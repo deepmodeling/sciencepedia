@@ -4,44 +4,44 @@
 
 ### 为人工智能引擎增压：机器学习中的优化
 
-动量如今最直接、或许也是影响最深远的应用，是在机器学习模型的训练中。想象一下训练一个深度神经网络的任务。“[损失景观](@article_id:639867)”——一个表示模型在每种可能参数配置下的误差的高维[曲面](@article_id:331153)——是一个极其复杂的地方。它是一片广袤的地形，充满了平坦的高原、险峻的峡谷和无数的局部最小值。
+动量如今最直接、或许也是影响最深远的应用，是在机器学习模型的训练中。想象一下训练一个深度神经网络的任务。“[损失景观](@keyword=loss_landscapes|lang=zh-CN|style=Feynman)”——一个表示模型在每种可能参数配置下的误差的高维[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)——是一个极其复杂的地方。它是一片广袤的地形，充满了平坦的高原、险峻的峡谷和无数的局部最小值。
 
-在这个景观中，标准梯度下降法就像一个[近视](@article_id:357860)的徒步者，只能看到脚下最陡峭的方向。在平缓、近乎平坦的高原上，他们迈着微小而痛苦的缓慢步伐。当他们进入一个狭窄、坡度陡峭的峡谷时，他们会惊慌失措，在两壁之间疯狂地之字形移动，沿着峡谷底部几乎没有取得任何进展。
+在这个景观中，标准梯度下降法就像一个[近视](@keyword=myopia|lang=zh-CN|style=Feynman)的徒步者，只能看到脚下最陡峭的方向。在平缓、近乎平坦的高原上，他们迈着微小而痛苦的缓慢步伐。当他们进入一个狭窄、坡度陡峭的峡谷时，他们会惊慌失措，在两壁之间疯狂地之字形移动，沿着峡谷底部几乎没有取得任何进展。
 
-这正是我们在分析一个简单的二次损失函数时所探讨的情景，该函数可以作为任何复杂景观的局部模型 。高曲率方向对应于峡谷的陡壁，而低曲率方向则代表了峡谷底部平缓的斜坡。简单的[梯度下降法](@article_id:302299)在陡峭方向上会超调和[振荡](@article_id:331484)，而在平缓方向上则爬行缓慢。
+这正是我们在分析一个简单的二次损失函数时所探讨的情景，该函数可以作为任何复杂景观的局部模型 [@problem_id:2375249]。高曲率方向对应于峡谷的陡壁，而低曲率方向则代表了峡谷底部平缓的斜坡。简单的[梯度下降法](@keyword=steepest_descent|lang=zh-CN|style=Feynman)在陡峭方向上会超调和[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，而在平缓方向上则爬行缓慢。
 
-这时，动量登场了。通过给我们的徒步者一个关于他们先前步骤的“记忆”——即赋予他们惯性——他们的行为被彻底改变了。当他们沿着高原的缓坡下降时，他们的速度不断累积，使他们能够更快地穿越。当他们遇到狭窄的峡谷时，动量帮助平均掉那些狂乱、[振荡](@article_id:331484)的梯度分量。横向的移动随着时间的推移趋于相互抵消，而沿着峡谷底部的一致推动力则被放大。结果是一条通往最小值的更平滑、更直接的路径。我们在数学上看到了这种效应：动量有助于抑制高曲率方向的[振荡](@article_id:331484)，并加速在低曲率方向上的进展，从而实现更快的整体收敛  。
+这时，动量登场了。通过给我们的徒步者一个关于他们先前步骤的“记忆”——即赋予他们惯性——他们的行为被彻底改变了。当他们沿着高原的缓坡下降时，他们的速度不断累积，使他们能够更快地穿越。当他们遇到狭窄的峡谷时，动量帮助平均掉那些狂乱、[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的梯度分量。横向的移动随着时间的推移趋于相互抵消，而沿着峡谷底部的一致推动力则被放大。结果是一条通往最小值的更平滑、更直接的路径。我们在数学上看到了这种效应：动量有助于抑制高曲率方向的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，并加速在低曲率方向上的进展，从而实现更快的整体收敛 [@problem_id:2375249] [@problem_id:2187022]。
 
-这不仅仅是一个理论上的好奇。我们可以在一个优美的跨学科例子中看到它的实际作用：教一个简单的机器学习模型——一个单层[感知器](@article_id:304352)——重新发现物理定律。给定一个[谐振子](@article_id:316032)的位置和速度数据，一个带动量的模型可以有效地学习其能量的正确公式，$E = \frac{1}{2} k x^2 + \frac{1}{2} m v^2$。[动量优化](@article_id:641640)器充当了发现的引擎，在参数空间中导航，以找到对应于真实[物理常数](@article_id:338291)的权重 。
+这不仅仅是一个理论上的好奇。我们可以在一个优美的跨学科例子中看到它的实际作用：教一个简单的机器学习模型——一个单层[感知器](@keyword=perceptron|lang=zh-CN|style=Feynman)——重新发现物理定律。给定一个[谐振子](@keyword=harmonic_oscillator|lang=zh-CN|style=Feynman)的位置和速度数据，一个带动量的模型可以有效地学习其能量的正确公式，$E = \frac{1}{2} k x^2 + \frac{1}{2} m v^2$。[动量优化](@keyword=momentum_optimization|lang=zh-CN|style=Feynman)器充当了发现的引擎，在参数空间中导航，以找到对应于真实[物理常数](@keyword=physical_constants|lang=zh-CN|style=Feynman)的权重 [@problem_id:2425757]。
 
-当然，故事并不仅止于这种“重球”动量。像 Adam（[自适应矩估计](@article_id:343985)）这样更复杂的[算法](@article_id:331821)将这一思想又向前推进了一步。如果说经典[动量法](@article_id:356782)给了我们的徒步者一个关于他们速度的记忆，那么 Adam 则给了他们一个自适应的记忆。它为每个参数维护独立的类动量估计，根据地形有效地调整球在每个方向上的“质量”。它在梯度嘈杂混乱的方向上抑制动量，而在梯度一致的方向上增强动量。对优化第一步的直接比较揭示了 Adam 的更新方向与标[准动量](@article_id:296823)的缩放方式有何不同，从一开始就校正了景观的各向异性 。
+当然，故事并不仅止于这种“重球”动量。像 Adam（[自适应矩估计](@keyword=adaptive_moment_estimation|lang=zh-CN|style=Feynman)）这样更复杂的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)将这一思想又向前推进了一步。如果说经典[动量法](@keyword=momentum_methods|lang=zh-CN|style=Feynman)给了我们的徒步者一个关于他们速度的记忆，那么 Adam 则给了他们一个自适应的记忆。它为每个参数维护独立的类动量估计，根据地形有效地调整球在每个方向上的“质量”。它在梯度嘈杂混乱的方向上抑制动量，而在梯度一致的方向上增强动量。对优化第一步的直接比较揭示了 Adam 的更新方向与标[准动量](@keyword=crystal_momentum|lang=zh-CN|style=Feynman)的缩放方式有何不同，从一开始就校正了景观的各向异性 [@problem_id:2152287]。
 
-这个框架的力量是如此巨大，以至于我们甚至可以把优化的工具反过来用于自身。动量参数 $\beta$ 不仅仅是一个需要手动调整的魔法数字；它是一个更大数学系统中的变量。利用链式法则，我们可以计算出我们模型的最终损[失相](@article_id:306965)对于 $\beta$ 本身是如何变化的，这为优化优化过程本身打开了大门 。
+这个框架的力量是如此巨大，以至于我们甚至可以把优化的工具反过来用于自身。动量参数 $\beta$ 不仅仅是一个需要手动调整的魔法数字；它是一个更大数学系统中的变量。利用链式法则，我们可以计算出我们模型的最终损[失相](@keyword=dephasing|lang=zh-CN|style=Feynman)对于 $\beta$ 本身是如何变化的，这为优化优化过程本身打开了大门 [@problem_id:577624]。
 
 ### 一条统一的线索：在数值计算中的回响
 
-科学中最深刻的感悟之一，是发现两个看起来截然不同的问题，其核心却是相同的。加速[神经网络训练](@article_id:639740)的“动量”并非一项新发明。它是对一个强大思想的重新发现，这个思想几十年来一直是计算科学和工程领域的得力工具。
+科学中最深刻的感悟之一，是发现两个看起来截然不同的问题，其核心却是相同的。加速[神经网络训练](@keyword=neural_network_training|lang=zh-CN|style=Feynman)的“动量”并非一项新发明。它是对一个强大思想的重新发现，这个思想几十年来一直是计算科学和工程领域的得力工具。
 
-工程师在设计桥梁、飞机或模拟天气模式时，经常需要求解庞大的[线性方程组](@article_id:309362)，通常形式为 $A x = b$，其中 $x$ 可能代表数百万个变量。像高斯消元法这样的方法对于如此大的规模来说实在太慢。因此，他们转向了迭代求解器。其中最著名的之一是**[共轭梯度](@article_id:306134)（CG）**法。
+工程师在设计桥梁、飞机或模拟天气模式时，经常需要求解庞大的[线性方程组](@keyword=systems_of_linear_equations|lang=zh-CN|style=Feynman)，通常形式为 $A x = b$，其中 $x$ 可能代表数百万个变量。像高斯消元法这样的方法对于如此大的规模来说实在太慢。因此，他们转向了迭代求解器。其中最著名的之一是**[共轭梯度](@keyword=conjugate_gradient|lang=zh-CN|style=Feynman)（CG）**法。
 
-乍一看，CG [算法](@article_id:331821)像是一系列复杂的[向量运算](@article_id:348673)。但经过一些代数[重排](@article_id:369331)，一个惊人的联系被揭示出来：解向量 $x_k$ 的更新规则可以写成一个**[三项递推关系](@article_id:355806)**。这个[递推关系](@article_id:368362)用当前解 $x_k$、前一个解 $x_{k-1}$ 和当前梯度（或[残差](@article_id:348682)）来表示下一个解 $x_{k+1}$。这正是[动量法](@article_id:356782) unmistakable 的标志 。事实证明，CG 方法是一种高度优化、“智能”的动量[算法](@article_id:331821)，专门为求解某些线性系统而量身定制。机器学习实践者通过启发式和物理类比发现的东西，数值分析学家早在几十年前就通过严格的优化理论推导出来了。
+乍一看，CG [算法](@keyword=algorithm|lang=zh-CN|style=Feynman)像是一系列复杂的[向量运算](@keyword=vector_operations|lang=zh-CN|style=Feynman)。但经过一些代数[重排](@keyword=derangement|lang=zh-CN|style=Feynman)，一个惊人的联系被揭示出来：解向量 $x_k$ 的更新规则可以写成一个**[三项递推关系](@keyword=three_term_recurrence_relation|lang=zh-CN|style=Feynman)**。这个[递推关系](@keyword=recursion_relation|lang=zh-CN|style=Feynman)用当前解 $x_k$、前一个解 $x_{k-1}$ 和当前梯度（或[残差](@keyword=residue|lang=zh-CN|style=Feynman)）来表示下一个解 $x_{k+1}$。这正是[动量法](@keyword=momentum_methods|lang=zh-CN|style=Feynman) unmistakable 的标志 [@problem_id:2211024]。事实证明，CG 方法是一种高度优化、“智能”的动量[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)，专门为求解某些线性系统而量身定制。机器学习实践者通过启发式和物理类比发现的东西，数值分析学家早在几十年前就通过严格的优化理论推导出来了。
 
-这种家族相似性也延伸到了其他经典求解器。用于求解[偏微分方程离散化](@article_id:354822)所产生的线性系统的**[逐次超松弛](@article_id:300973)（SOR）**法，有一个“松弛参数”$\omega$。通过分析 SOR 的更新，人们发现设置 $\omega > 1$（即“超松弛”状态）在数学上等同于增加一个动量项，帮助解“超调”简单的迭代更新，从而加速收敛 。
+这种家族相似性也延伸到了其他经典求解器。用于求解[偏微分方程离散化](@keyword=pde_discretization|lang=zh-CN|style=Feynman)所产生的线性系统的**[逐次超松弛](@keyword=successive_over_relaxation|lang=zh-CN|style=Feynman)（SOR）**法，有一个“松弛参数”$\omega$。通过分析 SOR 的更新，人们发现设置 $\omega > 1$（即“超松弛”状态）在数学上等同于增加一个动量项，帮助解“超调”简单的迭代更新，从而加速收敛 [@problem_id:2441051]。
 
-这并不是说每个迭代求解器都是一个简单的动量方法。对于[流体动力学](@article_id:319275)等领域中出现的最困难的非对称系统，人们采用像 **[BiCGSTAB](@article_id:303840)** 这样的方法。虽然这些方法也以类似动量的方式使用先前步骤的信息，但这种类比更多是启发式的。它们不像 CG 或带动量的梯度下降那样最小化一个单一、固定的能量函数。它们的结构更为复杂，但利用历史来指导未来的精神依然存在 。
+这并不是说每个迭代求解器都是一个简单的动量方法。对于[流体动力学](@keyword=hydrodynamics|lang=zh-CN|style=Feynman)等领域中出现的最困难的非对称系统，人们采用像 **[BiCGSTAB](@keyword=bicgstab|lang=zh-CN|style=Feynman)** 这样的方法。虽然这些方法也以类似动量的方式使用先前步骤的信息，但这种类比更多是启发式的。它们不像 CG 或带动量的梯度下降那样最小化一个单一、固定的能量函数。它们的结构更为复杂，但利用历史来指导未来的精神依然存在 [@problem_id:2374398]。
 
 ### 最深层的联系：动力学与统计物理
 
-要完全掌握这个概念的统一性，我们必须退后一步，从一个更高的视角来审视它。所有这些离散的迭代[算法](@article_id:331821)——[梯度下降](@article_id:306363)、动量、CG——都可以被看作是数值逼近一个单一、潜在物理过程的不同方式，这个过程由一个**[二阶常微分方程](@article_id:382822)（ODE）**描述。这是一个有质量的物体在[势场](@article_id:323065)中受到[阻尼力](@article_id:329410)（摩擦力）影响下运动的方程：
+要完全掌握这个概念的统一性，我们必须退后一步，从一个更高的视角来审视它。所有这些离散的迭代[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)——[梯度下降](@keyword=gradient_descent|lang=zh-CN|style=Feynman)、动量、CG——都可以被看作是数值逼近一个单一、潜在物理过程的不同方式，这个过程由一个**[二阶常微分方程](@keyword=second_order_odes|lang=zh-CN|style=Feynman)（ODE）**描述。这是一个有质量的物体在[势场](@keyword=potential_field|lang=zh-CN|style=Feynman)中受到[阻尼力](@keyword=damping_force|lang=zh-CN|style=Feynman)（摩擦力）影响下运动的方程：
 
 $$ \frac{d^2x}{dt^2} + \gamma \frac{dx}{dt} + \nabla L(x) = 0 $$
 
-这里，$x$ 是参数向量，$L(x)$ 是[损失函数](@article_id:638865)（势场），而 $\gamma$ 是[阻尼系数](@article_id:343129)。这是[动量优化](@article_id:641640)的连续时间极限。从这个角度看问题，弥合了优化与经典力学之间的鸿沟 。它也提出了新的、实际的问题。当我们实现一个优化器时，我们实际上是在选择一个数值方案（如[欧拉法](@article_id:299959)）来求解这个 ODE。该方案的稳定性——[数值解](@article_id:306259)是飞向无穷大还是正确地追踪真实路径——关键取决于我们选择的步长，这与机器学习中选择稳定[学习率](@article_id:300654)的必要性直接对应。
+这里，$x$ 是参数向量，$L(x)$ 是[损失函数](@keyword=loss_functions|lang=zh-CN|style=Feynman)（势场），而 $\gamma$ 是[阻尼系数](@keyword=damping_coefficient|lang=zh-CN|style=Feynman)。这是[动量优化](@keyword=momentum_optimization|lang=zh-CN|style=Feynman)的连续时间极限。从这个角度看问题，弥合了优化与经典力学之间的鸿沟 [@problem_id:2202806]。它也提出了新的、实际的问题。当我们实现一个优化器时，我们实际上是在选择一个数值方案（如[欧拉法](@keyword=euler_s_method|lang=zh-CN|style=Feynman)）来求解这个 ODE。该方案的稳定性——[数值解](@keyword=numerical_solution|lang=zh-CN|style=Feynman)是飞向无穷大还是正确地追踪真实路径——关键取决于我们选择的步长，这与机器学习中选择稳定[学习率](@keyword=learning_rate|lang=zh-CN|style=Feynman)的必要性直接对应。
 
-这些联系甚至更深，延伸到了**统计物理**的领域。在现实世界的机器学习中，我们通常使用*随机*梯度，这些梯度是在小批量数据上计算的。这就像我们的滚球不断受到随机力的踢动。轨迹不再平滑，而是[抖动](@article_id:326537)且不可预测。
+这些联系甚至更深，延伸到了**统计物理**的领域。在现实世界的机器学习中，我们通常使用*随机*梯度，这些梯度是在小批量数据上计算的。这就像我们的滚球不断受到随机力的踢动。轨迹不再平滑，而是[抖动](@keyword=dither|lang=zh-CN|style=Feynman)且不可预测。
 
-我们可以使用[统计力](@article_id:373880)学的强大工具，如 Kramers-Moyal 展开，来分析这个[随机过程](@article_id:333307)。通过计算预期运动（**漂移**）及其周围的涨落（**扩散**），我们可以描述系统的长期行为。当我们对带动量的[随机梯度下降](@article_id:299582)（SGD）进行此分析时，一个非凡的发现出现了：控制预期运动的“[力场](@article_id:307740)”是非保守的。它有一个非零的**旋度** 。
+我们可以使用[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学的强大工具，如 Kramers-Moyal 展开，来分析这个[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)。通过计算预期运动（**漂移**）及其周围的涨落（**扩散**），我们可以描述系统的长期行为。当我们对带动量的[随机梯度下降](@keyword=stochastic_gradient_descent|lang=zh-CN|style=Feynman)（SGD）进行此分析时，一个非凡的发现出现了：控制预期运动的“[力场](@keyword=force_field|lang=zh-CN|style=Feynman)”是非保守的。它有一个非零的**旋度** [@problem_id:132301]。
 
-在物理学中，非零旋度意味着力不能从一个简单的[势能函数](@article_id:345549)中导出。这是一个系统处于**[非平衡稳态](@article_id:302224)**的标志。不像一个球只是在碗底安顿下来然后停止，我们的参数向量，在动量和随机噪声的影响下，从未真正静止。它不断地循环和流动，从[梯度噪声](@article_id:345219)中消耗“能量”以维持一种动态状态。这将训练机器学习模型的抽象过程与活性物质的基本物理学联系起来，后者描述了从我们细胞内的[分子马达](@article_id:311712)到鸟群的一切事物。
+在物理学中，非零旋度意味着力不能从一个简单的[势能函数](@keyword=potential_energy_function|lang=zh-CN|style=Feynman)中导出。这是一个系统处于**[非平衡稳态](@keyword=non_equilibrium_steady_state_2|lang=zh-CN|style=Feynman)**的标志。不像一个球只是在碗底安顿下来然后停止，我们的参数向量，在动量和随机噪声的影响下，从未真正静止。它不断地循环和流动，从[梯度噪声](@keyword=gradient_noise|lang=zh-CN|style=Feynman)中消耗“能量”以维持一种动态状态。这将训练机器学习模型的抽象过程与活性物质的基本物理学联系起来，后者描述了从我们细胞内的[分子马达](@keyword=molecular_motors|lang=zh-CN|style=Feynman)到鸟群的一切事物。
 
 从一个滚球的简单直觉出发，我们穿越了人工智能的前沿，揭示了广阔的数值计算世界中隐藏的统一性，并最终触及了现代统计物理的深刻概念。动量的思想不仅仅是一个工具，而是一条将这些看似迥异的世界连接成一个美丽、连贯整体的线索。

@@ -7,7 +7,7 @@ This article delves into the elegant world of Radix-4 Booth's algorithm. First, 
 
 ## Principles and Mechanisms
 
-Imagine you're an accountant from a time before calculators. Your job is to multiply large numbers, all day, every day. You'd quickly realize that multiplication is just a fancy word for repeated addition. Multiplying a number $M$ by 13, for instance, means adding $M$ to itself 13 times. It's tedious and slow. A clever accountant, however, might notice that $13 = 10 + 3$, and instead calculate $(M \times 10) + (M \times 3)$. This is much faster. A computer's [arithmetic logic unit](@article_id:177724) (ALU) faces the same challenge, just with binary numbers. The journey to the Radix-4 Booth's algorithm is a story of finding ever-cleverer ways to be "lazy" and efficient.
+Imagine you're an accountant from a time before calculators. Your job is to multiply large numbers, all day, every day. You'd quickly realize that multiplication is just a fancy word for repeated addition. Multiplying a number $M$ by 13, for instance, means adding $M$ to itself 13 times. It's tedious and slow. A clever accountant, however, might notice that $13 = 10 + 3$, and instead calculate $(M \times 10) + (M \times 3)$. This is much faster. A computer's [arithmetic logic unit](@keyword=arithmetic_logic_unit|lang=en-US|style=Feynman) (ALU) faces the same challenge, just with binary numbers. The journey to the Radix-4 Booth's algorithm is a story of finding ever-cleverer ways to be "lazy" and efficient.
 
 ### The Art of Avoiding Work: From Many Additions to One Subtraction
 
@@ -43,7 +43,7 @@ Let's see what this means intuitively:
 - **Two Ones `...0110...`:** For the pair `11`, the triplet is `011`. The formula gives $d_i = -2(0) + 1 + 1 = +2$. We need to add $2 \times M$.
 - **Start of a String of Ones `...1110...`:** Here, the triplet is `110`. The formula gives $d_i = -2(1) + 1 + 0 = -1$. This is the "subtraction at the end of the string" trick we saw earlier!
 - **End of a String of Ones `...0011...`:** The triplet is `001`. The formula gives $d_i = -2(0) + 0 + 1 = +1$. This is the "addition at the beginning of the string".
-- **Middle of a String of Ones `...1111...`:** The triplet is `111`. The formula gives $d_i = -2(1) + 1 + 1 = 0$. This is beautiful! It tells us to do nothing in the middle of a long string of ones, just as our intuition suggested .
+- **Middle of a String of Ones `...1111...`:** The triplet is `111`. The formula gives $d_i = -2(1) + 1 + 1 = 0$. This is beautiful! It tells us to do nothing in the middle of a long string of ones, just as our intuition suggested [@problem_id:1916751].
 
 Let's try a complete example. Suppose our multiplier is the 8-bit number $Y = 01011011_2$. To recode it, we first append a zero on the right: $01011011\underline{0}$. Now we form overlapping 3-bit groups from right to left:
 
@@ -52,7 +52,7 @@ Let's try a complete example. Suppose our multiplier is the 8-bit number $Y = 01
 3.  **Group 2:** $(y_5, y_4, y_3) = (0, 1, 1) \rightarrow 011 \rightarrow d_2 = +2$
 4.  **Group 3:** $(y_7, y_6, y_5) = (0, 1, 0) \rightarrow 010 \rightarrow d_3 = +1$
 
-So, the number $Y = 01011011_2$ is transformed into the sequence of recoded digits $(+1, +2, -1, -1)$ . We have converted an 8-bit number into a 4-digit "secret code".
+So, the number $Y = 01011011_2$ is transformed into the sequence of recoded digits $(+1, +2, -1, -1)$ [@problem_id:1916743]. We have converted an 8-bit number into a 4-digit "secret code".
 
 ### From Code to Action: The Hardware's Simple Dance
 
@@ -60,11 +60,11 @@ Now, what does the hardware do with this code `[+1, +2, -1, -1]`? Each digit cor
 
 - **$d_i=0$**: Do nothing. Just shift the accumulator for the next step.
 - **$d_i=+1$**: Add $M$ to the partial product.
-- **$d_i=-1$**: Subtract $M$ (which means adding its [two's complement](@article_id:173849)).
-- **$d_i=+2$**: This is the magic move. To get $2M$, we don't need a complex calculation. The hardware simply performs a **one-bit left shift on the multiplicand $M$** and adds the result . This is an incredibly fast and cheap operation.
-- **$d_i=-2$**: Similarly, we get $2M$ by a one-bit left shift on $M$, and then we subtract this value (by taking its [two's complement](@article_id:173849) and adding) .
+- **$d_i=-1$**: Subtract $M$ (which means adding its [two's complement](@keyword=two_s_complement|lang=en-US|style=Feynman)).
+- **$d_i=+2$**: This is the magic move. To get $2M$, we don't need a complex calculation. The hardware simply performs a **one-bit left shift on the multiplicand $M$** and adds the result [@problem_id:1916744]. This is an incredibly fast and cheap operation.
+- **$d_i=-2$**: Similarly, we get $2M$ by a one-bit left shift on $M$, and then we subtract this value (by taking its [two's complement](@keyword=two_s_complement|lang=en-US|style=Feynman) and adding) [@problem_id:1916746].
 
-The entire [complex multiplication](@article_id:167594) is reduced to a simple dance of four steps (for an 8-bit multiplier). In each step, a controller looks at the recoded digit and tells an adder/subtractor circuit which operation to perform on either $M$ or a shifted version of $M$. After each step, the accumulated result is shifted right by two positions to prepare for the next, more significant digit. A full multiplication, like the one demonstrated in , is a beautiful orchestration of these simple steps, drastically reducing the total number of additions required compared to the naive method.
+The entire [complex multiplication](@keyword=complex_multiplication|lang=en-US|style=Feynman) is reduced to a simple dance of four steps (for an 8-bit multiplier). In each step, a controller looks at the recoded digit and tells an adder/subtractor circuit which operation to perform on either $M$ or a shifted version of $M$. After each step, the accumulated result is shifted right by two positions to prepare for the next, more significant digit. A full multiplication, like the one demonstrated in [@problem_id:1916764], is a beautiful orchestration of these simple steps, drastically reducing the total number of additions required compared to the naive method.
 
 ### A Look Under the Hood: The Beauty of Base-4
 
@@ -80,6 +80,6 @@ Value $= 1 \cdot 64 + 2 \cdot 16 - 1 \cdot 4 - 1 \cdot 1 = 64 + 32 - 4 - 1 = 91$
 
 And what was our original binary number? $01011011_2 = 64 + 16 + 8 + 2 + 1 = 91$. It matches perfectly!
 
-The algorithm is essentially a conversion from base 2 to this special base-4 system. This insight allows us to work backwards, too. If someone gives you a recoded string like $(+2, 0)$, you can immediately find its value: $2 \cdot 4^1 + 0 \cdot 4^0 = 8$, which is `001000` in 6-bit binary . You can even solve puzzles, like finding the original 6-bit binary number that produces the recoding `(-1, -1, +1)` by working the recoding rules in reverse , or finding all possible numbers that satisfy certain constraints on their recoded digits . We can even design numbers that produce a desired pattern of recoded digits, like finding the smallest positive number that gives a `[+,-,+]` pattern of digits .
+The algorithm is essentially a conversion from base 2 to this special base-4 system. This insight allows us to work backwards, too. If someone gives you a recoded string like $(+2, 0)$, you can immediately find its value: $2 \cdot 4^1 + 0 \cdot 4^0 = 8$, which is `001000` in 6-bit binary [@problem_id:1916732]. You can even solve puzzles, like finding the original 6-bit binary number that produces the recoding `(-1, -1, +1)` by working the recoding rules in reverse [@problem_id:1916745], or finding all possible numbers that satisfy certain constraints on their recoded digits [@problem_id:1916762]. We can even design numbers that produce a desired pattern of recoded digits, like finding the smallest positive number that gives a `[+,-,+]` pattern of digits [@problem_id:1916766].
 
-This reveals the profound unity of the concept: Radix-4 Booth's algorithm isn't just a collection of hardware tricks. It's a fundamental change in number representation, chosen specifically because the new representation is perfectly suited for fast and efficient hardware implementation. It replaces brute-force [binary arithmetic](@article_id:173972) with an elegant system where each "digit" corresponds to a trivial hardware operation: a shift and/or an add/subtract.
+This reveals the profound unity of the concept: Radix-4 Booth's algorithm isn't just a collection of hardware tricks. It's a fundamental change in number representation, chosen specifically because the new representation is perfectly suited for fast and efficient hardware implementation. It replaces brute-force [binary arithmetic](@keyword=binary_arithmetic|lang=en-US|style=Feynman) with an elegant system where each "digit" corresponds to a trivial hardware operation: a shift and/or an add/subtract.

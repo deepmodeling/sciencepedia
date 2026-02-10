@@ -1,11 +1,11 @@
 ## 引言
-水看似简单，是一种平静而均一的物质。然而，在分子层面，它是一个持续活动的场景，由一种称为[自电离](@article_id:316422)的基本过程所定义。这种微妙、永不停息的舞蹈——水分子交换质子形成离子——是[水溶液化学](@article_id:339459)的基石，但其深远的意义却常常被低估。本文旨在弥补这一不足，揭示这种“微小”的效应实际上是如何主导从[pH标度](@article_id:300369)到生命功能的一切事物的。
+水看似简单，是一种平静而均一的物质。然而，在分子层面，它是一个持续活动的场景，由一种称为[自电离](@keyword=autoionization|lang=zh-CN|style=Feynman)的基本过程所定义。这种微妙、永不停息的舞蹈——水分子交换质子形成离子——是[水溶液化学](@keyword=aqueous_chemistry|lang=zh-CN|style=Feynman)的基石，但其深远的意义却常常被低估。本文旨在弥补这一不足，揭示这种“微小”的效应实际上是如何主导从[pH标度](@keyword=ph_scale|lang=zh-CN|style=Feynman)到生命功能的一切事物的。
 
-本次探索分为两部分。在第一部分“**原理与机制**”中，我们将深入探讨[自电离](@article_id:316422)的化学机制，探索[平衡常数](@article_id:301482)$K_w$、驱动它的[热力学力](@article_id:322310)量，以及它如何引出[pH标度](@article_id:300369)。随后，在“**应用与跨学科联系**”部分，我们将展示这一原理的深远影响，说明它如何重新定义生物学和地质学中的中性，为[化学计算](@article_id:315631)设定基本限制，并在复杂的水溶液世界中充当普适的仲裁者。
+本次探索分为两部分。在第一部分“**原理与机制**”中，我们将深入探讨[自电离](@keyword=autoionization|lang=zh-CN|style=Feynman)的化学机制，探索[平衡常数](@keyword=equilibrium_constant|lang=zh-CN|style=Feynman)$K_w$、驱动它的[热力学力](@keyword=thermodynamic_forces|lang=zh-CN|style=Feynman)量，以及它如何引出[pH标度](@keyword=ph_scale|lang=zh-CN|style=Feynman)。随后，在“**应用与跨学科联系**”部分，我们将展示这一原理的深远影响，说明它如何重新定义生物学和地质学中的中性，为[化学计算](@keyword=chemical_computing|lang=zh-CN|style=Feynman)设定基本限制，并在复杂的水溶液世界中充当普适的仲裁者。
 
 ## 原理与机制
 
-如果你凝视一杯完美纯净的水，你会看到一种绝对宁静的物质。它看起来均匀、平静、不变。然而，这种平静的外表是一个巨大的幻象。在分子尺度上，水是一个永不停息、剧烈活动的场景。它是一个动态、翻腾的平衡，一场永恒的舞蹈，而水分子本身就是舞伴。这就是**[自电离](@article_id:316422)**（autoionization）或**自质子传递**（autoprotolysis）现象，它是理解几乎所有[水溶液化学](@article_id:339459)的关键。
+如果你凝视一杯完美纯净的水，你会看到一种绝对宁静的物质。它看起来均匀、平静、不变。然而，这种平静的外表是一个巨大的幻象。在分子尺度上，水是一个永不停息、剧烈活动的场景。它是一个动态、翻腾的平衡，一场永恒的舞蹈，而水分子本身就是舞伴。这就是**[自电离](@keyword=autoionization|lang=zh-CN|style=Feynman)**（autoionization）或**自质子传递**（autoprotolysis）现象，它是理解几乎所有[水溶液化学](@keyword=aqueous_chemistry|lang=zh-CN|style=Feynman)的关键。
 
 ### 水的躁动之舞
 
@@ -13,17 +13,17 @@
 
 $$2 \text{H}_2\text{O}(l) \rightleftharpoons \text{H}_3\text{O}^+(aq) + \text{OH}^-(aq)$$
 
-在这场微观戏剧中，我们看到了水的双重性格。根据酸碱的**[布朗斯特-劳里理论](@article_id:305785)**，酸是质子给予体，碱是质子接受体。在这个单一反应中，一个水分子充当[布朗斯特-劳里酸](@article_id:304629)，而另一个则充当布朗斯特-劳里碱。一种既能作酸又能作碱的物质被称为**[两性物质](@article_id:306054)**（amphiprotic），而水是其典型的例子 。
+在这场微观戏剧中，我们看到了水的双重性格。根据酸碱的**[布朗斯特-劳里理论](@keyword=brønsted_lowry_theory|lang=zh-CN|style=Feynman)**，酸是质子给予体，碱是质子接受体。在这个单一反应中，一个水分子充当[布朗斯特-劳里酸](@keyword=brønsted_lowry_acid|lang=zh-CN|style=Feynman)，而另一个则充当布朗斯特-劳里碱。一种既能作酸又能作碱的物质被称为**[两性物质](@keyword=amphiprotic_species|lang=zh-CN|style=Feynman)**（amphiprotic），而水是其典型的例子 [@problem_id:2779163]。
 
-这场舞蹈也揭示了[化学键合](@article_id:298665)更深层次的真相。[路易斯理论](@article_id:308276)将碱定义为电子对给予体，酸定义为电子对接受体。[质子转移](@article_id:303878)实际上是“碱”水分子的氧原子上的[孤对电子](@article_id:367489)伸出，与“酸”水分子的一个质子形成新键。因此，每一个[布朗斯特-劳里酸](@article_id:304629)碱反应，其核心都是一个[路易斯酸碱](@article_id:315925)反应，揭示了这两种观点之间优美的统一性 。同样值得注意的是，自由质子$H^+$是一个有用的简写，但在水中并不真正独立存在；它会立即被一个水分子捕获，形成[水合氢离子](@article_id:299934)$H_3O^+$，甚至是更复杂的簇合物 。
+这场舞蹈也揭示了[化学键合](@keyword=chemical_bonding|lang=zh-CN|style=Feynman)更深层次的真相。[路易斯理论](@keyword=lewis_theory|lang=zh-CN|style=Feynman)将碱定义为电子对给予体，酸定义为电子对接受体。[质子转移](@keyword=proton_transfer|lang=zh-CN|style=Feynman)实际上是“碱”水分子的氧原子上的[孤对电子](@keyword=lone_pairs|lang=zh-CN|style=Feynman)伸出，与“酸”水分子的一个质子形成新键。因此，每一个[布朗斯特-劳里酸](@keyword=brønsted_lowry_acid|lang=zh-CN|style=Feynman)碱反应，其核心都是一个[路易斯酸碱](@keyword=lewis_acid_base_2|lang=zh-CN|style=Feynman)反应，揭示了这两种观点之间优美的统一性 [@problem_id:2779163]。同样值得注意的是，自由质子$H^+$是一个有用的简写，但在水中并不真正独立存在；它会立即被一个水分子捕获，形成[水合氢离子](@keyword=hydronium_ion|lang=zh-CN|style=Feynman)$H_3O^+$，甚至是更复杂的簇合物 [@problem_id:2779163]。
 
 ### 舞蹈的法则：离子积常数
 
-这种分子舞蹈形成离子的频率有多高？并不高。平衡极大地偏向左侧，有利于完整的水分子。我们可以使用质量作用定律来定义一个平衡常数，从而量化这种趋势。对于[自电离](@article_id:316422)反应，表达式为：
+这种分子舞蹈形成离子的频率有多高？并不高。平衡极大地偏向左侧，有利于完整的水分子。我们可以使用质量作用定律来定义一个平衡常数，从而量化这种趋势。对于[自电离](@keyword=autoionization|lang=zh-CN|style=Feynman)反应，表达式为：
 
 $$K = \frac{[\text{H}_3\text{O}^+][\text{OH}^-]}{[\text{H}_2\text{O}]^2}$$
 
-然而，在纯水或[稀溶液](@article_id:304847)中，水本身的浓度巨大且几乎恒定。它是溶剂，是整个戏剧上演的舞台。按照惯例，我们将纯液体溶剂的活度视为1。这极大地简化了我们的表达式，得到了**[水的离子积常数](@article_id:310697)**$K_w$ ：
+然而，在纯水或[稀溶液](@keyword=dilute_solutions|lang=zh-CN|style=Feynman)中，水本身的浓度巨大且几乎恒定。它是溶剂，是整个戏剧上演的舞台。按照惯例，我们将纯液体溶剂的活度视为1。这极大地简化了我们的表达式，得到了**[水的离子积常数](@keyword=ion_product_constant_of_water|lang=zh-CN|style=Feynman)**$K_w$ [@problem_id:1481240]：
 
 $$K_w = [\text{H}_3\text{O}^+][\text{OH}^-]$$
 
@@ -31,7 +31,7 @@ $$K_w = [\text{H}_3\text{O}^+][\text{OH}^-]$$
 
 ### 酸度的标度：中性与pH
 
-在一个绝对纯净的水样本中，没有其他离子来源。唯一发生的过程是[自电离](@article_id:316422)，它每产生一个氢氧根离子就对应产生一个[水合氢离子](@article_id:299934)。因此，根据化学计量和**电中性**原理（本体溶液必须没有净[电荷](@article_id:339187)），这两种离子的浓度必须相等 。
+在一个绝对纯净的水样本中，没有其他离子来源。唯一发生的过程是[自电离](@keyword=autoionization|lang=zh-CN|style=Feynman)，它每产生一个氢氧根离子就对应产生一个[水合氢离子](@keyword=hydronium_ion|lang=zh-CN|style=Feynman)。因此，根据化学计量和**电中性**原理（本体溶液必须没有净[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)），这两种离子的浓度必须相等 [@problem_id:2779163]。
 
 $$[\text{H}_3\text{O}^+] = [\text{OH}^-]$$
 
@@ -40,7 +40,7 @@ $$[\text{H}_3\text{O}^+] = [\text{OH}^-]$$
 $$K_w = [\text{H}_3\text{O}^+]^2 = 1.0 \times 10^{-14}$$
 $$[\text{H}_3\text{O}^+] = \sqrt{1.0 \times 10^{-14}} = 1.0 \times 10^{-7} \, \text{M}$$
 
-处理带有大的负指数的如此小的数字很麻烦。为了简化这一点，我们使用**[pH标度](@article_id:300369)**，这是一个对数度量，定义为：
+处理带有大的负指数的如此小的数字很麻烦。为了简化这一点，我们使用**[pH标度](@keyword=ph_scale|lang=zh-CN|style=Feynman)**，这是一个对数度量，定义为：
 
 $$pH = -\log_{10}([\text{H}_3\text{O}^+])$$
 
@@ -48,48 +48,48 @@ $$pH = -\log_{10}([\text{H}_3\text{O}^+])$$
 
 ### 打破宁静：平衡在行动
 
-如果我们扰乱这个微妙的平衡会发生什么？假设我们在纯水中加入几滴像HCl这样的强酸。HCl完全解离，向体系中注入大量的$H_3O^+$离子。在加入之后，离子浓度的乘积，称为**[反应商](@article_id:305641)**（$Q_w$），现在远大于$K_w$ 。
+如果我们扰乱这个微妙的平衡会发生什么？假设我们在纯水中加入几滴像HCl这样的强酸。HCl完全解离，向体系中注入大量的$H_3O^+$离子。在加入之后，离子浓度的乘积，称为**[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman)**（$Q_w$），现在远大于$K_w$ [@problem_id:2024889]。
 
 $$Q_w = [\text{H}_3\text{O}^+]_{\text{total}}[\text{OH}^-]_{\text{initial}} > K_w$$
 
-系统失去了平衡。在这里，我们看到了自然界中最优美的原理之一——**[勒夏特列原理](@article_id:297793)**——开始发挥作用。平衡将向抵消扰动的方向移动。为了降低产物的浓度，逆反应加速：[水合氢离子](@article_id:299934)和氢氧根离子碰撞并反应生成水分子。这个过程持续进行，直到离子积$Q_w$降回到平衡值$K_w$。在这个新的平衡中，$H_3O^+$的浓度很高，因此，$OH^-$的浓度被抑制到一个非常低的值。系统自我调节了。
+系统失去了平衡。在这里，我们看到了自然界中最优美的原理之一——**[勒夏特列原理](@keyword=le_chatelier_s_principle|lang=zh-CN|style=Feynman)**——开始发挥作用。平衡将向抵消扰动的方向移动。为了降低产物的浓度，逆反应加速：[水合氢离子](@keyword=hydronium_ion|lang=zh-CN|style=Feynman)和氢氧根离子碰撞并反应生成水分子。这个过程持续进行，直到离子积$Q_w$降回到平衡值$K_w$。在这个新的平衡中，$H_3O^+$的浓度很高，因此，$OH^-$的浓度被抑制到一个非常低的值。系统自我调节了。
 
-这种自我调节是如此精确，以至于即使我们加入极少量的酸，比如浓度为$2.5 \times 10^{-8}$ M，水自身的贡献也不能被忽略。在这种情况下，简单的计算是不够的。我们必须同时求解[电荷平衡方程](@article_id:325538)和$K_w$表达式，才能找到真实的平衡浓度，从而揭示加入的酸与水本身之间微妙的相互作用 。
+这种自我调节是如此精确，以至于即使我们加入极少量的酸，比如浓度为$2.5 \times 10^{-8}$ M，水自身的贡献也不能被忽略。在这种情况下，简单的计算是不够的。我们必须同时求解[电荷平衡方程](@keyword=charge_balance_equation|lang=zh-CN|style=Feynman)和$K_w$表达式，才能找到真实的平衡浓度，从而揭示加入的酸与水本身之间微妙的相互作用 [@problem_id:1558749]。
 
-### [热力学](@article_id:359663)的心跳
+### [热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)的心跳
 
-为什么$K_w$等于$1.0 \times 10^{-14}$？为什么不是$10^{-5}$或$10^{-20}$？答案在于[热力学](@article_id:359663)。平衡常数与反应的**[标准吉布斯自由能变](@article_id:347891)**（$\Delta G^\circ$）直接相关：
+为什么$K_w$等于$1.0 \times 10^{-14}$？为什么不是$10^{-5}$或$10^{-20}$？答案在于[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)。平衡常数与反应的**[标准吉布斯自由能变](@keyword=standard_gibbs_free_energy_change|lang=zh-CN|style=Feynman)**（$\Delta G^\circ$）直接相关：
 
 $$\Delta G^\circ = -RT \ln K_w$$
 
-由于$K_w$非常小，其自然对数是一个很大的负数，这意味着[自电离](@article_id:316422)的$\Delta G^\circ$是正的（例如，在$350^\circ\text{C}$时，它大约是$+127$ kJ/mol）。一个正的$\Delta G^\circ$表示在标准条件下反应是非自发的。驱动这个“上坡”反应的能量来自周围水分子的随机热能。
+由于$K_w$非常小，其自然对数是一个很大的负数，这意味着[自电离](@keyword=autoionization|lang=zh-CN|style=Feynman)的$\Delta G^\circ$是正的（例如，在$350^\circ\text{C}$时，它大约是$+127$ kJ/mol）[@problem_id:1995250]。一个正的$\Delta G^\circ$表示在标准条件下反应是非自发的。驱动这个“上坡”反应的能量来自周围水分子的随机热能。
 
-这个断裂[化学键](@article_id:305517)并形成离子的过程需要能量输入，这意味着[水的自电离](@article_id:373560)是一个**吸热**反应（$\Delta H^\circ > 0$）。我们可以用几种巧妙的方法来确定这个[焓变](@article_id:308053)。一种方法是在两个不同温度下测量$K_w$，并应用**[范特霍夫方程](@article_id:301612)**，该方程精确地将平衡常数的变化与[反应焓](@article_id:310183)联系起来 。另一种更深刻的方法是认识到[自电离](@article_id:316422)恰好是[强酸和强碱](@article_id:309842)之间[中和反应](@article_id:372709)的逆反应：
+这个断裂[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)并形成离子的过程需要能量输入，这意味着[水的自电离](@keyword=autoprotolysis_of_water|lang=zh-CN|style=Feynman)是一个**吸热**反应（$\Delta H^\circ > 0$）。我们可以用几种巧妙的方法来确定这个[焓变](@keyword=enthalpy_change|lang=zh-CN|style=Feynman)。一种方法是在两个不同温度下测量$K_w$，并应用**[范特霍夫方程](@keyword=van__t_hoff_equation|lang=zh-CN|style=Feynman)**，该方程精确地将平衡常数的变化与[反应焓](@keyword=reaction_enthalpy|lang=zh-CN|style=Feynman)联系起来 [@problem_id:2021540]。另一种更深刻的方法是认识到[自电离](@keyword=autoionization|lang=zh-CN|style=Feynman)恰好是[强酸和强碱](@keyword=strong_acids_and_bases|lang=zh-CN|style=Feynman)之间[中和反应](@keyword=neutralization_reaction|lang=zh-CN|style=Feynman)的逆反应：
 
 $$H_3O^+(aq) + OH^-(aq) \rightarrow 2 \text{H}_2\text{O}(l) \quad \Delta H^\circ_{\text{neut}}$$
 
-根据[赫斯定律](@article_id:308289)，正向反应的[焓变](@article_id:308053)必须与逆向反应的焓变大小相等，符号相反：$\Delta H^\circ_{auto} = -\Delta H^\circ_{\text{neut}}$。通过测量中和过程中释放的热量（约$-55.8$ kJ/mol），我们直接得到了[自电离](@article_id:316422)过程中吸收的热量（$+55.8$ kJ/mol）。这揭示了水能量学中深刻而优雅的对称性。
+根据[赫斯定律](@keyword=hess_s_law|lang=zh-CN|style=Feynman)，正向反应的[焓变](@keyword=enthalpy_change|lang=zh-CN|style=Feynman)必须与逆向反应的焓变大小相等，符号相反：$\Delta H^\circ_{auto} = -\Delta H^\circ_{\text{neut}}$。通过测量中和过程中释放的热量（约$-55.8$ kJ/mol），我们直接得到了[自电离](@keyword=autoionization|lang=zh-CN|style=Feynman)过程中吸收的热量（$+55.8$ kJ/mol）[@problem_id:1993172]。这揭示了水能量学中深刻而优雅的对称性。
 
 ### 当中性不再是7时
 
-因为[自电离](@article_id:316422)是吸热的，所以加热（提高温度）是另一种扰动。根据[勒夏特列原理](@article_id:297793)，平衡将向右移动以吸收增加的热量，产生更多的离子。这意味着**$K_w$随温度升高而增大**。
+因为[自电离](@keyword=autoionization|lang=zh-CN|style=Feynman)是吸热的，所以加热（提高温度）是另一种扰动。根据[勒夏特列原理](@keyword=le_chatelier_s_principle|lang=zh-CN|style=Feynman)，平衡将向右移动以吸收增加的热量，产生更多的离子。这意味着**$K_w$随温度升高而增大**。
 
-这带来了一个有趣且常常违反直觉的后果。例如，在[高压灭菌器](@article_id:322242)温度（$121^\circ\text{C}$）下，中性水的pH值是多少？在这个温度下，$K_w$显著大于其室温值。使用[范特霍夫方程](@article_id:301612)计算表明，$K_w$变为约$2.4 \times 10^{-12}$。因此，中性pH，即$[\text{H}_3\text{O}^+] = \sqrt{K_w}$，约为$5.81$ 。在温暖的60°C下，中性pH约为6.51 。在某些极端[超临界水](@article_id:346487)状态下，$pK_w$（$-\log_{10}K_w$）可高达20，使得中性pH达到惊人的10.00 ！
+这带来了一个有趣且常常违反直觉的后果。例如，在[高压灭菌器](@keyword=autoclave|lang=zh-CN|style=Feynman)温度（$121^\circ\text{C}$）下，中性水的pH值是多少？在这个温度下，$K_w$显著大于其室温值。使用[范特霍夫方程](@keyword=van__t_hoff_equation|lang=zh-CN|style=Feynman)计算表明，$K_w$变为约$2.4 \times 10^{-12}$。因此，中性pH，即$[\text{H}_3\text{O}^+] = \sqrt{K_w}$，约为$5.81$ [@problem_id:1426065]。在温暖的60°C下，中性pH约为6.51 [@problem_id:2294151]。在某些极端[超临界水](@keyword=supercritical_water|lang=zh-CN|style=Feynman)状态下，$pK_w$（$-\log_{10}K_w$）可高达20，使得中性pH达到惊人的10.00 [@problem_id:2955054]！
 
 这是一个至关重要的教训：**“中性”并不意味着pH = 7**。“中性”意味着$[\text{H}_3\text{O}^+] = [\text{OH}^-]$。对应于中性的pH值完全取决于系统的温度。
 
 ### 水，普适的仲裁者
 
-[水的自电离](@article_id:373560)不仅定义了自身的性质；它还为溶解在其中的所有其他酸和碱设定了规则。考虑任何弱酸HA及其[共轭碱](@article_id:304682)A⁻。酸的强度由其[酸解离常数](@article_id:301341)$K_a$给出，而其共轭碱的强度由其碱水解常数$K_b$给出。
+[水的自电离](@keyword=autoprotolysis_of_water|lang=zh-CN|style=Feynman)不仅定义了自身的性质；它还为溶解在其中的所有其他酸和碱设定了规则。考虑任何弱酸HA及其[共轭碱](@keyword=conjugate_base|lang=zh-CN|style=Feynman)A⁻。酸的强度由其[酸解离常数](@keyword=acid_dissociation_constant_2|lang=zh-CN|style=Feynman)$K_a$给出，而其共轭碱的强度由其碱水解常数$K_b$给出。
 
-如果我们写出反应及其平衡表达式，然后简单地将它们相乘，就会发生奇妙的事情。[共轭](@article_id:312168)对的浓度[HA]和[A⁻]完美地抵消了，只剩下一件事：
+如果我们写出反应及其平衡表达式，然后简单地将它们相乘，就会发生奇妙的事情。[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)对的浓度[HA]和[A⁻]完美地抵消了，只剩下一件事：
 
 $$K_a \cdot K_b = \frac{[\text{H}_3\text{O}^+][\text{A}^-]}{[\text{HA}]} \cdot \frac{[\text{HA}][\text{OH}^-]}{[\text{A}^-]} = [\text{H}_3\text{O}^+][\text{OH}^-]$$
 
-于是，我们得出了酸碱化学中最基本的关系之一 ：
+于是，我们得出了酸碱化学中最基本的关系之一 [@problem_id:1859835]：
 
 $$K_a \cdot K_b = K_w$$
 
-这个恒等式对水中的任何[共轭](@article_id:312168)对都成立，意义深远。它意味着酸的强度和其[共轭碱](@article_id:304682)的强度不是独立的。它们被锁定在一种反比关系中，由水本身通过其离子积常数来仲裁。如果一种酸很强（大的$K_a$），它的共轭碱必须非常弱（极小的$K_b$）。这种关系在所有条件下都成立，即使在$K_w$值截然不同的[超临界水](@article_id:346487)的奇异世界中也是如此 。
+这个恒等式对水中的任何[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)对都成立，意义深远。它意味着酸的强度和其[共轭碱](@keyword=conjugate_base|lang=zh-CN|style=Feynman)的强度不是独立的。它们被锁定在一种反比关系中，由水本身通过其离子积常数来仲裁。如果一种酸很强（大的$K_a$），它的共轭碱必须非常弱（极小的$K_b$）。这种关系在所有条件下都成立，即使在$K_w$值截然不同的[超临界水](@keyword=supercritical_water|lang=zh-CN|style=Feynman)的奇异世界中也是如此 [@problem_id:2955054]。
 
-这个原理甚至解释了**[拉平效应](@article_id:314346)**。任何比$H_3O^+$强得多的酸都会被水强制几乎完全地捐出其质子，表现出与$H_3O^+$相同的强度。其真实、巨大的$K_a$值在水中变得难以通过实验测量。但即使对于这些被“拉平”的酸，[热力学恒等式](@article_id:302964)$K_a K_b = K_w$仍然是一个不可侵犯的真理，证明了支配化学世界的优雅而统一的数学结构 。从最简单的杯中水到最极端的[热液喷口](@article_id:299901)，水[自电离](@article_id:316422)的躁动之舞决定了游戏规则。
+这个原理甚至解释了**[拉平效应](@keyword=leveling_effect|lang=zh-CN|style=Feynman)**。任何比$H_3O^+$强得多的酸都会被水强制几乎完全地捐出其质子，表现出与$H_3O^+$相同的强度。其真实、巨大的$K_a$值在水中变得难以通过实验测量。但即使对于这些被“拉平”的酸，[热力学恒等式](@keyword=thermodynamic_identity|lang=zh-CN|style=Feynman)$K_a K_b = K_w$仍然是一个不可侵犯的真理，证明了支配化学世界的优雅而统一的数学结构 [@problem_id:2955014]。从最简单的杯中水到最极端的[热液喷口](@keyword=hydrothermal_vents|lang=zh-CN|style=Feynman)，水[自电离](@keyword=autoionization|lang=zh-CN|style=Feynman)的躁动之舞决定了游戏规则。

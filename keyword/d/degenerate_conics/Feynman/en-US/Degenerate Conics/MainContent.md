@@ -1,9 +1,9 @@
 ## Introduction
-The familiar [conic sections](@article_id:174628)—the ellipse, parabola, and hyperbola—are celebrated for their geometric perfection. But what happens when the slicing plane that creates them passes through a cone's vertex or is tangent to its side? The result is not a "perfect" curve but something simpler: a pair of intersecting lines, a single line, or a point. These are the degenerate conics, and far from being mere curiosities or failures, they are essential to a deeper understanding of geometry. They challenge our perception of what a conic is and reveal the powerful algebraic framework that unifies all second-degree curves.
+The familiar [conic sections](@keyword=conic_sections|lang=en-US|style=Feynman)—the ellipse, parabola, and hyperbola—are celebrated for their geometric perfection. But what happens when the slicing plane that creates them passes through a cone's vertex or is tangent to its side? The result is not a "perfect" curve but something simpler: a pair of intersecting lines, a single line, or a point. These are the degenerate conics, and far from being mere curiosities or failures, they are essential to a deeper understanding of geometry. They challenge our perception of what a conic is and reveal the powerful algebraic framework that unifies all second-degree curves.
 
 This article shifts the focus from the geometric slice to the universal algebraic equation that governs all conics, degenerate or not. By doing so, it resolves the apparent anomaly of these "broken" curves. You will discover the elegant principles that define and classify degenerate conics and see their profound applications in organizing entire families of curves and even in defining the fabric of geometric space itself. The discussion is structured to build this comprehensive view, starting with the fundamental algebraic definitions and moving towards their broader geometric implications.
 
-In "Principles and Mechanisms," you will learn the algebraic basis for all conics, understand how a simple [matrix determinant](@article_id:193572) serves as the ultimate test for degeneracy, and explore the different types of degenerate conics. Following this, "Applications and Interdisciplinary Connections" demonstrates how these forms act as crucial transitional states in families of curves, linking them together and revealing the deep structure of projective geometry.
+In "Principles and Mechanisms," you will learn the algebraic basis for all conics, understand how a simple [matrix determinant](@keyword=matrix_determinant|lang=en-US|style=Feynman) serves as the ultimate test for degeneracy, and explore the different types of degenerate conics. Following this, "Applications and Interdisciplinary Connections" demonstrates how these forms act as crucial transitional states in families of curves, linking them together and revealing the deep structure of projective geometry.
 
 ## Principles and Mechanisms
 
@@ -13,7 +13,7 @@ In mathematics, as in physics, the most interesting phenomena often occur at the
 
 ### An Algebraic Interlude: When Perfection Crumbles
 
-The geometric picture of slicing a cone is beautiful, but it is algebra that gives us the universal key. Every [conic section](@article_id:163717), without exception, is a collection of points $(x, y)$ that satisfy the [general second-degree equation](@article_id:177124):
+The geometric picture of slicing a cone is beautiful, but it is algebra that gives us the universal key. Every [conic section](@keyword=conic_section|lang=en-US|style=Feynman), without exception, is a collection of points $(x, y)$ that satisfy the [general second-degree equation](@keyword=general_second_degree_equation|lang=en-US|style=Feynman):
 
 $$
 Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0
@@ -27,7 +27,7 @@ $$
 (2x - 3y + 1)(x + 4y - 2) = 0
 $$
 
-For this equation to be true, a point $(x, y)$ must make either the first part zero (so it's on line $L_1$) OR the second part zero (so it's on line $L_2$). The set of all solutions is therefore the *union* of the two lines. But look what happens when we expand this product :
+For this equation to be true, a point $(x, y)$ must make either the first part zero (so it's on line $L_1$) OR the second part zero (so it's on line $L_2$). The set of all solutions is therefore the *union* of the two lines. But look what happens when we expand this product [@problem_id:2144347]:
 
 $$
 2x^2 + 5xy - 12y^2 - 3x + 10y - 2 = 0
@@ -53,43 +53,43 @@ Why the factors of $1/2$? They are a convention that ensures the matrix is symme
 
 Now for the master key. How can this matrix tell us if a conic is "proper" (an ellipse, parabola, hyperbola) or "degenerate"? The answer lies in a single number: the **determinant of M**.
 
-A [non-zero determinant](@article_id:153416) means the matrix is invertible, representing a transformation that doesn't collapse space. Geometrically, this corresponds to a full-fledged, non-[degenerate conic](@article_id:167004). But if **$\det(M) = 0$**, it means the matrix is "singular"—it squashes space down into a lower dimension. This is the algebraic signal for a [geometric collapse](@article_id:187629). This is the definitive test for degeneracy. A conic is degenerate if, and only if, the determinant of its matrix is zero.
+A [non-zero determinant](@keyword=non_zero_determinant|lang=en-US|style=Feynman) means the matrix is invertible, representing a transformation that doesn't collapse space. Geometrically, this corresponds to a full-fledged, non-[degenerate conic](@keyword=degenerate_conic|lang=en-US|style=Feynman). But if **$\det(M) = 0$**, it means the matrix is "singular"—it squashes space down into a lower dimension. This is the algebraic signal for a [geometric collapse](@keyword=geometric_collapse|lang=en-US|style=Feynman). This is the definitive test for degeneracy. A conic is degenerate if, and only if, the determinant of its matrix is zero.
 
 ### A Rogue's Gallery of Degenerates
 
-With our powerful determinant tool, let's go hunting for the different types of degenerates. They are distinguished by the quadratic part of the equation, $Ax^2+Bxy+Cy^2$, whose nature is captured by the famous [discriminant](@article_id:152126), $\Delta = B^2 - 4AC$.
+With our powerful determinant tool, let's go hunting for the different types of degenerates. They are distinguished by the quadratic part of the equation, $Ax^2+Bxy+Cy^2$, whose nature is captured by the famous [discriminant](@keyword=discriminant|lang=en-US|style=Feynman), $\Delta = B^2 - 4AC$.
 
 **1. Intersecting Lines ($\Delta \gt 0$)**
 
-This is the "hyperbolic" type of degeneracy. Our first example, $(2x-3y+1)(x+4y-2)=0$, falls in this category. For this conic, $\det(M)=0$, but the [discriminant](@article_id:152126) is $5^2 - 4(2)(-12) = 121 \gt 0$. These conics possess a unique **center**, which is simply the point of intersection. Remarkably, we can find this center using the same general method we would for an ellipse or a hyperbola: by finding the point where the [partial derivatives](@article_id:145786) of the conic's equation vanish . For the equation $2x^2 - xy - y^2 - 5x + 8y - 7 = 0$, this method points directly to $(2, 3)$, the unique [point of symmetry](@article_id:174342) where the two lines cross. This is a beautiful instance of unity: one mathematical tool works for both "perfect" and "broken" conics.
+This is the "hyperbolic" type of degeneracy. Our first example, $(2x-3y+1)(x+4y-2)=0$, falls in this category. For this conic, $\det(M)=0$, but the [discriminant](@keyword=discriminant|lang=en-US|style=Feynman) is $5^2 - 4(2)(-12) = 121 \gt 0$. These conics possess a unique **center**, which is simply the point of intersection. Remarkably, we can find this center using the same general method we would for an ellipse or a hyperbola: by finding the point where the [partial derivatives](@keyword=partial_derivatives|lang=en-US|style=Feynman) of the conic's equation vanish [@problem_id:2111719]. For the equation $2x^2 - xy - y^2 - 5x + 8y - 7 = 0$, this method points directly to $(2, 3)$, the unique [point of symmetry](@keyword=point_of_symmetry|lang=en-US|style=Feynman) where the two lines cross. This is a beautiful instance of unity: one mathematical tool works for both "perfect" and "broken" conics.
 
 **2. Parallel Lines ($\Delta = 0$)**
 
-This is the "parabolic" type of degeneracy. What if we want the equation to represent two parallel lines, like $(x+2y-3)(x+2y+1)=0$? Expanding this gives $x^2+4xy+4y^2-2x-4y-3=0$. Notice that the quadratic part, $x^2+4xy+4y^2$, is a [perfect square](@article_id:635128): $(x+2y)^2$. This is the hallmark of the parabolic case: $B^2-4AC = 4^2 - 4(1)(4) = 0$.
+This is the "parabolic" type of degeneracy. What if we want the equation to represent two parallel lines, like $(x+2y-3)(x+2y+1)=0$? Expanding this gives $x^2+4xy+4y^2-2x-4y-3=0$. Notice that the quadratic part, $x^2+4xy+4y^2$, is a [perfect square](@keyword=perfect_square|lang=en-US|style=Feynman): $(x+2y)^2$. This is the hallmark of the parabolic case: $B^2-4AC = 4^2 - 4(1)(4) = 0$.
 
-So, for a conic to be a pair of [parallel lines](@article_id:168513), it must satisfy two conditions:
+So, for a conic to be a pair of [parallel lines](@keyword=parallel_lines|lang=en-US|style=Feynman), it must satisfy two conditions:
 1.  It must be of the parabolic type: $B^2-4AC = 0$.
 2.  It must be degenerate: $\det(M) = 0$.
 
-In problem , we are given a family of conics $x^2 + 4xy + 4y^2 - 2x + k y - 3 = 0$. The first condition, $B^2-4AC=0$, is already satisfied. To find the specific member of the family that degenerates into [parallel lines](@article_id:168513), we simply need to enforce the second condition: calculate $\det(M)$ and set it to zero. This algebraic procedure magically reveals that $k$ must be $-4$, precisely the value that allows the equation to be factored into two [parallel lines](@article_id:168513). There is even a deeper, beautiful proportionality between the coefficients for this case, linking the linear terms to the quadratic ones .
+In problem [@problem_id:2144366], we are given a family of conics $x^2 + 4xy + 4y^2 - 2x + k y - 3 = 0$. The first condition, $B^2-4AC=0$, is already satisfied. To find the specific member of the family that degenerates into [parallel lines](@keyword=parallel_lines|lang=en-US|style=Feynman), we simply need to enforce the second condition: calculate $\det(M)$ and set it to zero. This algebraic procedure magically reveals that $k$ must be $-4$, precisely the value that allows the equation to be factored into two [parallel lines](@keyword=parallel_lines|lang=en-US|style=Feynman). There is even a deeper, beautiful proportionality between the coefficients for this case, linking the linear terms to the quadratic ones [@problem_id:2114757].
 
 **3. The Single Line ($\Delta = 0$)**
 
-What if the two parallel lines move on top of each other? Then we get a "double line" or a "repeated line." The equation is simply the square of a linear equation, like $(5x+y-2)^2=0$. This is still a [second-degree equation](@article_id:162740), so it's a conic! This might seem like a strange philosophical game, but it has immense practical importance in fields like computer vision, where algorithms designed for general conics must also be able to handle simple lines .
+What if the two parallel lines move on top of each other? Then we get a "double line" or a "repeated line." The equation is simply the square of a linear equation, like $(5x+y-2)^2=0$. This is still a [second-degree equation](@keyword=second_degree_equation|lang=en-US|style=Feynman), so it's a conic! This might seem like a strange philosophical game, but it has immense practical importance in fields like computer vision, where algorithms designed for general conics must also be able to handle simple lines [@problem_id:2144363].
 
-When we write out the equation $(2x - y + 2)^2 = 0$, we get $4x^2 - 4xy + y^2 + 8x - 4y + 4 = 0$ . It satisfies $B^2-4AC = (-4)^2 - 4(4)(1) = 0$ and, of course, $\det(M)=0$. Its matrix form is particularly elegant: if the line is $ax+by+c=0$ and its [coordinate vector](@article_id:152825) is $v = \begin{pmatrix} a & b & c \end{pmatrix}^T$, the matrix for the double line is simply the outer product $M = vv^T$ . Such a matrix has a rank of 1, the lowest possible for a non-zero conic matrix, representing the most extreme form of [geometric collapse](@article_id:187629) besides the next and final case.
+When we write out the equation $(2x - y + 2)^2 = 0$, we get $4x^2 - 4xy + y^2 + 8x - 4y + 4 = 0$ [@problem_id:2112527]. It satisfies $B^2-4AC = (-4)^2 - 4(4)(1) = 0$ and, of course, $\det(M)=0$. Its matrix form is particularly elegant: if the line is $ax+by+c=0$ and its [coordinate vector](@keyword=coordinate_vector|lang=en-US|style=Feynman) is $v = \begin{pmatrix} a & b & c \end{pmatrix}^T$, the matrix for the double line is simply the outer product $M = vv^T$ [@problem_id:2144363]. Such a matrix has a rank of 1, the lowest possible for a non-zero conic matrix, representing the most extreme form of [geometric collapse](@keyword=geometric_collapse|lang=en-US|style=Feynman) besides the next and final case.
 
 **4. The Single Point ($\Delta \lt 0$)**
 
-This is the "elliptic" type of degeneracy. Consider the equation $3(x+1)^2 + 2(y-4)^2 = 0$ . The left side is a sum of two non-negative quantities. For real numbers $x$ and $y$, this sum can be zero only if both terms are zero simultaneously. This forces $x+1=0$ and $y-4=0$, meaning the only real point that satisfies this equation is the single point $(-1, 4)$.
+This is the "elliptic" type of degeneracy. Consider the equation $3(x+1)^2 + 2(y-4)^2 = 0$ [@problem_id:2111667]. The left side is a sum of two non-negative quantities. For real numbers $x$ and $y$, this sum can be zero only if both terms are zero simultaneously. This forces $x+1=0$ and $y-4=0$, meaning the only real point that satisfies this equation is the single point $(-1, 4)$.
 
-This object is sometimes called a "point-ellipse." You can think of it as an ellipse whose axes have shrunk to zero length. Or, if we allow for complex numbers, it represents two imaginary lines that intersect at the real point $(-1, 4)$. For our purposes in the real plane, it is the ultimate collapse of a conic into a single point, yet it still arises from a [second-degree equation](@article_id:162740) and thus earns its place in the family.
+This object is sometimes called a "point-ellipse." You can think of it as an ellipse whose axes have shrunk to zero length. Or, if we allow for complex numbers, it represents two imaginary lines that intersect at the real point $(-1, 4)$. For our purposes in the real plane, it is the ultimate collapse of a conic into a single point, yet it still arises from a [second-degree equation](@keyword=second_degree_equation|lang=en-US|style=Feynman) and thus earns its place in the family.
 
 ### The Cosmic Dance: Degenerates in the Wild
 
 So, we have a zoo of degenerate conics. But their true significance is not as static objects in a collection, but as dynamic players in a grander drama. They often appear as transitions, or boundaries, between different families of proper conics.
 
-Consider the beautiful family of **[confocal conics](@article_id:168953)** given by the equation :
+Consider the beautiful family of **[confocal conics](@keyword=confocal_conics|lang=en-US|style=Feynman)** given by the equation [@problem_id:2115833]:
 $$ \frac{x^2}{a^2 - \lambda} + \frac{y^2}{b^2 - \lambda} = 1 $$
 Here, $a$ and $b$ are fixed, and $\lambda$ is a parameter we can tune.
 -   When $\lambda$ is less than $b^2$ (assuming $a \gt b$), both denominators are positive, and we get a family of ellipses, all sharing the same two foci.
@@ -103,15 +103,15 @@ The degenerate conics—in this case, the x and y axes—are not just oddities; 
 
 ### A Glimpse into a Deeper Reality: Singular Points
 
-To truly appreciate the nature of these special conics, we must take a brief step into the more powerful world of [projective geometry](@article_id:155745). In this world, we speak of **singular points**. A point on a conic is "regular" if it has a single, well-defined tangent line. All points on an ellipse, parabola, or hyperbola are regular. A point is **singular** if something goes wrong.
+To truly appreciate the nature of these special conics, we must take a brief step into the more powerful world of [projective geometry](@keyword=projective_geometry|lang=en-US|style=Feynman). In this world, we speak of **singular points**. A point on a conic is "regular" if it has a single, well-defined tangent line. All points on an ellipse, parabola, or hyperbola are regular. A point is **singular** if something goes wrong.
 
 -   For two intersecting lines, the intersection point is singular. There isn't one tangent there; there are two.
 -   For a double line, *every* point on the line is singular. The very concept of a unique tangent breaks down.
 
-This singularity has profound consequences. In projective geometry, there is a beautiful symmetry called **[pole-polar duality](@article_id:173619)**. For any non-[degenerate conic](@article_id:167004), every point in the plane (the pole) corresponds to a unique line (its polar). What happens when we try to find the polar of a [singular point](@article_id:170704)?
+This singularity has profound consequences. In projective geometry, there is a beautiful symmetry called **[pole-polar duality](@keyword=pole_polar_duality|lang=en-US|style=Feynman)**. For any non-[degenerate conic](@keyword=degenerate_conic|lang=en-US|style=Feynman), every point in the plane (the pole) corresponds to a unique line (its polar). What happens when we try to find the polar of a [singular point](@keyword=singular_point|lang=en-US|style=Feynman)?
 
-Let's take the conic $x^2 - y^2 = 0$, representing two lines intersecting at the origin. The origin is its [singular point](@article_id:170704). If we perform the standard matrix calculation to find its polar line, the result is the equation $0=0$ . This is not a line; it is an identity that is true for *all* points. The polar is undefined!
+Let's take the conic $x^2 - y^2 = 0$, representing two lines intersecting at the origin. The origin is its [singular point](@keyword=singular_point|lang=en-US|style=Feynman). If we perform the standard matrix calculation to find its polar line, the result is the equation $0=0$ [@problem_id:2150320]. This is not a line; it is an identity that is true for *all* points. The polar is undefined!
 
-Similarly, if we take the double line $x_1^2 = 0$ and ask for the polar of any point that lies *on* this line (all of which are singular), the result is again an undefined line . The beautiful duality, the [one-to-one correspondence](@article_id:143441) between points and lines, shatters precisely at the singular points that define a [degenerate conic](@article_id:167004).
+Similarly, if we take the double line $x_1^2 = 0$ and ask for the polar of any point that lies *on* this line (all of which are singular), the result is again an undefined line [@problem_id:2150341]. The beautiful duality, the [one-to-one correspondence](@keyword=one_to_one_correspondence|lang=en-US|style=Feynman) between points and lines, shatters precisely at the singular points that define a [degenerate conic](@keyword=degenerate_conic|lang=en-US|style=Feynman).
 
 This is not a failure of our mathematics. It is a discovery. It tells us that these points are fundamentally different. Degenerate conics are not just less interesting versions of the real thing; they are the objects that test the limits of our theorems and force us to seek deeper, more general theories. They are the exceptions that prove—and beautifully illuminate—the rule.

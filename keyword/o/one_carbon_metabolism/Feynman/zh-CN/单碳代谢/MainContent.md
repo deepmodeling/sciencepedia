@@ -1,7 +1,7 @@
 ## 引言
-细胞功能的核心是一种极其精妙且重要的过程：一碳代谢。这个错综复杂的生化[反应网络](@entry_id:203526)掌管着单碳单位的管理，而这些单碳单位是生命所必需的基[本构建模](@entry_id:183370)块和调控信号。从复制我们的DNA到开启和关闭基因，精确转移单个碳原子的能力是细胞生存、生长和适应的一项不可协商的要求。本文旨在解答细胞如何巧妙地协调这一过程，将我们饮食中摄入的简单[维生素](@entry_id:166919)与最复杂的生物学结果联系起来。
+细胞功能的核心是一种极其精妙且重要的过程：一碳代谢。这个错综复杂的生化[反应网络](@keyword=reaction_networks|lang=zh-CN|style=Feynman)掌管着单碳单位的管理，而这些单碳单位是生命所必需的基[本构建模](@keyword=constitutive_modeling|lang=zh-CN|style=Feynman)块和调控信号。从复制我们的DNA到开启和关闭基因，精确转移单个碳原子的能力是细胞生存、生长和适应的一项不可协商的要求。本文旨在解答细胞如何巧妙地协调这一过程，将我们饮食中摄入的简单[维生素](@keyword=vitamins|lang=zh-CN|style=Feynman)与最复杂的生物学结果联系起来。
 
-本次探索分为两个关键部分。首先，在“原理与机制”中，我们将剖析一碳代谢的核心机制，揭示[叶酸循环](@entry_id:175441)和[甲硫氨酸循环](@entry_id:173691)之间美妙的相互作用，B9和B12等关键维生素的角色，以及调控整个系统的复杂反馈回路。随后，“应用与跨学科联系”将展示这些原理的深远影响，阐明这一单一代谢枢纽如何成为胚胎发育、癌症的失控性生长、我们免疫系统的快速反应乃至[植物代谢](@entry_id:156214)逻辑的核心。读毕全文，读者将不仅把一碳代谢看作图表上的一个通路，更会将其 appreciating 为一个连接饮食、DNA和[细胞命运](@entry_id:268128)的统一原则。
+本次探索分为两个关键部分。首先，在“原理与机制”中，我们将剖析一碳代谢的核心机制，揭示[叶酸循环](@keyword=folate_cycle|lang=zh-CN|style=Feynman)和[甲硫氨酸循环](@keyword=methionine_cycle|lang=zh-CN|style=Feynman)之间美妙的相互作用，B9和B12等关键维生素的角色，以及调控整个系统的复杂反馈回路。随后，“应用与跨学科联系”将展示这些原理的深远影响，阐明这一单一代谢枢纽如何成为胚胎发育、癌症的失控性生长、我们免疫系统的快速反应乃至[植物代谢](@keyword=plant_metabolism|lang=zh-CN|style=Feynman)逻辑的核心。读毕全文，读者将不仅把一碳代谢看作图表上的一个通路，更会将其 appreciating 为一个连接饮食、DNA和[细胞命运](@keyword=cell_fate|lang=zh-CN|style=Feynman)的统一原则。
 
 ## 原理与机制
 
@@ -11,13 +11,13 @@
 
 ### 细胞的碳货币及其载体
 
-这个故事的核心是我们称之为**叶酸**或[维生素](@entry_id:166919)B9的维生素。在我们的细胞内，[叶酸](@entry_id:274376)被转化为其活性形式**四氢[叶酸](@entry_id:274376)（THF）**。你可以将THF想象成细胞专用于运输单碳单位的货车队。一个裸露的碳原子过于活泼且不具特异性，无法发挥作用，但当附着于THF上时，它就变成了一个稳定、有针对性的构建模块，一种细胞货币。
+这个故事的核心是我们称之为**叶酸**或[维生素](@keyword=vitamins|lang=zh-CN|style=Feynman)B9的维生素。在我们的细胞内，[叶酸](@keyword=folic_acid|lang=zh-CN|style=Feynman)被转化为其活性形式**四氢[叶酸](@keyword=folic_acid|lang=zh-CN|style=Feynman)（THF）**。你可以将THF想象成细胞专用于运输单碳单位的货车队。一个裸露的碳原子过于活泼且不具特异性，无法发挥作用，但当附着于THF上时，它就变成了一个稳定、有针对性的构建模块，一种细胞货币。
 
-但这种货币有不同的“面额”。细胞如同一位化学大师，处理处于不同**氧化态**的单碳单位，你可以将其理解为不同水平的化学能或反应性。每种形式都为特定任务量身定制。三种最重要的形式是：
+但这种货币有不同的“面额”。细胞如同一位化学大师，处理处于不同**氧化态**的单碳单位，你可以将其理解为不同水平的化学能或反应性。每种形式都为特定任务量身定制[@problem_id:2547152]。三种最重要的形式是：
 
--   **甲[酰基](@entry_id:204156) ($\text{-CHO}$)**：最“氧化”的形式。这是构建**嘌呤**（DNA中的'A'和'G'碱基）所需的货币。
+-   **甲[酰基](@keyword=acyl_group|lang=zh-CN|style=Feynman) ($\text{-CHO}$)**：最“氧化”的形式。这是构建**嘌呤**（DNA中的'A'和'G'碱基）所需的货币。
 
--   **[亚甲基](@entry_id:200959) ($\text{-CH}_2\text{-}$)**：一种中间形式。其明星角色是合成**胸苷**（DNA中的'T'），这个过程至关重要，没有它，细胞分裂就不可能发生。
+-   **[亚甲基](@keyword=methylene|lang=zh-CN|style=Feynman) ($\text{-CH}_2\text{-}$)**：一种中间形式。其明星角色是合成**胸苷**（DNA中的'T'），这个过程至关重要，没有它，细胞分裂就不可能发生。
 
 -   **甲基 ($\text{-CH}_3$)**：最“还原”且最稳定的形式。这是细胞用于一个极其重要的过程——**甲基化**——的首选单位。
 
@@ -25,47 +25,47 @@
 
 ### 伟大的代谢十字路口：两个相互扣合的循环
 
-管理这种碳货币的机制不是一个简单的循环，而是两个巧妙相连的循环：**[叶酸循环](@entry_id:175441)**和**[甲硫氨酸循环](@entry_id:173691)**。
+管理这种碳货币的机制不是一个简单的循环，而是两个巧妙相连的循环：**[叶酸循环](@keyword=folate_cycle|lang=zh-CN|style=Feynman)**和**[甲硫氨酸循环](@keyword=methionine_cycle|lang=zh-CN|style=Feynman)**。
 
-**[叶酸循环](@entry_id:175441)**担当主要的分配中心。单碳单位首先在这里被引入系统。主要供体是氨基酸**丝氨酸**。在一个[连接蛋白](@entry_id:192386)质和[核酸](@entry_id:164998)代谢的美妙环节中，一种酶从丝氨酸上摘下一个碳原子，将其作为[亚甲基](@entry_id:200959)加载到THF上，同时留下另一种氨基酸**甘氨酸**。这个[亚甲基](@entry_id:200959)-THF可以直接用于制造DNA合成所需的胸苷，也可以被氧化成甲酰基以制造嘌呤。该通路的这一分支是增殖的引擎，为新的遗传物质提供字面意义上的构建模块。
+**[叶酸循环](@keyword=folate_cycle|lang=zh-CN|style=Feynman)**担当主要的分配中心。单碳单位首先在这里被引入系统。主要供体是氨基酸**丝氨酸**。在一个[连接蛋白](@keyword=tapasin|lang=zh-CN|style=Feynman)质和[核酸](@keyword=nucleic_acid|lang=zh-CN|style=Feynman)代谢的美妙环节中，一种酶从丝氨酸上摘下一个碳原子，将其作为[亚甲基](@keyword=methylene|lang=zh-CN|style=Feynman)加载到THF上，同时留下另一种氨基酸**甘氨酸**[@problem_id:2831895]。这个[亚甲基](@keyword=methylene|lang=zh-CN|style=Feynman)-THF可以直接用于制造DNA合成所需的胸苷，也可以被氧化成甲酰基以制造嘌呤。该通路的这一分支是增殖的引擎，为新的遗传物质提供字面意义上的构建模块[@problem_id:2679510]。
 
-然而，[叶酸循环](@entry_id:175441)还有另一个极其重要的功能。它能利用一种名为**MTHFR**（[亚甲基四氢叶酸还原酶](@entry_id:167815)）的酶，将亚甲基-THF进行一次不可逆的转化，生成**5-甲基-THF**。这个分子很特别。它是一个已“承诺”的单碳单位，注定要像接力棒一样传递给第二个伟大的循环。
+然而，[叶酸循环](@keyword=folate_cycle|lang=zh-CN|style=Feynman)还有另一个极其重要的功能。它能利用一种名为**MTHFR**（[亚甲基四氢叶酸还原酶](@keyword=mthfr|lang=zh-CN|style=Feynman)）的酶，将亚甲基-THF进行一次不可逆的转化，生成**5-甲基-THF**。这个分子很特别。它是一个已“承诺”的单碳单位，注定要像接力棒一样传递给第二个伟大的循环。
 
-**[甲硫氨酸循环](@entry_id:173691)**是细胞的主调控回路。其核心是一个名为**[同型半胱氨酸](@entry_id:168970)**的分子。同型半胱氨酸处在一个十字路口；它等待着来自5-甲基-THF的甲基。这个“接力棒传递”由**甲硫氨酸合酶**完成，该酶至关重要地需要**维生素B12**作为[辅因子](@entry_id:137503)。它从5-甲基-THF上取下甲基，并将其接到[同型半胱氨酸](@entry_id:168970)上，从而一举两得：它再生了氨基酸**甲硫氨酸**，并释放了THF分子，使其能够回去拾取另一个碳。
+**[甲硫氨酸循环](@keyword=methionine_cycle|lang=zh-CN|style=Feynman)**是细胞的主调控回路。其核心是一个名为**[同型半胱氨酸](@keyword=homocysteine|lang=zh-CN|style=Feynman)**的分子。同型半胱氨酸处在一个十字路口；它等待着来自5-甲基-THF的甲基。这个“接力棒传递”由**甲硫氨酸合酶**完成，该酶至关重要地需要**维生素B12**作为[辅因子](@keyword=cofactors|lang=zh-CN|style=Feynman)。它从5-甲基-THF上取下甲基，并将其接到[同型半胱氨酸](@keyword=homocysteine|lang=zh-CN|style=Feynman)上，从而一举两得：它再生了氨基酸**甲硫氨酸**，并释放了THF分子，使其能够回去拾取另一个碳[@problem_id:4946719]。
 
-为什么要费这么大劲来再生甲硫氨酸？因为甲硫氨酸是细胞中最重要的分子之一**[S-腺苷甲硫氨酸](@entry_id:178385)**（或**SAM**）的前体。SAM被称为**通用甲基供体**。如果说THF是运货卡车，那么SAM就是皇家印章。它将甲基携带到DNA、包装DNA的[组蛋白](@entry_id:196283)以及无数其他分子上，用这个化学标记为它们“盖章”。这种甲基化并不改变遗传序列，但它作为一个强大的[表观遗传](@entry_id:143805)信号，决定了哪些基因被读取，哪些被沉默。
+为什么要费这么大劲来再生甲硫氨酸？因为甲硫氨酸是细胞中最重要的分子之一**[S-腺苷甲硫氨酸](@keyword=s_adenosylmethionine|lang=zh-CN|style=Feynman)**（或**SAM**）的前体。SAM被称为**通用甲基供体**。如果说THF是运货卡车，那么SAM就是皇家印章。它将甲基携带到DNA、包装DNA的[组蛋白](@keyword=histone_proteins|lang=zh-CN|style=Feynman)以及无数其他分子上，用这个化学标记为它们“盖章”[@problem_id:5027132]。这种甲基化并不改变遗传序列，但它作为一个强大的[表观遗传](@keyword=epigenetic_inheritance|lang=zh-CN|style=Feynman)信号，决定了哪些基因被读取，哪些被沉默。
 
 ### 当机器失灵时：一个关于维生素与疾病的故事
 
-这个相互关联的系统的精妙逻辑，在其失灵时表现得最为清晰。思考一下区分[叶酸](@entry_id:274376)缺乏和[维生素B12](@entry_id:169814)缺乏的经典临床难题。两者都可能导致[巨幼细胞性贫血](@entry_id:168005)，这是一种因[DNA合成](@entry_id:138380)受损导致[红细胞](@entry_id:140482)过大的病症。然而，它们是截然不同的问题。
+这个相互关联的系统的精妙逻辑，在其失灵时表现得最为清晰。思考一下区分[叶酸](@keyword=folic_acid|lang=zh-CN|style=Feynman)缺乏和[维生素B12](@keyword=vitamin_b12|lang=zh-CN|style=Feynman)缺乏的经典临床难题[@problem_id:4946719]。两者都可能导致[巨幼细胞性贫血](@keyword=megaloblastic_anemia|lang=zh-CN|style=Feynman)，这是一种因[DNA合成](@keyword=dna_synthesis|lang=zh-CN|style=Feynman)受损导致[红细胞](@keyword=red_blood_cell|lang=zh-CN|style=Feynman)过大的病症。然而，它们是截然不同的问题。
 
--   在**[叶酸](@entry_id:274376)缺乏**中，没有足够的THF“卡车”来运载单碳单位。这使得胸苷/[嘌呤合成](@entry_id:176130)（导致贫血）和5-甲基-THF的生产都停滞了。没有甲基供体，血液中的同型半胱氨酸水平升高。
+-   在**[叶酸](@keyword=folic_acid|lang=zh-CN|style=Feynman)缺乏**中，没有足够的THF“卡车”来运载单碳单位。这使得胸苷/[嘌呤合成](@keyword=purine_synthesis|lang=zh-CN|style=Feynman)（导致贫血）和5-甲基-THF的生产都停滞了。没有甲基供体，血液中的同型半胱氨酸水平升高。
 
--   在**维生素B12缺乏**中，问题则不同。甲硫氨酸合酶瘫痪了。即使有大量的5-甲基-THF，甲基也无法转移给[同型半胱氨酸](@entry_id:168970)。这导致了两个堵塞。首先，[同型半胱氨酸](@entry_id:168970)堆积。其次，[叶酸](@entry_id:274376)被“困”在其5-甲基-THF形式中无法循环利用，导致功能性[叶酸](@entry_id:274376)缺乏并引起贫血。但维生素B12还参与一种完全独立的、处理[脂肪酸](@entry_id:153334)的酶。当该酶失灵时，一种名为**甲基丙二酸（MMA）**的分子就会累积。
+-   在**维生素B12缺乏**中，问题则不同。甲硫氨酸合酶瘫痪了。即使有大量的5-甲基-THF，甲基也无法转移给[同型半胱氨酸](@keyword=homocysteine|lang=zh-CN|style=Feynman)。这导致了两个堵塞。首先，[同型半胱氨酸](@keyword=homocysteine|lang=zh-CN|style=Feynman)堆积。其次，[叶酸](@keyword=folic_acid|lang=zh-CN|style=Feynman)被“困”在其5-甲基-THF形式中无法循环利用，导致功能性[叶酸](@keyword=folic_acid|lang=zh-CN|style=Feynman)缺乏并引起贫血。但维生素B12还参与一种完全独立的、处理[脂肪酸](@keyword=fatty_acid|lang=zh-CN|style=Feynman)的酶。当该酶失灵时，一种名为**甲基丙二酸（MMA）**的分子就会累积。
 
-因此，医生可以分辨出差异：[同型半胱氨酸](@entry_id:168970)升高而MMA正常指向葉酸缺乏，而[同型半胱氨酸](@entry_id:168970)*和*MMA都升高则指向B12缺乏。这种诊断上的清晰性直接反映了这些维生素在代谢流程图中所扮演的不同角色。
+因此，医生可以分辨出差异：[同型半胱氨酸](@keyword=homocysteine|lang=zh-CN|style=Feynman)升高而MMA正常指向葉酸缺乏，而[同型半胱氨酸](@keyword=homocysteine|lang=zh-CN|style=Feynman)*和*MMA都升高则指向B12缺乏。这种诊断上的清晰性直接反映了这些维生素在代谢流程图中所扮演的不同角色。
 
-这个系统失灵的后果在快速发育期间最具破坏性。在早期胚胎中，神经管（将发育成大脑和脊髓）的形成是一个细胞增殖和精确遗传编程的爆发性过程，发生在妊娠的第3周和第4周之间。葉酸缺乏在这个关键时刻造成了灾难性的“双重打击”。单碳单位的缺乏同时剥夺了细胞增殖所需的[DNA构建](@entry_id:202084)模块，并削弱了SAM的产生，扰乱了指导[神经管闭合](@entry_id:265181)的[表观遗传](@entry_id:143805)指令。其结果可能是像[脊柱裂](@entry_id:275334)这样的严重[出生缺陷](@entry_id:266885)。这就是为什么围孕期补充[叶酸](@entry_id:274376)是现代医学伟大的公共卫生胜利之一。
+这个系统失灵的后果在快速发育期间最具破坏性。在早期胚胎中，神经管（将发育成大脑和脊髓）的形成是一个细胞增殖和精确遗传编程的爆发性过程，发生在妊娠的第3周和第4周之间。葉酸缺乏在这个关键时刻造成了灾难性的“双重打击”[@problem_id:5085566]。单碳单位的缺乏同时剥夺了细胞增殖所需的[DNA构建](@keyword=dna_construction|lang=zh-CN|style=Feynman)模块，并削弱了SAM的产生，扰乱了指导[神经管闭合](@keyword=neural_tube_closure|lang=zh-CN|style=Feynman)的[表观遗传](@keyword=epigenetic_inheritance|lang=zh-CN|style=Feynman)指令。其结果可能是像[脊柱裂](@keyword=spina_bifida|lang=zh-CN|style=Feynman)这样的严重[出生缺陷](@keyword=birth_defects|lang=zh-CN|style=Feynman)。这就是为什么围孕期补充[叶酸](@keyword=folic_acid|lang=zh-CN|style=Feynman)是现代医学伟大的公共卫生胜利之一。
 
 ### 平衡的艺术：一个精妙的自我调节系统
 
 这样一个对细胞生命至关重要的系统不能失控运行；它必须受到精妙的控制。一碳代谢最美的特点之一是其自我调节能力。关键在于甲基供体SAM与其产物**S-腺苷同型半胱氨酸（SAH）**之间的平衡，SAH是在SAM交出其甲基后形成的。
 
-**SAM/SAH比率**充当细胞的“甲基化计量表”。SAH是大多数甲基化反应的有效抑制剂。当比率高时，甲基化进行。当比率低时，甲基化停止。但调控更深一层。SAM本身的浓度会发出反馈信号来控制其自身的生产网络。
+**SAM/SAH比率**充当细胞的“甲基化计量表”。SAH是大多数甲基化反应的有效抑制剂。当比率高时，甲基化进行。当比率低时，甲基化停止[@problem_id:5027132]。但调控更深一层。SAM本身的浓度会发出反馈信号来控制其自身的生产网络[@problem_id:2547180]。
 
--   当SAM水平高时（意味着细胞有充足的甲基化能力），SAM会作为**MTHFR**的抑制剂，该酶负责将单碳单位投入[甲硫氨酸循环](@entry_id:173691)。这是系统在说：“好了，我们现在有足够的甲基了，减慢供应线。”
+-   当SAM水平高时（意味着细胞有充足的甲基化能力），SAM会作为**MTHFR**的抑制剂，该酶负责将单碳单位投入[甲硫氨酸循环](@keyword=methionine_cycle|lang=zh-CN|style=Feynman)。这是系统在说：“好了，我们现在有足够的甲基了，减慢供应线。”
 
--   同时，高水平的SAM会*激活*一种名为**CBS**（胱硫[醚](@entry_id:184120)β-合酶）的酶。该酶将前体同型半胱氨酸分流至另一条替代途径——转硫通路，用于制造另一种氨基酸——[半胱氨酸](@entry_id:186378)。这起到了一个安全阀的作用，防止[同型半胱氨酸](@entry_id:168970)累积到毒性水平，并利用剩余物来制造其他有价值的产物。
+-   同时，高水平的SAM会*激活*一种名为**CBS**（胱硫[醚](@keyword=ethers|lang=zh-CN|style=Feynman)β-合酶）的酶。该酶将前体同型半胱氨酸分流至另一条替代途径——转硫通路，用于制造另一种氨基酸——[半胱氨酸](@keyword=cysteine|lang=zh-CN|style=Feynman)。这起到了一个安全阀的作用，防止[同型半胱氨酸](@keyword=homocysteine|lang=zh-CN|style=Feynman)累积到毒性水平，并利用剩余物来制造其他有价值的产物。
 
-这种双重控制机制是[代谢工程](@entry_id:139295)的杰作，让细胞能够在缓冲其甲基化潜力的同时，优雅地适应营养供应和细胞需求的变化。
+这种双重控制机制是[代谢工程](@keyword=metabolic_engineering|lang=zh-CN|style=Feynman)的杰作，让细胞能够在缓冲其甲基化潜力的同时，优雅地适应营养供应和细胞需求的变化。
 
-### 双区室的故事：[胞质溶胶](@entry_id:175149)-线粒体伙伴关系
+### 双区室的故事：[胞质溶胶](@keyword=cytosol|lang=zh-CN|style=Feynman)-线粒体伙伴关系
 
-为了增加最后一层复杂性，一碳代谢并非局限于一个位置。它在细胞主体——**[胞质溶胶](@entry_id:175149)**，以及其能量工厂——**线粒体**中并行运作。这两个系统 sürekli 进行沟通，形成了一个强大而灵活的网络。
+为了增加最后一层复杂性，一碳代谢并非局限于一个位置。它在细胞主体——**[胞质溶胶](@keyword=cytosol|lang=zh-CN|style=Feynman)**，以及其能量工厂——**线粒体**中并行运作。这两个系统 sürekli 进行沟通，形成了一个强大而灵活的网络[@problem_id:2079732]。
 
-线粒体通路也可以分解丝氨酸以生成单碳单位。但它不是在内部使用所有单位，而是可以将它们打包成一个简单的分子**甲酸**，并将其输出到胞质溶膠。这个“甲酸穿梭”为[胞质溶胶](@entry_id:175149)提供了单碳单位的替代来源，这一来源可用于生成[嘌呤合成](@entry_id:176130)所需的甲酰-THF。
+线粒体通路也可以分解丝氨酸以生成单碳单位。但它不是在内部使用所有单位，而是可以将它们打包成一个简单的分子**甲酸**，并将其输出到胞质溶膠。这个“甲酸穿梭”为[胞质溶胶](@keyword=cytosol|lang=zh-CN|style=Feynman)提供了单碳单位的替代来源，这一来源可用于生成[嘌呤合成](@keyword=purine_synthesis|lang=zh-CN|style=Feynman)所需的甲酰-THF[@problem_id:2937368]。
 
-为何要有这种区室化？它提供了[代谢灵活性](@entry_id:154592)，并与细胞的能量和[氧化还原平衡](@entry_id:166906)深度交织。[胞质溶胶](@entry_id:175149)通路是**NADPH**的主要来源，这是一种对​​抗氧化防御至关重要的分子。相比之下，线粒体通路可以产生**NADH**，为能量生产提供燃料。癌细胞对构建模块有着贪婪的 appetite，并需要管理[氧化应激](@entry_id:149102)，因此它们常常劫持并重新布线这种[区室化](@entry_id:270828)的代谢，以支持其无休止的生长。
+为何要有这种区室化？它提供了[代谢灵活性](@keyword=metabolic_flexibility|lang=zh-CN|style=Feynman)，并与细胞的能量和[氧化还原平衡](@keyword=redox_balance|lang=zh-CN|style=Feynman)深度交织。[胞质溶胶](@keyword=cytosol|lang=zh-CN|style=Feynman)通路是**NADPH**的主要来源，这是一种对​​抗氧化防御至关重要的分子。相比之下，线粒体通路可以产生**NADH**，为能量生产提供燃料[@problem_id:2580519]。癌细胞对构建模块有着贪婪的 appetite，并需要管理[氧化应激](@keyword=oxidative_stress|lang=zh-CN|style=Feynman)，因此它们常常劫持并重新布线这种[区室化](@keyword=compartmentalization|lang=zh-CN|style=Feynman)的代谢，以支持其无休止的生长。
 
 从一种简单的维生素到环环相扣的循环、反馈回路和亚细胞区室的复杂舞蹈，一碳代谢的原理揭示了一个极其优雅的系统。它是一个统一的枢纽，连接着我们的饮食与DNA，增殖与调控，健康与单个碳原子那沉默而 ceaseless 的化学反应。
 

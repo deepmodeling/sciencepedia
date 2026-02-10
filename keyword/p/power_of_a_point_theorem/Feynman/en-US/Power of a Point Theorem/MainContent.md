@@ -55,7 +55,7 @@ $$
 \operatorname{Pow}(P) = d^2 - R^2
 $$
 
-This single, simple formula  is the engine behind the theorem, and its geometric meaning changes depending on where you are standing relative to the circle.
+This single, simple formula [@problem_id:2116591] is the engine behind the theorem, and its geometric meaning changes depending on where you are standing relative to the circle.
 
 ### What Does the Power Mean? A Tale of Three Positions
 
@@ -71,7 +71,7 @@ $$
 PA \cdot PB = PT^2 = d^2 - R^2
 $$
 
-We can verify this independently. Consider the triangle formed by the point $P$, the tangent point $T$, and the circle's center $C$. Since a radius to the [point of tangency](@article_id:172391) is always perpendicular to the tangent line, the triangle $\triangle PTC$ is a right-angled triangle with the right angle at $T$. By the Pythagorean theorem, $PT^2 + CT^2 = PC^2$. Since $CT$ is the radius $R$ and $PC$ is the distance $d$, we have $PT^2 + R^2 = d^2$, which gives $PT^2 = d^2 - R^2$. It all fits together perfectly. The power of an external point unifies the behavior of all secants and tangents passing through it.  
+We can verify this independently. Consider the triangle formed by the point $P$, the tangent point $T$, and the circle's center $C$. Since a radius to the [point of tangency](@keyword=point_of_tangency|lang=en-US|style=Feynman) is always perpendicular to the tangent line, the triangle $\triangle PTC$ is a right-angled triangle with the right angle at $T$. By the Pythagorean theorem, $PT^2 + CT^2 = PC^2$. Since $CT$ is the radius $R$ and $PC$ is the distance $d$, we have $PT^2 + R^2 = d^2$, which gives $PT^2 = d^2 - R^2$. It all fits together perfectly. The power of an external point unifies the behavior of all secants and tangents passing through it. [@problem_id:2170133] [@problem_id:2143212]
 
 **Case 2: $P$ is Inside the Circle ($d < R$)**
 
@@ -83,7 +83,7 @@ $$
 PA \cdot PB = |t_1 t_2| = |d^2 - R^2| = R^2 - d^2
 $$
 
-This constant value is what we sought in our initial thought experiment. For any chord passing through an [interior point](@article_id:149471) $P$, the product of the lengths of its segments is always $R^2 - d^2$.   This principle finds application in diverse fields. For instance, in a model of a particle [synchrotron](@article_id:172433), the quantity $PA \cdot PB$ might be related to a crucial calibration measurement. If an instrument must be placed along a specific path inside the chamber, the theorem allows us to find the position that optimizes this measurement. To minimize the product $PA \cdot PB = R^2 - d^2$, one must find the point on the path that is *farthest* from the center, thereby maximizing $d^2$. 
+This constant value is what we sought in our initial thought experiment. For any chord passing through an [interior point](@keyword=interior_point|lang=en-US|style=Feynman) $P$, the product of the lengths of its segments is always $R^2 - d^2$. [@problem_id:2111949] [@problem_id:2151283] This principle finds application in diverse fields. For instance, in a model of a particle [synchrotron](@keyword=synchrotron|lang=en-US|style=Feynman), the quantity $PA \cdot PB$ might be related to a crucial calibration measurement. If an instrument must be placed along a specific path inside the chamber, the theorem allows us to find the position that optimizes this measurement. To minimize the product $PA \cdot PB = R^2 - d^2$, one must find the point on the path that is *farthest* from the center, thereby maximizing $d^2$. [@problem_id:2151271]
 
 **Case 3: $P$ is on the Circle ($d = R$)**
 
@@ -93,14 +93,14 @@ This is the simplest case. If you stand exactly on the circle, $d=R$, and the po
 
 Beyond its intrinsic beauty, the Power of a Point theorem is a powerful tool for solving geometric problems with remarkable elegance, often allowing us to bypass tedious calculations.
 
-Consider a triangle with vertices at $V_1 = (c, 0)$, $V_2 = (-c, 0)$, and $V_3 = (0, h)$. Suppose we want to find the power of the origin, $P=(0,0)$, with respect to the [circumcircle](@article_id:164806) of this triangle. The "brute force" approach would be a nightmare of algebra: first, find the coordinates of the [circumcenter](@article_id:174016) by finding the intersection of [perpendicular bisectors](@article_id:162654); then, calculate the radius; finally, plug these values into the formula $d^2 - R^2$.
+Consider a triangle with vertices at $V_1 = (c, 0)$, $V_2 = (-c, 0)$, and $V_3 = (0, h)$. Suppose we want to find the power of the origin, $P=(0,0)$, with respect to the [circumcircle](@keyword=circumcircle|lang=en-US|style=Feynman) of this triangle. The "brute force" approach would be a nightmare of algebra: first, find the coordinates of the [circumcenter](@keyword=circumcenter|lang=en-US|style=Feynman) by finding the intersection of [perpendicular bisectors](@keyword=perpendicular_bisectors|lang=en-US|style=Feynman); then, calculate the radius; finally, plug these values into the formula $d^2 - R^2$.
 
-But with our new tool, we can be much cleverer. The power of the origin is constant for *any* line passing through it. So let's choose the simplest line we can think of: the x-axis. The x-axis passes through the origin. Where does it intersect the [circumcircle](@article_id:164806)? We don't know the full equation of the circle, but we know for a fact that the circle must pass through the triangle's vertices. Two of those vertices, $V_1=(c, 0)$ and $V_2=(-c, 0)$, lie directly on our chosen line, the x-axis!
+But with our new tool, we can be much cleverer. The power of the origin is constant for *any* line passing through it. So let's choose the simplest line we can think of: the x-axis. The x-axis passes through the origin. Where does it intersect the [circumcircle](@keyword=circumcircle|lang=en-US|style=Feynman)? We don't know the full equation of the circle, but we know for a fact that the circle must pass through the triangle's vertices. Two of those vertices, $V_1=(c, 0)$ and $V_2=(-c, 0)$, lie directly on our chosen line, the x-axis!
 
-So, the intersection points of the x-axis and the [circumcircle](@article_id:164806) are simply $(c,0)$ and $(-c,0)$. The signed distance from our point $P=(0,0)$ to $(c,0)$ is $c$. The signed distance from $P$ to $(-c,0)$ is $-c$. The power is the product of these signed distances:
+So, the intersection points of the x-axis and the [circumcircle](@keyword=circumcircle|lang=en-US|style=Feynman) are simply $(c,0)$ and $(-c,0)$. The signed distance from our point $P=(0,0)$ to $(c,0)$ is $c$. The signed distance from $P$ to $(-c,0)$ is $-c$. The power is the product of these signed distances:
 
 $$
 \operatorname{Pow}(P) = (c) \cdot (-c) = -c^2
 $$
 
-And we are done. In one step, we found the answer without ever calculating the circle's center or radius. This is the true power of a deep mathematical principle: it provides insight that can slice through complexity like a knife.  It's a testament to the fact that in mathematics, as in physics, the most profound ideas are often those that reveal a simple, unifying truth behind a seemingly chaotic world.
+And we are done. In one step, we found the answer without ever calculating the circle's center or radius. This is the true power of a deep mathematical principle: it provides insight that can slice through complexity like a knife. [@problem_id:2151234] It's a testament to the fact that in mathematics, as in physics, the most profound ideas are often those that reveal a simple, unifying truth behind a seemingly chaotic world.

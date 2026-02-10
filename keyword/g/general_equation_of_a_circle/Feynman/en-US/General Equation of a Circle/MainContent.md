@@ -41,7 +41,7 @@ This form is less intuitive. The center and radius are hidden, scrambled within 
 
 ### The Detective Work: Completing the Square
 
-Imagine you're an engineer analyzing the propagation of a shockwave across a metal plate  or an acoustician mapping a dampening field in a chamber . Your instruments give you data that fits an equation like $x^2 + y^2 - 6x + 10y + 9 = 0$. Where is the center of the shockwave? What is its radius? To answer this, we need to reverse the expansion we just did. We need to work backwards from the general form to the clean, standard form. The tool for this job is a wonderful algebraic technique called **[completing the square](@article_id:264986)**.
+Imagine you're an engineer analyzing the propagation of a shockwave across a metal plate [@problem_id:2130920] or an acoustician mapping a dampening field in a chamber [@problem_id:2170115]. Your instruments give you data that fits an equation like $x^2 + y^2 - 6x + 10y + 9 = 0$. Where is the center of the shockwave? What is its radius? To answer this, we need to reverse the expansion we just did. We need to work backwards from the general form to the clean, standard form. The tool for this job is a wonderful algebraic technique called **[completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman)**.
 
 Let's take that equation: $x^2 + y^2 - 6x + 10y + 9 = 0$.
 
@@ -53,13 +53,13 @@ $$
 (x^2 - 6x) + (y^2 + 10y) + 9 = 0
 $$
 
-Now, look at $x^2 - 6x$. We know that $(x-h)^2 = x^2 - 2hx + h^2$. If we match $x^2 - 6x$ with $x^2 - 2hx$, it's clear that $-2h = -6$, so $h=3$. The missing piece to make a [perfect square](@article_id:635128) is $h^2 = 3^2 = 9$. The trick is to add and subtract this missing piece, which is like adding zero and changing nothing about the equation's truth:
+Now, look at $x^2 - 6x$. We know that $(x-h)^2 = x^2 - 2hx + h^2$. If we match $x^2 - 6x$ with $x^2 - 2hx$, it's clear that $-2h = -6$, so $h=3$. The missing piece to make a [perfect square](@keyword=perfect_square|lang=en-US|style=Feynman) is $h^2 = 3^2 = 9$. The trick is to add and subtract this missing piece, which is like adding zero and changing nothing about the equation's truth:
 
 $$
 (x^2 - 6x + 9) - 9
 $$
 
-The part in the parenthesis is now a [perfect square](@article_id:635128): $(x-3)^2$. So, $x^2 - 6x$ is the same as $(x-3)^2 - 9$.
+The part in the parenthesis is now a [perfect square](@keyword=perfect_square|lang=en-US|style=Feynman): $(x-3)^2$. So, $x^2 - 6x$ is the same as $(x-3)^2 - 9$.
 
 We do the same for the $y$ terms. For $y^2 + 10y$, we match it to $y^2 - 2ky$. This means $-2k = 10$, so $k=-5$. The missing piece is $k^2 = (-5)^2 = 25$. We add and subtract it:
 
@@ -91,13 +91,13 @@ $$
 (x-3)^2 + (y+5)^2 = 25
 $$
 
-And there it is! Like a restored painting, the circle's true nature is revealed. We can see with perfect clarity that the center is $(h, k) = (3, -5)$ and the radius squared is $r^2 = 25$, making the radius $r=5$ . This algebraic sleight of hand is the fundamental mechanism for translating between the two forms of the circle's equation. It works no matter how strange the coefficients look, even if they involve [irrational numbers](@article_id:157826) or other parameters .
+And there it is! Like a restored painting, the circle's true nature is revealed. We can see with perfect clarity that the center is $(h, k) = (3, -5)$ and the radius squared is $r^2 = 25$, making the radius $r=5$ [@problem_id:2130949]. This algebraic sleight of hand is the fundamental mechanism for translating between the two forms of the circle's equation. It works no matter how strange the coefficients look, even if they involve [irrational numbers](@keyword=irrational_numbers|lang=en-US|style=Feynman) or other parameters [@problem_id:2130937].
 
 ### Decoding the Equation: What the Coefficients Tell Us
 
 Now that we know *how* to find the center and radius, we can ask a deeper question. What is the intrinsic meaning of the coefficients $D$, $E$, and $F$? Do they tell us anything on their own? You bet they do.
 
-The coefficients $D$ and $E$ are the circle's "address." From our procedure, we saw that $D = -2h$ and $E = -2k$. This means the center is simply $(h, k) = (-\frac{D}{2}, -\frac{E}{2})$. This relationship is a direct two-way street. If you know the center is at $(-4, 1)$, you immediately know that $D = -2(-4) = 8$ and $E = -2(1) = -2$ . The linear terms in the general equation are a direct report on the location of the circle's center, just in a slightly encoded form. This connection is so robust that it holds even when the coordinates themselves are expressed in more abstract ways, for example, using logarithms .
+The coefficients $D$ and $E$ are the circle's "address." From our procedure, we saw that $D = -2h$ and $E = -2k$. This means the center is simply $(h, k) = (-\frac{D}{2}, -\frac{E}{2})$. This relationship is a direct two-way street. If you know the center is at $(-4, 1)$, you immediately know that $D = -2(-4) = 8$ and $E = -2(1) = -2$ [@problem_id:2130920]. The linear terms in the general equation are a direct report on the location of the circle's center, just in a slightly encoded form. This connection is so robust that it holds even when the coordinates themselves are expressed in more abstract ways, for example, using logarithms [@problem_id:2130927].
 
 But what about $F$? This lonely constant term seems like an afterthought. It's what's "left over." But in physics and mathematics, the leftovers are often the most interesting part. Let's investigate.
 
@@ -107,7 +107,7 @@ $$
 r^2 = \left(\frac{D}{2}\right)^2 + \left(\frac{E}{2}\right)^2 - F = \frac{D^2 + E^2}{4} - F
 $$
 
-This equation is a treasure map. It tells us how to calculate the radius $r$ if we know $D$, $E$, and $F$. We can also turn it around. Imagine you are programming an autonomous underwater vehicle to stay a safe distance from a hydrothermal vent. You need the radius of your circular exclusion zone to be exactly 2 kilometers. Your navigation system uses the equation $x^2 + y^2 + 10x - 14y + F = 0$. You can use this relationship to find the correct safety factor $F$ . Solving for $F$, we get a general expression that an engineer could use directly: $F = \frac{D^2 + E^2}{4} - r^2$ .
+This equation is a treasure map. It tells us how to calculate the radius $r$ if we know $D$, $E$, and $F$. We can also turn it around. Imagine you are programming an autonomous underwater vehicle to stay a safe distance from a hydrothermal vent. You need the radius of your circular exclusion zone to be exactly 2 kilometers. Your navigation system uses the equation $x^2 + y^2 + 10x - 14y + F = 0$. You can use this relationship to find the correct safety factor $F$ [@problem_id:2130942]. Solving for $F$, we get a general expression that an engineer could use directly: $F = \frac{D^2 + E^2}{4} - r^2$ [@problem_id:2130946].
 
 This is useful, but the true magic of $F$ is revealed when we ask a simple geometric question: Is the origin, the point $(0,0)$, inside or outside the circle?
 
@@ -125,7 +125,7 @@ $$
 F < 0
 $$
 
-That's it! The sign of the constant term $F$ tells you whether the origin is inside the circle ($F<0$), outside the circle ($F>0$), or on the circle ($F=0$). It’s a beautifully simple geometric interpretation for what seemed like an arbitrary constant .
+That's it! The sign of the constant term $F$ tells you whether the origin is inside the circle ($F<0$), outside the circle ($F>0$), or on the circle ($F=0$). It’s a beautifully simple geometric interpretation for what seemed like an arbitrary constant [@problem_id:2130943].
 
 ### A Unified View: The Circle in Other Worlds
 
@@ -139,9 +139,9 @@ $$
 z\bar{z} - \bar{a}z - a\bar{z} + (a\bar{a} - R^2) = 0
 $$
 
-This might look foreign, but it's our old friend in a new disguise. If we let $z = x+iy$ and $a = h+ik$, this equation transforms, term by term, back into the general Cartesian equation $x^2+y^2+Dx+Ey+F=0$ . It's a powerful demonstration that the underlying structure—the geometric truth of the circle—is independent of the coordinate system we choose.
+This might look foreign, but it's our old friend in a new disguise. If we let $z = x+iy$ and $a = h+ik$, this equation transforms, term by term, back into the general Cartesian equation $x^2+y^2+Dx+Ey+F=0$ [@problem_id:2130915]. It's a powerful demonstration that the underlying structure—the geometric truth of the circle—is independent of the coordinate system we choose.
 
-This algebraic framework is also wonderfully honest about when a circle *cannot* exist. What happens if you try to find a circle passing through three points that lie on a straight line? Geometrically, we know this is impossible. The algebra agrees. If you substitute three [collinear points](@article_id:173728) into the general equation, you create a system of linear equations for $D$, $E$, and $F$ that has no solution—it leads to a contradiction, like $-1 = -6$ . The algebra doesn't break; it simply reports the geometric impossibility.
+This algebraic framework is also wonderfully honest about when a circle *cannot* exist. What happens if you try to find a circle passing through three points that lie on a straight line? Geometrically, we know this is impossible. The algebra agrees. If you substitute three [collinear points](@keyword=collinear_points|lang=en-US|style=Feynman) into the general equation, you create a system of linear equations for $D$, $E$, and $F$ that has no solution—it leads to a contradiction, like $-1 = -6$ [@problem_id:2124118]. The algebra doesn't break; it simply reports the geometric impossibility.
 
 Furthermore, our formula for the radius, $r^2 = \frac{D^2+E^2}{4} - F$, tells us the conditions for a legitimate circle to exist. We need a real, positive radius, which means we must have $D^2+E^2 - 4F > 0$. If $D^2+E^2 - 4F = 0$, the radius is zero, and our "circle" is just a single point. If $D^2+E^2 - 4F < 0$, the radius would be imaginary, meaning there are no real points $(x,y)$ that satisfy the equation. The algebra gracefully handles all these cases, demonstrating a robustness and completeness that is the hallmark of a powerful mathematical description.
 

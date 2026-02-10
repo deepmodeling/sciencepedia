@@ -9,9 +9,9 @@ If a digital circuit is a complex clockwork machine, a testbench is the laborato
 
 ### The Foundation: A Self-Contained World
 
-At its heart, a testbench is nothing more than a Verilog **module**. But it’s a special kind of module—a top-level one. Think of it as a closed room with no windows or doors to the outside world. It doesn't have inputs or outputs because it is the entire world for our simulation. Everything it needs is already inside. The most basic, empty testbench is a declaration of this self-contained space .
+At its heart, a testbench is nothing more than a Verilog **module**. But it’s a special kind of module—a top-level one. Think of it as a closed room with no windows or doors to the outside world. It doesn't have inputs or outputs because it is the entire world for our simulation. Everything it needs is already inside. The most basic, empty testbench is a declaration of this self-contained space [@problem_id:1975484].
 
-```[verilog](@article_id:172252)
+```[verilog](@keyword=verilog|lang=en-US|style=Feynman)
 module my_testbench;
   // Our universe will be built in here.
 endmodule
@@ -25,11 +25,11 @@ Inside our laboratory, we need two fundamental types of tools: tools that *creat
 
 *   **The Signal Generator: `reg`**
 
-    A `reg`, short for register, behaves like a variable. It holds a value until you tell it to change. In our lab analogy, a `reg` is like a programmable power supply or a function generator. We use it to *create the stimulus* for our circuit. If our circuit has an input `A`, we must connect it to a `reg` in our testbench. Why? Because we need to be able to write a script that says, "At time $t=10$, set `A` to 1. At time $t=20$, set `A` to 0." Only a `reg` can be the target of such procedural assignments inside a test block like an `initial` block .
+    A `reg`, short for register, behaves like a variable. It holds a value until you tell it to change. In our lab analogy, a `reg` is like a programmable power supply or a function generator. We use it to *create the stimulus* for our circuit. If our circuit has an input `A`, we must connect it to a `reg` in our testbench. Why? Because we need to be able to write a script that says, "At time $t=10$, set `A` to 1. At time $t=20$, set `A` to 0." Only a `reg` can be the target of such procedural assignments inside a test block like an `initial` block [@problem_id:1975493].
 
 *   **The Oscilloscope Probe: `wire`**
 
-    A `wire`, on the other hand, is like a passive probe or a simple copper wire. It cannot store a value on its own. Its value is determined at all times by whatever is driving it. We use `wires` in our testbench to *monitor the outputs* of the circuit we are testing. If our circuit has an output `Y`, we connect it to a `wire` in the testbench. The circuit drives the signal, and the `wire` simply carries that signal to our measurement tools, allowing us to see what the circuit is doing .
+    A `wire`, on the other hand, is like a passive probe or a simple copper wire. It cannot store a value on its own. Its value is determined at all times by whatever is driving it. We use `wires` in our testbench to *monitor the outputs* of the circuit we are testing. If our circuit has an output `Y`, we connect it to a `wire` in the testbench. The circuit drives the signal, and the `wire` simply carries that signal to our measurement tools, allowing us to see what the circuit is doing [@problem_id:1966485].
 
 So, the fundamental rule emerges: **In a testbench, drive DUT inputs with `reg`s; monitor DUT outputs with `wire`s.**
 
@@ -37,9 +37,9 @@ So, the fundamental rule emerges: **In a testbench, drive DUT inputs with `reg`s
 
 We have our testing environment (`module`), our signal generators (`reg`), and our probes (`wire`). Now, we need to bring in the device we're testing—the **Device Under Test (DUT)**. In Verilog, this is called **instantiation**. It's like placing the DUT on our workbench and hooking up the probes.
 
-Imagine we have a DUT module named `ALU_4bit`. To test it, we declare an *instance* of it inside our testbench, giving it a unique name, say, `dut`. Then, we connect our testbench's `reg`s and `wire`s to the DUT's ports. The clearest way to do this is with named port connections .
+Imagine we have a DUT module named `ALU_4bit`. To test it, we declare an *instance* of it inside our testbench, giving it a unique name, say, `dut`. Then, we connect our testbench's `reg`s and `wire`s to the DUT's ports. The clearest way to do this is with named port connections [@problem_id:1966485].
 
-```[verilog](@article_id:172252)
+```[verilog](@keyword=verilog|lang=en-US|style=Feynman)
 module tb_ALU_4bit;
   // Our "signal generators"
   reg [3:0] tb_A, tb_B;
@@ -70,9 +70,9 @@ How do we control our `reg` signal generators and tell them what to do and when?
 
 *   **The Heartbeat: Generating a Clock**
 
-    Most [digital circuits](@article_id:268018) are synchronous; they operate in lock-step with a master clock. A testbench must provide this clock. A beautifully concise pattern is often used to generate a continuous, periodic clock signal :
+    Most [digital circuits](@keyword=digital_circuits|lang=en-US|style=Feynman) are synchronous; they operate in lock-step with a master clock. A testbench must provide this clock. A beautifully concise pattern is often used to generate a continuous, periodic clock signal [@problem_id:1912825]:
 
-    ```[verilog](@article_id:172252)
+    ```[verilog](@keyword=verilog|lang=en-US|style=Feynman)
     reg clk;
 
     initial begin
@@ -81,13 +81,13 @@ How do we control our `reg` signal generators and tell them what to do and when?
     end
     ```
 
-    The `forever` loop does exactly what its name implies. The `#5` is a delay control operator; it tells the simulator to pause for 5 time units. The result? The clock goes from 0 to 1 at $t=5$, from 1 to 0 at $t=10$, from 0 to 1 at $t=15$, and so on. We have created a [perfect square](@article_id:635128) wave with a period of $10$ time units—the heartbeat of our system.
+    The `forever` loop does exactly what its name implies. The `#5` is a delay control operator; it tells the simulator to pause for 5 time units. The result? The clock goes from 0 to 1 at $t=5$, from 1 to 0 at $t=10$, from 0 to 1 at $t=15$, and so on. We have created a [perfect square](@keyword=perfect_square|lang=en-US|style=Feynman) wave with a period of $10$ time units—the heartbeat of our system.
 
 *   **The Test Vector Sequence**
 
-    With the clock ticking, we can now apply our test patterns. We use the same delay operator (`#`) to sequence our inputs. This allows us to define a precise series of events, a script for our DUT to follow .
+    With the clock ticking, we can now apply our test patterns. We use the same delay operator (`#`) to sequence our inputs. This allows us to define a precise series of events, a script for our DUT to follow [@problem_id:1912806].
 
-    ```[verilog](@article_id:172252)
+    ```[verilog](@keyword=verilog|lang=en-US|style=Feynman)
     initial begin
         // At time t=0
         tb_A = 0; tb_B = 0; tb_OpCode = 0;
@@ -113,7 +113,7 @@ How do we control our `reg` signal generators and tell them what to do and when?
 
 Running the experiment is pointless if we can't observe the results. Verilog provides system tasks to print information to the console. But here we encounter a subtle and beautiful point about the nature of time in a simulation.
 
-A simple way to see what's happening is with `$display`, which prints a formatted string exactly when it's called. A more powerful tool is **`$monitor`**. You set up `$monitor` once, and it automatically prints its message *any time one of the signals it's watching changes* . It is the vigilant guard of our simulation.
+A simple way to see what's happening is with `$display`, which prints a formatted string exactly when it's called. A more powerful tool is **`$monitor`**. You set up `$monitor` once, and it automatically prints its message *any time one of the signals it's watching changes* [@problem_id:1966454]. It is the vigilant guard of our simulation.
 
 But a true puzzle arises when we look closely. Imagine a flip-flop that toggles its output `q` on the positive edge of `clk`. If we put our print statements right at the clock edge, what value of `q` will we see? The old one or the new one?
 
@@ -128,7 +128,7 @@ The answer reveals the fine structure of a simulation time-step. A single moment
 
 1.  **Active Region**: The clock edge happens. Any blocks sensitive to it (`always @(posedge clk)`) are executed. This is when `$display` fires. It sees the world *as it is* at the very beginning of the clock edge, *before* the flip-flop has had a chance to update. So, `$display` reports the **old** value of `q`.
 2.  **Non-Blocking Assignment (NBA) Region**: After all active events are done, the simulator processes non-blocking assignments (`=`). Our flip-flop's assignment (`q = ~q;`) is executed here. The value of `q` is now updated.
-3.  **Postponed Region**: Now that all values for the current time-step have settled, other tasks are executed. **`$strobe`** and **`$monitor`** fire here. They are designed to report the **final, stable** state of the signals at the end of a time-step. They will therefore see the **new** value of `q` .
+3.  **Postponed Region**: Now that all values for the current time-step have settled, other tasks are executed. **`$strobe`** and **`$monitor`** fire here. They are designed to report the **final, stable** state of the signals at the end of a time-step. They will therefore see the **new** value of `q` [@problem_id:1943462].
 
 This distinction is not just academic; it is the key to avoiding confusion. Use `$display` for tracing the flow of execution. Use `$strobe` or `$monitor` when you want to check the final result of a calculation in a given clock cycle.
 
@@ -138,12 +138,12 @@ This understanding of the event queue allows us to avoid subtle bugs in our test
 
 *   **The Race Condition Trap**
 
-    What if we write our testbench stimulus generator and our DUT using the same event trigger? A common mistake is to drive inputs and sample outputs in the same `always @(posedge clk)` block. This creates a **[race condition](@article_id:177171)**. Both the testbench and the DUT want to act at the exact same moment. Who goes first? The simulator makes an arbitrary choice. If the testbench block runs first, it might change an input `din` and immediately sample the output `dout`. But the DUT hasn't had a chance to see the new `din` yet! The testbench will therefore sample the output corresponding to the *previous* cycle's input, leading to a verification failure that is incredibly hard to debug .
+    What if we write our testbench stimulus generator and our DUT using the same event trigger? A common mistake is to drive inputs and sample outputs in the same `always @(posedge clk)` block. This creates a **[race condition](@keyword=race_condition|lang=en-US|style=Feynman)**. Both the testbench and the DUT want to act at the exact same moment. Who goes first? The simulator makes an arbitrary choice. If the testbench block runs first, it might change an input `din` and immediately sample the output `dout`. But the DUT hasn't had a chance to see the new `din` yet! The testbench will therefore sample the output corresponding to the *previous* cycle's input, leading to a verification failure that is incredibly hard to debug [@problem_id:1915861].
 
-    This is why the hardware itself is modeled with non-blocking assignments (`=`). They guarantee that all signals are sampled first (in the Active region) before any updates are made (in the NBA region), elegantly sidestepping this [race condition](@article_id:177171). In modern testbenches, specialized constructs like SystemVerilog's **`clocking` blocks** provide an even more robust solution, allowing you to formally declare when signals should be driven and sampled relative to the clock, making such races impossible by design .
+    This is why the hardware itself is modeled with non-blocking assignments (`=`). They guarantee that all signals are sampled first (in the Active region) before any updates are made (in the NBA region), elegantly sidestepping this [race condition](@keyword=race_condition|lang=en-US|style=Feynman). In modern testbenches, specialized constructs like SystemVerilog's **`clocking` blocks** provide an even more robust solution, allowing you to formally declare when signals should be driven and sampled relative to the clock, making such races impossible by design [@problem_id:1915868].
 
 *   **The Ultimate Power: `force` and `release`**
 
-    Finally, the testbench has an ultimate power: the ability to override the physics of the circuit. The **`force`** statement allows you to reach into the DUT and hold any net to a specific value, no matter what is trying to drive it. This is an incredibly powerful tool for things like error injection (e.g., "What happens if this bus gets stuck at all 1s?"). The `force` remains active until you explicitly remove it with a **`release`** statement, at which point the wire reverts to being controlled by its normal drivers .
+    Finally, the testbench has an ultimate power: the ability to override the physics of the circuit. The **`force`** statement allows you to reach into the DUT and hold any net to a specific value, no matter what is trying to drive it. This is an incredibly powerful tool for things like error injection (e.g., "What happens if this bus gets stuck at all 1s?"). The `force` remains active until you explicitly remove it with a **`release`** statement, at which point the wire reverts to being controlled by its normal drivers [@problem_id:1975236].
 
 From the simple shell of a `module` to the god-like power of `force`, the principles of a Verilog testbench form a complete toolkit. It is a language for asking questions of a design—questions about its logic, its timing, and its behavior under duress. By mastering these principles, you move from simply describing circuits to becoming a true digital detective, capable of building the perfect environment to uncover the truth of your design.

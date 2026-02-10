@@ -1,24 +1,24 @@
 ## 引言
-运动是宇宙的一个基本方面，然而用科学的精度来描述它却是一个深刻的挑战。我们如何用一种统一的语言来捕捉抛射体的优美弧线、流体的复杂漩涡，或承重结构的微妙变形？这正是运动学的领域，它是力学中致力于研究纯粹[运动几何学](@article_id:353727)的分支。通过关注物体*如何*运动，而非*为何*运动，[运动学](@article_id:323309)为整个动力学大厦的建立提供了必要框架。本文旨在帮助读者清晰地理解这门基础语言，从其最简单的形式到最复杂的应用。
+运动是宇宙的一个基本方面，然而用科学的精度来描述它却是一个深刻的挑战。我们如何用一种统一的语言来捕捉抛射体的优美弧线、流体的复杂漩涡，或承重结构的微妙变形？这正是运动学的领域，它是力学中致力于研究纯粹[运动几何学](@keyword=geometry_of_motion|lang=zh-CN|style=Feynman)的分支。通过关注物体*如何*运动，而非*为何*运动，[运动学](@keyword=kinematics|lang=zh-CN|style=Feynman)为整个动力学大厦的建立提供了必要框架。本文旨在帮助读者清晰地理解这门基础语言，从其最简单的形式到最复杂的应用。
 
-在接下来的章节中，我们将一同探索[运动学](@article_id:323309)的世界。在“原理与机制”一章中，我们将构建核心词汇和数学工具，学习如何描述刚体和[可变形体](@article_id:380565)的平移、旋转和变形。随后，我们将在“应用与跨学科联系”一章中看到这些概念的实际应用，探索运动学的抽象语言如何为机器人学、结构工程、[断裂力学](@article_id:301921)，乃至驱动生物系统的复杂运动提供关键见解。
+在接下来的章节中，我们将一同探索[运动学](@keyword=kinematics|lang=zh-CN|style=Feynman)的世界。在“原理与机制”一章中，我们将构建核心词汇和数学工具，学习如何描述刚体和[可变形体](@keyword=deformable_bodies|lang=zh-CN|style=Feynman)的平移、旋转和变形。随后，我们将在“应用与跨学科联系”一章中看到这些概念的实际应用，探索运动学的抽象语言如何为机器人学、结构工程、[断裂力学](@keyword=fracture_mechanics|lang=zh-CN|style=Feynman)，乃至驱动生物系统的复杂运动提供关键见解。
 
 ## 原理与机制
 
-谈论运动，就是谈论一场穿越[时空](@article_id:370647)的旅程。但是，我们如何以科学所要求的精度来描述这场旅程呢？[运动学](@article_id:323309)是力学的一个分支，它为这种描述提供了语言和框架。它不关心*引起*运动的力——那是动力学的范畴——而只关心运动本身。它是运动的纯粹几何学。
+谈论运动，就是谈论一场穿越[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的旅程。但是，我们如何以科学所要求的精度来描述这场旅程呢？[运动学](@keyword=kinematics|lang=zh-CN|style=Feynman)是力学的一个分支，它为这种描述提供了语言和框架。它不关心*引起*运动的力——那是动力学的范畴——而只关心运动本身。它是运动的纯粹几何学。
 
 在本章中，我们将开始我们自己的旅程，从炮弹的简单飞行开始，逐步深入到流体的复杂流动之舞和金属的永久弯曲。我们将看到，通过发展一些核心思想，我们能够描述种类惊人的物理现象，揭示出支撑运动世界背后一个优美而统一的数学结构。
 
 ### 运动的语言：从点到路径
 
-最简单的入门方法是将物体视为一个单点来追踪其位置。想象我们是 Galileo，正在观察从投石机发射的炮弹。我们建立一个[坐标系](@article_id:316753)，x 轴沿地面，y 轴指向上方。在任意时刻 $t$，炮弹位于某个位置 $(x, y)$。整个旅程可以由两个简单的方程捕捉，这两个方程告诉我们对于任意给定的 $t$ 对应的 $x$ 和 $y$。
+最简单的入门方法是将物体视为一个单点来追踪其位置。想象我们是 Galileo，正在观察从投石机发射的炮弹。我们建立一个[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)，x 轴沿地面，y 轴指向上方。在任意时刻 $t$，炮弹位于某个位置 $(x, y)$。整个旅程可以由两个简单的方程捕捉，这两个方程告诉我们对于任意给定的 $t$ 对应的 $x$ 和 $y$。
 
-忽略[空气阻力](@article_id:348198)的复杂性，游戏规则很简单：水平速度是恒定的，而竖直运动则受恒定的向下拉力——重力——的支配。这些规则直接转化为运动的[参数方程](@article_id:351484)：
+忽略[空气阻力](@keyword=air_resistance|lang=zh-CN|style=Feynman)的复杂性，游戏规则很简单：水平速度是恒定的，而竖直运动则受恒定的向下拉力——重力——的支配。这些规则直接转化为运动的[参数方程](@keyword=parametric_equations|lang=zh-CN|style=Feynman)：
 
 $x(t) = (v_0 \cos\alpha) t$
 $y(t) = (v_0 \sin\alpha) t - \frac{1}{2}gt^2$
 
-这里，$v_0$ 和 $\alpha$ 是初始速度和角度，$g$ 是[重力加速度](@article_id:352507)。每个方程都讲述了一个简单的故事：一个是水平方向的稳定前进，另一个是向上的飞行不断与重力抗争并最终被重力克服。但真正的美妙之处在于，当我们追问这条路径，即**轨迹** (trajectory)，在空间中描绘出什么形状时。通过在这两个方程之间消去时间参数 $t$——一个简单的代数步骤——我们揭示了一个深刻的真理。轨迹是一条完美的抛物线。这是一个深刻的发现：抛体飞行这个看似混乱、动态的事件，遵循着一个精确、永恒的几何形式。这是[运动学](@article_id:323309)的第一个伟大成功——将对运动随时间变化的观察，转化为空间中路径的优美几何学。
+这里，$v_0$ 和 $\alpha$ 是初始速度和角度，$g$ 是[重力加速度](@keyword=acceleration_due_to_gravity|lang=zh-CN|style=Feynman)。每个方程都讲述了一个简单的故事：一个是水平方向的稳定前进，另一个是向上的飞行不断与重力抗争并最终被重力克服。但真正的美妙之处在于，当我们追问这条路径，即**轨迹** (trajectory)，在空间中描绘出什么形状时。通过在这两个方程之间消去时间参数 $t$——一个简单的代数步骤——我们揭示了一个深刻的真理。轨迹是一条完美的抛物线[@problem_id:2136403]。这是一个深刻的发现：抛体飞行这个看似混乱、动态的事件，遵循着一个精确、永恒的几何形式。这是[运动学](@keyword=kinematics|lang=zh-CN|style=Feynman)的第一个伟大成功——将对运动随时间变化的观察，转化为空间中路径的优美几何学。
 
 ### 当物体弯曲和拉伸时：应变的概念
 
@@ -32,7 +32,7 @@ $y(t) = (v_0 \sin\alpha) t - \frac{1}{2}gt^2$
 
 这表明我们需要一种能够累加相对于*当前*长度的*增量*变化的度量。这引出了**真应变** (true strain)，也称为对数应变，通过对微小变化进行积分来定义：$e_{\text{true}} = \int_{L_0}^L \frac{dl}{l} = \ln(L/L_0) = \ln(\lambda)$。对于这个度量，从 $\lambda=1$ 到 $\lambda=2$ 产生的应变为 $\ln(2) \approx 0.69$，而从 $\lambda=10$ 到 $\lambda=11$ 产生的应变为 $\ln(11) - \ln(10) \approx 0.095$。这感觉更自然。
 
-还有另一种方法，起初看起来很奇怪，但对于处理涉及旋转的复杂运动却极其重要。这就是**[格林-拉格朗日应变](@article_id:349620)** (Green-Lagrange strain)，它基于材料单元长度*平方*的变化：$E_{\text{GL}} = \frac{1}{2}\frac{L^2 - L_0^2}{L_0^2} = \frac{1}{2}(\lambda^2 - 1)$。对长度进行平方的原因很快就会明了，但目前我们看到，即使是简单的拉伸行为，也可以通过不同的数学视角来观察，每种视角都有其自身的用途和适用领域。
+还有另一种方法，起初看起来很奇怪，但对于处理涉及旋转的复杂运动却极其重要。这就是**[格林-拉格朗日应变](@keyword=green_lagrange_strain|lang=zh-CN|style=Feynman)** (Green-Lagrange strain)，它基于材料单元长度*平方*的变化：$E_{\text{GL}} = \frac{1}{2}\frac{L^2 - L_0^2}{L_0^2} = \frac{1}{2}(\lambda^2 - 1)$。对长度进行平方的原因很快就会明了，但目前我们看到，即使是简单的拉伸行为，也可以通过不同的数学视角来观察，每种视角都有其自身的用途和适用领域[@problem_id:2708023]。
 
 ### 运动的剖析：一个四部曲
 
@@ -42,64 +42,64 @@ $y(t) = (v_0 \sin\alpha) t - \frac{1}{2}gt^2$
 3.  **膨胀**：该微元均匀地膨胀或收缩，就像气球被充气或放气一样。
 4.  **剪切**：该微元在体积不变的情况下形状发生扭曲，就像将一副牌的顶部向侧面推动一样。
 
-连续介质[运动学](@article_id:323309)的魔力在于它提供了一种数学工具，能够清晰地将这些效应分离开来。这个工具就是**[位移梯度](@article_id:344697)**[张量](@article_id:321604)，以及它的基于时间的表亲——**[速度梯度](@article_id:325397)**[张量](@article_id:321604)。就我们的目的而言，[张量](@article_id:321604)只是一个数学机器，它封装了关于运动如何在不同方向上变化的所有信息。
+连续介质[运动学](@keyword=kinematics|lang=zh-CN|style=Feynman)的魔力在于它提供了一种数学工具，能够清晰地将这些效应分离开来。这个工具就是**[位移梯度](@keyword=displacement_gradient|lang=zh-CN|style=Feynman)**[张量](@keyword=tensor|lang=zh-CN|style=Feynman)，以及它的基于时间的表亲——**[速度梯度](@keyword=velocity_gradient|lang=zh-CN|style=Feynman)**[张量](@keyword=tensor|lang=zh-CN|style=Feynman)。就我们的目的而言，[张量](@keyword=tensor|lang=zh-CN|style=Feynman)只是一个数学机器，它封装了关于运动如何在不同方向上变化的所有信息。
 
-我们首先来看一个已经发生的变形的“静态”图像。[位移场](@article_id:301917) $\vec{u}(\vec{x})$ 告诉我们每个点 $\vec{x}$ 移动了多远。[位移梯度](@article_id:344697)，我们称之为 $\mathbf{H}$，是一个矩阵，包含了位移分量的所有偏导数（例如，当你在y方向移动时，x方向的位移变化了多少）。它包含了关于局部变形的所有信息。
+我们首先来看一个已经发生的变形的“静态”图像。[位移场](@keyword=displacement_field|lang=zh-CN|style=Feynman) $\vec{u}(\vec{x})$ 告诉我们每个点 $\vec{x}$ 移动了多远。[位移梯度](@keyword=displacement_gradient|lang=zh-CN|style=Feynman)，我们称之为 $\mathbf{H}$，是一个矩阵，包含了位移分量的所有偏导数（例如，当你在y方向移动时，x方向的位移变化了多少）。它包含了关于局部变形的所有信息。
 
 美妙之处在于，任何矩阵，包括 $\mathbf{H}$，都可以唯一地分解为一个对称部分和一个反对称部分：$\mathbf{H} = \boldsymbol{\epsilon} + \boldsymbol{\omega}$。
-*   对称部分 $\boldsymbol{\epsilon} = \frac{1}{2}(\mathbf{H} + \mathbf{H}^\mathrm{T})$，是**[无穷小应变张量](@article_id:346500)** (infinitesimal strain tensor)。它捕捉了运动中所有改变形状的部分：拉伸（膨胀）和剪切。
-*   反对称部分 $\boldsymbol{\omega} = \frac{1}{2}(\mathbf{H} - \mathbf{H}^\mathrm{T})$，是**[无穷小旋转张量](@article_id:371731)** (infinitesimal rotation tensor)。它捕捉了材料的局部刚体旋转，这不改变其形状。
+*   对称部分 $\boldsymbol{\epsilon} = \frac{1}{2}(\mathbf{H} + \mathbf{H}^\mathrm{T})$，是**[无穷小应变张量](@keyword=infinitesimal_strain_tensor|lang=zh-CN|style=Feynman)** (infinitesimal strain tensor)。它捕捉了运动中所有改变形状的部分：拉伸（膨胀）和剪切。
+*   反对称部分 $\boldsymbol{\omega} = \frac{1}{2}(\mathbf{H} - \mathbf{H}^\mathrm{T})$，是**[无穷小旋转张量](@keyword=infinitesimal_rotation_tensor|lang=zh-CN|style=Feynman)** (infinitesimal rotation tensor)。它捕捉了材料的局部刚体旋转，这不改变其形状。
 
-这个分解是一个具有直接物理解释的数学奇迹。它清晰地将“形状改变”与“方向改变”分离开来。
+这个分解是一个具有直接物理解释的数学奇迹。它清晰地将“形状改变”与“方向改变”分离开来[@problem_id:2697891]。
 
-当我们观察正在发生的运动——一幅动态的画面时，这个思想变得更加强大。我们不再关注位移，而是关注速度场 $\vec{v}(\vec{x}, t)$。相应的**[速度梯度张量](@article_id:334626)** (velocity gradient tensor) $\mathbf{L} = \nabla \vec{v}$，告诉我们速度如何随点变化。和之前一样，我们可以将其分解：$\mathbf{L} = \mathbf{D} + \mathbf{W}$。
-*   $\mathbf{D} = \frac{1}{2}(\mathbf{L} + \mathbf{L}^\mathrm{T})$ 是**变形率[张量](@article_id:321604)** (rate-of-deformation tensor)。它的分量告诉我们拉伸和剪切的*速率*。
-*   $\mathbf{W} = \frac{1}{2}(\mathbf{L} - \mathbf{L}^\mathrm{T})$ 是**[自旋张量](@article_id:366504)** (spin tensor)。它的分量告诉我们局部旋转的*速率*（[角速度](@article_id:323935)）。
+当我们观察正在发生的运动——一幅动态的画面时，这个思想变得更加强大。我们不再关注位移，而是关注速度场 $\vec{v}(\vec{x}, t)$。相应的**[速度梯度张量](@keyword=velocity_gradient_tensor|lang=zh-CN|style=Feynman)** (velocity gradient tensor) $\mathbf{L} = \nabla \vec{v}$，告诉我们速度如何随点变化。和之前一样，我们可以将其分解：$\mathbf{L} = \mathbf{D} + \mathbf{W}$。
+*   $\mathbf{D} = \frac{1}{2}(\mathbf{L} + \mathbf{L}^\mathrm{T})$ 是**变形率[张量](@keyword=tensor|lang=zh-CN|style=Feynman)** (rate-of-deformation tensor)。它的分量告诉我们拉伸和剪切的*速率*。
+*   $\mathbf{W} = \frac{1}{2}(\mathbf{L} - \mathbf{L}^\mathrm{T})$ 是**[自旋张量](@keyword=spin_tensor|lang=zh-CN|style=Feynman)** (spin tensor)。它的分量告诉我们局部旋转的*速率*（[角速度](@keyword=angular_velocity|lang=zh-CN|style=Feynman)）。
 
-让我们通过一个完美的例子来看看它的实际应用。考虑一个描述围绕z轴[稳定旋转](@article_id:361797)的速度场：$\vec{v} = (\alpha y, -\alpha x, 0)$。这是一张黑胶唱片在转盘上的运动。我们的直觉告诉我们这是一个*刚性*旋转；应该没有拉伸或剪切，只有旋转。让我们看看数学是怎么说的。如果我们计算[速度梯度张量](@article_id:334626) $\mathbf{L}$，然后计算其对称部分 $\mathbf{D}$，我们会发现 $\mathbf{D}$ 是[零矩阵](@article_id:316244)！所有的“作用”都在反对称的[自旋张量](@article_id:366504) $\mathbf{W}$ 中，它不为零，并精确地描述了一个绕z轴以角速度 $-\alpha$ 进行的旋转。数学完美地证实了我们的物理直觉：对于刚性旋转，变形率为零。这种将运动分解为变形和自旋的方法是整个物理学中最优雅和有用的概念之一。
+让我们通过一个完美的例子来看看它的实际应用。考虑一个描述围绕z轴[稳定旋转](@keyword=stable_rotation|lang=zh-CN|style=Feynman)的速度场：$\vec{v} = (\alpha y, -\alpha x, 0)$。这是一张黑胶唱片在转盘上的运动。我们的直觉告诉我们这是一个*刚性*旋转；应该没有拉伸或剪切，只有旋转。让我们看看数学是怎么说的。如果我们计算[速度梯度张量](@keyword=velocity_gradient_tensor|lang=zh-CN|style=Feynman) $\mathbf{L}$，然后计算其对称部分 $\mathbf{D}$，我们会发现 $\mathbf{D}$ 是[零矩阵](@keyword=zero_matrix|lang=zh-CN|style=Feynman)！所有的“作用”都在反对称的[自旋张量](@keyword=spin_tensor|lang=zh-CN|style=Feynman) $\mathbf{W}$ 中，它不为零，并精确地描述了一个绕z轴以角速度 $-\alpha$ 进行的旋转。数学完美地证实了我们的物理直觉：对于刚性旋转，变形率为零[@problem_id:2686156]。这种将运动分解为变形和自旋的方法是整个物理学中最优雅和有用的概念之一。
 
 ### 两种观察者的故事：在桥上还是在筏上？
 
-想象一条温度随处变化的河流。你可以用两种方式研究这个温度场。你可以站在桥上的一个固[定点](@article_id:304105)，测量流过你身边的水的温度。这是**欧拉** (Eulerian) 视角，从空间中的一个固定点观察世界。或者，你可以跳上一个木筏，随波逐流，并随身携带一个温度计。这是**[拉格朗日](@article_id:373322)** (Lagrangian) 或**物质** (material) 视角，跟随一个特定的物[质粒](@article_id:327484)子进行其旅程。
+想象一条温度随处变化的河流。你可以用两种方式研究这个温度场。你可以站在桥上的一个固[定点](@keyword=fixed_points|lang=zh-CN|style=Feynman)，测量流过你身边的水的温度。这是**欧拉** (Eulerian) 视角，从空间中的一个固定点观察世界。或者，你可以跳上一个木筏，随波逐流，并随身携带一个温度计。这是**[拉格朗日](@keyword=lagrange|lang=zh-CN|style=Feynman)** (Lagrangian) 或**物质** (material) 视角，跟随一个特定的物[质粒](@keyword=plasmid|lang=zh-CN|style=Feynman)子进行其旅程。
 
 在这两种情况下，你测量的温度会不同。如果河流是稳定流动的，但你正从一个寒冷的山泉漂向一个温暖的湖泊，你的温度计会显示温度上升，即使桥上的观察者在他们的位置看到的是恒定的温度。
 
-我们如何关联这两种观点？运动学为**[物质导数](@article_id:369934)** (material derivative) 提供了一个优美而关键的公式，它告诉我们移动粒子（筏上的人）所经历的变化率。对于任何属性，比如温度 $\theta(\vec{x}, t)$，[物质导数](@article_id:369934) $\frac{D\theta}{Dt}$ 由以下公式给出：
+我们如何关联这两种观点？运动学为**[物质导数](@keyword=material_time_derivative|lang=zh-CN|style=Feynman)** (material derivative) 提供了一个优美而关键的公式，它告诉我们移动粒子（筏上的人）所经历的变化率。对于任何属性，比如温度 $\theta(\vec{x}, t)$，[物质导数](@keyword=material_time_derivative|lang=zh-CN|style=Feynman) $\frac{D\theta}{Dt}$ 由以下公式给出：
 
 $$ \frac{D\theta}{Dt} = \frac{\partial \theta}{\partial t} + (\vec{v} \cdot \nabla)\theta $$
 
-让我们来解析这个杰作。它表明，粒子所经历的总变化（左式）是两种效应的总和。第一项 $\frac{\partial \theta}{\partial t}$ 是局部或欧拉[导数](@article_id:318324)：它是空间中固[定点](@article_id:304105)的温度变化率（桥上的人所看到的）。第二项 $(\vec{v} \cdot \nabla)\theta$ 是**[对流](@article_id:302247)项** (convective term)。它解释了粒子仅仅因为以速度 $\vec{v}$ 移动到一个温度不同的新位置而经历的变化。这个单一的方程连接了欧拉和拉格朗日的世界，是[流体动力学](@article_id:319275)、[热力学](@article_id:359663)以及几乎所有涉及流动物质领域的运动方程的基础。
+让我们来解析这个杰作[@problem_id:2657240]。它表明，粒子所经历的总变化（左式）是两种效应的总和。第一项 $\frac{\partial \theta}{\partial t}$ 是局部或欧拉[导数](@keyword=derivative|lang=zh-CN|style=Feynman)：它是空间中固[定点](@keyword=fixed_points|lang=zh-CN|style=Feynman)的温度变化率（桥上的人所看到的）。第二项 $(\vec{v} \cdot \nabla)\theta$ 是**[对流](@keyword=convection|lang=zh-CN|style=Feynman)项** (convective term)。它解释了粒子仅仅因为以速度 $\vec{v}$ 移动到一个温度不同的新位置而经历的变化。这个单一的方程连接了欧拉和拉格朗日的世界，是[流体动力学](@keyword=hydrodynamics|lang=zh-CN|style=Feynman)、[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)以及几乎所有涉及流动物质领域的运动方程的基础。
 
-### 运动的隐藏规则：[不变量](@article_id:309269)与约束
+### 运动的隐藏规则：[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)与约束
 
-有了我们的新工具，特别是变形率[张量](@article_id:321604) $\mathbf{D}$，我们就可以揭示一些支配运动的隐藏规则。$\mathbf{D}$ 的分量具有直接的物理意义：对角分量（$D_{xx}$、$D_{yy}$、$D_{zz}$）表示沿坐标轴的拉伸率，而非对角分量（$D_{xy}$ 等）表示剪切率（材料线之间角度的变化率）。
+有了我们的新工具，特别是变形率[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $\mathbf{D}$，我们就可以揭示一些支配运动的隐藏规则。$\mathbf{D}$ 的分量具有直接的物理意义：对角分量（$D_{xx}$、$D_{yy}$、$D_{zz}$）表示沿坐标轴的拉伸率，而非对角分量（$D_{xy}$ 等）表示剪切率（材料线之间角度的变化率）。
 
-[张量](@article_id:321604)最重要的属性之一是它的**迹** (trace)，即其对角元素之和：$\text{tr}(\mathbf{D}) = D_{xx} + D_{yy} + D_{zz}$。这个量看似一个任意的和，但它具有深刻的、与基底无关的物理意义：它是材料单元体积的变化率，除以单位体积。换句话说，$\text{tr}(\mathbf{D})$ 是**[体积应变率](@article_id:336168)** (volumetric strain rate)。
+[张量](@keyword=tensor|lang=zh-CN|style=Feynman)最重要的属性之一是它的**迹** (trace)，即其对角元素之和：$\text{tr}(\mathbf{D}) = D_{xx} + D_{yy} + D_{zz}$。这个量看似一个任意的和，但它具有深刻的、与基底无关的物理意义：它是材料单元体积的变化率，除以单位体积。换句话说，$\text{tr}(\mathbf{D})$ 是**[体积应变率](@keyword=volumetric_strain_rate|lang=zh-CN|style=Feynman)** (volumetric strain rate)。
 
-这立即引出了一个强大的约束。许多材料，如水，几乎是**不可压缩的** (incompressible)。金属的[塑性流动](@article_id:380043)在很大程度上也是一个保持体积的过程。对于任何此类运动，材料单元的体积不能改变。因此，对于[不可压缩材料](@article_id:354959)，我们必须有：
+这立即引出了一个强大的约束。许多材料，如水，几乎是**不可压缩的** (incompressible)。金属的[塑性流动](@keyword=plastic_flow|lang=zh-CN|style=Feynman)在很大程度上也是一个保持体积的过程。对于任何此类运动，材料单元的体积不能改变。因此，对于[不可压缩材料](@keyword=incompressible_materials|lang=zh-CN|style=Feynman)，我们必须有：
 
 $$ \text{tr}(\mathbf{D}) = 0 $$
 
-这个简单的方程具有深远的影响。它意味着不同方向的拉伸率不是独立的。如果你在一个方向上拉伸[不可压缩材料](@article_id:354959)（比如 $D_{xx} > 0$），它*必须*在至少一个其他方向上收缩，以使总和保持为零。这就是为什么当你拉伸一块太妃糖时，它会变细。你不能在不使其变窄的情况下使其变长。这个源于纯粹运动学的基本约束，支配着海洋的流动、我们大气中的空气，以及钢剑的锻造。
+这个简单的方程具有深远的影响[@problem_id:2668656]。它意味着不同方向的拉伸率不是独立的。如果你在一个方向上拉伸[不可压缩材料](@keyword=incompressible_materials|lang=zh-CN|style=Feynman)（比如 $D_{xx} > 0$），它*必须*在至少一个其他方向上收缩，以使总和保持为零。这就是为什么当你拉伸一块太妃糖时，它会变细。你不能在不使其变窄的情况下使其变长。这个源于纯粹运动学的基本约束，支配着海洋的流动、我们大气中的空气，以及钢剑的锻造。
 
-### 旋转的杂技：[欧拉角](@article_id:350936)与[万向节死锁](@article_id:350879)
+### 旋转的杂技：[欧拉角](@keyword=euler_angles|lang=zh-CN|style=Feynman)与[万向节死锁](@keyword=gimbal_lock|lang=zh-CN|style=Feynman)
 
-让我们暂时回到刚体。描述一个刚体（如飞机或卫星）的朝向是一个出人意料的棘手[运动学](@article_id:323309)问题。一种常见且直观的方法是使用一组三个**[欧拉角](@article_id:350936)** (Euler angles)，例如飞机上熟悉的偏航（向左/右转）、俯仰（机头向上/下）和滚转（倾斜）。你可以通过这样三个旋转的序列来描述任何朝向。
+让我们暂时回到刚体。描述一个刚体（如飞机或卫星）的朝向是一个出人意料的棘手[运动学](@keyword=kinematics|lang=zh-CN|style=Feynman)问题。一种常见且直观的方法是使用一组三个**[欧拉角](@keyword=euler_angles|lang=zh-CN|style=Feynman)** (Euler angles)，例如飞机上熟悉的偏航（向左/右转）、俯仰（机头向上/下）和滚转（倾斜）。你可以通过这样三个旋转的序列来描述任何朝向。
 
-然而，这个看似简单的系统有一个隐藏的、危险的缺陷，称为**[万向节死锁](@article_id:350879)** (gimbal lock)。想象一架飞机直线上仰，其俯仰角为90度。在这种姿态下，偏航轴（使机头左右转动）和滚[转轴](@article_id:366261)（围绕机身长度旋转）变得重合。飞机失去了一个旋转自由度。试图发出“偏航”指令只会使飞机以另一种方式“滚转”，反之亦然。你再也无法独立控制所有三个[旋转轴](@article_id:366261)。在数学上，将物体[角速度](@article_id:323935)分量 $(\omega_r, \omega_p, \omega_z)$ 与[欧拉角](@article_id:350936)变化率 $(\dot{\psi}, \dot{\theta}, \dot{\phi})$ 相关联的方程会变得奇异。
+然而，这个看似简单的系统有一个隐藏的、危险的缺陷，称为**[万向节死锁](@keyword=gimbal_lock|lang=zh-CN|style=Feynman)** (gimbal lock)。想象一架飞机直线上仰，其俯仰角为90度。在这种姿态下，偏航轴（使机头左右转动）和滚[转轴](@keyword=axis_of_rotation|lang=zh-CN|style=Feynman)（围绕机身长度旋转）变得重合。飞机失去了一个旋转自由度。试图发出“偏航”指令只会使飞机以另一种方式“滚转”，反之亦然。你再也无法独立控制所有三个[旋转轴](@keyword=axis_of_rotation|lang=zh-CN|style=Feynman)。在数学上，将物体[角速度](@keyword=angular_velocity|lang=zh-CN|style=Feynman)分量 $(\omega_r, \omega_p, \omega_z)$ 与[欧拉角](@keyword=euler_angles|lang=zh-CN|style=Feynman)变化率 $(\dot{\psi}, \dot{\theta}, \dot{\phi})$ 相关联的方程会变得奇异[@problem_id:2031385]。
 
-这不仅仅是一个数学上的奇闻。阿波罗指令舱的惯性测量单元使用了一个物理万向节系统，该系统实际上可能会陷入[万向节死锁](@article_id:350879)，迫使宇航员必须执行小心的机动来避免它。这个问题凸显了虽然[欧拉角](@article_id:350936)很直观，但它们并不是表示朝向的稳健方法。这就是为什么现代[航空航天工程](@article_id:332205)、机器人学和计算机图形学依赖于更抽象但行为良好的数学工具，如**四元数** (quaternions)，来跟踪朝向，而不用担心奇异性问题。
+这不仅仅是一个数学上的奇闻。阿波罗指令舱的惯性测量单元使用了一个物理万向节系统，该系统实际上可能会陷入[万向节死锁](@keyword=gimbal_lock|lang=zh-CN|style=Feynman)，迫使宇航员必须执行小心的机动来避免它。这个问题凸显了虽然[欧拉角](@keyword=euler_angles|lang=zh-CN|style=Feynman)很直观，但它们并不是表示朝向的稳健方法。这就是为什么现代[航空航天工程](@keyword=aerospace_engineering|lang=zh-CN|style=Feynman)、机器人学和计算机图形学依赖于更抽象但行为良好的数学工具，如**四元数** (quaternions)，来跟踪朝向，而不用担心奇异性问题。
 
 ### 前沿：永久性变化的运动学
 
-为结束我们的旅程，让我们看看这些[运动学](@article_id:323309)原理如何在科学的最前沿被用来描述最复杂的运动类型之一：永久性变形，即**塑性** (plastic) 变形。当你弯曲一个回形针时，它不会弹回原状；它保持弯曲。我们如何为此建模？
+为结束我们的旅程，让我们看看这些[运动学](@keyword=kinematics|lang=zh-CN|style=Feynman)原理如何在科学的最前沿被用来描述最复杂的运动类型之一：永久性变形，即**塑性** (plastic) 变形。当你弯曲一个回形针时，它不会弹回原状；它保持弯曲。我们如何为此建模？
 
-现代[塑性理论](@article_id:355981)使用了一个极其抽象的运动学思想：**变形梯度的[乘法分解](@article_id:378267)**。总变形由[张量](@article_id:321604) $\mathbf{F}$ 描述，被想象为一个两步过程：
+现代[塑性理论](@keyword=plasticity_theory|lang=zh-CN|style=Feynman)使用了一个极其抽象的运动学思想：**变形梯度的[乘法分解](@keyword=multiplicative_decomposition|lang=zh-CN|style=Feynman)**。总变形由[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $\mathbf{F}$ 描述，被想象为一个两步过程：
 
 $$ \mathbf{F} = \mathbf{F}_e \mathbf{F}_p $$
 
-这里，$\mathbf{F}_p$ 代表**塑性变形**。这是对应于[材料微观结构](@article_id:377214)的永久、不可逆[重排](@article_id:369331)的部分，就像[位错](@article_id:299027)在金属[晶格](@article_id:300090)中移动一样。随后是 $\mathbf{F}_e$，即**弹性变形**，它是[晶格](@article_id:300090)本身可恢复的拉伸和旋转。
+这里，$\mathbf{F}_p$ 代表**塑性变形**。这是对应于[材料微观结构](@keyword=materials_science_microstructure|lang=zh-CN|style=Feynman)的永久、不可逆[重排](@keyword=derangement|lang=zh-CN|style=Feynman)的部分，就像[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)在金属[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中移动一样。随后是 $\mathbf{F}_e$，即**弹性变形**，它是[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)本身可恢复的拉伸和旋转。
 
-这里真正令人费解的概念是在 $\mathbf{F}_p$ 和 $\mathbf{F}_e$ 步骤之间名义上存在的“[中间构型](@article_id:371966)”。如果你能神奇地“关闭”弯曲回形针中所有的内部弹性应力，你就会得到这种状态。它会是什么样子？它将不再是一个完整的的回形针！因为塑性变形本质上是不均匀的（某些部分比其他部分弯曲得更厉害），弹性卸载后的材料会是一团不相容、纠缠不清的混乱物。弹性变形 $\mathbf{F}_e$ 的作用就是拉伸和旋转这团混乱物，使其重新组合成一个连贯、连续的物体。这个复杂的[运动学](@article_id:323309)模型将永久滑移的物理过程与弹性拉伸分离开来，使工程师能够精确模拟汽车碰撞和金属锻造等过程。此外，要正确处理这类过程中剧烈的旋转，需要仔细定义应力等量如何随时间变化，这引出了像**[客观应力率](@article_id:378041)** (objective stress rates) 这样的概念，它们在纯刚体旋转下必须为零，才具有物理意义。
+这里真正令人费解的概念是在 $\mathbf{F}_p$ 和 $\mathbf{F}_e$ 步骤之间名义上存在的“[中间构型](@keyword=intermediate_configuration|lang=zh-CN|style=Feynman)”。如果你能神奇地“关闭”弯曲回形针中所有的内部弹性应力，你就会得到这种状态。它会是什么样子？它将不再是一个完整的的回形针！因为塑性变形本质上是不均匀的（某些部分比其他部分弯曲得更厉害），弹性卸载后的材料会是一团不相容、纠缠不清的混乱物。弹性变形 $\mathbf{F}_e$ 的作用就是拉伸和旋转这团混乱物，使其重新组合成一个连贯、连续的物体。这个复杂的[运动学](@keyword=kinematics|lang=zh-CN|style=Feynman)模型将永久滑移的物理过程与弹性拉伸分离开来，使工程师能够精确模拟汽车碰撞和金属锻造等过程[@problem_id:2663648]。此外，要正确处理这类过程中剧烈的旋转，需要仔细定义应力等量如何随时间变化，这引出了像**[客观应力率](@keyword=objective_stress_rates|lang=zh-CN|style=Feynman)** (objective stress rates) 这样的概念，它们在纯刚体旋转下必须为零，才具有物理意义[@problem_id:2905958]。
 
 从炮弹的简单抛物线到塑性流的抽象分解，运动学原理提供了一种通用而强大的语言。通过专注于运动的纯粹几何学，我们揭示了约束物体如何移动、旋转和变形的基本规则，为整个力学奠定了必要的基础。

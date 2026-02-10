@@ -1,11 +1,11 @@
 ## 引言
-[二次曲面](@article_id:328097)——诸如球面、锥面和马鞍面等形状——是我们所熟悉的[圆锥曲线](@article_id:354149)在三维空间中的“表亲”。虽然它们的最终形式通常简洁而优美，但我们初次接触它们时，通常是通过一个令人生畏的[一般二次方程](@article_id:356550)，这个方程掩盖了它们的真实性质。本文旨在解决一个根本性挑战：如何破译这个复杂的代数表达式，以揭示其潜在的几何形状、尺寸及其在空间中的方位。它为将代数混沌转化为几何秩序提供了一份清晰的路线图。
+[二次曲面](@keyword=quadric_surfaces|lang=zh-CN|style=Feynman)——诸如球面、锥面和马鞍面等形状——是我们所熟悉的[圆锥曲线](@keyword=conic_sections|lang=zh-CN|style=Feynman)在三维空间中的“表亲”。虽然它们的最终形式通常简洁而优美，但我们初次接触它们时，通常是通过一个令人生畏的[一般二次方程](@keyword=general_second_degree_equation|lang=zh-CN|style=Feynman)，这个方程掩盖了它们的真实性质。本文旨在解决一个根本性挑战：如何破译这个复杂的代数表达式，以揭示其潜在的几何形状、尺寸及其在空间中的方位。它为将代数混沌转化为几何秩序提供了一份清晰的路线图。
 
-接下来的章节将引导您完成这一过程。在“原理与机制”一章中，我们将探讨强大的代数工具，从[配方法](@article_id:373728)到基于矩阵的[主轴定理](@article_id:315115)，这些工具使我们能够系统地解构方程。您将学习到[特征值](@article_id:315305)的符号如何能即刻对[曲面](@article_id:331153)进行分类，以及[特征向量](@article_id:312227)如何揭示其方位。然后，在“应用与跨学科联系”一章中，我们将超越教科书，去发现这些形状令人惊讶且深刻的现实意义。我们将看到二次曲面如何成为计算机图形学、建筑设计、[材料物理学](@article_id:381379)乃至[时空](@article_id:370647)基本结构不可或缺的一部分，从而展示了它们作为贯穿科学与工程的统一概念所扮演的角色。
+接下来的章节将引导您完成这一过程。在“原理与机制”一章中，我们将探讨强大的代数工具，从[配方法](@keyword=complete_the_square|lang=zh-CN|style=Feynman)到基于矩阵的[主轴定理](@keyword=principal_axis_theorem|lang=zh-CN|style=Feynman)，这些工具使我们能够系统地解构方程。您将学习到[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)的符号如何能即刻对[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)进行分类，以及[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)如何揭示其方位。然后，在“应用与跨学科联系”一章中，我们将超越教科书，去发现这些形状令人惊讶且深刻的现实意义。我们将看到二次曲面如何成为计算机图形学、建筑设计、[材料物理学](@keyword=materials_physics|lang=zh-CN|style=Feynman)乃至[时空](@keyword=space_time|lang=zh-CN|style=Feynman)基本结构不可或缺的一部分，从而展示了它们作为贯穿科学与工程的统一概念所扮演的角色。
 
 ## 原理与机制
 
-想象一下，你是一位考古学家，刚刚出土了一件奇特的化石。它的标签上有一段冗长而笨拙的描述：一个一般[二次曲面](@article_id:328097)的方程。
+想象一下，你是一位考古学家，刚刚出土了一件奇特的化石。它的标签上有一段冗长而笨拙的描述：一个一般[二次曲面](@keyword=quadric_surfaces|lang=zh-CN|style=Feynman)的方程。
 
 $$Ax^2 + By^2 + Cz^2 + Dxy + Eyz + Fzx + Gx + Hy + Iz + J = 0$$
 
@@ -13,62 +13,62 @@ $$Ax^2 + By^2 + Cz^2 + Dxy + Eyz + Fzx + Gx + Hy + Iz + J = 0$$
 
 ### 从混沌到有序：驯服方程
 
-在我们笨拙的描述中，我们可能首先注意到的是线性项：那些只含 $x$、$y$ 或 $z$ 的项。它们意味着什么？它们告诉我们，这个物体的中心不在我们选择的原点 $(0,0,0)$。就好像我们把[坐标系](@article_id:316753)的原点放在了离雕塑自然平衡中心几步远的地方。
+在我们笨拙的描述中，我们可能首先注意到的是线性项：那些只含 $x$、$y$ 或 $z$ 的项。它们意味着什么？它们告诉我们，这个物体的中心不在我们选择的原点 $(0,0,0)$。就好像我们把[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)的原点放在了离雕塑自然平衡中心几步远的地方。
 
-幸运的是，有一个简单的方法可以解决这个问题。这就是我们熟悉的代数工具——**[配方法](@article_id:373728)**。通过收集每个变量的项，并加上减去合适的数，我们可以将它们重新打包成整洁的平方式。例如，像 $4x^2 - 8x$ 这样一团糟的式子可以被重写为 $4(x-1)^2 - 4$。
+幸运的是，有一个简单的方法可以解决这个问题。这就是我们熟悉的代数工具——**[配方法](@keyword=complete_the_square|lang=zh-CN|style=Feynman)**。通过收集每个变量的项，并加上减去合适的数，我们可以将它们重新打包成整洁的平方式。例如，像 $4x^2 - 8x$ 这样一团糟的式子可以被重写为 $4(x-1)^2 - 4$。
 
-当我们在一般方程中对所有三个变量都这样做时，线性项就被吸收了。方程神奇地转变为一种看起来更简洁的形式，通常包含 $(x-h)^2$、$(y-k)^2$ 和 $(z-l)^2$ 这样的项。我们做了什么？我们通过数学方法将[坐标系](@article_id:316753)平移到了一个新的原点 $(h,k,l)$，而这个点正是该二次曲面的真正中心。
+当我们在一般方程中对所有三个变量都这样做时，线性项就被吸收了。方程神奇地转变为一种看起来更简洁的形式，通常包含 $(x-h)^2$、$(y-k)^2$ 和 $(z-l)^2$ 这样的项。我们做了什么？我们通过数学方法将[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)平移到了一个新的原点 $(h,k,l)$，而这个点正是该二次曲面的真正中心。
 
-一旦我们校准了视角，我们通常可以将方程两边同除以右侧的常数，使其变为“标准形式”。例如，在配方和重新整理之后，我们可能会发现方程简化为如下形式  ：
+一旦我们校准了视角，我们通常可以将方程两边同除以右侧的常数，使其变为“标准形式”。例如，在配方和重新整理之后，我们可能会发现方程简化为如下形式 [@problem_id:2137236] [@problem_id:2140941]：
 
 $$ \frac{(x-1)^2}{4} + \frac{(y+1)^2}{1} - \frac{z^2}{4} = 1 $$
 
-突然间，迷雾散去！我们认出这是**[单叶双曲面](@article_id:324862)**的标志性方程。代数操作揭示了物体的身份。我们已经迈出了关键的第一步：我们找到了物体的中心，并通过观察平方项的符号（两个正号，一个负号），我们识别了它所属的家族。
+突然间，迷雾散去！我们认出这是**[单叶双曲面](@keyword=hyperboloid_of_one_sheet|lang=zh-CN|style=Feynman)**的标志性方程。代数操作揭示了物体的身份。我们已经迈出了关键的第一步：我们找到了物体的中心，并通过观察平方项的符号（两个正号，一个负号），我们识别了它所属的家族。
 
-### 泄露天机的扭转：[交叉](@article_id:315017)项揭示了什么
+### 泄露天机的扭转：[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)项揭示了什么
 
-但是那些讨厌的[交叉](@article_id:315017)项，比如 $Dxy$、$Eyz$ 和 $Fzx$ 呢？[配方法](@article_id:373728)并不能消除它们。这些项是描述中最微妙的部分。它们告诉我们，这个物体相对于我们的坐标轴是*旋转*的。想象一下你正在看一个鸡蛋，但不是正对着它看，而是从一个奇怪的角度看。它的[长轴和短轴](@article_id:343995)与你所认为的“水平”和“垂直”并不对齐。
+但是那些讨厌的[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)项，比如 $Dxy$、$Eyz$ 和 $Fzx$ 呢？[配方法](@keyword=complete_the_square|lang=zh-CN|style=Feynman)并不能消除它们。这些项是描述中最微妙的部分。它们告诉我们，这个物体相对于我们的坐标轴是*旋转*的。想象一下你正在看一个鸡蛋，但不是正对着它看，而是从一个奇怪的角度看。它的[长轴和短轴](@keyword=major_and_minor_axes|lang=zh-CN|style=Feynman)与你所认为的“水平”和“垂直”并不对齐。
 
-像 $Dxy$ 这样的项的存在，明确地表明了[曲面](@article_id:331153)的自然轴——我们称之为**[主轴](@article_id:351809)**——与 $x$ 和 $y$ 轴并不对齐。在 $xy$ 平面上存在一个扭转 。如果我们有一个没有线性项但有[交叉](@article_id:315017)项的方程，我们就知道这个物体以原点为中心，但它是倾斜放置的。
+像 $Dxy$ 这样的项的存在，明确地表明了[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的自然轴——我们称之为**[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)**——与 $x$ 和 $y$ 轴并不对齐。在 $xy$ 平面上存在一个扭转 [@problem_id:2140905]。如果我们有一个没有线性项但有[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)项的方程，我们就知道这个物体以原点为中心，但它是倾斜放置的。
 
 为了看清真实的形状，我们不仅需要移动我们的位置，还需要倾斜我们的头来匹配物体的方位。我们如何找到正确的倾斜角度？这时，一个更强大、更优雅的工具就派上用场了。
 
 ### 矩阵钥匙：解锁几何密码
 
-事实证明，方程的整个二次部分——所有 $x^2$、$y^2$、$z^2$ 和那些讨厌的[交叉](@article_id:315017)项——都可以被打包成一个单一而优美的数学对象：一个对称矩阵。我们可以将二次部分写成 $\mathbf{x}^T A \mathbf{x}$，其中 $\mathbf{x}$ 是[坐标向量](@article_id:313731) $\begin{pmatrix} x & y & z \end{pmatrix}^T$，而 $A$ 是一个 $3 \times 3$ 的矩阵。
+事实证明，方程的整个二次部分——所有 $x^2$、$y^2$、$z^2$ 和那些讨厌的[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)项——都可以被打包成一个单一而优美的数学对象：一个对称矩阵。我们可以将二次部分写成 $\mathbf{x}^T A \mathbf{x}$，其中 $\mathbf{x}$ 是[坐标向量](@keyword=coordinate_vector|lang=zh-CN|style=Feynman) $\begin{pmatrix} x & y & z \end{pmatrix}^T$，而 $A$ 是一个 $3 \times 3$ 的矩阵。
 
 对于像 $Ax^2 + By^2 + Cz^2 + Dxy + Eyz + Fzx$ 这样的方程，矩阵 $A$ 看起来是这样的：
 
 $$ A = \begin{pmatrix} A & D/2 & F/2 \\ D/2 & B & E/2 \\ F/2 & E/2 & C \end{pmatrix} $$
 
-请注意方程中的系数是如何巧妙地填充这个矩阵的。平方项的系数放在对角线上，而[交叉](@article_id:315017)项的系数减半后对称地放在非对角线位置上 。
+请注意方程中的系数是如何巧妙地填充这个矩阵的。平方项的系数放在对角线上，而[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)项的系数减半后对称地放在非对角线位置上 [@problem_id:2143897]。
 
-这不仅仅是一种紧凑的记法。这个矩阵 $A$ 就是那把*钥匙*。它是[曲面](@article_id:331153)的几何 DNA。它包含了关于[曲面](@article_id:331153)基本形状（无论是椭球面、[双曲面](@article_id:349917)还是其他形状）及其在空间中方位的所有信息。方程的其余部分（线性项和常数项）只是告诉我们该形状的位置及其整体尺寸。
+这不仅仅是一种紧凑的记法。这个矩阵 $A$ 就是那把*钥匙*。它是[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的几何 DNA。它包含了关于[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)基本形状（无论是椭球面、[双曲面](@keyword=hyperboloid|lang=zh-CN|style=Feynman)还是其他形状）及其在空间中方位的所有信息。方程的其余部分（线性项和常数项）只是告诉我们该形状的位置及其整体尺寸。
 
-### [特征值](@article_id:315305)的语言：破译形状
+### [特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)的语言：破译形状
 
-那么，我们如何读取编码在这个矩阵中的信息呢？我们向它提出一个特殊的问题：它的**[特征向量](@article_id:312227)**和**[特征值](@article_id:315305)**是什么？这听起来可能很抽象，但它有一个惊人地简单的几何意义。
+那么，我们如何读取编码在这个矩阵中的信息呢？我们向它提出一个特殊的问题：它的**[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)**和**[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)**是什么？这听起来可能很抽象，但它有一个惊人地简单的几何意义。
 
-矩阵 $A$ 的[特征向量](@article_id:312227)是三个相互垂直的向量，它们指向[二次曲面的主轴](@article_id:352901)方向。它们告诉我们[曲面](@article_id:331153)自然的“上”、“横”、“前”的方向——即其[对称轴](@article_id:356247)的方向。找到这些[特征向量](@article_id:312227)在数学上等同于旋转我们的[坐标系](@article_id:316753)（以及我们的头！），使其与[曲面](@article_id:331153)完美对齐。
+矩阵 $A$ 的[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)是三个相互垂直的向量，它们指向[二次曲面的主轴](@keyword=principal_axes_of_a_quadric_surface|lang=zh-CN|style=Feynman)方向。它们告诉我们[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)自然的“上”、“横”、“前”的方向——即其[对称轴](@keyword=axis_of_symmetry|lang=zh-CN|style=Feynman)的方向。找到这些[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)在数学上等同于旋转我们的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)（以及我们的头！），使其与[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)完美对齐。
 
-那么[特征值](@article_id:315305)呢？它们是数字，我们称之为 $\lambda_1, \lambda_2, \lambda_3$，它们告诉我们[曲面](@article_id:331153)在每个主轴方向上是如何拉伸或弯曲的。当我们将[坐标系](@article_id:316753)与[特征向量](@article_id:312227)对齐时，讨厌的[交叉](@article_id:315017)项就完全消失了！[曲面](@article_id:331153)在其自身的[自然坐标系](@article_id:348181) $(u,v,w)$ 中的方程简化为：
+那么[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)呢？它们是数字，我们称之为 $\lambda_1, \lambda_2, \lambda_3$，它们告诉我们[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)在每个主轴方向上是如何拉伸或弯曲的。当我们将[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)与[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)对齐时，讨厌的[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)项就完全消失了！[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)在其自身的[自然坐标系](@keyword=natural_coordinate_system|lang=zh-CN|style=Feynman) $(u,v,w)$ 中的方程简化为：
 
 $$ \lambda_1 u^2 + \lambda_2 v^2 + \lambda_3 w^2 = \text{constant} $$
 
-这就是**[主轴定理](@article_id:315115)**的实际应用，它是一段纯粹的数学魔法。它将一个带有[交叉](@article_id:315017)项的复杂方程转化为最简单的形式，揭示了[曲面](@article_id:331153)的内在性质 。
+这就是**[主轴定理](@keyword=principal_axis_theorem|lang=zh-CN|style=Feynman)**的实际应用，它是一段纯粹的数学魔法。它将一个带有[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)项的复杂方程转化为最简单的形式，揭示了[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的内在性质 [@problem_id:1352165]。
 
-[特征值](@article_id:315305)是分类[二次曲面](@article_id:328097)的罗塞塔石碑。
+[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)是分类[二次曲面](@keyword=quadric_surfaces|lang=zh-CN|style=Feynman)的罗塞塔石碑。
 
-*   **[特征值](@article_id:315305)的符号**：正负号的模式告诉我们[曲面](@article_id:331153)的*类型*。
-    *   如果所有三个[特征值](@article_id:315305) $(\lambda_1, \lambda_2, \lambda_3)$ 都是正的，那么[曲面](@article_id:331153)是一个**[椭球](@article_id:345137)面**。这在直觉上很有道理：无论你沿着哪个[主轴](@article_id:351809)方向移动，[曲面](@article_id:331153)都以同样的方式弯曲离开，形成一个封闭、有限的形状。这是物理学中一种常见的形状，用于描述[半导体](@article_id:301977)晶体中电子的[等能面](@article_id:326619)等事物 。
-    *   如果两个为正，一个为负，我们得到一个**[单叶双曲面](@article_id:324862)**。它就像一个无限的、被捏紧的圆柱体。
-    *   如果一个为正，两个为负，我们得到一个**[双叶双曲面](@article_id:352130)**——两个独立的碗状[曲面](@article_id:331153)彼此背离 。
+*   **[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)的符号**：正负号的模式告诉我们[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的*类型*。
+    *   如果所有三个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $(\lambda_1, \lambda_2, \lambda_3)$ 都是正的，那么[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)是一个**[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)面**。这在直觉上很有道理：无论你沿着哪个[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)方向移动，[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)都以同样的方式弯曲离开，形成一个封闭、有限的形状。这是物理学中一种常见的形状，用于描述[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)晶体中电子的[等能面](@keyword=constant_energy_surface|lang=zh-CN|style=Feynman)等事物 [@problem_id:2112912]。
+    *   如果两个为正，一个为负，我们得到一个**[单叶双曲面](@keyword=hyperboloid_of_one_sheet|lang=zh-CN|style=Feynman)**。它就像一个无限的、被捏紧的圆柱体。
+    *   如果一个为正，两个为负，我们得到一个**[双叶双曲面](@keyword=hyperboloid_of_two_sheets|lang=zh-CN|style=Feynman)**——两个独立的碗状[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)彼此背离 [@problem_id:1352165]。
 
-*   **[特征值](@article_id:315305)的大小**：[特征值](@article_id:315305)不仅分类，它们还进行量化。对于一个标准方程为 $\frac{u^2}{a^2} + \frac{v^2}{b^2} + \frac{w^2}{c^2} = 1$ 的椭球面，其[特征值](@article_id:315305)与半轴长度 $(a, b, c)$ 直接相关。这种关系非常简单：$\lambda_1 = 1/a^2$, $\lambda_2 = 1/b^2$, $\lambda_3 = 1/c^2$ 。这揭示了一个奇特而深刻的联系：大的[特征值](@article_id:315305)对应于*短*轴，意味着[曲面](@article_id:331153)在该方向上弯曲得很厉害；而小的[特征值](@article_id:315305)对应于*长*轴，[曲面](@article_id:331153)在该方向上更平坦。
+*   **[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)的大小**：[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)不仅分类，它们还进行量化。对于一个标准方程为 $\frac{u^2}{a^2} + \frac{v^2}{b^2} + \frac{w^2}{c^2} = 1$ 的椭球面，其[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)与半轴长度 $(a, b, c)$ 直接相关。这种关系非常简单：$\lambda_1 = 1/a^2$, $\lambda_2 = 1/b^2$, $\lambda_3 = 1/c^2$ [@problem_id:1397049]。这揭示了一个奇特而深刻的联系：大的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)对应于*短*轴，意味着[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)在该方向上弯曲得很厉害；而小的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)对应于*长*轴，[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)在该方向上更平坦。
 
-*   **零[特征值](@article_id:315305)**：如果其中一个[特征值](@article_id:315305)为零会怎样？这是一个特殊情况。零[特征值](@article_id:315305)意味着沿着那个特定的主轴方向，[曲面](@article_id:331153)根本不弯曲——它是平的。这预示着几何形状发生了质的变化。这些[曲面](@article_id:331153)被称为**无心**[二次曲面](@article_id:328097)。
-    *   如果一个[特征值](@article_id:315305)为零，我们得到一个**抛物面**（[椭圆抛物面](@article_id:331770)或[双曲抛物面](@article_id:339446)），形状像卫星天[线或](@article_id:349408)马鞍。
-    *   如果两个[特征值](@article_id:315305)为零，[曲面](@article_id:331153)在两个方向上是平的，形成一个**柱面**。
-    矩阵 $A$ 的[行列式](@article_id:303413)是其[特征值](@article_id:315305)的乘积，即 $\det(A) = \lambda_1\lambda_2\lambda_3$。因此，检查 $\det(A) = 0$ 是否成立，是判断我们处理的是否是这些“退化”的抛物面或柱面情况，而不是像椭球面和双曲面那样的“有心”二次曲面的一个快速测试  。
+*   **零[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)**：如果其中一个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)为零会怎样？这是一个特殊情况。零[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)意味着沿着那个特定的主轴方向，[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)根本不弯曲——它是平的。这预示着几何形状发生了质的变化。这些[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)被称为**无心**[二次曲面](@keyword=quadric_surfaces|lang=zh-CN|style=Feynman)。
+    *   如果一个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)为零，我们得到一个**抛物面**（[椭圆抛物面](@keyword=elliptic_paraboloid|lang=zh-CN|style=Feynman)或[双曲抛物面](@keyword=hyperbolic_paraboloid|lang=zh-CN|style=Feynman)），形状像卫星天[线或](@keyword=wired_or|lang=zh-CN|style=Feynman)马鞍。
+    *   如果两个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)为零，[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)在两个方向上是平的，形成一个**柱面**。
+    矩阵 $A$ 的[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)是其[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)的乘积，即 $\det(A) = \lambda_1\lambda_2\lambda_3$。因此，检查 $\det(A) = 0$ 是否成立，是判断我们处理的是否是这些“退化”的抛物面或柱面情况，而不是像椭球面和双曲面那样的“有心”二次曲面的一个快速测试 [@problem_id:2143863] [@problem_id:2143880]。
 
-所以，我们绕了一圈又回到了起点。我们从一个代数怪物开始。通过先用[配方法](@article_id:373728)找到它的中心，然后利用线性代数的强大工具——找到其[关联矩阵](@article_id:638532)的[特征值](@article_id:315305)和[特征向量](@article_id:312227)——我们便能完全破译它的几何形状 。[特征值](@article_id:315305)告诉我们它的类型和比例，而[特征向量](@article_id:312227)告诉我们它在空间中的方位。曾经的混乱无序，被揭示为由几个简单数字支配的一小族美丽、对称的形状之一。从复杂方程到简单几何形式的旅程，完美地展示了数学在表面的复杂性中寻找秩序与统一的力量与美感。
+所以，我们绕了一圈又回到了起点。我们从一个代数怪物开始。通过先用[配方法](@keyword=complete_the_square|lang=zh-CN|style=Feynman)找到它的中心，然后利用线性代数的强大工具——找到其[关联矩阵](@keyword=node_arc_incidence_matrix|lang=zh-CN|style=Feynman)的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)和[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)——我们便能完全破译它的几何形状 [@problem_id:1629694]。[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)告诉我们它的类型和比例，而[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)告诉我们它在空间中的方位。曾经的混乱无序，被揭示为由几个简单数字支配的一小族美丽、对称的形状之一。从复杂方程到简单几何形式的旅程，完美地展示了数学在表面的复杂性中寻找秩序与统一的力量与美感。

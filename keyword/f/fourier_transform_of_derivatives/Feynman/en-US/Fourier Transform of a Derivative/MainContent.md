@@ -3,7 +3,7 @@ Navigating the world of calculus, with its derivatives and integrals, can often 
 
 This article delves into one of the most powerful properties of the Fourier transform: its relationship with derivatives. We will uncover the "alchemist's secret" that turns differentiation into multiplication, effectively solving complex equations with astonishing ease. The following chapters will guide you through this elegant concept, demonstrating its far-reaching influence.
 
-First, in "Principles and Mechanisms," we will explore the core mathematical rule, peek behind the curtain to see its derivation through [integration by parts](@article_id:135856), and examine its dual nature. Then, in "Applications and Interdisciplinary Connections," we will witness this principle in action, from sharpening signals in engineering and solving the equations of nature in physics to forming the very bedrock of quantum mechanics.
+First, in "Principles and Mechanisms," we will explore the core mathematical rule, peek behind the curtain to see its derivation through [integration by parts](@keyword=integration_by_parts|lang=en-US|style=Feynman), and examine its dual nature. Then, in "Applications and Interdisciplinary Connections," we will witness this principle in action, from sharpening signals in engineering and solving the equations of nature in physics to forming the very bedrock of quantum mechanics.
 
 ## Principles and Mechanisms
 
@@ -21,13 +21,13 @@ $$
 \mathcal{F}\left\{\frac{df(t)}{dt}\right\} = i\omega \hat{f}(\omega)
 $$
 
-Look at that for a moment. The act of differentiation in the time world ($t$) becomes simple multiplication by $i\omega$ in the frequency world ($\omega$). This is the secret! It turns differential equations, the language of change, into algebraic equations, the language of high-school math . An operation that requires finding limits and slopes is replaced by a simple multiplication.
+Look at that for a moment. The act of differentiation in the time world ($t$) becomes simple multiplication by $i\omega$ in the frequency world ($\omega$). This is the secret! It turns differential equations, the language of change, into algebraic equations, the language of high-school math [@problem_id:1757832]. An operation that requires finding limits and slopes is replaced by a simple multiplication.
 
 Why is this so powerful? Think about what a derivative represents: the rate of change. A signal that wiggles very fast has a large derivative. A signal that changes slowly has a small one. In the frequency domain, fast wiggles correspond to high frequencies (large $\omega$), and slow changes correspond to low frequencies (small $\omega$). The factor $\omega$ in our rule does exactly this: it acts as an amplifier for high frequencies and a dampener for low ones. Taking a derivative is, in a sense, like turning up the "treble" on your signal—it emphasizes the sharp, rapidly changing features.
 
 ### Peeking Behind the Curtain: Why it Works
 
-This isn't just a happy coincidence; it falls right out of the definition of the Fourier transform with a clever trick called [integration by parts](@article_id:135856). Let's see how it's done, because the reasoning is beautiful in its own right .
+This isn't just a happy coincidence; it falls right out of the definition of the Fourier transform with a clever trick called [integration by parts](@keyword=integration_by_parts|lang=en-US|style=Feynman). Let's see how it's done, because the reasoning is beautiful in its own right [@problem_id:1451443].
 
 The Fourier transform of the derivative $f'(t)$ is, by definition:
 $$
@@ -49,7 +49,7 @@ The magic is just a consequence of the deep relationship between derivatives and
 
 ### The Universe in a Grain of Sand: The Gaussian and its Derivative
 
-Let's test this principle on one of the most important functions in all of nature: the Gaussian function, $f(t) = e^{-at^2}$. This beautiful bell curve appears everywhere, from the distribution of measurement errors to the ground state of a quantum harmonic oscillator and the shape of a laser beam. Its perfection extends to the frequency domain: the Fourier transform of a Gaussian is another Gaussian . Specifically:
+Let's test this principle on one of the most important functions in all of nature: the Gaussian function, $f(t) = e^{-at^2}$. This beautiful bell curve appears everywhere, from the distribution of measurement errors to the ground state of a quantum harmonic oscillator and the shape of a laser beam. Its perfection extends to the frequency domain: the Fourier transform of a Gaussian is another Gaussian [@problem_id:27665]. Specifically:
 $$
 \mathcal{F}\{e^{-at^2}\} = \sqrt{\frac{\pi}{a}} \exp\left(-\frac{\omega^2}{4a}\right)
 $$
@@ -61,26 +61,26 @@ Substituting the known transform of the Gaussian, we immediately get:
 $$
 \hat{g}(\omega) = i\omega \sqrt{\frac{\pi}{a}} \exp\left(-\frac{\omega^2}{4a}\right)
 $$
-This works for other functions too, even those with sharp "kinks" like the double-sided exponential decay $f(t) = e^{-a|t|}$, which is a model for many physical processes. Its transform is the Lorentzian function, $\hat{f}(\omega) = \frac{2a}{a^2 + \omega^2}$. Applying our rule, the transform of its derivative is instantly found to be $\frac{2a i \omega}{a^2 + \omega^2}$ . The method is powerful and direct.
+This works for other functions too, even those with sharp "kinks" like the double-sided exponential decay $f(t) = e^{-a|t|}$, which is a model for many physical processes. Its transform is the Lorentzian function, $\hat{f}(\omega) = \frac{2a}{a^2 + \omega^2}$. Applying our rule, the transform of its derivative is instantly found to be $\frac{2a i \omega}{a^2 + \omega^2}$ [@problem_id:1713805]. The method is powerful and direct.
 
 ### A Beautiful Symmetry: The Duality of Time and Frequency
 
 We've seen that differentiation in time corresponds to multiplication by $i\omega$ in frequency. A curious mind might immediately ask: what about the other way around? What does differentiation in the *frequency domain* correspond to in the time domain? This question reveals one of the most profound symmetries in Fourier analysis.
 
-It turns out there is a nearly identical, or "dual," relationship. Differentiating the Fourier transform $\hat{f}(\omega)$ with respect to $\omega$ corresponds to multiplying the original function $f(t)$ by $-it$ .
+It turns out there is a nearly identical, or "dual," relationship. Differentiating the Fourier transform $\hat{f}(\omega)$ with respect to $\omega$ corresponds to multiplying the original function $f(t)$ by $-it$ [@problem_id:2142277].
 $$
 \mathcal{F}\{-it f(t)\} = \frac{d\hat{f}(\omega)}{d\omega}
 $$
-The structure is the same: differentiation on one side, multiplication on the other. The variables $t$ and $\omega$ have swapped roles, along with a change in sign. This duality is a cornerstone of the theory, telling us that time and frequency are two sides of the same coin. We can use this property just as effectively. For instance, to find the transform of a function like $g(t) = t e^{-b|t|}$, we can recognize it as $t$ times a simpler function $f(t)=e^{-b|t|}$. We find the transform of $f(t)$, differentiate it with respect to $\omega$, and multiply by $i$ to get our answer .
+The structure is the same: differentiation on one side, multiplication on the other. The variables $t$ and $\omega$ have swapped roles, along with a change in sign. This duality is a cornerstone of the theory, telling us that time and frequency are two sides of the same coin. We can use this property just as effectively. For instance, to find the transform of a function like $g(t) = t e^{-b|t|}$, we can recognize it as $t$ times a simpler function $f(t)=e^{-b|t|}$. We find the transform of $f(t)$, differentiate it with respect to $\omega$, and multiply by $i$ to get our answer [@problem_id:27675].
 
 ### The Grand Application: Solving Equations with Ease
 
-Now we come to the payoff. Armed with this property, we can slay dragons—or at least, solve differential equations that would otherwise be formidable. The strategy is a three-step dance :
+Now we come to the payoff. Armed with this property, we can slay dragons—or at least, solve differential equations that would otherwise be formidable. The strategy is a three-step dance [@problem_id:2128534]:
 1.  **Transform:** Take the Fourier transform of the entire differential equation, converting derivatives into multiplications by $i\omega$.
 2.  **Solve:** The transformed equation is now purely algebraic. Solve for the Fourier transform of your unknown function, $\hat{f}(\omega)$.
 3.  **Invert:** Use the inverse Fourier transform to bring your solution $\hat{f}(\omega)$ back from the frequency world to the time world, yielding the function $f(t)$ you were looking for.
 
-Let's see this in action. Suppose a process is described by its derivative, and we happen to know what the Fourier transform of that derivative looks like. For example, say we know that $\widehat{f'}(\omega) = -2i\omega \exp(-a|\omega|)$ . We want to find the original function, $f(x)$.
+Let's see this in action. Suppose a process is described by its derivative, and we happen to know what the Fourier transform of that derivative looks like. For example, say we know that $\widehat{f'}(\omega) = -2i\omega \exp(-a|\omega|)$ [@problem_id:1451181]. We want to find the original function, $f(x)$.
 
 First, we use our rule, $\widehat{f'}(\omega) = i\omega \hat{f}(\omega)$. We can equate this with the given information:
 $$
@@ -98,14 +98,14 @@ What was a calculus problem has become a simple algebraic manipulation followed 
 
 ### On the Shoulders of Giants: From Functions to Distributions
 
-The power of Fourier analysis doesn't stop with smooth, well-behaved functions. What about the most ill-behaved "function" of all: the **Dirac [delta function](@article_id:272935)**, $\delta(t)$? This is not a function in the traditional sense, but an idealization—an infinitely tall, infinitely thin spike at $t=0$ whose area is exactly 1. It represents a perfect impulse, like the strike of a hammer.
+The power of Fourier analysis doesn't stop with smooth, well-behaved functions. What about the most ill-behaved "function" of all: the **Dirac [delta function](@keyword=delta_function|lang=en-US|style=Feynman)**, $\delta(t)$? This is not a function in the traditional sense, but an idealization—an infinitely tall, infinitely thin spike at $t=0$ whose area is exactly 1. It represents a perfect impulse, like the strike of a hammer.
 
 Its Fourier transform is astonishingly simple: $\hat{\delta}(\omega) = 1$. A perfect impulse in time contains equal amounts of all frequencies. What, then, is the Fourier transform of its *derivative*, $\delta'(t)$?
 
-Classical calculus fails here. But within the more powerful framework of "distributions," we can apply our rule without fear .
+Classical calculus fails here. But within the more powerful framework of "distributions," we can apply our rule without fear [@problem_id:1884885].
 $$
 \mathcal{F}\{\delta'(t)\} = i\omega \times \mathcal{F}\{\delta(t)\} = i\omega \times 1 = i\omega
 $$
-The result is breathtakingly simple. The Fourier transform of the derivative of a [delta function](@article_id:272935) is just the function $i\omega$. This means the "rate of change" of a perfect spike is a signal whose frequency components grow linearly with frequency.
+The result is breathtakingly simple. The Fourier transform of the derivative of a [delta function](@keyword=delta_function|lang=en-US|style=Feynman) is just the function $i\omega$. This means the "rate of change" of a perfect spike is a signal whose frequency components grow linearly with frequency.
 
-This single result beautifully ties together several ideas. We know that the [delta function](@article_id:272935) $\delta(t)$ is an *even* function, and its transform, 1, is real and even. The derivative of an [even function](@article_id:164308) is always an *odd* function. Therefore, we expect the transform of $\delta'(t)$ to have the symmetry corresponding to a real, odd function, which is to be purely imaginary and odd. And indeed, the function $i\omega$ is purely imaginary and odd! Everything fits. The rules are consistent, even when we push them to the absolute limits of what we can imagine . This is the hallmark of a deep and powerful physical principle.
+This single result beautifully ties together several ideas. We know that the [delta function](@keyword=delta_function|lang=en-US|style=Feynman) $\delta(t)$ is an *even* function, and its transform, 1, is real and even. The derivative of an [even function](@keyword=even_function|lang=en-US|style=Feynman) is always an *odd* function. Therefore, we expect the transform of $\delta'(t)$ to have the symmetry corresponding to a real, odd function, which is to be purely imaginary and odd. And indeed, the function $i\omega$ is purely imaginary and odd! Everything fits. The rules are consistent, even when we push them to the absolute limits of what we can imagine [@problem_id:1713855]. This is the hallmark of a deep and powerful physical principle.

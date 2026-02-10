@@ -15,7 +15,7 @@ This is the fundamental definition of a hyperbola: it is the set of all points $
 
 $$ |d(P, F_1) - d(P, F_2)| = \text{constant} $$
 
-This single rule governs the graceful, sweeping arcs of the hyperbola. If the sound arrived 8 kilometers "sooner" at one station than the other, we know the event lies on a specific hyperbola defined by this distance difference . The two fixed listening posts, $F_1$ and $F_2$, are the foci of this hyperbola.
+This single rule governs the graceful, sweeping arcs of the hyperbola. If the sound arrived 8 kilometers "sooner" at one station than the other, we know the event lies on a specific hyperbola defined by this distance difference [@problem_id:2109931]. The two fixed listening posts, $F_1$ and $F_2$, are the foci of this hyperbola.
 
 ### Forging an Equation from a Rule
 
@@ -23,7 +23,7 @@ This geometric rule is elegant, but to work with it—to program it into a navig
 
 A point $P(x, y)$ is on the hyperbola if $| \sqrt{(x+c)^2 + y^2} - \sqrt{(x-c)^2 + y^2} | = 2a$.
 
-This equation, with its nested square roots, looks rather menacing. Our task is to tame it. The journey involves a series of algebraic steps—squaring, rearranging, and squaring again—to eliminate the radicals. It is a bit of a workout, but the process is one of revealing a hidden simplicity. After the dust of algebra settles, we arrive at a crucial stage :
+This equation, with its nested square roots, looks rather menacing. Our task is to tame it. The journey involves a series of algebraic steps—squaring, rearranging, and squaring again—to eliminate the radicals. It is a bit of a workout, but the process is one of revealing a hidden simplicity. After the dust of algebra settles, we arrive at a crucial stage [@problem_id:2170082]:
 
 $$ (c^2 - a^2)x^2 - a^2y^2 = a^2(c^2 - a^2) $$
 
@@ -41,45 +41,45 @@ And there it is. The **standard equation of a hyperbola**. All that complex geom
 
 Our equation features three parameters: $a$, $b$, and $c$. We've seen how they are born, but what do they represent geometrically?
 
-*   **$c$**, the **focal distance**, is the simplest. It is half the distance between the foci, our original fixed points. A focus at $(5, 0)$ immediately tells us that $c=5$ .
+*   **$c$**, the **focal distance**, is the simplest. It is half the distance between the foci, our original fixed points. A focus at $(5, 0)$ immediately tells us that $c=5$ [@problem_id:2134791].
 
-*   **$a$**, the **transverse radius**, is connected to our original constant difference, $2a$. Where does this length appear on the graph? Let's find where the hyperbola intersects the x-axis by setting $y=0$ in the standard equation. We get $\frac{x^2}{a^2} = 1$, which means $x = \pm a$. These two points, $(-a, 0)$ and $(a, 0)$, are the **vertices** of the hyperbola. They are the "tips" of the two branches, and the distance between them is exactly $2a$. This line segment is the **[transverse axis](@article_id:176959)**. So, the constant difference that defines the hyperbola is nothing more than the distance between its vertices .
+*   **$a$**, the **transverse radius**, is connected to our original constant difference, $2a$. Where does this length appear on the graph? Let's find where the hyperbola intersects the x-axis by setting $y=0$ in the standard equation. We get $\frac{x^2}{a^2} = 1$, which means $x = \pm a$. These two points, $(-a, 0)$ and $(a, 0)$, are the **vertices** of the hyperbola. They are the "tips" of the two branches, and the distance between them is exactly $2a$. This line segment is the **[transverse axis](@keyword=transverse_axis|lang=en-US|style=Feynman)**. So, the constant difference that defines the hyperbola is nothing more than the distance between its vertices [@problem_id:2131817].
 
-*   **$b$**, the **conjugate radius**, is the most mysterious of the three. It appeared during our algebraic simplification, seemingly out of nowhere. It defines a length $2b$, called the **[conjugate axis](@article_id:177181)**, which is a line segment of that length centered at the origin and oriented perpendicular to the [transverse axis](@article_id:176959). While the hyperbola doesn't actually touch the endpoints of this axis, the value of $b$ is crucial, as it dictates the "openness" of the hyperbola's arms.
+*   **$b$**, the **conjugate radius**, is the most mysterious of the three. It appeared during our algebraic simplification, seemingly out of nowhere. It defines a length $2b$, called the **[conjugate axis](@keyword=conjugate_axis|lang=en-US|style=Feynman)**, which is a line segment of that length centered at the origin and oriented perpendicular to the [transverse axis](@keyword=transverse_axis|lang=en-US|style=Feynman). While the hyperbola doesn't actually touch the endpoints of this axis, the value of $b$ is crucial, as it dictates the "openness" of the hyperbola's arms.
 
 Knowing any two of these parameters allows us to find the third, and thus to define the hyperbola completely.
 
 ### The Unseen Guides: Asymptotes
 
-The true role of $b$ is revealed when we consider the behavior of the hyperbola far from the origin. Unlike an ellipse which is finite, a hyperbola extends to infinity. As it does, its curves get straighter and straighter, cozying up to two straight lines called **[asymptotes](@article_id:141326)**. These lines act as guides or "runways to infinity" for the hyperbolic path.
+The true role of $b$ is revealed when we consider the behavior of the hyperbola far from the origin. Unlike an ellipse which is finite, a hyperbola extends to infinity. As it does, its curves get straighter and straighter, cozying up to two straight lines called **[asymptotes](@keyword=asymptotes|lang=en-US|style=Feynman)**. These lines act as guides or "runways to infinity" for the hyperbolic path.
 
 We can find the equations for these lines from the standard equation itself. For very large values of $x$ and $y$, the $1$ on the right side becomes negligible compared to the terms with $x^2$ and $y^2$. So, the equation behaves like $\frac{x^2}{a^2} - \frac{y^2}{b^2} \approx 0$, which can be rearranged to $y^2 \approx \frac{b^2}{a^2}x^2$. Taking the square root gives us:
 
 $$ y = \pm \frac{b}{a} x $$
 
-This is the secret of $b$! The ratio of $b$ to $a$ determines the slopes of the asymptotes . A larger $b$ relative to $a$ means steeper [asymptotes](@article_id:141326) and a "wider" hyperbola. This relationship is so fundamental that if we know the vertices (giving us $a$) and the asymptotes (giving us the ratio $b/a$), we can immediately find the length of the [conjugate axis](@article_id:177181), $2b$ .
+This is the secret of $b$! The ratio of $b$ to $a$ determines the slopes of the asymptotes [@problem_id:2128935]. A larger $b$ relative to $a$ means steeper [asymptotes](@keyword=asymptotes|lang=en-US|style=Feynman) and a "wider" hyperbola. This relationship is so fundamental that if we know the vertices (giving us $a$) and the asymptotes (giving us the ratio $b/a$), we can immediately find the length of the [conjugate axis](@keyword=conjugate_axis|lang=en-US|style=Feynman), $2b$ [@problem_id:2109916].
 
 There is a wonderful way to visualize this. Imagine a rectangle centered at the origin with width $2a$ and height $2b$. The vertices of the hyperbola lie on the midpoints of the vertical sides. The asymptotes are simply the lines that pass through the corners of this "guiding rectangle." The hyperbola is then drawn, starting from the vertices and sweeping outwards, forever approaching these linear guides.
 
-This mental picture unites $a$ and $b$ and reveals the beautiful, hidden structure that governs the hyperbola's shape. Furthermore, our definition $b^2 = c^2 - a^2$ can be rewritten as $a^2 + b^2 = c^2$. This is the Pythagorean theorem! Geometrically, it means the distance from the center to a corner of the guiding rectangle ($\sqrt{a^2 + b^2}$) is exactly equal to $c$, the distance to the focus. This gives a stunningly simple compass-and-straightedge way to find the foci: just take the distance from the center to a corner of the guiding rectangle and swing that distance down to the [transverse axis](@article_id:176959). This beautiful Pythagorean connection links all three parameters in a single, timeless relationship .
+This mental picture unites $a$ and $b$ and reveals the beautiful, hidden structure that governs the hyperbola's shape. Furthermore, our definition $b^2 = c^2 - a^2$ can be rewritten as $a^2 + b^2 = c^2$. This is the Pythagorean theorem! Geometrically, it means the distance from the center to a corner of the guiding rectangle ($\sqrt{a^2 + b^2}$) is exactly equal to $c$, the distance to the focus. This gives a stunningly simple compass-and-straightedge way to find the foci: just take the distance from the center to a corner of the guiding rectangle and swing that distance down to the [transverse axis](@keyword=transverse_axis|lang=en-US|style=Feynman). This beautiful Pythagorean connection links all three parameters in a single, timeless relationship [@problem_id:2170082].
 
 ### A Tale of Two Orientations (and a Conjugate)
 
 What if our listening posts were arranged vertically instead of horizontally? The physics is the same, but the geometry is rotated. Our foci would be at $(0, \pm c)$, and the resulting hyperbola would open up and down.
 
-The algebra reflects this with a simple switch. The term with the positive sign in the standard equation indicates the direction of the [transverse axis](@article_id:176959). For a **vertical hyperbola**, the $y^2$ term is positive:
+The algebra reflects this with a simple switch. The term with the positive sign in the standard equation indicates the direction of the [transverse axis](@keyword=transverse_axis|lang=en-US|style=Feynman). For a **vertical hyperbola**, the $y^2$ term is positive:
 
 $$ \frac{y^2}{a^2} - \frac{x^2}{b^2} = 1 $$
 
-Here, the vertices are at $(0, \pm a)$ and the [transverse axis](@article_id:176959) is vertical . The relationship $a^2+b^2=c^2$ and the asymptote equations ($y = \pm \frac{a}{b}x$) are adjusted accordingly, but the core principles remain identical .
+Here, the vertices are at $(0, \pm a)$ and the [transverse axis](@keyword=transverse_axis|lang=en-US|style=Feynman) is vertical [@problem_id:2134785]. The relationship $a^2+b^2=c^2$ and the asymptote equations ($y = \pm \frac{a}{b}x$) are adjusted accordingly, but the core principles remain identical [@problem_id:2134744].
 
-This leads to a delightful concept: the **[conjugate hyperbola](@article_id:177452)**. For any given hyperbola, say $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$, its conjugate is defined as $\frac{y^2}{b^2} - \frac{x^2}{a^2} = 1$. They are a matched pair, one horizontal and one vertical. They share the exact same guiding rectangle and, therefore, the exact same [asymptotes](@article_id:141326). They fit together like two pieces of a puzzle, each one's [transverse axis](@article_id:176959) being the other's [conjugate axis](@article_id:177181). Remarkably, they also share the same focal distance $c$ .
+This leads to a delightful concept: the **[conjugate hyperbola](@keyword=conjugate_hyperbola|lang=en-US|style=Feynman)**. For any given hyperbola, say $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$, its conjugate is defined as $\frac{y^2}{b^2} - \frac{x^2}{a^2} = 1$. They are a matched pair, one horizontal and one vertical. They share the exact same guiding rectangle and, therefore, the exact same [asymptotes](@keyword=asymptotes|lang=en-US|style=Feynman). They fit together like two pieces of a puzzle, each one's [transverse axis](@keyword=transverse_axis|lang=en-US|style=Feynman) being the other's [conjugate axis](@keyword=conjugate_axis|lang=en-US|style=Feynman). Remarkably, they also share the same focal distance $c$ [@problem_id:2163907].
 
 ### Another Path to the Hyperbola
 
 Is the "constant distance difference" rule the only way nature can form a hyperbola? It turns out the answer is no. Great mathematical forms often appear in surprising places.
 
-Consider another scenario. Two navigational beacons are at $(\pm k, 0)$. A vehicle is programmed to move along a path such that for any point $(x,y)$ on its path, the *product* of the slopes of the lines connecting it to the two beacons is a constant positive value, $C$ .
+Consider another scenario. Two navigational beacons are at $(\pm k, 0)$. A vehicle is programmed to move along a path such that for any point $(x,y)$ on its path, the *product* of the slopes of the lines connecting it to the two beacons is a constant positive value, $C$ [@problem_id:2134748].
 
 The slope to the first beacon is $m_1 = \frac{y}{x+k}$, and to the second is $m_2 = \frac{y}{x-k}$. The vehicle's constraint is $m_1 m_2 = C$. Let's see what this implies:
 

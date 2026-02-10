@@ -13,7 +13,7 @@ Imagine you are standing in a large, flat field. In front of you is a long, stra
 
 This is the fundamental definition, the very soul of the parabola. It is the **locus** (a fancy word for a set of points that satisfy a certain condition) of all points equidistant from a fixed point, which we call the **focus**, and a fixed line, which we call the **directrix**.
 
-This definition is not just a sterile mathematical curiosity; it is a key that unlocks the parabola's secrets. For instance, suppose someone tells you a point $P(3, 8)$ lies on a parabola whose focus is at $F(-2, 5)$, but they refuse to tell you where the directrix is. They then ask you for the distance from point $P$ to this mysterious directrix. You might think you need to find the equation of the directrix first, a potentially messy task. But armed with our definition, the answer is immediate. By definition, the distance from any point on the parabola to the directrix *must* be equal to its distance to the focus. So, we simply calculate the distance between $P(3, 8)$ and $F(-2, 5)$ . Using the Pythagorean theorem, this distance is $\sqrt{(3 - (-2))^2 + (8-5)^2} = \sqrt{5^2 + 3^2} = \sqrt{34}$. That’s it! The distance to the directrix is $\sqrt{34}$. The definition gives us the answer directly, bypassing a mountain of potential calculation.
+This definition is not just a sterile mathematical curiosity; it is a key that unlocks the parabola's secrets. For instance, suppose someone tells you a point $P(3, 8)$ lies on a parabola whose focus is at $F(-2, 5)$, but they refuse to tell you where the directrix is. They then ask you for the distance from point $P$ to this mysterious directrix. You might think you need to find the equation of the directrix first, a potentially messy task. But armed with our definition, the answer is immediate. By definition, the distance from any point on the parabola to the directrix *must* be equal to its distance to the focus. So, we simply calculate the distance between $P(3, 8)$ and $F(-2, 5)$ [@problem_id:2169575]. Using the Pythagorean theorem, this distance is $\sqrt{(3 - (-2))^2 + (8-5)^2} = \sqrt{5^2 + 3^2} = \sqrt{34}$. That’s it! The distance to the directrix is $\sqrt{34}$. The definition gives us the answer directly, bypassing a mountain of potential calculation.
 
 ### From Geometry to Algebra: Unmasking the Equation
 
@@ -27,7 +27,7 @@ Our rule says: Distance(P, F) = Distance(P, Directrix).
 
 2.  **Distance to the Directrix:** The distance from a point $(x,y)$ to a horizontal line $y = c$ is simply the absolute difference of the y-coordinates, $|y-c|$. So, the square of the distance from $P(x,y)$ to the line $y = k-p$ is $(y - (k-p))^2$.
 
-Now, we set the squared distances equal to each other (squaring both sides of our original rule gets rid of the pesky square root and absolute value) :
+Now, we set the squared distances equal to each other (squaring both sides of our original rule gets rid of the pesky square root and absolute value) [@problem_id:2170078]:
 $$(x-h)^2 + (y - k - p)^2 = (y - k + p)^2$$
 
 At first, this looks complicated. But watch what happens. Let's expand the terms involving $y$:
@@ -42,32 +42,32 @@ Solving for $(x-h)^2$, we get:
 $$(x-h)^2 = 4pY$$
 Finally, substituting $Y=y-k$ back in, we arrive at the celebrated standard equation of a parabola:
 $$\boxed{(x-h)^2 = 4p(y-k)}$$
-This equation, born from a simple geometric rule, holds the essence of every vertically oriented parabola. The point $(h,k)$ is the parabola's **vertex**, and $p$ dictates how "open" or "narrow" the curve is. The same logical process can be used to find other descriptions, such as a set of [parametric equations](@article_id:171866) that trace the curve over time .
+This equation, born from a simple geometric rule, holds the essence of every vertically oriented parabola. The point $(h,k)$ is the parabola's **vertex**, and $p$ dictates how "open" or "narrow" the curve is. The same logical process can be used to find other descriptions, such as a set of [parametric equations](@keyword=parametric_equations|lang=en-US|style=Feynman) that trace the curve over time [@problem_id:2146430].
 
 ### The Heart of the Parabola: The Vertex
 
-The point $(h,k)$ that appeared in our derivation, the vertex, is the most special point on the parabola. Geometrically, it’s the point where the parabola makes its tightest turn. It lies on the **[axis of symmetry](@article_id:176805)**, the line that passes through the focus and is perpendicular to the directrix.
+The point $(h,k)$ that appeared in our derivation, the vertex, is the most special point on the parabola. Geometrically, it’s the point where the parabola makes its tightest turn. It lies on the **[axis of symmetry](@keyword=axis_of_symmetry|lang=en-US|style=Feynman)**, the line that passes through the focus and is perpendicular to the directrix.
 
-What’s the relationship between the vertex, the focus, and the directrix? The vertex is the *midpoint* between the focus and the directrix along this [axis of symmetry](@article_id:176805). Think about it: it's the one point on the parabola that is as close as it can possibly get to both its parent objects. This gives us an incredibly simple way to locate it.
+What’s the relationship between the vertex, the focus, and the directrix? The vertex is the *midpoint* between the focus and the directrix along this [axis of symmetry](@keyword=axis_of_symmetry|lang=en-US|style=Feynman). Think about it: it's the one point on the parabola that is as close as it can possibly get to both its parent objects. This gives us an incredibly simple way to locate it.
 
-Imagine a parabolic solar trough designed to focus sunlight . The heating pipe is at the focus, say $F(-1, 3)$, and a support structure defines the directrix, the line $x=5$. Where is the vertex—the bottom of the trough? The [axis of symmetry](@article_id:176805) must be the horizontal line passing through the focus, $y=3$. The vertex must lie on this line. Its x-coordinate must be exactly halfway between the focus's x-coordinate ($-1$) and the directrix's x-coordinate ($5$). The midpoint is $\frac{-1+5}{2} = 2$. So, the vertex is at $(2, 3)$.
+Imagine a parabolic solar trough designed to focus sunlight [@problem_id:2159498]. The heating pipe is at the focus, say $F(-1, 3)$, and a support structure defines the directrix, the line $x=5$. Where is the vertex—the bottom of the trough? The [axis of symmetry](@keyword=axis_of_symmetry|lang=en-US|style=Feynman) must be the horizontal line passing through the focus, $y=3$. The vertex must lie on this line. Its x-coordinate must be exactly halfway between the focus's x-coordinate ($-1$) and the directrix's x-coordinate ($5$). The midpoint is $\frac{-1+5}{2} = 2$. So, the vertex is at $(2, 3)$.
 
-This midpoint principle is universal. It works even if the directrix is a slanted, oblique line, say $ax+by+c=0$ . The geometry doesn't change, even if the algebra required to find the midpoint becomes more involved. The vertex is always the midpoint of the perpendicular line segment connecting the focus to the directrix. This simple, intuitive idea is our anchor.
+This midpoint principle is universal. It works even if the directrix is a slanted, oblique line, say $ax+by+c=0$ [@problem_id:2132136]. The geometry doesn't change, even if the algebra required to find the midpoint becomes more involved. The vertex is always the midpoint of the perpendicular line segment connecting the focus to the directrix. This simple, intuitive idea is our anchor.
 
 ### The Parabola in Hiding: A Locus of Centers
 
 One of the most beautiful aspects of mathematics is the way fundamental ideas reappear in unexpected disguises. The parabola is a master of this. Let's go on a hunt for it.
 
-Consider a seemingly unrelated problem: we have a fixed beacon at a point $F$ and a straight seawall, line $L$. We want to map all possible centers for a circular emergency signal that must always touch the seawall and simultaneously have its edge pass through the beacon . Let's call the center of our moving circle $P$.
+Consider a seemingly unrelated problem: we have a fixed beacon at a point $F$ and a straight seawall, line $L$. We want to map all possible centers for a circular emergency signal that must always touch the seawall and simultaneously have its edge pass through the beacon [@problem_id:2158765]. Let's call the center of our moving circle $P$.
 
-If the circle's boundary passes through $F$, then the distance from the center $P$ to $F$ must be equal to the circle's radius, $r$. If the circle is tangent to the line $L$, its radius $r$ must also be equal to the [perpendicular distance](@article_id:175785) from its center $P$ to the line $L$. So, we have:
+If the circle's boundary passes through $F$, then the distance from the center $P$ to $F$ must be equal to the circle's radius, $r$. If the circle is tangent to the line $L$, its radius $r$ must also be equal to the [perpendicular distance](@keyword=perpendicular_distance|lang=en-US|style=Feynman) from its center $P$ to the line $L$. So, we have:
 $$\text{Distance}(P, F) = r$$
 $$\text{Distance}(P, L) = r$$
 Putting these together gives us:
 $$\text{Distance}(P, F) = \text{Distance}(P, L)$$
 This is precisely the definition of a parabola! The locus of all possible centers is a parabola whose focus is the beacon $F$ and whose directrix is the seawall $L$. The problem never mentioned the word "parabola," yet it was there all along, hidden in the constraints.
 
-Let's try a harder one. What if our circle must be tangent to a line $L$ and also externally tangent to a fixed *circle* $C_0$?  Let the fixed circle have center $F$ and radius $R$. Let our moving circle have center $P$ and radius $r$.
+Let's try a harder one. What if our circle must be tangent to a line $L$ and also externally tangent to a fixed *circle* $C_0$? [@problem_id:2159466] Let the fixed circle have center $F$ and radius $R$. Let our moving circle have center $P$ and radius $r$.
 1. Tangency to line $L$ means: $\text{Distance}(P, L) = r$.
 2. External tangency to circle $C_0$ means the distance between their centers is the sum of their radii: $\text{Distance}(P, F) = r + R$.
 
@@ -79,8 +79,8 @@ Once again, we have a parabola! The locus of centers $P$ is a parabola whose foc
 
 ### A Hidden Symphony: The Harmony of Focal Chords
 
-Finally, let's look at a property of the parabola that is so simple and beautiful it feels like a secret handshake from nature. A **[focal chord](@article_id:165908)** is any line segment that connects two points on the parabola and passes through the focus.
+Finally, let's look at a property of the parabola that is so simple and beautiful it feels like a secret handshake from nature. A **[focal chord](@keyword=focal_chord|lang=en-US|style=Feynman)** is any line segment that connects two points on the parabola and passes through the focus.
 
-Now, consider any two focal chords that are perpendicular to each other. Let their lengths be $L_1$ and $L_2$. One might intuitively think that as you rotate this perpendicular pair, the individual lengths would change in a complicated way. They do. But their relationship holds a stunning secret. The sum of their reciprocals is constant .
+Now, consider any two focal chords that are perpendicular to each other. Let their lengths be $L_1$ and $L_2$. One might intuitively think that as you rotate this perpendicular pair, the individual lengths would change in a complicated way. They do. But their relationship holds a stunning secret. The sum of their reciprocals is constant [@problem_id:2135210].
 $$\frac{1}{L_1} + \frac{1}{L_2} = \text{a constant}$$
 This value is constant no matter the orientation of the perpendicular pair. It depends only on the parabola's own intrinsic geometry—specifically, on the distance from the focus to the directrix. For a parabola with focus-to-directrix distance $d$, this sum is always $\frac{1}{2d}$. It is a hidden law of conservation, an unexpected harmony, written into the very fabric of the curve. It is a perfect example of the profound and often surprising beauty that arises from the simplest of mathematical rules.

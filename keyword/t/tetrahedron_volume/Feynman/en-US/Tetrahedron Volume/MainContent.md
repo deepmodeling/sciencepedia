@@ -3,15 +3,15 @@ The tetrahedron, a simple pyramid with four triangular faces, is a fundamental b
 
 ## Principles and Mechanisms
 
-How do you measure the space inside a pyramid? This isn't just a question for ancient Egyptians; it's a fundamental problem that appears everywhere from materials science, in the packing of atoms , to [computational chemistry](@article_id:142545), in the geometry of molecules . Our pyramid of interest is the most basic one possible: the **tetrahedron**, a humble shape with four triangular faces. Its simplicity is deceptive, for in understanding its volume, we uncover a beautiful interplay between geometry and algebra.
+How do you measure the space inside a pyramid? This isn't just a question for ancient Egyptians; it's a fundamental problem that appears everywhere from materials science, in the packing of atoms [@problem_id:1364834], to [computational chemistry](@keyword=computational_chemistry|lang=en-US|style=Feynman), in the geometry of molecules [@problem_id:2213407]. Our pyramid of interest is the most basic one possible: the **tetrahedron**, a humble shape with four triangular faces. Its simplicity is deceptive, for in understanding its volume, we uncover a beautiful interplay between geometry and algebra.
 
 ### From Bricks to Pyramids: The Parallelepiped Connection
 
 Let's begin our journey not with a pyramid, but with a familiar brick. The volume of a rectangular brick is simple: $V = \text{length} \times \text{width} \times \text{height}$. Now, imagine this brick is made of a stack of cards. If you give the stack a push, it skews. The shape is no longer a perfect box but a **parallelepiped**. Its volume is still the area of its base times its height, but calculating these is trickier.
 
-We can define this skewed brick using three vectors, let's call them $\vec{a}$, $\vec{b}$, and $\vec{c}$, representing the three edges meeting at a corner. Let's say the base of our skewed brick is the parallelogram formed by vectors $\vec{b}$ and $\vec{c}$. From vector algebra, we know the area of this base is given by the magnitude of the cross product: $\text{Area}_{\text{base}} = |\vec{b} \times \vec{c}|$. The [cross product](@article_id:156255) $\vec{b} \times \vec{c}$ itself is a new vector, which has the special property of being perpendicular to the base.
+We can define this skewed brick using three vectors, let's call them $\vec{a}$, $\vec{b}$, and $\vec{c}$, representing the three edges meeting at a corner. Let's say the base of our skewed brick is the parallelogram formed by vectors $\vec{b}$ and $\vec{c}$. From vector algebra, we know the area of this base is given by the magnitude of the cross product: $\text{Area}_{\text{base}} = |\vec{b} \times \vec{c}|$. The [cross product](@keyword=cross_product|lang=en-US|style=Feynman) $\vec{b} \times \vec{c}$ itself is a new vector, which has the special property of being perpendicular to the base.
 
-The height of the parallelepiped is the component of the third vector, $\vec{a}$, that is perpendicular to the base. We can find this by projecting $\vec{a}$ onto the [normal vector](@article_id:263691) of the base. This is exactly what the dot product does! So, the height is the absolute value of the dot product of $\vec{a}$ with the *unit* normal vector. Combining these, the volume of the parallelepiped, $V_p$, is:
+The height of the parallelepiped is the component of the third vector, $\vec{a}$, that is perpendicular to the base. We can find this by projecting $\vec{a}$ onto the [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman) of the base. This is exactly what the dot product does! So, the height is the absolute value of the dot product of $\vec{a}$ with the *unit* normal vector. Combining these, the volume of the parallelepiped, $V_p$, is:
 
 $V_p = (\text{Area}_{\text{base}}) \times (\text{Height}) = |\vec{b} \times \vec{c}| \times \left| \vec{a} \cdot \frac{\vec{b} \times \vec{c}}{|\vec{b} \times \vec{c}|} \right| = |\vec{a} \cdot (\vec{b} \times \vec{c})|$
 
@@ -21,25 +21,25 @@ Now, what does this have to do with our tetrahedron? A beautiful, and not entire
 
 $$ V_T = \frac{1}{6} |\vec{a} \cdot (\vec{b} \times \vec{c})| $$
 
-This fundamental relationship is our key. If we scale all the edge vectors by a factor, say $\frac{1}{2}$, the volume of the parallelepiped scales by $(\frac{1}{2})^3 = \frac{1}{8}$. The tetrahedron's volume, being tied to it, also scales by the same cubic factor . Volume is, after all, a three-dimensional quantity.
+This fundamental relationship is our key. If we scale all the edge vectors by a factor, say $\frac{1}{2}$, the volume of the parallelepiped scales by $(\frac{1}{2})^3 = \frac{1}{8}$. The tetrahedron's volume, being tied to it, also scales by the same cubic factor [@problem_id:21146]. Volume is, after all, a three-dimensional quantity.
 
 ### The Magic of the Determinant
 
-Calculating the [scalar triple product](@article_id:152503) seems like a chore: first a [cross product](@article_id:156255), then a dot product. But here, a beautiful piece of magic from linear algebra comes to our rescue. If we write our three vectors in terms of their components, say $\vec{a} = (a_x, a_y, a_z)$, $\vec{b} = (b_x, b_y, b_z)$, and $\vec{c} = (c_x, c_y, c_z)$, we can arrange them into a matrix:
+Calculating the [scalar triple product](@keyword=scalar_triple_product|lang=en-US|style=Feynman) seems like a chore: first a [cross product](@keyword=cross_product|lang=en-US|style=Feynman), then a dot product. But here, a beautiful piece of magic from linear algebra comes to our rescue. If we write our three vectors in terms of their components, say $\vec{a} = (a_x, a_y, a_z)$, $\vec{b} = (b_x, b_y, b_z)$, and $\vec{c} = (c_x, c_y, c_z)$, we can arrange them into a matrix:
 
 $$ M = \begin{pmatrix} a_x & a_y & a_z \\ b_x & b_y & b_z \\ c_x & c_y & c_z \end{pmatrix} $$
 
-The **determinant** of this matrix, $\det(M)$, turns out to be *exactly* the [scalar triple product](@article_id:152503) $\vec{a} \cdot (\vec{b} \times \vec{c})$. This is no coincidence; it's a reflection of the deep unity of mathematics. The determinant, an algebraic operation, geometrically represents the [signed volume](@article_id:149434) of the parallelepiped.
+The **determinant** of this matrix, $\det(M)$, turns out to be *exactly* the [scalar triple product](@keyword=scalar_triple_product|lang=en-US|style=Feynman) $\vec{a} \cdot (\vec{b} \times \vec{c})$. This is no coincidence; it's a reflection of the deep unity of mathematics. The determinant, an algebraic operation, geometrically represents the [signed volume](@keyword=signed_volume|lang=en-US|style=Feynman) of the parallelepiped.
 
 So, our formula for the volume of a tetrahedron becomes wonderfully practical. If its vertices are at the origin and the points defined by vectors $\vec{v}_1$, $\vec{v}_2$, and $\vec{v}_3$, the volume is simply:
 
 $$ V_T = \frac{1}{6} |\det(\vec{v}_1, \vec{v}_2, \vec{v}_3)| $$
 
-For instance, if we're told atoms in a crystal are located at positions like $(4, -1, 1)$, $(2, 3, 0)$, and $(1, 5, -2)$ relative to a central atom at the origin, we can just plug these coordinates into a determinant, calculate the result, and take one-sixth of its absolute value to find the volume of the atomic building block . An abstract mathematical tool gives us a tangible physical quantity. As a simple case, consider vectors where many components are zero, such as $\vec{u} = (a,0,0)$, $\vec{v} = (b,c,0)$, and $\vec{w} = (d,e,f)$. The determinant becomes wonderfully simple, boiling down to just $a \cdot c \cdot f$, making the volume $\frac{|acf|}{6}$ .
+For instance, if we're told atoms in a crystal are located at positions like $(4, -1, 1)$, $(2, 3, 0)$, and $(1, 5, -2)$ relative to a central atom at the origin, we can just plug these coordinates into a determinant, calculate the result, and take one-sixth of its absolute value to find the volume of the atomic building block [@problem_id:1364834]. An abstract mathematical tool gives us a tangible physical quantity. As a simple case, consider vectors where many components are zero, such as $\vec{u} = (a,0,0)$, $\vec{v} = (b,c,0)$, and $\vec{w} = (d,e,f)$. The determinant becomes wonderfully simple, boiling down to just $a \cdot c \cdot f$, making the volume $\frac{|acf|}{6}$ [@problem_id:21140].
 
 ### It's All Relative: Choosing Your Point of View
 
-"But wait," you might ask, "what if none of the vertices are at the origin?" This is the usual situation in the real world. A molecule floats in space; its atoms are at positions $\vec{r}_A, \vec{r}_B, \vec{r}_C, \vec{r}_D$, none of which are likely the [zero vector](@article_id:155695) of our arbitrary coordinate system .
+"But wait," you might ask, "what if none of the vertices are at the origin?" This is the usual situation in the real world. A molecule floats in space; its atoms are at positions $\vec{r}_A, \vec{r}_B, \vec{r}_C, \vec{r}_D$, none of which are likely the [zero vector](@keyword=zero_vector|lang=en-US|style=Feynman) of our arbitrary coordinate system [@problem_id:21108].
 
 The beauty of physics and geometry is that intrinsic properties like volume shouldn't depend on where we place our origin. The volume of a tetrahedron is the same whether it's in your lab or orbiting Jupiter. The solution is simple and elegant: create your *own* local origin.
 
@@ -49,7 +49,7 @@ Pick any one of the four vertices, say $A$, as your anchor point. Then, define t
 - $\vec{b} = \vec{r}_C - \vec{r}_A$ (the vector from $A$ to $C$)
 - $\vec{c} = \vec{r}_D - \vec{r}_A$ (the vector from $A$ to $D$)
 
-Now we have three vectors starting from a common point, and we are back in familiar territory. The volume is simply one-sixth of the [scalar triple product](@article_id:152503) of these new edge vectors :
+Now we have three vectors starting from a common point, and we are back in familiar territory. The volume is simply one-sixth of the [scalar triple product](@keyword=scalar_triple_product|lang=en-US|style=Feynman) of these new edge vectors [@problem_id:2213407]:
 
 $$ V = \frac{1}{6} |(\vec{r}_B - \vec{r}_A) \cdot ((\vec{r}_C - \vec{r}_A) \times (\vec{r}_D - \vec{r}_A))| $$
 
@@ -61,11 +61,11 @@ What happens if the volume turns out to be zero? This isn't just a mathematical 
 
 If the scalar triple product $\vec{a} \cdot (\vec{b} \times \vec{c})$ is zero, it means the three vectors $\vec{a}$, $\vec{b}$, and $\vec{c}$ are **coplanar**—they all lie on the same two-dimensional plane. Think about it: the vector $\vec{b} \times \vec{c}$ is perpendicular to the plane containing $\vec{b}$ and $\vec{c}$. If $\vec{a}$ also lies in that plane, then $\vec{a}$ must be perpendicular to $\vec{b} \times \vec{c}$. The dot product of two perpendicular vectors is always zero.
 
-Therefore, if the four vertices of a "tetrahedron" yield a volume of zero, it means the shape has collapsed into a flat triangle. All four points lie on the same plane . This gives us a powerful and foolproof test for coplanarity. For a crystallographer, finding a zero-volume tetrahedron of atoms might indicate a planar defect in the crystal lattice, a feature that could dramatically alter the material's properties .
+Therefore, if the four vertices of a "tetrahedron" yield a volume of zero, it means the shape has collapsed into a flat triangle. All four points lie on the same plane [@problem_id:21117]. This gives us a powerful and foolproof test for coplanarity. For a crystallographer, finding a zero-volume tetrahedron of atoms might indicate a planar defect in the crystal lattice, a feature that could dramatically alter the material's properties [@problem_id:2156305].
 
 ### Stretching, Shearing, and Scaling: Volume Under Transformation
 
-Let's play with our tetrahedron a little. Suppose we start with a tetrahedron defined by vectors $\vec{a}$, $\vec{b}$, and $\vec{c}$, and we apply a deformation. For example, maybe we shear the material, which we can model by changing the vectors like this :
+Let's play with our tetrahedron a little. Suppose we start with a tetrahedron defined by vectors $\vec{a}$, $\vec{b}$, and $\vec{c}$, and we apply a deformation. For example, maybe we shear the material, which we can model by changing the vectors like this [@problem_id:2156329]:
 
 $$ \vec{a}' = \vec{a} $$
 $$ \vec{b}' = k_1 \vec{a} + k_2 \vec{b} $$
@@ -75,6 +75,6 @@ How does the volume change? We can mechanically plug these new vectors into our 
 
 $$ V_f = |k_2 k_4| V_0 $$
 
-where $V_0$ was the original volume. Notice that the shear factors, $k_1$ and $k_3$, have completely disappeared! This makes perfect physical sense. A [shear deformation](@article_id:170426) is like sliding the layers of our object past each other without changing their height or base area; it shouldn't change the volume. The volume only changes by the factors $k_2$ and $k_4$ that represent stretching along the directions of the original vectors $\vec{b}$ and $\vec{c}$.
+where $V_0$ was the original volume. Notice that the shear factors, $k_1$ and $k_3$, have completely disappeared! This makes perfect physical sense. A [shear deformation](@keyword=shear_deformation|lang=en-US|style=Feynman) is like sliding the layers of our object past each other without changing their height or base area; it shouldn't change the volume. The volume only changes by the factors $k_2$ and $k_4$ that represent stretching along the directions of the original vectors $\vec{b}$ and $\vec{c}$.
 
-This reveals a deep principle: the scalar triple product, and by extension the volume, is immune to shear transformations but scales directly with stretching. This behavior is precisely the defining characteristic of the determinant. The change in volume under any [linear transformation](@article_id:142586) is given by the determinant of the transformation matrix. Our little exploration of a tetrahedron's volume has led us to the doorstep of one of the most fundamental concepts in linear algebra, revealing once again the profound and beautiful unity of science.
+This reveals a deep principle: the scalar triple product, and by extension the volume, is immune to shear transformations but scales directly with stretching. This behavior is precisely the defining characteristic of the determinant. The change in volume under any [linear transformation](@keyword=linear_transformation|lang=en-US|style=Feynman) is given by the determinant of the transformation matrix. Our little exploration of a tetrahedron's volume has led us to the doorstep of one of the most fundamental concepts in linear algebra, revealing once again the profound and beautiful unity of science.

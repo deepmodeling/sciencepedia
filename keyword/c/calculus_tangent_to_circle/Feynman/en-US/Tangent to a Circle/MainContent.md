@@ -1,9 +1,9 @@
 ## Introduction
 The task of drawing a tangent to a circle—a line that kisses the curve at a single point—seems like a fundamental exercise from a high school geometry class. It feels neat, solved, and self-contained. But is that all there is to it? Or does this simple concept hold a deeper significance that resonates throughout the sciences? This article embarks on a journey to reveal that the tangent to a circle is not just a classroom problem but a master key that unlocks profound ideas in mathematics, physics, and engineering.
 
-We will begin our exploration in the first chapter, **Principles and Mechanisms**, by dissecting the concept of tangency from four distinct yet interconnected viewpoints. We will start with the elegant intuition of Euclidean geometry, move to the historical ingenuity of Pierre de Fermat's pre-calculus methods, then harness the systematic power of [implicit differentiation](@article_id:137435), and finally unify these ideas through the lens of vector calculus, gradients, and [level curves](@article_id:268010).
+We will begin our exploration in the first chapter, **Principles and Mechanisms**, by dissecting the concept of tangency from four distinct yet interconnected viewpoints. We will start with the elegant intuition of Euclidean geometry, move to the historical ingenuity of Pierre de Fermat's pre-calculus methods, then harness the systematic power of [implicit differentiation](@keyword=implicit_differentiation|lang=en-US|style=Feynman), and finally unify these ideas through the lens of vector calculus, gradients, and [level curves](@keyword=level_curves|lang=en-US|style=Feynman).
 
-With this robust mathematical foundation, the second chapter, **Applications and Interdisciplinary Connections**, will demonstrate the extraordinary reach of this concept. We will see how the geometry of tangents dictates optimal designs in engineering, serves as a universal sign of optimality in physics, and even defines the very language of natural laws governing rotational fields and [thermodynamic cycles](@article_id:148803). Prepare to see the humble tangent in a new light, as a thread that weaves together some of the most beautiful ideas in the scientific world.
+With this robust mathematical foundation, the second chapter, **Applications and Interdisciplinary Connections**, will demonstrate the extraordinary reach of this concept. We will see how the geometry of tangents dictates optimal designs in engineering, serves as a universal sign of optimality in physics, and even defines the very language of natural laws governing rotational fields and [thermodynamic cycles](@keyword=thermodynamic_cycles|lang=en-US|style=Feynman). Prepare to see the humble tangent in a new light, as a thread that weaves together some of the most beautiful ideas in the scientific world.
 
 ## Principles and Mechanisms
 
@@ -13,13 +13,13 @@ Let’s begin not with complex formulas, but with a simple, physical intuition. 
 
 This single, elegant observation—that **the tangent line at any point on a circle is perpendicular to the radius drawn to that point**—is the geometric heart of the matter. It’s a profound piece of Euclidean geometry that we can use to solve problems with startling ease.
 
-Consider a deep-space probe in a circular orbit described by the equation $x^2 + y^2 = 25$ . The celestial body is at the origin $(0,0)$. At the moment the probe is at location $(3, 4)$, it fires a laser beam that travels along the tangent line. What is the equation of this line? We don't need any high-powered calculus to find out. The radius connects the center $(0,0)$ to the probe at $(3,4)$. The slope of this radius is simply the "rise over run": $m_{\text{radius}} = \frac{4-0}{3-0} = \frac{4}{3}$.
+Consider a deep-space probe in a circular orbit described by the equation $x^2 + y^2 = 25$ [@problem_id:2157979]. The celestial body is at the origin $(0,0)$. At the moment the probe is at location $(3, 4)$, it fires a laser beam that travels along the tangent line. What is the equation of this line? We don't need any high-powered calculus to find out. The radius connects the center $(0,0)$ to the probe at $(3,4)$. The slope of this radius is simply the "rise over run": $m_{\text{radius}} = \frac{4-0}{3-0} = \frac{4}{3}$.
 
 Since the tangent is perpendicular to the radius, its slope, $m_{\text{tangent}}$, must satisfy the condition that the product of the slopes is $-1$. So, $m_{\text{radius}} \times m_{\text{tangent}} = -1$. This gives us $m_{\text{tangent}} = -\frac{1}{4/3} = -\frac{3}{4}$. We now know the slope of the laser's path and a point it passes through, $(3,4)$. The rest is simple algebra. This beautiful geometric relationship provides a complete and satisfying answer, all without formally invoking the machinery of calculus.
 
 ### A Ghost of the Infinitesimal
 
-But what *is* a tangent, really, in the language of algebra? How could mathematicians of the 17th century, standing on the cusp of calculus, grasp this concept? Let's travel back and appreciate the genius of Pierre de Fermat, who developed a "[method of adequality](@article_id:178025)" that beautifully anticipates the derivative .
+But what *is* a tangent, really, in the language of algebra? How could mathematicians of the 17th century, standing on the cusp of calculus, grasp this concept? Let's travel back and appreciate the genius of Pierre de Fermat, who developed a "[method of adequality](@keyword=method_of_adequality|lang=en-US|style=Feynman)" that beautifully anticipates the derivative [@problem_id:2116320].
 
 Imagine you are at a point $(x_0, y_0)$ on a circle. You want to find the slope $m$ of the tangent line there. Fermat’s idea was this: take a tiny, almost-zero step along the tangent line. Let this step have a horizontal component $E$ and a vertical component $mE$. You arrive at a new point, $(x_0+E, y_0+mE)$. Now, here is the brilliant leap: if $E$ is *infinitesimally* small, this new point on the tangent is practically *on* the circle itself. So, let’s "adequate" it, as Fermat would say, by pretending it satisfies the circle's equation, $x^2 + y^2 = r^2$.
 
@@ -45,7 +45,7 @@ Solving for the slope $m$, we find $m = -\frac{x_0}{y_0}$. This is the same conc
 
 ### The Calculus Machine
 
-Fermat’s method was a work of art, but the formal development of calculus by Newton and Leibniz gave us a systematic, powerful *machine* for finding slopes: **[implicit differentiation](@article_id:137435)**.
+Fermat’s method was a work of art, but the formal development of calculus by Newton and Leibniz gave us a systematic, powerful *machine* for finding slopes: **[implicit differentiation](@keyword=implicit_differentiation|lang=en-US|style=Feynman)**.
 
 Let's take our circle's equation, $x^2 + y^2 = r^2$. The "implicit" part of the name means we don't have to solve for $y$ in terms of $x$. We accept that $y$ is some function of $x$, and we differentiate the entire equation with respect to $x$, term by term.
 
@@ -61,7 +61,7 @@ Now we just have to solve for the slope, $\frac{dy}{dx}$. A little bit of algebr
 
 $$\frac{dy}{dx} = -\frac{x}{y}$$
 
-This is a universal formula for the slope of the tangent at *any* point $(x,y)$ on a circle centered at the origin. If we check this with our space probe at $(3,4)$ , we get $\frac{dy}{dx} = -\frac{3}{4}$ instantly. No geometric pictures, no infinitesimal ghosts—just the reliable turning of a mathematical crank. This method is far more general; it can find the tangent to a vast universe of curves where simple geometry would be lost.
+This is a universal formula for the slope of the tangent at *any* point $(x,y)$ on a circle centered at the origin. If we check this with our space probe at $(3,4)$ [@problem_id:2157979], we get $\frac{dy}{dx} = -\frac{3}{4}$ instantly. No geometric pictures, no infinitesimal ghosts—just the reliable turning of a mathematical crank. This method is far more general; it can find the tangent to a vast universe of curves where simple geometry would be lost.
 
 ### Climbing the Bowl: Gradients and Level Curves
 
@@ -71,11 +71,11 @@ In any landscape, at any point, there is a direction of steepest ascent. If you 
 
 $$\nabla F = \left(\frac{\partial F}{\partial x}, \frac{\partial F}{\partial y}\right) = (2x, 2y)$$
 
-Here is the key insight: **the [gradient vector](@article_id:140686) at a point is always perpendicular to the level curve passing through that point.** It makes perfect sense. If you are walking along a contour line, your elevation is constant. You are moving in a direction of zero change. The direction of maximum change (the gradient) must therefore be at a right angle to your path.
+Here is the key insight: **the [gradient vector](@keyword=gradient_vector|lang=en-US|style=Feynman) at a point is always perpendicular to the level curve passing through that point.** It makes perfect sense. If you are walking along a contour line, your elevation is constant. You are moving in a direction of zero change. The direction of maximum change (the gradient) must therefore be at a right angle to your path.
 
-This means the [gradient vector](@article_id:140686), $(2x, 2y)$, is **normal** (perpendicular) to the circle at the point $(x,y)$. But look at this vector! It's just a vector pointing from the origin to $(x,y)$, scaled by two. It has the exact same direction as the radius. So, this advanced concept from vector calculus has led us right back to our very first, simple geometric intuition!
+This means the [gradient vector](@keyword=gradient_vector|lang=en-US|style=Feynman), $(2x, 2y)$, is **normal** (perpendicular) to the circle at the point $(x,y)$. But look at this vector! It's just a vector pointing from the origin to $(x,y)$, scaled by two. It has the exact same direction as the radius. So, this advanced concept from vector calculus has led us right back to our very first, simple geometric intuition!
 
-This idea has profound physical meaning. If a charged particle is confined to a circular path, any corrective force needed to keep it on track must be directed normal to the path . That force vector lies along the direction of the gradient. The tangent, the direction of motion, is necessarily perpendicular to this force.
+This idea has profound physical meaning. If a charged particle is confined to a circular path, any corrective force needed to keep it on track must be directed normal to the path [@problem_id:2125882]. That force vector lies along the direction of the gradient. The tangent, the direction of motion, is necessarily perpendicular to this force.
 
 ### When the Slope Runs Out
 
@@ -83,6 +83,6 @@ Our wonderful formula $\frac{dy}{dx} = -x/y$ seems to do it all, but a good scie
 
 Did our calculus machine break? Not at all. It sent us a crucial message: "Warning: the slope you are looking for is not a finite number." If we look at the circle, the answer is obvious. The tangents at these points are perfect **vertical lines**. A vertical line has an infinite, or undefined, slope.
 
-This is a beautiful lesson. Our formulas are descriptions of reality, not reality itself. When a formula presents a singularity, it's an invitation to look back at the underlying geometry. Consider a circular gear in a CAD program centered at $(h,k)$ . The point with the smallest x-coordinate is $(h-r, k)$. The radius to this point is horizontal. Therefore, the tangent must be vertical. Its equation is simply $x = h-r$. No $m$ or $b$ from the familiar $y=mx+b$ form can describe this line.
+This is a beautiful lesson. Our formulas are descriptions of reality, not reality itself. When a formula presents a singularity, it's an invitation to look back at the underlying geometry. Consider a circular gear in a CAD program centered at $(h,k)$ [@problem_id:2126873]. The point with the smallest x-coordinate is $(h-r, k)$. The radius to this point is horizontal. Therefore, the tangent must be vertical. Its equation is simply $x = h-r$. No $m$ or $b$ from the familiar $y=mx+b$ form can describe this line.
 
-From the simple perfection of geometry to the ghostly [infinitesimals](@article_id:143361) of Fermat, and from the powerful engine of differentiation to the unifying perspective of gradients, the concept of a tangent to a circle reveals itself not as a single trick, but as a meeting point for some of the most beautiful ideas in mathematics. Each perspective reinforces and enriches the others, showing us a glimpse of the deep unity that underlies the scientific world.
+From the simple perfection of geometry to the ghostly [infinitesimals](@keyword=infinitesimals|lang=en-US|style=Feynman) of Fermat, and from the powerful engine of differentiation to the unifying perspective of gradients, the concept of a tangent to a circle reveals itself not as a single trick, but as a meeting point for some of the most beautiful ideas in mathematics. Each perspective reinforces and enriches the others, showing us a glimpse of the deep unity that underlies the scientific world.

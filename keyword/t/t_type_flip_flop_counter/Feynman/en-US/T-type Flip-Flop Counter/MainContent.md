@@ -1,11 +1,11 @@
 ## Introduction
-At the core of all digital systems lies the ability to sequence and count. From tracking time to executing program instructions, these operations are fundamental. But how does a machine, built from simple on-off switches, perform this seemingly intuitive task? The answer lies in understanding a clever building block and the rules that govern its behavior. This article delves into the world of the T-type flip-flop counter, a cornerstone of [digital logic design](@article_id:140628).
+At the core of all digital systems lies the ability to sequence and count. From tracking time to executing program instructions, these operations are fundamental. But how does a machine, built from simple on-off switches, perform this seemingly intuitive task? The answer lies in understanding a clever building block and the rules that govern its behavior. This article delves into the world of the T-type flip-flop counter, a cornerstone of [digital logic design](@keyword=digital_logic_design|lang=en-US|style=Feynman).
 
-This article addresses the fundamental challenge of creating automated, predictable sequences using simple logic. We will explore how to move beyond basic counting to design machines that can follow any arbitrary path we define. Across two main chapters, you will gain a comprehensive understanding of these powerful circuits. The "Principles and Mechanisms" chapter will break down the T-flip-flop itself, showing how its simple toggle rule is the key to all counting. We will construct standard binary counters, analyze the critical speed difference between synchronous and asynchronous designs, and investigate the design flaws that can lead to system failure. Following this, the "Applications and Interdisciplinary Connections" chapter will showcase how these principles are applied in high-speed computing, programmable [control systems](@article_id:154797), signal processing, and even abstract mathematics, revealing the counter's versatility. We begin by examining the heart of the machine: the toggling switch itself.
+This article addresses the fundamental challenge of creating automated, predictable sequences using simple logic. We will explore how to move beyond basic counting to design machines that can follow any arbitrary path we define. Across two main chapters, you will gain a comprehensive understanding of these powerful circuits. The "Principles and Mechanisms" chapter will break down the T-flip-flop itself, showing how its simple toggle rule is the key to all counting. We will construct standard binary counters, analyze the critical speed difference between synchronous and asynchronous designs, and investigate the design flaws that can lead to system failure. Following this, the "Applications and Interdisciplinary Connections" chapter will showcase how these principles are applied in high-speed computing, programmable [control systems](@keyword=control_systems|lang=en-US|style=Feynman), signal processing, and even abstract mathematics, revealing the counter's versatility. We begin by examining the heart of the machine: the toggling switch itself.
 
 ## Principles and Mechanisms
 
-Imagine you have a row of simple light switches. Each switch can be either on (1) or off (0). This row of switches represents a number. Our goal is to make these switches automatically flip in a specific sequence—to count—every time a clock ticks. How do we build such a machine? This is the essential question at the heart of a [digital counter](@article_id:175262). The answer lies in a wonderfully simple device and the clever rules we give it.
+Imagine you have a row of simple light switches. Each switch can be either on (1) or off (0). This row of switches represents a number. Our goal is to make these switches automatically flip in a specific sequence—to count—every time a clock ticks. How do we build such a machine? This is the essential question at the heart of a [digital counter](@keyword=digital_counter|lang=en-US|style=Feynman). The answer lies in a wonderfully simple device and the clever rules we give it.
 
 ### The Heart of the Counter: A Simple Toggling Switch
 
@@ -17,13 +17,13 @@ $Q^{+} = Q \oplus T$
 
 Here, the $\oplus$ symbol represents the Exclusive-OR (XOR) operation. It's the mathematical equivalent of "flipping." If you XOR a bit with 0, it stays the same. If you XOR it with 1, it flips.
 
-So, the "instruction" we give to our switch is just a single bit: 1 to toggle, 0 to hold. Suppose we have a 3-bit counter, and it's currently showing the number 5, which is $101$ in binary. We want it to count up to 6, which is $110$. What instructions must we give to each of our three [flip-flops](@article_id:172518), which we'll call $Q_2$, $Q_1$, and $Q_0$?
+So, the "instruction" we give to our switch is just a single bit: 1 to toggle, 0 to hold. Suppose we have a 3-bit counter, and it's currently showing the number 5, which is $101$ in binary. We want it to count up to 6, which is $110$. What instructions must we give to each of our three [flip-flops](@keyword=flip_flops|lang=en-US|style=Feynman), which we'll call $Q_2$, $Q_1$, and $Q_0$?
 
 -   **Bit $Q_2$ (Most Significant):** It is currently 1, and needs to be 1. It must *hold*. So, its instruction must be $T_2 = 0$.
 -   **Bit $Q_1$ (Middle):** It is currently 0, and needs to be 1. It must *toggle*. So, its instruction must be $T_1 = 1$.
 -   **Bit $Q_0$ (Least Significant):** It is currently 1, and needs to be 0. It must *toggle*. So, its instruction must be $T_0 = 1$.
 
-To make the counter advance from 5 to 6, we need to supply the toggle inputs $(T_2, T_1, T_0) = (0, 1, 1)$ just before the clock ticks . This simple idea—determining the required toggle instruction from the desired transition—is the key to designing any counter. The toggle input $T$ required to go from a current state $Q$ to a next state $Q^{+}$ is simply $T = Q \oplus Q^{+}$.
+To make the counter advance from 5 to 6, we need to supply the toggle inputs $(T_2, T_1, T_0) = (0, 1, 1)$ just before the clock ticks [@problem_id:1965387]. This simple idea—determining the required toggle instruction from the desired transition—is the key to designing any counter. The toggle input $T$ required to go from a current state $Q$ to a next state $Q^{+}$ is simply $T = Q \oplus Q^{+}$.
 
 ### The Logic is the Law: Crafting Custom Sequences
 
@@ -31,7 +31,7 @@ This leads us to a profound realization: a counter is nothing more than a set of
 
 This means we are not limited to simple counting! We can create any sequence we can imagine, just by designing the right logic.
 
-Let's explore a custom 3-bit counter. Instead of the standard counting logic, what if we wire it up according to these peculiar rules? 
+Let's explore a custom 3-bit counter. Instead of the standard counting logic, what if we wire it up according to these peculiar rules? [@problem_id:1908362]
 
 $T_A = Q_B \oplus Q_C$
 $T_B = Q_C$
@@ -71,23 +71,23 @@ Binary counting works the same way.
 -   The next bit ($Q_1$) should only toggle when $Q_0$ is 1 (and is about to flip back to 0, creating a "carry"). So, the instruction is: **$T_1 = Q_0$**.
 -   The next bit ($Q_2$) should only toggle when *both* $Q_1$ and $Q_0$ are 1 (i.e., state `...011` is about to become `...100`). The instruction is: **$T_2 = Q_1 \land Q_0$** (where `∧` is the logical AND).
 
-You can see the beautiful pattern emerging. The toggle condition for any given bit is that *all less significant bits are currently 1* . For a 4-bit counter, the logic is:
+You can see the beautiful pattern emerging. The toggle condition for any given bit is that *all less significant bits are currently 1* [@problem_id:1965460]. For a 4-bit counter, the logic is:
 $T_0 = 1$
 $T_1 = Q_0$
 $T_2 = Q_1 \land Q_0$
 $T_3 = Q_2 \land Q_1 \land Q_0$
 
-This cascade of AND gates forms the brain of a standard binary up-counter, perfectly implementing the rules of [binary addition](@article_id:176295).
+This cascade of AND gates forms the brain of a standard binary up-counter, perfectly implementing the rules of [binary addition](@keyword=binary_addition|lang=en-US|style=Feynman).
 
 ### The Tyranny of Time: Why Synchronicity is Speed
 
 Now, let's consider the clock—the heartbeat of our system. How we distribute its "tick" is critically important. There are two main philosophies.
 
-1.  **Asynchronous (Ripple) Counter:** Imagine a line of people passing a message. The first person gets the message, then turns and tells the second, who tells the third, and so on. This is a [ripple counter](@article_id:174853). The system clock only triggers the first flip-flop ($Q_0$). The clock for the second flip-flop ($Q_1$) is the *output* of the first one. The clock for $Q_2$ is the output of $Q_1$, and so on. The "toggle" signal ripples down the line. The problem? Delay. Each flip-flop takes a small but finite time to change its output (its **propagation delay**, $t_{pd}$). In an 8-bit [ripple counter](@article_id:174853), the last bit can't change until the first seven have finished rippling, so the total delay is $8 \times t_{pd}$. This cumulative delay severely limits how fast you can tick the clock.
+1.  **Asynchronous (Ripple) Counter:** Imagine a line of people passing a message. The first person gets the message, then turns and tells the second, who tells the third, and so on. This is a [ripple counter](@keyword=ripple_counter|lang=en-US|style=Feynman). The system clock only triggers the first flip-flop ($Q_0$). The clock for the second flip-flop ($Q_1$) is the *output* of the first one. The clock for $Q_2$ is the output of $Q_1$, and so on. The "toggle" signal ripples down the line. The problem? Delay. Each flip-flop takes a small but finite time to change its output (its **propagation delay**, $t_{pd}$). In an 8-bit [ripple counter](@keyword=ripple_counter|lang=en-US|style=Feynman), the last bit can't change until the first seven have finished rippling, so the total delay is $8 \times t_{pd}$. This cumulative delay severely limits how fast you can tick the clock.
 
-2.  **Synchronous Counter:** Now imagine an orchestra. The conductor gives a single, clear downbeat, and all musicians play their note at the same time. This is a [synchronous counter](@article_id:170441). A single, common [clock signal](@article_id:173953) is connected to *every* flip-flop. On the clock's tick, all flip-flops that have a $T=1$ instruction toggle simultaneously.
+2.  **Synchronous Counter:** Now imagine an orchestra. The conductor gives a single, clear downbeat, and all musicians play their note at the same time. This is a [synchronous counter](@keyword=synchronous_counter|lang=en-US|style=Feynman). A single, common [clock signal](@keyword=clock_signal|lang=en-US|style=Feynman) is connected to *every* flip-flop. On the clock's tick, all flip-flops that have a $T=1$ instruction toggle simultaneously.
 
-The speed difference is immense. In a [synchronous design](@article_id:162850), the total time required before the next clock tick is not the sum of all delays. Instead, it's the time for one flip-flop's output to change ($t_{pd}$), plus the time for that signal to travel through the longest chain of logic gates to determine the next T-input, plus a small [setup time](@article_id:166719) ($t_{su}$) for that input to be stable at the next flip-flop. In the synchronous world, the speed is limited not by the number of bits, but by the complexity of the logic *between* them  . For high-speed applications, synchronicity is king.
+The speed difference is immense. In a [synchronous design](@keyword=synchronous_design|lang=en-US|style=Feynman), the total time required before the next clock tick is not the sum of all delays. Instead, it's the time for one flip-flop's output to change ($t_{pd}$), plus the time for that signal to travel through the longest chain of logic gates to determine the next T-input, plus a small [setup time](@keyword=setup_time|lang=en-US|style=Feynman) ($t_{su}$) for that input to be stable at the next flip-flop. In the synchronous world, the speed is limited not by the number of bits, but by the complexity of the logic *between* them [@problem_id:1965452] [@problem_id:1955742]. For high-speed applications, synchronicity is king.
 
 ### Lost in the State Space: Glitches, Flaws, and Lock-ups
 
@@ -95,12 +95,12 @@ We've designed our counters assuming they start at 0 and follow their prescribed
 
 What happens if our counter accidentally finds itself in one of these states? It's like taking a wrong turn on a hiking trail. You might find a side path that leads you back to the main trail, or you might find yourself walking in a circle, lost in the woods. The counter, bound by its logic, will simply follow the rules.
 
--   **The Unintended Loop:** In one design for a MOD-6 counter, if it happens to land in state 6 (110), the logic might cause it to transition to state 7 (111) on the next tick. From state 7, the logic might then lead it right back to 6. The counter becomes trapped, oscillating forever between 6 and 7, never returning to its intended 0-5 sequence .
+-   **The Unintended Loop:** In one design for a MOD-6 counter, if it happens to land in state 6 (110), the logic might cause it to transition to state 7 (111) on the next tick. From state 7, the logic might then lead it right back to 6. The counter becomes trapped, oscillating forever between 6 and 7, never returning to its intended 0-5 sequence [@problem_id:1962241].
 
--   **The Design Flaw:** A subtle bug in the logic equations can also lead the counter astray. A counter designed to go $3 \rightarrow 4 \rightarrow 5$ might have a flaw that causes the transition from state 4 (100) to jump to state 7 (111) instead of 5 . The counter has been derailed from its intended path.
+-   **The Design Flaw:** A subtle bug in the logic equations can also lead the counter astray. A counter designed to go $3 \rightarrow 4 \rightarrow 5$ might have a flaw that causes the transition from state 4 (100) to jump to state 7 (111) instead of 5 [@problem_id:1928996]. The counter has been derailed from its intended path.
 
--   **The Frozen State:** It's even possible to design logic that leads to a "dead end." Consider a standard up-counter where the LSB's toggle input is changed from a constant `1` to depend on the MSB, like $T_0 = \overline{Q_3}$. This counter works normally until it reaches the state 8 (1000). At this point, $Q_3=1$, so $T_0$ becomes 0. The other bits are also 0, making all other T-inputs 0. With all toggle instructions set to "hold," the counter freezes permanently in state 1000 .
+-   **The Frozen State:** It's even possible to design logic that leads to a "dead end." Consider a standard up-counter where the LSB's toggle input is changed from a constant `1` to depend on the MSB, like $T_0 = \overline{Q_3}$. This counter works normally until it reaches the state 8 (1000). At this point, $Q_3=1$, so $T_0$ becomes 0. The other bits are also 0, making all other T-inputs 0. With all toggle instructions set to "hold," the counter freezes permanently in state 1000 [@problem_id:1965390].
 
-These examples teach us a crucial lesson in [digital design](@article_id:172106): it's not enough to define the path you want. A robust design must also consider all possible states, including the unused ones, and ensure that if the system ever gets lost, there is always a path back home to the main sequence.
+These examples teach us a crucial lesson in [digital design](@keyword=digital_design|lang=en-US|style=Feynman): it's not enough to define the path you want. A robust design must also consider all possible states, including the unused ones, and ensure that if the system ever gets lost, there is always a path back home to the main sequence.
 
-Finally, it's worth noting that our choice of the T-flip-flop was one of convenience. The abstract concepts—of states, transitions, and the logic that defines them—are universal. We could build the exact same counters using other building blocks, like D-type flip-flops, by simply translating the logic. For instance, the D-input needed is just $D = Q^+ = Q \oplus T$ . The underlying beauty of the [state machine](@article_id:264880) transcends the particular hardware used to build it.
+Finally, it's worth noting that our choice of the T-flip-flop was one of convenience. The abstract concepts—of states, transitions, and the logic that defines them—are universal. We could build the exact same counters using other building blocks, like D-type flip-flops, by simply translating the logic. For instance, the D-input needed is just $D = Q^+ = Q \oplus T$ [@problem_id:1929001]. The underlying beauty of the [state machine](@keyword=state_machine|lang=en-US|style=Feynman) transcends the particular hardware used to build it.

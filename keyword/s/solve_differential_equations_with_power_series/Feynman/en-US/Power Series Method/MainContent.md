@@ -1,13 +1,13 @@
 ## Introduction
-Differential equations are the language of the natural world, describing everything from planetary orbits to quantum phenomena. While many can be solved with familiar functions, a vast number of important equations, particularly in physics and engineering, resist these simple solutions. This creates a significant challenge: how do we analyze and understand systems whose behavior is governed by these more complex equations? This article introduces a powerful and elegant technique for tackling this problem: the [power series method](@article_id:160419). Instead of guessing the form of the solution, we construct it piece by piece as an infinite polynomial, letting the differential equation itself dictate the recipe.
+Differential equations are the language of the natural world, describing everything from planetary orbits to quantum phenomena. While many can be solved with familiar functions, a vast number of important equations, particularly in physics and engineering, resist these simple solutions. This creates a significant challenge: how do we analyze and understand systems whose behavior is governed by these more complex equations? This article introduces a powerful and elegant technique for tackling this problem: the [power series method](@keyword=power_series_method|lang=en-US|style=Feynman). Instead of guessing the form of the solution, we construct it piece by piece as an infinite polynomial, letting the differential equation itself dictate the recipe.
 
-This article will guide you through this versatile method. In the first chapter, **Principles and Mechanisms**, we will uncover the fundamental mechanics of the power series approach. You will learn how to substitute a series into an equation, perform the crucial "dance" of index shifting, and derive the recurrence relation that acts as a machine for generating the solution's coefficients. We will also explore the profound concept of the [radius of convergence](@article_id:142644), revealing how singularities in the complex plane govern the behavior of real-world solutions. Following this, the chapter on **Applications and Interdisciplinary Connections** will demonstrate the remarkable reach of this method. We will see how it solves [eigenvalue problems](@article_id:141659) in quantum mechanics, enables approximation via perturbation theory, and even bridges the gap between continuous differential equations and the discrete world of sequences. By the end, you will not only understand how to use the [power series method](@article_id:160419) but also appreciate its role as a unifying concept across science and mathematics.
+This article will guide you through this versatile method. In the first chapter, **Principles and Mechanisms**, we will uncover the fundamental mechanics of the power series approach. You will learn how to substitute a series into an equation, perform the crucial "dance" of index shifting, and derive the recurrence relation that acts as a machine for generating the solution's coefficients. We will also explore the profound concept of the [radius of convergence](@keyword=radius_of_convergence|lang=en-US|style=Feynman), revealing how singularities in the complex plane govern the behavior of real-world solutions. Following this, the chapter on **Applications and Interdisciplinary Connections** will demonstrate the remarkable reach of this method. We will see how it solves [eigenvalue problems](@keyword=eigenvalue_problems|lang=en-US|style=Feynman) in quantum mechanics, enables approximation via perturbation theory, and even bridges the gap between continuous differential equations and the discrete world of sequences. By the end, you will not only understand how to use the [power series method](@keyword=power_series_method|lang=en-US|style=Feynman) but also appreciate its role as a unifying concept across science and mathematics.
 
 ## Principles and Mechanisms
 
 Imagine you are faced with a differential equation, one of those beautiful statements that describes the rate of change of something—the motion of a planet, the vibration of a guitar string, or the oscillation of a quantum particle. You might first try to find a solution among the familiar cast of characters: exponentials, sines, cosines, and polynomials. But what happens when none of them work? Do we give up?
 
-Nature is far more inventive than our catalog of simple functions. The genius of the [power series method](@article_id:160419) is to say: let's not assume what the solution *is*. Instead, let's assume it can be *built* piece by piece, like an infinitely long polynomial. We propose that our unknown function $y(x)$ can be written as:
+Nature is far more inventive than our catalog of simple functions. The genius of the [power series method](@keyword=power_series_method|lang=en-US|style=Feynman) is to say: let's not assume what the solution *is*. Instead, let's assume it can be *built* piece by piece, like an infinitely long polynomial. We propose that our unknown function $y(x)$ can be written as:
 
 $$
 y(x) = \sum_{n=0}^{\infty} a_n x^n = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \dots
@@ -55,11 +55,11 @@ $$
 2c_2 + \sum_{k=1}^{\infty} \left[ (k+2)(k+1)c_{k+2} - c_{k-1} \right] x^k = 0
 $$
 
-This elegant expression contains all the information of the original differential equation, but now it's in a form we can work with . This "dance" of relabeling indices is a fundamental skill for this method, allowing us to combine various derivatives and terms into a single, unified [power series](@article_id:146342)  .
+This elegant expression contains all the information of the original differential equation, but now it's in a form we can work with [@problem_id:2193723]. This "dance" of relabeling indices is a fundamental skill for this method, allowing us to combine various derivatives and terms into a single, unified [power series](@keyword=power_series|lang=en-US|style=Feynman) [@problem_id:2193707] [@problem_id:2193729].
 
 ### The Recurrence Relation: A Machine for Coefficients
 
-With our equation neatly arranged as a single [power series](@article_id:146342) equal to zero, we arrive at a moment of profound insight. If a polynomial (even an infinite one) is equal to zero for *every* possible value of $x$, it cannot be because of some miraculous cancellation. It must be because every single one of its coefficients is zero.
+With our equation neatly arranged as a single [power series](@keyword=power_series|lang=en-US|style=Feynman) equal to zero, we arrive at a moment of profound insight. If a polynomial (even an infinite one) is equal to zero for *every* possible value of $x$, it cannot be because of some miraculous cancellation. It must be because every single one of its coefficients is zero.
 
 From our Airy equation example, this means two things:
 1.  The constant term must be zero: $2c_2 = 0$, which implies $c_2=0$.
@@ -71,9 +71,9 @@ $$
 c_{k+2} = \frac{c_{k-1}}{(k+2)(k+1)} \quad \text{for } k \geq 1
 $$
 
-This is the **recurrence relation**. It is a machine that generates coefficients. If you give it $c_0$, it will give you $c_3$, then $c_6$, and so on. If you give it $c_1$, it will give you $c_4$, then $c_7$, and so on. The coefficients $c_0$ and $c_1$ are our free choices, corresponding to the two arbitrary constants we expect in the solution of a [second-order differential equation](@article_id:176234).
+This is the **recurrence relation**. It is a machine that generates coefficients. If you give it $c_0$, it will give you $c_3$, then $c_6$, and so on. If you give it $c_1$, it will give you $c_4$, then $c_7$, and so on. The coefficients $c_0$ and $c_1$ are our free choices, corresponding to the two arbitrary constants we expect in the solution of a [second-order differential equation](@keyword=second_order_differential_equation|lang=en-US|style=Feynman).
 
-Let's see this powerful idea at work in a physically significant context: the Hermite differential equation, $y'' - 2xy' + 2\lambda y = 0$, which is central to the quantum mechanics of a [simple harmonic oscillator](@article_id:145270). Assuming a solution $y(x) = \sum_{k=0}^{\infty} a_k x^k$ and performing the same process of differentiation, substitution, and index shifting, we arrive at the unified equation:
+Let's see this powerful idea at work in a physically significant context: the Hermite differential equation, $y'' - 2xy' + 2\lambda y = 0$, which is central to the quantum mechanics of a [simple harmonic oscillator](@keyword=simple_harmonic_oscillator|lang=en-US|style=Feynman). Assuming a solution $y(x) = \sum_{k=0}^{\infty} a_k x^k$ and performing the same process of differentiation, substitution, and index shifting, we arrive at the unified equation:
 
 $$
 \sum_{k=0}^{\infty} \left[ (k+2)(k+1)a_{k+2} - 2ka_k + 2\lambda a_k \right] x^k = 0
@@ -85,13 +85,13 @@ $$
 a_{k+2} = \frac{2(k - \lambda)}{(k+2)(k+1)} a_k
 $$
 
-This beautiful formula tells us how to build the entire solution from just two initial pieces, $a_0$ and $a_1$ . This same fundamental principle allows us to tackle a vast array of important equations in physics and mathematics, from the Legendre equation to the hypergeometric equation, revealing the underlying structure of their solutions .
+This beautiful formula tells us how to build the entire solution from just two initial pieces, $a_0$ and $a_1$ [@problem_id:2213306]. This same fundamental principle allows us to tackle a vast array of important equations in physics and mathematics, from the Legendre equation to the hypergeometric equation, revealing the underlying structure of their solutions [@problem_id:1102082].
 
 ### Ghosts in the Complex Plane: The Radius of Convergence
 
-We've built a machine to generate the coefficients of our [series solution](@article_id:199789). But a crucial question remains: does this infinite sum actually add up to a finite number? In other words, for what range of $x$ values does our series **converge**? This range is defined by the **[radius of convergence](@article_id:142644)**, $R$.
+We've built a machine to generate the coefficients of our [series solution](@keyword=series_solution|lang=en-US|style=Feynman). But a crucial question remains: does this infinite sum actually add up to a finite number? In other words, for what range of $x$ values does our series **converge**? This range is defined by the **[radius of convergence](@keyword=radius_of_convergence|lang=en-US|style=Feynman)**, $R$.
 
-One might think that to find $R$, we would need to find the formula for $a_n$ and perform a [convergence test](@article_id:145933), like the [ratio test](@article_id:135737). Amazingly, that's not necessary. The answer lies hidden in plain sight, within the differential equation itself, and the secret is revealed by looking not just at the real number line, but at the entire complex plane.
+One might think that to find $R$, we would need to find the formula for $a_n$ and perform a [convergence test](@keyword=convergence_test|lang=en-US|style=Feynman), like the [ratio test](@keyword=ratio_test|lang=en-US|style=Feynman). Amazingly, that's not necessary. The answer lies hidden in plain sight, within the differential equation itself, and the secret is revealed by looking not just at the real number line, but at the entire complex plane.
 
 Let's write a general second-order linear ODE in its standard form:
 
@@ -99,9 +99,9 @@ $$
 y'' + P(x)y' + Q(x)y = g(x)
 $$
 
-The coefficients $P(x)$, $Q(x)$, and the [forcing term](@article_id:165492) $g(x)$ are functions. The points where these functions are "badly behaved"—where they go to infinity or are otherwise not well-defined—are called **singular points**. For any other point, an **[ordinary point](@article_id:164130)**, a power [series solution](@article_id:199789) exists. The glorious theorem is this: the radius of convergence of a power [series solution](@article_id:199789) centered at an [ordinary point](@article_id:164130) $x_0$ is *at least* the distance from $x_0$ to the nearest [singular point](@article_id:170704) in the complex plane.
+The coefficients $P(x)$, $Q(x)$, and the [forcing term](@keyword=forcing_term|lang=en-US|style=Feynman) $g(x)$ are functions. The points where these functions are "badly behaved"—where they go to infinity or are otherwise not well-defined—are called **singular points**. For any other point, an **[ordinary point](@keyword=ordinary_point|lang=en-US|style=Feynman)**, a power [series solution](@keyword=series_solution|lang=en-US|style=Feynman) exists. The glorious theorem is this: the radius of convergence of a power [series solution](@keyword=series_solution|lang=en-US|style=Feynman) centered at an [ordinary point](@keyword=ordinary_point|lang=en-US|style=Feynman) $x_0$ is *at least* the distance from $x_0$ to the nearest [singular point](@keyword=singular_point|lang=en-US|style=Feynman) in the complex plane.
 
-Consider the equation $(x^2 + 2x + 5)y'' + y = 0$ . In standard form, its coefficient $Q(x)$ is $\frac{1}{x^2+2x+5}$. On the real number line, the denominator is never zero, so everything seems perfectly fine. But in the complex plane, the denominator vanishes when $x^2 + 2x + 5 = 0$, which occurs at the two complex points $x = -1 \pm 2i$. These are the singular points.
+Consider the equation $(x^2 + 2x + 5)y'' + y = 0$ [@problem_id:2189847]. In standard form, its coefficient $Q(x)$ is $\frac{1}{x^2+2x+5}$. On the real number line, the denominator is never zero, so everything seems perfectly fine. But in the complex plane, the denominator vanishes when $x^2 + 2x + 5 = 0$, which occurs at the two complex points $x = -1 \pm 2i$. These are the singular points.
 
 Now, suppose we want to find a series solution centered at $x_0 = 1$. According to the theorem, the series is guaranteed to converge inside a circle centered at $1$ that extends just far enough to touch the nearest singularity. The distance from our center $x_0=1$ to the singularity at $-1+2i$ is:
 
@@ -112,9 +112,9 @@ $$
 The radius of convergence is $2\sqrt{2}$. This result is astonishing. The convergence of our series, defined entirely with real numbers, is governed by "ghosts" lurking in the complex plane! The solution somehow "knows" about these trouble spots and refuses to converge beyond them.
 
 This principle is remarkably universal.
--   The singularities can arise from any of the coefficient functions or from the [forcing term](@article_id:165492) on the right-hand side of the equation  .
--   The guaranteed [radius of convergence](@article_id:142644) depends on where you center your series; the distance to the nearest singularity changes as you move the center $x_0$ .
--   The concept even extends to more advanced cases. For solutions around **[regular singular points](@article_id:164854)** (a milder form of singularity), the **Method of Frobenius** guarantees a solution that converges up to the *next closest* singularity .
--   Furthermore, this is not just a feature of single equations. For [systems of differential equations](@article_id:147721), the radius of convergence is determined by the nearest singularity found in *any* of the entries of the [coefficient matrix](@article_id:150979) .
+-   The singularities can arise from any of the coefficient functions or from the [forcing term](@keyword=forcing_term|lang=en-US|style=Feynman) on the right-hand side of the equation [@problem_id:2194785] [@problem_id:2194794].
+-   The guaranteed [radius of convergence](@keyword=radius_of_convergence|lang=en-US|style=Feynman) depends on where you center your series; the distance to the nearest singularity changes as you move the center $x_0$ [@problem_id:2194808].
+-   The concept even extends to more advanced cases. For solutions around **[regular singular points](@keyword=regular_singular_points|lang=en-US|style=Feynman)** (a milder form of singularity), the **Method of Frobenius** guarantees a solution that converges up to the *next closest* singularity [@problem_id:2207482].
+-   Furthermore, this is not just a feature of single equations. For [systems of differential equations](@keyword=systems_of_differential_equations|lang=en-US|style=Feynman), the radius of convergence is determined by the nearest singularity found in *any* of the entries of the [coefficient matrix](@keyword=coefficient_matrix|lang=en-US|style=Feynman) [@problem_id:2194797].
 
-This deep connection between the structure of a differential equation and the domain of its solution reveals a beautiful unity in mathematics. By stepping into the complex plane, we gain a profound understanding of the behavior of solutions in the real world. The [power series method](@article_id:160419) is more than a technique; it is a window into the intricate and interconnected nature of [mathematical physics](@article_id:264909).
+This deep connection between the structure of a differential equation and the domain of its solution reveals a beautiful unity in mathematics. By stepping into the complex plane, we gain a profound understanding of the behavior of solutions in the real world. The [power series method](@keyword=power_series_method|lang=en-US|style=Feynman) is more than a technique; it is a window into the intricate and interconnected nature of [mathematical physics](@keyword=mathematical_physics|lang=en-US|style=Feynman).

@@ -1,7 +1,7 @@
 ## Introduction
-The inverse hyperbolic sine function, $\operatorname{arsinh}(x)$, is a familiar tool in the world of real calculus, often appearing as the solution to fundamental integrals. But what happens when we venture beyond the [real number line](@article_id:146792) and allow its argument to roam the complex plane? This transition from a single variable $x$ to a complex variable $z$ opens up a world of unexpected complexity and elegance. The resulting function, $\operatorname{arsinh}(z)$, is no longer a simple curve but a rich, multi-layered structure with properties that have profound implications across science and mathematics. This article addresses the challenge of understanding this [multi-valued function](@article_id:172249) by systematically dissecting its structure and exploring its utility.
+The inverse hyperbolic sine function, $\operatorname{arsinh}(x)$, is a familiar tool in the world of real calculus, often appearing as the solution to fundamental integrals. But what happens when we venture beyond the [real number line](@keyword=real_number_line|lang=en-US|style=Feynman) and allow its argument to roam the complex plane? This transition from a single variable $x$ to a complex variable $z$ opens up a world of unexpected complexity and elegance. The resulting function, $\operatorname{arsinh}(z)$, is no longer a simple curve but a rich, multi-layered structure with properties that have profound implications across science and mathematics. This article addresses the challenge of understanding this [multi-valued function](@keyword=multi_valued_function|lang=en-US|style=Feynman) by systematically dissecting its structure and exploring its utility.
 
-Our journey will proceed in two parts. In the first chapter, "Principles and Mechanisms," we will build the function from its definition, $\log(z + \sqrt{z^2+1})$, and uncover its core properties. We will investigate its multi-valued nature, the concept of a [principal value](@article_id:192267), and the critical role of [branch points](@article_id:166081) and Riemann surfaces in taming its complexity. In the second chapter, "Applications and Interdisciplinary Connections," we will see $\operatorname{arsinh}(z)$ in action. We will discover how it emerges naturally in calculus, simplifies problems in vector fields, reveals hidden [algebraic structures](@article_id:138965), and becomes a powerful computational tool in complex analysis, connecting disparate fields from physics to linear algebra.
+Our journey will proceed in two parts. In the first chapter, "Principles and Mechanisms," we will build the function from its definition, $\log(z + \sqrt{z^2+1})$, and uncover its core properties. We will investigate its multi-valued nature, the concept of a [principal value](@keyword=principal_value|lang=en-US|style=Feynman), and the critical role of [branch points](@keyword=branch_points|lang=en-US|style=Feynman) and Riemann surfaces in taming its complexity. In the second chapter, "Applications and Interdisciplinary Connections," we will see $\operatorname{arsinh}(z)$ in action. We will discover how it emerges naturally in calculus, simplifies problems in vector fields, reveals hidden [algebraic structures](@keyword=algebraic_structures|lang=en-US|style=Feynman), and becomes a powerful computational tool in complex analysis, connecting disparate fields from physics to linear algebra.
 
 ## Principles and Mechanisms
 
@@ -33,17 +33,17 @@ $$
 \operatorname{Arsinh}(i) = \operatorname{Log}(i + \sqrt{0}) = \operatorname{Log}(i)
 $$
 
-(Here, we use $\operatorname{Arsinh}$ and $\operatorname{Log}$ to denote the *[principal value](@article_id:192267)*—the main, standardized value, which we'll return to later.) So, what is the logarithm of $i$? We must think in terms of [polar coordinates](@article_id:158931). The complex number $i$ lies on the positive imaginary axis. Its distance from the origin (its modulus) is $|i|=1$, and the angle it makes with the positive real axis (its argument) is $\frac{\pi}{2}$. The [principal logarithm](@article_id:195475) is defined as $\operatorname{Log}(w) = \ln|w| + i\operatorname{Arg}(w)$. For $w=i$, this becomes:
+(Here, we use $\operatorname{Arsinh}$ and $\operatorname{Log}$ to denote the *[principal value](@keyword=principal_value|lang=en-US|style=Feynman)*—the main, standardized value, which we'll return to later.) So, what is the logarithm of $i$? We must think in terms of [polar coordinates](@keyword=polar_coordinates|lang=en-US|style=Feynman). The complex number $i$ lies on the positive imaginary axis. Its distance from the origin (its modulus) is $|i|=1$, and the angle it makes with the positive real axis (its argument) is $\frac{\pi}{2}$. The [principal logarithm](@keyword=principal_logarithm|lang=en-US|style=Feynman) is defined as $\operatorname{Log}(w) = \ln|w| + i\operatorname{Arg}(w)$. For $w=i$, this becomes:
 
 $$
 \operatorname{Log}(i) = \ln(1) + i\frac{\pi}{2} = 0 + i\frac{\pi}{2} = i\frac{\pi}{2}
 $$
 
-So, we have our first result: $\operatorname{Arsinh}(i) = i\frac{\pi}{2}$ . An imaginary input gives a purely imaginary output. This isn't a coincidence; it's a clue to a deeper structure.
+So, we have our first result: $\operatorname{Arsinh}(i) = i\frac{\pi}{2}$ [@problem_id:2247666]. An imaginary input gives a purely imaginary output. This isn't a coincidence; it's a clue to a deeper structure.
 
 ### Charting the Imaginary Coastline
 
-This naturally leads to a question: for which complex numbers $z$ is the [principal value](@article_id:192267) $\operatorname{Arsinh}(z)$ a purely imaginary number? Let's work backward. Suppose $\operatorname{Arsinh}(z) = w$, and $w$ is purely imaginary. We can write $w = iy$ for some real number $y$.
+This naturally leads to a question: for which complex numbers $z$ is the [principal value](@keyword=principal_value|lang=en-US|style=Feynman) $\operatorname{Arsinh}(z)$ a purely imaginary number? Let's work backward. Suppose $\operatorname{Arsinh}(z) = w$, and $w$ is purely imaginary. We can write $w = iy$ for some real number $y$.
 
 By definition, if $w = \operatorname{arsinh}(z)$, then $z = \sinh(w)$. Substituting $w=iy$:
 
@@ -53,13 +53,13 @@ $$
 
 Now we use one of the most beautiful identities connecting hyperbolic and trigonometric functions, Euler's formula in disguise: $\sinh(iy) = i\sin(y)$. So, our complex number $z$ must be of the form $z=i\sin(y)$. This tells us that for the output to be purely imaginary, the input must *also* be purely imaginary!
 
-But there's a constraint. The [principal value](@article_id:192267) $\operatorname{Arsinh}(z)$ is defined such that the imaginary part of the output, $y$, must lie in the interval $[-\frac{\pi}{2}, \frac{\pi}{2}]$. Over this interval, the sine function, $\sin(y)$, can only take values between $-1$ and $1$.
+But there's a constraint. The [principal value](@keyword=principal_value|lang=en-US|style=Feynman) $\operatorname{Arsinh}(z)$ is defined such that the imaginary part of the output, $y$, must lie in the interval $[-\frac{\pi}{2}, \frac{\pi}{2}]$. Over this interval, the sine function, $\sin(y)$, can only take values between $-1$ and $1$.
 
-Therefore, the locus of points $z$ for which $\operatorname{Arsinh}(z)$ is purely imaginary is precisely the segment of the imaginary axis from $-i$ to $i$. It's the set of all points $z=it$ where $t \in [-1, 1]$ . We have discovered a remarkable mapping: the function takes a vertical line segment in the input plane and maps it to a vertical line segment in the output plane.
+Therefore, the locus of points $z$ for which $\operatorname{Arsinh}(z)$ is purely imaginary is precisely the segment of the imaginary axis from $-i$ to $i$. It's the set of all points $z=it$ where $t \in [-1, 1]$ [@problem_id:2247688]. We have discovered a remarkable mapping: the function takes a vertical line segment in the input plane and maps it to a vertical line segment in the output plane.
 
 ### The Hydra's Heads: An Infinity of Values
 
-Up to now, we've been polite, using the "[principal value](@article_id:192267)". But the true nature of the [complex logarithm](@article_id:174363) is that it is multi-valued. For any complex number $\zeta$, the full set of its logarithms is given by:
+Up to now, we've been polite, using the "[principal value](@keyword=principal_value|lang=en-US|style=Feynman)". But the true nature of the [complex logarithm](@keyword=complex_logarithm|lang=en-US|style=Feynman) is that it is multi-valued. For any complex number $\zeta$, the full set of its logarithms is given by:
 
 $$
 \log(\zeta) = \operatorname{Log}(\zeta) + 2\pi i n, \quad \text{for any integer } n \in \mathbb{Z}
@@ -67,7 +67,7 @@ $$
 
 This single fact has monumental consequences. It means that our $\operatorname{arsinh}(z)$, defined via the logarithm, is also not a single value but an infinite set of values. It's a multi-headed hydra. For any $z$, there isn't *one* answer; there is an infinite ladder of answers, each separated by a step of $2\pi i$.
 
-Let's see this in action by finding all values of $\operatorname{arsinh}(-i)$ . The argument of the logarithm is $-i + \sqrt{(-i)^2+1} = -i$. The [principal logarithm](@article_id:195475) is $\operatorname{Log}(-i) = \ln|-i| + i\operatorname{Arg}(-i) = \ln(1) + i(-\frac{\pi}{2}) = -i\frac{\pi}{2}$. But the full set of values is:
+Let's see this in action by finding all values of $\operatorname{arsinh}(-i)$ [@problem_id:873410]. The argument of the logarithm is $-i + \sqrt{(-i)^2+1} = -i$. The [principal logarithm](@keyword=principal_logarithm|lang=en-US|style=Feynman) is $\operatorname{Log}(-i) = \ln|-i| + i\operatorname{Arg}(-i) = \ln(1) + i(-\frac{\pi}{2}) = -i\frac{\pi}{2}$. But the full set of values is:
 
 $$
 \operatorname{arsinh}(-i) = -i\frac{\pi}{2} + 2\pi i n, \quad n \in \mathbb{Z}
@@ -77,7 +77,7 @@ To visualize this, mathematicians invented the concept of a **Riemann surface**.
 
 ### A Deeper Symmetry
 
-In the real world, $\operatorname{arsinh}(x)$ is an [odd function](@article_id:175446): $\operatorname{arsinh}(-x) = -\operatorname{arsinh}(x)$. Does this hold in the complex plane? Let's test it with our newfound understanding of multi-valuedness. What is the set of all possible values for $\operatorname{arsinh}(i) + \operatorname{arsinh}(-i)$? 
+In the real world, $\operatorname{arsinh}(x)$ is an [odd function](@keyword=odd_function|lang=en-US|style=Feynman): $\operatorname{arsinh}(-x) = -\operatorname{arsinh}(x)$. Does this hold in the complex plane? Let's test it with our newfound understanding of multi-valuedness. What is the set of all possible values for $\operatorname{arsinh}(i) + \operatorname{arsinh}(-i)$? [@problem_id:2247687]
 
 From our earlier work, we know the sets of values are:
 - $\operatorname{arsinh}(i) = \{ i(\frac{\pi}{2} + 2\pi k) \mid k \in \mathbb{Z} \}$
@@ -93,25 +93,25 @@ Since $k$ and $m$ can be any integers, their sum can be any integer. Let's call 
 
 ### Navigating the Complex Landscape: Branch Points and Cuts
 
-A [multi-valued function](@article_id:172249) is a bit of a monster to work with directly. To tame it, we can perform a kind of surgery on the complex plane, making it single-valued in a specific region. This involves identifying the trouble spots—the **[branch points](@article_id:166081)**—and connecting them with **[branch cuts](@article_id:163440)**.
+A [multi-valued function](@keyword=multi_valued_function|lang=en-US|style=Feynman) is a bit of a monster to work with directly. To tame it, we can perform a kind of surgery on the complex plane, making it single-valued in a specific region. This involves identifying the trouble spots—the **[branch points](@keyword=branch_points|lang=en-US|style=Feynman)**—and connecting them with **[branch cuts](@keyword=branch_cuts|lang=en-US|style=Feynman)**.
 
 A branch point is a pivot around which the function's different values are permuted. Looking at our formula, $w = \log(z + \sqrt{z^2+1})$, the multi-valuedness comes from two places: the square root and the logarithm.
-1. The square root $\sqrt{\zeta}$ has a [branch point](@article_id:169253) where its argument is zero. Here, that means $z^2+1=0$, which gives $z=i$ and $z=-i$. These are the two finite branch points of our function .
-2. The logarithm $\log(\zeta)$ has a branch point where its argument is zero. Could $z+\sqrt{z^2+1}=0$? If so, $\sqrt{z^2+1}=-z$, and squaring both sides gives $z^2+1=z^2$, or $1=0$, a contradiction. So, the logarithm doesn't introduce any new finite [branch points](@article_id:166081).
+1. The square root $\sqrt{\zeta}$ has a [branch point](@keyword=branch_point|lang=en-US|style=Feynman) where its argument is zero. Here, that means $z^2+1=0$, which gives $z=i$ and $z=-i$. These are the two finite branch points of our function [@problem_id:2230732].
+2. The logarithm $\log(\zeta)$ has a branch point where its argument is zero. Could $z+\sqrt{z^2+1}=0$? If so, $\sqrt{z^2+1}=-z$, and squaring both sides gives $z^2+1=z^2$, or $1=0$, a contradiction. So, the logarithm doesn't introduce any new finite [branch points](@keyword=branch_points|lang=en-US|style=Feynman).
 
-The points $z=i$ and $z=-i$ are the crucial hinges connecting the infinite sheets of our Riemann surface. The point at infinity is also a [branch point](@article_id:169253) . To make the function single-valued (to choose one "sheet"), we must draw lines—the [branch cuts](@article_id:163440)—out from these points, which we agree not to cross. A standard choice is to place cuts along the [imaginary axis](@article_id:262124) from $i$ to $i\infty$ and from $-i$ to $-i\infty$. In the complex plane with these two slits removed, our function $\operatorname{Arsinh}(z)$ is analytic: a well-behaved, differentiable function .
+The points $z=i$ and $z=-i$ are the crucial hinges connecting the infinite sheets of our Riemann surface. The point at infinity is also a [branch point](@keyword=branch_point|lang=en-US|style=Feynman) [@problem_id:2266061]. To make the function single-valued (to choose one "sheet"), we must draw lines—the [branch cuts](@keyword=branch_cuts|lang=en-US|style=Feynman)—out from these points, which we agree not to cross. A standard choice is to place cuts along the [imaginary axis](@keyword=imaginary_axis|lang=en-US|style=Feynman) from $i$ to $i\infty$ and from $-i$ to $-i\infty$. In the complex plane with these two slits removed, our function $\operatorname{Arsinh}(z)$ is analytic: a well-behaved, differentiable function [@problem_id:2247681].
 
 ### A Journey Around the World (of $i$)
 
-But what happens if we are adventurous and decide to cross a [branch cut](@article_id:174163) by walking in a loop around a branch point? Let's start at a point, say $z=1$, where the function has the real value $w = \operatorname{arsinh}(1) = \log(1+\sqrt{2})$. Now, let's take a stroll in the complex plane, making one counter-clockwise loop around the [branch point](@article_id:169253) at $z=i$.
+But what happens if we are adventurous and decide to cross a [branch cut](@keyword=branch_cut|lang=en-US|style=Feynman) by walking in a loop around a branch point? Let's start at a point, say $z=1$, where the function has the real value $w = \operatorname{arsinh}(1) = \log(1+\sqrt{2})$. Now, let's take a stroll in the complex plane, making one counter-clockwise loop around the [branch point](@keyword=branch_point|lang=en-US|style=Feynman) at $z=i$.
 
-As we circle $i$, the term $\sqrt{z^2+1}$ changes its sign. This is the very nature of a square-root [branch point](@article_id:169253). So, when we return to our starting point, the function's value has transformed into something new:
+As we circle $i$, the term $\sqrt{z^2+1}$ changes its sign. This is the very nature of a square-root [branch point](@keyword=branch_point|lang=en-US|style=Feynman). So, when we return to our starting point, the function's value has transformed into something new:
 
 $$
 w_{\text{new}} = \log(z - \sqrt{z^2+1})
 $$
 
-How is this new value related to our original $w = \log(z + \sqrt{z^2+1})$? Let's use a bit of algebraic magic, inspired by the beautiful structure of these functions  . Consider the product of the arguments of the two logarithms:
+How is this new value related to our original $w = \log(z + \sqrt{z^2+1})$? Let's use a bit of algebraic magic, inspired by the beautiful structure of these functions [@problem_id:2247651] [@problem_id:789675]. Consider the product of the arguments of the two logarithms:
 
 $$
 (z + \sqrt{z^2+1})(z - \sqrt{z^2+1}) = z^2 - (z^2+1) = -1
@@ -135,7 +135,7 @@ Walking around the branch point at $z=i$ did not bring us back to our starting v
 
 After this dizzying tour of infinite surfaces and topological journeys, let's come back to a calmer place: the neighborhood around the origin, $z=0$. How does our function behave for very small $z$? Is it as chaotic as its global structure suggests?
 
-The answer comes from its Maclaurin [series expansion](@article_id:142384). By taking the derivative, $f'(z) = (1+z^2)^{-1/2}$, expanding it using the [binomial theorem](@article_id:276171), and integrating term-by-term, we can find the power series for $\operatorname{arsinh}(z)$ :
+The answer comes from its Maclaurin [series expansion](@keyword=series_expansion|lang=en-US|style=Feynman). By taking the derivative, $f'(z) = (1+z^2)^{-1/2}$, expanding it using the [binomial theorem](@keyword=binomial_theorem|lang=en-US|style=Feynman), and integrating term-by-term, we can find the power series for $\operatorname{arsinh}(z)$ [@problem_id:2247153]:
 
 $$
 \operatorname{arsinh}(z) = z - \frac{1}{6}z^3 + \frac{3}{40}z^5 - \dots = \sum_{n=0}^{\infty} \frac{(-1)^{n} (2n)!}{4^{n} (n!)^{2} (2n+1)} z^{2n+1}

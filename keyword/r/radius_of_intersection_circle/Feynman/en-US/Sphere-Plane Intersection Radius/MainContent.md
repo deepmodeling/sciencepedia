@@ -1,5 +1,5 @@
 ## Introduction
-The intersection of a sphere and a plane is a concept of beautiful simplicity, intuitively visualized as slicing an orange to reveal a perfect circle. While this observation is common, the ability to precisely define and calculate the properties of this circle is a cornerstone of three-dimensional geometry. This article addresses the fundamental question: how do we move from this intuitive picture to a rigorous mathematical description? We will explore the geometric principles that govern this intersection, providing the tools to calculate its radius and location. In the first chapter, "Principles and Mechanisms," we will derive the core formulas using the Pythagorean theorem, [analytic geometry](@article_id:163772), and [vector algebra](@article_id:151846), and extend the concept to the [intersection of two spheres](@article_id:167733). Subsequently, the "Applications and Interdisciplinary Connections" chapter will reveal the astonishing reach of this simple idea, showing how it provides a structural foundation for theories in [dynamical systems](@article_id:146147), X-ray [crystallography](@article_id:140162), complex analysis, and even quantum mechanics.
+The intersection of a sphere and a plane is a concept of beautiful simplicity, intuitively visualized as slicing an orange to reveal a perfect circle. While this observation is common, the ability to precisely define and calculate the properties of this circle is a cornerstone of three-dimensional geometry. This article addresses the fundamental question: how do we move from this intuitive picture to a rigorous mathematical description? We will explore the geometric principles that govern this intersection, providing the tools to calculate its radius and location. In the first chapter, "Principles and Mechanisms," we will derive the core formulas using the Pythagorean theorem, [analytic geometry](@keyword=analytic_geometry|lang=en-US|style=Feynman), and [vector algebra](@keyword=vector_algebra|lang=en-US|style=Feynman), and extend the concept to the [intersection of two spheres](@keyword=intersection_of_two_spheres|lang=en-US|style=Feynman). Subsequently, the "Applications and Interdisciplinary Connections" chapter will reveal the astonishing reach of this simple idea, showing how it provides a structural foundation for theories in [dynamical systems](@keyword=dynamical_systems|lang=en-US|style=Feynman), X-ray [crystallography](@keyword=crystallography|lang=en-US|style=Feynman), complex analysis, and even quantum mechanics.
 
 ## Principles and Mechanisms
 
@@ -35,7 +35,7 @@ This makes perfect intuitive sense. If the plane passes right through the sphere
 
 ### The Geometer's Toolkit: From Pictures to Numbers
 
-This relationship is beautiful, but to use it, we need a way to find $d$, the distance from the sphere's center to the plane. This is where [analytic geometry](@article_id:163772) comes to our aid. In a 3D Cartesian coordinate system, a sphere is defined by its center $(h, k, l)$ and radius $R$, giving the equation $(x-h)^2 + (y-k)^2 + (z-l)^2 = R^2$. A plane is defined by the linear equation $Ax + By + Cz = D$.
+This relationship is beautiful, but to use it, we need a way to find $d$, the distance from the sphere's center to the plane. This is where [analytic geometry](@keyword=analytic_geometry|lang=en-US|style=Feynman) comes to our aid. In a 3D Cartesian coordinate system, a sphere is defined by its center $(h, k, l)$ and radius $R$, giving the equation $(x-h)^2 + (y-k)^2 + (z-l)^2 = R^2$. A plane is defined by the linear equation $Ax + By + Cz = D$.
 
 Fortunately, there's a standard formula to find the shortest distance $d$ from a point $(x_0, y_0, z_0)$ to a plane $Ax + By + Cz - D = 0$:
 
@@ -49,15 +49,15 @@ $$
 d = \frac{|2(1) - 2(-2) + 1(3) - 15|}{\sqrt{2^2 + (-2)^2 + 1^2}} = \frac{|2 + 4 + 3 - 15|}{\sqrt{9}} = \frac{|-6|}{3} = 2
 $$
 
-The plane is a distance of $d=2$ from the sphere's center. Now we use our [master equation](@article_id:142465):
+The plane is a distance of $d=2$ from the sphere's center. Now we use our [master equation](@keyword=master_equation|lang=en-US|style=Feynman):
 
 $$
 r = \sqrt{R^2 - d^2} = \sqrt{5^2 - 2^2} = \sqrt{25 - 4} = \sqrt{21}
 $$
 
-And just like that, we have the radius of the circle . This isn't just a mathematical curiosity; it's used in practical applications like calculating the area a robotic scanner can see on a flat wall  or calibrating optical systems . Sometimes the sphere's equation might be given in a "disguised" general form like $x^2 + y^2 + z^2 - 4x + 6y - 8z - 7 = 0$. A little algebraic detective work—the method of [completing the square](@article_id:264986)—is needed to reveal its true center $(2, -3, 4)$ and radius $R=6$, after which the procedure is exactly the same.
+And just like that, we have the radius of the circle [@problem_id:2140927]. This isn't just a mathematical curiosity; it's used in practical applications like calculating the area a robotic scanner can see on a flat wall [@problem_id:2162187] or calibrating optical systems [@problem_id:2162215]. Sometimes the sphere's equation might be given in a "disguised" general form like $x^2 + y^2 + z^2 - 4x + 6y - 8z - 7 = 0$. A little algebraic detective work—the method of [completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman)—is needed to reveal its true center $(2, -3, 4)$ and radius $R=6$, after which the procedure is exactly the same.
 
-By combining the distance formula and the Pythagorean relation, we can write down a single, magnificent formula for the radius $r$ of the circle formed by the intersection of a sphere with center $(h,k,l)$ and radius $R$, and a plane $Ax+By+Cz=D$ :
+By combining the distance formula and the Pythagorean relation, we can write down a single, magnificent formula for the radius $r$ of the circle formed by the intersection of a sphere with center $(h,k,l)$ and radius $R$, and a plane $Ax+By+Cz=D$ [@problem_id:2166809]:
 
 $$
 r = \sqrt{R^2 - \frac{(Ah+Bk+Cl-D)^2}{A^2+B^2+C^2}}
@@ -73,25 +73,25 @@ $S_2: (x-h_2)^2 + (y-k_2)^2 + (z-l_2)^2 = R_2^2$
 
 A point $(x,y,z)$ that lies on the intersection of both spheres must satisfy both equations simultaneously. Now for the magic trick. Let's expand both equations and subtract one from the other. The squared terms, $x^2, y^2, z^2$, will all cancel out, leaving us with an equation that is *linear* in $x, y,$ and $z$. Something of the form $ax+by+cz=d$. But this is the equation of a plane!
 
-This plane is called the **[radical plane](@article_id:173735)**. It contains the circle of intersection of the two spheres. So, the problem of finding the [intersection of two spheres](@article_id:167733) boils down to these steps:
-1.  Find the equation of the [radical plane](@article_id:173735) by subtracting the two sphere equations.
+This plane is called the **[radical plane](@keyword=radical_plane|lang=en-US|style=Feynman)**. It contains the circle of intersection of the two spheres. So, the problem of finding the [intersection of two spheres](@keyword=intersection_of_two_spheres|lang=en-US|style=Feynman) boils down to these steps:
+1.  Find the equation of the [radical plane](@keyword=radical_plane|lang=en-US|style=Feynman) by subtracting the two sphere equations.
 2.  Solve the problem of the intersection of this new plane with *either one* of the original spheres.
 
-This is a fantastic example of reducing a complex problem to a simpler one we already know how to handle. For instance, if you have two drone signal spheres  or sensor detection regions  , you can find the exact size of their common coverage circle using this method.
+This is a fantastic example of reducing a complex problem to a simpler one we already know how to handle. For instance, if you have two drone signal spheres [@problem_id:2139001] or sensor detection regions [@problem_id:2124880] [@problem_id:2139008], you can find the exact size of their common coverage circle using this method.
 
-There's even a special case of remarkable elegance: when two spheres intersect **orthogonally**. This means that at any point on the intersection circle, the radii of the two spheres leading to that point are perpendicular. This happens when the square of the distance between their centers, $d^2$, is exactly equal to the sum of the squares of their radii, $d^2 = R_1^2 + R_2^2$. In this specific arrangement, the geometry simplifies beautifully, giving the radius of the intersection circle as $r = \frac{R_1 R_2}{d}$ .
+There's even a special case of remarkable elegance: when two spheres intersect **orthogonally**. This means that at any point on the intersection circle, the radii of the two spheres leading to that point are perpendicular. This happens when the square of the distance between their centers, $d^2$, is exactly equal to the sum of the squares of their radii, $d^2 = R_1^2 + R_2^2$. In this specific arrangement, the geometry simplifies beautifully, giving the radius of the intersection circle as $r = \frac{R_1 R_2}{d}$ [@problem_id:2139031].
 
 ### A More Elegant Weapon: The Power of Vectors
 
 While coordinate formulas work, they can be clunky. Physicists and mathematicians often prefer the language of vectors, which captures the geometry more directly, independent of any chosen coordinate system.
 
-In this language, a sphere has a center position vector $\vec{c}$ and a radius $R$. A plane is defined by its [unit normal vector](@article_id:178357) $\hat{n}$ and a point $\vec{p_0}$ that lies on it. The distance $d$ from the sphere's center $\vec{c}$ to the plane is simply the length of the projection of the vector $(\vec{c}-\vec{p_0})$ onto the normal vector $\hat{n}$:
+In this language, a sphere has a center position vector $\vec{c}$ and a radius $R$. A plane is defined by its [unit normal vector](@keyword=unit_normal_vector|lang=en-US|style=Feynman) $\hat{n}$ and a point $\vec{p_0}$ that lies on it. The distance $d$ from the sphere's center $\vec{c}$ to the plane is simply the length of the projection of the vector $(\vec{c}-\vec{p_0})$ onto the normal vector $\hat{n}$:
 
 $$
 d = |(\vec{c}-\vec{p_0}) \cdot \hat{n}|
 $$
 
-The center of the intersection circle, $\vec{q}$, is found by starting at the sphere's center $\vec{c}$ and moving along the direction of the normal vector until we hit the plane. The [displacement vector](@article_id:262288) is the projection of $(\vec{c}-\vec{p_0})$ onto $\vec{n}$. So, the center of our circle is located at :
+The center of the intersection circle, $\vec{q}$, is found by starting at the sphere's center $\vec{c}$ and moving along the direction of the normal vector until we hit the plane. The [displacement vector](@keyword=displacement_vector|lang=en-US|style=Feynman) is the projection of $(\vec{c}-\vec{p_0})$ onto $\vec{n}$. So, the center of our circle is located at [@problem_id:2174490]:
 
 $$
 \vec{q} = \vec{c} - ((\vec{c}-\vec{p_0}) \cdot \hat{n}) \hat{n}
@@ -101,10 +101,10 @@ Once we have $d$, the radius $r$ is still found with $r = \sqrt{R^2 - d^2}$. The
 
 ### The Pursuit of Greatness: An Optimisation Epilogue
 
-Let's end with a final, thought-provoking puzzle. Imagine you have a sphere and a line that passes by it without touching. You can pivot a plane around this line like a door on a hinge. As the plane pivots, it cuts the sphere, creating different intersection circles. Which position of the plane creates the circle with the largest possible area? 
+Let's end with a final, thought-provoking puzzle. Imagine you have a sphere and a line that passes by it without touching. You can pivot a plane around this line like a door on a hinge. As the plane pivots, it cuts the sphere, creating different intersection circles. Which position of the plane creates the circle with the largest possible area? [@problem_id:2138448]
 
 The answer lies in our fundamental equation: $r^2 = R^2 - d^2$. To make the area $\pi r^2$ as large as possible, we need to make $r$ as large as possible. This means we must make $d^2$ as *small* as possible. The smallest possible value for a squared distance is zero.
 
-So, the largest circle occurs when $d=0$. This means the plane must pass through the center of the sphere. The line is fixed in space, so there is only one specific orientation of the plane where it contains both the given line *and* the center of the sphere. This plane cuts the sphere into two equal hemispheres, and the resulting circle is a [great circle](@article_id:268476) of the sphere, with radius $r=R$.
+So, the largest circle occurs when $d=0$. This means the plane must pass through the center of the sphere. The line is fixed in space, so there is only one specific orientation of the plane where it contains both the given line *and* the center of the sphere. This plane cuts the sphere into two equal hemispheres, and the resulting circle is a [great circle](@keyword=great_circle|lang=en-US|style=Feynman) of the sphere, with radius $r=R$.
 
 This beautiful result ties everything together. The very principle that allows us to calculate the size of any circular slice also guides us to find the greatest slice of all. It's a testament to the power and unity of a simple geometric idea, turning a slicing knife into a tool of discovery.

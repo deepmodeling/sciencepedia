@@ -1,7 +1,7 @@
 ## Introduction
 In the foundational world of digital electronics, Boolean algebra provides the rules for manipulating logic. However, as logical expressions grow in complexity, simplifying them through pure algebra becomes a daunting task, prone to error and lacking intuition. This challenge creates a gap between an abstract logical requirement and its simplest, most efficient hardware implementation. We need a more intuitive, visual method to bridge this divide.
 
-This article introduces the two-variable Karnaugh map (K-map), a powerful graphical tool that transforms Boolean simplification into a pattern-recognition exercise. We will explore how this simple grid provides deep insights into the structure of logic. In the first chapter, "Principles and Mechanisms," you will learn the fundamentals of constructing a K-map, the secret behind its simplification power, and how to handle special cases like "don't-care" conditions. Following that, the "Applications and Interdisciplinary Connections" chapter will demonstrate how this tool is used to design efficient combinational and [sequential circuits](@article_id:174210), from simple code converters to robust, self-correcting systems.
+This article introduces the two-variable Karnaugh map (K-map), a powerful graphical tool that transforms Boolean simplification into a pattern-recognition exercise. We will explore how this simple grid provides deep insights into the structure of logic. In the first chapter, "Principles and Mechanisms," you will learn the fundamentals of constructing a K-map, the secret behind its simplification power, and how to handle special cases like "don't-care" conditions. Following that, the "Applications and Interdisciplinary Connections" chapter will demonstrate how this tool is used to design efficient combinational and [sequential circuits](@keyword=sequential_circuits|lang=en-US|style=Feynman), from simple code converters to robust, self-correcting systems.
 
 ## Principles and Mechanisms
 
@@ -11,7 +11,7 @@ What if we could turn Boolean algebra into a visual pattern-finding game? What i
 
 ### A New Kind of Truth Table
 
-Let's start with a [simple function](@article_id:160838) of two variables, $A$ and $B$. There are only four possible worlds, four combinations of inputs: $(A=0, B=0)$, $(A=0, B=1)$, $(A=1, B=0)$, and $(A=1, B=1)$. A standard truth table lists these in a column. The K-map arranges them in a 2x2 grid.
+Let's start with a [simple function](@keyword=simple_function|lang=en-US|style=Feynman) of two variables, $A$ and $B$. There are only four possible worlds, four combinations of inputs: $(A=0, B=0)$, $(A=0, B=1)$, $(A=1, B=0)$, and $(A=1, B=1)$. A standard truth table lists these in a column. The K-map arranges them in a 2x2 grid.
 
 ```
       B=0   B=1
@@ -21,16 +21,16 @@ A=1 [ cell 3 | cell 4 ]
 
 Each cell in this grid represents one of those four worlds. The top-left cell is where $A=0$ and $B=0$ (which corresponds to the Boolean term $\overline{A}\overline{B}$). The cell to its right is where $A=0$ and $B=1$ (the term $\overline{A}B$), and so on.
 
-You’ve probably seen a Venn diagram before. Think of two overlapping circles, one for $A$ and one for $B$, inside a box. The box has four distinct regions: the area outside both circles ($\overline{A}\overline{B}$), the part of circle $A$ that doesn't overlap with $B$ ($A\overline{B}$), the part of circle $B$ that doesn't overlap with $A$ ($\overline{A}B$), and the overlapping middle part ($AB$). The K-map is exactly this! It’s just a Venn diagram that has been squared-off and flattened. The four cells of the K-map correspond perfectly to the four regions of the Venn diagram . It's a map of logical space.
+You’ve probably seen a Venn diagram before. Think of two overlapping circles, one for $A$ and one for $B$, inside a box. The box has four distinct regions: the area outside both circles ($\overline{A}\overline{B}$), the part of circle $A$ that doesn't overlap with $B$ ($A\overline{B}$), the part of circle $B$ that doesn't overlap with $A$ ($\overline{A}B$), and the overlapping middle part ($AB$). The K-map is exactly this! It’s just a Venn diagram that has been squared-off and flattened. The four cells of the K-map correspond perfectly to the four regions of the Venn diagram [@problem_id:1974958]. It's a map of logical space.
 
-Let’s plot a function on it. Consider an "inequality detector" that outputs `1` only when its two inputs, $A$ and $B$, are different. This is the exclusive-OR, or **XOR**, function. Its [truth table](@article_id:169293) is:
+Let’s plot a function on it. Consider an "inequality detector" that outputs `1` only when its two inputs, $A$ and $B$, are different. This is the exclusive-OR, or **XOR**, function. Its [truth table](@keyword=truth_table|lang=en-US|style=Feynman) is:
 
 -   $F(0,0) = 0$
 -   $F(0,1) = 1$
 -   $F(1,0) = 1$
 -   $F(1,1) = 0$
 
-To put this on a K-map, we just place the output value in the corresponding cell .
+To put this on a K-map, we just place the output value in the corresponding cell [@problem_id:1943706].
 
 **XOR Function: $F = A \oplus B$**
 ```

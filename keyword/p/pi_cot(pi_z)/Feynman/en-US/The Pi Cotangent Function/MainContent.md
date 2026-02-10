@@ -19,7 +19,7 @@ Putting it all together, near the integer $n$, our function looks like:
 $$
 \pi \cot(\pi z) \approx \pi \frac{(-1)^n}{(-1)^n \pi \epsilon} = \frac{1}{\epsilon} = \frac{1}{z-n}
 $$
-This is a stunningly simple and beautiful result! Near each and every integer pole $n$, the complicated function $\pi \cot(\pi z)$ behaves just like the elementary function $\frac{1}{z-n}$. In the language of complex analysis, this means that $\pi \cot(\pi z)$ has a **simple pole** at every integer $n$ with a **residue** of exactly 1 . The residue is like a "charge" that tells us the strength of the pole, and in this case, every pole has the same unit charge. This perfect, infinite regularity is the first secret to the function's power.
+This is a stunningly simple and beautiful result! Near each and every integer pole $n$, the complicated function $\pi \cot(\pi z)$ behaves just like the elementary function $\frac{1}{z-n}$. In the language of complex analysis, this means that $\pi \cot(\pi z)$ has a **simple pole** at every integer $n$ with a **residue** of exactly 1 [@problem_id:2263617]. The residue is like a "charge" that tells us the strength of the pole, and in this case, every pole has the same unit charge. This perfect, infinite regularity is the first secret to the function's power.
 
 ### Building a Function from its Flaws
 
@@ -33,9 +33,9 @@ This sum, however, has the tricky problem of not converging properly. But with a
 $$
 \pi \cot(\pi z) = \frac{1}{z} + \sum_{n=1}^{\infty} \left( \frac{1}{z-n} + \frac{1}{z+n} \right) = \frac{1}{z} + \sum_{n=1}^{\infty} \frac{2z}{z^2 - n^2}
 $$
-This is the celebrated **[partial fraction expansion](@article_id:264627)** of the cotangent function. It tells us that the entire global behavior of $\pi \cot(\pi z)$ is completely captured by the sum of its simplest local behaviors at its poles. This is not just a mathematical curiosity; it's a deep statement about the nature of such functions. Remarkably, this same formula can be derived from a completely different direction: by taking the [logarithmic derivative](@article_id:168744) of the [infinite product representation](@article_id:173639) for the sine function, beautifully tying the poles of the cotangent to the zeros of the sine . It also emerges from the theory of other [special functions](@article_id:142740), like the Gamma and digamma functions, showcasing the profound unity of mathematics .
+This is the celebrated **[partial fraction expansion](@keyword=partial_fraction_expansion|lang=en-US|style=Feynman)** of the cotangent function. It tells us that the entire global behavior of $\pi \cot(\pi z)$ is completely captured by the sum of its simplest local behaviors at its poles. This is not just a mathematical curiosity; it's a deep statement about the nature of such functions. Remarkably, this same formula can be derived from a completely different direction: by taking the [logarithmic derivative](@keyword=logarithmic_derivative|lang=en-US|style=Feynman) of the [infinite product representation](@keyword=infinite_product_representation|lang=en-US|style=Feynman) for the sine function, beautifully tying the poles of the cotangent to the zeros of the sine [@problem_id:457865]. It also emerges from the theory of other [special functions](@keyword=special_functions|lang=en-US|style=Feynman), like the Gamma and digamma functions, showcasing the profound unity of mathematics [@problem_id:2281144].
 
-The magic doesn't stop there. If we treat this series expansion as a kind of "potential," we can ask what its "field" looks like by taking its derivative. Differentiating term by term—a move justified by the robust convergence of the series—gives another spectacular identity :
+The magic doesn't stop there. If we treat this series expansion as a kind of "potential," we can ask what its "field" looks like by taking its derivative. Differentiating term by term—a move justified by the robust convergence of the series—gives another spectacular identity [@problem_id:2240717]:
 $$
 \frac{d}{dz} (\pi \cot(\pi z)) = -\pi^2 \csc^2(\pi z) = \sum_{n=-\infty}^{\infty} \frac{-1}{(z-n)^2}
 $$
@@ -49,7 +49,7 @@ The square of the cosecant function is simply the sum of inverse squares of the 
 
 We have seen the function from a global perspective, as a galaxy of poles. Now, let's zoom in on the core, the pole at the origin, $z=0$. Instead of building the function from its poles, we can describe it locally using a **Laurent series**, which is a power series that can include negative exponents. This is like getting a high-resolution image of the galactic center.
 
-By expanding the [sine and cosine functions](@article_id:171646) into their power series, we can find the Laurent expansion for $\pi \cot(\pi z)$ around $z=0$. The first few terms are:
+By expanding the [sine and cosine functions](@keyword=sine_and_cosine_functions|lang=en-US|style=Feynman) into their power series, we can find the Laurent expansion for $\pi \cot(\pi z)$ around $z=0$. The first few terms are:
 $$
 \pi \cot(\pi z) = \frac{1}{z} - \frac{\pi^2}{3} z - \frac{\pi^4}{45} z^3 - \frac{2\pi^6}{945} z^5 - \dots
 $$
@@ -61,11 +61,11 @@ Specifically, $\zeta(2) = \frac{\pi^2}{6}$ and $\zeta(4) = \frac{\pi^4}{90}$. Th
 $$
 \pi \cot(\pi z) = \frac{1}{z} - 2\zeta(2)z - 2\zeta(4)z^3 - 2\zeta(6)z^5 - \dots
 $$
-This is an astonishing connection! The local behavior of a trigonometric function around one of its poles is governed by the sums of inverse powers of all positive integers. This bridge between trigonometry and number theory is one of the most beautiful results in mathematics, and our function $\pi \cot(\pi z)$ is the keystone of that bridge  . These coefficients are the function's "fingerprints," and they can be used to calculate residues for more complex functions built from it .
+This is an astonishing connection! The local behavior of a trigonometric function around one of its poles is governed by the sums of inverse powers of all positive integers. This bridge between trigonometry and number theory is one of the most beautiful results in mathematics, and our function $\pi \cot(\pi z)$ is the keystone of that bridge [@problem_id:2272451] [@problem_id:2281708]. These coefficients are the function's "fingerprints," and they can be used to calculate residues for more complex functions built from it [@problem_id:2241625].
 
 ### The Cotangent as a Summation Engine
 
-So, we have a function with an infinitely repeating, perfectly understood pattern of poles. What can we do with it? It turns out this structure makes $\pi \cot(\pi z)$ an extraordinary machine for a seemingly unrelated task: summing [infinite series](@article_id:142872).
+So, we have a function with an infinitely repeating, perfectly understood pattern of poles. What can we do with it? It turns out this structure makes $\pi \cot(\pi z)$ an extraordinary machine for a seemingly unrelated task: summing [infinite series](@keyword=infinite_series|lang=en-US|style=Feynman).
 
 The technique, a jewel of complex analysis, relies on the **Residue Theorem**. The core idea is this: suppose we want to calculate a sum like $\sum_{n=-\infty}^{\infty} f(n)$. We can construct a new function, $g(z) = f(z) \pi \cot(\pi z)$. What are the residues of this new function at the integers? Since $\pi \cot(\pi z)$ has a residue of 1 at each integer $n$ (and assuming $f(z)$ is well-behaved there), the residue of $g(z)$ at $z=n$ is simply $f(n)$.
 
@@ -73,12 +73,12 @@ The Residue Theorem states that the integral of $g(z)$ around a large closed loo
 $$
 \sum_{n=-\infty}^{\infty} f(n) = - (\text{Sum of residues of } f(z)\pi\cot(\pi z) \text{ at the poles of } f(z))
 $$
-This transforms the problem of summing an [infinite series](@article_id:142872) into the often much simpler algebraic problem of finding a few residues!
+This transforms the problem of summing an [infinite series](@keyword=infinite_series|lang=en-US|style=Feynman) into the often much simpler algebraic problem of finding a few residues!
 
 Let's see this magic in action. Consider the function $f(z) = \frac{1}{z^2}$. We want to find $\sum_{n=1}^{\infty} \frac{1}{n^2}$. Our method tells us to look at the function $g(z) = \frac{\pi \cot(\pi z)}{z^2}$. The sum of all its finite residues must equal zero if the function behaves nicely at infinity (which it does).
 The residues are:
--   At $z=n$ (for $n \neq 0$): The residue is $\frac{1}{n^2}$ .
--   At $z=0$: This is a more complex pole. From its Laurent series, we found the residue to be $-\frac{\pi^2}{3}$ .
+-   At $z=n$ (for $n \neq 0$): The residue is $\frac{1}{n^2}$ [@problem_id:904957].
+-   At $z=0$: This is a more complex pole. From its Laurent series, we found the residue to be $-\frac{\pi^2}{3}$ [@problem_id:2272451].
 
 The "sum of all residues is zero" principle implies:
 $$

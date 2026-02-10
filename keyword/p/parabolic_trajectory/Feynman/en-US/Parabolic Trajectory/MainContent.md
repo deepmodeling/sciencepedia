@@ -17,26 +17,26 @@ Now we have two equations, one for $x$ and one for $y$, both depending on time, 
 
 $$ y(x) = \left(\frac{v_{0y}}{v_{0x}}\right) x - \left(\frac{g}{2 v_{0x}^{2}}\right) x^{2} $$
 
-Look at this equation! It is the equation of a parabola. The height $y$ is a quadratic function of the horizontal distance $x$. This simple derivation shows us that any object moving under the influence of constant gravity must follow a parabolic path . This is not an accident; it is a direct consequence of a constant horizontal speed and a constant vertical acceleration. This equation is the mathematical blueprint for the trajectory, allowing us to predict where a projectile will land on an incline or determine its position at any point in its flight .
+Look at this equation! It is the equation of a parabola. The height $y$ is a quadratic function of the horizontal distance $x$. This simple derivation shows us that any object moving under the influence of constant gravity must follow a parabolic path [@problem_id:2210014]. This is not an accident; it is a direct consequence of a constant horizontal speed and a constant vertical acceleration. This equation is the mathematical blueprint for the trajectory, allowing us to predict where a projectile will land on an incline or determine its position at any point in its flight [@problem_id:2159524].
 
 ### The Hidden Order: Geometry Beneath the Surface
 
 So, the path is a parabola. That's a nice start. But nature is often more subtle and beautiful than we first suspect. Are there deeper properties hidden within this simple arc?
 
-Let's consider a classic feature of a parabola: its **focus**. You may know that a [parabolic mirror](@article_id:166036) or antenna has a special point; all incoming parallel rays of light or radio waves are reflected and converge at this single point, the focus. It's a point of concentration, of special significance. It might surprise you to learn that the trajectory of our simple thrown ball also has a focus! It’s not just a mathematical ghost; it’s a real point in space associated with the motion. If a projectile is launched from the origin with initial velocity components $(v_{0x}, v_{0y})$, the focus of its path is located at the coordinates:
+Let's consider a classic feature of a parabola: its **focus**. You may know that a [parabolic mirror](@keyword=parabolic_mirror|lang=en-US|style=Feynman) or antenna has a special point; all incoming parallel rays of light or radio waves are reflected and converge at this single point, the focus. It's a point of concentration, of special significance. It might surprise you to learn that the trajectory of our simple thrown ball also has a focus! It’s not just a mathematical ghost; it’s a real point in space associated with the motion. If a projectile is launched from the origin with initial velocity components $(v_{0x}, v_{0y})$, the focus of its path is located at the coordinates:
 
 $$ (x_f, y_f) = \left( \frac{v_{0x} v_{0y}}{g}, \frac{v_{0y}^{2} - v_{0x}^{2}}{2 g} \right) $$
-
+[@problem_id:2074958]
 
 For a moment, this might seem like a mere mathematical curiosity. But as we will see, this focus is the key that unlocks a much grander connection to the orbits of planets and comets.
 
-The elegance doesn't stop there. The ancient Greek mathematician Archimedes discovered a breathtakingly simple property of the parabolic arch. If you consider the area enclosed by the projectile's path and the ground, this area ($A_{arch}$) is exactly two-thirds of the area of the rectangle that encloses it ($A_{rect}$), where the rectangle's base is the projectile's range $R$ and its height is the maximum height $H$ .
+The elegance doesn't stop there. The ancient Greek mathematician Archimedes discovered a breathtakingly simple property of the parabolic arch. If you consider the area enclosed by the projectile's path and the ground, this area ($A_{arch}$) is exactly two-thirds of the area of the rectangle that encloses it ($A_{rect}$), where the rectangle's base is the projectile's range $R$ and its height is the maximum height $H$ [@problem_id:2227694].
 
 $$ \frac{A_{arch}}{A_{rect}} = \frac{2}{3} $$
 
 Think about that. It doesn't matter how fast you throw the ball, or at what angle. This ratio is always, universally, $\frac{2}{3}$. It is a perfect, simple rule hidden in plain sight, a piece of mathematical poetry written by the laws of physics.
 
-We can even describe how the path bends. The **radius of curvature** tells us how sharp a curve is. A small radius means a sharp turn, like a hairpin bend; a large radius means a gentle curve, like a wide highway turn. For a projectile, the path is not uniformly curved. It is most sharply curved at its very apex, where it momentarily travels horizontally, and it is "flatter," or less curved, at the launch and landing points. For a water jet launched at $25.0 \text{ m/s}$ at a $55.0^\circ$ angle, the [radius of curvature](@article_id:274196) at the apex is about $21.0 \text{ m}$, while at the launch point it is a much larger $111 \text{ m}$ . This means the trajectory bends most aggressively at the top, a subtle detail that our physical intuition confirms.
+We can even describe how the path bends. The **radius of curvature** tells us how sharp a curve is. A small radius means a sharp turn, like a hairpin bend; a large radius means a gentle curve, like a wide highway turn. For a projectile, the path is not uniformly curved. It is most sharply curved at its very apex, where it momentarily travels horizontally, and it is "flatter," or less curved, at the launch and landing points. For a water jet launched at $25.0 \text{ m/s}$ at a $55.0^\circ$ angle, the [radius of curvature](@keyword=radius_of_curvature|lang=en-US|style=Feynman) at the apex is about $21.0 \text{ m}$, while at the launch point it is a much larger $111 \text{ m}$ [@problem_id:2075011]. This means the trajectory bends most aggressively at the top, a subtle detail that our physical intuition confirms.
 
 ### The Great Escape: Energy and Cosmic Paths
 
@@ -48,17 +48,17 @@ For any object moving under the Sun's gravity (an inverse-square force), its tot
 
 -   If $E < 0$, the object doesn't have enough energy to escape. It is gravitationally bound, forever tracing an **ellipse**.
 -   If $E > 0$, the object has more than enough energy to escape. It follows a **hyperbola**, arriving from infinity and returning to infinity with energy to spare.
--   If $E = 0$, we have the critical, knife-edge case. The object has *exactly* the minimum energy required to escape the Sun's gravity. It can just make it to an infinite distance, arriving with zero velocity. This unique, boundary-case trajectory is a **parabola** .
+-   If $E = 0$, we have the critical, knife-edge case. The object has *exactly* the minimum energy required to escape the Sun's gravity. It can just make it to an infinite distance, arriving with zero velocity. This unique, boundary-case trajectory is a **parabola** [@problem_id:2085614].
 
-A parabolic trajectory in [orbital mechanics](@article_id:147366) is the signature of zero total energy! This is a profound and powerful link between a physical quantity (energy) and a geometric shape.
+A parabolic trajectory in [orbital mechanics](@keyword=orbital_mechanics|lang=en-US|style=Feynman) is the signature of zero total energy! This is a profound and powerful link between a physical quantity (energy) and a geometric shape.
 
-This idea gives us the true meaning of **[escape velocity](@article_id:157191)**. The [escape velocity](@article_id:157191) at a distance $r$ from a star of mass $M$ is the speed an object must have to achieve a zero-energy parabolic orbit. By setting the total energy to zero, we can easily find this speed:
+This idea gives us the true meaning of **[escape velocity](@keyword=escape_velocity|lang=en-US|style=Feynman)**. The [escape velocity](@keyword=escape_velocity|lang=en-US|style=Feynman) at a distance $r$ from a star of mass $M$ is the speed an object must have to achieve a zero-energy parabolic orbit. By setting the total energy to zero, we can easily find this speed:
 
 $$ \frac{1}{2}mv^2 - \frac{GMm}{r} = 0 \quad \implies \quad v_{esc} = \sqrt{\frac{2GM}{r}} $$
 
-Any object at distance $r$ moving with exactly this speed is on a parabolic escape path . An object moving slower is trapped in an ellipse; an object moving faster will escape on a hyperbola.
+Any object at distance $r$ moving with exactly this speed is on a parabolic escape path [@problem_id:2068771]. An object moving slower is trapped in an ellipse; an object moving faster will escape on a hyperbola.
 
-This isn't just theory; it's the daily bread of [space mission design](@article_id:177104). Imagine a probe from interstellar space approaching a star on a parabolic path. It has zero total energy. To capture it into a [stable circular orbit](@article_id:171900) (which has negative energy), engineers must fire thrusters to *reduce* its speed at the point of closest approach. The probe is moving too fast to be captured naturally; its speed must be lowered from the parabolic escape velocity to the slower circular orbit velocity .
+This isn't just theory; it's the daily bread of [space mission design](@keyword=space_mission_design|lang=en-US|style=Feynman). Imagine a probe from interstellar space approaching a star on a parabolic path. It has zero total energy. To capture it into a [stable circular orbit](@keyword=stable_circular_orbit|lang=en-US|style=Feynman) (which has negative energy), engineers must fire thrusters to *reduce* its speed at the point of closest approach. The probe is moving too fast to be captured naturally; its speed must be lowered from the parabolic escape velocity to the slower circular orbit velocity [@problem_id:2036900].
 
 ### A Unifying Principle
 
@@ -66,6 +66,6 @@ We seem to have two different stories. The path of a thrown ball is a parabola b
 
 The final, beautiful insight is that these are not two different stories, but two views of the same story. The "uniform gravity" we experience on Earth is itself an approximation. The Earth's gravitational field is truly an inverse-square field, pulling everything toward its center. When you throw a ball, it is technically entering a vast elliptical orbit around the center of the Earth!
 
-So why does it look like a parabola? Because the Earth is enormous ($R_{Earth} \approx 6400 \text{ km}$), and the path of your thrown ball is minuscule in comparison. You are looking at a tiny, tiny segment of an immense ellipse. And if you mathematically zoom in on the very top (the apocenter) of a very elongated ellipse—an orbit that nearly escapes—you find that its shape is perfectly described by a parabola . The equation for a projectile on a "flat Earth" is the limiting case of the equation for an orbit on a "round Earth".
+So why does it look like a parabola? Because the Earth is enormous ($R_{Earth} \approx 6400 \text{ km}$), and the path of your thrown ball is minuscule in comparison. You are looking at a tiny, tiny segment of an immense ellipse. And if you mathematically zoom in on the very top (the apocenter) of a very elongated ellipse—an orbit that nearly escapes—you find that its shape is perfectly described by a parabola [@problem_id:2074974]. The equation for a projectile on a "flat Earth" is the limiting case of the equation for an orbit on a "round Earth".
 
 Herein lies the unity. The simple parabolic arc of a water fountain is not a different kind of physics from the majestic sweep of a comet. It is a local snapshot of the same cosmic dance. The parabola stands as a fundamental bridge in our understanding—the boundary between being trapped and being free, the line separating the finite from the infinite. It is a shape born from the simplest rules of motion, yet it governs the fate of objects on a cosmic scale.

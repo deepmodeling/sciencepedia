@@ -17,13 +17,13 @@ We are going to move these beads along their tracks according to a single, simpl
 
 But where is our curve? We're not done yet. As our two beads, $Q_0$ and $Q_1$, are moving, we connect them with a *third* imaginary track, the line segment $Q_0Q_1$. And on this moving, shrinking, and rotating track, we place our final point, the star of the show, which we'll call $B$. This point $B$ plays the same game: as $Q_0$ and $Q_1$ move, $B$ glides along the track between them, always having traveled the same fraction $t$ of the distance.
 
-The path that the point $B$ traces as $t$ goes from 0 to 1 is the quadratic Bézier curve. This recursive process of linear interpolation is known as **de Casteljau's algorithm**. When $t=0.5$, for instance, $Q_0$ is the midpoint of $P_0P_1$, $Q_1$ is the midpoint of $P_1P_2$, and our curve point $B(0.5)$ is the midpoint of the segment connecting those two midpoints . This construction gives us a powerful intuition: the curve is a blend of blends, a smooth compromise between the straight lines of the control polygon.
+The path that the point $B$ traces as $t$ goes from 0 to 1 is the quadratic Bézier curve. This recursive process of linear interpolation is known as **de Casteljau's algorithm**. When $t=0.5$, for instance, $Q_0$ is the midpoint of $P_0P_1$, $Q_1$ is the midpoint of $P_1P_2$, and our curve point $B(0.5)$ is the midpoint of the segment connecting those two midpoints [@problem_id:2110538]. This construction gives us a powerful intuition: the curve is a blend of blends, a smooth compromise between the straight lines of the control polygon.
 
 ### From Motion to Math: The Master Formula
 
 This geometric dance is delightful, but for a computer, we need a more direct language: algebra. Let's translate our game into equations.
 
-The position of our first bead, $Q_0$, which moves from $P_0$ to $P_1$, is a simple [linear interpolation](@article_id:136598):
+The position of our first bead, $Q_0$, which moves from $P_0$ to $P_1$, is a simple [linear interpolation](@keyword=linear_interpolation|lang=en-US|style=Feynman):
 $$ Q_0(t) = (1-t)P_0 + tP_1 $$
 
 Similarly, the position of our second bead, $Q_1$, is:
@@ -43,28 +43,28 @@ And there it is. The famous formula for a quadratic Bézier curve. It's not some
 
 ### The Tug-of-War: Weights and the Safe Enclosure
 
-Let's look closely at the "coefficients" in front of our control points: $(1-t)^2$, $2t(1-t)$, and $t^2$. These are the **Bernstein basis polynomials** of degree 2. Think of them as "dials of influence" or "[weighting functions](@article_id:263669)". For any value of $t$, they tell us how much "pull" each control point has on the final position of the point $B(t)$.
+Let's look closely at the "coefficients" in front of our control points: $(1-t)^2$, $2t(1-t)$, and $t^2$. These are the **Bernstein basis polynomials** of degree 2. Think of them as "dials of influence" or "[weighting functions](@keyword=weighting_functions|lang=en-US|style=Feynman)". For any value of $t$, they tell us how much "pull" each control point has on the final position of the point $B(t)$.
 
 *   At $t=0$, the weights are $(1, 0, 0)$. All the influence belongs to $P_0$, so $B(0)=P_0$. The curve starts at $P_0$.
 *   At $t=1$, the weights are $(0, 0, 1)$. All the influence belongs to $P_2$, so $B(1)=P_2$. The curve ends at $P_2$.
-*   At any $t$ between 0 and 1, all three control points have some influence. For example, the influence of $P_1$, given by the term $\beta(t) = 2t(1-t)$, is zero at the ends and reaches its maximum value at $t=1/2$ . This confirms our intuition that the middle control point has the strongest pull on the middle of the curve.
+*   At any $t$ between 0 and 1, all three control points have some influence. For example, the influence of $P_1$, given by the term $\beta(t) = 2t(1-t)$, is zero at the ends and reaches its maximum value at $t=1/2$ [@problem_id:2110555]. This confirms our intuition that the middle control point has the strongest pull on the middle of the curve.
 
 These weights have two magical properties. First, for any $t$ in $[0, 1]$, they are all non-negative. Second, they always add up to exactly 1:
 $$ (1-t)^2 + 2t(1-t) + t^2 = (1-2t+t^2) + (2t-2t^2) + t^2 = 1 $$
-This "partition of unity" property  is profoundly important. An average where the weights are non-negative and sum to one is called a **[convex combination](@article_id:273708)**. This means that for any $t$, the point $B(t)$ is located *inside* the triangle formed by the three control points, $\triangle P_0P_1P_2$. This is the **[convex hull property](@article_id:167751)** . It gives designers a wonderful guarantee: no matter where they place $P_1$, the curve will never fly outside the triangle defined by the control points. It is tamed, predictable, and safely contained within its "hull".
+This "partition of unity" property [@problem_id:2110559] is profoundly important. An average where the weights are non-negative and sum to one is called a **[convex combination](@keyword=convex_combination|lang=en-US|style=Feynman)**. This means that for any $t$, the point $B(t)$ is located *inside* the triangle formed by the three control points, $\triangle P_0P_1P_2$. This is the **[convex hull property](@keyword=convex_hull_property|lang=en-US|style=Feynman)** [@problem_id:2110555]. It gives designers a wonderful guarantee: no matter where they place $P_1$, the curve will never fly outside the triangle defined by the control points. It is tamed, predictable, and safely contained within its "hull".
 
 ### The Secret Life of Curves: Velocity, Acceleration, and Parabolas
 
 So far, we have a geometric definition and an algebraic one. Now, let's put on our physicist hats and imagine a particle moving along this path, $B(t)$, where $t$ represents time. What is its velocity? Its acceleration? The answers reveal the deepest secret of the quadratic Bézier curve.
 
-The velocity vector, $B'(t)$, is found by taking the derivative of our master formula with respect to $t$. The result is wonderfully symmetric and relates back to our control polygon :
+The velocity vector, $B'(t)$, is found by taking the derivative of our master formula with respect to $t$. The result is wonderfully symmetric and relates back to our control polygon [@problem_id:2110564]:
 $$ B'(t) = 2(P_1 - P_0)(1-t) + 2(P_2 - P_1)t $$
 Look at this! The velocity itself is a simple linear Bézier curve. It's an interpolation between two vectors: the vector from $P_0$ to $P_1$ (scaled by 2) and the vector from $P_1$ to $P_2$ (scaled by 2). This tells us something incredibly practical. At the start of the curve ($t=0$), the velocity is $2(P_1 - P_0)$. This means the curve *starts out* moving in the direction from $P_0$ to $P_1$. At the end ($t=1$), the velocity is $2(P_2 - P_1)$, so the curve *arrives* pointing in the direction from $P_1$ to $P_2$. The first and last legs of the control polygon are tangent to the curve at its endpoints! This gives designers immediate and intuitive control over the curve's start and end directions.
 
-Now for the punchline. What about the acceleration, $B''(t)$? We differentiate again. What we find is almost shockingly simple :
+Now for the punchline. What about the acceleration, $B''(t)$? We differentiate again. What we find is almost shockingly simple [@problem_id:2110565]:
 $$ B''(t) = 2(P_2 - P_1) - 2(P_1 - P_0) = 2(P_0 - 2P_1 + P_2) $$
-The parameter $t$ has vanished! The [acceleration vector](@article_id:175254) is **constant** throughout the entire motion. It doesn't depend on where the particle is on the curve. This is a revelation. What kind of path does an object follow if its acceleration is constant? Think of a ball thrown through the air (ignoring [air resistance](@article_id:168470)). It is pulled by the [constant acceleration](@article_id:268485) of gravity, and its path is a **parabola**.
+The parameter $t$ has vanished! The [acceleration vector](@keyword=acceleration_vector|lang=en-US|style=Feynman) is **constant** throughout the entire motion. It doesn't depend on where the particle is on the curve. This is a revelation. What kind of path does an object follow if its acceleration is constant? Think of a ball thrown through the air (ignoring [air resistance](@keyword=air_resistance|lang=en-US|style=Feynman)). It is pulled by the [constant acceleration](@keyword=constant_acceleration|lang=en-US|style=Feynman) of gravity, and its path is a **parabola**.
 
-This means that *every single quadratic Bézier curve, for any non-collinear set of control points, is an arc of a parabola* . This beautiful, hidden unity connects a modern tool of digital design with the classical [conic sections](@article_id:174628) studied by the ancient Greeks and the laws of motion discovered by Galileo and Newton. This is not just a mathematical curiosity. Knowing the curve is a parabola means we can easily find its properties, like its vertex—the highest or lowest point—by simply finding the moment in time $t$ when the vertical component of the velocity is zero .
+This means that *every single quadratic Bézier curve, for any non-collinear set of control points, is an arc of a parabola* [@problem_id:2110537]. This beautiful, hidden unity connects a modern tool of digital design with the classical [conic sections](@keyword=conic_sections|lang=en-US|style=Feynman) studied by the ancient Greeks and the laws of motion discovered by Galileo and Newton. This is not just a mathematical curiosity. Knowing the curve is a parabola means we can easily find its properties, like its vertex—the highest or lowest point—by simply finding the moment in time $t$ when the vertical component of the velocity is zero [@problem_id:2140249].
 
 From a simple game of sliding beads to the profound realization of a universal parabolic form, the quadratic Bézier curve reveals how simple rules can generate elegant, predictable, and deeply beautiful structures.

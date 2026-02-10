@@ -1,9 +1,9 @@
 ## Introduction
-For many, the [sine and cosine functions](@article_id:171646) are reliable tools, forever oscillating between -1 and 1. Their behavior is predictable, governed by steadfast rules like the Pythagorean identity, $\cos^2(x) + \sin^2(x) = 1$. However, this familiar picture is confined to the one-dimensional real number line. This article addresses the knowledge gap that arises when we ask a simple but profound question: What happens when sine and cosine venture into the vast, two-dimensional landscape of complex numbers? Prepare to see comfortable rules crumble and a deeper, more unified mathematical reality emerge. Across the following chapters, we will explore this fascinating extension. In "Principles and Mechanisms," we will redefine these functions using Euler's formula, discovering their unbounded nature and their intimate relationship with hyperbolic functions. Subsequently, in "Applications and Interdisciplinary Connections," we will see how this expanded view provides powerful tools for physics and engineering, revealing the hidden unity between trigonometry, logarithms, and the language of the universe. Our journey begins by rebuilding these functions from their most fundamental core.
+For many, the [sine and cosine functions](@keyword=sine_and_cosine_functions|lang=en-US|style=Feynman) are reliable tools, forever oscillating between -1 and 1. Their behavior is predictable, governed by steadfast rules like the Pythagorean identity, $\cos^2(x) + \sin^2(x) = 1$. However, this familiar picture is confined to the one-dimensional real number line. This article addresses the knowledge gap that arises when we ask a simple but profound question: What happens when sine and cosine venture into the vast, two-dimensional landscape of complex numbers? Prepare to see comfortable rules crumble and a deeper, more unified mathematical reality emerge. Across the following chapters, we will explore this fascinating extension. In "Principles and Mechanisms," we will redefine these functions using Euler's formula, discovering their unbounded nature and their intimate relationship with hyperbolic functions. Subsequently, in "Applications and Interdisciplinary Connections," we will see how this expanded view provides powerful tools for physics and engineering, revealing the hidden unity between trigonometry, logarithms, and the language of the universe. Our journey begins by rebuilding these functions from their most fundamental core.
 
 ## Principles and Mechanisms
 
-If you've ever played with numbers, you know that some rules are sacred. You learn them in school and they become part of the very furniture of your mind. For instance, you know that the [sine and cosine functions](@article_id:171646) are like the gentle, repeating waves of the ocean—they oscillate politely between $-1$ and $1$, never daring to venture beyond. You know that for any angle $x$, the Pythagorean identity $\cos^2(x) + \sin^2(x) = 1$ holds true, a perfect circle of certainty. But what if I told you that these comfortable rules are just shadows on the wall of a much grander, stranger, and more beautiful reality? To see the full picture, we must do what mathematicians love to do: we must be bold and ask "what if?". What if we let our functions roam free in the vast, two-dimensional landscape of complex numbers?
+If you've ever played with numbers, you know that some rules are sacred. You learn them in school and they become part of the very furniture of your mind. For instance, you know that the [sine and cosine functions](@keyword=sine_and_cosine_functions|lang=en-US|style=Feynman) are like the gentle, repeating waves of the ocean—they oscillate politely between $-1$ and $1$, never daring to venture beyond. You know that for any angle $x$, the Pythagorean identity $\cos^2(x) + \sin^2(x) = 1$ holds true, a perfect circle of certainty. But what if I told you that these comfortable rules are just shadows on the wall of a much grander, stranger, and more beautiful reality? To see the full picture, we must do what mathematicians love to do: we must be bold and ask "what if?". What if we let our functions roam free in the vast, two-dimensional landscape of complex numbers?
 
 ### A Definition from the Heavens
 
@@ -11,7 +11,7 @@ Our journey begins not with triangles or circles, but with one of the most profo
 $$
 \exp(ix) = \cos(x) + i\sin(x)
 $$
-This formula is a bridge connecting the [exponential function](@article_id:160923)—the engine of growth—to the trigonometric functions—the language of rotation and oscillation. It's so beautiful and powerful that mathematicians decided it must be the *defining* relationship. By rearranging it, we can express [sine and cosine](@article_id:174871) in a new, and for our purposes, much more fundamental way:
+This formula is a bridge connecting the [exponential function](@keyword=exponential_function|lang=en-US|style=Feynman)—the engine of growth—to the trigonometric functions—the language of rotation and oscillation. It's so beautiful and powerful that mathematicians decided it must be the *defining* relationship. By rearranging it, we can express [sine and cosine](@keyword=sine_and_cosine|lang=en-US|style=Feynman) in a new, and for our purposes, much more fundamental way:
 $$
 \cos(z) = \frac{\exp(iz) + \exp(-iz)}{2}
 $$
@@ -34,7 +34,7 @@ $$
 $$
 Look at that! No imaginary unit $i$ in sight. The result is purely real. If you grab a calculator, you'll find this value is approximately $1.543$. This should set off alarm bells! We have just found a "cosine" value that is *greater than 1*. The familiar walls of the $[-1, 1]$ interval have just crumbled. Our functions are not the tame, bounded waves we thought they were.
 
-You might also recognize the expression $\frac{\exp(1) + \exp(-1)}{2}$. This is the **hyperbolic cosine** of 1, written as $\cosh(1)$. It seems our journey into the complex realm has unexpectedly led us to encounter a different [family of functions](@article_id:136955)—the [hyperbolic functions](@article_id:164681) . This is no coincidence.
+You might also recognize the expression $\frac{\exp(1) + \exp(-1)}{2}$. This is the **hyperbolic cosine** of 1, written as $\cosh(1)$. It seems our journey into the complex realm has unexpectedly led us to encounter a different [family of functions](@keyword=family_of_functions|lang=en-US|style=Feynman)—the [hyperbolic functions](@keyword=hyperbolic_functions|lang=en-US|style=Feynman) [@problem_id:2273765]. This is no coincidence.
 
 ### The Secret Identity of Sine and Cosine
 
@@ -52,7 +52,7 @@ Multiplying the numerator and denominator by $i$ gives us the elegant result:
 $$
 \sin(iy) = i\sinh(y)
 $$
-These two results, $\cos(iy) = \cosh(y)$ and $\sin(iy) = i\sinh(y)$, are incredibly important . They are the Rosetta Stone that translates between the circular [trigonometric functions](@article_id:178424) and their hyperbolic counterparts. A rotation in the argument by $i$ (from real $y$ to imaginary $iy$) transforms one family of functions into the other. The relationship is perfectly symmetric, too. A similar calculation shows that $\cosh(iz) = \cos(z)$ . Trigonometric and [hyperbolic functions](@article_id:164681) are not distant cousins; they are siblings, two different projections of the same underlying reality governed by the [complex exponential function](@article_id:169302). This unity extends to their basic properties, like symmetry. Just as $\cos(x)$ is an [even function](@article_id:164308) and $\sin(x)$ is an odd one, their hyperbolic brethren $\cosh(z)$ and $\sinh(z)$ follow suit, a fact that falls right out of their exponential definitions .
+These two results, $\cos(iy) = \cosh(y)$ and $\sin(iy) = i\sinh(y)$, are incredibly important [@problem_id:2284579]. They are the Rosetta Stone that translates between the circular [trigonometric functions](@keyword=trigonometric_functions|lang=en-US|style=Feynman) and their hyperbolic counterparts. A rotation in the argument by $i$ (from real $y$ to imaginary $iy$) transforms one family of functions into the other. The relationship is perfectly symmetric, too. A similar calculation shows that $\cosh(iz) = \cos(z)$ [@problem_id:2245634]. Trigonometric and [hyperbolic functions](@keyword=hyperbolic_functions|lang=en-US|style=Feynman) are not distant cousins; they are siblings, two different projections of the same underlying reality governed by the [complex exponential function](@keyword=complex_exponential_function|lang=en-US|style=Feynman). This unity extends to their basic properties, like symmetry. Just as $\cos(x)$ is an [even function](@keyword=even_function|lang=en-US|style=Feynman) and $\sin(x)$ is an odd one, their hyperbolic brethren $\cosh(z)$ and $\sinh(z)$ follow suit, a fact that falls right out of their exponential definitions [@problem_id:2245630].
 
 ### Old Laws in a New Land
 
@@ -62,7 +62,7 @@ We square our definitions:
 $$
 \cos^2(z) = \left( \frac{\exp(iz) + \exp(-iz)}{2} \right)^2 = \frac{\exp(i2z) + 2\exp(iz)\exp(-iz) + \exp(-i2z)}{4} = \frac{\exp(i2z) + 2 + \exp(-i2z)}{4}
 $$
-For sine, we must be careful with the denominator $(2i)^2 = 4i^2 = -4$ . This is a common pitfall!
+For sine, we must be careful with the denominator $(2i)^2 = 4i^2 = -4$ [@problem_id:2260583]. This is a common pitfall!
 $$
 \sin^2(z) = \left( \frac{\exp(iz) - \exp(-iz)}{2i} \right)^2 = \frac{\exp(i2z) - 2 + \exp(-i2z)}{-4} = \frac{-\exp(i2z) + 2 - \exp(-i2z)}{4}
 $$
@@ -70,7 +70,7 @@ Now, add them together:
 $$
 \cos^2(z) + \sin^2(z) = \frac{(\exp(i2z) + 2 + \exp(-i2z)) + (-\exp(i2z) + 2 - \exp(-i2z))}{4} = \frac{4}{4} = 1
 $$
-It holds! It holds perfectly for any complex number $z$. This is a spectacular result. It tells us that our extension into the complex plane was done "correctly." The deep structural truths are preserved. This is an example of a powerful idea in mathematics known as the **[principle of permanence of functional relations](@article_id:176415)**: analytic identities that hold for real numbers continue to hold when extended to complex numbers.
+It holds! It holds perfectly for any complex number $z$. This is a spectacular result. It tells us that our extension into the complex plane was done "correctly." The deep structural truths are preserved. This is an example of a powerful idea in mathematics known as the **[principle of permanence of functional relations](@keyword=principle_of_permanence_of_functional_relations|lang=en-US|style=Feynman)**: analytic identities that hold for real numbers continue to hold when extended to complex numbers.
 
 ### Unbounded and Unchained
 
@@ -80,7 +80,7 @@ Let $z = x + iy$. Through a bit of algebra involving the sum-of-angles formulas 
 $$
 |\cos(z)|^2 + |\sin(z)|^2 = \cosh(2y)
 $$
-This is a revelation! . Unlike the real case where the sum is always 1, here the sum depends on the imaginary part, $y$. The hyperbolic cosine, $\cosh(2y)$, grows enormously as $y$ moves away from zero. This means that $|\cos(z)|$ and $|\sin(z)|$ are **unbounded**. They can become arbitrarily large!
+This is a revelation! [@problem_id:2280888]. Unlike the real case where the sum is always 1, here the sum depends on the imaginary part, $y$. The hyperbolic cosine, $\cosh(2y)$, grows enormously as $y$ moves away from zero. This means that $|\cos(z)|$ and $|\sin(z)|$ are **unbounded**. They can become arbitrarily large!
 
 This is why $\cos(i) \approx 1.543$. Here, $z = 0 + 1i$, so $x=0$ and $y=1$. The sum of the squares of the magnitudes is $\cosh(2 \cdot 1) \approx 3.76$. Our functions are no longer tame little waves; they are vast, undulating surfaces that soar to infinity as you venture away from the real axis. This is the price and the power of the complex domain: we lose the comfort of boundedness, but we gain a universe of rich structure.
 
@@ -92,7 +92,7 @@ Let's find the zeros of $\sin(z)$. We want to solve $\sin(z) = 0$. Let $z = x+iy
 $$
 \sin(x+iy) = \sin(x)\cosh(y) + i\cos(x)\sinh(y) = 0
 $$
-For a complex number to be zero, both its [real and imaginary parts](@article_id:163731) must be zero.
+For a complex number to be zero, both its [real and imaginary parts](@keyword=real_and_imaginary_parts|lang=en-US|style=Feynman) must be zero.
 1.  $\sin(x)\cosh(y) = 0$
 2.  $\cos(x)\sinh(y) = 0$
 
@@ -100,6 +100,6 @@ From the first equation, since $\cosh(y)$ is always greater than or equal to 1 (
 
 Now, substitute this into the second equation. We know that if $x=n\pi$, then $\cos(x)$ will be either $1$ or $-1$. In either case, it's not zero. So, for the second equation $\cos(x)\sinh(y) = 0$ to hold, we are forced to conclude that $\sinh(y) = 0$. The only real number $y$ for which $\sinh(y) = 0$ is $y=0$.
 
-So, the only solutions are those where $y=0$ and $x=n\pi$. This means the zeros of $\sin(z)$ are $z = n\pi$. All the zeros lie on the real axis, right where we found them in high school! . Expanding to the complex plane did not create a single new zero off the real line. A similar analysis shows that the zeros of $\cos(z)$ are also all confined to the real axis at $z = \frac{\pi}{2} + n\pi$.
+So, the only solutions are those where $y=0$ and $x=n\pi$. This means the zeros of $\sin(z)$ are $z = n\pi$. All the zeros lie on the real axis, right where we found them in high school! [@problem_id:2287070]. Expanding to the complex plane did not create a single new zero off the real line. A similar analysis shows that the zeros of $\cos(z)$ are also all confined to the real axis at $z = \frac{\pi}{2} + n\pi$.
 
 This is a profoundly beautiful result. Even though the functions themselves soar to infinite heights in the imaginary directions, they are "tethered" to the real axis, which they must touch down upon at these regular, predictable intervals. The structure is not lost; it is clarified. By stepping back from the real line and viewing it from the perspective of the complex plane, we see not only how our familiar functions behave, but *why* they behave that way, revealing a unified and majestic landscape we never could have imagined by staying on the shore.

@@ -1,7 +1,7 @@
 ## Introduction
-Many fundamental relationships in nature and science are governed by a simple, strict rule: direct proportionality. In these systems, zero input yields zero output, and doubling the cause exactly doubles the effect. Modeling such a relationship requires a specialized statistical tool that honors this constraint. Standard [linear regression](@article_id:141824) is too flexible, allowing for an intercept that may not be physically meaningful. This introduces a critical question: how do we properly model, interpret, and validate a relationship that we know, from first principles, must pass through zero?
+Many fundamental relationships in nature and science are governed by a simple, strict rule: direct proportionality. In these systems, zero input yields zero output, and doubling the cause exactly doubles the effect. Modeling such a relationship requires a specialized statistical tool that honors this constraint. Standard [linear regression](@keyword=linear_regression|lang=en-US|style=Feynman) is too flexible, allowing for an intercept that may not be physically meaningful. This introduces a critical question: how do we properly model, interpret, and validate a relationship that we know, from first principles, must pass through zero?
 
-This is the domain of **regression through the origin (RTO)**, a linear model constrained to pass through the point (0,0). While seemingly a minor adjustment, this constraint fundamentally alters the model's mathematical properties and interpretation. This article provides a comprehensive guide to this powerful but often misunderstood method. In the "Principles and Mechanisms" chapter, we will dissect the statistical engine of RTO, from the derivation of its slope to the unique challenges of measuring its [goodness-of-fit](@article_id:175543) and the severe consequences of its misapplication. Then, in the "Applications and Interdisciplinary Connections" chapter, we will see these principles in action, exploring how RTO provides critical insights in diverse fields, from [materials physics](@article_id:202232) and [analytical chemistry](@article_id:137105) to the study of evolutionary biology.
+This is the domain of **regression through the origin (RTO)**, a linear model constrained to pass through the point (0,0). While seemingly a minor adjustment, this constraint fundamentally alters the model's mathematical properties and interpretation. This article provides a comprehensive guide to this powerful but often misunderstood method. In the "Principles and Mechanisms" chapter, we will dissect the statistical engine of RTO, from the derivation of its slope to the unique challenges of measuring its [goodness-of-fit](@keyword=goodness_of_fit_2|lang=en-US|style=Feynman) and the severe consequences of its misapplication. Then, in the "Applications and Interdisciplinary Connections" chapter, we will see these principles in action, exploring how RTO provides critical insights in diverse fields, from [materials physics](@keyword=materials_physics|lang=en-US|style=Feynman) and [analytical chemistry](@keyword=analytical_chemistry|lang=en-US|style=Feynman) to the study of evolutionary biology.
 
 ## Principles and Mechanisms
 
@@ -15,7 +15,7 @@ Here, $Y_i$ is our observation, $x_i$ is the variable we control or measure, $\e
 
 ### Finding the "Best" Proportionality
 
-Suppose we have a scatter of data points that we believe should follow such a proportional law. How do we draw the *best* possible line through the origin to represent them? The principle of **least squares**, our trusted guide in regression, still applies. Imagine a line [pivoting](@article_id:137115) around the origin like the hand of a clock. For each possible angle (slope), we can measure how far the line misses each data point vertically. These misses are our residuals. We then square each of these vertical distances and add them all up. The "best" line is the one that makes this total sum of squares as small as possible.
+Suppose we have a scatter of data points that we believe should follow such a proportional law. How do we draw the *best* possible line through the origin to represent them? The principle of **least squares**, our trusted guide in regression, still applies. Imagine a line [pivoting](@keyword=pivoting|lang=en-US|style=Feynman) around the origin like the hand of a clock. For each possible angle (slope), we can measure how far the line misses each data point vertically. These misses are our residuals. We then square each of these vertical distances and add them all up. The "best" line is the one that makes this total sum of squares as small as possible.
 
 When we turn the crank of calculus on this minimization problem, a wonderfully straightforward formula for our estimated slope, which we call $\hat{\beta}$, emerges:
 
@@ -33,15 +33,15 @@ where $\sigma^2$ is the variance of our measurement errors. This formula tells u
 
 In a standard regression with an intercept, the residuals—the differences between the actual and predicted values—are constructed to have a simple sum of zero. The intercept term's job is to adjust the line up or down until the positive and negative misses cancel out.
 
-But in the world of RTO, there is no intercept to perform this balancing act. The [least squares](@article_id:154405) criterion only imposes one condition on the residuals $e_i = Y_i - \hat{\beta} x_i$: that they be, on the whole, uncorrelated with the predictor. Mathematically, this is the [orthogonality condition](@article_id:168411) $\sum x_i e_i = 0$. This ensures our line has the correct tilt. However, the simple sum of the residuals, $\sum e_i$, is not forced to be zero. It can, and usually will, be some non-zero number. This might seem like a minor technicality, but it has dramatic and often misunderstood consequences.
+But in the world of RTO, there is no intercept to perform this balancing act. The [least squares](@keyword=least_squares|lang=en-US|style=Feynman) criterion only imposes one condition on the residuals $e_i = Y_i - \hat{\beta} x_i$: that they be, on the whole, uncorrelated with the predictor. Mathematically, this is the [orthogonality condition](@keyword=orthogonality_condition|lang=en-US|style=Feynman) $\sum x_i e_i = 0$. This ensures our line has the correct tilt. However, the simple sum of the residuals, $\sum e_i$, is not forced to be zero. It can, and usually will, be some non-zero number. This might seem like a minor technicality, but it has dramatic and often misunderstood consequences.
 
 ### The $R^2$ Illusion
 
-The most famous of these consequences concerns the **[coefficient of determination](@article_id:167656)**, or $R^2$. In standard regression, $R^2$ tells us the "proportion of [variance explained](@article_id:633812)" by our model, and it's neatly confined between 0 and 1. This works because of a tidy mathematical identity: the [total variation](@article_id:139889) in $Y$ (SST) is perfectly partitioned into the variation explained by the model (SSR) and the unexplained residual variation (SSE).
+The most famous of these consequences concerns the **[coefficient of determination](@keyword=coefficient_of_determination|lang=en-US|style=Feynman)**, or $R^2$. In standard regression, $R^2$ tells us the "proportion of [variance explained](@keyword=variance_explained|lang=en-US|style=Feynman)" by our model, and it's neatly confined between 0 and 1. This works because of a tidy mathematical identity: the [total variation](@keyword=total_variation|lang=en-US|style=Feynman) in $Y$ (SST) is perfectly partitioned into the variation explained by the model (SSR) and the unexplained residual variation (SSE).
 
 Because the sum of residuals is not zero in RTO, this beautiful identity, $SST = SSR + SSE$, breaks down. If you blindly use the standard formula for $R^2$ with an RTO model, you can get bizarre results, including a negative $R^2$! A negative $R^2$ simply means that your model, forced through the origin, is a worse predictor of the $Y$ values than just using their simple average, $\bar{y}$.
 
-To properly measure the [goodness of fit](@article_id:141177) for an RTO model, we must use an **uncentered** definition of variation. We rely on a different identity that *does* hold for RTO models: $\sum y_i^2 = \sum \hat{y}_i^2 + \sum e_i^2$. This partitions the total uncentered sum of squares into a part due to the regression and a part due to error. This leads to the **uncentered $R^2_{uc}$**:
+To properly measure the [goodness of fit](@keyword=goodness_of_fit|lang=en-US|style=Feynman) for an RTO model, we must use an **uncentered** definition of variation. We rely on a different identity that *does* hold for RTO models: $\sum y_i^2 = \sum \hat{y}_i^2 + \sum e_i^2$. This partitions the total uncentered sum of squares into a part due to the regression and a part due to error. This leads to the **uncentered $R^2_{uc}$**:
 
 $$R^2_{uc} = 1 - \frac{\sum e_i^2}{\sum y_i^2}$$
 
@@ -49,23 +49,23 @@ This quantity is always between 0 and 1 and correctly reflects the proportion of
 
 ### Confidence, Not Just an Estimate
 
-Finding the best estimate $\hat{\beta}$ is only the beginning. We also want to quantify our uncertainty. How confident are we that the true $\beta$ isn't zero? To do this, we need to construct a **[pivotal quantity](@article_id:167903)**—a standardized version of our estimator whose distribution we know, regardless of the true parameter values.
+Finding the best estimate $\hat{\beta}$ is only the beginning. We also want to quantify our uncertainty. How confident are we that the true $\beta$ isn't zero? To do this, we need to construct a **[pivotal quantity](@keyword=pivotal_quantity|lang=en-US|style=Feynman)**—a standardized version of our estimator whose distribution we know, regardless of the true parameter values.
 
-If we were lucky enough to know the true [error variance](@article_id:635547) $\sigma^2$, we could form a standard normal (Z) statistic:
+If we were lucky enough to know the true [error variance](@keyword=error_variance|lang=en-US|style=Feynman) $\sigma^2$, we could form a standard normal (Z) statistic:
 
 $$Z = \frac{(\hat{\beta} - \beta) \sqrt{\sum x_i^2}}{\sigma} \sim N(0,1)$$
 
-This follows directly from the mean and variance of $\hat{\beta}$ that we found earlier. In the real world, however, $\sigma^2$ is almost never known. We must estimate it from the data using our residuals. The correct estimator for the [error variance](@article_id:635547) is $\hat{\sigma}^2 = \frac{SSE}{n-1}$. Notice the denominator: $n-1$. We started with $n$ data points but used up one "degree of freedom" to estimate the single parameter $\beta$. This is a crucial difference from a standard simple regression with an intercept, which estimates two parameters ($\beta_0$ and $\beta_1$) and thus has $n-2$ degrees of freedom for error.
+This follows directly from the mean and variance of $\hat{\beta}$ that we found earlier. In the real world, however, $\sigma^2$ is almost never known. We must estimate it from the data using our residuals. The correct estimator for the [error variance](@keyword=error_variance|lang=en-US|style=Feynman) is $\hat{\sigma}^2 = \frac{SSE}{n-1}$. Notice the denominator: $n-1$. We started with $n$ data points but used up one "degree of freedom" to estimate the single parameter $\beta$. This is a crucial difference from a standard simple regression with an intercept, which estimates two parameters ($\beta_0$ and $\beta_1$) and thus has $n-2$ degrees of freedom for error.
 
-By substituting our estimate $\hat{\sigma}^2$ for the true $\sigma^2$ in the [pivotal quantity](@article_id:167903), we arrive at a statistic that follows a t-distribution:
+By substituting our estimate $\hat{\sigma}^2$ for the true $\sigma^2$ in the [pivotal quantity](@keyword=pivotal_quantity|lang=en-US|style=Feynman), we arrive at a statistic that follows a t-distribution:
 
 $$T = \frac{\hat{\beta} - \beta}{\sqrt{\frac{\hat{\sigma}^2}{\sum x_i^2}}} = \frac{\hat{\beta} - \beta}{\sqrt{\frac{SSE}{(n-1)\sum x_i^2}}} \sim t_{n-1}$$
 
-This T-statistic is the workhorse for building [confidence intervals](@article_id:141803) and testing hypotheses about $\beta$ in nearly all practical applications. From this, one can also construct an F-test to assess the overall significance of the regression, which for this simple one-parameter model is equivalent to the [t-test](@article_id:271740).
+This T-statistic is the workhorse for building [confidence intervals](@keyword=confidence_intervals|lang=en-US|style=Feynman) and testing hypotheses about $\beta$ in nearly all practical applications. From this, one can also construct an F-test to assess the overall significance of the regression, which for this simple one-parameter model is equivalent to the [t-test](@keyword=t_test|lang=en-US|style=Feynman).
 
 ### The Leverage of a Point
 
-We've mentioned that points far from the origin have more say in determining the slope. Let's make this precise. The **[leverage](@article_id:172073)** of a data point, $h_{ii}$, measures how much its own value $Y_i$ influences its own predicted value $\hat{Y}_i$. For the RTO model, the formula for [leverage](@article_id:172073) is remarkably elegant:
+We've mentioned that points far from the origin have more say in determining the slope. Let's make this precise. The **[leverage](@keyword=leverage|lang=en-US|style=Feynman)** of a data point, $h_{ii}$, measures how much its own value $Y_i$ influences its own predicted value $\hat{Y}_i$. For the RTO model, the formula for [leverage](@keyword=leverage|lang=en-US|style=Feynman) is remarkably elegant:
 
 $$h_{ii} = \frac{x_i^2}{\sum_{j=1}^n x_j^2}$$
 
@@ -77,7 +77,7 @@ The RTO model is a tool of great power and simplicity, but it rests entirely on 
 
 The consequences are severe. Our fitted line is now being asked to perform an impossible task: pass through the origin while also trying to fit data that has a different "natural" starting point. The result is a biased estimate of the slope $\beta$. The line gets twisted away from its true slope in an effort to compromise.
 
-Even more insidiously, our estimate of the [error variance](@article_id:635547), $\hat{\sigma}^2_*$, becomes positively biased. The residuals from the misspecified model are systematically inflated because the model is fundamentally wrong for the data. The expected value of our variance estimate is not the true variance $\sigma^2$, but something larger:
+Even more insidiously, our estimate of the [error variance](@keyword=error_variance|lang=en-US|style=Feynman), $\hat{\sigma}^2_*$, becomes positively biased. The residuals from the misspecified model are systematically inflated because the model is fundamentally wrong for the data. The expected value of our variance estimate is not the true variance $\sigma^2$, but something larger:
 
 $$E[\hat{\sigma}^2_*] = \sigma^2 + \text{a positive bias term}$$
 

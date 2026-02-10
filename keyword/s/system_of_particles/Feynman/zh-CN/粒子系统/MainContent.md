@@ -1,11 +1,11 @@
 ## 引言
-我们如何理解一个由无数相互作用的组分构成的世界？无论是气体中的分子、星系中的恒星，还是活细胞中的原子，追踪每一个粒子的运动都是一项不可能完成的任务。然而，物理学提供了一个优雅而强大的概念工具：将这些复杂实体视为一个“[粒子系统](@article_id:355770)”。这种方法将我们的焦点从个体转移到集体，揭示了支配整体行为的普适原理。本文旨在通过介绍这一基本模型来应对描述[多体系统](@article_id:304436)的挑战。
+我们如何理解一个由无数相互作用的组分构成的世界？无论是气体中的分子、星系中的恒星，还是活细胞中的原子，追踪每一个粒子的运动都是一项不可能完成的任务。然而，物理学提供了一个优雅而强大的概念工具：将这些复杂实体视为一个“[粒子系统](@keyword=system_of_particles|lang=zh-CN|style=Feynman)”。这种方法将我们的焦点从个体转移到集体，揭示了支配整体行为的普适原理。本文旨在通过介绍这一基本模型来应对描述[多体系统](@keyword=many_body_systems|lang=zh-CN|style=Feynman)的挑战。
 
-本文将分两大部分引导您了解这一强大的视角。在第一章“原理与机制”中，我们将探索用于描述这些系统的基础语言，从相空间的抽象概念，到[刘维尔定理](@article_id:303525)所支配的确定性舞蹈，再到量子世界中将所有粒子划分为两个不同家族的奇特而严格的规则。随后，“应用与跨学科联系”一章将展示这一思想的非凡应用范围，说明它如何连接微观与宏观世界，并为工程学、[统计力](@article_id:373880)学、[粒子物理学](@article_id:305677)和生物学等领域提供关键见解。
+本文将分两大部分引导您了解这一强大的视角。在第一章“原理与机制”中，我们将探索用于描述这些系统的基础语言，从相空间的抽象概念，到[刘维尔定理](@keyword=liouville_s_theorem|lang=zh-CN|style=Feynman)所支配的确定性舞蹈，再到量子世界中将所有粒子划分为两个不同家族的奇特而严格的规则。随后，“应用与跨学科联系”一章将展示这一思想的非凡应用范围，说明它如何连接微观与宏观世界，并为工程学、[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学、[粒子物理学](@keyword=particle_physics|lang=zh-CN|style=Feynman)和生物学等领域提供关键见解。
 
 ## 原理与机制
 
-我们该如何描述一个[粒子系统](@article_id:355770)？如果你在桌上放一个孤零零的台球，描述很简单：它在这里，并以*那个*速度朝*那个*方向移动。但如果你在一个盒子里有数万亿亿个气体分子呢？或者星系中旋转的恒星？甚至是构成活细胞的原子之间错综复杂的舞蹈？描述这样一个系统的任务似乎复杂得令人望而生畏。然而，物理学找到了一种极其优雅和强大的语言来做到这一点。它并不试图单独追踪每个粒子，而是提升了我们的视角，揭示了[支配集](@article_id:330264)体的普适原理。本章便是对这一视角的一次探索之旅。
+我们该如何描述一个[粒子系统](@keyword=system_of_particles|lang=zh-CN|style=Feynman)？如果你在桌上放一个孤零零的台球，描述很简单：它在这里，并以*那个*速度朝*那个*方向移动。但如果你在一个盒子里有数万亿亿个气体分子呢？或者星系中旋转的恒星？甚至是构成活细胞的原子之间错综复杂的舞蹈？描述这样一个系统的任务似乎复杂得令人望而生畏。然而，物理学找到了一种极其优雅和强大的语言来做到这一点。它并不试图单独追踪每个粒子，而是提升了我们的视角，揭示了[支配集](@keyword=dominating_set|lang=zh-CN|style=Feynman)体的普适原理。本章便是对这一视角的一次探索之旅。
 
 ### 存在之舞台：相空间中的宇宙
 
@@ -13,7 +13,7 @@
 
 物理学家将这种完备的描述——位置和动量——称为**相空间**中的一个点。对于一个被约束在一条线上运动的单个粒子，其状态由两个数描述：位置 $q$ 和动量 $p$。它的相空间是一个二维平面。如果我们允许粒子在一个平坦的二维表面上移动，它就需要四个数：两个用于位置（$x, y$），两个用于动量（$p_x, p_y$）。它的相空间是四维的。
 
-现在，让我们构建一个宇宙。想象一个由三组粒子组成的复合系统，这是一个有助于阐明这个宏大思想的思想实验 。
+现在，让我们构建一个宇宙。想象一个由三组粒子组成的复合系统，这是一个有助于阐明这个宏大思想的思想实验 [@problem_id:1954240]。
 - 我们有 $N_A$ 个只能沿一维直线运动的粒子。每个粒子在相空间中需要2个坐标。
 - 我们有 $N_B$ 个可以在二维平面上自由移动的粒子。每个粒子需要4个坐标。
 - 我们有 $N_C$ 个固定在空间中的粒子，就像雕塑中的铆钉。由于它们的位置和动量为零且不变，它们对动态相空间的维度没有贡献。
@@ -24,54 +24,54 @@
 
 ### 不可压缩之舞：刘维尔定理
 
-如果系统的状态是一个点，那么它随时间的演化就是一条路径。但如果我们不能精确地知道状态呢？如果我们最初的知识只是一小团可能的起始点，一个由相同系统组成的“系综”呢？这时，力学中最优美的原理之一便登场了：**[刘维尔定理](@article_id:303525)**。
+如果系统的状态是一个点，那么它随时间的演化就是一条路径。但如果我们不能精确地知道状态呢？如果我们最初的知识只是一小团可能的起始点，一个由相同系统组成的“系综”呢？这时，力学中最优美的原理之一便登场了：**[刘维尔定理](@keyword=liouville_s_theorem|lang=zh-CN|style=Feynman)**。
 
-其本质上，刘维尔定理指出，对于任何由[哈密顿运动方程](@article_id:355931)支配的系统，相空间中一个系综所占据的体积随时间守恒。点云可能会拉伸、扭曲、变形，呈现出奇异的形状，但其总体积保持不变。它的流动就像不可压缩的流体。这是一个非常普遍的真理，适用于任何其力可以从哈密顿量导出的系统，从[单摆](@article_id:340361)到[相对论](@article_id:327421)性宇宙射线集合 。其数学原因是相空间中流的“散度”恰好为零。这种流动既不创造也不破坏相空间体积。
+其本质上，刘维尔定理指出，对于任何由[哈密顿运动方程](@keyword=hamilton_s_equations_of_motion|lang=zh-CN|style=Feynman)支配的系统，相空间中一个系综所占据的体积随时间守恒。点云可能会拉伸、扭曲、变形，呈现出奇异的形状，但其总体积保持不变。它的流动就像不可压缩的流体。这是一个非常普遍的真理，适用于任何其力可以从哈密顿量导出的系统，从[单摆](@keyword=simple_pendulum|lang=zh-CN|style=Feynman)到[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)性宇宙射线集合 [@problem_id:2076811]。其数学原因是相空间中流的“散度”恰好为零。这种流动既不创造也不破坏相空间体积。
 
 让我们通过两个对比鲜明的例子来看看它是如何运作的。
 
-首先，想象一个粒子系综处于二维[谐振子](@article_id:316032)势 $V(r) = \frac{1}{2}\alpha r^2$ 中，就像在完美球形碗中滚动的弹珠 。假设我们从位置和动量上的一个方形初始条件区域开始。随着时间的推移，粒子发生[振荡](@article_id:331484)。相空间中最初的正方形开始旋转并剪切成一个平行四边形。如果你只观察粒子的位置——即相空间形状在位形空间上的投影——你会看到最初的方形区域扩展成一个更大的正方形。看起来系统似乎在“膨胀”。但这是一种错觉。位置上的扩张被动量上的压缩完美补偿，使得相空间 $(x, y, p_x, p_y)$ 中的总四维体积是完全守恒的。
+首先，想象一个粒子系综处于二维[谐振子](@keyword=harmonic_oscillator|lang=zh-CN|style=Feynman)势 $V(r) = \frac{1}{2}\alpha r^2$ 中，就像在完美球形碗中滚动的弹珠 [@problem_id:2064662]。假设我们从位置和动量上的一个方形初始条件区域开始。随着时间的推移，粒子发生[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。相空间中最初的正方形开始旋转并剪切成一个平行四边形。如果你只观察粒子的位置——即相空间形状在位形空间上的投影——你会看到最初的方形区域扩展成一个更大的正方形。看起来系统似乎在“膨胀”。但这是一种错觉。位置上的扩张被动量上的压缩完美补偿，使得相空间 $(x, y, p_x, p_y)$ 中的总四维体积是完全守恒的。
 
-现在来看一个戏剧性的对比：一个粒子系综在一个不稳定的[平衡点](@article_id:323137)上摇摇欲坠，就像倒立摆顶端的小珠子，其势能为 $V(q) = -\frac{1}{2}\alpha q^2$ 。在这里，一个微小的不确定性——相空间中原点周围一个微小、紧凑的矩形区域——会发生灾难性的演化。粒子会飞离[平衡点](@article_id:323137)。相空间中的矩形在一个方向（沿着位置和动量增加的轨迹）被剧烈拉伸，而在另一个方向被挤压。虽然其面积保持不变，但它迅速变成一条极长、极细的纤维。一个位置不确定性很低的初始状态，变成了一个不确定性很高的状态。这就是混沌的标志：[对初始条件的敏感依赖性](@article_id:304619)，通过相空间体积的拉伸得到了优美的可视化。
+现在来看一个戏剧性的对比：一个粒子系综在一个不稳定的[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)上摇摇欲坠，就像倒立摆顶端的小珠子，其势能为 $V(q) = -\frac{1}{2}\alpha q^2$ [@problem_id:1976912]。在这里，一个微小的不确定性——相空间中原点周围一个微小、紧凑的矩形区域——会发生灾难性的演化。粒子会飞离[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)。相空间中的矩形在一个方向（沿着位置和动量增加的轨迹）被剧烈拉伸，而在另一个方向被挤压。虽然其面积保持不变，但它迅速变成一条极长、极细的纤维。一个位置不确定性很低的初始状态，变成了一个不确定性很高的状态。这就是混沌的标志：[对初始条件的敏感依赖性](@keyword=sensitive_dependence_on_initial_conditions|lang=zh-CN|style=Feynman)，通过相空间体积的拉伸得到了优美的可视化。
 
 ### 合众为一：集体行为
 
 虽然相空间的观点很强大，但我们通常更关心系统的整体属性。我们不问炮弹中第17个分子的动量是多少；我们问的是炮弹本身的动量。
 
-这些集体属性中最重要的是**动量中心**。对于任何[粒子系统](@article_id:355770)，[总动量](@article_id:352180)就是各个粒子动量的矢量和，$\vec{P} = \sum_{i} \vec{p}_i$。**[质心动量](@article_id:350343)系**（或称[质心系](@article_id:318538)）是一个特殊的[惯性参考系](@article_id:323792)——它以恰当的速度运动，使得在该[参考系](@article_id:345789)中，总动量为零。在这个[参考系](@article_id:345789)中，系统作为一个整体是“静止”的。
+这些集体属性中最重要的是**动量中心**。对于任何[粒子系统](@keyword=system_of_particles|lang=zh-CN|style=Feynman)，[总动量](@keyword=total_linear_momentum|lang=zh-CN|style=Feynman)就是各个粒子动量的矢量和，$\vec{P} = \sum_{i} \vec{p}_i$。**[质心动量](@keyword=center_of_mass_momentum|lang=zh-CN|style=Feynman)系**（或称[质心系](@keyword=center_of_mass_frame|lang=zh-CN|style=Feynman)）是一个特殊的[惯性参考系](@keyword=inertial_frame_of_reference|lang=zh-CN|style=Feynman)——它以恰当的速度运动，使得在该[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)中，总动量为零。在这个[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)中，系统作为一个整体是“静止”的。
 
-这个[参考系](@article_id:345789)不仅仅是数学上的便利；它在物理上至关重要。在[粒子对撞机](@article_id:367382)中，物理学家们费尽心机地让实验室参考系成为[质心动量](@article_id:350343)系。为什么？因为在这个[参考系](@article_id:345789)中，[碰撞能量](@article_id:362790)没有一分被“浪费”在碎片的整体运动上。根据爱因斯坦的 $E=mc^2$ 方程，所有的能量都可以用来转化为新的、奇异粒子的质量。任何[参考系](@article_id:345789)成为[质心动量](@article_id:350343)系的[充分必要条件](@article_id:639724)很简单，即在该[参考系](@article_id:345789)中测量的所有粒子动量的矢量和为零：$\sum_{i=1}^{N} \vec{p}_i = \vec{0}$ 。
+这个[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)不仅仅是数学上的便利；它在物理上至关重要。在[粒子对撞机](@keyword=particle_collider|lang=zh-CN|style=Feynman)中，物理学家们费尽心机地让实验室参考系成为[质心动量](@keyword=center_of_mass_momentum|lang=zh-CN|style=Feynman)系。为什么？因为在这个[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)中，[碰撞能量](@keyword=collision_energy|lang=zh-CN|style=Feynman)没有一分被“浪费”在碎片的整体运动上。根据爱因斯坦的 $E=mc^2$ 方程，所有的能量都可以用来转化为新的、奇异粒子的质量。任何[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)成为[质心动量](@keyword=center_of_mass_momentum|lang=zh-CN|style=Feynman)系的[充分必要条件](@keyword=necessary_and_sufficient_conditions|lang=zh-CN|style=Feynman)很简单，即在该[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)中测量的所有粒子动量的矢量和为零：$\sum_{i=1}^{N} \vec{p}_i = \vec{0}$ [@problem_id:1817405]。
 
-另一个关键的集体属性是**转动惯量**，它描述了系统对转动运动的阻力。对于一个离散粒子系统，它不仅取决于粒子的质量，还取决于质量相对于转轴的分布。特别是，被称为**[惯性积](@article_id:372905)**的量，如 $I_{xy} = - \sum_{i} m_i x_i y_i$，衡量了[质量分布](@article_id:318855)的不对称性。如果这些[惯性积](@article_id:372905)不为零，旋转的物体会摇晃并承受[内应力](@article_id:369929)。工程师和化学家通常希望消除这种摇晃。对于一个平面分子，可以通过小心地添加或重新定位一个原子来改变质量分布，直到[惯性积](@article_id:372905)消失，从而使物体与其自然的“[主轴](@article_id:351809)”对齐 。这是一个绝佳的例子，说明了整体的行为是其各部分排布方式的直接、可计算的结果。
+另一个关键的集体属性是**转动惯量**，它描述了系统对转动运动的阻力。对于一个离散粒子系统，它不仅取决于粒子的质量，还取决于质量相对于转轴的分布。特别是，被称为**[惯性积](@keyword=product_of_inertia|lang=zh-CN|style=Feynman)**的量，如 $I_{xy} = - \sum_{i} m_i x_i y_i$，衡量了[质量分布](@keyword=mass_distribution|lang=zh-CN|style=Feynman)的不对称性。如果这些[惯性积](@keyword=product_of_inertia|lang=zh-CN|style=Feynman)不为零，旋转的物体会摇晃并承受[内应力](@keyword=internal_stress|lang=zh-CN|style=Feynman)。工程师和化学家通常希望消除这种摇晃。对于一个平面分子，可以通过小心地添加或重新定位一个原子来改变质量分布，直到[惯性积](@keyword=product_of_inertia|lang=zh-CN|style=Feynman)消失，从而使物体与其自然的“[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)”对齐 [@problem_id:2200555]。这是一个绝佳的例子，说明了整体的行为是其各部分排布方式的直接、可计算的结果。
 
-### 量子鸿沟：[群居](@article_id:346579)者与独行者
+### 量子鸿沟：[群居](@keyword=group_living|lang=zh-CN|style=Feynman)者与独行者
 
-到目前为止，我们的粒子都是“经典”的——像微小的台球一样，是可区分的个体。但是当我们进入微观领域时，规则就完全改变了。量子力学的第一个惊人事实是，全同粒子是真正、根本上**不可区分**的。你无法标记电子A和电子B并追踪它们。如果它们交[换位](@article_id:302555)置，宇宙与之前完全相同。
+到目前为止，我们的粒子都是“经典”的——像微小的台球一样，是可区分的个体。但是当我们进入微观领域时，规则就完全改变了。量子力学的第一个惊人事实是，全同粒子是真正、根本上**不可区分**的。你无法标记电子A和电子B并追踪它们。如果它们交[换位](@keyword=transpositions|lang=zh-CN|style=Feynman)置，宇宙与之前完全相同。
 
-这种不可区分性导致了粒子世界的巨大分裂。所有粒子都属于两个家族之一，由它们的[内禀角动量](@article_id:368811)，即**自旋**来区分。
-- **[玻色子](@article_id:298714)**：自旋为整数（0, 1, 2, ...）的粒子，例如[光子](@article_id:305617)（光的粒子）和[氦-4](@article_id:374336)原子。
-- **[费米子](@article_id:306655)**：自旋为半整数（$\frac{1}{2}, \frac{3}{2}, \frac{5}{2}, ...$）的粒子，例如电子、质子和中子。
+这种不可区分性导致了粒子世界的巨大分裂。所有粒子都属于两个家族之一，由它们的[内禀角动量](@keyword=intrinsic_angular_momentum|lang=zh-CN|style=Feynman)，即**自旋**来区分。
+- **[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)**：自旋为整数（0, 1, 2, ...）的粒子，例如[光子](@keyword=photon|lang=zh-CN|style=Feynman)（光的粒子）和[氦-4](@keyword=helium_4|lang=zh-CN|style=Feynman)原子。
+- **[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)**：自旋为半整数（$\frac{1}{2}, \frac{3}{2}, \frac{5}{2}, ...$）的粒子，例如电子、质子和中子。
 
-这种划分不仅仅是[分类学](@article_id:307541)；它决定了它们的集体行为。[玻色子](@article_id:298714)是宇宙中的“社交名流”。占据同一[量子态](@article_id:306563)的全同[玻色子](@article_id:298714)数量没有限制。事实上，它们更偏爱这样做。在低温下，它们会全部挤进可用的最低能量单态中，形成一种奇异的[物质状态](@article_id:299884)，称为玻色-爱因斯坦凝聚。
+这种划分不仅仅是[分类学](@keyword=systematics|lang=zh-CN|style=Feynman)；它决定了它们的集体行为。[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)是宇宙中的“社交名流”。占据同一[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)的全同[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)数量没有限制。事实上，它们更偏爱这样做。在低温下，它们会全部挤进可用的最低能量单态中，形成一种奇异的[物质状态](@keyword=states_of_matter|lang=zh-CN|style=Feynman)，称为玻色-爱因斯坦凝聚。
 
-[费米子](@article_id:306655)则相反。它们是终极的“独行者”，受**[泡利不相容原理](@article_id:302291)**支配：任何两个全同[费米子](@article_id:306655)都不能占据同一个[量子态](@article_id:306563) 。这个简单的规则带来了惊人的后果。正是由于这个原因，原子才有了丰富的壳层结构——电子被迫堆积到越来越高的能级上，从而创造了[元素周期表](@article_id:299916)和整个化学。也正是由于这个原因，恒星才不会在自身引力下坍缩——[费米子](@article_id:306655)拒绝共享同一状态所产生的巨大“简并压力”支撑着它们。
+[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)则相反。它们是终极的“独行者”，受**[泡利不相容原理](@keyword=pauli_exclusion_principle|lang=zh-CN|style=Feynman)**支配：任何两个全同[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)都不能占据同一个[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman) [@problem_id:2006691]。这个简单的规则带来了惊人的后果。正是由于这个原因，原子才有了丰富的壳层结构——电子被迫堆积到越来越高的能级上，从而创造了[元素周期表](@keyword=periodic_table|lang=zh-CN|style=Feynman)和整个化学。也正是由于这个原因，恒星才不会在自身引力下坍缩——[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)拒绝共享同一状态所产生的巨大“简并压力”支撑着它们。
 
-我们可以通过一个简单的思想实验来感受这两种行为的差异 。想象一个有两个能级的系统，一个能量为 $\epsilon_0=0$ 的[基态](@article_id:312876)和一个能量为 $\epsilon_1$ 的[激发态](@article_id:325164)。让我们逐个添加粒子，看看需要多少能量。这个成本就是**化学势**。
-- 对于**[玻色子](@article_id:298714)**，你添加的每个粒子都可以进入[基态](@article_id:312876)。第一个、第二个和第三个[玻色子](@article_id:298714)都占据 $\epsilon_0=0$ 的能级。一个双[粒子系统](@article_id:355770)的基态能量是 $E_{gs}(2)=0$，一个三[粒子系统](@article_id:355770)的[基态能量](@article_id:327411)是 $E_{gs}(3)=0$。添加第三个粒子的能量成本是 $\mu_A(3) = E_{gs}(3) - E_{gs}(2) = 0$。
-- 对于**[费米子](@article_id:306655)**（每个能级有两个自旋态），前两个粒子可以填满[基态](@article_id:312876)。但当你试图添加第三个粒子时，[基态](@article_id:312876)已经满了。[泡利不相容原理](@article_id:302291)迫使这第三个[费米子](@article_id:306655)进入更高的能级 $\epsilon_1$。2个[费米子](@article_id:306655)的[基态能量](@article_id:327411)是 $E_{gs}(2)=0$，但3个[费米子](@article_id:306655)的[基态能量](@article_id:327411)是 $E_{gs}(3)=\epsilon_1$。添加第三个粒子的成本是 $\mu_B(3) = E_{gs}(3) - E_{gs}(2) = \epsilon_1$。
+我们可以通过一个简单的思想实验来感受这两种行为的差异 [@problem_id:1966107]。想象一个有两个能级的系统，一个能量为 $\epsilon_0=0$ 的[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)和一个能量为 $\epsilon_1$ 的[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)。让我们逐个添加粒子，看看需要多少能量。这个成本就是**化学势**。
+- 对于**[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)**，你添加的每个粒子都可以进入[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)。第一个、第二个和第三个[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)都占据 $\epsilon_0=0$ 的能级。一个双[粒子系统](@keyword=system_of_particles|lang=zh-CN|style=Feynman)的基态能量是 $E_{gs}(2)=0$，一个三[粒子系统](@keyword=system_of_particles|lang=zh-CN|style=Feynman)的[基态能量](@keyword=ground_state_energy_2|lang=zh-CN|style=Feynman)是 $E_{gs}(3)=0$。添加第三个粒子的能量成本是 $\mu_A(3) = E_{gs}(3) - E_{gs}(2) = 0$。
+- 对于**[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)**（每个能级有两个自旋态），前两个粒子可以填满[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)。但当你试图添加第三个粒子时，[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)已经满了。[泡利不相容原理](@keyword=pauli_exclusion_principle|lang=zh-CN|style=Feynman)迫使这第三个[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)进入更高的能级 $\epsilon_1$。2个[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)的[基态能量](@keyword=ground_state_energy_2|lang=zh-CN|style=Feynman)是 $E_{gs}(2)=0$，但3个[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)的[基态能量](@keyword=ground_state_energy_2|lang=zh-CN|style=Feynman)是 $E_{gs}(3)=\epsilon_1$。添加第三个粒子的成本是 $\mu_B(3) = E_{gs}(3) - E_{gs}(2) = \epsilon_1$。
 
-能量成本的差异恰好是 $\epsilon_1$。你必须为添加一个[费米子](@article_id:306655)支付能量代价，这是它们“反社会”本性的直接后果。
+能量成本的差异恰好是 $\epsilon_1$。你必须为添加一个[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)支付能量代价，这是它们“反社会”本性的直接后果。
 
 ### 前沿生命：活性与相互作用系统
 
-我们的旅程终点是现代物理学的前沿，在这里，“粒子系统”的概念正被应用于一些最复杂和最迷人的现象，包括生命本身。大多数经典[统计力](@article_id:373880)学处理的是处于或接近热平衡的系统——粒子在热浴中[抖动](@article_id:326537)，其运动由[能量均分定理](@article_id:297423)支配。
+我们的旅程终点是现代物理学的前沿，在这里，“粒子系统”的概念正被应用于一些最复杂和最迷人的现象，包括生命本身。大多数经典[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学处理的是处于或接近热平衡的系统——粒子在热浴中[抖动](@keyword=dither|lang=zh-CN|style=Feynman)，其运动由[能量均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)支配。
 
-但细菌不是一粒尘埃。它是一个**活性粒子**。它拥有内部新陈代谢，消耗能量以产生有方向的自驱动运动。思考一下这种对比 ：
-- 流体中的**被动**胶体粒子进行布朗运动，其路径是由流体的热涨落决定的随机行走。它的扩散由温度和[流体粘度](@article_id:324910)通过[爱因斯坦关系式](@article_id:299798)决定。
+但细菌不是一粒尘埃。它是一个**活性粒子**。它拥有内部新陈代谢，消耗能量以产生有方向的自驱动运动。思考一下这种对比 [@problem_id:2008450]：
+- 流体中的**被动**胶体粒子进行布朗运动，其路径是由流体的热涨落决定的随机行走。它的扩散由温度和[流体粘度](@keyword=fluid_viscosity|lang=zh-CN|style=Feynman)通过[爱因斯坦关系式](@keyword=einstein_relation|lang=zh-CN|style=Feynman)决定。
 - 一个**活性**细菌执行“运动-翻滚”式的运动。它直线游动一小段时间，然后随机改变方向再次游动。这种运动不是由温度驱动，而是由其内部引擎驱动。
 
-虽然我们可以为细菌计算一个“有效”扩散系数，结果发现它比其被动对应物的扩散系数大得多，但其底层物理机制却截然不同。细菌是一个远离平衡的系统。它不断地耗散能量并打破[时间反演对称性](@article_id:298543)——你可以判断出一段细菌的录像是正放还是倒放，而对于布朗粒子你则无法判断。
+虽然我们可以为细菌计算一个“有效”扩散系数，结果发现它比其被动对应物的扩散系数大得多，但其底层物理机制却截然不同。细菌是一个远离平衡的系统。它不断地耗散能量并打破[时间反演对称性](@keyword=time_reversal_symmetry|lang=zh-CN|style=Feynman)——你可以判断出一段细菌的录像是正放还是倒放，而对于布朗粒子你则无法判断。
 
-这为广阔的**[相互作用粒子系统](@article_id:360824)**领域打开了大门。这些相互作用的性质定义了集体行为。相互作用可以是**局域的**，即粒子只感受到其近邻，就像[晶格](@article_id:300090)中的原子。但它们也可以是**非局域的**，或称“平均场”的，即一个粒子的行为取决于整个群体的[统计平均](@article_id:314269)。想象一个进化模型，其中个体被选中繁殖或被替换是基于整个基因库的适应度 。这是一种非局域相互作用。一个个体的命运与众多其他个体的状态联系在一起。这种全局耦合是鸟群同步飞行、萤火虫[同步](@article_id:339180)闪烁、甚至舆论形成等迷人现象背后的秘密。
+这为广阔的**[相互作用粒子系统](@keyword=interacting_particle_systems|lang=zh-CN|style=Feynman)**领域打开了大门。这些相互作用的性质定义了集体行为。相互作用可以是**局域的**，即粒子只感受到其近邻，就像[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中的原子。但它们也可以是**非局域的**，或称“平均场”的，即一个粒子的行为取决于整个群体的[统计平均](@keyword=statistical_average|lang=zh-CN|style=Feynman)。想象一个进化模型，其中个体被选中繁殖或被替换是基于整个基因库的适应度 [@problem_id:2981182]。这是一种非局域相互作用。一个个体的命运与众多其他个体的状态联系在一起。这种全局耦合是鸟群同步飞行、萤火虫[同步](@keyword=entrainment|lang=zh-CN|style=Feynman)闪烁、甚至舆论形成等迷人现象背后的秘密。
 
-从相空间的抽象完美到生命物质混乱而充满活力的世界，[粒子系统](@article_id:355770)的概念提供了一个统一的框架。它证明了物理学的力量，即能够找到简单而深刻的原理，来编排宇宙中复杂的舞蹈，从最小的量子组分到最宏大的生物集体。
+从相空间的抽象完美到生命物质混乱而充满活力的世界，[粒子系统](@keyword=system_of_particles|lang=zh-CN|style=Feynman)的概念提供了一个统一的框架。它证明了物理学的力量，即能够找到简单而深刻的原理，来编排宇宙中复杂的舞蹈，从最小的量子组分到最宏大的生物集体。

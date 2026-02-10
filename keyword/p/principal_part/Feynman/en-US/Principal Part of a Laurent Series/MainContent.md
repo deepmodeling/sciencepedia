@@ -13,7 +13,7 @@ This is where the genius of Pierre Alphonse Laurent comes in. He realized that t
 
 $$ f(z) = \dots + \frac{c_{-2}}{(z-z_0)^2} + \frac{c_{-1}}{z-z_0} + c_0 + c_1(z-z_0) + \dots $$
 
-This series beautifully splits the function's personality into two parts. The terms with non-negative powers, $c_0 + c_1(z-z_0) + \dots$, form the **[analytic part](@article_id:170738)**. This is the familiar, well-behaved component. The new, revolutionary part is the sum of all terms with negative powers:
+This series beautifully splits the function's personality into two parts. The terms with non-negative powers, $c_0 + c_1(z-z_0) + \dots$, form the **[analytic part](@keyword=analytic_part|lang=en-US|style=Feynman)**. This is the familiar, well-behaved component. The new, revolutionary part is the sum of all terms with negative powers:
 
 $$ \text{Principal Part} = \sum_{n=1}^{\infty} \frac{c_{-n}}{(z-z_0)^n} $$
 
@@ -21,15 +21,15 @@ This is it—the principal part. It is the singular soul of the function at $z_0
 
 ### Deconstructing Functions: From Rational to Singular
 
-Sometimes, the principal part is hiding in plain sight. Consider a function like $f(z) = \frac{z-1}{z^3(z+1)}$ . This function clearly has a problem at $z=0$ because of the $z^3$ in the denominator. We can use a wonderful algebraic technique called [partial fraction decomposition](@article_id:158714) to break the function apart, like a mechanic taking apart an engine to see its components. Doing so reveals:
+Sometimes, the principal part is hiding in plain sight. Consider a function like $f(z) = \frac{z-1}{z^3(z+1)}$ [@problem_id:2250007]. This function clearly has a problem at $z=0$ because of the $z^3$ in the denominator. We can use a wonderful algebraic technique called [partial fraction decomposition](@keyword=partial_fraction_decomposition|lang=en-US|style=Feynman) to break the function apart, like a mechanic taking apart an engine to see its components. Doing so reveals:
 
 $$ f(z) = \left( -\frac{1}{z^{3}}+\frac{2}{z^{2}}-\frac{2}{z} \right) + \frac{2}{z+1} $$
 
-Look at this structure! The function has been split perfectly. The first group of terms in parentheses is the principal part at $z=0$. Each term blows up as $z$ approaches zero. The second term, $\frac{2}{z+1}$, is perfectly well-behaved near $z=0$. In fact, for any $z$ with $|z| \lt 1$, we can write it as a familiar geometric series, $2(1-z+z^2-z^3+\dots)$, which is just a standard Taylor series. It contributes nothing to the singular behavior at the origin. The [partial fraction decomposition](@article_id:158714) has surgically extracted the principal part for us.
+Look at this structure! The function has been split perfectly. The first group of terms in parentheses is the principal part at $z=0$. Each term blows up as $z$ approaches zero. The second term, $\frac{2}{z+1}$, is perfectly well-behaved near $z=0$. In fact, for any $z$ with $|z| \lt 1$, we can write it as a familiar geometric series, $2(1-z+z^2-z^3+\dots)$, which is just a standard Taylor series. It contributes nothing to the singular behavior at the origin. The [partial fraction decomposition](@keyword=partial_fraction_decomposition|lang=en-US|style=Feynman) has surgically extracted the principal part for us.
 
 ### Unmasking Singularities with Series Expansions
 
-Often, a function's singular nature is more veiled. A function might look terrifyingly complex, but its principal part can reveal a surprisingly simple core. Take the function $f(z) = \frac{\cos(z) - 1 + \frac{1}{2}z^2}{z^6}$ . The $z^6$ in the denominator might suggest a ferocious singularity, a "pole of order 6." But let's not be too hasty. We must look at what the numerator is doing near $z=0$.
+Often, a function's singular nature is more veiled. A function might look terrifyingly complex, but its principal part can reveal a surprisingly simple core. Take the function $f(z) = \frac{\cos(z) - 1 + \frac{1}{2}z^2}{z^6}$ [@problem_id:2249786]. The $z^6$ in the denominator might suggest a ferocious singularity, a "pole of order 6." But let's not be too hasty. We must look at what the numerator is doing near $z=0$.
 
 We know the Taylor series for cosine is $\cos(z) = 1 - \frac{z^2}{2!} + \frac{z^4}{4!} - \frac{z^6}{6!} + \dots$. Notice what happens when we substitute this into the numerator:
 
@@ -41,15 +41,15 @@ $$ f(z) = \frac{\frac{z^4}{24} - \frac{z^6}{720} + \dots}{z^6} = \frac{1}{24z^2}
 
 The smoke clears, and the true nature of the singularity is revealed. The principal part is just a single term, $\frac{1}{24z^2}$. The supposedly order-6 pole is merely a **pole of order 2**. The principal part has cut through the complexity to tell us the essential truth of the function's behavior near the origin.
 
-This technique is a cornerstone. Whether we face $f(z) = \frac{1}{z \sin z}$ , where we expand $\sin z \approx z - z^3/6 + \dots$, or a more convoluted form like $f(z) = \pi z^{-2} \coth(\pi z)$ , the strategy is the same: expand the analytic parts of the function into their Taylor series, and then perform the necessary algebra to isolate the terms with negative powers of $z$. These terms, and these terms alone, constitute the principal part.
+This technique is a cornerstone. Whether we face $f(z) = \frac{1}{z \sin z}$ [@problem_id:2250030], where we expand $\sin z \approx z - z^3/6 + \dots$, or a more convoluted form like $f(z) = \pi z^{-2} \coth(\pi z)$ [@problem_id:925925], the strategy is the same: expand the analytic parts of the function into their Taylor series, and then perform the necessary algebra to isolate the terms with negative powers of $z$. These terms, and these terms alone, constitute the principal part.
 
 ### A Change of Perspective: Singularities Beyond the Origin
 
-What if the trouble spot isn't at the origin? Nature, after all, has no obligation to place its volcanoes at $(0,0)$. Consider the function $f(z) = \frac{\cos(\pi z)}{z(z-1)^2}$ which has a singularity at $z_0=1$ .
+What if the trouble spot isn't at the origin? Nature, after all, has no obligation to place its volcanoes at $(0,0)$. Consider the function $f(z) = \frac{\cos(\pi z)}{z(z-1)^2}$ which has a singularity at $z_0=1$ [@problem_id:2253574].
 
 The trick here is wonderfully simple and profoundly powerful: if the mountain won't come to you, you go to the mountain. We shift our coordinate system. Let's define a new local coordinate $w = z-1$. In this new view, the singularity at $z=1$ is now at $w=0$. We are back on familiar ground!
 
-We just need to rewrite our [entire function](@article_id:178275) in terms of $w$. Since $z = 1+w$, we have:
+We just need to rewrite our [entire function](@keyword=entire_function|lang=en-US|style=Feynman) in terms of $w$. Since $z = 1+w$, we have:
 
 $$ f(z) = f(1+w) = \frac{\cos(\pi(1+w))}{(1+w)w^2} $$
 
@@ -60,17 +60,17 @@ $$ f(1+w) = \frac{-(1 - \frac{\pi^2 w^2}{2} + \dots)}{w^2(1+w)} \approx -\frac{1
 Translating back to our original coordinate $z$, we find the principal part at $z=1$ is:
 $$ -\frac{1}{(z-1)^2} + \frac{1}{z-1} $$
 
-This [change of variables](@article_id:140892) is a universal tool. Faced with a complicated singularity at some point $z_0$, like in $f(z) = \frac{e^z}{(z^2+a^2)^2}$ at $z_0 = ia$  or $f(z) = \frac{\pi\cos(z/2)}{(z-\pi)^2(e^{iz}+1)}$ at $z_0 = \pi$ , the first step is always to set $w = z-z_0$ and re-center the universe around your point of interest.
+This [change of variables](@keyword=change_of_variables|lang=en-US|style=Feynman) is a universal tool. Faced with a complicated singularity at some point $z_0$, like in $f(z) = \frac{e^z}{(z^2+a^2)^2}$ at $z_0 = ia$ [@problem_id:806734] or $f(z) = \frac{\pi\cos(z/2)}{(z-\pi)^2(e^{iz}+1)}$ at $z_0 = \pi$ [@problem_id:815480], the first step is always to set $w = z-z_0$ and re-center the universe around your point of interest.
 
 ### The View from the Heavens: Behavior at Infinity
 
 We've been zooming in on functions. What happens if we zoom all the way out and view the complex plane from "infinity"? This isn't just a poetic notion. By imagining the complex plane as a giant sphere (the Riemann sphere), the point of "infinity" is just the north pole. Studying a function's behavior there is a perfectly valid question.
 
-How can we analyze behavior at an infinite distance? With another clever [change of coordinates](@article_id:272645)! We let $z = 1/\zeta$. As $z$ travels out to infinity in any direction, our new coordinate $\zeta$ goes to zero. Once again, we've transformed the problem into an analysis at the origin.
+How can we analyze behavior at an infinite distance? With another clever [change of coordinates](@keyword=change_of_coordinates|lang=en-US|style=Feynman)! We let $z = 1/\zeta$. As $z$ travels out to infinity in any direction, our new coordinate $\zeta$ goes to zero. Once again, we've transformed the problem into an analysis at the origin.
 
 When we talk about the principal part at infinity, the meaning gets a slight, but logical, twist. A function that "blows up" at infinity is one that doesn't settle down to a finite value, like $f(z)=z^2$ or $f(z)=2az$. In the $\zeta$ coordinate, these become $1/\zeta^2$ and $2a/\zeta$. These are terms with negative powers of $\zeta$. But what were they in terms of $z$? They were terms with *positive* powers of $z$.
 
-So, the **principal part at infinity** is the collection of all positive-power terms in the Laurent series of $f(z)$ for large $|z|$. It describes the growing, unbounded part of the function. For the function $f(z) = z^2 \log\left(\frac{z+a}{z-a}\right)$ , a careful expansion for large $|z|$ shows that the function behaves like:
+So, the **principal part at infinity** is the collection of all positive-power terms in the Laurent series of $f(z)$ for large $|z|$. It describes the growing, unbounded part of the function. For the function $f(z) = z^2 \log\left(\frac{z+a}{z-a}\right)$ [@problem_id:877772], a careful expansion for large $|z|$ shows that the function behaves like:
 
 $$ f(z) = 2az + \frac{2a^3}{3z} + \frac{2a^5}{5z^3} + \dots $$
 
@@ -80,10 +80,10 @@ The part that grows as $|z| \to \infty$ is simply $2az$. This is the principal p
 
 The principal part is far more than an algebraic exercise. It is the definitive fingerprint of a function's singularity.
 
--   If the principal part has a finite number of terms, ending at $\frac{c_{-m}}{(z-z_0)^m}$ (where $c_{-m} \neq 0$), the singularity is a **pole of order m**. The problems we've seen show poles of order 2 , order 3 , and even order 4 .
+-   If the principal part has a finite number of terms, ending at $\frac{c_{-m}}{(z-z_0)^m}$ (where $c_{-m} \neq 0$), the singularity is a **pole of order m**. The problems we've seen show poles of order 2 [@problem_id:2249786], order 3 [@problem_id:925925], and even order 4 [@problem_id:806832].
 
 -   If the principal part has an infinite number of non-zero terms, the singularity is a much wilder beast known as an **essential singularity**.
 
--   If the principal part is zero (i.e., there are no negative-power terms), the singularity was an illusion! It's a **[removable singularity](@article_id:175103)**, a hole that can be patched to make the function analytic.
+-   If the principal part is zero (i.e., there are no negative-power terms), the singularity was an illusion! It's a **[removable singularity](@keyword=removable_singularity|lang=en-US|style=Feynman)**, a hole that can be patched to make the function analytic.
 
 This "singular fingerprint" is the key that unlocks one of the most powerful computational tools in science and engineering: the Residue Theorem. The coefficient of the $(z-z_0)^{-1}$ term, $c_{-1}$, called the **residue**, turns out to have magical properties. But it's just one piece of the richer story told by the entire principal part—a story of how functions behave when they are pushed to their absolute limits. By learning to read this story, we gain dominion over the infinite.

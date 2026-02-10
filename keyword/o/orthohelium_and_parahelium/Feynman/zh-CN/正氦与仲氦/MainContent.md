@@ -1,9 +1,9 @@
 ## 引言
-氦原子仅有两个电子，却是量子力学中一个引人入胜的案例研究。它看似简单，却以两种截然不同且不可相互转换的形式存在：[正氦](@article_id:310014)和[仲氦](@article_id:312508)。这种二元性曾使早期科学家感到困惑，并揭示了一个由远比[经典物理学](@article_id:310812)所预示的更奇特的原理所支配的世界。这两种氦“物种”的存在并非偶然的怪癖，而是电子基本全同性和严格的[量子对称性](@article_id:310986)定律的直接结果。
+氦原子仅有两个电子，却是量子力学中一个引人入胜的案例研究。它看似简单，却以两种截然不同且不可相互转换的形式存在：[正氦](@keyword=orthohelium|lang=zh-CN|style=Feynman)和[仲氦](@keyword=parahelium|lang=zh-CN|style=Feynman)。这种二元性曾使早期科学家感到困惑，并揭示了一个由远比[经典物理学](@keyword=classical_physics|lang=zh-CN|style=Feynman)所预示的更奇特的原理所支配的世界。这两种氦“物种”的存在并非偶然的怪癖，而是电子基本全同性和严格的[量子对称性](@keyword=quantum_symmetry|lang=zh-CN|style=Feynman)定律的直接结果。
 
-本文旨在回答核心问题：为什么氦会表现出这种双重特性，以及其后果是什么。通过将复杂的物理学分解为其基本组成部分，本文将揭开其神秘面纱。通过阅读，您将对支配[多电子原子](@article_id:323532)行为的量子规则有清晰的理解。
+本文旨在回答核心问题：为什么氦会表现出这种双重特性，以及其后果是什么。通过将复杂的物理学分解为其基本组成部分，本文将揭开其神秘面纱。通过阅读，您将对支配[多电子原子](@keyword=many_electron_atoms|lang=zh-CN|style=Feynman)行为的量子规则有清晰的理解。
 
-我们的旅程始于“原理与机制”一章，在那里我们将探讨[泡利不相容原理](@article_id:302291)、自旋和空间对称性的概念，以及交换相互作用在决定原子能级中的关键作用。随后，“应用与跨学科联系”一章将阐明这些抽象原理如何在现实世界中体现，从产生独特的[原子光谱](@article_id:303571)、促成激光技术，到影响恒星等离子体的行为。我们将看到一条单一的量子规则如何引发一系列丰富多样、可观测且具有重要技术价值的现象。
+我们的旅程始于“原理与机制”一章，在那里我们将探讨[泡利不相容原理](@keyword=pauli_exclusion_principle|lang=zh-CN|style=Feynman)、自旋和空间对称性的概念，以及交换相互作用在决定原子能级中的关键作用。随后，“应用与跨学科联系”一章将阐明这些抽象原理如何在现实世界中体现，从产生独特的[原子光谱](@keyword=atomic_spectra|lang=zh-CN|style=Feynman)、促成激光技术，到影响恒星等离子体的行为。我们将看到一条单一的量子规则如何引发一系列丰富多样、可观测且具有重要技术价值的现象。
 
 ## 原理与机制
 
@@ -11,70 +11,70 @@
 
 ### 电子的全同之舞
 
-对于像电子这样的粒子（称为**[费米子](@article_id:306655)**），支配这种全同之舞的核心规则是著名的**[泡利不相容原理](@article_id:302291)**。但它比高中化学中“没有两个电子能拥有相同的量子数”这一简化版更为精妙和强大。其完整表述是：对于一个全同[费米子](@article_id:306655)体系，其总[波函数](@article_id:307855)在交换任意两个粒子时必须是**反对称**的 。
+对于像电子这样的粒子（称为**[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)**），支配这种全同之舞的核心规则是著名的**[泡利不相容原理](@keyword=pauli_exclusion_principle|lang=zh-CN|style=Feynman)**。但它比高中化学中“没有两个电子能拥有相同的量子数”这一简化版更为精妙和强大。其完整表述是：对于一个全同[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)体系，其总[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)在交换任意两个粒子时必须是**反对称**的 [@problem_id:2133044]。
 
-“反对称”是什么意思？假设我们两个氦电子的总状态由一个[波函数](@article_id:307855) $\Psi(\mathbf{x}_1, \mathbf{x}_2)$ 描述，其中 $\mathbf{x}_1$ 和 $\mathbf{x}_2$ 代表我们两个电子的所有属性（位置和自旋）。如果我们交换它们，该原理要求新的[波函数](@article_id:307855)是旧[波函数](@article_id:307855)的负值：
+“反对称”是什么意思？假设我们两个氦电子的总状态由一个[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman) $\Psi(\mathbf{x}_1, \mathbf{x}_2)$ 描述，其中 $\mathbf{x}_1$ 和 $\mathbf{x}_2$ 代表我们两个电子的所有属性（位置和自旋）。如果我们交换它们，该原理要求新的[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)是旧[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)的负值：
 
 $$
 \Psi(\mathbf{x}_2, \mathbf{x}_1) = -\Psi(\mathbf{x}_1, \mathbf{x}_2)
 $$
 
-这个负号看似微不足道，但它决定了一切。它是整个表演的导演，规定了电子必须如何在空间和自旋中[排列](@article_id:296886)自己。
+这个负号看似微不足道，但它决定了一切。它是整个表演的导演，规定了电子必须如何在空间和自旋中[排列](@keyword=permutation|lang=zh-CN|style=Feynman)自己。
 
 ### 两种对称性的故事：空间与自旋
 
-为了满足这个主导规则，电子[波函数](@article_id:307855)采用了一个巧妙的技巧。它可以被看作是两个独立部分的乘积：一个描述电子*位置*的**空间[波函数](@article_id:307855)** $\psi(\mathbf{r}_1, \mathbf{r}_2)$，以及一个描述其内禀自旋方向的**[自旋波函数](@article_id:369235)** $\chi(s_1, s_2)$。
+为了满足这个主导规则，电子[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)采用了一个巧妙的技巧。它可以被看作是两个独立部分的乘积：一个描述电子*位置*的**空间[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)** $\psi(\mathbf{r}_1, \mathbf{r}_2)$，以及一个描述其内禀自旋方向的**[自旋波函数](@keyword=spin_wave_function|lang=zh-CN|style=Feynman)** $\chi(s_1, s_2)$。
 
 $$
 \Psi_{\text{total}} = \psi_{\text{space}} \times \chi_{\text{spin}}
 $$
 
-现在，为了让这两部分的乘积是反对称的，它们必须具有相反的对称性。这就像数字相乘：要得到一个负数结果，你必须将一个正数和一个负数相乘。因此，我们有两种可能性 ：
+现在，为了让这两部分的乘积是反对称的，它们必须具有相反的对称性。这就像数字相乘：要得到一个负数结果，你必须将一个正数和一个负数相乘。因此，我们有两种可能性 [@problem_id:1994144]：
 
 1.  如果自旋部分 ($\chi_{\text{spin}}$) 是**对称的**（交换电子后符号不变），那么空间部分 ($\psi_{\text{space}}$) 必须是**反对称的**。
 2.  如果自旋部分 ($\chi_{\text{spin}}$) 是**反对称的**，那么空间部分 ($\psi_{\text{space}}$) 必须是**对称的**。
 
 这种空间和自旋之间严格的伙伴关系正是氦原子两种截然不同特性的起源。
 
-### 电子的社交生活：[单重态](@article_id:315140)与[三重态](@article_id:317111)
+### 电子的社交生活：[单重态](@keyword=singlet_state|lang=zh-CN|style=Feynman)与[三重态](@keyword=triplet_state|lang=zh-CN|style=Feynman)
 
-让我们先看自旋部分。一个电子的自旋可以是“上旋”($\uparrow$) 或“下旋”($\downarrow$)。当我们有两个电子时，它们的自旋可以以两种尊重[交换对称性](@article_id:312306)的基本方式组合 ：
+让我们先看自旋部分。一个电子的自旋可以是“上旋”($\uparrow$) 或“下旋”($\downarrow$)。当我们有两个电子时，它们的自旋可以以两种尊重[交换对称性](@keyword=exchange_symmetry|lang=zh-CN|style=Feynman)的基本方式组合 [@problem_id:2133016]：
 
-*   **不合群的[单重态](@article_id:315140)：** 自旋可以组合成一个在交换下是*反对称*的单一状态。这个状态的总[自旋量子数](@article_id:302990)为 $S=0$，被称为**[单重态](@article_id:315140)**。这是**[仲氦](@article_id:312508)**的自旋构型。
+*   **不合群的[单重态](@keyword=singlet_state|lang=zh-CN|style=Feynman)：** 自旋可以组合成一个在交换下是*反对称*的单一状态。这个状态的总[自旋量子数](@keyword=spin_quantum_number|lang=zh-CN|style=Feynman)为 $S=0$，被称为**[单重态](@keyword=singlet_state|lang=zh-CN|style=Feynman)**。这是**[仲氦](@keyword=parahelium|lang=zh-CN|style=Feynman)**的自旋构型。
 
-*   **合群的三重态：** 自旋也可以组合成一组三个状态，这三个状态在交换下都是*对称的*。这些状态的总自旋量子数为 $S=1$，被称为**三重态**。这是**[正氦](@article_id:310014)**的自旋构型。
+*   **合群的三重态：** 自旋也可以组合成一组三个状态，这三个状态在交换下都是*对称的*。这些状态的总自旋量子数为 $S=1$，被称为**三重态**。这是**[正氦](@keyword=orthohelium|lang=zh-CN|style=Feynman)**的自旋构型。
 
 现在，运用泡利原理，我们可以立即看到这对电子空间排布的后果：
 
-*   **[仲氦](@article_id:312508)** 具有反对称的[自旋态](@article_id:309855) ($S=0$)，因此它必须与一个**对称的空间[波函数](@article_id:307855)**配对。从空间角度讲，这些电子是“合群的”。
+*   **[仲氦](@keyword=parahelium|lang=zh-CN|style=Feynman)** 具有反对称的[自旋态](@keyword=spin_states|lang=zh-CN|style=Feynman) ($S=0$)，因此它必须与一个**对称的空间[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)**配对。从空间角度讲，这些电子是“合群的”。
 
-*   **[正氦](@article_id:310014)** 具有对称的自旋态 ($S=1$)，因此它必须与一个**反对称的空间[波函数](@article_id:307855)**配对。这些电子在空间上被迫变得“不合群”。
+*   **[正氦](@keyword=orthohelium|lang=zh-CN|style=Feynman)** 具有对称的自旋态 ($S=1$)，因此它必须与一个**反对称的空间[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)**配对。这些电子在空间上被迫变得“不合群”。
 
-### [库仑排斥](@article_id:361236)的深层影响
+### [库仑排斥](@keyword=coulomb_repulsion|lang=zh-CN|style=Feynman)的深层影响
 
-那又怎样呢？为什么这种空间对称性会影响原子的能量？毕竟，决定能量的哈密顿量似乎并不直接关心自旋（至少，其主要部分不关心）。主要因素是电子的动能和静电[库仑力](@article_id:353641)：对正[电荷](@article_id:339187)原子核的吸引力，以及至关重要的、两个负[电荷](@article_id:339187)电子之间的排斥力 。
+那又怎样呢？为什么这种空间对称性会影响原子的能量？毕竟，决定能量的哈密顿量似乎并不直接关心自旋（至少，其主要部分不关心）。主要因素是电子的动能和静电[库仑力](@keyword=coulomb_force|lang=zh-CN|style=Feynman)：对正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)原子核的吸引力，以及至关重要的、两个负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)电子之间的排斥力 [@problem_id:1991233]。
 
-这里就是那个优美而精妙的要点：[静电排斥](@article_id:322531)能取决于电子之间的平均距离。如果它们平均距离更近，排斥力就更强，总能量就更高。而它们的平均距离是由其空间[波函数](@article_id:307855)决定的！
+这里就是那个优美而精妙的要点：[静电排斥](@keyword=electrostatic_repulsion|lang=zh-CN|style=Feynman)能取决于电子之间的平均距离。如果它们平均距离更近，排斥力就更强，总能量就更高。而它们的平均距离是由其空间[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)决定的！
 
-让我们来看一个[激发态](@article_id:325164)的[氦原子](@article_id:310662)，比如处于 $1s^1 2s^1$ 组态。
+让我们来看一个[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的[氦原子](@keyword=helium_atom|lang=zh-CN|style=Feynman)，比如处于 $1s^1 2s^1$ 组态。
 
-对于**[正氦](@article_id:310014)**（[三重态](@article_id:317111)，$S=1$），空间[波函数](@article_id:307855)必须是反对称的。一个反[对称函数](@article_id:356066)的形式为 $\psi_A \sim \phi_{1s}(\mathbf{r}_1)\phi_{2s}(\mathbf{r}_2) - \phi_{1s}(\mathbf{r}_2)\phi_{2s}(\mathbf{r}_1)$。注意，如果两个电子试图占据相同的位置，即 $\mathbf{r}_1 = \mathbf{r}_2 = \mathbf{r}$，会发生什么。[波函数](@article_id:307855)变为 $\phi_{1s}(\mathbf{r})\phi_{2s}(\mathbf{r}) - \phi_{1s}(\mathbf{r})\phi_{2s}(\mathbf{r}) = 0$。在[正氦](@article_id:310014)态中找到两个电子处于同一位置的概率为*零* 。这种量子力学上的“个人空间”要求使得电子平均相距更远。距离更远减小了它们之间的库仑排斥力，从而**降低了总能量** [@problem_id:2133011, @problem_id:2026702]。
+对于**[正氦](@keyword=orthohelium|lang=zh-CN|style=Feynman)**（[三重态](@keyword=triplet_state|lang=zh-CN|style=Feynman)，$S=1$），空间[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)必须是反对称的。一个反[对称函数](@keyword=symmetry_functions|lang=zh-CN|style=Feynman)的形式为 $\psi_A \sim \phi_{1s}(\mathbf{r}_1)\phi_{2s}(\mathbf{r}_2) - \phi_{1s}(\mathbf{r}_2)\phi_{2s}(\mathbf{r}_1)$。注意，如果两个电子试图占据相同的位置，即 $\mathbf{r}_1 = \mathbf{r}_2 = \mathbf{r}$，会发生什么。[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)变为 $\phi_{1s}(\mathbf{r})\phi_{2s}(\mathbf{r}) - \phi_{1s}(\mathbf{r})\phi_{2s}(\mathbf{r}) = 0$。在[正氦](@keyword=orthohelium|lang=zh-CN|style=Feynman)态中找到两个电子处于同一位置的概率为*零* [@problem_id:2039905]。这种量子力学上的“个人空间”要求使得电子平均相距更远。距离更远减小了它们之间的库仑排斥力，从而**降低了总能量** [@problem_id:2133011, @problem_id:2026702]。
 
-对于**[仲氦](@article_id:312508)**（单重态，$S=0$），空间[波函数](@article_id:307855)是对称的：$\psi_S \sim \phi_{1s}(\mathbf{r}_1)\phi_{2s}(\mathbf{r}_2) + \phi_{1s}(\mathbf{r}_2)\phi_{2s}(\mathbf{r}_1)$。这里没有这样的限制。实际上，与两个不相关的粒子相比，电子被发现在一起的概率略高。这种更近的距离增加了它们的平均[库仑排斥](@article_id:361236)力，从而**提高了总能量**。
+对于**[仲氦](@keyword=parahelium|lang=zh-CN|style=Feynman)**（单重态，$S=0$），空间[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)是对称的：$\psi_S \sim \phi_{1s}(\mathbf{r}_1)\phi_{2s}(\mathbf{r}_2) + \phi_{1s}(\mathbf{r}_2)\phi_{2s}(\mathbf{r}_1)$。这里没有这样的限制。实际上，与两个不相关的粒子相比，电子被发现在一起的概率略高。这种更近的距离增加了它们的平均[库仑排斥](@keyword=coulomb_repulsion|lang=zh-CN|style=Feynman)力，从而**提高了总能量**。
 
-这种由泡利原理和普通[库仑力](@article_id:353641)共同产生的能量差异，通常被称为**交换相互作用**。它不是一种新的基本自然力，而是一种有效的相互作用，一个纯粹的量子统计效应。[正氦](@article_id:310014)态的能量降低了一个我们称之为**交换积分** $K$ 的量，而[仲氦](@article_id:312508)态的能量则被提高了相同的量 。因此，这两个态之间的总能量分裂为 $2K$ 。
+这种由泡利原理和普通[库仑力](@keyword=coulomb_force|lang=zh-CN|style=Feynman)共同产生的能量差异，通常被称为**交换相互作用**。它不是一种新的基本自然力，而是一种有效的相互作用，一个纯粹的量子统计效应。[正氦](@keyword=orthohelium|lang=zh-CN|style=Feynman)态的能量降低了一个我们称之为**交换积分** $K$ 的量，而[仲氦](@keyword=parahelium|lang=zh-CN|style=Feynman)态的能量则被提高了相同的量 [@problem_id:1406583]。因此，这两个态之间的总能量分裂为 $2K$ [@problem_id:1991194]。
 
-### 最后的转折：孤单的[基态](@article_id:312876)
+### 最后的转折：孤单的[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)
 
-这就引出了最后一个极好的问题：如果氦的[激发态](@article_id:325164)分裂成[正氦](@article_id:310014)和[仲氦](@article_id:312508)版本，为什么[基态](@article_id:312876) ($1s^2$) 只有一个能级呢？
+这就引出了最后一个极好的问题：如果氦的[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)分裂成[正氦](@keyword=orthohelium|lang=zh-CN|style=Feynman)和[仲氦](@keyword=parahelium|lang=zh-CN|style=Feynman)版本，为什么[基态](@keyword=basis_states|lang=zh-CN|style=Feynman) ($1s^2$) 只有一个能级呢？
 
-让我们试着应用我们的规则 。在[基态](@article_id:312876)中，两个电子都处于相同的空间轨道，即 $1s$ 轨道。
-唯一可能的[对称空间](@article_id:361152)[波函数](@article_id:307855)是 $\psi_S = \phi_{1s}(\mathbf{r}_1)\phi_{1s}(\mathbf{r}_2)$。根据泡利原理，这必须与反对称的[自旋单重态](@article_id:313545) ($S=0$) 配对。所以，[基态](@article_id:312876)必须是[仲氦](@article_id:312508)态。
+让我们试着应用我们的规则 [@problem_id:2039929]。在[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)中，两个电子都处于相同的空间轨道，即 $1s$ 轨道。
+唯一可能的[对称空间](@keyword=symmetric_spaces|lang=zh-CN|style=Feynman)[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)是 $\psi_S = \phi_{1s}(\mathbf{r}_1)\phi_{1s}(\mathbf{r}_2)$。根据泡利原理，这必须与反对称的[自旋单重态](@keyword=spin_singlet_state|lang=zh-CN|style=Feynman) ($S=0$) 配对。所以，[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)必须是[仲氦](@keyword=parahelium|lang=zh-CN|style=Feynman)态。
 
-那么[正氦](@article_id:310014)[基态](@article_id:312876)呢？那将需要一个对称的自旋部分（三重态），因此需要一个*反对称*的空间部分。但是，如果我们试图用两个相同的 $1s$ 轨道构建一个[反对称波函数](@article_id:314225)，我们得到：
+那么[正氦](@keyword=orthohelium|lang=zh-CN|style=Feynman)[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)呢？那将需要一个对称的自旋部分（三重态），因此需要一个*反对称*的空间部分。但是，如果我们试图用两个相同的 $1s$ 轨道构建一个[反对称波函数](@keyword=antisymmetric_wavefunction|lang=zh-CN|style=Feynman)，我们得到：
 
 $$
 \psi_A = \phi_{1s}(\mathbf{r}_1)\phi_{1s}(\mathbf{r}_2) - \phi_{1s}(\mathbf{r}_2)\phi_{1s}(\mathbf{r}_1) = 0
 $$
 
-这个[波函数](@article_id:307855)处处为零！这不是一个物理状态。处于同一空间轨道的两个电子不可能有对称的自旋排列。大自然禁止这样做。这就是为什么氦的[基态](@article_id:312876)永远是单重态，即[仲氦](@article_id:312508)，并且没有相应的[正氦](@article_id:310014)伙伴。植根于全同性这一深刻真理的对称性逻辑，没有留下任何其他选择。
+这个[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)处处为零！这不是一个物理状态。处于同一空间轨道的两个电子不可能有对称的自旋排列。大自然禁止这样做。这就是为什么氦的[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)永远是单重态，即[仲氦](@keyword=parahelium|lang=zh-CN|style=Feynman)，并且没有相应的[正氦](@keyword=orthohelium|lang=zh-CN|style=Feynman)伙伴。植根于全同性这一深刻真理的对称性逻辑，没有留下任何其他选择。

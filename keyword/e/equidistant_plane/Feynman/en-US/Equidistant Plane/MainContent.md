@@ -11,7 +11,7 @@ Let's make our thought experiment more precise. In a 3D Cartesian coordinate sys
 
 There are two wonderful ways to think about this problem, one rooted in geometry and the other in algebra. Both lead to the same beautiful conclusion.
 
-First, the geometric intuition. The midpoint of the segment connecting $P_1$ and $P_2$, which we can call $M = (\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2}, \frac{z_1+z_2}{2})$, is clearly one such point. Now, if we move away from this midpoint, we must do so along a surface that is "impartial" to both $P_1$ and $P_2$. This means the surface must be perpendicular to the line segment $\overline{P_1P_2}$. Any other orientation would tilt the surface, making it closer to one point than the other. So, our intuition tells us the answer is the **[perpendicular bisector](@article_id:175933) plane**: the plane that passes through the midpoint $M$ and is perpendicular to the vector pointing from one star to the other, $\vec{N} = P_2 - P_1$. This vector $\vec{N}$ is called the **[normal vector](@article_id:263691)** to the plane, as it defines the plane's orientation. This geometric insight gives us a complete recipe for constructing the plane .
+First, the geometric intuition. The midpoint of the segment connecting $P_1$ and $P_2$, which we can call $M = (\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2}, \frac{z_1+z_2}{2})$, is clearly one such point. Now, if we move away from this midpoint, we must do so along a surface that is "impartial" to both $P_1$ and $P_2$. This means the surface must be perpendicular to the line segment $\overline{P_1P_2}$. Any other orientation would tilt the surface, making it closer to one point than the other. So, our intuition tells us the answer is the **[perpendicular bisector](@keyword=perpendicular_bisector|lang=en-US|style=Feynman) plane**: the plane that passes through the midpoint $M$ and is perpendicular to the vector pointing from one star to the other, $\vec{N} = P_2 - P_1$. This vector $\vec{N}$ is called the **[normal vector](@keyword=normal_vector|lang=en-US|style=Feynman)** to the plane, as it defines the plane's orientation. This geometric insight gives us a complete recipe for constructing the plane [@problem_id:2147944].
 
 Now for the algebra, which provides a satisfying, rigorous confirmation. The condition of equal distance is written using the Euclidean distance formula:
 $$
@@ -23,13 +23,13 @@ $$
 (x-x_1)^2 + (y-y_1)^2 + (z-z_1)^2 = (x-x_2)^2 + (y-y_2)^2 + (z-z_2)^2
 $$
 
-If we expand the squared terms, something magical happens. On the left side, we'll get $x^2 - 2x_1x + x_1^2$, and on the right, $x^2 - 2x_2x + x_2^2$. The $x^2$ terms are identical on both sides, and they cancel out! The same happens for the $y^2$ and $z^2$ terms. All the quadratic terms—the ones that make equations complicated—vanish completely. What we are left with is a simple linear equation in $x$, $y$, and $z$: an equation of the form $ax+by+cz+d=0$. And this, of course, is the equation of a plane . The brute force of algebra has led us exactly where our intuition did. It confirms that the locus of points equidistant from two points is, indeed, a plane . Furthermore, we can think of this plane not just by what it's perpendicular to, but by the vectors that lie within it. The plane is a two-dimensional world, which can be described by two [orthogonal vectors](@article_id:141732) that span its entire surface, both of which are, by definition, perpendicular to the [normal vector](@article_id:263691) $\vec{N}$ .
+If we expand the squared terms, something magical happens. On the left side, we'll get $x^2 - 2x_1x + x_1^2$, and on the right, $x^2 - 2x_2x + x_2^2$. The $x^2$ terms are identical on both sides, and they cancel out! The same happens for the $y^2$ and $z^2$ terms. All the quadratic terms—the ones that make equations complicated—vanish completely. What we are left with is a simple linear equation in $x$, $y$, and $z$: an equation of the form $ax+by+cz+d=0$. And this, of course, is the equation of a plane [@problem_id:1383427]. The brute force of algebra has led us exactly where our intuition did. It confirms that the locus of points equidistant from two points is, indeed, a plane [@problem_id:2124687]. Furthermore, we can think of this plane not just by what it's perpendicular to, but by the vectors that lie within it. The plane is a two-dimensional world, which can be described by two [orthogonal vectors](@keyword=orthogonal_vectors|lang=en-US|style=Feynman) that span its entire surface, both of which are, by definition, perpendicular to the [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman) $\vec{N}$ [@problem_id:976856].
 
 ### Finding the Middle Ground: Equidistance Between Two Planes
 
-Let's extend this game. What if, instead of two points, we start with two infinite, [parallel planes](@article_id:165425)? Imagine you are in a room with a perfectly flat floor and a perfectly flat, parallel ceiling. Where are all the points that are equidistant from the floor and the ceiling? Your mind immediately jumps to the answer: it's another plane, parallel to both, slicing the room in half horizontally.
+Let's extend this game. What if, instead of two points, we start with two infinite, [parallel planes](@keyword=parallel_planes|lang=en-US|style=Feynman)? Imagine you are in a room with a perfectly flat floor and a perfectly flat, parallel ceiling. Where are all the points that are equidistant from the floor and the ceiling? Your mind immediately jumps to the answer: it's another plane, parallel to both, slicing the room in half horizontally.
 
-Algebra once again confirms this with stunning simplicity. Let's say our two [parallel planes](@article_id:165425), $\Pi_1$ and $\Pi_2$, are described by the equations:
+Algebra once again confirms this with stunning simplicity. Let's say our two [parallel planes](@keyword=parallel_planes|lang=en-US|style=Feynman), $\Pi_1$ and $\Pi_2$, are described by the equations:
 $$ \Pi_1: Ax + By + Cz = D_1 $$
 $$ \Pi_2: Ax + By + Cz = D_2 $$
 They must have the same coefficients $A, B, C$ because they are parallel; only their constant term, which relates to their distance from the origin, is different. A point $(x,y,z)$ is on the equidistant plane if its distance to $\Pi_1$ equals its distance to $\Pi_2$. Using the distance formula, this means:
@@ -40,7 +40,7 @@ The denominators cancel, leaving $|Ax + By + Cz - D_1| = |Ax + By + Cz - D_2|$. 
 $$
 \Pi_3: Ax + By + Cz = \frac{D_1 + D_2}{2}
 $$
-Look at that! The resulting plane has the exact same orientation, and its "position" is simply the average of the original two  . This is perfectly analogous to finding the midpoint of a line segment, which is $\frac{p_1+p_2}{2}$. The principle of "averaging" or "finding the middle" holds in a beautifully consistent way.
+Look at that! The resulting plane has the exact same orientation, and its "position" is simply the average of the original two [@problem_id:1383403] [@problem_id:2132904]. This is perfectly analogous to finding the midpoint of a line segment, which is $\frac{p_1+p_2}{2}$. The principle of "averaging" or "finding the middle" holds in a beautifully consistent way.
 
 ### A Cosmic Dance: Equidistance from a Point and a Plane
 
@@ -64,11 +64,11 @@ Once again, terms magically cancel! The $z^2$ and $f^2$ terms disappear from bot
 $$
 x^2 + y^2 = 4fz
 $$
-This is not the equation of a plane. It's a **quadratic surface**. For any given height $z$, the cross-section is a circle of radius $\sqrt{4fz}$. This shape, a bowl-like curve spun around an axis, is a **paraboloid of revolution** . This single, elegant surface is the heart of every [parabolic reflector](@article_id:176410). Why? Because this geometric property means that any ray of light arriving parallel to the z-axis (as if from the "plane at infinity") will strike the paraboloid and be reflected directly to the focus. The simple rule of equidistance creates a perfect focusing device.
+This is not the equation of a plane. It's a **quadratic surface**. For any given height $z$, the cross-section is a circle of radius $\sqrt{4fz}$. This shape, a bowl-like curve spun around an axis, is a **paraboloid of revolution** [@problem_id:2140890]. This single, elegant surface is the heart of every [parabolic reflector](@keyword=parabolic_reflector|lang=en-US|style=Feynman). Why? Because this geometric property means that any ray of light arriving parallel to the z-axis (as if from the "plane at infinity") will strike the paraboloid and be reflected directly to the focus. The simple rule of equidistance creates a perfect focusing device.
 
 From this simple game of "what's equidistant from what," we have uncovered a profound unity. The same fundamental principle, when applied to different geometric objects, generates a whole family of shapes:
 -   **Point & Point** $\rightarrow$ **Plane** (the ultimate bisector)
 -   **Plane & Plane** $\rightarrow$ **Plane** (the ultimate average)
 -   **Point & Plane** $\rightarrow$ **Paraboloid** (the perfect reflector)
 
-And we can keep going. The set of points equidistant from a line and a plane that it intersects perpendicularly generates a **cone** . The simple, intuitive notion of being "in the middle" is a powerful engine of creation, sculpting the fundamental geometries that appear all around us, from the cosmos to our living rooms.
+And we can keep going. The set of points equidistant from a line and a plane that it intersects perpendicularly generates a **cone** [@problem_id:1660152]. The simple, intuitive notion of being "in the middle" is a powerful engine of creation, sculpting the fundamental geometries that appear all around us, from the cosmos to our living rooms.

@@ -5,17 +5,17 @@ This article addresses the problem of calculating a tetrahedron's volume by expl
 
 ## Principles and Mechanisms
 
-How do we measure the space contained within a shape? For a simple cube, you multiply length by width by height. It’s a familiar, comfortable idea. But the universe is rarely so neat. Nature, in its beautiful complexity, often prefers the tetrahedron—the simplest of all [polyhedra](@article_id:637416), a pyramid with a triangular base. From the atomic arrangement in a quartz crystal to the fundamental unit cells studied by materials scientists, the tetrahedron is everywhere. So, how do we capture its volume? The answer is not just a formula; it’s a beautiful story about how three vectors can dance together to define a piece of three-dimensional space.
+How do we measure the space contained within a shape? For a simple cube, you multiply length by width by height. It’s a familiar, comfortable idea. But the universe is rarely so neat. Nature, in its beautiful complexity, often prefers the tetrahedron—the simplest of all [polyhedra](@keyword=polyhedra|lang=en-US|style=Feynman), a pyramid with a triangular base. From the atomic arrangement in a quartz crystal to the fundamental unit cells studied by materials scientists, the tetrahedron is everywhere. So, how do we capture its volume? The answer is not just a formula; it’s a beautiful story about how three vectors can dance together to define a piece of three-dimensional space.
 
 ### The Parallelepiped and the Secret of the Scalar Triple Product
 
 Before we can tackle the tetrahedron, let’s start with a slightly more familiar, if slanted, shape: the **parallelepiped**. Imagine taking a cardboard box and pushing it over. All its faces are parallelograms. This is a parallelepiped. Let’s say three edges meeting at one corner are defined by the vectors $\vec{a}$, $\vec{b}$, and $\vec{c}$. How can we find its volume?
 
-We can fall back on a principle we learned in school: the volume of such a solid is its base area times its height. Let’s pick the parallelogram formed by vectors $\vec{b}$ and $\vec{c}$ as our base. In the language of vector algebra, the area of this parallelogram is given by the magnitude of the [cross product](@article_id:156255), $|\vec{b} \times \vec{c}|$. This is a lovely geometric fact in itself. The cross product $\vec{b} \times \vec{c}$ creates a *new* vector that is perpendicular to the base, and its length is precisely the area of that base.
+We can fall back on a principle we learned in school: the volume of such a solid is its base area times its height. Let’s pick the parallelogram formed by vectors $\vec{b}$ and $\vec{c}$ as our base. In the language of vector algebra, the area of this parallelogram is given by the magnitude of the [cross product](@keyword=cross_product|lang=en-US|style=Feynman), $|\vec{b} \times \vec{c}|$. This is a lovely geometric fact in itself. The cross product $\vec{b} \times \vec{c}$ creates a *new* vector that is perpendicular to the base, and its length is precisely the area of that base.
 
-Now, we need the height. The height is the component of the third vector, $\vec{a}$, that is perpendicular to the base. How do we find that? We use another tool, the dot product. The dot product of $\vec{a}$ with the [normal vector](@article_id:263691) $(\vec{b} \times \vec{c})$ projects $\vec{a}$ onto the direction of the normal, effectively measuring the height relative to the base area.
+Now, we need the height. The height is the component of the third vector, $\vec{a}$, that is perpendicular to the base. How do we find that? We use another tool, the dot product. The dot product of $\vec{a}$ with the [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman) $(\vec{b} \times \vec{c})$ projects $\vec{a}$ onto the direction of the normal, effectively measuring the height relative to the base area.
 
-So, the volume of the parallelepiped, $V_p$, is the result of this two-step dance: a cross product to define the base area and direction, followed by a dot product to find the perpendicular height. This entire operation is called the **[scalar triple product](@article_id:152503)**:
+So, the volume of the parallelepiped, $V_p$, is the result of this two-step dance: a cross product to define the base area and direction, followed by a dot product to find the perpendicular height. This entire operation is called the **[scalar triple product](@keyword=scalar_triple_product|lang=en-US|style=Feynman)**:
 
 $V_p = |\vec{a} \cdot (\vec{b} \times \vec{c})|$
 
@@ -23,7 +23,7 @@ This expression is a marvel of concise notation. It turns out this is exactly eq
 
 $V_p = \left| \det \begin{pmatrix} a_x & a_y & a_z \\ b_x & b_y & b_z \\ c_x & c_y & c_z \end{pmatrix} \right|$
 
-You might notice the absolute value signs. The determinant itself can be positive or negative. This sign tells us about the "handedness" of the vectors—whether they form a right-handed or left-handed system, like the difference between your right and left hands. But for volume, which is a measure of space, we only care about the magnitude. A negative volume makes no physical sense, so we take the absolute value .
+You might notice the absolute value signs. The determinant itself can be positive or negative. This sign tells us about the "handedness" of the vectors—whether they form a right-handed or left-handed system, like the difference between your right and left hands. But for volume, which is a measure of space, we only care about the magnitude. A negative volume makes no physical sense, so we take the absolute value [@problem_id:2156311].
 
 ### From Box to Pyramid: The Crucial Factor of Six
 
@@ -34,15 +34,15 @@ The classic formula for the volume of any pyramid is $V = \frac{1}{3} (\text{Are
 Putting it all together:
 $V_{tetra} = \frac{1}{3} \times (\frac{1}{2} \text{Area}_{\text{parallelogram}}) \times (\text{Height}) = \frac{1}{6} \times (\text{Area}_{\text{parallelogram}} \times \text{Height}) = \frac{1}{6} V_p$
 
-So, the volume of a tetrahedron is simply one-sixth of the volume of the parallelepiped that envelops it! This elegant and fixed relationship is a cornerstone of solid geometry . This gives us our master formula:
+So, the volume of a tetrahedron is simply one-sixth of the volume of the parallelepiped that envelops it! This elegant and fixed relationship is a cornerstone of solid geometry [@problem_id:21122]. This gives us our master formula:
 
 $V_{tetra} = \frac{1}{6} |\vec{a} \cdot (\vec{b} \times \vec{c})| = \frac{1}{6} \left| \det(\vec{a}, \vec{b}, \vec{c}) \right|$
 
-This single, powerful expression encapsulates everything. It's the key that unlocks the volume of any tetrahedron, a tool used by physicists and engineers to model everything from [crystal structures](@article_id:150735) to structural mechanics  .
+This single, powerful expression encapsulates everything. It's the key that unlocks the volume of any tetrahedron, a tool used by physicists and engineers to model everything from [crystal structures](@keyword=crystal_structures|lang=en-US|style=Feynman) to structural mechanics [@problem_id:1364834] [@problem_id:21140].
 
 ### A Matter of Perspective: From Points to Vectors
 
-In practical applications, we are often given not the edge vectors themselves, but the coordinates of the four vertices, say $P$, $Q$, $R$, and $S$ . How do we apply our formula then?
+In practical applications, we are often given not the edge vectors themselves, but the coordinates of the four vertices, say $P$, $Q$, $R$, and $S$ [@problem_id:21108]. How do we apply our formula then?
 
 The trick is to choose one of the points as your anchor, your local origin. Let's pick $P$. Then, we simply create the three edge vectors that emanate from this point by subtracting the coordinates of $P$ from the others:
 $\vec{a} = \vec{PQ} = Q - P$
@@ -57,7 +57,7 @@ What if we calculate the volume and find that it is zero? Does this mean we made
 
 For the volume of the parallelepiped $|\vec{a} \cdot (\vec{b} \times \vec{c})|$ to be zero, it means the structure is squashed completely flat. This happens if the vector $\vec{a}$ lies in the same plane as the base formed by $\vec{b}$ and $\vec{c}$. In other words, the three vectors $\vec{a}$, $\vec{b}$, and $\vec{c}$ are **coplanar**.
 
-This means that our four vertices, $P, Q, R,$ and $S$, all lie on the same two-dimensional plane. The "tetrahedron" has degenerated into a flat quadrilateral. A striking example is when all four points have a z-coordinate of zero; they are all stuck on the $xy$-plane, and a 3D volume is impossible . Thus, our volume formula doubles as a powerful test: if you want to know if four points in space are coplanar, just calculate the volume of the tetrahedron they define. If it’s zero, they are .
+This means that our four vertices, $P, Q, R,$ and $S$, all lie on the same two-dimensional plane. The "tetrahedron" has degenerated into a flat quadrilateral. A striking example is when all four points have a z-coordinate of zero; they are all stuck on the $xy$-plane, and a 3D volume is impossible [@problem_id:21117]. Thus, our volume formula doubles as a powerful test: if you want to know if four points in space are coplanar, just calculate the volume of the tetrahedron they define. If it’s zero, they are [@problem_id:2156305].
 
 ### The Rules of Scale and Space
 
@@ -66,8 +66,8 @@ The vector formula for volume also gives us deep intuition about how shapes beha
 Let the new vectors be $\vec{a}' = 2\vec{a}$, $\vec{b}' = 2\vec{b}$, and $\vec{c}' = 2\vec{c}$. The new volume will be:
 $V' = \frac{1}{6} |(2\vec{a}) \cdot ((2\vec{b}) \times (2\vec{c}))| = \frac{1}{6} |(2\vec{a}) \cdot (4(\vec{b} \times \vec{c}))| = \frac{1}{6} |8 (\vec{a} \cdot (\vec{b} \times \vec{c}))| = 8V$
 
-The volume increases by a factor of $2^3 = 8$. This isn't a coincidence. Volume is a three-dimensional quantity, so if you scale all linear dimensions by a factor $k$, the volume scales by $k^3$. This fundamental principle of scaling falls right out of the mathematics of the [scalar triple product](@article_id:152503)  .
+The volume increases by a factor of $2^3 = 8$. This isn't a coincidence. Volume is a three-dimensional quantity, so if you scale all linear dimensions by a factor $k$, the volume scales by $k^3$. This fundamental principle of scaling falls right out of the mathematics of the [scalar triple product](@keyword=scalar_triple_product|lang=en-US|style=Feynman) [@problem_id:21146] [@problem_id:2164154].
 
-The "linearity" of the operations involved also allows for surprising results. You can construct tetrahedra from complex combinations of other vectors, and because of the distributive properties of the dot and cross products (which are embedded in the determinant), you can algebraically dissect and predict the resulting volumes in elegant ways . This transforms the volume formula from a mere computational recipe into a tool for geometric reasoning.
+The "linearity" of the operations involved also allows for surprising results. You can construct tetrahedra from complex combinations of other vectors, and because of the distributive properties of the dot and cross products (which are embedded in the determinant), you can algebraically dissect and predict the resulting volumes in elegant ways [@problem_id:2156319]. This transforms the volume formula from a mere computational recipe into a tool for geometric reasoning.
 
-From a simple desire to measure the space inside a pyramid, we have uncovered a rich tapestry of vector algebra, determinants, and profound geometric truths. The [scalar triple product](@article_id:152503) is more than a calculation; it is a lens through which we can see the hidden relationships governing the shapes that build our world.
+From a simple desire to measure the space inside a pyramid, we have uncovered a rich tapestry of vector algebra, determinants, and profound geometric truths. The [scalar triple product](@keyword=scalar_triple_product|lang=en-US|style=Feynman) is more than a calculation; it is a lens through which we can see the hidden relationships governing the shapes that build our world.

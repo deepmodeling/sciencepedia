@@ -1,7 +1,7 @@
 ## Introduction
-In an era defined by data, the trustworthiness of information is not just a technical detail—it is the bedrock of modern science, commerce, and society. From a patient's [electronic health record](@entry_id:899704) to a financial transaction, the assumption that data is accurate, reliable, and unaltered is fundamental. Yet, this trust is fragile. Data can be corrupted, incomplete, or simply wrong, leading to catastrophic failures in decision-making. This article delves into the critical concept of data integrity, moving beyond simple notions of 'correctness' to build a comprehensive framework for understanding and ensuring data trustworthiness.
+In an era defined by data, the trustworthiness of information is not just a technical detail—it is the bedrock of modern science, commerce, and society. From a patient's [electronic health record](@keyword=electronic_health_record|lang=en-US|style=Feynman) to a financial transaction, the assumption that data is accurate, reliable, and unaltered is fundamental. Yet, this trust is fragile. Data can be corrupted, incomplete, or simply wrong, leading to catastrophic failures in decision-making. This article delves into the critical concept of data integrity, moving beyond simple notions of 'correctness' to build a comprehensive framework for understanding and ensuring data trustworthiness.
 
-First, in "Principles and Mechanisms," we will deconstruct the meaning of 'good' data, distinguishing between intrinsic accuracy and 'fitness for use,' and exploring the core dimensions of quality: accuracy, validity, completeness, timeliness, and consistency. We will examine the architectural toolkit, from the ALCOA+ framework to [metadata](@entry_id:275500)-driven systems, used to build trust into our data infrastructure. Following this, the "Applications and Interdisciplinary Connections" chapter will demonstrate how these principles are applied in the real world, revealing the profound impact of data integrity on everything from clinical trials and legal proceedings to the stability of [operating systems](@entry_id:752938) and the security of artificial intelligence. By the end, you will have a robust understanding of data integrity not as an abstract ideal, but as a practical and essential discipline.
+First, in "Principles and Mechanisms," we will deconstruct the meaning of 'good' data, distinguishing between intrinsic accuracy and 'fitness for use,' and exploring the core dimensions of quality: accuracy, validity, completeness, timeliness, and consistency. We will examine the architectural toolkit, from the ALCOA+ framework to [metadata](@keyword=metadata|lang=en-US|style=Feynman)-driven systems, used to build trust into our data infrastructure. Following this, the "Applications and Interdisciplinary Connections" chapter will demonstrate how these principles are applied in the real world, revealing the profound impact of data integrity on everything from clinical trials and legal proceedings to the stability of [operating systems](@keyword=operating_systems|lang=en-US|style=Feynman) and the security of artificial intelligence. By the end, you will have a robust understanding of data integrity not as an abstract ideal, but as a practical and essential discipline.
 
 ## Principles and Mechanisms
 
@@ -13,19 +13,19 @@ This puzzle is the heart of data integrity. It's not just about data being "corr
 
 Let's first sharpen our language. We must distinguish between two fundamental ideas. On one hand, we have **intrinsic accuracy**. This is the purist's view: how close is a recorded value, let's call it $X$, to the true, latent value in the universe, $X^{\ast}$? If a patient's true temperature is $37.0^{\circ}\text{C}$, and we measure it as $37.1^{\circ}\text{C}$, the intrinsic error is $0.1^{\circ}\text{C}$. This relationship, idealized as $X = X^{\ast} + \epsilon$ where $\epsilon$ is some error, is a task-agnostic property of the measurement process itself.
 
-On the other hand, we have the pragmatist's view: **[data quality](@entry_id:185007) as fitness for use**. This is a much broader, task-dependent concept. Is the data good *enough* for *my specific purpose*? A dataset might be intrinsically inaccurate but perfectly fine for identifying broad trends. Conversely, a dataset with perfectly accurate data points might be useless if the key information you need is consistently missing. Fitness for use is the ultimate arbiter of quality. A dataset isn't just "good" or "bad"; it is fit or unfit for a particular purpose, whether that's training an AI model or conducting [public health surveillance](@entry_id:170581).
+On the other hand, we have the pragmatist's view: **[data quality](@keyword=data_quality|lang=en-US|style=Feynman) as fitness for use**. This is a much broader, task-dependent concept. Is the data good *enough* for *my specific purpose*? A dataset might be intrinsically inaccurate but perfectly fine for identifying broad trends. Conversely, a dataset with perfectly accurate data points might be useless if the key information you need is consistently missing. Fitness for use is the ultimate arbiter of quality. A dataset isn't just "good" or "bad"; it is fit or unfit for a particular purpose, whether that's training an AI model or conducting [public health surveillance](@keyword=public_health_surveillance|lang=en-US|style=Feynman).
 
 To determine fitness for use, we must dissect the idea of "quality" into a set of observable, measurable dimensions.
 
 ### A Symphony of Qualities: Deconstructing "Good" Data
 
-Think of [data quality](@entry_id:185007) not as a single note, but as a chord, composed of several distinct notes that harmonize to create a sense of trust. The most critical of these are validity, accuracy, completeness, timeliness, and consistency.
+Think of [data quality](@keyword=data_quality|lang=en-US|style=Feynman) not as a single note, but as a chord, composed of several distinct notes that harmonize to create a sense of trust. The most critical of these are validity, accuracy, completeness, timeliness, and consistency.
 
 #### Accuracy vs. Validity: The Rules of the Game
 
 This is the most common and most important distinction to master. **Accuracy** is closeness to the truth. **Validity** is conformance to the rules.
 
-Imagine a hospital's electronic health record (EHR) has a field for body temperature that, by definition in its [data dictionary](@entry_id:910490), must be a numeric value in degrees Celsius between $30$ and $45$.
+Imagine a hospital's electronic health record (EHR) has a field for body temperature that, by definition in its [data dictionary](@keyword=data_dictionary|lang=en-US|style=Feynman), must be a numeric value in degrees Celsius between $30$ and $45$.
 
 One day, a nurse measures a patient's temperature as a perfectly normal $98.6^{\circ}\text{F}$. She types "98.6" into the Celsius field. Is this data good?
 
@@ -43,7 +43,7 @@ This simple example reveals everything. Validity checks are your first line of d
 
 What good is accurate, valid data if it simply isn't there? **Completeness** measures the presence of required data. A blood pressure reading requires two numbers, systolic and diastolic. If the diastolic value is missing (`null`), the record is incomplete. In a public health system, if $100$ clinics are expected to submit a monthly report and only $80$ do, the reporting completeness is $0.8$.
 
-The nature of incompleteness changes depending on the type of data. For **[structured data](@entry_id:914605)** (think neat tables with rows and columns), completeness is easy to measure: we just count the empty cells in required fields. But for **[unstructured data](@entry_id:917435)**, like a doctor's free-text notes, the challenge is semantic. A discharge summary note might exist (the field is not null), but if it fails to mention the patient's primary diagnosis, it is conceptually incomplete for many research or billing purposes. Assessing this requires more sophisticated tools, like [natural language processing](@entry_id:270274), to check for the presence of expected clinical concepts.
+The nature of incompleteness changes depending on the type of data. For **[structured data](@keyword=structured_data|lang=en-US|style=Feynman)** (think neat tables with rows and columns), completeness is easy to measure: we just count the empty cells in required fields. But for **[unstructured data](@keyword=unstructured_data|lang=en-US|style=Feynman)**, like a doctor's free-text notes, the challenge is semantic. A discharge summary note might exist (the field is not null), but if it fails to mention the patient's primary diagnosis, it is conceptually incomplete for many research or billing purposes. Assessing this requires more sophisticated tools, like [natural language processing](@keyword=natural_language_processing|lang=en-US|style=Feynman), to check for the presence of expected clinical concepts.
 
 #### Timeliness: The Race Against Time
 
@@ -71,7 +71,7 @@ At the heart of ALCOA+ is the concept of **provenance**: the unbroken story of a
 
 #### A Tale of Two Controls: Humans and Machines
 
-Ensuring data integrity is not purely a technical problem. It’s a socio-technical challenge. You need a [defense-in-depth](@entry_id:203741) strategy that combines both technical and procedural controls.
+Ensuring data integrity is not purely a technical problem. It’s a socio-technical challenge. You need a [defense-in-depth](@keyword=defense_in_depth|lang=en-US|style=Feynman) strategy that combines both technical and procedural controls.
 
 *   **Technical Controls** are baked into the system itself. These are the rigid enforcers: immutable audit trails that record every change, role-based access controls that prevent unauthorized users from altering data, electronic signatures that are cryptographically linked to a person and time, and regular backups. The design of the system itself is a control. For example, a resilient system isn't just one with redundant servers; it's one designed with segmentation and rapid recovery plans to withstand not just hardware failure but also sophisticated cyberattacks that simple duplication can't handle.
 
@@ -81,14 +81,14 @@ Neither control is sufficient on its own. Technical controls without trained use
 
 #### The Brain of the System: Metadata-Driven Quality
 
-How can we possibly manage all these rules at scale? The answer is as elegant as it is powerful: we use data to manage data. This is the role of **[metadata](@entry_id:275500)** and the **[data dictionary](@entry_id:910490)**.
+How can we possibly manage all these rules at scale? The answer is as elegant as it is powerful: we use data to manage data. This is the role of **[metadata](@keyword=metadata|lang=en-US|style=Feynman)** and the **[data dictionary](@keyword=data_dictionary|lang=en-US|style=Feynman)**.
 
-A [data dictionary](@entry_id:910490) is an authoritative repository that stores the [metadata](@entry_id:275500)—the data about the data. For each data element, it defines the rules of the game: its data type, format constraints, requiredness, uniqueness, allowable value sets, and relationships to other data. This isn't just passive documentation; it is an executable specification. An automated quality engine can read this dictionary and instantly generate checks for thousands of data points:
+A [data dictionary](@keyword=data_dictionary|lang=en-US|style=Feynman) is an authoritative repository that stores the [metadata](@keyword=metadata|lang=en-US|style=Feynman)—the data about the data. For each data element, it defines the rules of the game: its data type, format constraints, requiredness, uniqueness, allowable value sets, and relationships to other data. This isn't just passive documentation; it is an executable specification. An automated quality engine can read this dictionary and instantly generate checks for thousands of data points:
 *   Does this temperature value conform to the `[30, 45]` range defined in the dictionary? (*Validity check*)
-*   Is this required "[allergy](@entry_id:188097) onset date" field null? (*Completeness check*)
+*   Is this required "[allergy](@keyword=allergy|lang=en-US|style=Feynman) onset date" field null? (*Completeness check*)
 *   Does this "facility ID" exist in the master facility table, as required by a foreign key constraint? (*Consistency check*)
 
-This automated, [metadata](@entry_id:275500)-driven approach turns abstract quality dimensions into concrete, relentless, and scalable data-processing operations.
+This automated, [metadata](@keyword=metadata|lang=en-US|style=Feynman)-driven approach turns abstract quality dimensions into concrete, relentless, and scalable data-processing operations.
 
 ### Beyond the Bits: The Integrity of an Enterprise
 
@@ -96,4 +96,4 @@ We end where we began, but with a richer perspective. The meticulous work of ens
 
 This principle is one of three pillars in the classic cybersecurity triad: **Confidentiality, Integrity, and Availability (CIA)**. Confidentiality protects against unauthorized disclosure, Availability ensures the data is there when needed, and Integrity ensures the data is trustworthy and unmodified.
 
-From the smallest bit in a database to the grandest scientific theory, an unbroken [chain of trust](@entry_id:747264) must be forged. Data integrity is the craft of forging those fundamental links, ensuring that the numbers in our machines faithfully reflect the world we seek to understand.
+From the smallest bit in a database to the grandest scientific theory, an unbroken [chain of trust](@keyword=chain_of_trust|lang=en-US|style=Feynman) must be forged. Data integrity is the craft of forging those fundamental links, ensuring that the numbers in our machines faithfully reflect the world we seek to understand.

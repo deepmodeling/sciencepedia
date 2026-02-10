@@ -36,51 +36,51 @@ The equation holds true! This means that our new plane automatically contains th
 
 This parameter $\lambda$ acts like a tuning dial. By turning this dial to the right value, we can select the one specific plane from this infinite family that satisfies our particular design constraint.
 
-The simplest and most common constraint is forcing the plane to pass through a specific point. Imagine a surveying drone at a point $P(x_p, y_p, z_p)$ that needs to define a planar path containing the intersection of two geological strata (). To find the equation of this plane, we simply substitute the coordinates of $P$ into our family equation:
+The simplest and most common constraint is forcing the plane to pass through a specific point. Imagine a surveying drone at a point $P(x_p, y_p, z_p)$ that needs to define a planar path containing the intersection of two geological strata ([@problem_id:1383419]). To find the equation of this plane, we simply substitute the coordinates of $P$ into our family equation:
 $$ (A_1x_p + B_1y_p + C_1z_p + D_1) + \lambda(A_2x_p + B_2y_p + C_2z_p + D_2) = 0 $$
 Since the point $P$ is not on the intersection line itself, the expressions in the parentheses will be non-zero numbers. This leaves us with a simple linear equation to solve for the one and only value of $\lambda$ that makes the plane contain point $P$.
 
 This single, powerful technique works for all sorts of point-based constraints:
-- Finding a plane that passes through the origin $(0,0,0)$ .
-- Finding a plane that passes through a specific point on an axis, like a z-intercept at $(0,0,5)$ .
-- Finding a plane that passes through the midpoint of a line segment connecting two other points .
+- Finding a plane that passes through the origin $(0,0,0)$ [@problem_id:2168876].
+- Finding a plane that passes through a specific point on an axis, like a z-intercept at $(0,0,5)$ [@problem_id:2124453].
+- Finding a plane that passes through the midpoint of a line segment connecting two other points [@problem_id:2130526].
 
 In every case, the procedure is the same: define the family, substitute the coordinates of the desired point, and solve for $\lambda$. The tedious work of finding the intersection line is completely avoided.
 
 ### Beyond Points: Commanding Orientations
 
-The power of the family of planes formula goes beyond simply hitting a target point. We can also use it to dictate the *orientation* of our plane. The orientation of a plane is entirely defined by its **[normal vector](@article_id:263691)**, the vector that sticks straight out, perpendicular to its surface.
+The power of the family of planes formula goes beyond simply hitting a target point. We can also use it to dictate the *orientation* of our plane. The orientation of a plane is entirely defined by its **[normal vector](@keyword=normal_vector|lang=en-US|style=Feynman)**, the vector that sticks straight out, perpendicular to its surface.
 
 Let the normal vectors of our original planes $\Pi_1$ and $\Pi_2$ be $\mathbf{n}_1 = (A_1, B_1, C_1)$ and $\mathbf{n}_2 = (A_2, B_2, C_2)$. If we look at our family equation after regrouping,
 $$ (A_1+\lambda A_2)x + (B_1+\lambda B_2)y + (C_1+\lambda C_2)z + (D_1+\lambda D_2) = 0 $$
-we can see that the [normal vector](@article_id:263691) for any plane in the family is:
+we can see that the [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman) for any plane in the family is:
 $$ \mathbf{n}(\lambda) = (A_1+\lambda A_2, B_1+\lambda B_2, C_1+\lambda C_2) = \mathbf{n}_1 + \lambda \mathbf{n}_2 $$
-Once again, we see this beautiful principle of [linear combination](@article_id:154597) at work! The normal vector of any plane in the family is just a weighted sum of the original two normal vectors. By tuning $\lambda$, we are effectively tilting the [normal vector](@article_id:263691), and thus the plane itself.
+Once again, we see this beautiful principle of [linear combination](@keyword=linear_combination|lang=en-US|style=Feynman) at work! The normal vector of any plane in the family is just a weighted sum of the original two normal vectors. By tuning $\lambda$, we are effectively tilting the [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman), and thus the plane itself.
 
 This gives us the ability to impose orientation constraints:
 
-- **Perpendicularity:** Suppose we want our plane to be perpendicular to some other plane $\Pi_3$ with normal vector $\mathbf{n}_3$. Two planes are perpendicular if their normal vectors are orthogonal. The condition for this is that their dot product is zero: $\mathbf{n}(\lambda) \cdot \mathbf{n}_3 = 0$. Writing this out gives a simple linear equation in $\lambda$, which we can solve to find the unique plane in the family with this property ().
+- **Perpendicularity:** Suppose we want our plane to be perpendicular to some other plane $\Pi_3$ with normal vector $\mathbf{n}_3$. Two planes are perpendicular if their normal vectors are orthogonal. The condition for this is that their dot product is zero: $\mathbf{n}(\lambda) \cdot \mathbf{n}_3 = 0$. Writing this out gives a simple linear equation in $\lambda$, which we can solve to find the unique plane in the family with this property ([@problem_id:2132897]).
 
-- **Parallelism:** What if we want our plane to be parallel to a certain direction, for instance, the z-axis? (). A plane is parallel to the z-axis if its [normal vector](@article_id:263691) is perpendicular to the z-axis direction vector, $\mathbf{k} = (0,0,1)$. This means the z-component of the normal vector must be zero. For our family, this condition is simply $C_1 + \lambda C_2 = 0$. This immediately gives us the value of $\lambda$ needed to orient the plane correctly. This is a far more elegant approach than first finding the intersection line and then constructing a plane around it ().
+- **Parallelism:** What if we want our plane to be parallel to a certain direction, for instance, the z-axis? ([@problem_id:2130528]). A plane is parallel to the z-axis if its [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman) is perpendicular to the z-axis direction vector, $\mathbf{k} = (0,0,1)$. This means the z-component of the normal vector must be zero. For our family, this condition is simply $C_1 + \lambda C_2 = 0$. This immediately gives us the value of $\lambda$ needed to orient the plane correctly. This is a far more elegant approach than first finding the intersection line and then constructing a plane around it ([@problem_id:2130540]).
 
 ### A Symphony of Constraints
 
 The true beauty of this method shines when we start combining constraints in more complex scenarios. It becomes a tool for thinking, allowing us to chain together logical steps with remarkable clarity.
 
-Consider a situation where we need the plane to pass through a point that is itself the result of another geometric construction—say, the unique intersection point of three other planes, $P_1, P_2, P_3$. And, this plane must also contain the intersection line of a different pair of planes, $P_4$ and $P_5$ (). The strategy becomes clear:
+Consider a situation where we need the plane to pass through a point that is itself the result of another geometric construction—say, the unique intersection point of three other planes, $P_1, P_2, P_3$. And, this plane must also contain the intersection line of a different pair of planes, $P_4$ and $P_5$ ([@problem_id:2130533]). The strategy becomes clear:
 1. First, find the special point by solving the system for $P_1, P_2, P_3$.
 2. Next, write down the family of planes equation for planes containing the intersection of $P_4$ and $P_5$.
 3. Finally, use the point from step 1 as our constraint to solve for $\lambda$ in the family from step 2.
 
-Or, what if the orientation constraint is itself complex? Imagine we need a plane from the family of $\Pi_1$ and $\Pi_2$ whose normal vector is parallel to the line of intersection of two *other* planes, $\Pi_3$ and $\Pi_4$ (). Again, we break it down:
-1. Find the direction vector $\mathbf{d}$ of the line of intersection of $\Pi_3$ and $\Pi_4$ by taking the [cross product](@article_id:156255) of their normal vectors: $\mathbf{d} = \mathbf{n}_3 \times \mathbf{n}_4$.
+Or, what if the orientation constraint is itself complex? Imagine we need a plane from the family of $\Pi_1$ and $\Pi_2$ whose normal vector is parallel to the line of intersection of two *other* planes, $\Pi_3$ and $\Pi_4$ ([@problem_id:2130558]). Again, we break it down:
+1. Find the direction vector $\mathbf{d}$ of the line of intersection of $\Pi_3$ and $\Pi_4$ by taking the [cross product](@keyword=cross_product|lang=en-US|style=Feynman) of their normal vectors: $\mathbf{d} = \mathbf{n}_3 \times \mathbf{n}_4$.
 2. The normal vector of our desired plane, $\mathbf{n}(\lambda)$, must be parallel to $\mathbf{d}$. This means $\mathbf{n}(\lambda) = k \mathbf{d}$ for some scalar $k$.
-3. This vector equation gives us a system of equations to solve for $\lambda$, pinpointing the exact plane we need. Once we have the plane, calculating secondary properties like its distance from the origin becomes straightforward ().
+3. This vector equation gives us a system of equations to solve for $\lambda$, pinpointing the exact plane we need. Once we have the plane, calculating secondary properties like its distance from the origin becomes straightforward ([@problem_id:2121876]).
 
 ### A Deeper Connection: From Geometry to Physics
 
-This "family of planes" formula is more than just a clever trick for [analytic geometry](@article_id:163772). It's a window into one of the most profound and unifying concepts in all of science: the **principle of superposition**. The idea that we can construct a whole space of solutions by taking linear combinations of a few basic solutions is fundamental.
+This "family of planes" formula is more than just a clever trick for [analytic geometry](@keyword=analytic_geometry|lang=en-US|style=Feynman). It's a window into one of the most profound and unifying concepts in all of science: the **principle of superposition**. The idea that we can construct a whole space of solutions by taking linear combinations of a few basic solutions is fundamental.
 
-You see this everywhere. In classical physics, the [principle of superposition](@article_id:147588) allows us to understand complex wave patterns (like the ripples on a pond from two pebbles) by simply adding together the simple waves. In [electrical engineering](@article_id:262068), the voltage at a point in a circuit is the sum of the voltages from each source. In quantum mechanics, the state of a particle is a superposition—a linear combination—of its possible basis states, and it is this very property that gives rise to the strange and wonderful phenomena of the quantum world.
+You see this everywhere. In classical physics, the [principle of superposition](@keyword=principle_of_superposition|lang=en-US|style=Feynman) allows us to understand complex wave patterns (like the ripples on a pond from two pebbles) by simply adding together the simple waves. In [electrical engineering](@keyword=electrical_engineering|lang=en-US|style=Feynman), the voltage at a point in a circuit is the sum of the voltages from each source. In quantum mechanics, the state of a particle is a superposition—a linear combination—of its possible basis states, and it is this very property that gives rise to the strange and wonderful phenomena of the quantum world.
 
-The family of planes is a perfect, tangible introduction to this grand idea. The two original planes are the "[basis states](@article_id:151969)," and by creating a linear combination with the parameter $\lambda$, we are exploring the entire "[solution space](@article_id:199976)" of all planes that share their common line of intersection. It is a beautiful example of how a simple geometric problem can reveal a pattern that echoes through the deepest theories of our physical universe. It transforms a calculation into an act of discovery.
+The family of planes is a perfect, tangible introduction to this grand idea. The two original planes are the "[basis states](@keyword=basis_states|lang=en-US|style=Feynman)," and by creating a linear combination with the parameter $\lambda$, we are exploring the entire "[solution space](@keyword=solution_space|lang=en-US|style=Feynman)" of all planes that share their common line of intersection. It is a beautiful example of how a simple geometric problem can reveal a pattern that echoes through the deepest theories of our physical universe. It transforms a calculation into an act of discovery.

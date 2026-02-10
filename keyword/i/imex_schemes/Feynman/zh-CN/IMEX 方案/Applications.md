@@ -6,32 +6,32 @@
 
 ### 粒子与波之舞：物理学与化学
 
-许多物理现象的核心是两个基本过程：平流（或[对流](@article_id:302247)），即物质的整体输运；以及扩散，即其向外[扩散](@article_id:327616)的趋势。考虑河流中污染物的输运。水流将其带到下游（平流），同时它在河流宽度上扩散开来（[扩散](@article_id:327616)）。控制这一过程的[平流-扩散方程](@article_id:304432)为 IMEX 格式提供了一个经典的案例。
+许多物理现象的核心是两个基本过程：平流（或[对流](@keyword=convection|lang=zh-CN|style=Feynman)），即物质的整体输运；以及扩散，即其向外[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)的趋势。考虑河流中污染物的输运。水流将其带到下游（平流），同时它在河流宽度上扩散开来（[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)）。控制这一过程的[平流-扩散方程](@keyword=advection_diffusion_equation|lang=zh-CN|style=Feynman)为 IMEX 格式提供了一个经典的案例。
 
-当我们使用[谱方法](@article_id:302178)等先进数值技术来解这个方程时，一个优美的洞见浮现出来。平流部分施加的时间步长限制取决于我们想要解析的最精细细节，比如说 $1/k_{\text{max}}$ 的尺度。但扩散部分施加了一个严格得多的限制，其尺度为 $1/k_{\text{max}}^2$ 。如果你将分辨率提高一倍以看到更精细的细节，显式扩散求解器的稳定性要求会变得苛刻四倍！[扩散](@article_id:327616)是“蜂鸟”，而平流是“乌龟”。自然的 IMEX 方法是隐式处理挑剔、刚性的[扩散](@article_id:327616)项，将我们的模拟从其严苛的[时间步长约束](@article_id:353461)中解放出来，同时显式处理较为温和的[平流](@article_id:333727)项。
+当我们使用[谱方法](@keyword=spectral_methods|lang=zh-CN|style=Feynman)等先进数值技术来解这个方程时，一个优美的洞见浮现出来。平流部分施加的时间步长限制取决于我们想要解析的最精细细节，比如说 $1/k_{\text{max}}$ 的尺度。但扩散部分施加了一个严格得多的限制，其尺度为 $1/k_{\text{max}}^2$ [@problem_id:1791115]。如果你将分辨率提高一倍以看到更精细的细节，显式扩散求解器的稳定性要求会变得苛刻四倍！[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)是“蜂鸟”，而平流是“乌龟”。自然的 IMEX 方法是隐式处理挑剔、刚性的[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)项，将我们的模拟从其严苛的[时间步长约束](@keyword=time_step_constraint|lang=zh-CN|style=Feynman)中解放出来，同时显式处理较为温和的[平流](@keyword=advection|lang=zh-CN|style=Feynman)项。
 
-这一原则延伸到由[反应-扩散方程](@article_id:349516)控制的一大类现象 。这些模型是[化学动力学](@article_id:356401)、热传递和[生物模式形成](@article_id:377800)的语言。想象一种化学物质，它不仅会扩散（扩散），还会转化为其他化学物质（反应）。[扩散](@article_id:327616)通常是刚性的，而局部反应可能要慢得多。
+这一原则延伸到由[反应-扩散方程](@keyword=reaction_diffusion_equations|lang=zh-CN|style=Feynman)控制的一大类现象 [@problem_id:2443592]。这些模型是[化学动力学](@keyword=chemical_dynamics|lang=zh-CN|style=Feynman)、热传递和[生物模式形成](@keyword=biological_patterning|lang=zh-CN|style=Feynman)的语言。想象一种化学物质，它不仅会扩散（扩散），还会转化为其他化学物质（反应）。[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)通常是刚性的，而局部反应可能要慢得多。
 
-这一思想的力量在[图灵斑图](@article_id:332297)的形成中表现得最为直观。在 20 世纪 50 年代，伟大的 Alan Turing 提出，一种缓慢扩散的激活剂化学物质和一种快速扩散的抑制剂化学物质之间的相互作用，可以导致从均匀状态自发地出现稳定图案。这种“[扩散驱动不稳定性](@article_id:319040)”被认为是豹的斑点和斑马的条纹的基础。模拟这些系统，如 Gray-Scott 模型，是 IMEX 的完美任务。我们隐式处理两种化学物质的刚性扩散，显式处理非线性反应项，从而能够以合理的[计算代价](@article_id:308397)在我们的计算机屏幕上观察到复杂的斑点和迷宫般的图案绽放 。
+这一思想的力量在[图灵斑图](@keyword=alan_turing_patterns|lang=zh-CN|style=Feynman)的形成中表现得最为直观。在 20 世纪 50 年代，伟大的 Alan Turing 提出，一种缓慢扩散的激活剂化学物质和一种快速扩散的抑制剂化学物质之间的相互作用，可以导致从均匀状态自发地出现稳定图案。这种“[扩散驱动不稳定性](@keyword=diffusion_driven_instability|lang=zh-CN|style=Feynman)”被认为是豹的斑点和斑马的条纹的基础。模拟这些系统，如 Gray-Scott 模型，是 IMEX 的完美任务。我们隐式处理两种化学物质的刚性扩散，显式处理非线性反应项，从而能够以合理的[计算代价](@keyword=computational_cost|lang=zh-CN|style=Feynman)在我们的计算机屏幕上观察到复杂的斑点和迷宫般的图案绽放 [@problem_id:2402590]。
 
-同样的想法也适用于[材料科学](@article_id:312640)。例如，Allen-Cahn 方程模拟了熔融合金在冷却时如何分离成不同的相 。这同样是一个[反应-扩散](@article_id:298079)过程，其中 IMEX 格式，或许使用复杂的切比雪夫多项式以获得高精度，是首选工具。故事也不仅限于扩散。在[流体动力学](@article_id:319275)领域，某些波，如 Korteweg-de Vries (KdV) 方程所描述的波，表现出[色散](@article_id:376945)现象——不同频率的波以不同速度传播。高频的“摆动”是“刚性”的，为了在不采取极小时间步长的情况下捕捉它们的行为，我们再次求助于 IMEX，隐式处理刚性的线性[色散](@article_id:376945)部分，显式处理非线性部分 。
+同样的想法也适用于[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)。例如，Allen-Cahn 方程模拟了熔融合金在冷却时如何分离成不同的相 [@problem_id:2379192]。这同样是一个[反应-扩散](@keyword=reaction_diffusion|lang=zh-CN|style=Feynman)过程，其中 IMEX 格式，或许使用复杂的切比雪夫多项式以获得高精度，是首选工具。故事也不仅限于扩散。在[流体动力学](@keyword=hydrodynamics|lang=zh-CN|style=Feynman)领域，某些波，如 Korteweg-de Vries (KdV) 方程所描述的波，表现出[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)现象——不同频率的波以不同速度传播。高频的“摆动”是“刚性”的，为了在不采取极小时间步长的情况下捕捉它们的行为，我们再次求助于 IMEX，隐式处理刚性的线性[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)部分，显式处理非线性部分 [@problem_id:2440950]。
 
 ### 构建我们的世界：从反应堆到桥梁
 
-一个深刻科学原理的美妙之处在于其统一看似不同领域的力量。让我们从[模式形成](@article_id:300444)的抽象世界转向工程学的具体挑战。在[化学反应](@article_id:307389)堆内部，如填充床反应器，放热反应会产生热量。这些反应的速率通常以指数形式依赖于温度，这种关系由[阿伦尼乌斯定律](@article_id:325145)描述。这产生了一个恶性反馈循环：温度的微小增加可能导致[反应速率](@article_id:303093)的大幅增加，从而产生更多热量，如此循环。这是极端刚性的温床。
+一个深刻科学原理的美妙之处在于其统一看似不同领域的力量。让我们从[模式形成](@keyword=pattern_formation|lang=zh-CN|style=Feynman)的抽象世界转向工程学的具体挑战。在[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)堆内部，如填充床反应器，放热反应会产生热量。这些反应的速率通常以指数形式依赖于温度，这种关系由[阿伦尼乌斯定律](@keyword=arrhenius_law|lang=zh-CN|style=Feynman)描述。这产生了一个恶性反馈循环：温度的微小增加可能导致[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)的大幅增加，从而产生更多热量，如此循环。这是极端刚性的温床。
 
-如果你试图用一个简单的、完全显式的方法来模拟这个过程，你很可能会遇到数值爆炸。你的模拟温度会飙升到物理上荒谬的值，除非你使用一个极小的时间步长。在这里，IMEX 格式不仅仅是一种便利；它是一种赋能技术。通过隐式处理刚性的热扩散，同时显式处理反应产生的热量，我们可以运行一个稳定的模拟，并安全地预测反应堆的行为，避免虚拟（以及潜在的真实）熔毁 。
+如果你试图用一个简单的、完全显式的方法来模拟这个过程，你很可能会遇到数值爆炸。你的模拟温度会飙升到物理上荒谬的值，除非你使用一个极小的时间步长。在这里，IMEX 格式不仅仅是一种便利；它是一种赋能技术。通过隐式处理刚性的热扩散，同时显式处理反应产生的热量，我们可以运行一个稳定的模拟，并安全地预测反应堆的行为，避免虚拟（以及潜在的真实）熔毁 [@problem_id:2390379]。
 
-现在，让我们想得更大一些——关于桥梁、建筑和飞机。[结构动力学](@article_id:351803)领域模拟这些结构如何[振动](@article_id:331484)并响应风、地震或发动机推力等力。一个复杂的结构，比如一座桥梁，可能由非常刚硬、刚性的构件（如[主支](@article_id:344214)撑塔）和更灵活、非刚性的构件（如悬挂的桥面）组成。用完全隐式方法模拟整个结构将涉及在每个时间步求解巨大的方程组。而完全显式方法则会受到解析最刚性部分[振动](@article_id:331484)所需的微小时间步长的限制，即使结构的大部分并不那么苛刻。
+现在，让我们想得更大一些——关于桥梁、建筑和飞机。[结构动力学](@keyword=structural_dynamics|lang=zh-CN|style=Feynman)领域模拟这些结构如何[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)并响应风、地震或发动机推力等力。一个复杂的结构，比如一座桥梁，可能由非常刚硬、刚性的构件（如[主支](@keyword=principal_branch|lang=zh-CN|style=Feynman)撑塔）和更灵活、非刚性的构件（如悬挂的桥面）组成。用完全隐式方法模拟整个结构将涉及在每个时间步求解巨大的方程组。而完全显式方法则会受到解析最刚性部分[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)所需的微小时间步长的限制，即使结构的大部分并不那么苛刻。
 
-在这里，IMEX 提供了一种特别巧妙的解决方案，展示了一种不同的思维方式。我们不是划分*数学算子*（如扩散与反应），而是可以按其*物理构件*来划分结构。我们识别出对应于刚性部分的自由度，并只对它们进行隐式处理。结构的其余部分则显式处理。这种域分解方法通常在像 Newmark-beta 方法这样的强大框架内实现，使工程师能够以一种原本无法实现的效率和稳定性的结合来模拟大规模、复杂的结构 。
+在这里，IMEX 提供了一种特别巧妙的解决方案，展示了一种不同的思维方式。我们不是划分*数学算子*（如扩散与反应），而是可以按其*物理构件*来划分结构。我们识别出对应于刚性部分的自由度，并只对它们进行隐式处理。结构的其余部分则显式处理。这种域分解方法通常在像 Newmark-beta 方法这样的强大框架内实现，使工程师能够以一种原本无法实现的效率和稳定性的结合来模拟大规模、复杂的结构 [@problem_id:2446582]。
 
 ### 生命与金钱的节奏：生物学与金融学
 
-IMEX 哲学的影响远超物理和工程科学。在生态学中，捕食者-被捕食者模型描述了相互作用物种种群的波动。通常，这些物种的生命周期截然不同。一个可能有很高的衰减率（例如，捕食者的高自然[死亡率](@article_id:375989)），而另一个则有缓慢的增长率。这种速率上的差异再次导致了[常微分方程](@article_id:307440)的[刚性系统](@article_id:306442)。可以针对这种情况定制一个 IMEX 格式，对刚性的捕食者动态使用隐式步长，对非刚性的猎物动态使用简单的显式步长，从而准确捕捉长期的生态之舞 。
+IMEX 哲学的影响远超物理和工程科学。在生态学中，捕食者-被捕食者模型描述了相互作用物种种群的波动。通常，这些物种的生命周期截然不同。一个可能有很高的衰减率（例如，捕食者的高自然[死亡率](@keyword=death_rate|lang=zh-CN|style=Feynman)），而另一个则有缓慢的增长率。这种速率上的差异再次导致了[常微分方程](@keyword=ordinary_differential_equations|lang=zh-CN|style=Feynman)的[刚性系统](@keyword=stiff_systems|lang=zh-CN|style=Feynman)。可以针对这种情况定制一个 IMEX 格式，对刚性的捕食者动态使用隐式步长，对非刚性的猎物动态使用简单的显式步长，从而准确捕捉长期的生态之舞 [@problem_id:2372897]。
 
-也许最令人惊讶的是，我们在物理学中遇到的同一个[平流-扩散方程](@article_id:304432)，在[计算金融学](@article_id:306278)中也扮演着核心角色。在著名的 Black-Scholes 股票[期权定价模型](@article_id:307958)中，期权价值根据一个[偏微分方程](@article_id:301773)演变，该方程在数学上等同于一个[对流-扩散方程](@article_id:312432)。“[对流](@article_id:302247)”或“漂移”项与标的资产的预期回报有关，而“扩散”项与其波动性有关。就像在物理系统中一样，[扩散](@article_id:327616)项通常是刚性最强的部分，特别是对于低波动性或接近到期日的期权。[金融工程](@article_id:297394)师使用 IMEX 格式，隐式处理扩散，显式处理漂移，来构建用于复杂[金融衍生品](@article_id:641330)的快速稳定定价引擎 。
+也许最令人惊讶的是，我们在物理学中遇到的同一个[平流-扩散方程](@keyword=advection_diffusion_equation|lang=zh-CN|style=Feynman)，在[计算金融学](@keyword=computational_finance|lang=zh-CN|style=Feynman)中也扮演着核心角色。在著名的 Black-Scholes 股票[期权定价模型](@keyword=option_pricing_models|lang=zh-CN|style=Feynman)中，期权价值根据一个[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)演变，该方程在数学上等同于一个[对流-扩散方程](@keyword=convection_diffusion_equation|lang=zh-CN|style=Feynman)。“[对流](@keyword=convection|lang=zh-CN|style=Feynman)”或“漂移”项与标的资产的预期回报有关，而“扩散”项与其波动性有关。就像在物理系统中一样，[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)项通常是刚性最强的部分，特别是对于低波动性或接近到期日的期权。[金融工程](@keyword=financial_engineering|lang=zh-CN|style=Feynman)师使用 IMEX 格式，隐式处理扩散，显式处理漂移，来构建用于复杂[金融衍生品](@keyword=financial_derivatives|lang=zh-CN|style=Feynman)的快速稳定定价引擎 [@problem_id:2391476]。
 
-而故事还在继续发展。当我们希望模拟的不仅仅是平均行为，还有世界固有的随机性——水中花粉粒的[抖动](@article_id:326537)（布朗运动）或股价的无规律路径——我们就进入了[随机微分方程](@article_id:307037) (SDEs) 的领域。在这里，刚性也是一个主要挑战。研究人员正在积极开发和完善用于 SDEs 的 IMEX 方法，仔细地将确定性漂移项分为隐式和显式部分，同时处理由随机噪声项引入的新复杂性。这代表了一个前沿领域，IMEX 哲学正在被调整以应对科学和金融领域一些最复杂的模型 。
+而故事还在继续发展。当我们希望模拟的不仅仅是平均行为，还有世界固有的随机性——水中花粉粒的[抖动](@keyword=dither|lang=zh-CN|style=Feynman)（布朗运动）或股价的无规律路径——我们就进入了[随机微分方程](@keyword=stochastic_differential_equations|lang=zh-CN|style=Feynman) (SDEs) 的领域。在这里，刚性也是一个主要挑战。研究人员正在积极开发和完善用于 SDEs 的 IMEX 方法，仔细地将确定性漂移项分为隐式和显式部分，同时处理由随机噪声项引入的新复杂性。这代表了一个前沿领域，IMEX 哲学正在被调整以应对科学和金融领域一些最复杂的模型 [@problem_id:2979953]。
 
-从分子的微观舞蹈到桥梁的宏观[振动](@article_id:331484)，从生物形态的出现到金融工具的估值，[刚性原理](@article_id:321544)是普适的。IMEX 方法提供了一个统一而优雅的框架来应对这一挑战。它证明了数值思维的力量：通过巧妙地将快与慢、难与易分开，我们可以创造出既强大到足以应对最刚性挑战，又高效到足以实际使用的计算工具。它让我们能够模拟我们的世界，及其所有的多尺度辉煌。
+从分子的微观舞蹈到桥梁的宏观[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，从生物形态的出现到金融工具的估值，[刚性原理](@keyword=principle_of_rigidity|lang=zh-CN|style=Feynman)是普适的。IMEX 方法提供了一个统一而优雅的框架来应对这一挑战。它证明了数值思维的力量：通过巧妙地将快与慢、难与易分开，我们可以创造出既强大到足以应对最刚性挑战，又高效到足以实际使用的计算工具。它让我们能够模拟我们的世界，及其所有的多尺度辉煌。

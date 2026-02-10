@@ -1,5 +1,5 @@
 ## Introduction
-A circle is a symbol of perfection and one of the most fundamental shapes in mathematics, defined simply as all points equidistant from a central point. However, this simplicity is often hidden within complex algebraic expressions. The central challenge this article addresses is how to decode these various equations—whether in general form, vector notation, or even the complex plane—to reveal a circle's two defining properties: its center and its radius. This guide will serve as your decoder ring for the language of circles. In the first part, "Principles and Mechanisms," we will establish the standard equation of a circle and master the essential technique of completing the square, before exploring how circles are described in vectors, polar coordinates, and complex numbers. Subsequently, in "Applications and Interdisciplinary Connections," we will journey beyond the blackboard to see how these principles are applied in fields ranging from [computer graphics](@article_id:147583) and engineering to abstract signal processing, revealing the circle's profound and unifying role across science and technology.
+A circle is a symbol of perfection and one of the most fundamental shapes in mathematics, defined simply as all points equidistant from a central point. However, this simplicity is often hidden within complex algebraic expressions. The central challenge this article addresses is how to decode these various equations—whether in general form, vector notation, or even the complex plane—to reveal a circle's two defining properties: its center and its radius. This guide will serve as your decoder ring for the language of circles. In the first part, "Principles and Mechanisms," we will establish the standard equation of a circle and master the essential technique of completing the square, before exploring how circles are described in vectors, polar coordinates, and complex numbers. Subsequently, in "Applications and Interdisciplinary Connections," we will journey beyond the blackboard to see how these principles are applied in fields ranging from [computer graphics](@keyword=computer_graphics|lang=en-US|style=Feynman) and engineering to abstract signal processing, revealing the circle's profound and unifying role across science and technology.
 
 ## Principles and Mechanisms
 
@@ -17,7 +17,7 @@ This equation is beautiful because it transparently tells us the circle's story.
 
 ### Unscrambling the Message: Completing the Square
 
-Most of the time, however, the circle's equation doesn't arrive in such a pristine form. It comes to us scrambled, its essential components hidden. Consider an equation like the one presented in a puzzle where the terms are factored in a peculiar way: $(x-2)(x+4) + (y-1)(y-5) = 0$ .
+Most of the time, however, the circle's equation doesn't arrive in such a pristine form. It comes to us scrambled, its essential components hidden. Consider an equation like the one presented in a puzzle where the terms are factored in a peculiar way: $(x-2)(x+4) + (y-1)(y-5) = 0$ [@problem_id:2130944].
 
 At first glance, this looks nothing like our standard equation. What can we do? We can expand it out, like laying all the pieces of a puzzle on a table:
 
@@ -26,7 +26,7 @@ $$x^2 + 2x + y^2 - 6y - 3 = 0$$
 
 This is the **general form** of a circle's equation, $x^2 + y^2 + Dx + Ey + F = 0$. It's the standard equation after someone has multiplied everything out and shuffled the terms. Our job is to reverse this process. We need to gather the $x$-related terms and the $y$-related terms and force them back into the "perfect square" shapes, $(x-h)^2$ and $(y-k)^2$. This reconstruction process is a wonderfully useful algebraic tool called **completing the square**.
 
-For the $x$ terms, we have $x^2 + 2x$. How do we make this a [perfect square](@article_id:635128)? We know that $(x+h)^2 = x^2 + 2hx + h^2$. Comparing terms, we see $2h$ must be $2$, so $h=1$. The piece we're missing is $h^2 = 1^2 = 1$. So we add and subtract 1:
+For the $x$ terms, we have $x^2 + 2x$. How do we make this a [perfect square](@keyword=perfect_square|lang=en-US|style=Feynman)? We know that $(x+h)^2 = x^2 + 2hx + h^2$. Comparing terms, we see $2h$ must be $2$, so $h=1$. The piece we're missing is $h^2 = 1^2 = 1$. So we add and subtract 1:
 
 $$(x^2 + 2x + 1) - 1 = (x+1)^2 - 1$$
 
@@ -42,7 +42,7 @@ And now, we just have to tidy up by moving all the constant numbers to the right
 
 $$(x+1)^2 + (y-3)^2 = 13$$
 
-The message is decoded! We can see clear as day that the center is $(h, k) = (-1, 3)$ and the radius is $r = \sqrt{13}$ . This single technique—completing the square—is our master key for deciphering any [circle equation](@article_id:168655) given in general form.
+The message is decoded! We can see clear as day that the center is $(h, k) = (-1, 3)$ and the radius is $r = \sqrt{13}$ [@problem_id:2130944]. This single technique—completing the square—is our master key for deciphering any [circle equation](@keyword=circle_equation|lang=en-US|style=Feynman) given in general form.
 
 ### A Circle by Any Other Name: Different Mathematical Languages
 
@@ -58,17 +58,17 @@ $$(\vec{p} - \vec{a}) \cdot (\vec{p} - \vec{b}) = 0$$
 
 What shape does this describe? If you remember a bit of high school geometry (specifically, Thales's Theorem), you might guess the answer. An angle inscribed in a semicircle is always a right angle. Our condition describes *exactly* this situation. The locus of points $P$ must be a circle with the segment $\overline{AB}$ as its diameter!
 
-Let's see if the algebra agrees. Given $\vec{a} = \langle 1, 2 \rangle$ and $\vec{b} = \langle 5, 6 \rangle$ , our equation becomes:
+Let's see if the algebra agrees. Given $\vec{a} = \langle 1, 2 \rangle$ and $\vec{b} = \langle 5, 6 \rangle$ [@problem_id:2130934], our equation becomes:
 
 $$(\langle x, y \rangle - \langle 1, 2 \rangle) \cdot (\langle x, y \rangle - \langle 5, 6 \rangle) = 0$$
 $$\langle x-1, y-2 \rangle \cdot \langle x-5, y-6 \rangle = 0$$
 $$(x-1)(x-5) + (y-2)(y-6) = 0$$
 
-This is another scrambled message! Expanding it and [completing the square](@article_id:264986) just as before leads to $(x-3)^2 + (y-4)^2 = 8$. This reveals a center at $(3,4)$ and a radius of $\sqrt{8} = 2\sqrt{2}$. And notice: the center $(3,4)$ is precisely the midpoint of $A(1,2)$ and $B(5,6)$, and the squared radius $8$ is the squared distance from the center to $A$. The algebra beautifully confirms our geometric intuition.
+This is another scrambled message! Expanding it and [completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman) just as before leads to $(x-3)^2 + (y-4)^2 = 8$. This reveals a center at $(3,4)$ and a radius of $\sqrt{8} = 2\sqrt{2}$. And notice: the center $(3,4)$ is precisely the midpoint of $A(1,2)$ and $B(5,6)$, and the squared radius $8$ is the squared distance from the center to $A$. The algebra beautifully confirms our geometric intuition.
 
 #### A Proportional Rule: The Circle of Apollonius
 
-Here is another puzzle. Find the set of all points $P$ such that the distance from $P$ to a fixed point $A$ is always a constant multiple of its distance from another fixed point $B$. For instance, let's say $PA = 3 \times PB$ .
+Here is another puzzle. Find the set of all points $P$ such that the distance from $P$ to a fixed point $A$ is always a constant multiple of its distance from another fixed point $B$. For instance, let's say $PA = 3 \times PB$ [@problem_id:2130968].
 
 It is not at all obvious that this rule should produce a circle. It seems too complicated. But let's follow the algebra and see where it leads us. Let $P(x,y)$, $A(5,3)$, and $B(-1,1)$. The condition is $\sqrt{(x-5)^2+(y-3)^2} = 3\sqrt{(x+1)^2+(y-1)^2}$.
 
@@ -76,7 +76,7 @@ Squaring both sides to get rid of the square roots, a messy but straightforward 
 
 $$8x^2 + 8y^2 + 28x - 12y - 16 = 0$$
 
-This is, remarkably, the general equation of a circle! After dividing by 8 and [completing the square](@article_id:264986), we find the equation of a specific circle. This surprising result is known as the **Circle of Apollonius**. It's a wonderful example of how a simple geometric rule involving ratios of distances can generate a perfect circle.
+This is, remarkably, the general equation of a circle! After dividing by 8 and [completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman), we find the equation of a specific circle. This surprising result is known as the **Circle of Apollonius**. It's a wonderful example of how a simple geometric rule involving ratios of distances can generate a perfect circle.
 
 #### Circles in the Complex Realm
 
@@ -88,16 +88,16 @@ $$|z - z_0| = R$$
 
 This says: the distance from any point $z$ on the circle to the center $z_0$ is the constant $R$. It doesn't get any clearer than that!
 
-But what if we encounter a more disguised equation in this language, like $|z|^2 + \text{Re}((3+i)z) = 0$? . We must translate it back to the language of $x$ and $y$. We substitute $z = x+iy$:
+But what if we encounter a more disguised equation in this language, like $|z|^2 + \text{Re}((3+i)z) = 0$? [@problem_id:2278585]. We must translate it back to the language of $x$ and $y$. We substitute $z = x+iy$:
 - $|z|^2 = x^2+y^2$
 - $(3+i)z = (3+i)(x+iy) = (3x-y) + i(x+3y)$
 - $\text{Re}((3+i)z) = 3x-y$
 
-Our equation becomes $x^2 + y^2 + 3x - y = 0$. And look at that—it's the general form again! Completing the square reveals the center and radius. The journey is always the same: translate from a foreign language (complex numbers) into a standard form (general Cartesian), and then decipher it using our master key ([completing the square](@article_id:264986)).
+Our equation becomes $x^2 + y^2 + 3x - y = 0$. And look at that—it's the general form again! Completing the square reveals the center and radius. The journey is always the same: translate from a foreign language (complex numbers) into a standard form (general Cartesian), and then decipher it using our master key ([completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman)).
 
 #### Circles in Polar Coordinates
 
-Yet another way to map the plane is with **[polar coordinates](@article_id:158931)**, $(r, \theta)$, which specify a point by its distance from the origin ($r$) and its angle from the positive x-axis ($\theta$). This system is ideal for describing anything with [rotational symmetry](@article_id:136583). But what does a circle look like here? An equation like $r = -5\sin(\theta)$ seems to have no connection to a circle .
+Yet another way to map the plane is with **[polar coordinates](@keyword=polar_coordinates|lang=en-US|style=Feynman)**, $(r, \theta)$, which specify a point by its distance from the origin ($r$) and its angle from the positive x-axis ($\theta$). This system is ideal for describing anything with [rotational symmetry](@keyword=rotational_symmetry|lang=en-US|style=Feynman). But what does a circle look like here? An equation like $r = -5\sin(\theta)$ seems to have no connection to a circle [@problem_id:2149293].
 
 To decode this, we need our dictionary to translate between polar and Cartesian systems: $x = r\cos(\theta)$, $y = r\sin(\theta)$, and $r^2 = x^2+y^2$. The key trick here is to multiply the entire equation by $r$:
 
@@ -111,12 +111,12 @@ We're back on familiar ground. Rearranging gives $x^2 + y^2 + 5y = 0$, a general
 
 ### The Defining Trio: Circles from Points
 
-So far, we have started with equations and found the circles. But where do the equations come from? A cornerstone of geometry is that **three non-[collinear points](@article_id:173728) uniquely define a circle**. How can we find its center and radius?
+So far, we have started with equations and found the circles. But where do the equations come from? A cornerstone of geometry is that **three non-[collinear points](@keyword=collinear_points|lang=en-US|style=Feynman) uniquely define a circle**. How can we find its center and radius?
 
-The logic is beautifully simple. If the center is $(h,k)$, it must be equidistant from all three points, say $P_1$, $P_2$, and $P_3$. This means the center must lie on the [perpendicular bisector](@article_id:175933) of the segment $\overline{P_1 P_2}$. It must *also* lie on the [perpendicular bisector](@article_id:175933) of $\overline{P_2 P_3}$. Since the three points are not in a line, these two bisector lines are not parallel and will intersect at exactly one point: the center of the circle!
+The logic is beautifully simple. If the center is $(h,k)$, it must be equidistant from all three points, say $P_1$, $P_2$, and $P_3$. This means the center must lie on the [perpendicular bisector](@keyword=perpendicular_bisector|lang=en-US|style=Feynman) of the segment $\overline{P_1 P_2}$. It must *also* lie on the [perpendicular bisector](@keyword=perpendicular_bisector|lang=en-US|style=Feynman) of $\overline{P_2 P_3}$. Since the three points are not in a line, these two bisector lines are not parallel and will intersect at exactly one point: the center of the circle!
 
-Let's see this in action with a general case: find the circle through $P_1(0,a)$, $P_2(b,0)$, and $P_3(c,0)$ .
-1.  The [perpendicular bisector](@article_id:175933) of the segment from $(b,0)$ to $(c,0)$ is a vertical line halfway between them. Its equation is $x = \frac{b+c}{2}$. The center's x-coordinate *must* be this value, so $h = \frac{b+c}{2}$.
+Let's see this in action with a general case: find the circle through $P_1(0,a)$, $P_2(b,0)$, and $P_3(c,0)$ [@problem_id:2130939].
+1.  The [perpendicular bisector](@keyword=perpendicular_bisector|lang=en-US|style=Feynman) of the segment from $(b,0)$ to $(c,0)$ is a vertical line halfway between them. Its equation is $x = \frac{b+c}{2}$. The center's x-coordinate *must* be this value, so $h = \frac{b+c}{2}$.
 2.  Now, we just need to use the fact that the distance from the center $(h,k)$ to $P_1$ is the same as the distance to $P_2$. So, $(\text{distance to } P_1)^2 = (\text{distance to } P_2)^2$.
     $$(h-0)^2 + (k-a)^2 = (h-b)^2 + (k-0)^2$$
 3.  We already know $h$. Plugging it in and solving the resulting equation for $k$ gives us the y-coordinate of the center.

@@ -27,23 +27,23 @@ $$
 \left(\frac{\partial u}{\partial x}\right)_i \approx \frac{u_{i+1} - u_{i-1}}{2\Delta x}
 $$
 
-This method is appealing; for smooth functions, it's more accurate than using only one neighbor. But for our advection problem, it contains a fatal flaw. It violates our river intuition by suggesting the state at buoy $i$ is influenced by buoy $i+1$—the downstream point. The result of this physical heresy is computational chaos. When you pair an explicit forward step in time with this [central difference](@entry_id:174103) in space (a scheme known as FTCS), the numerical solution becomes **unconditionally unstable** . Tiny, unavoidable rounding errors in the computer grow exponentially, like a screech of feedback from a microphone, until the solution is a meaningless mess of exploding oscillations.
+This method is appealing; for smooth functions, it's more accurate than using only one neighbor. But for our advection problem, it contains a fatal flaw. It violates our river intuition by suggesting the state at buoy $i$ is influenced by buoy $i+1$—the downstream point. The result of this physical heresy is computational chaos. When you pair an explicit forward step in time with this [central difference](@keyword=central_difference|lang=en-US|style=Feynman) in space (a scheme known as FTCS), the numerical solution becomes **unconditionally unstable** [@problem_id:4061478]. Tiny, unavoidable rounding errors in the computer grow exponentially, like a screech of feedback from a microphone, until the solution is a meaningless mess of exploding oscillations.
 
-The lesson here is profound: a numerical scheme must respect the underlying physics of the problem. This brings us to the beautifully simple **[upwind principle](@entry_id:756377)**. To calculate the derivative for the advection term, we must only use information from the direction the flow is coming from.
+The lesson here is profound: a numerical scheme must respect the underlying physics of the problem. This brings us to the beautifully simple **upwind principle**. To calculate the derivative for the advection term, we must only use information from the direction the flow is coming from.
 
--   If the velocity $a$ is positive (flow from left to right), the "wind" is at our back. We look to the left, or "upwind," and use a **[backward difference](@entry_id:637618)**:
+-   If the velocity $a$ is positive (flow from left to right), the "wind" is at our back. We look to the left, or "upwind," and use a **[backward difference](@keyword=backward_difference|lang=en-US|style=Feynman)**:
     $$
     \left(\frac{\partial u}{\partial x}\right)_i \approx \frac{u_i - u_{i-1}}{\Delta x} \quad (\text{for } a \gt 0)
     $$
-    This leads to the update rule $u_j^{n+1} = u_j^n - \frac{a \Delta t}{\Delta x} (u_j^n - u_{j-1}^n)$ .
+    This leads to the update rule $u_j^{n+1} = u_j^n - \frac{a \Delta t}{\Delta x} (u_j^n - u_{j-1}^n)$ [@problem_id:4061478].
 
--   If the velocity $a$ is negative (flow from right to left), the "wind" is in our face. We look to the right, or "upwind," and use a **[forward difference](@entry_id:173829)**:
+-   If the velocity $a$ is negative (flow from right to left), the "wind" is in our face. We look to the right, or "upwind," and use a **[forward difference](@keyword=forward_difference|lang=en-US|style=Feynman)**:
     $$
     \left(\frac{\partial u}{\partial x}\right)_i \approx \frac{u_{i+1} - u_i}{\Delta x} \quad (\text{for } a \lt 0)
     $$
-    This leads to the update rule $u_j^{n+1} = u_j^n - \frac{a \Delta t}{\Delta x} (u_{j+1}^n - u_j^n)$ .
+    This leads to the update rule $u_j^{n+1} = u_j^n - \frac{a \Delta t}{\Delta x} (u_{j+1}^n - u_j^n)$ [@problem_id:3818181].
 
-This choice, dictated entirely by the physics of information flow, is the essence of the **first-order [upwind differencing scheme](@entry_id:1133637)**.
+This choice, dictated entirely by the physics of information flow, is the essence of the **first-order [upwind differencing scheme](@keyword=upwind_differencing_scheme|lang=en-US|style=Feynman)**.
 
 ### The Reward for Respecting Physics: Stability and Monotonicity
 
@@ -53,33 +53,33 @@ $$
 u_j^{n+1} = (1 - \lambda) u_j^n + \lambda u_{j-1}^n
 $$
 
-Here, $\lambda = \frac{a \Delta t}{\Delta x}$ is the famous **Courant-Friedrichs-Lewy (CFL) number**. It represents the fraction of a grid cell that the flow travels in a single time step. For our scheme to be stable, we must ensure that information doesn't leapfrog an entire grid cell in one go. A rigorous **von Neumann stability analysis** confirms our intuition, showing that the scheme is stable if and only if $0 \le \lambda \le 1$ .
+Here, $\lambda = \frac{a \Delta t}{\Delta x}$ is the famous **Courant-Friedrichs-Lewy (CFL) number**. It represents the fraction of a grid cell that the flow travels in a single time step. For our scheme to be stable, we must ensure that information doesn't leapfrog an entire grid cell in one go. A rigorous **von Neumann stability analysis** confirms our intuition, showing that the scheme is stable if and only if $0 \le \lambda \le 1$ [@problem_id:3461957].
 
-When this **CFL condition** is met, something wonderful happens. Both coefficients, $(1-\lambda)$ and $\lambda$, are positive numbers that add up to 1. This means that the new value at a point, $u_j^{n+1}$, is a **convex combination**—a weighted average—of the old values at that point and its upwind neighbor . This has two beautiful and crucial consequences:
+When this **CFL condition** is met, something wonderful happens. Both coefficients, $(1-\lambda)$ and $\lambda$, are positive numbers that add up to 1. This means that the new value at a point, $u_j^{n+1}$, is a **convex combination**—a weighted average—of the old values at that point and its upwind neighbor [@problem_id:3818181]. This has two beautiful and crucial consequences:
 
-1.  **Monotonicity**: The scheme cannot create new peaks or valleys in the data. If you start with a profile that only goes down (like the front of a wave), the scheme will not introduce a spurious little "bump" or "dip" before or after it. This prevents the non-physical oscillations that plague other schemes when dealing with sharp fronts or discontinuities  .
+1.  **Monotonicity**: The scheme cannot create new peaks or valleys in the data. If you start with a profile that only goes down (like the front of a wave), the scheme will not introduce a spurious little "bump" or "dip" before or after it. This prevents the non-physical oscillations that plague other schemes when dealing with sharp fronts or discontinuities [@problem_id:4061478] [@problem_id:2418881].
 
-2.  **Positivity Preservation**: If the quantity $u$ represents something that can't be negative, like a concentration of a chemical, the [upwind scheme](@entry_id:137305) guarantees it will stay positive. Since $u_j^{n+1}$ is an average of non-negative values, it can never become negative .
+2.  **Positivity Preservation**: If the quantity $u$ represents something that can't be negative, like a concentration of a chemical, the [upwind scheme](@keyword=upwind_scheme|lang=en-US|style=Feynman) guarantees it will stay positive. Since $u_j^{n+1}$ is an average of non-negative values, it can never become negative [@problem_id:2418881].
 
-This trade-off is so fundamental that it is enshrined in a famous result called **Godunov's theorem**. The theorem states, in essence, that you can't have it all: any linear numerical scheme that is monotonicity-preserving (oscillation-free) can be at most first-order accurate. By choosing the [upwind scheme](@entry_id:137305), we deliberately sacrifice higher-order accuracy for the indispensable properties of [monotonicity](@entry_id:143760) and robustness .
+This trade-off is so fundamental that it is enshrined in a famous result called **Godunov's theorem**. The theorem states, in essence, that you can't have it all: any linear numerical scheme that is monotonicity-preserving (oscillation-free) can be at most first-order accurate. By choosing the [upwind scheme](@keyword=upwind_scheme|lang=en-US|style=Feynman), we deliberately sacrifice higher-order accuracy for the indispensable properties of [monotonicity](@keyword=monotonicity|lang=en-US|style=Feynman) and robustness [@problem_id:2418881].
 
 ### The Price of Simplicity: Numerical Diffusion
 
-Of course, in physics as in life, there is no free lunch. The price we pay for the wonderful stability of the [first-order upwind scheme](@entry_id:749417) is a phenomenon called **numerical diffusion**.
+Of course, in physics as in life, there is no free lunch. The price we pay for the wonderful stability of the [first-order upwind scheme](@keyword=first_order_upwind_scheme|lang=en-US|style=Feynman) is a phenomenon called **numerical diffusion**.
 
-To see where this comes from, we need to look more closely at our approximation. Using a Taylor series expansion, we can see what the [backward difference](@entry_id:637618) *really* represents:
+To see where this comes from, we need to look more closely at our approximation. Using a Taylor series expansion, we can see what the [backward difference](@keyword=backward_difference|lang=en-US|style=Feynman) *really* represents:
 
 $$
 \frac{u_i - u_{i-1}}{\Delta x} = \frac{u_i - (u_i - \Delta x \frac{\partial u}{\partial x} + \frac{(\Delta x)^2}{2} \frac{\partial^2 u}{\partial x^2} - \dots)}{\Delta x} = \frac{\partial u}{\partial x} - \frac{\Delta x}{2} \frac{\partial^2 u}{\partial x^2} + \dots
 $$
 
-Our simple approximation for the first derivative has an error, and its leading error term is proportional to the *second* derivative . When we substitute this more accurate expression back into our original [advection equation](@entry_id:144869), we discover we are not actually solving the equation we started with. Instead, we are solving a **[modified equation](@entry_id:173454)**:
+Our simple approximation for the first derivative has an error, and its leading error term is proportional to the *second* derivative [@problem_id:3952238]. When we substitute this more accurate expression back into our original [advection equation](@keyword=advection_equation|lang=en-US|style=Feynman), we discover we are not actually solving the equation we started with. Instead, we are solving a **[modified equation](@keyword=modified_equation|lang=en-US|style=Feynman)**:
 
 $$
 \frac{\partial u}{\partial t} + a \left( \frac{\partial u}{\partial x} - \frac{\Delta x}{2} \frac{\partial^2 u}{\partial x^2} \right) = 0 \quad \implies \quad \frac{\partial u}{\partial t} + a \frac{\partial u}{\partial x} = \frac{a \Delta x}{2} \frac{\partial^2 u}{\partial x^2}
 $$
 
-The term on the right-hand side is an unwelcome guest. It has the [exact form](@entry_id:273346) of a diffusion term, the same kind that describes how a drop of ink spreads out in a glass of water. This is **numerical diffusion**, an artifact of our discretization. It is not a real physical process, but the computer simulation behaves as if it were, using an artificial diffusion coefficient of $\Gamma_{\text{num}} = \frac{|a| \Delta x}{2}$ . The practical effect of this is that sharp features get smeared out and blurred. A [perfect square](@entry_id:635622)-wave pulse, for example, will become rounded and spread out as it propagates, just as if it were diffusing.
+The term on the right-hand side is an unwelcome guest. It has the [exact form](@keyword=exact_form|lang=en-US|style=Feynman) of a diffusion term, the same kind that describes how a drop of ink spreads out in a glass of water. This is **numerical diffusion**, an artifact of our discretization. It is not a real physical process, but the computer simulation behaves as if it were, using an artificial diffusion coefficient of $\Gamma_{\text{num}} = \frac{|a| \Delta x}{2}$ [@problem_id:3330997]. The practical effect of this is that sharp features get smeared out and blurred. A [perfect square](@keyword=perfect_square|lang=en-US|style=Feynman)-wave pulse, for example, will become rounded and spread out as it propagates, just as if it were diffusing.
 
 ### The Real World: A Battle of Convection and Diffusion
 
@@ -89,14 +89,14 @@ $$
 \mathrm{Pe}_h = \frac{\text{Strength of Convection}}{\text{Strength of Diffusion}} = \frac{|a| \Delta x}{\nu}
 $$
 
-where $\nu$ is the physical diffusion coefficient .
+where $\nu$ is the physical diffusion coefficient [@problem_id:3318452].
 
 The Peclet number tells us which process is in charge:
 -   If $\mathrm{Pe}_h \ll 1$, diffusion dominates. Information spreads out in all directions, like heat in a solid block. In this regime, central differencing is not only stable, but also more accurate.
 -   If $\mathrm{Pe}_h \gg 1$, convection dominates. Information is whisked along by the flow, and the upwind direction is paramount. This is where central differencing fails catastrophically.
 
-A careful analysis of the discretized steady-state equation reveals why. When using [central differencing](@entry_id:173198), the resulting algebraic equation for a node $P$, $a_P \phi_P = a_W \phi_W + a_E \phi_E$, develops a non-physical character when $\mathrm{Pe}_h > 2$. The coefficient for the downstream neighbor, $a_E$, becomes negative . This would imply that increasing the temperature downstream could somehow *lower* the temperature at node $P$, a clear violation of physical principles that leads to wild oscillations in the solution .
+A careful analysis of the discretized steady-state equation reveals why. When using [central differencing](@keyword=central_differencing|lang=en-US|style=Feynman), the resulting algebraic equation for a node $P$, $a_P \phi_P = a_W \phi_W + a_E \phi_E$, develops a non-physical character when $\mathrm{Pe}_h > 2$. The coefficient for the downstream neighbor, $a_E$, becomes negative [@problem_id:3318452]. This would imply that increasing the temperature downstream could somehow *lower* the temperature at node $P$, a clear violation of physical principles that leads to wild oscillations in the solution [@problem_id:1749396].
 
-The [upwind scheme](@entry_id:137305), by contrast, always produces a physically sound system of equations where all the neighboring coefficients are positive, ensuring that the solution is well-behaved for any Peclet number . It achieves this stability precisely by introducing its own numerical diffusion. For large $\mathrm{Pe}_h$, this numerical diffusion ($\Gamma_{\text{num}} \propto \mathrm{Pe}_h$) can dwarf the actual physical diffusion, leading to a stable but potentially inaccurate solution that is overly smeared . This fundamental trade-off between stability and accuracy has driven the development of more advanced methods, like **hybrid schemes**, which cleverly switch between central differencing for low $\mathrm{Pe}_h$ and upwind for high $\mathrm{Pe}_h$, attempting to get the best of both worlds  .
+The [upwind scheme](@keyword=upwind_scheme|lang=en-US|style=Feynman), by contrast, always produces a physically sound system of equations where all the neighboring coefficients are positive, ensuring that the solution is well-behaved for any Peclet number [@problem_id:1749395]. It achieves this stability precisely by introducing its own numerical diffusion. For large $\mathrm{Pe}_h$, this numerical diffusion ($\Gamma_{\text{num}} \propto \mathrm{Pe}_h$) can dwarf the actual physical diffusion, leading to a stable but potentially inaccurate solution that is overly smeared [@problem_id:3991649]. This fundamental trade-off between stability and accuracy has driven the development of more advanced methods, like **hybrid schemes**, which cleverly switch between central differencing for low $\mathrm{Pe}_h$ and upwind for high $\mathrm{Pe}_h$, attempting to get the best of both worlds [@problem_id:3991649] [@problem_id:3318452].
 
 In the end, the principle of upwinding is a story of humility. It is the recognition that our numerical tools must bow to the physical laws they seek to describe. By simply "listening to the wind," we create schemes that are robust, stable, and physically intuitive, providing a solid foundation upon which much of modern computational fluid dynamics is built.

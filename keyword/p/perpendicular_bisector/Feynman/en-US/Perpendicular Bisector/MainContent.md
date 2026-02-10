@@ -1,7 +1,7 @@
 ## Introduction
 In the world of mathematics, few concepts are as elegantly simple yet profoundly powerful as the perpendicular bisector. Often introduced as a basic line in geometry, it is, in fact, a deep principle of symmetry and balance that resonates across numerous scientific fields. Many learn the "how" of constructing this line but miss the "why" of its importance—its role as a universal rule of equity that organizes space, governs physical phenomena, and simplifies complex problems. This article bridges that gap, elevating the perpendicular bisector from a static textbook figure to a dynamic, indispensable tool. We will embark on a journey that first demystifies its core properties and then reveals its surprising influence in the world around us.
 
-The following chapters will guide you through this exploration. First, in "Principles and Mechanisms," we will dissect the fundamental definition of the perpendicular bisector, translate it into the precise languages of coordinate and [vector geometry](@article_id:156300), and see how it elegantly extends into three dimensions. Then, in "Applications and Interdisciplinary Connections," we will witness this simple line at work, carving up territories in city maps, defining atomic boundaries in crystals, and ensuring stability in advanced engineering systems.
+The following chapters will guide you through this exploration. First, in "Principles and Mechanisms," we will dissect the fundamental definition of the perpendicular bisector, translate it into the precise languages of coordinate and [vector geometry](@keyword=vector_geometry|lang=en-US|style=Feynman), and see how it elegantly extends into three dimensions. Then, in "Applications and Interdisciplinary Connections," we will witness this simple line at work, carving up territories in city maps, defining atomic boundaries in crystals, and ensuring stability in advanced engineering systems.
 
 ## Principles and Mechanisms
 
@@ -9,7 +9,7 @@ Have you ever had to split a cookie with a friend and wanted to make the cut per
 
 ### The Line of Ultimate Fairness
 
-At its heart, the perpendicular bisector is a line of pure equity. For any two distinct points, say $A$ and $B$, their perpendicular bisector is the set of *all* points in the plane that are the same distance from $A$ as they are from $B$. Imagine two radio beacons, Alpha and Beta, broadcasting signals. If you want your receiver to be perfectly equidistant from both, your path is confined to their perpendicular bisector . This is the fundamental definition, the one from which all other properties flow.
+At its heart, the perpendicular bisector is a line of pure equity. For any two distinct points, say $A$ and $B$, their perpendicular bisector is the set of *all* points in the plane that are the same distance from $A$ as they are from $B$. Imagine two radio beacons, Alpha and Beta, broadcasting signals. If you want your receiver to be perfectly equidistant from both, your path is confined to their perpendicular bisector [@problem_id:2139391]. This is the fundamental definition, the one from which all other properties flow.
 
 This "equidistance" rule has two immediate and obvious geometric consequences.
 
@@ -33,17 +33,17 @@ Next, we need the direction. We find the slope of the segment $AB$, which we'll 
 $$
 m_{AB} = \frac{y_B - y_A}{x_B - x_A}
 $$
-The "perpendicular" part of the name tells us that the slope of our bisector, $m_{\perp}$, must be the negative reciprocal of $m_{AB}$. This is a fundamental property of [perpendicular lines](@article_id:173653). As long as the segment isn't horizontal or vertical, the relationship is beautifully simple :
+The "perpendicular" part of the name tells us that the slope of our bisector, $m_{\perp}$, must be the negative reciprocal of $m_{AB}$. This is a fundamental property of [perpendicular lines](@keyword=perpendicular_lines|lang=en-US|style=Feynman). As long as the segment isn't horizontal or vertical, the relationship is beautifully simple [@problem_id:2111414]:
 $$
 m_{\perp} = -\frac{1}{m_{AB}}
 $$
-With a point ($M$) and a slope ($m_{\perp}$), we can write the equation of the line. This simple two-step process is the workhorse for countless problems, from tracking a robot  to finding the bisector of a segment formed by reflecting points across other lines .
+With a point ($M$) and a slope ($m_{\perp}$), we can write the equation of the line. This simple two-step process is the workhorse for countless problems, from tracking a robot [@problem_id:2139391] to finding the bisector of a segment formed by reflecting points across other lines [@problem_id:2115039].
 
-The connection between [perpendicular bisectors](@article_id:162654) and symmetry is profound. Consider a line segment whose perpendicular bisector is the y-axis itself. What must be true about its endpoints, $(\alpha, \beta)$ and $(\gamma, \delta)$? The midpoint's x-coordinate, $(\alpha + \gamma)/2$, must be 0, so $\alpha + \gamma = 0$. The segment must be perpendicular to the vertical y-axis, which means it must be horizontal, so $\beta = \delta$. The points are a perfect reflection of each other across the y-axis . The perpendicular bisector is, in essence, the axis of symmetry for the two points.
+The connection between [perpendicular bisectors](@keyword=perpendicular_bisectors|lang=en-US|style=Feynman) and symmetry is profound. Consider a line segment whose perpendicular bisector is the y-axis itself. What must be true about its endpoints, $(\alpha, \beta)$ and $(\gamma, \delta)$? The midpoint's x-coordinate, $(\alpha + \gamma)/2$, must be 0, so $\alpha + \gamma = 0$. The segment must be perpendicular to the vertical y-axis, which means it must be horizontal, so $\beta = \delta$. The points are a perfect reflection of each other across the y-axis [@problem_id:2161240]. The perpendicular bisector is, in essence, the axis of symmetry for the two points.
 
 ### A Universal Language: The Power of Vectors
 
-While [coordinate geometry](@article_id:162685) is effective, it can sometimes feel like we're just "crunching numbers." There is a more elegant and powerful way to think about these ideas using the language of vectors. Vectors free us from the constraints of a particular coordinate system and reveal the underlying physics of the situation.
+While [coordinate geometry](@keyword=coordinate_geometry|lang=en-US|style=Feynman) is effective, it can sometimes feel like we're just "crunching numbers." There is a more elegant and powerful way to think about these ideas using the language of vectors. Vectors free us from the constraints of a particular coordinate system and reveal the underlying physics of the situation.
 
 Let's represent our two points $P_1$ and $P_2$ by their position vectors, $\vec{p}_1$ and $\vec{p}_2$. Let an arbitrary point on the perpendicular bisector have position vector $\vec{r}$. The fundamental definition of "equidistant" can be written as:
 $$
@@ -61,7 +61,7 @@ The $\vec{r} \cdot \vec{r}$ terms on both sides cancel out! A bit of rearranging
 $$
 2\vec{r} \cdot (\vec{p}_2 - \vec{p}_1) = \vec{p}_2 \cdot \vec{p}_2 - \vec{p}_1 \cdot \vec{p}_1
 $$
-This is already a valid equation for the line, but we can make it even more insightful. Using the difference of squares factorization $a^2 - b^2 = (a-b)(a+b)$, which also applies to dot products, we can write $\vec{p}_2 \cdot \vec{p}_2 - \vec{p}_1 \cdot \vec{p}_1 = (\vec{p}_2 - \vec{p}_1) \cdot (\vec{p}_2 + \vec{p}_1)$. Substituting and rearranging leads to a gem of an equation :
+This is already a valid equation for the line, but we can make it even more insightful. Using the difference of squares factorization $a^2 - b^2 = (a-b)(a+b)$, which also applies to dot products, we can write $\vec{p}_2 \cdot \vec{p}_2 - \vec{p}_1 \cdot \vec{p}_1 = (\vec{p}_2 - \vec{p}_1) \cdot (\vec{p}_2 + \vec{p}_1)$. Substituting and rearranging leads to a gem of an equation [@problem_id:2141372]:
 $$
 (\vec{p}_2 - \vec{p}_1) \cdot \left(\vec{r} - \frac{\vec{p}_1 + \vec{p}_2}{2}\right) = 0
 $$
@@ -75,11 +75,11 @@ Here is where the power of the vector approach truly shines. What if our two poi
 
 Your intuition might tell you it's not a line anymore. If you imagine two points in a room, the set of points equidistant from them forms a flat sheet, a plane, cutting exactly between them.
 
-The [coordinate geometry](@article_id:162685) approach for finding this plane would be a bit clunky. But our vector equation remains completely unchanged!
+The [coordinate geometry](@keyword=coordinate_geometry|lang=en-US|style=Feynman) approach for finding this plane would be a bit clunky. But our vector equation remains completely unchanged!
 $$
 (\vec{p}_2 - \vec{p}_1) \cdot \left(\vec{r} - \frac{\vec{p}_1 + \vec{p}_2}{2}\right) = 0
 $$
-In 3D, this is the equation of a plane. The vector $\vec{n} = \vec{p}_2 - \vec{p}_1$ serves as the **normal vector** to the plane, defining its tilt. And the point $M$ with position vector $\vec{p}_M = \frac{\vec{p}_1 + \vec{p}_2}{2}$ is a point that lies on the plane. This is precisely the information needed to define a plane . The principle is the same; only the dimensionality of the solution has changed. The perpendicular bisector line in 2D becomes a perpendicular bisector plane in 3D, a beautiful example of mathematical unity.
+In 3D, this is the equation of a plane. The vector $\vec{n} = \vec{p}_2 - \vec{p}_1$ serves as the **normal vector** to the plane, defining its tilt. And the point $M$ with position vector $\vec{p}_M = \frac{\vec{p}_1 + \vec{p}_2}{2}$ is a point that lies on the plane. This is precisely the information needed to define a plane [@problem_id:2124894]. The principle is the same; only the dimensionality of the solution has changed. The perpendicular bisector line in 2D becomes a perpendicular bisector plane in 3D, a beautiful example of mathematical unity.
 
 ### A Point of Perfect Balance: The Circumcenter
 
@@ -89,7 +89,7 @@ Now for the magic. Since $P$ is on the perpendicular bisector of $AB$, it must b
 
 By the simple rules of logic, if $|PA| = |PB|$ and $|PB| = |PC|$, then it must be that $|PA| = |PC|$. But this is precisely the condition for $P$ to lie on the perpendicular bisector of the *third* side, $AC$!
 
-This means that all three [perpendicular bisectors](@article_id:162654) of a triangle are **concurrent**—they all meet at a single, unique point . This point, called the **[circumcenter](@article_id:174016)**, is the geometric heart of the triangle. It is the one point in the plane that is equidistant from all three vertices . If you wanted to build a central hub equidistant from three communication towers, you would build it at the [circumcenter](@article_id:174016). It is also the center of the unique circle (the [circumcircle](@article_id:164806)) that passes through all three vertices of the triangle. The vector proof of this concurrency is a beautiful exercise in the algebraic elegance we saw earlier, confirming this geometric jewel with rigorous certainty.
+This means that all three [perpendicular bisectors](@keyword=perpendicular_bisectors|lang=en-US|style=Feynman) of a triangle are **concurrent**—they all meet at a single, unique point [@problem_id:2175195]. This point, called the **[circumcenter](@keyword=circumcenter|lang=en-US|style=Feynman)**, is the geometric heart of the triangle. It is the one point in the plane that is equidistant from all three vertices [@problem_id:2165532]. If you wanted to build a central hub equidistant from three communication towers, you would build it at the [circumcenter](@keyword=circumcenter|lang=en-US|style=Feynman). It is also the center of the unique circle (the [circumcircle](@keyword=circumcircle|lang=en-US|style=Feynman)) that passes through all three vertices of the triangle. The vector proof of this concurrency is a beautiful exercise in the algebraic elegance we saw earlier, confirming this geometric jewel with rigorous certainty.
 
 ### A Final Twist: Geometry in Reverse
 
@@ -103,6 +103,6 @@ The distance from $F$ to the origin, $|FO|$, is a fixed constant, let's call it 
 $$
 |FP| = R
 $$
-This is the definition of a circle! The locus of point $P$ is a circle centered at $F$ with a radius equal to the distance from $F$ to the origin. The squared radius is simply $x_0^2 + y_0^2$ . What began as a complex-sounding constraint on a moving line reveals itself to be the simple and elegant geometry of a circle.
+This is the definition of a circle! The locus of point $P$ is a circle centered at $F$ with a radius equal to the distance from $F$ to the origin. The squared radius is simply $x_0^2 + y_0^2$ [@problem_id:2119640]. What began as a complex-sounding constraint on a moving line reveals itself to be the simple and elegant geometry of a circle.
 
 From a line of fairness to a unifying principle in higher dimensions, from the heart of a triangle to the definition of a circle, the perpendicular bisector is far more than a simple line from a high school textbook. It is a concept woven into the fabric of geometric space, a principle of symmetry and balance that, once understood, allows us to see the world with a new, more profound clarity.

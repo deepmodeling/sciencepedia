@@ -1,7 +1,7 @@
 ## Introduction
 Just as a polynomial can be defined by its roots and written in a factored form, can a function with an infinite number of roots be similarly "factored"? This question takes us from simple algebra to one of the most elegant results in mathematics: the sine product formula. While a naive attempt to multiply infinite factors based on the roots of the sine function would diverge, the genius of Leonhard Euler provided a formulation that converges perfectly, revealing a deep connection between a function and its zeros. This article explores this remarkable identity and its far-reaching consequences.
 
-This exploration is structured to provide a comprehensive understanding of both the theory and its impact. The first section, "Principles and Mechanisms," unpacks the formula itself, demonstrating how it can be tested, manipulated to derive new product formulas for cosine and [hyperbolic functions](@article_id:164681), and linked to the even more fundamental Gamma function. Following this, the "Applications and Interdisciplinary Connections" section reveals the formula's surprising power beyond pure mathematics, showing how it provides elegant solutions in number theory, explains physical phenomena in quantum mechanics, and even appears in the study of probability.
+This exploration is structured to provide a comprehensive understanding of both the theory and its impact. The first section, "Principles and Mechanisms," unpacks the formula itself, demonstrating how it can be tested, manipulated to derive new product formulas for cosine and [hyperbolic functions](@keyword=hyperbolic_functions|lang=en-US|style=Feynman), and linked to the even more fundamental Gamma function. Following this, the "Applications and Interdisciplinary Connections" section reveals the formula's surprising power beyond pure mathematics, showing how it provides elegant solutions in number theory, explains physical phenomena in quantum mechanics, and even appears in the study of probability.
 
 ## Principles and Mechanisms
 
@@ -21,7 +21,7 @@ The trouble is, this infinite product of growing terms flies off to infinity; it
 
 $$ \frac{\sin(\pi z)}{\pi z} = \prod_{n=1}^{\infty} \left(1 - \frac{z^2}{n^2}\right) $$
 
-This equation is a marvel. It tells us that the value of the sine function at any point $z$ is completely determined by its infinite set of roots at the integers. The term $(1 - z^2/n^2)$ ensures a root exists at $z=\pm n$, and the factor of $\pi z$ out front handles the root at $z=0$ and provides the correct scaling. This is the [factorization of the sine function](@article_id:164416).
+This equation is a marvel. It tells us that the value of the sine function at any point $z$ is completely determined by its infinite set of roots at the integers. The term $(1 - z^2/n^2)$ ensures a root exists at $z=\pm n$, and the factor of $\pi z$ out front handles the root at $z=0$ and provides the correct scaling. This is the [factorization of the sine function](@keyword=factorization_of_the_sine_function|lang=en-US|style=Feynman).
 
 ### A First Test: An Old Chestnut Revisited
 
@@ -31,7 +31,7 @@ Let's use our new sledgehammer. Our desired product looks just like the sine pro
 
 $$ \prod_{n=2}^{\infty} \left(1 - \frac{z^2}{n^2}\right) = \frac{\prod_{n=1}^{\infty} \left(1 - \frac{z^2}{n^2}\right)}{\left(1 - \frac{z^2}{1^2}\right)} = \frac{\sin(\pi z)}{\pi z (1 - z^2)} $$
 
-To find our specific product $P$, we need to evaluate this expression as $z$ approaches 1. But plugging in $z=1$ gives the indeterminate form $\frac{0}{0}$. This is a signal to call upon L'Hôpital's rule! By taking the derivative of the numerator and the denominator with respect to $z$ and then setting $z=1$, we find the limit :
+To find our specific product $P$, we need to evaluate this expression as $z$ approaches 1. But plugging in $z=1$ gives the indeterminate form $\frac{0}{0}$. This is a signal to call upon L'Hôpital's rule! By taking the derivative of the numerator and the denominator with respect to $z$ and then setting $z=1$, we find the limit [@problem_id:2240650]:
 
 $$ P = \lim_{z \to 1} \frac{\sin(\pi z)}{\pi z - \pi z^3} = \frac{\pi \cos(\pi)}{\pi - 3\pi} = \frac{-\pi}{-2\pi} = \frac{1}{2} $$
 
@@ -53,11 +53,11 @@ $$ \sin(iz) = \frac{\exp(i(iz)) - \exp(-i(iz))}{2i} = \frac{\exp(-z) - \exp(z)}{
 
 Substituting this back, we get $\frac{\sin(\pi i z)}{\pi i z} = \frac{i \sinh(\pi z)}{\pi i z} = \frac{\sinh(\pi z)}{\pi z}$.
 
-By putting the two sides of our transformed equation back together, we have discovered a brand new product formula, completely for free  :
+By putting the two sides of our transformed equation back together, we have discovered a brand new product formula, completely for free [@problem_id:2283657] [@problem_id:2262586]:
 
 $$ \frac{\sinh(\pi z)}{\pi z} = \prod_{n=1}^{\infty} \left(1 + \frac{z^2}{n^2}\right) $$
 
-A simple substitution has transported us from the oscillating world of [trigonometric functions](@article_id:178424) to the exponential growth world of [hyperbolic functions](@article_id:164681).
+A simple substitution has transported us from the oscillating world of [trigonometric functions](@keyword=trigonometric_functions|lang=en-US|style=Feynman) to the exponential growth world of [hyperbolic functions](@keyword=hyperbolic_functions|lang=en-US|style=Feynman).
 
 ### Composing New Music
 
@@ -65,7 +65,7 @@ Now that we have product formulas for both $\sin(\pi z)$ and $\sinh(\pi z)$, we 
 
 $$ P(z) = \prod_{n=1}^{\infty} \left(1 - \frac{z^4}{n^4}\right) $$
 
-The key is to recognize the simple difference of squares, $a^2 - b^2 = (a-b)(a+b)$. Here, we can write $1 - \frac{z^4}{n^4} = \left(1 - \frac{z^2}{n^2}\right) \left(1 + \frac{z^2}{n^2}\right)$. This allows us to split the entire [infinite product](@article_id:172862) into two separate products :
+The key is to recognize the simple difference of squares, $a^2 - b^2 = (a-b)(a+b)$. Here, we can write $1 - \frac{z^4}{n^4} = \left(1 - \frac{z^2}{n^2}\right) \left(1 + \frac{z^2}{n^2}\right)$. This allows us to split the entire [infinite product](@keyword=infinite_product|lang=en-US|style=Feynman) into two separate products [@problem_id:904367]:
 
 $$ P(z) = \left[ \prod_{n=1}^{\infty} \left(1 - \frac{z^2}{n^2}\right) \right] \cdot \left[ \prod_{n=1}^{\infty} \left(1 + \frac{z^2}{n^2}\right) \right] $$
 
@@ -89,7 +89,7 @@ This might look like we've made things more complicated, but a moment of true ma
 
 When $n$ is even, say $n=2m$, the term in the numerator is $\left(1 - \frac{4z^2}{(2m)^2}\right) = \left(1 - \frac{z^2}{m^2}\right)$. The product over all *even* $n$ is $\prod_{m=1}^{\infty} (1 - z^2/m^2)$, which is *exactly* the product in the denominator! They cancel each other out completely.
 
-What remains? Only the product over the *odd* terms from the numerator . And so, we arrive at the product formula for cosine:
+What remains? Only the product over the *odd* terms from the numerator [@problem_id:2250279]. And so, we arrive at the product formula for cosine:
 
 $$ \cos(\pi z) = \prod_{m=1}^{\infty} \left(1 - \frac{4z^2}{(2m-1)^2}\right) $$
 
@@ -97,17 +97,17 @@ Just as we'd hope, this formula perfectly encodes the roots of the cosine functi
 
 ### The Bridge from Products to Sums
 
-These formulas connect functions to [infinite products](@article_id:175839). Is there a way to connect them to infinite *sums*? There is, and the bridge is built with logarithms and derivatives.
+These formulas connect functions to [infinite products](@keyword=infinite_products|lang=en-US|style=Feynman). Is there a way to connect them to infinite *sums*? There is, and the bridge is built with logarithms and derivatives.
 
 Let's return to the sine product formula and take the natural logarithm of both sides. The logarithm has the wonderful property of turning multiplication into addition:
 
 $$ \ln(\sin(\pi z)) = \ln(\pi z) + \sum_{n=1}^{\infty} \ln\left(1 - \frac{z^2}{n^2}\right) $$
 
-Now, let's differentiate both sides with respect to $z$. On the left, we get $\pi \cot(\pi z)$. On the right, the sum of logarithms becomes a sum of simple fractions. The final result is a magnificent formula known as the **[partial fraction expansion](@article_id:264627) of the cotangent function**:
+Now, let's differentiate both sides with respect to $z$. On the left, we get $\pi \cot(\pi z)$. On the right, the sum of logarithms becomes a sum of simple fractions. The final result is a magnificent formula known as the **[partial fraction expansion](@keyword=partial_fraction_expansion|lang=en-US|style=Feynman) of the cotangent function**:
 
 $$ \pi \cot(\pi z) = \frac{1}{z} + \sum_{n=1}^{\infty} \frac{2z}{z^2 - n^2} $$
 
-This formula is a powerhouse. It directly relates the value of the cotangent function to a sum over all its poles (the integers). It allows us to find exact values for a whole class of [infinite series](@article_id:142872). For instance, it can be used to find a closed form for sums like $\sum_{n=1}^{\infty} \frac{1}{n^2 - a^2}$ , and it provides one of the most beautiful pathways to solving the famous Basel problem, proving that $\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$. The sine product formula contained this treasure all along.
+This formula is a powerhouse. It directly relates the value of the cotangent function to a sum over all its poles (the integers). It allows us to find exact values for a whole class of [infinite series](@keyword=infinite_series|lang=en-US|style=Feynman). For instance, it can be used to find a closed form for sums like $\sum_{n=1}^{\infty} \frac{1}{n^2 - a^2}$ [@problem_id:2240703], and it provides one of the most beautiful pathways to solving the famous Basel problem, proving that $\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$. The sine product formula contained this treasure all along.
 
 ### The Master Blueprint: The Gamma Function
 
@@ -115,7 +115,7 @@ We've treated the sine product as our foundation. But is there a deeper level? Y
 
 $$ \Gamma(z) \Gamma(1-z) = \frac{\pi}{\sin(\pi z)} $$
 
-We can use this to express our sine product in terms of the Gamma function . In fact, the story can be told in reverse. The Gamma function itself has an even more fundamental product representation (the Weierstrass product) . Using that product as a starting point, one can use the [reflection formula](@article_id:198347) to *derive* the sine product formula. In this grand hierarchy, the Gamma function is the master blueprint from which the plans for the sine function can be drawn.
+We can use this to express our sine product in terms of the Gamma function [@problem_id:2281182]. In fact, the story can be told in reverse. The Gamma function itself has an even more fundamental product representation (the Weierstrass product) [@problem_id:457523]. Using that product as a starting point, one can use the [reflection formula](@keyword=reflection_formula|lang=en-US|style=Feynman) to *derive* the sine product formula. In this grand hierarchy, the Gamma function is the master blueprint from which the plans for the sine function can be drawn.
 
 ### A Final Flourish: The Power of Complex Roots
 
@@ -123,15 +123,15 @@ Let's conclude with one last example to showcase the astonishing power of these 
 
 $$ P = \prod_{n=1}^{\infty} \left(1 + \frac{1}{n^2} + \frac{1}{n^4}\right) $$
 
-This looks unrelated to anything we have discussed. The path forward comes from factoring the polynomial inside: $x^2+x+1$. Its roots are the complex cube [roots of unity](@article_id:142103), $\exp(i2\pi/3)$ and $\exp(-i2\pi/3)$. This allows us to factor the term in the product as:
+This looks unrelated to anything we have discussed. The path forward comes from factoring the polynomial inside: $x^2+x+1$. Its roots are the complex cube [roots of unity](@keyword=roots_of_unity|lang=en-US|style=Feynman), $\exp(i2\pi/3)$ and $\exp(-i2\pi/3)$. This allows us to factor the term in the product as:
 
 $$ 1 + \frac{1}{n^2} + \frac{1}{n^4} = \left(1 - \frac{\exp(i2\pi/3)}{n^2}\right) \left(1 - \frac{\exp(-i2\pi/3)}{n^2}\right) $$
 
-Our product once again splits into two! Each one is a sine product formula, but for a *complex* value of $z^2$ .
+Our product once again splits into two! Each one is a sine product formula, but for a *complex* value of $z^2$ [@problem_id:457615].
 
 $$ P = \left[\prod_{n=1}^{\infty} \left(1 - \frac{(\exp(i\pi/3))^2}{n^2}\right)\right] \cdot \left[\prod_{n=1}^{\infty} \left(1 - \frac{(\exp(-i\pi/3))^2}{n^2}\right)\right] $$
 
-This evaluates to $\frac{\sin(\pi \exp(i\pi/3))}{\pi \exp(i\pi/3)} \cdot \frac{\sin(\pi \exp(-i\pi/3))}{\pi \exp(-i\pi/3)}$. While this seems like a dive into a rabbit hole of complex arithmetic, the expression simplifies miraculously. The arguments of the sine functions are $\pi(\frac{1}{2} \pm i\frac{\sqrt{3}}{2})$. Using [trigonometric identities](@article_id:164571), both sine terms evaluate to $\cosh(\frac{\pi\sqrt{3}}{2})$. The denominator becomes $\pi^2$. The final value is:
+This evaluates to $\frac{\sin(\pi \exp(i\pi/3))}{\pi \exp(i\pi/3)} \cdot \frac{\sin(\pi \exp(-i\pi/3))}{\pi \exp(-i\pi/3)}$. While this seems like a dive into a rabbit hole of complex arithmetic, the expression simplifies miraculously. The arguments of the sine functions are $\pi(\frac{1}{2} \pm i\frac{\sqrt{3}}{2})$. Using [trigonometric identities](@keyword=trigonometric_identities|lang=en-US|style=Feynman), both sine terms evaluate to $\cosh(\frac{\pi\sqrt{3}}{2})$. The denominator becomes $\pi^2$. The final value is:
 
 $$ P = \frac{\cosh^2\left(\frac{\pi\sqrt{3}}{2}\right)}{\pi^2} $$
 

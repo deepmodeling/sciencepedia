@@ -1,5 +1,5 @@
 ## 引言
-在化学世界中，反应物常常面临选择，能够同时转化为多种不同的产物。这种被称为**平行反应**的现象，既是挑战也是机遇。对于化学家和工程师来说，核心问题不仅是观察结果，更是控制结果，引导反应生成有价值的产物，同时最大限度地减少不希望的副产物。我们如何预测反应将走哪条路径？更重要的是，我们如何影响它的选择？本文将深入探讨支配这些化学竞赛的基本原理。第一章“原理与机理”将揭示决定产物比例的动力学和热力学定律，探讨活化能、温度和熵的作用。随后的“应用与跨学科联系”一章将展示这一理论知识如何应用于从工业合成、[材料科学](@article_id:312640)到生命本身复杂的[代谢网络](@article_id:323112)等各个领域，揭示掌握平行反应对于现代科学的核心重要性。
+在化学世界中，反应物常常面临选择，能够同时转化为多种不同的产物。这种被称为**平行反应**的现象，既是挑战也是机遇。对于化学家和工程师来说，核心问题不仅是观察结果，更是控制结果，引导反应生成有价值的产物，同时最大限度地减少不希望的副产物。我们如何预测反应将走哪条路径？更重要的是，我们如何影响它的选择？本文将深入探讨支配这些化学竞赛的基本原理。第一章“原理与机理”将揭示决定产物比例的动力学和热力学定律，探讨活化能、温度和熵的作用。随后的“应用与跨学科联系”一章将展示这一理论知识如何应用于从工业合成、[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)到生命本身复杂的[代谢网络](@keyword=metabolic_networks|lang=zh-CN|style=Feynman)等各个领域，揭示掌握平行反应对于现代科学的核心重要性。
 
 ## 原理与机理
 
@@ -20,68 +20,68 @@ $$
 $$
 \frac{\text{rate of forming B}}{\text{rate of forming C}} = \frac{d[B]/dt}{d[C]/dt} = \frac{k_1 [A]}{k_2 [A]} = \frac{k_1}{k_2}
 $$
-这意味着每生成一个 $C$ 分子，就必然会生成固定数量的 $B$ 分子，这个数量等于比值 $k_1/k_2$。无论是在反应开始时还是接近结束时，这个比例都保持不变。如果你从没有产物开始，让反应进行到完全，最终的产物堆中 $[B]/[C]$ 的[摩尔比](@article_id:372523)将恰好等于 $k_1/k_2$。这个被称为**动力学控制**的强大原理告诉我们，如果我们能理解并操纵[速率常数](@article_id:375068)，我们就能控制反应的最终结果  。那么，这场博弈的关键就在于理解是什么决定了 $k$。
+这意味着每生成一个 $C$ 分子，就必然会生成固定数量的 $B$ 分子，这个数量等于比值 $k_1/k_2$。无论是在反应开始时还是接近结束时，这个比例都保持不变。如果你从没有产物开始，让反应进行到完全，最终的产物堆中 $[B]/[C]$ 的[摩尔比](@keyword=molar_ratio|lang=zh-CN|style=Feynman)将恰好等于 $k_1/k_2$。这个被称为**动力学控制**的强大原理告诉我们，如果我们能理解并操纵[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman)，我们就能控制反应的最终结果 [@problem_id:2638969] [@problem_id:1487345]。那么，这场博弈的关键就在于理解是什么决定了 $k$。
 
 ### 能量门槛：活化与选择性
 
-是什么让一条路径比另一条更快？答案在于能量。一个反应物分子要转化，必须首先扭曲自身，形成一个高能量、不稳定的构型，称为**[活化络合物](@article_id:313517)**或**过渡态**。可以把它想象成翻越山口到达下一个山谷。这个山口的高度就是**活化能**。较低的山口比高的山口更容易、也更快地穿过。
+是什么让一条路径比另一条更快？答案在于能量。一个反应物分子要转化，必须首先扭曲自身，形成一个高能量、不稳定的构型，称为**[活化络合物](@keyword=activated_complex|lang=zh-CN|style=Feynman)**或**过渡态**。可以把它想象成翻越山口到达下一个山谷。这个山口的高度就是**活化能**。较低的山口比高的山口更容易、也更快地穿过。
 
-在[热力学](@article_id:359663)中，这个能垒的真实高度由**[吉布斯活化能](@article_id:374775)**给出，记为 $\Delta G^\ddagger$。速率常数与这个能垒之间的关系是指数性的，正如**[艾林方程](@article_id:359525)**所描述的：
+在[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)中，这个能垒的真实高度由**[吉布斯活化能](@keyword=gibbs_energy_of_activation|lang=zh-CN|style=Feynman)**给出，记为 $\Delta G^\ddagger$。速率常数与这个能垒之间的关系是指数性的，正如**[艾林方程](@keyword=eyring_equation|lang=zh-CN|style=Feynman)**所描述的：
 $$
 k = (\text{some factors}) \times \exp\left(-\frac{\Delta G^\ddagger}{RT}\right)
 $$
 其中 $R$ 是气体常数，$T$ 是绝对温度。这种关系的指数性质是关键。这意味着，即使两条路径之间的活化能有很小的差异，也会对其速率产生巨大的影响。
 
-让我们回到 $A \to B$ 和 $A \to C$ 的竞赛中。它们的[速率常数](@article_id:375068)之比为：
+让我们回到 $A \to B$ 和 $A \to C$ 的竞赛中。它们的[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman)之比为：
 $$
 \frac{k_1}{k_2} = \frac{\exp(-\Delta G_1^\ddagger / RT)}{\exp(-\Delta G_2^\ddagger / RT)} = \exp\left(\frac{\Delta G_2^\ddagger - \Delta G_1^\ddagger}{RT}\right)
 $$
-这个方程是控制反应的秘诀。它告诉我们，产物比例指数地取决于能垒之间的*差异*。如果路径1的能垒比路径2稍低（即 $\Delta G_1^\ddagger \lt \Delta G_2^\ddagger$），其[速率常数](@article_id:375068)将呈指数级增大，它将压倒性地成为主要产物 。
+这个方程是控制反应的秘诀。它告诉我们，产物比例指数地取决于能垒之间的*差异*。如果路径1的能垒比路径2稍低（即 $\Delta G_1^\ddagger \lt \Delta G_2^\ddagger$），其[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman)将呈指数级增大，它将压倒性地成为主要产物 [@problem_id:1487365]。
 
 ### 温度：化学家的控制旋钮
 
-上面的方程中有一个 $T$。这表明我们可以利用温度作为杠杆来影响结果。为了了解其工作原理，让我们使用更实用的**阿伦尼乌斯方程**，它是[艾林方程](@article_id:359525)的近亲：$k = A \exp(-E_a/RT)$。这里，$E_a$ 是阿伦尼乌斯活化能（与 $\Delta G^\ddagger$ 密切相关），$A$ 是指前因子，我们稍后会讨论。
+上面的方程中有一个 $T$。这表明我们可以利用温度作为杠杆来影响结果。为了了解其工作原理，让我们使用更实用的**阿伦尼乌斯方程**，它是[艾林方程](@keyword=eyring_equation|lang=zh-CN|style=Feynman)的近亲：$k = A \exp(-E_a/RT)$。这里，$E_a$ 是阿伦尼乌斯活化能（与 $\Delta G^\ddagger$ 密切相关），$A$ 是指前因子，我们稍后会讨论。
 
 产物比例则为：
 $$
 \frac{[P_1]}{[P_2]} = \frac{k_1}{k_2} = \frac{A_1}{A_2} \exp\left(\frac{E_{a2} - E_{a1}}{RT}\right)
 $$
-假设路径1的活化能较低，$E_{a1} \lt E_{a2}$。这是“更容易”的路径。在非常低的温度下，$1/T$ 项变得非常大，使得指数项变得巨大。反应几乎完全会沿着阻力最小的路径进行——即活化能较低的那条。这就是为什么通过最低能垒形成的产物通常被称为**[动力学产物](@article_id:367632)**。
+假设路径1的活化能较低，$E_{a1} \lt E_{a2}$。这是“更容易”的路径。在非常低的温度下，$1/T$ 项变得非常大，使得指数项变得巨大。反应几乎完全会沿着阻力最小的路径进行——即活化能较低的那条。这就是为什么通过最低能垒形成的产物通常被称为**[动力学产物](@keyword=kinetic_product|lang=zh-CN|style=Feynman)**。
 
-但是当我们升高温度时会发生什么呢？随着 $T$ 的增加，项 $(E_{a2} - E_{a1})/RT$ 变小。低能路径的指数“优势”减弱。现在，越来越多的分子也拥有足够的能量来克服较高的能垒 $E_{a2}$。因此，高能产物 $P_2$ 的比例增加 。
+但是当我们升高温度时会发生什么呢？随着 $T$ 的增加，项 $(E_{a2} - E_{a1})/RT$ 变小。低能路径的指数“优势”减弱。现在，越来越多的分子也拥有足够的能量来克服较高的能垒 $E_{a2}$。因此，高能产物 $P_2$ 的比例增加 [@problem_id:1968754]。
 
-这不仅仅是理论上的好奇心；它是[化学合成](@article_id:330670)中的一个基本工具。通过仔细选择温度，化学家可以设定一个特定的、[期望](@article_id:311378)的产物比例。如果为了使一个过程具有商业可行性，你需要一个恰好为10比1的产物比例，你可以计算出达到这个比例所需的精确温度，从而将科学原理转化为强大的工程工具 。
+这不仅仅是理论上的好奇心；它是[化学合成](@keyword=chemical_synthesis|lang=zh-CN|style=Feynman)中的一个基本工具。通过仔细选择温度，化学家可以设定一个特定的、[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)的产物比例。如果为了使一个过程具有商业可行性，你需要一个恰好为10比1的产物比例，你可以计算出达到这个比例所需的精确温度，从而将科学原理转化为强大的工程工具 [@problem_id:1969230]。
 
 ### 高温极限与一个意外的转折
 
-我们看到，升高温度会削弱低能路径的优势。如果我们将此推向极端，达到一个假设的无限温度，会发生什么？在 $T \to \infty$ 的极限下，项 $1/RT$ 趋于零。整个指数因子变为 $\exp(0)$，也就是1。在这个极限下，产物比例完全不再依赖于活化能！它变成了[指前因子](@article_id:305701)的比值：
+我们看到，升高温度会削弱低能路径的优势。如果我们将此推向极端，达到一个假设的无限温度，会发生什么？在 $T \to \infty$ 的极限下，项 $1/RT$ 趋于零。整个指数因子变为 $\exp(0)$，也就是1。在这个极限下，产物比例完全不再依赖于活化能！它变成了[指前因子](@keyword=pre_exponential_factor|lang=zh-CN|style=Feynman)的比值：
 $$
 \lim_{T\to\infty} \frac{[P_1]}{[P_2]} = \frac{A_1}{A_2}
 $$
-那么这个**[指前因子](@article_id:305701)** $A$ 是什么呢？它代表了反应尝试的频率，以及更微妙地，反应成功所需的几何或组织上的要求。一个需要非常特定的碰撞取向的反应，其 $A$ 值会比一个要求较宽松的反应要小。
+那么这个**[指前因子](@keyword=pre_exponential_factor|lang=zh-CN|style=Feynman)** $A$ 是什么呢？它代表了反应尝试的频率，以及更微妙地，反应成功所需的几何或组织上的要求。一个需要非常特定的碰撞取向的反应，其 $A$ 值会比一个要求较宽松的反应要小。
 
 这引出了一个引人入胜的可能性。如果能垒较低的路径（$E_{a1}$）同时也有更严格的组织要求（一个较小的 $A_1$）会怎样？
 
 *   在**低温**下，能量是瓶颈。$E_{a1}$ 较低的路径获胜。
 *   在**高温**下，能量对所有路径都足够。瓶颈现在是组织和尝试频率。$A_2$ 较大的路径获胜。
 
-在这些特定条件下——当能量上有利的路径在组织上不利时——我们可能会遇到**选择性的转换**。低温下的主要产物在高温下可能变成次要产物！这种转换发生的数学条件是，活化能较高的反应也必须有较高的[指前因子](@article_id:305701) 。这种[交叉](@article_id:315017)发生在一个特定的**等选择性温度**，此时两个反应的速率完全相等 。
+在这些特定条件下——当能量上有利的路径在组织上不利时——我们可能会遇到**选择性的转换**。低温下的主要产物在高温下可能变成次要产物！这种转换发生的数学条件是，活化能较高的反应也必须有较高的[指前因子](@keyword=pre_exponential_factor|lang=zh-CN|style=Feynman) [@problem_id:1516150]。这种[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)发生在一个特定的**等选择性温度**，此时两个反应的速率完全相等 [@problem_id:1515873]。
 
-### 更深层次的博弈：[焓与熵](@article_id:296778)
+### 更深层次的博弈：[焓与熵](@keyword=enthalpy_vs_entropy|lang=zh-CN|style=Feynman)
 
-为了触及问题的核心，我们回到[吉布斯活化能](@article_id:374775)，$\Delta G^\ddagger = \Delta H^\ddagger - T \Delta S^\ddagger$。这里，$\Delta H^\ddagger$ 是**[活化焓](@article_id:378519)**——大致是达到[过渡态](@article_id:313517)所需断裂和形成[化学键](@article_id:305517)的能量。$\Delta S^\ddagger$ 是**活化熵**——衡量在通往能垒顶峰过程中无序度的变化。负的 $\Delta S^\ddagger$ 意味着过渡态高度有序且刚性（像钥匙插入锁孔），而正的 $\Delta S^\ddagger$ 则意味着它松散且无序。
+为了触及问题的核心，我们回到[吉布斯活化能](@keyword=gibbs_energy_of_activation|lang=zh-CN|style=Feynman)，$\Delta G^\ddagger = \Delta H^\ddagger - T \Delta S^\ddagger$。这里，$\Delta H^\ddagger$ 是**[活化焓](@keyword=activation_enthalpy|lang=zh-CN|style=Feynman)**——大致是达到[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)所需断裂和形成[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)的能量。$\Delta S^\ddagger$ 是**活化熵**——衡量在通往能垒顶峰过程中无序度的变化。负的 $\Delta S^\ddagger$ 意味着过渡态高度有序且刚性（像钥匙插入锁孔），而正的 $\Delta S^\ddagger$ 则意味着它松散且无序。
 
 将此代入我们的产物比例方程，会得到一个非常优美的结果：
 $$
 \ln\left(\frac{k_1}{k_2}\right) = -\left(\frac{\Delta H_1^\ddagger - \Delta H_2^\ddagger}{R}\right)\frac{1}{T} + \left(\frac{\Delta S_1^\ddagger - \Delta S_2^\ddagger}{R}\right)
 $$
-这个方程，通常被称为[竞争反应](@article_id:371498)的范特霍夫-[阿伦尼乌斯图](@article_id:320925)，具有极强的揭示性。它表明，产物比例的对数对 $1/T$ 作图是一条直线。从这条线的斜率，实验人员可以直接测量[活化焓](@article_id:378519)的差异 $(\Delta H_1^\ddagger - \Delta H_2^\ddagger)$。从截距，他们可以测量活化熵的差异 $(\Delta S_1^\ddagger - \Delta S_2^\ddagger)$ 。
+这个方程，通常被称为[竞争反应](@keyword=competing_reactions|lang=zh-CN|style=Feynman)的范特霍夫-[阿伦尼乌斯图](@keyword=arrhenius_plot|lang=zh-CN|style=Feynman)，具有极强的揭示性。它表明，产物比例的对数对 $1/T$ 作图是一条直线。从这条线的斜率，实验人员可以直接测量[活化焓](@keyword=activation_enthalpy|lang=zh-CN|style=Feynman)的差异 $(\Delta H_1^\ddagger - \Delta H_2^\ddagger)$。从截距，他们可以测量活化熵的差异 $(\Delta S_1^\ddagger - \Delta S_2^\ddagger)$ [@problem_id:435435]。
 
-这种形式揭示了[动力学控制](@article_id:315291)核心的竞争。产物分布是[焓和熵](@article_id:314881)之间的一场拔河比赛，而温度是裁判。
+这种形式揭示了[动力学控制](@keyword=kinetic_control|lang=zh-CN|style=Feynman)核心的竞争。产物分布是[焓和熵](@keyword=enthalpy_and_entropy|lang=zh-CN|style=Feynman)之间的一场拔河比赛，而温度是裁判。
 
 *   在**低温**下，$1/T$ 项很大，因此结果由焓差 $\Delta H_1^\ddagger - \Delta H_2^\ddagger$ 主导。具有较低焓垒的路径获胜。
 *   在**高温**下，吉布斯能量中的 $T \Delta S^\ddagger$ 项变得显著。结果越来越受到熵差 $\Delta S_1^\ddagger - \Delta S_2^\ddagger$ 的影响。通往更“无序”或更少约束的过渡态（更高的 $\Delta S^\ddagger$）的路径获得优势。
 
-等选择性温度正是这两种效应达到平衡的点。在该温度下，$\Delta G_1^\ddagger = \Delta G_2^\ddagger$，整理后得到 $T_{iso} = \frac{\Delta H_1^\ddagger - \Delta H_2^\ddagger}{\Delta S_1^\ddagger - \Delta S_2^\ddagger}$ 。在此温度下，一条路径的焓优势被另一条路径的熵优势完全抵消。
+等选择性温度正是这两种效应达到平衡的点。在该温度下，$\Delta G_1^\ddagger = \Delta G_2^\ddagger$，整理后得到 $T_{iso} = \frac{\Delta H_1^\ddagger - \Delta H_2^\ddagger}{\Delta S_1^\ddagger - \Delta S_2^\ddagger}$ [@problem_id:1483392]。在此温度下，一条路径的焓优势被另一条路径的熵优势完全抵消。
 
 所以，当我们观察我们的分子 Alice 站在她的十字路口时，我们正在见证一场自然的根本之舞。她正在权衡每条路径的能量代价与其提供的组织自由度。通过理解这些原理，我们不再是被动的观察者。我们可以改变比赛的规则，转动温度的旋钮，以非凡的精度引导她走向我们选择的目的地。

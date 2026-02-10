@@ -1,7 +1,7 @@
 ## 引言
-正如一个多项式可以由其根定义并写成因式分解的形式，一个拥有无穷多个根的函数是否也能类似地被“因式分解”呢？这个问题将我们从简单的代数带到数学中最优雅的成果之一：[正弦乘积公式](@article_id:352377)。虽然根据正弦函数的根直接构造[无穷乘积](@article_id:355315)的朴素尝试会发散，但 Leonhard Euler 的天才构想提供了一种能够完美收敛的表达式，揭示了函数与其零点之间的深刻联系。本文将探讨这一非凡的恒等式及其深远的影响。
+正如一个多项式可以由其根定义并写成因式分解的形式，一个拥有无穷多个根的函数是否也能类似地被“因式分解”呢？这个问题将我们从简单的代数带到数学中最优雅的成果之一：[正弦乘积公式](@keyword=sine_product_formula|lang=zh-CN|style=Feynman)。虽然根据正弦函数的根直接构造[无穷乘积](@keyword=infinite_products|lang=zh-CN|style=Feynman)的朴素尝试会发散，但 Leonhard Euler 的天才构想提供了一种能够完美收敛的表达式，揭示了函数与其零点之间的深刻联系。本文将探讨这一非凡的恒等式及其深远的影响。
 
-本文的探索旨在全面理解该理论及其影响。第一部分“原理与机制”将剖析该公式本身，展示如何检验它、操作它以推导余弦函数和[双曲函数](@article_id:344525)的新乘积公式，并将其与更基础的[伽马函数](@article_id:301862)联系起来。随后，“应用与跨学科联系”部分将揭示该公式在纯数学之外的惊人力量，展示它如何在数论中提供优雅的解法，解释量子力学中的物理现象，甚至在概率论研究中现身。
+本文的探索旨在全面理解该理论及其影响。第一部分“原理与机制”将剖析该公式本身，展示如何检验它、操作它以推导余弦函数和[双曲函数](@keyword=hyperbolic_functions|lang=zh-CN|style=Feynman)的新乘积公式，并将其与更基础的[伽马函数](@keyword=gamma_function|lang=zh-CN|style=Feynman)联系起来。随后，“应用与跨学科联系”部分将揭示该公式在纯数学之外的惊人力量，展示它如何在数论中提供优雅的解法，解释量子力学中的物理现象，甚至在概率论研究中现身。
 
 ## 原理与机制
 
@@ -17,21 +17,21 @@
 
 $$ C \cdot (z-0) \cdot (z-1)(z+1) \cdot (z-2)(z+2) \cdots $$
 
-问题在于，这个由不断增大的项构成的[无穷乘积](@article_id:355315)会发散到无穷大；它不会收敛到任何有用的结果。伟大的数学家 Leonhard Euler 找到了一个绕过这个问题的方法。他没有使用像 $(z-n)$ 这样的因子，而是使用了 $\left(1 - \frac{z}{n}\right)$ 形式的因子。通过巧妙地将[正根](@article_id:378024)和负根组合在一起，他得到了一个优美收敛的乘积。这个结果就是著名的**[正弦乘积公式](@article_id:352377)**：
+问题在于，这个由不断增大的项构成的[无穷乘积](@keyword=infinite_products|lang=zh-CN|style=Feynman)会发散到无穷大；它不会收敛到任何有用的结果。伟大的数学家 Leonhard Euler 找到了一个绕过这个问题的方法。他没有使用像 $(z-n)$ 这样的因子，而是使用了 $\left(1 - \frac{z}{n}\right)$ 形式的因子。通过巧妙地将[正根](@keyword=positive_roots|lang=zh-CN|style=Feynman)和负根组合在一起，他得到了一个优美收敛的乘积。这个结果就是著名的**[正弦乘积公式](@keyword=sine_product_formula|lang=zh-CN|style=Feynman)**：
 
 $$ \frac{\sin(\pi z)}{\pi z} = \prod_{n=1}^{\infty} \left(1 - \frac{z^2}{n^2}\right) $$
 
-这个方程是一个奇迹。它告诉我们，正弦函数在任意点 $z$ 的值完全由它在整数处的无穷零点集所决定。项 $(1 - z^2/n^2)$ 确保了在 $z=\pm n$ 处存在一个根，而前面的因子 $\pi z$ 处理了 $z=0$ 处的根并提供了正确的缩放比例。这就是[正弦函数的因式分解](@article_id:344278)。
+这个方程是一个奇迹。它告诉我们，正弦函数在任意点 $z$ 的值完全由它在整数处的无穷零点集所决定。项 $(1 - z^2/n^2)$ 确保了在 $z=\pm n$ 处存在一个根，而前面的因子 $\pi z$ 处理了 $z=0$ 处的根并提供了正确的缩放比例。这就是[正弦函数的因式分解](@keyword=factorization_of_the_sine_function|lang=zh-CN|style=Feynman)。
 
 ### 第一次检验：重温一个经典问题
 
-任何新的、强大的机器都应该首先在一个熟悉的任务上进行测试。让我们尝试计算[无穷乘积](@article_id:355315) $P = \prod_{n=2}^{\infty} \left(1 - \frac{1}{n^2}\right)$ 的值。你可能见过这个问题用“裂项相消乘积”来解决，其中各项在一条长链中相互抵消，最终留下一个简单的答案。
+任何新的、强大的机器都应该首先在一个熟悉的任务上进行测试。让我们尝试计算[无穷乘积](@keyword=infinite_products|lang=zh-CN|style=Feynman) $P = \prod_{n=2}^{\infty} \left(1 - \frac{1}{n^2}\right)$ 的值。你可能见过这个问题用“裂项相消乘积”来解决，其中各项在一条长链中相互抵消，最终留下一个简单的答案。
 
-让我们用我们新的“大锤”来试试。我们想要的乘积看起来就像在 $z=1$ 处取值的[正弦乘积公式](@article_id:352377)，只不过它从 $n=2$ 开始而不是 $n=1$。我们可以写出：
+让我们用我们新的“大锤”来试试。我们想要的乘积看起来就像在 $z=1$ 处取值的[正弦乘积公式](@keyword=sine_product_formula|lang=zh-CN|style=Feynman)，只不过它从 $n=2$ 开始而不是 $n=1$。我们可以写出：
 
 $$ \prod_{n=2}^{\infty} \left(1 - \frac{z^2}{n^2}\right) = \frac{\prod_{n=1}^{\infty} \left(1 - \frac{z^2}{n^2}\right)}{\left(1 - \frac{z^2}{1^2}\right)} = \frac{\sin(\pi z)}{\pi z (1 - z^2)} $$
 
-为了找到我们特定的乘积 $P$，我们需要计算这个表达式在 $z$ 趋近于 1 时的值。但直接代入 $z=1$ 会得到[不定式](@article_id:304730) $\frac{0}{0}$。这是一个使用[洛必达法则](@article_id:307918)的信号！通过对分子和分母分别关于 $z$ 求导，然后令 $z=1$，我们求得极限 ：
+为了找到我们特定的乘积 $P$，我们需要计算这个表达式在 $z$ 趋近于 1 时的值。但直接代入 $z=1$ 会得到[不定式](@keyword=indeterminate_forms|lang=zh-CN|style=Feynman) $\frac{0}{0}$。这是一个使用[洛必达法则](@keyword=l_hôpital_s_rule|lang=zh-CN|style=Feynman)的信号！通过对分子和分母分别关于 $z$ 求导，然后令 $z=1$，我们求得极限 [@problem_id:2240650]：
 
 $$ P = \lim_{z \to 1} \frac{\sin(\pi z)}{\pi z - \pi z^3} = \frac{\pi \cos(\pi)}{\pi - 3\pi} = \frac{-\pi}{-2\pi} = \frac{1}{2} $$
 
@@ -55,11 +55,11 @@ $$ \sin(iz) = \frac{\exp(i(iz)) - \exp(-i(iz))}{2i} = \frac{\exp(-z) - \exp(z)}{
 
 将此代回，我们得到 $\frac{\sin(\pi i z)}{\pi i z} = \frac{i \sinh(\pi z)}{\pi i z} = \frac{\sinh(\pi z)}{\pi z}$。
 
-将我们变换后方程的两边重新组合，我们发现了一个全新的乘积公式，完全是免费得来的  ：
+将我们变换后方程的两边重新组合，我们发现了一个全新的乘积公式，完全是免费得来的 [@problem_id:2283657] [@problem_id:2262586]：
 
 $$ \frac{\sinh(\pi z)}{\pi z} = \prod_{n=1}^{\infty} \left(1 + \frac{z^2}{n^2}\right) $$
 
-一个简单的代换将我们从三角函数的[振荡](@article_id:331484)世界带到了双曲函数的[指数增长](@article_id:302310)世界。
+一个简单的代换将我们从三角函数的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)世界带到了双曲函数的[指数增长](@keyword=exponential_growth|lang=zh-CN|style=Feynman)世界。
 
 ### 谱写新乐章
 
@@ -67,7 +67,7 @@ $$ \frac{\sinh(\pi z)}{\pi z} = \prod_{n=1}^{\infty} \left(1 + \frac{z^2}{n^2}\r
 
 $$ P(z) = \prod_{n=1}^{\infty} \left(1 - \frac{z^4}{n^4}\right) $$
 
-关键是要认出简单的平方差公式，$a^2 - b^2 = (a-b)(a+b)$。在这里，我们可以写出 $1 - \frac{z^4}{n^4} = \left(1 - \frac{z^2}{n^2}\right) \left(1 + \frac{z^2}{n^2}\right)$。这使我们能够将整个[无穷乘积](@article_id:355315)分成两个独立的乘积 ：
+关键是要认出简单的平方差公式，$a^2 - b^2 = (a-b)(a+b)$。在这里，我们可以写出 $1 - \frac{z^4}{n^4} = \left(1 - \frac{z^2}{n^2}\right) \left(1 + \frac{z^2}{n^2}\right)$。这使我们能够将整个[无穷乘积](@keyword=infinite_products|lang=zh-CN|style=Feynman)分成两个独立的乘积 [@problem_id:904367]：
 
 $$ P(z) = \left[ \prod_{n=1}^{\infty} \left(1 - \frac{z^2}{n^2}\right) \right] \cdot \left[ \prod_{n=1}^{\infty} \left(1 + \frac{z^2}{n^2}\right) \right] $$
 
@@ -83,7 +83,7 @@ $$ P(z) = \left( \frac{\sin(\pi z)}{\pi z} \right) \cdot \left( \frac{\sinh(\pi 
 
 $$ \cos(\pi z) = \frac{\sin(2\pi z)}{2\sin(\pi z)} $$
 
-现在，我们可以将[正弦乘积公式](@article_id:352377)代入分子和分母。
+现在，我们可以将[正弦乘积公式](@keyword=sine_product_formula|lang=zh-CN|style=Feynman)代入分子和分母。
 
 $$ \cos(\pi z) = \frac{2\pi z \prod_{n=1}^{\infty} \left(1 - \frac{4z^2}{n^2}\right)}{2\pi z \prod_{n=1}^{\infty} \left(1 - \frac{z^2}{n^2}\right)} = \frac{\prod_{n=1}^{\infty} \left(1 - \frac{4z^2}{n^2}\right)}{\prod_{n=1}^{\infty} \left(1 - \frac{z^2}{n^2}\right)} $$
 
@@ -91,7 +91,7 @@ $$ \cos(\pi z) = \frac{2\pi z \prod_{n=1}^{\infty} \left(1 - \frac{4z^2}{n^2}\ri
 
 当 $n$ 为偶数，比如 $n=2m$ 时，分子中的项是 $\left(1 - \frac{4z^2}{(2m)^2}\right) = \left(1 - \frac{z^2}{m^2}\right)$。对所有*偶数* $n$ 的乘积是 $\prod_{m=1}^{\infty} (1 - z^2/m^2)$，这*恰好*是分母中的乘积！它们完全相互抵消了。
 
-还剩下什么？只剩下分子中对*奇数*项的乘积 。于是，我们得到了余弦的乘积公式：
+还剩下什么？只剩下分子中对*奇数*项的乘积 [@problem_id:2250279]。于是，我们得到了余弦的乘积公式：
 
 $$ \cos(\pi z) = \prod_{m=1}^{\infty} \left(1 - \frac{4z^2}{(2m-1)^2}\right) $$
 
@@ -99,27 +99,27 @@ $$ \cos(\pi z) = \prod_{m=1}^{\infty} \left(1 - \frac{4z^2}{(2m-1)^2}\right) $$
 
 ### 从乘积到级数的桥梁
 
-这些公式将函数与无穷乘积联系起来。有没有办法将它们与无穷*级数*联系起来呢？有，而这座桥梁是用对数和[导数](@article_id:318324)构建的。
+这些公式将函数与无穷乘积联系起来。有没有办法将它们与无穷*级数*联系起来呢？有，而这座桥梁是用对数和[导数](@keyword=derivative|lang=zh-CN|style=Feynman)构建的。
 
-让我们回到[正弦乘积公式](@article_id:352377)，并对两边取自然对数。对数有一个奇妙的性质，就是能把乘法变成加法：
+让我们回到[正弦乘积公式](@keyword=sine_product_formula|lang=zh-CN|style=Feynman)，并对两边取自然对数。对数有一个奇妙的性质，就是能把乘法变成加法：
 
 $$ \ln(\sin(\pi z)) = \ln(\pi z) + \sum_{n=1}^{\infty} \ln\left(1 - \frac{z^2}{n^2}\right) $$
 
-现在，让我们对两边关于 $z$ 求导。在左边，我们得到 $\pi \cot(\pi z)$。在右边，对数的和变成了一个简单分式的和。最终结果是一个宏伟的公式，被称为**余切函数的[部分分式展开](@article_id:328828)**：
+现在，让我们对两边关于 $z$ 求导。在左边，我们得到 $\pi \cot(\pi z)$。在右边，对数的和变成了一个简单分式的和。最终结果是一个宏伟的公式，被称为**余切函数的[部分分式展开](@keyword=partial_fraction_expansion|lang=zh-CN|style=Feynman)**：
 
 $$ \pi \cot(\pi z) = \frac{1}{z} + \sum_{n=1}^{\infty} \frac{2z}{z^2 - n^2} $$
 
-这个公式是一个强大的工具。它直接将余切函数的值与一个对其所有极点（整数）的求和联系起来。它使我们能够为一整类无穷级数找到精确值。例如，它可以用来找到像 $\sum_{n=1}^{\infty} \frac{1}{n^2 - a^2}$ 这样的级数的[封闭形式](@article_id:336656) ，并且它为解决著名的[巴塞尔问题](@article_id:297664)提供了最漂亮的途径之一，证明了 $\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$。[正弦乘积公式](@article_id:352377)一直都蕴含着这个宝藏。
+这个公式是一个强大的工具。它直接将余切函数的值与一个对其所有极点（整数）的求和联系起来。它使我们能够为一整类无穷级数找到精确值。例如，它可以用来找到像 $\sum_{n=1}^{\infty} \frac{1}{n^2 - a^2}$ 这样的级数的[封闭形式](@keyword=closed_forms|lang=zh-CN|style=Feynman) [@problem_id:2240703]，并且它为解决著名的[巴塞尔问题](@keyword=basel_problem|lang=zh-CN|style=Feynman)提供了最漂亮的途径之一，证明了 $\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$。[正弦乘积公式](@keyword=sine_product_formula|lang=zh-CN|style=Feynman)一直都蕴含着这个宝藏。
 
-### 总蓝图：[伽马函数](@article_id:301862)
+### 总蓝图：[伽马函数](@keyword=gamma_function|lang=zh-CN|style=Feynman)
 
-我们一直将正弦乘积视为我们的基础。但有没有更深层次的东西呢？有。那就是伽马函数，$\Gamma(z)$，著名的将阶乘推广到所有复数的函数。伽马函数通过**[欧拉反射公式](@article_id:333824)**与正弦函数相连，这是一个具有近乎神秘美感的恒等式：
+我们一直将正弦乘积视为我们的基础。但有没有更深层次的东西呢？有。那就是伽马函数，$\Gamma(z)$，著名的将阶乘推广到所有复数的函数。伽马函数通过**[欧拉反射公式](@keyword=euler_reflection_formula|lang=zh-CN|style=Feynman)**与正弦函数相连，这是一个具有近乎神秘美感的恒等式：
 
 $$ \Gamma(z) \Gamma(1-z) = \frac{\pi}{\sin(\pi z)} $$
 
-我们可以用它来以伽马函数表示我们的正弦乘积 。事实上，这个故事可以反过来说。[伽马函数](@article_id:301862)本身有一个更基本的乘积表示（魏尔斯特拉斯乘积）。以该乘积为起点，人们可以使用[反射公式](@article_id:377617)来*推导*出[正弦乘积公式](@article_id:352377)。在这个宏伟的层级结构中，[伽马函数](@article_id:301862)是总蓝图，从中可以绘制出正弦函数的规划。
+我们可以用它来以伽马函数表示我们的正弦乘积 [@problem_id:2281182]。事实上，这个故事可以反过来说。[伽马函数](@keyword=gamma_function|lang=zh-CN|style=Feynman)本身有一个更基本的乘积表示（魏尔斯特拉斯乘积）[@problem_id:457523]。以该乘积为起点，人们可以使用[反射公式](@keyword=reflection_formula|lang=zh-CN|style=Feynman)来*推导*出[正弦乘积公式](@keyword=sine_product_formula|lang=zh-CN|style=Feynman)。在这个宏伟的层级结构中，[伽马函数](@keyword=gamma_function|lang=zh-CN|style=Feynman)是总蓝图，从中可以绘制出正弦函数的规划。
 
-### 最后的华彩乐章：[复数根](@article_id:352053)的力量
+### 最后的华彩乐章：[复数根](@keyword=complex_roots|lang=zh-CN|style=Feynman)的力量
 
 让我们用最后一个例子来结束，以展示这些思想的惊人力量。考虑评估这个乘积的问题：
 
@@ -129,12 +129,12 @@ $$ P = \prod_{n=1}^{\infty} \left(1 + \frac{1}{n^2} + \frac{1}{n^4}\right) $$
 
 $$ 1 + \frac{1}{n^2} + \frac{1}{n^4} = \left(1 - \frac{\exp(i2\pi/3)}{n^2}\right) \left(1 - \frac{\exp(-i2\pi/3)}{n^2}\right) $$
 
-我们的乘积再次分裂成两个！每一个都是一个[正弦乘积公式](@article_id:352377)，但是针对一个*复数*值的 $z^2$ 。
+我们的乘积再次分裂成两个！每一个都是一个[正弦乘积公式](@keyword=sine_product_formula|lang=zh-CN|style=Feynman)，但是针对一个*复数*值的 $z^2$ [@problem_id:457615]。
 
 $$ P = \left[\prod_{n=1}^{\infty} \left(1 - \frac{(\exp(i\pi/3))^2}{n^2}\right)\right] \cdot \left[\prod_{n=1}^{\infty} \left(1 - \frac{(\exp(-i\pi/3))^2}{n^2}\right)\right] $$
 
-这计算结果为 $\frac{\sin(\pi \exp(i\pi/3))}{\pi \exp(i\pi/3)} \cdot \frac{\sin(\pi \exp(-i\pi/3))}{\pi \exp(-i\pi/3)}$。虽然这看起来像是掉进了复数运算的兔子洞，但这个表达式奇迹般地简化了。正弦函数的参数是 $\pi(\frac{1}{2} \pm i\frac{\sqrt{3}}{2})$。使用[三角恒等式](@article_id:344424)，两个正弦项的计算结果都是 $\cosh(\frac{\pi\sqrt{3}}{2})$。分母变为 $\pi^2$。最终的值是：
+这计算结果为 $\frac{\sin(\pi \exp(i\pi/3))}{\pi \exp(i\pi/3)} \cdot \frac{\sin(\pi \exp(-i\pi/3))}{\pi \exp(-i\pi/3)}$。虽然这看起来像是掉进了复数运算的兔子洞，但这个表达式奇迹般地简化了。正弦函数的参数是 $\pi(\frac{1}{2} \pm i\frac{\sqrt{3}}{2})$。使用[三角恒等式](@keyword=trigonometric_identities|lang=zh-CN|style=Feynman)，两个正弦项的计算结果都是 $\cosh(\frac{\pi\sqrt{3}}{2})$。分母变为 $\pi^2$。最终的值是：
 
 $$ P = \frac{\cosh^2\left(\frac{\pi\sqrt{3}}{2}\right)}{\pi^2} $$
 
-从一个令人生畏的实[数乘](@article_id:316379)积中，一个优美、精确的答案浮现出来，它是在[复平面](@article_id:318633)的火焰中锻造而成的。这就是[正弦乘积公式](@article_id:352377)的力量和美丽——一个关于函数根的简单陈述，却解锁了一个充满联系的整个宇宙。
+从一个令人生畏的实[数乘](@keyword=scalar_multiplication|lang=zh-CN|style=Feynman)积中，一个优美、精确的答案浮现出来，它是在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)的火焰中锻造而成的。这就是[正弦乘积公式](@keyword=sine_product_formula|lang=zh-CN|style=Feynman)的力量和美丽——一个关于函数根的简单陈述，却解锁了一个充满联系的整个宇宙。

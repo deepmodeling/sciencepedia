@@ -1,7 +1,7 @@
 ## 引言
-要欣赏生命的舞蹈，我们不仅要理解开启一个动作的舞步，还要理解赋予其意义的精准[停顿](@article_id:639398)。在生物学中，说“停止”的行为与下达“开始”的命令同样关键和精妙。一个无法终止的信号不是信号，而是噪音。本文旨在探讨[信号终止](@article_id:353344)这一常被低估的原则，它是所有生命系统中控制、计时和适应所必需的基本过程。通过探索这一概念，我们揭示了细胞如何防止混乱并维持秩序，这一过程对健康至关重要，在疾病中则会受到损害。
+要欣赏生命的舞蹈，我们不仅要理解开启一个动作的舞步，还要理解赋予其意义的精准[停顿](@keyword=stalling|lang=zh-CN|style=Feynman)。在生物学中，说“停止”的行为与下达“开始”的命令同样关键和精妙。一个无法终止的信号不是信号，而是噪音。本文旨在探讨[信号终止](@keyword=signal_termination|lang=zh-CN|style=Feynman)这一常被低估的原则，它是所有生命系统中控制、计时和适应所必需的基本过程。通过探索这一概念，我们揭示了细胞如何防止混乱并维持秩序，这一过程对健康至关重要，在疾病中则会受到损害。
 
-本次探索分为两个主要部分。在“原理与机制”中，我们将打开细胞的分子工具箱，审视其终止信号的各种巧妙机制——从内置计时器到分子清理团队——这些机制都具有极高的精确度。随后，“应用与跨学科联系”将展示这些原理的实际应用，揭示[信号终止](@article_id:353344)如何主宰从思维速度、[免疫系统应答](@article_id:348570)到我们遗传密码的标点等一切，从而在分子、医学和心智之间架起桥梁。
+本次探索分为两个主要部分。在“原理与机制”中，我们将打开细胞的分子工具箱，审视其终止信号的各种巧妙机制——从内置计时器到分子清理团队——这些机制都具有极高的精确度。随后，“应用与跨学科联系”将展示这些原理的实际应用，揭示[信号终止](@keyword=signal_termination|lang=zh-CN|style=Feynman)如何主宰从思维速度、[免疫系统应答](@keyword=immune_system_response|lang=zh-CN|style=Feynman)到我们遗传密码的标点等一切，从而在分子、医学和心智之间架起桥梁。
 
 ## 原理与机制
 
@@ -11,11 +11,11 @@
 
 想象一下短跑运动员和马拉松运动员的区别。一个需要爆发性的、短暂的能量迸发；另一个则需要长时间的持续耐力。细胞也面临类似的挑战，并已进化出与之匹配的不同信号传递策略。选择何种机制来终止信号是其持续时间的主要决定因素，而这个持续时间是根据生物学需求量身定制的。
 
-考虑一下突触这个快如闪电的世界，一个[神经元](@article_id:324093)在这里与另一个[神经元](@article_id:324093)对话。信号通常由**[离子型受体](@article_id:317109)**承载，这些受体本质上是门，当[神经递质](@article_id:301362)结合时打开，让离子涌入并改变[神经元](@article_id:324093)的电状态。这个信号是如何停止的？以可以想象的最简单、最优雅的方式：[神经递质](@article_id:301362)自行解离。当它被迅速从突触中清除时，门便迅速关闭。信号的生命周期与[神经递质](@article_id:301362)在其受体上的短暂驻留直接相关，这个过程可以在瞬间完成。对于这样的过程，[信号衰减](@article_id:326681)的[速率常数](@article_id:375068)可能非常高，达到 $10^3 \text{ s}^{-1}$ 的量级，这意味着信号在不到一毫秒的时间内减半 。这对于思维和行动的断奏式节奏来说是完美的。
+考虑一下突触这个快如闪电的世界，一个[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)在这里与另一个[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)对话。信号通常由**[离子型受体](@keyword=ionotropic_receptors|lang=zh-CN|style=Feynman)**承载，这些受体本质上是门，当[神经递质](@keyword=neurotransmitter|lang=zh-CN|style=Feynman)结合时打开，让离子涌入并改变[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)的电状态。这个信号是如何停止的？以可以想象的最简单、最优雅的方式：[神经递质](@keyword=neurotransmitter|lang=zh-CN|style=Feynman)自行解离。当它被迅速从突触中清除时，门便迅速关闭。信号的生命周期与[神经递质](@keyword=neurotransmitter|lang=zh-CN|style=Feynman)在其受体上的短暂驻留直接相关，这个过程可以在瞬间完成[@problem_id:2346268]。对于这样的过程，[信号衰减](@keyword=signal_attenuation|lang=zh-CN|style=Feynman)的[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman)可能非常高，达到 $10^3 \text{ s}^{-1}$ 的量级，这意味着信号在不到一毫秒的时间内减半 [@problem_id:2338173]。这对于思维和行动的断奏式节奏来说是完美的。
 
-现在，将此与身体对长期变化的反应进行对比，例如适应持续寒冷的环境。这需要一个稳定、提高的[代谢率](@article_id:301008)，而不是短暂的峰值。这里的信号通常由[脂溶性激素](@article_id:300927)承载，如甲状腺激素或[类固醇激素](@article_id:306528)（在假设情景中称为“激素Alpha”），它们绕过细胞表面，进入细胞核，直接改变正在被读取的基因。信号的持续时间不是由细胞膜上的快速开关控制，而是由激素被[肝脏代谢](@article_id:349274)并从体内排泄的缓慢、审慎的过程决定。这种信号的[半衰期](@article_id:305269)不是以毫秒计，而是以小时甚至天计 。
+现在，将此与身体对长期变化的反应进行对比，例如适应持续寒冷的环境。这需要一个稳定、提高的[代谢率](@keyword=metabolic_rate|lang=zh-CN|style=Feynman)，而不是短暂的峰值。这里的信号通常由[脂溶性激素](@keyword=lipid_soluble_hormones|lang=zh-CN|style=Feynman)承载，如甲状腺激素或[类固醇激素](@keyword=steroid_hormones|lang=zh-CN|style=Feynman)（在假设情景中称为“激素Alpha”），它们绕过细胞表面，进入细胞核，直接改变正在被读取的基因。信号的持续时间不是由细胞膜上的快速开关控制，而是由激素被[肝脏代谢](@keyword=liver_metabolism|lang=zh-CN|style=Feynman)并从体内排泄的缓慢、审慎的过程决定。这种信号的[半衰期](@keyword=half_life|lang=zh-CN|style=Feynman)不是以毫秒计，而是以小时甚至天计 [@problem_id:2338138]。
 
-细胞对生长因子的反应可能介于两者之间。为了停止这样的信号，细胞可能需要摧毁承载它的蛋白质本身。这个过程可能需要数分钟，它确保了生长的命令以一种可控的方式被撤销，而不是突然中断 。一个量化的比较是惊人的：关闭一个依赖[蛋白质降解](@article_id:323787)的信号所需的时间，可能是关闭一个[离子通道](@article_id:349942)所需时间的数百万倍。这巨大的[动态范围](@article_id:334172)并非偶然；它是生理学的一个基本原则，即信号的动力学与其功能精确匹配。
+细胞对生长因子的反应可能介于两者之间。为了停止这样的信号，细胞可能需要摧毁承载它的蛋白质本身。这个过程可能需要数分钟，它确保了生长的命令以一种可控的方式被撤销，而不是突然中断 [@problem_id:2338185]。一个量化的比较是惊人的：关闭一个依赖[蛋白质降解](@keyword=protein_degradation|lang=zh-CN|style=Feynman)的信号所需的时间，可能是关闭一个[离子通道](@keyword=ion_channel|lang=zh-CN|style=Feynman)所需时间的数百万倍[@problem_id:2338173]。这巨大的[动态范围](@keyword=dynamic_range|lang=zh-CN|style=Feynman)并非偶然；它是生理学的一个基本原则，即信号的动力学与其功能精确匹配。
 
 ### 分子开关：一个用于控制的工具箱
 
@@ -23,36 +23,36 @@
 
 #### “清理团队”：摧毁信使
 
-许多信号，特别是来自[肽类激素](@article_id:312039)如胰高血糖素或[肾上腺素](@article_id:302113)（“激素Beta”）的信号，是通过称为**第二信使**的小分子可扩散分子在细胞内传递的。其中最著名的一个是[环磷酸腺苷](@article_id:329181)，即**cAMP**。当激素与其细胞表面的受体结合时，它会触发一种酶疯狂地从ATP生产cAMP。cAMP随后在[细胞内扩散](@article_id:298140)，激活下游蛋白质。为了关闭信号，细胞不会等待激素慢慢清除。相反，它会释放出一支由称为**[磷酸二酯酶](@article_id:343138)**的酶组成的“清理团队”。这些酶会追捕cAMP分子，并通过一次化学切割，将它们转化回无活性的普通腺苷一磷酸（AMP）。这就像从白板上擦除一条信息——它快速、局部，并允许系统为下一个信号重置。
+许多信号，特别是来自[肽类激素](@keyword=peptide_hormones|lang=zh-CN|style=Feynman)如胰高血糖素或[肾上腺素](@keyword=epinephrine|lang=zh-CN|style=Feynman)（“激素Beta”）的信号，是通过称为**第二信使**的小分子可扩散分子在细胞内传递的。其中最著名的一个是[环磷酸腺苷](@keyword=cyclic_amp|lang=zh-CN|style=Feynman)，即**cAMP**。当激素与其细胞表面的受体结合时，它会触发一种酶疯狂地从ATP生产cAMP。cAMP随后在[细胞内扩散](@keyword=diffusion_in_cells|lang=zh-CN|style=Feynman)，激活下游蛋白质。为了关闭信号，细胞不会等待激素慢慢清除。相反，它会释放出一支由称为**[磷酸二酯酶](@keyword=phosphodiesterase|lang=zh-CN|style=Feynman)**的酶组成的“清理团队”。这些酶会追捕cAMP分子，并通过一次化学切割，将它们转化回无活性的普通腺苷一磷酸（AMP）[@problem_id:2050375]。这就像从白板上擦除一条信息——它快速、局部，并允许系统为下一个信号重置。
 
 #### “主动驱逐”：将信号泵出
 
-但如果信使无法被摧毁呢？这就是用途最广泛的[第二信使](@article_id:302248)之一：钙离子$Ca^{2+}$的情况。你不能“降解”一个原子。细胞的解决方案在概念上简单，但需要大量能量：它将钙泵出。细胞内$Ca^{2+}$的静息浓度被维持在极低的水平，比外部浓度低约一万倍。信号是通过打开通道让$Ca^{2+}$涌入而产生的。为了终止信号，细胞启动了强大的[分子泵](@article_id:375824)。其中一个泵是**[质膜](@article_id:305910)$Ca^{2+}$-ATP酶（PMCA）**。顾名思义，它是一种位于[质膜](@article_id:305910)中的酶，利用ATP水解的能量将$Ca^{2+}$离子主动运出细胞，逆着其陡峭的[浓度梯度](@article_id:297086)。其他泵，如SERCA，则负责将钙隔离到内部储存室中。无论哪种情况，原理都是相同的：通过物理移除终止信号，这是一种主动驱逐，恢复了安静的低钙状态。
+但如果信使无法被摧毁呢？这就是用途最广泛的[第二信使](@keyword=second_messengers|lang=zh-CN|style=Feynman)之一：钙离子$Ca^{2+}$的情况。你不能“降解”一个原子。细胞的解决方案在概念上简单，但需要大量能量：它将钙泵出。细胞内$Ca^{2+}$的静息浓度被维持在极低的水平，比外部浓度低约一万倍。信号是通过打开通道让$Ca^{2+}$涌入而产生的。为了终止信号，细胞启动了强大的[分子泵](@keyword=molecular_pumps|lang=zh-CN|style=Feynman)。其中一个泵是**[质膜](@keyword=plasma_membrane|lang=zh-CN|style=Feynman)$Ca^{2+}$-ATP酶（PMCA）**。顾名思义，它是一种位于[质膜](@keyword=plasma_membrane|lang=zh-CN|style=Feynman)中的酶，利用ATP水解的能量将$Ca^{2+}$离子主动运出细胞，逆着其陡峭的[浓度梯度](@keyword=concentration_gradient|lang=zh-CN|style=Feynman)[@problem_id:1695973]。其他泵，如SERCA，则负责将钙隔离到内部储存室中。无论哪种情况，原理都是相同的：通过物理移除终止信号，这是一种主动驱逐，恢复了安静的低钙状态。
 
 #### “内置计时器”：水解作为关闭开关
 
-也许最美的终止机制是那些自给自足的机制。考虑一下庞大的**G蛋白**家族，它们充当**[代谢型受体](@article_id:310063)**的中介。这些蛋白质是分子开关。当它们与一个[鸟苷三磷酸](@article_id:356526)（GTP）[分子结合](@article_id:379673)时，它们处于“开启”状态；当它们与鸟苷二磷酸（GDP）结合时，则处于“关闭”状态。当一个受体被激活时，它会促使[G蛋白](@article_id:313373)释放其旧的GDP并结合一个新的GTP，从而打开开关。
+也许最美的终止机制是那些自给自足的机制。考虑一下庞大的**G蛋白**家族，它们充当**[代谢型受体](@keyword=metabotropic_receptors|lang=zh-CN|style=Feynman)**的中介。这些蛋白质是分子开关。当它们与一个[鸟苷三磷酸](@keyword=guanosine_triphosphate|lang=zh-CN|style=Feynman)（GTP）[分子结合](@keyword=molecular_binding|lang=zh-CN|style=Feynman)时，它们处于“开启”状态；当它们与鸟苷二磷酸（GDP）结合时，则处于“关闭”状态。当一个受体被激活时，它会促使[G蛋白](@keyword=g_protein|lang=zh-CN|style=Feynman)释放其旧的GDP并结合一个新的GTP，从而打开开关。
 
-那么它是如何关闭的呢？G蛋白有一个秘密：它也是一种酶。它拥有一种缓慢的、内在的能力，可以水解它所持有的GTP，切掉一个磷酸基团，将其变回GDP。它有一个内置的计时器！一旦GTP被水解为GDP，G蛋白会自动关闭自己并返回其静息状态，准备好迎接下一个信号。但如果这个内在计时器对于手头的任务来说太慢了怎么办？细胞对此也有解决方案。它利用称为**[GTP酶](@article_id:350168)激活蛋白（GAPs）**的调节蛋白。这些GAPs与活化的[G蛋白](@article_id:313373)结合，并显著加速其[GTP水解](@article_id:353986)活性，有效地迫使开关更快地关闭。它们自己并不拨动开关；它们只是帮助G蛋白更快地拨动自己的开关，确保例如神经系统中的信号能够及时终止。
+那么它是如何关闭的呢？G蛋白有一个秘密：它也是一种酶。它拥有一种缓慢的、内在的能力，可以水解它所持有的GTP，切掉一个磷酸基团，将其变回GDP。它有一个内置的计时器！一旦GTP被水解为GDP，G蛋白会自动关闭自己并返回其静息状态，准备好迎接下一个信号[@problem_id:2346268]。但如果这个内在计时器对于手头的任务来说太慢了怎么办？细胞对此也有解决方案。它利用称为**[GTP酶](@keyword=gtpase|lang=zh-CN|style=Feynman)激活蛋白（GAPs）**的调节蛋白。这些GAPs与活化的[G蛋白](@keyword=g_protein|lang=zh-CN|style=Feynman)结合，并显著加速其[GTP水解](@keyword=gtp_hydrolysis|lang=zh-CN|style=Feynman)活性，有效地迫使开关更快地关闭。它们自己并不拨动开关；它们只是帮助G蛋白更快地拨动自己的开关，确保例如神经系统中的信号能够及时终止[@problem_id:2347566]。
 
 #### “修饰标签”：磷酸化的双向作用
 
 细胞最常见的通讯策略之一是给蛋白质附上一个磷酸基团——这个过程称为**磷酸化**。这种由称为**激酶**的酶执行的修饰，可以像一个分子旗帜一样，改变蛋白质的形状、活性或位置。虽然磷酸化通常会*开启*一个信号，但这个系统的美妙之处在于其可逆性。信号由一类互补的酶——**磷酸酶**——来*关闭*，它们负责去除磷酸基团。
 
-对免疫应答至关重要的[JAK-STAT通路](@article_id:310749)提供了一个完美的例子。一个[细胞因子](@article_id:382655)信号导致JAK激酶磷酸化一个[STAT蛋白](@article_id:342814)。这种磷酸化是“开启”信号，允许两个[STAT蛋白](@article_id:342814)[二聚化](@article_id:334813)，移动到细胞核，并激活[基因转录](@article_id:315931)。但这种状态不是永久的。为了关闭信号并回收[STAT蛋白](@article_id:342814)，一个核内[磷酸酶](@article_id:302717)必须找到活化的二聚体并移除那些关键的磷酸标签。一旦去磷酸化，二聚体就会解体，失去对DNA的控制，并被运出细胞核，准备好进行下一轮。[激酶和磷酸酶](@article_id:364802)之间的持续相互作用创造了一个动态、可逆的开关，使细胞能够根据其环境精巧地调节其基因表达。
+对免疫应答至关重要的[JAK-STAT通路](@keyword=jak_stat_pathway|lang=zh-CN|style=Feynman)提供了一个完美的例子。一个[细胞因子](@keyword=cytokine|lang=zh-CN|style=Feynman)信号导致JAK激酶磷酸化一个[STAT蛋白](@keyword=stat_proteins|lang=zh-CN|style=Feynman)。这种磷酸化是“开启”信号，允许两个[STAT蛋白](@keyword=stat_proteins|lang=zh-CN|style=Feynman)[二聚化](@keyword=dimerization|lang=zh-CN|style=Feynman)，移动到细胞核，并激活[基因转录](@keyword=gene_transcription|lang=zh-CN|style=Feynman)。但这种状态不是永久的。为了关闭信号并回收[STAT蛋白](@keyword=stat_proteins|lang=zh-CN|style=Feynman)，一个核内[磷酸酶](@keyword=phosphatase|lang=zh-CN|style=Feynman)必须找到活化的二聚体并移除那些关键的磷酸标签。一旦去磷酸化，二聚体就会解体，失去对DNA的控制，并被运出细胞核，准备好进行下一轮[@problem_id:1724019]。[激酶和磷酸酶](@keyword=kinase_and_phosphatase|lang=zh-CN|style=Feynman)之间的持续相互作用创造了一个动态、可逆的开关，使细胞能够根据其环境精巧地调节其基因表达。
 
 ### 驯服受体：从脱敏到降解
 
 有时，终止下游信号是不够的，特别是当初始刺激过于强烈或持久时。在这些情况下，细胞必须将注意力转向源头：受体本身。
 
-一个常见的策略是**脱敏**。如果一个[G蛋白偶联受体](@article_id:316381)（[GPCR](@article_id:316381)）被过于持续地激活，一个专门的酶，称为**G蛋白偶联受体激酶（GRK）**，会迅速介入并在受体的尾部添加磷酸基团。这种磷酸化并不直接停止信号，但它为另一个名为**arrestin**（[抑制蛋白](@article_id:315263)）的蛋白质创造了一个特定的对接位点。正如其名所示，arrestin的结合会物理上阻碍受体激活更多的[G蛋白](@article_id:313373)，从而“遏制”信号。但arrestin的作用不止于此。它还充当一个衔接蛋白，标记受体通过[内吞作用](@article_id:298213)从细胞表面被拉入内部，从而有效地将其隐藏起来，使其免受刺激。
+一个常见的策略是**脱敏**。如果一个[G蛋白偶联受体](@keyword=gpcrs|lang=zh-CN|style=Feynman)（[GPCR](@keyword=gpcrs|lang=zh-CN|style=Feynman)）被过于持续地激活，一个专门的酶，称为**G蛋白偶联受体激酶（GRK）**，会迅速介入并在受体的尾部添加磷酸基团。这种磷酸化并不直接停止信号，但它为另一个名为**arrestin**（[抑制蛋白](@keyword=arrestin|lang=zh-CN|style=Feynman)）的蛋白质创造了一个特定的对接位点。正如其名所示，arrestin的结合会物理上阻碍受体激活更多的[G蛋白](@keyword=g_protein|lang=zh-CN|style=Feynman)，从而“遏制”信号。但arrestin的作用不止于此。它还充当一个衔接蛋白，标记受体通过[内吞作用](@keyword=endocytosis|lang=zh-CN|style=Feynman)从细胞表面被拉入内部，从而有效地将其隐藏起来，使其免受刺激[@problem_id:2338236]。
 
-如果隐藏受体还不够，细胞可以采取更永久的解决方案：降解。这通常通过用一个名为**[泛素](@article_id:353436)**的小蛋白标记受体蛋白来完成。一个[E3泛素连接酶](@article_id:353660)将泛素链连接到活化的受体上，这就像一个分子的“死亡之吻”。这个泛素标签是细胞处理机器的一个信号，它会将[受体内化](@article_id:371906)并运送到溶酶体——细胞的回收中心，在那里它被完全降解。这是一种不可逆的终止形式，确保了细胞对该特定信号的敏感性发生深刻而持久的下调。
+如果隐藏受体还不够，细胞可以采取更永久的解决方案：降解。这通常通过用一个名为**[泛素](@keyword=ubiquitin|lang=zh-CN|style=Feynman)**的小蛋白标记受体蛋白来完成。一个[E3泛素连接酶](@keyword=e3_ubiquitin_ligase|lang=zh-CN|style=Feynman)将泛素链连接到活化的受体上，这就像一个分子的“死亡之吻”。这个泛素标签是细胞处理机器的一个信号，它会将[受体内化](@keyword=receptor_internalization|lang=zh-CN|style=Feynman)并运送到溶酶体——细胞的回收中心，在那里它被完全降解[@problem_id:2338185]。这是一种不可逆的终止形式，确保了细胞对该特定信号的敏感性发生深刻而持久的下调。
 
-### 从源头停止信息：终止[转录](@article_id:361745)
+### 从源头停止信息：终止[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)
 
-我们可以将“信号”的定义扩展到包括从DNA模板创建信息的过程本身。当[RNA聚合酶II](@article_id:308361)将一个[基因转录](@article_id:315931)成信使RNA时，这个过程也必须有一个清晰的停止标志。在真核生物中，这个停止标志巧妙地与信息本身的处理联系在一起。
+我们可以将“信号”的定义扩展到包括从DNA模板创建信息的过程本身。当[RNA聚合酶II](@keyword=rna_polymerase_ii|lang=zh-CN|style=Feynman)将一个[基因转录](@keyword=gene_transcription|lang=zh-CN|style=Feynman)成信使RNA时，这个过程也必须有一个清晰的停止标志。在真核生物中，这个停止标志巧妙地与信息本身的处理联系在一起。
 
-其中一个引人入胜的机制被称为**“鱼雷模型”**。当聚合酶[转录](@article_id:361745)过一个基因的末端时，一个蛋白质复合体识别出[新生RNA](@article_id:368009)上的一个[信号序列](@article_id:304092)并将其切割。这次切割释放了功能性的mRNA，它将继续被翻译，但留下另一段无用的RNA仍在从聚合酶中冒出。这个下游RNA片段有一个暴露的、未加帽的5'端，这对于一种名为5'-至-3'外切核酸酶的酶来说就像一个红旗。这种酶，即“鱼雷”（在人类中称为Xrn2），会锁定这个暴露的末端并开始快速降解RNA，“追逐”仍在DNA上缓慢移动的聚合酶。不可避免地，快速移动的鱼雷会追上并与大得多的聚合酶复合体相撞，将其从DNA模板上物理性地撞离，从而终止[转录](@article_id:361745)。这是一个非常物理、近乎机械化的解决方案，用于解决如何让一个分子机器停下来的问题。
+其中一个引人入胜的机制被称为**“鱼雷模型”**。当聚合酶[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)过一个基因的末端时，一个蛋白质复合体识别出[新生RNA](@keyword=nascent_rna|lang=zh-CN|style=Feynman)上的一个[信号序列](@keyword=signal_sequence|lang=zh-CN|style=Feynman)并将其切割。这次切割释放了功能性的mRNA，它将继续被翻译，但留下另一段无用的RNA仍在从聚合酶中冒出。这个下游RNA片段有一个暴露的、未加帽的5'端，这对于一种名为5'-至-3'外切核酸酶的酶来说就像一个红旗。这种酶，即“鱼雷”（在人类中称为Xrn2），会锁定这个暴露的末端并开始快速降解RNA，“追逐”仍在DNA上缓慢移动的聚合酶。不可避免地，快速移动的鱼雷会追上并与大得多的聚合酶复合体相撞，将其从DNA模板上物理性地撞离，从而终止[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)[@problem_id:2314807]。这是一个非常物理、近乎机械化的解决方案，用于解决如何让一个分子机器停下来的问题。
 
-从[神经递质](@article_id:301362)的短暂解离到分子鱼雷的戏剧性碰撞，[信号终止](@article_id:353344)的机制与信号本身一样多样和巧妙。它们是激活的必要对立面，是细胞宁静的守护者，也是生物应答的塑造者。没有它们，细胞的交响乐将陷入无休止、无意义的嘈杂之中。
+从[神经递质](@keyword=neurotransmitter|lang=zh-CN|style=Feynman)的短暂解离到分子鱼雷的戏剧性碰撞，[信号终止](@keyword=signal_termination|lang=zh-CN|style=Feynman)的机制与信号本身一样多样和巧妙。它们是激活的必要对立面，是细胞宁静的守护者，也是生物应答的塑造者。没有它们，细胞的交响乐将陷入无休止、无意义的嘈杂之中。

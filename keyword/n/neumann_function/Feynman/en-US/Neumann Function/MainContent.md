@@ -17,14 +17,14 @@ But who is the second player? This is where our story truly begins.
 
 ### In Search of a Second Solution
 
-For a long time, mathematicians knew that for this equation, another function, $J_{-\nu}(x)$, was also a perfectly valid solution. So, when the order $\nu$ is not an integer (like $\frac{1}{2}$ or $1.7$), everything is simple. The functions $J_\nu(x)$ and $J_{-\nu}(x)$ are [linearly independent](@article_id:147713); they are different enough to form a complete team. The general solution is simply a combination of the two: $c_1 J_\nu(x) + c_2 J_{-\nu}(x)$.
+For a long time, mathematicians knew that for this equation, another function, $J_{-\nu}(x)$, was also a perfectly valid solution. So, when the order $\nu$ is not an integer (like $\frac{1}{2}$ or $1.7$), everything is simple. The functions $J_\nu(x)$ and $J_{-\nu}(x)$ are [linearly independent](@keyword=linearly_independent|lang=en-US|style=Feynman); they are different enough to form a complete team. The general solution is simply a combination of the two: $c_1 J_\nu(x) + c_2 J_{-\nu}(x)$.
 
-However, having any old combination is not always convenient. We like our tools to be standardized. The physicist and mathematician **Carl Neumann** stepped in and defined a specific, standardized combination of these two solutions, which we now call the **Bessel function of the second kind**, $Y_\nu(x)$, or, in his honor, the **Neumann function** . For non-integer $\nu$, its definition is a beautiful, symmetric recipe:
+However, having any old combination is not always convenient. We like our tools to be standardized. The physicist and mathematician **Carl Neumann** stepped in and defined a specific, standardized combination of these two solutions, which we now call the **Bessel function of the second kind**, $Y_\nu(x)$, or, in his honor, the **Neumann function** [@problem_id:2090568]. For non-integer $\nu$, its definition is a beautiful, symmetric recipe:
 
 $$
 Y_\nu(x) = \frac{J_\nu(x) \cos(\nu \pi) - J_{-\nu}(x)}{\sin(\nu \pi)}
 $$
-
+[@problem_id:2127664]
 
 This looks a bit complicated, but it's just a carefully chosen mixture of our two known solutions, $J_\nu(x)$ and $J_{-\nu}(x)$. The constants $\cos(\nu \pi)$ and $\sin(\nu \pi)$ are chosen for deep and useful reasons related to the function's behavior in the complex plane, but for now, just think of it as the official, universally agreed-upon formula for the second player.
 
@@ -37,7 +37,7 @@ Let's look at our two solutions, $J_n(x)$ and $J_{-n}(x)$. It turns out they are
 $$
 J_{-n}(x) = (-1)^n J_n(x)
 $$
-
+[@problem_id:2090592]
 
 This means $J_{-n}(x)$ is just $J_n(x)$ itself (or its negative). We've lost our second player! It's like finding out your backup quarterback is just your starting quarterback wearing a different jersey. They're not two different players; they're the same one in disguise.
 
@@ -55,36 +55,36 @@ By asking what the formula for $Y_\nu(x)$ looks like as $\nu$ gets *infinitesima
 
 So, what is this function $Y_n(x)$ that we worked so hard to find? Its most defining characteristic is its behavior at the origin, $x=0$. While $J_n(x)$ is the polite, well-behaved function that is finite at the center, $Y_n(x)$ is a wild misfit.
 
-The limiting process that defines $Y_n(x)$ introduces a logarithmic term. For small values of $x$, the function behaves like this :
+The limiting process that defines $Y_n(x)$ introduces a logarithmic term. For small values of $x$, the function behaves like this [@problem_id:2090588]:
 
 $$
 Y_0(x) \approx \frac{2}{\pi} \ln\left(\frac{x}{2}\right)
 $$
 
-As $x$ gets closer and closer to zero, the logarithm $\ln(x)$ plummets toward negative infinity. This means that at the very heart of our coordinate system, at $x=0$, the Neumann function has a **[logarithmic singularity](@article_id:189943)**. It's not just a large value; it's infinitely deep. This behavior is a direct consequence of the function's definition, which contains a term proportional to $J_n(x) \ln(x)$ .
+As $x$ gets closer and closer to zero, the logarithm $\ln(x)$ plummets toward negative infinity. This means that at the very heart of our coordinate system, at $x=0$, the Neumann function has a **[logarithmic singularity](@keyword=logarithmic_singularity|lang=en-US|style=Feynman)**. It's not just a large value; it's infinitely deep. This behavior is a direct consequence of the function's definition, which contains a term proportional to $J_n(x) \ln(x)$ [@problem_id:1138854].
 
 But this function isn't just a singularity. It has a rich and beautiful structure.
-*   **Far From Home:** Far away from the singular origin (for large $x$), the drama dies down. The Neumann function, just like its partner $J_n(x)$, settles into a predictable, decaying wave pattern. For instance, the asymptotic behavior is like a sine wave whose amplitude shrinks as $\frac{1}{\sqrt{x}}$ . They both describe waves that ripple outwards, losing energy as they go.
+*   **Far From Home:** Far away from the singular origin (for large $x$), the drama dies down. The Neumann function, just like its partner $J_n(x)$, settles into a predictable, decaying wave pattern. For instance, the asymptotic behavior is like a sine wave whose amplitude shrinks as $\frac{1}{\sqrt{x}}$ [@problem_id:772564]. They both describe waves that ripple outwards, losing energy as they go.
 
-*   **Hidden Simplicity:** Are these "[special functions](@article_id:142740)" always so alien? Not at all! For half-integer orders ($\nu = \frac{1}{2}, \frac{3}{2}, \dots$), which are crucial in quantum mechanics and [wave scattering](@article_id:201530) problems, the Bessel and Neumann functions reveal a delightful secret: they are just our old friends, [sine and cosine](@article_id:174871), wearing a disguise! For example:
+*   **Hidden Simplicity:** Are these "[special functions](@keyword=special_functions|lang=en-US|style=Feynman)" always so alien? Not at all! For half-integer orders ($\nu = \frac{1}{2}, \frac{3}{2}, \dots$), which are crucial in quantum mechanics and [wave scattering](@keyword=wave_scattering|lang=en-US|style=Feynman) problems, the Bessel and Neumann functions reveal a delightful secret: they are just our old friends, [sine and cosine](@keyword=sine_and_cosine|lang=en-US|style=Feynman), wearing a disguise! For example:
     $$
     Y_{1/2}(x) = -\sqrt{\frac{2}{\pi x}}\cos(x)
     $$
-    
+    [@problem_id:2127662]
     And, beautifully,
     $$
     Y_{-1/2}(x) = J_{1/2}(x) = \sqrt{\frac{2}{\pi x}}\sin(x)
     $$
-    
+    [@problem_id:634971]
     Seeing these familiar functions pop out of such a complex definition is a moment of pure joy, a glimpse into the interconnectedness of mathematics.
 
-*   **A Family Resemblance:** Despite their differences at the origin, the $J_n$ and $Y_n$ functions are clearly family. They both satisfy the same Bessel differential equation , they obey similar "reflection" identities, where $Y_{-n}(x) = (-1)^n Y_n(x)$ just like its partner $J_{-n}(x)$ , and they are connected by a web of elegant recurrence relations that allow you to move between different orders . They are a true pair, two sides of the same coin.
+*   **A Family Resemblance:** Despite their differences at the origin, the $J_n$ and $Y_n$ functions are clearly family. They both satisfy the same Bessel differential equation [@problem_id:635120], they obey similar "reflection" identities, where $Y_{-n}(x) = (-1)^n Y_n(x)$ just like its partner $J_{-n}(x)$ [@problem_id:2090592], and they are connected by a web of elegant recurrence relations that allow you to move between different orders [@problem_id:634978]. They are a true pair, two sides of the same coin.
 
 ### A Tale of Two Domains: When to Keep the Neumann Function
 
 Now we come to the most important question: what is this singular function *for*? If it blows up at the origin, isn't it just "unphysical"?
 
-Let's go back to our [vibrating drumhead](@article_id:175992) . The center of the drum, $r=0$, is part of the instrument. The displacement of the drum must be finite everywhere; you can't have a point that moves down infinitely far. Because the Neumann function $Y_n(kr)$ diverges at $r=0$, its presence in the solution would lead to a physical absurdity.
+Let's go back to our [vibrating drumhead](@keyword=vibrating_drumhead|lang=en-US|style=Feynman) [@problem_id:2148819]. The center of the drum, $r=0$, is part of the instrument. The displacement of the drum must be finite everywhere; you can't have a point that moves down infinitely far. Because the Neumann function $Y_n(kr)$ diverges at $r=0$, its presence in the solution would lead to a physical absurdity.
 
 In this case, physics acts as a strict gatekeeper. To get a physically sensible solution, we are forced to discard the Neumann function entirely. We do this by setting its coefficient in the general solution to zero:
 
@@ -94,7 +94,7 @@ $$
 
 For problems involving a solid cylinder or a full disk, the Neumann function is thrown out. Its singularity makes it incompatible with the physical reality of the problem.
 
-But this is not the end of the story! What if we are studying the vibration of a washer-shaped object (an [annulus](@article_id:163184))? Or the sound waves *outside* a cylindrical flute? In these problems, the origin $r=0$ is *not part of the domain*. The [physical region](@article_id:159612) is, say, from an inner radius $a$ to an outer radius $b$. Since the troublesome point $r=0$ is excluded, the Neumann function is perfectly well-behaved everywhere that matters.
+But this is not the end of the story! What if we are studying the vibration of a washer-shaped object (an [annulus](@keyword=annulus|lang=en-US|style=Feynman))? Or the sound waves *outside* a cylindrical flute? In these problems, the origin $r=0$ is *not part of the domain*. The [physical region](@keyword=physical_region|lang=en-US|style=Feynman) is, say, from an inner radius $a$ to an outer radius $b$. Since the troublesome point $r=0$ is excluded, the Neumann function is perfectly well-behaved everywhere that matters.
 
 In these cases, not only is $Y_n(kr)$ allowed, it is **essential**. To meet the boundary conditions at *both* the inner and outer edges, you need both solutions, $J_n(kr)$ and $Y_n(kr)$. The misfit who was kicked out of the solid-drum party is now a crucial guest of honor at the hollow-pipe celebration.
 

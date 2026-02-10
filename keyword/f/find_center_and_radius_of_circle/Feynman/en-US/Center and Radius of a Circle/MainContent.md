@@ -31,21 +31,21 @@ $x^2 + y^2 + Dx + Ey + F = 0$
 
 where $D = -2h$, $E = -2k$, and $F = h^2 + k^2 - R^2$. This is the **general form** of a circle's equation. Looking at this, the center and radius are no longer obvious. It’s like hearing a beautiful melody played on a radio with a lot of static. Our job is to tune out the noise and find the clear signal.
 
-The "tuning" technique is a powerful algebraic tool called **[completing the square](@article_id:264986)**. It is the art of taking an expression like $x^2 + Dx$ and turning it into a [perfect square](@article_id:635128), $(x-h)^2$, plus or minus some constant. The trick is to realize that in the expansion of $(x-h)^2 = x^2 - 2hx + h^2$, the constant term $h^2$ is the square of half the coefficient of the $x$ term.
+The "tuning" technique is a powerful algebraic tool called **[completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman)**. It is the art of taking an expression like $x^2 + Dx$ and turning it into a [perfect square](@keyword=perfect_square|lang=en-US|style=Feynman), $(x-h)^2$, plus or minus some constant. The trick is to realize that in the expansion of $(x-h)^2 = x^2 - 2hx + h^2$, the constant term $h^2$ is the square of half the coefficient of the $x$ term.
 
-Let's see this in action. Suppose an autonomous rover's path is a parabola, and we need to know if its turning point is inside a circular "no-go zone" defined by $x^2 + y^2 - 6x - 8y + 24 = 0$ . To check, we first need to find the zone's center and radius. Let’s unmask it:
+Let's see this in action. Suppose an autonomous rover's path is a parabola, and we need to know if its turning point is inside a circular "no-go zone" defined by $x^2 + y^2 - 6x - 8y + 24 = 0$ [@problem_id:2150505]. To check, we first need to find the zone's center and radius. Let’s unmask it:
 
 Group the $x$ and $y$ terms:
 $(x^2 - 6x) + (y^2 - 8y) + 24 = 0$
 
-Now, [complete the square](@article_id:194337) for each variable. For $x$, half of $-6$ is $-3$, and $(-3)^2 = 9$. For $y$, half of $-8$ is $-4$, and $(-4)^2 = 16$. To keep the equation balanced, whatever we add to the left side, we must also add to the right side (or add and subtract on the same side).
+Now, [complete the square](@keyword=complete_the_square|lang=en-US|style=Feynman) for each variable. For $x$, half of $-6$ is $-3$, and $(-3)^2 = 9$. For $y$, half of $-8$ is $-4$, and $(-4)^2 = 16$. To keep the equation balanced, whatever we add to the left side, we must also add to the right side (or add and subtract on the same side).
 
 $(x^2 - 6x + 9) - 9 + (y^2 - 8y + 16) - 16 + 24 = 0$
 
 This rearranges to:
 $(x - 3)^2 + (y - 4)^2 = 9 + 16 - 24 = 1$
 
-And there it is! The static is gone. We can see clearly that the circle is centered at $(3, 4)$ and has a radius of $R = \sqrt{1} = 1$. This process is fundamental. We might be given other pieces of information, like a point the circle passes through or its circumference, but the core task often boils down to using that information to find the coefficients $D$, $E$, and $F$, and then [completing the square](@article_id:264986) to reveal the circle's true nature . Even when starting with more abstract definitions, such as a locus formed by combining two other circle equations, this method of [completing the square](@article_id:264986) remains our steadfast guide to finding the center and radius of the resulting circle .
+And there it is! The static is gone. We can see clearly that the circle is centered at $(3, 4)$ and has a radius of $R = \sqrt{1} = 1$. This process is fundamental. We might be given other pieces of information, like a point the circle passes through or its circumference, but the core task often boils down to using that information to find the coefficients $D$, $E$, and $F$, and then [completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman) to reveal the circle's true nature [@problem_id:2130955]. Even when starting with more abstract definitions, such as a locus formed by combining two other circle equations, this method of [completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman) remains our steadfast guide to finding the center and radius of the resulting circle [@problem_id:2130951].
 
 ### A New Perspective: Circles in the Complex Plane
 
@@ -55,37 +55,37 @@ So, what is the equation $|z| = R$? It describes all complex numbers whose dista
 
 $|z - z_0| = R$
 
-This equation elegantly states that the distance between the point $z$ and the center $z_0$ is $R$. This is the circle's definition in its most compact and beautiful form. Imagine a stable carrier signal in a communication system, represented by $z_0$. It gets corrupted by random noise, $z_{noise}$, which has a constant magnitude (power) but unpredictable phase. The received signal is $w = z_0 + z_{noise}$. The set of all possible received signals is $|w - z_0| = |z_{noise}| = R$. The signal lands somewhere on a circle with center $z_0$ and radius equal to the noise magnitude .
+This equation elegantly states that the distance between the point $z$ and the center $z_0$ is $R$. This is the circle's definition in its most compact and beautiful form. Imagine a stable carrier signal in a communication system, represented by $z_0$. It gets corrupted by random noise, $z_{noise}$, which has a constant magnitude (power) but unpredictable phase. The received signal is $w = z_0 + z_{noise}$. The set of all possible received signals is $|w - z_0| = |z_{noise}| = R$. The signal lands somewhere on a circle with center $z_0$ and radius equal to the noise magnitude [@problem_id:2226929].
 
-Just as in the Cartesian world, circles in the complex plane can appear in disguise. Consider an equation like $z\bar{z} - (4+i)z - (4-i)\bar{z} + 8 = 0$ . This looks intimidating! But let's remember a few key identities: $z = x+iy$, $\bar{z} = x-iy$, and most importantly, $z\bar{z} = |z|^2 = x^2 + y^2$. The expression $(4+i)z + (4-i)\bar{z}$ might seem tricky, but it's twice the real part of $(4+i)z$, which simplifies to $2(4x-y)$. Substituting these back into the equation and [completing the square](@article_id:264986) for $x$ and $y$ as before will once again reveal the familiar [standard form of a circle](@article_id:172743) .
+Just as in the Cartesian world, circles in the complex plane can appear in disguise. Consider an equation like $z\bar{z} - (4+i)z - (4-i)\bar{z} + 8 = 0$ [@problem_id:2274022]. This looks intimidating! But let's remember a few key identities: $z = x+iy$, $\bar{z} = x-iy$, and most importantly, $z\bar{z} = |z|^2 = x^2 + y^2$. The expression $(4+i)z + (4-i)\bar{z}$ might seem tricky, but it's twice the real part of $(4+i)z$, which simplifies to $2(4x-y)$. Substituting these back into the equation and [completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman) for $x$ and $y$ as before will once again reveal the familiar [standard form of a circle](@keyword=standard_form_of_a_circle|lang=en-US|style=Feynman) [@problem_id:2278585].
 
 ### A Spinning View: Circles in Polar Coordinates
 
 Let's switch our viewpoint one more time. Instead of locating a point by its rectangular coordinates $(x,y)$, we can use **polar coordinates** $(r, \theta)$, where $r$ is the distance from the origin (pole) and $\theta$ is the angle from a reference axis. How do circles look in this spinning world?
 
-The simplest case is a circle centered at the origin: its equation is just $r=R$. But what if the center is elsewhere? Let's take a circle described by the polar equation $r = -5\sin(\theta)$ . This doesn't look much like a circle at first glance. To translate it into a language we understand, we use the conversion formulas: $x = r\cos(\theta)$ and $y = r\sin(\theta)$, and $r^2 = x^2+y^2$. Multiplying our equation by $r$ gives $r^2 = -5r\sin(\theta)$. Substituting the Cartesian equivalents, we get:
+The simplest case is a circle centered at the origin: its equation is just $r=R$. But what if the center is elsewhere? Let's take a circle described by the polar equation $r = -5\sin(\theta)$ [@problem_id:2149293]. This doesn't look much like a circle at first glance. To translate it into a language we understand, we use the conversion formulas: $x = r\cos(\theta)$ and $y = r\sin(\theta)$, and $r^2 = x^2+y^2$. Multiplying our equation by $r$ gives $r^2 = -5r\sin(\theta)$. Substituting the Cartesian equivalents, we get:
 
 $x^2 + y^2 = -5y$
 
-By moving the $y$ term over and [completing the square](@article_id:264986), we get $x^2 + (y + \frac{5}{2})^2 = (\frac{5}{2})^2$. It was a circle all along, centered at $(0, -5/2)$ with radius $5/2$.
+By moving the $y$ term over and [completing the square](@keyword=completing_the_square|lang=en-US|style=Feynman), we get $x^2 + (y + \frac{5}{2})^2 = (\frac{5}{2})^2$. It was a circle all along, centered at $(0, -5/2)$ with radius $5/2$.
 
-A more general form for a circle in [polar coordinates](@article_id:158931) arises from the Law of Cosines. For a circle with radius $R$ and center at a distance $d$ from the origin at an angle $\theta_c$, the equation is:
+A more general form for a circle in [polar coordinates](@keyword=polar_coordinates|lang=en-US|style=Feynman) arises from the Law of Cosines. For a circle with radius $R$ and center at a distance $d$ from the origin at an angle $\theta_c$, the equation is:
 
 $R^2 = r^2 + d^2 - 2rd\cos(\theta - \theta_c)$
 
-Any equation that can be manipulated into this form, like $r^2 - 10r \cos(\theta - \pi/6) + 16 = 0$, immediately tells us about the circle's properties . By comparing terms, we can directly read off that $d=5$, $\theta_c = \pi/6$, and $R^2 = d^2 - 16 = 25 - 16 = 9$, so $R=3$. Again, the algebraic form is a direct encoding of the geometric relationships.
+Any equation that can be manipulated into this form, like $r^2 - 10r \cos(\theta - \pi/6) + 16 = 0$, immediately tells us about the circle's properties [@problem_id:2149263]. By comparing terms, we can directly read off that $d=5$, $\theta_c = \pi/6$, and $R^2 = d^2 - 16 = 25 - 16 = 9$, so $R=3$. Again, the algebraic form is a direct encoding of the geometric relationships.
 
 ### The Delicate Touch: Circles and Tangent Lines
 
-One of the most profound relationships in geometry is that between a circle and a line that touches it at exactly one point—a **tangent**. This single point of contact is governed by a simple, powerful rule: the radius drawn to the [point of tangency](@article_id:172391) is always perpendicular to the tangent line.
+One of the most profound relationships in geometry is that between a circle and a line that touches it at exactly one point—a **tangent**. This single point of contact is governed by a simple, powerful rule: the radius drawn to the [point of tangency](@keyword=point_of_tangency|lang=en-US|style=Feynman) is always perpendicular to the tangent line.
 
-This rule has a crucial consequence. The shortest distance from the circle's center to the tangent line is along this perpendicular radius. Therefore, **for a line to be tangent to a circle, the [perpendicular distance](@article_id:175785) from the center to the line must be exactly equal to the radius**.
+This rule has a crucial consequence. The shortest distance from the circle's center to the tangent line is along this perpendicular radius. Therefore, **for a line to be tangent to a circle, the [perpendicular distance](@keyword=perpendicular_distance|lang=en-US|style=Feynman) from the center to the line must be exactly equal to the radius**.
 
 This principle is a master key for solving a whole class of problems. The distance from a point $(h, k)$ to a line $Ax + By + C = 0$ is given by the formula:
 
 $d = \frac{|Ah + Bk + C|}{\sqrt{A^2 + B^2}}$
 
-So, if we have a circle and a line, we can find the circle's center $(h,k)$ and radius $R$. We then calculate the distance $d$ from the center to the line. If $d \gt R$, the line misses the circle. If $d \lt R$, the line cuts through it at two points. If $d = R$, the line is perfectly tangent . This relationship is so precise that we can use it to solve for unknown parameters, such as finding the exact size a circular "exclusion zone" needs to be for a laser beam to graze its edge perfectly .
+So, if we have a circle and a line, we can find the circle's center $(h,k)$ and radius $R$. We then calculate the distance $d$ from the center to the line. If $d \gt R$, the line misses the circle. If $d \lt R$, the line cuts through it at two points. If $d = R$, the line is perfectly tangent [@problem_id:2121365]. This relationship is so precise that we can use it to solve for unknown parameters, such as finding the exact size a circular "exclusion zone" needs to be for a laser beam to graze its edge perfectly [@problem_id:2126913].
 
 ### The Power of a Point: A Hidden Constant
 
@@ -96,10 +96,10 @@ What does this number mean?
 - If $P$ is on the circle, $d = R$, so the power is zero.
 - If $P$ is inside the circle, $d \lt R$, so the power is negative.
 
-This already gives us a nice way to check where a point lies . But there's more. If the point $P$ is outside the circle, we can draw a tangent line from $P$ to a point $T$ on the circle. The triangle $\triangle PTC$ is a right-angled triangle with the right angle at $T$. By the Pythagorean theorem, the square of the length of the tangent segment, $|PT|^2$, is:
+This already gives us a nice way to check where a point lies [@problem_id:2150505]. But there's more. If the point $P$ is outside the circle, we can draw a tangent line from $P$ to a point $T$ on the circle. The triangle $\triangle PTC$ is a right-angled triangle with the right angle at $T$. By the Pythagorean theorem, the square of the length of the tangent segment, $|PT|^2$, is:
 
 $|PT|^2 = |PC|^2 - |CT|^2 = d^2 - R^2$
 
-The square of the tangent length is exactly equal to the power of the point! This provides a beautiful and practical connection between a purely algebraic quantity ($d^2 - R^2$) and a tangible geometric length .
+The square of the tangent length is exactly equal to the power of the point! This provides a beautiful and practical connection between a purely algebraic quantity ($d^2 - R^2$) and a tangible geometric length [@problem_id:2151236].
 
 From its simple definition to its various algebraic disguises and its deep relationships with lines and points, the circle shows us the profound unity of geometry and algebra. Learning to find its center and radius is more than a mechanical skill; it is learning to read the story of symmetry and distance written in the universal language of mathematics.

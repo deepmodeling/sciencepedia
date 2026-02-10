@@ -1,17 +1,17 @@
 ## Introduction
-In the digital realm, information travels as vast streams of ones and zeros. This data is constantly at risk, susceptible to corruption from electrical noise, radiation, or hardware faults. How can we trust the integrity of our data without implementing overwhelmingly complex checks? This fundamental problem of ensuring data reliability is addressed by one of the most elegant and foundational concepts in computer science: the parity bit. This article explores the simple yet powerful mechanism of [parity bit](@article_id:170404) generation. We will begin by examining the "Principles and Mechanisms," delving into the core idea of [even and odd parity](@article_id:165752), the mathematical magic of the XOR gate, and the beautiful unity between error generation and checking circuits. Subsequently, the section on "Applications and Interdisciplinary Connections" will broaden our perspective, showing how this basic building block scales up to form the basis of advanced error-correcting codes and even plays a surprising role in the abstract worlds of cryptography and theoretical computer science.
+In the digital realm, information travels as vast streams of ones and zeros. This data is constantly at risk, susceptible to corruption from electrical noise, radiation, or hardware faults. How can we trust the integrity of our data without implementing overwhelmingly complex checks? This fundamental problem of ensuring data reliability is addressed by one of the most elegant and foundational concepts in computer science: the parity bit. This article explores the simple yet powerful mechanism of [parity bit](@keyword=parity_bit|lang=en-US|style=Feynman) generation. We will begin by examining the "Principles and Mechanisms," delving into the core idea of [even and odd parity](@keyword=even_and_odd_parity|lang=en-US|style=Feynman), the mathematical magic of the XOR gate, and the beautiful unity between error generation and checking circuits. Subsequently, the section on "Applications and Interdisciplinary Connections" will broaden our perspective, showing how this basic building block scales up to form the basis of advanced error-correcting codes and even plays a surprising role in the abstract worlds of cryptography and theoretical computer science.
 
 ## Principles and Mechanisms
 
 Imagine you are in charge of a line of soldiers marching from one town to another. Your commander wants a simple, quick way to know if anyone has deserted along the route. You don't have time to do a full roll call. What's a clever, minimalist trick you could use? You could simply count whether the number of soldiers is even or odd. You send a rider ahead with a single-word message: "even" or "odd". When the troop arrives, the receiving officer does their own quick count. If their result doesn't match the rider's message, they instantly know something is amiss.
 
-This is the beautiful, simple idea behind a **[parity bit](@article_id:170404)**. In the world of digital information, where data is a stream of 0s and 1s, bits can be flipped by electrical noise, cosmic rays, or countless other imperfections. A parity bit is our rider, a single extra bit added to a chunk of data, not to carry new information, but to carry a promise about the data it accompanies.
+This is the beautiful, simple idea behind a **[parity bit](@keyword=parity_bit|lang=en-US|style=Feynman)**. In the world of digital information, where data is a stream of 0s and 1s, bits can be flipped by electrical noise, cosmic rays, or countless other imperfections. A parity bit is our rider, a single extra bit added to a chunk of data, not to carry new information, but to carry a promise about the data it accompanies.
 
-We can establish one of two rules. In an **even parity** scheme, the [parity bit](@article_id:170404) is chosen so that the total number of '1's in the complete message (the original data plus the [parity bit](@article_id:170404)) is always even. In an **[odd parity](@article_id:175336)** scheme, it's chosen to make the total number of '1's odd. This seems almost too simple to be useful, but as we shall see, its power lies in its mathematical elegance and the cleverness of its implementation.
+We can establish one of two rules. In an **even parity** scheme, the [parity bit](@keyword=parity_bit|lang=en-US|style=Feynman) is chosen so that the total number of '1's in the complete message (the original data plus the [parity bit](@keyword=parity_bit|lang=en-US|style=Feynman)) is always even. In an **[odd parity](@keyword=odd_parity|lang=en-US|style=Feynman)** scheme, it's chosen to make the total number of '1's odd. This seems almost too simple to be useful, but as we shall see, its power lies in its mathematical elegance and the cleverness of its implementation.
 
 ### The Exclusive-OR: A Gate That Counts by Nature
 
-How can a machine, built from mindless electronic switches, perform this "counting" of ones? It doesn't use a cumbersome counter. Instead, it uses a wonderfully elegant [logic gate](@article_id:177517): the **Exclusive-OR**, or **XOR** gate.
+How can a machine, built from mindless electronic switches, perform this "counting" of ones? It doesn't use a cumbersome counter. Instead, it uses a wonderfully elegant [logic gate](@keyword=logic_gate|lang=en-US|style=Feynman): the **Exclusive-OR**, or **XOR** gate.
 
 An XOR gate is a simple device with two inputs and one output. Its rule is this: if the two inputs are different (one is '1', the other is '0'), the output is '1'. If the two inputs are the same (both '0' or both '1'), the output is '0'. You can think of it as a "difference detector."
 
@@ -29,7 +29,7 @@ This single operation, which can be described at a high level of design using Re
 
 With our magical XOR chain in hand, generating either even or odd parity becomes incredibly straightforward. It's all about what we want the final "promise" to be.
 
-For **even parity**, we want the grand total of '1's—including our new [parity bit](@article_id:170404), $P_{even}$—to be an even number. In the language of XOR, this means the XOR sum of all the bits together must be 0:
+For **even parity**, we want the grand total of '1's—including our new [parity bit](@keyword=parity_bit|lang=en-US|style=Feynman), $P_{even}$—to be an even number. In the language of XOR, this means the XOR sum of all the bits together must be 0:
 
 $$
 (D_3 \oplus D_2 \oplus D_1 \oplus D_0) \oplus P_{even} = 0
@@ -41,9 +41,9 @@ $$
 P_{even} = D_3 \oplus D_2 \oplus D_1 \oplus D_0
 $$
 
-Remarkably, the even [parity bit](@article_id:170404) is nothing more than the direct output of our XOR chain!
+Remarkably, the even [parity bit](@keyword=parity_bit|lang=en-US|style=Feynman) is nothing more than the direct output of our XOR chain!
 
-For **[odd parity](@article_id:175336)**, we want the total count of '1's to be odd. This means the XOR sum of the whole message must be 1:
+For **[odd parity](@keyword=odd_parity|lang=en-US|style=Feynman)**, we want the total count of '1's to be odd. This means the XOR sum of the whole message must be 1:
 
 $$
 (D_3 \oplus D_2 \oplus D_1 \oplus D_0) \oplus P_{odd} = 1
@@ -55,7 +55,7 @@ $$
 P_{odd} = \overline{D_3 \oplus D_2 \oplus D_1 \oplus D_0}
 $$
 
-The [odd parity](@article_id:175336) bit is simply the *inverse* of the even [parity bit](@article_id:170404). This duality is profound. A single hardware fault, such as a data input to an even [parity generator](@article_id:178414) becoming permanently stuck at '1', will cause the circuit to start computing $(D_n \oplus \dots) \oplus 1$. It will, as if by a strange magic, transform itself from an even [parity generator](@article_id:178414) into an odd one for the remaining inputs.
+The [odd parity](@keyword=odd_parity|lang=en-US|style=Feynman) bit is simply the *inverse* of the even [parity bit](@keyword=parity_bit|lang=en-US|style=Feynman). This duality is profound. A single hardware fault, such as a data input to an even [parity generator](@keyword=parity_generator|lang=en-US|style=Feynman) becoming permanently stuck at '1', will cause the circuit to start computing $(D_n \oplus \dots) \oplus 1$. It will, as if by a strange magic, transform itself from an even [parity generator](@keyword=parity_generator|lang=en-US|style=Feynman) into an odd one for the remaining inputs.
 
 ### The Unity of Creation and Inspection
 
@@ -64,7 +64,7 @@ Now for a truly satisfying revelation. Are the circuit that *creates* the parity
 *   An even parity **generator** for an N-bit word calculates the XOR sum of those $N$ bits.
 *   An even parity **checker** for an (N+1)-bit word (N data bits + 1 parity bit) signals an error if the XOR sum is 1. That is, it calculates the XOR sum of all $N+1$ bits.
 
-The logical operation is identical; the checker just applies it to one additional input. This means we can use the exact same physical component for both jobs. A single 3-input XOR gate can serve as an [even parity checker](@article_id:163073) for a 3-bit word. By permanently grounding one of its inputs to '0' (since $X \oplus 0 = X$), that same gate instantly becomes an even [parity generator](@article_id:178414) for a 2-bit word. This is the kind of elegant frugality that both nature and good engineering adore.
+The logical operation is identical; the checker just applies it to one additional input. This means we can use the exact same physical component for both jobs. A single 3-input XOR gate can serve as an [even parity checker](@keyword=even_parity_checker|lang=en-US|style=Feynman) for a 3-bit word. By permanently grounding one of its inputs to '0' (since $X \oplus 0 = X$), that same gate instantly becomes an even [parity generator](@keyword=parity_generator|lang=en-US|style=Feynman) for a 2-bit word. This is the kind of elegant frugality that both nature and good engineering adore.
 
 ### The Invariant Zero: Why the Check Always Works
 
@@ -92,6 +92,6 @@ This is the punchline. For any error-free transmission, the receiver's check cal
 
 ### From Abstract Logic to Physical Reality
 
-This elegant, abstract logic must ultimately be built from physical components. In modern digital design, engineers often describe behavior using a **Hardware Description Language (HDL)** like Verilog, rather than drawing individual gates. The entire logic for an 8-bit odd [parity generator](@article_id:178414), $P_{odd} = \overline{D_7 \oplus \dots \oplus D_0}$, can be captured in a single, powerful line of code: `assign parity_odd = ~^data_in;`. The `^` symbol represents the XOR reduction across all bits of the `data_in` vector, and the `~` symbol represents the inversion—a perfect mirror of the mathematics we just explored.
+This elegant, abstract logic must ultimately be built from physical components. In modern digital design, engineers often describe behavior using a **Hardware Description Language (HDL)** like Verilog, rather than drawing individual gates. The entire logic for an 8-bit odd [parity generator](@keyword=parity_generator|lang=en-US|style=Feynman), $P_{odd} = \overline{D_7 \oplus \dots \oplus D_0}$, can be captured in a single, powerful line of code: `assign parity_odd = ~^data_in;`. The `^` symbol represents the XOR reduction across all bits of the `data_in` vector, and the `~` symbol represents the inversion—a perfect mirror of the mathematics we just explored.
 
-But even with the same logical function, the physical arrangement of the gates matters. To compute an 8-bit XOR, we need 7 two-input XOR gates. We could arrange them in a long **linear cascade**, where the output of one gate feeds into the next. Or, we could arrange them in a **[balanced tree](@article_id:265480)**, where pairs of bits are processed in parallel at each level. Both structures compute the exact same result. However, the cascade is slow; the signal must propagate sequentially through all seven gates. The [balanced tree](@article_id:265480) is much faster, as the signal path is significantly shorter. This introduces a classic engineering trade-off between implementation complexity and performance (speed). The simple idea of parity, when brought into the real world, reveals that its physical embodiment is as important as its logical truth.
+But even with the same logical function, the physical arrangement of the gates matters. To compute an 8-bit XOR, we need 7 two-input XOR gates. We could arrange them in a long **linear cascade**, where the output of one gate feeds into the next. Or, we could arrange them in a **[balanced tree](@keyword=balanced_tree|lang=en-US|style=Feynman)**, where pairs of bits are processed in parallel at each level. Both structures compute the exact same result. However, the cascade is slow; the signal must propagate sequentially through all seven gates. The [balanced tree](@keyword=balanced_tree|lang=en-US|style=Feynman) is much faster, as the signal path is significantly shorter. This introduces a classic engineering trade-off between implementation complexity and performance (speed). The simple idea of parity, when brought into the real world, reveals that its physical embodiment is as important as its logical truth.

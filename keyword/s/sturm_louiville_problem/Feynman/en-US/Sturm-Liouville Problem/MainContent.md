@@ -3,7 +3,7 @@ From the resonant notes of a violin string to the allowed energy levels of an el
 
 ## Principles and Mechanisms
 
-Imagine you're a luthier, a maker of violins. You know that a string of a certain length, material, and tension will produce a specific set of notes—a [fundamental tone](@article_id:181668) and a series of overtones. These are its natural resonant frequencies. What if I told you that a vast array of phenomena in the universe—from the vibrations of a drumhead to the distribution of heat in a metal rod, and even the allowed energy levels of an electron in an atom—all follow a similar principle? They all have a characteristic set of "notes" or "modes" they prefer. The Sturm-Liouville theory is the beautiful mathematical language that describes this universal harmony. It gives us a master recipe for finding these special modes and shows us that they behave in wonderfully predictable and useful ways.
+Imagine you're a luthier, a maker of violins. You know that a string of a certain length, material, and tension will produce a specific set of notes—a [fundamental tone](@keyword=fundamental_tone|lang=en-US|style=Feynman) and a series of overtones. These are its natural resonant frequencies. What if I told you that a vast array of phenomena in the universe—from the vibrations of a drumhead to the distribution of heat in a metal rod, and even the allowed energy levels of an electron in an atom—all follow a similar principle? They all have a characteristic set of "notes" or "modes" they prefer. The Sturm-Liouville theory is the beautiful mathematical language that describes this universal harmony. It gives us a master recipe for finding these special modes and shows us that they behave in wonderfully predictable and useful ways.
 
 ### The Anatomy of a Physical Law
 
@@ -15,11 +15,11 @@ Let’s not be put off by the symbols. This is a story about balance. Think of $
 
 The functions $p(x)$, $q(x)$, and $r(x)$ define the physical environment. You can think of them this way:
 *   $p(x)$ is like a variable **stiffness** or **conductivity**. For a vibrating string, it could represent its varying thickness. For heat flow, it's the thermal conductivity.
-*   $q(x)$ often represents an external **[potential field](@article_id:164615)** or a restoring force that depends on position. In many simple cases, it's just zero.
-*   $r(x)$ is a **density** or **[weight function](@article_id:175542)**. For our string, it’s the mass per unit length. It tells us how to properly "weigh" the contribution of the function at different points.
+*   $q(x)$ often represents an external **[potential field](@keyword=potential_field|lang=en-US|style=Feynman)** or a restoring force that depends on position. In many simple cases, it's just zero.
+*   $r(x)$ is a **density** or **[weight function](@keyword=weight_function|lang=en-US|style=Feynman)**. For our string, it’s the mass per unit length. It tells us how to properly "weigh" the contribution of the function at different points.
 *   $\lambda$ is the star of the show: the **eigenvalue**. It's a special constant that makes the whole thing work. For each allowed $\lambda$, we find a corresponding solution $y(x)$, the **eigenfunction**.
 
-What's remarkable is how many of physics' most famous equations can be dressed up to look like this. The simple equation for a harmonic oscillator, $y'' + \lambda y = 0$, is already in this form with $p(x)=1$, $q(x)=0$, and $r(x)=1$. Even something more complex, like Hermite's equation, $y'' - 2xy' + \lambda y = 0$, which is crucial in quantum mechanics, can be put into this standard form by multiplying it by a clever "[integrating factor](@article_id:272660)," which turns out to be $\exp(-x^2)$. This reveals its hidden Sturm-Liouville structure: $\frac{d}{dx}[\exp(-x^2)y'] + \lambda \exp(-x^2)y = 0$. Suddenly, a whole menagerie of different-looking equations are revealed to be members of the same family.
+What's remarkable is how many of physics' most famous equations can be dressed up to look like this. The simple equation for a harmonic oscillator, $y'' + \lambda y = 0$, is already in this form with $p(x)=1$, $q(x)=0$, and $r(x)=1$. Even something more complex, like Hermite's equation, $y'' - 2xy' + \lambda y = 0$, which is crucial in quantum mechanics, can be put into this standard form by multiplying it by a clever "[integrating factor](@keyword=integrating_factor|lang=en-US|style=Feynman)," which turns out to be $\exp(-x^2)$. This reveals its hidden Sturm-Liouville structure: $\frac{d}{dx}[\exp(-x^2)y'] + \lambda \exp(-x^2)y = 0$. Suddenly, a whole menagerie of different-looking equations are revealed to be members of the same family.
 
 ### Setting the Stage: The "Regular" Game
 
@@ -41,13 +41,13 @@ Nature, of course, doesn't always play by our "regular" rules. Some of the most 
 
 A problem becomes **singular** if one of the regular conditions is violated. This often happens in one of two ways:
 *   **The playground becomes infinite.** The Hermite equation, describing the quantum harmonic oscillator, lives on the entire real line $(-\infty, \infty)$ and is therefore singular.
-*   **The "stiffness" vanishes at the boundary.** Consider Legendre's equation, which describes things like gravitational or electric potentials on a sphere. It's defined on the interval $[-1, 1]$, where the endpoints correspond to the North and South poles. Its $p(x)$ function is $(1-x^2)$, which goes to zero at both $x=-1$ and $x=1$. This singularity isn't a mistake; it's a fundamental feature of the [spherical coordinate system](@article_id:167023) at the poles!
+*   **The "stiffness" vanishes at the boundary.** Consider Legendre's equation, which describes things like gravitational or electric potentials on a sphere. It's defined on the interval $[-1, 1]$, where the endpoints correspond to the North and South poles. Its $p(x)$ function is $(1-x^2)$, which goes to zero at both $x=-1$ and $x=1$. This singularity isn't a mistake; it's a fundamental feature of the [spherical coordinate system](@keyword=spherical_coordinate_system|lang=en-US|style=Feynman) at the poles!
 
 A **periodic** problem arises when the endpoints are connected. Imagine studying the temperature distribution around a thin, circular wire. The point at the beginning of our interval is physically the same as the point at the end. In this case, the boundary conditions must reflect this connection: the temperature and the heat flow at both ends must match, i.e., $y(a)=y(b)$ and $y'(a)=y'(b)$. This creates a different kind of problem, but one that is equally rich and important.
 
 ### The Symphony of Solutions: Orthogonality and Completeness
 
-Now for the grand payoff. Why do we care so much about this framework? Because for any Sturm-Liouville problem (regular, periodic, or a well-behaved singular one), the resulting eigenvalues $\lambda_n$ and [eigenfunctions](@article_id:154211) $y_n(x)$ behave like the notes of a cosmic instrument.
+Now for the grand payoff. Why do we care so much about this framework? Because for any Sturm-Liouville problem (regular, periodic, or a well-behaved singular one), the resulting eigenvalues $\lambda_n$ and [eigenfunctions](@keyword=eigenfunctions|lang=en-US|style=Feynman) $y_n(x)$ behave like the notes of a cosmic instrument.
 
 *   **A Ladder of Tones (Eigenvalues):** The allowed values of $\lambda$ are not a messy continuum. For regular problems, they form a clean, discrete, infinite ladder of real numbers: $\lambda_1  \lambda_2  \lambda_3  \dots$, climbing all the way to infinity. These are the system's resonant frequencies, its natural "tones."
 
@@ -57,7 +57,7 @@ Now for the grand payoff. Why do we care so much about this framework? Because f
     $$
     \int_{a}^{b} y_m(x) y_n(x) r(x) dx = 0 \quad (\text{for } m \neq n)
     $$
-    This is a statement of independence. The fundamental vibration mode does not contain any part of the first overtone, and vice versa. They are pure, independent components of motion. It's crucial to notice that this orthogonality is defined with respect to the [weight function](@article_id:175542) $r(x)$. The physics of the system dictates the very definition of what it means to be orthogonal. If $r(x)=1$, this reduces to the familiar orthogonality of sine and cosine in a standard Fourier series.
+    This is a statement of independence. The fundamental vibration mode does not contain any part of the first overtone, and vice versa. They are pure, independent components of motion. It's crucial to notice that this orthogonality is defined with respect to the [weight function](@keyword=weight_function|lang=en-US|style=Feynman) $r(x)$. The physics of the system dictates the very definition of what it means to be orthogonal. If $r(x)=1$, this reduces to the familiar orthogonality of sine and cosine in a standard Fourier series.
 
 *   **Building Any Sound (Completeness):** Here is the ultimate power of the theory. The set of all eigenfunctions $\{y_n(x)\}$ forms a **complete basis**. This is a powerful idea. It means that *any* reasonable function $f(x)$ on our interval can be built by adding up the right amounts of these basic eigenfunctions, just as any complex musical waveform can be synthesized from a sum of pure sine waves in a Fourier series.
     $$

@@ -5,15 +5,15 @@ The journey will unfold in two parts. First, in "Principles and Mechanisms," we 
 
 ## Principles and Mechanisms
 
-In the geometric theater of any triangle, there are special points that play starring roles. While you may have been introduced to a whole cast of characters—the centroid, the orthocenter, the [circumcenter](@article_id:174016)—we will now turn our attention to one of the most elegant and intuitive of them all: the **incenter**. This is not just an abstract geometric curiosity; it is a point of profound balance and symmetry, a physical and conceptual heart of the triangle.
+In the geometric theater of any triangle, there are special points that play starring roles. While you may have been introduced to a whole cast of characters—the centroid, the orthocenter, the [circumcenter](@keyword=circumcenter|lang=en-US|style=Feynman)—we will now turn our attention to one of the most elegant and intuitive of them all: the **incenter**. This is not just an abstract geometric curiosity; it is a point of profound balance and symmetry, a physical and conceptual heart of the triangle.
 
 ### A Point of Perfect Balance
 
-Imagine you have a triangular plot of land and you want to install a single sprinkler that waters the largest possible circular area within the plot. Where would you place it? Or consider a communications tower that needs to be positioned to provide an equally strong signal to the three straight roads that form the boundaries of a region . The optimal location in both scenarios is the incenter. It is, by definition, the unique point inside the triangle that is **equidistant from all three sides**. This distance is the radius of the largest possible inscribed circle, fittingly called the **incircle**.
+Imagine you have a triangular plot of land and you want to install a single sprinkler that waters the largest possible circular area within the plot. Where would you place it? Or consider a communications tower that needs to be positioned to provide an equally strong signal to the three straight roads that form the boundaries of a region [@problem_id:2143394]. The optimal location in both scenarios is the incenter. It is, by definition, the unique point inside the triangle that is **equidistant from all three sides**. This distance is the radius of the largest possible inscribed circle, fittingly called the **incircle**.
 
 This property of being equidistant leads to a beautiful geometric construction. Think about any two intersecting lines. The set of all points that are equidistant from these two lines forms the bisector of the angle between them. Now, consider our triangle. For the incenter to be equidistant from sides $AB$ and $AC$, it must lie on the bisector of angle $A$. For it to be equidistant from sides $AB$ and $BC$, it must lie on the bisector of angle $B$. To satisfy all three conditions simultaneously, the incenter must be the one and only point where all three **internal angle bisectors** meet. That these three lines always meet at a single point is a small but wonderful theorem of geometry.
 
-We can find this point by laboriously drawing lines on a piece of paper, or, more practically, by finding the equations of two angle bisector lines and calculating their intersection, a method that works perfectly well for specific triangles  . But for a deeper understanding, we need a more general and powerful tool—a formula.
+We can find this point by laboriously drawing lines on a piece of paper, or, more practically, by finding the equations of two angle bisector lines and calculating their intersection, a method that works perfectly well for specific triangles [@problem_id:2143394] [@problem_id:2129187]. But for a deeper understanding, we need a more general and powerful tool—a formula.
 
 ### A Formula for the Center of Mass
 
@@ -23,9 +23,9 @@ $$
 \vec{r}_I = \frac{a \vec{r}_A + b \vec{r}_B + c \vec{r}_C}{a + b + c}
 $$
 
-This is a beautiful and compact formula . But it should make you pause and wonder. Why is the "weight" or "influence" of vertex $A$ determined by the length of the side $a$, the one *furthest* from it? It seems almost backward! The beauty of physics and mathematics lies in explaining such elegant but mysterious results. There are at least two wonderful ways to understand this.
+This is a beautiful and compact formula [@problem_id:2118636]. But it should make you pause and wonder. Why is the "weight" or "influence" of vertex $A$ determined by the length of the side $a$, the one *furthest* from it? It seems almost backward! The beauty of physics and mathematics lies in explaining such elegant but mysterious results. There are at least two wonderful ways to understand this.
 
-The first way is through the idea of **barycentric coordinates**, which is just a fancy term for the weights in a weighted average . The weight of a vertex, say $\lambda_A$, in defining an [interior point](@article_id:149471) is proportional to the area of the small triangle formed by the point and the *other two* vertices. For the incenter $I$, its barycentric coordinate $\lambda_A$ is proportional to the area of $\triangle IBC$. Since the incenter is equidistant from all sides, let's call this distance the inradius, $r$. The area of $\triangle IBC$ is simply its base ($a$) times its height ($r$), divided by two: $\text{Area}(\triangle IBC) = \frac{1}{2}ar$. Similarly, the areas of $\triangle ICA$ and $\triangle IAB$ are $\frac{1}{2}br$ and $\frac{1}{2}cr$, respectively. The weights are therefore in the ratio:
+The first way is through the idea of **barycentric coordinates**, which is just a fancy term for the weights in a weighted average [@problem_id:2109655]. The weight of a vertex, say $\lambda_A$, in defining an [interior point](@keyword=interior_point|lang=en-US|style=Feynman) is proportional to the area of the small triangle formed by the point and the *other two* vertices. For the incenter $I$, its barycentric coordinate $\lambda_A$ is proportional to the area of $\triangle IBC$. Since the incenter is equidistant from all sides, let's call this distance the inradius, $r$. The area of $\triangle IBC$ is simply its base ($a$) times its height ($r$), divided by two: $\text{Area}(\triangle IBC) = \frac{1}{2}ar$. Similarly, the areas of $\triangle ICA$ and $\triangle IAB$ are $\frac{1}{2}br$ and $\frac{1}{2}cr$, respectively. The weights are therefore in the ratio:
 
 $$
 \lambda_A : \lambda_B : \lambda_C = \frac{1}{2}ar : \frac{1}{2}br : \frac{1}{2}cr
@@ -33,19 +33,19 @@ $$
 
 The common factor of $\frac{1}{2}r$ cancels out, leaving us with the simple and profound ratio $a:b:c$. The side lengths are the natural weights! To make them proper coordinates that sum to 1, we just divide by their total, $a+b+c$.
 
-A second, more classical geometric path to the same result is through the **Angle Bisector Theorem** . This theorem states that the angle bisector from vertex $A$ divides the opposite side $BC$ into segments proportional to the adjacent sides $c$ and $b$. By applying this theorem twice, for two different angle bisectors, and doing a little algebra, we arrive at precisely the same weighting scheme: $a:b:c$. The convergence of these two different lines of reasoning—one based on areas, the other on ratios from angle bisections—is a hallmark of the deep interconnectedness of geometry.
+A second, more classical geometric path to the same result is through the **Angle Bisector Theorem** [@problem_id:2118636]. This theorem states that the angle bisector from vertex $A$ divides the opposite side $BC$ into segments proportional to the adjacent sides $c$ and $b$. By applying this theorem twice, for two different angle bisectors, and doing a little algebra, we arrive at precisely the same weighting scheme: $a:b:c$. The convergence of these two different lines of reasoning—one based on areas, the other on ratios from angle bisections—is a hallmark of the deep interconnectedness of geometry.
 
 ### The Incenter in Action
 
-Let's ground this theory with some examples. Consider the simplest non-trivial triangle: a right triangle with its legs on the coordinate axes. Let its vertices be $O(0,0)$, $A(L_x, 0)$, and $B(0, L_y)$ . Since the incenter must be equidistant from the x-axis ($y=0$) and the y-axis ($x=0$), its coordinates must be of the form $(r,r)$, where $r$ is the inradius. To find $r$, we just need to enforce the third condition: its distance to the hypotenuse must also be $r$. This simple condition gives us a beautiful formula for the inradius of a right triangle:
+Let's ground this theory with some examples. Consider the simplest non-trivial triangle: a right triangle with its legs on the coordinate axes. Let its vertices be $O(0,0)$, $A(L_x, 0)$, and $B(0, L_y)$ [@problem_id:2118650]. Since the incenter must be equidistant from the x-axis ($y=0$) and the y-axis ($x=0$), its coordinates must be of the form $(r,r)$, where $r$ is the inradius. To find $r$, we just need to enforce the third condition: its distance to the hypotenuse must also be $r$. This simple condition gives us a beautiful formula for the inradius of a right triangle:
 
 $$
 r = \frac{L_x + L_y - \sqrt{L_x^2 + L_y^2}}{2}
 $$
 
-The incenter is located at $(r,r)$. This special case gives a tangible feeling for what the incenter represents. You can even use this result to explore relationships between different [triangle centers](@article_id:172428), like the distance between the incenter and [circumcenter](@article_id:174016) .
+The incenter is located at $(r,r)$. This special case gives a tangible feeling for what the incenter represents. You can even use this result to explore relationships between different [triangle centers](@keyword=triangle_centers|lang=en-US|style=Feynman), like the distance between the incenter and [circumcenter](@keyword=circumcenter|lang=en-US|style=Feynman) [@problem_id:2118670].
 
-For a more general triangle, say with vertices A(0, 0), B(4, 0), and C(9, 12), we can apply the main formula directly. First, we calculate the side lengths: $c = |AB| = 4$, $b = |AC| = 15$, and $a = |BC| = 13$. Then we plug these into our weighted average formula to find the incenter's coordinates :
+For a more general triangle, say with vertices A(0, 0), B(4, 0), and C(9, 12), we can apply the main formula directly. First, we calculate the side lengths: $c = |AB| = 4$, $b = |AC| = 15$, and $a = |BC| = 13$. Then we plug these into our weighted average formula to find the incenter's coordinates [@problem_id:2122212]:
 
 $$
 x_I = \frac{(13)(0) + (15)(4) + (4)(9)}{13+15+4} = \frac{96}{32} = 3
@@ -66,7 +66,7 @@ $$
 \vec{r}_{I'} = \frac{a(\vec{r}_A + \vec{v}) + b(\vec{r}_B + \vec{v}) + c(\vec{r}_C + \vec{v})}{a+b+c} = \frac{a\vec{r}_A + b\vec{r}_B + c\vec{r}_C}{a+b+c} + \frac{(a+b+c)\vec{v}}{a+b+c} = \vec{r}_I + \vec{v}
 $$
 
-The incenter simply translates along with the triangle . This is exactly what our intuition would demand. The "center" of an object should move with the object.
+The incenter simply translates along with the triangle [@problem_id:2118679]. This is exactly what our intuition would demand. The "center" of an object should move with the object.
 
 Similarly, what if we perform a uniform **scaling** from the origin by a factor $\lambda$? Every position vector gets multiplied by $\lambda$, so $\vec{r}_{A'} = \lambda \vec{r}_A$. The distances between vertices also scale by $\lambda$, so the new side lengths are $a' = \lambda a$, $b' = \lambda b$, and $c' = \lambda c$. The new incenter is:
 
@@ -74,13 +74,13 @@ $$
 \vec{r}_{I'} = \frac{(\lambda a)(\lambda \vec{r}_A) + (\lambda b)(\lambda \vec{r}_B) + (\lambda c)(\lambda \vec{r}_C)}{\lambda a + \lambda b + \lambda c} = \frac{\lambda^2 (a\vec{r}_A + b\vec{r}_B + c\vec{r}_C)}{\lambda (a+b+c)} = \lambda \vec{r}_I
 $$
 
-The incenter's position vector is also scaled by $\lambda$ . The incenter maintains its relative position within the triangle, perfectly preserving the geometry. The formula is "covariant" with respect to these fundamental transformations, a sign of a robust and meaningful definition.
+The incenter's position vector is also scaled by $\lambda$ [@problem_id:2118655]. The incenter maintains its relative position within the triangle, perfectly preserving the geometry. The formula is "covariant" with respect to these fundamental transformations, a sign of a robust and meaningful definition.
 
 ### The Unexpected Numbers of Geometry
 
 Let's end with a deeper question. If we build a triangle on a grid, using only points with integer coordinates, we might expect its geometry to be "tame." We might guess that the coordinates of its special points, like the incenter, would also be simple, rational numbers. But is this true?
 
-The answer, surprisingly, is no . The source of the trouble is the distance formula. To find the side lengths $a, b, c$, we compute quantities like $\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$. Unless the quantity inside the square root happens to be a [perfect square](@article_id:635128), the side length will be an **irrational number**.
+The answer, surprisingly, is no [@problem_id:2118667]. The source of the trouble is the distance formula. To find the side lengths $a, b, c$, we compute quantities like $\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$. Unless the quantity inside the square root happens to be a [perfect square](@keyword=perfect_square|lang=en-US|style=Feynman), the side length will be an **irrational number**.
 
 The incenter formula is a mix of these side lengths and the integer vertex coordinates. Sometimes, the irrationals might cancel out or the side lengths might all be integers (as in a 3-4-5 right triangle with vertices at (0,0), (3,0), and (0,4), which yields an incenter at the very neat location (1,1)). But in many other cases, they do not. For a triangle with vertices at (0,0), (1,0), and (0,2), the side lengths are 1, 2, and $\sqrt{5}$. The incenter's coordinates turn out to be ($\frac{3-\sqrt{5}}{2}$, $\frac{3-\sqrt{5}}{2}$), which are irrational.
 

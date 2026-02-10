@@ -11,9 +11,9 @@ At its heart, the Archimedean spiral has a wonderfully simple recipe. In the lan
 
 $r = a\theta$
 
-That's it! This little equation tells us everything. It says that the distance from the center, $r$, is directly proportional to the angle of rotation, $\theta$. The constant of proportionality, $a$, is just a number that tells us how "tightly" the spiral is wound. A larger $a$ means the spiral opens up more quickly, while a smaller $a$ results in a tighter coil. You can think of $a$ as being related to how much string you let out for every degree you turn .
+That's it! This little equation tells us everything. It says that the distance from the center, $r$, is directly proportional to the angle of rotation, $\theta$. The constant of proportionality, $a$, is just a number that tells us how "tightly" the spiral is wound. A larger $a$ means the spiral opens up more quickly, while a smaller $a$ results in a tighter coil. You can think of $a$ as being related to how much string you let out for every degree you turn [@problem_id:2134127].
 
-This linear relationship is the spiral's defining characteristic. If you double the angle of rotation, you double your distance from the origin. If you triple the angle, you triple the distance. This predictability allows us to plot its course with ease. For instance, if we consider a spiral with $a = 1/2$, we can find points on its path by choosing simple angles. At $\theta = \pi/2$ (a quarter turn), the distance from the center is $r = (\pi/2)/2 = \pi/4$. At $\theta = \pi$ (a half turn), the distance is $r = \pi/2$. At $\theta = 2\pi$ (a full turn), the distance is $r = \pi$. By connecting these points, we begin to trace the graceful, ever-opening curve of the spiral .
+This linear relationship is the spiral's defining characteristic. If you double the angle of rotation, you double your distance from the origin. If you triple the angle, you triple the distance. This predictability allows us to plot its course with ease. For instance, if we consider a spiral with $a = 1/2$, we can find points on its path by choosing simple angles. At $\theta = \pi/2$ (a quarter turn), the distance from the center is $r = (\pi/2)/2 = \pi/4$. At $\theta = \pi$ (a half turn), the distance is $r = \pi/2$. At $\theta = 2\pi$ (a full turn), the distance is $r = \pi$. By connecting these points, we begin to trace the graceful, ever-opening curve of the spiral [@problem_id:2135689].
 
 ### The Unmistakable Constant Spacing
 
@@ -23,7 +23,7 @@ Let's see why. Suppose you are at some angle $\theta$ on the spiral. Your distan
 
 $r_2 - r_1 = (a\theta + 2\pi a) - a\theta = 2\pi a$
 
-Notice that the initial angle $\theta$ has vanished! It doesn't matter where you are on the spiral; after one full turn, the radial distance has increased by a fixed amount, $2\pi a$. This constant separation between successive turns is the signature of the Archimedean spiral, a property that makes it incredibly useful in engineering applications like the design of scroll compressors or watch balance springs . This is in stark contrast to other spirals, like the [logarithmic spiral](@article_id:171977) ($r = be^{k\theta}$), where the arms get farther and farther apart with each turn .
+Notice that the initial angle $\theta$ has vanished! It doesn't matter where you are on the spiral; after one full turn, the radial distance has increased by a fixed amount, $2\pi a$. This constant separation between successive turns is the signature of the Archimedean spiral, a property that makes it incredibly useful in engineering applications like the design of scroll compressors or watch balance springs [@problem_id:2134102]. This is in stark contrast to other spirals, like the [logarithmic spiral](@keyword=logarithmic_spiral|lang=en-US|style=Feynman) ($r = be^{k\theta}$), where the arms get farther and farther apart with each turn [@problem_id:2134127].
 
 ### Measuring the Immeasurable: Length, Area, and Growth
 
@@ -31,15 +31,15 @@ Now that we have a feel for its shape, we might ask some practical questions. If
 
 #### The Length of the Path
 
-Imagine a tiny particle tracing the spiral's path . To find the total length of its journey, we consider a tiny step. In that step, the particle moves a small distance outwards ($dr$) and a small distance sideways ($r\,d\theta$). By the Pythagorean theorem, the total length of this tiny step, $dL$, is $\sqrt{(dr)^2 + (r\,d\theta)^2}$. To get the total length, we just add up all these little steps by integrating. The formula for the arc length, $L$, of a polar curve from angle $\theta_1$ to $\theta_2$ is:
+Imagine a tiny particle tracing the spiral's path [@problem_id:2119437]. To find the total length of its journey, we consider a tiny step. In that step, the particle moves a small distance outwards ($dr$) and a small distance sideways ($r\,d\theta$). By the Pythagorean theorem, the total length of this tiny step, $dL$, is $\sqrt{(dr)^2 + (r\,d\theta)^2}$. To get the total length, we just add up all these little steps by integrating. The formula for the arc length, $L$, of a polar curve from angle $\theta_1$ to $\theta_2$ is:
 
 $L = \int_{\theta_1}^{\theta_2} \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2} \, d\theta$
 
-For our spiral, $r=a\theta$, so its derivative $\frac{dr}{d\theta}$ is just the constant $a$. Plugging this in, the [arc length](@article_id:142701) from the origin ($\theta=0$) to some angle $\theta_{end}$ is:
+For our spiral, $r=a\theta$, so its derivative $\frac{dr}{d\theta}$ is just the constant $a$. Plugging this in, the [arc length](@keyword=arc_length|lang=en-US|style=Feynman) from the origin ($\theta=0$) to some angle $\theta_{end}$ is:
 
 $L = \int_{0}^{\theta_{end}} \sqrt{(a\theta)^2 + a^2} \, d\theta = a \int_{0}^{\theta_{end}} \sqrt{\theta^2 + 1} \, d\theta$
 
-While the integral itself is a standard form found in tables, the key insight is how the length grows. Unlike a circle, where length is proportional to the angle, here the relationship is more complex, reflecting the fact that the path is constantly moving outwards .
+While the integral itself is a standard form found in tables, the key insight is how the length grows. Unlike a circle, where length is proportional to the angle, here the relationship is more complex, reflecting the fact that the path is constantly moving outwards [@problem_id:2134108].
 
 #### The Area of the Sweep
 
@@ -47,7 +47,7 @@ What about the area swept out by the radius as it rotates? Think of a lawn sprin
 
 $A = \frac{1}{2}\int_{\theta_1}^{\theta_2} r^2 \, d\theta$
 
-Let's use this to investigate a fascinating property related to the spiral's turns . We already know the spacing between the arms is constant. So, is the *area* of each successive annular region—the area between turn $n$ and turn $n+1$—also constant? Let's calculate the area for the $(n+1)$-th turn, which runs from $\theta = 2\pi n$ to $\theta = 2\pi(n+1)$:
+Let's use this to investigate a fascinating property related to the spiral's turns [@problem_id:2134102]. We already know the spacing between the arms is constant. So, is the *area* of each successive annular region—the area between turn $n$ and turn $n+1$—also constant? Let's calculate the area for the $(n+1)$-th turn, which runs from $\theta = 2\pi n$ to $\theta = 2\pi(n+1)$:
 
 $A_n = \frac{1}{2}\int_{2\pi n}^{2\pi(n+1)} (a\theta)^2 \, d\theta = \frac{a^2}{2} \left[\frac{\theta^3}{3}\right]_{2\pi n}^{2\pi(n+1)} = \frac{4\pi^3 a^2}{3} (3n^2 + 3n + 1)$
 
@@ -59,13 +59,13 @@ What does the spiral look like if we zoom in on a single point?
 
 #### The Path of Inertia: The Tangent Line
 
-Imagine a robotic arm tracing a spiral path. If, at some instant, the mechanism releases and the arm continues in a straight line, what path does it follow? It follows the tangent line at the point of release . The direction of this tangent is not simply the direction from the origin. The spiral is always moving outwards as it rotates, so the tangent line will be angled relative to the radius.
+Imagine a robotic arm tracing a spiral path. If, at some instant, the mechanism releases and the arm continues in a straight line, what path does it follow? It follows the tangent line at the point of release [@problem_id:2134112]. The direction of this tangent is not simply the direction from the origin. The spiral is always moving outwards as it rotates, so the tangent line will be angled relative to the radius.
 
 Using calculus, we can find the slope of this line at any angle $\theta$. The slope is given by $\frac{dy}{dx} = \frac{y'(\theta)}{x'(\theta)}$. For $r=a\theta$, the derivatives tell us that the slope at $\theta=\pi$, for instance, is simply $\pi$. An object flying off the spiral at that point would move along a line with a slope of $\pi$, a surprisingly neat result. This angle between the radial line and the tangent is what gives the spiral its characteristic "swirl."
 
 #### How Much Does It Bend? Curvature
 
-Curvature tells us how sharply a path is bending. A straight line has zero curvature, while a small, tight circle has high curvature. For our spiral, we can calculate the curvature, $\kappa$, at any point. The full formula is a bit of an algebraic beast, but the result is wonderfully intuitive :
+Curvature tells us how sharply a path is bending. A straight line has zero curvature, while a small, tight circle has high curvature. For our spiral, we can calculate the curvature, $\kappa$, at any point. The full formula is a bit of an algebraic beast, but the result is wonderfully intuitive [@problem_id:2119437]:
 
 $\kappa(\theta) = \frac{\theta^2 + 2}{a(\theta^2 + 1)^{3/2}}$
 
@@ -73,9 +73,9 @@ The important thing is not the exact expression, but what happens for large $\th
 
 ### Spirals in the Wild: Variations and Fields
 
-The simple form $r=a\theta$ is just the beginning. We can have spirals that wind inwards, like $r = b - a\theta$, which might trace a path starting outside a circle, moving inside, and then passing through the center to emerge on the other side . This variation introduces the curious but perfectly valid concept of a negative radius, which simply instructs us to measure the distance in the direction opposite to the angle $\theta$.
+The simple form $r=a\theta$ is just the beginning. We can have spirals that wind inwards, like $r = b - a\theta$, which might trace a path starting outside a circle, moving inside, and then passing through the center to emerge on the other side [@problem_id:2134082]. This variation introduces the curious but perfectly valid concept of a negative radius, which simply instructs us to measure the distance in the direction opposite to the angle $\theta$.
 
-Perhaps the most profound view of the Archimedean spiral comes when we see it not as a single curve, but as one member of an entire family of curves that fill a plane. Imagine a heated circular plate where the lines of constant temperature ([isotherms](@article_id:151399)) are a family of Archimedean spirals, $r=c\theta$, for different values of $c$ . Heat, according to the laws of thermodynamics, must flow along paths that are perpendicular to these [isotherms](@article_id:151399). What do these heat-flow paths look like?
+Perhaps the most profound view of the Archimedean spiral comes when we see it not as a single curve, but as one member of an entire family of curves that fill a plane. Imagine a heated circular plate where the lines of constant temperature ([isotherms](@keyword=isotherms|lang=en-US|style=Feynman)) are a family of Archimedean spirals, $r=c\theta$, for different values of $c$ [@problem_id:2190401]. Heat, according to the laws of thermodynamics, must flow along paths that are perpendicular to these [isotherms](@keyword=isotherms|lang=en-US|style=Feynman). What do these heat-flow paths look like?
 
 By solving a differential equation, we find that the family of curves orthogonal to the Archimedean spirals is given by:
 

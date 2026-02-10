@@ -15,9 +15,9 @@ $$
 \frac{PA}{PB} = k
 $$
 
-The two fixed points $A$ and $B$ are called the **foci** of the circle. This simple geometric rule has surprisingly practical consequences. For instance, consider a modern Autonomous Underwater Vehicle (AUV) navigating using signals from two fixed acoustic beacons. The intensity of a signal weakens with the square of the distance. If the AUV is programmed to maintain a constant ratio of signal intensities from beacon A to beacon B, say $\frac{I_A}{I_B} = \frac{9}{4}$, this is equivalent to maintaining a constant ratio of distances, $\frac{PB}{PA} = \sqrt{\frac{9}{4}} = \frac{3}{2}$. The path it traces is, therefore, a Circle of Apollonius .
+The two fixed points $A$ and $B$ are called the **foci** of the circle. This simple geometric rule has surprisingly practical consequences. For instance, consider a modern Autonomous Underwater Vehicle (AUV) navigating using signals from two fixed acoustic beacons. The intensity of a signal weakens with the square of the distance. If the AUV is programmed to maintain a constant ratio of signal intensities from beacon A to beacon B, say $\frac{I_A}{I_B} = \frac{9}{4}$, this is equivalent to maintaining a constant ratio of distances, $\frac{PB}{PA} = \sqrt{\frac{9}{4}} = \frac{3}{2}$. The path it traces is, therefore, a Circle of Apollonius [@problem_id:2156865].
 
-What if the constant ratio $k$ is equal to 1? The condition $PA = PB$ describes the set of all points equidistant from $A$ and $B$. You might remember from high school geometry that this is simply the **[perpendicular bisector](@article_id:175933)** of the line segment $AB$. As we'll see, it's useful to think of this line as a "circle of infinite radius," a beautiful idea that connects lines and circles into a single, unified family.
+What if the constant ratio $k$ is equal to 1? The condition $PA = PB$ describes the set of all points equidistant from $A$ and $B$. You might remember from high school geometry that this is simply the **[perpendicular bisector](@keyword=perpendicular_bisector|lang=en-US|style=Feynman)** of the line segment $AB$. As we'll see, it's useful to think of this line as a "circle of infinite radius," a beautiful idea that connects lines and circles into a single, unified family.
 
 ### The Algebraic Heart of the Circle
 
@@ -43,7 +43,7 @@ Notice that the center always lies on the line passing through the foci $A$ and 
 
 ### A Symphony of Circles: The Coaxal System
 
-For a single pair of foci $A$ and $B$, every possible value of $k$ (except 1) gives you a different circle. What you get is not just a circle, but an entire infinite *family* of circles. This nested family is known as a **non-intersecting [coaxal system](@article_id:175383)**.
+For a single pair of foci $A$ and $B$, every possible value of $k$ (except 1) gives you a different circle. What you get is not just a circle, but an entire infinite *family* of circles. This nested family is known as a **non-intersecting [coaxal system](@keyword=coaxal_system|lang=en-US|style=Feynman)**.
 
 Let's explore the character of this family. What happens for extreme values of $k$?
 
@@ -51,13 +51,13 @@ If $k$ is a very tiny positive number, say $k \to 0$, our defining equation $\fr
 
 Conversely, if $k$ becomes enormous, $k \to \infty$, then the distance $PB$ must approach zero. In this limit, the circle shrinks down to the other focus, $B$.
 
-This leads to a wonderful insight: the two original foci, $A$ and $B$, are themselves members of the family they generate! They are the "point-circles" of the system, corresponding to ratios of $0$ and $\infty$ . They are often called the **limiting points** of the [coaxal system](@article_id:175383).
+This leads to a wonderful insight: the two original foci, $A$ and $B$, are themselves members of the family they generate! They are the "point-circles" of the system, corresponding to ratios of $0$ and $\infty$ [@problem_id:2129641]. They are often called the **limiting points** of the [coaxal system](@keyword=coaxal_system|lang=en-US|style=Feynman).
 
-The family also possesses a lovely symmetry. Consider the circle for a ratio $k$ and the circle for its reciprocal, $1/k$. It turns out that the midpoint between the centers of these two circles is always the same, regardless of $k$: it is the midpoint of the segment connecting the foci, $\frac{A+B}{2}$ . The entire family is symmetrically balanced around the midpoint of its own creators.
+The family also possesses a lovely symmetry. Consider the circle for a ratio $k$ and the circle for its reciprocal, $1/k$. It turns out that the midpoint between the centers of these two circles is always the same, regardless of $k$: it is the midpoint of the segment connecting the foci, $\frac{A+B}{2}$ [@problem_id:898763]. The entire family is symmetrically balanced around the midpoint of its own creators.
 
 ### The Magic of Transformation
 
-The true, deep beauty of Apollonian circles is revealed when we look at them through the lens of **Möbius transformations**. These are marvelously powerful [functions of a complex variable](@article_id:174788) $z$ of the form $f(z) = \frac{az+b}{cz+d}$. They have the magical property of always mapping circles and lines to other circles and lines.
+The true, deep beauty of Apollonian circles is revealed when we look at them through the lens of **Möbius transformations**. These are marvelously powerful [functions of a complex variable](@keyword=functions_of_a_complex_variable|lang=en-US|style=Feynman) $z$ of the form $f(z) = \frac{az+b}{cz+d}$. They have the magical property of always mapping circles and lines to other circles and lines.
 
 So what happens if we apply a Möbius transformation to our family of Apollonian circles? Let's choose a very special transformation, one that is custom-built from our foci, $p_1$ and $p_2$. Consider the transformation:
 
@@ -71,14 +71,14 @@ $$
 |w| = \left| \frac{z-p_1}{z-p_2} \right| = \frac{|z-p_1|}{|z-p_2|} = k
 $$
 
-This is breathtaking. The entire Apollonian circle, which could be located anywhere in the plane, is transformed into a simple circle of radius $k$ centered at the origin! . This special Möbius transformation "unravels" the entire intricate family of Apollonian circles and maps them to the simplest possible family: a set of concentric circles centered at the origin. The two foci, $p_1$ and $p_2$, are mapped to the origin and infinity, the two "centers" of this new concentric system. This tells us that Apollonian circles are, in a very profound sense, just "displaced" or "transformed" versions of regular circles. This invariance is a key reason they appear in so many different contexts  .
+This is breathtaking. The entire Apollonian circle, which could be located anywhere in the plane, is transformed into a simple circle of radius $k$ centered at the origin! [@problem_id:2144626]. This special Möbius transformation "unravels" the entire intricate family of Apollonian circles and maps them to the simplest possible family: a set of concentric circles centered at the origin. The two foci, $p_1$ and $p_2$, are mapped to the origin and infinity, the two "centers" of this new concentric system. This tells us that Apollonian circles are, in a very profound sense, just "displaced" or "transformed" versions of regular circles. This invariance is a key reason they appear in so many different contexts [@problem_id:2272620] [@problem_id:878937].
 
 ### Echoes in Physics and Beyond
 
-This geometric curiosity is not just an abstract mathematical game. It is woven into the fabric of the physical world. In electrostatics, for instance, a method called the "[method of images](@article_id:135741)" is used to calculate the electric field of a charge near a conductor. If you place a point charge at a location $w$ inside a grounded, conducting spherical shell of radius 1, the electric potential is zero on the shell. The mathematical solution to this physical problem is found by pretending there is an "image charge" at a location $w^* = 1/\bar{w}$ outside the shell.
+This geometric curiosity is not just an abstract mathematical game. It is woven into the fabric of the physical world. In electrostatics, for instance, a method called the "[method of images](@keyword=method_of_images|lang=en-US|style=Feynman)" is used to calculate the electric field of a charge near a conductor. If you place a point charge at a location $w$ inside a grounded, conducting spherical shell of radius 1, the electric potential is zero on the shell. The mathematical solution to this physical problem is found by pretending there is an "image charge" at a location $w^* = 1/\bar{w}$ outside the shell.
 
-The surface of the shell itself—where the potential is zero—is precisely an Apollonius circle with respect to the real charge $w$ and its fictitious image $w^*$ . The constant ratio of distances for any point $z$ on the unit circle is found to be $k = |w|$.
+The surface of the shell itself—where the potential is zero—is precisely an Apollonius circle with respect to the real charge $w$ and its fictitious image $w^*$ [@problem_id:2243426]. The constant ratio of distances for any point $z$ on the unit circle is found to be $k = |w|$.
 
-This principle is captured by the **Green's function**, a master key for solving problems in [potential theory](@article_id:140930), from electrostatics to heat flow. The level curves of the Green's function for the unit disk—that is, the curves of constant potential—are none other than our family of Apollonian circles .
+This principle is captured by the **Green's function**, a master key for solving problems in [potential theory](@keyword=potential_theory|lang=en-US|style=Feynman), from electrostatics to heat flow. The level curves of the Green's function for the unit disk—that is, the curves of constant potential—are none other than our family of Apollonian circles [@problem_id:2243425].
 
-The influence of these circles extends even further. They can be defined elegantly using the **cross-ratio** , a fundamental invariant in complex analysis. And if you project the entire family of circles from the plane onto a sphere using **[stereographic projection](@article_id:141884)**, they become a family of circles on the sphere whose defining planes all intersect along a single, common line . From a simple ratio of distances, we have journeyed to the heart of complex analysis, [potential theory](@article_id:140930), and three-dimensional geometry, seeing the same beautiful structure appear in different guises, a testament to the profound unity of mathematics.
+The influence of these circles extends even further. They can be defined elegantly using the **cross-ratio** [@problem_id:836570], a fundamental invariant in complex analysis. And if you project the entire family of circles from the plane onto a sphere using **[stereographic projection](@keyword=stereographic_projection|lang=en-US|style=Feynman)**, they become a family of circles on the sphere whose defining planes all intersect along a single, common line [@problem_id:2267101]. From a simple ratio of distances, we have journeyed to the heart of complex analysis, [potential theory](@keyword=potential_theory|lang=en-US|style=Feynman), and three-dimensional geometry, seeing the same beautiful structure appear in different guises, a testament to the profound unity of mathematics.

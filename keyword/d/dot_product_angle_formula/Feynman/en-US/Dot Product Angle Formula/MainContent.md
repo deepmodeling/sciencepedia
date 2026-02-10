@@ -25,7 +25,7 @@ $$
 
 Here, $\|\mathbf{u}\|$ and $\|\mathbf{v}\|$ are the lengths (or norms) of the vectors, and $\theta$ is that precious angle between them. This definition tells a story. It says the dot product is the length of $\mathbf{u}$ times the length of the *projection* of $\mathbf{v}$ onto $\mathbf{u}$ (which is $\|\mathbf{v}\| \cos\theta$). It measures "how much" of one vector lies along the direction of the other.
 
-The secret to its power is that *these two definitions are the same thing*. The simple [sum of products](@article_id:164709) is secretly encoding the angle! By equating them, we can pry that angle loose.
+The secret to its power is that *these two definitions are the same thing*. The simple [sum of products](@keyword=sum_of_products|lang=en-US|style=Feynman) is secretly encoding the angle! By equating them, we can pry that angle loose.
 
 ### The Angle Revealed
 
@@ -35,7 +35,7 @@ $$
 \cos\theta = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|}
 $$
 
-Let's see this little machine in action. Suppose we have two vectors in our familiar three-dimensional space, $\mathbf{u} = (1, 1, 1)$ and $\mathbf{v} = (1, 2, 4)$ . To find the angle between them, we don't need to build a physical model. We just compute the pieces.
+Let's see this little machine in action. Suppose we have two vectors in our familiar three-dimensional space, $\mathbf{u} = (1, 1, 1)$ and $\mathbf{v} = (1, 2, 4)$ [@problem_id:976992]. To find the angle between them, we don't need to build a physical model. We just compute the pieces.
 
 The dot product is easy: $\mathbf{u} \cdot \mathbf{v} = (1)(1) + (1)(2) + (1)(4) = 7$.
 The lengths (norms) are found using the Pythagorean theorem:
@@ -53,7 +53,7 @@ The angle is simply $\theta = \arccos(\frac{\sqrt{7}}{3})$. We have captured a p
 
 Now for a change of perspective. Instead of *finding* an angle, what if we use an angle to *define* a shape? Imagine you are holding a flashlight in a dark room. The beam forms a cone. What is a cone, geometrically? It's the set of all lines (and thus all points on those lines) that make a *constant angle* with a central axis.
 
-We can use the dot product angle formula to turn this word-based definition into a precise mathematical equation. Let's say our central axis is the $y$-axis, represented by the unit vector $\hat{\jmath} = (0, 1, 0)$. Let's take any point $P=(x,y,z)$ on the cone, whose position vector is $\vec{r} = (x,y,z)$. The definition of the cone is that the angle $\theta$ between $\vec{r}$ and $\hat{\jmath}$ is always some constant value, say $\alpha = \frac{\pi}{4}$ radians ($45^\circ$)  .
+We can use the dot product angle formula to turn this word-based definition into a precise mathematical equation. Let's say our central axis is the $y$-axis, represented by the unit vector $\hat{\jmath} = (0, 1, 0)$. Let's take any point $P=(x,y,z)$ on the cone, whose position vector is $\vec{r} = (x,y,z)$. The definition of the cone is that the angle $\theta$ between $\vec{r}$ and $\hat{\jmath}$ is always some constant value, say $\alpha = \frac{\pi}{4}$ radians ($45^\circ$) [@problem_id:1634654] [@problem_id:2125366].
 
 Let's apply our formula:
 $$
@@ -78,7 +78,7 @@ Look at what we've done! We started with a simple geometric idea—"a constant a
 
 Our brains are built for three dimensions, but mathematics is not so constrained. What does an "angle" even mean in 17 dimensions? The dot product gives us a confident answer. The algebraic recipe for the dot product works for any number of dimensions, so we can use our angle formula as a portal to explore the geometry of these abstract spaces.
 
-Consider a rather curious question: in an $n$-dimensional space, what is the angle between a vector of all ones, $\mathbf{u} = (1, 1, \dots, 1)$, and a standard basis vector, say $\mathbf{e}_1 = (1, 0, \dots, 0)$? . Let's compute:
+Consider a rather curious question: in an $n$-dimensional space, what is the angle between a vector of all ones, $\mathbf{u} = (1, 1, \dots, 1)$, and a standard basis vector, say $\mathbf{e}_1 = (1, 0, \dots, 0)$? [@problem_id:977148]. Let's compute:
 
 $\mathbf{u} \cdot \mathbf{e}_1 = (1)(1) + (1)(0) + \dots + (1)(0) = 1$.
 $\|\mathbf{u}\| = \sqrt{1^2 + 1^2 + \dots + 1^2} = \sqrt{n}$.
@@ -97,7 +97,7 @@ In very high-dimensional spaces, the main diagonal is almost perpendicular to th
 
 Let's return to familiar territory, a 2D plane. If you take a vector and rotate it, what is the angle between the original vector and its rotated version? The answer is obviously the angle of rotation itself. But does our mathematical machinery agree? It had better, or the whole system is a sham!
 
-A rotation is a transformation, represented by a matrix. A counter-clockwise rotation by an angle $\theta$ is given by the Givens [rotation matrix](@article_id:139808) $G(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$. Let's take some vector $v$ and rotate it to get a new vector $v' = G(\theta)v$ . Now, let's use the dot product to find the angle $\varphi$ between $v$ and $v'$.
+A rotation is a transformation, represented by a matrix. A counter-clockwise rotation by an angle $\theta$ is given by the Givens [rotation matrix](@keyword=rotation_matrix|lang=en-US|style=Feynman) $G(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$. Let's take some vector $v$ and rotate it to get a new vector $v' = G(\theta)v$ [@problem_id:1365903]. Now, let's use the dot product to find the angle $\varphi$ between $v$ and $v'$.
 
 The formula is $\cos\varphi = \frac{v \cdot v'}{\|v\| \|v'\|}$.
 A key property of rotation is that it doesn't change a vector's length, so $\|v'\| = \|v\|$. The denominator is just $\|v\|^2$.
@@ -115,21 +115,21 @@ This means $\varphi = \theta$. The angle we calculated with the dot product is e
 
 So far, our vectors have lived in "flat" Euclidean space. What about angles on a curved surface, like a sphere? Imagine a triangle drawn on a globe, with vertices in New York, London, and Tokyo. Its sides aren't straight lines, but arcs of great circles. What is the angle at the New York vertex?
 
-It's the angle between the [great circle](@article_id:268476) path to London and the path to Tokyo. Here's the brilliant insight: this angle on the sphere's surface is exactly the same as the angle between the *planes* that slice through the Earth to create those two great circles .
+It's the angle between the [great circle](@keyword=great_circle|lang=en-US|style=Feynman) path to London and the path to Tokyo. Here's the brilliant insight: this angle on the sphere's surface is exactly the same as the angle between the *planes* that slice through the Earth to create those two great circles [@problem_id:2174051].
 
-And how do you find the [angle between two planes](@article_id:153541)? By finding the angle between their normal vectors! A normal vector to a plane is a vector that sticks straight out, perpendicular to the plane. If the plane of the [great circle](@article_id:268476) from $A$ to $B$ is defined by the vectors from the Earth's center to $A$ and $B$ (call them $\vec{r}_A$ and $\vec{r}_B$), its normal vector is simply their [cross product](@article_id:156255), $\vec{n}_{AB} = \vec{r}_A \times \vec{r}_B$. Similarly for the plane from $A$ to $C$, the normal is $\vec{n}_{AC} = \vec{r}_A \times \vec{r}_C$.
+And how do you find the [angle between two planes](@keyword=angle_between_two_planes|lang=en-US|style=Feynman)? By finding the angle between their normal vectors! A normal vector to a plane is a vector that sticks straight out, perpendicular to the plane. If the plane of the [great circle](@keyword=great_circle|lang=en-US|style=Feynman) from $A$ to $B$ is defined by the vectors from the Earth's center to $A$ and $B$ (call them $\vec{r}_A$ and $\vec{r}_B$), its normal vector is simply their [cross product](@keyword=cross_product|lang=en-US|style=Feynman), $\vec{n}_{AB} = \vec{r}_A \times \vec{r}_B$. Similarly for the plane from $A$ to $C$, the normal is $\vec{n}_{AC} = \vec{r}_A \times \vec{r}_C$.
 
-The spherical angle at vertex $A$ is just the angle between these two normal vectors, $\vec{n}_{AB}$ and $\vec{n}_{AC}$. And we can find *that* angle with our trusty dot product formula! This is a magnificent example of [problem transformation](@article_id:273779). A difficult question in non-Euclidean [spherical geometry](@article_id:267723) is converted into a standard, solvable problem in 3D [vector algebra](@article_id:151846).
+The spherical angle at vertex $A$ is just the angle between these two normal vectors, $\vec{n}_{AB}$ and $\vec{n}_{AC}$. And we can find *that* angle with our trusty dot product formula! This is a magnificent example of [problem transformation](@keyword=problem_transformation|lang=en-US|style=Feynman). A difficult question in non-Euclidean [spherical geometry](@keyword=spherical_geometry|lang=en-US|style=Feynman) is converted into a standard, solvable problem in 3D [vector algebra](@keyword=vector_algebra|lang=en-US|style=Feynman).
 
 ### A Practical Warning: The Danger of Nearly Parallel Lines
 
-Our formula, $\theta = \arccos\left(\frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|}\right)$, is mathematically perfect. But in the real world of [scientific computing](@article_id:143493), where numbers have finite precision, it has a hidden weakness.
+Our formula, $\theta = \arccos\left(\frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|}\right)$, is mathematically perfect. But in the real world of [scientific computing](@keyword=scientific_computing|lang=en-US|style=Feynman), where numbers have finite precision, it has a hidden weakness.
 
-Imagine you are tracking a deep-space probe. Its antenna is supposed to point in a direction $\mathbf{u}$, but it's actually pointing in a slightly different direction $\mathbf{v}$ . The vectors $\mathbf{u}$ and $\mathbf{v}$ are nearly parallel, so the angle $\theta$ between them is tiny. This means their normalized dot product, $\frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|}$, will be a number very, very close to 1, like $0.9999999999991$.
+Imagine you are tracking a deep-space probe. Its antenna is supposed to point in a direction $\mathbf{u}$, but it's actually pointing in a slightly different direction $\mathbf{v}$ [@problem_id:2186115]. The vectors $\mathbf{u}$ and $\mathbf{v}$ are nearly parallel, so the angle $\theta$ between them is tiny. This means their normalized dot product, $\frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \|\mathbf{v}\|}$, will be a number very, very close to 1, like $0.9999999999991$.
 
 Here's the problem: the `arccos` function is extremely sensitive near 1. A minuscule error in the input—caused by the way computers store floating-point numbers—can lead to a huge error in the output angle. It's like trying to measure the thickness of a single sheet of paper using a yardstick marked only in inches.
 
-Fortunately, there is a more robust way. By using the geometric definition of the [cross product](@article_id:156255), $\|\mathbf{u} \times \mathbf{v}\| = \|\mathbf{u}\| \|\mathbf{v}\| \sin\theta$, we can find $\sin\theta$. We can then compute $\tan\theta = \sin\theta/\cos\theta$. The `arctan` function is very well-behaved for small angles (where the argument is close to 0). It turns out the most stable formula for the angle is:
+Fortunately, there is a more robust way. By using the geometric definition of the [cross product](@keyword=cross_product|lang=en-US|style=Feynman), $\|\mathbf{u} \times \mathbf{v}\| = \|\mathbf{u}\| \|\mathbf{v}\| \sin\theta$, we can find $\sin\theta$. We can then compute $\tan\theta = \sin\theta/\cos\theta$. The `arctan` function is very well-behaved for small angles (where the argument is close to 0). It turns out the most stable formula for the angle is:
 
 $$
 \theta = \arctan\left(\frac{\|\mathbf{u} \times \mathbf{v}\|}{\mathbf{u} \cdot \mathbf{v}}\right)

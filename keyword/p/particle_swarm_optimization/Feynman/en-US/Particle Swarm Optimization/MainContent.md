@@ -7,7 +7,7 @@ Imagine you are part of a vast flock of birds, soaring over a landscape of rolli
 
 ### The Particle's Journey: Velocity and Position
 
-In the world of PSO, our "birds" are called **particles**, and the landscape they explore is a mathematical **search space**, where each position represents a potential solution to a problem. For an engineer tuning a machine learning model, a particle's position could be a set of hyperparameters; for a materials scientist, it could be a chemical composition  . Each particle has a state defined by its current position, $\vec{x}$, and its current velocity, $\vec{v}$. The magic happens in how the particle decides to update its velocity for the next step of its journey.
+In the world of PSO, our "birds" are called **particles**, and the landscape they explore is a mathematical **search space**, where each position represents a potential solution to a problem. For an engineer tuning a machine learning model, a particle's position could be a set of hyperparameters; for a materials scientist, it could be a chemical composition [@problem_id:2176772] [@problem_id:66078]. Each particle has a state defined by its current position, $\vec{x}$, and its current velocity, $\vec{v}$. The magic happens in how the particle decides to update its velocity for the next step of its journey.
 
 The core of the algorithm is the velocity update equation, a master formula that balances three competing influences:
 
@@ -31,13 +31,13 @@ $$
 \vec{x}(t+1) = \vec{x}(t) + \vec{v}(t+1)
 $$
 
-And that’s it! With these simple rules, repeated over and over, the swarm collectively navigates incredibly complex landscapes, often finding surprisingly good solutions  .
+And that’s it! With these simple rules, repeated over and over, the swarm collectively navigates incredibly complex landscapes, often finding surprisingly good solutions [@problem_id:2166466] [@problem_id:2166499].
 
 ### The Physics of the Swarm: A Deeper Look
 
 You might wonder, where did this magical update equation come from? Is it just an arbitrary rule that happens to work? The answer is a resounding "no," and the deeper reason reveals a beautiful connection to classical physics. The PSO update rule isn't just pulled out of thin air; it's the discrete-time solution to a continuous-time physical system.
 
-Imagine our particle isn't just a point in an abstract space, but a real physical object with mass, moving through a viscous medium like honey. Its motion is governed by a simple differential equation that Newton would recognize :
+Imagine our particle isn't just a point in an abstract space, but a real physical object with mass, moving through a viscous medium like honey. Its motion is governed by a simple differential equation that Newton would recognize [@problem_id:66078]:
 
 $$
 \frac{d\vec{v}}{dt} = -\alpha \vec{v}(t) + \xi_1 (\vec{p} - \vec{x}(t)) + \xi_2 (\vec{g} - \vec{x}(t))
@@ -61,20 +61,20 @@ Look closely. This is precisely the form of the standard PSO update rule! The in
 The fundamental challenge in any search problem is the trade-off between **exploration** (searching new, unknown areas for a potentially better solution) and **exploitation** (refining the search around the current best-known solution). A search party that only explores may never settle on the treasure, while one that only exploits might get stuck on the first treasure chest it finds, missing a much larger one just over the next hill. PSO's elegance lies in how it navigates this trade-off through its parameters.
 
 The **inertia weight ($w$)** is the primary dial for this balance.
-- A **high inertia weight** (e.g., $w=0.9$) gives particles more momentum. They tend to overshoot the personal and global bests, flying out into new regions of the search space. This favors exploration .
-- A **low inertia weight** (e.g., $w=0.1$) acts like a strong brake. Particles slow down quickly and are more strongly influenced by the pull of the best-known positions, allowing them to fine-tune their location. This favors exploitation .
+- A **high inertia weight** (e.g., $w=0.9$) gives particles more momentum. They tend to overshoot the personal and global bests, flying out into new regions of the search space. This favors exploration [@problem_id:2166514].
+- A **low inertia weight** (e.g., $w=0.1$) acts like a strong brake. Particles slow down quickly and are more strongly influenced by the pull of the best-known positions, allowing them to fine-tune their location. This favors exploitation [@problem_id:2166514].
 
 The **cognitive ($c_1$) and social ($c_2$) coefficients** control the swarm's "psychology."
-- **High $c_1$, low $c_2$**: This creates a swarm of "individualists." Each particle trusts its own memory far more than the group's discovery. This can be good for exploring many different valleys simultaneously, but if the social communication is too weak, the swarm may never agree on the single best solution and will instead stagnate, with small groups clustering around different [local optima](@article_id:172355) .
-- **High $c_2$, low $c_1$**: This creates a "herd mentality." Every particle is strongly drawn to the single global best position. This can lead to very rapid convergence, but it's a high-risk strategy. If the first spot identified as the global best is merely a local minimum (a "pothole"), the entire swarm can quickly collapse into this suboptimal trap, a phenomenon called **[premature convergence](@article_id:166506)** .
+- **High $c_1$, low $c_2$**: This creates a swarm of "individualists." Each particle trusts its own memory far more than the group's discovery. This can be good for exploring many different valleys simultaneously, but if the social communication is too weak, the swarm may never agree on the single best solution and will instead stagnate, with small groups clustering around different [local optima](@keyword=local_optima|lang=en-US|style=Feynman) [@problem_id:2176755].
+- **High $c_2$, low $c_1$**: This creates a "herd mentality." Every particle is strongly drawn to the single global best position. This can lead to very rapid convergence, but it's a high-risk strategy. If the first spot identified as the global best is merely a local minimum (a "pothole"), the entire swarm can quickly collapse into this suboptimal trap, a phenomenon called **[premature convergence](@keyword=premature_convergence|lang=en-US|style=Feynman)** [@problem_id:2176755].
 
-This delicate balance is what gives PSO its power. In a landscape like a long, "corrugated valley" filled with many small potholes ([local minima](@article_id:168559)), a well-tuned PSO swarm can succeed where other methods fail. The particles' inertia and their connection to the *global* best allow them to effectively "fly over" the minor potholes that would trap a purely local [search algorithm](@article_id:172887). The collective momentum carries the swarm down the valley towards the true global minimum at the end .
+This delicate balance is what gives PSO its power. In a landscape like a long, "corrugated valley" filled with many small potholes ([local minima](@keyword=local_minima|lang=en-US|style=Feynman)), a well-tuned PSO swarm can succeed where other methods fail. The particles' inertia and their connection to the *global* best allow them to effectively "fly over" the minor potholes that would trap a purely local [search algorithm](@keyword=search_algorithm|lang=en-US|style=Feynman). The collective momentum carries the swarm down the valley towards the true global minimum at the end [@problem_id:2217748].
 
 ### The Rules of the Game: Stability and Boundaries
 
 Just like a physical system, a particle swarm isn't guaranteed to be stable. If you choose the parameters poorly, things can go spectacularly wrong. If the inertia and acceleration coefficients are too high, the particle velocities can grow exponentially with each step, causing the particles to fly out of the search space towards infinity—a catastrophic divergence.
 
-Remarkably, through the lens of [linear systems theory](@article_id:172331), we can derive a simple and beautiful rule for stability. For a particle that has found the optimal spot, its stability depends on the combination of its inertia and the total pull from the cognitive and social components. The analysis reveals a "[stability triangle](@article_id:275285)" in the parameter space. One of the key results is a surprisingly simple upper bound on the total acceleration, $\varphi = c_1 + c_2$: for the swarm's expected dynamics to converge, you must have :
+Remarkably, through the lens of [linear systems theory](@keyword=linear_systems_theory|lang=en-US|style=Feynman), we can derive a simple and beautiful rule for stability. For a particle that has found the optimal spot, its stability depends on the combination of its inertia and the total pull from the cognitive and social components. The analysis reveals a "[stability triangle](@keyword=stability_triangle|lang=en-US|style=Feynman)" in the parameter space. One of the key results is a surprisingly simple upper bound on the total acceleration, $\varphi = c_1 + c_2$: for the swarm's expected dynamics to converge, you must have [@problem_id:3136559]:
 
 $$
 \varphi \lt 4(1 + w)
@@ -82,12 +82,12 @@ $$
 
 This tells us that as we increase the particle's inertia $w$, we can afford to use stronger acceleration forces without the swarm becoming unstable. This is another example of the deep, unifying principles hiding beneath the algorithm's surface.
 
-Practical implementation also presents challenges, particularly: what do you do when a particle's trajectory takes it outside the allowed search area? A naive approach is to simply "clamp" the particle to the boundary and set its velocity to zero. This seems reasonable, but it can be a death sentence for exploration. A particle that hits the wall loses all its momentum and, if the best-known positions are also on or near that boundary, it can become permanently pinned there, unable to escape and explore the rest of the space .
+Practical implementation also presents challenges, particularly: what do you do when a particle's trajectory takes it outside the allowed search area? A naive approach is to simply "clamp" the particle to the boundary and set its velocity to zero. This seems reasonable, but it can be a death sentence for exploration. A particle that hits the wall loses all its momentum and, if the best-known positions are also on or near that boundary, it can become permanently pinned there, unable to escape and explore the rest of the space [@problem_id:3133179].
 
-A much more robust strategy is a **[reflecting boundary](@article_id:634040)**. When a particle hits the wall, you bounce it back into the domain, perhaps reversing a fraction of its velocity. This preserves its kinetic energy and allows it to rebound off the wall and continue its search, turning boundaries from traps into trampolines. The choice of boundary handling, a seemingly minor detail, can be the difference between a stuck algorithm and a successful discovery .
+A much more robust strategy is a **[reflecting boundary](@keyword=reflecting_boundary|lang=en-US|style=Feynman)**. When a particle hits the wall, you bounce it back into the domain, perhaps reversing a fraction of its velocity. This preserves its kinetic energy and allows it to rebound off the wall and continue its search, turning boundaries from traps into trampolines. The choice of boundary handling, a seemingly minor detail, can be the difference between a stuck algorithm and a successful discovery [@problem_id:3133179].
 
 ### Knowing When to Stop
 
 Finally, how does the swarm know when its search is over? We could just let it run for a fixed number of steps, but that's inefficient. A more intelligent approach is to watch the swarm's behavior. In the beginning, particles are spread far and wide, exploring the landscape. As the search progresses and a promising region is found, the particles naturally start to cluster together.
 
-We can quantify this by measuring the **average swarm radius**—the average distance of each particle from the swarm's geometric center. When this radius shrinks below a small threshold, it's a strong indication that the flock has gathered around a single point, and the search has likely converged. At that point, the autonomous drones can land, knowing they've done their job, and we can be confident that the position of the global best particle, $\vec{g}$, is a very good solution to our problem .
+We can quantify this by measuring the **average swarm radius**—the average distance of each particle from the swarm's geometric center. When this radius shrinks below a small threshold, it's a strong indication that the flock has gathered around a single point, and the search has likely converged. At that point, the autonomous drones can land, knowing they've done their job, and we can be confident that the position of the global best particle, $\vec{g}$, is a very good solution to our problem [@problem_id:2176758].

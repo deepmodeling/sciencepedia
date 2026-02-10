@@ -3,7 +3,7 @@ In the world of optics, our primary tool for manipulating light has long been th
 
 ## Principles and Mechanisms
 
-Imagine you are standing on a beach, watching waves roll towards the shore. As they approach the shallows, you notice they don't just stop; they wheel around, their crests trying to align parallel to the coastline. Why? Because the part of the wave in shallower water moves slower than the part in deeper water. This difference in speed forces the entire [wavefront](@article_id:197462) to pivot. This simple observation is the key to understanding the entire world of gradient-index optics. It's not about magic; it's about a change of pace.
+Imagine you are standing on a beach, watching waves roll towards the shore. As they approach the shallows, you notice they don't just stop; they wheel around, their crests trying to align parallel to the coastline. Why? Because the part of the wave in shallower water moves slower than the part in deeper water. This difference in speed forces the entire [wavefront](@keyword=wavefront|lang=en-US|style=Feynman) to pivot. This simple observation is the key to understanding the entire world of gradient-index optics. It's not about magic; it's about a change of pace.
 
 ### A Marching Band in the Mud: Why Light Bends
 
@@ -15,7 +15,7 @@ Think of a wide column of soldiers marching across a paved field onto a muddy on
 
 This is precisely what happens to a light ray. Light rays always bend toward the region of **higher refractive index**—the "muddier" region where they travel more slowly.
 
-We can even describe *how much* it bends. The sharpness of the curve, known as its **curvature**, depends directly on how rapidly the refractive index is changing—its **gradient**. If you send a ray of light into a GRIN material where the index changes with height $y$ as $n(y) = n_0 - \alpha y$, the initial radius of curvature of its path is found to be $R = n_0 / \alpha$ . A larger gradient (a bigger $\alpha$) means a smaller [radius of curvature](@article_id:274196), a sharper bend. It’s an beautifully direct relationship: the steeper the change in the medium, the more dramatically the light responds.
+We can even describe *how much* it bends. The sharpness of the curve, known as its **curvature**, depends directly on how rapidly the refractive index is changing—its **gradient**. If you send a ray of light into a GRIN material where the index changes with height $y$ as $n(y) = n_0 - \alpha y$, the initial radius of curvature of its path is found to be $R = n_0 / \alpha$ [@problem_id:2235268]. A larger gradient (a bigger $\alpha$) means a smaller [radius of curvature](@keyword=radius_of_curvature|lang=en-US|style=Feynman), a sharper bend. It’s an beautifully direct relationship: the steeper the change in the medium, the more dramatically the light responds.
 
 ### The Unchanging Rule: A Conservation Law for Light
 
@@ -25,19 +25,19 @@ Consider a medium where the refractive index only varies in one direction, say, 
 
 $$ n(y) \cos(\theta) = \text{constant} $$
 
-This is a profound generalization of Snell's law, sometimes called Bouguer's law, and it is the master key to unlocking the secrets of ray trajectories  . It tells us that as a ray moves into a region of lower refractive index (smaller $n(y)$), the term $\cos(\theta)$ must get larger to keep the product constant. This means the angle $\theta$ must get closer to zero, forcing the ray to bend back toward the region of higher index.
+This is a profound generalization of Snell's law, sometimes called Bouguer's law, and it is the master key to unlocking the secrets of ray trajectories [@problem_id:2243892] [@problem_id:585574]. It tells us that as a ray moves into a region of lower refractive index (smaller $n(y)$), the term $\cos(\theta)$ must get larger to keep the product constant. This means the angle $\theta$ must get closer to zero, forcing the ray to bend back toward the region of higher index.
 
 This law gives us incredible predictive power. Imagine launching a ray at an angle $\theta_0$ from a point where the index is $n_0$. The ray will travel, curving as it goes, until it reaches a maximum height, $y_{\text{max}}$. At this peak, the ray is momentarily traveling horizontally, so its angle is $\theta=0$ and $\cos(\theta)=1$. Applying our conservation law, we find the condition for this turning point:
 
 $$ n(y_{\text{max}}) \cdot 1 = n_0 \cos(\theta_0) $$
 
-Just by knowing the initial conditions, we can find the peak of the ray's journey! This is how [optical fibers](@article_id:265153) guide light over continents and how GRIN lenses can trap light and bend it to our will .
+Just by knowing the initial conditions, we can find the peak of the ray's journey! This is how [optical fibers](@keyword=optical_fibers|lang=en-US|style=Feynman) guide light over continents and how GRIN lenses can trap light and bend it to our will [@problem_id:2140997].
 
 ### The Harmonic Dance: How to Build a Perfect Lens
 
-So, what is the ideal index profile for focusing light? The answer lies in one of the most fundamental patterns in all of physics: the [simple harmonic oscillator](@article_id:145270).
+So, what is the ideal index profile for focusing light? The answer lies in one of the most fundamental patterns in all of physics: the [simple harmonic oscillator](@keyword=simple_harmonic_oscillator|lang=en-US|style=Feynman).
 
-Let's design a GRIN medium where the refractive index is highest along the central axis and decreases quadratically as we move away radially. In the [paraxial approximation](@article_id:177436) (for rays close to and nearly parallel to the axis), its profile looks like:
+Let's design a GRIN medium where the refractive index is highest along the central axis and decreases quadratically as we move away radially. In the [paraxial approximation](@keyword=paraxial_approximation|lang=en-US|style=Feynman) (for rays close to and nearly parallel to the axis), its profile looks like:
 
 $$ n(r) \approx n_0 \left(1 - \frac{A}{2} r^2 \right) $$
 
@@ -45,17 +45,17 @@ Here, $r$ is the radial distance from the axis and $A$ is a positive constant. W
 
 $$ \frac{d^2r}{dz^2} = -A r $$
 
-This is the textbook equation for **simple harmonic motion**  . It’s the same equation that describes a mass on a spring or a pendulum swinging back and forth. This means the path of a light ray inside this material is not just a curve, but a perfect **sine wave**!
+This is the textbook equation for **simple harmonic motion** [@problem_id:2265887] [@problem_id:2224667]. It’s the same equation that describes a mass on a spring or a pendulum swinging back and forth. This means the path of a light ray inside this material is not just a curve, but a perfect **sine wave**!
 
-The implication is staggering. Imagine sending a set of parallel rays into a flat slab of this material. Because they all obey this harmonic oscillator equation, they will all oscillate with the same frequency. They will all cross the central axis at the same distance, creating a perfect focus. This flat slab of glass, with no curved surfaces at all, acts as a high-quality lens. A quarter-period of the sine wave corresponds to the focal length of the lens .
+The implication is staggering. Imagine sending a set of parallel rays into a flat slab of this material. Because they all obey this harmonic oscillator equation, they will all oscillate with the same frequency. They will all cross the central axis at the same distance, creating a perfect focus. This flat slab of glass, with no curved surfaces at all, acts as a high-quality lens. A quarter-period of the sine wave corresponds to the focal length of the lens [@problem_id:1745057].
 
-There is an even deeper way to appreciate this. A famous analogy, first explored by Hamilton, connects the path of a light ray with the orbit of a particle in classical mechanics . The trajectory of a light ray in a medium with index $n(r)$ is identical to the path of a particle moving in a specific, corresponding potential $V(r)$. For our quadratic GRIN lens, the equivalent mechanical potential turns out to be $V(r) \propto r^2$. This is the potential of a "harmonic oscillator bowl." A light ray entering this lens behaves just like a marble released into a perfectly parabolic bowl: it is naturally guided, oscillating back and forth about the center. This is why it focuses. The GRIN lens is a light trap, built on the most elegant principle of oscillation in nature.
+There is an even deeper way to appreciate this. A famous analogy, first explored by Hamilton, connects the path of a light ray with the orbit of a particle in classical mechanics [@problem_id:2082603]. The trajectory of a light ray in a medium with index $n(r)$ is identical to the path of a particle moving in a specific, corresponding potential $V(r)$. For our quadratic GRIN lens, the equivalent mechanical potential turns out to be $V(r) \propto r^2$. This is the potential of a "harmonic oscillator bowl." A light ray entering this lens behaves just like a marble released into a perfectly parabolic bowl: it is naturally guided, oscillating back and forth about the center. This is why it focuses. The GRIN lens is a light trap, built on the most elegant principle of oscillation in nature.
 
 ### Nature's Masterpiece: The Lens in Your Eye
 
 This might all seem like clever engineering, a product of modern labs. But nature, the ultimate engineer, figured this out hundreds of millions of years ago. The crystalline lens in your own eye is not a simple piece of uniform biological material; it is a masterpiece of gradient-index optics.
 
-The concentration of proteins called crystallins is highest at the center (the core) of the lens and decreases towards the outer surface. This creates a gradient in the refractive index, with $n_{\text{core}} \approx 1.42$ and $n_{\text{surface}} \approx 1.38$ . The profile is remarkably close to the ideal quadratic profile we just discussed.
+The concentration of proteins called crystallins is highest at the center (the core) of the lens and decreases towards the outer surface. This creates a gradient in the refractive index, with $n_{\text{core}} \approx 1.42$ and $n_{\text{surface}} \approx 1.38$ [@problem_id:1745057]. The profile is remarkably close to the ideal quadratic profile we just discussed.
 
 Why did evolution go to all this trouble? To solve a fundamental flaw of simple lenses: **spherical aberration**. In a uniform lens with spherical surfaces, rays hitting the outer edges are bent too strongly and focus at a closer point than rays passing through the center. This blurs the image.
 
