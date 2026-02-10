@@ -22,7 +22,7 @@ Notice something wonderful? This looks just like multiplication: $(+1) \times (+
 
 $$s_{ij} s_{jk} s_{ki} = +1$$
 
-This simple rule allows us to classify all possible triad configurations. Since each of the three edges can be positive or negative, there are $2^3=8$ specific configurations, but in terms of structure, they fall into just four distinct types based on the number of negative edges  .
+This simple rule allows us to classify all possible triad configurations. Since each of the three edges can be positive or negative, there are $2^3=8$ specific configurations, but in terms of structure, they fall into just four distinct types based on the number of negative edges [@problem_id:4134034] [@problem_id:4312779].
 
 - **Zero negative edges ($+++$)**: All three are friends. The product is $(+1)(+1)(+1)=+1$. This is a **balanced** triad. It's a cozy, stable clique.
 
@@ -32,13 +32,13 @@ This simple rule allows us to classify all possible triad configurations. Since 
 
 - **Three negative edges ($---$)**: Three mutual enemies. The product is $(-1)(-1)(-1)=-1$. This is an **unbalanced** triad. This might seem stable ("let them fight!"), but from the perspective of any single person $i$, their two enemies ($j$ and $k$) are also enemies of each other. The rule "the enemy of my enemy is my friend" is violated, creating social tension.
 
-So, the simple rule is: a triad is balanced if it has an **even** number of negative relationships ($0$ or $2$), and unbalanced if it has an **odd** number ($1$ or $3$). It is crucial to see that this is a purely qualitative property of the signs; the *strength* of the friendships or enmities doesn't matter .
+So, the simple rule is: a triad is balanced if it has an **even** number of negative relationships ($0$ or $2$), and unbalanced if it has an **odd** number ($1$ or $3$). It is crucial to see that this is a purely qualitative property of the signs; the *strength* of the friendships or enmities doesn't matter [@problem_id:4302662].
 
 ### From Local Tension to Global Structure
 
 Now, what happens when we demand that *every* triad in a large social network be balanced? We can think of each unbalanced triad as a pocket of "social tension" or **frustration**. A network, like many physical systems, will tend to rearrange itself to minimize this tension. A friendship might cool into antagonism, or a rivalry might be resolved. Each such change is a flip in the sign of a single relationship.
 
-As a simple example shows, flipping a single edge's sign can affect the balance of all triads it belongs to. If this flip turns more unbalanced triads into balanced ones than the reverse, the overall "social energy" of the network decreases. This process, of local relationships adjusting to reduce cognitive dissonance, is a fundamental mechanism of [social evolution](@entry_id:171575) .
+As a simple example shows, flipping a single edge's sign can affect the balance of all triads it belongs to. If this flip turns more unbalanced triads into balanced ones than the reverse, the overall "social energy" of the network decreases. This process, of local relationships adjusting to reduce cognitive dissonance, is a fundamental mechanism of [social evolution](@keyword=social_evolution|lang=en-US|style=Feynman) [@problem_id:4302646].
 
 The ultimate low-energy state, then, is a network with zero tension—one where every single triad is balanced. This is a **structurally balanced** network. What does such a perfectly harmonious world look like?
 
@@ -50,24 +50,24 @@ The **Structural Balance Theorem** states that a network is structurally balance
 
 The one-group case is the "all friends" utopia. The two-group case is a world perfectly divided. Within each group, all relationships are positive (allies are friends). Between the two groups, all relationships are negative (everyone in one group is an enemy of everyone in the other). This is the world of "us versus them".
 
-This result can be derived from first principles . The condition that every cycle product is positive is equivalent to being able to assign a "spin" $s_i \in \{+1, -1\}$ to each person $i$ such that every relationship sign is simply the product of the spins of the two people involved: $s_{ij} = s_i s_j$. Once such an assignment is found, the partition is obvious: all the people with spin $+1$ form one camp, and all those with spin $-1$ form the other. This elegant mathematical formulation reveals the deep truth of the theory: local consistency, when applied everywhere, forces the entire network into a highly organized, bipolar global structure .
+This result can be derived from first principles [@problem_id:4140708]. The condition that every cycle product is positive is equivalent to being able to assign a "spin" $s_i \in \{+1, -1\}$ to each person $i$ such that every relationship sign is simply the product of the spins of the two people involved: $s_{ij} = s_i s_j$. Once such an assignment is found, the partition is obvious: all the people with spin $+1$ form one camp, and all those with spin $-1$ form the other. This elegant mathematical formulation reveals the deep truth of the theory: local consistency, when applied everywhere, forces the entire network into a highly organized, bipolar global structure [@problem_id:4302664].
 
 ### The Emergence of Bipolarity
 
 This is a startling conclusion. But how could a complex social network organize itself into such a neat structure without a central planner? The answer lies in dynamics and probability. Imagine a network forming over time. When a new relationship forms, people subconsciously try to make it consistent with their existing social circles to avoid tension.
 
-If we model this as a process where each new edge's sign is chosen to create the fewest new unbalanced triads, we find that the system drives itself toward a zero-energy, [balanced state](@entry_id:1121319) . But which balanced state? The "all-friendly" world is just one single configuration. In contrast, the number of ways to partition $n$ people into two opposing factions is a staggering $2^{n-1}-1$ . From a statistical or entropic viewpoint, if the system is simply seeking *any* tension-free state, it is overwhelmingly more likely to land in one of the exponentially many "us vs. them" configurations. Global conflict, in this model, is not an aberration but a statistically favored outcome of local attempts to maintain social harmony.
+If we model this as a process where each new edge's sign is chosen to create the fewest new unbalanced triads, we find that the system drives itself toward a zero-energy, [balanced state](@keyword=balanced_state|lang=en-US|style=Feynman) [@problem_id:4302660]. But which balanced state? The "all-friendly" world is just one single configuration. In contrast, the number of ways to partition $n$ people into two opposing factions is a staggering $2^{n-1}-1$ [@problem_id:4140708]. From a statistical or entropic viewpoint, if the system is simply seeking *any* tension-free state, it is overwhelmingly more likely to land in one of the exponentially many "us vs. them" configurations. Global conflict, in this model, is not an aberration but a statistically favored outcome of local attempts to maintain social harmony.
 
 ### Living with Frustration
 
-Of course, real-world networks are rarely perfectly balanced. The theory, however, does not break down; it becomes even more useful. We can quantify exactly how unbalanced a network is using the **Frustration Index**: the minimum number of relationships whose signs would need to be flipped to make the entire network balanced . This is the irreducible, minimum amount of tension in the system. A network with a low frustration index is "almost" balanced—it might look like two factions with a few "traitors" or "bridges" whose relationships cross the divide, these very links being the stubborn sources of the system's residual tension .
+Of course, real-world networks are rarely perfectly balanced. The theory, however, does not break down; it becomes even more useful. We can quantify exactly how unbalanced a network is using the **Frustration Index**: the minimum number of relationships whose signs would need to be flipped to make the entire network balanced [@problem_id:4134095]. This is the irreducible, minimum amount of tension in the system. A network with a low frustration index is "almost" balanced—it might look like two factions with a few "traitors" or "bridges" whose relationships cross the divide, these very links being the stubborn sources of the system's residual tension [@problem_id:4302664].
 
 ### Beyond the Basics: Robustness and Generalizations
 
-The principles of [structural balance](@entry_id:1132546) are surprisingly robust and flexible.
+The principles of [structural balance](@keyword=structural_balance|lang=en-US|style=Feynman) are surprisingly robust and flexible.
 
-A balanced state isn't as fragile as it might seem. Its **robustness** to random relationship changes (a friendship souring, a rivalry ending) can be precisely calculated. The probability of the network remaining balanced after random sign flips depends intimately on its underlying structure—specifically, its number of independent cycles. A network with many cycles has more constraints, making its balance more fragile to random perturbations .
+A balanced state isn't as fragile as it might seem. Its **robustness** to random relationship changes (a friendship souring, a rivalry ending) can be precisely calculated. The probability of the network remaining balanced after random sign flips depends intimately on its underlying structure—specifically, its number of independent cycles. A network with many cycles has more constraints, making its balance more fragile to random perturbations [@problem_id:4302671].
 
-The theory also extends beyond the simple case of symmetric, friend/enemy relationships. What if relationships are directed ("I like you, but you don't like me")? One elegant approach is to define a single "net relationship" sign for each pair (for example, by multiplying the signs of the two directed links between them) and then apply the same balance principle. This demonstrates the power of the core idea: local consistency, however it is defined, has profound and predictable consequences for global structure .
+The theory also extends beyond the simple case of symmetric, friend/enemy relationships. What if relationships are directed ("I like you, but you don't like me")? One elegant approach is to define a single "net relationship" sign for each pair (for example, by multiplying the signs of the two directed links between them) and then apply the same balance principle. This demonstrates the power of the core idea: local consistency, however it is defined, has profound and predictable consequences for global structure [@problem_id:4302650].
 
 From the simple psychology of a three-person group, we have journeyed to the grand, global structure of a divided world, and seen how simple mathematical rules can illuminate the complex dynamics of social life.

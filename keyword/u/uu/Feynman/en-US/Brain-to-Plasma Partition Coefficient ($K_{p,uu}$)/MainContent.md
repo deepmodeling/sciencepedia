@@ -15,7 +15,7 @@ This simple picture is the essence of the free drug hypothesis. It is not the to
 
 The brain is no ordinary tissue. It is the body's command center, a delicate and vital organ protected from the chaotic chemical environment of the bloodstream by a remarkable fortress: the **Blood-Brain Barrier (BBB)**. This barrier isn't a simple wall, but a highly selective biological interface, a "door policy" of unparalleled strictness for who gets in and who stays out.
 
-If we want to design a drug that acts in the brain—for instance, to treat depression, [schizophrenia](@entry_id:164474), or a brain tumor—we must become experts in this door policy. A first, naive attempt might be to measure the total concentration of a drug in the brain ($C_{\text{tot,brain}}$) and compare it to the total concentration in the plasma ($C_{\text{tot,plasma}}$). This gives us a ratio called the **total brain-to-plasma [partition coefficient](@entry_id:177413)**, or $K_p$.
+If we want to design a drug that acts in the brain—for instance, to treat depression, [schizophrenia](@keyword=schizophrenia|lang=en-US|style=Feynman), or a brain tumor—we must become experts in this door policy. A first, naive attempt might be to measure the total concentration of a drug in the brain ($C_{\text{tot,brain}}$) and compare it to the total concentration in the plasma ($C_{\text{tot,plasma}}$). This gives us a ratio called the **total brain-to-plasma [partition coefficient](@keyword=partition_coefficient|lang=en-US|style=Feynman)**, or $K_p$.
 
 $$
 K_p = \frac{C_{\text{tot,brain}}}{C_{\text{tot,plasma}}}
@@ -23,11 +23,11 @@ $$
 
 You might find a drug with a $K_p$ of 5, meaning the total concentration in the brain is five times that in the plasma! A triumph, you might think. The drug must be flooding the brain. But here lies a subtle trap. What if the brain, with its high lipid content and abundance of proteins, is like a giant piece of flypaper? A drug molecule might get past the doorman only to be immediately stuck to the cellular furniture, rendered inactive. This "stickiness" is called **nonspecific binding**.
 
-This is not a hypothetical worry; it is a central challenge in [drug design](@entry_id:140420) . A high $K_p$ can be a complete illusion, masking poor access to the actual targets within the brain. The drug is *in* the brain, but it's not *free* to do its job.
+This is not a hypothetical worry; it is a central challenge in [drug design](@keyword=drug_design|lang=en-US|style=Feynman) [@problem_id:4939712]. A high $K_p$ can be a complete illusion, masking poor access to the actual targets within the brain. The drug is *in* the brain, but it's not *free* to do its job.
 
 ### $K_{p,uu}$: The Key to the Kingdom
 
-To see through the illusion of $K_p$, we must return to our first principle. We need to compare not the total concentrations, but the *unbound* concentrations. We must measure the concentration of free drug in the brain ($C_{u,brain}$) and compare it to the free drug in the plasma ($C_{u,plasma}$). This ratio is the hero of our story: the **unbound brain-to-plasma [partition coefficient](@entry_id:177413)**, or **$K_{p,uu}$**.
+To see through the illusion of $K_p$, we must return to our first principle. We need to compare not the total concentrations, but the *unbound* concentrations. We must measure the concentration of free drug in the brain ($C_{u,brain}$) and compare it to the free drug in the plasma ($C_{u,plasma}$). This ratio is the hero of our story: the **unbound brain-to-plasma [partition coefficient](@keyword=partition_coefficient|lang=en-US|style=Feynman)**, or **$K_{p,uu}$**.
 
 $$
 K_{p,uu} = \frac{C_{u,brain}}{C_{u,plasma}}
@@ -41,7 +41,7 @@ $$
 C_u = C_{\text{tot}} \times f_u
 $$
 
-With a little algebra, we can see exactly how binding distorts the picture :
+With a little algebra, we can see exactly how binding distorts the picture [@problem_id:4993467]:
 
 $$
 K_{p,uu} = \frac{C_{u,brain}}{C_{u,plasma}} = \frac{C_{\text{tot,brain}} \times f_{u,brain}}{C_{\text{tot,plasma}} \times f_{u,plasma}} = K_p \times \frac{f_{u,brain}}{f_{u,plasma}}
@@ -53,35 +53,35 @@ $$
 K_{p,uu} = 5 \times \frac{0.01}{0.10} = 5 \times 0.1 = 0.5
 $$
 
-The reality is devastating. The unbound, active concentration in the brain is only half of that in the plasma. Our supposed blockbuster is, in fact, being kept out. The high $K_p$ was a phantom, created by the drug getting trapped by the brain's "stickiness." This is why $K_{p,uu}$ is the gold standard; it is the true key to the kingdom of the CNS .
+The reality is devastating. The unbound, active concentration in the brain is only half of that in the plasma. Our supposed blockbuster is, in fact, being kept out. The high $K_p$ was a phantom, created by the drug getting trapped by the brain's "stickiness." This is why $K_{p,uu}$ is the gold standard; it is the true key to the kingdom of the CNS [@problem_id:4988140].
 
 ### What the Numbers Tell Us: A Coder's Guide to the BBB
 
-The value of $K_{p,uu}$ is more than just a correction factor; it's a diagnostic tool that lets us read the mind of the Blood-Brain Barrier. At steady state, where the concentrations have settled, the value of $K_{p,uu}$ reveals the net result of all the [transport processes](@entry_id:177992) at play.
+The value of $K_{p,uu}$ is more than just a correction factor; it's a diagnostic tool that lets us read the mind of the Blood-Brain Barrier. At steady state, where the concentrations have settled, the value of $K_{p,uu}$ reveals the net result of all the [transport processes](@keyword=transport_processes|lang=en-US|style=Feynman) at play.
 
 *   **Case 1: $K_{p,uu} \approx 1$. The Passive Bystander.**
-    This means that $C_{u,brain} \approx C_{u,plasma}$. The unbound drug concentrations are equal on both sides of the barrier. This is the state of **equilibrium**. It's what we expect if the drug is simply moving back and forth across the BBB by **passive diffusion**, like a crowd of people aimlessly wandering in and out of an open gate until the density is the same inside and out . Crucially, this equilibrium of *unbound* drug is achieved regardless of how sticky the plasma or brain are . In a carefully [controlled experiment](@entry_id:144738) where a drug achieves this state, we can be confident that the BBB is acting as a simple, passive membrane for that molecule .
+    This means that $C_{u,brain} \approx C_{u,plasma}$. The unbound drug concentrations are equal on both sides of the barrier. This is the state of **equilibrium**. It's what we expect if the drug is simply moving back and forth across the BBB by **passive diffusion**, like a crowd of people aimlessly wandering in and out of an open gate until the density is the same inside and out [@problem_id:4980036]. Crucially, this equilibrium of *unbound* drug is achieved regardless of how sticky the plasma or brain are [@problem_id:4599318]. In a carefully [controlled experiment](@keyword=controlled_experiment|lang=en-US|style=Feynman) where a drug achieves this state, we can be confident that the BBB is acting as a simple, passive membrane for that molecule [@problem_id:4753305].
 
 *   **Case 2: $K_{p,uu}  1$. The Bouncer.**
-    This means $C_{u,brain}  C_{u,plasma}$. The concentration of free drug inside the brain is being held systematically lower than outside. The BBB is not a passive bystander; it is an active bouncer, forcefully ejecting the drug from the brain. This process is called **net efflux**. The bouncers are real molecular machines—a family of proteins known as **efflux transporters**, with notorious members like **P-glycoprotein (P-gp)** and **Breast Cancer Resistance Protein (BCRP)**. They use cellular energy (ATP) to pump foreign substances out of the protected space of the brain. We can prove they are at work. In experiments where rats are given a drug that is an efflux substrate, the $K_{p,uu}$ might be, say, 0.2. But if they are also given an inhibitor like elacridar—a chemical that effectively tells the bouncers to take a break—the $K_{p,uu}$ can jump to 0.8, much closer to 1. The bouncers were indeed limiting the drug's access, and by inhibiting them, we let more of the drug stay in the brain .
+    This means $C_{u,brain}  C_{u,plasma}$. The concentration of free drug inside the brain is being held systematically lower than outside. The BBB is not a passive bystander; it is an active bouncer, forcefully ejecting the drug from the brain. This process is called **net efflux**. The bouncers are real molecular machines—a family of proteins known as **efflux transporters**, with notorious members like **P-glycoprotein (P-gp)** and **Breast Cancer Resistance Protein (BCRP)**. They use cellular energy (ATP) to pump foreign substances out of the protected space of the brain. We can prove they are at work. In experiments where rats are given a drug that is an efflux substrate, the $K_{p,uu}$ might be, say, 0.2. But if they are also given an inhibitor like elacridar—a chemical that effectively tells the bouncers to take a break—the $K_{p,uu}$ can jump to 0.8, much closer to 1. The bouncers were indeed limiting the drug's access, and by inhibiting them, we let more of the drug stay in the brain [@problem_id:4575184].
 
 *   **Case 3: $K_{p,uu}  1$. The Enthusiastic Host.**
     This means $C_{u,brain}  C_{u,plasma}$. The brain is actively concentrating the drug, pulling it in against its concentration gradient. The BBB is acting as a gracious host, using energy to welcome the substance inside. This process is called **net influx**, and it's mediated by **influx transporters**. The brain does this for molecules it desperately needs, like glucose, amino acids, and other essential nutrients. Designing a drug that can "trick" these transporters is a key strategy for improving brain delivery.
 
 ### The Unifying Equation of Brain Access
 
-Physics is at its most beautiful when it can distill complex phenomena into a single, elegant equation. We can do just that for [drug transport](@entry_id:170867) across the BBB. At steady state, the world is in balance: the rate of drug entering the brain must exactly equal the rate of drug leaving it.
+Physics is at its most beautiful when it can distill complex phenomena into a single, elegant equation. We can do just that for [drug transport](@keyword=drug_transport|lang=en-US|style=Feynman) across the BBB. At steady state, the world is in balance: the rate of drug entering the brain must exactly equal the rate of drug leaving it.
 
 Rate of Influx = Rate of Efflux
 
-Let's break this down. The influx has a passive component (driven by $C_{u,plasma}$) and a potential active component. The efflux also has a passive component (driven by $C_{u,brain}$) and a potential active component. We can describe the "strength" of these processes using engineering terms: the **permeability-surface area product ($PS$)** for passive diffusion, and **clearances ($CL$)** for [active transport](@entry_id:145511).
+Let's break this down. The influx has a passive component (driven by $C_{u,plasma}$) and a potential active component. The efflux also has a passive component (driven by $C_{u,brain}$) and a potential active component. We can describe the "strength" of these processes using engineering terms: the **permeability-surface area product ($PS$)** for passive diffusion, and **clearances ($CL$)** for [active transport](@keyword=active_transport|lang=en-US|style=Feynman).
 
 Our balance equation becomes:
 $$
 (PS \cdot C_{u,plasma}) + (CL_{\text{uptake}} \cdot C_{u,plasma}) = (PS \cdot C_{u,brain}) + (CL_{\text{efflux}} \cdot C_{u,brain})
 $$
 
-With a bit of rearranging to solve for our hero metric, $K_{p,uu} = C_{u,brain} / C_{u,plasma}$, we arrive at a wonderfully simple and powerful result :
+With a bit of rearranging to solve for our hero metric, $K_{p,uu} = C_{u,brain} / C_{u,plasma}$, we arrive at a wonderfully simple and powerful result [@problem_id:4526732]:
 
 $$
 K_{p,uu} = \frac{PS + CL_{\text{uptake}}}{PS + CL_{\text{efflux}}}
@@ -89,7 +89,7 @@ $$
 
 This is the master equation. It tells us that $K_{p,uu}$ is simply the ratio of the total forces pushing the drug *in* to the total forces pushing the drug *out*. Look how it perfectly explains our three cases:
 -   If there is no active transport ($CL_{\text{uptake}} = 0$ and $CL_{\text{efflux}} = 0$), the equation becomes $K_{p,uu} = \frac{PS}{PS} = 1$. This is our passive bystander.
--   If there is net efflux ($CL_{\text{efflux}}  CL_{\text{uptake}}$), the denominator is larger than the numerator, so $K_{p,uu}  1$. This is our bouncer. For a typical efflux substrate, we might have $PS=0.1$, $CL_{\text{uptake}}=0$, and a total efflux clearance of $CL_{\text{efflux}}=0.3$. Our equation predicts $K_{p,uu} = \frac{0.1}{0.1 + 0.3} = 0.25$ .
+-   If there is net efflux ($CL_{\text{efflux}}  CL_{\text{uptake}}$), the denominator is larger than the numerator, so $K_{p,uu}  1$. This is our bouncer. For a typical efflux substrate, we might have $PS=0.1$, $CL_{\text{uptake}}=0$, and a total efflux clearance of $CL_{\text{efflux}}=0.3$. Our equation predicts $K_{p,uu} = \frac{0.1}{0.1 + 0.3} = 0.25$ [@problem_id:4600144].
 -   If there is net influx ($CL_{\text{uptake}}  CL_{\text{efflux}}$), the numerator is larger, so $K_{p,uu}  1$. This is our enthusiastic host.
 
 This single equation unifies the physics of passive diffusion and the biology of active transport into one predictive framework.
@@ -106,4 +106,4 @@ Because Drug Y has a higher unbound concentration pushing its way in, it will ac
 
 The result? The *effective* efflux clearance, $CL_{\text{efflux}}$, actually goes *down* for Drug Y because the transporters are overwhelmed. Looking back at our master equation, if you decrease the denominator ($PS + CL_{\text{efflux}}$), the value of $K_{p,uu}$ must go *up*.
 
-This is a stunning and counter-intuitive consequence of a complex system . By simply making a drug less sticky in the plasma, we can saturate its efflux mechanism at the BBB and paradoxically *improve* its relative brain penetration ($K_{p,uu}$). It's a powerful reminder that in the intricate dance of biology, changing one parameter can have surprising and cascading effects on the entire system. Understanding these principles is not just an academic exercise; it is the very heart of designing medicines that can reach the most protected corners of the human body.
+This is a stunning and counter-intuitive consequence of a complex system [@problem_id:5063946]. By simply making a drug less sticky in the plasma, we can saturate its efflux mechanism at the BBB and paradoxically *improve* its relative brain penetration ($K_{p,uu}$). It's a powerful reminder that in the intricate dance of biology, changing one parameter can have surprising and cascading effects on the entire system. Understanding these principles is not just an academic exercise; it is the very heart of designing medicines that can reach the most protected corners of the human body.

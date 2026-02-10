@@ -1,7 +1,7 @@
 ## 引言
 当我们想到加速度时，我们常常会想象当汽车加速时，我们被推向座椅靠背的情景。然而，这种熟悉的感觉只讲述了故事的一半。另一半是当同一辆车以恒定速度急转弯时，我们感受到的侧向力。这也是加速度——不是速率的改变，而是方向的改变。物理学将加速度定义为速度的任何变化，而速度是一个同时具有大小（速率）和方向的矢量。未能区分加速度的这两种作用，会在我们对运动几何的理解上造成空白。本文通过将加速度分解为其组成部分来填补这一空白。
 
-在接下来的章节中，我们将首先探讨这种分解的“原理与机制”，深入研究切向和正交加速度的数学原理及其与路径曲率的深刻联系。然后，我们将发现其深远的“应用与跨学科联系”，揭示这单一的几何原理如何支配着从抛出的球、过山车设计到[带电粒子](@entry_id:160311)的运动乃至时空本身结构的轨迹。
+在接下来的章节中，我们将首先探讨这种分解的“原理与机制”，深入研究切向和正交加速度的数学原理及其与路径曲率的深刻联系。然后，我们将发现其深远的“应用与跨学科联系”，揭示这单一的几何原理如何支配着从抛出的球、过山车设计到[带电粒子](@keyword=charged_particle|lang=zh-CN|style=Feynman)的运动乃至时空本身结构的轨迹。
 
 ## 原理与机制
 
@@ -11,59 +11,59 @@
 
 运动物体的总加速度（我们可以用矢量 $\vec{a}$ 来表示）可以被认为具有两个不同的任务。一部分加速度致力于改变物体的速率，另一部分则致力于改变其运动方向。矢量微积分的精妙之处在于它允许我们清晰地将这两个角色分离开来。
 
-我们可以将总加[速度矢量](@entry_id:269648) $\vec{a}$ 分解为两个相互垂直（或称**正交**）的分量。
+我们可以将总加[速度矢量](@keyword=velocity_vector|lang=zh-CN|style=Feynman) $\vec{a}$ 分解为两个相互垂直（或称**正交**）的分量。
 
-第一个是**[切向加速度](@entry_id:173884)** $\vec{a}_T$。这个分量与速度矢量 $\vec{v}$ 指向同一条直线，它“相切”于运动路径。其唯一的职责是使物体加速或减速。当你在那条笔直的公路上被推向汽车座椅靠背时，你感受到的就是[切向加速度](@entry_id:173884)的作用。
+第一个是**[切向加速度](@keyword=tangential_acceleration|lang=zh-CN|style=Feynman)** $\vec{a}_T$。这个分量与速度矢量 $\vec{v}$ 指向同一条直线，它“相切”于运动路径。其唯一的职责是使物体加速或减速。当你在那条笔直的公路上被推向汽车座椅靠背时，你感受到的就是[切向加速度](@keyword=tangential_acceleration|lang=zh-CN|style=Feynman)的作用。
 
-第二个，也是对我们来说更有趣的分量，是**正交加速度**，通常称为**[法向加速度](@entry_id:170071)** $\vec{a}_N$。这个分量指向与[速度矢量](@entry_id:269648)成直角（$90^\circ$）的方向，朝向物体所描绘曲线的内侧中心。它对物体的速率没有影响；其唯一的工作就是使物体转向，改变其行进方向。你在转弯的汽车中感受到的侧向力就是这种[法向加速度](@entry_id:170071)的结果。
+第二个，也是对我们来说更有趣的分量，是**正交加速度**，通常称为**[法向加速度](@keyword=normal_acceleration|lang=zh-CN|style=Feynman)** $\vec{a}_N$。这个分量指向与[速度矢量](@keyword=velocity_vector|lang=zh-CN|style=Feynman)成直角（$90^\circ$）的方向，朝向物体所描绘曲线的内侧中心。它对物体的速率没有影响；其唯一的工作就是使物体转向，改变其行进方向。你在转弯的汽车中感受到的侧向力就是这种[法向加速度](@keyword=normal_acceleration|lang=zh-CN|style=Feynman)的结果。
 
 总而言之，总加速度是这两个正交部分的矢量和：$\vec{a} = \vec{a}_T + \vec{a}_N$。
 
-### 运动的几何学：分解加[速度矢量](@entry_id:269648)
+### 运动的几何学：分解加[速度矢量](@keyword=velocity_vector|lang=zh-CN|style=Feynman)
 
-这种分解不仅仅是一个方便的思维模型，它是一个精确的数学现实。假设一架先进无人机的仪器提供了其[瞬时速度](@entry_id:167797) $\vec{v}$ 和总加速度 $\vec{a}$ 。它的控制系统如何计算这两个分量呢？
+这种分解不仅仅是一个方便的思维模型，它是一个精确的数学现实。假设一架先进无人机的仪器提供了其[瞬时速度](@keyword=instantaneous_velocity|lang=zh-CN|style=Feynman) $\vec{v}$ 和总加速度 $\vec{a}$ [@problem_id:2208705]。它的控制系统如何计算这两个分量呢？
 
-关键在于一个优美的几何工具，称为**矢量投影**。为了找到切向分量 $\vec{a}_T$，我们只需将总加[速度矢量](@entry_id:269648) $\vec{a}$ 投影到[速度矢量](@entry_id:269648) $\vec{v}$ 上。你可以想象一个光源从垂直于[速度矢量](@entry_id:269648)的位置照射；$\vec{a}$ 落在 $\vec{v}$ 直线上的“影子”就是 $\vec{a}_T$。在数学上，这是通过[点积](@entry_id:149019)实现的：
+关键在于一个优美的几何工具，称为**矢量投影**。为了找到切向分量 $\vec{a}_T$，我们只需将总加[速度矢量](@keyword=velocity_vector|lang=zh-CN|style=Feynman) $\vec{a}$ 投影到[速度矢量](@keyword=velocity_vector|lang=zh-CN|style=Feynman) $\vec{v}$ 上。你可以想象一个光源从垂直于[速度矢量](@keyword=velocity_vector|lang=zh-CN|style=Feynman)的位置照射；$\vec{a}$ 落在 $\vec{v}$ 直线上的“影子”就是 $\vec{a}_T$。在数学上，这是通过[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)实现的：
 
 $$ \vec{a}_T = \frac{\vec{a} \cdot \vec{v}}{|\vec{v}|^2} \vec{v} $$
 
-[点积](@entry_id:149019) $\vec{a} \cdot \vec{v}$ 衡量了加速度与速度的对齐程度。除以 $|\vec{v}|^2$ 并乘以 $\vec{v}$ 将这种对齐关系缩放成一个沿着路径的恰当矢量。
+[点积](@keyword=dot_product|lang=zh-CN|style=Feynman) $\vec{a} \cdot \vec{v}$ 衡量了加速度与速度的对齐程度。除以 $|\vec{v}|^2$ 并乘以 $\vec{v}$ 将这种对齐关系缩放成一个沿着路径的恰当矢量。
 
 那么法向分量 $\vec{a}_N$ 呢？它甚至更简单。它就是剩下的部分！既然 $\vec{a} = \vec{a}_T + \vec{a}_N$，我们可以通过相减来找到法向分量：
 
 $$ \vec{a}_N = \vec{a} - \vec{a}_T $$
 
-这难道不优雅吗？加速度中不改变速率的部分*必然*是改变方向的部分。这两个分量 $\vec{a}_T$ 和 $\vec{a}_N$ 根据它们的构造方式，总是相互正交的。它们构成了一个随物体移动的小型[坐标系](@entry_id:156346)。这个由[切向量](@entry_id:265494) $\hat{T}$（速度方向）和[主法向量](@entry_id:263263) $\hat{N}$（[法向加速度](@entry_id:170071)方向）张成的局部平面被称为**[密切平面](@entry_id:167179)**——源自拉丁语“亲吻”之意——因为它是每时每刻最“贴合”曲线的平面  。
+这难道不优雅吗？加速度中不改变速率的部分*必然*是改变方向的部分。这两个分量 $\vec{a}_T$ 和 $\vec{a}_N$ 根据它们的构造方式，总是相互正交的。它们构成了一个随物体移动的小型[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)。这个由[切向量](@keyword=tangent_vectors|lang=zh-CN|style=Feynman) $\hat{T}$（速度方向）和[主法向量](@keyword=principal_normal_vector|lang=zh-CN|style=Feynman) $\hat{N}$（[法向加速度](@keyword=normal_acceleration|lang=zh-CN|style=Feynman)方向）张成的局部平面被称为**[密切平面](@keyword=osculating_plane|lang=zh-CN|style=Feynman)**——源自拉丁语“亲吻”之意——因为它是每时每刻最“贴合”曲线的平面 [@problem_id:1680300] [@problem_id:2213363]。
 
-### 转弯的艺术：曲率与[法向加速度](@entry_id:170071)
+### 转弯的艺术：曲率与[法向加速度](@keyword=normal_acceleration|lang=zh-CN|style=Feynman)
 
-是什么决定了[法向加速度](@entry_id:170071)的大小？直观上，我们知道一个平缓、宽阔的弯道比一个突然的发夹弯更容易通过。这种“急促度”的概念在几何学中由一个称为**曲率**的属性来量化，用希腊字母 $\kappa$ 表示。直线的曲率为零。一个非常急的转弯具有高曲率。
+是什么决定了[法向加速度](@keyword=normal_acceleration|lang=zh-CN|style=Feynman)的大小？直观上，我们知道一个平缓、宽阔的弯道比一个突然的发夹弯更容易通过。这种“急促度”的概念在几何学中由一个称为**曲率**的属性来量化，用希腊字母 $\kappa$ 表示。直线的曲率为零。一个非常急的转弯具有高曲率。
 
-[法向加速度](@entry_id:170071)的大小 $a_N = |\vec{a}_N|$ 与物体的速率 $v$ 和路径的曲率 $\kappa$ 通过一个基本关系奇妙地联系在一起：
+[法向加速度](@keyword=normal_acceleration|lang=zh-CN|style=Feynman)的大小 $a_N = |\vec{a}_N|$ 与物体的速率 $v$ 和路径的曲率 $\kappa$ 通过一个基本关系奇妙地联系在一起：
 
 $$ a_N = \kappa v^2 $$
 
-通常，用**[曲率半径](@entry_id:274690)** $R$ 来思考更直观，它就是曲率的倒数，即 $R = 1/\kappa$。使用这个关系，公式变为：
+通常，用**[曲率半径](@keyword=radius_of_curvature|lang=zh-CN|style=Feynman)** $R$ 来思考更直观，它就是曲率的倒数，即 $R = 1/\kappa$。使用这个关系，公式变为：
 
 $$ a_N = \frac{v^2}{R} $$
 
-这个关系意义深远。它告诉我们，沿着一条曲线运动所需的[法向加速度](@entry_id:170071)与速度的平方成正比。这就是为什么高速公路出口匝道有严格的速度限制。如果你将速度加倍，你需要*四倍*的[法向加速度](@entry_id:170071)——因而需要轮胎与路面之间四倍的侧向[摩擦力](@entry_id:171772)——才能完成同样的转弯。如果这个力不可用，你将无法转弯而滑出路面。这个原理无处不在，从设计蚀刻精确图案的机器人触控笔  到流体中粒子的路径 。
+这个关系意义深远。它告诉我们，沿着一条曲线运动所需的[法向加速度](@keyword=normal_acceleration|lang=zh-CN|style=Feynman)与速度的平方成正比。这就是为什么高速公路出口匝道有严格的速度限制。如果你将速度加倍，你需要*四倍*的[法向加速度](@keyword=normal_acceleration|lang=zh-CN|style=Feynman)——因而需要轮胎与路面之间四倍的侧向[摩擦力](@keyword=friction_force|lang=zh-CN|style=Feynman)——才能完成同样的转弯。如果这个力不可用，你将无法转弯而滑出路面。这个原理无处不在，从设计蚀刻精确图案的机器人触控笔 [@problem_id:2141170] 到流体中粒子的路径 [@problem_id:1797157]。
 
-如果某个瞬间[法向加速度](@entry_id:170071)变为零，这意味着路径在那一刻是直的；其曲率为零。曲线上这样的点称为**[拐点](@entry_id:144929)** 。此外，我们可以考虑物体运动方向变化的速率。这由单位[速度矢量](@entry_id:269648)的时间导数 $\frac{d\hat{v}}{dt}$ 捕捉。其大小由简单而优雅的比率 $|\frac{d\hat{v}}{dt}| = \frac{a_N}{v}$ 直接给出 。要在低速（小 $v$）下急转弯（大 $a_N$），你必须非常迅速地改变你的方向矢量。
+如果某个瞬间[法向加速度](@keyword=normal_acceleration|lang=zh-CN|style=Feynman)变为零，这意味着路径在那一刻是直的；其曲率为零。曲线上这样的点称为**[拐点](@keyword=inflection_points|lang=zh-CN|style=Feynman)** [@problem_id:2141182]。此外，我们可以考虑物体运动方向变化的速率。这由单位[速度矢量](@keyword=velocity_vector|lang=zh-CN|style=Feynman)的时间导数 $\frac{d\hat{v}}{dt}$ 捕捉。其大小由简单而优雅的比率 $|\frac{d\hat{v}}{dt}| = \frac{a_N}{v}$ 直接给出 [@problem_id:2186618]。要在低速（小 $v$）下急转弯（大 $a_N$），你必须非常迅速地改变你的方向矢量。
 
-### 在弯曲世界中的旅程：[曲面](@entry_id:267450)上的加速度
+### 在弯曲世界中的旅程：[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上的加速度
 
-到目前为止，我们的讨论都隐含地假设运动是在一个“平坦”的空间中。但如果运动被限制在一个[曲面](@entry_id:267450)上，比如火星丘陵地貌上的探测车、雪丘场上的滑雪者，或者蛋白质复杂表面上的分子 ，情况会怎样呢？故事变得更加引人入胜。
+到目前为止，我们的讨论都隐含地假设运动是在一个“平坦”的空间中。但如果运动被限制在一个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上，比如火星丘陵地貌上的探测车、雪丘场上的滑雪者，或者蛋白质复杂表面上的分子 [@problem_id:1503384]，情况会怎样呢？故事变得更加引人入胜。
 
-假设一个粒子沿着抛物面上的路径 $\gamma(t)$ 运动 。我们仍然可以在我们熟悉的三维空间中计算其加速度矢量 $\ddot{\gamma}(t)$。然而，这个二维[曲面](@entry_id:267450)世界的居民会以不同的方式体验这种加速度。一部分加速度可能试图使他们在[曲面](@entry_id:267450)*内部*转弯，而另一部分可能试图将他们从[曲面](@entry_id:267450)上抬起或压入[曲面](@entry_id:267450)。
+假设一个粒子沿着抛物面上的路径 $\gamma(t)$ 运动 [@problem_id:1678556]。我们仍然可以在我们熟悉的三维空间中计算其加速度矢量 $\ddot{\gamma}(t)$。然而，这个二维[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)世界的居民会以不同的方式体验这种加速度。一部分加速度可能试图使他们在[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)*内部*转弯，而另一部分可能试图将他们从[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上抬起或压入[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)。
 
-这引出了第二个强大的分解。总的三维加速度矢量可以分解为一个*与[曲面](@entry_id:267450)相切*的分量和一个*与[曲面](@entry_id:267450)垂直*的分量。
+这引出了第二个强大的分解。总的三维加速度矢量可以分解为一个*与[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)相切*的分量和一个*与[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)垂直*的分量。
 
-与[曲面](@entry_id:267450)相切的分量是[曲面](@entry_id:267450)居民会感知到的他们的加速度。在微分几何的语言中，这被称为**[协变](@entry_id:634097)加速度** 。它描述了从[曲面](@entry_id:267450)本身的内在视角来看，路径是如何弯曲的。
+与[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)相切的分量是[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)居民会感知到的他们的加速度。在微分几何的语言中，这被称为**[协变](@keyword=covariation|lang=zh-CN|style=Feynman)加速度** [@problem_id:1678556]。它描述了从[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)本身的内在视角来看，路径是如何弯曲的。
 
-与[曲面](@entry_id:267450)垂直的分量是使粒子保持在[曲面](@entry_id:267450)上的原因。它是[曲面](@entry_id:267450)必须施加的力，以防止粒子飞离或穿透。其大小既取决于路径，也取决于[曲面](@entry_id:267450)本身的曲率 。
+与[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)垂直的分量是使粒子保持在[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上的原因。它是[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)必须施加的力，以防止粒子飞离或穿透。其大小既取决于路径，也取决于[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)本身的曲率 [@problem_id:1651285]。
 
-这引出了**[测地线](@entry_id:269969)**的优美概念——在[曲面](@entry_id:267450)上可以采取的“最直的可能”路径。[测地线](@entry_id:269969)是协变加速度为零的路径。一架沿[大圆](@entry_id:268970)航线飞行的飞机就是在遵循一条[测地线](@entry_id:269969)。从球形地球的角度来看，它是在“直线”飞行。然而，这架飞机在不断地加速。它的总三维加速度矢量指向地球中心。这个加速度完全垂直于[曲面](@entry_id:267450)，提供了使飞机随着地球[曲面](@entry_id:267450)弯曲所需的力。
+这引出了**[测地线](@keyword=autoparallel_curve|lang=zh-CN|style=Feynman)**的优美概念——在[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上可以采取的“最直的可能”路径。[测地线](@keyword=autoparallel_curve|lang=zh-CN|style=Feynman)是协变加速度为零的路径。一架沿[大圆](@keyword=great_circle|lang=zh-CN|style=Feynman)航线飞行的飞机就是在遵循一条[测地线](@keyword=autoparallel_curve|lang=zh-CN|style=Feynman)。从球形地球的角度来看，它是在“直线”飞行。然而，这架飞机在不断地加速。它的总三维加速度矢量指向地球中心。这个加速度完全垂直于[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，提供了使飞机随着地球[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)弯曲所需的力。
 
-因此，我们最初在平坦空间中遇到的正交加速度，现在以新的视角被看待。当在[曲面](@entry_id:267450)上时，它会分裂。一部分成为协变加速度，使物体在其弯曲的世界内转弯；另一部分则成为与[曲面](@entry_id:267450)的力相互作用，这是[曲面](@entry_id:267450)自身几何形状的结果。这是一个物理学统一性的惊人例子，揭示了运动动力学与空间几何学之间深刻而优美的联系。
+因此，我们最初在平坦空间中遇到的正交加速度，现在以新的视角被看待。当在[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上时，它会分裂。一部分成为协变加速度，使物体在其弯曲的世界内转弯；另一部分则成为与[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的力相互作用，这是[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)自身几何形状的结果。这是一个物理学统一性的惊人例子，揭示了运动动力学与空间几何学之间深刻而优美的联系。
 

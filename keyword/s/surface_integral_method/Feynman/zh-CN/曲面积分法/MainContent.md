@@ -1,7 +1,7 @@
 ## 引言
-在对物理世界的研究中，一个深刻的原理时常显现：一个体积内部发生的故事，常常被书写在其边界上。从飞机机翼上的风力到[电荷](@entry_id:275494)辐射出的[电场](@entry_id:194326)，理解表面是理解整体的关键。[曲面积分](@entry_id:144805)法正是将这一原理形式化的数学语言，它提供了一个强大的工具集，用于将区域边缘的属性与内部发生的现象联系起来。它解决了我们如何通过审视复杂、[大规模系统](@entry_id:166848)与世界的交界面来量化和分析这些系统的基本问题。
+在对物理世界的研究中，一个深刻的原理时常显现：一个体积内部发生的故事，常常被书写在其边界上。从飞机机翼上的风力到[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)辐射出的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)，理解表面是理解整体的关键。[曲面积分](@keyword=surface_integrals|lang=zh-CN|style=Feynman)法正是将这一原理形式化的数学语言，它提供了一个强大的工具集，用于将区域边缘的属性与内部发生的现象联系起来。它解决了我们如何通过审视复杂、[大规模系统](@keyword=large_scale_systems|lang=zh-CN|style=Feynman)与世界的交界面来量化和分析这些系统的基本问题。
 
-本文将从概念基础到深远应用，探讨[曲面积分](@entry_id:144805)法。首先，在**“原理与机制”**一章中，我们将揭开向量场和通量核心思想的神秘面纱，并探索[散度定理](@entry_id:143110)和[斯托克斯定理](@entry_id:264534)令人惊叹的优雅之处，这些定理是该方法的数学基石。我们还将揭示用于驯服无穷大的技术，这些技术使我们即使在函数看似失效时也能进行计算。随后，**“应用与跨学科联系”**一章将展示这些抽象原理如何付诸实践，为理论物理学提供优雅的捷径，并构成[流体力学](@entry_id:136788)和电磁学等领域现代工程仿真的计算支柱。
+本文将从概念基础到深远应用，探讨[曲面积分](@keyword=surface_integrals|lang=zh-CN|style=Feynman)法。首先，在**“原理与机制”**一章中，我们将揭开向量场和通量核心思想的神秘面纱，并探索[散度定理](@keyword=gauss_s_theorem|lang=zh-CN|style=Feynman)和[斯托克斯定理](@keyword=the_curl_theorem|lang=zh-CN|style=Feynman)令人惊叹的优雅之处，这些定理是该方法的数学基石。我们还将揭示用于驯服无穷大的技术，这些技术使我们即使在函数看似失效时也能进行计算。随后，**“应用与跨学科联系”**一章将展示这些抽象原理如何付诸实践，为理论物理学提供优雅的捷径，并构成[流体力学](@keyword=fluid_dynamics|lang=zh-CN|style=Feynman)和电磁学等领域现代工程仿真的计算支柱。
 
 ## 原理与机制
 
@@ -11,75 +11,75 @@
 
 为了精确地讨论这一点，我们需要**向量场**的语言。向量场就是一个空间，其中每个点都附有一个向量——一个具有特定大小和方向的箭头。河流中水的速度、大气中风的流动，或磁铁周围无形的力线，都由向量场描述。让我们将我们的一般向量场称为 $\vec{F}$。
 
-通量是场 $\vec{F}$ 穿透给定[曲面](@entry_id:267450) $S$ 的总量。为了计算它，我们完全按照直觉的建议来做。我们将[曲面](@entry_id:267450)分解为一系列微小的、近乎平坦的小块，每块的面积我们称之为 $dS$。每个小块都有一个朝向，即它“面向”的方向，我们用一个与小块垂直的**[法向量](@entry_id:264185)** $\vec{n}$ 来表示。我们将这个方向和面积组合成一个向量，$d\vec{S} = \vec{n} \, dS$。
+通量是场 $\vec{F}$ 穿透给定[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman) $S$ 的总量。为了计算它，我们完全按照直觉的建议来做。我们将[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)分解为一系列微小的、近乎平坦的小块，每块的面积我们称之为 $dS$。每个小块都有一个朝向，即它“面向”的方向，我们用一个与小块垂直的**[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman)** $\vec{n}$ 来表示。我们将这个方向和面积组合成一个向量，$d\vec{S} = \vec{n} \, dS$。
 
-对于每个微小的小块，通过它的流量由场 $\vec{F}$ 平行于法向量 $\vec{n}$ 的分量乘以小块的面积给出。这通过[点积](@entry_id:149019)完美地捕捉：$\vec{F} \cdot d\vec{S}$。为了得到总通量，我们只需将整个[曲面](@entry_id:267450)上所有微小块的贡献相加。这个“和”就是我们所说的**[曲面积分](@entry_id:144805)**：
+对于每个微小的小块，通过它的流量由场 $\vec{F}$ 平行于法向量 $\vec{n}$ 的分量乘以小块的面积给出。这通过[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)完美地捕捉：$\vec{F} \cdot d\vec{S}$。为了得到总通量，我们只需将整个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上所有微小块的贡献相加。这个“和”就是我们所说的**[曲面积分](@keyword=surface_integrals|lang=zh-CN|style=Feynman)**：
 
 $$
 \Phi = \iint_S \vec{F} \cdot d\vec{S}
 $$
 
-虽然原则上我们可以直接计算任何给定[曲面](@entry_id:267450)（如[抛物面](@entry_id:264713) ）的这个积分，但过程可能相当繁琐。然而，大自然为我们提供了一些令人惊叹的优雅捷径。
+虽然原则上我们可以直接计算任何给定[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)（如[抛物面](@keyword=paraboloid|lang=zh-CN|style=Feynman) [@problem_id:1028630]）的这个积分，但过程可能相当繁琐。然而，大自然为我们提供了一些令人惊叹的优雅捷径。
 
 ### 伟大的统一：散度定理
 
-如果我们的[曲面](@entry_id:267450)是*封闭的*，会发生什么？想象一个密封的盒子、一个球体或一个气球——一个没有边界、完全包围一个体积的[曲面](@entry_id:267450)。我们仍然可以问总通量是多少，但现在我们测量的是从体积中*净*流*出*的量。是流出的场多于流入的，还是反之？
+如果我们的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)是*封闭的*，会发生什么？想象一个密封的盒子、一个球体或一个气球——一个没有边界、完全包围一个体积的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)。我们仍然可以问总通量是多少，但现在我们测量的是从体积中*净*流*出*的量。是流出的场多于流入的，还是反之？
 
 为了回答这个问题，我们需要观察体积内部。我们可以在空间的每个点定义向量场的一个局部属性，称为**散度**，记作 $\nabla \cdot \vec{F}$。散度衡量场从一个点“辐射”出去（或汇聚进来）的趋势。散度为正的点就像一个源，向外喷射场。散度为负的点就像一个汇，向内吞噬场。散度为零的场只是流过，没有产生或消失。
 
-这里蕴含着一个深刻的真理，这是物理学和数学中最优美的结果之一，被称为**[散度定理](@entry_id:143110)**或**高斯定理**。它指出，一个向量场通过一个封闭[曲面](@entry_id:267450)的净向外通量，完[全等](@entry_id:273198)于该[曲面](@entry_id:267450)所包围体积内所有源和汇的总和（即总散度）。
+这里蕴含着一个深刻的真理，这是物理学和数学中最优美的结果之一，被称为**[散度定理](@keyword=gauss_s_theorem|lang=zh-CN|style=Feynman)**或**高斯定理**。它指出，一个向量场通过一个封闭[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的净向外通量，完[全等](@keyword=congruences|lang=zh-CN|style=Feynman)于该[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)所包围体积内所有源和汇的总和（即总散度）。
 
 $$
 \oiint_S \vec{F} \cdot d\vec{S} = \iiint_V (\nabla \cdot \vec{F}) \, dV
 $$
 
-这个定理是一个深刻统一的陈述：边界的一个属性（通过 $S$ 的总通量）完全由内部的内容（在 $V$ 中的总散度）决定。其意义是惊人的。假设你有一个散度处处恒定的向量场，比如说 $\nabla \cdot \vec{F} = 5$。该定理告诉我们，从*任何*封闭[曲面](@entry_id:267450)流出的总通量就是其所包围体积的 $5$ 倍  。无论形状是简单的球体、椭球体，还是复杂的、凹凸不平的土豆——只要体积相同，净通量就相同！繁琐的[曲面积分](@entry_id:144805)被简单的乘法所取代。
+这个定理是一个深刻统一的陈述：边界的一个属性（通过 $S$ 的总通量）完全由内部的内容（在 $V$ 中的总散度）决定。其意义是惊人的。假设你有一个散度处处恒定的向量场，比如说 $\nabla \cdot \vec{F} = 5$。该定理告诉我们，从*任何*封闭[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)流出的总通量就是其所包围体积的 $5$ 倍 [@problem_id:27053] [@problem_id:27067]。无论形状是简单的球体、椭球体，还是复杂的、凹凸不平的土豆——只要体积相同，净通量就相同！繁琐的[曲面积分](@keyword=surface_integrals|lang=zh-CN|style=Feynman)被简单的乘法所取代。
 
 ### 流动的物理学：高斯定律
 
-这个定理不仅仅是一个数学上的奇观；它是宇宙的一条基本定律。考虑从单个[点电荷](@entry_id:263616)发出的[电场](@entry_id:194326)，或从单个点质量发出的[引力场](@entry_id:169425)。这些场向所有方向辐射出去，其强度随距离的平方 $1/r^2$ 而减小。该向量场可以写成 $\vec{F} = C \frac{\hat{r}}{r^2}$，其中 $\hat{r}$ 是指向远离源的单位向量。
+这个定理不仅仅是一个数学上的奇观；它是宇宙的一条基本定律。考虑从单个[点电荷](@keyword=point_charges|lang=zh-CN|style=Feynman)发出的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)，或从单个点质量发出的[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)。这些场向所有方向辐射出去，其强度随距离的平方 $1/r^2$ 而减小。该向量场可以写成 $\vec{F} = C \frac{\hat{r}}{r^2}$，其中 $\hat{r}$ 是指向远离源的单位向量。
 
-让我们用它来计算通过以源为中心、半径为 $R$ 的球体的通量。在球体表面的每一点上，场都与[法向量](@entry_id:264185)完美对齐，其大小是恒定的 $C/R^2$。总通量就是场的强度乘以球体的表面积：
+让我们用它来计算通过以源为中心、半径为 $R$ 的球体的通量。在球体表面的每一点上，场都与[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman)完美对齐，其大小是恒定的 $C/R^2$。总通量就是场的强度乘以球体的表面积：
 
 $$
 \Phi = \left( \frac{C}{R^2} \right) \times (4\pi R^2) = 4\pi C
 $$
 
-看看这个结果！$R^2$ 项相互抵消了。总通量是一个常数，完全与我们选择的球体大小无关。这是守恒的物理体现：无论我们测量的距离有多远，从源发出的总“流量”是守恒的。这就是电学和[引力](@entry_id:175476)学中**[高斯定律](@entry_id:141493)**的精髓。
+看看这个结果！$R^2$ 项相互抵消了。总通量是一个常数，完全与我们选择的球体大小无关。这是守恒的物理体现：无论我们测量的距离有多远，从源发出的总“流量”是守恒的。这就是电学和[引力](@keyword=gravitational_force|lang=zh-CN|style=Feynman)学中**[高斯定律](@keyword=gauss_s_law|lang=zh-CN|style=Feynman)**的精髓。
 
-[散度定理](@entry_id:143110)给了我们更深刻的洞察 。如果围绕原点的任何球体的通量都是一个非零常数，但对于任何*不*包围原点的[曲面](@entry_id:267450)，通量都为零，那么源——即散度——必定在除了原点这一点之外的所有地方都为零。场的整个“源性”都集中在一个无穷小的点上。这个概念引出了**狄拉克δ函数**，这是描述一个完美[点源](@entry_id:196698)的数学工具。
+[散度定理](@keyword=gauss_s_theorem|lang=zh-CN|style=Feynman)给了我们更深刻的洞察 [@problem_id:1629430]。如果围绕原点的任何球体的通量都是一个非零常数，但对于任何*不*包围原点的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，通量都为零，那么源——即散度——必定在除了原点这一点之外的所有地方都为零。场的整个“源性”都集中在一个无穷小的点上。这个概念引出了**狄拉克δ函数**，这是描述一个完美[点源](@keyword=point_source|lang=zh-CN|style=Feynman)的数学工具。
 
 ### 旋转与环流：斯托克斯定理
 
 散度描述了一个场如何扩张或收缩。但如果它旋转和涡旋呢？我们可以定义向量场的另一个局部属性，称为**旋度**，记作 $\nabla \times \vec{F}$。想象一下将一个微小的桨轮放入场中；如果场在该点有非零的旋度，桨轮就会开始旋转。旋度向量指向这个微观旋转的轴线。
 
-正如散度定理将[曲面积分](@entry_id:144805)与[体积分](@entry_id:171119)联系起来一样，**斯托克斯定理**将*旋度*通过一个[曲面](@entry_id:267450)的通量与沿其边界曲线的积分联系起来。它指出，通过一个开放[曲面](@entry_id:267450)（如我们的渔网）的总“涡旋度”等于场沿该[曲面](@entry_id:267450)边界边缘的总环流量。
+正如散度定理将[曲面积分](@keyword=surface_integrals|lang=zh-CN|style=Feynman)与[体积分](@keyword=volume_integration|lang=zh-CN|style=Feynman)联系起来一样，**斯托克斯定理**将*旋度*通过一个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的通量与沿其边界曲线的积分联系起来。它指出，通过一个开放[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)（如我们的渔网）的总“涡旋度”等于场沿该[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)边界边缘的总环流量。
 
 $$
 \iint_S (\nabla \times \vec{F}) \cdot d\vec{S} = \oint_{\partial S} \vec{F} \cdot d\vec{r}
 $$
 
-我们再次发现了一个[曲面](@entry_id:267450)与其边界之间的深刻联系。考虑一个**无旋**的向量场，意味着它处处旋度为零 。斯托克斯定理立即告诉我们，这个场围绕*任何*闭合回路的线积分必须为零。这样的场被称为**保守场**，它们在物理学中至关重要；静电场和[引力场](@entry_id:169425)就是典型的例子。
+我们再次发现了一个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)与其边界之间的深刻联系。考虑一个**无旋**的向量场，意味着它处处旋度为零 [@problem_id:1663631]。斯托克斯定理立即告诉我们，这个场围绕*任何*闭合回路的线积分必须为零。这样的场被称为**保守场**，它们在物理学中至关重要；静电场和[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)就是典型的例子。
 
-### 驯服无穷：现实世界中的[曲面积分](@entry_id:144805)
+### 驯服无穷：现实世界中的[曲面积分](@keyword=surface_integrals|lang=zh-CN|style=Feynman)
 
-到目前为止，我们的数学之旅一直处于一个干净、行为良好的世界。但现实往往更具挑战性。自然界的基本相互作用，如[引力](@entry_id:175476)和电磁学，涉及的场看起来像 $1/R$ 或 $1/R^2$，其中 $R$ 是到源的距离。如果我们试图在源的位置（$R=0$）计算[曲面积分](@entry_id:144805)，我们试图积分的函数会爆炸到无穷大！我们怎么可能处理这个问题？这正是[应用数学](@entry_id:170283)中最优雅的一些思想发挥作用的地方，它们构成了诸如**[边界元法 (BEM)](@entry_id:746941)** 等强大数值技术的基础。
+到目前为止，我们的数学之旅一直处于一个干净、行为良好的世界。但现实往往更具挑战性。自然界的基本相互作用，如[引力](@keyword=gravitational_force|lang=zh-CN|style=Feynman)和电磁学，涉及的场看起来像 $1/R$ 或 $1/R^2$，其中 $R$ 是到源的距离。如果我们试图在源的位置（$R=0$）计算[曲面积分](@keyword=surface_integrals|lang=zh-CN|style=Feynman)，我们试图积分的函数会爆炸到无穷大！我们怎么可能处理这个问题？这正是[应用数学](@keyword=applied_mathematics|lang=zh-CN|style=Feynman)中最优雅的一些思想发挥作用的地方，它们构成了诸如**[边界元法 (BEM)](@keyword=boundary_element_method_(bem)|lang=zh-CN|style=Feynman)** 等强大数值技术的基础。
 
-第一个洞见是，积分过程本身的几何特性可以拯救我们。当我们对一个行为类似 $1/R$ 的函数在一个[曲面](@entry_id:267450)片上积[分时](@entry_id:274419)，我们通常会切换到以[奇点](@entry_id:137764)为中心的极[坐标系](@entry_id:156346)。在这些[坐标系](@entry_id:156346)中，距离就是[径向坐标](@entry_id:165186) $\rho$。但[面积元](@entry_id:263205)不仅仅是 $d\rho$；它是 $\rho \, d\rho \, d\theta$。被积函数变为 $\left(\frac{1}{\rho}\right) \times (\rho \, d\rho \, d\theta) = d\rho \, d\theta$。核函数中麻烦的 $1/\rho$ 被面积元中的 $\rho$ 完美抵消了！那个看起来如此 menacing 的[奇点](@entry_id:137764)就此消失，留下一个行为良好的积分，通常会产生无害的对数项  。
+第一个洞见是，积分过程本身的几何特性可以拯救我们。当我们对一个行为类似 $1/R$ 的函数在一个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)片上积[分时](@keyword=time_sharing|lang=zh-CN|style=Feynman)，我们通常会切换到以[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)为中心的极[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)。在这些[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中，距离就是[径向坐标](@keyword=radial_coordinate|lang=zh-CN|style=Feynman) $\rho$。但[面积元](@keyword=surface_area_element|lang=zh-CN|style=Feynman)不仅仅是 $d\rho$；它是 $\rho \, d\rho \, d\theta$。被积函数变为 $\left(\frac{1}{\rho}\right) \times (\rho \, d\rho \, d\theta) = d\rho \, d\theta$。核函数中麻烦的 $1/\rho$ 被面积元中的 $\rho$ 完美抵消了！那个看起来如此 menacing 的[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)就此消失，留下一个行为良好的积分，通常会产生无害的对数项 [@problem_id:3352477] [@problem_id:2560782]。
 
-对于更复杂的情况，我们可以使用一种非常聪明的技巧，称为**[奇异点](@entry_id:199525)提取** 。假设我们需要计算一个复杂函数的积分，该函数包含一个简单的、已知的[奇点](@entry_id:137764)（如 $1/R$）。我们不能直接将其输入标准的[数值积分器](@entry_id:752799)。所以，我们这样做：我们加上再减去仅含简单奇异部分的积分。
+对于更复杂的情况，我们可以使用一种非常聪明的技巧，称为**[奇异点](@keyword=exceptional_points|lang=zh-CN|style=Feynman)提取** [@problem_id:3341371]。假设我们需要计算一个复杂函数的积分，该函数包含一个简单的、已知的[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)（如 $1/R$）。我们不能直接将其输入标准的数值积分器。所以，我们这样做：我们加上再减去仅含简单奇异部分的积分。
 
 $$
 \int (\text{Complicated}) \, dS = \int (\text{Complicated} - \text{Simple}) \, dS + \int (\text{Simple}) \, dS
 $$
 
-这个看似微不足道的步骤是变革性的。第一个积分 $\int (\text{Complicated} - \text{Simple}) \, dS$ 现在是完全正则的，因为无穷大已经相互抵消了。它是一个光滑的函数，计算机可以高精度地进行积分。第二个积分 $\int (\text{Simple}) \, dS$ 包含[奇点](@entry_id:137764)，但由于它很简单，我们通常可以用解析技巧（如我们刚刚讨论的极[坐标变换](@entry_id:172727)）精确地手动求解它。例如，将基本的 $\frac{1}{4\pi R}$ 核在一个半径为 $a$ 的小圆盘上积分，会得到优美而简单的结果 $a/2$ 。通过将[问题分解](@entry_id:272624)为计算机处理的[部分和](@entry_id:162077)数学家处理的部分，我们可以驯服无穷大并得到精确的答案。
+这个看似微不足道的步骤是变革性的。第一个积分 $\int (\text{Complicated} - \text{Simple}) \, dS$ 现在是完全正则的，因为无穷大已经相互抵消了。它是一个光滑的函数，计算机可以高精度地进行积分。第二个积分 $\int (\text{Simple}) \, dS$ 包含[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)，但由于它很简单，我们通常可以用解析技巧（如我们刚刚讨论的极[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman)）精确地手动求解它。例如，将基本的 $\frac{1}{4\pi R}$ 核在一个半径为 $a$ 的小圆盘上积分，会得到优美而简单的结果 $a/2$ [@problem_id:3341371]。通过将[问题分解](@keyword=problem_decomposition|lang=zh-CN|style=Feynman)为计算机处理的[部分和](@keyword=partial_sums|lang=zh-CN|style=Feynman)数学家处理的部分，我们可以驯服无穷大并得到精确的答案。
 
 ### 从理论到技术
 
-这些原理不仅仅是抽象的练习；它们是现代科学和工程大部分领域的引擎。考虑设计一辆车，无论是F1赛车还是客机。升力和阻力这些关键力是空气压力和[摩擦力](@entry_id:171772)作用在车辆表面每一点上的结果。根据定义，总力是**应力张量**在物体上的[曲面积分](@entry_id:144805)。
+这些原理不仅仅是抽象的练习；它们是现代科学和工程大部分领域的引擎。考虑设计一辆车，无论是F1赛车还是客机。升力和阻力这些关键力是空气压力和[摩擦力](@keyword=friction_force|lang=zh-CN|style=Feynman)作用在车辆表面每一点上的结果。根据定义，总力是**应力张量**在物体上的[曲面积分](@keyword=surface_integrals|lang=zh-CN|style=Feynman)。
 
-**[有限体积法 (FVM)](@entry_id:749403)** 是计算流体力学的基石，它将散度定理付诸实践以解决这个问题 。计算机创建车辆的几何模型，并将其表面细分为数千或数百万个小的、平坦的多边形——有限体积。然后，计算机求解流体流动方程，并计算每个微小多边形上的力矢量（“牵[引力](@entry_id:175476)”）。
+**[有限体积法 (FVM)](@keyword=finite_volume_method_(fvm)|lang=zh-CN|style=Feynman)** 是计算流体力学的基石，它将散度定理付诸实践以解决这个问题 [@problem_id:3291641]。计算机创建车辆的几何模型，并将其表面细分为数千或数百万个小的、平坦的多边形——有限体积。然后，计算机求解流体流动方程，并计算每个微小多边形上的力矢量（“牵[引力](@keyword=gravitational_force|lang=zh-CN|style=Feynman)”）。
 
-然后，通过简单地将所有这些单独的力矢量相加，就可以找到车辆上的总空气动力。这不过是[曲面积分](@entry_id:144805)的离散近似。正是[散度定理](@entry_id:143110)——它将应力的[曲面积分](@entry_id:144805)与其散度的[体积分](@entry_id:171119)等同起来——为这个极其强大的技术提供了严谨的数学基础。从19世纪定理的抽象之美到21世纪技术的设计，[曲面积分](@entry_id:144805)法提供了一个统一而强大的视角，来理解和改造我们的世界。
+然后，通过简单地将所有这些单独的力矢量相加，就可以找到车辆上的总空气动力。这不过是[曲面积分](@keyword=surface_integrals|lang=zh-CN|style=Feynman)的离散近似。正是[散度定理](@keyword=gauss_s_theorem|lang=zh-CN|style=Feynman)——它将应力的[曲面积分](@keyword=surface_integrals|lang=zh-CN|style=Feynman)与其散度的[体积分](@keyword=volume_integration|lang=zh-CN|style=Feynman)等同起来——为这个极其强大的技术提供了严谨的数学基础。从19世纪定理的抽象之美到21世纪技术的设计，[曲面积分](@keyword=surface_integrals|lang=zh-CN|style=Feynman)法提供了一个统一而强大的视角，来理解和改造我们的世界。
 

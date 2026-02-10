@@ -23,7 +23,7 @@ In a perfectly designed system, this passage would be wide and forgiving. But in
 
 Why do these passageways, normally adequate, begin to cause problems? The answer lies in a beautiful and sometimes frustrating principle of biology: the body's response to stress. Consider a competitive volleyball player or a baseball pitcher whose career depends on powerful, repetitive overhead arm motions.
 
-Every time they serve or pitch, they subject the muscles around the thoracic outlet—the scalenes and subclavius—to cyclical mechanical stress ($\sigma$) and strain ($\epsilon$). The body responds to this demand through a process called **[mechanotransduction](@entry_id:146690)**. At the cellular level, the repetitive loading signals muscle [satellite cells](@entry_id:182612) to activate, causing the muscle fibers to grow larger and stronger—a process known as **hypertrophy**. The muscles bulk up to handle the workload.
+Every time they serve or pitch, they subject the muscles around the thoracic outlet—the scalenes and subclavius—to cyclical mechanical stress ($\sigma$) and strain ($\epsilon$). The body responds to this demand through a process called **[mechanotransduction](@keyword=mechanotransduction|lang=en-US|style=Feynman)**. At the cellular level, the repetitive loading signals muscle [satellite cells](@keyword=satellite_cells|lang=en-US|style=Feynman) to activate, causing the muscle fibers to grow larger and stronger—a process known as **hypertrophy**. The muscles bulk up to handle the workload.
 
 But there's a downside. This repetitive motion also causes microscopic tears and inflammation in the muscles and surrounding connective tissues. The body's natural wound-healing response kicks in, dispatching fibroblasts to lay down collagen fibers to repair the damage. When this happens over and over, the healing becomes disorganized, leading to **fibrosis**, or scarring. This scar tissue is much stiffer than healthy tissue; its elastic modulus ($E$) increases, and its compliance ($C$), or ability to stretch, decreases ($C \propto 1/E$).
 
@@ -43,7 +43,7 @@ This is the classic "effort thrombosis," or Paget-Schroetter syndrome, often see
 
 #### Arterial TOS (ATOS): The Kinked Hose
 
-This is the rarest ($1\%$) but most dangerous form of TOS. It is typically caused not by [muscle hypertrophy](@entry_id:151233), but by a hard, unyielding bony anomaly, most often a **cervical rib**—an extra rib growing from the C7 vertebra. The subclavian artery is forced to arch over this bony prominence, getting kinked and battered with every arm movement. This chronic trauma can cause the arterial wall to weaken and bulge out, forming an **aneurysm**. Turbulent flow inside this aneurysm promotes the formation of blood clots. The supreme danger is that pieces of this clot can break off and travel downstream (**embolization**), blocking blood flow to the hand and fingers, causing acute ischemia and potentially leading to gangrene and limb loss.
+This is the rarest ($1\%$) but most dangerous form of TOS. It is typically caused not by [muscle hypertrophy](@keyword=muscle_hypertrophy|lang=en-US|style=Feynman), but by a hard, unyielding bony anomaly, most often a **cervical rib**—an extra rib growing from the C7 vertebra. The subclavian artery is forced to arch over this bony prominence, getting kinked and battered with every arm movement. This chronic trauma can cause the arterial wall to weaken and bulge out, forming an **aneurysm**. Turbulent flow inside this aneurysm promotes the formation of blood clots. The supreme danger is that pieces of this clot can break off and travel downstream (**embolization**), blocking blood flow to the hand and fingers, causing acute ischemia and potentially leading to gangrene and limb loss.
 
 ### The Art of Decompression: Widening the Passageway
 
@@ -57,7 +57,7 @@ This surgery is the epitome of anatomical precision. It is not a demolition. The
 
 ### Navigating Perils and Pitfalls
 
-Such a complex procedure in a crowded anatomical space is not without risk. The apical pleura, the dome-like lining of the lung, is fused to the underside of the first rib. During resection, it can be torn, causing a **pneumothorax** (a collapsed lung). Intraoperatively, this creates a dramatic scene: the anesthesiologist sees a sudden spike in the pressure needed to ventilate the patient, and the surgeon, upon filling the wound with saline, may see a tell-tale stream of bubbles with each positive-pressure breath—[direct proof](@entry_id:141172) of an air leak.
+Such a complex procedure in a crowded anatomical space is not without risk. The apical pleura, the dome-like lining of the lung, is fused to the underside of the first rib. During resection, it can be torn, causing a **pneumothorax** (a collapsed lung). Intraoperatively, this creates a dramatic scene: the anesthesiologist sees a sudden spike in the pressure needed to ventilate the patient, and the surgeon, upon filling the wound with saline, may see a tell-tale stream of bubbles with each positive-pressure breath—[direct proof](@keyword=direct_proof|lang=en-US|style=Feynman) of an air leak.
 
 Even more daunting is the risk of vascular injury. The massive subclavian vessels are inches from the surgeon's instruments. An errant move can lead to torrential **hemorrhage**, a life-threatening surgical emergency.
 

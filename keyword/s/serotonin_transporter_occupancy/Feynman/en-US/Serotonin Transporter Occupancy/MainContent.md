@@ -9,7 +9,7 @@ To understand how a tiny molecule can reshape the landscape of human emotion, we
 
 ### The Dance of Binding: What is Occupancy?
 
-Imagine a bustling city square representing the synapse, the tiny gap between two neurons. After a message is sent, little molecular messengers—in our case, **serotonin**—are released into this square. To keep the square from becoming overcrowded, a fleet of specialized sanitation trucks, the **serotonin transporters (SERT)**, constantly patrols the area, capturing serotonin molecules and returning them to the presynaptic neuron for reuse. This [reuptake](@entry_id:170553) process is the brain's natural way of turning down the volume of the serotonergic signal.
+Imagine a bustling city square representing the synapse, the tiny gap between two neurons. After a message is sent, little molecular messengers—in our case, **serotonin**—are released into this square. To keep the square from becoming overcrowded, a fleet of specialized sanitation trucks, the **serotonin transporters (SERT)**, constantly patrols the area, capturing serotonin molecules and returning them to the presynaptic neuron for reuse. This [reuptake](@keyword=reuptake|lang=en-US|style=Feynman) process is the brain's natural way of turning down the volume of the serotonergic signal.
 
 Now, a Selective Serotonin Reuptake Inhibitor (SSRI) arrives on the scene. Its job is to interfere with these sanitation trucks. It does this by literally sitting in the driver's seat. This act of a drug molecule physically binding to its intended molecular target is called **target engagement**. The fraction of all available SERT molecules that are bound by the drug at any given moment is known as the **serotonin transporter occupancy**.
 
@@ -27,9 +27,9 @@ Here, $[L]$ is the concentration of the free, unbound drug at the site of the tr
 
 ### The Competition: From $K_d$ to $K_i$
 
-Our simple model must be refined, because the synapse is not an empty playground. The SSRI molecule is not just looking for an empty seat on the transporter; it is competing for that very same seat with the molecule the transporter is designed to carry: serotonin itself. This is the classic scenario of **[competitive inhibition](@entry_id:142204)**.
+Our simple model must be refined, because the synapse is not an empty playground. The SSRI molecule is not just looking for an empty seat on the transporter; it is competing for that very same seat with the molecule the transporter is designed to carry: serotonin itself. This is the classic scenario of **[competitive inhibition](@keyword=competitive_inhibition|lang=en-US|style=Feynman)**.
 
-When our drug molecule has to elbow its way past the endogenous serotonin, its apparent ability to bind is reduced. This means we need a slightly different constant to describe its potency in the real, competitive biological environment. This constant is the **[inhibition constant](@entry_id:189001) ($K_i$)**. The $K_i$ is essentially an "effective $K_d$" that already accounts for the presence of the natural competitor. In the context of antidepressants, the $K_i$ tells us how good a drug is at inhibiting SERT in the face of competition from serotonin.
+When our drug molecule has to elbow its way past the endogenous serotonin, its apparent ability to bind is reduced. This means we need a slightly different constant to describe its potency in the real, competitive biological environment. This constant is the **[inhibition constant](@keyword=inhibition_constant|lang=en-US|style=Feynman) ($K_i$)**. The $K_i$ is essentially an "effective $K_d$" that already accounts for the presence of the natural competitor. In the context of antidepressants, the $K_i$ tells us how good a drug is at inhibiting SERT in the face of competition from serotonin.
 
 Fortunately, this correction doesn't overly complicate our math. We can still use our beautiful occupancy formula, but we substitute the context-aware $K_i$ for the idealized $K_d$:
 
@@ -41,7 +41,7 @@ Here, $C$ represents the concentration of the inhibitor drug. This simple, power
 
 The hyperbolic nature of the occupancy equation—$O = C / (C + K_i)$—has a profound consequence: **saturation**. The relationship is not linear. Doubling the drug dose does *not* necessarily double the number of occupied transporters.
 
-Think of it like coloring in a checkerboard. At first, every stroke of your crayon easily fills an empty square. But when 90% of the squares are already colored, you must spend much more time and effort to find and fill the remaining 10%. Your effort yields [diminishing returns](@entry_id:175447).
+Think of it like coloring in a checkerboard. At first, every stroke of your crayon easily fills an empty square. But when 90% of the squares are already colored, you must spend much more time and effort to find and fill the remaining 10%. Your effort yields [diminishing returns](@keyword=diminishing_returns|lang=en-US|style=Feynman).
 
 So it is with drug occupancy. At low concentrations (where $C \ll K_i$), the equation simplifies to $O \approx C/K_i$, and the relationship is nearly linear. But as the concentration rises and approaches or exceeds the $K_i$, we enter the saturation regime. For example, to go from 10% occupancy to 20% might require a small increase in dose, but to go from 80% occupancy to 90% requires a much larger dose increase.
 
@@ -53,7 +53,7 @@ This principle of saturation is why clinicians, guided by models that relate dru
 
 If high SERT occupancy can be achieved within hours or days of starting an SSRI, why does it famously take several weeks for a patient to feel better? The answer lies in a beautiful and crucial feature of biology: homeostasis. The brain is not a passive circuit board; it is an active, self-regulating system that resists change.
 
-Our serotonergic neuron is not just a release-and-[reuptake](@entry_id:170553) machine. On its own cell body and dendrites, far from the synapse, it has listening posts called **autoreceptors** (specifically, the **$5-\text{HT}_{1A}$ autoreceptor**). These receptors function like a thermostat for the entire neuron. When they detect that serotonin levels around the cell body are getting too high, they trigger an internal braking signal that reduces the neuron's [firing rate](@entry_id:275859). Less firing means less serotonin released at the terminals.
+Our serotonergic neuron is not just a release-and-[reuptake](@keyword=reuptake|lang=en-US|style=Feynman) machine. On its own cell body and dendrites, far from the synapse, it has listening posts called **autoreceptors** (specifically, the **$5-\text{HT}_{1A}$ autoreceptor**). These receptors function like a thermostat for the entire neuron. When they detect that serotonin levels around the cell body are getting too high, they trigger an internal braking signal that reduces the neuron's [firing rate](@keyword=firing_rate|lang=en-US|style=Feynman). Less firing means less serotonin released at the terminals.
 
 This creates a powerful **negative feedback loop**. When a patient first takes an SSRI, two things happen almost at once:
 1.  **Reuptake is blocked** at the synapse, which tends to increase serotonin levels.
@@ -63,12 +63,12 @@ The net result is that the initial increase in synaptic serotonin is buffered, b
 
 ### The Slow Rewiring: From Target Engagement to Clinical Effect
 
-The final act of our story unfolds over the subsequent weeks. The brain cannot maintain this standoff forever. Faced with a sustained, drug-induced increase in serotonin, the neuron begins to adapt. The autoreceptor "thermostat" itself is recalibrated. The neuron gradually reduces the number or sensitivity of its $5-\text{HT}_{1A}$ [autoreceptors](@entry_id:174391) in a process called **desensitization**.
+The final act of our story unfolds over the subsequent weeks. The brain cannot maintain this standoff forever. Faced with a sustained, drug-induced increase in serotonin, the neuron begins to adapt. The autoreceptor "thermostat" itself is recalibrated. The neuron gradually reduces the number or sensitivity of its $5-\text{HT}_{1A}$ [autoreceptors](@keyword=autoreceptors|lang=en-US|style=Feynman) in a process called **desensitization**.
 
-This process is slow, with a time constant on the order of one to two weeks. As the autoreceptors desensitize, their braking power fades. The neuron is "disinhibited" and begins to fire more robustly again. Now, with the reuptake pumps still blocked by the SSRI and the release mechanism restored to full power, the stage is set for a profound and sustained increase in [serotonin signaling](@entry_id:173178) throughout the brain's networks.
+This process is slow, with a time constant on the order of one to two weeks. As the autoreceptors desensitize, their braking power fades. The neuron is "disinhibited" and begins to fire more robustly again. Now, with the reuptake pumps still blocked by the SSRI and the release mechanism restored to full power, the stage is set for a profound and sustained increase in [serotonin signaling](@keyword=serotonin_signaling|lang=en-US|style=Feynman) throughout the brain's networks.
 
 But even this is not the end of the story. The ultimate antidepressant effect is believed to arise from **neuroplasticity**—a slow rewiring of the brain's circuits. The sustained high level of serotonin acts as a growth-promoting signal. It activates complex intracellular machinery (involving molecules like CREB) that leads to the synthesis of "neurotrophic" or "brain-nourishing" factors, most famously **Brain-Derived Neurotrophic Factor (BDNF)**.
 
-BDNF, in turn, helps neurons grow stronger connections, sprout new [dendritic spines](@entry_id:178272), and improve the health and function of the circuits involved in mood regulation. This cascade of events—from gene transcription to protein synthesis to the physical remodeling of synapses—is inherently slow. Each step has its own time constant, with the final structural changes taking weeks to mature.
+BDNF, in turn, helps neurons grow stronger connections, sprout new [dendritic spines](@keyword=dendritic_spines|lang=en-US|style=Feynman), and improve the health and function of the circuits involved in mood regulation. This cascade of events—from gene transcription to protein synthesis to the physical remodeling of synapses—is inherently slow. Each step has its own time constant, with the final structural changes taking weeks to mature.
 
 This multi-stage sequence—rapid target engagement, followed by slow autoreceptor desensitization, followed by even slower neuroplastic rewiring—provides a beautiful and complete explanation for the therapeutic lag of antidepressants. It shows that the initial drug-target interaction is just the first domino to fall in a long and complex cascade that ultimately reshapes the brain itself.

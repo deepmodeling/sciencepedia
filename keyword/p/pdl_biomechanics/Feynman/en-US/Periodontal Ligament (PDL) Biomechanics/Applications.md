@@ -1,6 +1,6 @@
 ## Applications and Interdisciplinary Connections
 
-Understanding the principles of the periodontal ligament (PDL) provides insights across a spectrum of disciplines, from clinical dentistry and surgery to pain physiology and [tissue engineering](@entry_id:142974).
+Understanding the principles of the periodontal ligament (PDL) provides insights across a spectrum of disciplines, from clinical dentistry and surgery to pain physiology and [tissue engineering](@keyword=tissue_engineering|lang=en-US|style=Feynman).
 
 ### The Orthodontist as a Biomechanical Engineer
 
@@ -10,11 +10,11 @@ This "optimal" force is not a single number; it depends on the tooth and the pat
 
 The geometry of movement also matters. Pushing a tooth deeper into its socket (intrusion) requires the lightest forces. An intrusive force concentrates compressive stress at the narrow apex of the root, where the load-bearing area is smallest. In contrast, pulling a tooth out (extrusion) places the PDL fibers in tension, a load they are well-designed to handle. To avoid crushing blood vessels at the apex, the intrusive force must be kept extremely low.
 
-During treatment, gentle, constant orthodontic forces are joined by powerful, short-lived chewing forces. Using the [principle of superposition](@entry_id:148082), the total stress is the sum of the stress from the appliance and the stress from chewing. The constant orthodontic force creates a static "bias" in the PDL's stress field. On the compression side, added chewing force can then easily push the total stress past the critical threshold for hyalinization.
+During treatment, gentle, constant orthodontic forces are joined by powerful, short-lived chewing forces. Using the [principle of superposition](@keyword=principle_of_superposition|lang=en-US|style=Feynman), the total stress is the sum of the stress from the appliance and the stress from chewing. The constant orthodontic force creates a static "bias" in the PDL's stress field. On the compression side, added chewing force can then easily push the total stress past the critical threshold for hyalinization.
 
 ### The PDL in Sickness and in Health: From Diagnostics to Pain
 
-The mechanical properties of the PDL are a [barometer](@entry_id:147792) of periodontal health. By observing how a tooth responds to force, a clinician can distinguish between healthy flexibility and disease. A tooth suffering from occlusal trauma (excessive biting forces) will often exhibit pathological mobility because the PDL itself has become wider and more compliant. Measuring the tooth's unique "mechanical signature"—its elastic displacement, time-dependent creep, and recovery—allows a clinician to diagnose this condition.
+The mechanical properties of the PDL are a [barometer](@keyword=barometer|lang=en-US|style=Feynman) of periodontal health. By observing how a tooth responds to force, a clinician can distinguish between healthy flexibility and disease. A tooth suffering from occlusal trauma (excessive biting forces) will often exhibit pathological mobility because the PDL itself has become wider and more compliant. Measuring the tooth's unique "mechanical signature"—its elastic displacement, time-dependent creep, and recovery—allows a clinician to diagnose this condition.
 
 The PDL's role extends into the realm of pain. The intense pain from biting on an abscessed tooth (symptomatic apical periodontitis) originates in the inflamed PDL at the root's tip. Inflammation sensitizes the nerve endings (mechanonociceptors), lowering their activation threshold. A normal biting force now generates stress that exceeds this lowered threshold, sending pain signals to the brain. A simple and effective therapy is occlusal adjustment. By slightly grinding down the tooth's biting surface, the peak force is reduced, which proportionally reduces the stress in the apical PDL. If the stress falls below the nociceptor's trigger point, pain relief is immediate.
 
@@ -28,8 +28,8 @@ Even tooth extraction is governed by stress distribution. A straight, axial pull
 
 ### The Future: Building with Nature's Blueprint
 
-The final frontier is to rebuild the PDL, the domain of [tissue engineering](@entry_id:142974). A scaffold to regenerate the tooth-support apparatus must mimic nature's design. To replicate the PDL's suspensory function, a scaffold must have obliquely aligned fibers, making it anisotropic—strong along its fiber axis but compliant in other directions.
+The final frontier is to rebuild the PDL, the domain of [tissue engineering](@keyword=tissue_engineering|lang=en-US|style=Feynman). A scaffold to regenerate the tooth-support apparatus must mimic nature's design. To replicate the PDL's suspensory function, a scaffold must have obliquely aligned fibers, making it anisotropic—strong along its fiber axis but compliant in other directions.
 
 Furthermore, a successful scaffold must replicate the gradual transition in stiffness from the soft PDL to the hard bone. A scaffold with a stiffness profile that increases smoothly from a compliant middle layer to a mineralized outer layer prevents stress concentration at the interface. This mineral gradient also serves as a biochemical cue for progenitor cells.
 
-Designing and testing such structures relies on computational tools like the Finite Element Method (FEM). FEM allows researchers to create a detailed map of [stress and strain](@entry_id:137374) fields, making it possible to see invisible forces and iterate on scaffold designs virtually. From moving teeth to regenerating tissues, the PDL is a universe of elegant mechanical principles.
+Designing and testing such structures relies on computational tools like the Finite Element Method (FEM). FEM allows researchers to create a detailed map of [stress and strain](@keyword=stress_and_strain|lang=en-US|style=Feynman) fields, making it possible to see invisible forces and iterate on scaffold designs virtually. From moving teeth to regenerating tissues, the PDL is a universe of elegant mechanical principles.

@@ -11,13 +11,13 @@ This isn't just some arbitrary number. It’s written in the beautiful and unive
 
 $$Q = -10 \log_{10}(p_{\text{error}})$$
 
-What this means is that for every 10 points the score increases, our confidence in the base call increases tenfold. A score of $Q=10$ means there's a 1 in 10 chance the base is wrong ($p_{\text{error}} = 0.1$). A score of $Q=20$ means a 1 in 100 chance of error ($p_{\text{error}} = 0.01$). A score of $Q=30$ means a 1 in 1000 chance—a very confident call indeed. This score is a property of a single nucleotide in a single read, telling us about the fidelity of the sequencing chemistry itself. It must not be confused with the **[mapping quality](@entry_id:170584) score**, which is a completely different metric assigned later in the process. Mapping quality tells us the probability that an entire string of DNA (a read) has been placed in the wrong location in the genome, like a librarian mis-shelving a book. One is about the spelling of a word, the other is about its location in the library.
+What this means is that for every 10 points the score increases, our confidence in the base call increases tenfold. A score of $Q=10$ means there's a 1 in 10 chance the base is wrong ($p_{\text{error}} = 0.1$). A score of $Q=20$ means a 1 in 100 chance of error ($p_{\text{error}} = 0.01$). A score of $Q=30$ means a 1 in 1000 chance—a very confident call indeed. This score is a property of a single nucleotide in a single read, telling us about the fidelity of the sequencing chemistry itself. It must not be confused with the **[mapping quality](@keyword=mapping_quality|lang=en-US|style=Feynman) score**, which is a completely different metric assigned later in the process. Mapping quality tells us the probability that an entire string of DNA (a read) has been placed in the wrong location in the genome, like a librarian mis-shelving a book. One is about the spelling of a word, the other is about its location in the library.
 
 Herein lies the rub. What if our reporter, the sequencing machine, is systematically biased? What if it's consistently overconfident in certain situations, like a person who speaks with authority even when they're guessing? This is not a hypothetical problem; it is a fundamental reality of all sequencing technologies.
 
 ### Uncovering Systematic Illusions
 
-The errors made by a sequencer are not always random. They often follow predictable patterns, like a camera that always adds a slight blue tint to the corners of its photos. These **[systematic errors](@entry_id:755765)** depend on the context of the base call. These influencing factors are known as **covariates**.
+The errors made by a sequencer are not always random. They often follow predictable patterns, like a camera that always adds a slight blue tint to the corners of its photos. These **systematic errors** depend on the context of the base call. These influencing factors are known as **covariates**.
 
 Imagine the sequencing process as a long race. The chemical reactions can become less reliable near the end of the DNA read, just as a runner gets tired in the final stretch. This is the **machine cycle** covariate. A base called in cycle 5 might be more trustworthy than one called in cycle 150.
 
@@ -31,7 +31,7 @@ If we can't trust the reporter's self-assessment, what can we do? We can't rebui
 
 The process is a beautiful example of statistical modeling in action:
 
-1.  **Find the Mismatches:** First, we take all the millions of DNA reads from our experiment and align them to a known, high-quality [reference genome](@entry_id:269221). We then identify every single place where a read disagrees with the reference. These mismatches are our potential clues to the machine's errors.
+1.  **Find the Mismatches:** First, we take all the millions of DNA reads from our experiment and align them to a known, high-quality [reference genome](@keyword=reference_genome|lang=en-US|style=Feynman). We then identify every single place where a read disagrees with the reference. These mismatches are our potential clues to the machine's errors.
 
 2.  **The 'Truth Set' Trick:** Here is where the real genius comes in. Some of these mismatches are not machine errors at all; they are real biological differences—genetic variants that make an individual unique. If we naively counted these true variants as errors, our model would be hopelessly corrupted. To avoid this, BQSR uses a "mask," a pre-existing catalog of known, common variant sites from large population databases (like gnomAD). During its learning phase, the algorithm simply ignores any mismatches that occur at these known variant locations. It's like a teacher grading a test who knows there's a typo in question 5; they don't penalize the student for getting an answer that contradicts the flawed question.
 

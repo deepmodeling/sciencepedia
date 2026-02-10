@@ -6,42 +6,42 @@
 
 ### 基石：精度、纯粹性与工程
 
-从本质上讲，[谱方法](@entry_id:141737)是一种深刻乐观主义的体现：即一个复杂的函数可以用一个全局多项式以惊人的效率来捕捉。对于这种乐观主义成立的问题——那些在简单域上具有光滑解的问题——其结果堪称壮观。
+从本质上讲，[谱方法](@keyword=spectral_methods|lang=zh-CN|style=Feynman)是一种深刻乐观主义的体现：即一个复杂的函数可以用一个全局多项式以惊人的效率来捕捉。对于这种乐观主义成立的问题——那些在简单域上具有光滑解的问题——其结果堪称壮观。
 
-考虑一根简单的弹性杆，一端固定，另一端自由，受到某种[内力](@entry_id:167605)作用 。如果我们巧妙地选择[基函数](@entry_id:170178)，使用能够自然满足边界条件的积分勒让德多项式，神奇的事情就会发生。最终得到的[方程组](@entry_id:193238)变成[对角矩阵](@entry_id:637782)！这意味着解的每种模态或“形状”都与其他模态相互独立。问题分解为一系列平凡的子问题，我们几乎可以通过观察直接写出精确的多项式解。这是理想情况，展示了谱收敛的原始力量：对于解析解，当我们增加更多多项式项时，误差会以指数速度消失。
+考虑一根简单的弹性杆，一端固定，另一端自由，受到某种[内力](@keyword=internal_forces|lang=zh-CN|style=Feynman)作用 [@problem_id:2698901]。如果我们巧妙地选择[基函数](@keyword=basis_function|lang=zh-CN|style=Feynman)，使用能够自然满足边界条件的积分勒让德多项式，神奇的事情就会发生。最终得到的[方程组](@keyword=simultaneous_equations|lang=zh-CN|style=Feynman)变成[对角矩阵](@keyword=diagonal_matrix|lang=zh-CN|style=Feynman)！这意味着解的每种模态或“形状”都与其他模态相互独立。问题分解为一系列平凡的子问题，我们几乎可以通过观察直接写出精确的多项式解。这是理想情况，展示了谱收敛的原始力量：对于解析解，当我们增加更多多项式项时，误差会以指数速度消失。
 
-当然，现实世界很少如此迁就。我们很少处理单一、简单的杆件；我们建造桥梁、飞机和微芯片。一个单一的全局多项式不可能描述飞机机翼的复杂形状。于是，第一个绝妙的改编方法出现了：**[谱元法](@entry_id:755171) (spectral element method)** 。这个想法非常务实，借鉴了工程中常见的[有限元法](@entry_id:749389)。我们将复杂域分解为一系列更简单的形状或“单元”——四边形或六面体。在每个简单单元上，我们使用高阶[勒让德多项式](@entry_id:141510)近似。然后，我们将这些多项式“补丁”缝合在一起，确保解在边界上是连续的。这让我们两全其美：既有模拟复杂现实世界物体的几何灵活性，又能在每个局部单元内获得[谱方法](@entry_id:141737)的高精度。
+当然，现实世界很少如此迁就。我们很少处理单一、简单的杆件；我们建造桥梁、飞机和微芯片。一个单一的全局多项式不可能描述飞机机翼的复杂形状。于是，第一个绝妙的改编方法出现了：**谱元法 (spectral element method)** [@problem_id:3277658]。这个想法非常务实，借鉴了工程中常见的[有限元法](@keyword=finite_element_methods|lang=zh-CN|style=Feynman)。我们将复杂域分解为一系列更简单的形状或“单元”——四边形或六面体。在每个简单单元上，我们使用高阶[勒让德多项式](@keyword=legendre_polynomials|lang=zh-CN|style=Feynman)近似。然后，我们将这些多项式“补丁”缝合在一起，确保解在边界上是连续的。这让我们两全其美：既有模拟复杂现实世界物体的几何灵活性，又能在每个局部单元内获得[谱方法](@keyword=spectral_methods|lang=zh-CN|style=Feynman)的高精度。
 
-但即使在一个简单的方形域上，解本身也可能行为不端。想象一下，在一个盒子中求解[电势](@entry_id:267554)，而边界条件在角落处不兼容。角落附近的解可能会出现[奇异点](@entry_id:199525)，其导数会趋于无穷大 。一个全局多项式，作为无限光滑的函数，很难近似这样的函数，其引以为傲的[指数收敛](@entry_id:142080)性也随之丧失。误差衰减缓慢，整个解都被一个微小点上的不良行为所污染。
+但即使在一个简单的方形域上，解本身也可能行为不端。想象一下，在一个盒子中求解[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)，而边界条件在角落处不兼容。角落附近的解可能会出现[奇异点](@keyword=exceptional_points|lang=zh-CN|style=Feynman)，其导数会趋于无穷大 [@problem_id:3370418]。一个全局多项式，作为无限光滑的函数，很难近似这样的函数，其引以为傲的[指数收敛](@keyword=exponential_convergence|lang=zh-CN|style=Feynman)性也随之丧失。误差衰减缓慢，整个解都被一个微小点上的不良行为所污染。
 
-我们是否要放弃这种方法？不，我们采用了另一个聪明的技巧：我们改变视角。通过应用**分级[坐标映射](@entry_id:747874)**，我们可以在[奇异点](@entry_id:199525)附近[拉伸坐标](@entry_id:269878)。这就像通过一个数学放大镜观察角落，使函数看起来比实际更平滑。在这些新的、被拉伸的坐标中，解再次变得良态，勒让德多项式近似可以重新以谱速度捕捉它 。这种创造性使得我们能够处理带有[奇异点](@entry_id:199525)的问题，这是[流体力学](@entry_id:136788)和电磁学中的常见特征。
+我们是否要放弃这种方法？不，我们采用了另一个聪明的技巧：我们改变视角。通过应用**分级[坐标映射](@keyword=coordinate_mappings|lang=zh-CN|style=Feynman)**，我们可以在[奇异点](@keyword=exceptional_points|lang=zh-CN|style=Feynman)附近[拉伸坐标](@keyword=stretched_coordinates|lang=zh-CN|style=Feynman)。这就像通过一个数学放大镜观察角落，使函数看起来比实际更平滑。在这些新的、被拉伸的坐标中，解再次变得良态，勒让德多项式近似可以重新以谱速度捕捉它 [@problem_id:3370418]。这种创造性使得我们能够处理带有[奇异点](@keyword=exceptional_points|lang=zh-CN|style=Feynman)的问题，这是[流体力学](@keyword=fluid_dynamics|lang=zh-CN|style=Feynman)和电磁学中的常见特征。
 
-这种适应性也延伸到了非平坦的域。物理学、[地球物理学](@entry_id:147342)和天体物理学中的许多基本现象都发生在球面上。要模拟天气模式、地球[磁场](@entry_id:153296)或恒星的[振动](@entry_id:267781)，我们需要在[曲面](@entry_id:267450)上求解方程。球面上函数的自然语言是[球谐函数](@entry_id:178380)，它由经度方向的傅里叶模态和纬度方向的**连带[勒让德多项式](@entry_id:141510)**构成。因此，勒让德[谱方法](@entry_id:141737)是处理这些问题的原生、最高效的工具，能够对球冠上的全球气候或[地震波传播](@entry_id:165726)进行极其精确的模拟 。
+这种适应性也延伸到了非平坦的域。物理学、[地球物理学](@keyword=geophysics|lang=zh-CN|style=Feynman)和天体物理学中的许多基本现象都发生在球面上。要模拟天气模式、地球[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)或恒星的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，我们需要在[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上求解方程。球面上函数的自然语言是[球谐函数](@keyword=y_l^m_functions|lang=zh-CN|style=Feynman)，它由经度方向的傅里叶模态和纬度方向的**连带[勒让德多项式](@keyword=legendre_polynomials|lang=zh-CN|style=Feynman)**构成。因此，勒让德[谱方法](@keyword=spectral_methods|lang=zh-CN|style=Feynman)是处理这些问题的原生、最高效的工具，能够对球冠上的全球气候或[地震波传播](@keyword=seismic_wave_propagation|lang=zh-CN|style=Feynman)进行极其精确的模拟 [@problem_id:3370274]。
 
-### 驾驭波动：驯服激波与[非线性](@entry_id:637147)
+### 驾驭波动：驯服激波与[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)
 
-世界不仅形状复杂，其动力学行为也同样复杂。自然界中许多最有趣的现象都由非线性方程控制，其中系统的行为会反馈于自身。这种[非线性](@entry_id:637147)带来了一系列新的挑战。
+世界不仅形状复杂，其动力学行为也同样复杂。自然界中许多最有趣的现象都由非线性方程控制，其中系统的行为会反馈于自身。这种[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)带来了一系列新的挑战。
 
-当使用[配置法](@entry_id:142690)时，即在特定点集上强制满足方程，一个名为**[混叠](@entry_id:146322) (aliasing)** 的微妙陷阱便会出现 。在一组离散点上计算[非线性](@entry_id:637147)项，比如 $u^2$，可能会产生虚假的高频信号，伪装成低频信号。这在数值上等同于当你看到两个精细网格重叠时出现的莫尔条纹，或是老式西部片中奇怪地向后旋转的车轮。为了解决这个问题，我们必须“过积分”。对于勒让德方法，这意味着使用比我们多项式次数更多的点来进行求积。对于二次[非线性](@entry_id:637147)，著名的“3/2 法则”告诉我们，需要大约多 50% 的点来无[混叠](@entry_id:146322)地计算[非线性](@entry_id:637147)项，从而确保解的完整性。
+当使用[配置法](@keyword=collocation_methods|lang=zh-CN|style=Feynman)时，即在特定点集上强制满足方程，一个名为**[混叠](@keyword=aliasing|lang=zh-CN|style=Feynman) (aliasing)** 的微妙陷阱便会出现 [@problem_id:3423350]。在一组离散点上计算[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)项，比如 $u^2$，可能会产生虚假的高频信号，伪装成低频信号。这在数值上等同于当你看到两个精细网格重叠时出现的莫尔条纹，或是老式西部片中奇怪地向后旋转的车轮。为了解决这个问题，我们必须“过积分”。对于勒让德方法，这意味着使用比我们多项式次数更多的点来进行求积。对于二次[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)，著名的“3/2 法则”告诉我们，需要大约多 50% 的点来无[混叠](@keyword=aliasing|lang=zh-CN|style=Feynman)地计算[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)项，从而确保解的完整性。
 
-当我们面对[非线性](@entry_id:637147)的最极端表现——激波时，这个概念变得更加关键。考虑[伯格斯方程](@entry_id:177995) (Burgers' equation)，一个模拟[交通流](@entry_id:165354)或气体中激波锋面形成的简单模型。如果任其发展，一个光滑的初始波会变得越来越陡峭，直到形成一个近乎不连续的——激波。任何高阶[多项式方法](@entry_id:142482)都会在这个激波附近剧烈[振荡](@entry_id:267781)，徒劳地试图解析这个无法解析的现象，这种现象被称为吉布斯效应 (Gibbs effect)。
+当我们面对[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)的最极端表现——激波时，这个概念变得更加关键。考虑[伯格斯方程](@keyword=burgers__equation|lang=zh-CN|style=Feynman) (Burgers' equation)，一个模拟[交通流](@keyword=traffic_flow|lang=zh-CN|style=Feynman)或气体中激波锋面形成的简单模型。如果任其发展，一个光滑的初始波会变得越来越陡峭，直到形成一个近乎不连续的——激波。任何高阶[多项式方法](@keyword=polynomial_method|lang=zh-CN|style=Feynman)都会在这个激波附近剧烈[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，徒劳地试图解析这个无法解析的现象，这种现象被称为吉布斯效应 (Gibbs effect)。
 
-解决方法是一种构思精妙的技术，称为**谱粘性消失法 (Spectral Vanishing Viscosity, SVV)** 。其思想是创造一种“智能”的数值粘性。我们将解转换到勒让德模态的基上。对于捕捉解的大尺度形状的低频模态，我们什么也不做，让它们无干扰地演化。但对于负责[吉布斯振荡](@entry_id:749902)的最高频模态，我们增加一个强耗散项来抑制它们。这种粘性对于解的重要部分“消失”，但在最需要的地方却充当了强大的减震器。这使得[谱方法](@entry_id:141737)能够在抑制非物理振铃的同时，高精度地捕捉激波的位置和速度。
+解决方法是一种构思精妙的技术，称为**谱粘性消失法 (Spectral Vanishing Viscosity, SVV)** [@problem_id:3418289]。其思想是创造一种“智能”的数值粘性。我们将解转换到勒让德模态的基上。对于捕捉解的大尺度形状的低频模态，我们什么也不做，让它们无干扰地演化。但对于负责[吉布斯振荡](@keyword=gibbs_oscillations|lang=zh-CN|style=Feynman)的最高频模态，我们增加一个强耗散项来抑制它们。这种粘性对于解的重要部分“消失”，但在最需要的地方却充当了强大的减震器。这使得[谱方法](@keyword=spectral_methods|lang=zh-CN|style=Feynman)能够在抑制非物理振铃的同时，高精度地捕捉激波的位置和速度。
 
-此外，物理学中的许多问题，如相空间中的[量子输运](@entry_id:138932)，是高度**各向异性的**：解可能在一个方向（例如，物理空间 $x$）非常光滑，但在另一个方向（动量空间 $k$）剧烈[振荡](@entry_id:267781)。在所有方向上都使用高分辨率将是极其浪费的。谱方法通过使用[张量积](@entry_id:140694)基，并在每个方向上采用不同的多项式次数，轻松地适应了这一点，例如，在 $x$ 方向使用低次多项式，而在 $k$ 方向使用非常高次的多项式 。这种量身定制的方法将计算精力精确地集中在最需要的地方，使得高维问题的模拟成为可能。
+此外，物理学中的许多问题，如相空间中的[量子输运](@keyword=quantum_transport|lang=zh-CN|style=Feynman)，是高度**各向异性的**：解可能在一个方向（例如，物理空间 $x$）非常光滑，但在另一个方向（动量空间 $k$）剧烈[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。在所有方向上都使用高分辨率将是极其浪费的。谱方法通过使用[张量积](@keyword=tensor_product|lang=zh-CN|style=Feynman)基，并在每个方向上采用不同的多项式次数，轻松地适应了这一点，例如，在 $x$ 方向使用低次多项式，而在 $k$ 方向使用非常高次的多项式 [@problem_id:3363780]。这种量身定制的方法将计算精力精确地集中在最需要的地方，使得高维问题的模拟成为可能。
 
 ### 最深刻的联系：维护物理学的结构
 
-也许，[勒让德多项式](@entry_id:141510)背后思想最深刻的应用与[空间离散化](@entry_id:172158)无关，而与时间步进有关。当我们对一个[偏微分方程](@entry_id:141332)进行[半离散化](@entry_id:163562)时，我们会得到一个（非常大的）关于时间的[常微分方程](@entry_id:147024) (ODE) 系统。我们如何求解这个系统，与我们如何处理空间变量同样重要。
+也许，[勒让德多项式](@keyword=legendre_polynomials|lang=zh-CN|style=Feynman)背后思想最深刻的应用与[空间离散化](@keyword=spatial_discretization|lang=zh-CN|style=Feynman)无关，而与时间步进有关。当我们对一个[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)进行[半离散化](@keyword=semi_discretization|lang=zh-CN|style=Feynman)时，我们会得到一个（非常大的）关于时间的常微分方程 (ODE) 系统。我们如何求解这个系统，与我们如何处理空间变量同样重要。
 
-事实证明，从[勒让德多项式](@entry_id:141510)根导出的相同[高斯求积](@entry_id:146011)点，构成了一类被称为**高斯-勒让德[配置法](@entry_id:142690)**的时间积分方案的基础 。这些不仅仅是另一类[时间步进格式](@entry_id:755998)；它们属于一个特殊的类别，称为**[几何积分子](@entry_id:138085)**。
+事实证明，从[勒让德多项式](@keyword=legendre_polynomials|lang=zh-CN|style=Feynman)根导出的相同[高斯求积](@keyword=gaussian_quadrature|lang=zh-CN|style=Feynman)点，构成了一类被称为**高斯-勒让德[配置法](@keyword=collocation_methods|lang=zh-CN|style=Feynman)**的时间积分方案的基础 [@problem_id:3459572]。这些不仅仅是另一类[时间步进格式](@keyword=time_stepping_schemes|lang=zh-CN|style=Feynman)；它们属于一个特殊的类别，称为**[几何积分子](@keyword=geometric_integrators|lang=zh-CN|style=Feynman)**。
 
-为了理解这为何如此重要，考虑模拟太阳系。[引力](@entry_id:175476)定律是守恒且时间可逆的。如果你向前运行模拟然后向后运行，你应该精确地回到起点。大多数标准的数值方法在每一步都会引入微小的、会累积的误差，导致缓慢的漂移。模拟的地球可能会慢慢地螺旋式地坠入太阳，或者它的能量可能会持续增加，违反了物理学的基本定律。
+为了理解这为何如此重要，考虑模拟太阳系。[引力](@keyword=gravitational_force|lang=zh-CN|style=Feynman)定律是守恒且时间可逆的。如果你向前运行模拟然后向后运行，你应该精确地回到起点。大多数标准的数值方法在每一步都会引入微小的、会累积的误差，导致缓慢的漂移。模拟的地球可能会慢慢地螺旋式地坠入太阳，或者它的能量可能会持续增加，违反了物理学的基本定律。
 
-一个**[辛积分](@entry_id:755737)子**，比如高斯-勒让德方法，会做出不可思议的事情。虽然数值轨迹可能不是*精确*的真实轨迹，但它是一个稍微*修改*过的邻近太阳系的*精确*轨迹。这意味着修改后系统的所有几何性质和守恒律都得到了完美保留。即使经过数百万次[轨道](@entry_id:137151)运行，也没有人为的[能量漂移](@entry_id:748982)。这个数值宇宙，虽然与真实宇宙略有不同，却完美地遵守其自身的守恒律。
+一个**[辛积分](@keyword=symplectic_integration|lang=zh-CN|style=Feynman)子**，比如高斯-勒让德方法，会做出不可思议的事情。虽然数值轨迹可能不是*精确*的真实轨迹，但它是一个稍微*修改*过的邻近太阳系的*精确*轨迹。这意味着修改后系统的所有几何性质和守恒律都得到了完美保留。即使经过数百万次[轨道](@keyword=orbit|lang=zh-CN|style=Feynman)运行，也没有人为的[能量漂移](@keyword=energy_drift|lang=zh-CN|style=Feynman)。这个数值宇宙，虽然与真实宇宙略有不同，却完美地遵守其自身的守恒律。
 
-这一性质并非学术上的好奇；它在现代物理学的许多领域都至关重要。例如，在[计算核物理](@entry_id:747629)中，[含时 Hartree-Fock (TDHF)](@entry_id:198498) 方程将[原子核](@entry_id:167902)的演化描述为一个具有许多守恒量的复杂哈密顿系统 。使用一个标准的、非辛的方法，如[后向差分公式](@entry_id:175714) (BDF)，会引入数值耗散，导致模拟的[原子核](@entry_id:167902)虚假地升温，其物理约束被违反。相比之下，辛的高斯-勒让德方法尊重底层的哈密顿几何结构，保持了运动的[不变量](@entry_id:148850)，并在长时间内产生物理上可信的结果  。
+这一性质并非学术上的好奇；它在现代物理学的许多领域都至关重要。例如，在[计算核物理](@keyword=computational_nuclear_physics|lang=zh-CN|style=Feynman)中，[含时 Hartree-Fock (TDHF)](@keyword=time_dependent_hartree_fock_(tdhf)|lang=zh-CN|style=Feynman) 方程将[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)的演化描述为一个具有许多守恒量的复杂哈密顿系统 [@problem_id:3565708]。使用一个标准的、非辛的方法，如[后向差分公式](@keyword=backward_difference_formula|lang=zh-CN|style=Feynman) (BDF)，会引入数值耗散，导致模拟的[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)虚假地升温，其物理约束被违反。相比之下，辛的高斯-勒让德方法尊重底层的哈密顿几何结构，保持了运动的[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)，并在长时间内产生物理上可信的结果 [@problem_id:3565708] [@problem_id:3459572]。
 
-这一思想的最终体现是为[偏微分方程](@entry_id:141332)创建**[多辛积分子](@entry_id:752262)** 。对于那些在空间和时间上都具有局部[能量和动量守恒](@entry_id:193044)的基本波动方程，我们可以*同时*在空间和时间上应用高斯-勒让德配置。最终在时空网格上定义的格式尊重了这种深刻的几何结构，确保数值解在最精细的层面上遵守了基本的物理原理。
+这一思想的最终体现是为[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)创建**[多辛积分子](@keyword=multi_symplectic_integrators|lang=zh-CN|style=Feynman)** [@problem_id:3451911]。对于那些在空间和时间上都具有局部[能量和动量守恒](@keyword=conservation_of_energy_and_momentum|lang=zh-CN|style=Feynman)的基本波动方程，我们可以*同时*在空间和时间上应用高斯-勒让德配置。最终在时空网格上定义的格式尊重了这种深刻的几何结构，确保数值解在最精细的层面上遵守了基本的物理原理。
 
 从一个简单的函数近似工具开始，勒让德多项式带我们踏上了一段旅程。我们见证了它被改造以适应复杂的工程问题，被武装以驯服激波的猛烈，并最终被提升为在模拟中维护物理法则的原则。它的故事证明了数学的统一力量，揭示了近似、几何与自然世界结构之间深刻而出人意料的和谐。

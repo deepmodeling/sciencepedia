@@ -1,19 +1,19 @@
 ## 引言
-在研究物理[世界时](@entry_id:275204)，理解能量如何变化往往比仅仅知道一个系统包含多少能量更具启发性。[热力学](@entry_id:141121)为这些变化提供了描述语言，而其核心是一种优雅的概念——共轭对，这是支配[能量传递](@entry_id:174809)和转换的基本“力”与“位移”的配对。这一原理使我们能够以惊人的精度描述系统的状态并预测其行为。
+在研究物理[世界时](@keyword=universal_time|lang=zh-CN|style=Feynman)，理解能量如何变化往往比仅仅知道一个系统包含多少能量更具启发性。[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)为这些变化提供了描述语言，而其核心是一种优雅的概念——共轭对，这是支配[能量传递](@keyword=energy_transfer|lang=zh-CN|style=Feynman)和转换的基本“力”与“位移”的配对。这一原理使我们能够以惊人的精度描述系统的状态并预测其行为。
 
-然而，对能量最基本的描述对于解决现实世界的问题而言，并非总是最实用的。我们如何将视角从熵这类抽象变量转换到温度这类可控变量？这种数学上的适应性又揭示了自然界中哪些隐藏的联系？本文将探讨[热力学](@entry_id:141121)共轭对的原理，这把万能钥匙能让我们更深入地理解物理世界。
+然而，对能量最基本的描述对于解决现实世界的问题而言，并非总是最实用的。我们如何将视角从熵这类抽象变量转换到温度这类可控变量？这种数学上的适应性又揭示了自然界中哪些隐藏的联系？本文将探讨[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)共轭对的原理，这把万能钥匙能让我们更深入地理解物理世界。
 
-接下来的章节将引导您了解这个强大的概念。首先，“原理与机制”一章将深入探讨共轭对的数学基础，解释[勒让德变换](@entry_id:146727)、不同热力学势的构建，以及由此产生的强大的麦克斯韦关系。随后，“应用与跨学科联系”一章将展示这一概念惊人的普适性，揭示其在工程学、[生物物理学](@entry_id:154938)和地质学等不同领域中的关键作用。
+接下来的章节将引导您了解这个强大的概念。首先，“原理与机制”一章将深入探讨共轭对的数学基础，解释[勒让德变换](@keyword=legendre_transformation|lang=zh-CN|style=Feynman)、不同热力学势的构建，以及由此产生的强大的麦克斯韦关系。随后，“应用与跨学科联系”一章将展示这一概念惊人的普适性，揭示其在工程学、[生物物理学](@keyword=biophysics|lang=zh-CN|style=Feynman)和地质学等不同领域中的关键作用。
 
 ## 原理与机制
 
-在理解世界的旅程中，我们通常从能量的概念开始。但说一个系统“拥有”能量仅仅是故事的开端，真正有趣的部分在于能量如何变化。[热力学](@entry_id:141121)正是研究这些变化的科学，其核心是一个既简单又强大的思想：**[热力学](@entry_id:141121)共轭对**的概念。这些配对是自然界用来描述力与形态、热与序之间相互作用的基本语言。
+在理解世界的旅程中，我们通常从能量的概念开始。但说一个系统“拥有”能量仅仅是故事的开端，真正有趣的部分在于能量如何变化。[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)正是研究这些变化的科学，其核心是一个既简单又强大的思想：**[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)共轭对**的概念。这些配对是自然界用来描述力与形态、热与序之间相互作用的基本语言。
 
 ### 变化的语言：能量及其变量
 
-想象一个被活塞困在圆柱体内的简单气体。该气体的状态并不仅仅由一个数字决定；其内能 $U$ 取决于我们施加给它的物理约束。其中最基本的约束是其体积 $V$ 和一个更微妙的量——熵 $S$。现在，我们可以将熵看作是对微观无序程度，或者说内部原子[排列](@entry_id:136432)方式数量的[精确度](@entry_id:143382)量。因此，我们可以将能量写成函数 $U(S,V)$。
+想象一个被活塞困在圆柱体内的简单气体。该气体的状态并不仅仅由一个数字决定；其内能 $U$ 取决于我们施加给它的物理约束。其中最基本的约束是其体积 $V$ 和一个更微妙的量——熵 $S$。现在，我们可以将熵看作是对微观无序程度，或者说内部原子[排列](@keyword=permutation|lang=zh-CN|style=Feynman)方式数量的[精确度](@keyword=degree_of_precision|lang=zh-CN|style=Feynman)量。因此，我们可以将能量写成函数 $U(S,V)$。
 
-如果我们微调这些变量，能量会如何变化？答案由物理学中最优雅、最重要的方程之一——**[基本热力学关系](@entry_id:144320)**——给出：
+如果我们微调这些变量，能量会如何变化？答案由物理学中最优雅、最重要的方程之一——**[基本热力学关系](@keyword=fundamental_thermodynamic_relation|lang=zh-CN|style=Feynman)**——给出：
 
 $$
 dU = TdS - PdV
@@ -29,39 +29,39 @@ $$
 T = \left(\frac{\partial U}{\partial S}\right)_{V} \quad \text{and} \quad P = -\left(\frac{\partial U}{\partial V}\right)_{S}
 $$
 
-这种伙伴关系是[热力学](@entry_id:141121)的基石 。
+这种伙伴关系是[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)的基石 [@problem_id:1989014]。
 
-### 选择你的视角：[勒让德变换](@entry_id:146727)的艺术
+### 选择你的视角：[勒让德变换](@keyword=legendre_transformation|lang=zh-CN|style=Feynman)的艺术
 
-用 $U(S,V)$ 来描述系统虽然很基本，但可能非常不方便。在现实世界的实验室中，控制熵几乎是不可能的。然而，控制温度——通过将我们的系统置于一个大的水浴（一个“[热库](@entry_id:143608)”）中——是我们每天都在做的事情。我们更希望用一个依赖于温度和体积的能量描述，比如一个新的势 $\Phi(T,V)$。
+用 $U(S,V)$ 来描述系统虽然很基本，但可能非常不方便。在现实世界的实验室中，控制熵几乎是不可能的。然而，控制温度——通过将我们的系统置于一个大的水浴（一个“[热库](@keyword=thermal_reservoir|lang=zh-CN|style=Feynman)”）中——是我们每天都在做的事情。我们更希望用一个依赖于温度和体积的能量描述，比如一个新的势 $\Phi(T,V)$。
 
 我们如何将视角从一个以广延变量（$S$）描述的系统切换到一个以其强度伴侣（$T$）描述的系统呢？自然界为此提供了一个优美的数学工具：**勒让德变换**。
 
-想象一下描述一条曲线。你可以列出其上所有的点 $(x, y)$，这就像 $U(S,V)$。或者，你也可以通过列出每一点[切线的斜率](@entry_id:192479)和截距来描述同一条曲线。[勒让德变换](@entry_id:146727)就是一种系统地完成这一转换的方法。它用一个变量换取其[共轭变量](@entry_id:147843)，而[共轭变量](@entry_id:147843)本质上就是能量函数对该变量的斜率。
+想象一下描述一条曲线。你可以列出其上所有的点 $(x, y)$，这就像 $U(S,V)$。或者，你也可以通过列出每一点[切线的斜率](@keyword=slope_of_the_tangent_line|lang=zh-CN|style=Feynman)和截距来描述同一条曲线。[勒让德变换](@keyword=legendre_transformation|lang=zh-CN|style=Feynman)就是一种系统地完成这一转换的方法。它用一个变量换取其[共轭变量](@keyword=conjugate_variables|lang=zh-CN|style=Feynman)，而[共轭变量](@keyword=conjugate_variables|lang=zh-CN|style=Feynman)本质上就是能量函数对该变量的斜率。
 
-要从 $U(S,V)$ 转换到一个依赖于 $T$ 的势，我们必须用变量 $S$ 换取其[共轭变量](@entry_id:147843) $T = (\partial U / \partial S)_V$。这个过程的配方非常简单。我们定义一个新势，即**亥姆霍兹自由能** $F$，为：
+要从 $U(S,V)$ 转换到一个依赖于 $T$ 的势，我们必须用变量 $S$ 换取其[共轭变量](@keyword=conjugate_variables|lang=zh-CN|style=Feynman) $T = (\partial U / \partial S)_V$。这个过程的配方非常简单。我们定义一个新势，即**亥姆霍兹自由能** $F$，为：
 
 $$
 F = U - TS
 $$
 
-为什么这样做有效呢？让我们看看其[微分](@entry_id:158718)会发生什么。根据[乘法法则](@entry_id:144424)，$dF = dU - d(TS) = dU - TdS - SdT$。现在，我们代入 $dU$ 的基本关系式：
+为什么这样做有效呢？让我们看看其[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)会发生什么。根据[乘法法则](@keyword=product_rule|lang=zh-CN|style=Feynman)，$dF = dU - d(TS) = dU - TdS - SdT$。现在，我们代入 $dU$ 的基本关系式：
 
 $$
 dF = (TdS - PdV) - TdS - SdT = -SdT - PdV
 $$
 
-就这样，我们得到了一个新势 $F$，其自然变量是 $T$ 和 $V$！我们成功地转换了视角 。我们没有丢失任何信息；原始变量 $S$ 仍然可以得到，但现在它表现为*新*势的导数：$S = -(\partial F/\partial T)_V$。
+就这样，我们得到了一个新势 $F$，其自然变量是 $T$ 和 $V$！我们成功地转换了视角 [@problem_id:2647360]。我们没有丢失任何信息；原始变量 $S$ 仍然可以得到，但现在它表现为*新*势的导数：$S = -(\partial F/\partial T)_V$。
 
-这个策略是完全通用的。如果我们想控制压力 $P$ 而不是体积 $V$，我们可以定义**焓** $H = U + PV$，其自然变量是 $(S,P)$ 。如果我们想同时控制温度 $T$ 和压力 $P$——这是化学实验室中最常见的情况——我们进行两次勒让德变换，得到**吉布斯自由能** $G = U - TS + PV$，其自然变量是 $(T,P)$ 。
+这个策略是完全通用的。如果我们想控制压力 $P$ 而不是体积 $V$，我们可以定义**焓** $H = U + PV$，其自然变量是 $(S,P)$ [@problem_id:1989014]。如果我们想同时控制温度 $T$ 和压力 $P$——这是化学实验室中最常见的情况——我们进行两次勒让德变换，得到**吉布斯自由能** $G = U - TS + PV$，其自然变量是 $(T,P)$ [@problem_id:2647327]。
 
-选择使用哪种势纯粹是出于方便，取决于你在实验中可以控制哪些变量。这个原理非常强大，以至于在工程中用于设计复杂的计算机模拟。对于一个在边界上已知材料位移和温度的问题，基于亥姆霍兹势的公式是最自然的选择。如果已知牵[引力](@entry_id:175476)（力），吉布斯势通常更方便 。
+选择使用哪种势纯粹是出于方便，取决于你在实验中可以控制哪些变量。这个原理非常强大，以至于在工程中用于设计复杂的计算机模拟。对于一个在边界上已知材料位移和温度的问题，基于亥姆霍兹势的公式是最自然的选择。如果已知牵[引力](@keyword=gravitational_force|lang=zh-CN|style=Feynman)（力），吉布斯势通常更方便 [@problem_id:3606690]。
 
 ### 隐藏的对称性：麦克斯韦关系
 
 那么，为什么要费这么多周折进行这些数学变换呢？因为这些不同的视角，这些新的势，揭示了物理世界中深刻而出人意料的联系。
 
-让我们回到亥姆霍兹自由能，其[微分](@entry_id:158718)为 $dF = -SdT - PdV$。由此我们知道两件事：
+让我们回到亥姆霍兹自由能，其[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)为 $dF = -SdT - PdV$。由此我们知道两件事：
 $$
 S = -\left(\frac{\partial F}{\partial T}\right)_V \quad \text{and} \quad P = -\left(\frac{\partial F}{\partial V}\right)_T
 $$
@@ -76,17 +76,17 @@ $$
 $$
 \left(\frac{\partial S}{\partial V}\right)_T = \left(\frac{\partial P}{\partial T}\right)_V
 $$
-停下来体会一下这意味着什么。左边是关于在恒温下压缩物质时熵（无序度）如何变化。右边是一个听起来完全不同的量：在密封容器中加热物质时压力如何变化。共轭对的数学告诉我们这两件事*必然相等*。这一点绝非显而易见！它是[热力学](@entry_id:141121)结构赠予我们的礼物 。
+停下来体会一下这意味着什么。左边是关于在恒温下压缩物质时熵（无序度）如何变化。右边是一个听起来完全不同的量：在密封容器中加热物质时压力如何变化。共轭对的数学告诉我们这两件事*必然相等*。这一点绝非显而易见！它是[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)结构赠予我们的礼物 [@problem_id:2840411]。
 
-这个关系告诉我们，对于大多数材料，在恒定体积下加热时压力会升高（$(\partial P/\partial T)_V > 0$），那么在恒温下压缩它们（$dV  0$）必然会*减少*它们的熵。这在物理上完全合理：更小的体积意味着原子更少的空间[排列](@entry_id:136432)方式，因此无序度更低。每个热力学势都能产生其自己的一套强大的、非显而易见的麦克斯韦关系 。
+这个关系告诉我们，对于大多数材料，在恒定体积下加热时压力会升高（$(\partial P/\partial T)_V > 0$），那么在恒温下压缩它们（$dV  0$）必然会*减少*它们的熵。这在物理上完全合理：更小的体积意味着原子更少的空间[排列](@keyword=permutation|lang=zh-CN|style=Feynman)方式，因此无序度更低。每个热力学势都能产生其自己的一套强大的、非显而易见的麦克斯韦关系 [@problem_id:1991726]。
 
 ### 普适的交响曲：超越气体的共轭对
 
 这种将强度“力”与广延“位移”配对的概念是物理学中一个普遍的主题，远不止于简单气体。
 
-一个引人注目的例子来自**经典力学**。粒子的运动可以由一个称为拉格朗日量 $L$ 的函数描述，它依赖于粒子的位置 $q$ 和速度 $\dot{q}$。要切换到力学的哈密顿描述，人们定义[广义动量](@entry_id:165699) $p = \partial L / \partial \dot{q}$。然后[哈密顿量](@entry_id:172864) $H$ 定义为 $H = p\dot{q} - L$。这正是一次[勒让德变换](@entry_id:146727)！其数学结构与我们从内能转换到亥姆霍兹能的过程完全相同。这里有一个深刻的类比：位置 $q$ 类似于体积 $V$，速度 $\dot{q}$ 类似于熵 $S$，动量 $p$ 类似于温度 $T$，而[哈密顿量](@entry_id:172864) $H$ 对应于 $-F$ 。同样的优雅数学支配着一壶沸水和一颗行星的[轨道](@entry_id:137151)。
+一个引人注目的例子来自**经典力学**。粒子的运动可以由一个称为拉格朗日量 $L$ 的函数描述，它依赖于粒子的位置 $q$ 和速度 $\dot{q}$。要切换到力学的哈密顿描述，人们定义广义动量 $p = \partial L / \partial \dot{q}$。然后[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman) $H$ 定义为 $H = p\dot{q} - L$。这正是一次[勒让德变换](@keyword=legendre_transformation|lang=zh-CN|style=Feynman)！其数学结构与我们从内能转换到亥姆霍兹能的过程完全相同。这里有一个深刻的类比：位置 $q$ 类似于体积 $V$，速度 $\dot{q}$ 类似于熵 $S$，动量 $p$ 类似于温度 $T$，而[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman) $H$ 对应于 $-F$ [@problem_id:1873655]。同样的优雅数学支配着一壶沸水和一颗行星的[轨道](@keyword=orbit|lang=zh-CN|style=Feynman)。
 
-这个概念延伸到各种形式的功。如果你拉伸一个弹性固体，所做的功涉及应力张量 $\boldsymbol{\sigma}$ 和[应变张量](@entry_id:193332) $\boldsymbol{\varepsilon}$。它们形成一个共轭对，能量方程中的功项是 $\boldsymbol{\sigma} : d\boldsymbol{\varepsilon}$ 。如果你制造一个肥[皂膜](@entry_id:267628)，你要做功来对抗表面张力 $\gamma$ 以增加面积 $A$；功是 $\gamma dA$，而 $(\gamma, A)$ 就是共轭对。如果你将一种材料置于[电场](@entry_id:194326) $\mathbf{E}$ 中，它会极化，获得一个总偶极矩 $\mathbf{P}_{\text{total}}$。[电功](@entry_id:273970)是 $\mathbf{E} \cdot d\mathbf{P}_{\text{total}}$，而 $(\mathbf{E}, \mathbf{P}_{\text{total}})$ 就是共轭对 。
+这个概念延伸到各种形式的功。如果你拉伸一个弹性固体，所做的功涉及应力张量 $\boldsymbol{\sigma}$ 和[应变张量](@keyword=strain_tensor|lang=zh-CN|style=Feynman) $\boldsymbol{\varepsilon}$。它们形成一个共轭对，能量方程中的功项是 $\boldsymbol{\sigma} : d\boldsymbol{\varepsilon}$ [@problem_id:3606663]。如果你制造一个肥[皂膜](@keyword=soap_film|lang=zh-CN|style=Feynman)，你要做功来对抗表面张力 $\gamma$ 以增加面积 $A$；功是 $\gamma dA$，而 $(\gamma, A)$ 就是共轭对。如果你将一种材料置于[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $\mathbf{E}$ 中，它会极化，获得一个总偶极矩 $\mathbf{P}_{\text{total}}$。[电功](@keyword=electrical_work|lang=zh-CN|style=Feynman)是 $\mathbf{E} \cdot d\mathbf{P}_{\text{total}}$，而 $(\mathbf{E}, \mathbf{P}_{\text{total}})$ 就是共轭对 [@problem_id:2675244]。
 
 因此，一种复杂材料的宏大基本方程可以写成一曲由共轭对组成的交响乐：
 $$
@@ -96,17 +96,17 @@ $$
 
 ### 时间之箭：力与通量
 
-到目前为止，我们的讨论都围绕着[平衡态](@entry_id:168134)和无限缓慢、可逆的变化。但现实世界充满了不可逆过程：热量穿过窗户，糖在咖啡中溶解，墨水在水中[扩散](@entry_id:141445)。事实证明，共轭对的思想在这里甚至更为强大，它为理解变化的动力学和[时间之箭](@entry_id:143779)提供了一个框架。
+到目前为止，我们的讨论都围绕着[平衡态](@keyword=equilibrium_states|lang=zh-CN|style=Feynman)和无限缓慢、可逆的变化。但现实世界充满了不可逆过程：热量穿过窗户，糖在咖啡中溶解，墨水在水中[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)。事实证明，共轭对的思想在这里甚至更为强大，它为理解变化的动力学和[时间之箭](@keyword=arrow_of_time|lang=zh-CN|style=Feynman)提供了一个框架。
 
-热力学第二定律指出，任何真实的、自发的过程都会产生熵。这个**熵产生**的速率，我们可以称之为 $\Xi$，总是正的。Lars Onsager 等人的卓越见解是，这个熵产生也可以写成若干对乘[积之和](@entry_id:266697)：
+热力学第二定律指出，任何真实的、自发的过程都会产生熵。这个**熵产生**的速率，我们可以称之为 $\Xi$，总是正的。Lars Onsager 等人的卓越见解是，这个熵产生也可以写成若干对乘[积之和](@keyword=sum_of_products_2|lang=zh-CN|style=Feynman)：
 $$
 \Xi = \sum_k J_k X_k \ge 0
 $$
-但这是另一种类型的配对。在这里，$J_k$ 是一个**[热力学通量](@entry_id:170306)**（某种量的流动，如[热通量](@entry_id:138471) $\mathbf{q}$ 或[质量扩散](@entry_id:149532)通量 $\mathbf{j}$），而 $X_k$ 是驱动该通量的共轭**[热力学力](@entry_id:161907)**（如温度或化学[势的梯度](@entry_id:268447)）。
+但这是另一种类型的配对。在这里，$J_k$ 是一个**[热力学通量](@keyword=thermodynamic_fluxes|lang=zh-CN|style=Feynman)**（某种量的流动，如[热通量](@keyword=heat_flux|lang=zh-CN|style=Feynman) $\mathbf{q}$ 或[质量扩散](@keyword=mass_diffusion|lang=zh-CN|style=Feynman)通量 $\mathbf{j}$），而 $X_k$ 是驱动该通量的共轭**[热力学力](@keyword=thermodynamic_forces|lang=zh-CN|style=Feynman)**（如温度或化学[势的梯度](@keyword=gradient_of_potential|lang=zh-CN|style=Feynman)）。
 
-例如，热流 $\mathbf{q}$ 是由[温度梯度](@entry_id:136845)驱动的。熵产生中相应的项是 $\mathbf{q} \cdot \nabla(1/T)$。所以，热通量 $\mathbf{q}$ 与力 $\nabla(1/T)$ 共轭。类似地，由化学势 $\mu$ 的梯度驱动的粒子[扩散](@entry_id:141445) $\mathbf{j}$，与一个正比于 $-\nabla(\mu/T)$ 的力配对 。
+例如，热流 $\mathbf{q}$ 是由[温度梯度](@keyword=temperature_gradient|lang=zh-CN|style=Feynman)驱动的。熵产生中相应的项是 $\mathbf{q} \cdot \nabla(1/T)$。所以，热通量 $\mathbf{q}$ 与力 $\nabla(1/T)$ 共轭。类似地，由化学势 $\mu$ 的梯度驱动的粒子[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman) $\mathbf{j}$，与一个正比于 $-\nabla(\mu/T)$ 的力配对 [@problem_id:2925026]。
 
-这个被称为非[平衡热力学](@entry_id:139780)的框架，使我们能够描述这些[通量与力](@entry_id:142890)之间的关系。对于离平衡不太远的过程，这种关系通常是简单线性的：通量只是一个常数乘以其共轭力（如[傅里叶热传导定律](@entry_id:138911)或[菲克扩散定律](@entry_id:270426)）。
+这个被称为非[平衡热力学](@keyword=thermodynamics_of_equilibrium|lang=zh-CN|style=Feynman)的框架，使我们能够描述这些[通量与力](@keyword=fluxes_and_forces|lang=zh-CN|style=Feynman)之间的关系。对于离平衡不太远的过程，这种关系通常是简单线性的：通量只是一个常数乘以其共轭力（如[傅里叶热传导定律](@keyword=fourier_s_law_of_heat_conduction|lang=zh-CN|style=Feynman)或[菲克扩散定律](@keyword=fick_s_laws_of_diffusion|lang=zh-CN|style=Feynman)）。
 
-从圆柱体中活塞的简单图像到[耦合输运现象](@entry_id:146193)的复杂舞蹈，共轭对的原理提供了一种统一而深刻优美的语言。它使我们能够为问题选择最方便的视角，揭示自然法则中隐藏的对称性，并让我们能够把握驱动宇宙前进的不可逆过程。这是物理世界深层统一性和数学优雅性的明证。
+从圆柱体中活塞的简单图像到[耦合输运现象](@keyword=coupled_transport_phenomena|lang=zh-CN|style=Feynman)的复杂舞蹈，共轭对的原理提供了一种统一而深刻优美的语言。它使我们能够为问题选择最方便的视角，揭示自然法则中隐藏的对称性，并让我们能够把握驱动宇宙前进的不可逆过程。这是物理世界深层统一性和数学优雅性的明证。
 

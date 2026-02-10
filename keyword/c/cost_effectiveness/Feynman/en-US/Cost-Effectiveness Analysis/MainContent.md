@@ -17,7 +17,7 @@ This leads us to the central tool of the trade: the **Incremental Cost-Effective
 
 $$ \text{ICER} = \frac{\text{Difference in Cost}}{\text{Difference in Effect}} = \frac{\Delta C}{\Delta E} $$
 
-Let's make this concrete. Suppose that over one year, Therapy U costs $8,000$ and yields a certain amount of health, while the new Therapy X costs $10,800$ and yields a little more health . The incremental cost, $\Delta C$, is simply the difference: $\$10,800 - \$8,000 = \$2,800$. This is the extra money we have to spend to get the extra health from Therapy X. The ICER is the price of that extra health.
+Let's make this concrete. Suppose that over one year, Therapy U costs $8,000$ and yields a certain amount of health, while the new Therapy X costs $10,800$ and yields a little more health [@problem_id:4403975]. The incremental cost, $\Delta C$, is simply the difference: $\$10,800 - \$8,000 = \$2,800$. This is the extra money we have to spend to get the extra health from Therapy X. The ICER is the price of that extra health.
 
 ### The Currency of Health: Understanding the QALY
 
@@ -25,11 +25,11 @@ But what is the "E" in our equation? What is the unit of "health effect"? We can
 
 Enter the **Quality-Adjusted Life Year**, or **QALY**. It is one of the most elegant and powerful ideas in all of health economics. One QALY is equivalent to one year of life lived in perfect health. If you are living in a state of less-than-perfect health—say, with a chronic illness that limits your daily activities—you might accumulate less than one QALY over the course of a year. Your health state is assigned a "utility" weight, a number between $0$ (for a state equivalent to death) and $1$ (for perfect health).
 
-Let's see how this is built from the ground up. Imagine a new therapy for advanced heart failure . To calculate the total QALYs a patient might expect over, say, three years, we need two pieces of information for each year: the probability they will be alive, and the quality of life (utility) they would experience if they are. For each year, the expected health gain is simply:
+Let's see how this is built from the ground up. Imagine a new therapy for advanced heart failure [@problem_id:5062383]. To calculate the total QALYs a patient might expect over, say, three years, we need two pieces of information for each year: the probability they will be alive, and the quality of life (utility) they would experience if they are. For each year, the expected health gain is simply:
 
 $$ \text{Expected QALYs in Year } k = (\text{Probability of Survival to Year } k) \times (\text{Utility in Year } k) $$
 
-By summing this up over the three years for both the new therapy and the standard care, we can calculate the total expected QALYs for each. The difference between them, $\Delta E$, is the incremental health gain that goes into our ICER calculation. For example, if a new therapy costs an extra $\$20,000$ and provides an additional $0.2684$ QALYs over three years, its ICER would be $\$20,000 / 0.2684$, which is about $\$74,516$ per QALY gained . This is the price of buying one year of perfect health with this therapy.
+By summing this up over the three years for both the new therapy and the standard care, we can calculate the total expected QALYs for each. The difference between them, $\Delta E$, is the incremental health gain that goes into our ICER calculation. For example, if a new therapy costs an extra $\$20,000$ and provides an additional $0.2684$ QALYs over three years, its ICER would be $\$20,000 / 0.2684$, which is about $\$74,516$ per QALY gained [@problem_id:5062383]. This is the price of buying one year of perfect health with this therapy.
 
 ### The Decision Rule: Is the Price Right?
 
@@ -37,7 +37,7 @@ So we have a price: $\$74,516$ per QALY. Is that a good deal? To answer that, we
 
 The decision rule is simple: If an intervention’s $\text{ICER}$ is less than the $\lambda$ threshold, it is considered **cost-effective**. It's a good value. If the ICER is greater than $\lambda$, it's considered poor value for money.
 
-This framework immediately helps us identify different kinds of "waste" in healthcare .
+This framework immediately helps us identify different kinds of "waste" in healthcare [@problem_id:4369279].
 *   **Overuse**: A service with a cost but zero (or negative) health benefit, like routine imaging for low back pain without any warning signs, is low-value care. Its NMB (Net Monetary Benefit, which we'll see next) is negative.
 *   **Underuse**: Failing to provide a high-value service. If a statin therapy has an ICER of $\$15,000$ per QALY (well below the threshold), but only $60\%$ of eligible people receive it, that is underuse. We are leaving "health on the table."
 
@@ -49,25 +49,25 @@ To do this, we must first convert the health gain ($\Delta E$) into a monetary v
 
 $$ \text{NMB} = (\lambda \times \Delta E) - \Delta C $$
 
-The decision rule here is even more intuitive: if the NMB is positive, the intervention is a good deal. Its health benefits, valued in dollars, are greater than its costs. If the NMB is negative, it's a bad deal . You can prove with a little algebra that an NMB greater than zero is mathematically identical to an ICER less than $\lambda$. They are two sides of the same coin, but sometimes thinking in terms of net benefit is clearer. For instance, in one evaluation, a new cancer drug had an ICER of $\$48,000$/QALY, which is less than a $\$60,000$/QALY threshold, making it cost-effective. Correspondingly, its NMB was positive, confirming the same conclusion from a different angle .
+The decision rule here is even more intuitive: if the NMB is positive, the intervention is a good deal. Its health benefits, valued in dollars, are greater than its costs. If the NMB is negative, it's a bad deal [@problem_id:4949455]. You can prove with a little algebra that an NMB greater than zero is mathematically identical to an ICER less than $\lambda$. They are two sides of the same coin, but sometimes thinking in terms of net benefit is clearer. For instance, in one evaluation, a new cancer drug had an ICER of $\$48,000$/QALY, which is less than a $\$60,000$/QALY threshold, making it cost-effective. Correspondingly, its NMB was positive, confirming the same conclusion from a different angle [@problem_id:4516347].
 
-The choice between CEA and CBA isn't just about preference. It depends on the decision you're making .
+The choice between CEA and CBA isn't just about preference. It depends on the decision you're making [@problem_id:4388928].
 *   **Cost-Effectiveness Analysis (CEA/CUA)** is the perfect tool for a decision-maker with a **fixed budget for one sector**, like a Minister of Health. Their goal is to get the most health (QALYs) possible for their fixed health budget.
-*   **Cost-Benefit Analysis (CBA)** is the right tool for making decisions **across different sectors**. If you want to know whether to spend a million dollars on a new hospital wing, a new school, or a new [environmental cleanup](@entry_id:195317) program, CBA is the only framework that puts everything into a common unit—money—allowing for a direct comparison of societal value.
+*   **Cost-Benefit Analysis (CBA)** is the right tool for making decisions **across different sectors**. If you want to know whether to spend a million dollars on a new hospital wing, a new school, or a new [environmental cleanup](@keyword=environmental_cleanup|lang=en-US|style=Feynman) program, CBA is the only framework that puts everything into a common unit—money—allowing for a direct comparison of societal value.
 
 ### The Bigger Picture: Efficiency, Perspective, and Justice
 
 These tools are powerful, but they can be misused. To use them wisely, we must consider the bigger picture.
 
-First, **perspective matters**. Whose costs and benefits are we counting? A narrow **sectoral perspective**, like that of a single hospital, might ignore the costs patients bear for transportation or the benefits employers gain from a healthier workforce. A broad **societal perspective**, the gold standard for these analyses, attempts to count *all* costs and benefits, no matter who experiences them .
+First, **perspective matters**. Whose costs and benefits are we counting? A narrow **sectoral perspective**, like that of a single hospital, might ignore the costs patients bear for transportation or the benefits employers gain from a healthier workforce. A broad **societal perspective**, the gold standard for these analyses, attempts to count *all* costs and benefits, no matter who experiences them [@problem_id:2539167].
 
-Second, we must distinguish between different kinds of efficiency .
+Second, we must distinguish between different kinds of efficiency [@problem_id:5002488].
 *   **Technical Efficiency:** Are we "doing things right"? This means producing our services with the least waste—for example, by getting the best possible price for drugs.
 *   **Allocative Efficiency:** Are we "doing the right things"? This is the core of CEA. It means allocating our budget to the mix of interventions that produces the most health. Funding a highly cost-effective HIV prevention program is allocative efficiency.
 *   **Dynamic Efficiency:** Are we getting better over time? This involves investing in innovation—like adopting a new, faster diagnostic test—that will improve our productivity in the future.
 
-Finally, we must confront the ethical dimensions. Is this all just a cold, utilitarian calculation of maximizing QALYs? Not at all. The principles of cost-effectiveness are deeply intertwined with core medical ethics . **Beneficence** (doing good) is captured by maximizing health gains. **Non-maleficence** (doing no harm) is reflected in accounting for the costs and side effects. **Justice** is at the very heart of the enterprise: it is the explicit, transparent, and fair allocation of scarce societal resources.
+Finally, we must confront the ethical dimensions. Is this all just a cold, utilitarian calculation of maximizing QALYs? Not at all. The principles of cost-effectiveness are deeply intertwined with core medical ethics [@problem_id:4949455]. **Beneficence** (doing good) is captured by maximizing health gains. **Non-maleficence** (doing no harm) is reflected in accounting for the costs and side effects. **Justice** is at the very heart of the enterprise: it is the explicit, transparent, and fair allocation of scarce societal resources.
 
-But there are limits. Some things may not be for sale. A **rights-based approach**, for example, argues that certain protections—like a [safe minimum standard](@entry_id:190582) for air quality—are fundamental rights that cannot be traded away for economic benefit, no matter how large . This creates a powerful and necessary tension with the pure logic of efficiency.
+But there are limits. Some things may not be for sale. A **rights-based approach**, for example, argues that certain protections—like a [safe minimum standard](@keyword=safe_minimum_standard|lang=en-US|style=Feynman) for air quality—are fundamental rights that cannot be traded away for economic benefit, no matter how large [@problem_id:2488880]. This creates a powerful and necessary tension with the pure logic of efficiency.
 
 Cost-effectiveness analysis, then, is not an answer machine. It is a flashlight. It illuminates the trade-offs that are inherent in a world of scarcity. It forces us to be explicit about what we value and why. It provides a common language for a conversation that is difficult but essential, helping us navigate the complex path toward a healthier and more just society.

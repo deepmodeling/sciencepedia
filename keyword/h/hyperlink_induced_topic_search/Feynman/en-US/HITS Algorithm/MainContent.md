@@ -20,12 +20,12 @@ The genius of HITS lies in how these two roles define each other in a recursive 
 
 This sounds like a paradox, a classic chicken-and-egg problem. To know what's authoritative, you need to know which hubs are trustworthy, but to know which hubs are trustworthy, you need to know what's authoritative!
 
-To escape this loop, we turn these words into mathematics. Let's assign every page $i$ a non-negative **hub score** ($h_i$) and every page $j$ a non-negative **authority score** ($a_j$). The rules of mutual reinforcement can now be translated directly :
+To escape this loop, we turn these words into mathematics. Let's assign every page $i$ a non-negative **hub score** ($h_i$) and every page $j$ a non-negative **authority score** ($a_j$). The rules of mutual reinforcement can now be translated directly [@problem_id:4281858]:
 
 The authority score of a page $j$, $a_j$, is the sum of the hub scores of all pages $i$ that link to it.
 The hub score of a page $i$, $h_i$, is the sum of the authority scores of all pages $j$ it links to.
 
-If we represent the web graph with an **adjacency matrix** $A$, where $A_{ij} = 1$ if page $i$ links to page $j$ and $0$ otherwise, these relationships take on a wonderfully compact form. The definition for the authority score $a_j$ sums over incoming links, which corresponds to the columns of $A$. In matrix notation, this becomes $a = A^{\top}h$. The definition for the hub score $h_i$ sums over outgoing links, corresponding to the rows of $A$, which gives $h = Aa$. We now have a coupled system of [linear equations](@entry_id:151487):
+If we represent the web graph with an **adjacency matrix** $A$, where $A_{ij} = 1$ if page $i$ links to page $j$ and $0$ otherwise, these relationships take on a wonderfully compact form. The definition for the authority score $a_j$ sums over incoming links, which corresponds to the columns of $A$. In matrix notation, this becomes $a = A^{\top}h$. The definition for the hub score $h_i$ sums over outgoing links, corresponding to the rows of $A$, which gives $h = Aa$. We now have a coupled system of [linear equations](@keyword=linear_equations|lang=en-US|style=Feynman):
 
 $$
 \begin{align*}
@@ -38,7 +38,7 @@ This is the mathematical heart of HITS. But the question remains: how do we solv
 
 ### An Iterative Conversation
 
-The solution is not to solve the equations at once, but to let the scores "talk" to each other and converge on an answer. We can kick off the process with a simple, democratic assumption: initially, let's pretend every page is an equally good hub, so we start with a hub vector $h^{(0)}$ where all scores are equal (e.g., $h^{(0)} = \begin{pmatrix} 1  1  \dots  1 \end{pmatrix}^{\top}$) .
+The solution is not to solve the equations at once, but to let the scores "talk" to each other and converge on an answer. We can kick off the process with a simple, democratic assumption: initially, let's pretend every page is an equally good hub, so we start with a hub vector $h^{(0)}$ where all scores are equal (e.g., $h^{(0)} = \begin{pmatrix} 1  1  \dots  1 \end{pmatrix}^{\top}$) [@problem_id:4281863].
 
 Now the conversation begins.
 
@@ -52,7 +52,7 @@ What we find is remarkable. With each iteration, the scores change less and less
 
 ### Unveiling the Hidden Mathematical Structure
 
-This iterative dance is not just a computational trick; it is revealing a deep, underlying mathematical property of the network. If we substitute one of our HITS equations into the other, the hidden structure snaps into focus  .
+This iterative dance is not just a computational trick; it is revealing a deep, underlying mathematical property of the network. If we substitute one of our HITS equations into the other, the hidden structure snaps into focus [@problem_id:4132281] [@problem_id:4292592].
 
 Let's substitute $h = Aa$ into the authority equation:
 $$a \propto A^{\top}(Aa) = (A^{\top}A)a$$
@@ -60,32 +60,32 @@ $$a \propto A^{\top}(Aa) = (A^{\top}A)a$$
 And let's substitute $a = A^{\top}h$ into the hub equation:
 $$h \propto A(A^{\top}h) = (AA^{\top})h$$
 
-These are **[eigenvalue problems](@entry_id:142153)**! The final, stable authority vector $a$ is nothing other than the principal **eigenvector** of the matrix $A^{\top}A$ (the *co-citation matrix*). And the hub vector $h$ is the [principal eigenvector](@entry_id:264358) of $AA^{\top}$ (the *bibliographic [coupling matrix](@entry_id:191757)*). The iterative process we described is simply the well-known **[power iteration](@entry_id:141327)** method, a numerical technique for finding the [principal eigenvector](@entry_id:264358) of a matrix.
+These are **[eigenvalue problems](@keyword=eigenvalue_problems|lang=en-US|style=Feynman)**! The final, stable authority vector $a$ is nothing other than the principal **eigenvector** of the matrix $A^{\top}A$ (the *co-citation matrix*). And the hub vector $h$ is the [principal eigenvector](@keyword=principal_eigenvector|lang=en-US|style=Feynman) of $AA^{\top}$ (the *bibliographic [coupling matrix](@keyword=coupling_matrix|lang=en-US|style=Feynman)*). The iterative process we described is simply the well-known **[power iteration](@keyword=power_iteration|lang=en-US|style=Feynman)** method, a numerical technique for finding the [principal eigenvector](@keyword=principal_eigenvector|lang=en-US|style=Feynman) of a matrix.
 
-The beauty runs even deeper. In linear algebra, the eigenvectors of $A^{\top}A$ and $AA^{\top}$ are known as the right and left **[singular vectors](@entry_id:143538)** of the original matrix $A$, respectively. This means the HITS algorithm is, in disguise, a method for computing the most significant component of the **Singular Value Decomposition (SVD)** of the web graph. It uncovers the most dominant "mode" of connectivity in the entire network, beautifully separating the concepts of source (hub) and destination (authority)  .
+The beauty runs even deeper. In linear algebra, the eigenvectors of $A^{\top}A$ and $AA^{\top}$ are known as the right and left **[singular vectors](@keyword=singular_vectors|lang=en-US|style=Feynman)** of the original matrix $A$, respectively. This means the HITS algorithm is, in disguise, a method for computing the most significant component of the **Singular Value Decomposition (SVD)** of the web graph. It uncovers the most dominant "mode" of connectivity in the entire network, beautifully separating the concepts of source (hub) and destination (authority) [@problem_id:4292592] [@problem_id:4364829].
 
 ### More Than Just Popularity
 
 One might wonder if "authority" is just a fancy name for popularity—that is, having a high in-degree (many incoming links). HITS is far more sophisticated. It's not about the *quantity* of links, but the *quality* of their sources.
 
-Imagine a page $Y$ that is linked to by thousands of random, unimportant blogs. Now consider a page $U$ with only two incoming links. However, these two links come from two of the most respected and well-curated hub pages on the subject. HITS will correctly assign a much higher authority score to $U$ than to $Y$. The endorsements from good hubs amplify $U$'s authority score, while the low-quality endorsements of $Y$ contribute very little . This is because the authority score is a sum of its endorsers' *hub scores*, not just a count of its endorsers.
+Imagine a page $Y$ that is linked to by thousands of random, unimportant blogs. Now consider a page $U$ with only two incoming links. However, these two links come from two of the most respected and well-curated hub pages on the subject. HITS will correctly assign a much higher authority score to $U$ than to $Y$. The endorsements from good hubs amplify $U$'s authority score, while the low-quality endorsements of $Y$ contribute very little [@problem_id:4281895]. This is because the authority score is a sum of its endorsers' *hub scores*, not just a count of its endorsers.
 
-This nuanced view distinguishes HITS from simpler measures like **[eigenvector centrality](@entry_id:155536)**, which is based on the equation $Ax = \lambda x$. For a directed network, this equation essentially defines a hub-like score, conflating the distinct roles of pointing and being pointed to. HITS elegantly separates them . Interestingly, if the network were undirected (symmetric, $A = A^{\top}$), the distinction vanishes. Hubs and authorities become one and the same, and the HITS scores coincide with [eigenvector centrality](@entry_id:155536).
+This nuanced view distinguishes HITS from simpler measures like **[eigenvector centrality](@keyword=eigenvector_centrality|lang=en-US|style=Feynman)**, which is based on the equation $Ax = \lambda x$. For a directed network, this equation essentially defines a hub-like score, conflating the distinct roles of pointing and being pointed to. HITS elegantly separates them [@problem_id:4364829]. Interestingly, if the network were undirected (symmetric, $A = A^{\top}$), the distinction vanishes. Hubs and authorities become one and the same, and the HITS scores coincide with [eigenvector centrality](@keyword=eigenvector_centrality|lang=en-US|style=Feynman).
 
 ### The Power of Context
 
 Perhaps the most practical aspect of the original HITS algorithm is its query-dependent nature. The goal isn't to find the best authorities on the entire web, but the best authorities for a specific *topic*.
 
-HITS achieves this with a clever two-step process . First, for a given query (e.g., "systems biomedicine"), a standard text-based search finds an initial list of relevant pages, called the **root set**. This set is a good starting point, but it may be incomplete.
+HITS achieves this with a clever two-step process [@problem_id:4281829]. First, for a given query (e.g., "systems biomedicine"), a standard text-based search finds an initial list of relevant pages, called the **root set**. This set is a good starting point, but it may be incomplete.
 
-To build a richer, topic-focused community of pages, this root set is expanded into a **base set**. This is done by including the root set itself, plus all pages they link to (potential authorities), and all pages that link to them (potential hubs). To prevent the base set from becoming enormous and to avoid "topic drift," this expansion is typically limited, for instance by only including a fixed number of the pages with incoming links .
+To build a richer, topic-focused community of pages, this root set is expanded into a **base set**. This is done by including the root set itself, plus all pages they link to (potential authorities), and all pages that link to them (potential hubs). To prevent the base set from becoming enormous and to avoid "topic drift," this expansion is typically limited, for instance by only including a fixed number of the pages with incoming links [@problem_id:4281920].
 
-The HITS algorithm—the iterative dance of hubs and authorities—is then run *only* on the [subgraph](@entry_id:273342) induced by this query-specific base set. The result is a ranking of hubs and authorities tailored to the topic of the query. This stands in sharp contrast to a global, query-agnostic algorithm like standard PageRank, which computes a single importance score for every page on the web, regardless of the user's immediate interest.
+The HITS algorithm—the iterative dance of hubs and authorities—is then run *only* on the [subgraph](@keyword=subgraph|lang=en-US|style=Feynman) induced by this query-specific base set. The result is a ranking of hubs and authorities tailored to the topic of the query. This stands in sharp contrast to a global, query-agnostic algorithm like standard PageRank, which computes a single importance score for every page on the web, regardless of the user's immediate interest.
 
 ### The Subtleties of the Tapestry
 
-Like any powerful model, HITS has interesting behaviors at the edges. A page with no outgoing links (a **dangling node**) cannot, by definition, be a hub, so its hub score will always be zero. However, it can be a fantastic authority if good hubs point to it. Conversely, a page with no incoming links cannot be an authority (its authority score is zero), but it can be a great hub if it does a good job of pointing to true authorities .
+Like any powerful model, HITS has interesting behaviors at the edges. A page with no outgoing links (a **dangling node**) cannot, by definition, be a hub, so its hub score will always be zero. However, it can be a fantastic authority if good hubs point to it. Conversely, a page with no incoming links cannot be an authority (its authority score is zero), but it can be a great hub if it does a good job of pointing to true authorities [@problem_id:4281915].
 
-Furthermore, the structure of the community matters. If a topic community is fragmented into several disconnected sub-communities, the HITS algorithm will naturally converge to the scores of the "strongest" component—the one with the densest and most mutually reinforcing linkage. The authority scores for pages outside this dominant component will fade to zero. This behavior, a consequence of the mathematical property of **reducibility** in the authority matrix, can actually be a feature, revealing the balkanization or a dominant school of thought within a topic area on the web .
+Furthermore, the structure of the community matters. If a topic community is fragmented into several disconnected sub-communities, the HITS algorithm will naturally converge to the scores of the "strongest" component—the one with the densest and most mutually reinforcing linkage. The authority scores for pages outside this dominant component will fade to zero. This behavior, a consequence of the mathematical property of **reducibility** in the authority matrix, can actually be a feature, revealing the balkanization or a dominant school of thought within a topic area on the web [@problem_id:4281835].
 
 From a simple, intuitive idea of mutual endorsement, a rich and mathematically beautiful structure emerges, one that allows us to find meaning in the seemingly chaotic network of the web.

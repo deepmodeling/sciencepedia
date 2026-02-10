@@ -8,44 +8,44 @@
 
 这段视频的数据是一个矩阵 $M$，我们推测它由两部分组成：一个“简单”的背景矩阵 $L$ 和一个包含移动人物的“稀疏”前景矩阵 $S$。背景之所以简单，不是因为其像素值为零，而是因为它高度冗余；一帧与下一帧非常相似。在线性代数中，这种冗余性由**低秩** (low rank) 的概念来捕捉。相比之下，前景是稀疏的：在任何给定的时刻，移动的人只占像素的一小部分。
 
-挑战在于将 $M$ 分解为 $L+S$。这就是著名的**[鲁棒主成分分析](@entry_id:754394) (RPCA)** 问题。我们可以通过惩罚复杂度来引导优化过程，以找到正确的分解。对于稀疏部分 $S$，我们可以使用熟悉的可分离 $\ell_1$ 范数，它鼓励大多数元素为零。但对于低秩部分 $L$，我们需要一种能衡量其全局结构的工具。矩阵的秩是整个矩阵的属性，而不是其单个元素的属性。一个完美的、非可分解的工具是**[核范数](@entry_id:195543)** (nuclear norm)，记作 $\|L\|_*$，它是矩阵奇异值的总和。最小化[核范数](@entry_id:195543)是最小化秩的一种凸代理 (convex proxy)。
+挑战在于将 $M$ 分解为 $L+S$。这就是著名的**鲁棒主成分分析 (RPCA)** 问题。我们可以通过惩罚复杂度来引导优化过程，以找到正确的分解。对于稀疏部分 $S$，我们可以使用熟悉的可分离 $\ell_1$ 范数，它鼓励大多数元素为零。但对于低秩部分 $L$，我们需要一种能衡量其全局结构的工具。矩阵的秩是整个矩阵的属性，而不是其单个元素的属性。一个完美的、非可分解的工具是**[核范数](@keyword=nuclear_norm|lang=zh-CN|style=Feynman)** (nuclear norm)，记作 $\|L\|_*$，它是矩阵奇异值的总和。最小化[核范数](@keyword=nuclear_norm|lang=zh-CN|style=Feynman)是最小化秩的一种凸代理 (convex proxy)。
 
-由此产生的[优化问题](@entry_id:266749) $\min_{L,S} \|L\|_* + \lambda \|S\|_1$，是用于全局结构的非可分解正则化器和用于局部结构的可分解正则化器的完美结合。这一个公式就能让机器在视频中分离背景和前景，去除医学图像中的噪声和伪影，以及在无数科学领域对受损数据进行去噪。[核范数](@entry_id:195543)的非可分解性并非一个麻烦；恰恰是这一特性编码了我们对于世界底层简单性的物理直觉。
+由此产生的[优化问题](@keyword=optimization_problem|lang=zh-CN|style=Feynman) $\min_{L,S} \|L\|_* + \lambda \|S\|_1$，是用于全局结构的非可分解正则化器和用于局部结构的可分解正则化器的完美结合。这一个公式就能让机器在视频中分离背景和前景，去除医学图像中的噪声和伪影，以及在无数科学领域对受损数据进行去噪。[核范数](@keyword=nuclear_norm|lang=zh-CN|style=Feynman)的非可分解性并非一个麻烦；恰恰是这一特性编码了我们对于世界底层简单性的物理直觉。
 
 ### 超越简单稀疏性：拥抱复杂几何
 
 世界的结构往往比“低秩”或“稀疏”更丰富。以一张天文图像为例。我们期望一颗恒星是一小团连通的明亮像素，而不是随机的散点。我们如何编码这种“团簇性”的概念？
 
-这就是**[结构化稀疏性](@entry_id:636211)** (structured sparsity) 的领域。我们可以将像素表示为图中的节点，用边连接相邻的像素。然后我们可以设计一个惩罚项：如果非零像素形成一个[紧密连接](@entry_id:170497)的组件，则惩罚较低；如果它们分散开来，“切断”了图中的许多边，则惩罚较高。这种惩罚可以使用**[子模](@entry_id:148922)集函数** (submodular set function) 来构建，这是一个来自[组合优化](@entry_id:264983)的概念，它自然地描述了分组和覆盖等概念。
+这就是**[结构化稀疏性](@keyword=structured_sparsity|lang=zh-CN|style=Feynman)** (structured sparsity) 的领域。我们可以将像素表示为图中的节点，用边连接相邻的像素。然后我们可以设计一个惩罚项：如果非零像素形成一个[紧密连接](@keyword=zonula_occludens|lang=zh-CN|style=Feynman)的组件，则惩罚较低；如果它们分散开来，“切断”了图中的许多边，则惩罚较高。这种惩罚可以使用**[子模](@keyword=submodule|lang=zh-CN|style=Feynman)集函数** (submodular set function) 来构建，这是一个来自[组合优化](@keyword=combinatorial_optimization|lang=zh-CN|style=Feynman)的概念，它自然地描述了分组和覆盖等概念。
 
 虽然这些函数是离散的，一个名为 **Lovász 扩展** 的非凡数学工具能将它们转化为连续、凸且非可分解的正则化器。最小化这个正则化器会鼓励解尊重所期望的图结构。这个强大的思想在前沿问题中找到了应用，例如**相位恢复** (phase retrieval)，这是晶体学和成像中常见的挑战，我们能测量信号的强度但会丢失其相位信息。通过添加一个“知道”信号支撑集应为连续形状的正则化器，我们可以显著减少模糊性并恢复信号。
 
-虽然这些基于图的正则化器不可微且不可分离，但它们在计算上并非无解。非同寻常的是，它们对应的[近端算子](@entry_id:635396)——现代[优化算法](@entry_id:147840)的关键组成部分——通常可以使用[相关图](@entry_id:185983)上的经典最大流/最小割算法高效计算。这揭示了[凸优化](@entry_id:137441)、图论和信号处理之间深刻而优美的联系，使我们能够大规模地解决涉及极其复杂结构先验的问题。
+虽然这些基于图的正则化器不可微且不可分离，但它们在计算上并非无解。非同寻常的是，它们对应的[近端算子](@keyword=proximal_operators|lang=zh-CN|style=Feynman)——现代[优化算法](@keyword=optimization_algorithms|lang=zh-CN|style=Feynman)的关键组成部分——通常可以使用[相关图](@keyword=correlation_diagrams|lang=zh-CN|style=Feynman)上的经典最大流/最小割算法高效计算。这揭示了[凸优化](@keyword=convex_optimization|lang=zh-CN|style=Feynman)、图论和信号处理之间深刻而优美的联系，使我们能够大规模地解决涉及极其复杂结构先验的问题。
 
 ### 组合学的插曲：离散选择的艰难与优美
 
-非可分解惩罚项并不仅限于向量和矩阵的连续世界。它们在算法和决策的离散领域中也同样自然地出现。考虑一下[现代机器学习](@entry_id:637169)中的**提升法** (boosting)，它通过顺序添加许多简单的“[弱学习器](@entry_id:634624)”来构建一个强大的预测模型。
+非可分解惩罚项并不仅限于向量和矩阵的连续世界。它们在算法和决策的离散领域中也同样自然地出现。考虑一下[现代机器学习](@keyword=modern_machine_learning|lang=zh-CN|style=Feynman)中的**提升法** (boosting)，它通过顺序添加许多简单的“[弱学习器](@keyword=weak_learners|lang=zh-CN|style=Feynman)”来构建一个强大的预测模型。
 
-假设我们想构建一个不仅准确而且可解释和高效的模型，这意味着它应该依赖尽可能少的输入特征（例如，患者症状）。我们可以修改[提升算法](@entry_id:635795)来实现这一目标。在每一步中，当我们添加一个新的[弱学习器](@entry_id:634624)时，如果该学习器使用了我们集成模型中任何先前学习器都未使用过的特征，我们就会增加一个惩罚成本。
+假设我们想构建一个不仅准确而且可解释和高效的模型，这意味着它应该依赖尽可能少的输入特征（例如，患者症状）。我们可以修改[提升算法](@keyword=boosting_algorithms|lang=zh-CN|style=Feynman)来实现这一目标。在每一步中，当我们添加一个新的[弱学习器](@keyword=weak_learners|lang=zh-CN|style=Feynman)时，如果该学习器使用了我们集成模型中任何先前学习器都未使用过的特征，我们就会增加一个惩罚成本。
 
-这种鼓励重用已选特征的惩罚是深层次非可分解的。在第 $t$ 步做出选择的成本取决于从第 $1$ 步到第 $t-1$ 步所做出的全部选择历史。这种耦合使得寻找全局最优学习器序列的问题在计算上变得棘手——它是 NP-难的。然而，并非全无希望。选择在准确性和引入新特征的惩罚之间提供最佳权衡的学习器的贪心策略，不仅直观，而且在理论上是可靠的。在某些合理条件下，该问题表现出一种称为[子模性](@entry_id:270750) (submodularity) 的“[收益递减](@entry_id:175447)”特性。这种联系使我们能够引用[组合优化](@entry_id:264983)中的强大定理，这些定理保证了简单的贪心方法能产生一个可证明是接近最优的解。
+这种鼓励重用已选特征的惩罚是深层次非可分解的。在第 $t$ 步做出选择的成本取决于从第 $1$ 步到第 $t-1$ 步所做出的全部选择历史。这种耦合使得寻找全局最优学习器序列的问题在计算上变得棘手——它是 NP-难的。然而，并非全无希望。选择在准确性和引入新特征的惩罚之间提供最佳权衡的学习器的贪心策略，不仅直观，而且在理论上是可靠的。在某些合理条件下，该问题表现出一种称为[子模性](@keyword=submodularity|lang=zh-CN|style=Feynman) (submodularity) 的“[收益递减](@keyword=diminishing_returns|lang=zh-CN|style=Feynman)”特性。这种联系使我们能够引用[组合优化](@keyword=combinatorial_optimization|lang=zh-CN|style=Feynman)中的强大定理，这些定理保证了简单的贪心方法能产生一个可证明是接近最优的解。
 
-### 指导智能行为：人工智能与逆[强化学习](@entry_id:141144)
+### 指导智能行为：人工智能与逆[强化学习](@keyword=reinforcement_learning|lang=zh-CN|style=Feynman)
 
-这些思想能否帮助我们理解智能本身？人工智能中的一个核心问题是**逆强化学习 (IRL)**：仅通过观察智能体的行为来推断其目标。如果你看到一个机器人持续地导航到充电站，你可能会推断它的目标（或“[奖励函数](@entry_id:138436)”）与保持高电量有关。
+这些思想能否帮助我们理解智能本身？人工智能中的一个核心问题是**逆强化学习 (IRL)**：仅通过观察智能体的行为来推断其目标。如果你看到一个机器人持续地导航到充电站，你可能会推断它的目标（或“[奖励函数](@keyword=reward_function|lang=zh-CN|style=Feynman)”）与保持高电量有关。
 
-然而，这个逆问题从根本上是病态的 (ill-posed)。大量不同的[奖励函数](@entry_id:138436)都可能导致完全相同的观察行为。例如，一个想要保持充电状态的机器人和一个想要待在电源插座附近的机器人可能会表现出完全相同的行为。这就是**策略等价性** (policy-equivalence) 问题。我们如何才能推断出“真实”的奖励？
+然而，这个逆问题从根本上是病态的 (ill-posed)。大量不同的[奖励函数](@keyword=reward_function|lang=zh-CN|style=Feynman)都可能导致完全相同的观察行为。例如，一个想要保持充电状态的机器人和一个想要待在电源插座附近的机器人可能会表现出完全相同的行为。这就是**策略等价性** (policy-equivalence) 问题。我们如何才能推断出“真实”的奖励？
 
-我们需要对问题进行正则化，注入一些关于何为“合理”[奖励函数](@entry_id:138436)的先验知识。像 $\ell_1$ 或 $\ell_2$ 范数这样的简单正则化器过于天真；它们可能会选择一个在数学上简单（例如，稀疏或值小）但在语义上毫无意义的[奖励函数](@entry_id:138436)。IRL的未来在于使用富有[表现力](@entry_id:149863)的、*学习到的*先验。我们可以在一个任务语料库上训练一个[深度生成模型](@entry_id:748264)，以学习在给定领域中（例如，在[机器人学](@entry_id:150623)中，目标通常涉及到达某个位置或操纵物体）合理的[奖励函数](@entry_id:138436)是什么样的。
+我们需要对问题进行正则化，注入一些关于何为“合理”[奖励函数](@keyword=reward_function|lang=zh-CN|style=Feynman)的先验知识。像 $\ell_1$ 或 $\ell_2$ 范数这样的简单正则化器过于天真；它们可能会选择一个在数学上简单（例如，稀疏或值小）但在语义上毫无意义的[奖励函数](@keyword=reward_function|lang=zh-CN|style=Feynman)。IRL的未来在于使用富有[表现力](@keyword=expressive_power|lang=zh-CN|style=Feynman)的、*学习到的*先验。我们可以在一个任务语料库上训练一个[深度生成模型](@keyword=deep_generative_models|lang=zh-CN|style=Feynman)，以学习在给定领域中（例如，在[机器人学](@keyword=robotics|lang=zh-CN|style=Feynman)中，目标通常涉及到达某个位置或操纵物体）合理的[奖励函数](@keyword=reward_function|lang=zh-CN|style=Feynman)是什么样的。
 
-这个学习到的先验的对数概率 $\log p_{\theta}(r)$，在[奖励函数](@entry_id:138436)空间上充当了一个强大的、非可分解的正则化器。它捕捉了简单范数无法捕捉的错综复杂的[非线性依赖](@entry_id:265776)关系和结构知识。通过最大化观察到的行为的[似然性](@entry_id:167119)*加上*这个学习到的对数先验，我们可以选择一个不仅与智能体行为一致，而且符合对合理目标丰富的、数据驱动的理解的[奖励函数](@entry_id:138436)。这是朝着构建能够真正理解他人意图的机器迈出的关键一步。
+这个学习到的先验的对数概率 $\log p_{\theta}(r)$，在[奖励函数](@keyword=reward_function|lang=zh-CN|style=Feynman)空间上充当了一个强大的、非可分解的正则化器。它捕捉了简单范数无法捕捉的错综复杂的[非线性依赖](@keyword=non_linear_dependence|lang=zh-CN|style=Feynman)关系和结构知识。通过最大化观察到的行为的[似然性](@keyword=likelihood|lang=zh-CN|style=Feynman)*加上*这个学习到的对数先验，我们可以选择一个不仅与智能体行为一致，而且符合对合理目标丰富的、数据驱动的理解的[奖励函数](@keyword=reward_function|lang=zh-CN|style=Feynman)。这是朝着构建能够真正理解他人意图的机器迈出的关键一步。
 
-### 编织概率之布：现代[统计学习](@entry_id:269475)
+### 编织概率之布：现代[统计学习](@keyword=statistical_learning|lang=zh-CN|style=Feynman)
 
-到目前为止，我们使用正则化器来指导我们寻找单一的最优解。但如果我们想要刻画我们的不确定性，并找到可能解的整个*[概率分布](@entry_id:146404)*呢？这是[贝叶斯推断](@entry_id:146958)的核心任务。
+到目前为止，我们使用正则化器来指导我们寻找单一的最优解。但如果我们想要刻画我们的不确定性，并找到可能解的整个*[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)*呢？这是[贝叶斯推断](@keyword=bayesian_inference|lang=zh-CN|style=Feynman)的核心任务。
 
-考虑一个动态[逆问题](@entry_id:143129)，比如用带噪的雷达数据跟踪一颗卫星。我们想要推断[卫星轨道](@entry_id:174792)参数及其初始状态的[分布](@entry_id:182848)。这个后验分布通常是一个形状奇异、高维的对象，无法用简单的方程来描述。机器学习中一项前沿技术，称为**使用[归一化流](@entry_id:272573)的[变分推断](@entry_id:634275)** (variational inference with normalizing flows)，通过学习一个复杂的变换 $T$ 来解决这个问题，该变换可以将一个简单的[分布](@entry_id:182848)（如一个[高斯噪声](@entry_id:260752)球）扭曲成我们正在寻找的复杂[后验分布](@entry_id:145605)的精确形状。
+考虑一个动态[逆问题](@keyword=inverse_problems|lang=zh-CN|style=Feynman)，比如用带噪的雷达数据跟踪一颗卫星。我们想要推断[卫星轨道](@keyword=satellite_orbits|lang=zh-CN|style=Feynman)参数及其初始状态的[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)。这个后验分布通常是一个形状奇异、高维的对象，无法用简单的方程来描述。机器学习中一项前沿技术，称为**使用[归一化流](@keyword=normalizing_flows|lang=zh-CN|style=Feynman)的[变分推断](@keyword=variational_inference|lang=zh-CN|style=Feynman)** (variational inference with normalizing flows)，通过学习一个复杂的变换 $T$ 来解决这个问题，该变换可以将一个简单的[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)（如一个[高斯噪声](@keyword=gaussian_noise|lang=zh-CN|style=Feynman)球）扭曲成我们正在寻找的复杂[后验分布](@keyword=posterior_distribution|lang=zh-CN|style=Feynman)的精确形状。
 
-这个变换 $T$ 通常由一个[神经网](@entry_id:276355)络[参数化](@entry_id:272587)。为了找到正确的变换，我们最小化一个[目标函数](@entry_id:267263)。这个目标函数的一个关键组成部分是 $\log |\det \nabla T|$ 项，即该映射雅可比矩阵[行列式](@entry_id:142978)的对数。这个看似深奥的项，实际上是作用于*变换本身参数*的非可分解正则化器。直观地说，它确保变换不会通过将概率空间的体积压缩到零来“作弊”。它惩罚那些过[分压](@entry_id:168927)缩空间的映射，从而确保最终得到的对象是一个有效的、延展开的[概率分布](@entry_id:146404)。这个[对数行列式](@entry_id:751430)项是深层次非可分解的，因为它以一种高度耦合的方式依赖于[神经网](@entry_id:276355)络的整个架构和权重。在这里，正则化器不仅仅是在塑造一个解，而是在塑造我们用以建模不确定性的概率空间本身。
+这个变换 $T$ 通常由一个[神经网](@keyword=nerve_net|lang=zh-CN|style=Feynman)络[参数化](@keyword=parametrization|lang=zh-CN|style=Feynman)。为了找到正确的变换，我们最小化一个[目标函数](@keyword=objective_function|lang=zh-CN|style=Feynman)。这个目标函数的一个关键组成部分是 $\log |\det \nabla T|$ 项，即该映射雅可比矩阵[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)的对数。这个看似深奥的项，实际上是作用于*变换本身参数*的非可分解正则化器。直观地说，它确保变换不会通过将概率空间的体积压缩到零来“作弊”。它惩罚那些过[分压](@keyword=partial_pressures|lang=zh-CN|style=Feynman)缩空间的映射，从而确保最终得到的对象是一个有效的、延展开的[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)。这个[对数行列式](@keyword=log_determinant|lang=zh-CN|style=Feynman)项是深层次非可分解的，因为它以一种高度耦合的方式依赖于[神经网](@keyword=nerve_net|lang=zh-CN|style=Feynman)络的整个架构和权重。在这里，正则化器不仅仅是在塑造一个解，而是在塑造我们用以建模不确定性的概率空间本身。
 
 从分离信号与噪声到理解人类意图，非可分解正则化原理是一条金线。它是我们用来教导算法关于结构、上下文和世界整体性的语言，使它们能够超越简单的像素计数，走向对所消费数据更综合、更物理、甚至更智能的理解。

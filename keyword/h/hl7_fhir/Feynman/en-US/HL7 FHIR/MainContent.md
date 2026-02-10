@@ -11,21 +11,21 @@ In healthcare, we face the exact same problem. We have a vast orchestra of syste
 
 At its core, interoperability stands on two pillars: the syntactic and the semantic. Let's think about this with a simple, concrete example. A hospital in Boston needs to send a patient's diagnosis of diabetes to a clinic in Los Angeles.
 
-**Syntactic interoperability** is about structure and grammar. It's the "sheet music" format. It means the computer in Los Angeles can receive the digital message from Boston and parse it without errors. It understands that the message contains a patient's name, a date, and a field labeled "diagnosis code." The message is structurally sound. HL7 FHIR's base resources—standardized [data structures](@entry_id:262134) for concepts like `Patient` or `Observation`—provide this syntactic foundation. They define the expected fields and data formats (like JSON or XML), ensuring everyone is reading from the same page layout .
+**Syntactic interoperability** is about structure and grammar. It's the "sheet music" format. It means the computer in Los Angeles can receive the digital message from Boston and parse it without errors. It understands that the message contains a patient's name, a date, and a field labeled "diagnosis code." The message is structurally sound. HL7 FHIR's base resources—standardized [data structures](@keyword=data_structures|lang=en-US|style=Feynman) for concepts like `Patient` or `Observation`—provide this syntactic foundation. They define the expected fields and data formats (like JSON or XML), ensuring everyone is reading from the same page layout [@problem_id:4981496].
 
 But this is only half the story. What if the diagnosis code sent from Boston is "`123`"? The LA clinic's computer can read the number `123` perfectly (syntactic success), but it has no idea what that code means. Is it diabetes? Is it a broken arm? It's a local code, meaningful only within the walls of the Boston hospital. This is a semantic failure.
 
-**Semantic interoperability** is about shared meaning. It's ensuring the "note" means the same thing to every musician. To achieve this, the Boston hospital must use a code from a shared, universal dictionary. If it sends the diagnosis using the Systematized Nomenclature of Medicine Clinical Terms (SNOMED CT) code `73211009`, the LA clinic's system can look up this code and know, with absolute certainty, that it means "Diabetes mellitus (disorder)". Now, the information can be used safely for clinical decisions, research, or public health. The meaning is preserved .
+**Semantic interoperability** is about shared meaning. It's ensuring the "note" means the same thing to every musician. To achieve this, the Boston hospital must use a code from a shared, universal dictionary. If it sends the diagnosis using the Systematized Nomenclature of Medicine Clinical Terms (SNOMED CT) code `73211009`, the LA clinic's system can look up this code and know, with absolute certainty, that it means "Diabetes mellitus (disorder)". Now, the information can be used safely for clinical decisions, research, or public health. The meaning is preserved [@problem_id:4832368].
 
 FHIR brilliantly separates these two concerns. It provides the syntactic structure, and then provides standardized "slots" where semantic meaning, drawn from universal terminologies, can be plugged in.
 
 ### Building with LEGOs, Not Pouring Concrete
 
-So how does FHIR provide this structure? To understand its genius, we must look at what came before. Older standards were often document-centric, like the HL7 Clinical Document Architecture (CDA). A CDA document is like a statue carved from a single block of stone—it's a complete, legally attested snapshot of a clinical event, like a discharge summary. This is perfect for archival and legal purposes, where you need a permanent, unchangeable record .
+So how does FHIR provide this structure? To understand its genius, we must look at what came before. Older standards were often document-centric, like the HL7 Clinical Document Architecture (CDA). A CDA document is like a statue carved from a single block of stone—it's a complete, legally attested snapshot of a clinical event, like a discharge summary. This is perfect for archival and legal purposes, where you need a permanent, unchangeable record [@problem_id:4827129].
 
-But what if you don't want a permanent statue? What if you just want to add a new [allergy](@entry_id:188097) to a patient's record, or check their latest blood pressure reading? Trying to do this with a large, static document is like trying to change the hat on a stone statue—it's inefficient and clumsy.
+But what if you don't want a permanent statue? What if you just want to add a new [allergy](@keyword=allergy|lang=en-US|style=Feynman) to a patient's record, or check their latest blood pressure reading? Trying to do this with a large, static document is like trying to change the hat on a stone statue—it's inefficient and clumsy.
 
-FHIR's philosophy is fundamentally different. It approaches health data not as monolithic statues, but as a collection of small, interconnecting LEGO bricks called **Resources** . A `Patient` is a resource. A single `Observation` (like a temperature reading) is a resource. A `MedicationRequest` is a resource. Each resource is a small, logical, self-contained packet of information.
+FHIR's philosophy is fundamentally different. It approaches health data not as monolithic statues, but as a collection of small, interconnecting LEGO bricks called **Resources** [@problem_id:4834976]. A `Patient` is a resource. A single `Observation` (like a temperature reading) is a resource. A `MedicationRequest` is a resource. Each resource is a small, logical, self-contained packet of information.
 
 This LEGO-like design has profound and beautiful consequences:
 
@@ -33,31 +33,31 @@ This LEGO-like design has profound and beautiful consequences:
 
 - **Composition:** Resources are not isolated; they connect. An `Observation` resource for a blood pressure reading has a mandatory `subject` element that doesn't contain the patient's full information again. Instead, it contains a simple, clean **reference** that points to the one and only `Patient` resource for that individual. This avoids redundancy and ensures there is a single source of truth for each piece of information.
 
-- **Addressability:** This is perhaps the most revolutionary part. Every single resource—every individual LEGO brick of data—can have its own unique address on a network (a URL), just like a webpage. And you can interact with it using the same simple verbs your web browser uses: `GET` to read it, `POST` to create a new one, and `PUT` to update it. This is the essence of a **RESTful API**, and it makes FHIR a natural fit for the modern world of web services and mobile apps .
+- **Addressability:** This is perhaps the most revolutionary part. Every single resource—every individual LEGO brick of data—can have its own unique address on a network (a URL), just like a webpage. And you can interact with it using the same simple verbs your web browser uses: `GET` to read it, `POST` to create a new one, and `PUT` to update it. This is the essence of a **RESTful API**, and it makes FHIR a natural fit for the modern world of web services and mobile apps [@problem_id:4857498].
 
 ### The Universal Language of Healthcare
 
 We now have our LEGO bricks (Resources) and a way to connect them. But to achieve true semantic interoperability, we need to agree on what the bricks themselves represent. FHIR provides the grammar of our language, but it doesn't provide all the words. For that, it relies on a whole ecosystem of specialized vocabularies, or **terminologies**.
 
-Think of it this way: the FHIR `Observation` resource is a template for recording a measurement. It has a slot called `code` to say *what* was measured, and a slot called `valueQuantity` to say *what the result was*. But FHIR itself doesn't define a code for every lab test in the world. Instead, it expects you to use the right dictionary for the job :
+Think of it this way: the FHIR `Observation` resource is a template for recording a measurement. It has a slot called `code` to say *what* was measured, and a slot called `valueQuantity` to say *what the result was*. But FHIR itself doesn't define a code for every lab test in the world. Instead, it expects you to use the right dictionary for the job [@problem_id:4856369]:
 
 - To identify a specific lab test or measurement, we use **Logical Observation Identifiers Names and Codes (LOINC)**. The LOINC code `718-7` unambiguously means "Hemoglobin".
 - To describe a diagnosis or clinical finding, we use **Systematized Nomenclature of Medicine Clinical Terms (SNOMED CT)**.
 - To precisely define a medication, abstracting away from brand names and packaging, we use **RxNorm**.
 - To ensure a measurement's units are computable, we use the **Unified Code for Units of Measure (UCUM)**. Recording a value as "`14 g/dL`" using UCUM allows any computer to understand it and, if necessary, convert it to another unit like `g/L`.
 
-Let's look inside a FHIR `Observation` for a blood pressure reading. It's not just a blob of text. It's a beautifully structured piece of data. It has a `code` pointing to the LOINC concept for a blood pressure panel. Then, it uses a special element called `component` to hold two smaller, related observations: one with the LOINC code for systolic pressure and its value (e.g., 120 mmHg), and another for diastolic pressure and its value (e.g., 80 mmHg). This structure makes the relationship between the two values explicit and machine-readable, a feat nearly impossible with simple text .
+Let's look inside a FHIR `Observation` for a blood pressure reading. It's not just a blob of text. It's a beautifully structured piece of data. It has a `code` pointing to the LOINC concept for a blood pressure panel. Then, it uses a special element called `component` to hold two smaller, related observations: one with the LOINC code for systolic pressure and its value (e.g., 120 mmHg), and another for diastolic pressure and its value (e.g., 80 mmHg). This structure makes the relationship between the two values explicit and machine-readable, a feat nearly impossible with simple text [@problem_id:4857056].
 
 ### From Universal Grammar to Specific Instructions: Profiles and Terminology Tools
 
 The base FHIR resources are designed to be flexible to cover thousands of potential use cases around the world—this is often called the "80% rule". But for a *specific* use case, like reporting a vaccination to a public health registry, this flexibility can be a source of ambiguity. Do we need to include the vaccine's lot number? Is the patient's date of birth required?
 
-This is where **FHIR Profiles** come in. A Profile is a set of rules, a "conformance layer" that sits on top of a base resource to make it stricter and more specific for a particular purpose . It’s like taking a general-purpose LEGO kit and providing a specific instruction manual that says, "To build this car, you *must* use these specific pieces in this specific way."
+This is where **FHIR Profiles** come in. A Profile is a set of rules, a "conformance layer" that sits on top of a base resource to make it stricter and more specific for a particular purpose [@problem_id:4981496]. It’s like taking a general-purpose LEGO kit and providing a specific instruction manual that says, "To build this car, you *must* use these specific pieces in this specific way."
 
-A profile can say, for instance, that for a maternal health record, an `Observation` for hemoglobin *must* use the LOINC code `718-7` and the value *must* be reported in `g/dL`. This is called **binding** an element to a specific set of codes. To manage these sets of codes, FHIR provides a suite of terminology tools :
+A profile can say, for instance, that for a maternal health record, an `Observation` for hemoglobin *must* use the LOINC code `718-7` and the value *must* be reported in `g/dL`. This is called **binding** an element to a specific set of codes. To manage these sets of codes, FHIR provides a suite of terminology tools [@problem_id:4336662]:
 
 - **Code System:** This is the master dictionary itself, like the entire SNOMED CT terminology.
-- **Value Set:** This is a curated list of codes selected from one or more code systems for a specific purpose. For example, a Value Set for "Vaccine Type" might contain a specific list of 15 vaccine codes that are relevant to a childhood [immunization](@entry_id:193800) program. The Profile would then bind the `vaccineCode` element to this Value Set.
+- **Value Set:** This is a curated list of codes selected from one or more code systems for a specific purpose. For example, a Value Set for "Vaccine Type" might contain a specific list of 15 vaccine codes that are relevant to a childhood [immunization](@keyword=immunization|lang=en-US|style=Feynman) program. The Profile would then bind the `vaccineCode` element to this Value Set.
 - **Concept Map:** This is a translation dictionary. It's used to map codes from one system to another, for instance, mapping a hospital's old, local codes to the standard SNOMED CT codes to enable interoperability.
 
 This elegant, layered system allows FHIR to be both a universal standard and infinitely adaptable, providing the precision needed for safe and effective healthcare.
@@ -66,7 +66,7 @@ This elegant, layered system allows FHIR to be both a universal standard and inf
 
 The true beauty of FHIR's principles—structured data, granular resources, and semantic clarity—is that they can be applied to more than just clinical measurements. They can be used to model concepts as complex, human, and vital as a patient's consent.
 
-Imagine a patient who wants to define a very specific set of rules for how their data is shared :
+Imagine a patient who wants to define a very specific set of rules for how their data is shared [@problem_id:4852311]:
 - "You may share my mental health notes, but *only* for treatment purposes, and *only* for the next year."
 - "You may *never* share my HIV status with anyone for any reason."
 - "You may share my genetic data, but *only* for research, and I reserve the right to revoke this permission at any time."

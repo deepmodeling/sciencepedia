@@ -11,27 +11,27 @@ A hazard is not a guarantee of harm. The knife only becomes dangerous if you dro
 
 At its core, hazard identification is a qualitative act of recognition. It answers the question, "What could possibly go wrong here?" The beauty of this question is its universality. The "what" can be a staggering variety of things, revealing the unifying power of this single concept across wildly different fields.
 
-A hazard could be a chemical, like an industrial solvent that has seeped into the [groundwater](@entry_id:201480) and now flows from the tap . It could be biological, like the hardy bacterium *Listeria monocytogenes* that, in a classic food safety scenario, might be present in a ready-to-eat smoked trout product, capable of growing even at refrigerator temperatures . It could be physical, like the microscopic blade of a microtome used to slice tissue samples in a pathology lab . Or it could be a form of energy, like the focused acoustic output of a [medical ultrasound](@entry_id:270486) system, which has the potential to heat tissue if not properly controlled .
+A hazard could be a chemical, like an industrial solvent that has seeped into the [groundwater](@keyword=groundwater|lang=en-US|style=Feynman) and now flows from the tap [@problem_id:4984304]. It could be biological, like the hardy bacterium *Listeria monocytogenes* that, in a classic food safety scenario, might be present in a ready-to-eat smoked trout product, capable of growing even at refrigerator temperatures [@problem_id:4516009]. It could be physical, like the microscopic blade of a microtome used to slice tissue samples in a pathology lab [@problem_id:4341408]. Or it could be a form of energy, like the focused acoustic output of a [medical ultrasound](@keyword=medical_ultrasound|lang=en-US|style=Feynman) system, which has the potential to heat tissue if not properly controlled [@problem_id:4918974].
 
-But we can push this powerful idea even further. Must harm always be physical? Consider a modern marvel: an AI-driven, closed-loop system in an intensive care unit that automatically adjusts a patient's medication to maintain blood pressure . A potential for physiological harm certainly exists—a software bug could give too much or too little of the drug. But what if the patient has explicitly refused the medication, and an error in the system's consent-checking module causes it to administer the drug anyway? In this case, the system has caused a profound **moral harm** by violating the patient's autonomy. So, our definition of a hazard must be broad enough to include anything that has the potential to harm us, whether that harm is to our bodies, our environment, or even our fundamental values. Hazard identification is the process of opening our eyes to all these possibilities.
+But we can push this powerful idea even further. Must harm always be physical? Consider a modern marvel: an AI-driven, closed-loop system in an intensive care unit that automatically adjusts a patient's medication to maintain blood pressure [@problem_id:4413107]. A potential for physiological harm certainly exists—a software bug could give too much or too little of the drug. But what if the patient has explicitly refused the medication, and an error in the system's consent-checking module causes it to administer the drug anyway? In this case, the system has caused a profound **moral harm** by violating the patient's autonomy. So, our definition of a hazard must be broad enough to include anything that has the potential to harm us, whether that harm is to our bodies, our environment, or even our fundamental values. Hazard identification is the process of opening our eyes to all these possibilities.
 
 ### The Four-Step Dance of Risk Assessment
 
-Identifying a hazard is the crucial first step, but it is just the beginning of a logical and elegant four-step dance known as **risk assessment**. This structured process, a cornerstone of public health and safety engineering, allows us to move from the qualitative "what if" of hazard identification to a quantitative understanding of the actual danger, or **risk** .
+Identifying a hazard is the crucial first step, but it is just the beginning of a logical and elegant four-step dance known as **risk assessment**. This structured process, a cornerstone of public health and safety engineering, allows us to move from the qualitative "what if" of hazard identification to a quantitative understanding of the actual danger, or **risk** [@problem_id:4984304].
 
-1.  **Hazard Identification:** As we've seen, this is the first step. We ask: What are the adverse effects this agent or situation can cause? If a new drug is being tested, toxicologists will perform studies to see if it has the potential to harm the liver, the kidneys, or other organs. This step is about cataloging the drug's intrinsic capabilities for harm, independent of how it might be used in a patient .
+1.  **Hazard Identification:** As we've seen, this is the first step. We ask: What are the adverse effects this agent or situation can cause? If a new drug is being tested, toxicologists will perform studies to see if it has the potential to harm the liver, the kidneys, or other organs. This step is about cataloging the drug's intrinsic capabilities for harm, independent of how it might be used in a patient [@problem_id:4981186].
 
 2.  **Dose-Response Assessment:** Once we've identified a hazard (e.g., liver damage), we ask the next logical question: How much of it does it take to cause the harm? Is one drop enough, or does it require gallons? This step quantifies the relationship between the **dose** (the amount of exposure) and the **response** (the magnitude or probability of the adverse effect).
 
 3.  **Exposure Assessment:** This step brings the analysis into the real world. We ask: How much contact do people or the environment actually have with the hazardous agent? This involves identifying who is exposed, to how much, for how long, and through what routes. A chemical can be extremely toxic, but if no one is ever exposed to it, the risk is zero.
 
-4.  **Risk Characterization:** This is the grand finale of the dance. Here, we integrate the information from the first three steps. We combine the [dose-response relationship](@entry_id:190870) ("how potent is it?") with the exposure assessment ("how much contact is there?") to arrive at a final estimate of the risk—the probability and severity of adverse effects in a specific population.
+4.  **Risk Characterization:** This is the grand finale of the dance. Here, we integrate the information from the first three steps. We combine the [dose-response relationship](@keyword=dose_response_relationship|lang=en-US|style=Feynman) ("how potent is it?") with the exposure assessment ("how much contact is there?") to arrive at a final estimate of the risk—the probability and severity of adverse effects in a specific population.
 
-This sequence is not arbitrary; it is a beautiful expression of causal logic. You cannot characterize a risk without understanding the exposure, you cannot interpret the significance of an exposure without understanding the [dose-response relationship](@entry_id:190870), and you cannot study a [dose-response relationship](@entry_id:190870) for an effect you have not yet identified as a hazard.
+This sequence is not arbitrary; it is a beautiful expression of causal logic. You cannot characterize a risk without understanding the exposure, you cannot interpret the significance of an exposure without understanding the [dose-response relationship](@keyword=dose_response_relationship|lang=en-US|style=Feynman), and you cannot study a [dose-response relationship](@keyword=dose_response_relationship|lang=en-US|style=Feynman) for an effect you have not yet identified as a hazard.
 
 ### The Detective Work: How Do We Find a Hazard?
 
-So, how do we decide that something—say, a new chemical in the environment—is truly a hazard and not just a harmless bystander? We become detectives. It is rarely a single "smoking gun" that reveals a hazard. Instead, we perform a **weight of evidence** evaluation, assembling clues from different lines of inquiry to see if they tell a consistent and coherent story .
+So, how do we decide that something—say, a new chemical in the environment—is truly a hazard and not just a harmless bystander? We become detectives. It is rarely a single "smoking gun" that reveals a hazard. Instead, we perform a **weight of evidence** evaluation, assembling clues from different lines of inquiry to see if they tell a consistent and coherent story [@problem_id:4523073].
 
 The evidence often comes from three main sources:
 -   **Human Studies:** Epidemiologists look for patterns in human populations. Do people exposed to "Compound Z" have higher rates of a particular disease than those who are not? To separate causal relationships from mere coincidence, they use a framework of considerations, famously articulated by the epidemiologist Sir Austin Bradford Hill. These act as a toolkit for causal thinking. For example, they ask: Did the exposure come *before* the disease (temporality)? Does more exposure lead to more disease (biological gradient)? Is the association seen consistently across different studies and populations (consistency)?
@@ -44,7 +44,7 @@ By integrating clues from all these areas—human, animal, and mechanistic—we 
 
 ### The Path of Exposure: From Source to Self
 
-A hazard locked away in a vault is no threat. For a hazard to cause harm, there must be a pathway for it to reach a person or a vulnerable part of the environment. A beautifully simple and powerful way to think about this is the **source-transport-receptor** model .
+A hazard locked away in a vault is no threat. For a hazard to cause harm, there must be a pathway for it to reach a person or a vulnerable part of the environment. A beautifully simple and powerful way to think about this is the **source-transport-receptor** model [@problem_id:4341408].
 
 -   The **Source** is where the hazard originates. This could be an open tray of formaldehyde solution in a lab, a contaminated food product on a grocery store shelf, or an AI algorithm making a decision.
 
@@ -58,11 +58,11 @@ This framework is another example of the unifying nature of hazard identificatio
 
 The real world is often messy and clouded by uncertainty. What do we do when the evidence is incomplete? What if we are exploring a new frontier where the hazards are literally unknown?
 
-Consider the challenge of "[microbial dark matter](@entry_id:137639)"—the vast majority of microorganisms on Earth that have never been cultivated in a lab . When scientists attempt to grow these unknown organisms, they face a fundamental problem: they don't know what hazards they might be unleashing. The organism could be harmless, it could produce a life-saving antibiotic, or it could be a deadly pathogen.
+Consider the challenge of "[microbial dark matter](@keyword=microbial_dark_matter|lang=en-US|style=Feynman)"—the vast majority of microorganisms on Earth that have never been cultivated in a lab [@problem_id:2508985]. When scientists attempt to grow these unknown organisms, they face a fundamental problem: they don't know what hazards they might be unleashing. The organism could be harmless, it could produce a life-saving antibiotic, or it could be a deadly pathogen.
 
 In situations like this, we rely on the **Precautionary Principle**. This wise and humble principle states that in the face of scientific uncertainty about potential harm, we should err on the side of caution. Instead of assuming the unknown microbe is safe and working with it at the lowest biosafety level (BSL-1), a responsible scientist will use a higher level of containment (like BSL-2), assuming it *could* be a hazard until proven otherwise.
 
-This "fog" of uncertainty comes in two main flavors :
+This "fog" of uncertainty comes in two main flavors [@problem_id:4393080]:
 
 -   **Variability (Aleatory Uncertainty):** This is the inherent randomness and diversity of the world. People are different. Some drink more water, some have different genetics, some are more susceptible to disease. This isn't a lack of knowledge; it's a feature of reality.
 
@@ -72,7 +72,7 @@ A mature approach to hazard identification and risk assessment does not ignore t
 
 ### When Simple Models Break: The World of Complex Systems
 
-The structured, linear process of risk assessment is an incredibly powerful tool. It is a brilliant simplification that has saved countless lives. But, as with any scientific model, it is vital to understand its limitations. The real world is not always a simple, linear dance; sometimes it’s a chaotic, interconnected mosh pit .
+The structured, linear process of risk assessment is an incredibly powerful tool. It is a brilliant simplification that has saved countless lives. But, as with any scientific model, it is vital to understand its limitations. The real world is not always a simple, linear dance; sometimes it’s a chaotic, interconnected mosh pit [@problem_id:4523084].
 
 When we look closely at complex environmental and biological systems, we find features that challenge our simple models:
 

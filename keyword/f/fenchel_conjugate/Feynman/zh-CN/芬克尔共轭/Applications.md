@@ -8,54 +8,54 @@
 
 现在，假设您是这家工厂的老板。您关心的不仅仅是内部成本，还有市场。市场为您的每一单位产品提供一个“价格” $y$。您自然会问：给定这个价格 $y$，我可能获得的最大利润是多少？为了找到答案，您会选择一个生产水平 $x$，使得您的收入 $xy$ 减去成本 $f(x)$ 最大化。这正是 $\sup_{x} \{ xy - f(x) \}$ 这个运算。而这是什么呢？根据定义，它就是芬克尔共轭 $f^{*}(y)$！
 
-从这个角度看，芬克尔共轭不再是一个抽象的公式，而是*利润函数*。它将关于内部生产成本的信息转化为关于市场价格下可实现的最大利润的信息。[对偶变量](@entry_id:143282) $y$ 是价格，共轭函数 $f^*(y)$ 是利润最大化问题的值函数。成本与利润之间的这种对偶性，即内部描述与基于市场的描述之间的对偶性，是经济学理论的基石，而芬克尔共轭正是其数学核心。
+从这个角度看，芬克尔共轭不再是一个抽象的公式，而是*利润函数*。它将关于内部生产成本的信息转化为关于市场价格下可实现的最大利润的信息[@problem_id:2384409]。[对偶变量](@keyword=antithetic_variates|lang=zh-CN|style=Feynman) $y$ 是价格，共轭函数 $f^*(y)$ 是利润最大化问题的值函数。成本与利润之间的这种对偶性，即内部描述与基于市场的描述之间的对偶性，是经济学理论的基石，而芬克尔共轭正是其数学核心。
 
-### 从能量到[余能](@entry_id:192009)：物理世界
+### 从能量到[余能](@keyword=complementary_energy|lang=zh-CN|style=Feynman)：物理世界
 
-一个卓越而优美的事实是，同样的数学结构也出现在对物理世界的描述中。让我们离开市场，进入一个受应力作用的固体材料领域。在连续介质力学中，当一个[超弹性材料](@entry_id:190241)变形时，它会储存能量。这种储存的能量可以用一个依赖于[应变张量](@entry_id:193332) $\varepsilon$ 的函数 $U(\varepsilon)$ 来描述，应变张量用于衡量变形。
+一个卓越而优美的事实是，同样的数学结构也出现在对物理世界的描述中。让我们离开市场，进入一个受应力作用的固体材料领域。在连续介质力学中，当一个[超弹性材料](@keyword=hyperelastic_materials|lang=zh-CN|style=Feynman)变形时，它会储存能量。这种储存的能量可以用一个依赖于[应变张量](@keyword=strain_tensor|lang=zh-CN|style=Feynman) $\varepsilon$ 的函数 $U(\varepsilon)$ 来描述，应变张量用于衡量变形。
 
-那么，与应变对偶的概念是什么？当然是应力张量 $\sigma$，它衡量材料内部的力。正如在我们的经济学例子中价格是数量的[对偶变量](@entry_id:143282)一样，应力是应变的[对偶变量](@entry_id:143282)。并且，正如我们可以定义一个利润函数一样，我们也可以通过对储能密度函数进行[勒让德-芬克尔变换](@entry_id:262931)来定义一个“余能”密度 $U^*(\sigma)$：
+那么，与应变对偶的概念是什么？当然是应力张量 $\sigma$，它衡量材料内部的力。正如在我们的经济学例子中价格是数量的[对偶变量](@keyword=antithetic_variates|lang=zh-CN|style=Feynman)一样，应力是应变的[对偶变量](@keyword=antithetic_variates|lang=zh-CN|style=Feynman)。并且，正如我们可以定义一个利润函数一样，我们也可以通过对储能密度函数进行[勒让德-芬克尔变换](@keyword=legendre_fenchel_transform|lang=zh-CN|style=Feynman)来定义一个“余能”密度 $U^*(\sigma)$：
 
 $$
 U^*(\sigma) = \sup_{\varepsilon} \{ \sigma:\varepsilon - U(\varepsilon) \}
 $$
 
-这不仅仅是一个形式上的练习。这个[余能](@entry_id:192009)是[固体力学](@entry_id:164042)中最强大的[变分原理](@entry_id:198028)之一——[最小余能原理](@entry_id:200382)的基础。它指出，在处于平衡状态的物体中所有可能的应[力场](@entry_id:147325)中，真实物理上实现的应[力场](@entry_id:147325)是使物体总[余能](@entry_id:192009)最小化的那一个。共轭关系给出了材料的[本构关系](@entry_id:186508)：应力对应变的依赖关系（$\sigma = \frac{\partial U}{\partial \varepsilon}$），以及其对偶，应变对应力的依赖关系（$\varepsilon = \frac{\partial U^*}{\partial \sigma}$）。芬克尔共轭提供了对材料行为的完备对偶描述，使得工程师能够用力和应力来表述和解决问题，而这通常比位移和应变更为直接。
+这不仅仅是一个形式上的练习。这个[余能](@keyword=complementary_energy|lang=zh-CN|style=Feynman)是[固体力学](@keyword=solid_mechanics|lang=zh-CN|style=Feynman)中最强大的[变分原理](@keyword=variational_principles|lang=zh-CN|style=Feynman)之一——最小余能原理的基础。它指出，在处于平衡状态的物体中所有可能的应[力场](@keyword=force_field|lang=zh-CN|style=Feynman)中，真实物理上实现的应[力场](@keyword=force_field|lang=zh-CN|style=Feynman)是使物体总[余能](@keyword=complementary_energy|lang=zh-CN|style=Feynman)最小化的那一个[@problem_id:2675461]。共轭关系给出了材料的[本构关系](@keyword=constitutive_relations|lang=zh-CN|style=Feynman)：应力对应变的依赖关系（$\sigma = \frac{\partial U}{\partial \varepsilon}$），以及其对偶，应变对应力的依赖关系（$\varepsilon = \frac{\partial U^*}{\partial \sigma}$）。芬克尔共轭提供了对材料行为的完备对偶描述，使得工程师能够用力和应力来表述和解决问题，而这通常比位移和应变更为直接。
 
 ### 重构问题的艺术
 
-到目前为止，我们已经看到共轭作为一种重新解释的工具。但它的威力远不止于此：它是一种将难题转化为易题的实用工具。科学和工程中的许多问题都采取 $\min_x f(x) + g(Ax)$ 的形式，其中 $x$ 是我们想要求解的变量，$A$ 是某个线性过程（如测量或物理系统），$f$ 和 $g$ 是[成本函数](@entry_id:138681)。
+到目前为止，我们已经看到共轭作为一种重新解释的工具。但它的威力远不止于此：它是一种将难题转化为易题的实用工具。科学和工程中的许多问题都采取 $\min_x f(x) + g(Ax)$ 的形式，其中 $x$ 是我们想要求解的变量，$A$ 是某个线性过程（如测量或物理系统），$f$ 和 $g$ 是[成本函数](@keyword=cost_function|lang=zh-CN|style=Feynman)。
 
-有时，项与项之间的相互作用使问题变得困难。例如，$g(Ax)$ 这一项可能会将 $x$ 的所有分量“耦合”在一起，使得无法对每个分量单独求解。这时，[芬克尔对偶](@entry_id:749289)就来解救了。通过将问题转化为其对偶形式，我们有时可以改变它的根本结构。一个在原始变量 $x$ 中是耦合且不可分的问题，在[对偶变量](@entry_id:143282) $y$ 中可能会变得优美地可分，从而可以分解为许多简单的、独立的子问题。这就像一团缠绕的绳结；与其直接试图拉开它们，你不如换个角度，从那个角度看，绳股自然就分开了。如何将[问题分解](@entry_id:272624)为 $f$ 和 $g$ 是一门艺术，一个熟练的实践者可以利用对偶性找到计算上最有利的表述方式。
+有时，项与项之间的相互作用使问题变得困难。例如，$g(Ax)$ 这一项可能会将 $x$ 的所有分量“耦合”在一起，使得无法对每个分量单独求解。这时，[芬克尔对偶](@keyword=fenchel_duality|lang=zh-CN|style=Feynman)就来解救了。通过将问题转化为其对偶形式，我们有时可以改变它的根本结构。一个在原始变量 $x$ 中是耦合且不可分的问题，在[对偶变量](@keyword=antithetic_variates|lang=zh-CN|style=Feynman) $y$ 中可能会变得优美地可分，从而可以分解为许多简单的、独立的子问题[@problem_id:3139664]。这就像一团缠绕的绳结；与其直接试图拉开它们，你不如换个角度，从那个角度看，绳股自然就分开了。如何将[问题分解](@keyword=problem_decomposition|lang=zh-CN|style=Feynman)为 $f$ 和 $g$ 是一门艺术，一个熟练的实践者可以利用对偶性找到计算上最有利的表述方式。
 
 ### 现代数据科学的核心
 
-[芬克尔对偶](@entry_id:749289)的实践威力在机器学习、统计学和信号处理等领域表现得最为淋漓尽致。在这里，它构成了当今使用的许多最重要算法的理论支柱。
+[芬克尔对偶](@keyword=fenchel_duality|lang=zh-CN|style=Feynman)的实践威力在机器学习、统计学和信号处理等领域表现得最为淋漓尽致。在这里，它构成了当今使用的许多最重要算法的理论支柱。
 
-大量的机器学习任务，从训练线性回归器到复杂的[神经网](@entry_id:276355)络，都可以被构建为**正则化[经验风险最小化](@entry_id:633880)（ERM）**。其目标是找到模型参数 $w$，以最小化两项之和：一项是衡量模型对数据拟合程度的[损失函数](@entry_id:634569)，另一项是惩罚模型复杂性以[防止过拟合](@entry_id:635166)的正则化项。
+大量的机器学习任务，从训练线性回归器到复杂的[神经网](@keyword=nerve_net|lang=zh-CN|style=Feynman)络，都可以被构建为**正则化经验风险最小化（ERM）**。其目标是找到模型参数 $w$，以最小化两项之和：一项是衡量模型对数据拟合程度的[损失函数](@keyword=loss_functions|lang=zh-CN|style=Feynman)，另一项是惩罚模型复杂性以[防止过拟合](@keyword=prevent_overfitting|lang=zh-CN|style=Feynman)的正则化项[@problem_id:3147998]。
 
-[芬克尔对偶](@entry_id:749289)为理解这些问题提供了一个普适的透镜。通过推导对偶问题，与每个数据点相关的拉格朗日乘子 $\alpha_i$ 被揭示出来，它们不仅仅是数学上的人工产物，而是代表了依赖于数据的“重要性权重”。在最优解处，这些权重决定了每个数据点对定义最终模型的贡献程度。这种对偶视角将问题从寻找参数转变为寻找最具影响力的数据点。让我们通过几个著名的例子来看看这一点。
+[芬克尔对偶](@keyword=fenchel_duality|lang=zh-CN|style=Feynman)为理解这些问题提供了一个普适的透镜。通过推导对偶问题，与每个数据点相关的拉格朗日乘子 $\alpha_i$ 被揭示出来，它们不仅仅是数学上的人工产物，而是代表了依赖于数据的“重要性权重”。在最优解处，这些权重决定了每个数据点对定义最终模型的贡献程度。这种对偶视角将问题从寻找参数转变为寻找最具影响力的数据点。让我们通过几个著名的例子来看看这一点。
 
 #### 稀疏性、简单性与压缩感知
 
-在我们这个大数据时代，一个反复出现的主题是对简单性的追求。给定一个海量数据集或一个复杂信号，我们能否找到一个简单、稀疏的解释？这就是**[基追踪](@entry_id:200728)**和**[Lasso回归](@entry_id:141759)**背后的思想。这些方法对参数向量的 $\ell_1$-范数 $\|w\|_1$ 进行惩罚，这能够有效地促进稀疏解（即有许多零元素的解）。
+在我们这个大数据时代，一个反复出现的主题是对简单性的追求。给定一个海量数据集或一个复杂信号，我们能否找到一个简单、稀疏的解释？这就是**[基追踪](@keyword=basis_pursuit|lang=zh-CN|style=Feynman)**和**[Lasso回归](@keyword=lasso_regression|lang=zh-CN|style=Feynman)**背后的思想。这些方法对参数向量的 $\ell_1$-范数 $\|w\|_1$ 进行惩罚，这能够有效地促进稀疏解（即有许多零元素的解）。
 
-带有不可微 $\ell_1$-范数的原始问题可能很棘手。但它的[芬克尔对偶](@entry_id:749289)通常异常优美。$\ell_1$-范数的共轭是 $\ell_\infty$-范数单位球的[指示函数](@entry_id:186820)。这意味着，困难的、非光滑的原始问题被转化为了一个在对偶空间中带有简单[箱式约束](@entry_id:746959)的光滑凸问题。更深刻的是，[最优性条件](@entry_id:634091)（[KKT条件](@entry_id:185881)）为我们提供了关于稀疏性的精确规则：一个特征对应的权重 $w_i$ 非零，当且仅当它与[模型误差](@entry_id:175815)的相关性达到了可能的最大值。对偶性告诉我们，一个特征何时才足够重要以至于被“开启”。
+带有不可微 $\ell_1$-范数的原始问题可能很棘手。但它的[芬克尔对偶](@keyword=fenchel_duality|lang=zh-CN|style=Feynman)通常异常优美。$\ell_1$-范数的共轭是 $\ell_\infty$-范数单位球的指示函数。这意味着，困难的、非光滑的原始问题被转化为了一个在对偶空间中带有简单[箱式约束](@keyword=box_constraints|lang=zh-CN|style=Feynman)的光滑凸问题[@problem_id:3113695][@problem_id:3439388]。更深刻的是，[最优性条件](@keyword=optimality_conditions|lang=zh-CN|style=Feynman)（[KKT条件](@keyword=kuhn_tucker_conditions|lang=zh-CN|style=Feynman)）为我们提供了关于稀疏性的精确规则：一个特征对应的权重 $w_i$ 非零，当且仅当它与[模型误差](@keyword=model_error|lang=zh-CN|style=Feynman)的相关性达到了可能的最大值。对偶性告诉我们，一个特征何时才足够重要以至于被“开启”。
 
-同样的原理可以优美地推广到矩阵。在[协同过滤](@entry_id:633903)（例如Netflix推荐）等问题中，我们希望找到一个简单的、**低秩矩阵**。与 $\ell_1$-[范数等价](@entry_id:137561)的[矩阵范数](@entry_id:139520)是**核范数**（[奇异值](@entry_id:152907)之和）。它的芬克尔共轭是**算子范数**（最大[奇异值](@entry_id:152907)）[单位球](@entry_id:142558)的[指示函数](@entry_id:186820)。[核范数](@entry_id:195543)和算子范数之间这种优美的对称性，是[芬克尔对偶](@entry_id:749289)的直接结果，也是矩阵压缩感知的基石，它使我们能够从数量惊人的少量测量中恢复巨大的矩阵。
+同样的原理可以优美地推广到矩阵。在[协同过滤](@keyword=collaborative_filtering|lang=zh-CN|style=Feynman)（例如Netflix推荐）等问题中，我们希望找到一个简单的、**低秩矩阵**。与 $\ell_1$-[范数等价](@keyword=norm_equivalence|lang=zh-CN|style=Feynman)的[矩阵范数](@keyword=matrix_norms|lang=zh-CN|style=Feynman)是**核范数**（[奇异值](@keyword=singular_values|lang=zh-CN|style=Feynman)之和）。它的芬克尔共轭是**算子范数**（最大[奇异值](@keyword=singular_values|lang=zh-CN|style=Feynman)）[单位球](@keyword=unit_ball|lang=zh-CN|style=Feynman)的指示函数。[核范数](@keyword=nuclear_norm|lang=zh-CN|style=Feynman)和算子范数之间这种优美的对称性，是[芬克尔对偶](@keyword=fenchel_duality|lang=zh-CN|style=Feynman)的直接结果，也是矩阵压缩感知的基石，它使我们能够从数量惊人的少量测量中恢复巨大的矩阵[@problem_id:3439408]。
 
-#### [支持向量机](@entry_id:172128)与[图像去噪](@entry_id:750522)
+#### [支持向量机](@keyword=support_vector_machines|lang=zh-CN|style=Feynman)与图像去噪
 
-这个故事在机器学习的其他支柱中得以延续。在**支持向量机（SVM）**中，利用“合页损失”函数的芬克尔共轭来推导出一个[对偶问题](@entry_id:177454)，在该问题中，解仅依赖于训练数据的一个小[子集](@entry_id:261956)，即所谓的*[支持向量](@entry_id:638017)*。对偶性再次揭示了该方法的几何本质：决策边界完全由这些位于边界上的关键数据点所支撑。
+这个故事在机器学习的其他支柱中得以延续。在**支持向量机（SVM）**中，利用“合页损失”函数的芬克尔共轭来推导出一个[对偶问题](@keyword=dual_problem|lang=zh-CN|style=Feynman)，在该问题中，解仅依赖于训练数据的一个小[子集](@keyword=subset|lang=zh-CN|style=Feynman)，即所谓的*[支持向量](@keyword=support_vectors|lang=zh-CN|style=Feynman)*[@problem_id:3439384]。对偶性再次揭示了该方法的几何本质：决策边界完全由这些位于边界上的关键数据点所支撑。
 
-在图像处理中，**全变分（TV）正则化**是一种强大的技术，用于在保留清晰边缘的同时去除噪声。它使用一个混合的 $\ell_{1,2}$-范数来惩罚图像的梯度。通过[芬克尔对偶](@entry_id:749289)推导出的对偶问题，不仅提供了理论上的洞见，也构成了高效解决该问题的强大[原始-对偶算法](@entry_id:753721)的基础。这些算法可以被想象成两个登山者，一个在原始空间，一个在对偶空间，共同协作以找到底层[拉格朗日函数](@entry_id:174593)的[鞍点](@entry_id:142576)。
+在图像处理中，**全变分（TV）正则化**是一种强大的技术，用于在保留清晰边缘的同时去除噪声。它使用一个混合的 $\ell_{1,2}$-范数来惩罚图像的梯度。通过[芬克尔对偶](@keyword=fenchel_duality|lang=zh-CN|style=Feynman)推导出的对偶问题，不仅提供了理论上的洞见，也构成了高效解决该问题的强大[原始-对偶算法](@keyword=primal_dual_algorithms|lang=zh-CN|style=Feynman)的基础。这些算法可以被想象成两个登山者，一个在原始空间，一个在对偶空间，共同协作以找到底层[拉格朗日函数](@keyword=lagrangian_function|lang=zh-CN|style=Feynman)的[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)[@problem_id:3466868]。
 
 ### 不大可能事件的概率
 
-我们的最后一站或许是最为深刻的。芬克尔共轭不仅出现在优化和物理定律中，也出现在概率论的结构之中。**[大偏差理论](@entry_id:273365)**是研究罕见事件概率的数学分支——即多次随机试验的平均值显著偏离其[期望值](@entry_id:153208)的几率。
+我们的最后一站或许是最为深刻的。芬克尔共轭不仅出现在优化和物理定律中，也出现在概率论的结构之中。**[大偏差理论](@keyword=large_deviations_theory|lang=zh-CN|style=Feynman)**是研究罕见事件概率的数学分支——即多次随机试验的平均值显著偏离其[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)的几率。
 
-该领域的奠基性成果[克拉默定理](@entry_id:273408)指出，这类罕见事件的概率呈指数级衰减，并由一个“[速率函数](@entry_id:154177)” $I(x)$ 控制。而这个[速率函数](@entry_id:154177)是什么呢？它正是[随机变量](@entry_id:195330)的[累积量生成函数](@entry_id:748109)的[勒让德-芬克尔变换](@entry_id:262931)。[累积量生成函数](@entry_id:748109) $\Lambda(\theta)$ 捕捉了[分布的矩](@entry_id:156454)特性（如均值和[方差](@entry_id:200758)）。它的共轭，[速率函数](@entry_id:154177) $I(x)$，可以被认为是观测到某个特定不大可能的平均值 $x$ 所需的“成本”或“能量”。从这个意义上说，自然界以最“有效”的方式产生大偏差，而描述这种效率的数学工具，恰恰就是芬克尔共轭。
+该领域的奠基性成果[克拉默定理](@keyword=cramér_s_theorem|lang=zh-CN|style=Feynman)指出，这类罕见事件的概率呈指数级衰减，并由一个“[速率函数](@keyword=rate_function|lang=zh-CN|style=Feynman)” $I(x)$ 控制。而这个[速率函数](@keyword=rate_function|lang=zh-CN|style=Feynman)是什么呢？它正是[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)的[累积量生成函数](@keyword=cumulant_generating_function_2|lang=zh-CN|style=Feynman)的[勒让德-芬克尔变换](@keyword=legendre_fenchel_transform|lang=zh-CN|style=Feynman)[@problem_id:2984131]。[累积量生成函数](@keyword=cumulant_generating_function_2|lang=zh-CN|style=Feynman) $\Lambda(\theta)$ 捕捉了[分布的矩](@keyword=moments_of_a_distribution|lang=zh-CN|style=Feynman)特性（如均值和[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)）。它的共轭，[速率函数](@keyword=rate_function|lang=zh-CN|style=Feynman) $I(x)$，可以被认为是观测到某个特定不大可能的平均值 $x$ 所需的“成本”或“能量”。从这个意义上说，自然界以最“有效”的方式产生大偏差，而描述这种效率的数学工具，恰恰就是芬克尔共轭。
 
 ### 描述的统一性
 
-从公司的利润到钢梁中的能量，从[机器学习模型](@entry_id:262335)中的特征到罕见巧合的概率，芬克尔共轭一次又一次地出现。这证明了在对世界的数学描述中存在着深刻的、根本的统一性。它向我们表明，一个诞生于[凸分析](@entry_id:273238)抽象世界的概念，为描述各种形式的对偶性提供了完美的语言。它不仅仅是一个工具，更是一种视角，一座连接不同世界的桥梁，也是宏大、互联的科学故事中一个美丽的篇章。
+从公司的利润到钢梁中的能量，从[机器学习模型](@keyword=machine_learning_models|lang=zh-CN|style=Feynman)中的特征到罕见巧合的概率，芬克尔共轭一次又一次地出现。这证明了在对世界的数学描述中存在着深刻的、根本的统一性。它向我们表明，一个诞生于[凸分析](@keyword=convex_analysis|lang=zh-CN|style=Feynman)抽象世界的概念，为描述各种形式的对偶性提供了完美的语言。它不仅仅是一个工具，更是一种视角，一座连接不同世界的桥梁，也是宏大、互联的科学故事中一个美丽的篇章。

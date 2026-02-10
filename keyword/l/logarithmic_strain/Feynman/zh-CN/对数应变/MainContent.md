@@ -1,9 +1,9 @@
 ## 引言
-我们如何精确描述橡皮筋的拉伸或金属部件的锻造？虽然这个问题看似简单，但传统的[应变度量](@entry_id:755495)在变形较大或分多步发生时便会失效。这种理解上的差距限制了我们预测材料在极端条件下行为的能力。本文将介绍对数应变，这是一个强大而优雅的概念，它提供了变形的“真实”度量。在接下来的章节中，我们将探讨其基本原理，然后遍览其多样化的应用。第一章“原理与机制”将解构应变的概念，揭示为何对数是正确累积变形的关键，以及这一概念如何利用张量的语言扩展到三维空间。随后的“应用与跨学科联系”章节将展示对数应变如何成为从[材料科学](@entry_id:152226)、塑性力学到[地球物理学](@entry_id:147342)和计算力学等领域不可或缺的工具，为描述物体弯曲、流动和断裂的方式提供了统一的语言。
+我们如何精确描述橡皮筋的拉伸或金属部件的锻造？虽然这个问题看似简单，但传统的[应变度量](@keyword=strain_measures|lang=zh-CN|style=Feynman)在变形较大或分多步发生时便会失效。这种理解上的差距限制了我们预测材料在极端条件下行为的能力。本文将介绍对数应变，这是一个强大而优雅的概念，它提供了变形的“真实”度量。在接下来的章节中，我们将探讨其基本原理，然后遍览其多样化的应用。第一章“原理与机制”将解构应变的概念，揭示为何对数是正确累积变形的关键，以及这一概念如何利用张量的语言扩展到三维空间。随后的“应用与跨学科联系”章节将展示对数应变如何成为从[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)、塑性力学到[地球物理学](@keyword=geophysics|lang=zh-CN|style=Feynman)和计算力学等领域不可或缺的工具，为描述物体弯曲、流动和断裂的方式提供了统一的语言。
 
 ## 原理与机制
 
-想象一下拉伸一根橡皮筋。它会变长。它被拉伸了多少？这个看似有显而易见答案的简单问题，为我们打开了一扇通往[材料力学](@entry_id:201885)中最优雅概念之一的大门。我们选择如何回答这个问题，决定了我们描述大而复杂变形世界的能力，从钢材的屈服到冰川的流动。
+想象一下拉伸一根橡皮筋。它会变长。它被拉伸了多少？这个看似有显而易见答案的简单问题，为我们打开了一扇通往[材料力学](@keyword=mechanics_of_materials|lang=zh-CN|style=Feynman)中最优雅概念之一的大门。我们选择如何回答这个问题，决定了我们描述大而复杂变形世界的能力，从钢材的屈服到冰川的流动。
 
 ### 拉伸的度量：两种应变的故事
 
@@ -13,7 +13,7 @@ $$
 e_{\text{eng}} = \frac{L - L_0}{L_0} = \frac{L}{L_0} - 1
 $$
 
-如果我们定义“拉伸比”为 $\lambda = L/L_0$，那么工程应变就是 $\lambda - 1$ 。如果杆的长度增加一倍，即 $\lambda=2$，工程应变为 $1$（或 100%）。这看起来非常直观。
+如果我们定义“拉伸比”为 $\lambda = L/L_0$，那么工程应变就是 $\lambda - 1$ [@problem_id:27023]。如果杆的长度增加一倍，即 $\lambda=2$，工程应变为 $1$（或 100%）。这看起来非常直观。
 
 但让我们做一个思想实验。假设我们首先将杆拉伸 50%，使其新长度为 $L_1 = 1.5 L_0$。此时工程应变为 0.5。现在，我们拿起这根*新拉伸过*的杆，再次将其拉伸 50% *（相对于其当前长度）*。最终长度将是 $L_2 = 1.5 L_1 = 1.5 \times (1.5 L_0) = 2.25 L_0$。从最开始测量的总工程应变为 $L_2/L_0 - 1 = 2.25 - 1 = 1.25$。
 
@@ -25,7 +25,7 @@ $$
 e_{\text{true}} = \int_{L_0}^{L} \frac{dl}{l} = \ln(L) - \ln(L_0) = \ln\left(\frac{L}{L_0}\right)
 $$
 
-这个量 $e_{\text{true}} = \ln(\lambda)$ 就是**真应变**，或者我们称之为**对数应变**  。
+这个量 $e_{\text{true}} = \ln(\lambda)$ 就是**真应变**，或者我们称之为**对数应变** [@problem_id:27023] [@problem_id:2668594]。
 
 ### 对数的魔力：真正的可加性
 
@@ -37,53 +37,53 @@ $$
 \ln(\lambda_{\text{total}}) = \ln(\lambda_1 \lambda_2) = \ln(\lambda_1) + \ln(\lambda_2)
 $$
 
-对数应变可以完美地相加！这种可加性不仅是数学上的便利；它反映了变形作为累积过程这一本质的更深层次的真理。这是对数[应变度量](@entry_id:755495)强大而优雅的第一个迹象  。它是累积有限拉伸的正确方法。
+对数应变可以完美地相加！这种可加性不仅是数学上的便利；它反映了变形作为累积过程这一本质的更深层次的真理。这是对数[应变度量](@keyword=strain_measures|lang=zh-CN|style=Feynman)强大而优雅的第一个迹象 [@problem_id:2668608] [@problem_id:2912244]。它是累积有限拉伸的正确方法。
 
 ### 解开扭转：从线到张量
 
 当然，真实世界是三维的。一块被压扁的粘土不仅在一个方向上伸长，它还会在其他方向上凸起、剪切和扭转。为了描述这一点，我们需要一个更强大的数学工具：**变形梯度张量**，用矩阵 $\boldsymbol{F}$ 表示。你可以将 $\boldsymbol{F}$ 想象成一张“总图”，它告诉你未变形体中的任何微小向量是如何变换为变形体中的新向量的。
 
-一个关键的洞见，被形式化为所谓的**极分解**，即任何变形都可以唯一地分解为两个独立的操作：一个纯拉伸，然后是一个纯刚体旋转 。在数学上，我们写作：
+一个关键的洞见，被形式化为所谓的**极分解**，即任何变形都可以唯一地分解为两个独立的操作：一个纯拉伸，然后是一个纯刚体旋转 [@problem_id:2876885]。在数学上，我们写作：
 
 $$
 \boldsymbol{F} = \boldsymbol{R}\boldsymbol{U}
 $$
 
-在这里，$\boldsymbol{U}$ 是**右[拉伸张量](@entry_id:193200)**，一个[对称矩阵](@entry_id:143130)，它捕捉了所有的拉伸和剪切——即材料形状的实际变化。$\boldsymbol{R}$ 是一个**[旋转张量](@entry_id:191990)**，它描述了被拉伸的形状如何在空间中旋转而不发生任何进一步的形状改变。由于应变本质上是关于形状和尺寸的变化，它必然完全隐藏在 $\boldsymbol{U}$ 中。旋转 $\boldsymbol{R}$ 与应变无关。所有有限应变的真实度量都必须以某种方式只与 $\boldsymbol{U}$ 有关，这使得它们独立于任何后续的刚体旋转 。
+在这里，$\boldsymbol{U}$ 是**右[拉伸张量](@keyword=stretch_tensor|lang=zh-CN|style=Feynman)**，一个[对称矩阵](@keyword=symmetric_matrix|lang=zh-CN|style=Feynman)，它捕捉了所有的拉伸和剪切——即材料形状的实际变化。$\boldsymbol{R}$ 是一个**[旋转张量](@keyword=rotation_tensor|lang=zh-CN|style=Feynman)**，它描述了被拉伸的形状如何在空间中旋转而不发生任何进一步的形状改变。由于应变本质上是关于形状和尺寸的变化，它必然完全隐藏在 $\boldsymbol{U}$ 中。旋转 $\boldsymbol{R}$ 与应变无关。所有有限应变的真实度量都必须以某种方式只与 $\boldsymbol{U}$ 有关，这使得它们独立于任何后续的刚体旋转 [@problem_id:3579088]。
 
 ### 对数应变张量：纯拉伸的写照
 
-有了这种关注点的完美分离，我们现在可以将我们的一维对数应变推广到三维。**Hencky 应变张量**（或对数[应变张量](@entry_id:193332)）被简单地定义为[拉伸张量](@entry_id:193200)的对数：
+有了这种关注点的完美分离，我们现在可以将我们的一维对数应变推广到三维。**Hencky 应变张量**（或对数[应变张量](@keyword=strain_tensor|lang=zh-CN|style=Feynman)）被简单地定义为[拉伸张量](@keyword=stretch_tensor|lang=zh-CN|style=Feynman)的对数：
 
 $$
 \boldsymbol{H} = \ln \boldsymbol{U}
 $$
 
-取一个矩阵的对数到底是什么意思？秘诀在于从正确的视角看待变形。对于任何对称的[拉伸张量](@entry_id:193200) $\boldsymbol{U}$，我们总能找到一组特殊的三个相互垂直的轴——**主方向**——沿着这些轴，变形是纯粹的拉伸，没有剪切。沿这些主方向的拉伸量被称为**主拉伸**，即 $\lambda_1, \lambda_2, \lambda_3$。它们是矩阵 $\boldsymbol{U}$ 的[特征值](@entry_id:154894) 。
+取一个矩阵的对数到底是什么意思？秘诀在于从正确的视角看待变形。对于任何对称的[拉伸张量](@keyword=stretch_tensor|lang=zh-CN|style=Feynman) $\boldsymbol{U}$，我们总能找到一组特殊的三个相互垂直的轴——**主方向**——沿着这些轴，变形是纯粹的拉伸，没有剪切。沿这些主方向的拉伸量被称为**主拉伸**，即 $\lambda_1, \lambda_2, \lambda_3$。它们是矩阵 $\boldsymbol{U}$ 的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) [@problem_id:1536972]。
 
-那么，取张量 $\boldsymbol{U}$ 的对数就变得异常简单：我们只需取其每个主拉伸的对数！[应变张量](@entry_id:193332) $\boldsymbol{H}$ 的主方向与[拉伸张量](@entry_id:193200) $\boldsymbol{U}$ 的[主方向](@entry_id:276187)相同，其主值就是 $\ln(\lambda_1), \ln(\lambda_2),$ 和 $\ln(\lambda_3)$  。因此，看似抽象的张量 $\boldsymbol{H} = \ln \boldsymbol{U}$ 只是一个简洁的包，封装了沿着变形的三个[主轴](@entry_id:172691)发生的三个一维对数应变。我们的三维定义完美地回归到我们直观的一维图像。
+那么，取张量 $\boldsymbol{U}$ 的对数就变得异常简单：我们只需取其每个主拉伸的对数！[应变张量](@keyword=strain_tensor|lang=zh-CN|style=Feynman) $\boldsymbol{H}$ 的主方向与[拉伸张量](@keyword=stretch_tensor|lang=zh-CN|style=Feynman) $\boldsymbol{U}$ 的[主方向](@keyword=principal_directions|lang=zh-CN|style=Feynman)相同，其主值就是 $\ln(\lambda_1), \ln(\lambda_2),$ 和 $\ln(\lambda_3)$ [@problem_id:2876885] [@problem_id:2668594]。因此，看似抽象的张量 $\boldsymbol{H} = \ln \boldsymbol{U}$ 只是一个简洁的包，封装了沿着变形的三个[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)发生的三个一维对数应变。我们的三维定义完美地回归到我们直观的一维图像。
 
-这个定义也可以用**[右柯西-格林张量](@entry_id:174156)** $\boldsymbol{C} = \boldsymbol{F}^T\boldsymbol{F} = \boldsymbol{U}^2$ 来表示。由于 $\ln(\boldsymbol{U}^2) = 2 \ln \boldsymbol{U}$，我们经常看到 Hencky 应变被定义为 $\boldsymbol{H} = \frac{1}{2}\ln \boldsymbol{C}$ 。
+这个定义也可以用**[右柯西-格林张量](@keyword=right_cauchy_green_tensor|lang=zh-CN|style=Feynman)** $\boldsymbol{C} = \boldsymbol{F}^T\boldsymbol{F} = \boldsymbol{U}^2$ 来表示。由于 $\ln(\boldsymbol{U}^2) = 2 \ln \boldsymbol{U}$，我们经常看到 Hencky 应变被定义为 $\boldsymbol{H} = \frac{1}{2}\ln \boldsymbol{C}$ [@problem_id:2640338]。
 
 ### 优雅的变形记录员
 
 这种对数应变的张量表述拥有一些非常优雅的特性，使其成为物理学家和工程师的挚爱。
 
-其中最美妙的特性之一是它与体积变化的联系。一小块材料的体积变化因子为 $J = \det \boldsymbol{F}$。事实证明，Hencky [应变张量](@entry_id:193332)的迹（其对角元素之和，也等于其[主值](@entry_id:189577)之和）恰好是体积变化比的对数：
+其中最美妙的特性之一是它与体积变化的联系。一小块材料的体积变化因子为 $J = \det \boldsymbol{F}$。事实证明，Hencky [应变张量](@keyword=strain_tensor|lang=zh-CN|style=Feynman)的迹（其对角元素之和，也等于其[主值](@keyword=principal_values|lang=zh-CN|style=Feynman)之和）恰好是体积变化比的对数：
 
 $$
 \mathrm{tr}(\boldsymbol{H}) = \ln(\lambda_1) + \ln(\lambda_2) + \ln(\lambda_3) = \ln(\lambda_1\lambda_2\lambda_3) = \ln(J)
 $$
 
-这提供了一种非常清晰的方式来将变形分解为改变体积的[部分和](@entry_id:162077)只改变形状的部分（**等体积**变形）。对于任何保持体积不变的变形，例如金属的塑性流动，我们有 $J=1$，这立即意味着 $\mathrm{tr}(\boldsymbol{H}) = 0$ 。这导致应变可以精确地、可加地分解为体积[部分和](@entry_id:162077)形状改变（偏量）部分，这一特性在构建材料行为理论时极为强大 。
+这提供了一种非常清晰的方式来将变形分解为改变体积的[部分和](@keyword=partial_sums|lang=zh-CN|style=Feynman)只改变形状的部分（**等体积**变形）[@problem_id:2668594]。对于任何保持体积不变的变形，例如金属的塑性流动，我们有 $J=1$，这立即意味着 $\mathrm{tr}(\boldsymbol{H}) = 0$ [@problem_id:2640338]。这导致应变可以精确地、可加地分解为体积[部分和](@keyword=partial_sums|lang=zh-CN|style=Feynman)形状改变（偏量）部分，这一特性在构建材料行为理论时极为强大 [@problem_id:2710431]。
 
-此外，我们在二维情况下所珍视的可加性也延伸到了三维，但有一个关键条件。如果我们进行一系列的拉伸，总的对数应变张量是个体[应变张量](@entry_id:193332)之和，*当且仅当*每一步的拉伸主方向都相同。我们称这种变形为**共轴**变形。需要这个条件是因为，在矩阵的语言中，乘积的对数等于对数的和（$\ln(\boldsymbol{U}_2 \boldsymbol{U}_1) = \ln \boldsymbol{U}_2 + \ln \boldsymbol{U}_1$）仅当矩阵可交换时（$\boldsymbol{U}_1 \boldsymbol{U}_2 = \boldsymbol{U}_2 \boldsymbol{U}_1$），而共轴[拉伸张量](@entry_id:193200)满足这个条件  。
+此外，我们在二维情况下所珍视的可加性也延伸到了三维，但有一个关键条件。如果我们进行一系列的拉伸，总的对数应变张量是个体[应变张量](@keyword=strain_tensor|lang=zh-CN|style=Feynman)之和，*当且仅当*每一步的拉伸主方向都相同。我们称这种变形为**共轴**变形。需要这个条件是因为，在矩阵的语言中，乘积的对数等于对数的和（$\ln(\boldsymbol{U}_2 \boldsymbol{U}_1) = \ln \boldsymbol{U}_2 + \ln \boldsymbol{U}_1$）仅当矩阵可交换时（$\boldsymbol{U}_1 \boldsymbol{U}_2 = \boldsymbol{U}_2 \boldsymbol{U}_1$），而共轴[拉伸张量](@keyword=stretch_tensor|lang=zh-CN|style=Feynman)满足这个条件 [@problem_id:2640338] [@problem_id:2668608]。
 
 ### 对数应变的优势
 
-虽然有很多方法可以定义有限应变张量——例如[格林-拉格朗日应变](@entry_id:170427) $\boldsymbol{E} = \frac{1}{2}(\boldsymbol{C}-\boldsymbol{I})$——但对数应变占有特殊的地位。其对共轴拉伸的可加性使其成为**塑性力学**理论的自然语言，在塑性理论中，材料以一系列漫长的增量步骤流动和变形。
+虽然有很多方法可以定义有限应变张量——例如[格林-拉格朗日应变](@keyword=green_lagrange_strain|lang=zh-CN|style=Feynman) $\boldsymbol{E} = \frac{1}{2}(\boldsymbol{C}-\boldsymbol{I})$——但对数应变占有特殊的地位。其对共轴拉伸的可加性使其成为**塑性力学**理论的自然语言，在塑性理论中，材料以一系列漫长的增量步骤流动和变形。
 
-此外，在[计算力学](@entry_id:174464)领域，基于对数应变的算法以其卓越的稳健性和准确性而闻名，尤其是在涉及大旋转的问题中。它们能够正确预测材料的响应，而不会产生困扰简单模型的“幻象”应力，因为它们是围绕着我们在极分解中看到的拉伸和旋转的清晰分离而构建的  。
+此外，在[计算力学](@keyword=computational_mechanics|lang=zh-CN|style=Feynman)领域，基于对数应变的算法以其卓越的稳健性和准确性而闻名，尤其是在涉及大旋转的问题中。它们能够正确预测材料的响应，而不会产生困扰简单模型的“幻象”应力，因为它们是围绕着我们在极分解中看到的拉伸和旋转的清晰分离而构建的 [@problem_id:3530905] [@problem_id:3579088]。
 
 从一个关于橡皮筋的简单问题出发，我们穿越了数学的风景，找到了一个量——对数应变，它不仅仅是一个定义，更是一个深刻而统一的原理。它优雅地处理了变形的累积，巧妙地分离了形状与尺寸，并为我们理解物理世界所拥有的一些最强大的理论和计算工具提供了基础。
 

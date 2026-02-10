@@ -21,7 +21,7 @@ How can we use this difference in relaxation times to our advantage? If we simpl
 
 The sequence begins with a carefully tuned blast of radiofrequency energy—a **$180^\circ$ inversion pulse**. This pulse is just powerful enough to give the entire population of aligned protons the energy to flip completely upside down. The net longitudinal magnetization, which was pointing North (let's call it $+M_0$), is instantly inverted to point South, to $-M_0$.
 
-Now, the race begins. From this unstable, inverted state, every tissue's magnetization begins its journey back North, back towards equilibrium. This recovery is not linear; it’s an exponential climb. The path of this journey is described by a wonderfully simple and elegant solution to the Bloch equations, which govern this behavior :
+Now, the race begins. From this unstable, inverted state, every tissue's magnetization begins its journey back North, back towards equilibrium. This recovery is not linear; it’s an exponential climb. The path of this journey is described by a wonderfully simple and elegant solution to the Bloch equations, which govern this behavior [@problem_id:4931011]:
 
 $$
 M_z(t) = M_0 \left(1 - 2\exp\left(-\frac{t}{T_1}\right)\right)
@@ -39,13 +39,13 @@ $$
 0 = M_{0, \text{fat}} \left(1 - 2\exp\left(-\frac{TI}{T_{1, \text{fat}}}\right)\right)
 $$
 
-Solving this simple equation gives us the secret to making fat disappear :
+Solving this simple equation gives us the secret to making fat disappear [@problem_id:4922659]:
 
 $$
 TI = T_{1, \text{fat}} \ln(2)
 $$
 
-This is the heart of the Short Tau Inversion Recovery (STIR) sequence. For a typical fat $T_1$ of about $250 \, \mathrm{ms}$, the nulling time is around $173 \, \mathrm{ms}$ . By waiting exactly this long after our initial inversion pulse, we arrive at a magical moment when fat has vanished.
+This is the heart of the Short Tau Inversion Recovery (STIR) sequence. For a typical fat $T_1$ of about $250 \, \mathrm{ms}$, the nulling time is around $173 \, \mathrm{ms}$ [@problem_id:4931011]. By waiting exactly this long after our initial inversion pulse, we arrive at a magical moment when fat has vanished.
 
 What do we do then? We take our "snapshot." We apply a second radiofrequency pulse, a **$90^\circ$ excitation pulse**. This pulse is designed to tip any existing longitudinal magnetization into the transverse plane, where it can be detected as a signal. But if a tissue has no longitudinal magnetization—as fat does at time $TI$—the $90^\circ$ pulse has nothing to tip over. No signal is created. We have successfully nulled the fat.
 
@@ -55,9 +55,9 @@ So, we’ve made fat invisible. Why is this so useful? In many parts of the body
 
 Consider bone marrow. It's a mixture of fatty marrow and water-rich cells. In cases of inflammation, like the active osteitis seen in ankylosing spondylitis, the marrow fills with fluid (edema). This fluid is essentially water, and water has a very long $T_1$.
 
-Now, let's revisit our race. At the moment our speedy fat runner crosses the finish line (the null point), where is the slow-moving water runner? It has barely begun its journey back from $-M_0$. Its magnetization is still large and pointing South (negative) . When we apply the $90^\circ$ excitation pulse at this moment, it finds a large magnetization for water and tips it over, creating a very strong signal. In the final image, we use magnitude reconstruction, so the sign doesn't matter; a large negative magnetization gives just as strong a signal as a large positive one.
+Now, let's revisit our race. At the moment our speedy fat runner crosses the finish line (the null point), where is the slow-moving water runner? It has barely begun its journey back from $-M_0$. Its magnetization is still large and pointing South (negative) [@problem_id:4922633]. When we apply the $90^\circ$ excitation pulse at this moment, it finds a large magnetization for water and tips it over, creating a very strong signal. In the final image, we use magnitude reconstruction, so the sign doesn't matter; a large negative magnetization gives just as strong a signal as a large positive one.
 
-The result is breathtaking. The fatty background of the bone marrow is turned black, and the area of inflammation, rich in water, lights up like a beacon. STIR is not merely a fat suppression technique; it is an exquisitely sensitive method for detecting fluid, making it indispensable for finding edema, tumors, and infections .
+The result is breathtaking. The fatty background of the bone marrow is turned black, and the area of inflammation, rich in water, lights up like a beacon. STIR is not merely a fat suppression technique; it is an exquisitely sensitive method for detecting fluid, making it indispensable for finding edema, tumors, and infections [@problem_id:4763500].
 
 ### The Real World is Messy: Complications and Ingenuity
 
@@ -65,18 +65,18 @@ Our description so far has assumed a perfect world. But the genius of science an
 
 #### The Price of Contrast: An SNR Penalty
 
-The beautiful contrast in STIR comes at a price. We generate the signal from water while its magnetization is still recovering and far from its maximum potential value, $M_0$. A conventional image might wait for water to fully recover before creating a signal. In STIR, we're catching it mid-journey. The resulting signal is inherently lower, which means the **[signal-to-noise ratio](@entry_id:271196) (SNR)** is reduced. For typical tissue values, the available water signal in a STIR sequence might only be about 60-70% of what's theoretically possible, a quantifiable trade-off for the spectacular contrast we gain .
+The beautiful contrast in STIR comes at a price. We generate the signal from water while its magnetization is still recovering and far from its maximum potential value, $M_0$. A conventional image might wait for water to fully recover before creating a signal. In STIR, we're catching it mid-journey. The resulting signal is inherently lower, which means the **[signal-to-noise ratio](@keyword=signal_to_noise_ratio|lang=en-US|style=Feynman) (SNR)** is reduced. For typical tissue values, the available water signal in a STIR sequence might only be about 60-70% of what's theoretically possible, a quantifiable trade-off for the spectacular contrast we gain [@problem_id:4922696].
 
 #### The Double-Edged Sword
 
-STIR’s power comes from its non-selectivity: it nulls *anything* with a short $T_1$. This can be a double-edged sword. Sometimes, we inject a **gadolinium-based contrast agent** into a patient to make tumors more conspicuous. These agents work by dramatically shortening the $T_1$ of the tissues they enter. But what if a gadolinium-enhanced tumor now has a $T_1$ that is very close to that of fat? The STIR sequence, blind to the cause, will see the tumor and say, "Aha, that has a short $T_1$, just like fat!" and proceed to null its signal  . The very thing we tried to make bright could become dark and invisible. This is a critical lesson: one must always understand the principles of a tool to avoid being fooled by it.
+STIR’s power comes from its non-selectivity: it nulls *anything* with a short $T_1$. This can be a double-edged sword. Sometimes, we inject a **gadolinium-based contrast agent** into a patient to make tumors more conspicuous. These agents work by dramatically shortening the $T_1$ of the tissues they enter. But what if a gadolinium-enhanced tumor now has a $T_1$ that is very close to that of fat? The STIR sequence, blind to the cause, will see the tumor and say, "Aha, that has a short $T_1$, just like fat!" and proceed to null its signal [@problem_id:4922646] [@problem_id:4922677]. The very thing we tried to make bright could become dark and invisible. This is a critical lesson: one must always understand the principles of a tool to avoid being fooled by it.
 
 #### The Complications of Time and Imperfection
 
-In a clinical setting, we can't wait an infinite amount of time between measurements. We repeat the inversion-excitation cycle with a **repetition time ($TR$)** that is often not much longer than the tissue $T_1$ values. This means tissues don't fully recover, and the system enters a **steady state**. The math becomes slightly more complex, but the key insight is that the nulling point now depends not just on $T_1$ and $TI$, but also on $TR$ . In a multislice acquisition where different slices have different effective $TR$s, the quality of fat suppression can vary from one slice to the next—a subtle but important practical detail .
+In a clinical setting, we can't wait an infinite amount of time between measurements. We repeat the inversion-excitation cycle with a **repetition time ($TR$)** that is often not much longer than the tissue $T_1$ values. This means tissues don't fully recover, and the system enters a **steady state**. The math becomes slightly more complex, but the key insight is that the nulling point now depends not just on $T_1$ and $TI$, but also on $TR$ [@problem_id:4922633]. In a multislice acquisition where different slices have different effective $TR$s, the quality of fat suppression can vary from one slice to the next—a subtle but important practical detail [@problem_id:4922668].
 
-Furthermore, our radiofrequency pulses are never perfect. A pulse intended to be $180^\circ$ might, due to hardware limitations, only achieve a flip of, say, $170^\circ$. This imperfect inversion means the starting point of recovery is not quite $-M_0$. If we use the "ideal" $TI$, we will miss the null point, and a small amount of fat signal will leak through, degrading the image .
+Furthermore, our radiofrequency pulses are never perfect. A pulse intended to be $180^\circ$ might, due to hardware limitations, only achieve a flip of, say, $170^\circ$. This imperfect inversion means the starting point of recovery is not quite $-M_0$. If we use the "ideal" $TI$, we will miss the null point, and a small amount of fat signal will leak through, degrading the image [@problem_id:4895370].
 
-Perhaps the biggest challenge is that the main magnetic field, $B_0$, is never perfectly uniform. These small field variations across the patient mean that our radio pulses work differently in different locations. In a region of significant inhomogeneity, a $180^\circ$ inversion pulse might fail badly. If the inversion fails (e.g., the effective flip angle is less than $90^\circ$), the magnetization never even crosses the zero line on its way back to equilibrium. It becomes mathematically impossible to null the signal, no matter what $TI$ we choose .
+Perhaps the biggest challenge is that the main magnetic field, $B_0$, is never perfectly uniform. These small field variations across the patient mean that our radio pulses work differently in different locations. In a region of significant inhomogeneity, a $180^\circ$ inversion pulse might fail badly. If the inversion fails (e.g., the effective flip angle is less than $90^\circ$), the magnetization never even crosses the zero line on its way back to equilibrium. It becomes mathematically impossible to null the signal, no matter what $TI$ we choose [@problem_id:4922683].
 
-This is where true engineering artistry comes in. To combat field inhomogeneity, physicists developed **adiabatic pulses**. These are complex, frequency-swept pulses that are remarkably robust. They can achieve a near-perfect inversion even in "bad" parts of the magnetic field, ensuring that the STIR sequence works reliably. This is a beautiful example of overcoming a fundamental physical limitation with a more sophisticated physical tool, showcasing the deep and productive unity of science and engineering .
+This is where true engineering artistry comes in. To combat field inhomogeneity, physicists developed **adiabatic pulses**. These are complex, frequency-swept pulses that are remarkably robust. They can achieve a near-perfect inversion even in "bad" parts of the magnetic field, ensuring that the STIR sequence works reliably. This is a beautiful example of overcoming a fundamental physical limitation with a more sophisticated physical tool, showcasing the deep and productive unity of science and engineering [@problem_id:4922683].

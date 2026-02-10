@@ -4,44 +4,44 @@
 
 ### 旧问题的新视角：从线条到地貌
 
-在所有科学中，最基本的任务或许就是找到变量之间的关系——在一组散点数据中画出一条线。几个世纪以来，像最小二乘法这样的方法给了我们一个单一的“最佳”答案，即那条使[误差最小化](@entry_id:163081)的线。但如果我们提出一个更深层次的问题呢？不是问“哪条是最好的线？”，而是问“所有*可能*的线的全集是什么，我们对每一条线的[置信度](@entry_id:267904)有多高？”
+在所有科学中，最基本的任务或许就是找到变量之间的关系——在一组散点数据中画出一条线。几个世纪以来，像最小二乘法这样的方法给了我们一个单一的“最佳”答案，即那条使[误差最小化](@keyword=error_minimization|lang=zh-CN|style=Feynman)的线。但如果我们提出一个更深层次的问题呢？不是问“哪条是最好的线？”，而是问“所有*可能*的线的全集是什么，我们对每一条线的[置信度](@keyword=degree_of_belief|lang=zh-CN|style=Feynman)有多高？”
 
-这正是由 Metropolis-Hastings 驱动的贝叶斯推断能够回答的问题。考虑简单模型 $y = mx + b$。我们不只是寻找斜率 $m$ 和截距 $b$ 的一个值，而是可以定义一个关于它们的后验概率[分布](@entry_id:182848)。这个[分布](@entry_id:182848)代表了我们在看到数据后对参数的更新信念。然后，Metropolis-Hastings 算法可以在 $(m,b)$ 的二维地貌中自由漫游，以与其[后验概率](@entry_id:153467)成正比的频率访问各个区域。它留下的足迹集合给我们的不是一个单点，而是一幅丰富的后验[曲面](@entry_id:267450)图，不仅揭示了 $m$ 和 $b$ 的最可[能值](@entry_id:187992)，还揭示了它们周围的不确定性以及它们之间的相关性 。这是一个[范式](@entry_id:161181)转变：从一个单一、脆弱的答案，到一个对数据真正告诉我们的信息的稳健、细致的理解。
+这正是由 Metropolis-Hastings 驱动的贝叶斯推断能够回答的问题。考虑简单模型 $y = mx + b$。我们不只是寻找斜率 $m$ 和截距 $b$ 的一个值，而是可以定义一个关于它们的后验概率[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)。这个[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)代表了我们在看到数据后对参数的更新信念。然后，Metropolis-Hastings 算法可以在 $(m,b)$ 的二维地貌中自由漫游，以与其[后验概率](@keyword=posterior_probability|lang=zh-CN|style=Feynman)成正比的频率访问各个区域。它留下的足迹集合给我们的不是一个单点，而是一幅丰富的后验[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)图，不仅揭示了 $m$ 和 $b$ 的最可[能值](@keyword=emergy|lang=zh-CN|style=Feynman)，还揭示了它们周围的不确定性以及它们之间的相关性 [@problem_id:3250349]。这是一个[范式](@keyword=normal_form|lang=zh-CN|style=Feynman)转变：从一个单一、脆弱的答案，到一个对数据真正告诉我们的信息的稳健、细致的理解。
 
 ### 物理学家的工具箱：优化与复杂网络
 
-该算法起源于[统计物理学](@entry_id:142945)，因此它在该领域得心应手并不奇怪。但它的用途远不止于箱中的粒子。想象一个计算机科学中的问题，比如找到将一个[复杂网络](@entry_id:261695)切成两半以最大化它们之间连接数的最佳方法——即“[最大割](@entry_id:271899)”问题 。这是一个臭名昭著的组合难题，可能的切割数量随网络规模呈指数级增长。
+该算法起源于[统计物理学](@keyword=statistical_physics|lang=zh-CN|style=Feynman)，因此它在该领域得心应手并不奇怪。但它的用途远不止于箱中的粒子。想象一个计算机科学中的问题，比如找到将一个[复杂网络](@keyword=complex_networks|lang=zh-CN|style=Feynman)切成两半以最大化它们之间连接数的最佳方法——即“[最大割](@keyword=max_cut|lang=zh-CN|style=Feynman)”问题 [@problem_id:3250366]。这是一个臭名昭著的组合难题，可能的切割数量随网络规模呈指数级增长。
 
-在这里，“状态”不再是一对连续参数，而是网络的特定划分。“状态”的“能量”可以定义为切割大小的负值。Metropolis-Hastings 算法，以一种与著名的*[模拟退火](@entry_id:144939)*方法密切相关的形式，可以探索这个广阔的离散地貌。它提议一个改变——将单个节点从切割的一侧翻转到另一侧——并根据切割大小的变化决定是否接受。通过在目标分布 $\pi(x) \propto \exp(\beta \cdot \text{CutSize}(x))$ 中引入一个“温度”参数 $\beta$，可以鼓励算法不仅仅是爬到最近的山峰，而是广泛地探索地貌，偶尔接受一个“坏”的移动以逃离局部最大值，从而找到一个更好的、更全局的最大值。描述原子沉降成晶体的相同逻辑，可以帮助计算机科学家设计出更好的电路板。
+在这里，“状态”不再是一对连续参数，而是网络的特定划分。“状态”的“能量”可以定义为切割大小的负值。Metropolis-Hastings 算法，以一种与著名的*[模拟退火](@keyword=simulated_annealing|lang=zh-CN|style=Feynman)*方法密切相关的形式，可以探索这个广阔的离散地貌。它提议一个改变——将单个节点从切割的一侧翻转到另一侧——并根据切割大小的变化决定是否接受。通过在目标分布 $\pi(x) \propto \exp(\beta \cdot \text{CutSize}(x))$ 中引入一个“温度”参数 $\beta$，可以鼓励算法不仅仅是爬到最近的山峰，而是广泛地探索地貌，偶尔接受一个“坏”的移动以逃离局部最大值，从而找到一个更好的、更全局的最大值。描述原子沉降成晶体的相同逻辑，可以帮助计算机科学家设计出更好的电路板。
 
-这种在网络上的能力延伸到动态过程的建模。考虑一个谣言或疾病在社交网络中的传播 。如果我们观察一个时间快照——谁知道谣言，谁不知道——我们能否确定这一切的源头？从特定源节点开始得到给定最终状态的似然值，其直接计算极其复杂。但我们不必这样做。我们可以在一个“无似然” (likelihood-free) 的设置中使用 Metropolis-Hastings 框架。对于任何候选源，我们可以多次模拟谣言传播过程。这些模拟的*平均*结果与我们实际观察结果越接近，我们就认为该候选源的“似然”越高。然后，算法在这个[合成似然](@entry_id:755756)的引导下，在可能的源节点空间中游走，最终收敛到最可能的起源。这是模拟与推断的美妙结合，使我们能够处理那些方程难以写出的问题。
+这种在网络上的能力延伸到动态过程的建模。考虑一个谣言或疾病在社交网络中的传播 [@problem_id:3250354]。如果我们观察一个时间快照——谁知道谣言，谁不知道——我们能否确定这一切的源头？从特定源节点开始得到给定最终状态的似然值，其直接计算极其复杂。但我们不必这样做。我们可以在一个“无似然” (likelihood-free) 的设置中使用 Metropolis-Hastings 框架。对于任何候选源，我们可以多次模拟谣言传播过程。这些模拟的*平均*结果与我们实际观察结果越接近，我们就认为该候选源的“似然”越高。然后，算法在这个[合成似然](@keyword=synthetic_likelihood|lang=zh-CN|style=Feynman)的引导下，在可能的源节点空间中游走，最终收敛到最可能的起源。这是模拟与推断的美妙结合，使我们能够处理那些方程难以写出的问题。
 
 ### 解码生命机制
 
-在过去几十年里，生物学已经转变为一门真正的定量科学。其核心是相互作用分子的复杂网络，受[非线性动力学](@entry_id:190195)支配。在这里，Metropolis-Hastings 已成为[逆向工程](@entry_id:754334)这些生物机器不可或缺的工具。
+在过去几十年里，生物学已经转变为一门真正的定量科学。其核心是相互作用分子的复杂网络，受[非线性动力学](@keyword=non_linear_dynamics|lang=zh-CN|style=Feynman)支配。在这里，Metropolis-Hastings 已成为[逆向工程](@keyword=reverse_engineering|lang=zh-CN|style=Feynman)这些生物机器不可或缺的工具。
 
-想象一个简单的[化学反应](@entry_id:146973)，$A \xrightarrow{k_1} B \xrightarrow{k_2} C$，这是[化学动力学](@entry_id:144961)的基石。如果我们只能随时间测量中间物质 $B$ 的浓度，且测量结果带有噪声，我们如何推断出潜在的[速率常数](@entry_id:196199) $k_1$ 和 $k_2$？。这是一个经典的反问题。类似地，在合成生物学中，我们可能构建一个基因回路，其中[启动子](@entry_id:156503)的活性由一个诱导分子控制，遵循[非线性](@entry_id:637147)的希尔型响应。从带有噪声的[基因表达测量](@entry_id:196387)数据中，我们如何推断出该响应的关键参数，如半最大浓度 $K$ 和协同系数 $n$？。
+想象一个简单的[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)，$A \xrightarrow{k_1} B \xrightarrow{k_2} C$，这是[化学动力学](@keyword=chemical_kinetics|lang=zh-CN|style=Feynman)的基石。如果我们只能随时间测量中间物质 $B$ 的浓度，且测量结果带有噪声，我们如何推断出潜在的[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman) $k_1$ 和 $k_2$？[@problem_id:2692583]。这是一个经典的反问题。类似地，在合成生物学中，我们可能构建一个基因回路，其中[启动子](@keyword=promoter|lang=zh-CN|style=Feynman)的活性由一个诱导分子控制，遵循[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)的希尔型响应。从带有噪声的[基因表达测量](@keyword=gene_expression_measurement|lang=zh-CN|style=Feynman)数据中，我们如何推断出该响应的关键参数，如半最大浓度 $K$ 和协同系数 $n$？[@problem_id:2840945]。
 
-在这两种情况下，我们想知道的参数与我们能测量的数据之间的关系都是复杂和[非线性](@entry_id:637147)的。Metropolis-Hastings 算法提供了一种稳健而强大的前进方式。我们写下参数的后验分布——将给定模型下数据的似然与我们拥有的任何先验知识相结合——然后让算法开始游走。得到的样本描绘出所有可能参数的全景，使我们不仅能说“$k_1$ 的最可[能值](@entry_id:187992)是 X”，还能说“根据我们的数据，$k_1$ 有 95% 的把握落在这个范围内。”
+在这两种情况下，我们想知道的参数与我们能测量的数据之间的关系都是复杂和[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)的。Metropolis-Hastings 算法提供了一种稳健而强大的前进方式。我们写下参数的后验分布——将给定模型下数据的似然与我们拥有的任何先验知识相结合——然后让算法开始游走。得到的样本描绘出所有可能参数的全景，使我们不仅能说“$k_1$ 的最可[能值](@keyword=emergy|lang=zh-CN|style=Feynman)是 X”，还能说“根据我们的数据，$k_1$ 有 95% 的把握落在这个范围内。”
 
-### [随机游走](@entry_id:142620)的艺术：技巧与高级技术
+### [随机游走](@keyword=random_walk|lang=zh-CN|style=Feynman)的艺术：技巧与高级技术
 
-虽然 Metropolis-Hastings 的基本方案很简单，但要将其有效地应用于复杂的高维问题，则是一门艺术。 “[随机游走](@entry_id:142620)”必须被小心引导。
+虽然 Metropolis-Hastings 的基本方案很简单，但要将其有效地应用于复杂的高维问题，则是一门艺术。 “[随机游走](@keyword=random_walk|lang=zh-CN|style=Feynman)”必须被小心引导。
 
-一项关键的技巧是**重[参数化](@entry_id:272587)** (reparameterization)。有时，我们选择的参数所定义的地貌是一个扭曲的、香蕉形的峡谷，对于一个简单的采样器来说是出了名的难以导航。对于像[标准差](@entry_id:153618) $\sigma$ 这样必须为正的参数，在零处的硬边界可能导致采样器卡住。一个简单而巧妙的技巧是转而对其对数 $\tau = \log \sigma$ 进行采样，它可以取任何实数值。这种变换可以将一条困难的弯曲路径变成一条笔直、开阔的道路，从而显著提高采样器的效率 。
+一项关键的技巧是**重[参数化](@keyword=parametrization|lang=zh-CN|style=Feynman)** (reparameterization)。有时，我们选择的参数所定义的地貌是一个扭曲的、香蕉形的峡谷，对于一个简单的采样器来说是出了名的难以导航。对于像[标准差](@keyword=standard_deviation|lang=zh-CN|style=Feynman) $\sigma$ 这样必须为正的参数，在零处的硬边界可能导致采样器卡住。一个简单而巧妙的技巧是转而对其对数 $\tau = \log \sigma$ 进行采样，它可以取任何实数值。这种变换可以将一条困难的弯曲路径变成一条笔直、开阔的道路，从而显著提高采样器的效率 [@problem_id:2374156]。
 
-另一个关键方面是**提议调优** (proposal tuning)。步行者应该迈多大的步子？如果步子太小，步行者会以冰川般的速度探索地貌，与前一个位置高度相关。如果步子太大，它会不断提议跳入概率极低的区域而被拒绝，长时间停留在原地。找到合适的平衡——通常目标是设定在 0.2 到 0.4 左右的特定接受率——对于高效探索至关重要，特别是当[目标分布](@entry_id:634522)具有挑战性特征（如[重尾](@entry_id:274276)）时 。
+另一个关键方面是**提议调优** (proposal tuning)。步行者应该迈多大的步子？如果步子太小，步行者会以冰川般的速度探索地貌，与前一个位置高度相关。如果步子太大，它会不断提议跳入概率极低的区域而被拒绝，长时间停留在原地。找到合适的平衡——通常目标是设定在 0.2 到 0.4 左右的特定接受率——对于高效探索至关重要，特别是当[目标分布](@keyword=target_distribution|lang=zh-CN|style=Feynman)具有挑战性特征（如[重尾](@keyword=heavy_tails|lang=zh-CN|style=Feynman)）时 [@problem_id:3183207]。
 
-对于更棘手的高维问题，如[地球物理学](@entry_id:147342)中的问题，需要更强大的技术。如果[后验分布](@entry_id:145605)是一个狭长、倾斜的[椭球体](@entry_id:165811)，各向同性（球形）的提议将非常低效。解决方案是**预处理** (preconditioning)，我们使用后验协[方差](@entry_id:200758)的估计来“白化”空间。这就像戴上一副矫正眼镜，将拉长的椭球体转换为一个简单的球体，使各向同性的提议能够轻松地向所有方向探索 。
+对于更棘手的高维问题，如[地球物理学](@keyword=geophysics|lang=zh-CN|style=Feynman)中的问题，需要更强大的技术。如果[后验分布](@keyword=posterior_distribution|lang=zh-CN|style=Feynman)是一个狭长、倾斜的[椭球体](@keyword=ellipsoid|lang=zh-CN|style=Feynman)，各向同性（球形）的提议将非常低效。解决方案是**预处理** (preconditioning)，我们使用后验协[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)的估计来“白化”空间。这就像戴上一副矫正眼镜，将拉长的椭球体转换为一个简单的球体，使各向同性的提议能够轻松地向所有方向探索 [@problem_id:3609564]。
 
-最后，对于评估目标密度计算成本高昂的问题，人们开发了巧妙的效率技巧。**[延迟接受](@entry_id:748288)** (Delayed Acceptance) 就是这样一种策略。它使用一个廉价、近似的目标密度版本进行快速的初步检查。只有当一个提议通过了这个廉价的测试，我们才投入计算资源用真实但昂贵的密度来评估它。这种两阶段筛选过程可以在不损害最终结果精确性的前提下，节省巨大的计算成本 。
+最后，对于评估目标密度计算成本高昂的问题，人们开发了巧妙的效率技巧。**[延迟接受](@keyword=delayed_acceptance|lang=zh-CN|style=Feynman)** (Delayed Acceptance) 就是这样一种策略。它使用一个廉价、近似的目标密度版本进行快速的初步检查。只有当一个提议通过了这个廉价的测试，我们才投入计算资源用真实但昂贵的密度来评估它。这种两阶段筛选过程可以在不损害最终结果精确性的前提下，节省巨大的计算成本 [@problem_id:3302301]。
 
 ### 前沿：蒙特卡洛中的蒙特卡洛
 
-也许该框架最令人费解且最强大的应用出现在这样一类问题中：系统的潜在状态本身随时间随机演化——即[状态空间模型](@entry_id:137993)。想象一下跟踪卫星、为波动的经济建模，或追踪[生灭过程](@entry_id:168595)中的隐藏种群 。
+也许该框架最令人费解且最强大的应用出现在这样一类问题中：系统的潜在状态本身随时间随机演化——即[状态空间模型](@keyword=state_space_models|lang=zh-CN|style=Feynman)。想象一下跟踪卫星、为波动的经济建模，或追踪[生灭过程](@keyword=birth_death_process|lang=zh-CN|style=Feynman)中的隐藏种群 [@problem_id:3289366]。
 
-在这里，我们面临一个“双重难解” (doubly intractable) 的问题。观测数据的似然需要对隐藏状态可能采取的所有路径进行积分——这是一个不可能完成的积分。解决方案，被称为**粒子边缘 Metropolis-Hastings (PMMH)**，是统计智慧的杰作 。其思想是使用一种[蒙特卡洛方法](@entry_id:136978)（粒子滤波器）来生成这个[难解似然](@entry_id:140896)的*有噪声但无偏的估计*。然后，将这个有噪声的估计直接代入第二种蒙特卡洛方法——我们的 Metropolis-Hastings 采样器——的接受率中，该采样器用于探索模型静态参数的空间。
+在这里，我们面临一个“双重难解” (doubly intractable) 的问题。观测数据的似然需要对隐藏状态可能采取的所有路径进行积分——这是一个不可能完成的积分。解决方案，被称为**粒子边缘 Metropolis-Hastings (PMMH)**，是统计智慧的杰作 [@problem_id:2890425]。其思想是使用一种[蒙特卡洛方法](@keyword=monte_carlo_methods|lang=zh-CN|style=Feynman)（粒子滤波器）来生成这个[难解似然](@keyword=intractable_likelihood|lang=zh-CN|style=Feynman)的*有噪声但无偏的估计*。然后，将这个有噪声的估计直接代入第二种蒙特卡洛方法——我们的 Metropolis-Hastings 采样器——的接受率中，该采样器用于探索模型静态参数的空间。
 
-这似乎行不通。一个依赖精确比率的算法，在输入有噪声的随机估计时，如何能正确收敛？其奥秘在于所谓的伪边缘算法 (pseudo-marginal algorithms) 的数学保证：只要[似然](@entry_id:167119)估计器是无偏的，参数的采样器实际上就会收敛到*精确*的[后验分布](@entry_id:145605)。[似然](@entry_id:167119)估计中的噪声被完美地吸收到链的整体随机性中。这展示了 Metropolis-Hastings 框架的深邃和稳健性，使我们能够在当今使用的一些最复杂的科学模型中执行精确的[贝叶斯推断](@entry_id:146958)。
+这似乎行不通。一个依赖精确比率的算法，在输入有噪声的随机估计时，如何能正确收敛？其奥秘在于所谓的伪边缘算法 (pseudo-marginal algorithms) 的数学保证：只要[似然](@keyword=likelihood|lang=zh-CN|style=Feynman)估计器是无偏的，参数的采样器实际上就会收敛到*精确*的[后验分布](@keyword=posterior_distribution|lang=zh-CN|style=Feynman)。[似然](@keyword=likelihood|lang=zh-CN|style=Feynman)估计中的噪声被完美地吸收到链的整体随机性中。这展示了 Metropolis-Hastings 框架的深邃和稳健性，使我们能够在当今使用的一些最复杂的科学模型中执行精确的[贝叶斯推断](@keyword=bayesian_inference|lang=zh-CN|style=Feynman)。
 
 从拟合一条简单的数据线，到解码生命本身的参数，再到对“双重难解”模型进行推断，Metropolis-Hastings 算法的历程证明了一个植根于优美物理原理的简单思想在照亮未知世界方面的强大力量。

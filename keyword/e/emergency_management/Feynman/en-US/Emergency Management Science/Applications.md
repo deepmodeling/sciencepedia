@@ -24,7 +24,7 @@ Most importantly, the clinician and patient collaboratively create an emergency 
 
 ### Scaling Up: From Individuals to Institutions
 
-The same principles of planning, foresight, and system design apply when we scale up to protect groups of people. Consider the world of competitive sports. An event called *commotio cordis* can occur when a projectile, like a baseball or lacrosse ball, strikes an athlete’s chest at a precise, vulnerable moment in the cardiac cycle, triggering a fatal [arrhythmia](@entry_id:155421).
+The same principles of planning, foresight, and system design apply when we scale up to protect groups of people. Consider the world of competitive sports. An event called *commotio cordis* can occur when a projectile, like a baseball or lacrosse ball, strikes an athlete’s chest at a precise, vulnerable moment in the cardiac cycle, triggering a fatal [arrhythmia](@keyword=arrhythmia|lang=en-US|style=Feynman).
 
 Mitigating this risk requires a two-pronged approach. The first is primary prevention: designing better chest protectors that can absorb and disperse the energy of an impact, governed by standards like NOCSAE ND200. But no equipment is perfect. Therefore, the second pillar is a flawless emergency response system. The American Heart Association’s "chain of survival" emphasizes that survival from cardiac arrest is a race against time. The goal is to get from collapse to the first defibrillator shock in under three minutes.
 
@@ -40,9 +40,9 @@ Imagine a complex surgical procedure, like a robotic thyroidectomy. The setup in
 
 For the routine setup, let's assume each step has a small probability of error. A well-tested model from learning theory shows that with each simulation session, $s$, the probability of an error, $p(s)$, decreases exponentially: $p(s) = p_0 e^{-\alpha s}$. The learning rate $\alpha$ means that the biggest gains in proficiency come from the first few practice runs.
 
-Now for the crisis. When unexpected bleeding occurs, the team must respond instantly. Let’s say their [response time](@entry_id:271485), $T$, is a random variable. Practice doesn't make the team's [response time](@entry_id:271485) a fixed number, but it does make the *average* [response time](@entry_id:271485), $\mu(s)$, shorter. This reduction also often follows an exponential decay: $\mu(s) = \mu_0 e^{-\beta s}$.
+Now for the crisis. When unexpected bleeding occurs, the team must respond instantly. Let’s say their [response time](@keyword=response_time|lang=en-US|style=Feynman), $T$, is a random variable. Practice doesn't make the team's [response time](@keyword=response_time|lang=en-US|style=Feynman) a fixed number, but it does make the *average* [response time](@keyword=response_time|lang=en-US|style=Feynman), $\mu(s)$, shorter. This reduction also often follows an exponential decay: $\mu(s) = \mu_0 e^{-\beta s}$.
 
-Here is the elegant synthesis. The danger to the patient during the crisis can be described by a [constant hazard rate](@entry_id:271158), $\gamma$. The longer the bleeding goes uncontrolled, the higher the chance of a bad outcome. The probability of an adverse outcome is not simply proportional to the average time; it turns out to be a beautiful little formula that connects the [hazard rate](@entry_id:266388) and the mean response time:
+Here is the elegant synthesis. The danger to the patient during the crisis can be described by a [constant hazard rate](@keyword=constant_hazard_rate|lang=en-US|style=Feynman), $\gamma$. The longer the bleeding goes uncontrolled, the higher the chance of a bad outcome. The probability of an adverse outcome is not simply proportional to the average time; it turns out to be a beautiful little formula that connects the [hazard rate](@keyword=hazard_rate|lang=en-US|style=Feynman) and the mean response time:
 
 $$
 P(\text{Adverse Outcome} | \text{crisis}, s) = \frac{\gamma \mu(s)}{1 + \gamma \mu(s)} = \frac{\gamma \mu_0 e^{-\beta s}}{1 + \gamma \mu_0 e^{-\beta s}}

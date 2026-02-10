@@ -1,11 +1,11 @@
 ## 引言
-分子并非图表中通常描绘的静态实体；它们处于持续的动态运动中。在这些运动中，最基本的一种是转动——一种由优雅的量子力学规则支配的、永恒的翻滚和旋转。这种量子化舞蹈的[光谱](@entry_id:185632)印记被称为转动谱带，它是一系列丰富的[谱线](@entry_id:193408)图案，如同分子的指纹。理解这些谱带是解开关于[分子结构](@entry_id:140109)、动力学和环境等海量信息的关键。本文旨在弥合观察复杂[光谱](@entry_id:185632)与解读其所编码的深奥物理细节之间的知识鸿沟。
+分子并非图表中通常描绘的静态实体；它们处于持续的动态运动中。在这些运动中，最基本的一种是转动——一种由优雅的量子力学规则支配的、永恒的翻滚和旋转。这种量子化舞蹈的[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)印记被称为转动谱带，它是一系列丰富的[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)图案，如同分子的指纹。理解这些谱带是解开关于[分子结构](@keyword=molecular_structure|lang=zh-CN|style=Feynman)、动力学和环境等海量信息的关键。本文旨在弥合观察复杂[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)与解读其所编码的深奥物理细节之间的知识鸿沟。
 
-本文将引导您穿越[分子转动](@entry_id:172532)的量子世界。首先，在“原理与机制”一章中，我们将探讨基本理论，从旋转哑铃的简单模型到决定分子如何与光相互作用的选择定则。我们将揭示[离心畸变](@entry_id:156195)的细微之处，并了解[转动结构](@entry_id:175721)如何在不同类型的[光谱学](@entry_id:141940)中表现出来。随后，“应用与跨学科联系”一章将揭示这些知识的应用方式，展示转动谱带如何成为化学、天体物理学、[材料科学](@entry_id:152226)乃至核物理学中的强大工具。让我们从深入探讨构成这场分子之舞编排的原理开始。
+本文将引导您穿越[分子转动](@keyword=molecular_rotations|lang=zh-CN|style=Feynman)的量子世界。首先，在“原理与机制”一章中，我们将探讨基本理论，从旋转哑铃的简单模型到决定分子如何与光相互作用的选择定则。我们将揭示[离心畸变](@keyword=centrifugal_distortion|lang=zh-CN|style=Feynman)的细微之处，并了解[转动结构](@keyword=rotational_structure|lang=zh-CN|style=Feynman)如何在不同类型的[光谱学](@keyword=optical_spectroscopy|lang=zh-CN|style=Feynman)中表现出来。随后，“应用与跨学科联系”一章将揭示这些知识的应用方式，展示转动谱带如何成为化学、天体物理学、[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)乃至核物理学中的强大工具。让我们从深入探讨构成这场分子之舞编排的原理开始。
 
 ## 原理与机制
 
-想象一个分子，比如一个简单的[一氧化碳](@entry_id:195929)分子，漂浮在太空的真空中。我们通常将其想象成一个静态的小物体，图表上的一个点。但现实远比这更具动态性。这个分子充满了运动。它[振动](@entry_id:267781)着，仿佛它的两个原子由一根弹簧连接；而对我们的故事最重要的是，它在黑暗中不停地翻滚和旋转。这场转动之舞并非某种混乱的翻滚；它是一场高度结构化、量子化的华尔兹，由奇特而优美的量子力学规则所支配。理解转动谱带，就是学习这场分子之舞的音乐与编排。
+想象一个分子，比如一个简单的[一氧化碳](@keyword=carbon_monoxide_(co)|lang=zh-CN|style=Feynman)分子，漂浮在太空的真空中。我们通常将其想象成一个静态的小物体，图表上的一个点。但现实远比这更具动态性。这个分子充满了运动。它[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)着，仿佛它的两个原子由一根弹簧连接；而对我们的故事最重要的是，它在黑暗中不停地翻滚和旋转。这场转动之舞并非某种混乱的翻滚；它是一场高度结构化、量子化的华尔兹，由奇特而优美的量子力学规则所支配。理解转动谱带，就是学习这场分子之舞的音乐与编排。
 
 ### 旋转的分子：从哑铃到量子
 
@@ -15,82 +15,82 @@
 
 $$E_J = B J(J+1)$$
 
-在这里，$J$ 是**转动[量子数](@entry_id:145558)**，一个可以取 $0, 1, 2, 3, \dots$ 的整数，代表分子所具有的转动角动量的大小。$J=0$ 的分子完全不转动。$J=1$ 的分子拥有一个转动量子，依此类推。
+在这里，$J$ 是**转动[量子数](@keyword=quantum_numbers|lang=zh-CN|style=Feynman)**，一个可以取 $0, 1, 2, 3, \dots$ 的整数，代表分子所具有的转动角动量的大小。$J=0$ 的分子完全不转动。$J=1$ 的分子拥有一个转动量子，依此类推。
 
-我们公式中的另一个字符 $B$ 是**转动常数**。它是每个分子特有的一个数字，是其结构的指纹。它的定义是 $B = \frac{\hbar^2}{2I}$，其中 $\hbar$ 是[约化普朗克常数](@entry_id:275910)，而 $I$ 是分子的**转动惯量**。对于我们简单的哑铃模型，$I = \mu r^2$，其中 $\mu$ 是两个原子的[约化质量](@entry_id:152420)。这告诉我们一些深刻的道理：较轻的分子（$\mu$ 较小）或[键长](@entry_id:144592)较短的分子（$r$ 较小）具有较小的转动惯量。这意味着它们有较大的[转动常数](@entry_id:191788) $B$，因此其能级之间的间隔也较大。在某种意义上，它们“更难被转动起来”。
+我们公式中的另一个字符 $B$ 是**转动常数**。它是每个分子特有的一个数字，是其结构的指纹。它的定义是 $B = \frac{\hbar^2}{2I}$，其中 $\hbar$ 是[约化普朗克常数](@keyword=reduced_planck_constant|lang=zh-CN|style=Feynman)，而 $I$ 是分子的**转动惯量**。对于我们简单的哑铃模型，$I = \mu r^2$，其中 $\mu$ 是两个原子的[约化质量](@keyword=reduced_mass|lang=zh-CN|style=Feynman)。这告诉我们一些深刻的道理：较轻的分子（$\mu$ 较小）或[键长](@keyword=bond_length|lang=zh-CN|style=Feynman)较短的分子（$r$ 较小）具有较小的转动惯量。这意味着它们有较大的[转动常数](@keyword=rotational_constants|lang=zh-CN|style=Feynman) $B$，因此其能级之间的间隔也较大。在某种意义上，它们“更难被转动起来”。
 
 注意能级的一些有趣之处。连续能级之间的间隔不是恒定的。$J$ 态与 $J-1$ 态之间的能量差为：
 
 $$\Delta E = E_J - E_{J-1} = B[J(J+1) - (J-1)J] = 2BJ$$
 
-这意味着随着分子旋转得越来越快（即 $J$ 增大），我们能级阶梯上的梯级间距也越来越大。从 $J=4$ 到 $J=3$ 的跃迁释放的能量比从 $J=1$ 到 $J=0$ 的跃迁要多。这个简单的事实是天文学家的一个强大工具，他们通过测量遥远气体云中分子发出的光的频率，不仅可以识别分子的类型，还能了解其转动的剧烈程度 。
+这意味着随着分子旋转得越来越快（即 $J$ 增大），我们能级阶梯上的梯级间距也越来越大。从 $J=4$ 到 $J=3$ 的跃迁释放的能量比从 $J=1$ 到 $J=0$ 的跃迁要多。这个简单的事实是天文学家的一个强大工具，他们通过测量遥远气体云中分子发出的光的频率，不仅可以识别分子的类型，还能了解其转动的剧烈程度 [@problem_id:1990749]。
 
 ### 入场券：为何有些分子能与光共舞，而另一些则不能
 
-那么，我们有了一个能级阶梯。分子如何攀登这个阶梯呢？它通过吸收一个能量恰好等于到下一个梯级能量差的[光子](@entry_id:145192)来实现。它又如何下降呢？通过发射一个[光子](@entry_id:145192)。这就是[光谱学](@entry_id:141940)。但这里有个条件。为了使这种相互作用发生，分子必须有一种方式来“感受”光波的[振荡](@entry_id:267781)[电场](@entry_id:194326)。
+那么，我们有了一个能级阶梯。分子如何攀登这个阶梯呢？它通过吸收一个能量恰好等于到下一个梯级能量差的光子来实现。它又如何下降呢？通过发射一个光子。这就是[光谱学](@keyword=optical_spectroscopy|lang=zh-CN|style=Feynman)。但这里有个条件。为了使这种相互作用发生，分子必须有一种方式来“感受”光波的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)。
 
-光用来“抓住”分子的“把手”是它的**[永久电偶极矩](@entry_id:178322)**。如果一个分子存在天然的[电荷](@entry_id:275494)分离——一个略带正电的一端和一个略带负电的另一端，就像一个微型条形磁铁——它就被称为**[极性分子](@entry_id:144673)**。当这个[极性分子](@entry_id:144673)旋转时，它自身会产生一个[振荡](@entry_id:267781)[电场](@entry_id:194326)。如果这个转动频率与入射光（如微波辐射）的频率相匹配，它们就可以耦合。光的[电场](@entry_id:194326)可以给分子一个微小的推或拉，即一个力矩，使其旋转得更快并跃迁到更高的 $J$ 态。
+光用来“抓住”分子的“把手”是它的**[永久电偶极矩](@keyword=permanent_electric_dipole_moment|lang=zh-CN|style=Feynman)**。如果一个分子存在天然的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)分离——一个略带正电的一端和一个略带负电的另一端，就像一个微型条形磁铁——它就被称为**[极性分子](@keyword=polar_molecules|lang=zh-CN|style=Feynman)**。当这个[极性分子](@keyword=polar_molecules|lang=zh-CN|style=Feynman)旋转时，它自身会产生一个[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)。如果这个转动频率与入射光（如微波辐射）的频率相匹配，它们就可以耦合。光的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)可以给分子一个微小的推或拉，即一个力矩，使其旋转得更快并跃迁到更高的 $J$ 态。
 
-这导致了纯[转动光谱学](@entry_id:152769)的一个基本“总[选择定则](@entry_id:140784)”：**一个分子必须具有[永久电偶极矩](@entry_id:178322)才能产生转动吸收光谱**。
+这导致了纯[转动光谱学](@keyword=rotational_spectroscopy|lang=zh-CN|style=Feynman)的一个基本“总[选择定则](@keyword=selection_rules|lang=zh-CN|style=Feynman)”：**一个分子必须具有[永久电偶极矩](@keyword=permanent_electric_dipole_moment|lang=zh-CN|style=Feynman)才能产生转动吸收光谱**。
 
-这个定则优雅地解释了许多实验观察。以一氧化碳（CO）和氮气（N₂）为例。它们是[等电子体](@entry_id:151231)（电子数相同），质量也几乎相同。然而，CO 具有丰富的微波[光谱](@entry_id:185632)，而 N₂ 在微波下则完全“隐形”。为什么？因为 CO 是一个**异核**[双原子分子](@entry_id:148655)。氧原子的电负性比碳原子强，将电子拉向自己，从而产生了一个[永久偶极矩](@entry_id:163961)。相比之下，N₂ 是一个**同核**双原子分子。两个氮原子完全相同，完美地共享电子。没有[电荷](@entry_id:275494)分离，没有偶极矩，因此光没有“把手”可以抓住它。
+这个定则优雅地解释了许多实验观察。以一氧化碳（CO）和氮气（N₂）为例。它们是[等电子体](@keyword=isoelectronic|lang=zh-CN|style=Feynman)（电子数相同），质量也几乎相同。然而，CO 具有丰富的微波[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)，而 N₂ 在微波下则完全“隐形”[@problem_id:1986473]。为什么？因为 CO 是一个**异核**[双原子分子](@keyword=diatomic_molecules|lang=zh-CN|style=Feynman)。氧原子的电负性比碳原子强，将电子拉向自己，从而产生了一个[永久偶极矩](@keyword=permanent_dipole_moment|lang=zh-CN|style=Feynman)。相比之下，N₂ 是一个**同核**双原子分子。两个氮原子完全相同，完美地共享电子。没有[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)分离，没有偶极矩，因此光没有“把手”可以抓住它。
 
-这个对称性原理也适用于更复杂的分子。甲烷（CH₄）和四氯化碳（CCl₄）是高度对称的**球陀螺**分子。虽然它们肯定有转动能级，但其完美的四面体对称性确保了任何局域的[键偶极](@entry_id:138765)都完全抵消。净偶极矩为零 。与 N₂ 和 H₂  一样，它们不能通过这种主要机制与微波辐射相互作用，因此是“微波非活性的”。
+这个对称性原理也适用于更复杂的分子。甲烷（CH₄）和四氯化碳（CCl₄）是高度对称的**球陀螺**分子。虽然它们肯定有转动能级，但其完美的四面体对称性确保了任何局域的[键偶极](@keyword=bond_dipole|lang=zh-CN|style=Feynman)都完全抵消。净偶极矩为零 [@problem_id:1413644]。与 N₂ 和 H₂ [@problem_id:1396643] 一样，它们不能通过这种主要机制与微波辐射相互作用，因此是“微波非活性的”。
 
-### 舞蹈的舞步：选择定则与[光谱](@entry_id:185632)图案
+### 舞蹈的舞步：选择定则与[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)图案
 
-即使对于有偶极矩的分子，这场量子之舞也并非毫无章法。它有严格的编排规则。当一个分子吸收一个[光子](@entry_id:145192)——一个具有单位[内禀角动量](@entry_id:189727)（自旋为1）的粒子——时，它必须遵守系统的总角动量守恒。对于一个简单的旋转分子，其结果是另一个选择定则：
+即使对于有偶极矩的分子，这场量子之舞也并非毫无章法。它有严格的编排规则。当一个分子吸收一个光子——一个具有单位[内禀角动量](@keyword=intrinsic_angular_momentum|lang=zh-CN|style=Feynman)（自旋为1）的粒子——时，它必须遵守系统的总角动量守恒。对于一个简单的旋转分子，其结果是另一个选择定则：
 
 $$\Delta J = +1$$
 
-这意味着处于 $J$ 态的分子只能吸收一个[光子](@entry_id:145192)并跃迁到 $J+1$ 态。它不能从 $J=0$ 跃迁到 $J=2$。从 $J$ 跃迁到 $J+1$ 所吸收[光子](@entry_id:145192)的频率为：
+这意味着处于 $J$ 态的分子只能吸收一个光子并跃迁到 $J+1$ 态。它不能从 $J=0$ 跃迁到 $J=2$。从 $J$ 跃迁到 $J+1$ 所吸收光子的频率为：
 
 $$\nu_{J \to J+1} = \frac{E_{J+1} - E_J}{h} = \frac{2B(J+1)}{h}$$
 
-这个公式预测了整个[转动光谱](@entry_id:163636)！
+这个公式预测了整个[转动光谱](@keyword=rotational_spectra|lang=zh-CN|style=Feynman)！
 - 对于 $J=0 \to 1$ 的跃迁，频率是 $\frac{2B}{h}$。
 - 对于 $J=1 \to 2$ 的跃迁，频率是 $\frac{4B}{h}$。
 - 对于 $J=2 \to 3$ 的跃迁，频率是 $\frac{6B}{h}$。
 
-[光谱](@entry_id:185632)是一系列几乎等间距的[谱线](@entry_id:193408)，间距约为 $\frac{2B}{h}$。在微波区域找到这样一系列[谱线](@entry_id:193408)，就像找到了一个[分子指纹](@entry_id:172531)——这是你正在观察一个特定的[极性分子](@entry_id:144673)在空间中旋转的确凿证据。
+[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)是一系列几乎等间距的[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)，间距约为 $\frac{2B}{h}$。在微波区域找到这样一系列[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)，就像找到了一个[分子指纹](@keyword=molecular_fingerprint|lang=zh-CN|style=Feynman)——这是你正在观察一个特定的[极性分子](@keyword=polar_molecules|lang=zh-CN|style=Feynman)在空间中旋转的确凿证据。
 
-### 当哑铃伸长时：[离心畸变](@entry_id:156195)的现实
+### 当哑铃伸长时：[离心畸变](@keyword=centrifugal_distortion|lang=zh-CN|style=Feynman)的现实
 
-我们的[刚性转子模型](@entry_id:153240)很优美，但它是一种理想化。真实的[化学键](@entry_id:138216)更像一根硬弹簧，而不是一根刚性杆。随着分子旋转得越来越快（$J$ 值越来越高），[离心力](@entry_id:173726)将原子拉开。键被拉伸，[键长](@entry_id:144592) $r$ 增加，因此转动惯量 $I$ 也增加。
+我们的[刚性转子模型](@keyword=rigid_rotor_model|lang=zh-CN|style=Feynman)很优美，但它是一种理想化。真实的[化学键](@keyword=chemical_bonding|lang=zh-CN|style=Feynman)更像一根硬弹簧，而不是一根刚性杆。随着分子旋转得越来越快（$J$ 值越来越高），[离心力](@keyword=centrifugal_force|lang=zh-CN|style=Feynman)将原子拉开。键被拉伸，[键长](@keyword=bond_length|lang=zh-CN|style=Feynman) $r$ 增加，因此转动惯量 $I$ 也增加。
 
-由于 $B = \frac{\hbar^2}{2I}$， $I$ 的增加意味着在高的 $J$ 值下，有效的转动“常数” $B$ 变小。分子变得更容易旋转了。这种被称为**[离心畸变](@entry_id:156195)**的效应，与[刚性转子](@entry_id:156317)的预测相比，会轻微降低转动能级的能量。为了解释这一点，我们在能量公式中加入一个小的修正项：
+由于 $B = \frac{\hbar^2}{2I}$， $I$ 的增加意味着在高的 $J$ 值下，有效的转动“常数” $B$ 变小。分子变得更容易旋转了。这种被称为**[离心畸变](@keyword=centrifugal_distortion|lang=zh-CN|style=Feynman)**的效应，与[刚性转子](@keyword=rigid_rotor|lang=zh-CN|style=Feynman)的预测相比，会轻微降低转动能级的能量。为了解释这一点，我们在能量公式中加入一个小的修正项：
 
 $$E_J = B J(J+1) - D_J J^2(J+1)^2$$
 
-在这里，$D_J$ 是微小的**[离心畸变常数](@entry_id:268362)**（单位与 $B$ 相同，为能量单位）。因为该项为负，并且对于大的 $J$ 值，它与 $J^4$ 成正比，所以它在低 $J$ 值时的影响可以忽略不计，但随着分子旋转得非常快，其影响变得越来越重要。这一改进意味着我们[谱线](@entry_id:193408)之间的间距不再是完全恒定的；对于更高的 $J$ 值跃迁，它会缓慢减小。这种对完美图案的微妙偏离并非缺陷；它甚至是更丰富信息的来源。通过精确测量几次跃迁的频率，天体物理学家可以同时解出 $B$ 和 $D_J$，从而获得关于[分子键长](@entry_id:163142)及其刚度的极其详细的图像 。
+在这里，$D_J$ 是微小的**[离心畸变常数](@keyword=centrifugal_distortion_constant|lang=zh-CN|style=Feynman)**（单位与 $B$ 相同，为能量单位）。因为该项为负，并且对于大的 $J$ 值，它与 $J^4$ 成正比，所以它在低 $J$ 值时的影响可以忽略不计，但随着分子旋转得非常快，其影响变得越来越重要。这一改进意味着我们[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)之间的间距不再是完全恒定的；对于更高的 $J$ 值跃迁，它会缓慢减小。这种对完美图案的微妙偏离并非缺陷；它甚至是更丰富信息的来源。通过精确测量几次跃迁的频率，天体物理学家可以同时解出 $B$ 和 $D_J$，从而获得关于[分子键长](@keyword=molecular_bond_length|lang=zh-CN|style=Feynman)及其刚度的极其详细的图像 [@problem_id:1986494]。
 
-### 更广阔的舞台：其他[光谱](@entry_id:185632)中的转动指纹
+### 更广阔的舞台：其他[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)中的转动指纹
 
-[分子能量](@entry_id:190933)的层级——[电子跃迁](@entry_id:152949)能量最大，其次是[振动能](@entry_id:157909)，然后是[转动能](@entry_id:160662)——意味着[转动结构](@entry_id:175721)并不仅限于微波区域 。它作为精细结构出现在其他类型的跃迁之上。
+[分子能量](@keyword=molecular_energy|lang=zh-CN|style=Feynman)的层级——[电子跃迁](@keyword=electronic_transitions|lang=zh-CN|style=Feynman)能量最大，其次是[振动能](@keyword=vibrational_energy|lang=zh-CN|style=Feynman)，然后是[转动能](@keyword=rotational_energy|lang=zh-CN|style=Feynman)——意味着[转动结构](@keyword=rotational_structure|lang=zh-CN|style=Feynman)并不仅限于微波区域 [@problem_id:3691472]。它作为精细结构出现在其他类型的跃迁之上。
 
-当一个分子吸收一个红外（IR）[光子](@entry_id:145192)时，它通常会跃迁到更高的[振动态](@entry_id:162097)。但它也可以同时改变其[转动态](@entry_id:158866)。对于[双原子分子](@entry_id:148655)中这样的**[振转跃迁](@entry_id:181881)**，其选择定则是 $\Delta J = \pm 1$。
+当一个分子吸收一个红外（IR）光子时，它通常会跃迁到更高的[振动态](@keyword=vibrational_states|lang=zh-CN|style=Feynman)。但它也可以同时改变其[转动态](@keyword=rotational_states|lang=zh-CN|style=Feynman)。对于[双原子分子](@keyword=diatomic_molecules|lang=zh-CN|style=Feynman)中这样的**[振转跃迁](@keyword=vibrational_rotational_transitions|lang=zh-CN|style=Feynman)**，其选择定则是 $\Delta J = \pm 1$。
 - $\Delta J = +1$ 的跃迁（转动加速）形成 **R-支**。
 - $\Delta J = -1$ 的跃迁（转动减速）形成 **P-支**。
 
-结果是，在纯[振动频率](@entry_id:199185)周围形成了两个由[谱线](@entry_id:193408)组成的翼（支）。
+结果是，在纯[振动频率](@keyword=vibrational_frequencies|lang=zh-CN|style=Feynman)周围形成了两个由[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)组成的翼（支）。
 
-在紫外-可见光范围内的电子跃迁中，舞台变得更加宏大。当一个电子被激发到一个新的[轨道](@entry_id:137151)时，分子的键长和电子结构可能会发生巨大变化。[转动选择定则](@entry_id:167711)变得更加复杂。现在，$\Delta J = 0$ 的跃迁也可能被允许。这些跃迁形成了第三个分支，称为 **Q-支**，通常是一个非常强而尖锐的特征。Q-支的存在与否告诉我们关于所涉及电子态对称性的深层信息。例如，在两个电子态之间的跃迁中，如果电子沿键轴的[轨道角动量](@entry_id:191303)没有变化（即 $\Sigma \to \Sigma$ 跃迁），则 Q-支是被禁止的，并会神秘地从[光谱](@entry_id:185632)中消失 。
+在紫外-可见光范围内的电子跃迁中，舞台变得更加宏大。当一个电子被激发到一个新的[轨道](@keyword=orbit|lang=zh-CN|style=Feynman)时，分子的键长和电子结构可能会发生巨大变化。[转动选择定则](@keyword=rotational_selection_rules|lang=zh-CN|style=Feynman)变得更加复杂。现在，$\Delta J = 0$ 的跃迁也可能被允许。这些跃迁形成了第三个分支，称为 **Q-支**，通常是一个非常强而尖锐的特征。Q-支的存在与否告诉我们关于所涉及电子态对称性的深层信息。例如，在两个电子态之间的跃迁中，如果电子沿键轴的[轨道角动量](@keyword=orbital_angular_momentum|lang=zh-CN|style=Feynman)没有变化（即 $\Sigma \to \Sigma$ 跃迁），则 Q-支是被禁止的，并会神秘地从[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)中消失 [@problem_id:1990386]。
 
-### 冲撞效应：为何[自由转动](@entry_id:191602)需要自由空间
+### 冲撞效应：为何[自由转动](@keyword=free_rotation|lang=zh-CN|style=Feynman)需要自由空间
 
-任何试图穿过拥挤人群的人都知道，自由移动是一种奢侈。对分子来说也是如此。我们讨论过的那些分辨精美的转动[谱线](@entry_id:193408)，通常只在**气相**[光谱](@entry_id:185632)中才能看到，尤其是在低压下。
+任何试图穿过拥挤人群的人都知道，自由移动是一种奢侈。对分子来说也是如此。我们讨论过的那些分辨精美的转动[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)，通常只在**气相**[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)中才能看到，尤其是在低压下。
 
-在液体或固体中会发生什么呢？在凝聚相中，一个分子不断被其邻居推挤和碰撞。想象一下我们旋转的分子处在一个由其他分子组成的“冲撞坑”里。它无法完成一次平滑的旋转而不被撞离[轨道](@entry_id:137151)。这种持续的冲击，这些分子间的碰撞，完全破坏了自由的、量子化的转动 。清晰、尖锐的[转动能级](@entry_id:155495)不再以有意义的方式存在。它们被涂抹和展宽，以至于合并成一个单一的、无法分辨的峰包 。这就是为什么气相红外[光谱](@entry_id:185632)中尖锐的 P-支和 R-支在分子溶解于溶剂后会坍缩成一个宽峰，以及为什么[转动精细结构](@entry_id:194768)会从染料溶液的[紫外-可见光谱](@entry_id:756394)中消失 。要看到真正的舞蹈，分子需要移动的空间。
+在液体或固体中会发生什么呢？在凝聚相中，一个分子不断被其邻居推挤和碰撞。想象一下我们旋转的分子处在一个由其他分子组成的“冲撞坑”里。它无法完成一次平滑的旋转而不被撞离[轨道](@keyword=orbit|lang=zh-CN|style=Feynman)。这种持续的冲击，这些分子间的碰撞，完全破坏了自由的、量子化的转动 [@problem_id:2017904]。清晰、尖锐的[转动能级](@keyword=rotational_energy_levels|lang=zh-CN|style=Feynman)不再以有意义的方式存在。它们被涂抹和展宽，以至于合并成一个单一的、无法分辨的峰包 [@problem_id:2021153]。这就是为什么气相红外[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)中尖锐的 P-支和 R-支在分子溶解于溶剂后会坍缩成一个宽峰，以及为什么[转动精细结构](@keyword=rotational_fine_structure|lang=zh-CN|style=Feynman)会从染料溶液的[紫外-可见光谱](@keyword=uv_vis_spectra|lang=zh-CN|style=Feynman)中消失 [@problem_id:3691472]。要看到真正的舞蹈，分子需要移动的空间。
 
 ### 更深的对称性：Pauli原理的幕后之手
 
-还有最后一层量子力学的精妙之处，它适用于像 H₂、N₂ 和 F₂ 这样的[同核分子](@entry_id:148980)。它涉及自然界的一个深刻原理：[泡利不相容原理](@entry_id:141850)。该原理指出，一个由全同[费米子](@entry_id:146235)（具有[半整数自旋](@entry_id:148826)的粒子，如自旋 $I=1/2$ 的 $^{19}$F [原子核](@entry_id:167902)）组成的系统，其总[波函数](@entry_id:147440)在交换粒子时必须是反对称的。
+还有最后一层量子力学的精妙之处，它适用于像 H₂、N₂ 和 F₂ 这样的[同核分子](@keyword=homonuclear_molecules|lang=zh-CN|style=Feynman)。它涉及自然界的一个深刻原理：[泡利不相容原理](@keyword=pauli_exclusion_principle|lang=zh-CN|style=Feynman)。该原理指出，一个由全同[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)（具有[半整数自旋](@keyword=half_integer_spin|lang=zh-CN|style=Feynman)的粒子，如自旋 $I=1/2$ 的 $^{19}$F [原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)）组成的系统，其总波函数在交换粒子时必须是反对称的。
 
-这个原理在核自旋态和[转动态](@entry_id:158866)之间建立了一个迷人的联系。对于处于基电子态和基[振动态](@entry_id:162097)（两者皆为对称）的 $^{19}$F₂ 分子，其转动[波函数](@entry_id:147440)和核[自旋波函数](@entry_id:190161)的乘积总体上必须是反对称的。这导致了一种严格的配对：
-- **偶数** $J$ 的[转动态](@entry_id:158866)（对称）只能与**反对称**的核自旋态（仲-氟）共存。
-- **奇数** $J$ 的[转动态](@entry_id:158866)（反对称）只能与**对称**的核自旋态（正-氟）共存。
+这个原理在核自旋态和[转动态](@keyword=rotational_states|lang=zh-CN|style=Feynman)之间建立了一个迷人的联系。对于处于基电子态和基[振动态](@keyword=vibrational_states|lang=zh-CN|style=Feynman)（两者皆为对称）的 $^{19}$F₂ 分子，其转动波函数和核[自旋波函数](@keyword=spin_wave_function|lang=zh-CN|style=Feynman)的乘积总体上必须是反对称的。这导致了一种严格的配对：
+- **偶数** $J$ 的[转动态](@keyword=rotational_states|lang=zh-CN|style=Feynman)（对称）只能与**反对称**的核自旋态（仲-氟）共存。
+- **奇数** $J$ 的[转动态](@keyword=rotational_states|lang=zh-CN|style=Feynman)（反对称）只能与**对称**的核自旋态（正-氟）共存。
 
-由于两种配对都是可能的，所以所有[转动能级](@entry_id:155495)都存在。然而，每存在一个反对称的“仲”自旋态，就对应有三个对称的“正”自旋态。这意味着，在一个可以看到转动[谱线](@entry_id:193408)的[光谱](@entry_id:185632)中（如拉曼[光谱](@entry_id:185632)），源于奇数 $J$ 态的[谱线](@entry_id:193408)强度将大约是源于偶数 $J$ 态[谱线](@entry_id:193408)强度的三倍！这种交替的强度模式是对[量子统计](@entry_id:143815)学最深层原理的惊人证实 。
+由于两种配对都是可能的，所以所有[转动能级](@keyword=rotational_energy_levels|lang=zh-CN|style=Feynman)都存在。然而，每存在一个反对称的“仲”自旋态，就对应有三个对称的“正”自旋态。这意味着，在一个可以看到转动[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)的[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)中（如拉曼[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)），源于奇数 $J$ 态的[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)强度将大约是源于偶数 $J$ 态[谱线](@keyword=spectral_line|lang=zh-CN|style=Feynman)强度的三倍！这种交替的强度模式是对[量子统计](@keyword=quantum_statistics|lang=zh-CN|style=Feynman)学最深层原理的惊人证实 [@problem_id:1983929]。
 
-当然，对于纯转动*吸收*[光谱](@entry_id:185632)而言，这一切都无实际意义。主要的守门人——总选择定则——仍然有效。因为 F₂ 没有偶极矩，所以无论其内部发生着多么优美的量子体操，它在微波区域都保持沉默。舞蹈确实存在，但分子无法将它告知光。
+当然，对于纯转动*吸收*[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)而言，这一切都无实际意义。主要的守门人——总选择定则——仍然有效。因为 F₂ 没有偶极矩，所以无论其内部发生着多么优美的量子体操，它在微波区域都保持沉默。舞蹈确实存在，但分子无法将它告知光。
 
