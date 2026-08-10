@@ -45,7 +45,7 @@ $$
 
 在此温度下，液相和气相处于平衡状态。打破分子间键的能量成本被无序度的增加完美地补偿，从而使[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)得以进行。这个简单的方程异常强大。如果我们知道这三个量中的任意两个——沸点、[汽化焓](@keyword=enthalpy_of_vaporization|lang=zh-CN|style=Feynman)或[汽化熵](@keyword=entropy_of_vaporization|lang=zh-CN|style=Feynman)——我们就可以计算出第三个 [@problem_id:1995433]。
 
-在自然界一个被称为**特鲁顿规则**（Trouton's rule）的奇妙现象中，许多简单液体的摩尔[汽化熵](@keyword=entropy_of_vaporization|lang=zh-CN|style=Feynman)都惊人地相似，大约在 $85-90 \text{ J/(mol·K)}$ 左右 [@problem_id:1848639]。为什么呢？因为从凝聚的液体到弥散的气体，其“混乱度”的增加对于许多不同类型的分子来说在结构上是相似的。这是一个美丽的暗示，揭示了[分子混沌](@keyword=molecular_chaos|lang=zh-CN|style=Feynman)行为背后的普适原理。
+在自然界一个被称为**特鲁顿规则**（Trouton's rule）的奇妙现象中，许多简单液体的摩尔[汽化熵](@keyword=entropy_of_vaporization|lang=zh-CN|style=Feynman)都惊人地相似，大约在 $85-90 \mathrm{J/(mol\cdot K)}$ 左右 [@problem_id:1848639]。为什么呢？因为从凝聚的液体到弥散的气体，其“混乱度”的增加对于许多不同类型的分子来说在结构上是相似的。这是一个美丽的暗示，揭示了[分子混沌](@keyword=molecular_chaos|lang=zh-CN|style=Feynman)行为背后的普适原理。
 
 ### 气泡的诞生：一个危险的秘密
 

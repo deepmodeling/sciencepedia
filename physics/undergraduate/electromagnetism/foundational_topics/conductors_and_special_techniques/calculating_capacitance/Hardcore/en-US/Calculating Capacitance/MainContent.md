@@ -1,13 +1,13 @@
 ## Introduction
 Capacitance is a fundamental electrical property that quantifies a system's ability to store energy in an electric field. Its importance spans nearly all of modern technology, from the energy storage in our electronic devices to the intricate signaling of our own nervous system. While the concept of capacitance is often introduced qualitatively, the ability to rigorously calculate its value for a given physical system is an essential skill for scientists and engineers. This article bridges that gap, moving from a conceptual understanding to a mastery of quantitative analysis.
 
-To achieve this, the article is structured into three comprehensive chapters. In the first, **"Principles and Mechanisms,"** we will establish the foundational, step-by-step strategy for calculating capacitance from first principles. We will apply this method to various geometries, explore the profound impact of dielectric materials, analyze capacitors in series and parallel combinations, and introduce powerful alternative calculation methods based on energy and the resistance-capacitance duality. Next, **"Applications and Interdisciplinary Connections"** will demonstrate the remarkable versatility of these principles, showing how capacitance calculations are vital in diverse fields, including the engineering of electronic components, the design of high-frequency circuits, the modeling of biological cell membranes, and the characterization of advanced materials in solid-state physics. Finally, the **"Hands-On Practices"** section will provide you with the opportunity to apply these concepts to solve practical, representative problems, solidifying your theoretical understanding and building your analytical skills.
+To achieve this, the article is structured into three comprehensive chapters. In the first, **"Principles and Mechanisms,"** we will establish the foundational, step-by-step strategy for calculating capacitance from first principles. We will apply this method to various geometries, explore the profound impact of [dielectric materials](@keyword=dielectric_materials|lang=en-US|style=Feynman), analyze [capacitors in series](@keyword=capacitors_in_series|lang=en-US|style=Feynman) and parallel combinations, and introduce powerful alternative calculation methods based on energy and the resistance-capacitance duality. Next, **"Applications and Interdisciplinary Connections"** will demonstrate the remarkable versatility of these principles, showing how capacitance calculations are vital in diverse fields, including the engineering of electronic components, the design of high-frequency circuits, the modeling of biological cell membranes, and the characterization of advanced materials in solid-state physics. Finally, the **"Hands-On Practices"** section will provide you with the opportunity to apply these concepts to solve practical, representative problems, solidifying your theoretical understanding and building your analytical skills.
 
 We begin by establishing the core principles and mechanisms that form the bedrock of all capacitance calculations.
 
 ## Principles and Mechanisms
 
-Capacitance is a fundamental property of any system of two conductors. It quantifies the system's ability to store electric potential energy by separating charge. While the preceding chapter introduced the concept, we now delve into the rigorous principles and systematic methods for calculating capacitance in various physical configurations. The value of the capacitance, $C$, is determined entirely by the geometry of the conductors and the properties of the insulating material, or **dielectric**, that separates them.
+Capacitance is a fundamental property of any system of two conductors. It quantifies the system's ability to store [electric potential energy](@keyword=electric_potential_energy|lang=en-US|style=Feynman) by separating charge. While the preceding chapter introduced the concept, we now delve into the rigorous principles and systematic methods for calculating capacitance in various physical configurations. The value of the capacitance, $C$, is determined entirely by the geometry of the conductors and the properties of the insulating material, or **dielectric**, that separates them.
 
 ### The Fundamental Definition and a First Example
 
@@ -15,13 +15,13 @@ A capacitor consists of two conductors, often called plates, holding equal and o
 
 $$C = \frac{Q}{V}$$
 
-It is crucial to recognize that capacitance is *not* a function of $Q$ or $V$. For a given device, doubling the charge $Q$ will double the electric field strength at every point, which in turn doubles the potential difference $V$, leaving the ratio $C = Q/V$ constant. Capacitance is a measure of how much charge a device can store *per volt* of potential difference.
+It is crucial to recognize that capacitance is *not* a function of $Q$ or $V$. For a given device, doubling the charge $Q$ will double the electric field strength at every point, which in turn doubles the [potential difference](@keyword=potential_difference|lang=en-US|style=Feynman) $V$, leaving the ratio $C = Q/V$ constant. Capacitance is a measure of how much charge a device can store *per volt* of [potential difference](@keyword=potential_difference|lang=en-US|style=Feynman).
 
-The simplest conceptual starting point is to consider a single, isolated conductor. Where is the second conductor? By convention, we imagine the second conductor to be a spherical shell at an infinite radius, which is defined to be at a potential of zero. Let us calculate the capacitance of an isolated conducting sphere of radius $R$ carrying a total charge $Q$ [@problem_id:1786901]. Due to spherical symmetry, the charge $Q$ distributes uniformly over its surface. By Gauss's Law, the electric field outside the sphere ($r > R$) is identical to that of a point charge $Q$ located at its center:
+The simplest conceptual starting point is to consider a single, isolated conductor. Where is the second conductor? By convention, we imagine the second conductor to be a spherical shell at an infinite radius, which is defined to be at a potential of zero. Let us calculate the capacitance of an isolated [conducting sphere](@keyword=conducting_sphere|lang=en-US|style=Feynman) of radius $R$ carrying a total charge $Q$ [@problem_id:1786901]. Due to [spherical symmetry](@keyword=spherical_symmetry|lang=en-US|style=Feynman), the charge $Q$ distributes uniformly over its surface. By Gauss's Law, the electric field outside the sphere ($r > R$) is identical to that of a point charge $Q$ located at its center:
 
 $$ \mathbf{E}(r) = \frac{Q}{4\pi \epsilon_{0} r^{2}} \hat{\mathbf{r}} $$
 
-where $\epsilon_0$ is the permittivity of free space. The potential of the conductor, $V_R$, relative to the zero potential at infinity ($V(\infty) = 0$), is found by integrating the electric field:
+where $\epsilon_0$ is the [permittivity of free space](@keyword=permittivity_of_free_space|lang=en-US|style=Feynman). The potential of the conductor, $V_R$, relative to the zero potential at infinity ($V(\infty) = 0$), is found by integrating the electric field:
 
 $$ V_R = -\int_{\infty}^{R} \mathbf{E} \cdot d\mathbf{l} = -\int_{\infty}^{R} \frac{Q}{4\pi \epsilon_{0} r^{2}} dr = \left[ \frac{Q}{4\pi \epsilon_{0} r} \right]_{\infty}^{R} = \frac{Q}{4\pi \epsilon_{0} R} $$
 
@@ -36,13 +36,13 @@ This elegant result confirms that capacitance depends only on the geometry (in t
 The procedure used for the isolated sphere can be generalized into a robust, multi-step strategy for calculating the capacitance of any two-conductor system:
 
 1.  **Assume Charge:** Place charges $+Q$ and $-Q$ on the two conductors.
-2.  **Find the Electric Field:** Determine the electric field $\mathbf{E}$ in the region between the conductors that arises from this charge distribution. This step often involves using Gauss's Law, taking advantage of the system's symmetry.
-3.  **Calculate Potential Difference:** Compute the potential difference $V$ between the two conductors using the line integral $V = -\int_{-}^{+} \mathbf{E} \cdot d\mathbf{l}$, where the path of integration goes from the negatively charged conductor to the positively charged one. This definition ensures $V$ is a positive quantity.
+2.  **Find the Electric Field:** Determine the electric field $\mathbf{E}$ in the region between the conductors that arises from this [charge distribution](@keyword=charge_distribution|lang=en-US|style=Feynman). This step often involves using Gauss's Law, taking advantage of the system's symmetry.
+3.  **Calculate Potential Difference:** Compute the [potential difference](@keyword=potential_difference|lang=en-US|style=Feynman) $V$ between the two conductors using the [line integral](@keyword=line_integral|lang=en-US|style=Feynman) $V = -\int_{-}^{+} \mathbf{E} \cdot d\mathbf{l}$, where the path of integration goes from the negatively charged conductor to the positively charged one. This definition ensures $V$ is a positive quantity.
 4.  **Determine Capacitance:** Apply the definition $C = Q/V$. The charge $Q$ assumed in step 1 will cancel out, leaving a final expression dependent only on geometric and material properties.
 
 Let's apply this strategy to a **coaxial cable**, which consists of an inner solid cylinder of radius $a$ and an outer concentric cylindrical shell of inner radius $b$ [@problem_id:1786848]. We wish to find the capacitance per unit length, $C_L$.
 
-1.  **Assume Charge:** Let the inner conductor have a linear charge density $+\lambda$ (charge per unit length) and the outer conductor have $-\lambda$. For a length $L$ of the cable, the total charge is $Q = \lambda L$.
+1.  **Assume Charge:** Let the inner conductor have a [linear charge density](@keyword=linear_charge_density|lang=en-US|style=Feynman) $+\lambda$ (charge per unit length) and the outer conductor have $-\lambda$. For a length $L$ of the cable, the total charge is $Q = \lambda L$.
 2.  **Find the Electric Field:** We use a cylindrical Gaussian surface of radius $r$ ($a  r  b$) and length $L$. By symmetry, the electric field must be purely radial. Gauss's Law gives:
     $$ \oint \mathbf{E} \cdot d\mathbf{A} = E(r) \cdot (2\pi r L) = \frac{Q_{enc}}{\epsilon_0} = \frac{\lambda L}{\epsilon_0} $$
     Solving for the electric field, we get:
@@ -51,19 +51,19 @@ Let's apply this strategy to a **coaxial cable**, which consists of an inner sol
     $$ V = V_a - V_b = -\int_{b}^{a} \frac{\lambda}{2\pi \epsilon_0 r} dr = \frac{\lambda}{2\pi \epsilon_0} \int_{a}^{b} \frac{1}{r} dr = \frac{\lambda}{2\pi \epsilon_0} \ln\left(\frac{b}{a}\right) $$
 4.  **Determine Capacitance:** The capacitance for a length $L$ is $C = Q/V = \lambda L / V$. The capacitance per unit length is therefore:
     $$ C_L = \frac{C}{L} = \frac{\lambda}{V} = \frac{\lambda}{\frac{\lambda}{2\pi \epsilon_0} \ln\left(\frac{b}{a}\right)} = \frac{2\pi \epsilon_0}{\ln(b/a)} $$
-This same systematic approach can be used for other geometries, such as the spherical capacitor (two concentric spheres) and the familiar parallel-plate capacitor.
+This same systematic approach can be used for other geometries, such as the [spherical capacitor](@keyword=spherical_capacitor|lang=en-US|style=Feynman) (two concentric spheres) and the familiar [parallel-plate capacitor](@keyword=parallel_plate_capacitor_2|lang=en-US|style=Feynman).
 
 ### The Influence of Dielectric Materials
 
-If the space between the conductors is filled with a dielectric material, the material becomes polarized by the electric field, creating its own internal field that opposes the original field. The net electric field is reduced by a factor $\kappa$, the **dielectric constant** of the material, where $\kappa \ge 1$. The permittivity of the material is $\epsilon = \kappa \epsilon_0$. This reduction in the electric field for the same amount of charge $Q$ means the potential difference $V$ is also reduced. Since $C=Q/V$, the presence of the dielectric increases the capacitance:
+If the space between the conductors is filled with a dielectric material, the material becomes polarized by the electric field, creating its own internal field that opposes the original field. The net electric field is reduced by a factor $\kappa$, the **dielectric constant** of the material, where $\kappa \ge 1$. The [permittivity](@keyword=permittivity|lang=en-US|style=Feynman) of the material is $\epsilon = \kappa \epsilon_0$. This reduction in the electric field for the same amount of charge $Q$ means the [potential difference](@keyword=potential_difference|lang=en-US|style=Feynman) $V$ is also reduced. Since $C=Q/V$, the presence of the dielectric increases the capacitance:
 
 $$ C_{diel} = \kappa C_{vac} $$
 
-For calculations involving dielectrics, especially non-uniform ones, it is advantageous to work with the **electric displacement field**, $\mathbf{D} = \epsilon \mathbf{E}$. Gauss's Law in terms of $\mathbf{D}$ relates the displacement field to only the *free charge* on the conductors, not the induced polarization charge in the dielectric:
+For calculations involving dielectrics, especially non-uniform ones, it is advantageous to work with the **[electric displacement field](@keyword=electric_displacement_field|lang=en-US|style=Feynman)**, $\mathbf{D} = \epsilon \mathbf{E}$. Gauss's Law in terms of $\mathbf{D}$ relates the [displacement field](@keyword=displacement_field|lang=en-US|style=Feynman) to only the *[free charge](@keyword=free_charge|lang=en-US|style=Feynman)* on the conductors, not the induced polarization charge in the dielectric:
 
 $$ \oint \mathbf{D} \cdot d\mathbf{A} = Q_{free, enc} $$
 
-This simplifies calculations immensely. Consider a spherical capacitor with inner radius $R_1$ and outer radius $R_2$, but filled with a non-uniform dielectric whose permittivity varies with radius as $\epsilon(r) = \epsilon_0 R_1 / r$ [@problem_id:1786853].
+This simplifies calculations immensely. Consider a [spherical capacitor](@keyword=spherical_capacitor|lang=en-US|style=Feynman) with inner radius $R_1$ and outer radius $R_2$, but filled with a [non-uniform dielectric](@keyword=non_uniform_dielectric|lang=en-US|style=Feynman) whose [permittivity](@keyword=permittivity|lang=en-US|style=Feynman) varies with radius as $\epsilon(r) = \epsilon_0 R_1 / r$ [@problem_id:1786853].
 
 1.  **Assume Charge:** Place charge $+Q$ on the inner sphere and $-Q$ on the outer.
 2.  **Find the Displacement Field:** Using a spherical Gaussian surface of radius $r$ ($R_1  r  R_2$), we find:
@@ -71,7 +71,7 @@ This simplifies calculations immensely. Consider a spherical capacitor with inne
     Notice that $\mathbf{D}$ is identical to $\epsilon_0 \mathbf{E}$ for the vacuum case, as it depends only on the free charge.
 3.  **Find Electric Field and Potential Difference:** We find $\mathbf{E}$ from $\mathbf{D}$:
     $$ E(r) = \frac{D(r)}{\epsilon(r)} = \frac{Q/(4\pi r^2)}{\epsilon_0 R_1 / r} = \frac{Q}{4\pi \epsilon_0 R_1 r} $$
-    Now we find the potential difference:
+    Now we find the [potential difference](@keyword=potential_difference|lang=en-US|style=Feynman):
     $$ V = -\int_{R_2}^{R_1} E(r) dr = \frac{Q}{4\pi \epsilon_0 R_1} \int_{R_1}^{R_2} \frac{1}{r} dr = \frac{Q}{4\pi \epsilon_0 R_1} \ln\left(\frac{R_2}{R_1}\right) $$
 4.  **Determine Capacitance:**
     $$ C = \frac{Q}{V} = \frac{4\pi \epsilon_0 R_1}{\ln(R_2/R_1)} $$
@@ -79,29 +79,29 @@ This example showcases the power of the displacement field formalism in handling
 
 ### Capacitors in Combination
 
-When multiple capacitors are connected in a circuit, they can be replaced by a single **equivalent capacitance**.
+When multiple capacitors are connected in a circuit, they can be replaced by a single **[equivalent capacitance](@keyword=equivalent_capacitance|lang=en-US|style=Feynman)**.
 
-If capacitors are connected in **parallel**, the potential difference $V$ across each one is the same. The total charge stored is the sum of the charges on each capacitor, $Q_{tot} = Q_1 + Q_2 + \dots$. Since $Q_i = C_i V$, we have $Q_{tot} = (C_1 + C_2 + \dots)V$. Thus, the equivalent capacitance is the sum of individual capacitances:
+If capacitors are connected in **parallel**, the [potential difference](@keyword=potential_difference|lang=en-US|style=Feynman) $V$ across each one is the same. The total charge stored is the sum of the charges on each capacitor, $Q_{tot} = Q_1 + Q_2 + \dots$. Since $Q_i = C_i V$, we have $Q_{tot} = (C_1 + C_2 + \dots)V$. Thus, the [equivalent capacitance](@keyword=equivalent_capacitance|lang=en-US|style=Feynman) is the sum of individual capacitances:
 
 $$ C_{eq} = C_1 + C_2 + C_3 + \dots \quad (\text{Parallel Combination}) $$
 
-A physical example of this is a parallel-plate capacitor where the space is filled with two dielectrics of permittivity $\epsilon_1$ and $\epsilon_2$ placed side-by-side, each occupying half the area $A$ [@problem_id:1786912]. This is equivalent to two capacitors, $C_1 = \epsilon_1 (A/2)/d$ and $C_2 = \epsilon_2 (A/2)/d$, connected in parallel, giving a total capacitance of $C_{eq} = C_1 + C_2 = \frac{A(\epsilon_1 + \epsilon_2)}{2d}$.
+A physical example of this is a parallel-plate capacitor where the space is filled with two [dielectrics](@keyword=dielectrics|lang=en-US|style=Feynman) of permittivity $\epsilon_1$ and $\epsilon_2$ placed side-by-side, each occupying half the area $A$ [@problem_id:1786912]. This is equivalent to two capacitors, $C_1 = \epsilon_1 (A/2)/d$ and $C_2 = \epsilon_2 (A/2)/d$, connected in parallel, giving a total capacitance of $C_{eq} = C_1 + C_2 = \frac{A(\epsilon_1 + \epsilon_2)}{2d}$.
 
-If capacitors are connected in **series**, charge conservation dictates that the magnitude of charge $Q$ on each capacitor must be the same. The total potential difference across the combination is the sum of the individual potential differences, $V_{tot} = V_1 + V_2 + \dots$. Since $V_i = Q/C_i$, we have $V_{tot} = Q(1/C_1 + 1/C_2 + \dots)$. The equivalent capacitance is defined by $V_{tot} = Q/C_{eq}$. Therefore:
+If capacitors are connected in **series**, [charge conservation](@keyword=charge_conservation|lang=en-US|style=Feynman) dictates that the magnitude of charge $Q$ on each capacitor must be the same. The total [potential difference](@keyword=potential_difference|lang=en-US|style=Feynman) across the combination is the sum of the individual potential differences, $V_{tot} = V_1 + V_2 + \dots$. Since $V_i = Q/C_i$, we have $V_{tot} = Q(1/C_1 + 1/C_2 + \dots)$. The [equivalent capacitance](@keyword=equivalent_capacitance|lang=en-US|style=Feynman) is defined by $V_{tot} = Q/C_{eq}$. Therefore:
 
 $$ \frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2} + \frac{1}{C_3} + \dots \quad (\text{Series Combination}) $$
 
 A capacitor with two stacked dielectric layers of thickness $d/2$ and permittivities $\epsilon_1$ and $\epsilon_2$ provides a physical realization of a series combination [@problem_id:1786866]. This is equivalent to two capacitors, $C_1 = \epsilon_1 A / (d/2)$ and $C_2 = \epsilon_2 A / (d/2)$, in series.
 
-The series combination rule is often more conveniently expressed using the concept of **elastance**, $S$, defined as the reciprocal of capacitance: $S = 1/C$. In terms of elastance, the series combination rule becomes a simple sum:
+The series combination rule is often more conveniently expressed using the concept of **[elastance](@keyword=elastance|lang=en-US|style=Feynman)**, $S$, defined as the reciprocal of capacitance: $S = 1/C$. In terms of [elastance](@keyword=elastance|lang=en-US|style=Feynman), the series combination rule becomes a simple sum:
 
 $$ S_{eq} = S_1 + S_2 + S_3 + \dots \quad (\text{Series Combination}) $$
 
-For a sensor modeled as three stacked dielectric layers, the total elastance is simply the sum of the individual elastances $S_i = d_i / (\epsilon_i A)$, elegantly simplifying the analysis [@problem_id:1786906].
+For a sensor modeled as three stacked dielectric layers, the total [elastance](@keyword=elastance|lang=en-US|style=Feynman) is simply the sum of the individual elastances $S_i = d_i / (\epsilon_i A)$, elegantly simplifying the analysis [@problem_id:1786906].
 
 ### Energy Storage and Electrostatic Forces
 
-Capacitors are energy storage devices. The work done to charge a capacitor to a final charge $Q$ and potential $V$ is stored as electric potential energy $U$ in the electric field. This stored energy can be expressed in two useful forms:
+Capacitors are energy storage devices. The work done to charge a capacitor to a final charge $Q$ and potential $V$ is stored as [electric potential energy](@keyword=electric_potential_energy|lang=en-US|style=Feynman) $U$ in the electric field. This stored energy can be expressed in two useful forms:
 
 $$ U = \frac{1}{2}QV = \frac{Q^2}{2C} = \frac{1}{2}CV^2 $$
 
@@ -123,7 +123,7 @@ Dividing by $L$ gives $C_L = \frac{2\pi \epsilon}{\ln(b/a)}$, precisely the same
 
 #### Electrostatic Forces
 
-Mechanical forces arise from the tendency of systems to move towards a state of lower potential energy. The force component in a direction $x$ is given by the negative gradient of the potential energy, $F_x = - \partial U / \partial x$. However, we must be careful about what is held constant during this partial differentiation.
+Mechanical forces arise from the tendency of systems to move towards a state of lower potential energy. The force component in a direction $x$ is given by the negative gradient of the potential energy, $F_x = - \partial U / \partial x$. However, we must be careful about what is held constant during this [partial differentiation](@keyword=partial_differentiation|lang=en-US|style=Feynman).
 
 **Case 1: Constant Charge (Isolated System).** If the capacitor is isolated, its charge $Q$ is constant. The force is directly given by $F_x = -(\partial U / \partial x)_Q$. Using $U = Q^2/(2C)$:
 
@@ -131,7 +131,7 @@ $$ F_x = -\frac{\partial}{\partial x}\left(\frac{Q^2}{2C}\right) = \frac{Q^2}{2C
 
 For a parallel-plate capacitor with separation $x$, $C = \epsilon_0 A / x$, so $\partial C/\partial x = -\epsilon_0 A / x^2$. The attractive force on a plate is:
 $F_x = \frac{Q^2}{2(\epsilon_0 A/x)^2} (-\frac{\epsilon_0 A}{x^2}) = -\frac{Q^2}{2\epsilon_0 A}$.
-This force is constant, independent of the separation $x$. This principle is key to modeling devices like a MEMS accelerometer where an electrostatic force balances mechanical forces [@problem_id:1786873].
+This force is constant, independent of the separation $x$. This principle is key to modeling devices like a MEMS accelerometer where an [electrostatic force](@keyword=electrostatic_force|lang=en-US|style=Feynman) balances mechanical forces [@problem_id:1786873].
 
 **Case 2: Constant Potential (Connected to a Battery).** If the capacitor is connected to a power supply, the potential $V$ is held constant. As the geometry changes (e.g., $x$ changes), charge can flow to or from the battery. The battery does work $dU_{batt} = V dQ$. The change in stored energy is $dU = d(\frac{1}{2}CV^2) = \frac{1}{2}V^2 dC$. The work done by the electrostatic force, $F_x dx$, is the difference between the energy supplied by the battery and the energy stored in the capacitor: $F_x dx = dU_{batt} - dU = V(VdC) - \frac{1}{2}V^2 dC = \frac{1}{2}V^2 dC$. Thus, the force is:
 
@@ -141,16 +141,16 @@ Note the positive sign, in stark contrast to the constant-charge case. This is b
 
 ### The Resistance-Capacitance Duality
 
-A remarkable connection exists between the capacitance of a system and the resistance between the same two conductors if the intervening space were filled with a weakly conducting medium of resistivity $\rho = 1/\sigma$. For a given geometry and potential difference $V$, the electric field lines have the exact same shape in both the electrostatic (capacitance) and steady-current (resistance) problems.
+A remarkable connection exists between the capacitance of a system and the resistance between the same two conductors if the intervening space were filled with a weakly conducting medium of [resistivity](@keyword=resistivity|lang=en-US|style=Feynman) $\rho = 1/\sigma$. For a given geometry and potential difference $V$, the electric field lines have the exact same shape in both the electrostatic (capacitance) and steady-current (resistance) problems.
 
 The total charge on the positive conductor is given by $Q = \oint \mathbf{D} \cdot d\mathbf{A} = \oint \epsilon \mathbf{E} \cdot d\mathbf{A}$.
-The total leakage current flowing from it is given by $I = \oint \mathbf{J} \cdot d\mathbf{A} = \oint \sigma \mathbf{E} \cdot d\mathbf{A}$, where $\mathbf{J}$ is the current density.
+The total leakage current flowing from it is given by $I = \oint \mathbf{J} \cdot d\mathbf{A} = \oint \sigma \mathbf{E} \cdot d\mathbf{A}$, where $\mathbf{J}$ is the [current density](@keyword=current_density|lang=en-US|style=Feynman).
 
 For a homogeneous medium (constant $\epsilon$ and $\sigma$), we can write:
 $Q = \epsilon \oint \mathbf{E} \cdot d\mathbf{A}$ and $I = \sigma \oint \mathbf{E} \cdot d\mathbf{A}$.
 Dividing these two equations, we get $Q/I = \epsilon/\sigma$.
 Using the definitions $C = Q/V$ and $R = V/I$, we have:
 $$ \frac{CV}{V/R} = \frac{\epsilon}{\sigma} \implies RC = \frac{\epsilon}{\sigma} = \epsilon \rho $$
-This powerful relation, $RC = \epsilon\rho$, means that if you solve for the resistance of a given geometry, you automatically know its capacitance, and vice-versa. For instance, if the resistance per unit length $R_L$ of a twin-lead cable is known to be $R_L = \frac{\rho}{\pi} \arccosh(d/2a)$, we can immediately find the capacitance per unit length $C_L$ [@problem_id:1786910]:
-$$ C_L = \frac{\epsilon \rho}{R_L} = \frac{\epsilon \rho}{\frac{\rho}{\pi} \arccosh(d/2a)} = \frac{\pi \epsilon}{\arccosh(d/2a)} $$
-This duality is a profound illustration of the underlying unity of electrostatic and steady-state current phenomena.
+This powerful relation, $RC = \epsilon\rho$, means that if you solve for the resistance of a given geometry, you automatically know its capacitance, and vice-versa. For instance, if the resistance per unit length $R_L$ of a twin-lead cable is known to be $R_L = \frac{\rho}{\pi} \operatorname{arccosh}(d/2a)$, we can immediately find the capacitance per unit length $C_L$ [@problem_id:1786910]:
+$$ C_L = \frac{\epsilon \rho}{R_L} = \frac{\epsilon \rho}{\frac{\rho}{\pi} \operatorname{arccosh}(d/2a)} = \frac{\pi \epsilon}{\operatorname{arccosh}(d/2a)} $$
+This duality is a profound illustration of the underlying unity of electrostatic and [steady-state current](@keyword=steady_state_current|lang=en-US|style=Feynman) phenomena.

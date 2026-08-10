@@ -55,7 +55,7 @@ $$
 
 我们可以通过一个简化的[哥德尔](@keyword=gödel|lang=zh-CN|style=Feynman)[时空](@keyword=space_time|lang=zh-CN|style=Feynman)版本来理解这是如何运作的 [@problem_id:1818278]。在这个宇宙中，[时空间隔](@keyword=spacetime_interval|lang=zh-CN|style=Feynman)包含一个混合了时间 ($dt$) 和角运动 ($d\phi$) 的“[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)项”。几何结构被如此扭曲，以至于对于一个以恒定半径 $R$ 简单地做[圆周运动](@keyword=circular_motion|lang=zh-CN|style=Feynman)的观察者来说，他们路径的性质取决于他们离旋转中心的距离。
 
-对于较大的半径，路径是类空的，正如你所预料的那样。但如果半径小于一个临界值（在该模型中为 $R  \arcsinh(1)$），这个圆形路径的 $ds^2$ 会变成*负值*。路径变成了类时路径。想一想这意味着什么：你只是在走一个圆圈，这在日常生活中是一个纯粹的“空间”旅程，但[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的扭曲几何使得这成为一个有效的、亚光速的轨迹，并且它循环回到其起始时间。“[光锥](@keyword=light_cones|lang=zh-CN|style=Feynman)”——定义未来边界的锥体——被[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的旋转倾斜得如此厉害，以至于在空间方向上的移动实际上可能意味着你正在进入附近观察者的过去。你不是用一艘花哨的飞船建造了一台时间机器，而是通过选择一个正确的地方散步。
+对于较大的半径，路径是类空的，正如你所预料的那样。但如果半径小于一个临界值（在该模型中为 $R  \operatorname{arcsinh}(1)$），这个圆形路径的 $ds^2$ 会变成*负值*。路径变成了类时路径。想一想这意味着什么：你只是在走一个圆圈，这在日常生活中是一个纯粹的“空间”旅程，但[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的扭曲几何使得这成为一个有效的、亚光速的轨迹，并且它循环回到其起始时间。“[光锥](@keyword=light_cones|lang=zh-CN|style=Feynman)”——定义未来边界的锥体——被[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的旋转倾斜得如此厉害，以至于在空间方向上的移动实际上可能意味着你正在进入附近观察者的过去。你不是用一艘花哨的飞船建造了一台时间机器，而是通过选择一个正确的地方散步。
 
 ### 因果性危机：悖论与不可预测性
 

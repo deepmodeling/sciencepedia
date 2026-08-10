@@ -9,7 +9,7 @@
 
 让我们先来给 $R$ 做个体检，看看它的“基因”——也就是它的量纲。通过[理想气体定律](@keyword=ideal_gas_law|lang=zh-CN|style=Feynman) $PV=nRT$，我们可以解出 $R = PV/(nT)$。我们知道，压强 $P$ 是单位面积上所受的力，而体积 $V$ 是一个长度的三次方。所以，压强乘以体积（$P \times V$）的量纲，实际上和“力乘以距离”是一样的，而这正是“功”或者说“能量”的量纲。因此，$PV$ 代表了能量。这样一来，$R$ 的单位就是能量（[焦耳](@keyword=joule|lang=zh-CN|style=Feynman)）除以物质的量（摩尔）再除以温度（[开尔文](@keyword=kelvin|lang=zh-CN|style=Feynman)）。
 
-所以，$R$ 根本不是一个抽象的数字，它的物理意义清清楚楚：**每摩尔[理想气体](@keyword=perfect_gases|lang=zh-CN|style=Feynman)，温度每升高一开尔文，其内在能量或对外做功的能力会增加一个与 $R$ 相关的量级**。它是一个将我们用温度计测量的宏观温度，与气体所蕴含的能量联系起来的转换系数。这也就是为什么在不同的单位制下，$R$ 会有不同的数值。例如，当我们使用[焦耳](@keyword=joule|lang=zh-CN|style=Feynman)作为能量单位时，$R \approx 8.314 \, \text{J/(mol·K)}$；而当化学家们更喜欢用升（L）和[标准大气压](@keyword=standard_atmosphere|lang=zh-CN|style=Feynman)（atm）来处理实验数据时，$R$ 就变成了大约 $0.0821 \, \text{L·atm/(mol·K)}$。数字变了，但其作为“每摩尔每开尔文的能量”的核心身份从未改变。
+所以，$R$ 根本不是一个抽象的数字，它的物理意义清清楚楚：**每摩尔[理想气体](@keyword=perfect_gases|lang=zh-CN|style=Feynman)，温度每升高一开尔文，其内在能量或对外做功的能力会增加一个与 $R$ 相关的量级**。它是一个将我们用温度计测量的宏观温度，与气体所蕴含的能量联系起来的转换系数。这也就是为什么在不同的单位制下，$R$ 会有不同的数值。例如，当我们使用[焦耳](@keyword=joule|lang=zh-CN|style=Feynman)作为能量单位时，$R \approx 8.314 \, \mathrm{J/(mol\cdot K)}$；而当化学家们更喜欢用升（L）和[标准大气压](@keyword=standard_atmosphere|lang=zh-CN|style=Feynman)（atm）来处理实验数据时，$R$ 就变成了大约 $0.0821 \, \mathrm{L\cdot atm/(mol\cdot K)}$。数字变了，但其作为“每摩尔每开尔文的能量”的核心身份从未改变。
 
 ### “通用”的真正含义
 

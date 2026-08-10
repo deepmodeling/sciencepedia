@@ -49,7 +49,7 @@ $$
 
 这个思想可以从估计单个均值推广到学习整个函数。这就是**协同克里金 (co-kriging)** 的领域，它使用**高斯过程 (GPs)** 将[自回归模型](@keyword=autoregressive_models|lang=zh-CN|style=Feynman) $f_H(\mathbf{x}) = \rho f_L(\mathbf{x}) + \delta(\mathbf{x})$ 置于一个完全概率化的基础上 [@problem_id:3352833]。在这个框架中，我们将低保真度函数 $f_L(\mathbf{x})$ 和差异函数 $\delta(\mathbf{x})$ 视为从 GP 先验中抽取的随机函数。GP 是一个灵活的模型，可以定义函数上的[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)，其特征是均值和[协方差核](@keyword=covariance_kernel|lang=zh-CN|style=Feynman)，后者描述了函数的光滑程度以及不同点的值如何相关。
 
-通过在这个单一的[概率模型](@keyword=probability_models|lang=zh-CN|style=Feynman)中结合 HF 和 LF 数据，我们可以在新的、未尝试过的位置对 $f_H(\mathbfx)$ 进行预测。来[自密集](@keyword=dense_in_itself|lang=zh-CN|style=Feynman)的廉价 LF 数据的信息有助于“填补”稀疏的昂贵 HF 数据点之间的“空白”，从而显著减少我们的不确定性。这不仅仅是一个理论上的好处；在预测核质量属性等实际应用中，添加低保真度数据可以大幅削减模型的预测[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman) [@problem_id:3568164]。
+通过在这个单一的[概率模型](@keyword=probability_models|lang=zh-CN|style=Feynman)中结合 HF 和 LF 数据，我们可以在新的、未尝试过的位置对 $f_H(\mathbf{x})$ 进行预测。来[自密集](@keyword=dense_in_itself|lang=zh-CN|style=Feynman)的廉价 LF 数据的信息有助于“填补”稀疏的昂贵 HF 数据点之间的“空白”，从而显著减少我们的不确定性。这不仅仅是一个理论上的好处；在预测核质量属性等实际应用中，添加低保真度数据可以大幅削减模型的预测[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman) [@problem_id:3568164]。
 
 从这个框架中得出的一个关键见解是，拥有至少一些**同位样本 (co-located samples)** 的重要性——即我们同时运行了低保真度和[高保真度模拟](@keyword=high_fidelity_simulation|lang=zh-CN|style=Feynman)的输入点。这些配对数据点对于模型学习关键的缩放参数 $\rho$ 至关重要。没有它们，模型可能会混淆，无法区分高保真度输出的变化是由于低保真度函数的影响还是差异项的影响。同位点锚定了两种保真度之间的关系，并允许对信息进行稳健的融合 [@problem_id:3352833] [@problem_id:3369157]。
 

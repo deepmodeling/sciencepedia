@@ -66,7 +66,7 @@ $$
 $$
 This is a wonderfully intuitive result! It confirms our physical picture: the axes of principal stretch in the final body are just the original axes of principal stretch, rigidly rotated.
 
-To see this in action, consider a deformation given by $\mathbf{F}=\begin{psmallmatrix} 2 & 1 \\ 0 & 1.5 \end{psmallmatrix}$. By first computing $\mathbf{C} = \mathbf{F}^{\mathsf{T}}\mathbf{F}$, we can find its eigenvalues, which are approximately $5.66$ and $1.59$. The [principal stretches](@keyword=principal_stretches|lang=en-US|style=Feynman) are the square roots of these values, $\lambda_1 \approx 2.38$ and $\lambda_2 \approx 1.26$. The corresponding eigenvectors of $\mathbf{C}$ give us the principal directions in the original body. This concrete calculation shows how we can extract the pure stretch information from any given deformation [@problem_id:2681794].
+To see this in action, consider a deformation given by $\mathbf{F}=\begin{pmatrix} 2 & 1 \\ 0 & 1.5 \end{pmatrix}$. By first computing $\mathbf{C} = \mathbf{F}^{\mathsf{T}}\mathbf{F}$, we can find its eigenvalues, which are approximately $5.66$ and $1.59$. The [principal stretches](@keyword=principal_stretches|lang=en-US|style=Feynman) are the square roots of these values, $\lambda_1 \approx 2.38$ and $\lambda_2 \approx 1.26$. The corresponding eigenvectors of $\mathbf{C}$ give us the principal directions in the original body. This concrete calculation shows how we can extract the pure stretch information from any given deformation [@problem_id:2681794].
 
 ### A Deeper Connection: SVD and The Nature of Uniqueness
 

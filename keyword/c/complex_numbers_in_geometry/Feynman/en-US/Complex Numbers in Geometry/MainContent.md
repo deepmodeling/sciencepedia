@@ -50,9 +50,9 @@ The **hyperbolic distance** between two points can be defined in a couple of way
 
 A more practical formula, which can be derived from the metric, is:
 
-$$ d_{\mathbb{H}}(z_1, z_2) = \arccosh\left(1 + \frac{|z_1 - z_2|^2}{2 \operatorname{Im}(z_1) \operatorname{Im}(z_2)}\right) $$
+$$ d_{\mathbb{H}}(z_1, z_2) = \operatorname{arccosh}\left(1 + \frac{|z_1 - z_2|^2}{2 \operatorname{Im}(z_1) \operatorname{Im}(z_2)}\right) $$
 
-This formula elegantly confirms our earlier intuition. If we try to measure the distance from a point $z_1$ in our universe to a point $z_2$ approaching the boundary, $\operatorname{Im}(z_2)$ goes to zero. The fraction in the formula explodes, the argument of $\arccosh$ goes to infinity, and so the distance is infinite. The boundary is truly unreachable.
+This formula elegantly confirms our earlier intuition. If we try to measure the distance from a point $z_1$ in our universe to a point $z_2$ approaching the boundary, $\operatorname{Im}(z_2)$ goes to zero. The fraction in the formula explodes, the argument of $\operatorname{arccosh}$ goes to infinity, and so the distance is infinite. The boundary is truly unreachable.
 
 What about familiar shapes? What does a "circle" look like? A circle is just the set of all points at a fixed distance from a center. If we take the hyperbolic center to be $z_0 = 2+3i$ and the hyperbolic radius to be $R = \ln(2)$, and plot all the points $z$ that satisfy $d_H(z, z_0) = R$, we get a surprising result. The shape is a perfect Euclidean circle! But it is not the Euclidean circle you might expect. Its Euclidean center is shifted upwards and its Euclidean radius is different from what a naive guess would suggest [@problem_id:2272175]. It's as if our warped space has distorted the very idea of a circle's center.
 

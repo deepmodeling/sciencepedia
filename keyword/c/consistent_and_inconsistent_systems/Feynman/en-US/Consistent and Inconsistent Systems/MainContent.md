@@ -49,11 +49,11 @@ The [augmented matrix](@keyword=augmented_matrix|lang=en-US|style=Feynman) conta
 
 Thus, the ironclad rule is:
 
-A system $A\mathbf{x} = \mathbf{b}$ is **consistent** if and only if $\rank(A) = \rank([A | \mathbf{b}])$.
+A system $A\mathbf{x} = \mathbf{b}$ is **consistent** if and only if $\operatorname{rank}(A) = \operatorname{rank}([A | \mathbf{b}])$.
 
 If the system is consistent, adding the $\mathbf{b}$ column doesn't create a new pivot row during [row reduction](@keyword=row_reduction|lang=en-US|style=Feynman), so the rank doesn't increase [@problem_id:4984].
 
-What happens if the ranks are not equal? Since the columns of $A$ are also in $[A | \mathbf{b}]$, the rank of the [augmented matrix](@keyword=augmented_matrix|lang=en-US|style=Feynman) can never be smaller. So, the only alternative is $\rank(A) < \rank([A | \mathbf{b}])$. This signifies an inconsistency [@problem_id:4985]. It means that the vector $\mathbf{b}$ is so alien to the columns of $A$ that it introduces a whole new dimension. Algebraically, this manifests as a row in the reduced matrix that looks like `[0 0 ... 0 | 1]`, which is the mathematical equivalent of the absurd statement $0 = 1$.
+What happens if the ranks are not equal? Since the columns of $A$ are also in $[A | \mathbf{b}]$, the rank of the [augmented matrix](@keyword=augmented_matrix|lang=en-US|style=Feynman) can never be smaller. So, the only alternative is $\operatorname{rank}(A) < \operatorname{rank}([A | \mathbf{b}])$. This signifies an inconsistency [@problem_id:4985]. It means that the vector $\mathbf{b}$ is so alien to the columns of $A$ that it introduces a whole new dimension. Algebraically, this manifests as a row in the reduced matrix that looks like `[0 0 ... 0 | 1]`, which is the mathematical equivalent of the absurd statement $0 = 1$.
 
 For instance, if we have a system that leads to the [augmented matrix](@keyword=augmented_matrix|lang=en-US|style=Feynman) $\begin{pmatrix} 1 & -2 & | & k \\ 0 & 0 & | & 12+3k \end{pmatrix}$, that bottom row is a ticking time bomb [@problem_id:5012]. If $12+3k$ is anything other than zero, the system is telling us that $0x_1 + 0x_2$ equals a non-zero number, which is impossible. The system is inconsistent. To salvage consistency, we are forced to set $12+3k=0$, which means $k=-4$. For that one special value, the bomb is defused, and the system becomes consistent. For any other value of $k$, the rank of the [augmented matrix](@keyword=augmented_matrix|lang=en-US|style=Feynman) is 2, while the rank of the [coefficient matrix](@keyword=coefficient_matrix|lang=en-US|style=Feynman) is 1. The mismatch in rank screams "inconsistent!" [@problem_id:4972].
 

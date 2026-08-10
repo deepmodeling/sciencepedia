@@ -29,7 +29,7 @@
 
 ### 快度：大自然偏爱的速度计
 
-事实证明确实有。物理学常常奖励我们找到描述现象的“自然”变量。对于[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)速度，这个变量被称为**快度**，用希腊字母 $\phi$（phi）表示。[快度](@keyword=rapidity|lang=zh-CN|style=Feynman)的定义是 $\phi = \arctanh(v/c)$。
+事实证明确实有。物理学常常奖励我们找到描述现象的“自然”变量。对于[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)速度，这个变量被称为**快度**，用希腊字母 $\phi$（phi）表示。[快度](@keyword=rapidity|lang=zh-CN|style=Feynman)的定义是 $\phi = \operatorname{arctanh}(v/c)$。
 
 为什么这是思考速度的更好方式？在低速时，[快度](@keyword=rapidity|lang=zh-CN|style=Feynman)几乎与 $v/c$ 完全相同。但是，当一个粒子的速度 $v$ 诱人地接近光速 $c$ 时，它的[快度](@keyword=rapidity|lang=zh-CN|style=Feynman)并不会撞上一堵墙——它会不断延伸，趋向于无穷大。速度上限 $c$ 对应于无限的快度。
 
@@ -57,9 +57,9 @@ $$
 \phi_f = \ln\left(\frac{M_i}{M_f}\right)
 $$
 
-最终快度*恰好*是初始质量与最终质量之比的自然对数！ 这使得一些计算变得惊人地简单。假设我们想达到一个可观的星际速度 $0.8c$。相应的[快度](@keyword=rapidity|lang=zh-CN|style=Feynman)是 $\phi = \arctanh(0.8) \approx 1.0986$。因此，我们需要一个质量比 $M_i/M_f = \exp(1.0986) = 3$。这意味着，对于每一公斤的最终有效载荷，我们必须以三公斤的总质量开始；我们初始飞船的三分之二必须是燃料。
+最终快度*恰好*是初始质量与最终质量之比的自然对数！ 这使得一些计算变得惊人地简单。假设我们想达到一个可观的星际速度 $0.8c$。相应的[快度](@keyword=rapidity|lang=zh-CN|style=Feynman)是 $\phi = \operatorname{arctanh}(0.8) \approx 1.0986$。因此，我们需要一个质量比 $M_i/M_f = \exp(1.0986) = 3$。这意味着，对于每一公斤的最终有效载荷，我们必须以三公斤的总质量开始；我们初始飞船的三分之二必须是燃料。
 
-如果我们想非常接近宇宙速度极限，比如说 $v_f = 0.995c$ 呢？此时的[快度](@keyword=rapidity|lang=zh-CN|style=Feynman)是 $\arctanh(0.995) \approx 2.99$。这需要一个质量比 $M_i/M_f = \exp(2.99) \approx 20$。为了运送一吨的有效载荷，我们初始的飞船必须重达20吨，其中19吨是将要被湮灭的燃料。为那最后一点速度付出的代价是巨大的。
+如果我们想非常接近宇宙速度极限，比如说 $v_f = 0.995c$ 呢？此时的[快度](@keyword=rapidity|lang=zh-CN|style=Feynman)是 $\operatorname{arctanh}(0.995) \approx 2.99$。这需要一个质量比 $M_i/M_f = \exp(2.99) \approx 20$。为了运送一吨的有效载荷，我们初始的飞船必须重达20吨，其中19吨是将要被湮灭的燃料。为那最后一点速度付出的代价是巨大的。
 
 ### 令人警醒的能量经济学
 

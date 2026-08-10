@@ -11,7 +11,7 @@
 
 ### [混叠](@keyword=aliasing|lang=zh-CN|style=Feynman)的幽灵：数据中的鬼影
 
-让我们从核心概念——采样（sampling）——开始。计算机只能在离散的网格点上存储信息。从数学上讲，这就像是将真实的连续场（例如[密度扰动](@keyword=density_perturbations|lang=zh-CN|style=Feynman) $\delta(\boldsymbol{x})$）乘以一个由无限多个测量点组成的“栅栏”。这个“栅栏”被称为 **狄拉克梳（Dirac comb）** $\Sha_\Delta(\boldsymbol{x})$，它是一系列间距为 $\Delta$（网格尺寸）的无限窄的尖峰。
+让我们从核心概念——采样（sampling）——开始。计算机只能在离散的网格点上存储信息。从数学上讲，这就像是将真实的连续场（例如[密度扰动](@keyword=density_perturbations|lang=zh-CN|style=Feynman) $\delta(\boldsymbol{x})$）乘以一个由无限多个测量点组成的“栅栏”。这个“栅栏”被称为 **狄拉克梳（Dirac comb）** $\mathrm{Ш}_\Delta(\boldsymbol{x})$，它是一系列间距为 $\Delta$（网格尺寸）的无限窄的尖峰。
 
 这里蕴含着物理学和数学中一个优美而强大的原理：**卷积定理（convolution theorem）**。它告诉我们，[实空间](@keyword=real_space|lang=zh-CN|style=Feynman)中的乘法对应于傅里叶空间（即[波矢](@keyword=wavevector|lang=zh-CN|style=Feynman)空间）中的卷积（一种混合或“抹开”的操作）。而狄拉克梳的[傅里叶变换](@keyword=fourier_transform|lang=zh-CN|style=Feynman)，奇妙的是，它本身是另一个狄拉克梳。因此，当我们对场进行采样时，它的傅里叶谱 $\tilde{\delta}(\boldsymbol{k})$ 会与一个傅里叶空间的梳函数发生卷积。这个卷积操作会创造出无数个原始谱的精确副本，每个副本都相对于原点平移了倒易格矢的整数倍，其特征间距为 $2\pi/\Delta$ [@problem_id:3464943]。
 

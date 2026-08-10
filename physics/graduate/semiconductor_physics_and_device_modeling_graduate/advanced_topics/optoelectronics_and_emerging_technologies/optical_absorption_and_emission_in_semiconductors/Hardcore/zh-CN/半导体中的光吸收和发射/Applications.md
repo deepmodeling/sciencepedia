@@ -18,7 +18,7 @@
 
 - 对于**非晶半导体**，由于缺少长程有序性，晶体动量守恒的选择定则被弛豫。理论上，其近带边吸收系数 $\alpha(\hbar\omega)$ 遵循 $\alpha(\hbar\omega)\hbar\omega \propto (\hbar\omega - E_{\mathrm{opt}})^{2}$ 的关系。因此，绘制 $(\alpha\hbar\omega)^{1/2}$ 对光子能量 $\hbar\omega$ 的关系图（即Tauc图），可以得到一条直线，其与能量轴的截距即为材料的光学带隙 $E_{\mathrm{opt}}$。这个值通常被认为是迁移率边之间的能量间隔。
 
-- 对于**直接带隙晶体**，动量守恒要求跃迁是垂直的，其吸收系数近似遵循 $\alpha(\hbar\omega) \propto (\hbar\omega - E_{\mathrm{g}})^{1/2}$。因此，应该绘制 $\alpha^{2}$（或 $(\alpha\hbar\omega)^2$）对 $\hbar\omega$ 的图来获得线性的关系并外推出带隙 $E_{\mathrmg}$。
+- 对于**直接带隙晶体**，动量守恒要求跃迁是垂直的，其吸收系数近似遵循 $\alpha(\hbar\omega) \propto (\hbar\omega - E_{\mathrm{g}})^{1/2}$。因此，应该绘制 $\alpha^{2}$（或 $(\alpha\hbar\omega)^2$）对 $\hbar\omega$ 的图来获得线性的关系并外推出带隙 $E_{\mathrm{g}}$。
 
 - 对于**间接带隙晶体**，动量守恒需要声子的参与，这导致吸收系数遵循 $\alpha(\hbar\omega) \propto (\hbar\omega - E_{\mathrm{g}} \mp E_{\mathrm{phonon}})^{2}$ 的关系，其中 $E_{\mathrm{phonon}}$ 是参与吸收或发射的声子能量。在这种情况下，绘制 $\alpha^{1/2}$ 对 $\hbar\omega$ 的图会呈现出两段线性区域，分别外推至 $E_{\mathrm{g}} \mp E_{\mathrm{phonon}}$。
 
@@ -114,7 +114,7 @@ $$
 
 半导体光学吸收和发射的原理不仅在传统无机半导体领域根深蒂固，也在许多跨学科的前沿研究中扮演着核心角色，例如有机电子学、超快动力学和计算材料科学。
 
-#### 有机半导体中的[激子](@entry_id:147299)与极化子
+#### 有机半导体中的[激子](@keyword=excitons|lang=zh-CN|style=Feynman)与极化子
 
 与共价键合的无机晶体不同，共轭聚合物等有机半导体是由弱范德华力相互作用的分子单元组成。这种材料的电子和光学性质由局域化的分子激发主导。
 

@@ -58,7 +58,7 @@ Another profound consequence is the trade-off between time and energy. The uncer
 If the world is so strange, why does it seem so normal to us? Why don't we see people walking through walls or their energies blurring into uncertainty? The answer is simple: the value of $\hbar$ is fantastically, almost unimaginably, small.
 
 $$
-\hbar \approx 1.054 \times 10^{-34} \text{ J·s}
+\hbar \approx 1.054 \times 10^{-34} \mathrm{J\cdot s}
 $$
 
 Let's put this into perspective. Every moving object has a quantum wavelength, the de Broglie wavelength, given by $\lambda = h/p$. For a 70 kg person walking at 1.4 m/s, this wavelength is about $10^{-36}$ meters. This is trillions of trillions of times smaller than a single proton. It's so small that it is completely and utterly irrelevant.

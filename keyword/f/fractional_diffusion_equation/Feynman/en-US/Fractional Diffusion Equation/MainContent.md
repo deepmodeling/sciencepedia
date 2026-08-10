@@ -49,7 +49,7 @@ What about the particle getting stuck in traps? This introduces **memory** into 
 
 The Caputo derivative of order $\alpha$ (where $0 \lt \alpha \le 1$) is essentially a weighted average of the function's past rate of change. The weighting factor is a power law in time, so while recent events are most important, the influence of the distant past never completely fades away. This gives rise to the **time-fractional [diffusion equation](@keyword=diffusion_equation|lang=en-US|style=Feynman)**:
 $$
-\partial_t^\alpha c(\mathbf{x}, t) = D \nabla^2 c(\mathbfx, t)
+\partial_t^\alpha c(\mathbf{x}, t) = D \nabla^2 c(\mathbf{x}, t)
 $$
 Here, the spatial part is the good old Laplacian, but the [time evolution](@keyword=time_evolution|lang=en-US|style=Feynman) is governed by memory. The order $\alpha$ is directly tied to the heavy tail of the waiting-time distribution from the microscopic CTRW model. When $\alpha=1$, the memory vanishes, the fractional derivative becomes the standard first derivative, and we recover [classical diffusion](@keyword=classical_diffusion|lang=en-US|style=Feynman). But for $\alpha \lt 1$, we are in the subdiffusive regime. This equation elegantly predicts that the [mean-squared displacement](@keyword=mean_squared_displacement_2|lang=en-US|style=Feynman) will scale not as $t$, but as $t^\alpha$, a hallmark of [subdiffusion](@keyword=subdiffusion|lang=en-US|style=Feynman) observed in countless experiments.
 

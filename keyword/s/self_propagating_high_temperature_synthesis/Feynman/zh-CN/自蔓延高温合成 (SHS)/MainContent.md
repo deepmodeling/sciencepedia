@@ -19,9 +19,9 @@ SHS 反应的核心驱动力是巨大的能量释放。反应物就像一根被�
 
 但是，为什么宇宙会*允许*这种能量释放呢？纯粹主义者可能会说，单靠能量释放并不能说明全部问题。[热力学第二定律](@keyword=second_law_of_thermodynamics|lang=zh-CN|style=Feynman)告诉我们，一个过程要能自发进行，宇宙的总熵——一种衡量无序度的度量——必须增加。
 
-让我们看一下碳化钛的合成过程：$Ti(s) + C(s) \rightarrow TiC(s)$。我们正在将两种不同的固体形成一种更复杂、更有序的单一晶体固体。在这种情况下，系统本身的熵实际上略有*减少*（$\Delta S_{sys} = -12.26 \text{ J/(K·mol)}$）。那么这个反应怎么可能是自发的呢？
+让我们看一下碳化钛的合成过程：$Ti(s) + C(s) \rightarrow TiC(s)$。我们正在将两种不同的固体形成一种更复杂、更有序的单一晶体固体。在这种情况下，系统本身的熵实际上略有*减少*（$\Delta S_{sys} = -12.26 \mathrm{J/(K\cdot mol)}$）。那么这个反应怎么可能是自发的呢？
 
-秘密在于反应向其周围环境倾泻的巨大热量 $\Delta H_{rxn}^\circ = -184.5 \text{ kJ/mol}$。这股能量的洪流在周围环境中制造了混乱，极大地增加了其熵。周围环境熵的变化是如此巨大（$\Delta S_{surr} \approx 618.8 \text{ J/(K·mol)}$），以至于它完全压倒了系统本身微小的有序化。宇宙的总熵急剧上升（$\Delta S_{total} \approx 606.6 \text{ J/(K·mol)}$），反应不仅是自愿地，而且是不可避免地向[前推](@keyword=pushforward|lang=zh-CN|style=Feynman)进 [@problem_id:1342267]。这是一个深刻的提醒：即使是创造高度有序的材料，最终也是由宇宙向着更大总无序度不可阻挡的前进所驱动的。
+秘密在于反应向其周围环境倾泻的巨大热量 $\Delta H_{rxn}^\circ = -184.5 \text{ kJ/mol}$。这股能量的洪流在周围环境中制造了混乱，极大地增加了其熵。周围环境熵的变化是如此巨大（$\Delta S_{surr} \approx 618.8 \mathrm{J/(K\cdot mol)}$），以至于它完全压倒了系统本身微小的有序化。宇宙的总熵急剧上升（$\Delta S_{total} \approx 606.6 \mathrm{J/(K\cdot mol)}$），反应不仅是自愿地，而且是不可避免地向[前推](@keyword=pushforward|lang=zh-CN|style=Feynman)进 [@problem_id:1342267]。这是一个深刻的提醒：即使是创造高度有序的材料，最终也是由宇宙向着更大总无序度不可阻挡的前进所驱动的。
 
 #### 内在熔炉：绝热温度
 

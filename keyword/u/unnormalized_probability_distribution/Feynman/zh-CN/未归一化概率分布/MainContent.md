@@ -41,7 +41,7 @@ $P(\text{参数} | \text{数据}) \propto P(\text{数据} | \text{参数}) \time
 
 ### 用蛮力（和一点技巧）驯服野兽
 
-但是，如果我们真的需要知道 $\mathcalZ$ 的值，或者某个似乎依赖于它的其他属性，比如我们[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)的[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)，该怎么办？MCMC 给了我们样本，但也许我们需要数字本身。在这里，我们必须借助计算机的力量，正面迎击这个积分。
+但是，如果我们真的需要知道 $\mathcal{Z}$ 的值，或者某个似乎依赖于它的其他属性，比如我们[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)的[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)，该怎么办？MCMC 给了我们样本，但也许我们需要数字本身。在这里，我们必须借助计算机的力量，正面迎击这个积分。
 
 最直接的方法是直接进行[数值积分](@keyword=numerical_quadrature|lang=zh-CN|style=Feynman)。如果我们有一个一维的未归一化密度，如 $\tilde{p}(x) = \exp(-x^4)$，我们可以使用像辛普森法则这样的经典方法来[数值近似](@keyword=numerical_approximation|lang=zh-CN|style=Feynman)曲线下的面积。这给了我们一个 $\mathcal{Z}$ 的估计值。然后我们可以对 $x^2 \tilde{p}(x)$ 的积分做同样的事情来找到（未归一化的）二阶矩。然后[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)就简单地是我们第二个积分与第一个积分的比值（因为通过对称性，均值为零）[@problem_id:2190990]。这种方法甚至可以用来构建累积分布函数（CDF）的数值表，然后我们可以反转它来生成随机样本，为MCMC提供了一种替代方案 [@problem_id:3244412]。
 

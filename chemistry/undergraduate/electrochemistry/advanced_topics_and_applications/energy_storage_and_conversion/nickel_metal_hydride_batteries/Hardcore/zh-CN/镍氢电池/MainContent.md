@@ -1,25 +1,25 @@
 ## 引言
-镍氢（NiMH）电池作为一项成熟且重要的可充电储能技术，在混合动力汽车和消费电子产品等领域扮演了关键角色。尽管更新的技术不断涌现，但深入理解其工作原理对于掌握电化学储能系统的核心概念仍然至关重要。许多学习者可能了解其基本应用，但对其性能背后的复杂电化学、材料科学和工程权衡缺乏系统性的认识。本文旨在填补这一知识鸿沟，为读者提供一个从微观机理到宏观应用的全面视角。
+镍氢（NiMH）电池作为一项成熟且重要的可充电[储能](@keyword=energy_storage|lang=zh-CN|style=Feynman)技术，在混合动力汽车和消费电子产品等领域扮演了关键角色。尽管更新的技术不断涌现，但深入理解其工作原理对于掌握电化学储能系统的核心概念仍然至关重要。许多学习者可能了解其基本应用，但对其性能背后的复杂电化学、[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)和工程权衡缺乏系统性的认识。本文旨在填补这一知识鸿沟，为读者提供一个从微观机理到宏观应用的全面视角。
 
-在接下来的内容中，您将踏上一段深入的探索之旅。第一章 **“原理与机制”** 将剖析电池运行的核心，从基本的电极反应方程式出发，逐步揭示电压、容量、功率和寿命等关键性能参数背后的科学原理。随后，**“应用与跨学科连接”** 章节将把这些理论知识与现实世界相连接，展示它们如何应用于工程计算、材料设计和先进的诊断技术中，并揭示其与材料科学、物理学等领域的深刻联系。最后，**“动手实践”** 部分将提供一系列精心设计的问题，让您有机会应用所学知识，巩固对镍氢电池工作原理和性能计算的理解。
+在接下来的内容中，您将踏上一段深入的探索之旅。第一章 **“原理与机制”** 将剖析电池运行的核心，从基本的电极反应方程式出发，逐步揭示电压、容量、功率和寿命等关键性能参数背后的科学原理。随后，**“应用与跨学科连接”** 章节将把这些理论知识与现实世界相连接，展示它们如何应用于工程计算、材料设计和先进的诊断技术中，并揭示其与[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)、物理学等领域的深刻联系。最后，**“动手实践”** 部分将提供一系列精心设计的问题，让您有机会应用所学知识，巩固对[镍氢电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)工作原理和性能计算的理解。
 
 ## 原理与机制
 
-在对镍氢电池（NiMH）进行了基本介绍之后，本章将深入探讨其运行的核心科学原理与电化学机制。我们将从基本的电极反应出发，逐步构建起对电池电压、容量、功率和寿命等关键性能参数的深刻理解。
+在对[镍氢电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)（NiMH）进行了基本介绍之后，本章将深入探讨其运行的核心科学原理与电化学机制。我们将从基本的电极反应出发，逐步构建起对[电池电压](@keyword=battery_voltage|lang=zh-CN|style=Feynman)、容量、功率和寿命等关键性能参数的深刻理解。
 
-### 电化学反应与电解质的独特作用
+### 电[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)与电解质的独特作用
 
-镍氢电池的运行基于两个电极上发生的可逆氧化还原反应，这两个电极浸泡在碱性电解质中，通常是高浓度的氢氧化钾（$KOH$）水溶液。在放电过程中，负极发生氧化，正极发生还原。
+[镍氢电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)的运行基于两个电极上发生的可逆[氧化还原反应](@keyword=redox_reactions|lang=zh-CN|style=Feynman)，这两个电极浸泡在碱性[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)中，通常是高浓度的氢氧化钾（$KOH$）水溶液。在放电过程中，负极发生氧化，正极发生还原。
 
-**负极（阳极）** 由能够可逆吸附和解吸氢的金属氢化物（以 $MH$ 表示）构成。氢原子在碱性环境中被氧化，生成水并释放电子：
+**负极（阳极）** 由能够可逆吸附和[解吸](@keyword=desorption|lang=zh-CN|style=Feynman)氢的[金属氢化物](@keyword=metallic_hydrides|lang=zh-CN|style=Feynman)（以 $MH$ 表示）构成。氢原子在碱性环境中被氧化，生成水并释放电子：
 
 $$ MH_{(s)} + OH^{-}_{(aq)} \rightarrow M_{(s)} + H_{2}O_{(l)} + e^{-} $$
 
-**正极（阴极）** 由羟基氧化镍（$\text{NiO(OH)}$）构成。它接受来自负极的电子，并在水的参与下被还原为氢氧化镍（$\text{Ni(OH)}_2$）：
+**正极（阴极）** 由羟基氧化镍（$\text{NiO(OH)}$）构成。它接受来自负极的电子，并在水的参与下被还原为[氢氧化](@keyword=hydrogen_oxidation|lang=zh-CN|style=Feynman)镍（$\text{Ni(OH)}_2$）：
 
 $$ \text{NiO(OH)}_{(s)} + H_{2}O_{(l)} + e^{-} \rightarrow \text{Ni(OH)}_{2(s)} + OH^{-}_{(aq)} $$
 
-要获得电池放电过程的总反应方程式，我们可以将这两个半反应相加。观察上述两个半反应，我们发现电子得失的数量已经平衡（均为1个电子）。将反应物和生成物分别合并，我们得到：
+要获得电池放电过程的总反应方程式，我们可以将这两个[半反应](@entry_id:266806)相加。观察上述两个半反应，我们发现电子得失的数量已经平衡（均为1个电子）。将反应物和生成物分别合并，我们得到：
 
 $$ MH_{(s)} + OH^{-}_{(aq)} + \text{NiO(OH)}_{(s)} + H_{2}O_{(l)} + e^{-} \rightarrow M_{(s)} + H_{2}O_{(l)} + e^{-} + \text{Ni(OH)}_{2(s)} + OH^{-}_{(aq)} $$
 
@@ -27,17 +27,17 @@ $$ MH_{(s)} + OH^{-}_{(aq)} + \text{NiO(OH)}_{(s)} + H_{2}O_{(l)} + e^{-} \right
 
 $$ MH_{(s)} + \text{NiO(OH)}_{(s)} \rightarrow M_{(s)} + \text{Ni(OH)}_{2(s)} $$
 
-这个总反应式揭示了镍氢电池的一个关键特性。在理想的充放电循环中，电解质中的组分——水（$H_2O$）和氢氧根离子（$OH^{-}$）——虽然深度参与了电极上的半反应，但其净消耗和生成量为零。具体来说，负极每消耗一个 $OH^{-}$ 离子，正极就会生成一个 $OH^{-}$ 离子；正极每消耗一个水分子，负极就会生成一个水分子 [@problem_id:1574440]。因此，在整个充放电过程中，电解质的整体浓度和体积几乎保持不变。这一特性被称为“贫电解质”或“电解质穿梭”机制，它极大地提高了电池的循环稳定性和使用寿命，因为它避免了像铅酸电池那样由于电解质浓度剧烈变化而引起的分层和性能衰退问题。
+这个总反应式揭示了[镍氢电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)的一个关键特性。在理想的充放电循环中，[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)中的组分——水（$H_2O$）和氢氧根离子（$OH^{-}$）——虽然深度参与了电极上的[半反应](@entry_id:266806)，但其净消耗和生成量为零。具体来说，负极每消耗一个 $OH^{-}$ 离子，正极就会生成一个 $OH^{-}$ 离子；正极每消耗一个水分子，负极就会生成一个水分子 [@problem_id:1574440]。因此，在整个充放电过程中，[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)的整体浓度和体积几乎保持不变。这一特性被称为“贫[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)”或“电解质穿梭”机制，它极大地提高了电池的循环稳定性和使用寿命，因为它避免了像铅酸电池那样由于[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)浓度剧烈变化而引起的分层和性能衰退问题。
 
-### 电池的热力学：电压与自发性
+### 电池的[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)：电压与自发性
 
-任何电池的电动势（电压）都根植于其内部化学反应的吉布斯自由能变化（$\Delta G$）。对于一个电化学反应，其标准吉布斯自由能变（$\Delta G^\circ$）与标准电池电势（$E^\circ$）之间的关系由以下公式给出：
+任何电池的电动势（电压）都根植于其内部[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的吉布斯自由能变化（$\Delta G$）。对于一个电[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)，其[标准吉布斯自由能变](@keyword=standard_gibbs_free_energy_change|lang=zh-CN|style=Feynman)（$\Delta G^\circ$）与[标准电池电势](@keyword=standard_cell_potential|lang=zh-CN|style=Feynman)（$E^\circ$）之间的关系由以下公式给出：
 
 $$ \Delta G^\circ = -nFE^\circ $$
 
-其中，$n$ 是在总反应中转移的电子摩尔数，$F$ 是法拉第常数（$F = 96485 \text{ C/mol}$），代表每摩尔电子所带的电荷量。
+其中，$n$ 是在总反应中转移的电子摩尔数，$F$ 是法拉第常数（$F = 96485 \text{ C/mol}$），代表每摩尔电子所带的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量。
 
-对于镍氢电池，从我们推导的总反应来看，每发生一摩尔的反应，转移的电子数为 $n=1$。一个典型的镍氢电池单体的标准电势约为 $E^\circ = 1.32 \text{ V}$。我们可以利用这些信息来计算其放电反应的标准吉布斯自由能变 [@problem_id:1574455]。
+对于[镍氢电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)，从我们推导的总反应来看，每发生一摩尔的反应，转移的电子数为 $n=1$。一个典型的[镍氢电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)[单体](@keyword=monomer|lang=zh-CN|style=Feynman)的[标准电势](@keyword=standard_potential|lang=zh-CN|style=Feynman)约为 $E^\circ = 1.32 \text{ V}$。我们可以利用这些信息来计算其放电反应的[标准吉布斯自由能变](@keyword=standard_gibbs_free_energy_change|lang=zh-CN|style=Feynman) [@problem_id:1574455]。
 
 $$ \Delta G^\circ = -(1 \text{ mol}) \times (96485 \frac{\text{C}}{\text{mol}}) \times (1.32 \text{ V}) $$
 
@@ -45,73 +45,73 @@ $$ \Delta G^\circ = -(1 \text{ mol}) \times (96485 \frac{\text{C}}{\text{mol}}) 
 
 $$ \Delta G^\circ \approx -127000 \text{ J/mol} = -127 \text{ kJ/mol} $$
 
-这个显著的负值表明，在标准条件下，镍氢电池的放电反应是一个热力学上自发的趋势，能够对外做电功。反之，充电过程需要外界提供至少等同于此能量的电功，以驱动非自发的逆反应发生。
+这个显著的负值表明，在标准条件下，[镍氢电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)的放电反应是一个[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)上自发的趋势，能够对外做电功。反之，充电过程需要外界提供至少等同于此能量的电功，以驱动非自发的逆反应发生。
 
 ### 容量、能量与活性物质
 
-电池的容量（以安时 A·h 为单位）和能量（以瓦时 W·h 为单位）是衡量其性能的核心指标。这些指标直接取决于电极上活性物质的数量和其电化学当量。
+电池的容量（以安时 A·h 为单位）和能量（以瓦时 W·h 为单位）是衡量其性能的核心指标。这些指标直接取决于电极上[活性物质](@keyword=active_matter|lang=zh-CN|style=Feynman)的数量和其电化学当量。
 
 #### 负极与比容量
 
-负极材料是镍氢电池技术的核心之一。它并非纯金属，而是一种能够形成金属氢化物的特殊金属间化合物，如镧镍合金（$LaNi_5$）。这种材料的独特之处在于它能像海绵一样可逆地吸收和释放大量的氢原子。充电时，水被还原，产生的氢原子储存在合金的晶格间隙中，形成 $MH$；放电时，这些氢原子被氧化。
+[负极材料](@keyword=anode_materials|lang=zh-CN|style=Feynman)是[镍氢电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)技术的核心之一。它并非纯金属，而是一种能够形成[金属氢化物](@keyword=metallic_hydrides|lang=zh-CN|style=Feynman)的特殊[金属间化合物](@keyword=intermetallics|lang=zh-CN|style=Feynman)，如镧镍合金（$LaNi_5$）。这种材料的独特之处在于它能像海绵一样可逆地吸收和释放大量的氢原子。充电时，水被还原，产生的氢原子储存在合金的[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)间隙中，形成 $MH$；放电时，这些氢原子被氧化。
 
-电池的 **理论比容量（Theoretical Specific Capacity）** 是指单位质量的活性物质所能储存或释放的最大电荷量，通常以 A·h/kg 为单位。我们可以通过一个例子来计算 $LaNi_5$ 负极的理论比容量 [@problem_id:1574419]。假设充电后形成的金属氢化物化学式为 $LaNi_5H_6$。放电反应为：
+电池的 **理论比容量（Theoretical Specific Capacity）** 是指单位质量的活性物质所能储存或释放的最大[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量，通常以 A·h/kg 为单位。我们可以通过一个例子来计算 $LaNi_5$ 负极的理论比容量 [@problem_id:1574419]。假设充电后形成的[金属氢化物](@keyword=metallic_hydrides|lang=zh-CN|style=Feynman)化学式为 $LaNi_5H_6$。放电反应为：
 
 $$ LaNi_5H_6 + 6OH^- \rightarrow LaNi_5 + 6H_2O + 6e^- $$
 
-这个反应表明，每摩尔的 $LaNi_5$（在完全氢化后）可以释放6摩尔的电子，即 $n=6$。首先，计算 $LaNi_5$ 的摩尔质量：$M_{LaNi_5} = 138.91 \text{ g/mol} + 5 \times 58.69 \text{ g/mol} = 432.36 \text{ g/mol}$。
+这个反应表明，每摩尔的 $LaNi_5$（在完全氢化后）可以释放6摩尔的电子，即 $n=6$。首先，计算 $LaNi_5$ 的[摩尔质量](@keyword=molar_mass|lang=zh-CN|style=Feynman)：$M_{LaNi_5} = 138.91 \text{ g/mol} + 5 \times 58.69 \text{ g/mol} = 432.36 \text{ g/mol}$。
 
-每摩尔 $LaNi_5$ 释放的总电荷量为 $Q_{mol} = nF = 6 \times 96485 \text{ C/mol}$。比容量 $C_s$ 的计算如下，其中包含单位换算（$1 \text{ A·h} = 3600 \text{ C}$ 和 $1 \text{ kg} = 1000 \text{ g}$）：
+每摩尔 $LaNi_5$ 释放的总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量为 $Q_{mol} = nF = 6 \times 96485 \text{ C/mol}$。比容量 $C_s$ 的计算如下，其中包含[单位换算](@keyword=unit_conversion|lang=zh-CN|style=Feynman)（$1 \mathrm{A\cdot h} = 3600 \text{ C}$ 和 $1 \text{ kg} = 1000 \text{ g}$）：
 
-$$ C_s = \frac{nF}{M_{LaNi_5}} = \frac{6 \times 96485 \text{ C/mol}}{432.36 \text{ g/mol}} \times \frac{1 \text{ A·h}}{3600 \text{ C}} \times \frac{1000 \text{ g}}{1 \text{ kg}} \approx 372 \text{ A·h/kg} $$
+$$ C_s = \frac{nF}{M_{LaNi_5}} = \frac{6 \times 96485 \text{ C/mol}}{432.36 \text{ g/mol}} \times \frac{1 \mathrm{A\cdot h}}{3600 \text{ C}} \times \frac{1000 \text{ g}}{1 \text{ kg}} \approx 372 \mathrm{A\cdot h/kg} $$
 
-这个数值代表了 $LaNi_5$ 合金作为储氢材料的理论电荷储存密度。
+这个数值代表了 $LaNi_5$ 合金作为[储氢](@keyword=hydrogen_storage|lang=zh-CN|style=Feynman)材料的理论[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)储存密度。
 
 #### 容量限制与放电时间
 
-在实际电池设计中，通常会使一个电极的容量略大于另一个电极，以防止某些有害的副反应。容量较小的电极成为 **容量限制电极**。电池的总容量和最长放电时间由该电极上活性物质的量决定。
+在实际电池设计中，通常会使一个电极的容量略大于另一个电极，以防止某些有害的[副反应](@keyword=side_reaction|lang=zh-CN|style=Feynman)。容量较小的电极成为 **容量限制电极**。电池的总容量和最长放电时间由该电极上[活性物质](@keyword=active_matter|lang=zh-CN|style=Feynman)的量决定。
 
-例如，考虑一个正极（$\text{NiO(OH)}$）为容量限制电极的电池，其初始活性物质质量为 $15.0 \text{ g}$。该电池以 $250 \text{ mA}$ 的恒定电流为设备供电 [@problem_id:1574390]。根据正极半反应，每摩尔 $\text{NiO(OH)}$（摩尔质量为 $91.70 \text{ g/mol}$）转移1摩尔电子。
+例如，考虑一个正极（$\text{NiO(OH)}$）为容量限制电极的电池，其初始活性物质质量为 $15.0 \text{ g}$。该电池以 $250 \text{ mA}$ 的恒定电流为设备供电 [@problem_id:1574390]。根据正极[半反应](@entry_id:266806)，每摩尔 $\text{NiO(OH)}$（摩尔质量为 $91.70 \text{ g/mol}$）转移1摩尔电子。
 
 首先，计算 $\text{NiO(OH)}$ 的摩尔数：
 $$ n_{NiOOH} = \frac{15.0 \text{ g}}{91.70 \text{ g/mol}} \approx 0.1636 \text{ mol} $$
 
-由于电子与 $\text{NiO(OH)}$ 的摩尔比为1:1，电池能释放的电子总摩尔数也为 $0.1636 \text{ mol}$。总电荷量 $Q$ 为：
+由于电子与 $\text{NiO(OH)}$ 的[摩尔比](@keyword=molar_ratio|lang=zh-CN|style=Feynman)为1:1，电池能释放的电子总摩尔数也为 $0.1636 \text{ mol}$。总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量 $Q$ 为：
 $$ Q = n_e \times F = 0.1636 \text{ mol} \times 96485 \text{ C/mol} \approx 15785 \text{ C} $$
 
 在 $I = 250 \text{ mA} = 0.250 \text{ A}$ 的恒定电流下，放电时间 $t$ 为：
 $$ t = \frac{Q}{I} = \frac{15785 \text{ C}}{0.250 \text{ C/s}} \approx 63140 \text{ s} $$
 
-换算成小时，即 $t \approx 63140 \text{ s} / 3600 \text{ s/h} \approx 17.5 \text{ 小时}$。这表明电池的续航能力直接与活性物质的质量成正比。
+换算成小时，即 $t \approx 63140 \text{ s} / 3600 \text{ s/h} \approx 17.5 \text{ 小时}$。这表明电池的续航能力直接与[活性物质](@keyword=active_matter|lang=zh-CN|style=Feynman)的质量成正比。
 
 #### 电池组的能量与质量
 
-将这些原理应用到更大规模的系统，例如混合动力汽车的电池组，我们可以估算实现特定储能目标所需的活性物质总质量 [@problem_id:1574423]。假设一个电池组需要储存 $1.3 \text{ kWh}$ 的能量，单体电池的平均放电电压为 $1.2 \text{ V}$。
+将这些原理应用到更大规模的系统，例如混合动力汽车的电池组，我们可以估算实现特定储能目标所需的[活性物质](@keyword=active_matter|lang=zh-CN|style=Feynman)总质量 [@problem_id:1574423]。假设一个电池组需要储存 $1.3 \text{ kWh}$ 的能量，[单体](@keyword=monomer|lang=zh-CN|style=Feynman)电池的平均放电电压为 $1.2 \text{ V}$。
 
-首先，将总能量转换为国际单位制（焦耳）：
+首先，将总能量转换为[国际单位制](@keyword=si_system|lang=zh-CN|style=Feynman)（[焦耳](@keyword=joule|lang=zh-CN|style=Feynman)）：
 $$ E_{total} = 1.3 \text{ kWh} = 1.3 \times 10^3 \text{ W} \times 3600 \text{ s} = 4.68 \times 10^6 \text{ J} $$
 
 根据总反应，每摩尔反应转移1摩尔电子，其释放的能量为 $E_{per\_mol} = nFV_{cell} = 1 \times F \times V_{cell}$。因此，实现总能量目标所需的反应总摩尔数 $n_{total}$ 为：
 $$ n_{total} = \frac{E_{total}}{F V_{cell}} = \frac{4.68 \times 10^6 \text{ J}}{(96485 \text{ C/mol}) \times (1.2 \text{ V})} \approx 40.4 \text{ mol} $$
 
-由于每摩尔反应消耗1摩尔 $MH$ 和1摩尔 $\text{NiO(OH)}$，我们需要计算这两种活性物质的总摩尔质量。假设 $M_{MH} = 101.5 \text{ g/mol}$ 和 $M_{NiO(OH)} = 91.7 \text{ g/mol}$，则每摩尔反应消耗的活性物质质量为 $101.5 + 91.7 = 193.2 \text{ g}$。
+由于每摩尔反应消耗1摩尔 $MH$ 和1摩尔 $\text{NiO(OH)}$，我们需要计算这两种活性物质的总摩尔质量。假设 $M_{MH} = 101.5 \text{ g/mol}$ 和 $M_{NiO(OH)} = 91.7 \text{ g/mol}$，则每摩尔反应消耗的[活性物质](@keyword=active_matter|lang=zh-CN|style=Feynman)质量为 $101.5 + 91.7 = 193.2 \text{ g}$。
 
-因此，所需的活性物质总质量为：
+因此，所需的[活性物质](@keyword=active_matter|lang=zh-CN|style=Feynman)总质量为：
 $$ m_{total} = n_{total} \times (M_{MH} + M_{NiO(OH)}) = 40.4 \text{ mol} \times 193.2 \text{ g/mol} \approx 7800 \text{ g} = 7.8 \text{ kg} $$
 
-这个计算清晰地展示了电池的能量密度与活性材料的电化学性质和质量之间的直接联系。
+这个计算清晰地展示了电池的能量密度与[活性材料](@keyword=living_materials|lang=zh-CN|style=Feynman)的电化学性质和质量之间的直接联系。
 
-### 电解质与功率性能
+### [电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)与功率性能
 
-电池的 **功率性能**，即其快速输送能量的能力，主要受其 **内阻（Internal Resistance）** 的限制。内阻越低，在给定电压下所能输出的最大电流就越大，功率也越高。根据最大功率传输定理，电池可输出的最大功率 $P_{max}$ 为 $\frac{\mathcal{E}^2}{4r}$，其中 $\mathcal{E}$ 是电动势，$r$ 是内阻。因此，降低内阻是提升功率性能的关键。
+电池的 **功率性能**，即其快速输送能量的能力，主要受其 **内阻（Internal Resistance）** 的限制。内阻越低，在给定电压下所能输出的最大电流就越大，功率也越高。根据[最大功率传输定理](@keyword=maximum_power_transfer_theorem|lang=zh-CN|style=Feynman)，电池可输出的最大功率 $P_{max}$ 为 $\frac{\mathcal{E}^2}{4r}$，其中 $\mathcal{E}$ 是[电动势](@keyword=electromotive_force|lang=zh-CN|style=Feynman)，$r$ 是[内阻](@keyword=internal_resistance|lang=zh-CN|style=Feynman)。因此，降低内阻是提升功率性能的关键。
 
-镍氢电池的内阻主要来自电解质对离子流动的阻碍，即 **欧姆电阻**。电解质的电阻 $r$ 与其电导率 $\kappa$ 成反比。而电导率 $\kappa$ 又取决于离子的浓度 $c$ 和离子的 **摩尔电导率 $\Lambda_m$**，后者则与离子在电场中的迁移速率，即 **离子迁移率（Ionic Mobility, $u$）** 直接相关。对于1:1电解质，$\kappa = c \Lambda_m = cF(u_+ + u_-)$。
+[镍氢电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)的[内阻](@keyword=internal_resistance|lang=zh-CN|style=Feynman)主要来自[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)对离子流动的阻碍，即 **欧姆电阻**。电解质的电阻 $r$ 与其[电导率](@keyword=conductivity|lang=zh-CN|style=Feynman) $\kappa$ 成反比。而电导率 $\kappa$ 又取决于离子的浓度 $c$ 和离子的 **[摩尔电导率](@keyword=molar_conductivity|lang=zh-CN|style=Feynman) $\Lambda_m$**，后者则与离子在[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)中的迁移速率，即 **[离子迁移率](@keyword=ionic_mobility|lang=zh-CN|style=Feynman)（Ionic Mobility, $u$）** 直接相关。对于1:1电解质，$\kappa = c \Lambda_m = cF(u_+ + u_-)$。
 
-镍氢电池使用高浓度$KOH$溶液作为电解质，一个关键原因就在于其极高的电导率。我们可以通过一个思想实验来揭示这一点 [@problem_id:1574462]。比较一个使用$KOH$电解质的NiMH电池和另一个使用等摩尔浓度$NaCl$溶液的假想电池。它们的功率性能之比将等于它们的电解质电导率之比：
+[镍氢电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)使用高浓度$KOH$溶液作为电解质，一个关键原因就在于其极高的[电导率](@keyword=conductivity|lang=zh-CN|style=Feynman)。我们可以通过一个思想实验来揭示这一点 [@problem_id:1574462]。比较一个使用$KOH$[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)的[NiMH电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)和另一个使用等[摩尔浓度](@keyword=molarity|lang=zh-CN|style=Feynman)$NaCl$溶液的假想电池。它们的功率性能之比将等于它们的电解质[电导率](@keyword=conductivity|lang=zh-CN|style=Feynman)之比：
 
 $$ \frac{P_{max, KOH}}{P_{max, NaCl}} = \frac{r_{NaCl}}{r_{KOH}} = \frac{\kappa_{KOH}}{\kappa_{NaCl}} = \frac{cF(u_{K^+} + u_{OH^-})}{cF(u_{Na^+} + u_{Cl^-})} = \frac{u_{K^+} + u_{OH^-}}{u_{Na^+} + u_{Cl^-}} $$
 
-使用25°C下的离子迁移率数据：
+使用25°C下的[离子迁移率](@keyword=ionic_mobility|lang=zh-CN|style=Feynman)数据：
 - $u_{K^+} = 7.62 \times 10^{-8} \text{ m}^2\text{V}^{-1}\text{s}^{-1}$
 - $u_{OH^-} = 20.5 \times 10^{-8} \text{ m}^2\text{V}^{-1}\text{s}^{-1}$
 - $u_{Na^+} = 5.19 \times 10^{-8} \text{ m}^2\text{V}^{-1}\text{s}^{-1}$
@@ -120,15 +120,15 @@ $$ \frac{P_{max, KOH}}{P_{max, NaCl}} = \frac{r_{NaCl}}{r_{KOH}} = \frac{\kappa_
 代入计算：
 $$ \frac{P_{max, KOH}}{P_{max, NaCl}} = \frac{(7.62 + 20.5) \times 10^{-8}}{(5.19 + 7.91) \times 10^{-8}} = \frac{28.12}{13.10} \approx 2.15 $$
 
-计算结果表明，在其他条件完全相同的情况下，仅因电解质的不同，$KOH$电池的最大输出功率就是$NaCl$电池的2.15倍。这一巨大差异的根源在于$OH^-$离子。由于Grotthuss机制（质子跃迁），$OH^-$（以及$H_3O^+$）在水溶液中表现出异常高的迁移率。正是这种高迁移率赋予了$KOH$电解质优异的电导性能，从而使镍氢电池能够实现高倍率充放电，满足混合动力汽车等高功率应用的需求。
+计算结果表明，在其他条件完全相同的情况下，仅因电解质的不同，$KOH$电池的最大输出功率就是$NaCl$电池的2.15倍。这一巨大差异的根源在于$OH^-$离子。由于[Grotthuss机制](@keyword=grotthuss_mechanism|lang=zh-CN|style=Feynman)（质子跃迁），$OH^-$（以及$H_3O^+$）在[水溶液](@keyword=aqueous_solutions|lang=zh-CN|style=Feynman)中表现出异常高的迁移率。正是这种高迁移率赋予了$KOH$[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)优异的[电导](@keyword=conductance|lang=zh-CN|style=Feynman)性能，从而使[镍氢电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)能够实现高倍率充放电，满足混合动力汽车等高功率应用的需求。
 
-### 实际考量：过充电与循环寿命
+### 实际考量：过充电与[循环寿命](@keyword=cycle_life|lang=zh-CN|style=Feynman)
 
 #### 过充电现象与后果
 
-当电池充满电后，若继续施加充电电流，就会发生 **过充电（Overcharging）**。此时，由于主要的活性物质已经转化完毕，充电电流会转而驱动电解质分解等副反应，最主要的就是水的电解。
+当电池充满电后，若继续施加[充电电流](@keyword=charging_current|lang=zh-CN|style=Feynman)，就会发生 **过充电（Overcharging）**。此时，由于主要的活性物质已经转化完毕，[充电电流](@keyword=charging_current|lang=zh-CN|style=Feynman)会转而驱动电解质分解等[副反应](@keyword=side_reaction|lang=zh-CN|style=Feynman)，最主要的就是水的电解。
 
-在正极（过充时为阳极），氢氧根离子被氧化生成氧气：
+在正极（过充时为[阳极](@keyword=anode|lang=zh-CN|style=Feynman)），氢氧根离子被氧化生成氧气：
 $$ 4OH^{-}_{(aq)} \rightarrow O_{2(g)} + 2H_{2}O_{(l)} + 4e^{-} $$
 
 在负极（过充时为阴极），水被还原生成氢气：
@@ -136,28 +136,28 @@ $$ 4H_{2}O_{(l)} + 4e^{-} \rightarrow 2H_{2(g)} + 4OH^{-}_{(aq)} $$
 
 将这两个副反应相加，得到净反应为水的分解：$2H_{2}O \rightarrow 2H_{2} + O_{2}$。这会带来两个严重后果：
 1.  **内部压力升高**：在密封的电池内部，产生的氧气和氢气会迅速积聚，导致内部压力急剧上升。如果压力超过电池壳体的承受极限或安全阀的设计，可能导致电池鼓胀、漏液甚至破裂。我们可以量化这一效应：假设一个内部自由体积为 $1.50 \text{ cm}^3$ 的电池在 $2.40 \text{ A}$ 的电流下被过充 $20.0 \text{ s}$ [@problem_id:1574394]。根据正极的副反应，每转移4摩尔电子会产生1摩尔氧气。
-    - 传递的总电荷为 $Q = It = 2.40 \text{ A} \times 20.0 \text{ s} = 48.0 \text{ C}$。
+    - 传递的总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)为 $Q = It = 2.40 \text{ A} \times 20.0 \text{ s} = 48.0 \text{ C}$。
     - 转移的电子摩尔数为 $n_e = Q/F = 48.0 / 96485 \approx 4.97 \times 10^{-4} \text{ mol}$。
     - 产生的氧气摩尔数为 $n_{O_2} = n_e / 4 \approx 1.24 \times 10^{-4} \text{ mol}$。
-    - 根据理想气体定律 $PV=nRT$，产生的压力增量 $\Delta P = \frac{n_{O_2}RT}{V}$。在298 K下，这会导致压力增加约 $2.05 \times 10^5 \text{ Pa}$，使总压力达到初始压力的三倍左右。现代NiMH电池通过在负极设计过剩容量，并加入催化剂，使正极产生的氧气能在负极被快速消耗（$2MH + O_2 \rightarrow 2M + H_2O$），从而抑制压力上升，这被称为“氧复合机制”。
+    - 根据[理想气体定律](@keyword=ideal_gas_law|lang=zh-CN|style=Feynman) $PV=nRT$，产生的压力增量 $\Delta P = \frac{n_{O_2}RT}{V}$。在298 K下，这会导致压力增加约 $2.05 \times 10^5 \text{ Pa}$，使[总压](@keyword=stagnation_pressure|lang=zh-CN|style=Feynman)力达到初始压力的三倍左右。现代[NiMH电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)通过在负极设计过剩容量，并加入催化剂，使正极产生的氧气能在负极被快速消耗（$2MH + O_2 \rightarrow 2M + H_2O$），从而抑制压力上升，这被称为“氧复合机制”。
 
-2.  **电解质损耗**：从净反应看，过充电会净消耗水，导致电解质浓度升高和总量减少，最终影响离子导电性和电池寿命。我们可以计算这个损耗：假设电池在 $0.850 \text{ A}$ 的电流下过充 $45.0$ 分钟 [@problem_id:1574399]。
-    - 总电荷量 $Q = 0.850 \text{ A} \times 45.0 \times 60 \text{ s} = 2295 \text{ C}$。
+2.  **[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)损耗**：从净反应看，过充电会净消耗水，导致[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)浓度升高和总量减少，最终影响离子导电性和电池寿命。我们可以计算这个损耗：假设电池在 $0.850 \text{ A}$ 的电流下过充 $45.0$ 分钟 [@problem_id:1574399]。
+    - 总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量 $Q = 0.850 \text{ A} \times 45.0 \times 60 \text{ s} = 2295 \text{ C}$。
     - 电子摩尔数 $n_e = 2295 / 96485 \approx 0.0238 \text{ mol}$。
     - 根据总电解反应，每转移4摩尔电子消耗2摩尔水，即每转移1摩尔电子消耗0.5摩尔水。
     - 消耗的水的摩尔数为 $n_{H_2O} = 0.5 \times n_e \approx 0.0119 \text{ mol}$。
     - 消耗的水的质量为 $m = n_{H_2O} \times M_{H_2O} \approx 0.0119 \text{ mol} \times 18.015 \text{ g/mol} \approx 0.214 \text{ g}$。虽然单次过充损失不大，但长期累积会严重影响电池性能。
 
-#### 循环寿命与相变应力
+#### [循环寿命](@keyword=cycle_life|lang=zh-CN|style=Feynman)与[相变](@keyword=phase_change|lang=zh-CN|style=Feynman)应力
 
-电池的循环寿命不仅受过充电等滥用条件的影响，也与电极材料在正常充放电过程中的物理化学变化密切相关。对于正极的氢氧化镍，其充放电伴随着晶体结构和体积的变化，这种反复的“呼吸”会产生机械应力，导致活性物质粉化、从集流体上脱落，最终使容量衰减。
+电池的[循环寿命](@keyword=cycle_life|lang=zh-CN|style=Feynman)不仅受过充电等滥用条件的影响，也与电极材料在正常充放电过程中的物理化学变化密切相关。对于正极的氢氧化镍，其充放电伴随着[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)和体积的变化，这种反复的“呼吸”会产生机械应力，导致[活性物质](@keyword=active_matter|lang=zh-CN|style=Feynman)粉化、从集流体上脱落，最终使容量衰减。
 
-这里存在一个关键的权衡：容量与寿命之间的矛盾。标准的充放电循环涉及 $\beta\text{-Ni(OH)}_2$ 和 $\beta\text{-NiOOH}$ 之间的相变。在这个过程中，每个镍原子转移1个电子。然而，通过改变电极添加剂（如钴、锌）或充电协议，可以形成一种称为 $\gamma\text{-NiOOH}$ 的物相。$\gamma$相的镍平均氧化态更高，可以达到+3.7左右，意味着每个镍原子能转移约1.7个电子，从而大幅提升电极的比容量。
+这里存在一个关键的权衡：容量与寿命之间的矛盾。标准的充放电循环涉及 $\beta\text{-Ni(OH)}_2$ 和 $\beta\text{-NiOOH}$ 之间的[相变](@keyword=phase_change|lang=zh-CN|style=Feynman)。在这个过程中，每个镍原子转移1个电子。然而，通过改变电极添加剂（如钴、锌）或充电协议，可以形成一种称为 $\gamma\text{-NiOOH}$ 的物相。$\gamma$相的镍平均[氧化态](@keyword=oxidation_states|lang=zh-CN|style=Feynman)更高，可以达到+3.7左右，意味着每个镍原子能转移约1.7个电子，从而大幅提升电极的比容量。
 
-然而，这种高容量是有代价的。$\beta$相和$\gamma$相的晶体结构和摩尔体积差异巨大。我们可以通过一个模型来量化这种得失 [@problem_id:1574443]。
+然而，这种高容量是有代价的。$\beta$相和$\gamma$相的[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)和摩尔体积差异巨大。我们可以通过一个模型来量化这种得失 [@problem_id:1574443]。
 - **标准路径（$\beta$相）**：从 $V_{discharged} = 24.0 \text{ cm}^3/\text{mol}$ 的 $\beta\text{-Ni(OH)}_2$ 变为 $V_{\beta,charged} = 20.5 \text{ cm}^3/\text{mol}$ 的 $\beta\text{-NiOOH}$。体积变化幅度为 $|\Delta V_\beta| = 3.5 \text{ cm}^3/\text{mol}$。电子转移数 $n_\beta = 1.0$。
 - **高容量路径（$\gamma$相）**：从 $V_{discharged} = 24.0 \text{ cm}^3/\text{mol}$ 的 $\text{Ni(OH)}_2$ 变为 $V_{\gamma,charged} = 30.0 \text{ cm}^3/\text{mol}$ 的 $\gamma\text{-NiOOH}$。体积变化幅度为 $|\Delta V_\gamma| = 6.0 \text{ cm}^3/\text{mol}$。电子转移数 $n_\gamma \approx 1.7$。
 
 与标准路径相比，高容量路径的容量增益分数为 $\frac{1.7 - 1.0}{1.0} = 0.70$（即70%）。但其循环体积变化幅度的增益分数为 $\frac{6.0 - 3.5}{3.5} \approx 0.714$（即71.4%）。
 
-定义一个“性能增益因子” $\mathcal{G}$ 为容量增益分数与体积变化增益分数之比，我们得到 $\mathcal{G} = \frac{0.70}{0.714} \approx 0.98$。这个接近1的数值意味着，追求更高容量所带来的好处，几乎被循环过程中加剧的机械应力所抵消。$\gamma$相的形成和消失伴随着巨大的体积膨胀和收缩，会加速电极结构的破坏，导致电池循环寿命显著缩短。因此，现代NiMH电池的设计需要在追求高能量密度和保证长循环寿命之间做出精妙的平衡。
+定义一个“性能增益因子” $\mathcal{G}$ 为容量增益分数与体积变化增益分数之比，我们得到 $\mathcal{G} = \frac{0.70}{0.714} \approx 0.98$。这个接近1的数值意味着，追求更高容量所带来的好处，几乎被[循环过程](@keyword=cyclic_process|lang=zh-CN|style=Feynman)中加剧的机械应力所抵消。$\gamma$相的形成和消失伴随着巨大的体积膨胀和收缩，会加速电极结构的破坏，导致电池[循环寿命](@keyword=cycle_life|lang=zh-CN|style=Feynman)显著缩短。因此，现代[NiMH电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)的设计需要在追求高能量密度和保证长[循环寿命](@keyword=cycle_life|lang=zh-CN|style=Feynman)之间做出精妙的平衡。

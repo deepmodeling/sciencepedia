@@ -86,11 +86,11 @@ This is done by embedding it into a larger, but computable, group called the **$
 
 The relationship between these groups is captured in a fundamental [short exact sequence](@keyword=short_exact_sequence|lang=en-US|style=Feynman) [@problem_id:3089295]:
 $$
-0 \to E(\mathbb{Q})/pE(\mathbb{Q}) \to \mathrm{Sel}^{(p)}(E/\mathbb{Q}) \to \Sha(E/\mathbb{Q})[p] \to 0
+0 \to E(\mathbb{Q})/pE(\mathbb{Q}) \to \mathrm{Sel}^{(p)}(E/\mathbb{Q}) \to \mathrm{Ш}(E/\mathbb{Q})[p] \to 0
 $$
-In plain English, this sequence tells us that the Selmer group contains a copy of our target group, $E(\mathbb{Q})/pE(\mathbb{Q})$. The difference, the part of the Selmer group that does *not* come from actual rational points, is measured by a mysterious object called the **Tate-Shafarevich group**, denoted $\Sha(E/\mathbb{Q})$. This group consists of "ghost" solutions—solutions that exist locally everywhere (over reals and all p-adics) but fail to patch together into a global rational solution. It measures the failure of the "local-to-global" principle.
+In plain English, this sequence tells us that the Selmer group contains a copy of our target group, $E(\mathbb{Q})/pE(\mathbb{Q})$. The difference, the part of the Selmer group that does *not* come from actual rational points, is measured by a mysterious object called the **Tate-Shafarevich group**, denoted $\mathrm{Ш}(E/\mathbb{Q})$. This group consists of "ghost" solutions—solutions that exist locally everywhere (over reals and all p-adics) but fail to patch together into a global rational solution. It measures the failure of the "local-to-global" principle.
 
-While $\Sha$ is deeply enigmatic (we don't even know if it's always finite), the Selmer group is finite and computable. The [exact sequence](@keyword=exact_sequence|lang=en-US|style=Feynman) above gives us a powerful, practical inequality [@problem_id:3089295] [@problem_id:3089283]:
+While $\mathrm{Ш}$ is deeply enigmatic (we don't even know if it's always finite), the Selmer group is finite and computable. The [exact sequence](@keyword=exact_sequence|lang=en-US|style=Feynman) above gives us a powerful, practical inequality [@problem_id:3089295] [@problem_id:3089283]:
 $$
 r(E) \le \dim_{\mathbb{F}_{p}} \mathrm{Sel}^{(p)}(E/\mathbb{Q}) - \dim_{\mathbb{F}_{p}} E(\mathbb{Q})[p]
 $$
@@ -104,4 +104,4 @@ The **Parity Conjecture** asserts that the same is true for the [algebraic rank]
 $$
 (-1)^{r(E)} = w(E)
 $$
-This is a "coarse" version of BSD. It doesn't tell us the exact rank, but it predicts its parity (whether it's even or odd). Astonishingly, this part of the conjecture is much more tractable. There are powerful theorems that connect the parity of the Selmer group dimension to the root number $w(E)$. Assuming the finiteness of the elusive group $\Sha$, these theorems can be used to prove the Parity Conjecture. This connection provides some of the strongest theoretical evidence we have for the profound truth lurking within the Birch and Swinnerton-Dyer conjecture [@problem_id:3089251]. The journey from a simple geometric curiosity to these deep structural theorems and conjectures shows how a single, elegant idea can blossom into a rich and beautiful mathematical landscape.
+This is a "coarse" version of BSD. It doesn't tell us the exact rank, but it predicts its parity (whether it's even or odd). Astonishingly, this part of the conjecture is much more tractable. There are powerful theorems that connect the parity of the Selmer group dimension to the root number $w(E)$. Assuming the finiteness of the elusive group $\mathrm{Ш}$, these theorems can be used to prove the Parity Conjecture. This connection provides some of the strongest theoretical evidence we have for the profound truth lurking within the Birch and Swinnerton-Dyer conjecture [@problem_id:3089251]. The journey from a simple geometric curiosity to these deep structural theorems and conjectures shows how a single, elegant idea can blossom into a rich and beautiful mathematical landscape.

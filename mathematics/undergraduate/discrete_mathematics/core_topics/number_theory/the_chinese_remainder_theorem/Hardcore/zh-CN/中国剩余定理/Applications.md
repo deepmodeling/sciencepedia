@@ -38,7 +38,7 @@
 
 - **理想结构**: 环 $\mathbb{Z}_n$ 中的每个理想都与直积环 $\mathbb{Z}_{p_1^{k_1}} \times \dots \times \mathbb{Z}_{p_m^{k_m}}$ 中的一个理想一一对应。直积环中的理想具有简单的形式，即各个分量环中理想的笛卡尔积。通过分析分量环（如 $\mathbb{Z}_{p^k}$）中由 $p$ 的幂生成的理想，我们可以完全刻画出 $\mathbb{Z}_n$ 的全部理想结构。例如，一个理想 $J = \langle a_1 \rangle_{m_1} \times \dots \times \langle a_k \rangle_{m_k}$ 对应于 $\mathbb{Z}_n$ 中由 $d = \operatorname{lcm}(\gcd(a_1, m_1), \dots, \gcd(a_k, m_k))$ 生成的理想。[@problem_id:1404973]
 
-- **群结构**: 考虑环 $\mathbb{Z}_n$ 的单位群 $(\mathbb{Z}_n)^\times$。环同构诱导了一个群同构：$(\mathbb{Z}_n)^\times \cong (\mathbb{Z}_{p_1^{k_1}})^\times \times \dots \times (\mathbb{Z}_{p_m^{k_m}})^\times$。这一分解是判定 $(\mathbbZ_n)^\times$ 是否为循环群的关键。一个直积群是循环的，当且仅当其各分量群都是循环的，且它们的阶两两互质。通过分析 $(\mathbb{Z}_{p^k})^\times$ 的结构（例如，当 $p$ 为奇素数时是循环的，但对 $p=2, k\ge3$ 时不是），我们可以精确地刻画出使得 $(\mathbb{Z}_n)^\times$ 为循环群的所有 $n$ 的形式，即 $n=2, 4, p^k, 2p^k$（其中 $p$ 是奇素数）。[@problem_id:1827623]
+- **群结构**: 考虑环 $\mathbb{Z}_n$ 的单位群 $(\mathbb{Z}_n)^\times$。环同构诱导了一个群同构：$(\mathbb{Z}_n)^\times \cong (\mathbb{Z}_{p_1^{k_1}})^\times \times \dots \times (\mathbb{Z}_{p_m^{k_m}})^\times$。这一分解是判定 $(\mathbb{Z}_n)^\times$ 是否为循环群的关键。一个直积群是循环的，当且仅当其各分量群都是循环的，且它们的阶两两互质。通过分析 $(\mathbb{Z}_{p^k})^\times$ 的结构（例如，当 $p$ 为奇素数时是循环的，但对 $p=2, k\ge3$ 时不是），我们可以精确地刻画出使得 $(\mathbb{Z}_n)^\times$ 为循环群的所有 $n$ 的形式，即 $n=2, 4, p^k, 2p^k$（其中 $p$ 是奇素数）。[@problem_id:1827623]
 
 ### 推广与高阶应用
 

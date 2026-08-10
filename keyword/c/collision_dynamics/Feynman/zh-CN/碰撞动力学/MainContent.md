@@ -51,7 +51,7 @@ $$
 
 两个基本的原型是**回弹**和**剥离**机理[@problem_id:2680276]。
 - **[回弹](@keyword=snapback|lang=zh-CN|style=Feynman)机理：** 这种情况发生在近乎正面的碰撞中（小碰撞参数$b$）。入射原子$\mathrm{A}$正面撞击原子$\mathrm{B}$并被向后抛出，同时带走了$\mathrm{B}$。因此，新形成的分子$\mathrm{AB}$被向后散射（散射角接近$180^\circ$）。这就像把一个网球扔向一个重得多的保龄球；网球会反弹回来。
-- **剥离机理：** 这是掠射式碰撞（大[碰撞参数](@keyword=impact_parameter|lang=zh-CN|style=Feynman)$b$）的特征。原子$\mathrmA$飞过$\mathrm{BC}$分子，顺便“剥离”走原子$\mathrm{B}$，并基本沿其原始路径继续前进。$\mathrm{AB}$产物被向前散射（[散射角](@keyword=scattering_angle|lang=zh-CN|style=Feynman)接近$0^\circ$）。原子$\mathrm{C}$则作为“旁观者”被留下。
+- **剥离机理：** 这是掠射式碰撞（大[碰撞参数](@keyword=impact_parameter|lang=zh-CN|style=Feynman)$b$）的特征。原子$\mathrm{A}$飞过$\mathrm{BC}$分子，顺便“剥离”走原子$\mathrm{B}$，并基本沿其原始路径继续前进。$\mathrm{AB}$产物被向前散射（[散射角](@keyword=scattering_angle|lang=zh-CN|style=Feynman)接近$0^\circ$）。原子$\mathrm{C}$则作为“旁观者”被留下。
 
 剥离机理的一个壮观例子是**鱼叉反应**[@problem_id:1519378]。考虑一个钾原子（$\mathrm{K}$）与一个甲基[碘](@keyword=iodine|lang=zh-CN|style=Feynman)分子（$\mathrm{CH_3I}$）的反应。$\mathrm{K}$有一个松散的外层电子。在一个惊人的远距离上，它可以将这个电子“抛”到$\mathrm{CH_3I}$分子上，就像鱼叉一样。[电子转移](@keyword=electron_transfer|lang=zh-CN|style=Feynman)发生的瞬间，粒子变成了离子，$\mathrm{K}^+$和$\mathrm{CH_3I}^-$。它们现在被强大的长程库仑引力束缚在一起。这个力将碘拉过来，形成碘化钾（$\mathrm{KI}$），留下甲基。因为这可以在非常大的碰撞参数下发生，所以该反应具有巨大的[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)，并且产物主要向前散射，这是剥离机理的典型特征。
 

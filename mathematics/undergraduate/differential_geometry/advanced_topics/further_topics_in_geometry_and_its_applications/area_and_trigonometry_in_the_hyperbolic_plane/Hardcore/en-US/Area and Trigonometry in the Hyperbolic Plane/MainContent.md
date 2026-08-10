@@ -1,29 +1,29 @@
 ## Introduction
-Hyperbolic geometry is a fascinating and counter-intuitive world where parallel lines diverge and the sum of a triangle's angles is always less than 180 degrees. While its concepts challenge our Euclidean upbringing, this non-Euclidean space is not merely a mathematical curiosity; it is a fundamental structure appearing in fields from cosmology to complex analysis. The primary challenge in exploring this space is developing a new set of tools to replace our familiar rulers and protractors. How do we measure distances, calculate angles, and determine the area of figures in a world defined by constant negative curvature?
+Hyperbolic geometry is a fascinating and counter-intuitive world where [parallel lines](@keyword=parallel_lines|lang=en-US|style=Feynman) diverge and the sum of a triangle's angles is always less than 180 degrees. While its concepts challenge our Euclidean upbringing, this non-Euclidean space is not merely a mathematical curiosity; it is a fundamental structure appearing in fields from cosmology to complex analysis. The primary challenge in exploring this space is developing a new set of tools to replace our familiar rulers and protractors. How do we measure distances, calculate angles, and determine the area of figures in a world defined by constant negative curvature?
 
-This article addresses this knowledge gap by building the quantitative foundations of hyperbolic geometry from the ground up. Over the following chapters, you will gain a comprehensive understanding of the rules that govern shapes and sizes in the hyperbolic plane. The first chapter, **Principles and Mechanisms**, will introduce the fundamental formulas of hyperbolic trigonometry and the direct link between a triangle's angles and its area. Next, **Applications and Interdisciplinary Connections** will reveal how these seemingly abstract principles are applied to model our universe, design advanced materials, and unify disparate areas of mathematics. Finally, **Hands-On Practices** will provide a series of guided problems to solidify your skills and deepen your intuition for this remarkable geometry.
+This article addresses this knowledge gap by building the quantitative foundations of hyperbolic geometry from the ground up. Over the following chapters, you will gain a comprehensive understanding of the rules that govern shapes and sizes in the [hyperbolic plane](@keyword=hyperbolic_plane|lang=en-US|style=Feynman). The first chapter, **Principles and Mechanisms**, will introduce the fundamental formulas of [hyperbolic trigonometry](@keyword=hyperbolic_trigonometry|lang=en-US|style=Feynman) and the direct link between a triangle's angles and its area. Next, **Applications and Interdisciplinary Connections** will reveal how these seemingly abstract principles are applied to model our universe, design advanced materials, and unify disparate areas of mathematics. Finally, **Hands-On Practices** will provide a series of guided problems to solidify your skills and deepen your intuition for this remarkable geometry.
 
 ## Principles and Mechanisms
 
-In the preceding chapter, we introduced the concept of the hyperbolic plane as a two-dimensional manifold of constant negative Gaussian curvature. We now shift our focus from the abstract definition of the space to the concrete geometric principles that govern figures within it. This chapter will develop the foundational tools for quantitative analysis in hyperbolic space: the formulas for trigonometry and area. Throughout our discussion, we will primarily work in a hyperbolic plane with its curvature normalized to $K=-1$. This normalization simplifies the resulting formulas considerably, allowing the fundamental geometric relationships to emerge with clarity. Results for a general curvature $K = -1/R^2$ can be recovered through appropriate scaling by the characteristic length $R$, the radius of curvature.
+In the preceding chapter, we introduced the concept of the hyperbolic plane as a two-dimensional manifold of constant negative Gaussian curvature. We now shift our focus from the abstract definition of the space to the concrete geometric principles that govern figures within it. This chapter will develop the foundational tools for [quantitative analysis](@keyword=quantitative_analysis|lang=en-US|style=Feynman) in [hyperbolic space](@keyword=hyperbolic_space|lang=en-US|style=Feynman): the formulas for trigonometry and area. Throughout our discussion, we will primarily work in a [hyperbolic plane](@keyword=hyperbolic_plane|lang=en-US|style=Feynman) with its curvature normalized to $K=-1$. This normalization simplifies the resulting formulas considerably, allowing the fundamental geometric relationships to emerge with clarity. Results for a general curvature $K = -1/R^2$ can be recovered through appropriate scaling by the [characteristic length](@keyword=characteristic_length|lang=en-US|style=Feynman) $R$, the [radius of curvature](@keyword=radius_of_curvature|lang=en-US|style=Feynman).
 
 ### The Geometry of Hyperbolic Triangles
 
-The most fundamental polygon is the triangle, and its properties form the bedrock of any geometry. A **geodesic triangle** in the hyperbolic plane is a figure formed by three points, its vertices, connected by three geodesic segments, its sides. A geodesic is the shortest path between two points, the hyperbolic equivalent of a straight line.
+The most fundamental polygon is the triangle, and its properties form the bedrock of any geometry. A **[geodesic triangle](@keyword=geodesic_triangle|lang=en-US|style=Feynman)** in the [hyperbolic plane](@keyword=hyperbolic_plane|lang=en-US|style=Feynman) is a figure formed by three points, its vertices, connected by three geodesic segments, its sides. A geodesic is the shortest path between two points, the hyperbolic equivalent of a straight line.
 
-A primary question is to determine the conditions under which three given lengths can form a non-degenerate triangle. In hyperbolic geometry, as in Euclidean geometry, the side lengths $a$, $b$, and $c$ must satisfy the strict **triangle inequalities**:
+A primary question is to determine the conditions under which three given lengths can form a non-degenerate triangle. In [hyperbolic geometry](@keyword=hyperbolic_geometry|lang=en-US|style=Feynman), as in Euclidean geometry, the side lengths $a$, $b$, and $c$ must satisfy the strict **triangle inequalities**:
 $$
 a+b \gt c, \quad a+c \gt b, \quad \text{and} \quad b+c \gt a.
 $$
-If one of these relations becomes an equality, for instance $a+b=c$, the three vertices are collinear on a single geodesic, forming a degenerate triangle. A notable contrast with spherical geometry is that there is no upper bound on the sum of the side lengths of a hyperbolic triangle. For example, consider a set of proposed side lengths for a triangle given as $a=\ln(5)$, $b=\ln(6)$, and $c=\ln(12)$ [@problem_id:1624643]. To check the validity, we examine the longest side, $c$, against the sum of the others. The inequality $c \lt a+b$ becomes $\ln(12) \lt \ln(5) + \ln(6)$. Using the property of logarithms, this is equivalent to $\ln(12) \lt \ln(5 \times 6) = \ln(30)$, which simplifies to the true statement $12 \lt 30$. The other two inequalities are satisfied trivially. However, if the lengths were $a=\ln(2)$, $b=\ln(3)$, and $c=\ln(6)$, the condition $c  a+b$ would become $\ln(6)  \ln(2 \times 3) = \ln(6)$, which is false. This set of lengths would result in a degenerate triangle.
+If one of these relations becomes an equality, for instance $a+b=c$, the three vertices are collinear on a single geodesic, forming a degenerate triangle. A notable contrast with [spherical geometry](@keyword=spherical_geometry|lang=en-US|style=Feynman) is that there is no upper bound on the sum of the side lengths of a hyperbolic triangle. For example, consider a set of proposed side lengths for a triangle given as $a=\ln(5)$, $b=\ln(6)$, and $c=\ln(12)$ [@problem_id:1624643]. To check the validity, we examine the longest side, $c$, against the sum of the others. The inequality $c \lt a+b$ becomes $\ln(12) \lt \ln(5) + \ln(6)$. Using the property of logarithms, this is equivalent to $\ln(12) \lt \ln(5 \times 6) = \ln(30)$, which simplifies to the true statement $12 \lt 30$. The other two inequalities are satisfied trivially. However, if the lengths were $a=\ln(2)$, $b=\ln(3)$, and $c=\ln(6)$, the condition $c  a+b$ would become $\ln(6)  \ln(2 \times 3) = \ln(6)$, which is false. This set of lengths would result in a degenerate triangle.
 
-To make the concept of hyperbolic distance more concrete, it is useful to consider a specific model of the hyperbolic plane. One of the most common is the **Poincaré disk model**, where the space is represented by the open unit disk in the complex plane, $D = \{z \in \mathbb{C} : |z| \lt 1\}$. The distance between two points $z_1$ and $z_2$ in this disk is not the Euclidean distance, but a special metric that accounts for the curvature of the space:
+To make the concept of hyperbolic distance more concrete, it is useful to consider a specific model of the [hyperbolic plane](@keyword=hyperbolic_plane|lang=en-US|style=Feynman). One of the most common is the **Poincaré disk model**, where the space is represented by the open unit disk in the complex plane, $D = \{z \in \mathbb{C} : |z| \lt 1\}$. The distance between two points $z_1$ and $z_2$ in this disk is not the Euclidean distance, but a special metric that accounts for the curvature of the space:
 $$
-d_H(z_1, z_2) = \arccosh\left(1 + \frac{2|z_1 - z_2|^2}{(1-|z_1|^2)(1-|z_2|^2)}\right)
+d_H(z_1, z_2) = \operatorname{arccosh}\left(1 + \frac{2|z_1 - z_2|^2}{(1-|z_1|^2)(1-|z_2|^2)}\right)
 $$
 As an example, let us calculate the distance between the points $P_1$ and $P_2$ represented by $z_1 = \frac{1}{2}$ and $z_2 = \frac{i}{2}$ [@problem_id:1624676]. We first compute the necessary components: $|z_1|^2 = \frac{1}{4}$, $|z_2|^2 = \frac{1}{4}$, and $|z_1 - z_2|^2 = |\frac{1}{2} - \frac{i}{2}|^2 = \frac{1}{4}|1-i|^2 = \frac{2}{4} = \frac{1}{2}$. Substituting these into the formula yields:
 $$
-d_H(z_1, z_2) = \arccosh\left(1 + \frac{2 \cdot \frac{1}{2}}{(1-\frac{1}{4})(1-\frac{1}{4})}\right) = \arccosh\left(1 + \frac{1}{(3/4)^2}\right) = \arccosh\left(1 + \frac{16}{9}\right) = \arccosh\left(\frac{25}{9}\right).
+d_H(z_1, z_2) = \operatorname{arccosh}\left(1 + \frac{2 \cdot \frac{1}{2}}{(1-\frac{1}{4})(1-\frac{1}{4})}\right) = \operatorname{arccosh}\left(1 + \frac{1}{(3/4)^2}\right) = \operatorname{arccosh}\left(1 + \frac{16}{9}\right) = \operatorname{arccosh}\left(\frac{25}{9}\right).
 $$
 This calculation demonstrates how the metric distorts distances, particularly as points approach the boundary of the disk $|z|=1$, which represents "infinity" in this model.
 
@@ -45,13 +45,13 @@ Thus, $\cosh(a) = \cosh(\ln 3) = \frac{3+1/3}{2} = \frac{5}{3}$ and $\sinh(a) = 
 $$
 \cosh(c) = \left(\frac{5}{3}\right)\left(\frac{17}{8}\right) - \left(\frac{4}{3}\right)\left(\frac{15}{8}\right)\left(\frac{1}{2}\right) = \frac{85}{24} - \frac{30}{24} = \frac{55}{24}
 $$
-Solving for $c$ yields $c = \arccosh(\frac{55}{24})$.
+Solving for $c$ yields $c = \operatorname{arccosh}(\frac{55}{24})$.
 
 A particularly important special case of this law is the **Hyperbolic Pythagorean Theorem**. If a triangle has a right angle, say $C=\frac{\pi}{2}$, then $\cos(C)=0$, and the law of cosines simplifies beautifully to:
 $$
 \cosh(c) = \cosh(a)\cosh(b)
 $$
-Here, $c$ is the hypotenuse opposite the right angle, and $a$ and $b$ are the legs. This is the hyperbolic analogue of the famous Euclidean theorem $c^2=a^2+b^2$. If a right-angled triangle has legs $a = \ln(3)$ and $b = \ln(2)$, we can find the hypotenuse $c$ [@problem_id:1624678]. We have $\cosh(a) = \frac{5}{3}$ and $\cosh(b) = \frac{2+1/2}{2} = \frac{5}{4}$. Therefore, $\cosh(c) = (\frac{5}{3})(\frac{5}{4}) = \frac{25}{12}$, and the length of the hypotenuse is $c = \arccosh(\frac{25}{12})$.
+Here, $c$ is the hypotenuse opposite the right angle, and $a$ and $b$ are the legs. This is the hyperbolic analogue of the famous Euclidean theorem $c^2=a^2+b^2$. If a right-angled triangle has legs $a = \ln(3)$ and $b = \ln(2)$, we can find the hypotenuse $c$ [@problem_id:1624678]. We have $\cosh(a) = \frac{5}{3}$ and $\cosh(b) = \frac{2+1/2}{2} = \frac{5}{4}$. Therefore, $\cosh(c) = (\frac{5}{3})(\frac{5}{4}) = \frac{25}{12}$, and the length of the hypotenuse is $c = \operatorname{arccosh}(\frac{25}{12})$.
 
 #### The Hyperbolic Law of Sines
 
@@ -63,7 +63,7 @@ This law is useful in situations where a side and its opposite angle are known (
 $$
 \sinh(b) = \sinh(1.75) \cdot \frac{\sin(40^\circ)}{\sin(55^\circ)} \approx (2.790) \cdot \frac{0.6428}{0.8192} \approx 2.190
 $$
-From this, $b = \arcsinh(2.190) \approx 1.53$.
+From this, $b = \operatorname{arcsinh}(2.190) \approx 1.53$.
 
 #### The Dual Law of Cosines and AAA Congruence
 
@@ -71,7 +71,7 @@ One of the most striking differences from Euclidean geometry emerges with the **
 $$
 \cos(A) = -\cos(B)\cos(C) + \sin(B)\sin(C)\cosh(a)
 $$
-This law expresses a relationship between the three angles and one side. Its profound implication is that the three angles of a hyperbolic triangle uniquely determine its three side lengths. In Euclidean geometry, knowing all three angles only determines the triangle's shape (similarity), not its size. In hyperbolic geometry, Angle-Angle-Angle (AAA) is a **congruence criterion**.
+This law expresses a relationship between the three angles and one side. Its profound implication is that the three angles of a hyperbolic triangle uniquely determine its three side lengths. In Euclidean geometry, knowing all three angles only determines the triangle's shape (similarity), not its size. In [hyperbolic geometry](@keyword=hyperbolic_geometry|lang=en-US|style=Feynman), Angle-Angle-Angle (AAA) is a **[congruence](@keyword=congruence|lang=en-US|style=Feynman) criterion**.
 
 Let's demonstrate this. Consider a hyperbolic triangle with angles $\alpha_1 = \frac{\pi}{4}$, $\alpha_2 = \frac{\pi}{6}$, and $\alpha_3 = \frac{\pi}{4}$ [@problem_id:1624629]. We can find the length of the side $L_2$ opposite the angle $\alpha_2$ by rearranging the dual law of cosines:
 $$
@@ -81,17 +81,17 @@ Substituting the values:
 $$
 \cosh(L_2) = \frac{\cos(\pi/6) + \cos(\pi/4)\cos(\pi/4)}{\sin(\pi/4)\sin(\pi/4)} = \frac{\frac{\sqrt{3}}{2} + (\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2})}{(\frac{\sqrt{2}}{2})(\frac{\sqrt{2}}{2})} = \frac{\frac{\sqrt{3}}{2} + \frac{1}{2}}{\frac{1}{2}} = \sqrt{3} + 1
 $$
-Thus, the side length is fixed: $L_2 = \arccosh(1+\sqrt{3})$. This calculation shows that specifying the angles leaves no ambiguity about the size of the triangle.
+Thus, the side length is fixed: $L_2 = \operatorname{arccosh}(1+\sqrt{3})$. This calculation shows that specifying the angles leaves no ambiguity about the size of the triangle.
 
 ### Area and Angular Defect
 
 Another fundamental departure from Euclidean geometry is the relationship between a triangle's interior angles and its area. In the Euclidean plane, the sum of angles is always $\pi$, and the area can be arbitrarily large. In the hyperbolic plane, the sum of angles is always less than $\pi$, and this "deficit" is directly proportional to the area.
 
-This remarkable result is a consequence of the **Gauss-Bonnet Theorem**. For a geodesic triangle in a hyperbolic plane with constant curvature $K$, the theorem simplifies to:
+This remarkable result is a consequence of the **Gauss-Bonnet Theorem**. For a [geodesic triangle](@keyword=geodesic_triangle|lang=en-US|style=Feynman) in a hyperbolic plane with constant curvature $K$, the theorem simplifies to:
 $$
 A = \frac{1}{-K} \left(\pi - (\alpha_1 + \alpha_2 + \alpha_3)\right)
 $$
-where $A$ is the area and $\alpha_1, \alpha_2, \alpha_3$ are the interior angles. The quantity $\pi - (\alpha_1 + \alpha_2 + \alpha_3)$ is known as the **angular defect**. For our standard plane with $K=-1$, the formula is simply:
+where $A$ is the area and $\alpha_1, \alpha_2, \alpha_3$ are the interior angles. The quantity $\pi - (\alpha_1 + \alpha_2 + \alpha_3)$ is known as the **[angular defect](@keyword=angular_defect|lang=en-US|style=Feynman)**. For our standard plane with $K=-1$, the formula is simply:
 $$
 A = \pi - (\alpha_1 + \alpha_2 + \alpha_3)
 $$
@@ -103,17 +103,17 @@ A = (n-2)\pi - \sum_{i=1}^n \alpha_i
 $$
 This formula can be used, for example, to determine a missing angle in a pentagon ($n=5$) if its area and other four angles are known [@problem_id:1624679].
 
-The area formula $A = \pi - (\alpha_1 + \alpha_2 + \alpha_3)$ has a fascinating consequence regarding the maximum possible area of a triangle. Since the angles of a non-degenerate triangle must be positive, their sum is always greater than zero. This implies that the area $A$ is always less than $\pi$ (for $K=-1$). The maximum area is not achieved but is approached as the three vertices are moved infinitely far apart to distinct points on the boundary at infinity. In this limit, the geodesics connecting them become parallel and the interior angles all approach zero. Such a figure is called an **ideal triangle**, and it encloses the maximum possible area for a triangle: $A_{max} = \pi$ [@problem_id:1624653].
+The area formula $A = \pi - (\alpha_1 + \alpha_2 + \alpha_3)$ has a fascinating consequence regarding the maximum possible area of a triangle. Since the angles of a non-degenerate triangle must be positive, their sum is always greater than zero. This implies that the area $A$ is always less than $\pi$ (for $K=-1$). The maximum area is not achieved but is approached as the three vertices are moved infinitely far apart to distinct points on the [boundary at infinity](@keyword=boundary_at_infinity|lang=en-US|style=Feynman). In this limit, the geodesics connecting them become parallel and the interior angles all approach zero. Such a figure is called an **ideal triangle**, and it encloses the maximum possible area for a triangle: $A_{max} = \pi$ [@problem_id:1624653].
 
 ### The Euclidean Limit
 
-The trigonometric laws and area formulas of hyperbolic geometry appear strikingly different from their familiar Euclidean counterparts. A crucial test of their validity is the **correspondence principle**: for regions small enough that curvature is negligible, hyperbolic geometry must reduce to Euclidean geometry.
+The trigonometric laws and area formulas of hyperbolic geometry appear strikingly different from their familiar Euclidean counterparts. A crucial test of their validity is the **correspondence principle**: for regions small enough that curvature is negligible, [hyperbolic geometry](@keyword=hyperbolic_geometry|lang=en-US|style=Feynman) must reduce to Euclidean geometry.
 
-Let's verify this for the Law of Cosines for sides. For very small side lengths $a,b,c \ll 1$, we can use the Taylor series expansions for the hyperbolic functions:
+Let's verify this for the Law of Cosines for sides. For very small side lengths $a,b,c \ll 1$, we can use the Taylor series expansions for the [hyperbolic functions](@keyword=hyperbolic_functions|lang=en-US|style=Feynman):
 $$
 \cosh(x) \approx 1 + \frac{x^2}{2} + \frac{x^4}{24} \quad \text{and} \quad \sinh(x) \approx x + \frac{x^3}{6}
 $$
-Substituting these into the hyperbolic law of cosines, $\cosh(c) = \cosh(a)\cosh(b) - \sinh(a)\sinh(b)\cos(C)$, and keeping terms up to second order, we get:
+Substituting these into the [hyperbolic law of cosines](@keyword=hyperbolic_law_of_cosines|lang=en-US|style=Feynman), $\cosh(c) = \cosh(a)\cosh(b) - \sinh(a)\sinh(b)\cos(C)$, and keeping terms up to second order, we get:
 $$
 1 + \frac{c^2}{2} \approx \left(1 + \frac{a^2}{2}\right)\left(1 + \frac{b^2}{2}\right) - (ab)\cos(C) \approx 1 + \frac{a^2}{2} + \frac{b^2}{2} - ab\cos(C)
 $$
@@ -121,10 +121,10 @@ Subtracting 1 from both sides and multiplying by 2 gives:
 $$
 c^2 \approx a^2 + b^2 - 2ab\cos(C)
 $$
-This is precisely the Euclidean Law of Cosines. The hyperbolic formula naturally contains the Euclidean formula as its first-order approximation.
+This is precisely the Euclidean Law of Cosines. The hyperbolic formula naturally contains the Euclidean formula as its [first-order approximation](@keyword=first_order_approximation|lang=en-US|style=Feynman).
 
 A more detailed analysis reveals how the curvature manifests itself as a correction term [@problem_id:1624649]. By carrying the Taylor expansion to the fourth order, one can show that a more accurate approximation for $c^2$ is:
 $$
 c^2 \approx (a^2 + b^2 - 2ab\cos(C)) + \frac{a^2 b^2}{3}\sin^2(C)
 $$
-The first term is the squared Euclidean length, $c_E^2$. The second term is a small, positive correction that depends on the side lengths and angle. This term can be interpreted as the first signature of the negative curvature of the space, causing the side $c$ to be slightly longer than what Euclidean geometry would predict. This smooth transition to Euclidean geometry at small scales provides profound confirmation of the consistency of the hyperbolic framework.
+The first term is the squared Euclidean length, $c_E^2$. The second term is a small, positive correction that depends on the side lengths and angle. This term can be interpreted as the first signature of the [negative curvature](@keyword=negative_curvature|lang=en-US|style=Feynman) of the space, causing the side $c$ to be slightly longer than what Euclidean geometry would predict. This smooth transition to Euclidean geometry at small scales provides profound confirmation of the consistency of the hyperbolic framework.

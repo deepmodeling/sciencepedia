@@ -75,7 +75,7 @@ ACA 是一种“黑箱”方法。它对物理、格林函数或波一无所知�
 
 我们所揭示的原理并不仅限于单频、时谐问题。考虑模拟一个瞬态脉冲，比如雷击产生的电磁脉冲击中一个系统。在这里，我们需要求解一个**[时域积分方程](@keyword=time_domain_integral_equations|lang=zh-CN|style=Feynman) (TDIE)**。其复杂度进一步爆炸。任何时刻的场都取决于物体上电流的整个历史，这种现象称为**[延迟效应](@keyword=retardation_effect|lang=zh-CN|style=Feynman)**。
 
-一个在 $N_t$ 个时间步长上推进的朴素实现，在每一步都必须回顾之前所有的时间步。这导致计算[时间复杂度](@keyword=time_complexity|lang=zh-CN|style=Feynman)为 $\mathcal{O}(N^2 N_{t}^2)$，内存使用量为 $\mathcal{O}(N^2 N_{t})$——这是空间和时间上的**双重困境**[@problem_id:3355658]。但根本问题依然相同：每个时间延迟下的空间算子都是稠密的。通过应用相同的“[分而治之](@keyword=divide_and_conquer_2|lang=zh-CN|style=Feynman)”逻辑并使用时域 FMM，可以在时间卷积的每一步将空间成本从 $\mathcalO(N^2)$ 降低到 $\mathcal{O}(N \log N)$。这将问题从不可能转变为仅仅是非常、非常困难，为模拟曾经无法想象规模的瞬态电磁现象打开了大门。
+一个在 $N_t$ 个时间步长上推进的朴素实现，在每一步都必须回顾之前所有的时间步。这导致计算[时间复杂度](@keyword=time_complexity|lang=zh-CN|style=Feynman)为 $\mathcal{O}(N^2 N_{t}^2)$，内存使用量为 $\mathcal{O}(N^2 N_{t})$——这是空间和时间上的**双重困境**[@problem_id:3355658]。但根本问题依然相同：每个时间延迟下的空间算子都是稠密的。通过应用相同的“[分而治之](@keyword=divide_and_conquer_2|lang=zh-CN|style=Feynman)”逻辑并使用时域 FMM，可以在时间卷积的每一步将空间成本从 $\mathcal{O}(N^2)$ 降低到 $\mathcal{O}(N \log N)$。这将问题从不可能转变为仅仅是非常、非常困难，为模拟曾经无法想象规模的瞬态电磁现象打开了大门。
 
 从[稠密矩阵](@keyword=dense_matrix|lang=zh-CN|style=Feynman)的暴政到 FMM 优雅的层次结构，快速算法的故事证明了人类在面对自然令人生畏的复杂性时的创造力。通过理解相互作用的物理原理，并将它们转化为巧妙的数学和计算结构，我们可以建立一个虚拟实验室来探索[电磁波](@keyword=electromagnetic_wave|lang=zh-CN|style=Feynman)错综复杂的舞蹈。
 

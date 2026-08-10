@@ -13,10 +13,10 @@
 然而，确定秩 $r$ ——即无限阶生成元的数量——则要困难得多，这是数论中一个核心的计算挑战。直接的搜索是无望的，因为这些生成元的坐标可能是分母极大的分数，毫无规律可循。数论学家们发展出一种称为“**下降法 (descent)**”的强大技术。其基本思想是，我们不直接寻找 $E(\mathbb{Q})$ 中的点，而是研究一个相关的、更容易计算的[有限群](@keyword=finite_groups|lang=zh-CN|style=Feynman)，称为**[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman) (Selmer group)**，记作 $\mathrm{Sel}^{(p)}(E/\mathbb{Q})$ [@problem_id:3092242]。
 
 [塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)像一张网，它捕获了所有来自全局[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)的信息，但也可能包含一些“虚假”的信号。这些虚假信号来自于一些在“局部”（即在[实数域](@keyword=real_numbers_field|lang=zh-CN|style=Feynman)和所有 $p$-进[数域](@keyword=number_fields|lang=zh-CN|style=Feynman)上）看起来像是[全局解](@keyword=global_solution|lang=zh-CN|style=Feynman)的投影，但实际上在全局（有理[数域](@keyword=number_fields|lang=zh-CN|style=Feynman)）上并不对应任何真实解的对象。一个美妙的[短正合序列](@keyword=short_exact_sequence|lang=zh-CN|style=Feynman)将这几个对象联系起来：
-$$0 \to E(\mathbb{Q})/2E(\mathbb{Q}) \to \mathrm{Sel}^{(2)}(E/\mathbb{Q}) \to \Sha(E/\mathbb{Q})[2] \to 0$$
+$$0 \to E(\mathbb{Q})/2E(\mathbb{Q}) \to \mathrm{Sel}^{(2)}(E/\mathbb{Q}) \to \mathrm{Ш}(E/\mathbb{Q})[2] \to 0$$
 这个序列告诉我们，[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小给出了秩 $r$ 的一个上界。具体来说，我们可以通过计算[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的维数来约束秩的大小：$r \le \dim_{\mathbb{F}_{2}}\mathrm{Sel}^{(2)}(E/\mathbb{Q}) - \dim_{\mathbb{F}_{2}} E(\mathbb{Q})[2]$ [@problem_id:3092278]。
 
-那么，是什么阻止我们精确计算秩呢？正是上述序列中那个神秘的**沙法列维奇-塔特群 (Shafarevich-Tate group)** $\Sha(E/\mathbb{Q})$。这个群度量了“[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)”的失效程度。也就是说，它由那些在每个局部域（实数和所有 $p$-进数）上都有解，但自身在有理数域上却没有解的“幽灵”几何对象（主[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)）组成 [@problem_id:3092257]。$\Sha$ 群的存在，正是使秩的计算如此困难的根本原因。
+那么，是什么阻止我们精确计算秩呢？正是上述序列中那个神秘的**沙法列维奇-塔特群 (Shafarevich-Tate group)** $\mathrm{Ш}(E/\mathbb{Q})$。这个群度量了“[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)”的失效程度。也就是说，它由那些在每个局部域（实数和所有 $p$-进数）上都有解，但自身在有理数域上却没有解的“幽灵”几何对象（主[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)）组成 [@problem_id:3092257]。$\mathrm{Ш}$ 群的存在，正是使秩的计算如此困难的根本原因。
 
 尽管存在理论上的困难，但在许多具体例子中，我们可以将这些工具结合起来，成功确定秩。一个典型的计算过程 [@problem_id:3092341] 如下：
 1.  使用内格尔-卢兹定理确定[扭子群](@keyword=torsion_subgroup|lang=zh-CN|style=Feynman)。

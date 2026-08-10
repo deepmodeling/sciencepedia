@@ -35,7 +35,7 @@ $$
 0 = \Delta H_p^\circ - T_c \Delta S_p^\circ \quad \implies \quad T_c = \frac{\Delta H_p^\circ}{\Delta S_p^\circ}
 $$
 
-在 $T_c$ 以下，聚合反应在[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)上是有利的（$\Delta G_p \lt 0$）。在 $T_c$ 以上，它是不利的（$\Delta G_p \gt 0$），任何已存在的聚合物都会自发分解回其[单体](@keyword=monomer|lang=zh-CN|style=Feynman)。例如，在[3D打印](@keyword=3d_printing|lang=zh-CN|style=Feynman)和医疗植入物中使用的流行[生物可降解聚合物](@keyword=biodegradable_polymers|lang=zh-CN|style=Feynman)——聚乳酸（PLA），其标准聚合焓约为 $-23.0 \text{ kJ/mol}$，熵变约为 $-45.0 \text{ J/(mol·K)}$。这些值使其[上限温度](@keyword=ceiling_temperature|lang=zh-CN|style=Feynman)约为 $511 \text{ K}$（或 $238 \text{ °C}$），高于此温度它会轻易解链 [@problem_id:1890950]。这个简单的概念解释了为什么在过高的温度下合成某些聚合物是徒劳的——你正在与[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)进行一场注定失败的战斗 [@problem_id:2514094]。
+在 $T_c$ 以下，聚合反应在[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)上是有利的（$\Delta G_p \lt 0$）。在 $T_c$ 以上，它是不利的（$\Delta G_p \gt 0$），任何已存在的聚合物都会自发分解回其[单体](@keyword=monomer|lang=zh-CN|style=Feynman)。例如，在[3D打印](@keyword=3d_printing|lang=zh-CN|style=Feynman)和医疗植入物中使用的流行[生物可降解聚合物](@keyword=biodegradable_polymers|lang=zh-CN|style=Feynman)——聚乳酸（PLA），其标准聚合焓约为 $-23.0 \text{ kJ/mol}$，熵变约为 $-45.0 \mathrm{J/(mol\cdot K)}$。这些值使其[上限温度](@keyword=ceiling_temperature|lang=zh-CN|style=Feynman)约为 $511 \text{ K}$（或 $238 \text{ °C}$），高于此温度它会轻易解链 [@problem_id:1890950]。这个简单的概念解释了为什么在过高的温度下合成某些聚合物是徒劳的——你正在与[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)进行一场注定失败的战斗 [@problem_id:2514094]。
 
 ### 为何结构决定命运：结构设计的作用
 

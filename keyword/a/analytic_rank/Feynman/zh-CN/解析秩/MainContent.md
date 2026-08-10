@@ -32,7 +32,7 @@ $$
 但猜想远不止于此。它预测，$L(E,s)$ 在 $s=1$ 处的泰勒展开中的第一个非零项——正是这个项告诉我们[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为 $r$——编码了曲线一系列最内在的算术秘密 [@problem_id:3022294]。完整的猜想陈述如下：
 
 $$
-\frac{L^{(r)}(E,1)}{r!} = \frac{\#\Sha(E/\mathbb{Q}) \cdot \mathrm{Reg}(E) \cdot \Omega_E \cdot \prod_{p} c_p}{\#E(\mathbb{Q})_{\mathrm{tors}}^2}
+\frac{L^{(r)}(E,1)}{r!} = \frac{\#\mathrm{Ш}(E/\mathbb{Q}) \cdot \mathrm{Reg}(E) \cdot \Omega_E \cdot \prod_{p} c_p}{\#E(\mathbb{Q})_{\mathrm{tors}}^2}
 $$
 
 不要被这个公式吓到！把它想象成一张藏宝图。左边是解析世界。右边是一堆算术宝藏：
@@ -40,7 +40,7 @@ $$
 -   $\mathrm{Reg}(E)$：**[调节子](@keyword=regulon|lang=zh-CN|style=Feynman)** (regulator)，它衡量由我们的“彗星”所生成的基本区域的“体积”。
 -   $\Omega_E$：实周期，一个与曲线上[实数域](@keyword=real_numbers_field|lang=zh-CN|style=Feynman)上的形状相关的因子。
 -   $c_p$：**Tamagawa 数**，用于修正曲线在某些素数上的不良行为。
--   $\#\Sha(E/\mathbb{Q})$：神秘的 **Tate-Shafarevich 群**的大小，这个群衡量了某个“局部-整体”原则的失效程度，是该领域最深的谜团之一。
+-   $\#\mathrm{Ш}(E/\mathbb{Q})$：神秘的 **Tate-Shafarevich 群**的大小，这个群衡量了某个“局部-整体”原则的失效程度，是该领域最深的谜团之一。
 
 BSD 猜想不仅仅是关于两个数字相等；它是一本在分析和算术之间进行精确、定量翻译的词典。
 

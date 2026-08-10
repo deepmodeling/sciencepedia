@@ -57,7 +57,7 @@ The connection doesn't stop there. The constant value of the ratio is directly r
 $$
 \frac{\tau}{\kappa} = \cot\alpha
 $$
-So, if you know a path has a constant torsion-to-curvature ratio of, say, $\sqrt{3}$, you immediately know it's a helix whose tangent makes a constant angle of $\alpha = \arccot(\sqrt{3}) = 30^\circ$ with its axis [@problem_id:1627672]. The intrinsic "feel" of the curve ($\tau/\kappa$) dictates its extrinsic "look" ($\alpha$). This is a profound unification of two different perspectives, revealing the inner consistency and beauty of mathematics.
+So, if you know a path has a constant torsion-to-curvature ratio of, say, $\sqrt{3}$, you immediately know it's a helix whose tangent makes a constant angle of $\alpha = \operatorname{arccot}(\sqrt{3}) = 30^\circ$ with its axis [@problem_id:1627672]. The intrinsic "feel" of the curve ($\tau/\kappa$) dictates its extrinsic "look" ($\alpha$). This is a profound unification of two different perspectives, revealing the inner consistency and beauty of mathematics.
 
 ### The Helix Family: Lines, Planes, and Symmetries
 

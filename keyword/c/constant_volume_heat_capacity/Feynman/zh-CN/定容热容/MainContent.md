@@ -37,7 +37,7 @@ $$U_m = \frac{3}{2}RT$$
 
 $$C_{V,m} = \left(\frac{\partial U_m}{\partial T}\right)_{V} = \frac{\partial}{\partial T}\left(\frac{3}{2}RT\right) = \frac{3}{2}R$$
 
-瞧！我们刚刚从第一性原理出发，计算出了任何单原子理想气体的[摩尔热容](@keyword=molar_specific_heat|lang=zh-CN|style=Feynman) [@problem_id:1969880]。它不依赖于原子的质量或大小，只依赖于它可以在三个维度上移动这一事实。使用 $R \approx 8.314 \, \text{J/(mol·K)}$ 的值，这大约给出 $12.47 \, \text{J/(mol·K)}$ [@problem_id:1877978]。这个原理是普适的：如果某个假设的分子有，比如说，4个自由度，它的[摩尔热容](@keyword=molar_specific_heat|lang=zh-CN|style=Feynman)将简单地是 $C_{V,m} = \frac{4}{2}R = 2R$ [@problem_id:1853885]。[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)就像是自由度的计数器。
+瞧！我们刚刚从第一性原理出发，计算出了任何单原子理想气体的[摩尔热容](@keyword=molar_specific_heat|lang=zh-CN|style=Feynman) [@problem_id:1969880]。它不依赖于原子的质量或大小，只依赖于它可以在三个维度上移动这一事实。使用 $R \approx 8.314 \, \mathrm{J/(mol\cdot K)}$ 的值，这大约给出 $12.47 \, \mathrm{J/(mol\cdot K)}$ [@problem_id:1877978]。这个原理是普适的：如果某个假设的分子有，比如说，4个自由度，它的[摩尔热容](@keyword=molar_specific_heat|lang=zh-CN|style=Feynman)将简单地是 $C_{V,m} = \frac{4}{2}R = 2R$ [@problem_id:1853885]。[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)就像是自由度的计数器。
 
 ### 从原子到哑铃：增加转动与[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)
 
@@ -81,7 +81,7 @@ $$C_{V,m} = \frac{3}{2}R (\text{平动}) + \frac{2}{2}R (\text{转动}) + R (\te
 
 $$C_{V,m} = \left(\frac{\partial U_m}{\partial T}\right)_{V} = 3R$$
 
-这个非凡的结果被称为**[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman)**。它预测，在足够高的温度下，大多数简单固体的[摩尔热容](@keyword=molar_specific_heat|lang=zh-CN|style=Feynman)应该大致相同，约为 $3R \approx 25 \, \text{J/(mol·K)}$。令人惊奇的是，[单原子气体](@keyword=monatomic_gas|lang=zh-CN|style=Feynman)的 $C_V = \frac{3}{2}R$，而由相同原子构成的[固体的热容](@keyword=heat_capacity_of_solids|lang=zh-CN|style=Feynman)恰好是它的两倍 [@problem_id:1970450]。这种差异完全是由于原子被锁定在[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中而获得的势能，这是这些物理原理在不同物态中统一性的完美例证。（当然，在低温下，这些[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式也会被冻结，这一现象首先由 Einstein 解释，后来由 Debye 完善）。
+这个非凡的结果被称为**[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman)**。它预测，在足够高的温度下，大多数简单固体的[摩尔热容](@keyword=molar_specific_heat|lang=zh-CN|style=Feynman)应该大致相同，约为 $3R \approx 25 \, \mathrm{J/(mol\cdot K)}$。令人惊奇的是，[单原子气体](@keyword=monatomic_gas|lang=zh-CN|style=Feynman)的 $C_V = \frac{3}{2}R$，而由相同原子构成的[固体的热容](@keyword=heat_capacity_of_solids|lang=zh-CN|style=Feynman)恰好是它的两倍 [@problem_id:1970450]。这种差异完全是由于原子被锁定在[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中而获得的势能，这是这些物理原理在不同物态中统一性的完美例证。（当然，在低温下，这些[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式也会被冻结，这一现象首先由 Einstein 解释，后来由 Debye 完善）。
 
 ### 更深层次的探讨：[真实气体](@keyword=real_gases|lang=zh-CN|style=Feynman)与[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)的惊喜
 

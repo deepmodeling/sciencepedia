@@ -1,63 +1,63 @@
 ## 引言
-[配平的化学方程式](@entry_id:141254)简洁地总结了一个反应，展示了起始物料和最终产物，就像电影海报揭示演员阵容并暗示结局一样。然而，它完全没有告诉我们实际的情节——构成真实[反应机理](@entry_id:149504)的事件序列和中间步骤。这种总体概述与底层过程之间的鸿沟是[化学动力学](@entry_id:144961)中的一个核心挑战。本文深入探讨了这一挑战，首先解释了区分单步[基元反应](@entry_id:177550)与多步[复杂反应](@entry_id:166407)的基本原理。在“原理与机理”一章中，我们将探讨支配[基元步骤](@entry_id:143394)的规则以及揭示隐藏复杂性的分析线索。随后，“应用与跨学科联系”一章将展示如何应用这一基本区别来理解和操控从[大气化学](@entry_id:198364)到[细胞生物学](@entry_id:143618)等不同领域的复杂系统。
+[配平的化学方程式](@keyword=balanced_chemical_equation|lang=zh-CN|style=Feynman)简洁地总结了一个反应，展示了起始物料和最终产物，就像电影海报揭示演员阵容并暗示结局一样。然而，它完全没有告诉我们实际的情节——构成真实[反应机理](@keyword=reaction_mechanisms|lang=zh-CN|style=Feynman)的事件序列和中间步骤。这种总体概述与底层过程之间的鸿沟是[化学动力学](@keyword=chemical_kinetics|lang=zh-CN|style=Feynman)中的一个核心挑战。本文深入探讨了这一挑战，首先解释了区分单步[基元反应](@keyword=elementary_reactions|lang=zh-CN|style=Feynman)与多步[复杂反应](@keyword=complex_reactions|lang=zh-CN|style=Feynman)的基本原理。在“原理与机理”一章中，我们将探讨支配[基元步骤](@keyword=elementary_steps|lang=zh-CN|style=Feynman)的规则以及揭示隐藏复杂性的分析线索。随后，“应用与跨学科联系”一章将展示如何应用这一基本区别来理解和操控从[大气化学](@keyword=atmospheric_chemistry|lang=zh-CN|style=Feynman)到[细胞生物学](@keyword=cell_biology|lang=zh-CN|style=Feynman)等不同领域的复杂系统。
 
 ## 原理与机理
 
 ### 化学脚本 vs. 电影海报
 
-想象一下你看到一张宏大史诗电影的海报。它展示了英雄和反派，并暗示了一个戏剧性的结局。化学反应的总方程式，比如著名的水[生成反应](@entry_id:147837) $2\mathrm{H}_2 + \mathrm{O}_2 \rightarrow 2\mathrm{H}_2\mathrm{O}$，就很像那张电影海报。它告诉你主角（反应物 $\mathrm{H}_2$ 和 $\mathrm{O}_2$）和最终结局（产物 $\mathrm{H}_2\mathrm{O}$）。但它对情节本身却只字未提。它没有揭示任何曲折、转瞬即逝的中间角色，或是实际导致从开始到结束的事件序列。要真正理解一个反应的故事，我们必须超越海报，阅读脚本。
+想象一下你看到一张宏大史诗电影的海报。它展示了英雄和反派，并暗示了一个戏剧性的结局。化学反应的总方程式，比如著名的水[生成反应](@keyword=formation_reaction|lang=zh-CN|style=Feynman) $2\mathrm{H}_2 + \mathrm{O}_2 \rightarrow 2\mathrm{H}_2\mathrm{O}$，就很像那张电影海报。它告诉你主角（反应物 $\mathrm{H}_2$ 和 $\mathrm{O}_2$）和最终结局（产物 $\mathrm{H}_2\mathrm{O}$）。但它对情节本身却只字未提。它没有揭示任何曲折、转瞬即逝的中间角色，或是实际导致从开始到结束的事件序列。要真正理解一个反应的故事，我们必须超越海报，阅读脚本。
 
-在化学中，脚本由一系列**基元反应**构成。**基元反应**是在分子层面发生的、单一且不可分割的事件。它是我们化学电影中的一个场景：两个[分子碰撞](@entry_id:137334)并反应，一个激发的分子自行分解，或者一个原子从一个分子传递到另一个分子。这是化学变化的基本层面。
+在化学中，脚本由一系列**基元反应**构成。**基元反应**是在分子层面发生的、单一且不可分割的事件。它是我们化学电影中的一个场景：两个[分子碰撞](@keyword=molecular_collisions|lang=zh-CN|style=Feynman)并反应，一个激发的分子自行分解，或者一个原子从一个分子传递到另一个分子。这是化学变化的基本层面。
 
 ### 相遇法则
 
-对于这些简单的基元场景，有一个 beautifully intuitive 的规则来支配它们的发生速率。它有一个相当宏大的名字，叫**质量作用定律**，但其核心思想非常符合常理：[反应速率](@entry_id:185114)取决于必要参与[物相](@entry_id:196677)遇的频率。
+对于这些简单的基元场景，有一个 beautifully intuitive 的规则来支配它们的发生速率。它有一个相当宏大的名字，叫**质量作用定律**，但其核心思想非常符合常理：[反应速率](@keyword=rate_of_reaction|lang=zh-CN|style=Feynman)取决于必要参与[物相](@keyword=phases_of_matter|lang=zh-CN|style=Feynman)遇的频率。
 
 如果一个基元反应涉及单个分子 $\mathrm{A}$ 自发地改变其形式（$\mathrm{A} \rightarrow \mathrm{P}$），速率仅取决于存在多少个 $\mathrm{A}$ 分子。你拥有的分子越多，每秒看到的事件就越多。速率 $r$ 与 $\mathrm{A}$ 的浓度（写作 $[\mathrm{A}]$）成正比。所以，$r = k[\mathrm{A}]$。
 
 如果反应需要一个 $\mathrm{A}$ 分子找到并与一个 $\mathrm{B}$ 分子碰撞（$\mathrm{A} + \mathrm{B} \rightarrow \mathrm{P}$），速率则取决于它们相遇的概率。在一个充分混合的化学反应体系中，这个机会与两种物质的浓度都成正比。将 $\mathrm{A}$ 的量加倍，碰撞的机会就加倍；将 $\mathrm{B}$ 的量加倍，机会再次加倍。因此，速率与它们浓度的乘积成正比：$r = k[\mathrm{A}][\mathrm{B}]$。
 
-参与[基元步骤](@entry_id:143394)的分子数量称为其**[反应分子数](@entry_id:136888)**。[速率定律](@entry_id:276849)中的指数是**[反应级数](@entry_id:142981)**。质量作用定律揭示了一个深刻的联系：对于基元反应，且*仅*对于基元反应，[反应级数](@entry_id:142981)必须与代表其[反应分子数](@entry_id:136888)的反应物[化学计量系数](@entry_id:204082)相同。这是我们进行化学侦探工作的万能钥匙。
+参与[基元步骤](@keyword=elementary_steps|lang=zh-CN|style=Feynman)的分子数量称为其**[反应分子数](@keyword=molecularity|lang=zh-CN|style=Feynman)**。[速率定律](@keyword=rate_laws|lang=zh-CN|style=Feynman)中的指数是**[反应级数](@keyword=reaction_order|lang=zh-CN|style=Feynman)**。质量作用定律揭示了一个深刻的联系：对于基元反应，且*仅*对于基元反应，[反应级数](@keyword=reaction_order|lang=zh-CN|style=Feynman)必须与代表其[反应分子数](@keyword=molecularity|lang=zh-CN|style=Feynman)的反应物[化学计量系数](@keyword=stoichiometric_coefficient|lang=zh-CN|style=Feynman)相同。这是我们进行化学侦探工作的万能钥匙。
 
-这个逻辑也帮助我们理解著名的 Arrhenius 方程，$k = A \exp(-E_a / (RT))$。$E_a$ 项，即活化能，代表了分子为了发生反应必须攀登的能量山峰的高度。指前因子 $A$ 与[反应分子数](@entry_id:136888)密切相关；它是“尝试频率”的量度——即分子以正确方向碰撞的频率。对于[单分子反应](@entry_id:167301)，$A$ 与导致变化的内部[分子振动频率](@entry_id:186321)有关。对于[双分子反应](@entry_id:165027)，它与反应物分子之间的[碰撞频率](@entry_id:138992)有关。山的高度 $E_a$ 是这个地形的固有属性，但尝试攀登的频率 $A$ 直接取决于有多少攀登者以及他们必须如何接近攀登。
+这个逻辑也帮助我们理解著名的 Arrhenius 方程，$k = A \exp(-E_a / (RT))$。$E_a$ 项，即活化能，代表了分子为了发生反应必须攀登的能量山峰的高度。指前因子 $A$ 与[反应分子数](@keyword=molecularity|lang=zh-CN|style=Feynman)密切相关；它是“尝试频率”的量度——即分子以正确方向碰撞的频率。对于[单分子反应](@keyword=unimolecular_reactions|lang=zh-CN|style=Feynman)，$A$ 与导致变化的内部[分子振动频率](@keyword=molecular_vibrational_frequencies|lang=zh-CN|style=Feynman)有关。对于[双分子反应](@keyword=bimolecular_reactions|lang=zh-CN|style=Feynman)，它与反应物分子之间的[碰撞频率](@keyword=collision_frequency|lang=zh-CN|style=Feynman)有关。山的高度 $E_a$ 是这个地形的固有属性，但尝试攀登的频率 $A$ 直接取决于有多少攀登者以及他们必须如何接近攀登。
 
 这也立即告诉我们为什么写成 $\mathrm{A} + \mathrm{B} + \mathrm{C} \rightarrow \mathrm{P}$ 的反应几乎肯定不是一个基元步骤。三个独立的分子恰好在同一微小地点、同一瞬间、以足够的能量和正确的方向相遇的概率是无穷小的。这就像试图安排三辆特定的出租车在曼哈顿市中心同时相撞。自然界总是高效的，几乎总是通过一系列双体相遇的方式找到更简单的途径。
 
 ### 揭開偽裝：複雜反應
 
-這就引出了絕大多數的反應，它們都不是基元的。它們是**複雜反應**。**複雜反應**是完整的故事——一系列基元步驟的最終結果。這一系列步驟就是**反應機理**。而這裡有一個關鍵的情節轉折：對於複雜反應，實驗測得的[速率定律](@entry_id:276849)不必與電影海報上写的總化學計量相匹配。事實上，它很少匹配。
+這就引出了絕大多數的反應，它們都不是基元的。它們是**複雜反應**。**複雜反應**是完整的故事——一系列基元步驟的最終結果。這一系列步驟就是**反應機理**。而這裡有一個關鍵的情節轉折：對於複雜反應，實驗測得的[速率定律](@keyword=rate_laws|lang=zh-CN|style=Feynman)不必與電影海報上写的總化學計量相匹配。事實上，它很少匹配。
 
-讓我們來扮演偵探。假設我們研究一個總化學計量為 $\mathrm{A} + \mathrm{B} \rightarrow \mathrm{P}$ 的反應。我們前往實驗室，仔細測量速率如何隨著 A 和 B 濃度的變化而變化。我們發現[速率定律](@entry_id:276849)是 $r = k[\mathrm{A}]^{1.0} [\mathrm{B}]^{0.5}$。相對於 B 的級數是 $0.5$，而不是我們在總方程式中看到的 $1$。這種不匹配是確鑿的證據。它證明了反應不可能是基元的；它*必定*是复杂的。分数级数是一个不容否認的线索。同样，如果我们研究反应 $\mathrm{A} + 2\mathrm{B} \rightarrow \mathrm{P}$ 並發現其[速率定律](@entry_id:276849)是 $r = k[\mathrm{A}]^{1.0} [\mathrm{B}]^{1.0}$，B 的级数是 $1$ 而不是 $2$ 这一事实再次证明我们正在研究一个复杂的机理。
+讓我們來扮演偵探。假設我們研究一個總化學計量為 $\mathrm{A} + \mathrm{B} \rightarrow \mathrm{P}$ 的反應。我們前往實驗室，仔細測量速率如何隨著 A 和 B 濃度的變化而變化。我們發現[速率定律](@keyword=rate_laws|lang=zh-CN|style=Feynman)是 $r = k[\mathrm{A}]^{1.0} [\mathrm{B}]^{0.5}$。相對於 B 的級數是 $0.5$，而不是我們在總方程式中看到的 $1$。這種不匹配是確鑿的證據。它證明了反應不可能是基元的；它*必定*是复杂的。分数级数是一个不容否認的线索。同样，如果我们研究反应 $\mathrm{A} + 2\mathrm{B} \rightarrow \mathrm{P}$ 並發現其[速率定律](@keyword=rate_laws|lang=zh-CN|style=Feynman)是 $r = k[\mathrm{A}]^{1.0} [\mathrm{B}]^{1.0}$，B 的级数是 $1$ 而不是 $2$ 这一事实再次证明我们正在研究一个复杂的机理。
 
 这样奇怪且不直观的速率定律是如何产生的呢？它们是底层多步机理的数学回声。一个经典的例子来自链式反应，从爆炸到塑料合成的一切都与它有关。总反应可能看起来 deceptively simple，比如说 $\mathrm{A} \rightarrow \mathrm{P}$。但机理可能是一出戏剧性的大戲，角色齊全：
 
-1.  **引发**：一个稳定的分子 $\mathrm{A}$ 缓慢分解，形成一对称为[自由基](@entry_id:188302)的高[活性中间体](@entry_id:151819) $\mathrm{X}$：$\mathrm{A} \xrightarrow{k_i} 2\mathrm{X}$。
-2.  **增长**：这个[自由基](@entry_id:188302)是一个旋风。它与一个稳定的分子 $\mathrm{A}$ 反应生成产物 $\mathrm{P}$，但在此过程中，它又再生了自己：$\mathrm{X} + \mathrm{A} \xrightarrow{k_p} \mathrm{X} + \mathrm{P}$。这个步骤可以一遍又一遍地发生，传播链条。
-3.  **终止**：最终，两个[自由基](@entry_id:188302)找到彼此并结合，结束链条：$\mathrm{X} + \mathrm{X} \xrightarrow{k_t} \mathrm{T}$。
+1.  **引发**：一个稳定的分子 $\mathrm{A}$ 缓慢分解，形成一对称为[自由基](@keyword=free_radical|lang=zh-CN|style=Feynman)的高[活性中间体](@keyword=reactive_intermediates|lang=zh-CN|style=Feynman) $\mathrm{X}$：$\mathrm{A} \xrightarrow{k_i} 2\mathrm{X}$。
+2.  **增长**：这个[自由基](@keyword=free_radical|lang=zh-CN|style=Feynman)是一个旋风。它与一个稳定的分子 $\mathrm{A}$ 反应生成产物 $\mathrm{P}$，但在此过程中，它又再生了自己：$\mathrm{X} + \mathrm{A} \xrightarrow{k_p} \mathrm{X} + \mathrm{P}$。这个步骤可以一遍又一遍地发生，传播链条。
+3.  **终止**：最终，两个[自由基](@keyword=free_radical|lang=zh-CN|style=Feynman)找到彼此并结合，结束链条：$\mathrm{X} + \mathrm{X} \xrightarrow{k_t} \mathrm{T}$。
 
-[自由基](@entry_id:188302) $\mathrm{X}$ 就像蜉蝣：其个体寿命極其短暂。它们被生成和消耗得如此之快，以至于它们的总数量保持微小且幾乎恒定。这种洞见被称为**[稳态近似](@entry_id:140455)**。通过应用这种近似，我们可以解出[自由基](@entry_id:188302)的浓度，并发现总[反应速率](@entry_id:185114)并不仅仅与 $[\mathrm{A}]$ 成正比。相反，从数学推导中出现了一个更奇怪的形式：$r_A = k_p\sqrt{k_i/k_t}\,[A]^{3/2}$。一个奇怪的 $1.5$ 分数级数，自然地从一个简单的基元步骤序列中产生。
+[自由基](@keyword=free_radical|lang=zh-CN|style=Feynman) $\mathrm{X}$ 就像蜉蝣：其个体寿命極其短暂。它们被生成和消耗得如此之快，以至于它们的总数量保持微小且幾乎恒定。这种洞见被称为**[稳态近似](@keyword=steady_state_approximation|lang=zh-CN|style=Feynman)**。通过应用这种近似，我们可以解出[自由基](@keyword=free_radical|lang=zh-CN|style=Feynman)的浓度，并发现总[反应速率](@keyword=rate_of_reaction|lang=zh-CN|style=Feynman)并不仅仅与 $[\mathrm{A}]$ 成正比。相反，从数学推导中出现了一个更奇怪的形式：$r_A = k_p\sqrt{k_i/k_t}\,[A]^{3/2}$。一个奇怪的 $1.5$ 分数级数，自然地从一个简单的基元步骤序列中产生。
 
-自然界构建复杂性的另一种常见方式是通过**[预平衡近似](@entry_id:147445)**。这种情况发生在机理的第一步是一个快速可逆的反应，建立了一个小的、平衡浓度的中间体，然后该中间体在一个较慢的后续步骤中继续反应。例如，一个看起来像是极不可能的三体碰撞反应 $\mathrm{A} + \mathrm{B} + \mathrm{C} \rightarrow \mathrm{P}$，通常暗地里是一出两幕剧：一个快速平衡形成中间体复合物（$\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{I}$），然后是该复合物与 C 的慢速、速率决定反应（$\mathrm{I} + \mathrm{C} \rightarrow \mathrm{P}$）。最终的速率定律形式为 $r = k_{eff} [\mathrm{A}][\mathrm{B}][\mathrm{C}]$，完美地模仿了[三分子反应](@entry_id:198929)，但它完全是由更简单、更可能的双分子步骤构成的。
+自然界构建复杂性的另一种常见方式是通过**[预平衡近似](@keyword=pre_equilibrium_approximation|lang=zh-CN|style=Feynman)**。这种情况发生在机理的第一步是一个快速可逆的反应，建立了一个小的、平衡浓度的中间体，然后该中间体在一个较慢的后续步骤中继续反应。例如，一个看起来像是极不可能的三体碰撞反应 $\mathrm{A} + \mathrm{B} + \mathrm{C} \rightarrow \mathrm{P}$，通常暗地里是一出两幕剧：一个快速平衡形成中间体复合物（$\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{I}$），然后是该复合物与 C 的慢速、速率决定反应（$\mathrm{I} + \mathrm{C} \rightarrow \mathrm{P}$）。最终的速率定律形式为 $r = k_{eff} [\mathrm{A}][\mathrm{B}][\mathrm{C}]$，完美地模仿了[三分子反应](@keyword=termolecular_reaction|lang=zh-CN|style=Feynman)，但它完全是由更简单、更可能的双分子步骤构成的。
 
 ### 侦探的警示：必要但不充分的线索
 
-所以，测得的[速率定律](@entry_id:276849)与总化学计量之间的不匹配是反应复杂的确定性证据。但如果它们恰好匹配呢？考虑一个反应 $2\mathrm{A} \rightarrow \mathrm{P}$，我们测得其[速率定律](@entry_id:276849)为 $r=k[\mathrm{A}]^2$。级数与化学计量[完美匹配](@entry_id:273916)。我们能庆祝，收起实验服，宣布反应是基元的吗？
+所以，测得的[速率定律](@keyword=rate_laws|lang=zh-CN|style=Feynman)与总化学计量之间的不匹配是反应复杂的确定性证据。但如果它们恰好匹配呢？考虑一个反应 $2\mathrm{A} \rightarrow \mathrm{P}$，我们测得其[速率定律](@keyword=rate_laws|lang=zh-CN|style=Feynman)为 $r=k[\mathrm{A}]^2$。级数与化学计量[完美匹配](@keyword=perfect_matching|lang=zh-CN|style=Feynman)。我们能庆祝，收起实验服，宣布反应是基元的吗？
 
-绝对不能。这是一个经典的逻辑陷阱，曾使许多学生陷入其中。虽然[基元反应](@entry_id:177550)*必须*具有匹配的级数，但[复杂反应](@entry_id:166407)可以通过其机理的某种特殊巧合，共谋产生一个*看起来*简单的速率定律。级数与化学计量的匹配是反应成为基元的*必要*条件，但不是*充分*条件。它只意味着反应*可能*是基元的。侦探的工作从未真正完成；总是需要其他证据，例如[直接探测](@entry_id:748463)到中间体，来构建更强的案例。
+绝对不能。这是一个经典的逻辑陷阱，曾使许多学生陷入其中。虽然[基元反应](@keyword=elementary_reactions|lang=zh-CN|style=Feynman)*必须*具有匹配的级数，但[复杂反应](@keyword=complex_reactions|lang=zh-CN|style=Feynman)可以通过其机理的某种特殊巧合，共谋产生一个*看起来*简单的速率定律。级数与化学计量的匹配是反应成为基元的*必要*条件，但不是*充分*条件。它只意味着反应*可能*是基元的。侦探的工作从未真正完成；总是需要其他证据，例如[直接探测](@keyword=direct_detection|lang=zh-CN|style=Feynman)到中间体，来构建更强的案例。
 
-### 统一原理：[动力学与热力学](@entry_id:138039)的交汇
+### 统一原理：[动力学与热力学](@keyword=kinetics_vs_thermodynamics|lang=zh-CN|style=Feynman)的交汇
 
-看起来动力学——研究[反应路径](@entry_id:163735)和速度的学科——与[热力学](@entry_id:172368)——研究能量、平衡和事物最终状态的学科——似乎是两个独立的世界。但自然是一个统一的整体，这两个领域通过一个名为**[微观可逆性原理](@entry_id:137392)**的美妙概念紧密相连。
+看起来动力学——研究[反应路径](@keyword=reaction_path|lang=zh-CN|style=Feynman)和速度的学科——与[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)——研究能量、平衡和事物最终状态的学科——似乎是两个独立的世界。但自然是一个统一的整体，这两个领域通过一个名为**[微观可逆性原理](@keyword=principle_of_microscopic_reversibility|lang=zh-CN|style=Feynman)**的美妙概念紧密相连。
 
-在平衡状态下，系统看起来是静止的，但在分子层面却是一场活动的旋风。该原理指出，在平衡时，每个基元过程的速率与其逆过程的速率完全相等。对于一个简单的可逆步骤 $\mathrm{A} \rightleftharpoons \mathrm{B}$，这意味着 $\mathrm{A}$ 转化为 $\mathrm{B}$ 的速率（由 $k_f[\mathrm{A}]_{eq}$ 给出）必须等于 $\mathrm{B}$ 变回 $\mathrm{A}$ 的速率（由 $k_r[\mathrmB]_{eq}$ 给出）。一点代数运算就得出了一个深刻的结果：
+在平衡状态下，系统看起来是静止的，但在分子层面却是一场活动的旋风。该原理指出，在平衡时，每个基元过程的速率与其逆过程的速率完全相等。对于一个简单的可逆步骤 $\mathrm{A} \rightleftharpoons \mathrm{B}$，这意味着 $\mathrm{A}$ 转化为 $\mathrm{B}$ 的速率（由 $k_f[\mathrm{A}]_{eq}$ 给出）必须等于 $\mathrm{B}$ 变回 $\mathrm{A}$ 的速率（由 $k_r[\mathrm{B}]_{eq}$ 给出）。一点代数运算就得出了一个深刻的结果：
 $$ \frac{k_f}{k_r} = \frac{[\mathrm{B}]_{eq}}{[\mathrm{A}]_{eq}} = K_{eq} $$
-正逆*[速率常数](@entry_id:140362)*（纯粹的动力学量）之比必须等于*[热力学平衡常数](@entry_id:164623)*。路径与终点密不可分。这不仅仅是一个巧妙的理论奇观；它是对任何提出的[反应机理](@entry_id:149504)的强力约束。如果一个科学家团队提出了一个包含一组正向和逆向[速率常数](@entry_id:140362)的机理，但它们的比率与总反应的已知[平衡常数](@entry_id:141040)不匹配，那么他们的模型在物理上是错误的。这一原理确保了我们的动力学脚本总能导致电影正确的、符合[热力学](@entry_id:172368)的结局。
+正逆*[速率常数](@keyword=rate_constant|lang=zh-CN|style=Feynman)*（纯粹的动力学量）之比必须等于*[热力学平衡常数](@keyword=thermodynamic_equilibrium_constant|lang=zh-CN|style=Feynman)*。路径与终点密不可分。这不仅仅是一个巧妙的理论奇观；它是对任何提出的[反应机理](@keyword=reaction_mechanisms|lang=zh-CN|style=Feynman)的强力约束。如果一个科学家团队提出了一个包含一组正向和逆向[速率常数](@keyword=rate_constant|lang=zh-CN|style=Feynman)的机理，但它们的比率与总反应的已知[平衡常数](@keyword=equilibrium_constant|lang=zh-CN|style=Feynman)不匹配，那么他们的模型在物理上是错误的。这一原理确保了我们的动力学脚本总能导致电影正确的、符合[热力学](@keyword=thermo_mechanics|lang=zh-CN|style=Feynman)的结局。
 
 ### 从理论到烈焰：极端条件下的反应
 
-[基元反应](@entry_id:177550)和[复杂反应](@entry_id:166407)之间的区别仅仅是一种学术活动吗？远非如此。它是一些现代科学和工程中最具挑战性问题的核心。想象一艘以25倍音速重返地球大气层的航天器。其前方的冲击波中的空气在微秒内被压缩和加热到数千度。
+[基元反应](@keyword=elementary_reactions|lang=zh-CN|style=Feynman)和[复杂反应](@keyword=complex_reactions|lang=zh-CN|style=Feynman)之间的区别仅仅是一种学术活动吗？远非如此。它是一些现代科学和工程中最具挑战性问题的核心。想象一艘以25倍音速重返地球大气层的航天器。其前方的冲击波中的空气在微秒内被压缩和加热到数千度。
 
-想要预测飞行器隔熱罩上強烈热负荷的工程师不能简单地使用像 $\mathrm{N}_2 + \mathrm{O}_2 \rightarrow 2\mathrm{NO}$ 這樣的“总包”反應。那是電影海報，依賴它將是危險的誤導。為了得到正確的物理描述，他們需要完整的腳本：一個可能包含數十甚至数百个基元步骤的详细**[反应机理](@entry_id:149504)**。他们必须考虑氮气和氧气分子剧烈振动，与其他分子碰撞并分解（$\mathrm{N}_2 + \mathrm{M} \rightarrow 2\mathrm{N} + \mathrm{M}$），原子在炽热的相遇中交換伴侶（$\mathrm{N} + \mathrm{O}_2 \rightarrow \mathrm{NO} + \mathrm{O}$），以及一系列其他过程。
+想要预测飞行器隔熱罩上強烈热负荷的工程师不能简单地使用像 $\mathrm{N}_2 + \mathrm{O}_2 \rightarrow 2\mathrm{NO}$ 這樣的“总包”反應。那是電影海報，依賴它將是危險的誤導。為了得到正確的物理描述，他們需要完整的腳本：一個可能包含數十甚至数百个基元步骤的详细**[反应机理](@keyword=reaction_mechanisms|lang=zh-CN|style=Feynman)**。他们必须考虑氮气和氧气分子剧烈振动，与其他分子碰撞并分解（$\mathrm{N}_2 + \mathrm{M} \rightarrow 2\mathrm{N} + \mathrm{M}$），原子在炽热的相遇中交換伴侶（$\mathrm{N} + \mathrm{O}_2 \rightarrow \mathrm{NO} + \mathrm{O}$），以及一系列其他过程。
 
-這些詳細的機理計算量極大，因此它們通常被仔細簡化為**[简化机理](@entry_id:1131726)**用於模擬。但所有這些模型的基礎都是對基元步驟的正确理解。将整体转变拆解为其[基本事件](@entry_id:265317)，是现代化学的基石，从设计拯救生命的药物和高效催化剂，到建造更安全的航天器和揭示生命复杂的生物化学。
+這些詳細的機理計算量極大，因此它們通常被仔細簡化為**[简化机理](@keyword=skeletal_mechanism|lang=zh-CN|style=Feynman)**用於模擬。但所有這些模型的基礎都是對基元步驟的正确理解。将整体转变拆解为其[基本事件](@keyword=elementary_events|lang=zh-CN|style=Feynman)，是现代化学的基石，从设计拯救生命的药物和高效催化剂，到建造更安全的航天器和揭示生命复杂的生物化学。
 

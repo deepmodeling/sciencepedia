@@ -51,7 +51,7 @@ The elegant logic of biomarkers extends far beyond the clinic and into fields li
 
 Just as biomarkers can predict efficacy, they can also predict harm. This is the critical role of **safety biomarkers**, which come in two main flavors [@problem_id:4993886].
 
-**Predictive safety biomarkers** are pre-treatment warning signs. They identify individuals with a built-in susceptibility to a specific drug's side effects. The most stunning success story in this category is the use of $HLA-B^\*57:01$ genotyping. Patients carrying this genetic variant have a very high risk of a severe, life-threatening hypersensitivity reaction to the antiviral drug abacavir. Screening for this biomarker before treatment has virtually eliminated this adverse event, a true triumph of preventative personalized medicine.
+**Predictive safety biomarkers** are pre-treatment warning signs. They identify individuals with a built-in susceptibility to a specific drug's side effects. The most stunning success story in this category is the use of $HLA-B^*57:01$ genotyping. Patients carrying this genetic variant have a very high risk of a severe, life-threatening hypersensitivity reaction to the antiviral drug abacavir. Screening for this biomarker before treatment has virtually eliminated this adverse event, a true triumph of preventative personalized medicine.
 
 **Monitoring safety biomarkers** are the "check engine" lights during treatment. They are measured serially to detect emerging organ injury. The routine measurement of the liver enzyme $\text{ALT}$ during therapy with many drugs is a classic example. A significant rise in $\text{ALT}$ signals potential liver damage, prompting doctors to stop the drug before irreversible harm occurs.
 

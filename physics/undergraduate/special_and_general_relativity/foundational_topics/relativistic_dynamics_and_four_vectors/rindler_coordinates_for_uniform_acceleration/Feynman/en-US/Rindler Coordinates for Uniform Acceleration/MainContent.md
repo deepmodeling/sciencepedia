@@ -18,7 +18,7 @@ Let's call our new coordinates $(\eta, \xi)$. Here, $\xi$ (the Greek letter xi) 
 $$t = \xi \sinh(\eta)$$
 $$x = \xi \cosh(\eta)$$
 
-These simple-looking equations are packed with profound physics. A constant value of $\xi$ and changing $\eta$ traces out the hyperbolic [worldline](@keyword=worldline|lang=en-US|style=Feynman) of one of the ships in our fleet [@problem_id:1849710]. A constant value of $\eta$, on the other hand, defines a "moment of now" for the entire fleet—a surface of simultaneity. For any event with inertial coordinates $(t,x)$, we can find its Rindler time by the relation $\eta = \arctanh(t/x)$ [@problem_id:1849690]. This new grid of rulers and clocks is perfectly tailored to the world of [constant acceleration](@keyword=constant_acceleration|lang=en-US|style=Feynman).
+These simple-looking equations are packed with profound physics. A constant value of $\xi$ and changing $\eta$ traces out the hyperbolic [worldline](@keyword=worldline|lang=en-US|style=Feynman) of one of the ships in our fleet [@problem_id:1849710]. A constant value of $\eta$, on the other hand, defines a "moment of now" for the entire fleet—a surface of simultaneity. For any event with inertial coordinates $(t,x)$, we can find its Rindler time by the relation $\eta = \operatorname{arctanh}(t/x)$ [@problem_id:1849690]. This new grid of rulers and clocks is perfectly tailored to the world of [constant acceleration](@keyword=constant_acceleration|lang=en-US|style=Feynman).
 
 ### The Price of Acceleration: Spacetime à la Rindler
 

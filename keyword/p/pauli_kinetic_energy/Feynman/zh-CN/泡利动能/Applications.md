@@ -49,7 +49,7 @@ ELF提供了一座视觉桥梁，将量子力学的抽象数学与化学家每�
 *   第二级，**[广义梯度近似](@keyword=generalized_gradient_approximation|lang=zh-CN|style=Feynman)（GGA）**，增加了密度的梯度 $|\nabla\rho(\mathbf{r})|$。
 *   第三级是我们主角登场的地方：**[meta-GGA](@keyword=meta_gga|lang=zh-CN|style=Feynman)** 泛函增加了动能密度 $\tau(\mathbf{r})$。
 
-为什么 $\tau(\mathbf{r})$ 如此重要？因为它包含了关于[泡利动能](@keyword=pauli_kinetic_energy|lang=zh-CN|style=Feynman)的信息。在空间的任何一点，我们都可以将真实的动能密度 $\tau(\mathbfr)$ 与冯·魏茨泽克密度 $\tau_W(\mathbf{r})$（它只依赖于 $\rho$ 和 $\nabla\rho$）进行比较。这个差异，即[泡利动能](@keyword=pauli_kinetic_energy|lang=zh-CN|style=Feynman)，告诉泛函它处于什么样的电子环境中——这是密度及其梯度本身无法做到的事情 [@problem_id:2464930]。它使得泛函能够区分一个由单个电子对主导的区域和一个有许多重叠、[离域电子](@keyword=delocalized_electrons|lang=zh-CN|style=Feynman)的区域。
+为什么 $\tau(\mathbf{r})$ 如此重要？因为它包含了关于[泡利动能](@keyword=pauli_kinetic_energy|lang=zh-CN|style=Feynman)的信息。在空间的任何一点，我们都可以将真实的动能密度 $\tau(\mathbf{r})$ 与冯·魏茨泽克密度 $\tau_W(\mathbf{r})$（它只依赖于 $\rho$ 和 $\nabla\rho$）进行比较。这个差异，即[泡利动能](@keyword=pauli_kinetic_energy|lang=zh-CN|style=Feynman)，告诉泛函它处于什么样的电子环境中——这是密度及其梯度本身无法做到的事情 [@problem_id:2464930]。它使得泛函能够区分一个由单个电子对主导的区域和一个有许多重叠、[离域电子](@keyword=delocalized_electrons|lang=zh-CN|style=Feynman)的区域。
 
 这个额外的物理洞见使得 [meta-GGA](@keyword=meta_gga|lang=zh-CN|style=Feynman) 泛函的表现显著优于其前辈。它们可以更准确地描述拉伸键中微妙的[能量平衡](@keyword=energy_balance|lang=zh-CN|style=Feynman)，从而更好地预测[反应能垒](@keyword=reaction_barriers|lang=zh-CN|style=Feynman)。它们能更好地分辨不同类型的化学环境，从而得到更准确的[键长](@keyword=bond_length|lang=zh-CN|style=Feynman)和[分子结构](@keyword=molecular_structure|lang=zh-CN|style=Feynman)。通过向我们的理论提供一些关于泡利代价的信息，我们获得了大幅提升的预测能力 [@problem_id:2987528]。
 

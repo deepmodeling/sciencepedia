@@ -21,7 +21,7 @@ $$
 
 这里，$J$ 是一个称为**[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)**的矩阵，它代表了[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)周围的局部景观 [@problem_id:2655660]。这个矩阵的每个元素 $J_{ij} = \frac{\partial f_i}{\partial x_j}$ 都告诉我们一些非常直观的事情：变量 $x_j$ 的微小变化如何影响变量 $x_i$ 的变化率？
 
-例如，在一个由两种蛋白质P1和P2[相互调节](@keyword=reciprocal_regulation|lang=zh-CN|style=Feynman)的基因网络中，[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)为我们提供了它们之间关系的直接图谱。如果在某个[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)下，雅可比矩阵被发现是 $J = \begin{psmallmatrix} -5 & 1 \\ 1 & -5 \end{psmallmatrix}$，我们就能立刻解读出这个故事 [@problem_id:1442580]。正的非对角线项（$J_{12}=1$ 和 $J_{21}=1$）告诉我们，P2促进P1的产生，P1也促进P2的产生。它们处于一种相互激活的关系中！负的对角线项告诉我们，每种蛋白质自身都会降解或自我抑制，这有助于维持平衡。[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)不仅仅是抽象的数学；它是系统相互作用的蓝图。
+例如，在一个由两种蛋白质P1和P2[相互调节](@keyword=reciprocal_regulation|lang=zh-CN|style=Feynman)的基因网络中，[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)为我们提供了它们之间关系的直接图谱。如果在某个[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)下，雅可比矩阵被发现是 $J = \begin{pmatrix} -5 & 1 \\ 1 & -5 \end{pmatrix}$，我们就能立刻解读出这个故事 [@problem_id:1442580]。正的非对角线项（$J_{12}=1$ 和 $J_{21}=1$）告诉我们，P2促进P1的产生，P1也促进P2的产生。它们处于一种相互激活的关系中！负的对角线项告诉我们，每种蛋白质自身都会降解或自我抑制，这有助于维持平衡。[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)不仅仅是抽象的数学；它是系统相互作用的蓝图。
 
 ### [特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)神谕：读取系统的命运
 

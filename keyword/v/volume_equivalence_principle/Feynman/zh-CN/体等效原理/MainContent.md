@@ -48,7 +48,7 @@ $$
 
 这就是**体[积分方程](@keyword=integral_equations|lang=zh-CN|style=Feynman)**或**对比源积分方程（CSIE）**的精髓。它指出，空间中任意一点的总场，等于入射场加上物体内部所有无穷小的等效[电流元](@keyword=current_element|lang=zh-CN|style=Feynman)所[辐射场](@keyword=radiation_field|lang=zh-CN|style=Feynman)的总和（一个积分）。[@problem_id:3295370]
 
-一个关键点浮现出来：为什么积分只在物体的体积 $D$ 上进行？被积函数包含项 $\chi_e(\mathbf{r}') \mathbf{E}(\mathbfr')$. 尽管总场 $\mathbf{E}(\mathbf{r}')$ 在物体外部当然存在，但根据定义，对于 $D$ 外部的任何点 $\mathbf{r}'$，对比度 $\chi_e(\mathbf{r}')$ 都是零。因此，它们的乘积——也就是等效源本身——在物体外部处处为零。散射场的源被限制在散射体的体积内。积分自然地将自己限制在区域 $D$ 上，因为那是被积函数唯一非零的地方。[@problem_id:3295370]
+一个关键点浮现出来：为什么积分只在物体的体积 $D$ 上进行？被积函数包含项 $\chi_e(\mathbf{r}') \mathbf{E}(\mathbf{r}')$. 尽管总场 $\mathbf{E}(\mathbf{r}')$ 在物体外部当然存在，但根据定义，对于 $D$ 外部的任何点 $\mathbf{r}'$，对比度 $\chi_e(\mathbf{r}')$ 都是零。因此，它们的乘积——也就是等效源本身——在物体外部处处为零。散射场的源被限制在散射体的体积内。积分自然地将自己限制在区域 $D$ 上，因为那是被积函数唯一非零的地方。[@problem_id:3295370]
 
 ### 两种原理，一个现实
 

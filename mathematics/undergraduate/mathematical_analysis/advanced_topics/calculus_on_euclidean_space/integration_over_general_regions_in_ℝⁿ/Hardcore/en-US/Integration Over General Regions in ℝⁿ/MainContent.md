@@ -1,15 +1,15 @@
 ## Introduction
-While the theory of multiple integrals is often introduced over simple rectangular domains, real-world problems in science and engineering rarely conform to such regular boundaries. From calculating the mass of an irregularly shaped component to modeling gravitational fields around celestial bodies, we are constantly faced with the need to integrate functions over regions with curved or complex geometries. This article addresses the fundamental challenge of extending integration from simple boxes to general regions in ℝⁿ. It provides a comprehensive guide to the essential techniques required to master this crucial skill.
+While the theory of [multiple integrals](@keyword=multiple_integrals|lang=en-US|style=Feynman) is often introduced over simple rectangular domains, real-world problems in science and engineering rarely conform to such regular boundaries. From calculating the mass of an irregularly shaped component to modeling [gravitational fields](@keyword=gravitational_fields|lang=en-US|style=Feynman) around celestial bodies, we are constantly faced with the need to integrate functions over regions with curved or complex geometries. This article addresses the fundamental challenge of extending integration from simple boxes to general regions in ℝⁿ. It provides a comprehensive guide to the essential techniques required to master this crucial skill.
 
-Across the following chapters, you will develop a robust understanding of this topic. The first chapter, **Principles and Mechanisms**, lays the theoretical groundwork, detailing how to set up iterated integrals over general domains and how to simplify problems using the powerful Change of Variables Theorem. Next, **Applications and Interdisciplinary Connections** demonstrates the immense utility of these methods, exploring their role in calculating physical quantities and modeling phenomena across physics, engineering, and computational science. Finally, **Hands-On Practices** will allow you to solidify your knowledge by tackling a curated set of problems that range from fundamental setups to advanced coordinate transformations.
+Across the following chapters, you will develop a robust understanding of this topic. The first chapter, **Principles and Mechanisms**, lays the theoretical groundwork, detailing how to set up [iterated integrals](@keyword=iterated_integrals|lang=en-US|style=Feynman) over general domains and how to simplify problems using the powerful Change of Variables Theorem. Next, **Applications and Interdisciplinary Connections** demonstrates the immense utility of these methods, exploring their role in calculating [physical quantities](@keyword=physical_quantities|lang=en-US|style=Feynman) and modeling phenomena across physics, engineering, and computational science. Finally, **Hands-On Practices** will allow you to solidify your knowledge by tackling a curated set of problems that range from fundamental setups to advanced [coordinate transformations](@keyword=coordinate_transformations|lang=en-US|style=Feynman).
 
 ## Principles and Mechanisms
 
-While integration over rectangular domains in $\mathbb{R}^n$ provides the theoretical foundation for multiple integrals, most applications in science and engineering involve regions with curved or irregular boundaries. This chapter develops the principles and mechanisms for defining and evaluating integrals over such general regions. We will explore two primary strategies: the decomposition of a domain into iterated one-dimensional integrals, known as Fubini's Theorem for general regions, and the simplification of a domain through a coordinate transformation, governed by the Change of Variables Theorem.
+While integration over rectangular domains in $\mathbb{R}^n$ provides the theoretical foundation for [multiple integrals](@keyword=multiple_integrals|lang=en-US|style=Feynman), most applications in science and engineering involve regions with curved or irregular boundaries. This chapter develops the principles and mechanisms for defining and evaluating integrals over such general regions. We will explore two primary strategies: the decomposition of a domain into iterated one-dimensional integrals, known as Fubini's Theorem for general regions, and the simplification of a domain through a [coordinate transformation](@keyword=coordinate_transformation|lang=en-US|style=Feynman), governed by the Change of Variables Theorem.
 
 ### Iterated Integrals over General Regions
 
-The fundamental strategy for computing an integral over a non-rectangular domain is to express it as an **iterated integral**, where the limits of integration for the inner integrals are functions of the outer variables. This process is effectively a systematic "slicing" of the domain.
+The fundamental strategy for computing an integral over a non-rectangular domain is to express it as an **[iterated integral](@keyword=iterated_integral|lang=en-US|style=Feynman)**, where the limits of integration for the inner integrals are functions of the outer variables. This process is effectively a systematic "slicing" of the domain.
 
 #### The Slicing Principle in $\mathbb{R}^2$
 
@@ -23,22 +23,22 @@ Note that the limits of the outer integral must be constants, corresponding to t
 
 Similarly, a region $D$ is called **Type II** (or horizontally simple) if it is described by:
 $$D = \{ (x,y) \in \mathbb{R}^2 \mid c \le y \le d, \ h_1(y) \le x \le h_2(y) \}$$
-The corresponding iterated integral is:
+The corresponding [iterated integral](@keyword=iterated_integral|lang=en-US|style=Feynman) is:
 $$\iint_D f(x,y) \,dA = \int_{c}^{d} \left( \int_{h_1(y)}^{h_2(y)} f(x,y) \,dx \right) \,dy$$
 
-For example, consider the problem of finding the volume of a solid whose base is the region $R$ enclosed by the curves $y = \sin(x)$ and $y = \cos(x)$ between their first two intersection points for $x \ge 0$, and whose height is given by $h(x,y) = \gamma x^2$ [@problem_id:2303660]. The intersection points are found by solving $\sin(x) = \cos(x)$, which yields $x = \frac{\pi}{4}$ and $x = \frac{5\pi}{4}$. In this interval, $\sin(x) \ge \cos(x)$. Thus, the base $R$ is a Type I region with $g_1(x) = \cos(x)$ and $g_2(x) = \sin(x)$ for $x \in [\frac{\pi}{4}, \frac{5\pi}{4}]$. The volume is the integral of the height function over this region:
+For example, consider the problem of finding the volume of a solid whose base is the region $R$ enclosed by the curves $y = \sin(x)$ and $y = \cos(x)$ between their first two intersection points for $x \ge 0$, and whose height is given by $h(x,y) = \gamma x^2$ [@problem_id:2303660]. The intersection points are found by solving $\sin(x) = \cos(x)$, which yields $x = \frac{\pi}{4}$ and $x = \frac{5\pi}{4}$. In this interval, $\sin(x) \ge \cos(x)$. Thus, the base $R$ is a Type I region with $g_1(x) = \cos(x)$ and $g_2(x) = \sin(x)$ for $x \in [\frac{\pi}{4}, \frac{5\pi}{4}]$. The volume is the integral of the [height function](@keyword=height_function|lang=en-US|style=Feynman) over this region:
 $$V = \iint_R \gamma x^2 \,dA = \gamma \int_{\pi/4}^{5\pi/4} \int_{\cos(x)}^{\sin(x)} x^2 \,dy \,dx = \gamma \int_{\pi/4}^{5\pi/4} x^2(\sin(x) - \cos(x)) \,dx$$
-The evaluation of this integral, which requires techniques like integration by parts, yields the total volume of the described sculpture. This example illustrates how a geometric description is translated into the precise analytical limits of an iterated integral.
+The evaluation of this integral, which requires techniques like integration by parts, yields the total volume of the described sculpture. This example illustrates how a geometric description is translated into the precise analytical limits of an [iterated integral](@keyword=iterated_integral|lang=en-US|style=Feynman).
 
 #### Extension to Higher Dimensions
 
 The slicing principle extends naturally to three or more dimensions. For a solid region $E \subset \mathbb{R}^3$, we can describe it as lying between two surfaces defined as functions of $(x,y)$ over a domain $D$ in the $xy$-plane:
 $$E = \{ (x,y,z) \in \mathbb{R}^3 \mid (x,y) \in D, \ u_1(x,y) \le z \le u_2(x,y) \}$$
-The triple integral of a function $f(x,y,z)$ over $E$ is then computed as:
+The [triple integral](@keyword=triple_integral|lang=en-US|style=Feynman) of a function $f(x,y,z)$ over $E$ is then computed as:
 $$\iiint_E f(x,y,z) \,dV = \iint_D \left( \int_{u_1(x,y)}^{u_2(x,y)} f(x,y,z) \,dz \right) \,dA$$
 The inner integral is with respect to $z$, and the resulting function of $(x,y)$ is then integrated over the two-dimensional region $D$, which itself is handled using the methods described above.
 
-Consider the evaluation of the iterated integral [@problem_id:2303662]:
+Consider the evaluation of the [iterated integral](@keyword=iterated_integral|lang=en-US|style=Feynman) [@problem_id:2303662]:
 $$I = \int_{0}^{4} \int_{0}^{2 - \frac{x}{2}} \int_{0}^{4 - x - 2y} dz \,dy \,dx$$
 This integral represents the volume of a solid $E$ defined by the inequalities:
 $$0 \le x \le 4, \quad 0 \le y \le 2 - \frac{x}{2}, \quad 0 \le z \le 4 - x - 2y$$
@@ -54,7 +54,7 @@ $$I = \int_{0}^{4} \left(4 - 2x + \frac{x^2}{4}\right) \,dx = \left[4x - x^2 + \
 The choice of integration order is not merely a matter of convenience; it can be the difference between a tractable integral and an impossible one. Furthermore, a region might be simple with respect to one ordering but require decomposition for another. The process of changing the order of integration is a crucial skill that relies on a solid geometric understanding of the domain defined by the integral limits.
 
 The core procedure is as follows:
-1.  **Analyze the Limits:** From the given iterated integral, write down the system of inequalities that defines the region of integration.
+1.  **Analyze the Limits:** From the given [iterated integral](@keyword=iterated_integral|lang=en-US|style=Feynman), write down the system of inequalities that defines the region of integration.
 2.  **Sketch the Region:** Create a visual representation of the region. This is the most critical step for building intuition.
 3.  **Re-describe the Region:** Project the region onto a different coordinate axis (or plane in 3D) and determine the new bounds for the slicing variables.
 
@@ -84,9 +84,9 @@ The area of this parallelogram, $\Delta A_{xy}$, is given by the magnitude of th
 $$\Delta A_{xy} \approx \left| \det \begin{pmatrix} \frac{\partial x}{\partial u}\Delta u  \frac{\partial x}{\partial v}\Delta v \\ \frac{\partial y}{\partial u}\Delta u  \frac{\partial y}{\partial v}\Delta v \end{pmatrix} \right| = \left| \det \begin{pmatrix} \frac{\partial x}{\partial u}  \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u}  \frac{\partial y}{\partial v} \end{pmatrix} \right| \Delta u \Delta v$$
 The determinant in this expression is the **Jacobian determinant** of the transformation $T$, denoted as:
 $$J(u,v) = \frac{\partial(x,y)}{\partial(u,v)} = \det \begin{pmatrix} \frac{\partial x}{\partial u}  \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u}  \frac{\partial y}{\partial v} \end{pmatrix} = \frac{\partial x}{\partial u}\frac{\partial y}{\partial v} - \frac{\partial x}{\partial v}\frac{\partial y}{\partial u}$$
-The absolute value of the Jacobian, $|J(u,v)|$, is the local scaling factor that relates an area element in the $uv$-plane to the corresponding area element in the $xy$-plane: $dA_{xy} = |J(u,v)| dA_{uv}$.
+The absolute value of the Jacobian, $|J(u,v)|$, is the local scaling factor that relates an area element in the $uv$-plane to the corresponding [area element](@keyword=area_element|lang=en-US|style=Feynman) in the $xy$-plane: $dA_{xy} = |J(u,v)| dA_{uv}$.
 
-For instance, consider the transformation to parabolic coordinates given by $x = \sigma \tau$ and $y = \frac{1}{2}(\tau^2 - \sigma^2)$ [@problem_id:2303677]. The partial derivatives are $\frac{\partial x}{\partial \sigma} = \tau$, $\frac{\partial x}{\partial \tau} = \sigma$, $\frac{\partial y}{\partial \sigma} = -\sigma$, and $\frac{\partial y}{\partial \tau} = \tau$. The Jacobian determinant is:
+For instance, consider the transformation to [parabolic coordinates](@keyword=parabolic_coordinates|lang=en-US|style=Feynman) given by $x = \sigma \tau$ and $y = \frac{1}{2}(\tau^2 - \sigma^2)$ [@problem_id:2303677]. The partial derivatives are $\frac{\partial x}{\partial \sigma} = \tau$, $\frac{\partial x}{\partial \tau} = \sigma$, $\frac{\partial y}{\partial \sigma} = -\sigma$, and $\frac{\partial y}{\partial \tau} = \tau$. The Jacobian determinant is:
 $$J(\sigma, \tau) = \det \begin{pmatrix} \tau  \sigma \\ -\sigma  \tau \end{pmatrix} = \tau^2 - (\sigma)(-\sigma) = \sigma^2 + \tau^2$$
 Since $\sigma^2+\tau^2$ is always non-negative, the area scaling factor is simply $|\frac{\partial(x,y)}{\partial(\sigma,\tau)}| = \sigma^2 + \tau^2$.
 
@@ -111,7 +111,7 @@ Therefore, $\left|\frac{\partial(x,y)}{\partial(u,v)}\right| = \left|\frac{1}{-u
 $$\text{Area}(R) = \iint_R 1 \,dA = \iint_S 1 \cdot \frac{1}{u+1} \,du\,dv = \int_{3}^{4} \int_{1}^{2} \frac{1}{u+1} \,du\,dv$$
 $$= (4-3) \int_{1}^{2} \frac{1}{u+1} \,du = [\ln(u+1)]_1^2 = \ln(3) - \ln(2) = \ln\left(\frac{3}{2}\right)$$
 
-This principle generalizes to $\mathbb{R}^n$, where the Jacobian is the determinant of the $n \times n$ matrix of partial derivatives. Famous instances include polar coordinates $(dA = r\,dr\,d\theta)$, cylindrical coordinates $(dV = r\,dr\,d\theta\,dz)$, and spherical coordinates $(dV = \rho^2 \sin\phi \,d\rho\,d\phi\,d\theta)$.
+This principle generalizes to $\mathbb{R}^n$, where the Jacobian is the determinant of the $n \times n$ matrix of [partial derivatives](@keyword=partial_derivatives|lang=en-US|style=Feynman). Famous instances include [polar coordinates](@keyword=polar_coordinates|lang=en-US|style=Feynman) $(dA = r\,dr\,d\theta)$, cylindrical coordinates $(dV = r\,dr\,d\theta\,dz)$, and spherical coordinates $(dV = \rho^2 \sin\phi \,d\rho\,d\phi\,d\theta)$.
 
 ### Advanced Topics and Applications
 
@@ -126,13 +126,13 @@ This decomposition transforms an integral over a non-convex, non-simple region i
 
 #### Improper Integrals
 
-Multivariable integrals can be **improper** if either the domain of integration is unbounded or the integrand is unbounded at some points within the domain. The convergence of such integrals is a critical question. An improper integral is defined as a limit of integrals over an expanding sequence of compact sub-regions.
+Multivariable integrals can be **improper** if either the domain of integration is unbounded or the integrand is unbounded at some points within the domain. The convergence of such integrals is a critical question. An [improper integral](@keyword=improper_integral|lang=en-US|style=Feynman) is defined as a [limit of integrals](@keyword=limit_of_integrals|lang=en-US|style=Feynman) over an expanding sequence of compact sub-regions.
 
 Coordinate transformations are exceptionally powerful for analyzing convergence. Consider the integral $I(p) = \iiint_{V} \frac{\exp(-(x^2+y^2+z^2))}{(x^2+y^2+z^2)^p} \,dV$, where $V$ is the infinite region between two cones $z = b\sqrt{x^2+y^2}$ and $z = a\sqrt{x^2+y^2}$ with $a > b > 0$ [@problem_id:2303672].
-The region and the integrand have strong spherical symmetry, suggesting a change to spherical coordinates: $x=\rho\sin\phi\cos\theta, y=\rho\sin\phi\sin\theta, z=\rho\cos\phi$. The cone equation $z=c\sqrt{x^2+y^2}$ becomes $\rho\cos\phi = c \rho\sin\phi$, or $\cot\phi = c$. So the region $V$ corresponds to a rectangular box in $(\rho, \phi, \theta)$ space: $\rho \in [0, \infty)$, $\phi \in [\arccot(a), \arccot(b)]$, and $\theta \in 0, 2\pi)$. The integrand becomes $\exp(-\rho^2)/\rho^{2p}$, and the [volume element is $dV = \rho^2\sin\phi \,d\rho\,d\phi\,d\theta$. The integral becomes:
-$$I(p) = \int_0^{2\pi} \int_{\arccot a}^{\arccot b} \int_0^\infty \frac{\exp(-\rho^2)}{\rho^{2p}} \rho^2 \sin\phi \,d\rho\,d\phi\,d\theta$$
-$$= \left( \int_0^{2\pi} d\theta \right) \left( \int_{\arccot a}^{\arccot b} \sin\phi \,d\phi \right) \left( \int_0^\infty \rho^{2-2p} \exp(-\rho^2) \,d\rho \right)$$
-The angular integrals yield a finite, positive constant. Convergence depends entirely on the radial integral. We analyze its behavior at the two critical points: $\rho \to 0$ and $\rho \to \infty$.
+The region and the integrand have strong spherical symmetry, suggesting a change to [spherical coordinates](@keyword=spherical_coordinates|lang=en-US|style=Feynman): $x=\rho\sin\phi\cos\theta, y=\rho\sin\phi\sin\theta, z=\rho\cos\phi$. The cone equation $z=c\sqrt{x^2+y^2}$ becomes $\rho\cos\phi = c \rho\sin\phi$, or $\cot\phi = c$. So the region $V$ corresponds to a rectangular box in $(\rho, \phi, \theta)$ space: $\rho \in [0, \infty)$, $\phi \in [\operatorname{arccot}(a), \operatorname{arccot}(b)]$, and $\theta \in [0, 2\pi)$. The integrand becomes $\exp(-\rho^2)/\rho^{2p}$, and the [volume element](@keyword=volume_element|lang=en-US|style=Feynman) is $dV = \rho^2\sin\phi \,d\rho\,d\phi\,d\theta$. The integral becomes:
+$$I(p) = \int_0^{2\pi} \int_{\operatorname{arccot} a}^{\operatorname{arccot} b} \int_0^\infty \frac{\exp(-\rho^2)}{\rho^{2p}} \rho^2 \sin\phi \,d\rho\,d\phi\,d\theta$$
+$$= \left( \int_0^{2\pi} d\theta \right) \left( \int_{\operatorname{arccot} a}^{\operatorname{arccot} b} \sin\phi \,d\phi \right) \left( \int_0^\infty \rho^{2-2p} \exp(-\rho^2) \,d\rho \right)$$
+The angular integrals yield a finite, positive constant. Convergence depends entirely on the radial integral. We analyze its behavior at the two [critical points](@keyword=critical_points|lang=en-US|style=Feynman): $\rho \to 0$ and $\rho \to \infty$.
 - As $\rho \to \infty$, the term $\exp(-\rho^2)$ decays faster than any power of $\rho$ grows, ensuring convergence for any $p$.
 - As $\rho \to 0$, $\exp(-\rho^2) \approx 1$. The integrand behaves like $\rho^{2-2p}$. The integral $\int_0^\epsilon \rho^{k} d\rho$ converges if and only if $k > -1$. Thus, we require $2-2p > -1$, which simplifies to $2p  3$, or $p  3/2$.
 For the integral to converge, we must satisfy all conditions. Therefore, the integral converges for $p  3/2$.
@@ -141,4 +141,4 @@ For the integral to converge, we must satisfy all conditions. Therefore, the int
 
 The Change of Variables Theorem is stated with conditions: the map $\Phi$ must be continuously differentiable ($C^1$) and typically one-to-one, with a non-vanishing Jacobian on the interior of the domain. When these conditions are violated, care must be taken. If the Jacobian determinant vanishes on a set of measure zero (like a point or a curve), the formula usually remains valid. However, if the Jacobian is zero on a larger set, the transformation may be degenerate. For example, the map may collapse a 3D region to a 2D surface, a phenomenon related to Sard's theorem.
 
-In such advanced cases [@problem_id:2303679], blindly applying the formula can be misleading. A more robust approach is to first determine the geometry of the image set $D = \Phi(U)$ and then formulate a new, direct integral over $D$. This sidesteps the problematic transformation and returns to the fundamental principles of setting up iterated integrals based on the geometry of the domain. This serves as a reminder that mathematical tools have preconditions, and understanding them is essential for correct application in complex scenarios.
+In such advanced cases [@problem_id:2303679], blindly applying the formula can be misleading. A more robust approach is to first determine the geometry of the image set $D = \Phi(U)$ and then formulate a new, direct integral over $D$. This sidesteps the problematic transformation and returns to the fundamental principles of setting up [iterated integrals](@keyword=iterated_integrals|lang=en-US|style=Feynman) based on the geometry of the domain. This serves as a reminder that mathematical tools have preconditions, and understanding them is essential for correct application in complex scenarios.

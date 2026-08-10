@@ -27,7 +27,7 @@ $$S = k_B \ln(W)$$
 
 这个思想可以推广到我们熟悉的宏观世界：
 
-*   **[物态](@keyword=states_of_matter|lang=zh-CN|style=Feynman)变化**：为什么气体的熵比液体高得多，而液体又比固体高？因为气体分子可以在整个容器中自由飞翔，而液体分子只能在彼此身边滑动，固体中的原子则被牢牢固定在[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的特定位置上。从固态[碘](@keyword=iodine|lang=zh-CN|style=Feynman)华丽地升华为紫色蒸气时，其摩尔熵会从 $116.14 \, \text{J/(mol·K)}$ 暴增至 $260.69 \, \text{J/(mol·K)}$，[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)高达 $+144.6 \, \text{J/(mol·K)}$ [@problem_id:1982691]。这巨大的熵增正是一摩尔分子从被束缚的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中解放出来，获得巨大自由度的体现。
+*   **[物态](@keyword=states_of_matter|lang=zh-CN|style=Feynman)变化**：为什么气体的熵比液体高得多，而液体又比固体高？因为气体分子可以在整个容器中自由飞翔，而液体分子只能在彼此身边滑动，固体中的原子则被牢牢固定在[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的特定位置上。从固态[碘](@keyword=iodine|lang=zh-CN|style=Feynman)华丽地升华为紫色蒸气时，其摩尔熵会从 $116.14 \, \mathrm{J/(mol\cdot K)}$ 暴增至 $260.69 \, \mathrm{J/(mol\cdot K)}$，[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)高达 $+144.6 \, \mathrm{J/(mol\cdot K)}$ [@problem_id:1982691]。这巨大的熵增正是一摩尔分子从被束缚的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中解放出来，获得巨大自由度的体现。
 
 *   **体积与浓度**：将一定量的气体从大体积压缩到小体积，相当于限制了每个分子的活动空间，减少了它们可能存在的微观状态数 $W$。因此，熵会减小。例如，将氩气等温压缩，体积变为原来的三分之一，其熵变就是一个负值，可以通过 $\Delta S = nR \ln(V_f/V_i)$ 精确计算 [@problem_id:1982730]。同样，当氧气分子从广阔的空气中溶解到水里时，它就从自由的飞行状态变成了被水分子“囚禁”的状态，活动范围大大受限，因此熵会显著降低 [@problem_id:1982675]。
 
@@ -53,9 +53,9 @@ $\Delta S_{rxn}^{\circ}$ 的正负号蕴含着丰富的分子层面的信息：
 
 *   **气体摩尔数的变化**：在许多反应中，这是决定[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)方向的最主要因素。如果反应产生了更多的气体分子，系统的混乱度和可能性通常会急剧增加。例如，在 $N_2O_4(g) \rightarrow 2 NO_2(g)$ 这个反应中，一个分子分裂成两个，气体分子的总数增加了。这导致了巨大的正[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)（$+176 \text{ J/K}$），因为两个独立的 $NO_2$ 分子比一个 $N_2O_4$ 分子拥有多得多的运动和[排列](@keyword=permutation|lang=zh-CN|style=Feynman)方式 [@problem_id:1982740]。
 
-*   **[分子复杂度](@keyword=molecular_complexity|lang=zh-CN|style=Feynman)和结构**：熵不仅仅与粒子数目有关，还与分子本身的结构有关。以正丁烷和异丁烷的异构化反应为例：$\text{正丁烷}(g) \rightleftharpoons \text{异丁烷}(g)$。正丁烷是一条灵活的“链”，它的碳-碳[单键](@keyword=single_bond|lang=zh-CN|style=Feynman)可以自由旋转，产生多种构象。而异丁烷结构更“紧凑”，分支限制了其内部旋转的自由度。因此，正丁烷拥有更高的熵。当正丁烷转化为异丁烷时，系统变得更“有序”，熵变 $\Delta S^{\circ}$ 为负值（$-15.6 \text{ J/(mol·K)}$）[@problem_id:1982717]。
+*   **[分子复杂度](@keyword=molecular_complexity|lang=zh-CN|style=Feynman)和结构**：熵不仅仅与粒子数目有关，还与分子本身的结构有关。以正丁烷和异丁烷的异构化反应为例：$\text{正丁烷}(g) \rightleftharpoons \text{异丁烷}(g)$。正丁烷是一条灵活的“链”，它的碳-碳[单键](@keyword=single_bond|lang=zh-CN|style=Feynman)可以自由旋转，产生多种构象。而异丁烷结构更“紧凑”，分支限制了其内部旋转的自由度。因此，正丁烷拥有更高的熵。当正丁烷转化为异丁烷时，系统变得更“有序”，熵变 $\Delta S^{\circ}$ 为负值（$-15.6 \mathrm{J/(mol\cdot K)}$）[@problem_id:1982717]。
 
-*   **溶剂的“[隐形](@keyword=cloaking|lang=zh-CN|style=Feynman)之手”**：在溶液中的反应，我们绝不能忽视溶剂的作用。当一个气态的镁离子 $Mg^{2+}(g)$ 进入水中形成 $Mg^{2+}(aq)$ 时，会发生什么？镁离子本身从自由运动的气相进入受限的液相，熵会降低。但更重要的效应是，$Mg^{2+}$ 拥有很高的电荷密度，它会像一块强力磁铁一样，将周围的水分子牢牢地吸引和定向，形成一个高度有序的“水合物外壳”。这种对溶剂分子的强烈束缚，导致整个系统（离子+水）的熵大幅度降低。这个效应非常显著，使得水合熵 $\Delta S^{\circ}_{hydr}$ 是一个很大的负值（$-286.7 \text{ J/(mol·K)}$）[@problem_id:1982681]。相比之下，在 $Ni^{2+}(aq) + 4 CN^-(aq) \rightarrow [Ni(CN)_4]^{2-}(aq)$ 这样的[络合反应](@keyword=complexation_reactions|lang=zh-CN|style=Feynman)中，虽然产物络离子比反应物离子更复杂，但反应中五个独立的溶[质粒](@keyword=plasmid|lang=zh-CN|style=Feynman)子变成了一个，这种粒子数的急剧减少占据了主导地位，使得总的反应[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)为负值 [@problem_id:1982727]。
+*   **溶剂的“[隐形](@keyword=cloaking|lang=zh-CN|style=Feynman)之手”**：在溶液中的反应，我们绝不能忽视溶剂的作用。当一个气态的镁离子 $Mg^{2+}(g)$ 进入水中形成 $Mg^{2+}(aq)$ 时，会发生什么？镁离子本身从自由运动的气相进入受限的液相，熵会降低。但更重要的效应是，$Mg^{2+}$ 拥有很高的电荷密度，它会像一块强力磁铁一样，将周围的水分子牢牢地吸引和定向，形成一个高度有序的“水合物外壳”。这种对溶剂分子的强烈束缚，导致整个系统（离子+水）的熵大幅度降低。这个效应非常显著，使得水合熵 $\Delta S^{\circ}_{hydr}$ 是一个很大的负值（$-286.7 \mathrm{J/(mol\cdot K)}$）[@problem_id:1982681]。相比之下，在 $Ni^{2+}(aq) + 4 CN^-(aq) \rightarrow [Ni(CN)_4]^{2-}(aq)$ 这样的[络合反应](@keyword=complexation_reactions|lang=zh-CN|style=Feynman)中，虽然产物络离子比反应物离子更复杂，但反应中五个独立的溶[质粒](@keyword=plasmid|lang=zh-CN|style=Feynman)子变成了一个，这种粒子数的急剧减少占据了主导地位，使得总的反应[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)为负值 [@problem_id:1982727]。
 
 ### 超越系统：宇宙的视角
 
@@ -68,7 +68,7 @@ $$\Delta S_{\text{宇宙}} = \Delta S_{\text{系统}} + \Delta S_{\text{环境}}
 *   如果一个反应是**放热的**（$\Delta H_{rxn} < 0$），它会向环境中释放热量。这股能量增加了环境分子的动能，使它们运动得更剧烈、更无序。因此，环境的熵增加。
 *   如果一个反应是**吸热的**（$\Delta H_{rxn} > 0$），它会从环境中吸收热量，使环境“冷却”下来，分子的运动变得更平缓。因此，环境的熵减小。
 
-在恒温恒压下，环境的[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)可以精确计算：$\Delta S_{\text{环境}} = -\frac{\Delta H_{\text{反应}}}{T}$。分母中的温度 $T$ 告诉我们，同样的热量对不同温度的环境影响是不同的。向冰冷的房间里加热会带来显著的熵增，而向炙热的熔炉里加入同样的热量则影响甚微。[过氧化氢](@keyword=hydrogen_peroxide|lang=zh-CN|style=Feynman)分解是一个放热反应，它释放的热量使得环境的熵增加了 $+329 \text{ J/(K·mol)}$ [@problem_id:1982695]。
+在恒温恒压下，环境的[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)可以精确计算：$\Delta S_{\text{环境}} = -\frac{\Delta H_{\text{反应}}}{T}$。分母中的温度 $T$ 告诉我们，同样的热量对不同温度的环境影响是不同的。向冰冷的房间里加热会带来显著的熵增，而向炙热的熔炉里加入同样的热量则影响甚微。[过氧化氢](@keyword=hydrogen_peroxide|lang=zh-CN|style=Feynman)分解是一个放热反应，它释放的热量使得环境的熵增加了 $+329 \mathrm{J/(K\cdot mol)}$ [@problem_id:1982695]。
 
 现在，我们可以通过计算 $\Delta S_{\text{宇宙}}$ 来判断一个过程的最终命运。氢气和氧气自发地反应生成水，这个过程的宇宙总熵变是一个很大的正值（$+796 \text{ J/K}$），表明这是一个强烈的自发过程 [@problem_id:1982704]。
 

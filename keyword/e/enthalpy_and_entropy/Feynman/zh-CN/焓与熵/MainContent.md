@@ -25,7 +25,7 @@ $$
 
 思考一下不起眼的速冷冰袋。你捏破里面的内袋，硝酸铵溶于水，使冰袋感觉异常冰冷。你的触觉告诉你这个过程正在从周围吸收热量，这意味着它是吸热的——[焓变](@keyword=enthalpy_change|lang=zh-CN|style=Feynman)是不利的，$\Delta H > 0$ [@problem_id:1890980]。那么它为什么会发生呢？答案是熵。当[排列](@keyword=permutation|lang=zh-CN|style=Feynman)整齐的[硝酸](@keyword=nitric_acid|lang=zh-CN|style=Feynman)铵[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)溶解成一团漂浮在水中的混乱离子时，系统的无序度急剧增加（$\Delta S > 0$）。在室温下，这个巨大的熵增，再经由温度$T$的放大，足以克服不利的[焓变](@keyword=enthalpy_change|lang=zh-CN|style=Feynman)。$T\Delta S$项大于$\Delta H$项，使得$\Delta G$为负。溶解是自发的，不是因为能量，而是不顾能量的阻碍。这是一个经典的**[熵驱动过程](@keyword=entropy_driven_process|lang=zh-CN|style=Feynman)**。
 
-这种平衡对于科学家和工程师来说是一个实际问题。想象一下，你是一名生物工程师，正在设计一种新酶来生产生物燃料[@problem_id:2047445]。你设计的反应是吸热的（$\Delta H = +12.5 \text{ kJ/mol}$），这是一个不好的开始。但你还发现它产生了大量的分子无序（$\Delta S = +128 \text{ J/(mol·K)}$）。它能在你的生物反应器中工作吗？该反应器在$37^\circ\text{C}$（$310.15 \text{ K}$）的生理温度下运行。我们可以问问Gibbs。我们计算熵项：$T\Delta S = (310.15 \text{ K}) \times (0.128 \text{ kJ/(mol·K)}) \approx 39.7 \text{ kJ/mol}$。现在我们计算最终得分：$\Delta G = 12.5 - 39.7 = -27.2 \text{ kJ/mol}$。结果是负值！该反应是自发的。多亏了熵，你的生物燃料项目是可行的。
+这种平衡对于科学家和工程师来说是一个实际问题。想象一下，你是一名生物工程师，正在设计一种新酶来生产生物燃料[@problem_id:2047445]。你设计的反应是吸热的（$\Delta H = +12.5 \text{ kJ/mol}$），这是一个不好的开始。但你还发现它产生了大量的分子无序（$\Delta S = +128 \mathrm{J/(mol\cdot K)}$）。它能在你的生物反应器中工作吗？该反应器在$37^\circ\text{C}$（$310.15 \text{ K}$）的生理温度下运行。我们可以问问Gibbs。我们计算熵项：$T\Delta S = (310.15 \text{ K}) \times (0.128 \mathrm{kJ/(mol\cdot K)}) \approx 39.7 \text{ kJ/mol}$。现在我们计算最终得分：$\Delta G = 12.5 - 39.7 = -27.2 \text{ kJ/mol}$。结果是负值！该反应是自发的。多亏了熵，你的生物燃料项目是可行的。
 
 ### 转折点：平衡与[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)
 
@@ -62,8 +62,8 @@ $$
 有时，当我们研究一系列相关反应时——例如，在不同溶剂中的同一个反应，或者类似分子与蛋白质的结合——我们会发现一些奇怪的现象。我们可能做了一个微小的改动，却引起了$\Delta H$的巨大变化和$\Delta S$相应的巨大变化。但这两个巨大的变化似乎“共谋”着几乎完全相互抵消，使得$\Delta G$几乎保持不变。
 
 例如，考虑四种假设的盐在水中溶解[@problem_id:2918932]。在室温（$298 \text{ K}$）下，我们测量了它们的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)参数：
-- 盐 S1: $\Delta H^\circ = +22.0 \text{ kJ/mol}$, $\Delta S^\circ = +74.0 \text{ J/(mol·K)}$
-- 盐 S2: $\Delta H^\circ = -10.0 \text{ kJ/mol}$, $\Delta S^\circ = -33.0 \text{ J/(mol·K)}$
+- 盐 S1: $\Delta H^\circ = +22.0 \text{ kJ/mol}$, $\Delta S^\circ = +74.0 \mathrm{J/(mol\cdot K)}$
+- 盐 S2: $\Delta H^\circ = -10.0 \text{ kJ/mol}$, $\Delta S^\circ = -33.0 \mathrm{J/(mol\cdot K)}$
 
 这两个过程简直天差地别！S1的溶解是强吸热的，并由大的熵增驱动。S2的溶解是放热的，并受到熵减的阻碍。它们截然相反。然而，当我们计算它们的吉布斯自由能时，我们发现$\Delta G^\circ_{S1} \approx -0.05 \text{ kJ/mol}$和$\Delta G^\circ_{S2} \approx -0.17 \text{ kJ/mol}$。它们几乎完全相同！对于在不同溶剂中的一系列断键反应[@problem_id:2922986]或不同弱酸的解离[@problem_id:2772449]，同样如此。
 

@@ -27,7 +27,7 @@ $$
 \mathbf{q} = -\frac{1}{\mu} \mathbf{K} \cdot \nabla p
 $$
 
-这不仅仅是符号上的改变；它代表了行为上的深刻转变。渗透率张量 $\mathbf{K}$ 就像一台机器，它接收[压力梯度](@keyword=pressure_gradient|lang=zh-CN|style=Feynman)矢量 $\nabla p$作为输入，并产生流体速度矢量 $\mathbfq$ 作为输出。而这里的美妙转折在于：输出矢量 $\mathbf{q}$ 不再必须与输入矢量 $\nabla p$ 平行。
+这不仅仅是符号上的改变；它代表了行为上的深刻转变。渗透率张量 $\mathbf{K}$ 就像一台机器，它接收[压力梯度](@keyword=pressure_gradient|lang=zh-CN|style=Feynman)矢量 $\nabla p$作为输入，并产生流体速度矢量 $\mathbf{q}$ 作为输出。而这里的美妙转折在于：输出矢量 $\mathbf{q}$ 不再必须与输入矢量 $\nabla p$ 平行。
 
 想象一下向下按压桌上的一块海绵。水会垂直向下挤出。这是各向同性。现在想象一下向下按压一种由倾斜的层状薄片构成的材料。水可能会沿着阻力最小的路径——即沿着这些层——向侧面喷出。你向一个方向施力，流动却在另一个方向响应。这就是各向异性的魔力，而渗透率张量是其规则手册。至关重要的是要认识到，这个张量描述了材料的*输运*特性；它决定了压[力场](@keyword=force_field|lang=zh-CN|style=Feynman) $p(\mathbf{x},t)$ 如何随时间演化，但并不改变压力在固体骨架内对机械应力贡献的基本瞬时方式[@problem_id:2695844]。
 

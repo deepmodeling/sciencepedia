@@ -17,7 +17,7 @@
 
 我们如何量化这种阻力呢？一个直观的方法是观察一个物体在液体中下落的快慢。想象一个玻璃珠，分别掉入装满水和洗发水的圆筒中。在水中，它会迅速沉底；而在黏稠的洗发水中，它则会缓慢下沉。小球受到的向上的拖曳力与液体的黏度直接相关。通过测量小球达到恒定速度（[终端速度](@keyword=terminal_velocity|lang=zh-CN|style=Feynman)）后的下落时间，我们就能精确地计算出液体的黏度。这个简单的实验揭示了黏度的本质：它是液体抵抗[剪切变形](@keyword=shear_deformation|lang=zh-CN|style=Feynman)的能力。
 
-在物理学家的工具箱里，我们还会区分两种黏度。我们通常谈论的，抵抗剪切力的“纯粹”阻力，叫做**[动力黏度](@keyword=dynamic_viscosity|lang=zh-CN|style=Feynman)** (dynamic viscosity)，用符号 $\eta$ 表示，其单位是帕斯卡·秒 ($\text{Pa·s}$)。而另一个相关的量叫做**运动黏度** (kinematic viscosity)，用符号 $\nu$ 表示，它等于[动力黏度](@keyword=dynamic_viscosity|lang=zh-CN|style=Feynman)除以密度 ($\nu = \eta/\rho$)。运动黏度描述的是动量在流体中扩散的速度。打个比方，如果你用勺子搅动一杯液体，$\eta$ 描述的是你搅动时感受到的直接阻力，而 $\nu$ 则描述了你搅动产生的漩涡会以多快的速度传递到液体的其他部分。
+在物理学家的工具箱里，我们还会区分两种黏度。我们通常谈论的，抵抗剪切力的“纯粹”阻力，叫做**[动力黏度](@keyword=dynamic_viscosity|lang=zh-CN|style=Feynman)** (dynamic viscosity)，用符号 $\eta$ 表示，其单位是帕斯卡·秒 ($\mathrm{Pa\cdot s}$)。而另一个相关的量叫做**运动黏度** (kinematic viscosity)，用符号 $\nu$ 表示，它等于[动力黏度](@keyword=dynamic_viscosity|lang=zh-CN|style=Feynman)除以密度 ($\nu = \eta/\rho$)。运动黏度描述的是动量在流体中扩散的速度。打个比方，如果你用勺子搅动一杯液体，$\eta$ 描述的是你搅动时感受到的直接阻力，而 $\nu$ 则描述了你搅动产生的漩涡会以多快的速度传递到液体的其他部分。
 
 #### 黏度的微观之舞：分子间的作用力
 

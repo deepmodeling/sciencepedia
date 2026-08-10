@@ -39,7 +39,7 @@ $$
 \frac{v}{c} = \tanh\phi
 $$
 
-Rapidity, $\phi = \arctanh(v/c)$, is the natural "angle" of a Lorentz boost. It’s the parameter that makes the geometry of spacetime manifest. It might seem like we've just swapped one set of symbols for another, but this change in perspective is incredibly powerful. As we are about to see, it simplifies some of the most famously counter-intuitive aspects of relativity.
+Rapidity, $\phi = \operatorname{arctanh}(v/c)$, is the natural "angle" of a Lorentz boost. It’s the parameter that makes the geometry of spacetime manifest. It might seem like we've just swapped one set of symbols for another, but this change in perspective is incredibly powerful. As we are about to see, it simplifies some of the most famously counter-intuitive aspects of relativity.
 
 ### The Joy of Addition
 
@@ -62,8 +62,8 @@ $$
 Let's see this magic in action with a concrete example [@problem_id:414891]. Imagine a spaceship $S'$ moves away from Earth $S$ at a speed of $v_1 = \frac{3}{5}c$. It then launches a probe $S''$ in the same direction at a speed of $v_2 = \frac{4}{5}c$ relative to itself. What is the probe's speed relative to Earth?
 
 First, we find the rapidities:
-$\phi_1 = \arctanh(3/5) \approx 0.693$
-$\phi_2 = \arctanh(4/5) \approx 1.099$
+$\phi_1 = \operatorname{arctanh}(3/5) \approx 0.693$
+$\phi_2 = \operatorname{arctanh}(4/5) \approx 1.099$
 
 The total rapidity is just their sum: $\phi_{12} = \phi_1 + \phi_2 \approx 1.792$.
 

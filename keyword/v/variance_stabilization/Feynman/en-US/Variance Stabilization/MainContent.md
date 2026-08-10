@@ -61,7 +61,7 @@ Let's examine the behavior at the extremes [@problem_id:4370607]:
 
 This insight explains the ubiquity of the `log(1+x)` transformation in bioinformatics. It's a practical compromise: for small values of $x$, it behaves linearly (which is a rough approximation of a square root), and for large values, it behaves like a logarithm. However, it's not a perfect solution and can fail to fully stabilize variance, especially in the low-to-medium count range so common in single-cell data [@problem_id:3302570] [@problem_id:3301319].
 
-Is there a single, elegant function that perfectly bridges this gap? Yes! The true VST for the Negative Binomial distribution is a function called the **inverse hyperbolic sine** (or $\arcsinh$). It naturally transitions from square-root-like behavior at low values to logarithm-like behavior at high values, providing a unified solution derived directly from first principles [@problem_id:4370607].
+Is there a single, elegant function that perfectly bridges this gap? Yes! The true VST for the Negative Binomial distribution is a function called the **inverse hyperbolic sine** (or $\operatorname{arcsinh}$). It naturally transitions from square-root-like behavior at low values to logarithm-like behavior at high values, providing a unified solution derived directly from first principles [@problem_id:4370607].
 
 ### The General Rule: A Unifying Principle
 

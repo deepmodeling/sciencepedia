@@ -1,39 +1,39 @@
 ## 引言
-绝对零度（0 K 或 -273.15 °C）是物理学中最引人入胜的基本概念之一。它不仅是温度的理论下限，更是一个窗口，通过它我们得以窥见物质在最极端条件下的行为，以及量子力学如何取代经典物理学成为主导规律。许多人对绝对零度的理解止于“粒子完全停止运动”的经典图像，但这忽略了量子力学带来的深刻变革。本文旨在弥合这一认知差距，揭示绝对零度作为热力学第三定律核心，以及其在现代物理学中作为探索量子世界的基石的重要意义。
+绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)（0 K 或 -273.15 °C）是物理学中最引人入胜的基本概念之一。它不仅是温度的理论下限，更是一个窗口，通过它我们得以窥见物质在最极端条件下的行为，以及量子力学如何取代[经典物理学](@keyword=classical_physics|lang=zh-CN|style=Feynman)成为主导规律。许多人对绝对零度的理解止于“粒子完全停止运动”的经典图像，但这忽略了量子力学带来的深刻变革。本文旨在弥合这一认知差距，揭示绝对零度作为[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)第三定律核心，以及其在现代物理学中作为探索量子世界的基石的重要意义。
 
-本文将带领读者踏上一段从经典到量子的探索之旅。在“原理与机制”一章中，我们将深入剖析热力学第三定律及其对熵和物质特性的根本性约束。接着，在“应用与跨学科联系”一章，我们将看到这些原理如何在低温工程、超导超流以及宇宙学等领域催生出革命性的技术和发现。最后，通过“动手实践”部分，您将有机会运用这些知识解决具体问题，巩固理解。让我们首先深入绝对零度的核心，探究其背后的物理原理与机制。
+本文将带领读者踏上一段从经典到量子的探索之旅。在“原理与机制”一章中，我们将深入剖析[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)第三定律及其对熵和物质特性的根本性约束。接着，在“应用与跨学科联系”一章，我们将看到这些原理如何在低温工程、超导超流以及宇宙学等领域催生出革命性的技术和发现。最后，通过“动手实践”部分，您将有机会运用这些知识解决具体问题，巩固理解。让我们首先深入绝对零度的核心，探究其背后的物理原理与机制。
 
 ## 原理与机制
 
-在上一章的介绍之后，我们现在深入探讨绝对零度的核心物理原理和机制。绝对零度不仅仅是一个温度标尺上的终点，它更是一个深刻概念的体现，这个概念触及了热力学、量子力学和物质基本属性的交叉领域。本章将系统地阐述作为现代绝对零度概念基石的热力学第三定律，并探讨其在理论和实验上的广泛推论。
+在上一章的介绍之后，我们现在深入探讨绝对零度的核心物理原理和机制。绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)不仅仅是一个温度标尺上的终点，它更是一个深刻概念的体现，这个概念触及了[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)、量子力学和物质基本属性的[交叉](@keyword=chiasmata|lang=zh-CN|style=Feynman)领域。本章将系统地阐述作为现代绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)概念基石的[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)第三定律，并探讨其在理论和实验上的广泛推论。
 
-### 绝对零度的经典概念
+### 绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)的经典概念
 
-在量子理论出现之前，对绝对零度的理解主要源于对气体行为的观察和外推。18世纪的科学家们，如 Guillaume Amontons，通过研究气体的压力与温度的关系，注意到一个线性趋势：对于固定体积和数量的气体，其压力随温度的降低而减小。这引出了一个自然而然的推论：是否存在一个最低温度，在该温度下，气体的压力将降至零？
+在[量子理论](@keyword=quantum_theory|lang=zh-CN|style=Feynman)出现之前，对绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)的理解主要源于对气体行为的观察和外推。18世纪的科学家们，如 Guillaume Amontons，通过研究气体的压力与温度的关系，注意到一个线性趋势：对于固定体积和数量的气体，其压力随温度的降低而减小。这引出了一个自然而然的推论：是否存在一个最低温度，在该温度下，气体的压力将降至零？
 
-我们可以通过理想气体模型来精确地量化这一思想。理想气体定律描述了压力 $P$、体积 $V$、物质的量 $n$ 和绝对温度 $T$ 之间的关系：
+我们可以通过[理想气体模型](@keyword=perfect_gas_model|lang=zh-CN|style=Feynman)来精确地量化这一思想。理想气体定律描述了压力 $P$、体积 $V$、[物质的量](@keyword=molar_quantity|lang=zh-CN|style=Feynman) $n$ 和[绝对温度](@keyword=absolute_temperature|lang=zh-CN|style=Feynman) $T$ 之间的关系：
 
 $$P V = n R T$$
 
-其中 $R$ 是理想气体常数。考虑一个体积固定且密封的容器，这意味着 $V$ 和 $n$ 都是常数。因此，压力 $P$ 与绝对温度 $T$ 成正比：
+其中 $R$ 是理想气体常数。考虑一个体积固定且密封的容器，这意味着 $V$ 和 $n$ 都是常数。因此，压力 $P$ 与[绝对温度](@keyword=absolute_temperature|lang=zh-CN|style=Feynman) $T$ 成正比：
 
 $$P = \left(\frac{n R}{V}\right) T$$
 
-假设一个装有理想气体的容器最初处于标准温度与压力下（$T_1 = 273.15$ K，$P_1 = 100$ kPa）。如果我们持续冷却该容器，根据理想气体定律，气体的压力将线性下降。理论上，当压力变为零时，我们有：
+假设一个装有[理想气体](@keyword=perfect_gases|lang=zh-CN|style=Feynman)的容器最初处于标准温度与压力下（$T_1 = 273.15$ K，$P_1 = 100$ kPa）。如果我们持续冷却该容器，根据理想气体定律，气体的压力将线性下降。理论上，当压力变为零时，我们有：
 
 $$0 = \left(\frac{n R}{V}\right) T$$
 
-这只有在绝对温度 $T=0$ K 时才成立。换算成摄氏温标，$T_C = T_K - 273.15$，这个理论上的最低温度就是 $-273.15$ °C [@problem_id:1840485]。这个由气体行为外推得到的温度，为 Lord Kelvin 建立绝对温标提供了最初的依据，并将 $0$ K 定义为绝对零度。
+这只有在绝对温度 $T=0$ K 时才成立。换算成摄氏温标，$T_C = T_K - 273.15$，这个理论上的最低温度就是 $-273.15$ °C [@problem_id:1840485]。这个由气体行为外推得到的温度，为 Lord Kelvin 建立[绝对温标](@keyword=absolute_temperature_scale|lang=zh-CN|style=Feynman)提供了最初的依据，并将 $0$ K 定义为绝对零度。
 
-然而，这个经典图像过于简单。它假设气体在冷却过程中始终保持为理想气体，并且其粒子的动能可以完全消失。现实中，所有气体在达到绝对零度之前都会液化和固化。更重要的是，量子力学揭示，即使在 $0$ K，粒子也并非完全静止，它们仍然拥有被称为**零点能**的最小能量。因此，一个更深刻、更精确的描述需要我们转向热力学第三定律。
+然而，这个经典图像过于简单。它假设气体在冷却过程中始终保持为理想气体，并且其粒子的动能可以完全消失。现实中，所有气体在[达到绝对零度](@keyword=reaching_absolute_zero|lang=zh-CN|style=Feynman)之前都会液化和固化。更重要的是，量子力学揭示，即使在 $0$ K，粒子也并非完全静止，它们仍然拥有被称为**零点能**的最小能量。因此，一个更深刻、更精确的描述需要我们转向[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)第三定律。
 
-### 热力学第三定律与熵的量子诠释
+### [热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)第三定律与熵的量子诠释
 
-对绝对零度的现代理解与熵的概念密不可分。熵，在宏观上是系统无序度的量度，在微观上则与系统可及的量子态数目有关。热力学第三定律正是关于系统在接近绝对零度时熵的行为。
+对绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)的现代理解与熵的概念密不可分。熵，在宏观上是系统无序度的量度，在微观上则与系统可及的[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)数目有关。[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)第三定律正是关于系统在接近绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)时熵的行为。
 
-#### 能斯特热定理与化学反应
+#### [能斯特热定理](@keyword=nernst_heat_theorem|lang=zh-CN|style=Feynman)与[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)
 
-20世纪初，化学家 Walther Nernst 在研究低温下的化学反应时发现了一个普遍规律。对于涉及纯净、完美晶体物质的反应，吉布斯自由能变 $\Delta G$ 和焓变 $\Delta H$ 之间的关系由下式给出：
+20世纪初，化学家 Walther Nernst 在研究低温下的[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)时发现了一个普遍规律。对于涉及纯净、完美晶体物质的反应，吉布斯自由能变 $\Delta G$ 和[焓变](@keyword=enthalpy_change|lang=zh-CN|style=Feynman) $\Delta H$ 之间的关系由下式给出：
 
 $$\Delta G = \Delta H - T \Delta S$$
 
@@ -41,57 +41,57 @@ $$\Delta G = \Delta H - T \Delta S$$
 
 $$\lim_{T \to 0} \Delta G = \lim_{T \to 0} (\Delta H - T \Delta S) = \Delta H$$
 
-虽然 $T \to 0$ 是一个因素，但这并不足以保证 $T \Delta S \to 0$，因为 $\Delta S$ 自身也可能在 $T \to 0$ 时发散。Nernst 的关键洞察，即**能斯特热定理**，正是断言对于凝聚态物质的任何等温可逆过程，其熵变在绝对零度时趋于零：
+虽然 $T \to 0$ 是一个因素，但这并不足以保证 $T \Delta S \to 0$，因为 $\Delta S$ 自身也可能在 $T \to 0$ 时发散。Nernst 的关键洞察，即**[能斯特热定理](@keyword=nernst_heat_theorem|lang=zh-CN|style=Feynman)**，正是断言对于[凝聚态物质](@keyword=condensed_matter|lang=zh-CN|style=Feynman)的任何等温[可逆过程](@keyword=reversible_processes|lang=zh-CN|style=Feynman)，其熵变在绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)时趋于零：
 
 $$\lim_{T \to 0} \Delta S = 0$$
 
-这一发现表明，在绝对零度附近，物质的熵值变得与压力、体积等其他热力学参数无关 [@problem_id:1840489]。
+这一发现表明，在绝对零度附近，物质的熵值变得与压力、体积等其他[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)参数无关 [@problem_id:1840489]。
 
-#### 统计力学观点：熵与基态
+#### [统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学观点：熵与[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)
 
-能斯特的发现为 Max Planck 等人将其推广为普适的热力学第三定律铺平了道路。通过 Ludwig Boltzmann 建立的统计力学，熵被赋予了微观意义：
+能斯特的发现为 Max Planck 等人将其推广为普适的[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)第三定律铺平了道路。通过 [Ludwig Boltzmann](@keyword=ludwig_boltzmann|lang=zh-CN|style=Feynman) 建立的[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学，熵被赋予了微观意义：
 
 $$S = k_B \ln \Omega$$
 
-其中 $k_B$ 是玻尔兹曼常数，$\Omega$ 是系统在给定宏观条件下（如能量、体积、粒子数）所能占据的微观状态总数。
+其中 $k_B$ 是[玻尔兹曼常数](@keyword=boltzmann_constant|lang=zh-CN|style=Feynman)，$\Omega$ 是系统在给定宏观条件下（如能量、体积、粒子数）所能占据的微观状态总数。
 
-根据量子力学，一个系统的能量是量子化的。在绝对零度 $T=0$ K 时，系统会自发地处于其能量最低的状态，即**基态**。如果这个基态是唯一的，即**非简并的**，那么系统在 $T=0$ 时只有一种可能的微观构型，即 $\Omega = 1$。在这种情况下，系统的熵为：
+根据量子力学，一个系统的能量是量子化的。在绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman) $T=0$ K 时，系统会自发地处于其能量最低的状态，即**[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)**。如果这个[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)是唯一的，即**非简并的**，那么系统在 $T=0$ 时只有一种可能的微观构型，即 $\Omega = 1$。在这种情况下，系统的熵为：
 
 $$S = k_B \ln(1) = 0$$
 
-[@problem_id:2013514] 这就是热力学第三定律的普朗克表述：**一个完美晶体在绝对零度时的熵为零。** “完美晶体”这一限定词至关重要，它确保了基态的唯一性。
+[@problem_id:2013514] 这就是[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)第三定律的普朗克表述：**一个[完美晶体](@keyword=perfect_crystal|lang=zh-CN|style=Feynman)在绝对零度时的熵为零。** “完美晶体”这一限定词至关重要，它确保了[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)的唯一性。
 
 这一量子原理在不同类型的粒子系统中得到了体现：
-*   **费米子系统**：对于像电子这样的费米子，它们必须遵守泡利不相容原理，即两个全同费米子不能占据同一个量子态。因此，在 $T=0$ K 时，N个费米子会从最低能级开始，依次填充所有可用的能级，直到所有粒子都被安置。这个确定的填充方式导致了一个唯一的、非简并的N粒子基态（通常称为费米海）。因此，一个理想的费米子系统在绝对零度的熵为零 [@problem_id:1902529]。
-*   **玻色子系统**：对于像光子或某些原子那样的玻色子，它们倾向于占据同一个量子态。当温度足够低时，会发生**玻色-爱因斯坦凝聚 (Bose-Einstein Condensation, BEC)**，即宏观数量的粒子“凝聚”到能量最低的单粒子基态上。在 $T \to 0$ 的极限下，所有粒子都处于这个唯一的基态，同样导致系统的微观状态数为 $\Omega=1$，熵为零 [@problem_id:1902592]。
+*   **[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)系统**：对于像电子这样的[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)，它们必须遵守[泡利不相容原理](@keyword=pauli_exclusion_principle|lang=zh-CN|style=Feynman)，即两个全同[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)不能占据同一个[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)。因此，在 $T=0$ K 时，N个[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)会从最低能级开始，依次填充所有可用的能级，直到所有粒子都被安置。这个确定的填充方式导致了一个唯一的、非简并的N粒子基态（通常称为费米海）。因此，一个理想的[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)系统在绝对零度的熵为零 [@problem_id:1902529]。
+*   **[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)系统**：对于像[光子](@entry_id:145192)或某些原子那样的[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)，它们倾向于占据同一个[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)。当温度足够低时，会发生**玻色-爱因斯坦凝聚 (Bose-Einstein Condensation, BEC)**，即宏观数量的粒子“凝聚”到能量最低的单粒[子基](@keyword=subbasis|lang=zh-CN|style=Feynman)态上。在 $T \to 0$ 的极限下，所有粒子都处于这个唯一的[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)，同样导致系统的微观状态数为 $\Omega=1$，熵为零 [@problem_id:1902592]。
 
-与此形成鲜明对比的是经典理想气体模型。其熵的半经典表达式，即**萨克-特特罗德方程**，在低温下会失效。该方程预测当 $T \to 0$ 时，熵会发散到负无穷大，这明显违背了熵作为微观状态数对数的物理意义（$\Omega$ 不能小于1），也与热力学第三定律相抵触 [@problem_id:2013560]。这凸显了在低温领域，量子力学描述的必要性。
+与此形成鲜明对比的是[经典理想气体](@keyword=classical_ideal_gas|lang=zh-CN|style=Feynman)模型。其熵的半经典表达式，即**[萨克-特特罗德方程](@keyword=sackur_tetrode_equation|lang=zh-CN|style=Feynman)**，在低温下会失效。该方程预测当 $T \to 0$ 时，熵会发散到负无穷大，这明显违背了熵作为微观状态数对数的物理意义（$\Omega$ 不能小于1），也与[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)第三定律相抵触 [@problem_id:2013560]。这凸显了在低温领域，量子力学描述的必要性。
 
-### 残余熵：基态不唯一的情况
+### 残余熵：[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)不唯一的情况
 
-“完美晶体”的假设并非总是成立。在某些情况下，即使在绝对零度，系统也可能存在多种能量相同或极其相近的基态构型。这种由基态简并（degeneracy, $g > 1$）导致的在 $T=0$ K 时的非零熵，被称为**残余熵 (residual entropy)**。
+“[完美晶体](@keyword=perfect_crystal|lang=zh-CN|style=Feynman)”的假设并非总是成立。在某些情况下，即使在绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)，系统也可能存在多种能量相同或极其相近的[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)构型。这种由[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)简并（degeneracy, $g > 1$）导致的在 $T=0$ K 时的非零熵，被称为**残余熵 (residual entropy)**。
 
 此时，系统的熵趋于一个正的常数值：
 
 $$S_0 = \lim_{T \to 0} S(T) = k_B \ln \Omega_0 = k_B \ln(g)$$
 
-其中 $\Omega_0 = g$ 是基态的简并度。
+其中 $\Omega_0 = g$ 是[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)的简并度。
 
-一个经典的例子是固态一氧化碳（CO）晶体 [@problem_id:1840502]。CO 分子是线性的且略有不对称。在晶格中，每个分子可以有两种几乎等能量的取向（C-O 或 O-C）。如果晶体冷却速度足够快，分子来不及调整到能量绝对最低的有序排列，就会被“冻结”在这些随机的取向中。对于 1 摩尔（包含 $N_A$ 个分子）的晶体，每个分子有 2 种可能的取向，总的微观状态数就是 $\Omega = 2^{N_A}$。因此，其摩尔残余熵为：
+一个经典的例子是固态一氧化碳（CO）晶体 [@problem_id:1840502]。CO 分子是线性的且略有不对称。在[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)中，每个分子可以有两种几乎等能量的取向（C-O 或 O-C）。如果晶体冷却速度足够快，分子来不及调整到能量绝对最低的有序[排列](@keyword=permutation|lang=zh-CN|style=Feynman)，就会被“冻结”在这些随机的取向中。对于 1 摩尔（包含 $N_A$ 个分子）的晶体，每个分子有 2 种可能的取向，总的微观状态数就是 $\Omega = 2^{N_A}$。因此，其摩尔残余熵为：
 
-$$S_m = k_B \ln(2^{N_A}) = N_A k_B \ln 2 = R \ln 2 \approx 5.76 \, \text{J/(mol·K)}$$
+$$S_m = k_B \ln(2^{N_A}) = N_A k_B \ln 2 = R \ln 2 \approx 5.76 \, \mathrm{J/(mol\cdot K)}$$
 
-除了分子取向无序，残余熵的来源还包括同位素的随机混合，以及在非晶态固体（如玻璃）中存在的结构无序。玻璃本质上是动力学上被“冻结”的过冷液体，其原子排列不具备长程有序性，因此具有大量的准简并构象，导致其在 $T \to 0$ 时熵值远高于对应的晶体。
+除了[分子取向](@keyword=molecular_orientation|lang=zh-CN|style=Feynman)无序，残余熵的来源还包括同位素的随机混合，以及在[非晶态固体](@keyword=amorphous_solids|lang=zh-CN|style=Feynman)（如玻璃）中存在的结构无序。玻璃本质上是动力学上被“冻结”的[过冷液体](@keyword=supercooled_liquids|lang=zh-CN|style=Feynman)，其原子[排列](@keyword=permutation|lang=zh-CN|style=Feynman)不具备长程有序性，因此具有大量的[准简并](@keyword=quasi_degeneracy|lang=zh-CN|style=Feynman)构象，导致其在 $T \to 0$ 时熵值远高于对应的晶体。
 
-因此，对热力学第三定律最精确和普适的陈述是：**当温度趋于绝对零度时，任何系统的熵都趋于一个常数值。对于处于唯一、非简并基态的系统（如完美晶体），该值为零** [@problem_id:1896799]。
+因此，对[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)第三定律最精确和普适的陈述是：**当温度趋于绝对零度时，任何系统的熵都趋于一个常数值。对于处于唯一、非简并[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)的系统（如[完美晶体](@keyword=perfect_crystal|lang=zh-CN|style=Feynman)），该值为零** [@problem_id:1896799]。
 
 ### 低温下的宏观推论
 
-热力学第三定律不仅是一个关于熵的抽象陈述，它对物质在低温下的宏观可测量性质施加了强有力的约束。
+[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)第三定律不仅是一个关于熵的抽象陈述，它对物质在低温下的宏观可测量性质施加了强有力的约束。
 
-#### 热容趋于零
+#### [热容](@keyword=heat_capacity|lang=zh-CN|style=Feynman)趋于零
 
-物质的热容 $C$ 反映了其温度每升高一度所需吸收的热量。恒容热容 $C_V$ 与熵 $S$ 的关系为 $C_V = T (\partial S / \partial T)_V$。通过积分，我们可以得到从绝对零度到温度 $T$ 的熵变：
+物质的[热容](@keyword=heat_capacity|lang=zh-CN|style=Feynman) $C$ 反映了其温度每升高一度所需吸收的热量。恒容热容 $C_V$ 与熵 $S$ 的关系为 $C_V = T (\partial S / \partial T)_V$。通过积分，我们可以得到从绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)到温度 $T$ 的[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)：
 
 $$S(T) - S(0) = \int_{0}^{T} \frac{C_V(T')}{T'} dT'$$
 
@@ -99,11 +99,11 @@ $$S(T) - S(0) = \int_{0}^{T} \frac{C_V(T')}{T'} dT'$$
 
 $$\lim_{T \to 0} C_V(T) = 0 \quad \text{and} \quad \lim_{T \to 0} C_P(T) = 0$$
 
-这一结论得到了实验的广泛证实，例如，固体的热容在低温下通常遵循 $T^3$（德拜模型）或 $T$（金属的电子热容）的行为，均满足趋于零的要求。
+这一结论得到了实验的广泛证实，例如，[固体的热容](@keyword=heat_capacity_of_solids|lang=zh-CN|style=Feynman)在低温下通常遵循 $T^3$（德拜模型）或 $T$（金属的[电子热容](@keyword=electronic_heat_capacity|lang=zh-CN|style=Feynman)）的行为，均满足趋于零的要求。
 
-#### 热膨胀系数趋于零
+#### [热膨胀系数](@keyword=thermal_expansion_coefficient|lang=zh-CN|style=Feynman)趋于零
 
-另一个重要的推论是，所有物质的**热膨胀系数 $\beta$** 在 $T \to 0$ 时也必须为零。$\beta$ 定义为恒压下单位温度变化引起的体积极分变化：
+另一个重要的推论是，所有物质的**[热膨胀系数](@keyword=thermal_expansion_coefficient|lang=zh-CN|style=Feynman) $\beta$** 在 $T \to 0$ 时也必须为零。$\beta$ 定义为恒压下单位温度变化引起的体积极分变化：
 
 $$\beta = \frac{1}{V} \left( \frac{\partial V}{\partial T} \right)_P$$
 
@@ -115,22 +115,22 @@ $$\left( \frac{\partial V}{\partial T} \right)_P = - \left( \frac{\partial S}{\p
 
 $$\beta = -\frac{1}{V} \left( \frac{\partial S}{\partial P} \right)_T$$
 
-根据能斯特热定理，在 $T=0$ 时，熵与压力无关，这意味着 $(\partial S / \partial P)_T$ 在 $T \to 0$ 时必须为零。由于体积 $V$ 是一个有限的正常数，这直接导致了热膨胀系数也必须趋于零 [@problem_id:1840515]：
+根据[能斯特热定理](@keyword=nernst_heat_theorem|lang=zh-CN|style=Feynman)，在 $T=0$ 时，熵与压力无关，这意味着 $(\partial S / \partial P)_T$ 在 $T \to 0$ 时必须为零。由于体积 $V$ 是一个有限的正常数，这直接导致了[热膨胀系数](@keyword=thermal_expansion_coefficient|lang=zh-CN|style=Feynman)也必须趋于零 [@problem_id:1840515]：
 
 $$\lim_{T \to 0} \beta = 0$$
 
-这个结果直观上也容易理解：在基态时，系统处于能量最低的唯一构型，微小的温度扰动不足以使其体积发生显著变化。
+这个结果直观上也容易理解：在[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)时，系统处于能量最低的唯一构型，微小的温度扰动不足以使其体积发生显著变化。
 
-### 绝对零度的不可达到性
+### [绝对零度的不可达到性](@keyword=unattainability_of_absolute_zero|lang=zh-CN|style=Feynman)
 
-热力学第三定律的最后一种、也是在实践中最常被引用的表述是**绝对零度不可达到原理**：**不可能通过有限次数的操作将任何系统冷却到绝对零度。**
+[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)第三定律的最后一种、也是在实践中最常被引用的表述是**绝对零度不可达到原理**：**不可能通过有限次数的操作将任何系统冷却到绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)。**
 
 我们可以通过一个简单的数学模型来理解这一点。假设有一个多级冷却设备，每一级操作能使物体的绝对温度降低其当前值的某个固定百分比 $\rho$。如果初始温度为 $T_0$，经过 $N$ 级冷却后，温度将变为：
 
 $$T_N = T_0 (1 - \rho)^N$$
 
-要达到 $T_N = 0$，需要 $(1-\rho)^N = 0$。由于 $1-\rho$ 是一个小于1的正数，这只有在 $N \to \infty$ 时才可能实现。换言之，无论每一步的冷却效率有多高（只要 $\rho \lt 1$），都需要无限多步才能达到绝对零度 [@problem_id:1902565]。
+要达到 $T_N = 0$，需要 $(1-\rho)^N = 0$。由于 $1-\rho$ 是一个小于1的正数，这只有在 $N \to \infty$ 时才可能实现。换言之，无论每一步的冷却效率有多高（只要 $\rho \lt 1$），都需要无限多步才能[达到绝对零度](@keyword=reaching_absolute_zero|lang=zh-CN|style=Feynman) [@problem_id:1902565]。
 
-更根本的物理解释来自于熵的行为。所有实用的制冷过程，如绝热去磁，都依赖于通过改变某个外部参数（如磁场）来操纵系统的熵。一个典型的制冷循环包括等温和绝热两个步骤。然而，第三定律指出，在不同参数值下（例如，有磁场和无磁场），系统的熵曲线 $S(T)$ 都会在 $T \to 0$ 时汇合到同一点（或同一个常数值 $S_0$）。这意味着，随着温度的降低，通过改变参数所能获得的熵变越来越小，从而使得每一个冷却循环能降低的温度也越来越小。最终，到达 $T=0$ 将需要无限个这样的循环。
+更根本的物理解释来自于熵的行为。所有实用的制冷过程，如[绝热去磁](@keyword=magnetic_cooling|lang=zh-CN|style=Feynman)，都依赖于通过改变某个外部参数（如[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)）来操纵系统的熵。一个典型的[制冷循环](@keyword=refrigeration_cycle|lang=zh-CN|style=Feynman)包括等温和绝热两个步骤。然而，第三定律指出，在不同参数值下（例如，有[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)和无[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)），系统的熵曲线 $S(T)$ 都会在 $T \to 0$ 时[汇合](@keyword=consilience|lang=zh-CN|style=Feynman)到同一点（或同一个常数值 $S_0$）。这意味着，随着温度的降低，通过改变参数所能获得的[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)越来越小，从而使得每一个冷却循环能降低的温度也越来越小。最终，到达 $T=0$ 将需要无限个这样的循环。
 
-因此，绝对零度作为一个理论极限，在物理上是可定义的，其附近的物理现象是可以被研究的，但它本身在实践中却是一个永远无法触及的目标。它像地平线一样，我们可以无限接近，但永远无法到达。
+因此，绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)作为一个理论极限，在物理上是可定义的，其附近的物理现象是可以被研究的，但它本身在实践中却是一个永远无法触及的目标。它像地平线一样，我们可以无限接近，但永远无法到达。

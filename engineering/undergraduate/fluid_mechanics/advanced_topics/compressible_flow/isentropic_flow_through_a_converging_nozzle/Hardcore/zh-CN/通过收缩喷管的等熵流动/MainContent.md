@@ -1,93 +1,93 @@
 ## 引言
-气体在喷管内的加速流动是许多关键工程技术的核心，从驱动火箭进入太空的发动机，到发电厂中的燃气轮机，再到保障工业安全的泄压系统。精确预测和控制这种高速可压缩流动的行为，对于系统设计、性能优化与安全评估至关重要。然而，当流速接近声速时，气体的行为变得不再直观，需要一个坚实的理论框架来描述。本文旨在系统性地解析收缩喷管中等熵流动的物理过程，填补直观理解与定量分析之间的鸿沟。
+气体在喷管内的加速流动是许多关键工程技术的核心，从驱动火箭进入太空的发动机，到发电厂中的[燃气轮机](@keyword=gas_turbine|lang=zh-CN|style=Feynman)，再到保障工业安全的泄压系统。精确预测和控制这种高速[可压缩流](@keyword=compressible_flows|lang=zh-CN|style=Feynman)动的行为，对于[系统设计](@keyword=system_design|lang=zh-CN|style=Feynman)、[性能优化](@keyword=performance_optimization|lang=zh-CN|style=Feynman)与安全评估至关重要。然而，当流速接近声速时，气体的行为变得不再直观，需要一个坚实的理论框架来描述。本文旨在系统性地解析[收缩喷管](@keyword=converging_nozzle|lang=zh-CN|style=Feynman)中[等熵流](@keyword=isentropic_flow|lang=zh-CN|style=Feynman)动的物理过程，填补直观理解与定量分析之间的鸿沟。
 
-在接下来的内容中，我们将分三步深入探索这一主题。第一章 **“原理与机制”** 将奠定理论基础，详细介绍滞止性质、临界条件以及关键的壅塞现象。第二章 **“应用与跨学科联系”** 将理论与实践相结合，展示这些原理如何在航空航天、安全工程乃至化学物理等多个领域发挥作用。最后，通过 **“动手实践”** 环节，你将有机会运用所学知识解决具体的工程计算问题。
+在接下来的内容中，我们将分三步深入探索这一主题。第一章 **“原理与机制”** 将奠定理论基础，详细介绍滞止性质、[临界条件](@keyword=criticality_condition|lang=zh-CN|style=Feynman)以及关键的壅塞现象。第二章 **“应用与跨学科联系”** 将理论与实践相结合，展示这些原理如何在航空航天、安全工程乃至[化学物理](@keyword=chemical_physics|lang=zh-CN|style=Feynman)等多个领域发挥作用。最后，通过 **“动手实践”** 环节，你将有机会运用所学知识解决具体的工程计算问题。
 
 让我们首先从理解控制这一流动现象的基本物理定律开始。
 
 ## 原理与机制
 
-在本章中，我们将深入探讨气体通过收缩喷管进行等熵流动的核心原理与关键机制。理解这些内容对于航空航天推进、燃气轮机以及多种工业过程的设计与分析至关重要。我们将从气流的起始状态出发，逐步建立描述其在喷管内变化的物理模型，最终揭示壅塞（choking）这一关键现象的本质。
+在本章中，我们将深入探讨气体通过[收缩喷管](@keyword=converging_nozzle|lang=zh-CN|style=Feynman)进行[等熵流](@keyword=isentropic_flow|lang=zh-CN|style=Feynman)动的核心原理与关键机制。理解这些内容对于航空[航天推进](@keyword=space_propulsion|lang=zh-CN|style=Feynman)、[燃气轮机](@keyword=gas_turbine|lang=zh-CN|style=Feynman)以及多种工业过程的设计与分析至关重要。我们将从气流的起始状态出发，逐步建立描述其在喷管内变化的物理模型，最终揭示壅塞（choking）这一关键现象的本质。
 
 ### 滞止状态与流动性质
 
-我们分析的起点通常是一个被称为“滞止室”（stagnation chamber）或“储气罐”（reservoir）的大型容器。我们假设容器中的气体速度可以忽略不计（$V \approx 0$）。此状态下的气体性质被称为**滞止性质**，用下标“0”表示。这些性质包括**滞止压力** $P_0$、**滞止温度** $T_0$ 和**滞止密度** $\rho_0$。它们是气体在被加速前的初始热力学状态。
+我们分析的起点通常是一个被称为“滞止室”（stagnation chamber）或“储气罐”（reservoir）的大型容器。我们假设容器中的气体速度可以忽略不计（$V \approx 0$）。此状态下的气体性质被称为**滞止性质**，用下标“0”表示。这些性质包括**[滞止压力](@keyword=stagnation_pressure|lang=zh-CN|style=Feynman)** $P_0$、**[滞止温度](@keyword=stagnation_temperature|lang=zh-CN|style=Feynman)** $T_0$ 和**滞止密度** $\rho_0$。它们是气体在被加速前的初始[热力学状态](@keyword=thermodynamic_states|lang=zh-CN|style=Feynman)。
 
-对于理想气体，这些滞止性质遵循理想气体状态方程。例如，如果我们知道储气罐内的滞止压力和滞止温度，就可以计算滞止密度。在一个为小型卫星推进器供气的高压氮气罐中，若初始条件为 $P_0 = 20.0 \text{ MPa}$ 和 $T_0 = 300 \text{ K}$，使用氮气的气体常数 $R = 296.8 \text{ J/(kg·K)}$，我们可以通过以下关系式计算滞止密度 [@problem_id:1767298]：
+对于[理想气体](@keyword=perfect_gases|lang=zh-CN|style=Feynman)，这些滞止性质遵循[理想气体状态方程](@keyword=pv=nrt|lang=zh-CN|style=Feynman)。例如，如果我们知道储气罐内的滞止压力和[滞止温度](@keyword=stagnation_temperature|lang=zh-CN|style=Feynman)，就可以计算滞止密度。在一个为小型卫星推进器供气的高压氮气罐中，若初始条件为 $P_0 = 20.0 \text{ MPa}$ 和 $T_0 = 300 \text{ K}$，使用氮气的气体常数 $R = 296.8 \mathrm{J/(kg\cdot K)}$，我们可以通过以下关系式计算滞止密度 [@problem_id:1767298]：
 $$
-\rho_0 = \frac{P_0}{R T_0} = \frac{20.0 \times 10^6 \text{ Pa}}{[296.8 \text{ J/(kg·K)}] (300 \text{ K})} \approx 225 \text{ kg/m}^3
+\rho_0 = \frac{P_0}{R T_0} = \frac{20.0 \times 10^6 \text{ Pa}}{[296.8 \mathrm{J/(kg\cdot K)}] (300 \text{ K})} \approx 225 \text{ kg/m}^3
 $$
-滞止性质是整个等熵流动过程中的重要参考基准。
+滞止性质是整个[等熵流](@keyword=isentropic_flow|lang=zh-CN|style=Feynman)动过程中的重要参考基准。
 
-当气体从滞止室流出并进入收缩喷管时，其内能（以温度体现）会转化成动能（以速度体现）。对于绝热且无功交换的稳定流动，总能量守恒，这体现在总焓（或总温度）的守恒上。总焓 $h_0$ 由静焓 $h$ 和动能项组成：
+当气体从滞止室流出并进入[收缩喷管](@keyword=converging_nozzle|lang=zh-CN|style=Feynman)时，其内能（以温度体现）会转化成动能（以速度体现）。对于绝热且无功交换的稳定流动，总[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)，这体现在[总焓](@keyword=total_enthalpy|lang=zh-CN|style=Feynman)（或[总温](@keyword=stagnation_temperature|lang=zh-CN|style=Feynman)度）的守恒上。[总焓](@keyword=total_enthalpy|lang=zh-CN|style=Feynman) $h_0$ 由静焓 $h$ 和动能项组成：
 $$
 h_0 = h + \frac{V^2}{2}
 $$
-对于量热完全气体（calorically perfect gas），我们有 $h = c_p T$，其中 $c_p$ 是定压比热。因此，能量方程可以写成温度的形式：
+对于[量热完全气体](@keyword=calorically_perfect_gas|lang=zh-CN|style=Feynman)（calorically perfect gas），我们有 $h = c_p T$，其中 $c_p$ 是定[压比](@keyword=pressure_ratio|lang=zh-CN|style=Feynman)热。因此，能量方程可以写成温度的形式：
 $$
 c_p T_0 = c_p T + \frac{V^2}{2}
 $$
-这里，$T$ 和 $V$ 分别是流动中任意一点的**静态温度**和速度。引入**马赫数** $M = V/a$（其中 $a = \sqrt{\gamma R T}$ 是当地声速，$\gamma$ 是比热比），我们可以将上式重新整理，得到静态温度与滞止温度之间的基本关系：
+这里，$T$ 和 $V$ 分别是流动中任意一点的**静态温度**和速度。引入**[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)** $M = V/a$（其中 $a = \sqrt{\gamma R T}$ 是当地声速，$\gamma$ 是比热比），我们可以将上式重新整理，得到静态温度与[滞止温度](@keyword=stagnation_temperature|lang=zh-CN|style=Feynman)之间的基本关系：
 $$
 \frac{T_0}{T} = 1 + \frac{\gamma - 1}{2} M^2
 $$
-这个方程揭示了等熵流动的一个核心特征：随着马赫数的增加（即流速加快），气体的静态温度会下降。例如，若已知气流在喷管出口的马赫数为 $M_e = 0.5$，且滞止温度为 $T_0 = 400.0 \text{ K}$（对于 $\gamma=1.4$ 的氮气），我们可以计算出出口的静态温度 [@problem_id:1767352]：
+这个方程揭示了[等熵流](@keyword=isentropic_flow|lang=zh-CN|style=Feynman)动的一个核心特征：随着马赫数的增加（即流速加快），气体的静态温度会下降。例如，若已知气流在喷管出口的马赫数为 $M_e = 0.5$，且[滞止温度](@keyword=stagnation_temperature|lang=zh-CN|style=Feynman)为 $T_0 = 400.0 \text{ K}$（对于 $\gamma=1.4$ 的氮气），我们可以计算出出口的静态温度 [@problem_id:1767352]：
 $$
 T_e = \frac{T_0}{1 + \frac{1.4 - 1}{2} (0.5)^2} = \frac{400.0}{1 + 0.2 \times 0.25} = \frac{400.0}{1.05} \approx 381 \text{ K}
 $$
 
 ### 临界条件
 
-一个特别重要的状态是当流速达到当地声速时，即 $M=1$。该状态下的流动性质被称为**临界性质**，用上标“*”表示。将 $M=1$ 代入温度关系式，我们可以得到**临界温度** $T^*$ 与滞止温度 $T_0$ 的比值 [@problem_id:1767330]：
+一个特别重要的状态是当流速达到当地声速时，即 $M=1$。该状态下的流动性质被称为**[临界性质](@keyword=critical_properties|lang=zh-CN|style=Feynman)**，用上标“*”表示。将 $M=1$ 代入温度关系式，我们可以得到**[临界温度](@keyword=critical_temperature|lang=zh-CN|style=Feynman)** $T^*$ 与[滞止温度](@keyword=stagnation_temperature|lang=zh-CN|style=Feynman) $T_0$ 的比值 [@problem_id:1767330]：
 $$
 \frac{T^*}{T_0} = \frac{1}{1 + \frac{\gamma - 1}{2}} = \frac{2}{\gamma + 1}
 $$
 这个比值仅取决于气体的比热比 $\gamma$。对于空气（$\gamma \approx 1.4$），$T^*/T_0 \approx 0.833$。
 
-利用等熵关系式 $P/P_0 = (T/T_0)^{\gamma/(\gamma-1)}$ 和 $\rho/\rho_0 = (T/T_0)^{1/(\gamma-1)}$，我们可以类似地推导出**临界压力** $P^*$ 和**临界密度** $\rho^*$ 与其滞止值的关系：
+利用等熵关系式 $P/P_0 = (T/T_0)^{\gamma/(\gamma-1)}$ 和 $\rho/\rho_0 = (T/T_0)^{1/(\gamma-1)}$，我们可以类似地推导出**[临界压力](@keyword=critical_pressure|lang=zh-CN|style=Feynman)** $P^*$ 和**[临界密度](@keyword=critical_density|lang=zh-CN|style=Feynman)** $\rho^*$ 与其滞止值的关系：
 $$
 \frac{P^*}{P_0} = \left(\frac{2}{\gamma + 1}\right)^{\frac{\gamma}{\gamma - 1}}
 $$
 $$
 \frac{\rho^*}{\rho_0} = \left(\frac{2}{\gamma + 1}\right)^{\frac{1}{\gamma - 1}}
 $$
-**临界压力比** $P^*/P_0$ 是决定喷管是否壅塞的关键参数。对于空气（$\gamma=1.4$），$P^*/P_0 \approx 0.528$。这意味着，为了使气流在喷管某处达到声速，出口处的压力至少需要降低到滞止压力的52.8%。反过来，刚好使喷管壅塞所需的滞止压力与背压之比为 $P_0/P_b = (P_0/P^*) \approx 1/0.528 \approx 1.893$ [@problem_id:1783636]。这些临界值是喷管设计的固有属性，仅与气体类型有关。
+**[临界压力比](@keyword=critical_pressure_ratio|lang=zh-CN|style=Feynman)** $P^*/P_0$ 是决定喷管是否壅塞的关键参数。对于空气（$\gamma=1.4$），$P^*/P_0 \approx 0.528$。这意味着，为了使气流在喷管某处达到声速，出口处的压力至少需要降低到滞止压力的52.8%。反过来，刚好使喷管壅塞所需的滞止压力与[背压](@keyword=backpressure|lang=zh-CN|style=Feynman)之比为 $P_0/P_b = (P_0/P^*) \approx 1/0.528 \approx 1.893$ [@problem_id:1783636]。这些临界值是喷管设计的固有属性，仅与气体类型有关。
 
-### 面积-马赫数关系与收缩喷管的局限性
+### [面积-马赫数关系](@keyword=area_mach_relation|lang=zh-CN|style=Feynman)与[收缩喷管](@keyword=converging_nozzle|lang=zh-CN|style=Feynman)的局限性
 
-气流在变截面管道中是加速还是减速，取决于当地的马赫数。这个行为由**面积-马赫数关系**所支配。通过结合质量守恒方程（$\rho A V = \text{const}$）和动量方程的微分形式，我们可以推导出如下的关键关系式：
+气流在变[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)管道中是加速还是减速，取决于当地的马赫数。这个行为由**[面积-马赫数关系](@keyword=area_mach_relation|lang=zh-CN|style=Feynman)**所支配。通过结合质量守恒方程（$\rho A V = \text{const}$）和[动量方程](@keyword=momentum_equation|lang=zh-CN|style=Feynman)的微分形式，我们可以推导出如下的关键关系式：
 $$
 \frac{dA}{A} = (M^2 - 1) \frac{dV}{V}
 $$
 这个简洁的方程蕴含了可压缩流动的深刻物理：
-1.  **亚声速流动 ($M  1$)**: $M^2 - 1$ 为负。为了使气流加速（$dV > 0$），管道截面积必须减小（$dA  0$）。这正是**收缩喷管**（converging nozzle）能够加速亚声速气流的原理。
-2.  **超声速流动 ($M > 1$)**: $M^2 - 1$ 为正。为了使气流继续加速（$dV > 0$），管道截面积必须增大（$dA > 0$）。这意味着需要一个**扩张喷管**（diverging nozzle）来加速超声速气流。
-3.  **声速流动 ($M = 1$)**: $M^2 - 1 = 0$。该方程要求 $dA = 0$，这意味着流速达到声速的地点必须是管道截面积为极小值的**喉道**（throat）处。
+1.  **亚[声速流](@keyword=sonic_flow|lang=zh-CN|style=Feynman)动 ($M  1$)**: $M^2 - 1$ 为负。为了使气流加速（$dV > 0$），管道[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)积必须减小（$dA  0$）。这正是**[收缩喷管](@keyword=converging_nozzle|lang=zh-CN|style=Feynman)**（converging nozzle）能够加速亚声速气流的原理。
+2.  **超[声速流](@keyword=sonic_flow|lang=zh-CN|style=Feynman)动 ($M > 1$)**: $M^2 - 1$ 为正。为了使气流继续加速（$dV > 0$），管道[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)积必须增大（$dA > 0$）。这意味着需要一个**扩张喷管**（diverging nozzle）来加速超声速气流。
+3.  **[声速流](@keyword=sonic_flow|lang=zh-CN|style=Feynman)动 ($M = 1$)**: $M^2 - 1 = 0$。该方程要求 $dA = 0$，这意味着流速达到声速的地点必须是管道[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)积为极小值的**喉道**（throat）处。
 
-从这些分析可以得出一个至关重要的结论：一个纯粹的收缩喷管，其截面积单调减小，最小面积在出口处。因此，从亚声速滞止室出发的气流，在收缩喷管内能达到的最大马赫数就是1，且这个极限只能在出口处达到。它无法将气流加速至超声速 [@problem_id:1767639]。要获得超声速流动，必须在达到声速的喉道之后再接一个扩张段，即构成一个拉伐尔喷管（converging-diverging nozzle）。
+从这些分析可以得出一个至关重要的结论：一个纯粹的[收缩喷管](@keyword=converging_nozzle|lang=zh-CN|style=Feynman)，其[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)积单调减小，最小面积在出口处。因此，从亚声速滞止室出发的气流，在[收缩喷管](@keyword=converging_nozzle|lang=zh-CN|style=Feynman)内能达到的最大[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)就是1，且这个极限只能在出口处达到。它无法将气流加速至超声速 [@problem_id:1767639]。要获得超[声速流](@keyword=sonic_flow|lang=zh-CN|style=Feynman)动，必须在达到声速的喉道之后再接一个扩张段，即构成一个拉伐尔喷管（converging-diverging nozzle）。
 
-该关系式的积分形式，即**面积-马赫数函数**，为喷管设计提供了定量的指导。它将任意截面面积 $A$ 与该流动达到 $M=1$ 所需的临界喉道面积 $A^*$ 联系起来：
+该关系式的积分形式，即**面积-[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)函数**，为喷管设计提供了定量的指导。它将任意[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)面积 $A$ 与该流动达到 $M=1$ 所需的临界喉道面积 $A^*$ 联系起来：
 $$
 \frac{A}{A^*} = \frac{1}{M} \left[ \frac{1 + \frac{\gamma-1}{2} M^2}{\frac{\gamma+1}{2}} \right]^{\frac{\gamma+1}{2(\gamma-1)}}
 $$
-这个函数表明，对于给定的马赫数 $M$（无论亚声速或超声速），所需的截面积 $A$ 总是大于或等于 $A^*$（仅在 $M=1$ 时取等号）。在亚声速区，随着 $M$ 从0增加到1，$A/A^*$ 从无穷大减小到1。这允许我们计算为实现特定亚声速加速所需的面积比。例如，要将气流从马赫数 $M_1=0.2$ 加速到 $M_2=0.7$，我们可以通过计算相应的 $A/A^*$ 比值来确定所需的喷管出口与入口的面积比 $A_2/A_1$ [@problem_id:1767325]。
+这个函数表明，对于给定的[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman) $M$（无论亚声速或超声速），所需的[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)积 $A$ 总是大于或等于 $A^*$（仅在 $M=1$ 时取等号）。在亚声速区，随着 $M$ 从0增加到1，$A/A^*$ 从无穷大减小到1。这允许我们计算为实现特定亚声速加速所需的面积比。例如，要将气流从[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman) $M_1=0.2$ 加速到 $M_2=0.7$，我们可以通过计算相应的 $A/A^*$ 比值来确定所需的喷管出口与入口的面积比 $A_2/A_1$ [@problem_id:1767325]。
 
-### 收缩喷管的运行与壅塞现象
+### [收缩喷管](@keyword=converging_nozzle|lang=zh-CN|style=Feynman)的运行与壅塞现象
 
-收缩喷管的实际运行行为由其出口外部的环境压力——**背压** $P_b$ ——控制。让我们考虑一个思想实验：将喷管连接到滞止压力 $P_0$ 恒定的储气罐，然后逐步降低背压 $P_b$。
+[收缩喷管](@keyword=converging_nozzle|lang=zh-CN|style=Feynman)的实际运行行为由其出口外部的环境压力——**[背压](@keyword=backpressure|lang=zh-CN|style=Feynman)** $P_b$ ——控制。让我们考虑一个思想实验：将喷管连接到[滞止压力](@keyword=stagnation_pressure|lang=zh-CN|style=Feynman) $P_0$ 恒定的储气罐，然后逐步降低[背压](@keyword=backpressure|lang=zh-CN|style=Feynman) $P_b$。
 
-1.  **未壅塞流动 (Unchoked Flow)**: 当背压 $P_b$ 相对较高，具体而言，当 $P_b > P^*$ 时，气流在整个喷管内都保持亚声速。此时，喷管出口的压力 $P_e$ 完全由背压决定，即 $P_e = P_b$。出口马赫数 $M_e  1$，其值由压力比 $P_b/P_0$ 唯一确定。随着 $P_b$ 的降低，压差增大，气流加速，出口马赫数 $M_e$ 和质量流量 $\dot{m}$ 也随之增加。
+1.  **未[壅塞流](@keyword=choked_flow|lang=zh-CN|style=Feynman)动 (Unchoked Flow)**: 当背压 $P_b$ 相对较高，具体而言，当 $P_b > P^*$ 时，气流在整个喷管内都保持亚声速。此时，喷管出口的压力 $P_e$ 完全由[背压](@keyword=backpressure|lang=zh-CN|style=Feynman)决定，即 $P_e = P_b$。出口马赫数 $M_e  1$，其值由[压力比](@keyword=pressure_ratio|lang=zh-CN|style=Feynman) $P_b/P_0$ 唯一确定。随着 $P_b$ 的降低，压差增大，气流加速，出口[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman) $M_e$ 和[质量流](@keyword=mass_flow|lang=zh-CN|style=Feynman)量 $\dot{m}$ 也随之增加。
 
-2.  **壅塞流动 (Choked Flow)**: 当背压降低到等于或低于临界压力时，即 $P_b \le P^*$ 时，**壅塞**现象发生。
+2.  **[壅塞流](@keyword=choked_flow|lang=zh-CN|style=Feynman)动 (Choked Flow)**: 当背压降低到等于或低于[临界压力](@keyword=critical_pressure|lang=zh-CN|style=Feynman)时，即 $P_b \le P^*$ 时，**壅塞**现象发生。
     *   喷管出口（喉道）的马赫数达到其极限值 $M_e = 1$。
-    *   喷管出口的压力也达到了一个最小值，即临界压力 $P^*$。此时，出口压力与背压“脱钩”，即 $P_e = P^*$, 即使 $P_b$ 继续下降，出口压力也维持在 $P^*$ 不变。例如，如果滞止压力 $P_0=147.5 \text{ kPa}$（$\gamma=1.4$），临界压力 $P^* \approx 0.528 P_0 \approx 77.9 \text{ kPa}$。若背压降至 $P_b = 65.0 \text{ kPa}$，由于 $P_b  P^*$，喷管已经壅塞，其出口压力将是 $P_e = P^* \approx 77.9 \text{ kPa}$，而不是 $65.0 \text{ kPa}$ [@problem_id:1767336]。从出口平面 $P_e=P^*$ 到远场环境 $P_b$ 的压力调整，是通过喷管外部一系列复杂的二维/三维膨胀波结构完成的。
+    *   喷管出口的压力也达到了一个最小值，即[临界压力](@keyword=critical_pressure|lang=zh-CN|style=Feynman) $P^*$。此时，出口压力与[背压](@keyword=backpressure|lang=zh-CN|style=Feynman)“脱钩”，即 $P_e = P^*$, 即使 $P_b$ 继续下降，出口压力也维持在 $P^*$ 不变。例如，如果滞止压力 $P_0=147.5 \text{ kPa}$（$\gamma=1.4$），[临界压力](@keyword=critical_pressure|lang=zh-CN|style=Feynman) $P^* \approx 0.528 P_0 \approx 77.9 \text{ kPa}$。若背压降至 $P_b = 65.0 \text{ kPa}$，由于 $P_b  P^*$，喷管已经壅塞，其出口压力将是 $P_e = P^* \approx 77.9 \text{ kPa}$，而不是 $65.0 \text{ kPa}$ [@problem_id:1767336]。从出口平面 $P_e=P^*$ 到[远场](@keyword=far_field|lang=zh-CN|style=Feynman)环境 $P_b$ 的压力调整，是通过喷管外部一系列复杂的二维/三维[膨胀波](@keyword=expansion_waves|lang=zh-CN|style=Feynman)结构完成的。
     *   最重要的是，一旦壅塞，通过喷管的**质量流量 $\dot{m}$ 达到其最大值**。这是因为出口面积 $A_e$ 是固定的，而出口的密度和速度也分别被锁定在其临界值 $\rho^*$ 和 $V^*=a^*$。因此，质量流量 $\dot{m} = \rho^* A_e a^*$ 达到一个上限。继续降低背压 $P_b$ 不会改变出口的任何流动参数，因此质量流量不再增加。喷管就像一个“饱和”的管道，其流量达到了极限。
 
-我们可以通过分析**质量通量**（单位面积的质量流量）$G = \rho V$ 来更深入地理解这一现象。可以证明，对于给定的滞止条件，质量通量是马赫数的函数，并且在 $M=1$ 时达到最大值 [@problem_id:1767365]。这从数学上证明了声速喉道是质量流动的瓶颈。
+我们可以通过分析**质量通量**（单位面积的[质量流](@keyword=mass_flow|lang=zh-CN|style=Feynman)量）$G = \rho V$ 来更深入地理解这一现象。可以证明，对于给定的滞止条件，质量通量是[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)的函数，并且在 $M=1$ 时达到最大值 [@problem_id:1767365]。这从数学上证明了声速喉道是[质量流](@keyword=mass_flow|lang=zh-CN|style=Feynman)动的瓶颈。
 
-让我们通过一个具体的例子来量化壅塞对质量流量的影响。假设一个氮气推进器，滞止条件为 $P_0=800 \text{ kPa}$ 和 $T_0=300 \text{ K}$。其临界压力为 $P^* \approx 0.528 \times 800 = 422.6 \text{ kPa}$。
-*   在测试1中，背压 $P_{b1} = 500 \text{ kPa}$。因为 $P_{b1} > P^*$，流动未壅塞，$P_{e1} = 500 \text{ kPa}$。
-*   在测试2中，背压 $P_{b2} = 200 \text{ kPa}$。因为 $P_{b2}  P^*$，流动壅塞，$P_{e2} = P^* \approx 422.6 \text{ kPa}$。
-通过计算，我们可以发现从测试1到测试2，虽然背压显著降低，但质量流量的增加非常有限。计算表明，$\dot{m}_2 / \dot{m}_1 \approx 1.02$ [@problem_id:1767292]。这个微小的增量完全来自于将出口马赫数从未壅塞的某个值（例如 $M_{e1} \approx 0.85$）提升到壅塞的 $M_{e2}=1$。如果我们将背压从 $200 \text{ kPa}$ 进一步降低到 $100 \text{ kPa}$，质量流量将完全保持不变，即 $\dot{m}_3/\dot{m}_2 = 1.0$。
+让我们通过一个具体的例子来量化壅塞对[质量流](@keyword=mass_flow|lang=zh-CN|style=Feynman)量的影响。假设一个氮气推进器，滞止条件为 $P_0=800 \text{ kPa}$ 和 $T_0=300 \text{ K}$。其[临界压力](@keyword=critical_pressure|lang=zh-CN|style=Feynman)为 $P^* \approx 0.528 \times 800 = 422.6 \text{ kPa}$。
+*   在测试1中，[背压](@keyword=backpressure|lang=zh-CN|style=Feynman) $P_{b1} = 500 \text{ kPa}$。因为 $P_{b1} > P^*$，流动未壅塞，$P_{e1} = 500 \text{ kPa}$。
+*   在测试2中，背压 $P_{b2} = 200 \text{ kPa}$。因为 $P_{b2}  P^*$，[流动壅塞](@keyword=flow_choking|lang=zh-CN|style=Feynman)，$P_{e2} = P^* \approx 422.6 \text{ kPa}$。
+通过计算，我们可以发现从测试1到测试2，虽然[背压](@keyword=backpressure|lang=zh-CN|style=Feynman)显著降低，但质量流量的增加非常有限。计算表明，$\dot{m}_2 / \dot{m}_1 \approx 1.02$ [@problem_id:1767292]。这个微小的增量完全来自于将出口[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)从未壅塞的某个值（例如 $M_{e1} \approx 0.85$）提升到壅塞的 $M_{e2}=1$。如果我们将[背压](@keyword=backpressure|lang=zh-CN|style=Feynman)从 $200 \text{ kPa}$ 进一步降低到 $100 \text{ kPa}$，[质量流](@keyword=mass_flow|lang=zh-CN|style=Feynman)量将完全保持不变，即 $\dot{m}_3/\dot{m}_2 = 1.0$。
 
-综上所述，收缩喷管的等熵流动由一系列明确的物理定律支配。其核心在于面积变化与速度变化的相互关系，以及由背压控制的壅塞机制。壅塞不仅将出口马赫数限制在1，更重要的是，它为给定的上游条件和喷管几何形状设定了质量流量的上限，这是所有基于喷管的推进和流动控制系统的基本工作原理。
+综上所述，[收缩喷管](@keyword=converging_nozzle|lang=zh-CN|style=Feynman)的[等熵流](@keyword=isentropic_flow|lang=zh-CN|style=Feynman)动由一系列明确的物理定律支配。其核心在于面积变化与速度变化的相互关系，以及由[背压](@keyword=backpressure|lang=zh-CN|style=Feynman)控制的壅塞机制。壅塞不仅将出口[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)限制在1，更重要的是，它为给定的上游条件和喷管几何形状设定了质量流量的上限，这是所有基于喷管的推进和流动控制系统的基本工作原理。

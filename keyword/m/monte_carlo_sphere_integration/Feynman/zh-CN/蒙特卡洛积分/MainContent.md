@@ -31,7 +31,7 @@ $$
 
 然而，这种惊人的性能背后隐藏着一个致命的缺陷。想象一下试图在一个二维正方形上积分。一个沿每条轴有 $n$ 个点的网格总共需要 $n^2$ 个点。对于一个三维立方体，是 $n^3$ 个点。对于一个 $d$ 维[超立方体](@keyword=hypercube|lang=zh-CN|style=Feynman)，则是 $n^d$ 个点。这种计算成本的指数级增长，就是数学家和计算机科学家所称的**“[维度灾难](@keyword=curse_of_dimensionality|lang=zh-CN|style=Feynman)”**。[@problem_id:3253276]
 
-假设我们需要在一个20维空间上积分，这是金融或物理学等领域的常见任务。如果我们每个维度只用10个网格点（一个非常粗糙的网格），我们将需要 $10^{20}$ 次函数求值——这个数字远远超出了地球上任何计算机的能力。对于这种张量积[辛普森法则](@keyword=simpson_s_rule|lang=zh-CN|style=Feynman)，其误差在一维中曾以 $\mathcal{O}(M^{-4})$ 的优美方式缩放（其中 $M$ 是总点数），现在却变成了 $\mathcal{O}(M^{-4/d})$。对于 $d=20$，这就是 $\mathcalO(M^{-0.2})$，一个比蒙特卡洛方法差得多的[收敛速度](@keyword=rates_of_convergence|lang=zh-CN|style=Feynman)。[@problem_id:3259370]
+假设我们需要在一个20维空间上积分，这是金融或物理学等领域的常见任务。如果我们每个维度只用10个网格点（一个非常粗糙的网格），我们将需要 $10^{20}$ 次函数求值——这个数字远远超出了地球上任何计算机的能力。对于这种张量积[辛普森法则](@keyword=simpson_s_rule|lang=zh-CN|style=Feynman)，其误差在一维中曾以 $\mathcal{O}(M^{-4})$ 的优美方式缩放（其中 $M$ 是总点数），现在却变成了 $\mathcal{O}(M^{-4/d})$。对于 $d=20$，这就是 $\mathcal{O}(M^{-0.2})$，一个比蒙特卡洛方法差得多的[收敛速度](@keyword=rates_of_convergence|lang=zh-CN|style=Feynman)。[@problem_id:3259370]
 
 蒙特卡洛的魔力正在于此。它的[误差收敛](@keyword=error_convergence|lang=zh-CN|style=Feynman)速度 $\mathcal{O}(N^{-1/2})$，完全**与维度 $d$ 无关**。无论你是在二维圆上还是在二十维超球体上投掷飞镖，随着飞镖数量的增加，[统计不确定性](@keyword=statistical_uncertainty|lang=zh-CN|style=Feynman)都以完全相同的方式缩小。这一特性使得[蒙特卡洛](@keyword=monte_carlo|lang=zh-CN|style=Feynman)成为处理大量高维问题的唯一可行工具。它轻松地绕过了维度灾难，用随机机会的蛮力效果取代了[结构化网格](@keyword=structured_mesh|lang=zh-CN|style=Feynman)的数学优雅。
 

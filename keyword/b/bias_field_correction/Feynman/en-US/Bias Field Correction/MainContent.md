@@ -28,7 +28,7 @@ The secret lies in a crucial difference between the two signals. The bias field,
 To make this task easier, we can employ a classic mathematical trick. The multiplicative model $I = b \cdot s$ is awkward to work with. But if we take the natural logarithm of the image, the multiplication turns into a simple addition:
 
 $$
-\ln(I(\mathbf{x})) \approx \ln(b(\mathbf{x})) + \ln(s(\mathbfx))
+\ln(I(\mathbf{x})) \approx \ln(b(\mathbf{x})) + \ln(s(\mathbf{x}))
 $$
 
 Suddenly, the problem looks much more familiar. We now have a composite signal that is the sum of a low-frequency component (the log-bias field) and a high-frequency component (the log-anatomy). Our task has become analogous to filtering out a low-frequency hum from a high-frequency melody in an audio recording [@problem_id:4554362] [@problem_id:4893715].

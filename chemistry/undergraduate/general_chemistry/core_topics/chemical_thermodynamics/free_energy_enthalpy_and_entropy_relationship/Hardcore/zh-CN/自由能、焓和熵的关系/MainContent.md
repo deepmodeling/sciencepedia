@@ -39,13 +39,13 @@ $$
 $$
 在标准条件下（$298.15 \text{ K}$），该反应的标准焓变 $\Delta H^\circ$ 为 $-23.50 \text{ kJ/mol}$，标准吉布斯自由能变 $\Delta G^\circ$ 为 $-16.14 \text{ kJ/mol}$。首先，我们可以利用这些数据计算标准熵变 $\Delta S^\circ$：
 $$
-\Delta S^\circ = \frac{\Delta H^\circ - \Delta G^\circ}{T} = \frac{-23.50 \text{ kJ/mol} - (-16.14 \text{ kJ/mol})}{298.15 \text{ K}} \approx -0.0247 \text{ kJ/(mol·K)}
+\Delta S^\circ = \frac{\Delta H^\circ - \Delta G^\circ}{T} = \frac{-23.50 \text{ kJ/mol} - (-16.14 \text{ kJ/mol})}{298.15 \text{ K}} \approx -0.0247 \mathrm{kJ/(mol\cdot K)}
 $$
 注意到熵变是负的，这符合预期，因为尽管反应中气体分子的总数保持不变（2摩尔反应物生成2摩尔产物），但形成了结构更复杂的分子，通常伴随着熵的微小减少。
 
 现在，假设我们需要在工业反应器的工作温度 $400.0 \text{ K}$ 下评估驱动力。如果我们近似地认为 $\Delta H^\circ$ 和 $\Delta S^\circ$ 不随温度变化，则焓的贡献保持不变，为 $\Delta H = -23.5 \text{ kJ/mol}$。然而，熵的贡献则与温度成正比：
 $$
--T\Delta S = -(400.0 \text{ K}) \times (-0.0247 \text{ kJ/(mol·K)}) \approx +9.87 \text{ kJ/mol}
+-T\Delta S = -(400.0 \text{ K}) \times (-0.0247 \mathrm{kJ/(mol\cdot K)}) \approx +9.87 \text{ kJ/mol}
 $$
 在 $400.0 \text{ K}$ 时，总的吉布斯自由能变为：
 $$
@@ -76,7 +76,7 @@ $$
 $$
 2\text{NO}_2(g) \rightarrow \text{N}_2\text{O}_4(g)
 $$
-该反应是放热的（$\Delta H^\circ = -58.03 \text{ kJ/mol}$），同时熵减少（$\Delta S^\circ = -176.6 \text{ J/(mol·K)}$），因为两个气体分子合并成一个。因此，它在低温下是自发的，但在高温下，熵的不利影响会使反应逆转。我们可以计算出其自发性转变的阈值温度约为 $T^* = (-58.03 \times 10^3) / (-176.6) \approx 328.6 \text{ K}$。高于此温度，$\text{N}_2\text{O}_4$ 会倾向于分解为 $\text{NO}_2$。同样的逻辑适用于许多气体凝聚成固体或液体的过程，例如从气态原子共沉积形成合金薄膜 [@problem_id:1995460]。如果一个聚合反应在升温时变得越来越不自发，我们也可以推断出它属于这种情况，即 $\Delta H  0$ 和 $\Delta S  0$ [@problem_id:1995470]。
+该反应是放热的（$\Delta H^\circ = -58.03 \text{ kJ/mol}$），同时熵减少（$\Delta S^\circ = -176.6 \mathrm{J/(mol\cdot K)}$），因为两个气体分子合并成一个。因此，它在低温下是自发的，但在高温下，熵的不利影响会使反应逆转。我们可以计算出其自发性转变的阈值温度约为 $T^* = (-58.03 \times 10^3) / (-176.6) \approx 328.6 \text{ K}$。高于此温度，$\text{N}_2\text{O}_4$ 会倾向于分解为 $\text{NO}_2$。同样的逻辑适用于许多气体凝聚成固体或液体的过程，例如从气态原子共沉积形成合金薄膜 [@problem_id:1995460]。如果一个聚合反应在升温时变得越来越不自发，我们也可以推断出它属于这种情况，即 $\Delta H  0$ 和 $\Delta S  0$ [@problem_id:1995470]。
 
 更有趣的是，某些盐类在水中的溶解也属于这种情况。例如，硫酸铈(III) ($\text{Ce}_2(\text{SO}_4)_3$) 的溶解度随温度升高而降低 [@problem_id:1995476]。这反常的行为表明其溶解过程变得越来越不自发。根据勒夏特列原理和范特霍夫方程，溶解度随温度升高而降低意味着溶解过程是放热的（$\Delta H^\circ_{soln}  0$）。而 $\Delta G$ 随 $T$ 增加，必然要求 $\Delta S^\circ_{soln}  0$。这是因为强烈的离子水合作用束缚了大量水分子，使得溶液的有序度甚至高于纯水和固体盐之和。
 
@@ -85,7 +85,7 @@ $$
 
 同样，存在一个阈值温度 $T^* = \Delta H / \Delta S$（此时 $\Delta H$ 和 $\Delta S$ 均为正值）。当 $T > T^*$ 时，反应变为自发。
 
-生活中有许多熵驱动过程的例子。速冷冰袋的原理就是硝酸铵的溶解 [@problem_id:1995446]。这个过程是吸热的（$\Delta H^\circ = +25.7 \text{ kJ/mol}$），所以它会使周围环境变冷。然而，由于固体溶解成水合离子导致熵的大幅增加（$\Delta S^\circ = +108.7 \text{ J/(mol·K)}$），只要温度足够高（高于 $T^* \approx 236.4 \text{ K}$ 或 $-36.7^\circ\text{C}$），这个过程就是自发的。
+生活中有许多熵驱动过程的例子。速冷冰袋的原理就是硝酸铵的溶解 [@problem_id:1995446]。这个过程是吸热的（$\Delta H^\circ = +25.7 \text{ kJ/mol}$），所以它会使周围环境变冷。然而，由于固体溶解成水合离子导致熵的大幅增加（$\Delta S^\circ = +108.7 \mathrm{J/(mol\cdot K)}$），只要温度足够高（高于 $T^* \approx 236.4 \text{ K}$ 或 $-36.7^\circ\text{C}$），这个过程就是自发的。
 
 生物化学中的蛋白质变性 [@problem_id:2017240] 和多肽展开 [@problem_id:1995471] 也是典型的例子。蛋白质从其有序的折叠结构（天然态）转变为无序的随机线圈（变性态）是一个吸热过程，因为它需要断裂许多维持稳定结构的非共价键。但这个过程伴随着构象自由度的大幅增加，即巨大的熵增。因此，只有当温度超过某个“熔化温度”$T_m$时，变性过程才会自发发生。
 
@@ -126,9 +126,9 @@ $$
 
 相变过程为理解 $\Delta G$ 提供了绝佳模型。在正常熔点 $T_m$ 时，固相和液相处于平衡状态，因此熔化过程的吉布斯自由能变为零，$\Delta G_{fus} = 0$。这导出了一个重要关系：$\Delta H_{fus} - T_m \Delta S_{fus} = 0$，即 $T_m = \Delta H_{fus} / \Delta S_{fus}$。
 
-当温度偏离熔点时，$\Delta G$ 不再为零。例如，考虑一种新材料“cryostorine”在低于其熔点的温度 $50.0 ^\circ\text{C}$ 下的凝固过程 [@problem_id:1995452]。凝固是熔化的逆过程，因此其焓变和熵变符号相反：$\Delta H_{freeze} = -\Delta H_{fus}$ 且 $\Delta S_{freeze} = -\Delta S_{fus}$。我们可以计算在该温度下的 $\Delta G_{freeze}$。如果 $\Delta H_{fus} = +28.4 \text{ kJ/mol}$ 且 $\Delta S_{fus} = +85.0 \text{ J/(mol·K)}$，那么在 $T = 323.15 \text{ K}$ 时：
+当温度偏离熔点时，$\Delta G$ 不再为零。例如，考虑一种新材料“cryostorine”在低于其熔点的温度 $50.0 ^\circ\text{C}$ 下的凝固过程 [@problem_id:1995452]。凝固是熔化的逆过程，因此其焓变和熵变符号相反：$\Delta H_{freeze} = -\Delta H_{fus}$ 且 $\Delta S_{freeze} = -\Delta S_{fus}$。我们可以计算在该温度下的 $\Delta G_{freeze}$。如果 $\Delta H_{fus} = +28.4 \text{ kJ/mol}$ 且 $\Delta S_{fus} = +85.0 \mathrm{J/(mol\cdot K)}$，那么在 $T = 323.15 \text{ K}$ 时：
 $$
-\Delta G_{freeze} = -\Delta H_{fus} - T(-\Delta S_{fus}) = -28.4 \text{ kJ/mol} + (323.15 \text{ K})(0.0850 \text{ kJ/(mol·K)}) \approx -0.932 \text{ kJ/mol}
+\Delta G_{freeze} = -\Delta H_{fus} - T(-\Delta S_{fus}) = -28.4 \text{ kJ/mol} + (323.15 \text{ K})(0.0850 \mathrm{kJ/(mol\cdot K)}) \approx -0.932 \text{ kJ/mol}
 $$
 由于 $\Delta G_{freeze}  0$，凝固在该温度下是自发的。这解释了为什么低于熔点的液体会自发结冰。
 
@@ -144,7 +144,7 @@ $$
     $$
     \text{C(s, diamond)} \rightarrow \text{C(s, graphite)}
     $$
-    在标准条件下（$298.15 \text{ K}$, 1 atm），我们可以计算该过程的热力学参数。$\Delta H^\circ \approx -1.9 \text{ kJ/mol}$ (放热)，$\Delta S^\circ \approx +3.4 \text{ J/(mol·K)}$ (熵增，因为石墨结构比金刚石稍无序)。因此，$\Delta G^\circ = \Delta H^\circ - T\Delta S^\circ \approx -2.9 \text{ kJ/mol}$。
+    在标准条件下（$298.15 \text{ K}$, 1 atm），我们可以计算该过程的热力学参数。$\Delta H^\circ \approx -1.9 \text{ kJ/mol}$ (放热)，$\Delta S^\circ \approx +3.4 \mathrm{J/(mol\cdot K)}$ (熵增，因为石墨结构比金刚石稍无序)。因此，$\Delta G^\circ = \Delta H^\circ - T\Delta S^\circ \approx -2.9 \text{ kJ/mol}$。
     $\Delta G^\circ$ 为负，表明在常温常压下，金刚石自发地转变为石墨是热力学上有利的。然而，我们都知道钻石恒久远。这是因为这个转变需要碳原子在晶格中进行重大的重排，这个过程的活化能垒极其巨大。因此，反应速率在数十亿年尺度上都是可以忽略不计的。金刚石是热力学上的 **亚稳态**，但动力学上非常稳定。
 
 2.  **煮熟的鸡蛋无法“反煮”** [@problem_id:1995461]：

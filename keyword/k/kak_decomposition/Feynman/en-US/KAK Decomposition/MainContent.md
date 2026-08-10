@@ -56,7 +56,7 @@ This is the **KAK decomposition**. The letter 'K' is traditionally used for the 
 For any given matrix, say in $SL(2,\mathbb{R})$, we can explicitly compute this decomposition. For instance, for the matrix $g = \begin{pmatrix} 3 & 1 \\ 2 & 1 \end{pmatrix}$, a direct calculation of the eigenvalues of $g^\top g$ shows that the intrinsic stretch factor is given by a parameter $t = \frac{1}{2}\ln\left(\frac{15+\sqrt{221}}{2}\right)$, which defines the diagonal matrix $a = \mathrm{diag}(\exp(t), \exp(-t))$ [@problem_id:3031929]. More generally, for any $2 \times 2$ matrix $g = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$, this intrinsic stretch parameter $t$, which captures the 'non-rotational' part of the transformation, has an incredibly compact and elegant formula:
 
 $$
-t = \mu(g) = \frac{1}{2}\arccosh\left(\frac{a^2+b^2+c^2+d^2}{2}\right)
+t = \mu(g) = \frac{1}{2}\operatorname{arccosh}\left(\frac{a^2+b^2+c^2+d^2}{2}\right)
 $$
 
 This is the **Cartan projection** $\mu(g)$. It essentially measures the geometric "distance" from the matrix $g$ to the group of pure rotations [@problem_id:2969854].

@@ -17,7 +17,7 @@
 
 $$ \tau = \eta \frac{dv}{dy} $$
 
-这里的比例常数 $\eta$ (eta) 就是我们所说的**动力粘度**（dynamic viscosity）。它是一个只取决于流体种类和温度的物理量，是流体“有多粘”的直接量度。$\eta$ 的值越大，意味着我们需要更大的[剪切应力](@keyword=shear_stress|lang=zh-CN|style=Feynman)才能产生相同的剪切速率，也就是说，流体越“粘稠”。它的标准单位是帕斯卡·秒（$\text{Pa·s}$）。
+这里的比例常数 $\eta$ (eta) 就是我们所说的**动力粘度**（dynamic viscosity）。它是一个只取决于流体种类和温度的物理量，是流体“有多粘”的直接量度。$\eta$ 的值越大，意味着我们需要更大的[剪切应力](@keyword=shear_stress|lang=zh-CN|style=Feynman)才能产生相同的剪切速率，也就是说，流体越“粘稠”。它的标准单位是帕斯卡·秒（$\mathrm{Pa\cdot s}$）。
 
 但是，故事并没有就此结束。在流体的世界里，还存在另一种“粘度”。
 

@@ -45,7 +45,7 @@ $$
 
 At this temperature, the liquid and gas are in equilibrium. The energy cost of breaking the intermolecular bonds is perfectly paid for by the gain in disorder, allowing the phase transition to proceed. This simple equation is remarkably powerful. If we know any two of the quantities—boiling point, enthalpy, or [entropy of vaporization](@keyword=entropy_of_vaporization|lang=en-US|style=Feynman)—we can calculate the third [@problem_id:1995433].
 
-In a fascinating quirk of nature known as **Trouton's rule**, many simple liquids have a remarkably similar molar [entropy of vaporization](@keyword=entropy_of_vaporization|lang=en-US|style=Feynman), around $85-90 \text{ J/(mol·K)}$ [@problem_id:1848639]. Why? Because the increase in "messiness" in going from a condensed liquid to a diffuse gas is structurally similar for many different types of molecules. It's a beautiful hint at the universal principles underlying the chaotic behavior of molecules.
+In a fascinating quirk of nature known as **Trouton's rule**, many simple liquids have a remarkably similar molar [entropy of vaporization](@keyword=entropy_of_vaporization|lang=en-US|style=Feynman), around $85-90 \mathrm{J/(mol\cdot K)}$ [@problem_id:1848639]. Why? Because the increase in "messiness" in going from a condensed liquid to a diffuse gas is structurally similar for many different types of molecules. It's a beautiful hint at the universal principles underlying the chaotic behavior of molecules.
 
 ### The Birth of a Bubble: A Dangerous Secret
 

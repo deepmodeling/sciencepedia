@@ -44,7 +44,7 @@ $$
 
 #### 终极武器：科利瓦金的[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)
 
-有了格罗斯-扎吉尔公式找到的这个无限阶点，数学家弗拉基米尔·科利瓦金（Vladimir Kolyvagin）更进一步。他将一系列相关的黑格纳点组织成一个高度结构化的代数对象，称为“[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)”（Euler system）。这个系统就像一套精密的齿轮，其内部的[相容性关系](@keyword=consistency_relations|lang=zh-CN|style=Feynman)提供了巨大的约束力。通过这套强大的机器，科利瓦金得以证明，在分析秩为 1 的情况下，椭圆曲线的[代数秩](@keyword=algebraic_rank|lang=zh-CN|style=Feynman)确实**正好**为 1，并且那个神秘的、衡量[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)失效程度的沙法列维奇-塔特群（Shafarevich-Tate group） $\Sha(E/\mathbb{Q})$ 是有限的。[@problem_id:3024973] [@problem_id:3024998] [@problem_id:3024971]
+有了格罗斯-扎吉尔公式找到的这个无限阶点，数学家弗拉基米尔·科利瓦金（Vladimir Kolyvagin）更进一步。他将一系列相关的黑格纳点组织成一个高度结构化的代数对象，称为“[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)”（Euler system）。这个系统就像一套精密的齿轮，其内部的[相容性关系](@keyword=consistency_relations|lang=zh-CN|style=Feynman)提供了巨大的约束力。通过这套强大的机器，科利瓦金得以证明，在分析秩为 1 的情况下，椭圆曲线的[代数秩](@keyword=algebraic_rank|lang=zh-CN|style=Feynman)确实**正好**为 1，并且那个神秘的、衡量[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)失效程度的沙法列维奇-塔特群（Shafarevich-Tate group） $\mathrm{Ш}(E/\mathbb{Q})$ 是有限的。[@problem_id:3024973] [@problem_id:3024998] [@problem_id:3024971]
 
 更令人惊叹的是，这些方法的精度之高，甚至可以验证 BSD 猜想中关于 $L$ 函数首项系数的完整公式——尽管结果中还带有一个“有理数平方”的不确定性。这好比我们不仅证明了月球的存在，还精确测量了它的质量，误差只在一个已知的、可控的范围内。[@problem_id:3024981]
 

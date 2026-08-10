@@ -8,15 +8,15 @@
 
 数论中的一个伟大主题是“[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)”，最早由 Helmut Hasse 阐明。这个想法简单而美妙：要理解有理数 $\mathbb{Q}$ 上的一个问题，你可以先在所有“局部”完备化——实数 $\mathbb{R}$ 和对每个素数 $p$ 的 $p$-adic 数 $\mathbb{Q}_p$ ——上研究它。如果在这些更简单的局部世界中都存在解，你可能会希望在 $\mathbb{Q}$ 上也存在一个[全局解](@keyword=global_solution|lang=zh-CN|style=Feynman)。
 
-有时这确实行之有效。但对于许多深层次的问题，尤其是涉及椭圆曲线的问题，它却失败了。存在一些称为“[扭子](@keyword=torsors|lang=zh-CN|style=Feynman) (torsors)”的几何对象，它们在每个局部都有点，但顽固地拒绝拥有单个全局[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman) [@problem_id:3025038]。它们就像幽灵——在每个局部都可见，但在全局上却不可触及。所有这些“幽灵”对象的集合构成一个群，即著名的 Tate-Shafarevich 群，记作 $\Sha(E/\mathbb{Q})$。这个群衡量了 Hasse 原则的失效程度；它是阻碍，是所有局部分析无法看到的微妙全局问题的储藏库。几十年来，它一直是所有数学中最神秘的对象之一。你怎么可能去衡量一个其定义本身就建立在全局不可见性之上的群呢？
+有时这确实行之有效。但对于许多深层次的问题，尤其是涉及椭圆曲线的问题，它却失败了。存在一些称为“[扭子](@keyword=torsors|lang=zh-CN|style=Feynman) (torsors)”的几何对象，它们在每个局部都有点，但顽固地拒绝拥有单个全局[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman) [@problem_id:3025038]。它们就像幽灵——在每个局部都可见，但在全局上却不可触及。所有这些“幽灵”对象的集合构成一个群，即著名的 Tate-Shafarevich 群，记作 $\mathrm{Ш}(E/\mathbb{Q})$。这个群衡量了 Hasse 原则的失效程度；它是阻碍，是所有局部分析无法看到的微妙全局问题的储藏库。几十年来，它一直是所有数学中最神秘的对象之一。你怎么可能去衡量一个其定义本身就建立在全局不可见性之上的群呢？
 
-这就是对偶性登场的时刻。我们无法直接抓住 $\Sha$，但我们可以为它构建一个“陷阱”。这个陷阱被称为 Selmer 群，$\operatorname{Sel}(E/\mathbb{Q})$，它是通过拼接局部信息构造的。这个陷阱的设计关键依赖于局部 Tate 对偶性。对偶性告诉我们关于我们正在处理的局部碎片的非凡之处。在所有局部可能性的空间内，对应于曲线上实际点的子空间不仅仅是某个随机的块；它是一个*最大迷向子空间* (maximal isotropic subspace) [@problem_id:3029553]。这意味着它是一个在 Tate 配对下是其自身[正交补](@keyword=orthogonal_complements|lang=zh-CN|style=Feynman)的子空间——这是一个完美平衡的陈述，一个空间以精确的、自对偶的方式占据了可用空间的恰好一半。这个性质是整个 Selmer 群理论得以运作的关键。
+这就是对偶性登场的时刻。我们无法直接抓住 $\mathrm{Ш}$，但我们可以为它构建一个“陷阱”。这个陷阱被称为 Selmer 群，$\operatorname{Sel}(E/\mathbb{Q})$，它是通过拼接局部信息构造的。这个陷阱的设计关键依赖于局部 Tate 对偶性。对偶性告诉我们关于我们正在处理的局部碎片的非凡之处。在所有局部可能性的空间内，对应于曲线上实际点的子空间不仅仅是某个随机的块；它是一个*最大迷向子空间* (maximal isotropic subspace) [@problem_id:3029553]。这意味着它是一个在 Tate 配对下是其自身[正交补](@keyword=orthogonal_complements|lang=zh-CN|style=Feynman)的子空间——这是一个完美平衡的陈述，一个空间以精确的、自对偶的方式占据了可用空间的恰好一半。这个性质是整个 Selmer 群理论得以运作的关键。
 
 Selmer 群将 Tate-Shafarevich 群“捕获”在一个精确序列中，这实质上为我们提供了一种间接掌握其大小的方法。但奇迹并未就此止步。通过运用[全局类域论](@keyword=global_class_field_theory|lang=zh-CN|style=Feynman)的线索，将所有局部 Tate 对偶性编织在一起，J.W.S. Cassels 构造出了一个宏伟的对象：一个定义在 Tate-Shafarevich 群本身之上的全局、非退化、交错的配对，
 $$
-\langle\cdot,\cdot\rangle_{\mathrm{CT}} \colon \Sha(E/\mathbb{Q}) \times \Sha(E/\mathbb{Q}) \to \mathbb{Q}/\mathbb{Z}.
+\langle\cdot,\cdot\rangle_{\mathrm{CT}} \colon \mathrm{Ш}(E/\mathbb{Q}) \times \mathrm{Ш}(E/\mathbb{Q}) \to \mathbb{Q}/\mathbb{Z}.
 $$
-这就是 Cassels-Tate 配对 [@problem_id:3024960]。想一想这意味着什么。我们有一个由其失效性和难以捉摸性定义的对象 $\Sha$，但对偶性赋予了它一个完美、刚性的内部结构。
+这就是 Cassels-Tate 配对 [@problem_id:3024960]。想一想这意味着什么。我们有一个由其失效性和难以捉摸性定义的对象 $\mathrm{Ш}$，但对偶性赋予了它一个完美、刚性的内部结构。
 
 而这个结构有一个惊人的推论。代数的一个基本定理告诉我们，任何承认这种完美交错配对的[有限阿贝尔群](@keyword=finite_abelian_groups|lang=zh-CN|style=Feynman)，其阶必须是完全平方数！就这样，从抽象的对偶性机制中，我们得知这个神秘群的元素个数不能是 5、7 或 12。它的阶要么是 $1, 4, 9, 16, 25, \dots$，要么是无限的。这是一个深刻的约束，是在算术混沌中窥见秩序的一瞥，而这完全是由对偶性的逻辑赋予我们的。
 
@@ -26,7 +26,7 @@ $$
 
 一方面，我们有一个[泛形变环](@keyword=universal_deformation_ring|lang=zh-CN|style=Feynman) $R$。这个环参数化了“形变”或“加厚”一个给定算术对象——一个[伽罗瓦表示](@keyword=galois_representations|lang=zh-CN|style=Feynman) $\bar{\rho}$——的所有可能方式，同时尊重某些局部规则 [@problem_id:3028180]。它是所有在无穷小意义下看起来像 $\bar{\rho}$ 的表示的主蓝图。另一方面，我们有一个 Hecke 代数 $T$，这是一个由模形式的对称性构建的环。证明 $R=T$ 意味着证明伽罗瓦表示的算术世界与模形式的分析世界实际上是相同的。
 
-如何才能证明两个看起来如此不同的环是同构的？再一次，对偶性提供了基本的结构规划。由 Barry Mazur 发展的出发点是，一阶形变空间——环 $R$ 的“[切空间](@keyword=tangent_spaces|lang=zh-CN|style=Feynman)”——由一个 Selmer 群 $H^1_{\mathcal{L}}(\mathbb{Q}, \operatorname{ad}^0\bar{\rho})$ 来描述 [@problem_id:3028180]。这与我们用来研究 $\Sha$ 的对象是同一类型，但现在处于一个更广义的背景下。
+如何才能证明两个看起来如此不同的环是同构的？再一次，对偶性提供了基本的结构规划。由 Barry Mazur 发展的出发点是，一阶形变空间——环 $R$ 的“[切空间](@keyword=tangent_spaces|lang=zh-CN|style=Feynman)”——由一个 Selmer 群 $H^1_{\mathcal{L}}(\mathbb{Q}, \operatorname{ad}^0\bar{\rho})$ 来描述 [@problem_id:3028180]。这与我们用来研究 $\mathrm{Ш}$ 的对象是同一类型，但现在处于一个更广义的背景下。
 
 这为我们提供了环 $R$ 的生成元数量。但关系式呢？为了控制环的完整结构，我们需要理解形变我们表示的“阻碍”。而这正是 Tate 对偶性扮演主角的地方。对于由局部条件 $\mathcal{L}$ 定义的任何 Selmer 群，对偶性允许我们定义一个与[对偶表示](@keyword=dual_representation|lang=zh-CN|style=Feynman)和正交局部条件 $\mathcal{L}^\perp$ 相关联的*对偶 Selmer 群* [@problem_id:3018585]。这个[对偶群](@keyword=dual_group|lang=zh-CN|style=Feynman)是原始群的“影子”。
 
@@ -48,6 +48,6 @@ $$
 
 这个框架引导我们走向*[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)* (Euler systems) 的概念。[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)是一个贯穿整个岩泽塔的连贯的上同调类族，这是一个具有无与伦[比力](@keyword=specific_force|lang=zh-CN|style=Feynman)量和美感的结构。[岩泽理论](@keyword=iwasawa_theory|lang=zh-CN|style=Feynman)的“[主猜想](@keyword=main_conjecture|lang=zh-CN|style=Feynman)”，现在已是一个定理，指出 Selmer 群的岩泽模的[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)完全由一个分析对象——一个 $p$-adic L-函数——来描述，而后者是由[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)构造的。这是另一个极具深度的“$A=B$”定理，它本质上是一个关于对偶性的陈述。
 
-而这个宏大的理论有着非常实际的推论。通过将[主猜想](@keyword=main_conjecture|lang=zh-CN|style=Feynman)从无限塔“下降”回 $\mathbb{Q}$，人们得到一个强大的不等式：Selmer 群（以及我们的老朋友 $\Sha$）的大小由这个 $p$-adic L-函数的值作为上界 [@problem_id:3013764]。作用在无限域阶梯上的对偶性，为我们提供了一个新的、可计算的工具，来控制我们最初试图寻找的那个幽灵。
+而这个宏大的理论有着非常实际的推论。通过将[主猜想](@keyword=main_conjecture|lang=zh-CN|style=Feynman)从无限塔“下降”回 $\mathbb{Q}$，人们得到一个强大的不等式：Selmer 群（以及我们的老朋友 $\mathrm{Ш}$）的大小由这个 $p$-adic L-函数的值作为上界 [@problem_id:3013764]。作用在无限域阶梯上的对偶性，为我们提供了一个新的、可计算的工具，来控制我们最初试图寻找的那个幽灵。
 
 从揭示一个神秘群的完全平方性质，到为模性证明提供蓝图，再到为无限提供核算原则，Tate 对偶性远不止是一个技术工具。它是对称与平衡的基本原则，是一种揭示数世界隐藏的、统一结构的语言。它教导我们，有时候，理解一个对象的最佳方式是理解它的影子。

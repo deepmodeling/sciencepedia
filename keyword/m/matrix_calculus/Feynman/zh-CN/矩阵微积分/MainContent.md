@@ -25,7 +25,7 @@ $$f(A) = P f(D) P^{-1}$$
 
 ### 一个新数的世界：分支切割与复杂性
 
-“啊哈！”你可能会说，“但如果[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)是负数呢？或者是复数？”这正是故事变得更有趣的地方。像对数和平方根这样的函数对于负数或复数是多值的。例如，$\log(-1)$ 可以是 $i\pi$，也可以是 $3i\pi$，或者 $-i\pi$，等等。为了唯一地定义一个矩阵的函数，我们必须首先为标量函数做一个选择。我们通常选择**[主支](@keyword=principal_branch|lang=zh-CN|style=Feynman)**，比如[复对数](@keyword=complex_logarithm|lang=zh-CN|style=Feynman)的分支 $\log(z) = \ln|z| + i\Arg(z)$，其中辐角 $\Arg(z)$ 被限制在 $(-\pi, \pi]$。
+“啊哈！”你可能会说，“但如果[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)是负数呢？或者是复数？”这正是故事变得更有趣的地方。像对数和平方根这样的函数对于负数或复数是多值的。例如，$\log(-1)$ 可以是 $i\pi$，也可以是 $3i\pi$，或者 $-i\pi$，等等。为了唯一地定义一个矩阵的函数，我们必须首先为标量函数做一个选择。我们通常选择**[主支](@keyword=principal_branch|lang=zh-CN|style=Feynman)**，比如[复对数](@keyword=complex_logarithm|lang=zh-CN|style=Feynman)的分支 $\log(z) = \ln|z| + i\operatorname{Arg}(z)$，其中辐角 $\operatorname{Arg}(z)$ 被限制在 $(-\pi, \pi]$。
 
 让我们想象一个对角矩阵，其对角元都是负数。这样一个矩阵的对数是什么？遵循我们的规则，我们将[主对数](@keyword=principal_logarithm|lang=zh-CN|style=Feynman)应用于每个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)。对于一个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $-a$（其中 $a > 0$），[主对数](@keyword=principal_logarithm|lang=zh-CN|style=Feynman)是 $\ln(a) + i\pi$。如果我们有一个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)为 $-1, -2, -3, -4, -5$ 的矩阵，其对数的迹将有一个实部和一个[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)。[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)来自于对五个负[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)对数的[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)（均为 $\pi$）求和，得出一个惊人地简洁的结果 $5\pi$ [@problem_id:1025726]。一个实矩阵，通过函数的透镜，可以突然拥有深刻的复数性质。
 

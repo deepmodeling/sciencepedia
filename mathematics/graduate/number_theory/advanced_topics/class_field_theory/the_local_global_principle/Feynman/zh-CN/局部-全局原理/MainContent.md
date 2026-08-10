@@ -63,7 +63,7 @@ $$ 3x^3 + 4y^3 + 5z^3 = 0 $$
 
 但问题是：是不是每一个“兼容套件”都能成功拼装成一个“全局建筑”呢？答案是否定的！可能存在一些“幽灵套件”：它们包含的每一个局部零件都完美无瑕，彼此之间也看似兼容，但无论你怎么尝试，都无法将它们组装成一个完整的全局建筑。
 
-这些无法被“全局实现”的“幽灵套件”所构成的集合，正是**沙法列维奇群 (Tate-Shafarevich group)**，通常写作 $\Sha(E/\mathbb{Q})$。这个群的大小，精确地衡量了[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)在多大程度上会失败。如果 $\Sha$ 群是“空的”（只包含单位元），那么原则成立；如果它是“非空的”，就像 Selmer 的三次曲线那样，那么原则就会失败，幽灵就会出现。
+这些无法被“全局实现”的“幽灵套件”所构成的集合，正是**沙法列维奇群 (Tate-Shafarevich group)**，通常写作 $\mathrm{Ш}(E/\mathbb{Q})$。这个群的大小，精确地衡量了[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)在多大程度上会失败。如果 $\mathrm{Ш}$ 群是“空的”（只包含单位元），那么原则成立；如果它是“非空的”，就像 Selmer 的三次曲线那样，那么原则就会失败，幽灵就会出现。
 
 ### 统一的语言: [阿代尔](@keyword=adeles|lang=zh-CN|style=Feynman)、[伊代尔](@keyword=ideles|lang=zh-CN|style=Feynman)与布劳尔-马宁挠阻
 

@@ -48,13 +48,13 @@
 
 *   **通用货币ATP与磷酸化**
     修饰的第一步往往是磷酸化。细胞动用其能量通货——三磷酸腺苷（ATP），将一个高能的磷酸基团转移到糖分子上。这个过程本身就是能量偶联的典范：一个本身不利于发生的酯化反应（糖 + 磷酸），通过与一个非常有利于发生的ATP水解反应捆绑在一起，使得总反应在[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)上变得可行 [@problem_id:2577244]。磷酸化的糖不仅被“标记”了，还被“激活”了，为后续的转化做好了准备。
-    $$ S + \mathrm{ATP} \rightarrow S\mbox{-}P + \mathrm{ADP} $$
+    $$ S + \mathrm{ATP} \rightarrow S\text{-}P + \mathrm{ADP} $$
 
 *   **激活与转移：“烫手山芋”策略**
     要将一个糖分子或者修饰基团安装到另一个分子上，细胞会先将其转变成一个高活性的“中间体”——一个不稳定的“烫手山芋”，急于将自己的一部分转移出去。
 
     一个经典的策略是合成尿苷二磷酸-糖（UDP-sugar）。这个反应本身并不特别有利，但细胞有一个绝妙的技巧来确保其不可逆转：反应的副产物焦磷酸（PPi）一旦生成，就会被另一种酶（[焦磷酸酶](@keyword=pyrophosphatase|lang=zh-CN|style=Feynman)）立即水解掉。这就像在天平的一端不断移走砝码，使得天平只能持续向另一端倾斜 [@problem_id:2577244]。
-    $$ S\mbox{-}1\mbox{-}P + \mathrm{UTP} \rightarrow \mathrm{UDP}\mbox{-}S + \mathrm{PP_i} $$
+    $$ S\text{-}1\text{-}P + \mathrm{UTP} \rightarrow \mathrm{UDP}\text{-}S + \mathrm{PP_i} $$
     $$ \mathrm{PP_i} + \mathrm{H_2O} \rightarrow 2\,\mathrm{P_i} \quad (\text{快速移除}) $$
 
     [硫酸化](@keyword=sulfation|lang=zh-CN|style=Feynman)的过程也遵循着类似的逻辑 [@problem_id:2577285]。细胞合成一种名为PAPS（3'-磷酸腺苷-5'-磷酸硫酸）的“超级[硫酸](@keyword=sulfuric_acid|lang=zh-CN|style=Feynman)供体”。PAPS本身就是一个高能分子，使得[硫酸](@keyword=sulfuric_acid|lang=zh-CN|style=Feynman)基团的转移在能量上很有利。为了给这个反应“上双保险”，细胞还会水解[转移反应](@keyword=transfer_reactions|lang=zh-CN|style=Feynman)的副产物PAP，从而彻底杜绝了逆反应的可能。

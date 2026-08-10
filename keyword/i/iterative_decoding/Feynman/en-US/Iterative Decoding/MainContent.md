@@ -40,7 +40,7 @@ $$
 **The Check Node's Turn:** A check node's job is to enforce its rule. It listens to all incoming messages from its connected variable nodes. To compute a message to send *back* to a specific variable, say $v_4$, it looks at the beliefs about all the *other* variables ($v_1, v_2, v_3$). It asks, "Assuming these other bits have the values they are likely to have, what must the value of bit $v_4$ be for my [parity](@keyword=parity|lang=en-US|style=Feynman) rule to be satisfied?" This is a more complex calculation, but its essence is a "soft" version of an XOR operation. The formula looks a bit intimidating, but it's just doing this logical check in the language of LLRs [@problem_id:1638274] [@problem_id:1603935]:
 
 $$
-L_{c \to v_4} = 2 \arctanh\left( \prod_{i=1}^{3} \tanh\left(\frac{L_{v_i \to c}}{2}\right) \right)
+L_{c \to v_4} = 2 \operatorname{arctanh}\left( \prod_{i=1}^{3} \tanh\left(\frac{L_{v_i \to c}}{2}\right) \right)
 $$
 
 This exchange happens across the entire graph, simultaneously. Beliefs are updated, refined, and propagated. With each iteration, the LLRs at the variable nodes tend to grow in magnitude, moving from uncertainty towards a confident and, hopefully, correct decision.

@@ -10,7 +10,7 @@
 
 如果[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为零呢？这意味着 L-函数 $L(E,1)$ *不*为零。BSD 猜想于是预测[代数秩](@keyword=algebraic_rank|lang=zh-CN|style=Feynman)也为零。这是一个里程碑式的论断：它意味着这条椭圆曲线只拥有有限多个有理点！对于一个原则上可能拥有一个复杂、无限解梯的问题，一个复数的非零性告诉我们，解的列表是简短且有限的。
 
-但故事的精彩之处还不止于此。BSD 猜想给出了一个关于 $L(E,1)$ 值的精确公式，用曲线的算术[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)来表示，包括其[挠点](@keyword=torsion_points|lang=zh-CN|style=Feynman)、实周期、在“坏”素数处的局部行为（Tamagawa 数），以及神秘的 Shafarevich-Tate 群 $\Sha(E/\mathbb{Q})$ 的大小。在这里，我们发现了一个美妙的内在一致性。在 Galois [上同调理论](@keyword=cohomology_theory|lang=zh-CN|style=Feynman)的深处，人们可以在 Shafarevich-Tate 群上构造一个[典范配对](@keyword=canonical_pairing|lang=zh-CN|style=Feynman)，称为 Cassels-Tate 配对。该配对性质的一个直接推论是，如果 $\Sha(E/\mathbb{Q})$ 是有限的，其阶*必须*是一个完全平方数 [@problem_id:3024960]。这个看似晦涩的结构性事实与包含其他平方项的 BSD 公式完美契合，赋予了该猜想一种深刻、仿佛命中注定的真理光环。
+但故事的精彩之处还不止于此。BSD 猜想给出了一个关于 $L(E,1)$ 值的精确公式，用曲线的算术[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)来表示，包括其[挠点](@keyword=torsion_points|lang=zh-CN|style=Feynman)、实周期、在“坏”素数处的局部行为（Tamagawa 数），以及神秘的 Shafarevich-Tate 群 $\mathrm{Ш}(E/\mathbb{Q})$ 的大小。在这里，我们发现了一个美妙的内在一致性。在 Galois [上同调理论](@keyword=cohomology_theory|lang=zh-CN|style=Feynman)的深处，人们可以在 Shafarevich-Tate 群上构造一个[典范配对](@keyword=canonical_pairing|lang=zh-CN|style=Feynman)，称为 Cassels-Tate 配对。该配对性质的一个直接推论是，如果 $\mathrm{Ш}(E/\mathbb{Q})$ 是有限的，其阶*必须*是一个完全平方数 [@problem_id:3024960]。这个看似晦涩的结构性事实与包含其他平方项的 BSD 公式完美契合，赋予了该猜想一种深刻、仿佛命中注定的真理光环。
 
 #### [解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为一的无限但有序的世界
 
@@ -44,6 +44,6 @@
 
 [解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)，这个简单的整数，是一座桥梁。它连接着分析的连续世界和[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)的离散世界。它连接着深奥的理论与实际的计算。而且，最令人惊讶的是，它甚至可以在不同的椭圆曲线之间搭建桥梁。
 
-在一个最美丽、最精妙的应用中，研究表明，两个模形式之间的“同余”——一种深刻的算术关系——可以产生深远的影响。如果一个形式对应于[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为 1 的曲线，而另一个对应于[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为 0 的曲线，这种[同余关系](@keyword=congruence_relation|lang=zh-CN|style=Feynman)可以迫使秩为 0 曲线的、原本不可见的 Shafarevich-Tate 群中存在非平凡的元素 [@problem_id:3013143]。这是一种数学上的“[超距作用](@keyword=action_at_a_distance|lang=zh-CN|style=Feynman)”，即一条曲线上有理点的存在，在另一条完全不同的曲线上凭空变出了“幽灵”——$\Sha$ 的元素。
+在一个最美丽、最精妙的应用中，研究表明，两个模形式之间的“同余”——一种深刻的算术关系——可以产生深远的影响。如果一个形式对应于[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为 1 的曲线，而另一个对应于[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为 0 的曲线，这种[同余关系](@keyword=congruence_relation|lang=zh-CN|style=Feynman)可以迫使秩为 0 曲线的、原本不可见的 Shafarevich-Tate 群中存在非平凡的元素 [@problem_id:3013143]。这是一种数学上的“[超距作用](@keyword=action_at_a_distance|lang=zh-CN|style=Feynman)”，即一条曲线上有理点的存在，在另一条完全不同的曲线上凭空变出了“幽灵”——$\mathrm{Ш}$ 的元素。
 
 从预测古老问题的解的数量，到指导现代计算，再到揭示与对称性和随机性理论的深刻联系，[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)已经证明自己远非一个技术性的奇特概念。理解这个单一、不起眼的整数的探索，推动了广阔新数学领域的发展，并在此过程中，揭示了一个充满意想不到的美丽与统一的宇宙。

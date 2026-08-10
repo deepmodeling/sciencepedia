@@ -25,7 +25,7 @@ The key phrase here is "most stable form," also known as the **reference form**.
 
 ### A Tale of Two Zeros: Relative Enthalpy vs. Absolute Entropy
 
-Here we arrive at a point of profound beauty and subtlety. We've just established that the [standard enthalpy of formation](@keyword=standard_enthalpy_of_formation|lang=en-US|style=Feynman) for an element like graphite is zero by *convention*. But if you look up graphite in a data table, you'll find its **[standard molar entropy](@keyword=standard_molar_entropy|lang=en-US|style=Feynman)**, $S^\circ$, is a positive, non-zero number ($5.74 \text{ J/(mol·K)}$). Why is one zero and the other not?
+Here we arrive at a point of profound beauty and subtlety. We've just established that the [standard enthalpy of formation](@keyword=standard_enthalpy_of_formation|lang=en-US|style=Feynman) for an element like graphite is zero by *convention*. But if you look up graphite in a data table, you'll find its **[standard molar entropy](@keyword=standard_molar_entropy|lang=en-US|style=Feynman)**, $S^\circ$, is a positive, non-zero number ($5.74 \mathrm{J/(mol\cdot K)}$). Why is one zero and the other not?
 
 The answer lies in the difference between a relative scale and an absolute one[@problem_id:2005835]. Enthalpy has no natural zero point; we can only measure changes in it. So, we invent a zero point for convenience—our elemental "sea level."
 

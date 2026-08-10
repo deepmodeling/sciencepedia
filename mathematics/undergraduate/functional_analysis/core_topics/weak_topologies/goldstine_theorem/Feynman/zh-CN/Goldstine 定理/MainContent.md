@@ -35,7 +35,7 @@ $$ (J(x))(f) = f(x) $$
 $$ |\Phi(f_i) - (J(x))(f_i)|  \epsilon \quad \text{对于所有的 } i = 1, \dots, n $$
 由于 $(J(x))(f_i) = f_i(x)$，上式可写作：
 $$ |\Phi(f_i) - f_i(x)|  \epsilon \quad \text{对于所有的 } i = 1, \dots, n $$
-[@problem_id:1864455] [@problem_id:1864439] 这种“弱星”的凝视，只关注有限个侧面，而非整体的距离，正是定理成立的关键。它既不像范数拓扑那么苛刻，也不像其他可能更强的拓扑（如[弱拓扑](@keyword=weak_topology|lang=zh-CN|style=Feynman) $\sigma(X^{**}, X^{**\*})$）那样，会让我们再次失去稠密性。[@problem_id:1864442]
+[@problem_id:1864455] [@problem_id:1864439] 这种“弱星”的凝视，只关注有限个侧面，而非整体的距离，正是定理成立的关键。它既不像范数拓扑那么苛刻，也不像其他可能更强的拓扑（如[弱拓扑](@keyword=weak_topology|lang=zh-CN|style=Feynman) $\sigma(X^{**}, X^{***})$）那样，会让我们再次失去稠密性。[@problem_id:1864442]
 
 ### 捕捉幽灵：一个生动的例子
 

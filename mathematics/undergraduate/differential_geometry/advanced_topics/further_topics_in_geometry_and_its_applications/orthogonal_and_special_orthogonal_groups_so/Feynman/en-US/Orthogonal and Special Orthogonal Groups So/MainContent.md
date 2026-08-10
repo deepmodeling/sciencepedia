@@ -76,7 +76,7 @@ So far we've been talking about rotations as complete, finished transformations.
 
 Let a point's position at time $t$ be $\mathbf{x}(t)$. Its velocity is $\dot{\mathbf{x}}$. For a pure rotation about the origin, the velocity must be related to the position by some matrix, let's call it $\Omega$: $\dot{\mathbf{x}} = \Omega \mathbf{x}$. We know that for a rotation, the distance from the origin must remain constant, which means the squared length $\mathbf{x}^T \mathbf{x}$ must not change with time. Using the [product rule](@keyword=product_rule|lang=en-US|style=Feynman) for derivatives:
 $$
-\frac{d}{dt}(\mathbf{x}^T \mathbf{x}) = \dot{\mathbf{x}}^T \mathbf{x} + \mathbf{x}^T \dot{\mathbf{x}} = (\Omega\mathbf{x})^T \mathbf{x} + \mathbf{x}^T (\Omega\mathbfx) = \mathbf{x}^T (\Omega^T + \Omega) \mathbf{x} = 0
+\frac{d}{dt}(\mathbf{x}^T \mathbf{x}) = \dot{\mathbf{x}}^T \mathbf{x} + \mathbf{x}^T \dot{\mathbf{x}} = (\Omega\mathbf{x})^T \mathbf{x} + \mathbf{x}^T (\Omega\mathbf{x}) = \mathbf{x}^T (\Omega^T + \Omega) \mathbf{x} = 0
 $$
 Since this must be true for *any* vector $\mathbf{x}$, the matrix sandwiched in the middle must be the zero matrix. This gives us a condition on our "velocity matrix" $\Omega$:
 $$

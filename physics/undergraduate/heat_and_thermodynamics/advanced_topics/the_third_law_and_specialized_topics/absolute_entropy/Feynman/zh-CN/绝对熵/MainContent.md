@@ -3,7 +3,7 @@
 
 ## 原理与机制
 
-想象一下，你正在翻阅一本厚厚的化学数据手册，里面密密麻麻地罗列着各种物质的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)性质。你可能会注意到一个奇怪的现象：对于像石墨这样的元素，其“[标准生成焓](@keyword=standard_enthalpy_of_formation|lang=zh-CN|style=Feynman)”（$\Delta_f H^\circ$）被精确地定义为零，而它的“[标准摩尔熵](@keyword=standard_molar_entropy|lang=zh-CN|style=Feynman)”（$S^\circ$）却是一个明确的非零正值，比如 $5.74 \text{ J/(mol·K)}$。这不是很奇怪吗？为什么能量的起点可以被人为地设为零，而熵却有一个看似“绝对”的、不可动摇的数值呢？ [@problem_id:2005835]
+想象一下，你正在翻阅一本厚厚的化学数据手册，里面密密麻麻地罗列着各种物质的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)性质。你可能会注意到一个奇怪的现象：对于像石墨这样的元素，其“[标准生成焓](@keyword=standard_enthalpy_of_formation|lang=zh-CN|style=Feynman)”（$\Delta_f H^\circ$）被精确地定义为零，而它的“[标准摩尔熵](@keyword=standard_molar_entropy|lang=zh-CN|style=Feynman)”（$S^\circ$）却是一个明确的非零正值，比如 $5.74 \mathrm{J/(mol\cdot K)}$。这不是很奇怪吗？为什么能量的起点可以被人为地设为零，而熵却有一个看似“绝对”的、不可动摇的数值呢？ [@problem_id:2005835]
 
 这个看似不起眼的区别，实际上揭示了熵（entropy）这个概念的深刻本质，并将我们直接引向了[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)中最基本、也最优雅的定律之一。
 
@@ -66,7 +66,7 @@ $$
 5.  **第五站：加热水蒸气 (373.15 K → 393.15 K, 即 120°C)**
     最后，我们继续加热水蒸气，熵的累积进入最后一段冲刺：$\int_{373.15}^{393.15} \frac{C_{p, \text{gas}}(T)}{T} dT$。
 
-把这五个步骤的熵增全部加起来，我们就得到了水蒸气在 120°C 时的绝对摩尔熵。例如，通过计算，这个值大约是 $197 \text{ J/(mol·K)}$。[@problem_id:1840254] 现在，你再看到数据手册上的这个数字，就不会觉得它只是一个凭空出现的符号，而是理解了它背后所包含的、从绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)开始的全部加热和[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)历史。
+把这五个步骤的熵增全部加起来，我们就得到了水蒸气在 120°C 时的绝对摩尔熵。例如，通过计算，这个值大约是 $197 \mathrm{J/(mol\cdot K)}$。[@problem_id:1840254] 现在，你再看到数据手册上的这个数字，就不会觉得它只是一个凭空出现的符号，而是理解了它背后所包含的、从绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)开始的全部加热和[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)历史。
 
 ### 当“完美”不再：残留熵
 
@@ -85,7 +85,7 @@ $$
 一个典型的例子是像一氧化碳（CO）或一氧化二氮（N$_2$O）这样的非对称线性分子所组成的晶体。由于分子的两端（比如 N-N-O 和 O-N-N）非常相似，它们在[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中可以随机地朝向两个方向[排列](@keyword=permutation|lang=zh-CN|style=Feynman)。当晶体冷却时，这些随机取向被“冻结”在了[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中，就像一排排被随机抛掷后冻住的硬币。[@problem_id:1840282] 假设每个分子都有两种可能的取向，那么对于 1 摩尔（包含 $N_A$ 个分子）的物质，总的微观状态数就是 $W = 2^{N_A}$。其在绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)下的熵就不会是零，而是一个确定的正值，我们称之为**残留熵**（Residual Entropy）：
 
 $$
-S_{residual} = k_B \ln(2^{N_A}) = N_A k_B \ln 2 = R \ln 2 \approx 5.76 \text{ J/(mol·K)}
+S_{residual} = k_B \ln(2^{N_A}) = N_A k_B \ln 2 = R \ln 2 \approx 5.76 \mathrm{J/(mol\cdot K)}
 $$
 
 其中 $R$ 是[理想气体常数](@keyword=universal_gas_constant|lang=zh-CN|style=Feynman)。这是一个由于“选择困难”而被永远留存下来的混乱度。[@problem_id:1896843]

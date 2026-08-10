@@ -1,120 +1,120 @@
-## 应用与交叉学科联系
+## 应用与[交叉](@keyword=chiasmata|lang=zh-CN|style=Feynman)学科联系
 
-在前几章中，我们详细探讨了电容去离子（Capacitive Deionization, CDI）技术的基本原理和核心机制，重点关注了多孔碳电极中非法拉第电吸附过程。掌握了这些基础知识后，我们现在将视野转向更广阔的应用领域，探索这些核心原理如何在多样的实际场景和交叉学科中得到应用、扩展和优化。本章旨在搭建理论与实践之间的桥梁，揭示CDI作为一个融合了电化学、材料科学、流体力学和系统工程学的交叉领域的魅力。我们将通过一系列面向应用的案例，展示如何通过创新的系统设计、先进的材料结构和精密的运行调控，来应对真实世界水处理中的各种挑战。
+在前几章中，我们详细探讨了电容去离子（Capacitive Deionization, CDI）技术的基本原理和核心机制，重点关注了[多孔碳电极](@keyword=porous_carbon_electrodes|lang=zh-CN|style=Feynman)中非法拉第电吸附过程。掌握了这些基础知识后，我们现在将视野转向更广阔的应用领域，探索这些核心原理如何在多样的实际场景和[交叉](@keyword=chiasmata|lang=zh-CN|style=Feynman)学科中得到应用、扩展和优化。本章旨在搭建理论与实践之间的桥梁，揭示CDI作为一个融合了电化学、[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)、[流体力学](@keyword=fluid_dynamics|lang=zh-CN|style=Feynman)和系统工程学的[交叉](@keyword=chiasmata|lang=zh-CN|style=Feynman)领域的魅力。我们将通过一系列面向应用的案例，展示如何通过创新的[系统设计](@keyword=system_design|lang=zh-CN|style=Feynman)、先进的材料结构和精密的运行调控，来应对真实世界[水处理](@keyword=water_treatment|lang=zh-CN|style=Feynman)中的各种挑战。
 
 ### 先进CDI系统架构与性能提升
 
-传统的CDI装置虽然原理清晰，但在盐吸附容量（Salt Adsorption Capacity, SAC）、电荷效率和运行模式上存在局限。为了突破这些瓶颈，研究人员开发了多种先进的CDI架构。
+传统的CDI装置虽然原理清晰，但在盐吸附容量（Salt Adsorption Capacity, SAC）、[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)效率和运行模式上存在局限。为了突破这些瓶颈，研究人员开发了多种先进的CDI架构。
 
 #### 混合电容去离子（HCDI）
 
-为了显著提升盐吸附容量，一种有效的策略是构建混合电容去离子（Hybrid Capacitive Deionization, HCDI）系统。其核心思想是用一个具有法拉第反应活性的电极（如钠离子电池材料）取代传统CDI中的一个电容性碳电极。非法拉第电容性电极通过在电双层（Electrical Double Layer, EDL）中物理吸附离子来储存电荷，其容量受限于表面积和电压；而法拉第电极通过材料体相内的氧化还原反应来嵌入或脱出离子，其电荷容量通常远高于前者。
+为了显著提升盐吸附容量，一种有效的策略是构建混合电容去离子（Hybrid Capacitive Deionization, HCDI）系统。其核心思想是用一个具有[法拉第反应](@keyword=faradaic_reactions|lang=zh-CN|style=Feynman)活性的电极（如[钠离子电池](@keyword=sodium_ion_batteries|lang=zh-CN|style=Feynman)材料）取代传统CDI中的一个电容性碳电极。非法拉第电容性电极通过在电双层（Electrical Double Layer, EDL）中物理吸附离子来储存[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，其容量受限于表面积和电压；而法拉第电极通过材料体相内的氧化还原反应来嵌入或脱出离子，其[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)容量通常远高于前者。
 
-通过理论分析可以量化这种性能提升。在一个理想的HCDI系统中，假设非法拉第碳阳极吸附$Cl^-$，而法拉第阴极（如$NaTi_2(PO_4)_3$）嵌入$Na^+$。在理想的HCDI系统中，由于法拉第电极的电位在离子嵌入/脱出过程中相对稳定，大部分电胞电压降可以施加在电容电极的电双层上，显著提高了其电荷储存能力。通过对阴阳两极的质量进行精密匹配，可以最大化整个系统的盐吸附量。理论模型预测，在理想条件下，HCDI系统的理论盐吸附容量（SAC）与传统CDI系统的比值，即增强比，可以表示为：
+通过理论分析可以量化这种性能提升。在一个理想的HCDI系统中，假设非法拉第碳[阳极](@keyword=anode|lang=zh-CN|style=Feynman)吸附$Cl^-$，而法拉第阴极（如$NaTi_2(PO_4)_3$）嵌入$Na^+$。在理想的HCDI系统中，由于法拉第电极的[电位](@keyword=electric_potential|lang=zh-CN|style=Feynman)在离子嵌入/脱出过程中相对稳定，大部分电胞电压降可以施加在电容电极的电双层上，显著提高了其[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)储存能力。通过对阴阳两极的质量进行精密匹配，可以最大化整个系统的盐吸附量。理论模型预测，在理想条件下，HCDI系统的理论盐吸附容量（SAC）与传统CDI系统的比值，即增强比，可以表示为：
 $$ \text{Enhancement Ratio} = \frac{4}{1+\frac{C_{sp}\Delta V}{Q_{sp}}} $$
-其中，$C_{sp}$是碳电极的比电容，$Q_{sp}$是法拉第材料的比电荷容量。考虑到$Q_{sp}$通常远大于$C_{sp}\Delta V$，该比值趋近于4，这意味着HCDI在理想条件下可将盐吸附容量提升至传统CDI的四倍。这种架构的代价是牺牲了一定的普适性，因为法拉第电极通常对特定离子具有选择性。[@problem_id:1541415]
+其中，$C_{sp}$是碳电极的比电容，$Q_{sp}$是法拉第材料的比[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)容量。考虑到$Q_{sp}$通常远大于$C_{sp}\Delta V$，该比值趋近于4，这意味着HCDI在理想条件下可将盐吸附容量提升至传统CDI的四倍。这种架构的代价是牺牲了一定的普适性，因为法拉第电极通常对特定离子具有选择性。[@problem_id:1541415]
 
-#### 膜电容去离子（MCDI）
+#### [膜电容](@keyword=membrane_capacitance|lang=zh-CN|style=Feynman)去离子（MCDI）
 
-传统CDI的一个主要效率损失来源是“同离子排斥”效应：在充电后期，从电极孔隙中排出的同离子（co-ions，即与电极带相同电荷的离子）会进入主流道，降低了净脱盐率。膜电容去离子（Membrane Capacitive Deionization, MCDI）通过在每个电极和水流通道之间引入离子交换膜来解决此问题。阳离子交换膜（CEM）置于阴极前，只允许阳离子通过；阴离子交换膜（AEM）置于阳极前，只允许阴离子通过。
+传统CDI的一个主要效率损失来源是“同离子排斥”效应：在充电后期，从电极孔隙中排出的同离子（co-ions，即与电极带相同[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的离子）会进入主流道，降低了净脱盐率。[膜电容](@keyword=membrane_capacitance|lang=zh-CN|style=Feynman)去离子（Membrane Capacitive Deionization, MCDI）通过在每个电极和水流通道之间引入[离子交换膜](@keyword=ion_exchange_membranes|lang=zh-CN|style=Feynman)来解决此问题。[阳离子交换](@keyword=cation_exchange|lang=zh-CN|style=Feynman)膜（CEM）置于阴极前，只允许阳离子通过；[阴离子交换膜](@keyword=anion_exchange_membrane|lang=zh-CN|style=Feynman)（AEM）置于[阳极](@keyword=anode|lang=zh-CN|style=Feynman)前，只允许阴离子通过。
 
-这些膜极大地提升了系统的电荷效率$\Lambda$（即吸附的盐的摩尔数与通过电极的总电荷摩尔数之比）。电荷效率与膜的选择性渗透率（Permselectivity, $P$）直接相关。对于一个MCDI单元，其总电荷效率$\Lambda_{cell}$可以近似表示为：
+这些膜极大地提升了系统的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)效率$\Lambda$（即吸附的盐的摩尔数与通过电极的总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)摩尔数之比）。[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)效率与膜的选择性渗透率（Permselectivity, $P$）直接相关。对于一个MCDI单元，其总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)效率$\Lambda_{cell}$可以近似表示为：
 $$ \Lambda_{cell} \approx P_{CEM} + P_{AEM} - 1 $$
-其中$P_{CEM}$和$P_{AEM}$分别是阳离子和阴离子交换膜的选择性渗透率。一片理想的离子交换膜其选择性渗透率接近1，这将使$\Lambda_{cell}$也趋近于1，意味着几乎所有通过的电流都用于有效脱盐。因此，使用高性能的离子交换膜是提升MCDI性能的关键。[@problem_id:1541435]
+其中$P_{CEM}$和$P_{AEM}$分别是阳离子和[阴离子交换膜](@keyword=anion_exchange_membrane|lang=zh-CN|style=Feynman)的选择性渗透率。一片理想的[离子交换膜](@keyword=ion_exchange_membranes|lang=zh-CN|style=Feynman)其选择性渗透率接近1，这将使$\Lambda_{cell}$也趋近于1，意味着几乎所有通过的电流都用于有效脱盐。因此，使用高性能的[离子交换膜](@keyword=ion_exchange_membranes|lang=zh-CN|style=Feynman)是提升MCDI性能的关键。[@problem_id:1541435]
 
-这种高选择性的物理基础源于膜-溶液界面处建立的唐南电位（Donnan Potential）。离子交换膜内部含有高浓度的固定电荷基团（例如，CEM中含有固定的负电荷基团）。为了维持膜内部的电中性，膜会吸收大量反离子（counter-ions）并强烈排斥同离子。这导致膜内外离子浓度存在巨大差异，从而在界面上形成一个平衡电位差，即唐南电位$\Delta \phi$。该电位对于同离子而言是一个能量壁垒，阻碍其进入膜内，而对于反离子则是一个驱动力。对于含有浓度为$C_{feed}$的1:1盐溶液和固定电荷浓度为$C_{fix,m}$的CEM，该电位可由下式估算：
-$$ \Delta \phi = -\frac{R T}{F} \arcsinh\left(\frac{C_{fix,m}}{2 C_{feed}}\right) $$
-其中$R$是气体常数，$T$是温度，$F$是法拉第常数。这个负的电位有效地阻止了带负电的同离子（阴离子）进入CEM，从而保证了阳离子的高选择性通过。[@problem_id:1541429]
+这种高选择性的物理基础源于膜-溶液界面处建立的唐南[电位](@keyword=electric_potential|lang=zh-CN|style=Feynman)（Donnan Potential）。[离子交换膜](@keyword=ion_exchange_membranes|lang=zh-CN|style=Feynman)内部含有高浓度的固定[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)基团（例如，CEM中含有固定的负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)基团）。为了维持膜内部的电中性，膜会吸收大量反离子（counter-ions）并强烈排斥同离子。这导致膜内外[离子浓度](@keyword=ion_concentration|lang=zh-CN|style=Feynman)存在巨大差异，从而在界面上形成一个平衡电位差，即唐南[电位](@keyword=electric_potential|lang=zh-CN|style=Feynman)$\Delta \phi$。该[电位](@keyword=electric_potential|lang=zh-CN|style=Feynman)对于同离子而言是一个能量壁垒，阻碍其进入膜内，而对于反离子则是一个驱动力。对于含有浓度为$C_{feed}$的1:1盐溶液和固定[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)浓度为$C_{fix,m}$的CEM，该[电位](@keyword=electric_potential|lang=zh-CN|style=Feynman)可由下式估算：
+$$ \Delta \phi = -\frac{R T}{F} \operatorname{arcsinh}\left(\frac{C_{fix,m}}{2 C_{feed}}\right) $$
+其中$R$是气体常数，$T$是温度，$F$是法拉第常数。这个负的[电位](@keyword=electric_potential|lang=zh-CN|style=Feynman)有效地阻止了带负电的同离子（阴离子）进入CEM，从而保证了阳离子的高选择性通过。[@problem_id:1541429]
 
 #### 流动电极电容去离子（FCDI）
 
-传统CDI和MCDI本质上是循环批处理过程，包含充电吸附和放电再生两个阶段。为了实现连续不间断的脱盐操作，流动电极电容去离子（Flow-Electrode Capacitive Deionization, FCDI）应运而生。在FCDI中，固定的多孔电极被流动的导电碳浆料所取代。含盐水在中央通道流过，两侧是分别作为阴极和阳极的碳浆料通道。
+传统CDI和MCDI本质上是循环批处理过程，包含充电吸附和放电再生两个阶段。为了实现连续不间断的脱盐操作，流动电极电容去离子（Flow-Electrode Capacitive Deionization, FCDI）应运而生。在FCDI中，固定的多孔电极被流动的导电碳浆料所取代。含盐水在中央通道流过，两侧是分别作为阴极和[阳极](@keyword=anode|lang=zh-CN|style=Feynman)的碳浆料通道。
 
-在稳态操作下，可以通过建立质量平衡模型来预测系统性能。盐水以流速$Q_w$和入口浓度$C_{in}$进入，而碳浆料以流速$Q_s$和碳载量$\rho_c$进入。如果碳材料的比电荷容量为$Q_{sp}$，那么在理想情况下，盐的去除速率与浆料的电荷承载速率成正比。通过对水流通道中的盐进行质量衡算，可以导出出口处的盐浓度$C_{out}$：
+在[稳态](@keyword=steady_states|lang=zh-CN|style=Feynman)操作下，可以通过建立质量平衡模型来预测系统性能。盐水以流速$Q_w$和入口浓度$C_{in}$进入，而碳浆料以流速$Q_s$和碳载量$\rho_c$进入。如果碳材料的比[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)容量为$Q_{sp}$，那么在理想情况下，盐的去除速率与浆料的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)承载速率成正比。通过对水流通道中的盐进行质量衡算，可以导出出口处的盐浓度$C_{out}$：
 $$ C_{out} = C_{in} - \frac{M Q_s \rho_c Q_{sp}}{F Q_w} $$
 其中$M$是盐的摩尔质量。这个关系式清晰地表明，通过调节水和碳浆料的流速比，可以精确控制出水水质，实现连续稳定的脱盐过程。[@problem_id:1541408]
 
-### 系统设计与优化
+### [系统设计](@keyword=system_design|lang=zh-CN|style=Feynman)与优化
 
 CDI系统的性能不仅取决于其基本架构，还依赖于一系列精巧的工程设计与优化，这些设计需要在多个相互制约的因素之间寻找最佳平衡。
 
 #### 非对称电极设计
 
-当处理含有非对称价态离子（如$MgCl_2$）或水合半径差异巨大的离子的盐溶液时，使用两个完全相同的电极可能导致效率低下和pH波动。原因在于，为了维持电中性，吸附的阳离子和阴离子的总电荷量必须相等。对于$MgCl_2$，需要吸附的$Cl^-$摩尔数是$Mg^{2+}$的两倍。如果阴阳两极对离子的吸附能力不匹配，一个电极会先于另一个达到饱和，导致过电位增加，可能引发水的电解等副反应。
+当处理含有非对称价态离子（如$MgCl_2$）或[水合半径](@keyword=hydrated_radius|lang=zh-CN|style=Feynman)差异巨大的离子的盐溶液时，使用两个完全相同的电极可能导致效率低下和pH波动。原因在于，为了维持电中性，吸附的阳离子和阴离子的总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量必须相等。对于$MgCl_2$，需要吸附的$Cl^-$摩尔数是$Mg^{2+}$的两倍。如果阴阳两极对离子的吸附能力不匹配，一个电极会先于另一个达到饱和，导致[过电位](@keyword=overpotential|lang=zh-CN|style=Feynman)增加，可能引发水的电解等[副反应](@keyword=side_reaction|lang=zh-CN|style=Feynman)。
 
-为了解决这个问题，可以采用非对称电极设计，即通过调整阴阳两极的质量或材料，使其电容不同。一个简化的物理模型是，电极的电容与其有效表面积成正比，而其最大离子吸附数量则由离子自身的水合半径决定的堆积密度决定。为了实现对$MgCl_2$的同时饱和吸附，阴极（吸附$Mg^{2+}$）和阳极（吸附$Cl^-$）的电容比值需要满足特定的化学计量关系。基于此模型，最优的电容比可以推导为：
+为了解决这个问题，可以采用非对称电极设计，即通过调整阴阳两极的质量或材料，使其电容不同。一个简化的物理模型是，电极的电容与其有效表面积成正比，而其最大[离子吸附](@keyword=ion_adsorption|lang=zh-CN|style=Feynman)数量则由离子自身的[水合半径](@keyword=hydrated_radius|lang=zh-CN|style=Feynman)决定的[堆积密度](@keyword=packing_efficiency|lang=zh-CN|style=Feynman)决定。为了实现对$MgCl_2$的同时饱和吸附，阴极（吸附$Mg^{2+}$）和阳极（吸附$Cl^-$）的电容比值需要满足特定的[化学计量关系](@keyword=stoichiometric_relationships|lang=zh-CN|style=Feynman)。基于此模型，最优的电容比可以推导为：
 $$ \frac{C_{cathode}}{C_{anode}} = \frac{r_{Mg}^{2}}{2 r_{Cl}^{2}} $$
-其中$r_{Mg}$和$r_{Cl}$分别是$Mg^{2+}$和$Cl^-$的水合离子半径。这种设计确保了两电极储存的离子电荷量满足化学计量比，从而最大化了盐吸附量并提升了系统稳定性。[@problem_id:1541421]
+其中$r_{Mg}$和$r_{Cl}$分别是$Mg^{2+}$和$Cl^-$的[水合离子](@keyword=aqua_ion|lang=zh-CN|style=Feynman)半径。这种设计确保了两电极储存的离子[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量满足[化学计量](@keyword=chemical_stoichiometry|lang=zh-CN|style=Feynman)比，从而最大化了盐吸附量并提升了系统稳定性。[@problem_id:1541421]
 
 #### 流道构型优化：流通式与流过式
 
-CDI单元的内部流道设计对传质效率和能量消耗有决定性影响。两种基本的构型是“流通式”（flow-by）和“流过式”（flow-through）。在流通式设计中，水流经放置在两电极之间的非导电隔网通道。在流过式设计中，水直接流过多孔电极本身。
+CDI单元的内部流道设计对[传质](@keyword=mass_transport|lang=zh-CN|style=Feynman)效率和能量消耗有决定性影响。两种基本的构型是“流通式”（flow-by）和“流过式”（flow-through）。在流通式设计中，水流经放置在两电极之间的非导电隔网通道。在流过式设计中，水直接流过多孔电极本身。
 
-流过式构型极大地缩短了离子从主流道迁移到电极表面的距离，从而显著增强了传质速率，获得了更高的脱盐效率。然而，其代价是巨大的压降，因为水流需克服多孔介质的渗透阻力。这种压降遵循达西定律（Darcy's Law）。相比之下，流通式构型的压降要小得多，可由平行板间层流模型描述，但其传质效率较低。为了系统地评估这两种设计的優劣，可以定义一个综合性能指标（Figure of Merit, FoM），例如单位体积处理水电离的盐量与单位体积处理水所需的泵送能耗之比，即$FoM \propto f/\Delta P$，其中$f$是脱盐率，$\Delta P$是压降。通过对此指标的分析，工程师可以在特定的应用场景下，权衡传质增益和能耗成本，选择最优的流道构型。[@problem_id:1541419]
+流过式构型极大地缩短了离子从主流道迁移到电极表面的距离，从而显著增强了传质速率，获得了更高的脱盐效率。然而，其代价是巨大的[压降](@keyword=voltage_drop|lang=zh-CN|style=Feynman)，因为水流需克服多孔介质的渗透阻力。这种[压降](@keyword=voltage_drop|lang=zh-CN|style=Feynman)遵循[达西定律](@keyword=darcy_s_law|lang=zh-CN|style=Feynman)（Darcy's Law）。相比之下，流通式构型的[压降](@keyword=voltage_drop|lang=zh-CN|style=Feynman)要小得多，可由[平行板](@keyword=parallel_plates|lang=zh-CN|style=Feynman)间[层流](@keyword=laminar_flow|lang=zh-CN|style=Feynman)模型描述，但其传质效率较低。为了系统地评估这两种设计的優劣，可以定义一个综合性能指标（Figure of Merit, FoM），例如单位体积处理水电离的盐量与单位体积处理水所需的泵送能耗之比，即$FoM \propto f/\Delta P$，其中$f$是脱盐率，$\Delta P$是压降。通过对此指标的分析，工程师可以在特定的应用场景下，权衡传质增益和能耗成本，选择最优的流道构型。[@problem_id:1541419]
 
 #### 能量回收策略
 
 CDI过程的能耗是其实际应用的关键经济指标之一。在充电过程中，能量不仅储存在电极的电双层中，还有一部分因电阻而以热量形式耗散。在传统的放电阶段，储存在电双层中的电能通常被直接浪费。为了提高能源效率，可以实施能量回收策略。
 
-一种简洁而高效的方案是“电荷交换”（charge-swapping）。在一个包含两个CDI单元的系统中，让它们交替进行吸附和再生循环。当一个单元（Cell 1）刚刚完成充电，电压达到$V_0$，而另一个单元（Cell 2）刚刚完成放电，电压为0时，将两者直接并联。电荷会从Cell 1自发地流向Cell 2，直到两者电压达到平衡点$V_{eq} = V_0 / 2$。之后，Cell 2只需由电源从$V_0/2$充电至$V_0$，而Cell 1则继续放电。理论计算表明，通过这种简单的并联操作，每次充电循环中从外部电源节省的能量等于电容器中储存的静电能，即：
+一种简洁而高效的方案是“[电荷交换](@keyword=charge_exchange|lang=zh-CN|style=Feynman)”（charge-swapping）。在一个包含两个CDI单元的系统中，让它们交替进行吸附和[再生循环](@keyword=regenerative_cycle|lang=zh-CN|style=Feynman)。当一个单元（Cell 1）刚刚完成充电，电压达到$V_0$，而另一个单元（Cell 2）刚刚完成放电，电压为0时，将两者直接并联。[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)会从Cell 1自发地流向Cell 2，直到两者电压[达到平衡](@keyword=equilibration|lang=zh-CN|style=Feynman)点$V_{eq} = V_0 / 2$。之后，Cell 2只需由电源从$V_0/2$充电至$V_0$，而Cell 1则继续放电。理论计算表明，通过这种简单的并联操作，每次充电循环中从外部电源节省的能量等于[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)中储存的[静电能](@keyword=electrostatic_energy|lang=zh-CN|style=Feynman)，即：
 $$ E_{saved} = \frac{1}{2} C V_{0}^{2} $$
 这种方法无需复杂的电力电子变换器，显著降低了CDI过程的净能耗。[@problem_id:1541418]
 
-### 材料科学与电极结构
+### [材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)与电极结构
 
-CDI技术的核心是多孔电极材料。电极的微观结构，包括孔径分布、比表面积和孔道连通性，直接决定了其宏观的电化学性能。
+CDI技术的核心是多孔[电极材料](@keyword=electrode_materials|lang=zh-CN|style=Feynman)。电极的微观结构，包括孔径[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)、比表面积和孔道连通性，直接决定了其宏观的电化学性能。
 
 #### 分级孔结构设计
 
-理想的CDI电极需要同时具备高离子储存容量和快速离子传输速率。这两个要求往往是相互矛盾的：高容量通常依赖于由微孔（micropores, 2 nm）提供的高比表面积，而快速传输则需要由大孔（macropores, >50 nm）构成的低阻力离子通道。为了解决这一矛盾，先进的电极设计采用了分级孔结构，即在一个材料中同时集成微孔和大孔网络。
+理想的CDI电极需要同时具备高离子储存容量和快速离子传输速率。这两个要求往往是相互矛盾的：高容量通常依赖于由微孔（micropores, 2 nm）提供的高[比表面积](@keyword=surface_area_to_volume_ratio_2|lang=zh-CN|style=Feynman)，而快速传输则需要由大孔（macropores, >50 nm）构成的低阻力离子通道。为了解决这一矛盾，先进的电极设计采用了分级孔结构，即在一个材料中同时集成微孔和大孔网络。
 
-我们可以通过建立一个均质化模型来优化这种结构。假设电极由固体碳骨架（体积分数$\phi_s$）、大孔（$\phi_M$）和微孔（$\phi_m$）三相组成。其体积电容$C_{vol}$正比于固体体积分数$\phi_s$，而有效离子电导率$\sigma_{eff}$则由大孔网络决定，遵循幂律关系$\sigma_{eff} \propto \phi_M^{\alpha}$（$\alpha$是与孔道弯曲度相关的指数）。此外，微孔必须存在于固体基质中才能发挥作用，这引入了一个结构约束，如$\phi_m = k \phi_s$。为了获得最佳的综合性能，可以定义一个性能指标$FoM = C_{vol} \times \sigma_{eff}$并将其最大化。通过数学优化可以发现，存在一个最优的大孔与微孔体积分数比：
+我们可以通过建立一个均质化模型来优化这种结构。假设电极由固体碳骨架（[体积分数](@keyword=volume_fraction|lang=zh-CN|style=Feynman)$\phi_s$）、大孔（$\phi_M$）和微孔（$\phi_m$）三[相组成](@keyword=phase_composition|lang=zh-CN|style=Feynman)。其体积电容$C_{vol}$正比于固体体积分数$\phi_s$，而有效[离子电导率](@keyword=ionic_conductivity|lang=zh-CN|style=Feynman)$\sigma_{eff}$则由大孔网络决定，遵循[幂律](@keyword=power_law|lang=zh-CN|style=Feynman)关系$\sigma_{eff} \propto \phi_M^{\alpha}$（$\alpha$是与孔道弯曲度相关的指数）。此外，微孔必须存在于固体基质中才能发挥作用，这引入了一个结构约束，如$\phi_m = k \phi_s$。为了获得最佳的综合性能，可以定义一个性能指标$FoM = C_{vol} \times \sigma_{eff}$并将其最大化。通过[数学优化](@keyword=mathematical_optimization|lang=zh-CN|style=Feynman)可以发现，存在一个最优的大孔与微孔[体积分数](@keyword=volume_fraction|lang=zh-CN|style=Feynman)比：
 $$ \frac{\phi_M}{\phi_m} = \frac{\alpha(1+k)}{k} $$
-这个结果为设计兼具高容量和高倍率性能的分级孔结构电极材料提供了理论指导。[@problem_id:1541410]
+这个结果为设计兼具高容量和高倍率性能的分级孔结构[电极材料](@keyword=electrode_materials|lang=zh-CN|style=Feynman)提供了理论指导。[@problem_id:1541410]
 
-#### 逾渗理论与电化学可及面积
+#### [逾渗理论](@keyword=percolation_theory|lang=zh-CN|style=Feynman)与电化学可及面积
 
-一个多孔电极的总比表面积虽然巨大，但并非所有表面都能对脱盐过程做出贡献。只有那些能够通过连续的孔道网络与外部电解质溶液相连的表面，即“电化学可及表面”，才是有效的。逾渗理论（Percolation Theory）为理解这种连通性与材料孔隙率之间的关系提供了一个强大的数学框架。
+一个多孔电极的总[比表面积](@keyword=surface_area_to_volume_ratio_2|lang=zh-CN|style=Feynman)虽然巨大，但并非所有表面都能对脱盐过程做出贡献。只有那些能够通过连续的孔道网络与外部[电解质溶液](@keyword=electrolyte_solutions|lang=zh-CN|style=Feynman)相连的表面，即“电化学可及表面”，才是有效的。[逾渗理论](@keyword=percolation_theory|lang=zh-CN|style=Feynman)（Percolation Theory）为理解这种连通性与材料孔隙率之间的关系提供了一个强大的数学框架。
 
-我们可以将多孔电极抽象为一个三维晶格，每个格点代表一个微元，它有$p$的概率是孔隙，$1-p$的概率是固体。离子只能在相连的孔隙格点中传输。理论表明，存在一个临界的孔隙率阈值$p_c$（对于三维简单立方格子，$p_c \approx 0.3116$）。当孔隙率$p  p_c$时，孔道网络是断开的，无法形成贯穿整个电极的路径。当$p > p_c$时，会出现一个连接到电极表面的“逾渗簇”，其所占孔隙的比例$P_{\infty}(p)$随着$p$的增加而增加。在阈值附近，该比例遵循一个标度律：
+我们可以将多孔电极抽象为一个[三维晶格](@keyword=3d_lattices|lang=zh-CN|style=Feynman)，每个格点代表一个微元，它有$p$的概率是孔隙，$1-p$的概率是固体。离子只能在相连的孔隙格点中传输。理论表明，存在一个临界的孔隙率阈值$p_c$（对于三维简单立方格子，$p_c \approx 0.3116$）。当孔隙率$p  p_c$时，孔道网络是断开的，无法形成贯穿整个电极的路径。当$p > p_c$时，会出现一个连接到电极表面的“逾渗簇”，其所占孔隙的比例$P_{\infty}(p)$随着$p$的增加而增加。在阈值附近，该比例遵循一个[标度律](@keyword=scaling_laws|lang=zh-CN|style=Feynman)：
 $$ P_{\infty}(p) \approx A(p - p_c)^{\beta} $$
-其中$\beta$是一个普适的临界指数（3D中约为0.41）。这个$P_{\infty}(p)$就代表了电化学可及孔隙的体积分数，也因此决定了有效表面积的比例。这个模型揭示了，即使一个电极的孔隙率高于阈值，也并非所有孔隙都对CDI性能有贡献，这对指导电极材料的制备和评估具有重要意义。
+其中$\beta$是一个普适的[临界指数](@keyword=critical_exponents|lang=zh-CN|style=Feynman)（3D中约为0.41）。这个$P_{\infty}(p)$就代表了电化学可及孔隙的[体积分数](@keyword=volume_fraction|lang=zh-CN|style=Feynman)，也因此决定了有效表面积的比例。这个模型揭示了，即使一个电极的孔隙率高于阈值，也并非所有孔隙都对CDI性能有贡献，这对指导[电极材料](@keyword=electrode_materials|lang=zh-CN|style=Feynman)的制备和评估具有重要意义。
 
 ### 实际运行挑战与诊断
 
-在CDI系统的长期运行中，会遇到各种复杂的实际问题，如传质限制、电极污染和温度波动等。理解、诊断并缓解这些问题对于保证系统的稳定高效至关重要。
+在CDI系统的长期运行中，会遇到各种复杂的实际问题，如[传质限制](@keyword=mass_transfer_limitations|lang=zh-CN|style=Feynman)、[电极污染](@keyword=electrode_fouling|lang=zh-CN|style=Feynman)和[温度波](@keyword=temperature_wave|lang=zh-CN|style=Feynman)动等。理解、诊断并缓解这些问题对于保证系统的稳定高效至关重要。
 
-#### 传质限制与极限电流
+#### [传质限制](@keyword=mass_transfer_limitations|lang=zh-CN|style=Feynman)与[极限电流](@keyword=limiting_current|lang=zh-CN|style=Feynman)
 
-当CDI系统在高电流密度下运行时，离子从主流体向电极表面的迁移速率可能跟不上电吸附的速率，导致电极/膜界面附近出现离子耗尽区，即浓度极化现象。在MCDI中，这会导致盐浓度在膜表面的边界层内显著下降。当电流密度达到一个临界值——极限电流密度（$i_{lim}$）时，膜表面的盐浓度会趋近于零。超过此电流密度将导致电池电阻急剧上升，并可能引发水电解等有害副反应。
+当CDI系统在高[电流密度](@keyword=current_density|lang=zh-CN|style=Feynman)下运行时，离子从主流体向电极表面的迁移速率可能跟不上电吸附的速率，导致电极/膜界面附近出现离子耗尽区，即浓度极化现象。在MCDI中，这会导致盐浓度在膜表面的[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)内显著下降。当[电流密度](@keyword=current_density|lang=zh-CN|style=Feynman)达到一个临界值——[极限电流密度](@keyword=limiting_current_density|lang=zh-CN|style=Feynman)（$i_{lim}$）时，膜表面的盐浓度会趋近于零。超过此电流密度将导致电池电阻急剧上升，并可能引发水[电解](@keyword=electrolysis|lang=zh-CN|style=Feynman)等有害副反应。
 
-通过对扩散边界层内的离子传输（扩散和电迁移）进行稳态分析，可以推导出极限电流密度的表达式。对于一个含有1:1价盐的MCDI系统，其阳离子交换膜侧的极限电流密度为：
+通过对[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)内的离子传输（[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)和[电迁移](@keyword=electromigration|lang=zh-CN|style=Feynman)）进行[稳态分析](@keyword=steady_state_analysis_2|lang=zh-CN|style=Feynman)，可以推导出[极限电流密度](@keyword=limiting_current_density|lang=zh-CN|style=Feynman)的表达式。对于一个含有1:1价盐的MCDI系统，其[阳离子交换](@keyword=cation_exchange|lang=zh-CN|style=Feynman)膜侧的[极限电流密度](@keyword=limiting_current_density|lang=zh-CN|style=Feynman)为：
 $$ i_{lim} = \frac{z_c F D_s C_b}{\delta (t_c^m - t_c)} $$
-其中，$C_b$是主流体中的盐浓度，$D_s$是盐的扩散系数，$\delta$是扩散边界层厚度，$t_c$和$t_c^m$分别是阳离子在溶液中和在膜中的迁移数。这个公式指明了提高极限电流、拓宽操作窗口的方向：即提高主流体浓度、增强流体混合以减小$\delta$，以及选用离子选择性更强（$t_c^m$更接近1）的膜。[@problem_id:1541427]
+其中，$C_b$是主流体中的盐浓度，$D_s$是盐的[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)系数，$\delta$是[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)[边界层厚度](@keyword=boundary_layer_thickness|lang=zh-CN|style=Feynman)，$t_c$和$t_c^m$分别是阳离子在溶液中和在膜中的[迁移数](@keyword=transport_number|lang=zh-CN|style=Feynman)。这个公式指明了提高[极限电流](@keyword=limiting_current|lang=zh-CN|style=Feynman)、拓宽操作窗口的方向：即提高主流体浓度、增强流体混合以减小$\delta$，以及选用[离子选择性](@keyword=ion_selectivity|lang=zh-CN|style=Feynman)更强（$t_c^m$更接近1）的膜。[@problem_id:1541427]
 
-除了界面传质，沿流道方向的浓度变化也可以被建模。将单通道CDI池视为一个理想的活塞流反应器（Plug Flow Reactor, PFR），并假设盐的去除速率与当地浓度成一级反应（速率常数$k$），可以预测盐浓度$C(x)$沿流道长度$x$的分布。通过求解质量平衡微分方程，得到的浓度分布呈指数衰减：
+除了界面[传质](@keyword=mass_transport|lang=zh-CN|style=Feynman)，沿流道方向的浓度变化也可以被建模。将单通道CDI池视为一个理想的活[塞流](@keyword=slug_flow|lang=zh-CN|style=Feynman)反应器（Plug Flow Reactor, PFR），并假设盐的去除速率与当地浓度成一级反应（[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman)$k$），可以预测盐浓度$C(x)$沿流道长度$x$的[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)。通过求解质量平衡[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)，得到的浓度[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)呈指数衰减：
 $$ C(x) = C_{in} \exp\left(-\frac{\alpha V W H}{Q} x\right) $$
-其中$C_{in}$是入口浓度，$Q$是体积流量，$W, H$是通道宽高，$V$是操作电压（假设$k = \alpha V$）。这个模型将CDI单元的操作与经典的化学反应工程理论联系起来，为系统设计和性能预测提供了便捷的工具。[@problem_id:1541430]
+其中$C_{in}$是入口浓度，$Q$是[体积流量](@keyword=volumetric_flow_rate|lang=zh-CN|style=Feynman)，$W, H$是通道宽高，$V$是操作电压（假设$k = \alpha V$）。这个模型将CDI单元的操作与经典的[化学反应工程](@keyword=chemical_reaction_engineering|lang=zh-CN|style=Feynman)理论联系起来，为系统设计和性能预测提供了便捷的工具。[@problem_id:1541430]
 
 #### 有机物污染（Fouling）
 
-在处理含有天然有机物的水源时，CDI电极表面会逐渐吸附大分子有机物，形成一层污染层。这种污染层通常具有电绝缘性或离子传输阻力，会严重影响系统性能。我们可以将此污染层简化为一个附加的串联电阻$R_f$。在恒流充电模式下，这个附加电阻会导致在存储相同电荷量时，电池两端的电压更高，从而增加了能量消耗。
+在处理含有天然有机物的水源时，CDI电极表面会逐渐吸附大分子有机物，形成一层污染层。这种污染层通常具有电绝缘性或离子传输阻力，会严重影响系统性能。我们可以将此污染层简化为一个附加的[串联](@keyword=catenation|lang=zh-CN|style=Feynman)电阻$R_f$。在恒流充电模式下，这个附加电阻会导致在存储相同[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量时，电池两端的电压更高，从而增加了能量消耗。
 
-单位处理水量所消耗的能量，即比能耗（Specific Energy Consumption, SEC），是衡量CDI效率的关键指标。可以推导出，由于厚度为$d_f$、电阻率为$\rho_f$的污染层所导致的SEC增量$\Delta \text{SEC}$为：
+单位处理水量所消耗的能量，即比能耗（Specific Energy Consumption, SEC），是衡量CDI效率的关键指标。可以推导出，由于厚度为$d_f$、[电阻率](@keyword=resistivity|lang=zh-CN|style=Feynman)为$\rho_f$的污染层所导致的SEC增量$\Delta \text{SEC}$为：
 $$ \Delta \text{SEC} = \frac{F \Delta c \, I_{0}}{\alpha} \, \frac{\rho_{f} d_{f}}{A} $$
-其中$I_0$是充电电流，$A$是电极面积，$\alpha$是电荷效率，$\Delta c$是盐浓度降。这个关系式直接将污染层的物理性质与宏观的能量消耗联系起来，为评估污染影响和制定清洗策略提供了量化依据。[@problem_id:1541428]
+其中$I_0$是[充电电流](@keyword=charging_current|lang=zh-CN|style=Feynman)，$A$是电极面积，$\alpha$是[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)效率，$\Delta c$是盐浓度降。这个关系式直接将污染层的物理性质与宏观的能量消耗联系起来，为评估污染影响和制定清洗策略提供了量化依据。[@problem_id:1541428]
 
 #### 温度效应
 
-操作温度对CDI性能的影响是复杂的，因为它同时改变了多个物理化学参数。升高温度通常会提高电解质溶液的电导率，降低离子粘度，从而有利于离子传输，这会增大总电流。然而，温度升高也会带来负面效应：首先，它会提高水的电解等寄生反应的速率，这些反应通常遵循阿伦尼乌斯定律，导致更多电流被无效消耗。其次，它也会改变唐南电位等热力学平衡电位，轻微增加脱盐过程的热力学能垒。因此，净的盐吸附率是这些相互竞争效应的综合结果。通过建立一个包含电导率的线性温度依赖关系、寄生反应的指数温度依赖关系以及唐南电位的$T$正比关系的模型，可以分析在特定操作条件下是否存在一个最优操作温度，使得净吸附电流达到最大。[@problem_id:1541438]
+操作温度对CDI性能的影响是复杂的，因为它同时改变了多个[物理化学](@keyword=physical_chemistry|lang=zh-CN|style=Feynman)参数。升高温度通常会提高电解质[溶液的电导率](@keyword=electrical_conductivity_of_solutions|lang=zh-CN|style=Feynman)，降低离子粘度，从而有利于离子传输，这会增大总电流。然而，温度升高也会带来负面效应：首先，它会提高水的电解等寄生反应的速率，这些反应通常遵循[阿伦尼乌斯定律](@keyword=arrhenius_law|lang=zh-CN|style=Feynman)，导致更多电流被无效消耗。其次，它也会改变唐南[电位](@keyword=electric_potential|lang=zh-CN|style=Feynman)等[热力学平衡](@keyword=thermodynamic_equilibrium|lang=zh-CN|style=Feynman)[电位](@keyword=electric_potential|lang=zh-CN|style=Feynman)，轻微增加脱盐过程的[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)能垒。因此，净的盐吸附率是这些相互竞争效应的综合结果。通过建立一个包含[电导率](@keyword=conductivity|lang=zh-CN|style=Feynman)的线性温度依赖关系、寄生反应的指数温度依赖关系以及唐南[电位](@keyword=electric_potential|lang=zh-CN|style=Feynman)的$T$正比关系的模型，可以分析在特定操作条件下是否存在一个最优操作温度，使得净吸附电流达到最大。[@problem_id:1541438]
 
-#### 电化学阻抗谱诊断
+#### [电化学阻抗谱](@keyword=electrochemical_impedance_spectroscopy|lang=zh-CN|style=Feynman)诊断
 
-为了无损地监测CDI单元在运行过程中的状态变化，如电极饱和、孔隙堵塞或污染，电化学阻抗谱（Electrochemical Impedance Spectroscopy, EIS）是一种非常强大的诊断工具。通过施加一个小的正弦交流电压并测量电流响应，可以获得系统在很宽频率范围内的复阻抗。结果通常用波特图（Bode Plot）表示，即阻抗模量$|Z|$和相位角$\phi$随频率的变化。
+为了无损地监测CDI单元在运行过程中的状态变化，如电极饱和、孔隙堵塞或污染，[电化学阻抗谱](@keyword=electrochemical_impedance_spectroscopy|lang=zh-CN|style=Feynman)（Electrochemical Impedance Spectroscopy, EIS）是一种非常强大的诊断工具。通过施加一个小的正弦交流电压并测量电流响应，可以获得系统在很宽频率范围内的[复阻抗](@keyword=complex_impedance|lang=zh-CN|style=Feynman)。结果通常用[波特图](@keyword=gain_and_phase_plot|lang=zh-CN|style=Feynman)（Bode Plot）表示，即阻抗模量$|Z|$和相位角$\phi$随频率的变化。
 
-一个简化的CDI等效电路模型包含溶液电阻$R_s$与一个由孔隙电阻$R_p$和双电层电容$C_{dl}$并联组成的单元串联。在波特图上：
+一个简化的CDI[等效电路模型](@keyword=equivalent_circuit_model|lang=zh-CN|style=Feynman)包含[溶液电阻](@keyword=solution_resistance|lang=zh-CN|style=Feynman)$R_s$与一个由孔隙电阻$R_p$和[双电层电容](@keyword=double_layer_capacitance|lang=zh-CN|style=Feynman)$C_{dl}$并联组成的单元[串联](@keyword=catenation|lang=zh-CN|style=Feynman)。在[波特图](@keyword=gain_and_phase_plot|lang=zh-CN|style=Feynman)上：
 -   高频区的阻抗模量趋近于$R_s$，反映了电极间溶液的电阻。
 -   低频区的阻抗模量趋近于$R_s + R_p$，反映了包括孔道内离子传输的总电阻。
 -   中频区的相位角会出现一个极小值，其深度反映了体系的电容特性。
 
-当CDI电极在充电过程中逐渐饱和时，EIS谱会发生系统性变化：由于主流道脱盐，溶液电阻$R_s$会增加；同时，孔道内因离子拥挤和同离子排斥，孔隙电阻$R_p$也会增加。这两个效应导致了高频和低频阻抗模量的全面升高。此外，由于电极吸附能力下降，有效电容$C_{dl}$减小，系统的电容特性减弱，表现为相位角的极小值向0度方向移动（即变得不那么负）。通过跟踪这些特征参数的变化，可以实时诊断CDI单元的运行状态和健康状况。[@problem_id:1540166]
+当CDI电极在充电过程中逐渐饱和时，EIS谱会发生系统性变化：由于主流道脱盐，[溶液电阻](@keyword=solution_resistance|lang=zh-CN|style=Feynman)$R_s$会增加；同时，孔道内因离子拥挤和同离子排斥，孔隙电阻$R_p$也会增加。这两个效应导致了高频和低频阻抗模量的全面升高。此外，由于电极吸附能力下降，有效电容$C_{dl}$减小，系统的电容特性减弱，表现为相位角的极小值向0度方向移动（即变得不那么负）。通过跟踪这些特征参数的变化，可以实时诊断CDI单元的运行[状态和](@keyword=sum_of_states|lang=zh-CN|style=Feynman)健康状况。[@problem_id:1540166]

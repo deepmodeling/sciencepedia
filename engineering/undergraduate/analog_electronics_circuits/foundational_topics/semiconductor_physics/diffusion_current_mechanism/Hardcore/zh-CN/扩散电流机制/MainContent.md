@@ -1,127 +1,127 @@
 ## 引言
-在半导体物理与电子电路的世界中，电荷的流动——即电流——是所有器件功能的基础。电流的形成主要源于两种截然不同的物理机制：由电场驱动的漂移运动和由浓度不均引起的扩散运动。虽然漂移电流直观易懂，但扩散电流背后的深刻机制及其在现代电子学中的核心作用往往更难掌握。本文旨在填补这一知识鸿沟，系统性地揭示扩散电流的本质。
+在[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)物理与电子电路的世界中，[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的流动——即电流——是所有器件功能的基础。电流的形成主要源于两种截然不同的物理机制：由[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)驱动的漂移运动和由浓度不均引起的[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)运动。虽然[漂移电流](@keyword=drift_current|lang=zh-CN|style=Feynman)直观易懂，但[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)背后的深刻机制及其在现代电子学中的核心作用往往更难掌握。本文旨在填补这一知识鸿沟，系统性地揭示[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)的本质。
 
-通过本文的学习，您将深入理解一个基本问题：在没有外加电场的情况下，半导体内部为何以及如何产生电流？我们将从最基本的物理原理出发，逐步构建起完整的理论框架和应用图景。文章分为三个核心部分：
+通过本文的学习，您将深入理解一个基本问题：在没有外加[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)的情况下，[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)内部为何以及如何产生电流？我们将从最基本的物理原理出发，逐步构建起完整的理论框架和应用图景。文章分为三个核心部分：
 
-*   在**“原理与机制”**一章中，我们将追溯扩散的物理起源，建立其数学模型，并探讨它与漂移电流之间的动态平衡关系，最终引出著名的爱因斯坦关系。
-*   接着，在**“应用与跨学科联系”**一章中，我们将展示扩散机制如何在p-n结二极管和BJT等关键半导体器件中发挥决定性作用，并将其视野拓展到电化学、材料科学等多个领域。
-*   最后，在**“动手实践”**部分，您将通过一系列计算练习，将理论知识应用于解决具体问题，从而巩固和深化对扩散电流的理解。
+*   在**“原理与机制”**一章中，我们将追溯[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)的物理起源，建立其数学模型，并探讨它与[漂移电流](@keyword=drift_current|lang=zh-CN|style=Feynman)之间的[动态平衡](@keyword=dynamic_equilibrium|lang=zh-CN|style=Feynman)关系，最终引出著名的爱因斯坦关系。
+*   接着，在**“应用与跨学科联系”**一章中，我们将展示[扩散机制](@keyword=diffusion_mechanisms|lang=zh-CN|style=Feynman)如何在p-n结二极管和BJT等关键[半导体器件](@keyword=semiconductor_devices|lang=zh-CN|style=Feynman)中发挥决定性作用，并将其视野拓展到电化学、[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)等多个领域。
+*   最后，在**“动手实践”**部分，您将通过一系列计算练习，将理论知识应用于解决具体问题，从而巩固和深化对[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)的理解。
 
-现在，让我们一同启程，首先深入到扩散电流的“原理与机制”之中。
+现在，让我们一同启程，首先深入到[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)的“原理与机制”之中。
 
 ## 原理与机制
 
-在半导体物理学中，电荷载流子（电子和空穴）的运动构成了电流。这种运动由两种基本的物理机制驱动，分别产生漂移电流和扩散电流。虽然我们在介绍章节中已经概述了这两种电流，但本章将深入探讨扩散电流的内在原理和核心机制。理解扩散现象不仅是掌握二极管和晶体管工作原理的基石，也能帮助我们洞悉在非均匀掺杂或载流子注入情况下半导体内部发生的深刻物理过程。
+在[半导体物理学](@keyword=semiconductor_physics|lang=zh-CN|style=Feynman)中，[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)载流子（[电子和空穴](@keyword=electrons_and_holes|lang=zh-CN|style=Feynman)）的运动构成了电流。这种运动由两种基本的物理机制驱动，分别产生[漂移电流和扩散电流](@keyword=drift_and_diffusion_current|lang=zh-CN|style=Feynman)。虽然我们在介绍章节中已经概述了这两种电流，但本章将深入探讨[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)的内在原理和核心机制。理解[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)现象不仅是掌握二极管和晶体管工作原理的基石，也能帮助我们洞悉在非均匀掺杂或载流子注入情况下[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)内部发生的深刻物理过程。
 
-### 扩散的物理起源：浓度梯度
+### [扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)的物理起源：[浓度梯度](@keyword=concentration_gradient|lang=zh-CN|style=Feynman)
 
-想象一下，将一滴墨水滴入一杯静止的清水中。我们观察到墨水会自发地从中心的高浓度区域向周围的低浓度区域散开，直至最终均匀分布在整杯水中。这个过程的驱动力并非来自任何外部施加的力，而是源于粒子无规则热运动所产生的统计学效应。在浓度不均匀的区域，从高浓度区向低浓度区运动的粒子在数量上超过了反向运动的粒子，从而产生了一种宏观上的净流动。
+想象一下，将一滴墨水滴入一杯静止的清水中。我们观察到墨水会自发地从中心的高浓度区域向周围的低浓度区域散开，直至最终[均匀分布](@keyword=equidistribution|lang=zh-CN|style=Feynman)在整杯水中。这个过程的驱动力并非来自任何外部施加的力，而是源于粒子无规则热运动所产生的统计学效应。在浓度不均匀的区域，从高浓度区向低浓度区运动的粒子在数量上超过了反向运动的粒子，从而产生了一种宏观上的净流动。
 
-半导体中的载流子扩散遵循完全相同的物理逻辑 [@problem_id:1298159]。在恒定温度下，晶格中的电子和空穴并非静止不动，而是处在持续的、随机的热运动之中，不断地与晶格原子发生碰撞并改变运动方向。如果载流子在整个半导体材料中是均匀分布的，那么在任何一个截面上，向左和向右穿越的载流子在统计上是相等的，宏观上没有净电荷流动，因此不会产生电流 [@problem_id:1298118]。
+[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)中的载流子[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)遵循完全相同的物理逻辑 [@problem_id:1298159]。在恒定温度下，[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)中的电子和空穴并非静止不动，而是处在持续的、随机的热运动之中，不断地与[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)原子发生碰撞并改变运动方向。如果载流子在整个[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)材料中是[均匀分布](@keyword=equidistribution|lang=zh-CN|style=Feynman)的，那么在任何一个[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)上，向左和向右穿越的载流子在统计上是相等的，宏观上没有净[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)流动，因此不会产生电流 [@problem_id:1298118]。
 
-然而，一旦半导体内部存在**载流子浓度梯度**（concentration gradient），即载流子密度随空间位置变化，情况就截然不同了。在这种情况下，尽管单个载流子的运动仍然是随机的，但从高浓度区域向低浓度区域迁移的载流子数量会系统性地多于反向迁移的数量。这种由浓度梯度驱动的载流子净迁移过程，就构成了**扩散电流**（diffusion current）。
+然而，一旦[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)内部存在**[载流子浓度梯度](@keyword=carrier_concentration_gradient|lang=zh-CN|style=Feynman)**（concentration gradient），即载流子密度随空间位置变化，情况就截然不同了。在这种情况下，尽管单个载流子的运动仍然是随机的，但从高浓度区域向低浓度区域迁移的载流子数量会系统性地多于反向迁移的数量。这种由浓度梯度驱动的载流子净迁移过程，就构成了**[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)**（diffusion current）。
 
 因此，我们可以明确区分两种基本的电流机制 [@problem_id:1298147]：
 
-*   **漂移电流（Drift Current）**：由**电场**驱动。电场对带电的载流子施加静电力，使其产生一个平均的、定向的漂移速度，从而形成电流。
+*   **[漂移电流](@keyword=drift_current|lang=zh-CN|style=Feynman)（Drift Current）**：由**[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)**驱动。[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)对带电的载流子施加[静电力](@keyword=electrostatic_forces|lang=zh-CN|style=Feynman)，使其产生一个平均的、定向的漂移速度，从而形成电流。
 
-*   **扩散电流（Diffusion Current）**：由**浓度梯度**驱动。载流子的随机热运动在宏观上表现为从高浓度区域向低浓度区域的净流动，从而形成电流。
+*   **[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)（Diffusion Current）**：由**[浓度梯度](@keyword=concentration_gradient|lang=zh-CN|style=Feynman)**驱动。载流子的随机热运动在宏观上表现为从高浓度区域向低浓度区域的净流动，从而形成电流。
 
-重要的是要理解，扩散不是一种作用在单个粒子上的“力”，而是一种大量粒子随机运动产生的宏观统计效应。
+重要的是要理解，[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)不是一种作用在单个粒子上的“力”，而是一种大量粒子随机运动产生的宏观统计效应。
 
-### 扩散电流的数学表述
+### [扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)的数学表述
 
-扩散现象可以用菲克第一定律（Fick's First Law）来定量描述。该定律指出，粒子通量（单位时间穿过单位面积的粒子数）正比于浓度梯度，并指向浓度降低的方向。当我们将此定律应用于带电的载流子时，便可得到扩散电流密度的表达式。
+[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)现象可以用[菲克第一定律](@keyword=fick_s_first_law|lang=zh-CN|style=Feynman)（Fick's First Law）来定量描述。该定律指出，[粒子通量](@entry_id:753207)（单位时间穿过单位面积的粒子数）正比于[浓度梯度](@keyword=concentration_gradient|lang=zh-CN|style=Feynman)，[并指](@keyword=syndactyly|lang=zh-CN|style=Feynman)向浓度降低的方向。当我们将此定律应用于带电的载流子时，便可得到[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)密度的表达式。
 
-对于电子，其粒子通量密度 $\Phi_n$ 与电子浓度梯度 $\frac{dn}{dx}$ 的关系为：
+对于电子，其[粒子通量](@entry_id:753207)密度 $\Phi_n$ 与[电子浓度](@keyword=electron_concentration|lang=zh-CN|style=Feynman)梯度 $\frac{dn}{dx}$ 的关系为：
 $$ \Phi_n(x) = -D_n \frac{dn(x)}{dx} $$
-其中，$D_n$ 是**电子扩散系数**（electron diffusion coefficient），单位通常为 $\text{cm}^2/\text{s}$，它量化了电子扩散的难易程度。负号表示电子的净流动方向与浓度**增加**的方向相反。
+其中，$D_n$ 是**电子[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)系数**（electron diffusion coefficient），单位通常为 $\text{cm}^2/\text{s}$，它量化了电子[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)的难易程度。负号表示电子的净流动方向与浓度**增加**的方向相反。
 
-由于每个电子携带的电荷为 $-q$（其中 $q$ 是元电荷，$q = 1.602 \times 10^{-19} \text{ C}$），电子扩散电流密度 $J_{n, \text{diff}}$ 就是粒子通量乘以单个电子的电荷：
+由于每个电子携带的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)为 $-q$（其中 $q$ 是元[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，$q = 1.602 \times 10^{-19} \text{ C}$），电子[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)密度 $J_{n, \text{diff}}$ 就是[粒子通量](@entry_id:753207)乘以单个电子的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)：
 $$ J_{n, \text{diff}}(x) = (-q) \Phi_n(x) = (-q) \left(-D_n \frac{dn(x)}{dx}\right) = q D_n \frac{dn(x)}{dx} $$
-这个公式是分析电子扩散电流的基础。这里的正号有一个重要的物理含义：如果电子浓度随 $x$ 增加（$\frac{dn}{dx} \gt 0$），电子会向 $-x$ 方向扩散（从高浓度到低浓度）。由于电子带负电，负电荷向 $-x$ 方向的运动等效于常规电流（正电荷流）向 $+x$ 方向，因此 $J_{n, \text{diff}}$ 为正。
+这个公式是分析电子[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)的基础。这里的正号有一个重要的物理含义：如果[电子浓度](@keyword=electron_concentration|lang=zh-CN|style=Feynman)随 $x$ 增加（$\frac{dn}{dx} \gt 0$），电子会向 $-x$ 方向[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)（从高浓度到低浓度）。由于电[子带](@keyword=miniband|lang=zh-CN|style=Feynman)负电，负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)向 $-x$ 方向的运动等效于常规电流（正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)流）向 $+x$ 方向，因此 $J_{n, \text{diff}}$ 为正。
 
-同理，对于带正电荷 $(+q)$ 的空穴，其扩散电流密度 $J_{p, \text{diff}}$ 的表达式为：
+同理，对于带正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman) $(+q)$ 的空穴，其[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)密度 $J_{p, \text{diff}}$ 的表达式为：
 $$ J_{p, \text{diff}}(x) = (+q) \Phi_p(x) = (+q) \left(-D_p \frac{dp(x)}{dx}\right) = -q D_p \frac{dp(x)}{dx} $$
-其中，$p(x)$ 是空穴浓度，$D_p$ 是**空穴扩散系数**（hole diffusion coefficient）。此处的负号同样符合物理直觉：如果空穴浓度随 $x$ 减小（$\frac{dp}{dx} \lt 0$），空穴会向 $+x$ 方向扩散，其携带的正电荷也向 $+x$ 方向流动，从而产生一个正向的电流密度 $J_{p, \text{diff}} \gt 0$。
+其中，$p(x)$ 是空穴浓度，$D_p$ 是**空穴[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)系数**（hole diffusion coefficient）。此处的负号同样符合物理直觉：如果空穴浓度随 $x$ 减小（$\frac{dp}{dx} \lt 0$），空穴会向 $+x$ 方向[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)，其携带的正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)也向 $+x$ 方向流动，从而产生一个正向的[电流密度](@keyword=current_density|lang=zh-CN|style=Feynman) $J_{p, \text{diff}} \gt 0$。
 
-### 扩散电流的分析与计算
+### [扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)的分析与计算
 
-掌握了扩散电流的数学公式后，我们便可以分析和计算在给定载流子分布下的电流大小和方向。
+掌握了[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)的数学公式后，我们便可以分析和计算在给定载流子[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)下的电流大小和方向。
 
-#### 均匀分布的平凡情况
+#### [均匀分布](@keyword=equidistribution|lang=zh-CN|style=Feynman)的平凡情况
 
-首先考虑最简单的情形：一个均匀掺杂的半导体棒，在热平衡状态下，其载流子浓度在空间上是恒定的 [@problem_id:1298118]。例如，对于电子，有 $n(x) = n_0$，其中 $n_0$ 是一个常数。在这种情况下，浓度梯度处处为零：
+首先考虑最简单的情形：一个均匀掺杂的[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)棒，在热平衡状态下，其[载流子浓度](@keyword=charge_carrier_density|lang=zh-CN|style=Feynman)在空间上是恒定的 [@problem_id:1298118]。例如，对于电子，有 $n(x) = n_0$，其中 $n_0$ 是一个常数。在这种情况下，[浓度梯度](@keyword=concentration_gradient|lang=zh-CN|style=Feynman)处处为零：
 $$ \frac{dn(x)}{dx} = \frac{d}{dx}(n_0) = 0 $$
-因此，电子扩散电流密度也必然为零：
+因此，电子[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)密度也必然为零：
 $$ J_{n, \text{diff}}(x) = q D_n \cdot 0 = 0 $$
-这再次确认了我们的物理直觉：没有浓度梯度，就没有宏观上的净扩散流动。
+这再次确认了我们的物理直觉：没有浓度梯度，就没有宏观上的净[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)流动。
 
-#### 非均匀分布的线性情形
+#### 非[均匀分布](@keyword=equidistribution|lang=zh-CN|style=Feynman)的线性情形
 
-现在，考虑一个更实际的例子，一个半导体棒的空穴浓度沿其长度呈线性变化 [@problem_id:1298138]。假设在 $0 \le x \le L$ 的区域内，空穴浓度由下式给出：
+现在，考虑一个更实际的例子，一个[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)棒的空穴浓度沿其长度呈线性变化 [@problem_id:1298138]。假设在 $0 \le x \le L$ 的区域内，空穴浓度由下式给出：
 $$ p(x) = p_{max} \left(1 - \frac{x}{L}\right) $$
-其中 $p_{max}$ 是 $x=0$ 处的最大空穴浓度。首先，我们计算浓度梯度：
+其中 $p_{max}$ 是 $x=0$ 处的最大空穴浓度。首先，我们计算[浓度梯度](@keyword=concentration_gradient|lang=zh-CN|style=Feynman)：
 $$ \frac{dp(x)}{dx} = \frac{d}{dx} \left[p_{max} \left(1 - \frac{x}{L}\right)\right] = -\frac{p_{max}}{L} $$
-这是一个负的常数，表明空穴浓度从 $x=0$ 到 $x=L$ 线性递减。将此梯度代入空穴扩散电流公式：
+这是一个负的常数，表明空穴浓度从 $x=0$ 到 $x=L$ 线性递减。将此梯度代入空穴[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)公式：
 $$ J_{p, \text{diff}}(x) = -q D_p \left(-\frac{p_{max}}{L}\right) = \frac{q D_p p_{max}}{L} $$
-我们发现，线性浓度梯度导致了**恒定**的扩散电流密度。这个结论很有用，例如，如果我们通过实验测量到一个恒定的扩散电流密度 $J_{meas}$，我们就可以反过来推算材料的扩散系数 $D_p = \frac{J_{meas} L}{q p_{max}}$ [@problem_id:1298138]。
+我们发现，线性[浓度梯度](@keyword=concentration_gradient|lang=zh-CN|style=Feynman)导致了**恒定**的[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)密度。这个结论很有用，例如，如果我们通过实验测量到一个恒定的[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)密度 $J_{meas}$，我们就可以反过来推算材料的[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)系数 $D_p = \frac{J_{meas} L}{q p_{max}}$ [@problem_id:1298138]。
 
-#### 非均匀分布的指数情形
+#### 非[均匀分布](@keyword=equidistribution|lang=zh-CN|style=Feynman)的指数情形
 
-在许多半导体器件中，载流子浓度常常呈现指数形式的分布。让我们来分析这种情况。
+在许多半导体器件中，[载流子浓度](@keyword=charge_carrier_density|lang=zh-CN|style=Feynman)常常呈现指数形式的[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)。让我们来分析这种情况。
 
 **案例1：指数衰减浓度**
 
-假设在一个n型硅棒中，电子浓度由于特定的制造工艺，呈现指数衰减分布 [@problem_id:1298159] [@problem_id:1298153]：
+假设在一个n型硅棒中，[电子浓度](@keyword=electron_concentration|lang=zh-CN|style=Feynman)由于特定的制造工艺，呈现指数衰减[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman) [@problem_id:1298159] [@problem_id:1298153]：
 $$ n(x) = N_0 \exp\left(-\frac{x}{L}\right) $$
-其中 $N_0$ 是 $x=0$ 处的浓度，$L$ 是特征衰减长度。电子浓度梯度为：
+其中 $N_0$ 是 $x=0$ 处的浓度，$L$ 是[特征衰减长度](@keyword=characteristic_decay_length|lang=zh-CN|style=Feynman)。[电子浓度](@keyword=electron_concentration|lang=zh-CN|style=Feynman)梯度为：
 $$ \frac{dn(x)}{dx} = N_0 \exp\left(-\frac{x}{L}\right) \cdot \left(-\frac{1}{L}\right) = -\frac{N_0}{L} \exp\left(-\frac{x}{L}\right) $$
-梯度为负，且其绝对值随 $x$ 增大而减小。相应的电子扩散电流密度为：
+梯度为负，且其[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)随 $x$ 增大而减小。相应的电子[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)密度为：
 $$ J_{n, \text{diff}}(x) = q D_n \left(-\frac{N_0}{L} \exp\left(-\frac{x}{L}\right)\right) = -\frac{q D_n N_0}{L} \exp\left(-\frac{x}{L}\right) $$
 等一下，这里的符号似乎有问题。让我们回顾一下公式的推导：$J_n = (-q) \Phi_n = (-q)(-D_n \frac{dn}{dx}) = qD_n \frac{dn}{dx}$。这个公式是正确的。让我们重新代入梯度：
 $$ J_{n, \text{diff}}(x) = q D_n \left(-\frac{N_0}{L} \exp\left(-\frac{x}{L}\right)\right) $$
-哦，我的分析有误。物理上，电子从高浓度（$x$ 小）向低浓度（$x$ 大）扩散，即向 $+x$ 方向运动。负电荷沿 $+x$ 方向运动，产生的常规电流应指向 $-x$ 方向。因此 $J_{n, \text{diff}}$ 应该是负值。上面的公式是 $J_n(x) \propto -\exp(-x/L)$，这确实是负值，与物理直觉一致。
-*（编者注：请注意，部分教材或问题中可能会定义电子电流$J_n$时，其方向与电子运动方向相同，并最后在总电流中考虑电荷符号。但标准的漂移-扩散模型中，$J_n$和$J_p$均指常规电流方向，我们在此遵循标准定义。例如，在 [@problem_id:1298153] 和 [@problem_id:1298159] 的解答中，计算的是电流的**大小**，避免了符号混淆。）*
-例如，在 [@problem_id:1298153] 的情景中，给定 $N_0 = 5.0 \times 10^{17} \text{ cm}^{-3}$，$L = 100 \text{ \mu m}$，$D_n = 35 \text{ cm}^2/\text{s}$，在 $x = 50 \text{ \mu m}$ 处，扩散电流密度的大小可以计算出来，约为 $170 \text{ A/cm}^2$。
+哦，我的分析有误。物理上，电子从高浓度（$x$ 小）向低浓度（$x$ 大）[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)，即向 $+x$ 方向运动。负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)沿 $+x$ 方向运动，产生的常规电流应指向 $-x$ 方向。因此 $J_{n, \text{diff}}$ 应该是负值。上面的公式是 $J_n(x) \propto -\exp(-x/L)$，这确实是负值，与物理直觉一致。
+*（编者注：请注意，部分教材或问题中可能会定义电子电流$J_n$时，其方向与电子运动方向相同，并最后在总电流中考虑[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)符号。但标准的漂移-扩散模型中，$J_n$和$J_p$均指常规电流方向，我们在此遵循标准定义。例如，在 [@problem_id:1298153] 和 [@problem_id:1298159] 的解答中，计算的是电流的**大小**，避免了符号混淆。）*
+例如，在 [@problem_id:1298153] 的情景中，给定 $N_0 = 5.0 \times 10^{17} \text{ cm}^{-3}$，$L = 100 \mathrm{\mu m}$，$D_n = 35 \text{ cm}^2/\text{s}$，在 $x = 50 \mathrm{\mu m}$ 处，[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)密度的大小可以计算出来，约为 $170 \text{ A/cm}^2$。
 
 **案例2：指数增长浓度**
 
-作为对比，我们思考一个电子浓度随位置指数增长的情形 [@problem_id:1298116]：
+作为对比，我们思考一个[电子浓度](@keyword=electron_concentration|lang=zh-CN|style=Feynman)随位置指数增长的情形 [@problem_id:1298116]：
 $$ n(x) = n_0 \exp\left(\frac{x}{\lambda}\right) $$
-其中 $n_0$ 和 $\lambda$ 均为正常数。此时，浓度梯度为：
+其中 $n_0$ 和 $\lambda$ 均为正常数。此时，[浓度梯度](@keyword=concentration_gradient|lang=zh-CN|style=Feynman)为：
 $$ \frac{dn(x)}{dx} = \frac{n_0}{\lambda} \exp\left(\frac{x}{\lambda}\right) $$
-梯度为正，且随 $x$ 增大而增大。电子扩散电流密度为：
+梯度为正，且随 $x$ 增大而增大。电子[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)密度为：
 $$ J_{n, \text{diff}}(x) = q D_n \left(\frac{n_0}{\lambda} \exp\left(\frac{x}{\lambda}\right)\right) = \frac{q D_n n_0}{\lambda} \exp\left(\frac{x}{\lambda}\right) $$
-结果是 $J_{n, \text{diff}}(x)$ 为正，且其大小随 $x$ 增大而指数增长。这是否符合物理直觉？是的。浓度随 $x$ 增加，因此电子的净扩散方向是从 $x$ 大的地方流向 $x$ 小的地方，即向 $-x$ 方向。负电荷沿 $-x$ 方向运动，构成的常规电流指向 $+x$ 方向。因此 $J_{n, \text{diff}}$ 为正。同时，梯度越大的地方，扩散驱动效应越强，电流密度也越大。
+结果是 $J_{n, \text{diff}}(x)$ 为正，且其大小随 $x$ 增大而[指数增长](@keyword=exponential_growth|lang=zh-CN|style=Feynman)。这是否符合物理直觉？是的。浓度随 $x$ 增加，因此电子的净[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)方向是从 $x$ 大的地方流向 $x$ 小的地方，即向 $-x$ 方向。负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)沿 $-x$ 方向运动，构成的常规电流指向 $+x$ 方向。因此 $J_{n, \text{diff}}$ 为正。同时，梯度越大的地方，[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)驱动效应越强，[电流密度](@keyword=current_density|lang=zh-CN|style=Feynman)也越大。
 
 ### 漂移与扩散的相互作用：热平衡状态
 
-在半导体器件中，漂移和扩散往往同时存在。总的电子电流密度是两者的代数和：
+在[半导体器件](@keyword=semiconductor_devices|lang=zh-CN|style=Feynman)中，[漂移和扩散](@keyword=drift_and_diffusion|lang=zh-CN|style=Feynman)往往同时存在。总的电子电流密度是两者的代数和：
 $$ J_n(x) = J_{n, \text{drift}}(x) + J_{n, \text{diff}}(x) = q n(x) \mu_n E(x) + q D_n \frac{dn(x)}{dx} $$
-一个至关重要的场景是**热平衡**（thermal equilibrium）。在热平衡状态下，系统处于稳定状态，没有任何宏观上的净电流流动，即 $J_n(x) = 0$ 且 $J_p(x) = 0$。这意味着，由浓度梯度引起的扩散电流，必然被一个大小相等、方向相反的漂移电流所精确抵消 [@problem_id:1298108] [@problem_id:1298143]。
+一个至关重要的场景是**[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)**（thermal equilibrium）。在热平衡状态下，系统处于稳定状态，没有任何宏观上的净电流流动，即 $J_n(x) = 0$ 且 $J_p(x) = 0$。这意味着，由浓度梯度引起的[扩散电流](@keyword=diffusion_current|lang=zh-CN|style=Feynman)，必然被一个大小相等、方向相反的[漂移电流](@keyword=drift_current|lang=zh-CN|style=Feynman)所精确抵消 [@problem_id:1298108] [@problem_id:1298143]。
 $$ J_{n, \text{drift}}(x) = -J_{n, \text{diff}}(x) $$
 $$ q n(x) \mu_n E(x) = -q D_n \frac{dn(x)}{dx} $$
-这个平衡关系意味着，在一个非均匀掺杂且处于热平衡的半导体中，必然存在一个**内建电场**（built-in electric field）$E(x)$。我们可以从中解出这个电场：
+这个平衡关系意味着，在一个非均匀掺杂且处于[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)的[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)中，必然存在一个**内建[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)**（built-in electric field）$E(x)$。我们可以从中解出这个[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)：
 $$ E(x) = -\frac{D_n}{\mu_n} \frac{1}{n(x)} \frac{dn(x)}{dx} $$
-这里出现了一个关键的组合 $\frac{D_n}{\mu_n}$。在1905年，爱因斯坦在他的博士论文中证明，驱动扩散的随机热运动和响应电场的漂移运动通过温度联系在一起。这个深刻的联系被称为**爱因斯坦关系**（Einstein relation）：
+这里出现了一个关键的组合 $\frac{D_n}{\mu_n}$。在1905年，爱因斯坦在他的博士论文中证明，驱动[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)的随机热运动和响应[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)的漂移运动通过温度联系在一起。这个深刻的联系被称为**爱因斯坦关系**（Einstein relation）：
 $$ \frac{D_n}{\mu_n} = \frac{k_B T}{q} $$
-其中 $k_B$ 是玻尔兹曼常数，$T$ 是绝对温度。这个关系式将微观的扩散系数 $D_n$ 与宏观的迁移率 $\mu_n$ 通过热能 $k_B T$ 联系起来，揭示了两种输运现象的共同物理起源——热运动。
+其中 $k_B$ 是玻尔兹曼常数，$T$ 是[绝对温度](@keyword=absolute_temperature|lang=zh-CN|style=Feynman)。这个关系式将微观的[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)系数 $D_n$ 与宏观的迁移率 $\mu_n$ 通[过热](@keyword=superheating|lang=zh-CN|style=Feynman)能 $k_B T$ 联系起来，揭示了两种[输运现象](@keyword=transport_phenomena|lang=zh-CN|style=Feynman)的共同物理起源——热运动。
 
-将爱因斯坦关系代入内建电场的表达式，我们得到一个更基本的形式：
+将爱因斯坦关系代入内建[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)的表达式，我们得到一个更基本的形式：
 $$ E(x) = -\frac{k_B T}{q} \frac{1}{n(x)} \frac{dn(x)}{dx} = -\frac{k_B T}{q} \frac{d[\ln n(x)]}{dx} $$
-这个结果表明，只要我们知道平衡状态下的载流子浓度分布 $n(x)$，就可以唯一地确定抵消扩散所需的内建电场 $E(x)$。例如：
-*   如果浓度呈指数衰减 $n(x) = N_0 \exp(-x/L_n)$，则内建电场是一个常数 $E(x) = \frac{k_B T}{q L_n}$ [@problem_id:1298108]。
-*   如果浓度呈线性增加 $n(x) = N_0(1+x/L)$，则内建电场是随位置变化的 $E(x) = -\frac{k_B T}{q} \frac{1}{x+L}$ [@problem_id:1298141]。
+这个结果表明，只要我们知道平衡状态下的载流子浓度[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman) $n(x)$，就可以唯一地确定抵消[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)所需的内建[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $E(x)$。例如：
+*   如果浓度呈指数衰减 $n(x) = N_0 \exp(-x/L_n)$，则内建[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)是一个常数 $E(x) = \frac{k_B T}{q L_n}$ [@problem_id:1298108]。
+*   如果浓度呈线性增加 $n(x) = N_0(1+x/L)$，则内建[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)是随位置变化的 $E(x) = -\frac{k_B T}{q} \frac{1}{x+L}$ [@problem_id:1298141]。
 
-这种漂移-扩散平衡是理解 p-n 结耗尽区、双极晶体管基区等关键半导体结构中内建电场和能带弯曲的物理基础。
+这种漂移-[扩散平衡](@keyword=diffusive_equilibrium|lang=zh-CN|style=Feynman)是理解 p-n 结[耗尽区](@keyword=space_charge_region|lang=zh-CN|style=Feynman)、双极晶体管基区等关键[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)结构中内建[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)和[能带弯曲](@keyword=band_bending|lang=zh-CN|style=Feynman)的物理基础。
 
-### 高级主题：双极性扩散
+### 高级主题：[双极性扩散](@keyword=ambipolar_diffusion|lang=zh-CN|style=Feynman)
 
-目前为止，我们都只考虑了一种载流子（多数载流子）的扩散。但当半导体受到光照或高电平注入时，会产生大量的**非平衡**电子-空穴对。此时，电子和空穴的浓度梯度同时存在。一个有趣的问题出现了：由于电子的迁移率和扩散系数通常远大于空穴（$D_n > D_p$），它们会以不同的速率扩散吗？
+目前为止，我们都只考虑了一种载流子（多数载流子）的[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)。但当[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)受到光照或高电平注入时，会产生大量的**非平衡**电子-空穴对。此时，电子和空穴的[浓度梯度](@keyword=concentration_gradient|lang=zh-CN|style=Feynman)同时存在。一个有趣的问题出现了：由于电子的迁移率和[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)系数通常远大于空穴（$D_n > D_p$），它们会以不同的速率[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)吗？
 
-答案是否定的。如果电子试图“甩开”空穴独自扩散，那么扩散的前沿会积累负电荷，而被“甩下”的区域会积累正电荷。这种电荷分离会瞬间建立一个强大的内建电场。这个电场会拉住跑得快的电子，同时推着跑得慢的空穴，迫使电子和空穴作为一个整体的、电中性的“载流子云”共同前进 [@problem_id:1298128]。
+答案是否定的。如果电子试图“甩开”空穴独[自扩散](@entry_id:754665)，那么[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)的前沿会积累负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，而被“甩下”的区域会积累正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。这种[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)分离会瞬间建立一个强大的内建[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)。这个[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)会拉住跑得快的电子，同时推着跑得慢的空穴，迫使电子和空穴作为一个整体的、[电中性](@keyword=electroneutrality|lang=zh-CN|style=Feynman)的“载流子云”共同前进 [@problem_id:1298128]。
 
-这种电子和空穴被静电力束缚在一起共同扩散的现象称为**双极性扩散**（ambipolar diffusion）。整个载流子云的扩散行为可以用一个有效的**双极性扩散系数** $D_a$ 来描述。在高注入水平下（即注入的电子和空穴浓度远大于背景掺杂浓度，使得 $n \approx p$），可以推导出 $D_a$ 的表达式 [@problem_id:1298128]：
+这种电子和空穴被[静电力](@keyword=electrostatic_forces|lang=zh-CN|style=Feynman)束缚在一起共同[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)的现象称为**[双极性扩散](@keyword=ambipolar_diffusion|lang=zh-CN|style=Feynman)**（ambipolar diffusion）。整个载流子云的[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)行为可以用一个有效的**[双极性扩散](@keyword=ambipolar_diffusion|lang=zh-CN|style=Feynman)系数** $D_a$ 来描述。在高注入水平下（即注入的[电子和空穴](@keyword=electrons_and_holes|lang=zh-CN|style=Feynman)浓度远大于背景掺杂浓度，使得 $n \approx p$），可以推导出 $D_a$ 的表达式 [@problem_id:1298128]：
 $$ D_a = \frac{2 D_n D_p}{D_n + D_p} $$
-这个表达式是 $D_n$ 和 $D_p$ 的调和平均数。有趣的是，双极性扩散系数的值总是小于 $D_n$ 和 $D_p$ 的算术平均值，并且更接近于较小的那一个（通常是 $D_p$）。这形象地说明了“团队的前进速度由最慢的成员决定”——跑得快的电子被静电力“拖累”，以适应跑得慢的空穴。双极性输运是理解和建模许多光电器件（如太阳能电池、发光二极管）和功率器件中载流子动态行为的关键。
+这个表达式是 $D_n$ 和 $D_p$ 的调和平均数。有趣的是，[双极性扩散](@keyword=ambipolar_diffusion|lang=zh-CN|style=Feynman)系数的值总是小于 $D_n$ 和 $D_p$ 的[算术平均值](@keyword=arithmetic_mean|lang=zh-CN|style=Feynman)，并且更接近于较小的那一个（通常是 $D_p$）。这形象地说明了“团队的前进速度由最慢的成员决定”——跑得快的电子被[静电力](@keyword=electrostatic_forces|lang=zh-CN|style=Feynman)“拖累”，以适应跑得慢的空穴。[双极性输运](@keyword=ambipolar_transport|lang=zh-CN|style=Feynman)是理解和建模许多光电器件（如[太阳能电池](@keyword=solar_cells|lang=zh-CN|style=Feynman)、[发光二极管](@keyword=light_emitting_diodes|lang=zh-CN|style=Feynman)）和功率器件中载流子动态行为的关键。

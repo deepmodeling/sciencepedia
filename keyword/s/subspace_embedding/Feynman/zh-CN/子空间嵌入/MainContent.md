@@ -86,7 +86,7 @@ $$ \min_{x} \|S(Ax-b)\|_2^2 $$
 
 想象一下，你有两个不同的数据集，也许是来自系统不同部分的传感器读数。你可以将每个数据集中的基本信息表示为一个[子空间](@keyword=subspace|lang=zh-CN|style=Feynman)，比如$\mathcal{R}(A)$和$\mathcal{S}$。一个基本的问题是：这两个[子空间](@keyword=subspace|lang=zh-CN|style=Feynman)是如何相关的？它们是重合的，正交的，还是介于两者之间？它们之间的**主夹角**给出了一个精确的答案。
 
-从原始[高维数据](@keyword=high_dimensional_data|lang=zh-CN|style=Feynman)计算这些角度是昂贵的。但同样，嵌入提供了一条捷径。我们可以构造一个[随机投影](@keyword=random_projections|lang=zh-CN|style=Feynman)$S$，它是两个[子空间](@keyword=subspace|lang=zh-CN|style=Feynman)*并集*$\text{span}(\mathcalR(A) \cup \mathcal{S})$的一个[子空间](@keyword=subspace|lang=zh-CN|style=Feynman)嵌入。因为这个更大空间的几何结构被保留了，所以草图化[子空间](@keyword=subspace|lang=zh-CN|style=Feynman)$S\mathcal{R}(A)$和$S\mathcal{S}$之间的角度几乎与原始角度相同。通过检查低维的影子，我们可以理解原始复杂对象之间的关系。[@problem_id:3571055]
+从原始[高维数据](@keyword=high_dimensional_data|lang=zh-CN|style=Feynman)计算这些角度是昂贵的。但同样，嵌入提供了一条捷径。我们可以构造一个[随机投影](@keyword=random_projections|lang=zh-CN|style=Feynman)$S$，它是两个[子空间](@keyword=subspace|lang=zh-CN|style=Feynman)*并集*$\text{span}(\mathcal{R}(A) \cup \mathcal{S})$的一个[子空间](@keyword=subspace|lang=zh-CN|style=Feynman)嵌入。因为这个更大空间的几何结构被保留了，所以草图化[子空间](@keyword=subspace|lang=zh-CN|style=Feynman)$S\mathcal{R}(A)$和$S\mathcal{S}$之间的角度几乎与原始角度相同。通过检查低维的影子，我们可以理解原始复杂对象之间的关系。[@problem_id:3571055]
 
 ### 拓展边界：稳健性与其他几何
 

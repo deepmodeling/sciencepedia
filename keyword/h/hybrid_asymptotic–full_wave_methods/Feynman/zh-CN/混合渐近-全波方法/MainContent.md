@@ -17,7 +17,7 @@ $$
 (\nabla S)^2 = n^2(\mathbf{r})
 $$
 
-这就是著名的**程函方程 (eikonal equation)**，是**几何光学 (Geometrical Optics, GO)** 的基石。它看起来一点也不像[波动方程](@keyword=wave_equation|lang=zh-CN|style=Feynman)！它告诉我们等相面（$S$ = 常数），即所谓的波前，是如何前进的。始终垂直于这些[波前](@keyword=wavefront|lang=zh-CN|style=Feynman)的路径就是我们所说的**射线**。程函方程是支配其轨迹的定律，随着[折射率](@keyword=index_of_refraction|lang=zh-CN|style=Feynman) $n(\mathbfr)$ 的变化而在空间中弯曲它们。
+这就是著名的**程函方程 (eikonal equation)**，是**几何光学 (Geometrical Optics, GO)** 的基石。它看起来一点也不像[波动方程](@keyword=wave_equation|lang=zh-CN|style=Feynman)！它告诉我们等相面（$S$ = 常数），即所谓的波前，是如何前进的。始终垂直于这些[波前](@keyword=wavefront|lang=zh-CN|style=Feynman)的路径就是我们所说的**射线**。程函方程是支配其轨迹的定律，随着[折射率](@keyword=index_of_refraction|lang=zh-CN|style=Feynman) $n(\mathbf{r})$ 的变化而在空间中弯曲它们。
 
 但波的强度呢？这由我们展开式中次重要的项，即 $k_0$ 阶的项来处理。它们给出了**[输运方程](@keyword=transport_equations|lang=zh-CN|style=Feynman) (transport equation)**：
 

@@ -1,7 +1,7 @@
 ## Introduction
-Understanding the flow of energy is fundamental to comprehending life at a molecular level. While metabolic maps show us the 'what' of biochemical transformations, they don't explain the 'why' or 'how'—why certain reactions proceed spontaneously while others require energy, and how cells construct complex pathways from individual steps. The concept of standard free-energy change ($\Delta G^{\circ'}$) provides the thermodynamic framework to answer these questions, offering a quantitative measure of a reaction's intrinsic favorability. This article serves as a comprehensive guide to this cornerstone of bioenergetics.
+Understanding the flow of energy is fundamental to comprehending life at a molecular level. While metabolic maps show us the 'what' of biochemical transformations, they don't explain the 'why' or 'how'—why certain reactions proceed spontaneously while others require energy, and how cells construct complex pathways from individual steps. The concept of standard free-energy change ($\Delta G^{\circ'}$) provides the thermodynamic framework to answer these questions, offering a quantitative measure of a reaction's intrinsic favorability. This article serves as a comprehensive guide to this cornerstone of [bioenergetics](@keyword=bioenergetics|lang=en-US|style=Feynman).
 
-This article is structured to build your understanding from the ground up. In **Principles and Mechanisms**, we will dissect the Gibbs free energy equation, define the crucial biochemical standard state, and establish the mathematical relationships between free energy, equilibrium, and redox potentials. Next, in **Applications and Interdisciplinary Connections**, we will explore how these principles are applied to understand metabolic coupling, ATP's role as energy currency, electron transport chains, and molecular binding. Finally, **Hands-On Practices** will allow you to apply your knowledge through targeted problems, solidifying your ability to analyze the thermodynamics of biochemical systems.
+This article is structured to build your understanding from the ground up. In **Principles and Mechanisms**, we will dissect the Gibbs free energy equation, define the crucial [biochemical standard state](@keyword=biochemical_standard_state|lang=en-US|style=Feynman), and establish the mathematical relationships between free energy, equilibrium, and redox potentials. Next, in **Applications and Interdisciplinary Connections**, we will explore how these principles are applied to understand [metabolic coupling](@keyword=metabolic_coupling|lang=en-US|style=Feynman), ATP's role as energy currency, electron transport chains, and [molecular binding](@keyword=molecular_binding|lang=en-US|style=Feynman). Finally, **Hands-On Practices** will allow you to apply your knowledge through targeted problems, solidifying your ability to analyze the thermodynamics of biochemical systems.
 
 ## Principles and Mechanisms
 
@@ -13,7 +13,7 @@ At its core, the spontaneity of any process at constant temperature and pressure
 
 $\Delta G = \Delta H - T\Delta S$
 
-Here, $\Delta H$ represents the change in **enthalpy**, which is the total heat content of a system. A negative $\Delta H$ indicates an **exothermic** reaction that releases heat, while a positive $\Delta H$ signifies an **endothermic** reaction that absorbs heat. The term $\Delta S$ is the change in **entropy**, a measure of the system's randomness or disorder. An increase in disorder corresponds to a positive $\Delta S$. Finally, $T$ is the absolute temperature in Kelvin. The $\Delta G$ represents the portion of the total energy change that is available to do useful work. A reaction is spontaneous, or can proceed without the net input of energy, only if its $\Delta G$ is negative.
+Here, $\Delta H$ represents the change in **enthalpy**, which is the total heat content of a system. A negative $\Delta H$ indicates an **exothermic** reaction that releases heat, while a positive $\Delta H$ signifies an **endothermic** reaction that absorbs heat. The term $\Delta S$ is the change in **entropy**, a measure of the system's randomness or disorder. An increase in disorder corresponds to a positive $\Delta S$. Finally, $T$ is the [absolute temperature](@keyword=absolute_temperature|lang=en-US|style=Feynman) in Kelvin. The $\Delta G$ represents the portion of the total energy change that is available to do useful work. A reaction is spontaneous, or can proceed without the net input of energy, only if its $\Delta G$ is negative.
 
 To compare the energetics of different reactions under a common set of conditions, we use the **standard free-energy change**, denoted as $\Delta G^{\circ'}$. This value represents the free-energy change when a reaction occurs under a defined set of **biochemical standard conditions** (which we will define shortly). The relationship is expressed as:
 
@@ -21,34 +21,34 @@ $\Delta G^{\circ'} = \Delta H^{\circ'} - T\Delta S^{\circ'}$
 
 where $\Delta H^{\circ'}$ and $\Delta S^{\circ'}$ are the standard enthalpy and entropy changes, respectively.
 
-Consider, for example, the binding of a drug inhibitor to its target enzyme. Through calorimetric measurements, such a reaction might be found to be exothermic with $\Delta H^{\circ'} = -20.0 \text{ kJ/mol}$ and to result in a more ordered system (the drug-enzyme complex) with $\Delta S^{\circ'} = -50.0 \text{ J/(mol·K)}$. To determine if this binding is spontaneous under standard conditions at a physiological temperature of 37.0 °C (310.15 K), we can calculate $\Delta G^{\circ'}$. We must first ensure our units are consistent by converting $\Delta S^{\circ'}$ to kJ/(mol·K): $-50.0 \text{ J/(mol·K)} = -0.0500 \text{ kJ/(mol·K)}$.
+Consider, for example, the binding of a drug inhibitor to its target enzyme. Through calorimetric measurements, such a reaction might be found to be exothermic with $\Delta H^{\circ'} = -20.0 \text{ kJ/mol}$ and to result in a more ordered system (the drug-enzyme complex) with $\Delta S^{\circ'} = -50.0 \mathrm{J/(mol\cdot K)}$. To determine if this binding is spontaneous under standard conditions at a physiological temperature of 37.0 °C (310.15 K), we can calculate $\Delta G^{\circ'}$. We must first ensure our units are consistent by converting $\Delta S^{\circ'}$ to kJ/(mol·K): $-50.0 \mathrm{J/(mol\cdot K)} = -0.0500 \mathrm{kJ/(mol\cdot K)}$.
 
-$\Delta G^{\circ'} = (-20.0 \text{ kJ/mol}) - (310.15 \text{ K})(-0.0500 \text{ kJ/(mol·K)})$
+$\Delta G^{\circ'} = (-20.0 \text{ kJ/mol}) - (310.15 \text{ K})(-0.0500 \mathrm{kJ/(mol\cdot K)})$
 $\Delta G^{\circ'} = -20.0 \text{ kJ/mol} + 15.5 \text{ kJ/mol} = -4.5 \text{ kJ/mol}$
 
-Since $\Delta G^{\circ'}$ is negative, the binding process is spontaneous under these standard conditions [@problem_id:2077241]. This calculation highlights the critical interplay between enthalpy and entropy. Here, the favorable enthalpy change (heat release) outweighs the unfavorable entropy change (increased order), driving the reaction forward.
+Since $\Delta G^{\circ'}$ is negative, the binding process is spontaneous under these standard conditions [@problem_id:2077241]. This calculation highlights the critical interplay between enthalpy and entropy. Here, the favorable [enthalpy change](@keyword=enthalpy_change|lang=en-US|style=Feynman) (heat release) outweighs the unfavorable entropy change (increased order), driving the reaction forward.
 
-Temperature is a crucial factor in this balance. For a process with a positive $\Delta H^{\circ'}$ (endothermic) and a positive $\Delta S^{\circ'}$ (increased disorder), the $-T\Delta S^{\circ'}$ term becomes more negative as temperature increases. At low temperatures, the unfavorable enthalpy term may dominate, making $\Delta G^{\circ'}$ positive. However, as temperature rises, the favorable entropy term will eventually overcome the enthalpy barrier, and $\Delta G^{\circ'}$ will become negative. The temperature at which the reaction is at equilibrium under standard conditions ($\Delta G^{\circ'} = 0$) marks the threshold for spontaneity. This crossover temperature can be calculated by rearranging the equation:
+Temperature is a crucial factor in this balance. For a process with a positive $\Delta H^{\circ'}$ (endothermic) and a positive $\Delta S^{\circ'}$ (increased disorder), the $-T\Delta S^{\circ'}$ term becomes more negative as temperature increases. At low temperatures, the unfavorable enthalpy term may dominate, making $\Delta G^{\circ'}$ positive. However, as temperature rises, the favorable entropy term will eventually overcome the enthalpy barrier, and $\Delta G^{\circ'}$ will become negative. The temperature at which the reaction is at equilibrium under standard conditions ($\Delta G^{\circ'} = 0$) marks the threshold for spontaneity. This [crossover temperature](@keyword=crossover_temperature|lang=en-US|style=Feynman) can be calculated by rearranging the equation:
 
 $T = \frac{\Delta H^{\circ'}}{\Delta S^{\circ'}}$
 
-For a hypothetical enzymatic reaction breaking down a biopolymer, with $\Delta H^{\circ'} = +45.5 \text{ kJ/mol}$ and $\Delta S^{\circ'} = +152 \text{ J/(mol·K)}$, this threshold temperature would be $T = (45.5 \times 10^3 \text{ J/mol}) / (152 \text{ J/(mol·K)}) \approx 299 \text{ K}$ [@problem_id:2077238]. Above this temperature, the reaction becomes spontaneous under standard conditions.
+For a hypothetical enzymatic reaction breaking down a biopolymer, with $\Delta H^{\circ'} = +45.5 \text{ kJ/mol}$ and $\Delta S^{\circ'} = +152 \mathrm{J/(mol\cdot K)}$, this threshold temperature would be $T = (45.5 \times 10^3 \text{ J/mol}) / (152 \mathrm{J/(mol\cdot K)}) \approx 299 \text{ K}$ [@problem_id:2077238]. Above this temperature, the reaction becomes spontaneous under standard conditions.
 
 ### The Biochemical Standard State
 
 The definition of "standard conditions" is critical for interpreting $\Delta G^{\circ'}$ values. In chemistry, the **chemical standard state** assumes a temperature of 298.15 K (25 °C), a pressure of 1 atm for gases, and a concentration of 1 M for all solutes. While useful, the 1 M concentration for solutes presents a problem for biological systems, most notably for the hydrogen ion, H⁺. A concentration of 1 M H⁺ corresponds to a pH of 0, a condition far from the near-neutral environment of most cells.
 
-To provide a more biologically relevant reference point, biochemists established the **biochemical standard state**. It retains the 1 M concentration for most solutes but makes two key exceptions: the concentration of H⁺ is fixed at $10^{-7}$ M (pH 7.0), and in reactions involving water, the concentration of water is taken as constant and incorporated into the relevant constants. The standard free-energy change under these conditions is designated with a prime symbol, $\Delta G^{\circ'}$.
+To provide a more biologically relevant reference point, biochemists established the **[biochemical standard state](@keyword=biochemical_standard_state|lang=en-US|style=Feynman)**. It retains the 1 M concentration for most solutes but makes two key exceptions: the concentration of H⁺ is fixed at $10^{-7}$ M (pH 7.0), and in reactions involving water, the concentration of water is taken as constant and incorporated into the relevant constants. The standard free-energy change under these conditions is designated with a prime symbol, $\Delta G^{\circ'}$.
 
 The difference between the chemical ($\Delta G^{\circ}$) and biochemical ($\Delta G^{\circ'}$) standard free-energy changes can be significant for reactions that produce or consume protons. The general relationship between free-energy change and reaction conditions is given by:
 
 $\Delta G = \Delta G^{\circ} + RT \ln Q$
 
-where $Q$ is the reaction quotient. For a reaction such as $\text{A} + n \text{H}^+ \rightleftharpoons \text{B}$, the reaction quotient is $Q = \frac{[\text{B}]}{[\text{A}][\text{H}^+]^n}$. The biochemical standard free energy, $\Delta G^{\circ'}$, is the value of $\Delta G$ when all species are at 1 M *except* for H⁺, which is at $10^{-7}$ M. Substituting these conditions:
+where $Q$ is the [reaction quotient](@keyword=reaction_quotient|lang=en-US|style=Feynman). For a reaction such as $\text{A} + n \text{H}^+ \rightleftharpoons \text{B}$, the [reaction quotient](@keyword=reaction_quotient|lang=en-US|style=Feynman) is $Q = \frac{[\text{B}]}{[\text{A}][\text{H}^+]^n}$. The biochemical standard free energy, $\Delta G^{\circ'}$, is the value of $\Delta G$ when all species are at 1 M *except* for H⁺, which is at $10^{-7}$ M. Substituting these conditions:
 
 $\Delta G^{\circ'} = \Delta G^{\circ} + RT \ln \left( \frac{1}{1 \cdot (10^{-7})^n} \right) = \Delta G^{\circ} + RT \ln(10^{7n}) = \Delta G^{\circ} + nRT \ln(10^7)$
 
-This can be simplified to $\Delta G^{\circ'} = \Delta G^{\circ} - n(RT \ln(10^{-7}))$. For a hypothetical reaction where $\text{A} + 2 \text{H}^+ \rightleftharpoons \text{B}$ has a $\Delta G^{\circ}$ of $+15.0$ kJ/mol at 298.15 K, the biochemical standard free-energy change involves an adjustment term for the two protons consumed. The calculation reveals a substantial difference: $\Delta G^{\circ'} = +15.0 \text{ kJ/mol} - 2(8.314 \times 10^{-3} \text{ kJ/(mol·K)})(298.15 \text{ K})\ln(10^{-7})$, resulting in a $\Delta G^{\circ'}$ of approximately $+94.9$ kJ/mol [@problem_id:2077292]. This demonstrates why it is crucial to use the appropriate standard state when analyzing biochemical reactions.
+This can be simplified to $\Delta G^{\circ'} = \Delta G^{\circ} - n(RT \ln(10^{-7}))$. For a hypothetical reaction where $\text{A} + 2 \text{H}^+ \rightleftharpoons \text{B}$ has a $\Delta G^{\circ}$ of $+15.0$ kJ/mol at 298.15 K, the biochemical standard free-energy change involves an adjustment term for the two protons consumed. The calculation reveals a substantial difference: $\Delta G^{\circ'} = +15.0 \text{ kJ/mol} - 2(8.314 \times 10^{-3} \mathrm{kJ/(mol\cdot K)})(298.15 \text{ K})\ln(10^{-7})$, resulting in a $\Delta G^{\circ'}$ of approximately $+94.9$ kJ/mol [@problem_id:2077292]. This demonstrates why it is crucial to use the appropriate standard state when analyzing [biochemical reactions](@keyword=biochemical_reactions|lang=en-US|style=Feynman).
 
 ### Standard Free-Energy Change and the Equilibrium Constant
 
@@ -56,7 +56,7 @@ The standard free-energy change, $\Delta G^{\circ'}$, has a direct mathematical 
 
 $K'_{\text{eq}} = \frac{[\text{C}]_{\text{eq}}[\text{D}]_{\text{eq}}}{[\text{A}]_{\text{eq}}[\text{B}]_{\text{eq}}}$
 
-The relationship between $\Delta G^{\circ'}$ and $K'_{\text{eq}}$ is one of the most important equations in bioenergetics:
+The relationship between $\Delta G^{\circ'}$ and $K'_{\text{eq}}$ is one of the most important equations in [bioenergetics](@keyword=bioenergetics|lang=en-US|style=Feynman):
 
 $\Delta G^{\circ'} = -RT \ln K'_{\text{eq}}$
 
@@ -65,11 +65,11 @@ This equation reveals the following:
 *   If $K'_{\text{eq}}  1$, reactants are favored at equilibrium. The natural logarithm is negative, making $\Delta G^{\circ'}$ **positive**. The reaction is **endergonic** under standard conditions.
 *   If $K'_{\text{eq}} = 1$, reactants and products are present in equal proportion at equilibrium under standard conditions. The natural logarithm is zero, so $\Delta G^{\circ'} = 0$.
 
-For instance, if an engineered isomerization reaction, $\text{Intermediate-A} \rightleftharpoons \text{Intermediate-B}$, is observed at 298.15 K to reach an equilibrium where the concentration of Intermediate-B is 500 times that of Intermediate-A, the equilibrium constant is $K'_{\text{eq}} = 500$. We can calculate the standard free-energy change as:
+For instance, if an engineered isomerization reaction, $\text{Intermediate-A} \rightleftharpoons \text{Intermediate-B}$, is observed at 298.15 K to reach an equilibrium where the concentration of Intermediate-B is 500 times that of Intermediate-A, the [equilibrium constant](@keyword=equilibrium_constant|lang=en-US|style=Feynman) is $K'_{\text{eq}} = 500$. We can calculate the standard free-energy change as:
 
-$\Delta G^{\circ'} = -(8.3145 \text{ J/(mol·K)})(298.15 \text{ K})\ln(500) \approx -15,400 \text{ J/mol} = -15.4 \text{ kJ/mol}$
+$\Delta G^{\circ'} = -(8.3145 \mathrm{J/(mol\cdot K)})(298.15 \text{ K})\ln(500) \approx -15,400 \text{ J/mol} = -15.4 \text{ kJ/mol}$
 
-The negative sign of $\Delta G^{\circ'}$ confirms that the reaction is exergonic and spontaneously proceeds toward products under standard conditions, consistent with the large equilibrium constant [@problem_id:2077309].
+The negative sign of $\Delta G^{\circ'}$ confirms that the reaction is exergonic and spontaneously proceeds toward products under standard conditions, consistent with the large [equilibrium constant](@keyword=equilibrium_constant|lang=en-US|style=Feynman) [@problem_id:2077309].
 
 ### Actual Free-Energy Change: Predicting Spontaneity in the Cell
 
@@ -79,19 +79,19 @@ The actual free-energy change is calculated using the equation:
 
 $\Delta G = \Delta G^{\circ'} + RT \ln Q$
 
-where $Q$ is the **reaction quotient**. $Q$ has the same mathematical form as $K'_{\text{eq}}$ but uses the *current*, non-equilibrium concentrations of reactants and products. The sign of $\Delta G$, not $\Delta G^{\circ'}$, is the true indicator of a reaction's spontaneous direction *in vivo*.
+where $Q$ is the **[reaction quotient](@keyword=reaction_quotient|lang=en-US|style=Feynman)**. $Q$ has the same mathematical form as $K'_{\text{eq}}$ but uses the *current*, non-equilibrium concentrations of reactants and products. The sign of $\Delta G$, not $\Delta G^{\circ'}$, is the true indicator of a reaction's spontaneous direction *in vivo*.
 
 *   If $\Delta G  0$, the forward reaction is spontaneous.
 *   If $\Delta G > 0$, the reverse reaction is spontaneous.
 *   If $\Delta G = 0$, the reaction is at equilibrium under those specific cellular conditions.
 
-Consider a reaction $\text{P} \rightleftharpoons \text{Q}$ with a positive standard free-energy change, for instance $\Delta G^{\circ'} = +5.8 \text{ kJ/mol}$. If we begin an experiment with equimolar amounts of P and Q, the initial reaction quotient is $Q = \frac{[\text{Q}]}{[\text{P}]} = 1$. In this specific case, because $\ln(1) = 0$, the actual free-energy change is equal to the standard free-energy change: $\Delta G = \Delta G^{\circ'} = +5.8 \text{ kJ/mol}$. Since $\Delta G$ is positive, the forward reaction is not spontaneous. To reach equilibrium, the reaction must proceed in the reverse direction, consuming Q to form P [@problem_id:2077259].
+Consider a reaction $\text{P} \rightleftharpoons \text{Q}$ with a positive standard free-energy change, for instance $\Delta G^{\circ'} = +5.8 \text{ kJ/mol}$. If we begin an experiment with equimolar amounts of P and Q, the initial [reaction quotient](@keyword=reaction_quotient|lang=en-US|style=Feynman) is $Q = \frac{[\text{Q}]}{[\text{P}]} = 1$. In this specific case, because $\ln(1) = 0$, the actual free-energy change is equal to the standard free-energy change: $\Delta G = \Delta G^{\circ'} = +5.8 \text{ kJ/mol}$. Since $\Delta G$ is positive, the forward reaction is not spontaneous. To reach equilibrium, the reaction must proceed in the reverse direction, consuming Q to form P [@problem_id:2077259].
 
-This relationship is the key to how cells drive thermodynamically unfavorable reactions. A reaction with a positive $\Delta G^{\circ'}$ can be made to proceed spontaneously if the cell maintains a reaction quotient $Q$ that is sufficiently small. This is typically achieved by keeping the concentration of products very low, either through their immediate consumption in a subsequent metabolic step or by actively transporting them away. For a reaction to be spontaneous ($\Delta G  0$), the following condition must be met:
+This relationship is the key to how cells drive thermodynamically unfavorable reactions. A reaction with a positive $\Delta G^{\circ'}$ can be made to proceed spontaneously if the cell maintains a [reaction quotient](@keyword=reaction_quotient|lang=en-US|style=Feynman) $Q$ that is sufficiently small. This is typically achieved by keeping the concentration of products very low, either through their immediate consumption in a subsequent metabolic step or by actively transporting them away. For a reaction to be spontaneous ($\Delta G  0$), the following condition must be met:
 
 $\Delta G^{\circ'} + RT \ln Q  0 \implies RT \ln Q  - \Delta G^{\circ'} \implies Q  \exp\left(-\frac{\Delta G^{\circ'}}{RT}\right)$
 
-For a reaction with a large positive $\Delta G^{\circ'}$ of $+24.5$ kJ/mol at 325 K, the cell must maintain a reaction quotient $Q$ below $1.15 \times 10^{-4}$ to ensure the reaction proceeds in the forward direction [@problem_id:2077276]. This illustrates a fundamental principle of metabolic control: cellular concentrations are powerful modulators of reaction spontaneity.
+For a reaction with a large positive $\Delta G^{\circ'}$ of $+24.5$ kJ/mol at 325 K, the cell must maintain a [reaction quotient](@keyword=reaction_quotient|lang=en-US|style=Feynman) $Q$ below $1.15 \times 10^{-4}$ to ensure the reaction proceeds in the forward direction [@problem_id:2077276]. This illustrates a fundamental principle of metabolic control: cellular concentrations are powerful modulators of [reaction spontaneity](@keyword=reaction_spontaneity|lang=en-US|style=Feynman).
 
 ### The Thermodynamics of Metabolic Pathways
 
@@ -107,23 +107,23 @@ $\Delta G^{\circ'}_{\text{overall}} = (+14.2 \text{ kJ/mol}) + (-33.7 \text{ kJ/
 
 The strong "pull" of the second reaction effectively drives the first reaction forward, making the entire pathway spontaneous under standard conditions [@problem_id:2077305].
 
-Furthermore, the free-energy change for a reverse reaction is equal in magnitude and opposite in sign to the forward reaction. If the forward reaction $\text{Y} \rightleftharpoons \text{Z}$ has a $\Delta G^{\circ'}$ of $-20.3$ kJ/mol, then the reverse reaction $\text{Z} \rightleftharpoons \text{Y}$ must have a $\Delta G^{\circ'}$ of $+20.3$ kJ/mol [@problem_id:2077264]. This follows directly from the properties of state functions.
+Furthermore, the free-energy change for a reverse reaction is equal in magnitude and opposite in sign to the forward reaction. If the forward reaction $\text{Y} \rightleftharpoons \text{Z}$ has a $\Delta G^{\circ'}$ of $-20.3$ kJ/mol, then the reverse reaction $\text{Z} \rightleftharpoons \text{Y}$ must have a $\Delta G^{\circ'}$ of $+20.3$ kJ/mol [@problem_id:2077264]. This follows directly from the properties of [state functions](@keyword=state_functions|lang=en-US|style=Feynman).
 
 ### Free Energy in Redox Reactions
 
-Many crucial energy transformations in biochemistry, such as in glycolysis and oxidative phosphorylation, are **oxidation-reduction (redox) reactions**. The free-energy change of these reactions is directly related to the difference in electron affinity, or **standard reduction potential ($E^{\circ'}$)**, between the reacting species.
+Many crucial energy transformations in biochemistry, such as in glycolysis and oxidative phosphorylation, are **[oxidation-reduction](@keyword=oxidation_reduction|lang=en-US|style=Feynman) ([redox](@keyword=redox|lang=en-US|style=Feynman)) reactions**. The free-energy change of these reactions is directly related to the difference in [electron affinity](@keyword=electron_affinity|lang=en-US|style=Feynman), or **[standard reduction potential](@keyword=standard_reduction_potential|lang=en-US|style=Feynman) ($E^{\circ'}$)**, between the reacting species.
 
-A redox reaction can be conceptualized as two half-reactions: one species is oxidized (loses electrons) and another is reduced (gains electrons). The overall potential for the reaction, $E^{\circ'}_{\text{cell}}$, is calculated as the difference between the standard reduction potential of the electron acceptor (the species being reduced) and that of the electron donor (the species being oxidized):
+A [redox reaction](@keyword=redox_reaction|lang=en-US|style=Feynman) can be conceptualized as two [half-reactions](@entry_id:266806): one species is oxidized (loses electrons) and another is reduced (gains electrons). The overall potential for the reaction, $E^{\circ'}_{\text{cell}}$, is calculated as the difference between the [standard reduction potential](@keyword=standard_reduction_potential|lang=en-US|style=Feynman) of the electron acceptor (the species being reduced) and that of the electron donor (the species being oxidized):
 
 $E^{\circ'}_{\text{cell}} = E^{\circ'}_{\text{(electron acceptor)}} - E^{\circ'}_{\text{(electron donor)}}$
 
-A positive $E^{\circ'}_{\text{cell}}$ indicates a spontaneous reaction under standard conditions. This electrical potential is directly proportional to the standard free-energy change through the following equation:
+A positive $E^{\circ'}_{\text{cell}}$ indicates a [spontaneous reaction](@keyword=spontaneous_reaction|lang=en-US|style=Feynman) under standard conditions. This [electrical potential](@keyword=electrical_potential|lang=en-US|style=Feynman) is directly proportional to the standard free-energy change through the following equation:
 
 $\Delta G^{\circ'} = -nFE^{\circ'}_{\text{cell}}$
 
-Here, $n$ is the number of moles of electrons transferred in the balanced reaction, and $F$ is the **Faraday constant** ($96.485 \text{ kJ·V⁻¹·mol⁻¹}$), which relates electrical charge to moles of substance.
+Here, $n$ is the number of moles of electrons transferred in the balanced reaction, and $F$ is the **Faraday constant** ($96.485 \mathrm{kJ\cdot V⁻¹\cdot mol⁻¹}$), which relates [electrical charge](@entry_id:274596) to moles of substance.
 
-For example, consider the potential reduction of pyruvate to lactate by the cofactor FMNH₂. The half-reactions are:
+For example, consider the potential reduction of pyruvate to lactate by the [cofactor](@keyword=cofactor|lang=en-US|style=Feynman) FMNH₂. The [half-reactions](@entry_id:266806) are:
 1. Pyruvate + 2H⁺ + 2e⁻ ⇌ Lactate,  $E^{\circ'} = -0.185 \text{ V}$
 2. FMN + 2H⁺ + 2e⁻ ⇌ FMNH₂, $E^{\circ'} = -0.219 \text{ V}$
 
@@ -133,12 +133,12 @@ $E^{\circ'}_{\text{cell}} = (-0.185 \text{ V}) - (-0.219 \text{ V}) = +0.034 \te
 
 Since the potential is positive, the reaction is spontaneous. We can calculate the standard free-energy change for this two-electron transfer ($n=2$):
 
-$\Delta G^{\circ'} = -2 \cdot (96.485 \text{ kJ·V⁻¹·mol⁻¹}) \cdot (0.034 \text{ V}) \approx -6.56 \text{ kJ/mol}$
+$\Delta G^{\circ'} = -2 \cdot (96.485 \mathrm{kJ\cdot V⁻¹\cdot mol⁻¹}) \cdot (0.034 \text{ V}) \approx -6.56 \text{ kJ/mol}$
 
-The negative $\Delta G^{\circ'}$ confirms the spontaneity of the electron transfer from FMNH₂ to pyruvate under standard conditions [@problem_id:2077270].
+The negative $\Delta G^{\circ'}$ confirms the spontaneity of the [electron transfer](@keyword=electron_transfer|lang=en-US|style=Feynman) from FMNH₂ to pyruvate under standard conditions [@problem_id:2077270].
 
 ### A Note on Catalysis: Enzymes and Free Energy
 
-A common misconception is that enzymes, as powerful biological catalysts, make reactions more favorable by altering their $\Delta G^{\circ'}$. This is fundamentally incorrect. The standard free-energy change is a state function; it depends only on the free energies of the initial (reactants) and final (products) states. It is completely independent of the path or mechanism taken to get from one state to the other.
+A common misconception is that enzymes, as powerful biological catalysts, make reactions more favorable by altering their $\Delta G^{\circ'}$. This is fundamentally incorrect. The standard free-energy change is a [state function](@keyword=state_function|lang=en-US|style=Feynman); it depends only on the free energies of the initial (reactants) and final (products) states. It is completely independent of the path or mechanism taken to get from one state to the other.
 
-Enzymes function by providing an alternative, lower-energy reaction pathway. They do this by stabilizing the high-energy **transition state** of the reaction, thereby lowering the **activation energy ($\Delta G^{\ddagger}$)**. By lowering this kinetic barrier, enzymes dramatically increase the *rate* at which a reaction proceeds toward equilibrium. However, they do not change the free energies of the substrates or products themselves. Therefore, an enzyme has absolutely no effect on the equilibrium constant ($K'_{\text{eq}}$) or the standard free-energy change ($\Delta G^{\circ'}$) of the reaction it catalyzes [@problem_id:2077261]. Enzymes affect the kinetics, not the thermodynamics, of a reaction.
+Enzymes function by providing an alternative, lower-energy reaction pathway. They do this by stabilizing the high-energy **transition state** of the reaction, thereby lowering the **activation energy ($\Delta G^{\ddagger}$)**. By lowering this kinetic barrier, enzymes dramatically increase the *rate* at which a reaction proceeds toward equilibrium. However, they do not change the free energies of the substrates or products themselves. Therefore, an enzyme has absolutely no effect on the [equilibrium constant](@keyword=equilibrium_constant|lang=en-US|style=Feynman) ($K'_{\text{eq}}$) or the standard free-energy change ($\Delta G^{\circ'}$) of the reaction it catalyzes [@problem_id:2077261]. Enzymes affect the kinetics, not the thermodynamics, of a reaction.

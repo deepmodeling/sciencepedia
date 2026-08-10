@@ -19,7 +19,7 @@ This isn't just a formula; it's a statement about equilibrium. The universe favo
 
 ### A Surprising Simplicity: Trouton's Rule
 
-Let’s be scientists and put some numbers to this. For a common solvent like dichloromethane, the entropy of vaporization comes out to be about $89.7 \text{ J/(mol·K)}$ [@problem_id:1995433]. For acetone, it's about $88.4 \text{ J/(mol·K)}$ [@problem_id:2025557]. You might try this for benzene, hexane, or carbon tetrachloride, and you would find something remarkable: the values all cluster around a similar number, about $85$ to $90 \text{ J/(mol·K)}$.
+Let’s be scientists and put some numbers to this. For a common solvent like dichloromethane, the entropy of vaporization comes out to be about $89.7 \mathrm{J/(mol\cdot K)}$ [@problem_id:1995433]. For acetone, it's about $88.4 \mathrm{J/(mol\cdot K)}$ [@problem_id:2025557]. You might try this for benzene, hexane, or carbon tetrachloride, and you would find something remarkable: the values all cluster around a similar number, about $85$ to $90 \mathrm{J/(mol\cdot K)}$.
 
 This curious consistency was first noted by Frederick Trouton in the late 19th century. **Trouton's rule** is the empirical observation that for many simple, non-interacting liquids, the molar entropy of vaporization is roughly constant, approximately $10.5$ times the ideal gas constant $R$.
 
@@ -43,7 +43,7 @@ Any good physicist knows that the exceptions to a rule are often more interestin
 
 #### Exception 1: The Orderly Liquid
 
-Let's look at methane ($\text{CH}_4$), a simple nonpolar molecule. Its entropy of vaporization is about $73 \text{ J/(mol·K)}$ [@problem_id:1979662], a bit low but in the ballpark. Now consider water ($\text{H}_2\text{O}$). Its value is a whopping $109 \text{ J/(mol·K)}$, a massive deviation! Why?
+Let's look at methane ($\text{CH}_4$), a simple nonpolar molecule. Its entropy of vaporization is about $73 \mathrm{J/(mol\cdot K)}$ [@problem_id:1979662], a bit low but in the ballpark. Now consider water ($\text{H}_2\text{O}$). Its value is a whopping $109 \mathrm{J/(mol\cdot K)}$, a massive deviation! Why?
 
 The answer is **hydrogen bonding**. Liquid water is not the simple, chaotic scrum of molecules we imagined earlier. It possesses a significant degree of local structure. The hydrogen bonds form a dynamic, flickering network that gives the liquid a "configurational order" that a liquid like methane lacks. When water boils, it's not just that the molecules gain translational and rotational freedom; the system also loses this extra layer of hydrogen-bond order. The total increase in disorder is therefore much greater.
 
@@ -51,7 +51,7 @@ We can even quantify this. Think of a molecule like ammonia ($\text{NH}_3$), whi
 
 #### Exception 2: The Quantum Liquid
 
-What happens if we go to the other extreme, to substances that boil at incredibly low temperatures? Consider [liquid helium](@keyword=liquid_helium|lang=en-US|style=Feynman), which boils at a mere $4.2 \text{ K}$. If we calculate its entropy of vaporization, we get a value of only about $20 \text{ J/(mol·K)}$. This isn't just a small deviation; it's a complete breakdown of the rule. The actual value is less than a quarter of what Trouton's rule predicts [@problem_id:1902564].
+What happens if we go to the other extreme, to substances that boil at incredibly low temperatures? Consider [liquid helium](@keyword=liquid_helium|lang=en-US|style=Feynman), which boils at a mere $4.2 \text{ K}$. If we calculate its entropy of vaporization, we get a value of only about $20 \mathrm{J/(mol\cdot K)}$. This isn't just a small deviation; it's a complete breakdown of the rule. The actual value is less than a quarter of what Trouton's rule predicts [@problem_id:1902564].
 
 Here, we've walked into the realm of quantum mechanics. The **Third Law of Thermodynamics** states that the entropy of a perfect substance approaches zero as the temperature approaches absolute zero. Our classical picture of jiggling, tumbling molecules breaks down. At $4.2 \text{ K}$, liquid helium is already in a state of very high quantum order. There's very little thermal disorder to begin with. Thus, the *gain* in entropy when it transitions to a gas is necessarily small. The failure of Trouton's rule for helium is a striking reminder that at the lowest temperatures, the universe is governed by quantum rules, not classical intuition.
 

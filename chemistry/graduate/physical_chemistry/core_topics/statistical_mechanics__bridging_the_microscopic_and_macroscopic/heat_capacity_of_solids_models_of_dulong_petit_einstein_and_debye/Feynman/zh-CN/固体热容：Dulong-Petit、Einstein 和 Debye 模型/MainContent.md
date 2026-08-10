@@ -9,7 +9,7 @@
 
 ### 经典物理的优雅绝唱：[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman)
 
-19世纪初，两位法国科学家 Pierre Louis Dulong 和 Alexis Thérèse Petit 发现了一个惊人的规律。他们测量了许多固体元素的室温[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)量，发现它们的值都惊人地相似，大约是 $25 \text{ J/(mol·K)}$。一个普适的常数！这在当时是石破天惊的发现。物理学的美，恰恰在于用最简洁的规律统一看似无关的现象。
+19世纪初，两位法国科学家 Pierre Louis Dulong 和 Alexis Thérèse Petit 发现了一个惊人的规律。他们测量了许多固体元素的室温[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)量，发现它们的值都惊人地相似，大约是 $25 \mathrm{J/(mol\cdot K)}$。一个普适的常数！这在当时是石破天惊的发现。物理学的美，恰恰在于用最简洁的规律统一看似无关的现象。
 
 半个世纪后，经典统计物理学为这个神秘的常数给出了一个极其优美的解释。想象一下，一个晶体是由无数原子构成的，它们被无形的“弹簧”连接在一起，形成一个规整的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)。每个原子都可以在自己的[平衡位置](@keyword=equilibrium_position|lang=zh-CN|style=Feynman)附近[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。根据经典物理的**[能量均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)（Equipartition Theorem）**，在足够高的温度下，能量会被公平地分配给系统每一个可以存[储能](@keyword=energy_storage|lang=zh-CN|style=Feynman)量的“自由度”。[@2644333]
 
@@ -23,7 +23,7 @@
 $C_V = \left(\frac{\partial U}{\partial T}\right)_V = 3R$
 [@2644219]
 
-$R$ 的值大约是 $8.314 \text{ J/(mol·K)}$，所以 $3R \approx 24.9 \text{ J/(mol·K)}$。这个结果与 Dulong 和 Petit 的实验观测完美吻合！经典物理学似乎再次取得了巨大的胜利。这个简单、普适且优雅的**[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman)**，成为了经典物理大厦上一块闪亮的基石。
+$R$ 的值大约是 $8.314 \mathrm{J/(mol\cdot K)}$，所以 $3R \approx 24.9 \mathrm{J/(mol\cdot K)}$。这个结果与 Dulong 和 Petit 的实验观测完美吻合！经典物理学似乎再次取得了巨大的胜利。这个简单、普适且优雅的**[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman)**，成为了经典物理大厦上一块闪亮的基石。
 
 ### “低温灾变”：经典大厦的裂痕
 

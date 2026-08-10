@@ -1,29 +1,29 @@
 ## 引言
-在晶体固体的微观世界中，电子的行为由量子力学主导，其能量状态由复杂的能带结构$E(\mathbf{k})$决定。然而，为了理解材料的宏观电学和光学性质，我们必须回答一个核心问题：当施加电场或磁场时，这些晶体中的电子将如何运动？它们对外力的响应能否用类似牛顿定律的简洁形式来描述？直接求解含时薛定谔方程来追踪每个电子的运动是不切实际的，这暴露了连接量子能带理论与经典粒子动力学之间的知识鸿沟。
+在晶体固体的微观世界中，电子的行为由量子力学主导，其能量状态由复杂的[能带结构](@keyword=band_structure|lang=zh-CN|style=Feynman)$E(\mathbf{k})$决定。然而，为了理解材料的宏观电学和光学性质，我们必须回答一个核心问题：当施加[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)或[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)时，这些晶体中的电子将如何运动？它们对外力的响应能否用类似[牛顿定律](@entry_id:163541)的简洁形式来描述？直接求解[含时薛定谔方程](@keyword=time_dependent_schrödinger_equation|lang=zh-CN|style=Feynman)来追踪每个电子的运动是不切实际的，这暴露了连接量子能带理论与经典粒子动力学之间的知识鸿沟。
 
-本文旨在填补这一鸿沟，系统介绍“有效质量”这一核心概念。有效质量是一个强大的理论工具，它将晶格周期性势场对电子的复杂影响巧妙地封装在一个单一参数中，使我们能够用经典力学的语言来描述电子的准经典行为。通过学习本文，读者将能够理解电子在晶体中的运动为何以及如何不同于在真空中的自由电子。
+本文旨在填补这一鸿沟，系统介绍“有效质量”这一核心概念。有效质量是一个强大的理论工具，它将[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)[周期性势场](@keyword=periodic_potential|lang=zh-CN|style=Feynman)对电子的复杂影响巧妙地封装在一个单一参数中，使我们能够用经典力学的语言来描述电子的准经典行为。通过学习本文，读者将能够理解电子在晶体中的运动为何以及如何不同于在真空中的自由电子。
 
 文章将分三个主要部分展开：
 
-在“原理与机制”部分，我们将从半经典模型出发，推导有效质量的定义，探讨其与能带曲率的深刻联系，并揭示负有效质量与“空穴”概念的起源。
+在“原理与机制”部分，我们将从半经典模型出发，推导有效质量的定义，探讨其与能带曲率的深刻联系，并揭示[负有效质量](@keyword=negative_effective_mass|lang=zh-CN|style=Feynman)与“空穴”概念的起源。
 
-在“应用与跨学科交叉”部分，我们将展示有效质量如何在半导体物理、材料科学甚至原子核物理等领域发挥关键作用，并介绍其测量方法与调控手段。
+在“应用与跨学科[交叉](@keyword=chiasmata|lang=zh-CN|style=Feynman)”部分，我们将展示有效质量如何在[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)物理、[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)甚至[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)物理等领域发挥关键作用，并介绍其测量方法与调控手段。
 
-最后，在“动手实践”部分，您将通过具体的计算问题，亲手应用这些理论知识，加深对有效质量概念的理解。
+最后，在“动手实践”部分，您将通过具体的计算问题，亲手应用这些理论知识，加深对[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)概念的理解。
 
 ## 原理与机制
 
-在上一章中，我们介绍了晶体中电子的状态由其能带结构 $E(\mathbf{k})$ 描述。然而，仅仅拥有静态的能带图景是不够的。我们更关心的是，当施加一个外部电场或磁场时，这些电子如何运动？它们如何对外界的力作出响应？经典物理中的牛顿第二定律 $F = ma$ 在这个量子世界中是否依然有效？本章将深入探讨连接量子能带理论与电子宏观动力学行为的关键桥梁——**有效质量**（effective mass）的概念。我们将从第一性原理出发，推导出其定义，并探索其丰富的物理内涵及其在不同情况下的应用和局限性。
+在上一章中，我们介绍了晶体中电子的状态由其[能带结构](@keyword=band_structure|lang=zh-CN|style=Feynman) $E(\mathbf{k})$ 描述。然而，仅仅拥有静态的[能带图](@keyword=energy_band_diagram|lang=zh-CN|style=Feynman)景是不够的。我们更关心的是，当施加一个外部[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)或[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)时，这些电子如何运动？它们如何对外界的力作出响应？经典物理中的牛顿第二定律 $F = ma$ 在这个量子世界中是否依然有效？本章将深入探讨连接量子[能带理论](@keyword=band_theory|lang=zh-CN|style=Feynman)与电子宏观动力学行为的关键桥梁——**有效质量**（effective mass）的概念。我们将从第一性原理出发，推导出其定义，并探索其丰富的物理内涵及其在不同情况下的应用和局限性。
 
-### 半经典模型与有效质量的起源
+### 半经典模型与有效[质量的起源](@keyword=origin_of_mass|lang=zh-CN|style=Feynman)
 
-要理解晶体中电子的运动，我们不能简单地将其视为在真空中运动的自由粒子。电子与晶格周期性势场之间存在着复杂的相互作用。完整地求解含时薛定谔方程来描述电子在外场下的演化是极其困难的。因此，我们引入一个强大的近似方法——**半经典模型**（semiclassical model）。
+要理解晶体中电子的运动，我们不能简单地将其视为在真[空中运动](@keyword=aerial_locomotion|lang=zh-CN|style=Feynman)的[自由粒子](@keyword=the_free_particle|lang=zh-CN|style=Feynman)。电子与[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)[周期性势场](@keyword=periodic_potential|lang=zh-CN|style=Feynman)之间存在着复杂的相互作用。完整地求解[含时薛定谔方程](@keyword=time_dependent_schrödinger_equation|lang=zh-CN|style=Feynman)来描述电子在外场下的演化是极其困难的。因此，我们引入一个强大的近似方法——**半经典模型**（semiclassical model）。
 
-该模型将电子视为一个**波包**（wave packet），它在真实空间中具有一定的局域性，同时在动量空间中也占据一个有限的范围。此波包的中心速度由其在 $k$ 空间中的**群速度**（group velocity）$v_g$ 给出，其定义为：
+该模型将电子视为一个**[波包](@keyword=wave_packets|lang=zh-CN|style=Feynman)**（wave packet），它在真实空间中具有一定的局域性，同时在动量空间中也占据一个有限的范围。此[波包](@keyword=wave_packets|lang=zh-CN|style=Feynman)的中心速度由其在 $k$ 空间中的**[群速度](@keyword=group_velocity|lang=zh-CN|style=Feynman)**（group velocity）$v_g$ 给出，其定义为：
 $$ \mathbf{v}_g = \frac{1}{\hbar} \nabla_{\mathbf{k}} E(\mathbf{k}) $$
-其中 $\nabla_{\mathbf{k}}$ 是对波矢 $\mathbf{k}$ 的梯度算符。这个公式表明，电子的速度由其在能带结构 $E(\mathbf{k})$ 上所处位置的斜率决定。
+其中 $\nabla_{\mathbf{k}}$ 是对波矢 $\mathbf{k}$ 的梯度算符。这个公式表明，电子的速度由其在[能带结构](@keyword=band_structure|lang=zh-CN|style=Feynman) $E(\mathbf{k})$ 上所处位置的斜率决定。
 
-现在，考虑一个外力 $\mathbf{F}_{ext}$（例如，由电场 $\mathcal{E}$ 产生的力 $\mathbf{F}_{ext} = -e\mathcal{E}$）作用于电子上。半经典模型的一个核心论断是，电子的**晶体动量**（crystal momentum）$\hbar\mathbf{k}$ 的变化率遵循一个类似于牛顿第二定律的方程：
+现在，考虑一个外力 $\mathbf{F}_{ext}$（例如，由[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $\mathcal{E}$ 产生的力 $\mathbf{F}_{ext} = -e\mathcal{E}$）作用于电子上。半经典模型的一个核心论断是，电子的**[晶体动量](@keyword=crystal_momentum|lang=zh-CN|style=Feynman)**（crystal momentum）$\hbar\mathbf{k}$ 的变化率遵循一个类似于牛顿第二定律的方程：
 $$ \hbar \frac{d\mathbf{k}}{dt} = \mathbf{F}_{ext} $$
 这个方程描述了外力如何改变电子的波矢 $\mathbf{k}$，即它如何使电子在能带上移动。
 
@@ -33,82 +33,82 @@ $$ a = \frac{dv_g}{dt} = \frac{d}{dt} \left( \frac{1}{\hbar} \frac{dE}{dk} \righ
 $$ a = \frac{1}{\hbar} \frac{d}{dk}\left(\frac{dE}{dk}\right) \frac{dk}{dt} = \frac{1}{\hbar} \frac{d^2E}{dk^2} \frac{dk}{dt} $$
 将 $\frac{dk}{dt} = \frac{F_{ext}}{\hbar}$ 代入上式，可得：
 $$ a = \frac{1}{\hbar^2} \frac{d^2E}{dk^2} F_{ext} $$
-这个结果形式上惊人地类似于牛顿第二定律 $a = \frac{1}{m} F$。通过类比，我们可以看到，$\frac{1}{\hbar^2} \frac{d^2E}{dk^2}$ 这一项扮演了“质量倒数”的角色。这正是有效质量概念的起源。它允许我们将晶格内部复杂的周期性势场对电子运动的影响，全部归结到一个单一的参数中，从而可以用一个经典形式的方程 $F_{ext} = m^* a$ 来描述电子对外力的响应。
+这个结果形式上惊人地类似于[牛顿第二定律](@keyword=newton_s_second_law|lang=zh-CN|style=Feynman) $a = \frac{1}{m} F$。通过类比，我们可以看到，$\frac{1}{\hbar^2} \frac{d^2E}{dk^2}$ 这一项扮演了“质量倒数”的角色。这正是有效质量概念的起源。它允许我们将[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)内部复杂的周期性势场对电子运动的影响，全部归结到一个单一的参数中，从而可以用一个经典形式的方程 $F_{ext} = m^* a$ 来描述电子对外力的响应。
 
-### 有效质量的定义与物理内涵
+### [有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)的定义与物理内涵
 
 基于上述推导，我们正式定义一维系统中的**有效质量** $m^*$ 为：
 $$ \frac{1}{m^*} = \frac{1}{\hbar^2} \frac{d^2E}{dk^2} \quad \text{或} \quad m^* = \hbar^2 \left( \frac{d^2E}{dk^2} \right)^{-1} $$
 这个定义清晰地表明，有效质量由能带结构 $E(k)$ 在特定 $k$ 点的**曲率**（curvature）$\frac{d^2E}{dk^2}$ 决定。
 
-必须强调的是，**有效质量不是电子的真实静止质量 $m_e$**。它是一个描述电子在晶格周期性势场中动力学行为的等效参数。当一个外力作用于电子时，晶格本身也会对电子施加一个力。有效质量 $m^*$ 将这个内部晶格力与电子的惯性质量结合在一起，使得我们只需要考虑外力 $\mathbf{F}_{ext}$ 就能正确地得到电子的加速度。
+必须强调的是，**[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)不是电子的真实静止质量 $m_e$**。它是一个描述电子在[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)[周期性势场](@keyword=periodic_potential|lang=zh-CN|style=Feynman)中动力学行为的等效参数。当一个外力作用于电子时，[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)本身也会对电子施加一个力。有效质量 $m^*$ 将这个内部[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)力与电子的[惯性质量](@keyword=inertial_mass|lang=zh-CN|style=Feynman)结合在一起，使得我们只需要考虑外力 $\mathbf{F}_{ext}$ 就能正确地得到电子的加速度。
 
 $m^*$ 的物理内涵可以通过能带的形状直观理解：
 *   **平坦的能带**：如果能带 $E(k)$ 在某区域非常平坦，则其曲率 $\frac{d^2E}{dk^2}$ 很小。这意味着有效质量 $m^*$ 非常**大**。物理上，这对应于电子被高度局域化在原子周围，难以在晶体中移动。即使施加外力，其加速度也很小，表现出“沉重”的特性。
-*   **弯曲的能带**：如果能带非常弯曲，则其曲率 $\frac{d^2E}{dk^2}$ 很大。这意味着有效质量 $m^*$ 非常**小**。物理上，这对应于电子很容易在晶格间跃迁，对外力的响应非常灵敏，表现出“轻巧”的特性。
+*   **弯曲的能带**：如果能带非常弯曲，则其曲率 $\frac{d^2E}{dk^2}$ 很大。这意味着有效质量 $m^*$ 非常**小**。物理上，这对应于电子很容易在[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)间跃迁，对外力的响应非常灵敏，表现出“轻巧”的特性。
 
-一个典型的例子是紧束缚模型，它描述了电子在原子轨道之间跃迁形成的能带。在一个一维晶格中，其色散关系通常可以写成 $E(k) = E_{at} - 2\gamma \cos(ka)$，其中 $\gamma$ 是跃迁积分，表征相邻原子轨道之间的交叠程度。在能带底部（$k=0$），我们可以计算其有效质量。首先求二阶导数：
+一个典型的例子是[紧束缚模型](@keyword=tight_binding_model|lang=zh-CN|style=Feynman)，它描述了电子在原子轨道之间跃迁形成的能带。在一个一维[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)中，其色散关系通常可以写成 $E(k) = E_{at} - 2\gamma \cos(ka)$，其中 $\gamma$ 是[跃迁积分](@entry_id:147296)，表征相邻原子轨道之间的交叠程度。在能带底部（$k=0$），我们可以计算其有效质量。首先求[二阶导数](@keyword=second_derivative|lang=zh-CN|style=Feynman)：
 $$ \frac{dE}{dk} = 2\gamma a \sin(ka) \quad \Rightarrow \quad \frac{d^2E}{dk^2} = 2\gamma a^2 \cos(ka) $$
-在能带底部 $k=0$ 处，曲率为 $\left.\frac{d^2E}{dk^2}\right|_{k=0} = 2\gamma a^2$。因此，有效质量为：
+在能带底部 $k=0$ 处，曲率为 $\left.\frac{d^2E}{dk^2}\right|_{k=0} = 2\gamma a^2$。因此，[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)为：
 $$ m^* = \frac{\hbar^2}{2\gamma a^2} $$
-这个结果直接揭示了能带宽度与有效质量的关系 [@problem_id:1811665]。一个非常窄的能带（对应于小的跃迁积分 $\gamma$，即电子高度局域化）会导致一个非常大的有效质量。反之，宽能带（大 $\gamma$）则对应小的有效质量。这种关系在材料设计中至关重要。例如，比较两种材料A和B，它们的有效质量之比可以直接通过它们的能带参数计算得出。如果材料A的参数为 $\gamma_A, a_A$，材料B的参数为 $\gamma_B, a_B$，那么它们在能带底部的有效质量之比为 $\frac{m^*_A}{m^*_B} = \frac{\gamma_B a_B^2}{\gamma_A a_A^2}$ [@problem_id:1811695]。
+这个结果直接揭示了能带宽度与有效质量的关系 [@problem_id:1811665]。一个非常窄的能带（对应于小的[跃迁积分](@entry_id:147296) $\gamma$，即电子高度局域化）会导致一个非常大的有效质量。反之，宽能带（大 $\gamma$）则对应小的[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)。这种关系在材料设计中至关重要。例如，比较两种材料A和B，它们的有效质量之比可以直接通过它们的能带参数计算得出。如果材料A的参数为 $\gamma_A, a_A$，材料B的参数为 $\gamma_B, a_B$，那么它们在能带底部的[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)之比为 $\frac{m^*_A}{m^*_B} = \frac{\gamma_B a_B^2}{\gamma_A a_A^2}$ [@problem_id:1811695]。
 
-### 有效质量的符号：电子与空穴
+### [有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)的符号：电子与空穴
 
 有效质量最令人惊讶和深刻的特性之一是它可以是**负数**。从定义式 $m^* = \hbar^2 / (d^2E/dk^2)$ 可以看出，有效质量的符号与能带曲率的符号完全相同。
 
 *   在能带的**底部**（例如导带底），$E(k)$ 曲线是向上弯曲的（凹形），所以曲率 $\frac{d^2E}{dk^2} > 0$。因此，有效质量 $m^*$ 是**正的**。这符合我们的直觉：电子在外力作用下，其加速度方向与受力方向一致（考虑到电子带负电）。
 
-*   在能带的**顶部**（例如价带顶），$E(k)$ 曲线是向下弯曲的（凸形），所以曲率 $\frac{d^2E}{dk^2}  0$。因此，有效质量 $m^*$ 是**负的**。
+*   在能带的**顶部**（例如价带顶），$E(k)$ 曲线是向下弯曲的（凸形），所以曲率 $\frac{d^2E}{dk^2}  0$。因此，[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman) $m^*$ 是**负的**。
 
-一个负的有效质量听起来似乎违反物理直觉，但它完美地描述了电子在能带顶部附近的奇特行为。让我们分析一个位于能带顶部的电子，它受到一个指向 $+x$ 方向的电场 $\mathcal{E}$ 的作用。电子受到的力为 $F_{ext} = -e\mathcal{E}$，方向指向 $-x$。它的加速度为 $a = F_{ext}/m^*$。由于 $F_{ext}$ 和 $m^*$ 都是负的，加速度 $a$ 竟然是**正的**！这意味着，电子在外电场的作用下，其运动的加速度方向与经典粒子预期的方向完全相反 [@problem_id:1819567]。这个反常的加速度实际上是晶格周期性势场对电子施加的内部作用力超过了外力的结果。
+一个负的[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)听起来似乎违反物理直觉，但它完美地描述了电子在能带顶部附近的奇特行为。让我们分析一个位于能带顶部的电子，它受到一个指向 $+x$ 方向的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $\mathcal{E}$ 的作用。电子受到的力为 $F_{ext} = -e\mathcal{E}$，方向指向 $-x$。它的加速度为 $a = F_{ext}/m^*$。由于 $F_{ext}$ 和 $m^*$ 都是负的，加速度 $a$ 竟然是**正的**！这意味着，电子在外[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)的作用下，其运动的加速度方向与经典粒子预期的方向完全相反 [@problem_id:1819567]。这个反常的加速度实际上是[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)周期性势场对电子施加的内部作用力超过了外力的结果。
 
-处理一个充满电子的能带中大量具有负有效质量的电子，是一件极其繁琐的事情。幸运的是，物理学家们找到了一种优雅的替代描述方式：**空穴**（hole）的概念。一个几乎被电子填满的价带，其宏观电学行为可以等效地看作是少数几个未被占据的量子态（即“空穴”）的运动。
+处理一个充满电子的能带中大量具有[负有效质量](@keyword=negative_effective_mass|lang=zh-CN|style=Feynman)的电子，是一件极其繁琐的事情。幸运的是，物理学家们找到了一种优雅的替代描述方式：**空穴**（hole）的概念。一个几乎被电子填满的价带，其宏观电学行为可以等效地看作是少数几个未被占据的[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)（即“空穴”）的运动。
 
-我们可以证明，一个空穴的行为就像一个带正电荷 $(+e)$ 且具有**正有效质量**的准粒子。空穴的有效质量 $m_h^*$ 与它所替代的那个位于价带顶部的电子的有效质量 $m_{e,v}^*$ 的关系是：
+我们可以证明，一个空穴的行为就像一个带正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman) $(+e)$ 且具有**正有效质量**的[准粒子](@keyword=quasiparticle|lang=zh-CN|style=Feynman)。空穴的有效质量 $m_h^*$ 与它所替代的那个位于[价带](@keyword=valence_band|lang=zh-CN|style=Feynman)顶部的电子的有效质量 $m_{e,v}^*$ 的关系是：
 $$ m_h^* = -m_{e,v}^* $$
-由于价带顶部的电子有效质量 $m_{e,v}^*$ 是负的，所以空穴的有效质量 $m_h^*$ 是正的。
+由于[价带](@keyword=valence_band|lang=zh-CN|style=Feynman)顶部的电子有效质量 $m_{e,v}^*$ 是负的，所以空穴的[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman) $m_h^*$ 是正的。
 
-这个模型的自洽性可以通过一个思想实验来验证 [@problem_id:1811660]。考虑一个位于价带顶部的电子，在外电场 $\mathcal{E}$ 作用下，其加速度为 $a_e = \frac{-e\mathcal{E}}{m_{e,v}^*}$。由于 $m_{e,v}^*  0$，所以 $a_e > 0$。现在，我们用空穴模型来描述。这个空穴带电荷 $+e$，受力 $F_h = +e\mathcalE$。其有效质量为 $m_h^* = -m_{e,v}^* > 0$。因此，空穴的加速度为 $a_h = \frac{F_h}{m_h^*} = \frac{+e\mathcalE}{-m_{e,v}^*} = a_e$。两种描述给出了完全相同的加速度，这证明了空穴模型是描述满带中少数空余态的有效且方便的工具。
+这个模型的自洽性可以通过一个思想实验来验证 [@problem_id:1811660]。考虑一个位于价带顶部的电子，在外[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $\mathcal{E}$ 作用下，其加速度为 $a_e = \frac{-e\mathcal{E}}{m_{e,v}^*}$。由于 $m_{e,v}^*  0$，所以 $a_e > 0$。现在，我们用空穴模型来描述。这个空穴带[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman) $+e$，受力 $F_h = +e\mathcal{E}$。其有效质量为 $m_h^* = -m_{e,v}^* > 0$。因此，空穴的加速度为 $a_h = \frac{F_h}{m_h^*} = \frac{+e\mathcal{E}}{-m_{e,v}^*} = a_e$。两种描述给出了完全相同的加速度，这证明了空穴模型是描述满带中少数空余态的有效且方便的工具。
 
-总结来说，我们可以用简单的抛物线能带近似来描述导带底和价带顶的行为 [@problem_id:1811704]：
-*   导带：$E_{CB}(k) = E_c + A k^2$，其中 $A>0$。电子有效质量 $m_c^* = \frac{\hbar^2}{2A} > 0$。
-*   价带：$E_{VB}(k) = E_v - B k^2$，其中 $B>0$。电子有效质量 $m_{v,e}^* = -\frac{\hbar^2}{2B}  0$。对应的空穴有效质量为 $m_h^* = -m_{v,e}^* = \frac{\hbar^2}{2B} > 0$。
+总结来说，我们可以用简单的抛物线能带近似来描述[导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)底和[价带](@keyword=valence_band|lang=zh-CN|style=Feynman)顶的行为 [@problem_id:1811704]：
+*   [导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)：$E_{CB}(k) = E_c + A k^2$，其中 $A>0$。电子有效质量 $m_c^* = \frac{\hbar^2}{2A} > 0$。
+*   [价带](@keyword=valence_band|lang=zh-CN|style=Feynman)：$E_{VB}(k) = E_v - B k^2$，其中 $B>0$。电子有效质量 $m_{v,e}^* = -\frac{\hbar^2}{2B}  0$。对应的空穴有效质量为 $m_h^* = -m_{v,e}^* = \frac{\hbar^2}{2B} > 0$。
 
-### 超越抛物线近似：复杂能带结构
+### 超越[抛物线近似](@keyword=parabolic_approximation|lang=zh-CN|style=Feynman)：复杂能带结构
 
-虽然抛物线能带近似在能带极值点附近非常有用，但对于远离极值点的电子，或者在一些新型材料（如石墨烯）中，能带结构要复杂得多。这意味着有效质量不再是一个常数，而是依赖于电子所处的波矢 $\mathbf{k}$，即 $m^* = m^*(\mathbf{k})$。
+虽然抛物线能带近似在能带极值点附近非常有用，但对于远离[极值](@keyword=maximum_and_minimum|lang=zh-CN|style=Feynman)点的电子，或者在一些新型材料（如石墨烯）中，[能带结构](@keyword=band_structure|lang=zh-CN|style=Feynman)要复杂得多。这意味着有效质量不再是一个常数，而是依赖于电子所处的[波矢](@keyword=wavevector|lang=zh-CN|style=Feynman) $\mathbf{k}$，即 $m^* = m^*(\mathbf{k})$。
 
-例如，考虑一个假想材料，其色散关系为 $E(k) = \alpha (\sqrt{1 + (\beta k)^2} - 1)$ [@problem_id:1811656]。通过计算其二阶导数，可以得到与 $k$ 相关的有效质量：
+例如，考虑一个假想材料，其色散关系为 $E(k) = \alpha (\sqrt{1 + (\beta k)^2} - 1)$ [@problem_id:1811656]。通过计算其[二阶导数](@keyword=second_derivative|lang=zh-CN|style=Feynman)，可以得到与 $k$ 相关的有效质量：
 $$ m^*(k) = \frac{\hbar^2}{\alpha\beta^2} (1 + (\beta k)^2)^{3/2} $$
 在能带底部（$k=0$），$m^*(0) = \frac{\hbar^2}{\alpha\beta^2}$。随着 $k$ 的增加，有效质量也随之增大。这意味着当电子在外场作用下被加速到更大的 $k$ 值时，它会变得越来越“重”，越来越难以被进一步加速。
 
-在紧束缚模型 $E(k) = E_0 - 2T \cos(ka)$ 中，我们也可以看到有效质量对 $k$ 的依赖性：$m^*(k) = \frac{\hbar^2}{2Ta^2 \cos(ka)}$。有趣的是，当 $k \to \pm \pi/(2a)$ 时，$\cos(ka) \to 0$，导致有效质量 $m^*(k) \to \infty$ [@problem_id:1811701]。在这一点，能带 $E(k)$ 曲线存在一个**拐点**（inflection point），其曲率为零。物理上，这意味着电子在该点的加速度为零。这也是电子群速度 $v_g = \frac{2Ta}{\hbar}\sin(ka)$ 达到其最大值的点。
+在[紧束缚模型](@keyword=tight_binding_model|lang=zh-CN|style=Feynman) $E(k) = E_0 - 2T \cos(ka)$ 中，我们也可以看到有效质量对 $k$ 的依赖性：$m^*(k) = \frac{\hbar^2}{2Ta^2 \cos(ka)}$。有趣的是，当 $k \to \pm \pi/(2a)$ 时，$\cos(ka) \to 0$，导致有效质量 $m^*(k) \to \infty$ [@problem_id:1811701]。在这一点，能带 $E(k)$ 曲线存在一个**[拐点](@keyword=inflection_points|lang=zh-CN|style=Feynman)**（inflection point），其曲率为零。物理上，这意味着电子在该点的加速度为零。这也是电子群速度 $v_g = \frac{2Ta}{\hbar}\sin(ka)$ 达到其最大值的点。
 
-这种非抛物线性质会导致一些奇特的现象，例如**布洛赫振荡**（Bloch oscillations）。在一个恒定的电场中，电子的波矢 $k$ 会随时间线性增加。电子从能带底部 ($k=0$) 开始，起初 $m^*>0$，电子被正常加速。当它经过 $k=\pi/(2a)$ 时，$m^*$ 发散，速度达到最大。随后，进入 $k > \pi/(2a)$ 的区域，曲率变为负，有效质量变为负。此时，电子开始减速，即使外力没有改变！当电子到达布里渊区边界 $k=\pi/a$ 时，其群速度变为零。然后它会经历布拉格反射，跳到 $k=-\pi/a$，并重复整个过程。结果是电子在真实空间中进行一种周期性的振荡运动，而不是匀加速直线运动。电子可以达到的最大加速度发生在能带曲率最大的地方，对于余弦形式的能带，这发生在能带底部和顶部 [@problem_id:1811655]。
+这种[非抛物线性](@keyword=non_parabolicity|lang=zh-CN|style=Feynman)质会导致一些奇特的现象，例如**[布洛赫振荡](@keyword=bloch_oscillations|lang=zh-CN|style=Feynman)**（Bloch oscillations）。在一个恒定的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)中，电子的波矢 $k$ 会随时间线性增加。电子从能带底部 ($k=0$) 开始，起初 $m^*>0$，电子被正常加速。当它经过 $k=\pi/(2a)$ 时，$m^*$ 发散，速度达到最大。随后，进入 $k > \pi/(2a)$ 的区域，曲率变为负，有效质量变为负。此时，电子开始减速，即使外力没有改变！当电子到达[布里渊区](@keyword=brillouin_zone|lang=zh-CN|style=Feynman)边界 $k=\pi/a$ 时，其[群速度](@keyword=group_velocity|lang=zh-CN|style=Feynman)变为零。然后它会经历[布拉格反射](@keyword=bragg_reflection|lang=zh-CN|style=Feynman)，跳到 $k=-\pi/a$，并重复整个过程。结果是电子在真实空间中进行一种周期性的[振荡运动](@keyword=oscillatory_motion|lang=zh-CN|style=Feynman)，而不是[匀加速直线运动](@keyword=rectilinear_motion_with_constant_acceleration|lang=zh-CN|style=Feynman)。电子可以达到的最[大加速](@keyword=great_acceleration|lang=zh-CN|style=Feynman)度发生在能带曲率最大的地方，对于余弦形式的能带，这发生在能带底部和顶部 [@problem_id:1811655]。
 
-### 各向异性与有效质量张量
+### 各向异性与[有效质量张量](@keyword=effective_mass_tensor|lang=zh-CN|style=Feynman)
 
-到目前为止，我们的讨论大多局限于一维或各向同性的三维模型。然而，在真实的晶体中，原子排列在不同方向上往往是不同的。这种结构的各向异性（anisotropy）会导致能带结构 $E(\mathbf{k})$ 在 $k_x, k_y, k_z$ 方向上具有不同的形状。
+到目前为止，我们的讨论大多局限于一维或各向同性的三维模型。然而，在真实的晶体中，原子[排列](@keyword=permutation|lang=zh-CN|style=Feynman)在不同方向上往往是不同的。这种结构的各向异性（anisotropy）会导致能带结构 $E(\mathbf{k})$ 在 $k_x, k_y, k_z$ 方向上具有不同的形状。
 
-在这种情况下，加速度 $\mathbf{a}$ 和外力 $\mathbf{F}_{ext}$ 的方向通常不再是平行的。一个沿 $x$ 方向的力可能会产生一个同时具有 $x$ 和 $y$ 分量的加速度。为了描述这种复杂的响应，我们需要将标量的有效质量推广为**有效质量张量**（effective mass tensor）。半经典加速度方程写为：
+在这种情况下，加速度 $\mathbf{a}$ 和外力 $\mathbf{F}_{ext}$ 的方向通常不再是平行的。一个沿 $x$ 方向的力可能会产生一个同时具有 $x$ 和 $y$ 分量的加速度。为了描述这种复杂的响应，我们需要将标量的有效质量推广为**[有效质量张量](@keyword=effective_mass_tensor|lang=zh-CN|style=Feynman)**（effective mass tensor）。半经典加速度方程写为：
 $$ a_i = \sum_j (\mathbf{M}^{-1})_{ij} F_{ext,j} $$
-其中 $(\mathbf{M}^{-1})_{ij}$ 是**逆有效质量张量**（inverse effective mass tensor）的矩阵元，其定义为：
+其中 $(\mathbf{M}^{-1})_{ij}$ 是**逆[有效质量张量](@keyword=effective_mass_tensor|lang=zh-CN|style=Feynman)**（inverse effective mass tensor）的[矩阵元](@keyword=matrix_elements|lang=zh-CN|style=Feynman)，其定义为：
 $$ (\mathbf{M}^{-1})_{ij} = \frac{1}{\hbar^2} \frac{\partial^2 E}{\partial k_i \partial k_j} $$
 其中 $i, j$ 代表坐标方向（如 $x, y, z$）。
 
-例如，在一个假设的二维材料中，能带关系为 $E(k_x, k_y) = \alpha k_x^2 + \beta k_y^4$ [@problem_id:1811702]。我们可以计算逆有效质量张量的分量：
+例如，在一个假设的二维材料中，能带关系为 $E(k_x, k_y) = \alpha k_x^2 + \beta k_y^4$ [@problem_id:1811702]。我们可以计算逆[有效质量张量](@keyword=effective_mass_tensor|lang=zh-CN|style=Feynman)的分量：
 $$ (\mathbf{M}^{-1})_{xx} = \frac{1}{\hbar^2} \frac{\partial^2 E}{\partial k_x^2} = \frac{2\alpha}{\hbar^2} $$
 $$ (\mathbf{M}^{-1})_{yy} = \frac{1}{\hbar^2} \frac{\partial^2 E}{\partial k_y^2} = \frac{12\beta k_y^2}{\hbar^2} $$
 $$ (\mathbf{M}^{-1})_{xy} = \frac{1}{\hbar^2} \frac{\partial^2 E}{\partial k_x \partial k_y} = 0 $$
-这个结果表明，该材料的有效质量是各向异性的。沿 $x$ 方向的有效质量是一个常数，而沿 $y$ 方向的有效质量则依赖于电子的波矢 $k_y$。非对角项为零意味着沿主轴方向的力只会产生沿该主轴方向的加速度。如果非对角项不为零，则动力学行为会更加复杂。
+这个结果表明，该材料的[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)是各向异性的。沿 $x$ 方向的有效质量是一个常数，而沿 $y$ 方向的[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)则依赖于电子的[波矢](@keyword=wavevector|lang=zh-CN|style=Feynman) $k_y$。非对角项为零意味着沿[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)方向的力只会产生沿该[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)方向的加速度。如果非对角项不为零，则动力学行为会更加复杂。
 
-### 有效质量概念的局限性
+### [有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)概念的局限性
 
-尽管有效质量是一个极其成功的概念，但它的应用并非没有边界。它的有效性根植于半经典模型的两大核心假设：周期性势场和缓变外场。当这些假设不成立时，有效质量的概念就会失效。
+尽管[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)是一个极其成功的概念，但它的应用并非没有边界。它的有效性根植于半经典模型的两大核心假设：周期性势场和缓变外场。当这些假设不成立时，[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)的概念就会失效。
 
-最根本的限制来自于对**长程周期性序**的依赖。有效质量的整个理论框架，始于布洛赫定理和良好定义的能带结构 $E(\mathbf{k})$。而布洛赫定理本身是晶格具有平移对称性的直接结果。在**非晶态材料**（amorphous materials）如玻璃或非晶硅中，原子排列缺乏长程有序性。因此，平移对称性被破坏，晶体动量 $\hbar\mathbf{k}$ 不再是一个好的量子数，连续的 $E(\mathbf{k})$ 能带也就不复存在。既然没有能带结构，谈论其“曲率”自然也就没有意义了。因此，有效质量的概念对于描述非晶态材料中的载流子输运是根本不适用的 [@problem_id:1811713]。在这些材料中，电荷输运通常由更复杂的机制主导，例如在局域态之间的**跳跃输运**（hopping transport）。
+最根本的限制来自于对**长程周期性序**的依赖。[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)的整个理论框架，始于[布洛赫定理](@keyword=bloch_s_theorem|lang=zh-CN|style=Feynman)和良好定义的[能带结构](@keyword=band_structure|lang=zh-CN|style=Feynman) $E(\mathbf{k})$。而布洛赫定理本身是[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)具有[平移对称性](@keyword=translational_symmetry|lang=zh-CN|style=Feynman)的直接结果。在**[非晶态材料](@keyword=amorphous_materials|lang=zh-CN|style=Feynman)**（amorphous materials）如玻璃或[非晶硅](@keyword=amorphous_silicon|lang=zh-CN|style=Feynman)中，原子[排列](@keyword=permutation|lang=zh-CN|style=Feynman)缺乏[长程有序](@keyword=long_range_order|lang=zh-CN|style=Feynman)性。因此，[平移对称性](@keyword=translational_symmetry|lang=zh-CN|style=Feynman)被破坏，晶体动量 $\hbar\mathbf{k}$ 不再是一个好的量子数，连续的 $E(\mathbf{k})$ 能带也就不复存在。既然没有能带结构，谈论其“曲率”自然也就没有意义了。因此，[有效质量](@keyword=effective_mass|lang=zh-CN|style=Feynman)的概念对于描述[非晶态材料](@keyword=amorphous_materials|lang=zh-CN|style=Feynman)中的[载流子输运](@keyword=charge_carrier_transport|lang=zh-CN|style=Feynman)是根本不适用的 [@problem_id:1811713]。在这些材料中，[电荷输运](@keyword=charge_transport|lang=zh-CN|style=Feynman)通常由更复杂的机制主导，例如在局域态之间的**[跳跃输运](@entry_id:147344)**（hopping transport）。
 
-此外，即使在晶体中，如果外场变化太快或太强，使得电子在一个波长的距离内能量发生显著变化，或者当电子散射非常频繁以至于其波包在两次散射之间无法形成时，半经典近似本身也会失效。在这些情况下，也需要使用更完整的量子输运理论。
+此外，即使在晶体中，如果外场变化太快或太强，使得电子在一个波长的距离内能量发生显著变化，或者当[电子散射](@keyword=electron_scattering|lang=zh-CN|style=Feynman)非常频繁以至于其波包在两次散射之间无法形成时，[半经典近似](@keyword=semiclassical_approximation|lang=zh-CN|style=Feynman)本身也会失效。在这些情况下，也需要使用更完整的[量子输运](@keyword=quantum_transport|lang=zh-CN|style=Feynman)理论。
 
 总而言之，有效质量是一个强大而精妙的理论工具。它将复杂的量子力学问题（电子与周期势场的相互作用）巧妙地转化为一个经典力学框架下的参数，极大地简化了我们对晶体中电子动力学的理解，并为半导体器件的设计和分析提供了理论基石。然而，作为学术研究者，我们也必须时刻铭记其理论边界，认识到它只是真实物理世界的一个深刻而有效的近似。

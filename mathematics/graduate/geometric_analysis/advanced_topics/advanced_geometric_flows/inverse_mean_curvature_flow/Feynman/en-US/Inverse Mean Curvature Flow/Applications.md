@@ -62,7 +62,7 @@ While its most celebrated application is in general relativity, the IMCF is a co
 
 What happens in a [curved space](@keyword=curved_space|lang=en-US|style=Feynman), say, the negatively curved **hyperbolic space** $\mathbb{H}^n$? The background curvature fights against the flow. A calculation shows that the radius $r(t)$ of a geodesic sphere now evolves according to a much different law [@problem_id:3031186]:
 $$
-r(t) = \arcsinh\left(\sinh(r_0) \exp\left(\frac{t}{n-1}\right)\right)
+r(t) = \operatorname{arcsinh}\left(\sinh(r_0) \exp\left(\frac{t}{n-1}\right)\right)
 $$
 The expansion is tamed by the negative curvature, providing a beautiful example of the intricate dance between a flow and the geometry of its stage.
 

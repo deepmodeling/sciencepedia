@@ -44,7 +44,7 @@
 
 许多全波方法的核心在于需要求解一个巨大的线性方程组，通常写为 $A \mathbf{x} = \mathbf{b}$，其中 $A$ 是一个代表物理相互作用的巨大矩阵。求解这个系统是主要的计算瓶颈。迭代求解器通过从一个猜测开始并逐步 refining it 来解决这个问题。它们收敛的速度在很大程度上取决于矩阵 $A$ 的性质。
 
-这时，[渐近方法](@keyword=asymptotic_methods|lang=zh-CN|style=Feynman)的灵光一闪就能创造奇迹 [@problem_id:3315416]。根据高频理论，我们对于算子 $A$ 的“最重要”部分有一个很好的概念。我们可以构造一个简单得多的算子，一个渐近“拟基本解 (parametrix)” $P$，它捕捉了这种主导阶的物理。虽然 $P$ 不是 $A$ 的真正逆，但它是一个极好的近似，尤其是在高频时。然后我们可以用这个简单的算子来“[预处理](@keyword=preconditioning|lang=zh-CN|style=Feynman)”我们的原始系统。我们不再求解 $A \mathbfx = \mathbf{b}$，而是求解 $(P^{-1}A) \mathbf{x} = P^{-1}\mathbf{b}$。因为我们的拟基本解 $P$ 是 $A$ 的一个良好近似，预处理后的矩阵 $P^{-1}A$ 现在非常接近单位矩阵。一个[迭代求解器](@keyword=iterative_solvers|lang=zh-CN|style=Feynman)可以以惊人的速度处理这样的系统。随着频率增加，[渐近近似](@keyword=asymptotic_approximation|lang=zh-CN|style=Feynman)变得更好，预处理后的矩阵更接近单位矩阵，解只需几次迭代就能找到。这是一个利用物理学来驯服数学野兽的漂亮例子。
+这时，[渐近方法](@keyword=asymptotic_methods|lang=zh-CN|style=Feynman)的灵光一闪就能创造奇迹 [@problem_id:3315416]。根据高频理论，我们对于算子 $A$ 的“最重要”部分有一个很好的概念。我们可以构造一个简单得多的算子，一个渐近“拟基本解 (parametrix)” $P$，它捕捉了这种主导阶的物理。虽然 $P$ 不是 $A$ 的真正逆，但它是一个极好的近似，尤其是在高频时。然后我们可以用这个简单的算子来“[预处理](@keyword=preconditioning|lang=zh-CN|style=Feynman)”我们的原始系统。我们不再求解 $A \mathbf{x} = \mathbf{b}$，而是求解 $(P^{-1}A) \mathbf{x} = P^{-1}\mathbf{b}$。因为我们的拟基本解 $P$ 是 $A$ 的一个良好近似，预处理后的矩阵 $P^{-1}A$ 现在非常接近单位矩阵。一个[迭代求解器](@keyword=iterative_solvers|lang=zh-CN|style=Feynman)可以以惊人的速度处理这样的系统。随着频率增加，[渐近近似](@keyword=asymptotic_approximation|lang=zh-CN|style=Feynman)变得更好，预处理后的矩阵更接近单位矩阵，解只需几次迭代就能找到。这是一个利用物理学来驯服数学野兽的漂亮例子。
 
 ### 视角的力量
 

@@ -20,12 +20,12 @@
 
 在很长一段时间里，Ш 是如此神秘，以至于人们甚至不知道它是否总是有限的。正是在这里，[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)提供了一个惊人的启示。有一个基本而优美的[短正合序列](@keyword=short_exact_sequence|lang=zh-CN|style=Feynman)，它就像一张宇宙资产负债表，连接了我们这三个群：
 
-$$0 \longrightarrow E(\mathbb{Q})/2E(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(2)}(E/\mathbb{Q}) \longrightarrow \Sha(E/\mathbb{Q})[2] \longrightarrow 0$$
+$$0 \longrightarrow E(\mathbb{Q})/2E(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(2)}(E/\mathbb{Q}) \longrightarrow \mathrm{Ш}(E/\mathbb{Q})[2] \longrightarrow 0$$
 
 简单来说，由于这些都是[有限群](@keyword=finite_groups|lang=zh-CN|style=Feynman)，这意味着它们的大小由一个简单的乘积关系联系在一起：
-$$|\mathrm{Sel}^{(2)}(E/\mathbb{Q})| = |E(\mathbb{Q})/2E(\mathbb{Q})| \cdot |\Sha(E/\mathbb{Q})[2]|$$
+$$|\mathrm{Sel}^{(2)}(E/\mathbb{Q})| = |E(\mathbb{Q})/2E(\mathbb{Q})| \cdot |\mathrm{Ш}(E/\mathbb{Q})[2]|$$
 
-这个方程是一个奇迹。在左边，我们有[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小，这是我们可以（通过艰苦工作）计算出来的东西！在右边，我们有两项。第一项 $|E(\mathbb{Q})/2E(\mathbb{Q})|$ 与曲线的秩 $r$（独立有理点的数量）及其有理 2-[挠点](@keyword=torsion_points|lang=zh-CN|style=Feynman)有关。第二项 $|\Sha(E/\mathbb{Q})[2]|$ 是神秘的[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman)的 2-挠部分的大小。
+这个方程是一个奇迹。在左边，我们有[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小，这是我们可以（通过艰苦工作）计算出来的东西！在右边，我们有两项。第一项 $|E(\mathbb{Q})/2E(\mathbb{Q})|$ 与曲线的秩 $r$（独立有理点的数量）及其有理 2-[挠点](@keyword=torsion_points|lang=zh-CN|style=Feynman)有关。第二项 $|\mathrm{Ш}(E/\mathbb{Q})[2]|$ 是神秘的[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman)的 2-挠部分的大小。
 
 想一想这意味着什么。如果我们能计算出[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)，并独立地确定曲线的秩，这个方程就能让我们*衡量障碍群 Ш 的大小*。我们可以用一个可计算的对象来掌握数学中最神秘的对象之一。例如，如果我们给定一条秩 $r=1$ 且其有理2-[挠群](@keyword=torsion_group|lang=zh-CN|style=Feynman)大小为2的曲线，并且我们计算出其2-[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小为16，这张资产负债表就会迫使其[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman)的2-部分大小为4 [@problem_id:3013177]。我们窥探了深渊，并测量了它的一部分。
 

@@ -30,7 +30,7 @@ Heegner关于类数为一问题的原始证明起初遭到了质疑，但他的�
 
 这个里程碑式的定理指出，$L$-函数在 $s=1$ 处的一阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)与一个特殊构造的黑格纳点的**Néron-Tate高**成正比 [@problem_id:3024975]。点的高度是其算术复杂性的度量；[扭点](@keyword=torsion_points|lang=zh-CN|style=Feynman)的高度为零，而无限阶点的高度为正。因此，[Gross-Zagier定理](@keyword=gross_zagier_theorem|lang=zh-CN|style=Feynman)可以这样解读：如果$L$-函数展现出秩为一曲线的特征（即，$L'(E,1) \ne 0$），那么我们构造的黑格纳点*必定*具有正的高度，因此它必定是我们所寻找的无限阶点了！ [@problem_id:3024998]
 
-这是一个分水岭时刻。它提供了一种[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)来构造BSD猜想所预测存在的点。但故事并未就此结束。数学家Victor Kolyvagin利用这个珍贵的黑格纳点，通过生成一系列相关的点（一个“[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)”），成功地证明了秩*恰好*为一，并且，与曲线相关的另一个神秘对象——[Tate-Shafarevich群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) ($\Sha$)——是有限的 [@problem_id:3024971] [@problem_id:3029562]。
+这是一个分水岭时刻。它提供了一种[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)来构造BSD猜想所预测存在的点。但故事并未就此结束。数学家Victor Kolyvagin利用这个珍贵的黑格纳点，通过生成一系列相关的点（一个“[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)”），成功地证明了秩*恰好*为一，并且，与曲线相关的另一个神秘对象——[Tate-Shafarevich群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) ($\mathrm{Ш}$)——是有限的 [@problem_id:3024971] [@problem_id:3029562]。
 
 [Gross-Zagier定理](@keyword=gross_zagier_theorem|lang=zh-CN|style=Feynman)与Kolyvagin工作的结合，为BSD猜想的研究提供了迄今为止最重要的进展。它验证了大量[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为0和1的[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的猜想。这项工作甚至使我们非常接近于证明秩为一情况下 $L$-函数首项的完整BSD公式，其值与真实值仅[相差](@keyword=phase_contrast|lang=zh-CN|style=Feynman)一个有理数完全平方的因子 [@problem_id:3024981]。当然，所有的技术条件都必须恰好满足；正如可以计算的那样，如果定理的假设不被满足，该理论能正确地预测所构造的黑格纳点仅仅是一个高度为零的[扭点](@keyword=torsion_points|lang=zh-CN|style=Feynman)，不会产生任何有价值的结果 [@problem_id:1124594]。这种精确性正是其魔力的一部分。
 

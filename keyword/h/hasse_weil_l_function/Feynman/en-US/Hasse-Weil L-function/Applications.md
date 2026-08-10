@@ -22,13 +22,13 @@ To see this in action, consider a hypothetical curve that has bad, split multipl
 #### The Quantitative Formula: A Cosmic Recipe
 
 The parity conjecture is just the beginning. The full BSD conjecture makes a quantitative statement about the L-function's value at $s=1$. If the rank $r$ is positive, $L(E,1)$ should be zero, and the conjecture describes the first non-zero term of its Taylor series. But if the rank is 0, the value $L(E,1)$ itself is non-zero and predicted to be a rich cocktail of the curve's fundamental arithmetic and [geometric invariants](@keyword=geometric_invariants|lang=en-US|style=Feynman):
-$$ L(E,1) = \frac{\Omega_E \cdot |\Sha(E/\mathbb{Q})| \cdot \prod_p c_p}{|E(\mathbb{Q})_{\text{tors}}|^2} $$
+$$ L(E,1) = \frac{\Omega_E \cdot |\mathrm{Ш}(E/\mathbb{Q})| \cdot \prod_p c_p}{|E(\mathbb{Q})_{\text{tors}}|^2} $$
 
 This formula is a symphony of beautiful ideas. On the left, we have a single analytic value. On the right, we have a collection of arithmetic quantities:
 *   $\Omega_E$: The real period, a number coming from an integral that measures the geometric size of the curve.
 *   $\text{Reg}(E)$: The regulator, which measures the "density" or complexity of the infinite solutions. (For rank 0, this term is defined as 1 and does not appear in the leading-order formula).
 *   $|E(\mathbb{Q})_{\text{tors}}|^2$: The size of the [torsion group](@keyword=torsion_group|lang=en-US|style=Feynman)—the "obvious," finite-order solutions—squared.
-*   $|\Sha(E/\mathbb{Q})|$: The order of the mysterious Tate-Shafarevich group, measuring subtle obstructions to finding solutions locally versus globally.
+*   $|\mathrm{Ш}(E/\mathbb{Q})|$: The order of the mysterious Tate-Shafarevich group, measuring subtle obstructions to finding solutions locally versus globally.
 *   $\prod_p c_p$: The product of local Tamagawa numbers, capturing information at the primes of bad reduction.
 
 For the famous lemniscatic elliptic curve $y^2 = x^3 - x$, which is known to have rank 0, this conjecture is a proven theorem. Its L-function value at $s=1$ is found to be directly proportional to its real period, a value obtained by calculating a classical [elliptic integral](@keyword=elliptic_integral|lang=en-US|style=Feynman). This provides a stunning confirmation of the connection between the curve's analytic "shadow" and its fundamental geometric shape [@problem_id:689715]. The other factors in the formula are also crucial. For example, the term $|E(\mathbb{Q})_{\text{tors}}|^2$ in the denominator accounts for the curve's trivial solutions. By analyzing the curve's equation over small finite fields, we can deduce the size of this [torsion group](@keyword=torsion_group|lang=en-US|style=Feynman); for some curves it might be trivial (size 1), while for others it is not, and this integer factor appears precisely as predicted in the denominator of the grand formula [@problem_id:3024978] [@problem_id:712011].

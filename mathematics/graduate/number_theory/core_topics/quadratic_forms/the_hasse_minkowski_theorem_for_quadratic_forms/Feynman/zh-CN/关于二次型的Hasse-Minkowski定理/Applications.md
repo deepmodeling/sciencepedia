@@ -79,8 +79,8 @@ $$ 3x^3 + 4y^3 + 5z^3 = 0 $$
 
 [局部-全局原理](@keyword=hasse_principle|lang=zh-CN|style=Feynman)在这里失效了。所有局部的“绿灯”加起来，却未能导向一个全局的“通行”。为什么会这样？
 
-这标志着我们从熟悉的、平坦的二次型世界，进入了充满曲折和拓扑障碍的高次曲线世界。光滑的三次曲线（椭圆曲线）拥有更丰富的[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)。它们的解集不再能简单地通过参数化来描述。这种失败的根源在于一个名为 **Tate-Shafarevich 群**（记作 $\Sha$）的神秘对象。这个群的非零元素，恰恰对应于那些“处处局部可解，但全局无解”的[代数几何](@keyword=algebraic_geometry|lang=zh-CN|style=Feynman)对象。[塞尔默曲线](@keyword=selmer_curve|lang=zh-CN|style=Feynman)就是由 $\Sha$ 群中一个非零元素所代表的第一个具体例子 [@problem_id:3027894]。
+这标志着我们从熟悉的、平坦的二次型世界，进入了充满曲折和拓扑障碍的高次曲线世界。光滑的三次曲线（椭圆曲线）拥有更丰富的[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)。它们的解集不再能简单地通过参数化来描述。这种失败的根源在于一个名为 **Tate-Shafarevich 群**（记作 $\mathrm{Ш}$）的神秘对象。这个群的非零元素，恰恰对应于那些“处处局部可解，但全局无解”的[代数几何](@keyword=algebraic_geometry|lang=zh-CN|style=Feynman)对象。[塞尔默曲线](@keyword=selmer_curve|lang=zh-CN|style=Feynman)就是由 $\mathrm{Ш}$ 群中一个非零元素所代表的第一个具体例子 [@problem_id:3027894]。
 
-我们可以做一个类比。二次型的世界好比牛顿物理学，清晰、确定，局部性质决定全局行为。而三次及更高次的世界，则更像广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)和量子力学。在这里，空间本身（或者说，代数簇的内在几何）变得弯曲和复杂。存在着某种“拓扑缠结”或“[量子效应](@keyword=quantum_effects|lang=zh-CN|style=Feynman)”（由 $\Sha$ 群衡量），使得即使所有局部碎片都能完美吻合，也无法将它们无缝地拼成一个完整的全局图像。
+我们可以做一个类比。二次型的世界好比牛顿物理学，清晰、确定，局部性质决定全局行为。而三次及更高次的世界，则更像广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)和量子力学。在这里，空间本身（或者说，代数簇的内在几何）变得弯曲和复杂。存在着某种“拓扑缠结”或“[量子效应](@keyword=quantum_effects|lang=zh-CN|style=Feynman)”（由 $\mathrm{Ш}$ 群衡量），使得即使所有局部碎片都能完美吻合，也无法将它们无缝地拼成一个完整的全局图像。
 
 因此，哈斯-[闵可夫斯基定理](@keyword=minkowski_s_theorems|lang=zh-CN|style=Feynman)不仅为我们解决了一大类问题，它还为我们指明了边界。它在[二次型](@keyword=quadratic_forms|lang=zh-CN|style=Feynman)的世界里建立了一个完美的秩序，同时也反衬出更高次方程世界中那些等待着我们去探索的、更深邃的未知与混沌。这正是数学之美的体现：每一个伟大的定理，既是知识的巅峰，也是通往更广阔未知世界的起点。

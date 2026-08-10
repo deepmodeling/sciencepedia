@@ -48,16 +48,16 @@ Poitou-Tate 序列是对“全局真理”与“所有局部真理”集合之�
 
 ### 寂静之声：用 Cassels-Tate 配对构造无形之物
 
-我们现在来到了交响乐的惊人高潮：一个应用于现[代数学](@keyword=algebra|lang=zh-CN|style=Feynman)中最神秘的对象之一——**Tate-Shafarevich 群** (Tate-Shafarevich group)，记作 $\Sha(E/K)$。对于一个[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman) $E$，这个群衡量了“[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)”的失效程度 [@problem_id:3025033]。$\Sha(E/K)$ 的一个元素是一种幻影——一个全局上同调类，当从任何单一素数 $p$ 的角度看时，它都显示为零。它在每个局部都是平凡的，但在全局上却非平凡。几十年来，这些群是如此幽灵般的存在，以至于甚至不清楚它们是否可以非零。它们真正代表了椭圆曲线算术中的“寂静之声”。
+我们现在来到了交响乐的惊人高潮：一个应用于现[代数学](@keyword=algebra|lang=zh-CN|style=Feynman)中最神秘的对象之一——**Tate-Shafarevich 群** (Tate-Shafarevich group)，记作 $\mathrm{Ш}(E/K)$。对于一个[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman) $E$，这个群衡量了“[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)”的失效程度 [@problem_id:3025033]。$\mathrm{Ш}(E/K)$ 的一个元素是一种幻影——一个全局上同调类，当从任何单一素数 $p$ 的角度看时，它都显示为零。它在每个局部都是平凡的，但在全局上却非平凡。几十年来，这些群是如此幽灵般的存在，以至于甚至不清楚它们是否可以非零。它们真正代表了椭圆曲线算术中的“寂静之声”。
 
 如何才能把握这样一个难以捉摸的对象？答案奇迹般地来[自对偶性](@keyword=self_duality|lang=zh-CN|style=Feynman)。当将宏大的 Poitou-Tate 对偶性机制应用于与椭圆曲线相关的模时，便在这个幻影群上产生了一个规范的配对：**Cassels-Tate 配对** (Cassels-Tate pairing) [@problem_id:3022303]。
-$$ \langle \cdot, \cdot \rangle : \Sha(E/K) \times \Sha(E/K) \longrightarrow \mathbb{Q}/\mathbb{Z} $$
+$$ \langle \cdot, \cdot \rangle : \mathrm{Ш}(E/K) \times \mathrm{Ш}(E/K) \longrightarrow \mathbb{Q}/\mathbb{Z} $$
 这个配对仿佛魔术般地被构造为源自[杯积](@keyword=cup_product|lang=zh-CN|style=Feynman)、曲线上[挠点](@keyword=torsion_points|lang=zh-CN|style=Feynman)的 Weil 配对以及[局部不变量](@keyword=local_invariants|lang=zh-CN|style=Feynman)映射的无穷个局部配对之和。一个深刻的全局[互反律](@keyword=reciprocity_laws|lang=zh-CN|style=Feynman)确保了这个无穷和是良定义的，并给出一个在 $\mathbb{Q}/\mathbb{Z}$ 中的值。
 
 这个配对具有由 J.W.S. Cassels 和 John Tate 确立的真正非凡的性质：
 1.  该配对是**交错的** (alternating)，意味着任何元素与自身的配对 $\langle x, x \rangle$ 总是为零。
-2.  配对的核——与所有元素配对为零的元素集合——恰好是 $\Sha(E/K)$ 的**最大可除[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)** (maximal divisible subgroup)。如果一个[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)内的方程 $ny=x$ 总有解，则该[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)是可除的。
+2.  配对的核——与所有元素配对为零的元素集合——恰好是 $\mathrm{Ш}(E/K)$ 的**最大可除[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)** (maximal divisible subgroup)。如果一个[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)内的方程 $ny=x$ 总有解，则该[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)是可除的。
 
-这些性质带来了一个惊人的推论。[抽象代数](@keyword=abstract_algebra|lang=zh-CN|style=Feynman)的一个定理指出，如果一个[有限阿贝尔群](@keyword=finite_abelian_groups|lang=zh-CN|style=Feynman)上存在一个非退化的交错配对，它的阶**必须是一个完全平方数**。著名的 **Birch and Swinnerton-Dyer 猜想**预测 Tate-Shafarevich 群是有限的。如果这是真的，那么它的可除部分必须是平凡的，使得 Cassels-Tate 配对非退化。因此，抽象的对偶性原则做出了一个具体的、可证伪的预测：这个幽灵般的群 $\Sha(E/K)$ 的阶，如果有限，必须是 $1, 4, 9, 16, \dots$ 或其他完全平方数 [@problem_id:3022303]。
+这些性质带来了一个惊人的推论。[抽象代数](@keyword=abstract_algebra|lang=zh-CN|style=Feynman)的一个定理指出，如果一个[有限阿贝尔群](@keyword=finite_abelian_groups|lang=zh-CN|style=Feynman)上存在一个非退化的交错配对，它的阶**必须是一个完全平方数**。著名的 **Birch and Swinnerton-Dyer 猜想**预测 Tate-Shafarevich 群是有限的。如果这是真的，那么它的可除部分必须是平凡的，使得 Cassels-Tate 配对非退化。因此，抽象的对偶性原则做出了一个具体的、可证伪的预测：这个幽灵般的群 $\mathrm{Ш}(E/K)$ 的阶，如果有限，必须是 $1, 4, 9, 16, \dots$ 或其他完全平方数 [@problem_id:3022303]。
 
 这就是 Tate 对偶性的力量和美。它是一条金线，从一个[有限群](@keyword=finite_groups|lang=zh-CN|style=Feynman)的简单对称性延伸到全局数域的宏伟结构，为我们所知的最神秘的对象施加了一种隐藏的、刚性的结构。它证明了数学深刻的统一性，即一个单一、优雅的对称性原则可以照亮数值宇宙最深邃、最黑暗的角落。

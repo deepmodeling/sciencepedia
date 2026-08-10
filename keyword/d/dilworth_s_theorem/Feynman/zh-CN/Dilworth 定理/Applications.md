@@ -32,6 +32,6 @@ Dilworth 定理，在一个有时被称为 Mirsky 定理的略微不同的形式
 
 在[理论计算机科学](@keyword=computer_science_theory|lang=zh-CN|style=Feynman)中，人们可以通过它们接受的语言来比较不同的计算模型，如图灵机。如果机器 $M_i$ 的语言是机器 $M_j$ 语言的子集，我们可以说机器 $M_i$ 先于 $M_j$。这在机器空间上定义了一个偏序。找到最大的机器集合，其中任意两个都不能以这种方式进行比较，这给了我们衡量该集合中计算能力“广度”或多样性的一个指标 [@problem_id:1363699]。它告诉我们其中代表了多少种根本不同的计算任务。
 
-也许最令人惊叹的飞跃是进入[抽象代数](@keyword=abstract_algebra|lang=zh-CN|style=Feynman)的世界。[伽罗瓦理论基本定理](@keyword=fundamental_theorem_of_galois_theory|lang=zh-CN|style=Feynman)在多项式方程的解与相应群的结构之间建立了深刻的联系。该理论涉及研究介于一个小域（例如有理数域 $\mathbb{Q}$）和一个更大的扩张域（如 $\mathbbQ(\sqrt{2}, i)$）之间的[中间域](@keyword=intermediate_fields|lang=zh-CN|style=Feynman)格。这些域的集合在集合包含关系下形成了一个偏序集。如果我们问，要组织这整个结构最少需要多少个域的“塔”（包含关系的链），Dilworth 定理再次提供了答案：它等于相互不可比的[中间域](@keyword=intermediate_fields|lang=zh-CN|style=Feynman)的最大数量 [@problem_id:1363686]。一个源于简单调度问题的定理，竟能阐明数学中最深刻、最美丽的学科之一的结构，这有力地证明了科学思想的统一性。
+也许最令人惊叹的飞跃是进入[抽象代数](@keyword=abstract_algebra|lang=zh-CN|style=Feynman)的世界。[伽罗瓦理论基本定理](@keyword=fundamental_theorem_of_galois_theory|lang=zh-CN|style=Feynman)在多项式方程的解与相应群的结构之间建立了深刻的联系。该理论涉及研究介于一个小域（例如有理数域 $\mathbb{Q}$）和一个更大的扩张域（如 $\mathbb{Q}(\sqrt{2}, i)$）之间的[中间域](@keyword=intermediate_fields|lang=zh-CN|style=Feynman)格。这些域的集合在集合包含关系下形成了一个偏序集。如果我们问，要组织这整个结构最少需要多少个域的“塔”（包含关系的链），Dilworth 定理再次提供了答案：它等于相互不可比的[中间域](@keyword=intermediate_fields|lang=zh-CN|style=Feynman)的最大数量 [@problem_id:1363686]。一个源于简单调度问题的定理，竟能阐明数学中最深刻、最美丽的学科之一的结构，这有力地证明了科学思想的统一性。
 
 从调度软件到排序序列，从设计药物到剖析方程的对称性，Dilworth 定理都证明了它的价值。它是一个理解并行广度与顺序深度之间权衡的通用工具，一个为这个奇妙复杂的世界带来惊人秩序的原理。

@@ -37,7 +37,7 @@ t_0 = \int_{0}^{1} \frac{da}{a H(a)}
 $$
 where $H(a) = H_0 \sqrt{\Omega_{m,0} a^{-3} + (1-\Omega_{m,0})}$. Miraculously, this integral can be solved analytically, yielding a beautiful expression for the age of our universe [@problem_id:1854483]:
 $$
-t_0 = \frac{2}{3 H_{0} \sqrt{1-\Omega_{m,0}}}\,\arcsinh\! \left(\sqrt{\frac{1-\Omega_{m,0}}{\Omega_{m,0}}}\right)
+t_0 = \frac{2}{3 H_{0} \sqrt{1-\Omega_{m,0}}}\,\operatorname{arcsinh}\! \left(\sqrt{\frac{1-\Omega_{m,0}}{\Omega_{m,0}}}\right)
 $$
 Plugging in the best modern measurements from missions like the Planck satellite ($H_0 \approx 67.4$ km/s/Mpc, $\Omega_{m,0} \approx 0.315$), this cosmic clock gives us our current best estimate for the age of the universe: **13.8 billion years**.
 

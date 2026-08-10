@@ -56,7 +56,7 @@ Here, $j_0$ is the **exchange current density**, a measure of the intrinsic cata
 
 For many reactions, it is a reasonable approximation to assume a symmetric energy barrier, where $\alpha_a = \alpha_c = 0.5$. Under this assumption, the Butler-Volmer equation can be expressed using the hyperbolic sine function. To find the overpotential required to drive a certain current, we can invert this relationship:
 
-$$ \eta_{\text{act}} = \frac{2RT}{nF} \arcsinh\left(\frac{j}{2j_0}\right) $$
+$$ \eta_{\text{act}} = \frac{2RT}{nF} \operatorname{arcsinh}\left(\frac{j}{2j_0}\right) $$
 
 For example, to drive the oxygen evolution reaction (OER, $n=4$) at an electrolyzer anode to a current density of $j=1.0\,\mathrm{A/cm^2}$ at $80^{\circ}\mathrm{C}$, given a symmetric catalyst with $j_0=0.10\,\mathrm{A/cm^2}$, an activation overpotential of approximately $0.035\,\mathrm{V}$ is required [@problem_id:4087822].
 
@@ -68,7 +68,7 @@ Rearranging this equation to solve for $\eta_{\text{act}}$ yields the **Tafel eq
 
 $$ \eta_{\text{act}} = \frac{RT}{\alpha_a nF} \ln\left(\frac{j}{j_0}\right) $$
 
-This equation shows a linear relationship between activation overpotential and the logarithm of the current density. The pre-logarithmic term, $b = \frac{RT}{\alpha_a nF}$, is known as the **Tafel slope**. It represents the overpotential required to increase the current density by a factor of $e$. The Tafel slope is a critical diagnostic parameter: it is directly proportional to temperature and inversely proportional to the effective charge [transfer coefficient](@entry_id:264443), providing insight into the reaction mechanism and the effectiveness of the applied potential in accelerating the reaction [@problem_id:4087778].
+This equation shows a linear relationship between activation overpotential and the logarithm of the current density. The pre-logarithmic term, $b = \frac{RT}{\alpha_a nF}$, is known as the **Tafel slope**. It represents the overpotential required to increase the current density by a factor of $e$. The Tafel slope is a critical diagnostic parameter: it is directly proportional to temperature and inversely proportional to the effective charge [transfer coefficient](@keyword=transfer_coefficient|lang=en-US|style=Feynman), providing insight into the reaction mechanism and the effectiveness of the applied potential in accelerating the reaction [@problem_id:4087778].
 
 ### Ohmic Overpotential: The Resistance to Charge Flow
 

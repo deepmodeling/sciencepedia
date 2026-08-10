@@ -57,6 +57,6 @@ $d_{\text{geodesic}} = \sqrt{(R\Delta\theta)^2 + (z_2 - z_1)^2}$
 
 这种弯曲空间的概念为[非欧几何](@keyword=non_euclidean_geometry|lang=zh-CN|style=Feynman)打开了大门。考虑**[庞加莱圆盘](@keyword=poincaré_disk|lang=zh-CN|style=Feynman)**，这是一个存在于圆内的双曲宇宙模型。在这个宇宙中，线元——无穷小距离的基本度量——被定义为 $ds^2 = 4|dz|^2 / (1-|z|^2)^2$。这个度规告诉我们，从一个居民的角度来看，当你接近圆盘的边界时，距离会被拉伸。在中心附近的一步只覆盖了很小的“双曲距离”，而在边缘附近的同样大小的一步却覆盖了巨大的距离。[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)不再是直线，而是与边界成直角相交的圆弧。在这个奇怪的世界里，两点 $z_1$ 和 $z_2$ 之间的距离公式完全不同：
 
-$d_H(z_1, z_2) = 2 \arctanh\left(\left|\frac{z_1-z_2}{1-\overline{z_1}z_2}\right|\right)$
+$d_H(z_1, z_2) = 2 \operatorname{arctanh}\left(\left|\frac{z_1-z_2}{1-\overline{z_1}z_2}\right|\right)$
 
 这个公式 [@problem_id:1652521] 表明，“距离”不是一个仅由 Pythagoras 定义的固定、普适的概念。它是空间本身的属性。我们可以定义不同的距离测量规则，从而创造出全新且自洽的几何学。这不仅仅是一个数学上的奇想；它正是 Einstein 的广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)的精髓，其中引力不是一种力，而是时空曲率的表现。行星和光线在这个弯曲的[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中沿着[测地线运动](@keyword=geodesic_motion|lang=zh-CN|style=Feynman)，在一个其几何形状由质量和能量决定的宇宙中，遵循最短的可能路径。从一个简单的三角形，我们已经来到了宇宙的结构本身。

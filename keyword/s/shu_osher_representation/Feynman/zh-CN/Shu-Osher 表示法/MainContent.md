@@ -35,7 +35,7 @@ $$
 
 看括号里的项！它就是从前一阶段 $\mathbf{U}^{(j)}$ 开始的一个前向欧拉步，其有效时间步长为 $\frac{\beta_{ij}}{\alpha_{ij}} \Delta t$。因此，整个公式表明，每个新阶段 $\mathbf{U}^{(i)}$ 仅仅是一系列“微型”前向欧拉步的凸组合（权重为正的 $\alpha_{ij}$ 的加权平均）。[@problem_id:3317325]
 
-这就是魔力所在。由于[前向欧拉法](@keyword=forward_euler_method|lang=zh-CN|style=Feynman)是稳定的，而稳定状态的凸组合也是稳定的，这种结构保证了在计算的每一个阶段都保持稳定性。如果我们从一个“好”的解 $\mathbf{U}^n$ 开始，并且每个 $\mathbf{U}^{(i)}$ 都以这种方式构建，那么最终结果 $\mathbfU^{n+1}$ 也将是“好”的。稳定性被牢牢鎖定。[@problem_id:3590118]
+这就是魔力所在。由于[前向欧拉法](@keyword=forward_euler_method|lang=zh-CN|style=Feynman)是稳定的，而稳定状态的凸组合也是稳定的，这种结构保证了在计算的每一个阶段都保持稳定性。如果我们从一个“好”的解 $\mathbf{U}^n$ 开始，并且每个 $\mathbf{U}^{(i)}$ 都以这种方式构建，那么最终结果 $\mathbf{U}^{n+1}$ 也将是“好”的。稳定性被牢牢鎖定。[@problem_id:3590118]
 
 ### 稳定性的代价：SSP 系数
 

@@ -1,84 +1,84 @@
 ## 引言
-光化学，作为一门研究光与物质相互作用及其所引发化学效应的学科，在自然界（如光合作用）和现代科技（如光刻技术、光动力疗法）中扮演着至关重要的角色。与热驱动的反应不同，光化学反应通过特定波长的光子精确地激发分子，从而开启独特的反应路径。然而，一个核心问题随之而来：我们如何定量地描述光能转化为化学产物的效率？又如何精确测量驱动反应的“光剂量”？这正是理解和控制光化学过程的关键所在。
+光化学，作为一门研究[光与物质相互作用](@keyword=light_matter_interaction|lang=zh-CN|style=Feynman)及其所引发化学效应的学科，在自然界（如光合作用）和现代科技（如光刻技术、[光动力疗法](@keyword=photodynamic_therapy|lang=zh-CN|style=Feynman)）中扮演着至关重要的角色。与热驱动的反应不同，光化学反应通过特定波长的[光子](@entry_id:145192)精确地激发分子，从而开启独特的反应路径。然而，一个核心问题随之而来：我们如何定量地描述光能转化为化学产物的效率？又如何精确测量驱动反应的“光剂量”？这正是理解和控制[光化学](@keyword=photochemistry|lang=zh-CN|style=Feynman)过程的关键所在。
 
-本文旨在系统性地解答这些问题。我们将深入探讨光化学的基石，重点介绍衡量光化学效率的核心标尺——量子产率，并详细阐述精确测量光强的标准实验方法——化学光量法。通过学习本文，您将能够：
+本文旨在系统性地解答这些问题。我们将深入探讨[光化学](@keyword=photochemistry|lang=zh-CN|style=Feynman)的基石，重点介绍衡量[光化学效率](@keyword=photochemical_efficiency|lang=zh-CN|style=Feynman)的核心标尺——[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman)，并详细阐述精确测量光强的标[准实验方法](@keyword=quasi_experimental_methods|lang=zh-CN|style=Feynman)——化学光量法。通过学习本文，您将能够：
 
-*   在“原理与机制”一章中，理解光化学的基本定律、量子产率的定义及其如何揭示反应机理，并掌握激发态动力学竞争如何决定反应效率。
-*   在“应用与交叉学科联系”一章中，探索量子产率和化学光量法在化学、生物学、环境科学和工程学等不同领域中的实际应用和重要作用。
+*   在“原理与机制”一章中，理解[光化学](@keyword=photochemistry|lang=zh-CN|style=Feynman)的基本定律、[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman)的定义及其如何揭示反应机理，并掌握[激发态动力学](@keyword=excited_state_dynamics_2|lang=zh-CN|style=Feynman)竞争如何决定反应效率。
+*   在“应用与[交叉](@keyword=chiasmata|lang=zh-CN|style=Feynman)学科联系”一章中，探索量子产率和化学光量法在化学、生物学、[环境科学](@keyword=environmental_science|lang=zh-CN|style=Feynman)和工程学等不同领域中的实际应用和重要作用。
 *   在“动手实践”一章中，通过具体的计算练习，将理论知识应用于解决实际的实验数据分析问题，巩固对核心概念的掌握。
 
-本篇文章将为您构建一个关于光化学反应定量分析的坚实框架，从基本原理无缝过渡到实际应用。
+本篇文章将为您构建一个关于[光化学反应](@keyword=photochemical_reactions|lang=zh-CN|style=Feynman)定量分析的坚实框架，从基本原理无缝过渡到实际应用。
 
 ## 原理与机制
 
-光化学，作为研究光与物质相互作用所引发化学反应的科学，其核心在于理解分子如何吸收光能，以及这些能量如何驱动化学转化。与热化学反应中分子通过碰撞获得能量不同，光化学反应由特定波长的光子精准地“激活”特定分子，开启独特的反应路径。本章将深入探讨光化学反应的基本原理，重点关注衡量其效率的核心指标——**量子产率**，以及精确测量光强的实验方法——**化学光量法**。
+[光化学](@keyword=photochemistry|lang=zh-CN|style=Feynman)，作为研究[光与物质相互作用](@keyword=light_matter_interaction|lang=zh-CN|style=Feynman)所引发[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的科学，其核心在于理解分子如何吸收光能，以及这些能量如何驱动化学转化。与热[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)中分子通过碰撞获得能量不同，[光化学反应](@keyword=photochemical_reactions|lang=zh-CN|style=Feynman)由特定波长的[光子](@entry_id:145192)精准地“激活”特定分子，开启独特的[反应路径](@keyword=reaction_path|lang=zh-CN|style=Feynman)。本章将深入探讨光化学反应的基本原理，重点关注衡量其效率的核心指标——**[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman)**，以及精确测量光强的实验方法——**化学光量法**。
 
 ### 光化学反应的基本法则
 
-一切光化学现象都建立在两个基本定律之上。**格罗特斯-德雷珀定律（Grotthuss-Draper law）**，即光化学第一定律，确立了一个根本性的前提：只有被化学体系吸收的光才能引发化学变化。仅仅照射样品而没有发生吸收，是无法驱动光化学反应的。
+一切光化学现象都建立在两个基本定律之上。**[格罗特斯-德雷珀定律](@keyword=grotthuss–draper_law|lang=zh-CN|style=Feynman)（Grotthuss-Draper law）**，即光化学第一定律，确立了一个根本性的前提：只有被化学体系吸收的光才能引发[化学变化](@keyword=chemical_change|lang=zh-CN|style=Feynman)。仅仅照射样品而没有发生吸收，是无法驱动[光化学反应](@keyword=photochemical_reactions|lang=zh-CN|style=Feynman)的。
 
-在此基础上，**斯塔克-爱因斯坦定律（Stark-Einstein law）**，或称光化学第二定律，对光吸收过程进行了量子化描述：在**初级光化学过程**中，一个分子吸收一个光子，从而被激发到一个高能态。这个“一分子对一光子”的相互作用是光化学事件的起点。这个被光子激发的分子，即**激发态**分子，是后续所有化学或物理过程的源头。
+在此基础上，**[斯塔克-爱因斯坦定律](@keyword=stark_einstein_law|lang=zh-CN|style=Feynman)（Stark-Einstein law）**，或称光化学第二定律，对光吸收过程进行了量子化描述：在**初级[光化学](@keyword=photochemistry|lang=zh-CN|style=Feynman)过程**中，一个分子吸收一个[光子](@entry_id:145192)，从而被激发到一个高能态。这个“一分子对一[光子](@entry_id:145192)”的相互作用是[光化学](@keyword=photochemistry|lang=zh-CN|style=Feynman)事件的起点。这个被[光子](@entry_id:145192)激发的分子，即**[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)**分子，是后续所有化学或物理过程的源头。
 
-这两个定律共同蕴含了一个关键的能量准则：要引发特定的化学键断裂，吸收的光子必须携带足够的能量。单个光子的能量 $E_{\text{photon}}$ 与其波长 $\lambda$ 成反比，由普朗克-爱因斯坦关系式描述：
+这两个定律共同蕴含了一个关键的能量准则：要引发特定的化学键断裂，吸收的[光子](@entry_id:145192)必须携带足够的能量。单个[光子](@entry_id:145192)的能量 $E_{\text{photon}}$ 与其波长 $\lambda$ 成反比，由[普朗克-爱因斯坦关系](@keyword=planck_einstein_relation|lang=zh-CN|style=Feynman)式描述：
 
 $$
 E_{\text{photon}} = h\nu = \frac{hc}{\lambda}
 $$
 
-其中 $h$ 是普朗克常数（$6.626 \times 10^{-34} \text{ J·s}$），$c$ 是光速（$2.998 \times 10^8 \text{ m/s}$），而 $\nu$ 是光的频率。
+其中 $h$ 是[普朗克常数](@keyword=planck_s_constant|lang=zh-CN|style=Feynman)（$6.626 \times 10^{-34} \mathrm{J\cdot s}$），$c$ 是光速（$2.998 \times 10^8 \text{ m/s}$），而 $\nu$ 是光的频率。
 
-要使一个化学反应发生，例如分子内某个化学键的断裂，光子能量必须至少等于或超过该过程的活化能，通常是该键的**键解离能**。这意味着存在一个**最大波长阈值** $\lambda_{\max}$，只有波长小于或等于此值的辐射才能启动该反应。
+要使一个[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)发生，例如分子内某个化学键的断裂，[光子能量](@keyword=photon_energy|lang=zh-CN|style=Feynman)必须至少等于或超过该过程的活化能，通常是该键的**[键解离能](@keyword=bond_dissociation_energy|lang=zh-CN|style=Feynman)**。这意味着存在一个**最大波长阈值** $\lambda_{\max}$，只有波长小于或等于此值的辐射才能启动该反应。
 
-例如，设想一种存在于高层大气中的假想污染物分子，其分解始于一个特定化学键的断裂，该键的键解离能经实验测定为 $345 \text{ kJ/mol}$ [@problem_id:1506563]。这是一个摩尔量，我们需要计算单个分子断键所需的能量。利用阿伏伽德罗常数 $N_A$（$6.022 \times 10^{23} \text{ mol}^{-1}$），我们可以得到：
+例如，设想一种存在于高层大气中的假想污染物分子，其分解始于一个特定[化学键](@keyword=chemical_bonding|lang=zh-CN|style=Feynman)的断裂，该键的[键解离能](@keyword=bond_dissociation_energy|lang=zh-CN|style=Feynman)经实验测定为 $345 \text{ kJ/mol}$ [@problem_id:1506563]。这是一个[摩尔量](@keyword=molar_quantity|lang=zh-CN|style=Feynman)，我们需要计算单个分子断键所需的能量。利用阿伏伽德罗常数 $N_A$（$6.022 \times 10^{23} \text{ mol}^{-1}$），我们可以得到：
 
 $$
 E_{\text{molecule}} = \frac{345 \times 10^3 \text{ J/mol}}{6.022 \times 10^{23} \text{ mol}^{-1}} \approx 5.73 \times 10^{-19} \text{ J}
 $$
 
-根据斯塔克-爱因斯坦定律，一个光子必须提供至少这么多能量。因此，我们可以设置 $E_{\text{photon}} = E_{\text{molecule}}$ 来计算阈值波长 $\lambda_{\max}$：
+根据[斯塔克-爱因斯坦定律](@keyword=stark_einstein_law|lang=zh-CN|style=Feynman)，一个[光子](@entry_id:145192)必须提供至少这么多能量。因此，我们可以设置 $E_{\text{photon}} = E_{\text{molecule}}$ 来计算阈值波长 $\lambda_{\max}$：
 
 $$
-\lambda_{\max} = \frac{hc}{E_{\text{molecule}}} = \frac{(6.626 \times 10^{-34} \text{ J·s}) \times (2.998 \times 10^8 \text{ m/s})}{5.73 \times 10^{-19} \text{ J}} \approx 3.47 \times 10^{-7} \text{ m} = 347 \text{ nm}
+\lambda_{\max} = \frac{hc}{E_{\text{molecule}}} = \frac{(6.626 \times 10^{-34} \mathrm{J\cdot s}) \times (2.998 \times 10^8 \text{ m/s})}{5.73 \times 10^{-19} \text{ J}} \approx 3.47 \times 10^{-7} \text{ m} = 347 \text{ nm}
 $$
 
-这意味着，只有波长小于或等于 $347 \text{ nm}$ 的紫外光才能引发该污染物的光解。波长更长的光（如可见光）即使强度再高，也因单个光子能量不足而无法启动这一过程。
+这意味着，只有波长小于或等于 $347 \text{ nm}$ 的紫外光才能引发该污染物的[光解](@keyword=photolysis|lang=zh-CN|style=Feynman)。波长更长的光（如可见光）即使强度再高，也因单个[光子能量](@keyword=photon_energy|lang=zh-CN|style=Feynman)不足而无法启动这一过程。
 
-### 量子产率：衡量光化学效率的标尺
+### 量子产率：衡量[光化学效率](@keyword=photochemical_efficiency|lang=zh-CN|style=Feynman)的标尺
 
-斯塔克-爱因斯坦定律描述了光吸收的初级步骤，但这并非故事的全部。一个被光子激发的分子接下来会经历一系列复杂的**次级过程**。它可能发生化学反应，也可能通过其他物理途径失去能量返回基态。为了量化光能转化为化学能的效率，我们引入了**量子产率（quantum yield）**，符号为 $\Phi$。
+[斯塔克-爱因斯坦定律](@keyword=stark_einstein_law|lang=zh-CN|style=Feynman)描述了光吸收的初级步骤，但这并非故事的全部。一个被[光子](@entry_id:145192)激发的分子接下来会经历一系列复杂的**次级过程**。它可能发生[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)，也可能通过其他物理途径失去能量返回[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)。为了量化光能转化为化学能的效率，我们引入了**量子产率（quantum yield）**，符号为 $\Phi$。
 
-特定事件的量子产率定义为该事件发生的分子数（或摩尔数）与系统吸收的光子数（或光子摩尔数）之比：
+特定事件的量子产率定义为该事件发生的分子数（或摩尔数）与系统吸收的[光子](@entry_id:145192)数（或[光子](@entry_id:145192)摩尔数）之比：
 
 $$
 \Phi = \frac{\text{发生特定事件的分子数}}{\text{吸收的光子数}} = \frac{\text{事件发生的速率}}{\text{光子吸收的速率}}
 $$
 
-这里的“事件”可以是反应物的消耗、产物的生成，或是激发态的某种特定衰变过程。例如，对于一个光解反应 $A \xrightarrow{h\nu} B + C$，我们可以定义反应物 $A$ 消耗的量子产率 $\Phi_{(-A)}$ 和产物 $B$ 生成的量子产率 $\Phi_{B}$。根据反应化学计量，这些产率可能是相关的。
+这里的“事件”可以是反应物的消耗、产物的生成，或是[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的某种特定衰变过程。例如，对于一个[光解](@keyword=photolysis|lang=zh-CN|style=Feynman)反应 $A \xrightarrow{h\nu} B + C$，我们可以定义反应物 $A$ 消耗的量子产率 $\Phi_{(-A)}$ 和产物 $B$ 生成的[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman) $\Phi_{B}$。根据[反应化学计量](@keyword=reaction_stoichiometry|lang=zh-CN|style=Feynman)，这些[产率](@keyword=percent_yield|lang=zh-CN|style=Feynman)可能是相关的。
 
-量子产率的数值揭示了光吸收后发生的复杂次级过程的本质：
+[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman)的数值揭示了光吸收后发生的复杂次级过程的本质：
 
-*   **$\Phi  1$**: 这表明并非每个被吸收的光子都能成功引发目标化学事件。激发态分子通过其他与之竞争的非反应性途径（如发出荧光、以热量形式耗散能量等）失活了。这是最常见的情况。
+*   **$\Phi  1$**: 这表明并非每个被吸收的[光子](@entry_id:145192)都能成功引发目标化学事件。[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)分子通过其他与之竞争的非反应性途径（如发出荧光、以热量形式耗散能量等）失活了。这是最常见的情况。
 
-*   **$\Phi \approx 1$**: 这意味着光化学过程非常高效。几乎每一个被吸收的光子都成功地引发了一次化学事件，竞争性失活途径可以忽略不计。
+*   **$\Phi \approx 1$**: 这意味着[光化学](@keyword=photochemistry|lang=zh-CN|style=Feynman)过程非常高效。几乎每一个被吸收的[光子](@entry_id:145192)都成功地引发了一次化学事件，竞争性失活途径可以忽略不计。
 
-*   **$\Phi > 1$**: 这是一个明确的信号，表明反应机理中存在**链式反应（chain reaction）** [@problem_id:1506564]。在这种情况下，初级光化学过程（吸收一个光子，产生一个活性中间体）仅仅是“点火”步骤。这个活性中间体（如自由基）会引发一个自催化的循环，即**链式传播**，在每一个循环中消耗一个或多个反应物分子。只有当两个活性中间体相遇并发生**链终止**反应时，链条才中断。如果一个光子引发的链条平均长度为 $1000$，那么量子产率就会接近 $1000$。因此，一个远大于1的量子产率是链式反应机理的强有力证据。一个声称一个光子同时分解1000个分子的解释，是违背光化学第二定律的。
+*   **$\Phi > 1$**: 这是一个明确的信号，表明[反应机理](@keyword=reaction_mechanisms|lang=zh-CN|style=Feynman)中存在**链式反应（chain reaction）** [@problem_id:1506564]。在这种情况下，初级[光化学](@keyword=photochemistry|lang=zh-CN|style=Feynman)过程（吸收一个[光子](@entry_id:145192)，产生一个[活性中间体](@keyword=reactive_intermediates|lang=zh-CN|style=Feynman)）仅仅是“点火”步骤。这个活性中间体（如[自由基](@keyword=free_radicals|lang=zh-CN|style=Feynman)）会引发一个自催化的循环，即**链式传播**，在每一个循环中消耗一个或多个反应物分子。只有当两个[活性中间体](@keyword=reactive_intermediates|lang=zh-CN|style=Feynman)相遇并发生**[链终止](@keyword=chain_termination|lang=zh-CN|style=Feynman)**反应时，链条才中断。如果一个[光子](@entry_id:145192)引发的链条平均长度为 $1000$，那么量子产率就会接近 $1000$。因此，一个远大于1的[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman)是[链式反应机理](@keyword=chain_reaction_mechanism|lang=zh-CN|style=Feynman)的强有力证据。一个声称一个[光子](@entry_id:145192)同时分解1000个分子的解释，是违背光化学第二定律的。
 
-### 激发态的命运：反应与失活的动力学竞争
+### [激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的命运：反应与失活的动力学竞争
 
-量子产率的具体数值由激发态分子 $M^*$ 所经历的各种衰变途径的速率竞争决定。一个典型的激发态分子可能面临以下几种命运：
+[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman)的具体数值由[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)分子 $M^*$ 所经历的各种衰变途径的速率竞争决定。一个典型的[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)分子可能面临以下几种命运：
 
 1.  **光化学反应**：$M^* \xrightarrow{k_{rxn}} \text{产物}$
-2.  **荧光发射**（辐射跃迁）：$M^* \xrightarrow{k_f} M + h\nu'$
-3.  **无辐射衰变**（如内转换、系间窜越）：$M^* \xrightarrow{k_{nr}} M + \text{热量}$
-4.  **淬灭**（与其他分子碰撞失活）：$M^* + Q \xrightarrow{k_q} M + Q^*$ (或 $M+Q$)
+2.  **荧光发射**（[辐射跃迁](@keyword=radiative_transitions|lang=zh-CN|style=Feynman)）：$M^* \xrightarrow{k_f} M + h\nu'$
+3.  **无[辐射衰变](@keyword=radiative_decay|lang=zh-CN|style=Feynman)**（如[内转换](@keyword=internal_conversion|lang=zh-CN|style=Feynman)、[系间窜越](@keyword=intersystem_crossing|lang=zh-CN|style=Feynman)）：$M^* \xrightarrow{k_{nr}} M + \text{热量}$
+4.  **淬灭**（与其他[分子碰撞](@keyword=molecular_collisions|lang=zh-CN|style=Feynman)失活）：$M^* + Q \xrightarrow{k_q} M + Q^*$ (或 $M+Q$)
 
-每条路径都有其对应的速率常数（$k_{rxn}$, $k_f$, $k_{nr}$, $k_q[Q]$ 等）。激发态的寿命极短（通常在纳秒到微秒量级），其浓度 $[M^*]$ 很快达到一个**稳态（steady state）**。在稳态下，其生成速率等于其消耗速率之和。设光子吸收速率为 $I_{abs}$（单位为 $\text{mol L}^{-1} \text{s}^{-1}$），则：
+每条路径都有其对应的速率常数（$k_{rxn}$, $k_f$, $k_{nr}$, $k_q[Q]$ 等）。[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的寿命极短（通常在纳秒到微秒量级），其浓度 $[M^*]$ 很快达到一个**[稳态](@keyword=steady_states|lang=zh-CN|style=Feynman)（steady state）**。在[稳态](@keyword=steady_states|lang=zh-CN|style=Feynman)下，其生成速率等于其消耗速率之和。设[光子](@entry_id:145192)吸收速率为 $I_{abs}$（单位为 $\text{mol L}^{-1} \text{s}^{-1}$），则：
 
 $$
 \frac{d[M^*]}{dt} = I_{abs} - k_{rxn}[M^*] - k_f[M^*] - k_{nr}[M^*] - k_q[Q][M^*] = 0
 $$
 
-解出稳态浓度 $[M^*]$:
+解出[稳态](@keyword=steady_states|lang=zh-CN|style=Feynman)浓度 $[M^*]$:
 
 $$
 [M^*] = \frac{I_{abs}}{k_{rxn} + k_f + k_{nr} + k_q[Q]}
@@ -90,9 +90,9 @@ $$
 \Phi_P = \frac{k_{rxn}[M^*]}{I_{abs}} = \frac{k_{rxn}}{k_{rxn} + k_f + k_{nr} + k_q[Q]}
 $$
 
-这个重要的关系式表明，任何一个过程的量子产率等于其速率常数占总衰变速率常数之和的比例。所有可能途径的量子产率之和必须为1：$\Phi_{rxn} + \Phi_f + \Phi_{nr} + \Phi_q = 1$。
+这个重要的关系式表明，任何一个过程的量子产率等于其速率常数占总衰变[速率常数](@keyword=rate_constants|lang=zh-CN|style=Feynman)之和的比例。所有可能途径的[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman)之和必须为1：$\Phi_{rxn} + \Phi_f + \Phi_{nr} + \Phi_q = 1$。
 
-这个模型可以解释许多实验现象。例如，在一个光动力学疗法分子的设计中，科学家们发现其初始荧光产率 $\Phi_f = 0.15$，目标反应产率 $\Phi_{rxn} = 0.25$ [@problem_id:1506553]。这意味着无辐射衰变产率 $\Phi_{nr} = 1 - 0.15 - 0.25 = 0.60$，大部分能量被浪费了。如果通过优化分子结构，完全抑制了无辐射衰变途径（即 $k_{nr} = 0$），而 $k_f$ 和 $k_{rxn}$ 的比值（$\frac{k_{rxn}}{k_f} = \frac{\Phi_{rxn}}{\Phi_f} = \frac{0.25}{0.15} = \frac{5}{3}$）保持不变，那么新的反应量子产率将变为：
+这个模型可以解释许多实验现象。例如，在一个光动力学疗法分子的设计中，科学家们发现其初始[荧光产率](@keyword=fluorescence_yield|lang=zh-CN|style=Feynman) $\Phi_f = 0.15$，目标反应产率 $\Phi_{rxn} = 0.25$ [@problem_id:1506553]。这意味着无[辐射衰变](@keyword=radiative_decay|lang=zh-CN|style=Feynman)[产率](@keyword=percent_yield|lang=zh-CN|style=Feynman) $\Phi_{nr} = 1 - 0.15 - 0.25 = 0.60$，大部分能量被浪费了。如果通过优化分子结构，完全抑制了无[辐射衰变](@keyword=radiative_decay|lang=zh-CN|style=Feynman)途径（即 $k_{nr} = 0$），而 $k_f$ 和 $k_{rxn}$ 的比值（$\frac{k_{rxn}}{k_f} = \frac{\Phi_{rxn}}{\Phi_f} = \frac{0.25}{0.15} = \frac{5}{3}$）保持不变，那么新的反应量子产率将变为：
 
 $$
 \Phi'_{rxn} = \frac{k_{rxn}}{k_{rxn} + k_f} = \frac{\frac{5}{3}k_f}{\frac{5}{3}k_f + k_f} = \frac{\frac{5}{3}}{\frac{8}{3}} = \frac{5}{8} = 0.625
@@ -100,39 +100,39 @@ $$
 
 通过抑制竞争性的失活途径，目标反应的效率得到了显著提升。
 
-当淬灭剂 $Q$ 就是基态分子 $S$ 本身时，这种现象被称为**自淬灭（self-quenching）**。其动力学机理为 $S^* + S \xrightarrow{k_q} 2S$。在这种情况下，假定没有其他淬灭剂且反应为一级，产物生成的量子产率的表达式变为 [@problem_id:1506554]：
+当淬灭剂 $Q$ 就是[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)分子 $S$ 本身时，这种现象被称为**自淬灭（self-quenching）**。其动力学机理为 $S^* + S \xrightarrow{k_q} 2S$。在这种情况下，假定没有其他淬灭剂且反应为一级，产物生成的量子产率的表达式变为 [@problem_id:1506554]：
 
 $$
 \Phi_{P} = \frac{k_{rxn}}{k_{rxn}+k_{nr}+k_{q}[S]}
 $$
 
-这个表达式清楚地表明，随着基态分子浓度 $[S]$ 的增加，分母变大，导致产物量子产率 $\Phi_P$ 下降。这解释了为什么在某些光化学合成中，过高的反应物浓度反而会降低效率。
+这个表达式清楚地表明，随着[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)分子浓度 $[S]$ 的增加，分母变大，导致产物量子产率 $\Phi_P$ 下降。这解释了为什么在某些光化学合成中，过高的反应物浓度反而会降低效率。
 
-### 化学光量法：标定光化学的“尺子”
+### 化学光量法：标定[光化学](@keyword=photochemistry|lang=zh-CN|style=Feynman)的“尺子”
 
-要实验测定一个反应的量子产率，我们必须知道光子吸收的绝对速率 $I_{abs}$。直接用物理探测器测量穿过反应容器的光强变化是困难且不精确的。因此，化学家们开发了一种更可靠的方法：**化学光量法（actinometry）**。
+要实验测定一个反应的[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman)，我们必须知道[光子](@entry_id:145192)吸收的绝对速率 $I_{abs}$。直接用物理探测器测量穿过反应容器的光强变化是困难且不精确的。因此，化学家们开发了一种更可靠的方法：**化学光量法（actinometry）**。
 
 化学光量法利用一种“标准”光化学反应，称为**化学光量计（chemical actinometer）**。这种反应体系在特定波长下的量子产率是经过精确校准、公认的常数。最常用和最可靠的化学光量计之一是**草酸铁钾（potassium ferrioxalate）**体系。
 
-在紫外和可见光区域，$[\text{Fe(C}_2\text{O}_4)_3]^{3-}$ 离子吸收光子后，会发生还原反应，生成 $Fe^{2+}$ 离子。在特定条件下（例如，波长为 $365 \text{ nm}$ 时），$Fe^{2+}$ 生成的量子产率 $\Phi_{Fe^{2+}}$ 是一个众所周知的值（例如，可以是 $1.25$）。
+在紫外和可见光区域，$[\text{Fe(C}_2\text{O}_4)_3]^{3-}$ [离子吸收](@keyword=ion_uptake|lang=zh-CN|style=Feynman)[光子](@entry_id:145192)后，会发生还原反应，生成 $Fe^{2+}$ 离子。在特定条件下（例如，波长为 $365 \text{ nm}$ 时），$Fe^{2+}$ 生成的[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman) $\Phi_{Fe^{2+}}$ 是一个众所周知的值（例如，可以是 $1.25$）。
 
 化学光量法的应用通常分为两步 [@problem_id:1506550] [@problem_id:1506561]：
 
 **第一步：标定光源强度**
 
-将化学光量计溶液（如草酸铁钾）置于与后续实验完全相同的几何装置中，并调整其浓度使其能**完全吸收**所有入射光。此时，吸收的光子数等于光源发出的光子数。照射一段时间 $t_{act}$ 后，通过化学分析（如用邻菲啰啉显色后进行分光光度法测量）测定生成的 $Fe^{2+}$ 摩尔数 $n_{Fe^{2+}}$。根据量子产率的定义，吸收的光子摩尔数 $n_{\gamma}$ 为：
+将化学光量计溶液（如草酸铁钾）置于与后续实验完全相同的几何装置中，并调整其浓度使其能**完全吸收**所有入射光。此时，吸收的[光子](@entry_id:145192)数等于光源发出的[光子](@entry_id:145192)数。照射一段时间 $t_{act}$ 后，通过化学分析（如用邻菲啰啉显色后进行[分光光度法](@keyword=spectrophotometry|lang=zh-CN|style=Feynman)测量）测定生成的 $Fe^{2+}$ 摩尔数 $n_{Fe^{2+}}$。根据[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman)的定义，吸收的[光子](@entry_id:145192)摩尔数 $n_{\gamma}$ 为：
 
 $$
 n_{\gamma, abs} = \frac{n_{Fe^{2+}}}{\Phi_{Fe^{2+}}}
 $$
 
-由于光被完全吸收，光源的**光子通量（photon flux）** $I_0$（单位：$\text{mol/s}$）就可以计算出来：
+由于光被完全吸收，光源的**[光子通量](@keyword=photon_flux|lang=zh-CN|style=Feynman)（photon flux）** $I_0$（单位：$\text{mol/s}$）就可以计算出来：
 
 $$
 I_0 = \frac{n_{\gamma, abs}}{t_{act}} = \frac{n_{Fe^{2+}}}{\Phi_{Fe^{2+}} \cdot t_{act}}
 $$
 
-例如，如果在一个光量热计实验中，使用量子产率为 $1.25$ 的草酸铁钾溶液，照射 $300.0$ 秒后生成了 $4.80 \times 10^{-6}$ 摩尔的 $Fe^{2+}$，那么光源的光子通量为 [@problem_id:1506551]：
+例如，如果在一个光[量热计](@keyword=calorimeter|lang=zh-CN|style=Feynman)实验中，使用[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman)为 $1.25$ 的草酸铁钾溶液，照射 $300.0$ 秒后生成了 $4.80 \times 10^{-6}$ 摩尔的 $Fe^{2+}$，那么光源的[光子通量](@keyword=photon_flux|lang=zh-CN|style=Feynman)为 [@problem_id:1506551]：
 
 $$
 I_0 = \frac{4.80 \times 10^{-6} \text{ mol}}{1.25 \times 300.0 \text{ s}} = 1.28 \times 10^{-8} \text{ mol/s}
@@ -140,19 +140,19 @@ $$
 
 **第二步：测定目标反应的量子产率**
 
-用已标定好强度的同一光源照射待研究的反应体系。现在，一个关键的区别是，待研究的溶液**未必能完全吸收**入射光。我们需要利用**比尔-朗伯定律（Beer-Lambert Law）**计算光吸收的份额。溶液的吸光度 $A$ 为：
+用已标定好强度的同一光源照射待研究的反应体系。现在，一个关键的区别是，待研究的溶液**未必能完全吸收**入射光。我们需要利用**[比尔-朗伯定律](@keyword=beer_s_law|lang=zh-CN|style=Feynman)（Beer-Lambert Law）**计算[光吸收](@keyword=optical_absorption|lang=zh-CN|style=Feynman)的份额。溶液的[吸光度](@keyword=absorbance|lang=zh-CN|style=Feynman) $A$ 为：
 
 $$
 A = \epsilon c l
 $$
 
-其中 $\epsilon$ 是摩尔吸光系数， $c$ 是吸光物质的浓度， $l$ 是光程。透光率 $T = 10^{-A}$，因此被吸收的光的比例 $f_{abs}$ 为 $1-T$。
+其中 $\epsilon$ 是[摩尔吸光系数](@keyword=molar_absorptivity|lang=zh-CN|style=Feynman)， $c$ 是吸光物质的浓度， $l$ 是光程。透光率 $T = 10^{-A}$，因此被吸收的光的比例 $f_{abs}$ 为 $1-T$。
 
 $$
 f_{abs} = 1 - 10^{-A} = 1 - 10^{-\epsilon c l}
 $$
 
-在照射时间 $t_{exp}$ 内，样品吸收的总光子摩尔数为：
+在照射时间 $t_{exp}$ 内，样品吸收的总[光子](@entry_id:145192)摩尔数为：
 
 $$
 n_{\gamma, sample} = I_0 \times t_{exp} \times f_{abs}
@@ -164,23 +164,23 @@ $$
 \Phi_{true} = \frac{n_{event}}{n_{\gamma, sample}}
 $$
 
-这个两步法是光化学动力学研究的基石，它将一个未知反应的效率与一个公认的标准联系起来，保证了测量结果的准确性和可比性。
+这个两步法是[光化学动力学](@keyword=photochemistry_dynamics|lang=zh-CN|style=Feynman)研究的基石，它将一个未知反应的效率与一个公认的标准联系起来，保证了测量结果的准确性和可比性。
 
-### 光敏化反应
+### [光敏化](@keyword=photosensitization|lang=zh-CN|style=Feynman)反应
 
-在某些情况下，反应物本身可能不吸收特定波长的光，但我们仍然希望利用这种光能。这时可以引入**光敏剂（photosensitizer）**。光敏化过程如下 [@problem_id:1506560]：
+在某些情况下，反应物本身可能不吸收特定波长的光，但我们仍然希望利用这种光能。这时可以引入**光敏剂（photosensitizer）**。[光敏化](@keyword=photosensitization|lang=zh-CN|style=Feynman)过程如下 [@problem_id:1506560]：
 
-1.  光敏剂 $S$ 吸收光子，被激发至激发态 $S^*$。
+1.  光敏剂 $S$ 吸收[光子](@entry_id:145192)，被激发至[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman) $S^*$。
     $$ S + h\nu \rightarrow S^* $$
-2.  激发态的光敏剂 $S^*$ 与反应物分子 $R$ 碰撞，通过**能量转移（energy transfer）**将能量交给 $R$，使其成为激发态 $R^*$，而 $S$ 自身返回基态。
+2.  [激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的光敏剂 $S^*$ 与反应物分子 $R$ 碰撞，通过**[能量转移](@keyword=energy_transfer|lang=zh-CN|style=Feynman)（energy transfer）**将能量交给 $R$，使其成为[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman) $R^*$，而 $S$ 自身返回[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)。
     $$ S^* + R \rightarrow S + R^* $$
 3.  被激活的反应物 $R^*$ 发生后续反应生成产物。
     $$ R^* + R \rightarrow P $$ (例如，二聚反应)
 
-在这种机制中，总的量子产率取决于多个步骤的效率。例如，对于一个二聚反应 $2R \rightarrow P$，其反应物消耗的量子产率 $\Phi_{(-R)}$ 可以表示为：
+在这种机制中，总的量子产率取决于多个步骤的效率。例如，对于一个二聚反应 $2R \rightarrow P$，其反应物消耗的[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman) $\Phi_{(-R)}$ 可以表示为：
 
 $$
 \Phi_{(-R)} = \Phi_{S^*} \times \phi_{ET} \times (\text{化学计量数})
 $$
 
-这里，$\Phi_{S^*}$ 是光敏剂生成激发态的量子产率（通常接近1），$\phi_{ET}$ 是能量转移步骤的效率（即 $S^*$ 与 $R$ 碰撞后成功生成 $R^*$ 的比例），化学计量数则代表每生成一个 $R^*$ 最终会消耗多少个 $R$ 分子。在一个二聚反应中，这个化学计量数是2。如果能量转移效率为 $82.3\%$，那么总的量子产率将是 $\Phi_{(-R)} = 1 \times 0.823 \times 2 = 1.646$。光敏化极大地扩展了光化学的应用范围，使得利用可见光等低能量光子驱动通常需要紫外光的反应成为可能。
+这里，$\Phi_{S^*}$ 是光敏剂生成[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的量子产率（通常接近1），$\phi_{ET}$ 是能量转移步骤的效率（即 $S^*$ 与 $R$ 碰撞后成功生成 $R^*$ 的比例），[化学计量数](@keyword=stoichiometric_number|lang=zh-CN|style=Feynman)则代表每生成一个 $R^*$ 最终会消耗多少个 $R$ 分子。在一个二聚反应中，这个[化学计量数](@keyword=stoichiometric_number|lang=zh-CN|style=Feynman)是2。如果能量转移效率为 $82.3\%$，那么总的[量子产率](@keyword=quantum_yield|lang=zh-CN|style=Feynman)将是 $\Phi_{(-R)} = 1 \times 0.823 \times 2 = 1.646$。[光敏化](@keyword=photosensitization|lang=zh-CN|style=Feynman)极大地扩展了光化学的应用范围，使得利用可见光等低能量[光子](@entry_id:145192)驱动通常需要紫外光的反应成为可能。

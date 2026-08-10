@@ -1,131 +1,131 @@
 ## 引言
-双曲平面的等距变换构成了双曲几何的对称性，是理解其非欧结构的核心。然而，这些变换的行为比欧氏空间中的刚性运动要复杂得多，其分类、不变量及代数结构构成了一个深刻而丰富的理论体系。本文旨在系统地揭示这一体系，填补从基本定义到深刻应用之间的知识鸿沟。
+[双曲平面](@keyword=hyperbolic_plane|lang=zh-CN|style=Feynman)的[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman)构成了[双曲几何](@keyword=hyperbolic_geometry|lang=zh-CN|style=Feynman)的对称性，是理解其非欧结构的核心。然而，这些变换的行为比[欧氏空间](@keyword=euclidean_space|lang=zh-CN|style=Feynman)中的[刚性运动](@keyword=rigid_motions|lang=zh-CN|style=Feynman)要复杂得多，其分类、[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)及[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)构成了一个深刻而丰富的理论体系。本文旨在系统地揭示这一体系，填补从基本定义到深刻应用之间的知识鸿沟。
 
-在接下来的内容中，读者将踏上一段从原理到实践的探索之旅。第一章“原理与机制”将深入剖析等距变换的分类方法、几何不变量以及复合规律，为你构建坚实的理论基础。第二章“应用与跨学科联系”将视野拓宽至拓扑学、群论、数论等领域，展示双曲等距变换如何成为连接不同数学分支的桥梁。最后，在“动手实践”部分，你将通过解决具体问题来巩固所学知识，将抽象理论转化为具体的计算和几何直觉。
+在接下来的内容中，读者将踏上一段从原理到实践的探索之旅。第一章“原理与机制”将深入剖析等距变换的分类方法、[几何不变量](@keyword=geometric_invariants|lang=zh-CN|style=Feynman)以及复合规律，为你构建坚实的理论基础。第二章“应用与跨学科联系”将视野拓宽至拓扑学、群论、数论等领域，展示[双曲等距](@keyword=hyperbolic_isometry|lang=zh-CN|style=Feynman)变换如何成为连接不同数学分支的桥梁。最后，在“动手实践”部分，你将通过解决具体问题来巩固所学知识，将抽象理论转化为具体的计算和几何直觉。
 
 ## 原理与机制
 
-继前一章对双曲几何背景的介绍之后，本章将深入探讨双曲平面等距变换的核心原理与机制。等距变换是保持距离的映射，它们构成了双曲几何的“对称性”。理解这些变换的结构、分类及其复合规律，是掌握双曲几何学的关键。我们将系统地阐述这些变换的分类方法，揭示其内在的几何不变量，并探索它们在复合运算下的丰富结构。
+继前一章对[双曲几何](@keyword=hyperbolic_geometry|lang=zh-CN|style=Feynman)背景的介绍之后，本章将深入探讨双曲平面[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman)的核心原理与机制。等距变换是保持距离的映射，它们构成了双曲几何的“对称性”。理解这些变换的结构、分类及其复合规律，是掌握[双曲几何](@keyword=hyperbolic_geometry|lang=zh-CN|style=Feynman)学的关键。我们将系统地阐述这些变换的分类方法，揭示其内在的[几何不变量](@keyword=geometric_invariants|lang=zh-CN|style=Feynman)，并探索它们在复合运算下的丰富结构。
 
-### 双曲等距的分类
+### [双曲等距](@keyword=hyperbolic_isometry|lang=zh-CN|style=Feynman)的分类
 
-对双曲平面的保向等距变换进行分类，是理解其几何结构的第一步。存在两种互补的分类方法：一种是基于不动点的几何方法，另一种是基于矩阵表示的代数方法。
+对双曲平面的[保向等距](@keyword=orientation_preserving_isometries|lang=zh-CN|style=Feynman)变换进行分类，是理解其几何结构的第一步。存在两种互补的分类方法：一种是基于[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)的几何方法，另一种是基于[矩阵表示](@keyword=matrix_representations|lang=zh-CN|style=Feynman)的代数方法。
 
-#### 几何分类：不动点
+#### 几何分类：[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)
 
-一个等距变换最基本的特征之一是它所固定的点。为了全面地讨论不动点，我们必须考虑双曲平面的紧化。对于庞加莱上半平面模型 $H^2 = \{z=x+iy \in \mathbb{C} \mid y > 0\}$，其紧化空间为 $\overline{H^2} = H^2 \cup \mathbb{R} \cup \{\infty\}$，即包含了内部点、边界（实轴）以及无穷远点。对于庞加莱圆盘模型 $D = \{z \in \mathbb{C} : |z| < 1\}$，其紧化空间为 $\overline{D} = D \cup \partial D$，即闭圆盘。
+一个等距变换最基本的特征之一是它所固定的点。为了全面地讨论[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)，我们必须考虑双曲平面的[紧化](@keyword=compactification|lang=zh-CN|style=Feynman)。对于[庞加莱上半平面模型](@keyword=poincaré_upper_half_plane_model|lang=zh-CN|style=Feynman) $H^2 = \{z=x+iy \in \mathbb{C} \mid y > 0\}$，其[紧化](@keyword=compactification|lang=zh-CN|style=Feynman)空间为 $\overline{H^2} = H^2 \cup \mathbb{R} \cup \{\infty\}$，即包含了内部点、边界（实轴）以及[无穷远点](@keyword=points_at_infinity|lang=zh-CN|style=Feynman)。对于[庞加莱圆盘模型](@keyword=poincaré_disk_model|lang=zh-CN|style=Feynman) $D = \{z \in \mathbb{C} : |z| < 1\}$，其[紧化](@keyword=compactification|lang=zh-CN|style=Feynman)空间为 $\overline{D} = D \cup \partial D$，即[闭圆盘](@keyword=closed_disk|lang=zh-CN|style=Feynman)。
 
-根据在紧化空间中不动点的数量和位置，非平凡的保向等距变换可以分为三类：
+根据在[紧化](@keyword=compactification|lang=zh-CN|style=Feynman)空间中[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)的数量和位置，非平凡的[保向等距](@keyword=orientation_preserving_isometries|lang=zh-CN|style=Feynman)变换可以分为三类：
 
-1.  **椭圆型 (Elliptic)**: 在双曲平面内部（$H^2$ 或 $D$）有且仅有一个不动点。这种变换在几何上表现为围绕该不动点的**双曲旋转**。
+1.  **椭圆型 (Elliptic)**: 在[双曲平面](@keyword=hyperbolic_plane|lang=zh-CN|style=Feynman)内部（$H^2$ 或 $D$）有且仅有一个[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)。这种变换在几何上表现为围绕该[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)的**[双曲旋转](@keyword=hyperbolic_rotations|lang=zh-CN|style=Feynman)**。
 
-2.  **抛物型 (Parabolic)**: 在边界（$\mathbb{R} \cup \{\infty\}$ 或 $\partial D$）上有且仅有一个不动点。这种变换可以看作是“中心在无穷远处的旋转”，其作用是沿着以该不动点为中心的极限圆（horocycles）进行平移。
+2.  **抛物型 (Parabolic)**: 在边界（$\mathbb{R} \cup \{\infty\}$ 或 $\partial D$）上有且仅有一个[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)。这种变换可以看作是“中心在无穷远处的旋转”，其作用是沿着以该[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)为中心的极限圆（horocycles）进行平移。
 
-3.  **双曲型 (Hyperbolic)**: 在边界上有两个不同的不动点。这种变换在几何上表现为沿着连接这两个不动点的唯一测地线（称为**轴**）进行的**平移**。
+3.  **双曲型 (Hyperbolic)**: 在边界上有两个不同的[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)。这种变换在几何上表现为沿着连接这两个[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)的唯一[测地线](@keyword=autoparallel_curve|lang=zh-CN|style=Feynman)（称为**轴**）进行的**平移**。
 
-直接寻找不动点是判断等距类型的一种直观方法。例如，考虑庞加莱圆盘模型中的一个变换 $g(z) = i \frac{z - 1/2}{1 - z/2}$ [@problem_id:1647891]。为了分类它，我们求解不动点方程 $g(z)=z$：
+直接寻找[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)是判断等距类型的一种直观方法。例如，考虑[庞加莱圆盘模型](@keyword=poincaré_disk_model|lang=zh-CN|style=Feynman)中的一个变换 $g(z) = i \frac{z - 1/2}{1 - z/2}$ [@problem_id:1647891]。为了分类它，我们求解[不动点方程](@keyword=fixed_point_equation|lang=zh-CN|style=Feynman) $g(z)=z$：
 $z = i \frac{z - 1/2}{1 - z/2}$
-整理后得到一个二次方程 $z^2 - 2(1 - i)z - i = 0$。利用求根公式，我们得到两个解 $z_{\pm} = (1 - i)(1 \pm 1/\sqrt{2})$。通过计算它们的模，我们发现 $|z_{+}| = \sqrt{2} + 1 > 1$，而 $|z_{-}| = \sqrt{2} - 1 < 1$。这意味着只有一个不动点 $z_{-}$ 位于庞加莱圆盘 $D$ 的内部。根据定义，该等距变换是椭圆型的。
+整理后得到一个二次方程 $z^2 - 2(1 - i)z - i = 0$。利用[求根](@keyword=root_finding|lang=zh-CN|style=Feynman)公式，我们得到两个解 $z_{\pm} = (1 - i)(1 \pm 1/\sqrt{2})$。通过计算它们的模，我们发现 $|z_{+}| = \sqrt{2} + 1 > 1$，而 $|z_{-}| = \sqrt{2} - 1 < 1$。这意味着只有一个[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman) $z_{-}$ 位于[庞加莱圆盘](@keyword=poincaré_disk|lang=zh-CN|style=Feynman) $D$ 的内部。根据定义，该等距变换是椭圆型的。
 
 #### 代数分类：矩阵的迹
 
-虽然通过求解不动点方程进行分类在几何上很直观，但在计算上可能很繁琐。幸运的是，有一个强大的代数工具——矩阵的**迹 (trace)**，可以让我们快速地对等距变换进行分类。
+虽然通过求解[不动点方程](@keyword=fixed_point_equation|lang=zh-CN|style=Feynman)进行分类在几何上很直观，但在计算上可能很繁琐。幸运的是，有一个强大的代数工具——矩阵的**迹 (trace)**，可以让我们快速地对等距变换进行分类。
 
-我们知道，上半平面模型 $H^2$ 的保向等距群与射影特殊线性群 $PSL(2, \mathbb{R})$ 同构。任何一个变换都可以由一个行列式为 1 的 $2 \times 2$ 实矩阵 $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in SL(2, \mathbb{R})$ 表示。该等距变换的类型完全由其矩阵的迹 $\text{tr}(A) = a+d$ 决定：
+我们知道，[上半平面模型](@keyword=upper_half_plane_model_2|lang=zh-CN|style=Feynman) $H^2$ 的[保向等距](@keyword=orientation_preserving_isometries|lang=zh-CN|style=Feynman)群与射影[特殊线性群](@keyword=special_linear_group|lang=zh-CN|style=Feynman) $PSL(2, \mathbb{R})$ 同构。任何一个变换都可以由一个[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)为 1 的 $2 \times 2$ 实矩阵 $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in SL(2, \mathbb{R})$ 表示。该[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman)的类型完全由其矩阵的迹 $\text{tr}(A) = a+d$ 决定：
 
 - **椭圆型 (Elliptic)**: 当且仅当 $|\text{tr}(A)| < 2$。
 - **抛物型 (Parabolic)**: 当且仅当 $|\text{tr}(A)| = 2$ (且 $A \neq \pm I$，其中 $I$ 是单位矩阵)。
 - **双曲型 (Hyperbolic)**: 当且仅当 $|\text{tr}(A)| > 2$。
 
-如果一个变换由一个行列式 $\det(M) > 0$ 的任意实矩阵 $M$ 给出，我们首先需要将其标准化为 $A = M / \sqrt{\det(M)}$，使其行列式为 1，然后再应用上述迹准则 [@problem_id:1652485]。
+如果一个变换由一个[行列式](@keyword=determinant|lang=zh-CN|style=Feynman) $\det(M) > 0$ 的任意实矩阵 $M$ 给出，我们首先需要将其[标准化](@keyword=z_score_normalization|lang=zh-CN|style=Feynman)为 $A = M / \sqrt{\det(M)}$，使其[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)为 1，然后再应用上述迹准则 [@problem_id:1652485]。
 
-例如，考虑变换 $T_1(z) = \frac{3z - 4}{z-1}$。它对应的矩阵是 $A_1 = \begin{pmatrix} 3 & -4 \\ 1 & -1 \end{pmatrix}$。我们计算其行列式 $\det(A_1) = 3(-1) - (-4)(1) = 1$，迹 $\text{tr}(A_1) = 3 + (-1) = 2$。由于 $|\text{tr}(A_1)|=2$，该变换是抛物型的。对于 $T_2(z) = \frac{2z+1}{z+1}$，其矩阵 $A_2 = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix}$ 的行列式为 1，迹为 3。由于 $|\text{tr}(A_2)|=3 > 2$，它是双曲型的。
+例如，考虑变换 $T_1(z) = \frac{3z - 4}{z-1}$。它对应的矩阵是 $A_1 = \begin{pmatrix} 3 & -4 \\ 1 & -1 \end{pmatrix}$。我们计算其[行列式](@keyword=determinant|lang=zh-CN|style=Feynman) $\det(A_1) = 3(-1) - (-4)(1) = 1$，迹 $\text{tr}(A_1) = 3 + (-1) = 2$。由于 $|\text{tr}(A_1)|=2$，该变换是抛物型的。对于 $T_2(z) = \frac{2z+1}{z+1}$，其矩阵 $A_2 = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix}$ 的[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)为 1，迹为 3。由于 $|\text{tr}(A_2)|=3 > 2$，它是双曲型的。
 
-这个强大的代数准则也适用于庞加莱圆盘模型 $D$。圆盘的保向等距群与 $PSU(1,1)$ 同构，其元素是形如 $f(z) = \frac{az+\bar{c}}{cz+\bar{a}}$ 且满足 $|a|^2-|c|^2=1$ 的变换。对应的矩阵 $M = \begin{pmatrix} a & \bar{c} \\ c & \bar{a} \end{pmatrix}$ 属于 $SU(1,1)$。分类准则与 $SL(2, \mathbb{R})$ 完全相同，仅取决于迹 $\text{tr}(M) = a+\bar{a} = 2\text{Re}(a)$ 的绝对值。
+这个强大的代数准则也适用于[庞加莱圆盘模型](@keyword=poincaré_disk_model|lang=zh-CN|style=Feynman) $D$。圆盘的[保向等距](@keyword=orientation_preserving_isometries|lang=zh-CN|style=Feynman)群与 $PSU(1,1)$ 同构，其元素是形如 $f(z) = \frac{az+\bar{c}}{cz+\bar{a}}$ 且满足 $|a|^2-|c|^2=1$ 的变换。对应的矩阵 $M = \begin{pmatrix} a & \bar{c} \\ c & \bar{a} \end{pmatrix}$ 属于 $SU(1,1)$。分类准则与 $SL(2, \mathbb{R})$ 完全相同，仅取决于迹 $\text{tr}(M) = a+\bar{a} = 2\text{Re}(a)$ 的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)。
 
-考虑一个由实数 $k$ 参数化的等距变换族 $f_k(z) = \frac{(k+i\sqrt{2})z + \sqrt{k^2+1}}{\sqrt{k^2+1}z + (k-i\sqrt{2})}$ [@problem_id:1647899]。这里 $a = k+i\sqrt{2}$ 且 $c = \sqrt{k^2+1}$。对应的 $SU(1,1)$ 矩阵的迹为 $\text{tr}(M_k) = 2\text{Re}(a) = 2k$。因此：
-- 当 $|2k| < 2$，即 $|k|<1$ 时，$f_k$ 是椭圆型，在边界上没有不动点。
-- 当 $|2k| = 2$，即 $|k|=1$ 时，$f_k$ 是抛物型，在边界上有 1 个不动点。
-- 当 $|2k| > 2$，即 $|k|>1$ 时，$f_k$ 是双曲型，在边界上有 2 个不动点。
-这清晰地展示了代数性质（迹）如何直接控制几何性质（不动点数量）。
+考虑一个由实数 $k$ 参数化的[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman)族 $f_k(z) = \frac{(k+i\sqrt{2})z + \sqrt{k^2+1}}{\sqrt{k^2+1}z + (k-i\sqrt{2})}$ [@problem_id:1647899]。这里 $a = k+i\sqrt{2}$ 且 $c = \sqrt{k^2+1}$。对应的 $SU(1,1)$ [矩阵的迹](@keyword=trace_of_a_matrix|lang=zh-CN|style=Feynman)为 $\text{tr}(M_k) = 2\text{Re}(a) = 2k$。因此：
+- 当 $|2k| < 2$，即 $|k|<1$ 时，$f_k$ 是椭圆型，在边界上没有[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)。
+- 当 $|2k| = 2$，即 $|k|=1$ 时，$f_k$ 是抛物型，在边界上有 1 个[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)。
+- 当 $|2k| > 2$，即 $|k|>1$ 时，$f_k$ 是双曲型，在边界上有 2 个[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)。
+这清晰地展示了代数性质（迹）如何直接控制几何性质（[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)数量）。
 
-### 等距的几何不变量
+### 等距的[几何不变量](@keyword=geometric_invariants|lang=zh-CN|style=Feynman)
 
-除了分类，我们还关心那些在某种“变化”下保持不变的几何量。对于等距变换，最重要的不变量之一是与双曲型变换相关的**平移长度**。
+除了分类，我们还关心那些在某种“变化”下保持不变的几何量。对于等距变换，最重要的[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)之一是与双曲型变换相关的**平移长度**。
 
-#### 双曲等距：轴与平移长度
+#### [双曲等距](@keyword=hyperbolic_isometry|lang=zh-CN|style=Feynman)：轴与平移长度
 
-如前所述，一个双曲型等距变换 $f$ 在边界上有两个不动点，不妨记为 $p$ 和 $q$。连接 $p$ 和 $q$ 的唯一测地线 $L$ 被称为 $f$ 的**轴 (axis)**。$f$ 的作用是将轴 $L$ 映到自身，并将 $L$ 上的每一点沿着 $L$ 移动一个固定的双曲距离。这个固定的距离被称为 $f$ 的**平移长度 (translation length)**，记为 $\ell(f)$。
+如前所述，一个双曲型[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman) $f$ 在边界上有两个[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)，不妨记为 $p$ 和 $q$。连接 $p$ 和 $q$ 的唯一[测地线](@keyword=autoparallel_curve|lang=zh-CN|style=Feynman) $L$ 被称为 $f$ 的**轴 (axis)**。$f$ 的作用是将轴 $L$ 映到自身，并将 $L$ 上的每一点沿着 $L$ 移动一个固定的双曲距离。这个固定的距离被称为 $f$ 的**平移长度 (translation length)**，记为 $\ell(f)$。
 
 对于双曲平面中的任意一点 $z$，我们可以定义其在 $f$ 作用下的**位移 (displacement)**，即双曲距离 $\delta(z) = d_H(z, f(z))$。一个深刻的几何事实是，位移函数 $\delta(z)$ 在且仅在轴 $L$ 上取得其最小值，并且这个最小值恰好等于平移长度 $\ell(f)$ [@problem_id:1647902]。
 
-我们可以通过一个例子来阐明这一点。考虑圆盘模型中的双曲等距 $f(z) = \frac{2z-i}{iz+2}$。它的不动点是方程 $z^2 = -1$ 的解，即 $i$ 和 $-i$。这两个点都在边界 $\partial D$ 上。因此，它的轴是通过 $i$ 和 $-i$ 的测地线，也就是虚轴在圆盘内的部分 $\{z \in D : \text{Re}(z)=0\}$。要计算平移长度，我们只需在轴上任取一点（例如原点 $z=0$）并计算其位移：
+我们可以通过一个例子来阐明这一点。考虑圆盘模型中的[双曲等距](@keyword=hyperbolic_isometry|lang=zh-CN|style=Feynman) $f(z) = \frac{2z-i}{iz+2}$。它的[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)是方程 $z^2 = -1$ 的解，即 $i$ 和 $-i$。这两个点都在边界 $\partial D$ 上。因此，它的轴是通过 $i$ 和 $-i$ 的[测地线](@keyword=autoparallel_curve|lang=zh-CN|style=Feynman)，也就是虚轴在圆盘内的部分 $\{z \in D : \text{Re}(z)=0\}$。要计算平移长度，我们只需在轴上任取一点（例如原点 $z=0$）并计算其位移：
 $\ell(f) = d_H(0, f(0)) = d_H(0, -i/2)$
-利用双曲距离公式 $d_H(z_1, z_2) = \arccosh\left(1 + \frac{2|z_1-z_2|^2}{(1-|z_1|^2)(1-|z_2|^2)}\right)$，我们得到：
-$\ell(f) = \arccosh\left(1 + \frac{2|-i/2|^2}{(1-0)(1-|-i/2|^2)}\right) = \arccosh\left(1 + \frac{2(1/4)}{1-(1/4)}\right) = \arccosh\left(\frac{5}{3}\right)$
-这个值 $\arccosh(5/3)$ 就是该变换的平移长度，也是其位移函数在虚轴上取得的最小值。
+利用双曲[距离公式](@keyword=distance_formula|lang=zh-CN|style=Feynman) $d_H(z_1, z_2) = \operatorname{arccosh}\left(1 + \frac{2|z_1-z_2|^2}{(1-|z_1|^2)(1-|z_2|^2)}\right)$，我们得到：
+$\ell(f) = \operatorname{arccosh}\left(1 + \frac{2|-i/2|^2}{(1-0)(1-|-i/2|^2)}\right) = \operatorname{arccosh}\left(1 + \frac{2(1/4)}{1-(1/4)}\right) = \operatorname{arccosh}\left(\frac{5}{3}\right)$
+这个值 $\operatorname{arccosh}(5/3)$ 就是该变换的平移长度，也是其位移函数在[虚轴](@keyword=imaginary_axis|lang=zh-CN|style=Feynman)上取得的最小值。
 
-平移长度这个几何量与之前讨论的代数不变量——迹，有着深刻的联系。对于一个由 $A \in SL(2, \mathbb{R})$ 代表的双曲等距变换 $f$，其平移长度 $\ell$ 与矩阵的迹满足以下优美的关系：
+平移长度这个几何量与之前讨论的代数[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)——迹，有着深刻的联系。对于一个由 $A \in SL(2, \mathbb{R})$ 代表的[双曲等距](@keyword=hyperbolic_isometry|lang=zh-CN|style=Feynman)变换 $f$，其平移长度 $\ell$ 与[矩阵的迹](@keyword=trace_of_a_matrix|lang=zh-CN|style=Feynman)满足以下优美的关系：
 $\cosh(\ell/2) = \frac{|\text{tr}(A)|}{2}$
 
 #### 共轭类
 
-在群论中，共轭是一个核心概念。如果存在另一个等距变换 $h$，使得 $f_2 = h \circ f_1 \circ h^{-1}$，我们就说两个等距变换 $f_1$ 和 $f_2$ 是**共轭的 (conjugate)**。从几何上看，共轭意味着 $f_1$ 和 $f_2$ 本质上是“同一个”变换，只是在不同的“坐标系”下观察而已（$h$ 扮演了坐标变换的角色）。
+在群论中，共轭是一个核心概念。如果存在另一个[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman) $h$，使得 $f_2 = h \circ f_1 \circ h^{-1}$，我们就说两个等距变换 $f_1$ 和 $f_2$ 是**共轭的 (conjugate)**。从几何上看，共轭意味着 $f_1$ 和 $f_2$ 本质上是“同一个”变换，只是在不同的“[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)”下观察而已（$h$ 扮演了坐标变换的角色）。
 
-对于双曲型等距变换，其共轭类完全由一个几何不变量——平移长度——来刻画。也就是说，两个双曲型等距变换是共轭的，当且仅当它们有相同的平移长度。
+对于双曲型[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman)，其[共轭类](@keyword=conjugacy_classes|lang=zh-CN|style=Feynman)完全由一个[几何不变量](@keyword=geometric_invariants|lang=zh-CN|style=Feynman)——平移长度——来刻画。也就是说，两个双曲型[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman)是共轭的，当且仅当它们有相同的平移长度。
 
-结合迹与平移长度的关系，这给出了一个纯代数的判据：两个由 $A_1, A_2 \in SL(2, \mathbb{R})$ 代表的双曲型等距变换是共轭的，当且仅当 $|\text{tr}(A_1)| = |\text{tr}(A_2)|$ [@problem_id:1647894]。例如，要判断由矩阵 $A_1 = \begin{pmatrix} 3 & 4 \\ 2 & 3 \end{pmatrix}$（迹为 6）表示的变换 $f_1$ 与由 $A_k = \begin{pmatrix} k & 1 \\ k-1 & 1 \end{pmatrix}$（迹为 $k+1$）表示的变换 $f_k$ 是否共轭，我们只需令它们的迹的绝对值相等：$|k+1|=6$。这给出 $k=5$ 或 $k=-7$。对于这两个 $k$ 值，变换 $f_k$ 都是双曲型的，并且与 $f_1$ 共轭，因为它们具有相同的平移长度 $\ell = 2\arccosh(6/2) = 2\arccosh(3)$。
+结合迹与平移长度的关系，这给出了一个纯代数的判据：两个由 $A_1, A_2 \in SL(2, \mathbb{R})$ 代表的双曲型[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman)是共轭的，当且仅当 $|\text{tr}(A_1)| = |\text{tr}(A_2)|$ [@problem_id:1647894]。例如，要判断由矩阵 $A_1 = \begin{pmatrix} 3 & 4 \\ 2 & 3 \end{pmatrix}$（迹为 6）表示的变换 $f_1$ 与由 $A_k = \begin{pmatrix} k & 1 \\ k-1 & 1 \end{pmatrix}$（迹为 $k+1$）表示的变换 $f_k$ 是否共轭，我们只需令它们的迹的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)相等：$|k+1|=6$。这给出 $k=5$ 或 $k=-7$。对于这两个 $k$ 值，变换 $f_k$ 都是双曲型的，并且与 $f_1$ 共轭，因为它们具有相同的平移长度 $\ell = 2\operatorname{arccosh}(6/2) = 2\operatorname{arccosh}(3)$。
 
 ### 等距的复合
 
-理解了单个等距变换的性质后，下一个自然的问题是：两个等距变换复合之后会得到什么？
+理解了单个[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman)的性质后，下一个自然的问题是：两个等距变换复合之后会得到什么？
 
 #### 从镜面反射构建等距
 
-所有保向等距变换都可以由更基本的操作——**镜面反射 (reflection)** ——构建而成。镜面反射是关于一条测地线 $L$ 的对称变换。它是反转定向的。任何保向等距变换都可以表示为两次镜面反射的复合。
+所有[保向等距](@keyword=orientation_preserving_isometries|lang=zh-CN|style=Feynman)变换都可以由更基本的操作——**[镜面反射](@keyword=specular_reflection|lang=zh-CN|style=Feynman) (reflection)** ——构建而成。[镜面反射](@keyword=specular_reflection|lang=zh-CN|style=Feynman)是关于一条[测地线](@keyword=autoparallel_curve|lang=zh-CN|style=Feynman) $L$ 的[对称变换](@keyword=symmetry_transformations|lang=zh-CN|style=Feynman)。它是反转定向的。任何[保向等距](@keyword=orientation_preserving_isometries|lang=zh-CN|style=Feynman)变换都可以表示为两次镜面[反射的复合](@keyword=composition_of_reflections|lang=zh-CN|style=Feynman)。
 
-令 $R_1$ 和 $R_2$ 分别是关于测地线 $L_1$ 和 $L_2$ 的反射。复合变换 $T = R_2 \circ R_1$ 是一个保向等距变换，其类型取决于 $L_1$ 和 $L_2$ 的相对位置：
+令 $R_1$ 和 $R_2$ 分别是关于[测地线](@keyword=autoparallel_curve|lang=zh-CN|style=Feynman) $L_1$ 和 $L_2$ 的反射。复合变换 $T = R_2 \circ R_1$ 是一个[保向等距](@keyword=orientation_preserving_isometries|lang=zh-CN|style=Feynman)变换，其类型取决于 $L_1$ 和 $L_2$ 的相对位置：
 1.  如果 $L_1$ 和 $L_2$ 在双曲平面内相交于一点 $p$，则 $T$ 是一个以 $p$ 为中心的椭圆型旋转。
-2.  如果 $L_1$ 和 $L_2$ 在边界上相切（称为平行），则 $T$ 是一个以该切点为不动点的抛物型变换。
+2.  如果 $L_1$ 和 $L_2$ 在边界上相切（称为平行），则 $T$ 是一个以该切点为[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)的抛物型变换。
 3.  如果 $L_1$ 和 $L_2$ 既不相交也不相切（称为超平行），则 $T$ 是一个双曲型变换。
 
 在超平行的情形下，存在一个非常优美的关系。设 $d$ 是 $L_1$ 和 $L_2$ 之间的双曲距离（沿着它们唯一的公垂线段测量），而 $\ell$ 是复合变换 $T=R_2 \circ R_1$ 的平移长度。那么，$\ell = 2d$。
 
-我们可以通过一个具体的例子来验证这个关系 [@problem_id:1647913]。在上半平面模型中，考虑两条以原点为中心的半圆测地线 $L_1: |z|=r_1$ 和 $L_2: |z|=r_2$（$r_2 > r_1$）。它们是超平行的，公垂线是正虚轴。它们之间的距离 $d = d_H(ir_1, ir_2) = \ln(r_2/r_1)$。关于 $L_k$ 的反射是复反演 $R_k(z) = r_k^2/\bar{z}$。复合变换为 $T(z) = R_2(R_1(z)) = (r_2/r_1)^2 z$。这是一个以正虚轴为轴的双曲变换，其平移长度 $\ell = \ln((r_2/r_1)^2) = 2\ln(r_2/r_1)$。我们清晰地看到 $\ell = 2d$。
+我们可以通过一个具体的例子来验证这个关系 [@problem_id:1647913]。在[上半平面模型](@keyword=upper_half_plane_model_2|lang=zh-CN|style=Feynman)中，考虑两条以原点为中心的半圆[测地线](@keyword=autoparallel_curve|lang=zh-CN|style=Feynman) $L_1: |z|=r_1$ 和 $L_2: |z|=r_2$（$r_2 > r_1$）。它们是超平行的，公垂线是正[虚轴](@keyword=imaginary_axis|lang=zh-CN|style=Feynman)。它们之间的距离 $d = d_H(ir_1, ir_2) = \ln(r_2/r_1)$。关于 $L_k$ 的反射是[复反演](@keyword=complex_inversion|lang=zh-CN|style=Feynman) $R_k(z) = r_k^2/\bar{z}$。复合变换为 $T(z) = R_2(R_1(z)) = (r_2/r_1)^2 z$。这是一个以正虚轴为轴的双曲变换，其平移长度 $\ell = \ln((r_2/r_1)^2) = 2\ln(r_2/r_1)$。我们清晰地看到 $\ell = 2d$。
 
 #### 旋转的复合
 
 两个椭圆型旋转 $f_1$ 和 $f_2$（中心分别为 $p_1, p_2$，旋转角为 $\alpha_1, \alpha_2$）的复合 $f = f_2 \circ f_1$ 会产生什么？结果出人意料地丰富，它取决于旋转角和中心之间的距离 $d=d(p_1, p_2)$。
 
-通过将问题共轭到标准位置，并使用矩阵表示，可以推导出复合变换 $f$ 的迹的表达式。对于两个逆时针旋转，其迹的表达式（在 $PSL(2,\mathbb{R})$ 中）可以表示为：
+通过将问题共轭到标准位置，并使用[矩阵表示](@keyword=matrix_representations|lang=zh-CN|style=Feynman)，可以推导出复合变换 $f$ 的迹的表达式。对于两个逆时针旋转，其迹的表达式（在 $PSL(2,\mathbb{R})$ 中）可以表示为：
 $\text{tr}(f) = 2(\cos(\alpha_1/2)\cos(\alpha_2/2) - \sin(\alpha_1/2)\sin(\alpha_2/2)\cosh(d))$
 这个公式揭示了所有秘密。当中心距离 $d$ 从 0 开始增加时，$\cosh(d)$ 从 1 开始增加，导致 $\text{tr}(f)$ 减小。
-- 当 $d$ 较小时，$\text{tr}(f)$ 的绝对值可能小于 2，此时复合变换 $f$ 是另一个椭圆型旋转。
+- 当 $d$ 较小时，$\text{tr}(f)$ 的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)可能小于 2，此时复合变换 $f$ 是另一个椭圆型旋转。
 - 存在一个**临界距离** $d_0$，使得 $|\text{tr}(f)|=2$，此时 $f$ 变为抛物型。
 - 当 $d > d_0$ 时， $|\text{tr}(f)| > 2$，此时 $f$ 变为双曲型，拥有一个确定的平移长度 $L$ [@problem_id:1647907]。
 
-这表明，通过连续地改变两个旋转中心的距离，我们可以平滑地从一种类型的等距变换过渡到另一种。
+这表明，通过连续地改变两个旋转中心的距离，我们可以平滑地从一种类型的[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman)过渡到另一种。
 
-### 等距群的代数结构
+### [等距群](@keyword=isometry_group|lang=zh-CN|style=Feynman)的[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)
 
-最后，我们从更抽象的代数视角来审视等距群的结构。
+最后，我们从更抽象的代数视角来审视[等距群](@keyword=isometry_group|lang=zh-CN|style=Feynman)的结构。
 
-#### 抛物等距的子群与中心化子
+#### [抛物等距](@keyword=parabolic_isometry|lang=zh-CN|style=Feynman)的[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)与[中心化子](@keyword=centralizer|lang=zh-CN|style=Feynman)
 
-考虑所有共享同一个不动点 $p$ 的抛物型等距变换。这个集合，连同恒等变换，构成了一个与加法群 $(\mathbb{R}, +)$ 同构的单参数子群。这意味着，两个具有相同不动点的抛物变换 $f_A$ 和 $f_B$ 的复合 $f_A \circ f_B$，通常是另一个具有相同不动点的抛物变换。只有在特殊情况下，它们的复合才会是恒等变换 [@problem_id:1647883]。
+考虑所有共享同一个[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman) $p$ 的抛物型等距变换。这个集合，连同[恒等变换](@keyword=identity_transformation|lang=zh-CN|style=Feynman)，构成了一个与[加法群](@keyword=additive_group|lang=zh-CN|style=Feynman) $(\mathbb{R}, +)$ 同构的[单参数子群](@keyword=one_parameter_subgroups|lang=zh-CN|style=Feynman)。这意味着，两个具有相同[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)的[抛物变换](@keyword=parabolic_transformation|lang=zh-CN|style=Feynman) $f_A$ 和 $f_B$ 的复合 $f_A \circ f_B$，通常是另一个具有相同[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)的[抛物变换](@keyword=parabolic_transformation|lang=zh-CN|style=Feynman)。只有在特殊情况下，它们的复合才会是[恒等变换](@keyword=identity_transformation|lang=zh-CN|style=Feynman) [@problem_id:1647883]。
 
-与此密切相关的是**中心化子 (centralizer)** 的概念。一个等距变换 $T$ 的中心化子 $C(T)$ 是指所有与 $T$ 可交换的等距变换 $f$（即 $f \circ T = T \circ f$）所构成的子群。
+与此密切相关的是**中心化子 (centralizer)** 的概念。一个等距变换 $T$ 的中心化子 $C(T)$ 是指所有与 $T$ 可交换的等距变换 $f$（即 $f \circ T = T \circ f$）所构成的[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)。
 
-让我们来确定一个抛物型等距变换的中心化子是什么样的。考虑上半平面中的一个标准抛物变换 $T(z) = z+s_0$ ($s_0 \neq 0$)，其不动点在 $\infty$。我们寻找所有与 $T$ 可交换的等距变换 $f_M(z)$，其中 $M \in PSL(2, \mathbb{R})$。通过矩阵计算 $MU=UM$ (其中 $U$ 是代表 $T$ 的矩阵)，我们发现 $M$ 必须是形如 $\begin{pmatrix} 1 & t \\ 0 & 1 \end{pmatrix}$ 的矩阵，其中 $t \in \mathbb{R}$ [@problem_id:1647887]。这些矩阵正好对应于所有以 $\infty$ 为不动点的抛物变换（以及 $t=0$ 时的恒等变换）。
+让我们来确定一个抛物型等距变换的[中心化子](@keyword=centralizer|lang=zh-CN|style=Feynman)是什么样的。考虑上半平面中的一个标准[抛物变换](@keyword=parabolic_transformation|lang=zh-CN|style=Feynman) $T(z) = z+s_0$ ($s_0 \neq 0$)，其[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)在 $\infty$。我们寻找所有与 $T$ 可交换的[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman) $f_M(z)$，其中 $M \in PSL(2, \mathbb{R})$。通过矩阵计算 $MU=UM$ (其中 $U$ 是代表 $T$ 的矩阵)，我们发现 $M$ 必须是形如 $\begin{pmatrix} 1 & t \\ 0 & 1 \end{pmatrix}$ 的矩阵，其中 $t \in \mathbb{R}$ [@problem_id:1647887]。这些矩阵正好对应于所有以 $\infty$ 为[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)的[抛物变换](@keyword=parabolic_transformation|lang=zh-CN|style=Feynman)（以及 $t=0$ 时的[恒等变换](@keyword=identity_transformation|lang=zh-CN|style=Feynman)）。
 
-因此，抛物变换 $T(z)=z+s_0$ 的中心化子 $C(T)$ 就是所有水平平移 $f(z)=z+t$ 构成的群。这正是我们前面提到的、以 $\infty$ 为共同不动点的抛物变换构成的那个单参数群。
+因此，[抛物变换](@keyword=parabolic_transformation|lang=zh-CN|style=Feynman) $T(z)=z+s_0$ 的中心化子 $C(T)$ 就是所有水平平移 $f(z)=z+t$ 构成的群。这正是我们前面提到的、以 $\infty$ 为共同[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)的[抛物变换](@keyword=parabolic_transformation|lang=zh-CN|style=Feynman)构成的那个单参数群。
 
 #### 等距类型的连续过渡
 
 等距变换的分类不是离散的；它们构成了一个连续的“空间”。我们可以想象一个从椭圆型等距平滑地过渡到双曲型等距的路径。根据我们的分类准则，这条路径必然会穿过由抛物型等距构成的“边界”。
 
-考虑一个由参数 $t \in [0, 1]$ 控制的连续变换族，其矩阵为 $M(t) = (1-t)M_0 + tM_1$，其中 $M_0$ 对应一个椭圆型变换，而 $M_1$ 对应一个双曲型变换 [@problem_id:1647888]。要找出类型转变发生的精确时刻，我们只需找到使标准化矩阵 $A(t) = M(t)/\sqrt{\det(M(t))}$ 的迹满足 $| \text{tr}(A(t)) | = 2$ 的参数 $t$ 值。
+考虑一个由参数 $t \in [0, 1]$ 控制的连续变换族，其矩阵为 $M(t) = (1-t)M_0 + tM_1$，其中 $M_0$ 对应一个椭圆型变换，而 $M_1$ 对应一个双曲型变换 [@problem_id:1647888]。要找出类型转变发生的精确时刻，我们只需找到使[标准化](@keyword=z_score_normalization|lang=zh-CN|style=Feynman)矩阵 $A(t) = M(t)/\sqrt{\det(M(t))}$ 的迹满足 $| \text{tr}(A(t)) | = 2$ 的参数 $t$ 值。
 
-例如，从 $M_0 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$ (椭圆型，$\text{tr}=0$) 到 $M_1 = \begin{pmatrix} 2 & 0 \\ 0 & 1/2 \end{pmatrix}$ (双曲型，标准化后迹为 $2.5$) 的路径，其类型转变发生在 $t=4/7$。在这一点，变换是抛物型的。这完美地展示了三种类型的等距变换是如何在等距群的拓扑空间中相互毗邻的。
+例如，从 $M_0 = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$ (椭圆型，$\text{tr}=0$) 到 $M_1 = \begin{pmatrix} 2 & 0 \\ 0 & 1/2 \end{pmatrix}$ (双曲型，[标准化](@keyword=z_score_normalization|lang=zh-CN|style=Feynman)后迹为 $2.5$) 的路径，其类型转变发生在 $t=4/7$。在这一点，变换是抛物型的。这完美地展示了三种类型的等距变换是如何在[等距群](@keyword=isometry_group|lang=zh-CN|style=Feynman)的拓扑空间中相互毗邻的。
 
-通过本章的探讨，我们不仅为双曲等距建立了基于几何和代数的双重分类体系，还揭示了平移长度这一核心几何不变量，并探索了通过复合操作生成新等距的机制。这些原理共同描绘了双曲对称性的丰富而深刻的内在结构。
+通过本章的探讨，我们不仅为[双曲等距](@keyword=hyperbolic_isometry|lang=zh-CN|style=Feynman)建立了基于几何和代数的双重分类体系，还揭示了平移长度这一核心[几何不变量](@keyword=geometric_invariants|lang=zh-CN|style=Feynman)，并探索了通过复合操作生成新等距的机制。这些原理共同描绘了双曲对称性的丰富而深刻的内在结构。

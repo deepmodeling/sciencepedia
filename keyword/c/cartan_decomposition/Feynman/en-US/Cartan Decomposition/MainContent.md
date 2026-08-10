@@ -56,7 +56,7 @@ While the decomposition $G = K \exp(\mathfrak{p})$ is powerful, there's another,
 However, this form introduces a new subtlety: ambiguity. The middle element $a$ is not unique. For example, you can swap the diagonal entries of $a$ if you also change the rotations $k_1$ and $k_2$ appropriately. This ambiguity is precisely captured by the action of a [finite group](@keyword=finite_group|lang=en-US|style=Feynman) called the **Weyl group**, $W$ [@problem_id:2969844]. To get a unique representative, we must restrict $a$ to a specific region called a **positive Weyl chamber**, denoted $A^+$. This is like adopting a convention, such as always ordering the singular values from largest to smallest.
 
 With this convention, every transformation $g$ has a unique "stretching" component $a \in A^+$, which tells us the principal magnitudes of its action. For $SL(2,\mathbb{R})$, this "amount of stretch" can be captured by a single number, the Cartan projection $\mu(g)$, which has the elegant formula:
-$$ \mu(g) = \frac{1}{2}\arccosh\left(\frac{a^2+b^2+c^2+d^2}{2}\right) $$
+$$ \mu(g) = \frac{1}{2}\operatorname{arccosh}\left(\frac{a^2+b^2+c^2+d^2}{2}\right) $$
 for a matrix $g = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$ [@problem_id:2969854]. This tells you the "hyperbolic distance" the transformation moves points on the hyperbolic plane, regardless of the rotational parts.
 
 ### A Profound Duality: The Unity of Worlds

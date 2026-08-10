@@ -6,7 +6,7 @@
 
 我们如何窥见百年后海洋的化学面貌？答案，或者说我们目前最好的答案，深藏于[地球系统模型](@keyword=earth_system_model|lang=zh-CN|style=Feynman)（Earth System Models, ESMs）的复杂代码之中。这些模型是人类智慧的结晶，它们试图在超级计算机中重建一个虚拟的地球，包含了大气、海洋、陆地和冰雪圈之间错综复杂的相互作用。
 
-为了预测未来，我们首先需要一个关于人类社会自身发展路径的故事。这便是“[共享社会经济路径](@keyword=shared_socioeconomic_pathways|lang=zh-CN|style=Feynman)”（Shared Socioeconomic Pathways, SSPs）的作用。它们描绘了从可持续发展到高歌猛进的化石燃料依赖等多种可能的未来。在模型中，这些社会经济“剧本”被转化为具体的温室气体排放和浓度轨迹。例如，在一个积极减排的 $\mathrm{SSP}1\mbox{-}2.6$ 情景下，大气中的二氧化碳浓度可能在本世纪中叶达到峰值后缓慢下降；而在一个高排放的 $\mathrm{SSP}5\mbox{-}8.5$ 情景下，$\mathrm{CO_2}$ 浓度将一路飙升 [@problem_id:4071426]。
+为了预测未来，我们首先需要一个关于人类社会自身发展路径的故事。这便是“[共享社会经济路径](@keyword=shared_socioeconomic_pathways|lang=zh-CN|style=Feynman)”（Shared Socioeconomic Pathways, SSPs）的作用。它们描绘了从可持续发展到高歌猛进的化石燃料依赖等多种可能的未来。在模型中，这些社会经济“剧本”被转化为具体的温室气体排放和浓度轨迹。例如，在一个积极减排的 $\mathrm{SSP}1\text{-}2.6$ 情景下，大气中的二氧化碳浓度可能在本世纪中叶达到峰值后缓慢下降；而在一个高排放的 $\mathrm{SSP}5\text{-}8.5$ 情景下，$\mathrm{CO_2}$ 浓度将一路飙升 [@problem_id:4071426]。
 
 一旦大气中的 $\mathrm{CO_2}$ 浓度被设定，好戏就在海-气界面上演了。这里，一场永恒的拔河比赛正在进行。一方面，根据亨利定律，不断上升的大气 $\mathrm{CO_2}$ [分压](@keyword=partial_pressures|lang=zh-CN|style=Feynman)像一只无形的手，将更多的 $\mathrm{CO_2}$ 压入海洋。另一方面，全球变暖使得表层海水温度升高，而温暖的海水对气体的溶解能力会下降，试图将溶解的 $\mathrm{CO_2}$ “吐”回大气。这两个效应的竞争结果，决定了海洋碳吸收的净速率。我们的模型必须精确地量化这两个过程——升高的 $\mathrm{pCO_2}$ 效应和变暖导致的[溶解度](@keyword=solubility|lang=zh-CN|style=Feynman)（由 $K_0$ 常数表征）下降效应——以及它们之间微妙的相互作用，才能准确预测未来海水中溶解的二氧化碳浓度 [@problem_id:4071396]。
 

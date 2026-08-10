@@ -49,7 +49,7 @@ $$ U(r) = \frac{1}{4\pi \epsilon_0 \epsilon_r} \frac{q_1 q_2}{r} $$
 
 在生物系统中，一个关键的概念是**竞争**（competition）。在真空中，一个肽链内部的羰基氧和酰胺氢之间形成的氢键可能具有 $-20$ 到 $-30 \ \mathrm{kJ \ mol^{-1}}$ 的稳定化能。然而，在水溶液中，这两个基团在形成分子内氢键之前，都各自与水分子形成了强烈的氢键（C=O···H-OH 和 N-H···OH₂）。因此，形成一个分子内氢键的净自由能变化 $\Delta G_{\text{net}}$，是形成的新氢键的能量与破坏的两个溶质-水氢键的能量之差：
 
-$$ \Delta G_{\text{net}} \approx E_{\text{D-H···A}} - (E_{\text{D-H···water}} + E_{\text{A···water}}) $$
+$$ \Delta G_{\text{net}} \approx E_{\mathrm{D-H\cdot \cdot \cdot A}} - (E_{\mathrm{D-H\cdot \cdot \cdot water}} + E_{\mathrm{A\cdot \cdot \cdot water}}) $$
 
 由于水-溶质氢键本身也很稳定，$\Delta G_{\text{net}}$ 的数值通常很小，往往只在 $-2$ 到 $-5 \ \mathrm{kJ \ mol^{-1}}$ 的范围内，甚至可能为正。这意味着，水中的氢键只有在几何构型非常理想，或者在疏水核心等局部脱水的环境中，才能提供显著的净稳定性。
 

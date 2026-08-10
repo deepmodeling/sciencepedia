@@ -65,7 +65,7 @@ $$
 $$
 实验测得在 $298 \, \text{K}$ 时，该反应的 $\Delta G^\circ = -21.2 \, \text{kJ/mol}$。我们可以据此计算平衡常数 [@problem_id:2165700]：
 $$
-K_{eq} = \frac{[\text{环状}]}{[\text{开链}]} = \exp\left(-\frac{\Delta G^\circ}{RT}\right) = \exp\left(-\frac{-21200 \, \text{J/mol}}{(8.314 \, \text{J·mol}^{-1}\text{·K}^{-1})(298 \, \text{K})}\right) \approx 5200
+K_{eq} = \frac{[\text{环状}]}{[\text{开链}]} = \exp\left(-\frac{\Delta G^\circ}{RT}\right) = \exp\left(-\frac{-21200 \, \text{J/mol}}{(8.314 \, \mathrm{J\cdot mol}^{-1}\mathrm{\cdot K}^{-1})(298 \, \text{K})}\right) \approx 5200
 $$
 这意味着在平衡状态下，环状葡萄糖的浓度是开链形式的5200倍以上。开链形式所占的比例仅为 $\frac{1}{K_{eq} + 1} \approx \frac{1}{5201} \approx 0.000192$，即约 **0.02%**。这个计算结果雄辩地证明了环状结构相对于开链结构的巨大热力学优势。
 
@@ -78,7 +78,7 @@ $$
 
 相比之下，五元环无法同时实现理想的键角和完全交错的构象。它通常采取**信封式（envelope）**或**扭曲式（twist）**构象来平衡角张力和扭转张力，但始终存在不可避免的残余张力。因此，对于己醛糖来说，无张力的吡喃糖椅式构象在能量上远比有张力的呋喃糖构象更有利 [@problem_id:2165696]。
 
-#### 吡喃糖的[椅式构象](@entry_id:137492)
+#### 吡喃糖的[椅式构象](@keyword=chair_conformation|lang=zh-CN|style=Feynman)
 在椅式构象中，每个碳原子上的取代基可以占据两种位置：**直立键（axial）**或**平伏键（equatorial）**。体积较大的取代基倾向于占据空间更宽敞的平伏键位置，以避免与环上其他直立键取代基之间产生不利的**1,3-双直轴相互作用（1,3-diaxial interactions）**。
 
 D-葡萄糖是解释这一原理的完美范例。在 $\beta$-D-吡喃葡萄糖的优势椅式构象中，所有五个非氢取代基（C1, C2, C3, C4上的-OH基团和C5上的$-\text{CH}_2\text{OH}$基团）都位于**平伏键**位置。这种“全平伏”构象使得空间位阻最小化，使其成为所有己醛糖中最稳定的异构体之一 [@problem_id:2165691]。

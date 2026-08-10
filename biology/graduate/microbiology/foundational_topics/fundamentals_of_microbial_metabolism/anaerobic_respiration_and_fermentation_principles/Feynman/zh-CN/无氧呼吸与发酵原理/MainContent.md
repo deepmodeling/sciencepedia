@@ -87,7 +87,7 @@
 
 拥有了[发酵](@keyword=fermentation|lang=zh-CN|style=Feynman)和无氧呼吸这两种截然不同的生存策略，一个[兼性厌氧菌](@keyword=facultative_anaerobes|lang=zh-CN|style=Feynman)（如大肠杆菌）如何“决定”何时使用哪一种呢？它需要一个灵敏的传感器来感知环境中最重要的信号——氧气的存在与否。这个角色由一个叫做 FNR 的蛋白扮演 [@problem_id:2470490]。
 
-FNR 是一个[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)调节因子，也就是一个基因表达的“开关”。它的核心是一个对氧气极其敏感的 $[4Fe\mbox{--}4S]$ [铁硫簇](@keyword=iron_sulfur_clusters|lang=zh-CN|style=Feynman)。
+FNR 是一个[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)调节因子，也就是一个基因表达的“开关”。它的核心是一个对氧气极其敏感的 $[4Fe\text{--}4S]$ [铁硫簇](@keyword=iron_sulfur_clusters|lang=zh-CN|style=Feynman)。
 
 *   **在无氧环境下**：[铁硫簇](@keyword=iron_sulfur_clusters|lang=zh-CN|style=Feynman)保持完整。这使得两个 FNR 蛋白能够相互结合，形成一个具有活性的二聚体。这个二聚体能精确地识别并结合到 DNA 上的特定序列，像一把钥匙插入锁孔，从而“开启”一系列负责无氧呼吸和发酵的基因（如[硝酸](@keyword=nitric_acid|lang=zh-CN|style=Feynman)还原酶基因），同时“关闭”那些在有氧条件下才需要的基因。
 

@@ -99,6 +99,6 @@ $K_1 > K_2 > K_3 > \dots$ 这个趋势虽然普遍，但并非金科玉律。最
 
 $$[Co(H_2O)_4Cl_2](aq) + Cl^{-}(aq) \rightleftharpoons [CoCl_3(H_2O)]^{-}(aq) + 3H_2O(l)$$
 
-在这一步，络合物的构型从**八面体**突然转变为**四面体**，并一次性释放了 3 个水分子！这导致该步骤的熵变 $\Delta S_3^\circ$ 异常巨大（高达 $+240 \text{ J/mol·K}$）。这个巨大的熵增益，足以克服该步骤吸热（$\Delta H_3^\circ = +46.0 \text{ kJ/mol}$）的不利因素，使得 $K_3$ 的值远大于预期，打破了单调递减的趋势。
+在这一步，络合物的构型从**八面体**突然转变为**四面体**，并一次性释放了 3 个水分子！这导致该步骤的熵变 $\Delta S_3^\circ$ 异常巨大（高达 $+240 \mathrm{J/mol\cdot K}$）。这个巨大的熵增益，足以克服该步骤吸热（$\Delta H_3^\circ = +46.0 \text{ kJ/mol}$）的不利因素，使得 $K_3$ 的值远大于预期，打破了单调递减的趋势。
 
 这个例子 [@problem_id:2289647] 完美地展示了络合物化学的复杂与精妙。它告诉我们，络合物的稳定性不仅仅是简单的配体加减法，更是统计概率、空间效应、电子匹配以及整个体系熵变和[焓变](@keyword=enthalpy_change|lang=zh-CN|style=Feynman)之间动态博弈的结果。通过理解逐级和总[形成常数](@keyword=formation_constant|lang=zh-CN|style=Feynman)，我们不仅能预测和控制[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)，更能欣赏到物质世界在微观尺度上演绎的这场遵循着深刻物理化学原理的、无比华丽的舞蹈。

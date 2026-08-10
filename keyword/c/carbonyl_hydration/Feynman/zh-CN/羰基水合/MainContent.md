@@ -45,7 +45,7 @@ $$R(R')C=O + \text{OH}^- \rightarrow R(R')C(OH)\text{O}^-$$
 
 *   **熵 ($\Delta S$)**：这个术语是衡量无序度的。[水合反应](@keyword=aquation_reaction|lang=zh-CN|style=Feynman)将两个独立的分子（一个[羰基化合物](@keyword=carbonyl_compounds|lang=zh-CN|style=Feynman)和一个水分子）结合成一个单一的分子（水合物）。这代表了运动自由度的减少和有序度的增加，这在熵学上是不利的。因此，[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)$\Delta S$为负值。
 
-让我们以丙酮为例。该反应在焓上是有利的（$\Delta H^\circ \approx -21.0 \text{ kJ/mol}$），将平衡推向水合物。然而，该反应在熵上是*不利的*（$\Delta S^\circ \approx -72.0 \text{ J/(mol·K)}$），将平衡推回反应物。在室温下（$298 \text{ K}$），这两种效应几乎相互抵消，导致一个略微为正的[吉布斯自由能变](@keyword=change_in_gibbs_free_energy|lang=zh-CN|style=Feynman)（$\Delta G^\circ \approx +0.46 \text{ kJ/mol}$）。这意味着[平衡常数](@keyword=equilibrium_constant|lang=zh-CN|style=Feynman)$K_{eq}$略小于1。在丙酮的[水溶液](@keyword=aqueous_solutions|lang=zh-CN|style=Feynman)中，任何特定时刻只有一小部分以水合物的形式存在[@problem_id:2172913]。这种微妙的平衡是许多简单酮类的普遍规律。但是，当我们开始改变[羰基化合物](@keyword=carbonyl_compounds|lang=zh-CN|style=Feynman)的结构时，会发生什么呢？
+让我们以丙酮为例。该反应在焓上是有利的（$\Delta H^\circ \approx -21.0 \text{ kJ/mol}$），将平衡推向水合物。然而，该反应在熵上是*不利的*（$\Delta S^\circ \approx -72.0 \mathrm{J/(mol\cdot K)}$），将平衡推回反应物。在室温下（$298 \text{ K}$），这两种效应几乎相互抵消，导致一个略微为正的[吉布斯自由能变](@keyword=change_in_gibbs_free_energy|lang=zh-CN|style=Feynman)（$\Delta G^\circ \approx +0.46 \text{ kJ/mol}$）。这意味着[平衡常数](@keyword=equilibrium_constant|lang=zh-CN|style=Feynman)$K_{eq}$略小于1。在丙酮的[水溶液](@keyword=aqueous_solutions|lang=zh-CN|style=Feynman)中，任何特定时刻只有一小部分以水合物的形式存在[@problem_id:2172913]。这种微妙的平衡是许多简单酮类的普遍规律。但是，当我们开始改变[羰基化合物](@keyword=carbonyl_compounds|lang=zh-CN|style=Feynman)的结构时，会发生什么呢？
 
 ### 打破平衡：结构如何决定命运
 

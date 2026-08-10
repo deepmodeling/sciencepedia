@@ -63,15 +63,15 @@ $$
 
 在这种情况下，波函数 $\ket{\Psi(\lambda)} = \sum_\mu C_\mu(\lambda) \ket{\chi_\mu(\lambda)}$ 对 $\lambda$ 的依赖性有两个来源：变分系数 $C_\mu$ 的变化，以及基函数 $\chi_\mu$ 本身的变化。波函数的全导数可以分解为：
 $$
-\left\lvert \frac{\mathrm{d} \Psi}{\mathrm{d} \lambda} \right\rangle = \sum_{\mu} \frac{\mathrm{d} C_\mu}{\mathrm{d} \lambda}\lvert \chi_\mu \rangle + \sum_{\mu} C_\mu \left\lvert \frac{\mathrm{d} \chi_\mu}{\mathrm{d} \lambda} \right\rangle = \left\lvert \frac{\mathrm{d} \Psi}{\mathrm{d} \lambda} \right\rangle_{\text{coeff}} + \left\lvert \frac{\mathrm{d} \Psi}{\mathrmd \lambda} \right\rangle_{\text{basis}}
+\left\lvert \frac{\mathrm{d} \Psi}{\mathrm{d} \lambda} \right\rangle = \sum_{\mu} \frac{\mathrm{d} C_\mu}{\mathrm{d} \lambda}\lvert \chi_\mu \rangle + \sum_{\mu} C_\mu \left\lvert \frac{\mathrm{d} \chi_\mu}{\mathrm{d} \lambda} \right\rangle = \left\lvert \frac{\mathrm{d} \Psi}{\mathrm{d} \lambda} \right\rangle_{\text{coeff}} + \left\lvert \frac{\mathrm{d} \Psi}{\mathrm{d} \lambda} \right\rangle_{\text{basis}}
 $$
 正如我们前面所见，能量导数中的额外项为 $2\,\mathrm{Re} \bra{\frac{\mathrm{d}\Psi}{\mathrm{d}\lambda}} H-E \ket{\Psi}$。由于变分条件保证了残差向量 $(H-E)\ket{\Psi}$ 与基函数张成的空间正交，所以系数导数部分的贡献为零：$2\,\mathrm{Re} \bra{(\frac{\mathrm{d}\Psi}{\mathrm{d}\lambda})_\text{coeff}} H-E \ket{\Psi} = 0$。然而，基函数导数 $\ket{\frac{\mathrm{d}\chi_\mu}{\mathrm{d}\lambda}}$ 通常位于基函数空间之外，因此其贡献不为零。这个非零的贡献项就是**普莱力 (Pulay force)** 或普莱项 [@problem_id:2814507]。
 $$
-F_{\text{Pulay}} = - 2\,\mathrm{Re} \left\langle \left(\frac{\mathrm{d} \Psi}{\mathrm{d} \lambda}\right)_{\text{basis}} \middle\vert H-E \middle\vert \Psi \right\rangle = - 2\,\mathrm{Re} \sum_\mu C_\mu^* \left\langle \frac{\mathrm{d} \chi_\mu}{\mathrmd \lambda} \middle\vert H-E \middle\vert \Psi \right\rangle
+F_{\text{Pulay}} = - 2\,\mathrm{Re} \left\langle \left(\frac{\mathrm{d} \Psi}{\mathrm{d} \lambda}\right)_{\text{basis}} \middle\vert H-E \middle\vert \Psi \right\rangle = - 2\,\mathrm{Re} \sum_\mu C_\mu^* \left\langle \frac{\mathrm{d} \chi_\mu}{\mathrm{d} \lambda} \middle\vert H-E \middle\vert \Psi \right\rangle
 $$
 普莱力源于有限基组的不完备性以及基组对参数的显式依赖。
 
-我们可以通过一个简单的思想实验来清晰地理解普莱力的本质 [@problem_id:1406925]。考虑一个一维非谐振子，其哈密顿量 $\hat{H}$ **不依赖**于任何参数 $\lambda$。现在，我们使用一个中心位于 $\lambda$ 的高斯函数 $\phi(x; \lambda)$ 作为变分试探波函数来近似基态能量 $E(\lambda) = \bra{\phi(x; \lambda)} \hat{H} \ket{\phi(x; \lambda)}$。根据赫尔曼-费曼定理，由于 $\frac{\partial \hat{H}}{\partial \lambda} = 0$，我们可能会错误地认为 $\frac{\mathrm{d}E}{\mathrm{d}\lambda}$ 永远为零。然而，直接计算表明 $\frac{\mathrm{d}E}{\mathrm{d}\lambda}$ 并不为零，除非势能是对称的且高斯函数位于对称中心。这个非零的导数 $\frac{\mathrm{d}E}{\mathrmd\lambda}$ 完全来自于基函数对 $\lambda$ 的依赖，它是一个纯粹的普莱力。
+我们可以通过一个简单的思想实验来清晰地理解普莱力的本质 [@problem_id:1406925]。考虑一个一维非谐振子，其哈密顿量 $\hat{H}$ **不依赖**于任何参数 $\lambda$。现在，我们使用一个中心位于 $\lambda$ 的高斯函数 $\phi(x; \lambda)$ 作为变分试探波函数来近似基态能量 $E(\lambda) = \bra{\phi(x; \lambda)} \hat{H} \ket{\phi(x; \lambda)}$。根据赫尔曼-费曼定理，由于 $\frac{\partial \hat{H}}{\partial \lambda} = 0$，我们可能会错误地认为 $\frac{\mathrm{d}E}{\mathrm{d}\lambda}$ 永远为零。然而，直接计算表明 $\frac{\mathrm{d}E}{\mathrm{d}\lambda}$ 并不为零，除非势能是对称的且高斯函数位于对称中心。这个非零的导数 $\frac{\mathrm{d}E}{\mathrm{d}\lambda}$ 完全来自于基函数对 $\lambda$ 的依赖，它是一个纯粹的普莱力。
 
 这种区别在实践中至关重要。例如，在*ab initio*分子动力学中，使用原子中心基组（如高斯基组）时，必须包含普莱力才能得到正确的总力并确保能量守恒。相反，如果使用平面波基组，由于基函数（形如 $e^{i\mathbf{G}\cdot\mathbf{r}}$）仅由模拟盒子定义，不随原子位置移动，因此不存在由基组产生的普莱力 [@problem_id:2814480]。
 
@@ -149,7 +149,7 @@ $$
 $$
 \frac{\mathrm{d}E}{\mathrm{d}R_{\alpha}} = \frac{\partial E}{\partial R_{\alpha}} + \left(\frac{\partial E}{\partial \mathbf{p}}\right)^{\top} \frac{\mathrm{d}\mathbf{p}}{\mathrm{d}R_{\alpha}}
 $$
-直接求解参数响应 $\frac{\mathrm{d}\mathbf{p}}{\mathrmd R_{\alpha}}$ 需要求解一套复杂的线性方程组，即耦合微扰方程（response equations）。
+直接求解参数响应 $\frac{\mathrm{d}\mathbf{p}}{\mathrm{d} R_{\alpha}}$ 需要求解一套复杂的线性方程组，即耦合微扰方程（response equations）。
 
 为了避免这个繁琐的步骤，现代量子化学中采用了所谓的**Z-向量方法**。该方法引入拉格朗日乘子 $\mathbf{z}$ (即Z-向量)，构造一个拉格朗日函数 $\mathcal{L} = E + \mathbf{z}^\top \mathbf{f}$，其中 $\mathbf{f}(\mathbf{p}, \mathbf{R})=\mathbf{0}$ 是决定波函数参数的方程组。通过选择合适的 $\mathbf{z}$ 使得 $\mathcal{L}$ 对所有参数 $\mathbf{p}$ 都满足平稳条件 (stationary)，即 $\frac{\partial \mathcal{L}}{\partial \mathbf{p}} = \mathbf{0}$。这样一来，参数响应项就被巧妙地吸收了，总能量导数可以简化为拉格朗日函数对核坐标的偏导数：
 $$

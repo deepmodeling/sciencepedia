@@ -60,7 +60,7 @@ The solution is to use a **[logarithmic scale](@keyword=logarithmic_scale|lang=e
 
 But there’s a wrinkle. The process of compensation involves subtraction. Because of random noise in the measurement (shot noise), sometimes the amount of signal we subtract is slightly more than the signal that was there, resulting in a calculated fluorescence value that is slightly *negative*. This isn't physically real, but it's a common artifact of the math. The problem is, you can't take the logarithm of a negative number!
 
-To solve this, modern cytometry software uses clever hybrid display scales like the **biexponential** or **hyperlog** (technically, an $\arcsinh$ transformation). These scales behave just like a [log scale](@keyword=log_scale|lang=en-US|style=Feynman) for large positive values, but they transition to a linear scale around zero. This allows them to display small positive values, small negative values, and zero in a clean, readable way, giving us the best of both worlds [@problem_id:2037731].
+To solve this, modern cytometry software uses clever hybrid display scales like the **biexponential** or **hyperlog** (technically, an $\operatorname{arcsinh}$ transformation). These scales behave just like a [log scale](@keyword=log_scale|lang=en-US|style=Feynman) for large positive values, but they transition to a linear scale around zero. This allows them to display small positive values, small negative values, and zero in a clean, readable way, giving us the best of both worlds [@problem_id:2037731].
 
 ### Pulling the Levers: Trade-offs in Sorting and Analysis
 

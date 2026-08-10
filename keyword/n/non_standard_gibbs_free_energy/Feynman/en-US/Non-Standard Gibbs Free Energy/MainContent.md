@@ -59,7 +59,7 @@ This framework reveals a profound principle: we can control the direction of a r
 
 Consider a biological reaction inside a cell, like the isomerization of substrate X to product Y, which has an unfavorable $\Delta G^{\circ'}$ of $+7.50 \text{ kJ/mol}$ [@problem_id:2065017]. On paper, this looks like an uphill battle. But in a living cell, this reaction is just one step in a long metabolic assembly line. As soon as a molecule of Y is formed, another enzyme snatches it away for the next step. This keeps the concentration of Y incredibly low. In the scenario presented, we have $[X] = 68.0 \text{ µM}$ and $[Y] = 1.20 \text{ µM}$.
 
-The [reaction quotient](@keyword=reaction_quotient|lang=en-US|style=Feynman) is $Q = [Y]/[X] = 1.20/68.0 \approx 0.0176$. This is a number much smaller than 1. The logarithm, $\ln(0.0176)$, is about $-4.04$. The correction term $RT \ln Q$ at room temperature (298.15 K) becomes roughly $(8.314 \times 10^{-3} \text{ kJ/mol·K})(298.15 \text{ K})(-4.04) \approx -10.0 \text{ kJ/mol}$.
+The [reaction quotient](@keyword=reaction_quotient|lang=en-US|style=Feynman) is $Q = [Y]/[X] = 1.20/68.0 \approx 0.0176$. This is a number much smaller than 1. The logarithm, $\ln(0.0176)$, is about $-4.04$. The correction term $RT \ln Q$ at room temperature (298.15 K) becomes roughly $(8.314 \times 10^{-3} \mathrm{kJ/mol\cdot K})(298.15 \text{ K})(-4.04) \approx -10.0 \text{ kJ/mol}$.
 
 Now we calculate the real driving force:
 $$ \Delta G = \Delta G^{\circ'} + RT \ln Q \approx +7.50 \text{ kJ/mol} - 10.0 \text{ kJ/mol} = -2.5 \text{ kJ/mol} $$

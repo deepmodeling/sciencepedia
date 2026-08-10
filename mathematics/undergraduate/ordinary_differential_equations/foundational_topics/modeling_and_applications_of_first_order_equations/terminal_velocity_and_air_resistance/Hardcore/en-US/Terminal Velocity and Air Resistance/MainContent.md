@@ -1,53 +1,53 @@
 ## Introduction
-When an object moves through a fluid like air or water, it encounters a resistive force known as drag. This fundamental interaction governs everything from the speed of a falling raindrop to the design of a parachute. While many can intuitively grasp that a falling object eventually stops accelerating, a deeper understanding requires moving beyond a simple static balance of forces to a dynamic description of motion. This article bridges that gap by using the language of ordinary differential equations to model and solve for an object's velocity as it approaches its final, constant speed—the terminal velocity.
+When an object moves through a fluid like air or water, it encounters a resistive force known as drag. This fundamental interaction governs everything from the speed of a falling raindrop to the design of a parachute. While many can intuitively grasp that a falling object eventually stops accelerating, a deeper understanding requires moving beyond a simple static balance of forces to a dynamic description of motion. This article bridges that gap by using the language of [ordinary differential equations](@entry_id:147024) to model and solve for an object's velocity as it approaches its final, constant speed—the [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman).
 
-This article builds a comprehensive understanding of this essential physical phenomenon through its main sections. The **Principles and Mechanisms** section lays the theoretical groundwork, deriving the governing differential equations for both linear and quadratic drag models and solving them to find velocity as a function of time. The **Applications and Interdisciplinary Connections** section then shows these principles in action, exploring how terminal velocity impacts fields ranging from engineering and earth science to biology and astrophysics. Finally, the **Hands-On Practices** in the appendices provide an opportunity to apply this knowledge by working through guided problems, solidifying the connection between mathematical theory and physical reality.
+This article builds a comprehensive understanding of this essential physical phenomenon through its main sections. The **Principles and Mechanisms** section lays the theoretical groundwork, deriving the governing differential equations for both [linear and quadratic drag](@keyword=linear_and_quadratic_drag|lang=en-US|style=Feynman) models and solving them to find velocity as a function of time. The **Applications and Interdisciplinary Connections** section then shows these principles in action, exploring how [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman) impacts fields ranging from engineering and earth science to biology and astrophysics. Finally, the **Hands-On Practices** in the appendices provide an opportunity to apply this knowledge by working through guided problems, solidifying the connection between mathematical theory and physical reality.
 
 ## Principles and Mechanisms
 
-An object moving through a fluid, such as a raindrop falling through air or a submarine navigating the ocean depths, experiences a resistive force known as **drag**. This force opposes the object's motion and is fundamental to understanding a wide range of physical phenomena. A key consequence of drag is the concept of **terminal velocity**, a steady-state condition that arises from the interplay between the driving forces of motion (like gravity) and the resistive drag force. This chapter will elucidate the principles governing drag and terminal velocity, starting from the static balance of forces and progressing to the dynamic differential equations that describe the motion.
+An object moving through a fluid, such as a raindrop falling through air or a submarine navigating the ocean depths, experiences a resistive force known as **drag**. This force opposes the object's motion and is fundamental to understanding a wide range of physical phenomena. A key consequence of drag is the concept of **terminal velocity**, a steady-state condition that arises from the interplay between the driving forces of motion (like gravity) and the resistive drag force. This chapter will elucidate the principles governing drag and [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman), starting from the static balance of forces and progressing to the dynamic differential equations that describe the motion.
 
 ### The Concept of Terminal Velocity: A Balance of Forces
 
 Imagine an object released from rest in a gravitational field, such as a skydiver jumping from an airplane. Initially, its speed is zero, and the only significant vertical force acting upon it is gravity, $F_g = mg$, where $m$ is the mass and $g$ is the acceleration due to gravity. The object accelerates downwards. As its speed, $v$, increases, it encounters a drag force, $F_d$, from the surrounding fluid (in this case, air). This drag force is directed opposite to the motion—upwards for a falling object—and its magnitude increases with speed.
 
-The net force on the object is the vector sum of the gravitational and drag forces. Taking the downward direction as positive, Newton's second law is written as:
+The [net force](@keyword=net_force|lang=en-US|style=Feynman) on the object is the vector sum of the gravitational and drag forces. Taking the downward direction as positive, Newton's second law is written as:
 
 $$m a = mg - F_d(v)$$
 
-As the object's speed $v$ increases, the magnitude of the drag force $F_d(v)$ also increases. Eventually, the object can reach a speed at which the upward drag force perfectly balances the downward gravitational force. At this point, the net force on the object is zero ($mg - F_d = 0$), and its acceleration $a$ becomes zero. The object ceases to accelerate and continues to fall at a constant velocity. This maximum, constant velocity is known as the **terminal velocity**, denoted by $v_T$.
+As the object's speed $v$ increases, the magnitude of the drag force $F_d(v)$ also increases. Eventually, the object can reach a speed at which the upward drag force perfectly balances the downward [gravitational force](@keyword=gravitational_force|lang=en-US|style=Feynman). At this point, the net force on the object is zero ($mg - F_d = 0$), and its acceleration $a$ becomes zero. The object ceases to accelerate and continues to fall at a [constant velocity](@keyword=constant_velocity|lang=en-US|style=Feynman). This maximum, constant velocity is known as the **[terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman)**, denoted by $v_T$.
 
-The condition for terminal velocity is therefore a static equilibrium of forces:
+The condition for [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman) is therefore a static equilibrium of forces:
 
 $$F_d(v_T) = mg$$
 
-This simple relationship reveals that the terminal velocity of an object depends critically on its mass and the nature of the drag force, which in turn is influenced by the object's shape, size, and the properties of the fluid.
+This simple relationship reveals that the [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman) of an object depends critically on its mass and the nature of the drag force, which in turn is influenced by the object's shape, size, and the properties of the fluid.
 
-For instance, consider a scientific probe falling through the atmosphere. The drag force is often modeled as being proportional to the cross-sectional area $A$ and the square of the speed, $F_d = \beta A v^2$. At terminal velocity $v_{t1}$, the force balance is $mg = \beta A_1 v_{t1}^2$. If we modify the probe, increasing its mass to $M$ and its area to $A_2$, it will achieve a new terminal velocity $v_{t2}$ such that $Mg = \beta A_2 v_{t2}^2$. By taking the ratio of these two equations, we can eliminate the constants $g$ and $\beta$, revealing a direct relationship between the measurable quantities: $\frac{m}{M} = \frac{A_1 v_{t1}^2}{A_2 v_{t2}^2}$. This demonstrates how terminal velocity measurements can be used to deduce physical properties of an object [@problem_id:2192909].
+For instance, consider a scientific probe falling through the atmosphere. The drag force is often modeled as being proportional to the cross-sectional area $A$ and the square of the speed, $F_d = \beta A v^2$. At terminal velocity $v_{t1}$, the force balance is $mg = \beta A_1 v_{t1}^2$. If we modify the probe, increasing its mass to $M$ and its area to $A_2$, it will achieve a new [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman) $v_{t2}$ such that $Mg = \beta A_2 v_{t2}^2$. By taking the ratio of these two equations, we can eliminate the constants $g$ and $\beta$, revealing a direct relationship between the measurable quantities: $\frac{m}{M} = \frac{A_1 v_{t1}^2}{A_2 v_{t2}^2}$. This demonstrates how terminal velocity measurements can be used to deduce physical properties of an object [@problem_id:2192909].
 
-In cases where an object is submerged in a fluid, such as a bead settling in a column of water, we must also account for the upward **buoyant force**, $F_b$, as described by Archimedes' principle. The buoyant force is equal to the weight of the fluid displaced by the object, $F_b = \rho_f V g$, where $\rho_f$ is the fluid density and $V$ is the object's volume. The net force balance at terminal velocity then becomes:
+In cases where an object is submerged in a fluid, such as a bead settling in a column of water, we must also account for the upward **[buoyant force](@keyword=buoyant_force|lang=en-US|style=Feynman)**, $F_b$, as described by Archimedes' principle. The buoyant force is equal to the weight of the fluid displaced by the object, $F_b = \rho_f V g$, where $\rho_f$ is the fluid density and $V$ is the object's volume. The net [force balance](@keyword=force_balance|lang=en-US|style=Feynman) at terminal velocity then becomes:
 
 $$F_d(v_T) + F_b = mg$$
 
-Solving for the drag force gives $F_d(v_T) = mg - \rho_f V g = mg(1 - \frac{\rho_f}{\rho_o})$, where $\rho_o$ is the object's density. This shows that buoyancy effectively reduces the net gravitational force, leading to a lower terminal velocity than would be observed in a vacuum or a much less dense fluid [@problem_id:2204379].
+Solving for the drag force gives $F_d(v_T) = mg - \rho_f V g = mg(1 - \frac{\rho_f}{\rho_o})$, where $\rho_o$ is the object's density. This shows that [buoyancy](@keyword=buoyancy|lang=en-US|style=Feynman) effectively reduces the net gravitational force, leading to a lower terminal velocity than would be observed in a vacuum or a much less dense fluid [@problem_id:2204379].
 
 ### Modeling Drag Forces
 
 The functional form of the drag force, $F_d(v)$, is complex and depends on the fluid's properties (like density and viscosity) and the object's speed, size, and shape. This relationship is often characterized by a dimensionless quantity called the Reynolds number. For many applications in introductory dynamics, we can approximate the drag force using two simplified models.
 
 #### Linear Drag Model
-For small objects moving at low speeds, the drag force is often well approximated by a linear relationship with velocity:
+For small objects moving at low speeds, the drag force is often well approximated by a [linear relationship](@keyword=linear_relationship|lang=en-US|style=Feynman) with velocity:
 
 $$F_d = b v$$
 
-This is known as **linear drag** or Stokes' drag. The constant $b$ is the linear drag coefficient, which encapsulates the properties of the fluid and the geometry of the object.
+This is known as **[linear drag](@keyword=linear_drag|lang=en-US|style=Feynman)** or Stokes' drag. The constant $b$ is the linear drag coefficient, which encapsulates the properties of the fluid and the geometry of the object.
 
 #### Quadratic Drag Model
 For larger objects moving at higher speeds, such as a skydiver, a car, or a micrometeoroid entering the atmosphere, the drag force is more accurately described by a quadratic relationship with speed:
 
 $$F_d = c v^2$$
 
-This is known as **quadratic drag** or Newtonian drag. The constant $c$ is the quadratic drag coefficient. To ensure that this physical model is dimensionally consistent, we can analyze the units. Force has SI units of $\text{kg} \cdot \text{m} \cdot \text{s}^{-2}$ (Newtons), and speed has units of $\text{m} \cdot \text{s}^{-1}$. For the equation $F_d = c v^2$ to be valid, the units must balance:
+This is known as **quadratic drag** or Newtonian drag. The constant $c$ is the quadratic [drag coefficient](@keyword=drag_coefficient|lang=en-US|style=Feynman). To ensure that this physical model is dimensionally consistent, we can analyze the units. Force has SI units of $\text{kg} \cdot \text{m} \cdot \text{s}^{-2}$ (Newtons), and speed has units of $\text{m} \cdot \text{s}^{-1}$. For the equation $F_d = c v^2$ to be valid, the units must balance:
 
 $[\text{Units of } c] = \frac{[\text{Units of } F_d]}{[\text{Units of } v^2]} = \frac{\text{kg} \cdot \text{m} \cdot \text{s}^{-2}}{(\text{m} \cdot \text{s}^{-1})^2} = \frac{\text{kg} \cdot \text{m} \cdot \text{s}^{-2}}{\text{m}^2 \cdot \text{s}^{-2}} = \text{kg} \cdot \text{m}^{-1}$
 
@@ -55,19 +55,19 @@ Thus, the SI units of the quadratic drag coefficient $c$ are kilograms per meter
 
 ### The Dynamics of Approaching Terminal Velocity: The Linear Drag Model
 
-While the force-balance equation defines what terminal velocity is, it does not describe how an object's velocity changes over time to reach that state. To understand this dynamic process, we must solve the equation of motion—a differential equation.
+While the force-balance equation defines what [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman) is, it does not describe how an object's velocity changes over time to reach that state. To understand this dynamic process, we must solve the [equation of motion](@keyword=equation_of_motion|lang=en-US|style=Feynman)—a differential equation.
 
-For an object falling from rest under gravity and linear drag, Newton's second law is:
+For an object falling from rest under gravity and [linear drag](@keyword=linear_drag|lang=en-US|style=Feynman), Newton's second law is:
 
 $$m \frac{dv}{dt} = mg - bv$$
 
-This is a first-order linear ordinary differential equation. We can find the terminal velocity $v_T$ by setting the acceleration $\frac{dv}{dt}$ to zero, which gives $mg - bv_T = 0$, so $v_T = \frac{mg}{b}$. Using this, we can substitute $b = \frac{mg}{v_T}$ back into the equation of motion:
+This is a first-order linear [ordinary differential equation](@keyword=ordinary_differential_equation|lang=en-US|style=Feynman). We can find the [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman) $v_T$ by setting the acceleration $\frac{dv}{dt}$ to zero, which gives $mg - bv_T = 0$, so $v_T = \frac{mg}{b}$. Using this, we can substitute $b = \frac{mg}{v_T}$ back into the [equation of motion](@keyword=equation_of_motion|lang=en-US|style=Feynman):
 
 $$\frac{dv}{dt} = g - \frac{b}{m} v = g \left(1 - \frac{v}{v_T}\right)$$
 
 This form of the equation is particularly insightful. It shows that the acceleration is initially $g$ (when $v=0$) and decreases linearly with velocity, becoming zero when $v = v_T$.
 
-To find the velocity as a function of time, $v(t)$, we can solve this separable differential equation. With the initial condition $v(0)=0$:
+To find the velocity as a function of time, $v(t)$, we can solve this [separable differential equation](@keyword=separable_differential_equation|lang=en-US|style=Feynman). With the initial condition $v(0)=0$:
 $$\int_{0}^{v} \frac{dv'}{g - \frac{b}{m}v'} = \int_{0}^{t} dt'$$
 
 Solving this integral yields the solution:
@@ -78,7 +78,7 @@ Recognizing that $v_T = \frac{mg}{b}$, the solution becomes:
 
 $$v(t) = v_T \left(1 - \exp\left(-\frac{t}{\tau}\right)\right)$$
 
-Here, we have introduced the **characteristic time** or time constant, $\tau = \frac{m}{b}$. This parameter has units of time and dictates how quickly the object approaches its terminal velocity. After one time constant ($t=\tau$), the object has reached $(1 - e^{-1}) \approx 0.632$ or 63.2% of its terminal velocity. Using the definition of $v_T$, we can also express the time constant as $\tau = \frac{v_T}{g}$ [@problem_id:2204377]. This elegantly connects the terminal velocity, gravity, and the time scale of the motion. For example, the time $T$ required to reach a speed of $\frac{N}{N+1}v_T$ is found by solving $\frac{N}{N+1} = 1 - \exp(-\frac{T}{\tau})$, which gives $T = \tau \ln(N+1)$ [@problem_id:2204352].
+Here, we have introduced the **characteristic time** or time constant, $\tau = \frac{m}{b}$. This parameter has units of time and dictates how quickly the object approaches its [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman). After one [time constant](@keyword=time_constant|lang=en-US|style=Feynman) ($t=\tau$), the object has reached $(1 - e^{-1}) \approx 0.632$ or 63.2% of its [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman). Using the definition of $v_T$, we can also express the [time constant](@keyword=time_constant|lang=en-US|style=Feynman) as $\tau = \frac{v_T}{g}$ [@problem_id:2204377]. This elegantly connects the [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman), gravity, and the time scale of the motion. For example, the time $T$ required to reach a speed of $\frac{N}{N+1}v_T$ is found by solving $\frac{N}{N+1} = 1 - \exp(-\frac{T}{\tau})$, which gives $T = \tau \ln(N+1)$ [@problem_id:2204352].
 
 ### The Dynamics of Approaching Terminal Velocity: The Quadratic Drag Model
 
@@ -86,7 +86,7 @@ For objects experiencing quadratic drag, the physics is analogous but the mathem
 
 $$m \frac{dv}{dt} = mg - cv^2$$
 
-Again, we find the terminal velocity by setting $\frac{dv}{dt} = 0$, which gives $mg - cv_T^2 = 0$, or $v_T = \sqrt{\frac{mg}{c}}$. Substituting $c = \frac{mg}{v_T^2}$ back into the differential equation gives:
+Again, we find the [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman) by setting $\frac{dv}{dt} = 0$, which gives $mg - cv_T^2 = 0$, or $v_T = \sqrt{\frac{mg}{c}}$. Substituting $c = \frac{mg}{v_T^2}$ back into the differential equation gives:
 
 $$\frac{dv}{dt} = g\left(1 - \frac{v^2}{v_T^2}\right)$$
 
@@ -94,17 +94,17 @@ This is a nonlinear first-order differential equation. It is separable and can b
 
 $$\int_{0}^{v} \frac{dv'}{1 - (v'/v_T)^2} = \int_{0}^{t} g dt'$$
 
-The integral on the left is a standard form whose solution involves the inverse hyperbolic tangent function, $\arctanh$. The solution for the velocity as a function of time is:
+The integral on the left is a standard form whose solution involves the inverse hyperbolic tangent function, $\operatorname{arctanh}$. The solution for the velocity as a function of time is:
 
 $$v(t) = v_T \tanh\left(\frac{gt}{v_T}\right)$$
 
-Here, $\tanh$ is the hyperbolic tangent function. Like the exponential function in the linear case, $\tanh(x)$ starts at 0 and asymptotically approaches 1 as $x \to \infty$. This ensures that $v(t)$ starts at 0 and approaches $v_T$ as $t \to \infty$. Using this solution, one can calculate the time required to reach any fraction of terminal velocity, such as 95.0% for a skydiver with known mass and drag coefficient [@problem_id:2204374].
+Here, $\tanh$ is the hyperbolic tangent function. Like the exponential function in the linear case, $\tanh(x)$ starts at 0 and asymptotically approaches 1 as $x \to \infty$. This ensures that $v(t)$ starts at 0 and approaches $v_T$ as $t \to \infty$. Using this solution, one can calculate the time required to reach any fraction of [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman), such as 95.0% for a skydiver with known mass and drag coefficient [@problem_id:2204374].
 
-A crucial insight from this model is that terminal velocity acts as a stable equilibrium. If an object is propelled downwards with an initial velocity $v_0$ that is *greater* than its terminal velocity ($v_0 > v_T$), the drag force $cv_0^2$ will be greater than the force of gravity $mg$. The net force, and thus the acceleration $\frac{dv}{dt}$, will be negative (directed upwards). The object will slow down, with its velocity asymptotically approaching $v_T$ from above. For example, if an object has an initial velocity of $v_0 = 3v_T$, its initial acceleration is $a_0 = g(1 - (3v_T)^2/v_T^2) = g(1-9) = -8g$. The negative sign indicates deceleration [@problem_id:2204369].
+A crucial insight from this model is that terminal velocity acts as a [stable equilibrium](@keyword=stable_equilibrium|lang=en-US|style=Feynman). If an object is propelled downwards with an [initial velocity](@keyword=initial_velocity|lang=en-US|style=Feynman) $v_0$ that is *greater* than its terminal velocity ($v_0 > v_T$), the drag force $cv_0^2$ will be greater than the force of gravity $mg$. The net force, and thus the acceleration $\frac{dv}{dt}$, will be negative (directed upwards). The object will slow down, with its velocity asymptotically approaching $v_T$ from above. For example, if an object has an initial velocity of $v_0 = 3v_T$, its initial acceleration is $a_0 = g(1 - (3v_T)^2/v_T^2) = g(1-9) = -8g$. The negative sign indicates deceleration [@problem_id:2204369].
 
 ### Advanced Models and Extensions
 
-The linear and quadratic drag models provide a strong foundation, but real-world scenarios can involve greater complexity. The differential equations framework is robust enough to accommodate many such extensions.
+The [linear and quadratic drag](@keyword=linear_and_quadratic_drag|lang=en-US|style=Feynman) models provide a strong foundation, but real-world scenarios can involve greater complexity. The differential equations framework is robust enough to accommodate many such extensions.
 
 #### Combined Drag Forces
 In reality, drag is a complex phenomenon that can involve both linear (viscous) and quadratic (inertial) effects. A more accurate model, valid over a wider range of speeds, combines both terms:
@@ -114,27 +114,27 @@ $$F_d = c_1 v + c_2 v^2$$
 The equation of motion becomes:
 $$m \frac{dv}{dt} = mg - c_1 v - c_2 v^2$$
 
-The terminal velocity is found by solving the quadratic equation $c_2 v_T^2 + c_1 v_T - mg = 0$. While the solution of the full differential equation is more involved, it can be handled with the same separation of variables technique, leading to a more complex logarithmic solution. This approach allows for higher-fidelity modeling of systems where neither drag component is negligible [@problem_id:2204372].
+The [terminal velocity](@keyword=terminal_velocity|lang=en-US|style=Feynman) is found by solving the quadratic equation $c_2 v_T^2 + c_1 v_T - mg = 0$. While the solution of the full differential equation is more involved, it can be handled with the same separation of variables technique, leading to a more complex logarithmic solution. This approach allows for higher-fidelity modeling of systems where neither drag component is negligible [@problem_id:2204372].
 
 #### Spatially Varying Environments
-In many situations, the drag coefficient is not constant. For a probe falling through the atmosphere or coasting through a nebula, the density of the surrounding medium changes with position. This can be modeled by making the drag coefficient a function of position, e.g., $k(y) = k_0 \exp(-y/H)$, where density decreases exponentially with altitude $y$. The equation of motion becomes $m \frac{dv}{dt} = -k(y)v$.
+In many situations, the [drag coefficient](@keyword=drag_coefficient|lang=en-US|style=Feynman) is not constant. For a probe falling through the atmosphere or coasting through a nebula, the density of the surrounding medium changes with position. This can be modeled by making the [drag coefficient](@keyword=drag_coefficient|lang=en-US|style=Feynman) a function of position, e.g., $k(y) = k_0 \exp(-y/H)$, where density decreases exponentially with altitude $y$. The [equation of motion](@keyword=equation_of_motion|lang=en-US|style=Feynman) becomes $m \frac{dv}{dt} = -k(y)v$.
 
-To solve such a problem, it is often useful to change the independent variable from time $t$ to position $y$. Using the chain rule, we can write the acceleration as $\frac{dv}{dt} = \frac{dv}{dy}\frac{dy}{dt} = v \frac{dv}{dy}$. Substituting this into the equation of motion gives:
+To solve such a problem, it is often useful to change the [independent variable](@keyword=independent_variable|lang=en-US|style=Feynman) from time $t$ to position $y$. Using the [chain rule](@keyword=chain_rule|lang=en-US|style=Feynman), we can write the acceleration as $\frac{dv}{dt} = \frac{dv}{dy}\frac{dy}{dt} = v \frac{dv}{dy}$. Substituting this into the equation of motion gives:
 
 $$m v \frac{dv}{dy} = -k(y)v$$
 
-For non-zero velocities, this simplifies to a separable differential equation in $v$ and $y$:
+For non-zero velocities, this simplifies to a [separable differential equation](@keyword=separable_differential_equation|lang=en-US|style=Feynman) in $v$ and $y$:
 $$m \frac{dv}{dy} = -k(y)$$
 This allows us to find the velocity as a function of position, $v(y)$, without explicitly solving for time [@problem_id:2204344].
 
 #### Variable Mass Systems
 A further level of complexity arises when the mass of the object itself changes during motion. This occurs, for example, with a rocket burning fuel or a probe accreting atmospheric dust. In these cases, the simple form of Newton's second law, $\mathbf{F}_{net} = m\mathbf{a}$, is insufficient. We must return to the more fundamental statement that the net external force equals the rate of change of momentum, $\mathbf{F}_{net} = \frac{d\mathbf{p}}{dt} = \frac{d(m\mathbf{v})}{dt}$.
 
-For an object accreting mass from a stationary medium, the equation of motion becomes:
+For an object accreting mass from a stationary medium, the [equation of motion](@keyword=equation_of_motion|lang=en-US|style=Feynman) becomes:
 $$m \frac{dv}{dt} = \sum F_{ext} - v \frac{dm}{dt}$$
-The last term represents the "thrust" required to accelerate the newly acquired mass from rest to the object's current velocity $v$.
+The last term represents the "[thrust](@keyword=thrust|lang=en-US|style=Feynman)" required to accelerate the newly acquired mass from rest to the object's current velocity $v$.
 
-Consider a probe whose mass increases at a rate proportional to its speed, $\frac{dm}{dt} = \alpha v$, while subject to gravity and quadratic drag. The equation of motion is:
+Consider a probe whose mass increases at a rate proportional to its speed, $\frac{dm}{dt} = \alpha v$, while subject to gravity and quadratic drag. The [equation of motion](@keyword=equation_of_motion|lang=en-US|style=Feynman) is:
 $$m \frac{dv}{dt} = mg - cv^2 - v(\alpha v) = mg - (c+\alpha)v^2$$
 
-To find the velocity as a function of mass, we again use the chain rule to change variables: $\frac{dv}{dt} = \frac{dv}{dm}\frac{dm}{dt} = \alpha v \frac{dv}{dm}$. This leads to a first-order linear differential equation for $v^2$ as a function of $m$, which can be solved using an integrating factor. This advanced technique allows us to model highly complex dynamic systems where both drag and mass are changing simultaneously [@problem_id:2204349].
+To find the velocity as a function of mass, we again use the chain rule to change variables: $\frac{dv}{dt} = \frac{dv}{dm}\frac{dm}{dt} = \alpha v \frac{dv}{dm}$. This leads to a first-order [linear differential equation](@keyword=linear_differential_equation|lang=en-US|style=Feynman) for $v^2$ as a function of $m$, which can be solved using an integrating factor. This advanced technique allows us to model highly complex dynamic systems where both drag and mass are changing simultaneously [@problem_id:2204349].

@@ -50,11 +50,11 @@ The most apparent cost is time. To build a complete image, a scanner needs to co
 
 Let's imagine we're performing a cardiac MRI. A typical heart rate is $75$ beats per minute (bpm), which means one heartbeat, or R-R interval, lasts $T_{RR} = 60/75 = 0.8\,\text{s}$. The quiescent window might only last for $80\,\text{ms}$ ($0.08\,\text{s}$). If each piece of data (a phase-encoding line) takes $4\,\text{ms}$ to acquire, we can calculate the maximum number of lines we can snatch per heartbeat:
 $$
-N_\max = \frac{80\,\text{ms}}{4\,\text{ms}} = 20 \text{ lines}
+N_{\max} = \frac{80\,\text{ms}}{4\,\text{ms}} = 20 \text{ lines}
 $$
 If we need $256$ lines to form a complete image, the minimum number of heartbeats required is:
 $$
-B_\min = \left\lceil \frac{256}{20} \right\rceil = \lceil 12.8 \rceil = 13 \text{ heartbeats}
+B_{\min} = \left\lceil \frac{256}{20} \right\rceil = \lceil 12.8 \rceil = 13 \text{ heartbeats}
 $$
 Since each heartbeat takes $0.8\,\text{s}$, the total minimum scan time becomes $13 \times 0.8\,\text{s} = 10.4\,\text{s}$ [@problem_id:4911792]. Notice that the total time we were actually acquiring data was just $256 \times 4\,\text{ms} = 1.024\,\text{s}$. The other 90% of the time was spent waiting.
 

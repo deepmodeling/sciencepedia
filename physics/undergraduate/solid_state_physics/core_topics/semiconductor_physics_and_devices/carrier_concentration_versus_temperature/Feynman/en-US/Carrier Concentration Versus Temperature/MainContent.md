@@ -37,7 +37,7 @@ $$n + N_a^- = p + N_d^+$$
 This equation is the supreme law of the land. The concentrations of all four charge species are interconnected through their dependence on a single, powerful parameter: the **Fermi level**, $E_F$. The Fermi level can be thought of as the "water level" for electrons. The probability that any given energy state is occupied by an electron is determined by its energy relative to $E_F$. States far below $E_F$ are almost certainly full; states far above are almost certainly empty.
 
 By expressing $n$ and $p$ in terms of the Fermi level and the intrinsic level $E_i$ (where $E_F$ would lie in a pure semiconductor), and under the reasonable assumption that at operating temperatures all dopants are ionized, the [charge neutrality](@keyword=charge_neutrality|lang=en-US|style=Feynman) condition can be solved explicitly. This leads to a beautifully compact expression for the position of the Fermi level [@problem_id:1763664]:
-$$E_F - E_i = k_B T \arcsinh\left(\frac{N_d - N_a}{2n_i}\right)$$
+$$E_F - E_i = k_B T \operatorname{arcsinh}\left(\frac{N_d - N_a}{2n_i}\right)$$
 This equation tells us everything! It shows how the net doping ($N_d - N_a$) pulls the Fermi level up (for n-type) or down (for [p-type](@keyword=p_type|lang=en-US|style=Feynman)) from the intrinsic center, and how the rising tide of intrinsic carriers ($n_i$) at high temperatures works to pull it back toward the middle.
 
 ### A Journey Through Temperature: The Three Ages of a Semiconductor

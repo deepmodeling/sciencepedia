@@ -8,11 +8,11 @@
 
 现[代数学](@keyword=algebra|lang=zh-CN|style=Feynman)中最深刻、最具挑战性的问题之一是Birch和Swinnerton-Dyer（BSD）猜想。它关乎[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)——形如$y^2 = x^3 + ax + b$的看似简单的方程，其内部蕴含着极其丰富的算术结构。该猜想假设，这类[曲线上的有理点](@keyword=rational_points_on_curves|lang=zh-CN|style=Feynman)数量与其相关解析对象——其$L$-函数——在特殊值$s=1$处的行为之间存在深刻联系。
 
-这幅图景中一个特别神秘的方面是[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman)，记作$\Sha(E/\mathbb{Q})$。这个群衡量了[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)某个“局部到全局”原则的失效程度。几十年来，人们甚至不知道这个群是否总是有限的。我们如何才能掌控这样一个难以捉摸的对象呢？
+这幅图景中一个特别神秘的方面是[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman)，记作$\mathrm{Ш}(E/\mathbb{Q})$。这个群衡量了[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)某个“局部到全局”原则的失效程度。几十年来，人们甚至不知道这个群是否总是有限的。我们如何才能掌控这样一个难以捉摸的对象呢？
 
 在此，[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)的力量以一种戏剧性的方式登场。Gross、Zagier和Kolyvagin的开创性工作为Kato后来更具普遍性的构造奠定了概念基础，并取得了第一个重大突破。他们的策略堪称数学侦查的典范。如果一条[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)$E$在[虚二次域](@keyword=imaginary_quadratic_fields|lang=zh-CN|style=Feynman)$K$上的$L$-函数在$s=1$处恰好有一阶零点（一个称为[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)一的条件），[Gross-Zagier定理](@keyword=gross_zagier_theorem|lang=zh-CN|style=Feynman)表明，这一解析事实对应于曲线上一个特殊的非平凡点的存在——一个[Heegner点](@keyword=heegner_points|lang=zh-CN|style=Feynman)。
 
-这一个点就是可以生长出整个[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)的“种子”。Kolyvagin的天才之处在于，他展示了这个相关的上同调类系统如何像一个笼子一样，系统地约束了另一个关键对象——[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小。由于[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)包含了[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman)，囚禁[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)也同样囚禁了$\Sha(E/\mathbb{Q})$。这一系列壮观推理的结论是，在这些条件下，[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman)必须是有限的。这是对一大类[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的$\Sha$群有限性的第一个普遍证明，将一个长期的猜想变成了定理，并展示了[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)将解析信息转化为具体算术结果的巨大威力[@problem_id:3024973]。
+这一个点就是可以生长出整个[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)的“种子”。Kolyvagin的天才之处在于，他展示了这个相关的上同调类系统如何像一个笼子一样，系统地约束了另一个关键对象——[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小。由于[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)包含了[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman)，囚禁[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)也同样囚禁了$\mathrm{Ш}(E/\mathbb{Q})$。这一系列壮观推理的结论是，在这些条件下，[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman)必须是有限的。这是对一大类[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的$\mathrm{Ш}$群有限性的第一个普遍证明，将一个长期的猜想变成了定理，并展示了[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)将解析信息转化为具体算术结果的巨大威力[@problem_id:3024973]。
 
 ### 从理论到数字：作为计算工具的[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)
 
@@ -20,7 +20,7 @@
 
 由Kato为[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)证明的[岩泽主猜想](@keyword=iwasawa_main_conjecture|lang=zh-CN|style=Feynman)给出了一个精确的陈述：[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的某个[特征理想](@keyword=characteristic_ideal|lang=zh-CN|style=Feynman)（代数侧）可以被$p$-adic $L$-函数（解析侧）“整除”。虽然完整的陈述相当技术化，但在有理数$\mathbb{Q}$层面上，一个直接的推论是一个显著的不等式。对于在素数$p$处具有良好常约化的椭圆曲线$E$，它对其[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman)的$p$-准素部分的大小给出了一个硬性上界：
 
-$$ \operatorname{ord}_{p}\! \big(\#\Sha(E/\mathbb{Q})[p^{\infty}]\big) \le \operatorname{ord}_{p}\! \big( L_{p}(E,1) \big) + (\text{局部校正项}) $$
+$$ \operatorname{ord}_{p}\! \big(\#\mathrm{Ш}(E/\mathbb{Q})[p^{\infty}]\big) \le \operatorname{ord}_{p}\! \big( L_{p}(E,1) \big) + (\text{局部校正项}) $$
 
 这里，$\operatorname{ord}_{p}$衡量一个数中因子$p$的个数。左边是我们想要理解的神秘代数群的大小。右边则以$p$-adic $L$-函数的特殊值的大小（一个解析量）为基准。“局部校正项”是一些明确的数（Tamagawa数），用于解释曲线在“行为不良”的素数处的复杂细节。这个公式将一个抽象的定理转化为一个实用的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)。给定一条椭圆曲线，人们可以（原则上）计算出$L$-值和校正因子，从而得出其[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman)大小的数值上限，这表明Kato的理论不仅在存在性上强大，在计算上也同样有效[@problem_id:3013764]。
 

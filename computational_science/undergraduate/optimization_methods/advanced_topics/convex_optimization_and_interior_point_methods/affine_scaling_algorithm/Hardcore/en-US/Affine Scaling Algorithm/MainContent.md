@@ -1,9 +1,9 @@
 ## Introduction
-The Affine Scaling algorithm stands as a cornerstone in the evolution of optimization, offering an elegant and intuitive approach to solving linear programming problems. Unlike classical methods that traverse the edges of the feasible region, affine scaling pioneered the concept of moving through its interior, creating a new paradigm for constrained optimization. This article addresses the challenge of efficiently solving linear programs while strictly respecting non-negativity constraints, a problem where simple gradient methods often fail. We will embark on a structured journey through this powerful technique. In the first chapter, "Principles and Mechanisms," we will dissect the algorithm's core, from its geometric intuition to the derivation of its search direction. The second chapter, "Applications and Interdisciplinary Connections," will showcase its utility in real-world scenarios across engineering, finance, and logistics. Finally, "Hands-On Practices" will provide concrete exercises to solidify your understanding. This progression from theory to application will equip you with a comprehensive grasp of the Affine Scaling algorithm.
+The Affine Scaling algorithm stands as a cornerstone in the evolution of optimization, offering an elegant and intuitive approach to solving [linear programming](@keyword=linear_programming|lang=en-US|style=Feynman) problems. Unlike classical methods that traverse the edges of the feasible region, affine scaling pioneered the concept of moving through its interior, creating a new paradigm for constrained optimization. This article addresses the challenge of efficiently solving linear programs while strictly respecting non-negativity constraints, a problem where simple gradient methods often fail. We will embark on a structured journey through this powerful technique. In the first chapter, "Principles and Mechanisms," we will dissect the algorithm's core, from its geometric intuition to the derivation of its search direction. The second chapter, "Applications and Interdisciplinary Connections," will showcase its utility in real-world scenarios across engineering, finance, and logistics. Finally, "Hands-On Practices" will provide concrete exercises to solidify your understanding. This progression from theory to application will equip you with a comprehensive grasp of the Affine Scaling algorithm.
 
 ## Principles and Mechanisms
 
-The Affine Scaling algorithm represents a foundational step in the development of modern interior-point methods. Its elegance lies in transforming a constrained optimization problem into a series of unconstrained steps within a dynamically scaled space. This chapter elucidates the core principles of the method, from its geometric intuition to the algebraic formulation of its search direction, step-size calculation, and its relationship to more advanced interior-point frameworks. We will also explore the practical challenges of implementation, including computational efficiency and numerical stability.
+The Affine Scaling algorithm represents a foundational step in the development of modern [interior-point methods](@keyword=interior_point_methods|lang=en-US|style=Feynman). Its elegance lies in transforming a [constrained optimization](@keyword=constrained_optimization|lang=en-US|style=Feynman) problem into a series of unconstrained steps within a dynamically scaled space. This chapter elucidates the core principles of the method, from its geometric intuition to the algebraic formulation of its search direction, step-size calculation, and its relationship to more advanced interior-point frameworks. We will also explore the practical challenges of implementation, including [computational efficiency](@keyword=computational_efficiency|lang=en-US|style=Feynman) and numerical stability.
 
 ### The Geometric Intuition: Scaling the Feasible Region
 
@@ -15,11 +15,11 @@ $$
  x \ge 0
 \end{aligned}
 $$
-A central challenge in solving this problem is handling the non-negativity constraints, $x_i \ge 0$. A simple gradient-based method that takes a step $x_{k+1} = x_k - \alpha \nabla f(x_k)$ is insufficient, as it can easily violate these boundaries. A more sophisticated approach, such as projecting the negative gradient $-c$ onto the nullspace of $A$ to maintain the equality constraints $Ax=b$, still fails to adequately respect the boundary conditions. Such a Euclidean projection is agnostic to the current iterate's proximity to the boundary walls $x_i = 0$, leading to infinitesimally small steps when an iterate is very close to a boundary.
+A central challenge in solving this problem is handling the non-negativity constraints, $x_i \ge 0$. A simple gradient-based method that takes a step $x_{k+1} = x_k - \alpha \nabla f(x_k)$ is insufficient, as it can easily violate these boundaries. A more sophisticated approach, such as projecting the negative gradient $-c$ onto the [nullspace](@keyword=nullspace|lang=en-US|style=Feynman) of $A$ to maintain the equality constraints $Ax=b$, still fails to adequately respect the boundary conditions. Such a Euclidean projection is agnostic to the current iterate's proximity to the boundary walls $x_i = 0$, leading to infinitesimally small steps when an iterate is very close to a boundary.
 
 The affine scaling method's key insight is to reshape, or scale, the problem space at every iteration. This transformation is designed to place the current strictly feasible point $x$ ($x > 0$) at a "central" location, equidistant from the boundary constraints in the transformed space. This is achieved through a simple affine transformation.
 
-Let $x$ be the current strictly feasible iterate. We define a diagonal scaling matrix $D = \mathrm{diag}(x_1, x_2, \ldots, x_n)$. Since $x > 0$, $D$ is positive definite and invertible. We then define a new set of variables $\hat{x}$ through the transformation:
+Let $x$ be the current strictly feasible iterate. We define a diagonal [scaling matrix](@keyword=scaling_matrix|lang=en-US|style=Feynman) $D = \mathrm{diag}(x_1, x_2, \ldots, x_n)$. Since $x > 0$, $D$ is positive definite and invertible. We then define a new set of variables $\hat{x}$ through the transformation:
 $$
 \hat{x} = D^{-1} x
 $$
@@ -31,11 +31,11 @@ By performing the optimization step in this scaled space, the algorithm inherent
 
 With the geometric motivation established, we can formally derive the search direction. We seek a direction $d$ in the original $x$-space that corresponds to a fruitful descent direction in the scaled space. The update will be of the form $x_{new} = x + d$.
 
-To maintain feasibility for the equality constraints, the step $d$ must lie in the nullspace of $A$:
+To maintain feasibility for the equality constraints, the step $d$ must lie in the [nullspace](@keyword=nullspace|lang=en-US|style=Feynman) of $A$:
 $$
 A(x+d) = b \implies Ax + Ad = b \implies Ad = 0
 $$
-In the scaled space, the change is $\Delta \hat{x} = D^{-1}d$. We want to find the direction $d$ that maximizes the rate of cost reduction, $c^{\mathsf{T}}d$, while taking a step of a fixed size in the scaled space. This can be formulated as a trust-region subproblem: find the direction $d$ that solves
+In the scaled space, the change is $\Delta \hat{x} = D^{-1}d$. We want to find the direction $d$ that maximizes the rate of cost reduction, $c^{\mathsf{T}}d$, while taking a step of a fixed size in the scaled space. This can be formulated as a [trust-region subproblem](@keyword=trust_region_subproblem|lang=en-US|style=Feynman): find the direction $d$ that solves
 $$
 \begin{aligned}
 \text{minimize} \quad  c^{\mathsf{T}}d \\
@@ -61,7 +61,7 @@ Substituting this into the constraint $Ad=0$:
 $$
 A \left(-\frac{1}{\lambda}D^2(c - A^{\mathsf{T}}y)\right) = 0 \implies AD^2(c - A^{\mathsf{T}}y) = 0
 $$
-This gives us the **normal equations** for the dual variable estimates $y$:
+This gives us the **[normal equations](@keyword=normal_equations|lang=en-US|style=Feynman)** for the dual variable estimates $y$:
 $$
 (AD^2A^{\mathsf{T}})y = AD^2c
 $$
@@ -73,25 +73,25 @@ The search direction is proportional to $-D^2(c - A^{\mathsf{T}}y)$. By conventi
 $$
 d_{as} = -D^2(c - A^{\mathsf{T}}y)
 $$
-This expression is rich with meaning [@problem_id:3096008]. The vector $s = c - A^{\mathsf{T}}y$ can be interpreted as an estimate of the dual slack variables. The term $d_{as} = -D^2s$ shows that the primal step is a scaled version of this estimated dual slack. The scaling $D^2 = \mathrm{diag}(x_i^2)$ heavily dampens the step components where $x_i$ is small, elegantly achieving the boundary-avoidance objective.
+This expression is rich with meaning [@problem_id:3096008]. The vector $s = c - A^{\mathsf{T}}y$ can be interpreted as an estimate of the dual [slack variables](@keyword=slack_variables|lang=en-US|style=Feynman). The term $d_{as} = -D^2s$ shows that the primal step is a scaled version of this estimated dual slack. The scaling $D^2 = \mathrm{diag}(x_i^2)$ heavily dampens the step components where $x_i$ is small, elegantly achieving the boundary-avoidance objective.
 
 #### Extension to Inequality Constraints
 
-The same principle applies to problems of the form $\min c^{\mathsf{T}}x$ subject to $Ax \le b$. We first convert this to standard form by introducing a vector of slack variables $s \in \mathbb{R}^m$:
+The same principle applies to problems of the form $\min c^{\mathsf{T}}x$ subject to $Ax \le b$. We first convert this to standard form by introducing a vector of [slack variables](@keyword=slack_variables|lang=en-US|style=Feynman) $s \in \mathbb{R}^m$:
 $$
 Ax + s = b, \quad s \ge 0
 $$
-Now, the non-negativity is on the slack variables. A point $x$ is strictly feasible if $s = b - Ax > 0$. The affine scaling transformation is applied to the variables that are bounded by zero—in this case, the slacks $s$.
+Now, the non-negativity is on the [slack variables](@keyword=slack_variables|lang=en-US|style=Feynman). A point $x$ is strictly feasible if $s = b - Ax > 0$. The affine [scaling transformation](@keyword=scaling_transformation|lang=en-US|style=Feynman) is applied to the variables that are bounded by zero—in this case, the slacks $s$.
 
-We define a scaling matrix $S = \mathrm{diag}(s_1, \ldots, s_m)$. The step direction $\Delta x$ is found by solving a trust-region problem in the scaled slack space, which leads to the following system for the search direction $\Delta x$ [@problem_id:3095981]:
+We define a [scaling matrix](@keyword=scaling_matrix|lang=en-US|style=Feynman) $S = \mathrm{diag}(s_1, \ldots, s_m)$. The step direction $\Delta x$ is found by solving a trust-region problem in the scaled slack space, which leads to the following system for the search direction $\Delta x$ [@problem_id:3095981]:
 $$
 (A^{\mathsf{T}}S^{-2}A) \Delta x = -c
 $$
-Once $\Delta x$ is computed, the corresponding change in slacks is $\Delta s = -A \Delta x$. The logic remains identical: the scaling by $S^{-2}$ penalizes steps that would quickly reduce a small slack variable, thus keeping the iterates away from the constraint boundaries.
+Once $\Delta x$ is computed, the corresponding change in slacks is $\Delta s = -A \Delta x$. The logic remains identical: the scaling by $S^{-2}$ penalizes steps that would quickly reduce a small [slack variable](@keyword=slack_variable|lang=en-US|style=Feynman), thus keeping the iterates away from the constraint boundaries.
 
 ### Determining the Step Length
 
-Once the search direction $d$ is computed, we must determine the step length $\alpha$ for the update $x_{new} = x + \alpha d$. The primary requirement is to maintain strict feasibility, i.e., $x_{new} > 0$.
+Once the search direction $d$ is computed, we must determine the step length $\alpha$ for the update $x_{new} = x + \alpha d$. The primary requirement is to maintain [strict feasibility](@keyword=strict_feasibility|lang=en-US|style=Feynman), i.e., $x_{new} > 0$.
 For each component $i$, we need $x_i + \alpha d_i > 0$.
 - If $d_i \ge 0$, this is true for any $\alpha > 0$ since $x_i > 0$.
 - If $d_i  0$, we must have $\alpha d_i > -x_i$, which implies $\alpha  -x_i/d_i$.
@@ -100,7 +100,7 @@ This condition must hold for all components with $d_i  0$. Therefore, the maximu
 $$
 \alpha_{max} = \min_{i: d_i  0} \left\{-\frac{x_i}{d_i}\right\}
 $$
-If we were to take a step with $\alpha = \alpha_{max}$, at least one component of the new iterate would become exactly zero. This would make it impossible to form the scaling matrix $D$ at the next iteration, as it would be singular. To avoid this, we take a step that is a fraction $\eta$ of the maximum possible step, where $\eta \in (0, 1)$ is a parameter close to 1 (e.g., $0.95$ or $0.99$). The step length is thus calculated as:
+If we were to take a step with $\alpha = \alpha_{max}$, at least one component of the new iterate would become exactly zero. This would make it impossible to form the [scaling matrix](@keyword=scaling_matrix|lang=en-US|style=Feynman) $D$ at the next iteration, as it would be singular. To avoid this, we take a step that is a fraction $\eta$ of the maximum possible step, where $\eta \in (0, 1)$ is a parameter close to 1 (e.g., $0.95$ or $0.99$). The step length is thus calculated as:
 $$
 \alpha = \eta \alpha_{max}
 $$
@@ -108,11 +108,11 @@ This is known as the **fraction-to-the-boundary** rule. The parameter $\eta$ ens
 
 ### Broader Context and Enhancements
 
-While the primal affine scaling algorithm is powerful, it is best understood as a member of the larger family of interior-point methods.
+While the primal affine scaling algorithm is powerful, it is best understood as a member of the larger family of [interior-point methods](@keyword=interior_point_methods|lang=en-US|style=Feynman).
 
 #### Relationship to Logarithmic Barrier Methods
 
-The logarithmic barrier method addresses the non-negativity constraints by adding a penalty term to the objective function:
+The logarithmic [barrier method](@keyword=barrier_method|lang=en-US|style=Feynman) addresses the non-negativity constraints by adding a penalty term to the [objective function](@keyword=objective_function|lang=en-US|style=Feynman):
 $$
 f_\mu(x) = c^{\mathsf{T}}x - \mu \sum_{i=1}^n \ln(x_i)
 $$
@@ -122,11 +122,11 @@ The Newton step $\Delta x$ for minimizing $f_\mu(x)$ subject to $Ax=b$ can be sh
 $$
 \Delta x = \frac{1}{\mu} d_{as} + d_{cen}
 $$
-where $d_{as}$ is a direction identical to the affine scaling direction, and $d_{cen}$ is a "centering" direction that pushes the iterate toward the analytic center of the feasible region. This reveals a deep connection: the affine scaling algorithm is equivalent to a log-barrier method that does not perform an explicit centering step [@problem_id:3096024]. In the limit as $\mu \to 0$, the scaled Newton direction $\mu \Delta x$ converges to the affine scaling direction. This lack of an explicit centering component can sometimes cause the iterates to get "stuck" near a boundary, leading to slow convergence.
+where $d_{as}$ is a direction identical to the affine scaling direction, and $d_{cen}$ is a "centering" direction that pushes the iterate toward the analytic center of the feasible region. This reveals a deep connection: the affine scaling algorithm is equivalent to a log-[barrier method](@keyword=barrier_method|lang=en-US|style=Feynman) that does not perform an explicit centering step [@problem_id:3096024]. In the limit as $\mu \to 0$, the scaled Newton direction $\mu \Delta x$ converges to the affine scaling direction. This lack of an explicit centering component can sometimes cause the iterates to get "stuck" near a boundary, leading to slow convergence.
 
-This insight motivates **predictor-corrector methods**, which are at the heart of most modern interior-point solvers. These methods compute two directions at each iteration [@problem_id:3096038]:
-1.  **Corrector (Centering) Step:** A first step is taken to move the iterate closer to the "central path," a trajectory of points that are optimally centered for each value of $\mu$. This improves the numerical conditioning.
-2.  **Predictor (Affine Scaling) Step:** From this better-centered point, a second, more aggressive step is taken to decrease the objective function, similar to the pure affine scaling step.
+This insight motivates **[predictor-corrector methods](@keyword=predictor_corrector_methods|lang=en-US|style=Feynman)**, which are at the heart of most modern interior-point solvers. These methods compute two directions at each iteration [@problem_id:3096038]:
+1.  **Corrector (Centering) Step:** A first step is taken to move the iterate closer to the "[central path](@keyword=central_path|lang=en-US|style=Feynman)," a trajectory of points that are optimally centered for each value of $\mu$. This improves the [numerical conditioning](@keyword=numerical_conditioning|lang=en-US|style=Feynman).
+2.  **Predictor (Affine Scaling) Step:** From this better-centered point, a second, more aggressive step is taken to decrease the [objective function](@keyword=objective_function|lang=en-US|style=Feynman), similar to the pure affine scaling step.
 
 ### Practical Implementation: Stability and Efficiency
 
@@ -138,26 +138,26 @@ The cost and stability of this step are paramount to the algorithm's performance
 
 #### Computational Cost
 
-For dense matrices, forming the $m \times m$ matrix $H = AD^2A^{\mathsfT}$ and solving the system via a direct method like Cholesky factorization costs $O(m^2n + m^3)$ operations. For large $m$, the $O(m^3)$ term dominates and can be prohibitively expensive.
+For dense matrices, forming the $m \times m$ matrix $H = AD^2A^{\mathsf{T}}$ and solving the system via a direct method like Cholesky factorization costs $O(m^2n + m^3)$ operations. For large $m$, the $O(m^3)$ term dominates and can be prohibitively expensive.
 
-For large, sparse problems, forming $H$ explicitly can destroy sparsity. A better approach is to use an iterative solver like the **Conjugate Gradient (CG) method**, which only requires matrix-vector products [@problem_id:3095973]. The product $Hv$ can be computed implicitly as $A(D^2(A^{\mathsfT}v))$ without ever forming $H$, preserving sparsity and reducing the cost per iteration significantly. To accelerate convergence, preconditioning and inexact solves with a controlled tolerance (using a "forcing sequence") are essential.
+For large, sparse problems, forming $H$ explicitly can destroy sparsity. A better approach is to use an iterative solver like the **Conjugate Gradient (CG) method**, which only requires matrix-vector products [@problem_id:3095973]. The product $Hv$ can be computed implicitly as $A(D^2(A^{\mathsf{T}}v))$ without ever forming $H$, preserving sparsity and reducing the cost per iteration significantly. To accelerate convergence, [preconditioning](@keyword=preconditioning|lang=en-US|style=Feynman) and inexact solves with a controlled tolerance (using a "forcing sequence") are essential.
 
 #### Numerical Stability Challenges
 
-The matrix $H = AD^2A^{\mathsfT}$ can become ill-conditioned or singular for several reasons, posing a serious numerical challenge.
+The matrix $H = AD^2A^{\mathsf{T}}$ can become ill-conditioned or singular for several reasons, posing a serious numerical challenge.
 
-1.  **Redundant Constraints:** If the matrix $A$ has linearly dependent rows (i.e., does not have full row rank), then $H$ will be singular. This is because the rank of $H$ is equal to the rank of $A$ for any positive diagonal matrix $D$ [@problem_id:3095945]. In practice, this can be handled by using a rank-revealing factorization (like a Cholesky factorization with pivoting) to identify and computationally remove the redundant constraints.
+1.  **Redundant Constraints:** If the matrix $A$ has linearly dependent rows (i.e., does not have full row rank), then $H$ will be singular. This is because the rank of $H$ is equal to the rank of $A$ for any positive diagonal matrix $D$ [@problem_id:3095945]. In practice, this can be handled by using a [rank-revealing factorization](@keyword=rank_revealing_factorization|lang=en-US|style=Feynman) (like a Cholesky factorization with pivoting) to identify and computationally remove the redundant constraints.
 
-2.  **Near-Collinearity:** Even if $A$ has full row rank, its rows may be nearly linearly dependent. This can lead to a severely ill-conditioned (nearly singular) matrix $H$, causing the computed dual variables $y$ to be enormous and numerically unreliable [@problem_id:3096036].
+2.  **Near-Collinearity:** Even if $A$ has full row rank, its rows may be nearly linearly dependent. This can lead to a severely ill-conditioned (nearly singular) matrix $H$, causing the computed [dual variables](@keyword=dual_variables|lang=en-US|style=Feynman) $y$ to be enormous and numerically unreliable [@problem_id:3096036].
 
 3.  **Small Iterate Components:** As an iterate $x$ approaches the boundary, some components $x_i$ become very small. This makes the corresponding diagonal entries $D_{ii}^2 = x_i^2$ extremely small. This can also degrade the conditioning of $H$.
 
-Several regularization techniques exist to combat this instability. A common approach is **Tikhonov regularization**, where one solves a perturbed system [@problem_id:3096036]:
+Several [regularization techniques](@keyword=regularization_techniques|lang=en-US|style=Feynman) exist to combat this instability. A common approach is **Tikhonov regularization**, where one solves a perturbed system [@problem_id:3096036]:
 $$
-(AD^2A^{\mathsfT} + \lambda I)y = AD^2c
+(AD^2A^{\mathsf{T}} + \lambda I)y = AD^2c
 $$
-Adding the small term $\lambda I$ (with $\lambda > 0$) guarantees the matrix is positive definite and well-conditioned, ensuring a unique and stable solution for $y$. This comes at a cost: the resulting search direction $d$ will no longer be perfectly feasible, satisfying $Ad = -\lambda y$ instead of $Ad=0$. As $\lambda \to \infty$, the direction simply becomes the unprojected scaled gradient, $d \to -D^2c$.
+Adding the small term $\lambda I$ (with $\lambda > 0$) guarantees the matrix is [positive definite](@keyword=positive_definite|lang=en-US|style=Feynman) and well-conditioned, ensuring a unique and stable solution for $y$. This comes at a cost: the resulting search direction $d$ will no longer be perfectly feasible, satisfying $Ad = -\lambda y$ instead of $Ad=0$. As $\lambda \to \infty$, the direction simply becomes the unprojected scaled gradient, $d \to -D^2c$.
 
-Another heuristic is to "clip" the values in the scaling matrix by replacing $D=\mathrm{diag}(x)$ with $\tilde{D}=\mathrm{diag}(\max\{x_i, \varepsilon\})$ for a small floor $\varepsilon > 0$. This prevents any diagonal element of the scaling matrix from becoming too small, bounding the condition number of $A\tilde{D}^2A^{\mathsf{T}}$ [@problem_id:3095968]. This modification alters the geometry of the scaling, generally penalizing motion less in the coordinates that were clipped.
+Another heuristic is to "clip" the values in the [scaling matrix](@keyword=scaling_matrix|lang=en-US|style=Feynman) by replacing $D=\mathrm{diag}(x)$ with $\tilde{D}=\mathrm{diag}(\max\{x_i, \varepsilon\})$ for a small floor $\varepsilon > 0$. This prevents any diagonal element of the [scaling matrix](@keyword=scaling_matrix|lang=en-US|style=Feynman) from becoming too small, bounding the condition number of $A\tilde{D}^2A^{\mathsf{T}}$ [@problem_id:3095968]. This modification alters the geometry of the scaling, generally penalizing motion less in the coordinates that were clipped.
 
-In summary, the Affine Scaling algorithm provides a clear and powerful framework for solving linear programs by navigating the interior of the feasible region. While the basic algorithm is elegant, its real-world application requires careful attention to numerical linear algebra, computational cost, and stability, leading naturally to the more robust and efficient predictor-corrector methods that dominate the field today.
+In summary, the Affine Scaling algorithm provides a clear and powerful framework for solving linear programs by navigating the interior of the feasible region. While the basic algorithm is elegant, its real-world application requires careful attention to numerical linear algebra, computational cost, and stability, leading naturally to the more robust and efficient [predictor-corrector methods](@keyword=predictor_corrector_methods|lang=en-US|style=Feynman) that dominate the field today.

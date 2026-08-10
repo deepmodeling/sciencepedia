@@ -27,7 +27,7 @@ $$ 3x^3 + 4y^3 + 5z^3 = 0 $$
 
 一旦你在扭量上找到一个有理点，你就可以“钉住”它，宣布该点为原点，这时它就与[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman) $E$ 本身无法区分了。但在那之前，它仍然是一个幻影，是原始曲线的幽灵。这些扭量在数学上由一个特殊的群——[伽罗瓦上同调](@keyword=galois_cohomology|lang=zh-CN|style=Feynman)一阶群 $H^1(\mathbb{Q}, E)$——来分类。
 
-现在我们可以为我们的谜团命名了。**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)**，用引人注目的西里尔字母 Ш 表示，读作“Sha”，是所有这些“迷失”的扭量的集合——它们在每个局部邻域都有地标 ($C(\mathbb{Q}_v) \neq \emptyset$)，但没有全局的、有理的地标 ($C(\mathbb{Q})=\emptyset$)。[@problem_id:3013154] [@problem_id:3025038] $\Sha(E/\mathbb{Q})$ 的每个非平凡元素都对应于像[塞尔默曲线](@keyword=selmer_curve|lang=zh-CN|style=Feynman)那样的曲线，代表了[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)的一次真正失败。Ш群正是衡量这种失败的尺度。它是“幻影解之群”。
+现在我们可以为我们的谜团命名了。**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)**，用引人注目的西里尔字母 Ш 表示，读作“Sha”，是所有这些“迷失”的扭量的集合——它们在每个局部邻域都有地标 ($C(\mathbb{Q}_v) \neq \emptyset$)，但没有全局的、有理的地标 ($C(\mathbb{Q})=\emptyset$)。[@problem_id:3013154] [@problem_id:3025038] $\mathrm{Ш}(E/\mathbb{Q})$ 的每个非平凡元素都对应于像[塞尔默曲线](@keyword=selmer_curve|lang=zh-CN|style=Feynman)那样的曲线，代表了[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)的一次真正失败。Ш群正是衡量这种失败的尺度。它是“幻影解之群”。
 
 ### 侦探的工具箱：[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)与下降法
 
@@ -37,13 +37,13 @@ $$ 3x^3 + 4y^3 + 5z^3 = 0 $$
 
 为了找到 $E(\mathbb{Q})/mE(\mathbb{Q})$，我们构造了一个稍大但仍然有限且可计算的群，称为**$m$-[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman) (m-Selmer group)**，记作 $\mathrm{Sel}^{(m)}(E/\mathbb{Q})$。[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)是我们的“嫌疑犯”名单。它通过收集在所有地方都满足特定局部条件的上同调类来构建；实质上，[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的一个元素是一个“潜在”的[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)片段，它通过了每一项局部测试。[@problem_id:3022326]
 
-在这里我们找到了关键的联系，即连接所有这些思想的核心机制。[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)中的“嫌疑犯”包括两种实体：来自 $E(\mathbb{Q})/mE(\mathbb{Q})$ 中真正有理点的“真凶”，以及一群“冒名顶替者”。这些冒名顶替者是谁呢？它们恰恰是[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)中被乘以 $m$ 后变为零的元素，记作 $\Sha(E/\mathbb{Q})[m]$。这种关系被该领域最基本的公式之一——一个**[短正合序列](@keyword=short_exact_sequence|lang=zh-CN|style=Feynman)**——所捕捉：
+在这里我们找到了关键的联系，即连接所有这些思想的核心机制。[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)中的“嫌疑犯”包括两种实体：来自 $E(\mathbb{Q})/mE(\mathbb{Q})$ 中真正有理点的“真凶”，以及一群“冒名顶替者”。这些冒名顶替者是谁呢？它们恰恰是[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)中被乘以 $m$ 后变为零的元素，记作 $\mathrm{Ш}(E/\mathbb{Q})[m]$。这种关系被该领域最基本的公式之一——一个**[短正合序列](@keyword=short_exact_sequence|lang=zh-CN|style=Feynman)**——所捕捉：
 
-$$ 0 \longrightarrow E(\mathbb{Q})/mE(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(m)}(E/\mathbb{Q}) \longrightarrow \Sha(E/\mathbb{Q})[m] \longrightarrow 0 $$
+$$ 0 \longrightarrow E(\mathbb{Q})/mE(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(m)}(E/\mathbb{Q}) \longrightarrow \mathrm{Ш}(E/\mathbb{Q})[m] \longrightarrow 0 $$
 
 [@problem_id:3022326] [@problem_id:3024972] [@problem_id:3022299]
 
-让我们来解读这行优美的数学语言。箭头 $\longrightarrow$ 代表一个[群同态](@keyword=group_homomorphism|lang=zh-CN|style=Feynman)（保持结构的映射）。一个序列 $0 \to A \to B \to C \to 0$ 意味着 $A$ 是 $B$ 的一个[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)，而 $C$ 是所得的商群 $B/A$。所以，这个序列告诉我们，[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman) $\mathrm{Sel}^{(m)}(E/\mathbb{Q})$ 包含了[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)群 $E(\mathbb{Q})/mE(\mathbb{Q})$，而它们之间的差异——[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)中*不*来自实际有理点的那部分——正好是[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的 $m$-挠部分。Ш群是我们侦探工作中的“误差项”。如果我们幸运，并且我们使用的 $m$ 对应的 $\Sha(E/\mathbb{Q})[m]$ 是平凡的，那么可计算的[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)就能告诉我们 $E(\mathbb{Q})/mE(\mathbb{Q})$ 的确切大小，从而为确定[椭圆曲线的秩](@keyword=ranks_of_elliptic_curves|lang=zh-CN|style=Feynman)提供了一个强大的工具。[@problem_id:3022299]
+让我们来解读这行优美的数学语言。箭头 $\longrightarrow$ 代表一个[群同态](@keyword=group_homomorphism|lang=zh-CN|style=Feynman)（保持结构的映射）。一个序列 $0 \to A \to B \to C \to 0$ 意味着 $A$ 是 $B$ 的一个[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)，而 $C$ 是所得的商群 $B/A$。所以，这个序列告诉我们，[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman) $\mathrm{Sel}^{(m)}(E/\mathbb{Q})$ 包含了[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)群 $E(\mathbb{Q})/mE(\mathbb{Q})$，而它们之间的差异——[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)中*不*来自实际有理点的那部分——正好是[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的 $m$-挠部分。Ш群是我们侦探工作中的“误差项”。如果我们幸运，并且我们使用的 $m$ 对应的 $\mathrm{Ш}(E/\mathbb{Q})[m]$ 是平凡的，那么可计算的[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)就能告诉我们 $E(\mathbb{Q})/mE(\mathbb{Q})$ 的确切大小，从而为确定[椭圆曲线的秩](@keyword=ranks_of_elliptic_curves|lang=zh-CN|style=Feynman)提供了一个强大的工具。[@problem_id:3022299]
 
 ### 伟大的综合：对称性与百万美元猜想
 
@@ -51,7 +51,7 @@ $$ 0 \longrightarrow E(\mathbb{Q})/mE(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{
 
 数论中的一个核心信念是，[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)总是有限的。虽然这仍然是一个猜想，但一个非凡的性质已被证明：在Ш群自身内部存在一种深刻、隐藏的对称性。这种对称性以一种称为**[卡塞尔斯-泰特配对](@keyword=cassels_tate_pairing|lang=zh-CN|style=Feynman) (Cassels-Tate pairing)** 的双线性配对形式存在，它取Ш的两个元素并产生一个模 1 的有理数。它是一个**交错配对**，这意味着任何元素与自身的配对总是得到零。[@problem_id:3025033] [@problem_id:3024960]
 
-这个抽象的性质有一个惊人的推论：如果 $\Sha(E/\mathbb{Q})$ 是有限的，它的阶必须是一个**完全平方数**！幻影解的数量必须是 $1, 4, 9, 16$ 或其他某个平方数。这是一个深刻的约束，它并非源于计数，而是源于群的深层内部对称性。[@problem_id:3022299] [@problem_id:3024960]
+这个抽象的性质有一个惊人的推论：如果 $\mathrm{Ш}(E/\mathbb{Q})$ 是有限的，它的阶必须是一个**完全平方数**！幻影解的数量必须是 $1, 4, 9, 16$ 或其他某个平方数。这是一个深刻的约束，它并非源于计数，而是源于群的深层内部对称性。[@problem_id:3022299] [@problem_id:3024960]
 
 这把我们带到了最终的、宏大的舞台。[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)并非某个晦涩的注脚；它是数学中最重要的未解问题之一——**Birch与Swinnerton-Dyer (BSD) 猜想**——的核心角色。这是克莱数学研究所的七个千禧年大奖难题之一，为其证明提供了百万美元的奖金。
 
@@ -59,10 +59,10 @@ BSD 猜想提出了一个惊人的联系，它连接了椭圆曲线的算术世�
 
 对于一个秩为 $r$ 的[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)，精确的猜想表述为：
 
-$$ \frac{L^{(r)}(E,1)}{r!} = \frac{\#\Sha(E/\mathbb{Q}) \cdot R_E \cdot \Omega_E \cdot \prod_v c_v}{\left(\#E(\mathbb{Q})_{\mathrm{tors}}\right)^2} $$
+$$ \frac{L^{(r)}(E,1)}{r!} = \frac{\#\mathrm{Ш}(E/\mathbb{Q}) \cdot R_E \cdot \Omega_E \cdot \prod_v c_v}{\left(\#E(\mathbb{Q})_{\mathrm{tors}}\right)^2} $$
 
 [@problem_id:3022299]
 
-这个公式是一块罗塞塔石碑，连接了秩 $r$、正则子 $R_E$（一种有理点体积的度量）、[挠子群](@keyword=torsion_subgroup|lang=zh-CN|style=Feynman)的大小 $\#E(\mathbb{Q})_{\mathrm{tors}}$、局部因子 $c_v$、一个周期 $\Omega_E$，以及最神奇的，我们的幻影群的大小 $\#\Sha(E/\mathbb{Q})$。一个复变函数的解析行为似乎神秘地*知道*那个衡量简单[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)失败程度的群。
+这个公式是一块罗塞塔石碑，连接了秩 $r$、正则子 $R_E$（一种有理点体积的度量）、[挠子群](@keyword=torsion_subgroup|lang=zh-CN|style=Feynman)的大小 $\#E(\mathbb{Q})_{\mathrm{tors}}$、局部因子 $c_v$、一个周期 $\Omega_E$，以及最神奇的，我们的幻影群的大小 $\#\mathrm{Ш}(E/\mathbb{Q})$。一个复变函数的解析行为似乎神秘地*知道*那个衡量简单[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)失败程度的群。
 
 始于一个关于有理数解的简单谜题的旅程，带领我们穿越了一片由幻影和阴影构成的地景。但在描绘这片领土时，我们发现阴影本身具有丰富、对称的结构，并且是位于现[代数学](@keyword=algebra|lang=zh-CN|style=Feynman)核心的一个宏大、统一猜想的关键组成部分。[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)是一个美丽的证明，它表明，在试图理解出错之处时，我们往往能发现最深刻的真理。

@@ -19,7 +19,7 @@
 
 这样做之后，一个描述时空连续体的[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)（PDE）就奇迹般地转化成了一个描述各个网格单元状态如何随时间演化的巨大[常微分方程组](@keyword=systems_of_ordinary_differential_equations|lang=zh-CN|style=Feynman)（ODE）。我们可以将其写成这样的形式：$M \frac{d\mathbf{u}(t)}{dt} = \mathbf{r}(\mathbf{u}(t), t)$。[@problem_id:3316930]
 
-这里，$\mathbf{u}(t)$ 是一个巨大的向量，包含了所有网格单元在时间 $t$ 的状态。$M$ 是一个**质量矩阵**（mass matrix），它反映了网格的几何特性（比如单元的体积）。而 $\mathbf{r}(\mathbfu(t), t)$ 则是“残差”向量，它根据当前所有单元的状态 $\mathbf{u}(t)$，计算出每个单元状态的变化趋势——这本质上就是物理定律（如[动量守恒](@keyword=momentum_conservation|lang=zh-CN|style=Feynman)和[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)）在离散网格上的体现。
+这里，$\mathbf{u}(t)$ 是一个巨大的向量，包含了所有网格单元在时间 $t$ 的状态。$M$ 是一个**质量矩阵**（mass matrix），它反映了网格的几何特性（比如单元的体积）。而 $\mathbf{r}(\mathbf{u}(t), t)$ 则是“残差”向量，它根据当前所有单元的状态 $\mathbf{u}(t)$，计算出每个单元状态的变化趋势——这本质上就是物理定律（如[动量守恒](@keyword=momentum_conservation|lang=zh-CN|style=Feynman)和[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)）在离散网格上的体现。
 
 通过线方法，我们成功地将一个复杂的时空问题分解成了一个我们更熟悉的问题：给定一个初始状态 $\mathbf{u}(0)$，如何求解一个大型 ODE 系统来预测未来的 $\mathbf{u}(t)$？这正是时间步进策略大展身手的舞台。
 

@@ -21,7 +21,7 @@
 
 将[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)上的结合位点（**paratope**）与其目标抗原上的相应区域（**epitope**）想象成两只紧握的手。要使握手既牢固又特异，手指必须完美地互锁（形状互补），并且表面必须具有一定的亲和力——也许是一些静电引力，就像静电吸附一样，或者是弱[氢键](@keyword=hydrogen_bond|lang=zh-CN|style=Feynman)的形成 [@problem_id:1313226] [@problem_id:1553833]。这种精确匹配和有利的非共价相互作用的组合创造了一个稳定的键，一个两个分子都“偏好”的低能状态。其他分子可能会撞上[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)，但由于它们不匹配或缺乏正确的化学“粘性”，它们很快就会飘走。
 
-当然，没有哪个握手是绝对完美的。有时，一个结构上与目标[分析物](@keyword=analyte|lang=zh-CN|style=Feynman)非常相似的分子可能会欺骗[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)，形成一次微弱而错误的握手。这种现象被称为**[交叉反应性](@keyword=cross_reactivity|lang=zh-CN|style=Feynman)**，而将其最小化是任何传感器设计者的关键目标。我们甚至可以对其进行量化。想象一下，我们用预期目标抗原X测试一个传感器，得到了一个强信号，比如电流为 $8.62 \text{ \mu A}$。然后，我们用一个形状相似但错误的分子Y，在完全相同的浓度下进行测试，得到了一个弱得多的信号，也许是 $0.53 \text{ \mu A}$。[交叉反应性](@keyword=cross_reactivity|lang=zh-CN|style=Feynman)就是错误信号与正确信号的比率：
+当然，没有哪个握手是绝对完美的。有时，一个结构上与目标[分析物](@keyword=analyte|lang=zh-CN|style=Feynman)非常相似的分子可能会欺骗[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)，形成一次微弱而错误的握手。这种现象被称为**[交叉反应性](@keyword=cross_reactivity|lang=zh-CN|style=Feynman)**，而将其最小化是任何传感器设计者的关键目标。我们甚至可以对其进行量化。想象一下，我们用预期目标抗原X测试一个传感器，得到了一个强信号，比如电流为 $8.62 \mathrm{\mu A}$。然后，我们用一个形状相似但错误的分子Y，在完全相同的浓度下进行测试，得到了一个弱得多的信号，也许是 $0.53 \mathrm{\mu A}$。[交叉反应性](@keyword=cross_reactivity|lang=zh-CN|style=Feynman)就是错误信号与正确信号的比率：
 
 $$
 \text{Cross-reactivity} = \frac{\text{Signal from Interferent}}{\text{Signal from Target}} = \frac{0.53}{8.62} \approx 0.0615

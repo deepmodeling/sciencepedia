@@ -26,11 +26,11 @@ C4 和 CAM 途径并非“免费的午餐”。它们建立[碳浓缩机制](@ke
 
 大气中的碳主要以两种[稳定同位素](@keyword=stable_isotopes|lang=zh-CN|style=Feynman)的形式存在：较轻的$^{12}\text{C}$（约占 99%）和较重的$^{13}\text{C}$（约占 1%）。在生化反应中，酶往往对较轻的同位素“情有独钟”，这种现象称为[同位素分馏](@keyword=isotopic_fractionation|lang=zh-CN|style=Feynman)。
 
-C3 植物的固碳过程一步到位：Rubisco 酶直接从大气中捕捉 $CO_2$。Rubisco 是一个“挑剔”的酶，它强烈偏爱较轻的 $^{12}CO_2$，导致 C3 植物体内的 $^{13}C$ 含量相对于大气显著偏低。它们的 $\delta^{13}C$ 值（一个衡量 $^{13}C$ 相对丰度的指标）通常在 $-28\permil$ 左右。
+C3 植物的固碳过程一步到位：Rubisco 酶直接从大气中捕捉 $CO_2$。Rubisco 是一个“挑剔”的酶，它强烈偏爱较轻的 $^{12}CO_2$，导致 C3 植物体内的 $^{13}C$ 含量相对于大气显著偏低。它们的 $\delta^{13}C$ 值（一个衡量 $^{13}C$ 相对丰度的指标）通常在 $-28\text{‰}$ 左右。
 
-C4 植物的固碳过程则分两步走。第一步，PEPC 酶在[叶肉](@keyword=mesophyll|lang=zh-CN|style=Feynman)细胞中固定 $CO_2$。PEPC 对同位素的“歧视”要小得多。然后，这些被初步固定的碳被运送到[维管束](@keyword=vascular_bundles|lang=zh-CN|style=Feynman)[鞘](@keyword=sheath|lang=zh-CN|style=Feynman)细胞，在一个高 $CO_2$ 浓度的“密室”中释放出来，强制性地被 Rubisco 再次固定。在这种“供过于求”的环境下，Rubisco 几乎没有机会挑三拣四，只能来者不拒。因此，C4 植物最终的[同位素分馏](@keyword=isotopic_fractionation|lang=zh-CN|style=Feynman)效应远小于 C3 植物，其 $\delta^{13}C$ 值通常在 $-12\permil$ 到 $-14\permil$ 之间。
+C4 植物的固碳过程则分两步走。第一步，PEPC 酶在[叶肉](@keyword=mesophyll|lang=zh-CN|style=Feynman)细胞中固定 $CO_2$。PEPC 对同位素的“歧视”要小得多。然后，这些被初步固定的碳被运送到[维管束](@keyword=vascular_bundles|lang=zh-CN|style=Feynman)[鞘](@keyword=sheath|lang=zh-CN|style=Feynman)细胞，在一个高 $CO_2$ 浓度的“密室”中释放出来，强制性地被 Rubisco 再次固定。在这种“供过于求”的环境下，Rubisco 几乎没有机会挑三拣四，只能来者不拒。因此，C4 植物最终的[同位素分馏](@keyword=isotopic_fractionation|lang=zh-CN|style=Feynman)效应远小于 C3 植物，其 $\delta^{13}C$ 值通常在 $-12\text{‰}$ 到 $-14\text{‰}$ 之间。
 
-这大约 $14\permil$ 的显著差异，为我们打开了通往多个学科的大门：
+这大约 $14\text{‰}$ 的显著差异，为我们打开了通往多个学科的大门：
 *   **[古生态学](@keyword=paleoecology|lang=zh-CN|style=Feynman)与[古气候学](@keyword=paleoclimatology|lang=zh-CN|style=Feynman)**：食草动物的牙齿和骨骼会忠实地记录它们所食植物的 $\delta^{13}C$ 值。通过分析远古动物化石的同位素组成，我们可以重建它们的食谱，判断它们是吃 C3 植物还是 C4 植物。这进一步帮助我们推断几百万年前地球上 C4 草原的扩张历史，这被认为是全球[气候变化](@keyword=climate_change|lang=zh-CN|style=Feynman)（如 $CO_2$ 浓度下降和干旱化）的重要标志。
 *   **食品科学与[法医学](@keyword=forensics|lang=zh-CN|style=Feynman)**：这个原理在现代生活中也有着令人意想不到的应用。例如，纯天然蜂蜜来自 C3 植物，而廉价的玉米糖浆（高果糖浆）来自 C4 植物玉米。通过检测蜂蜜的 $\delta^{13}C$ 值，我们就能轻易地判断它是否被掺入了玉米糖浆。同样的技术也用于鉴别人类饮食结构、验证奢侈品（如龙舌兰酒）的真伪等等。
 

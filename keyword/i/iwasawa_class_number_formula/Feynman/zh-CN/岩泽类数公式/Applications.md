@@ -48,8 +48,8 @@
 
 源自[分圆单位](@keyword=cyclotomic_units|lang=zh-CN|style=Feynman)的类，它们是 $\mathbb{Q}$ 上[主猜想](@keyword=main_conjecture|lang=zh-CN|style=Feynman)的基础，构成了[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)的第一个例子 [@problem_id:3013772]。但这仅仅是个开始。
 
-在1980年代，基于这一哲学，Victor Kolyvagin 构建了一个新的、革命性的[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)。其构成要素不是[分圆单位](@keyword=cyclotomic_units|lang=zh-CN|style=Feynman)，而是[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)上的特殊点，称为*Heegner 点*。椭圆曲线是现代数学的基石对象，在 Wiles 证明费马大定理中起着核心作用，并且是克莱数学研究所七个千禧年大奖难题之一：Birch and Swinnerton-Dyer (BSD) 猜想的主题。该猜想的一个关键部分是理解一个名为 Tate-Shafarevich 群的神秘群组，记作 $\Sha(E/\mathbb{Q})$。
+在1980年代，基于这一哲学，Victor Kolyvagin 构建了一个新的、革命性的[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)。其构成要素不是[分圆单位](@keyword=cyclotomic_units|lang=zh-CN|style=Feynman)，而是[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)上的特殊点，称为*Heegner 点*。椭圆曲线是现代数学的基石对象，在 Wiles 证明费马大定理中起着核心作用，并且是克莱数学研究所七个千禧年大奖难题之一：Birch and Swinnerton-Dyer (BSD) 猜想的主题。该猜想的一个关键部分是理解一个名为 Tate-Shafarevich 群的神秘群组，记作 $\mathrm{Ш}(E/\mathbb{Q})$。
 
-Kolyvagin 的 Heegner 点[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)提供了一个惊人强大的工具。借此，他得以证明对于一大类椭圆曲线（那些[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为 0 或 1 的曲线），这个神秘的 $\Sha$ 群是有限的 [@problem_id:3013106]。这是朝向 BSD 猜想迈出的巨大一步，也是20世纪数学的里程碑式成就。
+Kolyvagin 的 Heegner 点[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)提供了一个惊人强大的工具。借此，他得以证明对于一大类椭圆曲线（那些[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为 0 或 1 的曲线），这个神秘的 $\mathrm{Ш}$ 群是有限的 [@problem_id:3013106]。这是朝向 BSD 猜想迈出的巨大一步，也是20世纪数学的里程碑式成就。
 
 请思考一下。一个诞生于研究[分圆域](@keyword=cyclotomic_fields|lang=zh-CN|style=Feynman)中类数复杂模式的哲学，为解开椭圆曲线的深层秘密提供了关键。这是对数学深刻且常常出人意料的统一性的惊人证明。最初一个优雅的[类数公式](@keyword=class_number_formula|lang=zh-CN|style=Feynman)，已经发展成为一个指导原则，一把万能钥匙，继续为新的、美丽的数学世界开启大门。

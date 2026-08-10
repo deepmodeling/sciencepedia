@@ -26,7 +26,7 @@
 
 在物理学中，不完全Beta函数同样不可或缺。在凝聚态物理中，描述[半导体能带](@keyword=semiconductor_energy_bands|lang=zh-CN|style=Feynman)中[电子态密度](@keyword=electronic_density_of_states|lang=zh-CN|style=Feynman) $g(E)$ 的模型，有时会包含形如 $E^{\alpha-1}(E_{max}-E)^{\beta-1}$ 的因子。要计算在某个能量 $E_f$ 以下被占据的电子态占总态数的比例，就需要计算积分 $\int_0^{E_f} g(E) dE$ 与总积分 $\int_0^{E_{max}} g(E) dE$ 的比值。这恰恰就是正则化不完全Beta函数的定义本身 [@problem_id:690637]。在这里，函数值直接对应一个可测量的物理量——填充态的相对比例。
 
-更深入到量子力学的核心，我们会发现不完全Beta函数的身影。在处理一些特殊势场（如Pöschl-Teller势）中的量子系统时，计算不同能态之间的[跃迁概率](@keyword=transition_probability|lang=zh-CN|style=Feynman)或[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)交叠，往往需要求解复杂的积分。这些积分的被积函数可能包含[双曲正切函数](@keyword=tanh_function|lang=zh-CN|style=Feynman) ($\tanh$) 和双曲正割函数 ($\sech$) 的幂次。通过一系列精妙的代换，这些看似棘手的量子力学积分可以被转化为标准的不完全Beta函数积分，从而得到精确的解析解 [@problem_id:690570]。这表明，不完全Beta函数是描述某些特定量[子系统对称性](@keyword=subsystem_symmetries|lang=zh-CN|style=Feynman)和动力学性质的内蕴数学语言。
+更深入到量子力学的核心，我们会发现不完全Beta函数的身影。在处理一些特殊势场（如Pöschl-Teller势）中的量子系统时，计算不同能态之间的[跃迁概率](@keyword=transition_probability|lang=zh-CN|style=Feynman)或[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)交叠，往往需要求解复杂的积分。这些积分的被积函数可能包含[双曲正切函数](@keyword=tanh_function|lang=zh-CN|style=Feynman) ($\tanh$) 和双曲正割函数 ($\operatorname{sech}$) 的幂次。通过一系列精妙的代换，这些看似棘手的量子力学积分可以被转化为标准的不完全Beta函数积分，从而得到精确的解析解 [@problem_id:690570]。这表明，不完全Beta函数是描述某些特定量[子系统对称性](@keyword=subsystem_symmetries|lang=zh-CN|style=Feynman)和动力学性质的内蕴数学语言。
 
 ### 生命科学与金融工程中的应用
 

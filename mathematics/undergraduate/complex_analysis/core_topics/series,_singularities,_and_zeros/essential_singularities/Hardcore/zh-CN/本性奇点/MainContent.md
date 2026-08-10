@@ -63,12 +63,12 @@ $$
 
 一个更有力的例子是，我们甚至可以精确地达到某些看似不可能的值。考虑函数 $f(z) = \cos(1/z)$，它在 $z=0$ 处有一个本质奇点。我们能否找到一个趋向于 $0$ 的点列 $\{z_n\}$，使得 $f(z_n) = 2$？[@problem_id:2239008] 这在实数域中是不可想象的，因为余弦函数的值域是 $[-1, 1]$。但在复数域中，这是可能的。
 
-我们需要解方程 $\cos(1/z) = 2$。令 $w = 1/z$，问题转化为解 $\cos(w) = 2$。利用欧拉公式，我们知道 $\cos(w) = \frac{\exp(iw) + \exp(-iw)}{2}$。设 $v = \exp(iw)$，方程变为 $\frac{v+1/v}{2} = 2$，即 $v^2 - 4v + 1 = 0$。解得 $v = 2 \pm \sqrt{3}$。因此，$\exp(iw) = 2 \pm \sqrt{3}$。取对数，我们得到 $iw = \ln(2 \pm \sqrt{3}) + 2\pi i k$ 对于任意整数 $k$。这意味着 $w = 2\pi k - i\ln(2 \pm \sqrt{3}) = 2\pi k \pm i\arccosh(2)$。
+我们需要解方程 $\cos(1/z) = 2$。令 $w = 1/z$，问题转化为解 $\cos(w) = 2$。利用欧拉公式，我们知道 $\cos(w) = \frac{\exp(iw) + \exp(-iw)}{2}$。设 $v = \exp(iw)$，方程变为 $\frac{v+1/v}{2} = 2$，即 $v^2 - 4v + 1 = 0$。解得 $v = 2 \pm \sqrt{3}$。因此，$\exp(iw) = 2 \pm \sqrt{3}$。取对数，我们得到 $iw = \ln(2 \pm \sqrt{3}) + 2\pi i k$ 对于任意整数 $k$。这意味着 $w = 2\pi k - i\ln(2 \pm \sqrt{3}) = 2\pi k \pm i\operatorname{arccosh}(2)$。
 为了得到一个趋向于 $0$ 的点列 $z_n=1/w_n$，我们只需让 $w_n$ 的模趋向于无穷大。例如，我们可以选择
 $$
-z_n = \frac{1}{2\pi n + i\arccosh(2)} \quad (n = 1, 2, 3, \ldots)
+z_n = \frac{1}{2\pi n + i\operatorname{arccosh}(2)} \quad (n = 1, 2, 3, \ldots)
 $$
-当 $n \to \infty$ 时，显然 $|z_n| \to 0$。而对于每一个 $n$，$\cos(1/z_n) = \cos(2\pi n + i\arccosh(2)) = 2$。这具体地展示了卡索拉蒂-魏尔斯特拉斯定理的强大威力。
+当 $n \to \infty$ 时，显然 $|z_n| \to 0$。而对于每一个 $n$，$\cos(1/z_n) = \cos(2\pi n + i\operatorname{arccosh}(2)) = 2$。这具体地展示了卡索拉蒂-魏尔斯特拉斯定理的强大威力。
 
 ### 皮卡大定理：一个更强的结果
 

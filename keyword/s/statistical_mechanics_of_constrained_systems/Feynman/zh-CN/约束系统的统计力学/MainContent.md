@@ -57,7 +57,7 @@ $$ P_{\text{true}}(\mathbf{q}) \propto \sqrt{\det(\mathbf{G}\mathbf{M}^{-1}\math
 
 1.  **历史学家的方法：重加权。** 我们让模拟天真地运行，收集有偏的数据。然后，在我们的分析中，我们扮演谨慎的历史学家。我们通过对观察到的每个构型应用一个**重加权因子** $w(\mathbf{q})$ 来修正记录。这个因子正是所缺失的几何项，它在事后修正了每个状态的概率 [@problem_id:2787471]。
 
-2.  **向导的方法：[Fixman势](@keyword=fixman_potential|lang=zh-CN|style=Feynman)。** 与其事后修正数据，我们可以从一开始就正确地引导模拟。我们通过向真实[势能](@keyword=energy_potential|lang=zh-CN|style=Feynman)中添加一个“假的”或虚拟的势能来实现这一点，$U_{eff}(\mathbfq) = U(\mathbf{q}) + U_F(\mathbf{q})$。这个特殊的势，被称为**[Fixman势](@keyword=fixman_potential|lang=zh-CN|style=Feynman)**，定义为 $U_F(\mathbf{q}) = -\frac{k_B T}{2} \ln \det(\mathbf{G}\mathbf{M}^{-1}\mathbf{G}^T)$。注意它的构造如何完美地抵消了[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)中不想要的几何因子的影响。通过包含这一项，我们欺骗动力学，使其自动地对真实的、无偏的[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)进行采样 [@problem_id:3416341]。
+2.  **向导的方法：[Fixman势](@keyword=fixman_potential|lang=zh-CN|style=Feynman)。** 与其事后修正数据，我们可以从一开始就正确地引导模拟。我们通过向真实[势能](@keyword=energy_potential|lang=zh-CN|style=Feynman)中添加一个“假的”或虚拟的势能来实现这一点，$U_{eff}(\mathbf{q}) = U(\mathbf{q}) + U_F(\mathbf{q})$。这个特殊的势，被称为**[Fixman势](@keyword=fixman_potential|lang=zh-CN|style=Feynman)**，定义为 $U_F(\mathbf{q}) = -\frac{k_B T}{2} \ln \det(\mathbf{G}\mathbf{M}^{-1}\mathbf{G}^T)$。注意它的构造如何完美地抵消了[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)中不想要的几何因子的影响。通过包含这一项，我们欺骗动力学，使其自动地对真实的、无偏的[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)进行采样 [@problem_id:3416341]。
 
 最后，我们发现了一个美丽而深刻的联系。固定一个键长这个看似简单的行为，其影响波及整个[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学的基础，改变了我们测量温度的方式、定义概率的方式，以及解释模拟结果的方式。它告诉我们，分子的世界不是一块平坦的、欧几里得式的画布，而是一片丰富、弯曲的 landscape，而理解其几何形状是解开其秘密的关键。
 

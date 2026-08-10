@@ -40,7 +40,7 @@ Let's make this concrete. Suppose we want to travel between the points $z_1 = -1
 Now that we know what the paths are, how do we calculate their total length? We could integrate the metric $ds = |dz|/y$ along the geodesic arc, but that's the hard way. There is a far more elegant approach, one that reveals a deep symmetry of this geometry. It turns out there is a beautiful formula for the distance $d_{\mathbb{H}}(z_1, z_2)$ between any two points $z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$:
 
 $$
-d_{\mathbb{H}}(z_1, z_2) = \arccosh\left(1 + \frac{|z_1 - z_2|^2}{2 y_1 y_2}\right) = \arccosh\left(1 + \frac{(x_1 - x_2)^2 + (y_1 - y_2)^2}{2 y_1 y_2}\right)
+d_{\mathbb{H}}(z_1, z_2) = \operatorname{arccosh}\left(1 + \frac{|z_1 - z_2|^2}{2 y_1 y_2}\right) = \operatorname{arccosh}\left(1 + \frac{(x_1 - x_2)^2 + (y_1 - y_2)^2}{2 y_1 y_2}\right)
 $$
 
 This formula might look intimidating, but it holds a wonderful secret. This entire expression is *invariant* under a special class of transformations called Möbius transformations. These are functions that map the upper-half plane to itself and act as **isometries**—they shuffle points around without changing the hyperbolic distances between them.

@@ -32,7 +32,7 @@ $\text{arccosh}(z)$的影响力甚至延伸到数学物理学的一些最前沿�
 
 ### 统一的线索
 
-那么，为什么这一个函数会出现在这么多不同的地方呢？因为它并非孤立存在。它是一个深刻、统一的数学关系网络的一部分。它作为对数的定义，$\arccosh(z) = \log(z + \sqrt{z^2-1})$，将它与代数的基本运算和[指数函数](@keyword=exponential_function|lang=zh-CN|style=Feynman)联系起来。
+那么，为什么这一个函数会出现在这么多不同的地方呢？因为它并非孤立存在。它是一个深刻、统一的数学关系网络的一部分。它作为对数的定义，$\operatorname{arccosh}(z) = \log(z + \sqrt{z^2-1})$，将它与代数的基本运算和[指数函数](@keyword=exponential_function|lang=zh-CN|style=Feynman)联系起来。
 
 此外，在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)中，[双曲函数](@keyword=hyperbolic_functions|lang=zh-CN|style=Feynman)和[三角函数](@keyword=trigonometric_functions|lang=zh-CN|style=Feynman)之间的区别变得模糊。它们被揭示为彼此的旋转，通过优雅的恒等式$\cosh(iw) = \cos(w)$联系在一起。这意味着像$\text{Arcsin}(z) = -i \text{Arccosh}(z)$这样联系$\text{arccosh}$和$\arcsin$的方程，并非巧合，而是关于这种基本统一性的陈述。求解它揭示了这两个函数对于某个特定的$z$值是相等的，从而[强化](@keyword=reinforcement|lang=zh-CN|style=Feynman)了它们只是对同一底层结构的不同视角的观点[@problem_id:925905]。即使是求解像$\sin(\text{Arccosh } z) = i$这样一个看似随意的方程，也成为对这种相互联系的探索，一个只有通过在三角世界和双曲世界之间架起桥梁才能解决的谜题[@problem_id:926059]。
 

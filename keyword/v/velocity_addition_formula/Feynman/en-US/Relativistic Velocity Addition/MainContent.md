@@ -71,17 +71,17 @@ In physics, when we encounter a complicated rule for combining things, we often 
 The answer is yes, and it is a beautiful concept called **[rapidity](@keyword=rapidity|lang=en-US|style=Feynman)**. Rapidity, often denoted by $\theta$ or $\phi$, is related to velocity $v$ by the equation:
 
 $$
-v = c \tanh(\theta) \quad \text{or} \quad \theta = \arctanh(v/c)
+v = c \tanh(\theta) \quad \text{or} \quad \theta = \operatorname{arctanh}(v/c)
 $$
 
 This might look like an arbitrary mathematical substitution, but it holds a deep physical meaning. For collinear boosts, rapidities have a remarkable property: they simply add up! [@problem_id:1842892]. If a boost of velocity $v_1$ corresponds to rapidity $\theta_1$, and a second boost of $v_2$ corresponds to rapidity $\theta_2$, the combined effect is a boost whose total [rapidity](@keyword=rapidity|lang=en-US|style=Feynman) is simply $\theta_{total} = \theta_1 + \theta_2$ [@problem_id:621857].
 
 The complicated velocity addition formula is just a reflection of the hyperbolic tangent addition identity, $\tanh(\theta_1 + \theta_2) = (\tanh\theta_1 + \tanh\theta_2)/(1+\tanh\theta_1 \tanh\theta_2)$. What seemed like an arbitrary rule is revealed to be the expression of a simple, additive structure in a different language. In a sense, [rapidity](@keyword=rapidity|lang=en-US|style=Feynman) is the "truer" measure of motion. While velocity is bounded by $c$, [rapidity](@keyword=rapidity|lang=en-US|style=Feynman) can range from $-\infty$ to $+\infty$.
 
-To see the power of this idea, consider a probe that executes $N$ identical boosts, each imparting a velocity $u$ relative to its own [rest frame](@keyword=rest_frame|lang=en-US|style=Feynman) [@problem_id:1842879]. Calculating the final velocity $v_N$ by applying the addition formula $N-1$ times would be a nightmare. But with rapidity, the solution is astonishingly simple. We find the rapidity $\theta_u = \arctanh(u/c)$ for a single boost. After $N$ boosts, the total rapidity is just $N \theta_u$. The final velocity is then:
+To see the power of this idea, consider a probe that executes $N$ identical boosts, each imparting a velocity $u$ relative to its own [rest frame](@keyword=rest_frame|lang=en-US|style=Feynman) [@problem_id:1842879]. Calculating the final velocity $v_N$ by applying the addition formula $N-1$ times would be a nightmare. But with rapidity, the solution is astonishingly simple. We find the rapidity $\theta_u = \operatorname{arctanh}(u/c)$ for a single boost. After $N$ boosts, the total rapidity is just $N \theta_u$. The final velocity is then:
 
 $$
-v_N = c \tanh(N \theta_u) = c \tanh\left(N \arctanh(u/c)\right)
+v_N = c \tanh(N \theta_u) = c \tanh\left(N \operatorname{arctanh}(u/c)\right)
 $$
 
 This elegant expression gives us the final velocity in one clean step. It reveals that Lorentz boosts behave much like rotations. Just as we add angles to find the result of successive rotations in a plane, we add rapidities to find the result of successive boosts in spacetime.

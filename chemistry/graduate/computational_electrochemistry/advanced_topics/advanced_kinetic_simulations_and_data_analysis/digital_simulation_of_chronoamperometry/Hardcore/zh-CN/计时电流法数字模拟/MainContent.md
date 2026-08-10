@@ -1,142 +1,142 @@
 ## 引言
-数字模拟已成为现代计算电化学研究中不可或缺的工具，它为理解和预测复杂的电极过程提供了强有力的手段。其中，计时电流法作为一种基础而重要的暂态电化学技术，其响应蕴含着丰富的动力学和传质信息。然而，实验曲线的精确解析往往受到限制，因为解析解仅适用于高度理想化的体系。数字模拟填补了这一鸿沟，它允许研究者在受控的计算环境中，系统地探索电极几何、反应机理和仪器参数等因素对电流响应的影响，从而将基础理论与复杂的实验现实紧密相连。本文旨在为研究生及相关领域的研究人员提供一个关于计时电流法数字模拟的全面指南。在接下来的内容中，我们将首先在“原理与机制”一章中，深入剖析控制电化学系统的物理模型、核心数学方程及其数值离散化方法。随后，在“应用与跨学科交叉”一章中，我们将展示如何将基础模型扩展至处理复杂的实际问题，如微电极行为、耦合化学反应和仪器伪影。最后，通过“动手实践”部分的具体编程练习，读者将有机会亲手实现并验证所学的模拟技术，从而真正掌握这一强大的研究工具。
+数字模拟已成为现代[计算电化学](@keyword=computational_electrochemistry|lang=zh-CN|style=Feynman)研究中不可或缺的工具，它为理解和预测复杂的电极过程提供了强有力的手段。其中，[计时电流法](@keyword=chronoamperometry|lang=zh-CN|style=Feynman)作为一种基础而重要的暂态电化学技术，其响应蕴含着丰富的动力学和[传质](@keyword=mass_transport|lang=zh-CN|style=Feynman)信息。然而，实验曲线的精确解析往往受到限制，因为解析解仅适用于高度理想化的体系。数字模拟填补了这一鸿沟，它允许研究者在受控的计算环境中，系统地探索电极几何、[反应机理](@keyword=reaction_mechanisms|lang=zh-CN|style=Feynman)和仪器参数等因素对电流响应的影响，从而将基础理论与复杂的实验现实紧密相连。本文旨在为研究生及相关领域的研究人员提供一个关于[计时电流法](@keyword=chronoamperometry|lang=zh-CN|style=Feynman)数字模拟的全面指南。在接下来的内容中，我们将首先在“原理与机制”一章中，深入剖析控制电化学系统的物理模型、核心数学方程及其[数值离散化](@keyword=numerical_discretization|lang=zh-CN|style=Feynman)方法。随后，在“应用与跨学科交叉”一章中，我们将展示如何将基础模型扩展至处理复杂的实际问题，如微电极行为、耦合化学反应和[仪器伪影](@keyword=instrumental_artifacts|lang=zh-CN|style=Feynman)。最后，通过“动手实践”部分的具体编程练习，读者将有机会亲手实现并验证所学的模拟技术，从而真正掌握这一强大的研究工具。
 
 ## 原理与机制
 
-本章深入探讨了计时电流法数字模拟背后的基本原理和核心机制。我们将从描述电化学体系的综合物理模型出发，阐述在特定实验条件下如何简化该模型，并建立一个数学框架来耦合质量传输与电极动力学。随后，我们将讨论该模型在特定极限情况下的解析解及其物理意义。最后，我们将详细介绍如何将连续的数学模型转化为离散的计算方案，并讨论在实际数值实现过程中出现的关键挑战和先进的解决方法。
+本章深入探讨了[计时电流法](@keyword=chronoamperometry|lang=zh-CN|style=Feynman)数字模拟背后的基本原理和核心机制。我们将从描述电化学体系的综合物理模型出发，阐述在特定实验条件下如何简化该模型，并建立一个数学框架来耦合质量传输与[电极动力学](@keyword=electrode_kinetics|lang=zh-CN|style=Feynman)。随后，我们将讨论该模型在特定极限情况下的解析解及其物理意义。最后，我们将详细介绍如何将连续的数学模型转化为离散的计算方案，并讨论在实际数值实现过程中出现的关键挑战和先进的解决方法。
 
 ### 控制物理与数学模型
 
-在电极/电解质界面上发生的过程本质上是复杂的，涉及带电物质在电场中的运动和化学转化。对这一过程进行精确的数学描述，需要一个能够同时捕捉离子传输和静电相互作用的综合框架。
+在电极/[电解质](@keyword=electrolyte|lang=zh-CN|style=Feynman)界面上发生的过程本质上是复杂的，涉及带电物质在电场中的运动和化学转化。对这一过程进行精确的数学描述，需要一个能够同时捕捉离子传输和静电相互作用的综合框架。
 
-#### 泊松-能斯特-普朗克（PNP）模型及其简化
+#### [泊松-能斯特-普朗克](@keyword=poisson_nernst_planck|lang=zh-CN|style=Feynman)（PNP）模型及其简化
 
-最完整的描述离子在电解质中传输的理论是**泊松-能斯特-普朗克（Poisson-Nernst-Planck, PNP）模型**。该模型由三个核心部分组成：
-1.  **能斯特-普朗克方程**：描述了第 $i$ 种离子在浓度梯度（扩散）和电势梯度（迁移）共同驱动下的通量 $J_i$。在一维情况下，其表达式为：
+最完整的描述离子在[电解质](@keyword=electrolyte|lang=zh-CN|style=Feynman)中传输的理论是**[泊松-能斯特-普朗克](@keyword=poisson_nernst_planck|lang=zh-CN|style=Feynman)（[Poisson-Nernst-Planck](@keyword=poisson_nernst_planck|lang=zh-CN|style=Feynman), PNP）模型**。该模型由三个核心部分组成：
+1.  **[能斯特-普朗克方程](@keyword=nernst_planck_equation|lang=zh-CN|style=Feynman)**：描述了第 $i$ 种离子在浓度梯度（扩散）和电势梯度（迁移）共同驱动下的通量 $J_i$。在一维情况下，其表达式为：
     $J_{i} = -D_{i}\frac{\partial c_{i}}{\partial x} - z_{i}u_{i}c_{i}\frac{\partial \phi}{\partial x}$
     其中，$D_i$ 是扩散系数，$c_i$ 是浓度，$z_i$ 是电荷数，$u_i$ 是迁移率，$\phi$ 是电势。
 
-2.  **连续性方程**：表达了物质守恒，即浓度的局部变化率等于通量的负散度：
+2.  **[连续性方程](@keyword=equation_of_continuity|lang=zh-CN|style=Feynman)**：表达了物质守恒，即浓度的[局部变化率](@keyword=local_rate_of_change|lang=zh-CN|style=Feynman)等于通量的负散度：
     $\frac{\partial c_{i}}{\partial t} = -\frac{\partial J_{i}}{\partial x}$
 
-3.  **泊松方程**：将电势与空间中的净电荷密度 $\rho_e = F\sum_{i} z_{i} c_{i}$ 联系起来，其中 $F$ 是法拉第常数：
+3.  **泊松方程**：将电势与空间中的净电荷密度 $\rho_e = F\sum_{i} z_{i} c_{i}$ 联系起来，其中 $F$ 是[法拉第常数](@keyword=faraday_s_constant|lang=zh-CN|style=Feynman)：
     $-\varepsilon\frac{\partial^{2}\phi}{\partial x^{2}} = F\sum_{i} z_{i} c_{i}$
-    这里 $\varepsilon$ 是电解质的介电常数。
+    这里 $\varepsilon$ 是[电解质](@keyword=electrolyte|lang=zh-CN|style=Feynman)的介[电常数](@keyword=permittivity_of_free_space|lang=zh-CN|style=Feynman)。
 
-尽管 PNP 模型非常全面，但其求解过程计算量巨大，因为它需要同时解析所有离子的传输和变化的电场。幸运的是，在许多电化学实验（包括计时电流法）的典型条件下，我们可以引入合理的简化。这些简化的关键在于体系中**过量支持电解质**的存在 [@problem_id:4242547]。支持电解质是一种惰性盐，其浓度 $c_s$ 远高于电活性物质的浓度 $c_{\mathrm{O},\infty}$。
+尽管 PNP 模型非常全面，但其求解过程计算量巨大，因为它需要同时解析所有离子的传输和变化的电场。幸运的是，在许多电化学实验（包括[计时电流法](@keyword=chronoamperometry|lang=zh-CN|style=Feynman)）的典型条件下，我们可以引入合理的简化。这些简化的关键在于体系中**过量[支持电解质](@keyword=supporting_electrolyte|lang=zh-CN|style=Feynman)**的存在 [@problem_id:4242547]。[支持电解质](@keyword=supporting_electrolyte|lang=zh-CN|style=Feynman)是一种惰性盐，其浓度 $c_s$ 远高于电活性物质的浓度 $c_{\mathrm{O},\infty}$。
 
-过量支持电解质的存在带来了两个重要的简化：
+过量[支持电解质](@keyword=supporting_electrolyte|lang=zh-CN|style=Feynman)的存在带来了两个重要的简化：
 
-1.  **体相电中性**：在远离电极界面的“体相”溶液中，可以假定局部电荷密度近似为零，即 $\sum_{i} z_{i}c_{i} \approx 0$。这一假设的物理基础是电解质对电荷扰动的快速屏蔽。任何局部的电荷不平衡都会在特征时间尺度**电荷弛豫时间** $\tau_c = \varepsilon/\sigma$ 内迅速消散，其中 $\sigma$ 是溶液的电导率。过量的支持电解质使得 $\sigma$ 非常大，从而 $\tau_c$ 变得极短。此外，电荷分离主要被限制在电极表面附近一个极薄的区域内，其厚度由**德拜长度** $\lambda_D$ 来表征，$\lambda_D \propto 1/\sqrt{c_s}$。在计时电流法实验中，电活性物质的浓度变化发生在一个随时间增长的**扩散层**中，其厚度 $\delta(t) \sim \sqrt{Dt}$。只要实验时间足够长，使得 $\delta(t) \gg \lambda_D$，我们就可以在整个扩散层区域（双电层以外）安全地应用电中性假设，从而无需直接求解泊松方程。
+1.  **体相[电中性](@keyword=charge_neutrality|lang=zh-CN|style=Feynman)**：在远离电极界面的“体相”溶液中，可以假定局部[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman)近似为零，即 $\sum_{i} z_{i}c_{i} \approx 0$。这一假设的物理基础是[电解质](@keyword=electrolyte|lang=zh-CN|style=Feynman)对电荷扰动的快速屏蔽。任何局部的电荷不平衡都会在[特征时间尺度](@keyword=characteristic_timescale|lang=zh-CN|style=Feynman)**[电荷弛豫时间](@keyword=charge_relaxation_time|lang=zh-CN|style=Feynman)** $\tau_c = \varepsilon/\sigma$ 内迅速消散，其中 $\sigma$ 是[溶液的电导率](@keyword=electrical_conductivity_of_solutions|lang=zh-CN|style=Feynman)。过量的[支持电解质](@keyword=supporting_electrolyte|lang=zh-CN|style=Feynman)使得 $\sigma$ 非常大，从而 $\tau_c$ 变得极短。此外，电荷分离主要被限制在电极表面附近一个极薄的区域内，其厚度由**德拜长度** $\lambda_D$ 来表征，$\lambda_D \propto 1/\sqrt{c_s}$。在[计时电流法](@keyword=chronoamperometry|lang=zh-CN|style=Feynman)实验中，电[活性物质](@keyword=active_matter|lang=zh-CN|style=Feynman)的浓度变化发生在一个随时间增长的**[扩散层](@keyword=diffusion_layer|lang=zh-CN|style=Feynman)**中，其厚度 $\delta(t) \sim \sqrt{Dt}$。只要实验时间足够长，使得 $\delta(t) \gg \lambda_D$，我们就可以在整个扩散层区域（[双电层](@keyword=electrical_double_layer|lang=zh-CN|style=Feynman)以外）安全地应用[电中性](@keyword=charge_neutrality|lang=zh-CN|style=Feynman)假设，从而无需直接求解泊松方程。
 
-2.  **迁移的忽略**：由于支持电解质的浓度远高于电活性物质，溶液中的绝大部分电流由支持电解质离子的迁移承载。这意味着流经体相溶液的电流所产生的电场（即欧姆电势降）非常小，并且电活性物质的**迁移数**（其迁移对总电流的贡献分数）可以忽略不计。因此，电活性物质的通量可以近似认为完全由扩散主导，能斯特-普朗克方程中的迁移项 $-z_{i}u_{i}c_{i}\partial \phi/\partial x$ 可以被忽略 [@problem_id:4242547]。
+2.  **迁移的忽略**：由于[支持电解质](@keyword=supporting_electrolyte|lang=zh-CN|style=Feynman)的浓度远高于电[活性物质](@keyword=active_matter|lang=zh-CN|style=Feynman)，溶液中的绝大部分电流由[支持电解质](@keyword=supporting_electrolyte|lang=zh-CN|style=Feynman)离子的迁移承载。这意味着流经体相溶液的电流所产生的电场（即欧姆电势降）非常小，并且电活性物质的**迁移数**（其迁移对总电流的贡献分数）可以忽略不计。因此，电活性物质的通量可以近似认为完全由扩散主导，[能斯特-普朗克方程](@keyword=nernst_planck_equation|lang=zh-CN|style=Feynman)中的迁移项 $-z_{i}u_{i}c_{i}\partial \phi/\partial x$ 可以被忽略 [@problem_id:4242547]。
 
-经过这些简化，复杂的 PNP 模型退化为一个更易于处理的**扩散-反应模型**。在该模型中，电活性物质 O 和 R 的传输由**菲克第二定律**描述：
+经过这些简化，复杂的 PNP 模型退化为一个更易于处理的**扩散-反应模型**。在该模型中，电[活性物质](@keyword=active_matter|lang=zh-CN|style=Feynman) O 和 R 的传输由**[菲克第二定律](@keyword=fick_s_second_law|lang=zh-CN|style=Feynman)**描述：
 $$ \frac{\partial C_i(x,t)}{\partial t} = D_i \frac{\partial^2 C_i(x,t)}{\partial x^2} \quad (i \in \{\mathrm{O, R}\}) $$
 其中，$C_i(x,t)$ 是物种 $i$ 在离电极距离 $x$ 和时间 $t$ 处的浓度。这个方程构成了我们数字模拟的核心 [@problem_id:4242515]。
 
-#### 法拉第电流与电容电流
+#### [法拉第电流](@keyword=faradaic_current|lang=zh-CN|style=Feynman)与[电容电流](@keyword=capacitive_current|lang=zh-CN|style=Feynman)
 
-计时电流法实验中测得的总电流 $i(t)$ 是两个基本过程贡献之和：法拉第电流 $i_F(t)$ 和电容电流 $i_C(t)$ [@problem_id:4242510]。
+[计时电流法](@keyword=chronoamperometry|lang=zh-CN|style=Feynman)实验中测得的总电流 $i(t)$ 是两个基本过程贡献之和：[法拉第电流](@keyword=faradaic_current|lang=zh-CN|style=Feynman) $i_F(t)$ 和电容电流 $i_C(t)$ [@problem_id:4242510]。
 
-**法拉第电流** ($i_F$) 是由电极表面发生的电子转移反应（如 $\mathrm{O} + e^- \rightleftharpoons \mathrm{R}$）直接产生的。根据法拉第定律，它正比于电活性物质在电极表面的摩尔通量。在一维情况下，通量由菲克第一定律给出，因此：
-$$ i_F(t) = nFA D_{\mathrmO} \left( \frac{\partial C_{\mathrmO}(x,t)}{\partial x} \right)_{x=0} $$
-其中 $n$ 是反应转移的电子数，$A$ 是电极面积。可见，法拉第电流直接与电极表面的浓度梯度相关。施加的电势 $E(t)$ 并不直接出现在菲克定律中，而是通过设定电极表面的边界条件来间接影响浓度分布，从而控制法拉第电流。
+**[法拉第电流](@keyword=faradaic_current|lang=zh-CN|style=Feynman)** ($i_F$) 是由电极表面发生的[电子转移反应](@keyword=electron_transfer_reactions|lang=zh-CN|style=Feynman)（如 $\mathrm{O} + e^- \rightleftharpoons \mathrm{R}$）直接产生的。根据[法拉第定律](@keyword=faraday_s_laws|lang=zh-CN|style=Feynman)，它正比于电[活性物质](@keyword=active_matter|lang=zh-CN|style=Feynman)在电极表面的[摩尔通量](@keyword=molar_flux|lang=zh-CN|style=Feynman)。在一维情况下，通量由[菲克第一定律](@keyword=fick_s_first_law|lang=zh-CN|style=Feynman)给出，因此：
+$$ i_F(t) = nFA D_{\mathrm{O}} \left( \frac{\partial C_{\mathrm{O}}(x,t)}{\partial x} \right)_{x=0} $$
+其中 $n$ 是[反应转移](@keyword=response_shift|lang=zh-CN|style=Feynman)的电子数，$A$ 是电极面积。可见，[法拉第电流](@keyword=faradaic_current|lang=zh-CN|style=Feynman)直接与电极表面的浓度梯度相关。施加的电势 $E(t)$ 并不直接出现在[菲克定律](@keyword=fick_s_laws|lang=zh-CN|style=Feynman)中，而是通过设定电极表面的边界条件来间接影响浓度分布，从而控制[法拉第电流](@keyword=faradaic_current|lang=zh-CN|style=Feynman)。
 
-**电容电流** ($i_C$) 则源于电极/溶液界面处**双电层（EDL）**的充放电过程。双电层就像一个微型电容器，其电容为 $C_{dl}$。当电极电势变化时，就需要电流来改变双电层中的电荷量。该电流由下式给出：
+**电容电流** ($i_C$) 则源于电极/溶液界面处**双电层（EDL）**的充放电过程。[双电层](@keyword=electrical_double_layer|lang=zh-CN|style=Feynman)就像一个微型电容器，其电容为 $C_{dl}$。当电极电势变化时，就需要电流来改变[双电层](@keyword=electrical_double_layer|lang=zh-CN|style=Feynman)中的电荷量。该电流由下式给出：
 $$ i_C(t) = C_{dl} \frac{dE(t)}{dt} $$
-在理想的计时电流法实验中，电势在 $t=0$ 时刻发生瞬时阶跃，从 $E_i$ 变为 $E_f$，并在 $t>0$ 时保持恒定。理论上，这意味着 $dE/dt$ 是一个在 $t=0$ 处的狄拉克 $\delta$ 函数，会导致一个无限大的电流尖峰。在数字模拟中，这个阶跃是在一个有限的时间步 $\Delta t$ 内完成的，因此电容电流表现为一个在第一个时间步内出现的、大而有限的电流脉冲，此后便降为零 [@problem_id:4242510]。
+在理想的[计时电流法](@keyword=chronoamperometry|lang=zh-CN|style=Feynman)实验中，电势在 $t=0$ 时刻发生瞬时阶跃，从 $E_i$ 变为 $E_f$，并在 $t>0$ 时保持恒定。理论上，这意味着 $dE/dt$ 是一个在 $t=0$ 处的狄拉克 $\delta$ 函数，会导致一个无限大的电流尖峰。在数字模拟中，这个阶跃是在一个有限的时间步 $\Delta t$ 内完成的，因此电容电流表现为一个在第一个时间步内出现的、大而有限的电流脉冲，此后便降为零 [@problem_id:4242510]。
 
-由于电容电流通常在实验开始后的极短时间内衰减殆尽，因此后续的分析和模拟主要集中在理解和计算随时间演变的法拉第电流上。
+由于电容电流通常在实验开始后的极短时间内衰减殆尽，因此后续的分析和模拟主要集中在理解和计算随时间演变的[法拉第电流](@keyword=faradaic_current|lang=zh-CN|style=Feynman)上。
 
-### 质量传输与电极动力学的耦合：边界条件
+### 质量传输与[电极动力学](@keyword=electrode_kinetics|lang=zh-CN|style=Feynman)的耦合：边界条件
 
-菲克第二定律描述了电活性物质在溶液中的行为，但要获得一个完整的模型，我们必须定义初始条件和边界条件。初始条件通常是均匀的体相浓度。一个边界在远离电极的“无穷远”处，那里的浓度保持为体相浓度。而最关键、信息最丰富的边界是位于 $x=0$ 的电极表面。正是这个边界条件将质量传输（扩散）与电极反应动力学耦合在一起。
+[菲克第二定律](@keyword=fick_s_second_law|lang=zh-CN|style=Feynman)描述了电活性物质在溶液中的行为，但要获得一个完整的模型，我们必须定义初始条件和边界条件。初始条件通常是均匀的体相浓度。一个边界在远离电极的“无穷远”处，那里的浓度保持为体相浓度。而最关键、信息最丰富的边界是位于 $x=0$ 的电极表面。正是这个边界条件将质量传输（扩散）与电极[反应动力学](@keyword=reaction_kinetics|lang=zh-CN|style=Feynman)耦合在一起。
 
-#### 通用动力学边界条件：巴特勒-沃尔默方程
+#### 通用动力学边界条件：[巴特勒-沃尔默方程](@keyword=butler_volmer_equation|lang=zh-CN|style=Feynman)
 
-当电极反应的速率是有限的时，我们需要一个描述反应速率如何依赖于电势和表面浓度的动力学模型。最常用的模型是**巴特勒-沃尔默（Butler-Volmer）方程**。该方程给出了净反应速率 $r(t)$ (单位：$\mathrm{mol \cdot m^{-2} \cdot s^{-1}}$) 是正向（还原）和反向（氧化）反应速率之差：
+当电极反应的速率是有限的时，我们需要一个描述[反应速率](@keyword=rate_of_reaction|lang=zh-CN|style=Feynman)如何依赖于电势和[表面浓度](@keyword=surface_concentration|lang=zh-CN|style=Feynman)的动力学模型。最常用的模型是**巴特勒-沃尔默（Butler-Volmer）方程**。该方程给出了净[反应速率](@keyword=rate_of_reaction|lang=zh-CN|style=Feynman) $r(t)$ (单位：$\mathrm{mol \cdot m^{-2} \cdot s^{-1}}$) 是正向（还原）和反向（氧化）[反应速率](@keyword=rate_of_reaction|lang=zh-CN|style=Feynman)之差：
 $$ r(t) = k_f C_O(0,t) - k_b C_R(0,t) $$
-其中，$k_f$ 和 $k_b$ 是依赖于电势的速率常数。它们通常表示为：
+其中，$k_f$ 和 $k_b$ 是依赖于电势的[速率常数](@keyword=rate_constant|lang=zh-CN|style=Feynman)。它们通常表示为：
 $$ r(t) = k^0 \left[ C_O(0,t)\, \exp\left(-\alpha f \eta(t)\right) - C_R(0,t)\, \exp\left((1-\alpha) f \eta(t)\right) \right] $$
 这里，每个参数都有明确的物理意义 [@problem_id:4242511]：
 *   $C_O(0,t)$ 和 $C_R(0,t)$ 是在电极表面 ($x=0$) 的浓度。
-*   $k^0$ 是**标准异相速率常数**，表示在平衡电势下反应的固有速率。
-*   $\alpha$ 是**电荷转移系数**（通常在 $0$ 和 $1$ 之间），描述了电势对活化能垒的非对称影响。
-*   $f = F/(RT)$，是法拉第常数、气体常数和绝对温度的组合。
+*   $k^0$ 是**标准异相[速率常数](@keyword=rate_constant|lang=zh-CN|style=Feynman)**，表示在平衡电势下反应的固有速率。
+*   $\alpha$ 是**[电荷转移系数](@keyword=charge_transfer_coefficient|lang=zh-CN|style=Feynman)**（通常在 $0$ 和 $1$ 之间），描述了电势对活化能垒的非对称影响。
+*   $f = F/(RT)$，是[法拉第常数](@keyword=faraday_s_constant|lang=zh-CN|style=Feynman)、气体常数和[绝对温度](@keyword=absolute_temperature|lang=zh-CN|style=Feynman)的组合。
 *   $\eta(t) = E(t) - E_{eq}$ 是**过电势**，即施加电势 $E(t)$ 相对于体系平衡电势 $E_{eq}$ 的差值。
 
-在电极表面，物质的消耗或生成速率必须等于其通过扩散供应或移除的速率。这个质量守恒原则提供了我们的边界条件。对于物种 O，其在电极表面的消耗速率等于净反应速率 $r(t)$。这必须等于从溶液中扩散到电极的通量。因此，我们得到 [@problem_id:4242515]：
+在电极表面，物质的消耗或生成速率必须等于其通过扩散供应或移除的速率。这个[质量守恒](@keyword=mass_conservation|lang=zh-CN|style=Feynman)原则提供了我们的边界条件。对于物种 O，其在电极表面的消耗速率等于净[反应速率](@keyword=rate_of_reaction|lang=zh-CN|style=Feynman) $r(t)$。这必须等于从溶液中扩散到电极的通量。因此，我们得到 [@problem_id:4242515]：
 $$ -D_O \left.\frac{\partial C_O}{\partial x}\right|_{x=0} = r(t) $$
 将巴特勒-沃尔默表达式代入，我们便得到了一个**混合型（Robin-type）边界条件**，它同时包含了表面浓度值（如 $C_O(0,t)$）和它们的梯度（通量）[@problem_id:4242511]。这个方程是连接扩散和动力学的桥梁。
 
-此外，根据反应化学计量 $\mathrm{O} + e^- \rightleftharpoons \mathrm{R}$，每消耗一摩尔的 O，必然会生成一摩尔的 R。这反映在它们的通量关系上：
+此外，根据[反应化学计量](@keyword=reaction_stoichiometry|lang=zh-CN|style=Feynman) $\mathrm{O} + e^- \rightleftharpoons \mathrm{R}$，每消耗一摩尔的 O，必然会生成一摩尔的 R。这反映在它们的通量关系上：
 $$ -D_O \left.\frac{\partial C_O}{\partial x}\right|_{x=0} = - \left( -D_R \left.\frac{\partial C_R}{\partial x}\right|_{x=0} \right) \quad \implies \quad D_O \left.\frac{\partial C_O}{\partial x}\right|_{x=0} = -D_R \left.\frac{\partial C_R}{\partial x}\right|_{x=0} $$
-这被称为**化学计量通量平衡**条件 [@problem_id:4242541]。
+这被称为**化学计量[通量平衡](@keyword=flux_balancing|lang=zh-CN|style=Feynman)**条件 [@problem_id:4242541]。
 
 #### 极限情况下的边界条件
 
 虽然巴特勒-沃尔默方程是通用的，但在两个重要的极限情况下，边界条件可以被大大简化。体系处于哪个 regime，主要由施加的过电势 $\eta$ 的大小决定 [@problem_id:4242549]。
 
-1.  **扩散控制（质谱限制）**：当施加一个非常大的阴极过电势（$\eta$ 是一个很大的负数）时，$\exp(-\alpha f \eta)$ 项变得非常大，使得反应的固有速率 $k_f$ 极快。反应快到任何到达电极表面的 O 分子都会被瞬间还原。在这种情况下，反应速率不再受动力学限制，而是受限于反应物 O 通过扩散到达电极的速率。因此，表面的反应物浓度被耗尽至零。这给出了一个简单的**狄利克雷（Dirichlet-type）边界条件** [@problem_id:4242541]：
+1.  **扩散控制（质谱限制）**：当施加一个非常大的阴极过电势（$\eta$ 是一个很大的负数）时，$\exp(-\alpha f \eta)$ 项变得非常大，使得反应的固有速率 $k_f$ 极快。反应快到任何到达电极表面的 O 分子都会被瞬间还原。在这种情况下，[反应速率](@keyword=rate_of_reaction|lang=zh-CN|style=Feynman)不再受动力学限制，而是受限于反应物 O 通过扩散到达电极的速率。因此，表面的反应物浓度被耗尽至零。这给出了一个简单的**狄利克雷（Dirichlet-type）边界条件** [@problem_id:4242541]：
     $$ C_O(0,t) = 0 \quad (\text{for } t > 0) $$
-    这是计时电流法中最常被分析的一种情况，因为它产生了一个可解析的电流响应。
+    这是[计时电流法](@keyword=chronoamperometry|lang=zh-CN|style=Feynman)中最常被分析的一种情况，因为它产生了一个可解析的电流响应。
 
-2.  **可逆（能斯特）控制**：当标准速率常数 $k^0$ 非常大时，即使是很小的过电势也能驱动很大的电流。在这种情况下，电极反应非常快，以至于表面浓度始终处于与施加电势相对应的热力学平衡状态。这种平衡由**能斯特方程**描述 [@problem_id:4242510]：
+2.  **可逆（能斯特）控制**：当标准[速率常数](@keyword=rate_constant|lang=zh-CN|style=Feynman) $k^0$ 非常大时，即使是很小的过电势也能驱动很大的电流。在这种情况下，电极反应非常快，以至于表面浓度始终处于与施加电势相对应的热力学平衡状态。这种平衡由**能斯特方程**描述 [@problem_id:4242510]：
     $$ E(t) = E^{0'} + \frac{RT}{nF} \ln\left(\frac{C_O(0,t)}{C_R(0,t)}\right) $$
     在这种“可逆”体系中，能斯特方程取代了巴特勒-沃尔默方程，作为电极表面的边界条件。
 
-总而言之，施加的电势步长（相对于平衡电势）决定了反应的驱动力。小的过电势可能不足以克服动力学障碍，导致体系处于**活化控制**下；而大的过电势则可以使动力学变得非常快，从而使体系转变为**扩散控制** [@problem_id:4242549]。
+总而言之，施加的电势步长（相对于平衡电势）决定了反应的驱动力。小的过电势可能不足以克服动力学障碍，导致体系处于**活化控制**下；而大的过电势则可以使动力学变得非常快，从而使体系转变为**[扩散控制](@keyword=diffusion_control|lang=zh-CN|style=Feynman)** [@problem_id:4242549]。
 
 ### 扩散的特征：科特雷尔响应
 
-当体系处于扩散控制下时（即 $C_O(0,t)=0$），菲克第二定律的求解会产生一个标志性的电流响应。这个响应的物理起源在于**扩散层**的增长 [@problem_id:4242506]。
+当体系处于[扩散控制](@keyword=diffusion_control|lang=zh-CN|style=Feynman)下时（即 $C_O(0,t)=0$），[菲克第二定律](@keyword=fick_s_second_law|lang=zh-CN|style=Feynman)的求解会产生一个标志性的电流响应。这个响应的物理起源在于**扩散层**的增长 [@problem_id:4242506]。
 
-在 $t=0$ 之后，电极附近的 O 被耗尽，形成一个浓度从零（表面）过渡到体相浓度 $C_O^*$ 的区域，这就是扩散层。随着时间的推移，反应物需要从越来越远的地方扩散而来，因此扩散层向溶液内部扩展，其厚度 $\delta(t)$ 近似与 $\sqrt{Dt}$ 成正比。
+在 $t=0$ 之后，电极附近的 O 被耗尽，形成一个浓度从零（表面）过渡到体相浓度 $C_O^*$ 的区域，这就是[扩散层](@keyword=diffusion_layer|lang=zh-CN|style=Feynman)。随着时间的推移，反应物需要从越来越远的地方扩散而来，因此扩散层向溶液内部扩展，其厚度 $\delta(t)$ 近似与 $\sqrt{Dt}$ 成正比。
 
-法拉第电流正比于表面的浓度梯度，而这个梯度可以粗略地近似为 $(C_O^* - C_O(0,t))/\delta(t)$。在扩散控制下，$C_O(0,t)=0$，所以梯度约等于 $C_O^*/\delta(t)$。因此，电流与 $1/\delta(t)$ 成正比，即：
+[法拉第电流](@keyword=faradaic_current|lang=zh-CN|style=Feynman)正比于表面的浓度梯度，而这个梯度可以粗略地近似为 $(C_O^* - C_O(0,t))/\delta(t)$。在扩散控制下，$C_O(0,t)=0$，所以梯度约等于 $C_O^*/\delta(t)$。因此，电流与 $1/\delta(t)$ 成正比，即：
 $$ i(t) \propto \frac{1}{\sqrt{Dt}} \propto t^{-1/2} $$
-这个 $t^{-1/2}$ 的依赖关系是平面电极扩散控制的明确特征。其精确的解析解即为著名的**科特雷尔方程**：
+这个 $t^{-1/2}$ 的依赖关系是平面电极扩散控制的明确特征。其精确的解析解即为著名的**[科特雷尔方程](@keyword=cottrell_equation|lang=zh-CN|style=Feynman)**：
 $$ i(t) = \frac{nFA\sqrt{D_O}C_O^*}{\sqrt{\pi t}} $$
-科特雷尔方程不仅是电分析化学中的一个重要工具，也是验证计时电流法数字模拟程序正确性的黄金标准 [@problem_id:4242506]。
+[科特雷尔方程](@keyword=cottrell_equation|lang=zh-CN|style=Feynman)不仅是[电分析化学](@keyword=electroanalytical_chemistry|lang=zh-CN|style=Feynman)中的一个重要工具，也是验证[计时电流法](@keyword=chronoamperometry|lang=zh-CN|style=Feynman)数字模拟程序正确性的黄金标准 [@problem_id:4242506]。
 
 ### 从连续方程到离散仿真
 
-为了在计算机上求解菲克定律的偏微分方程（PDE），我们必须将其转化为一个可计算的代数系统。这个过程称为离散化。
+为了在计算机上求解菲克定律的[偏微分](@keyword=partial_differentiation|lang=zh-CN|style=Feynman)方程（PDE），我们必须将其转化为一个可计算的代数系统。这个过程称为离散化。
 
 #### 空间离散化：线方法（MOL）
 
-一种强大的技术是**线方法（Method of Lines, MOL）**。我们首先只对空间维度进行离散化，将溶液域划分为一系列节点 $x_i = i\Delta x$，其中 $\Delta x$ 是网格间距。然后，我们将空间导数（即 $\partial^2 C / \partial x^2$）用这些节点上的浓度值的有限差分来近似。对于内部节点 $i$，二阶中心差分近似为：
+一种强大的技术是**线方法（Method of Lines, MOL）**。我们首先只对空间维度进行离散化，将溶液域划分为一系列节点 $x_i = i\Delta x$，其中 $\Delta x$ 是网格间距。然后，我们将空间导数（即 $\partial^2 C / \partial x^2$）用这些节点上的浓度值的有限差分来近似。对于内部节点 $i$，[二阶中心差分](@keyword=second_order_central_difference|lang=zh-CN|style=Feynman)近似为：
 $$ \left.\frac{\partial^2 C}{\partial x^2}\right|_{x_i} \approx \frac{C_{i+1} - 2C_i + C_{i-1}}{(\Delta x)^2} $$
 其中 $C_i(t)$ 是 $C(x_i, t)$ 的近似值。
 
-将这个近似代入菲克第二定律，我们就将单个 PDE 转化为了一个关于节点浓度 $C_i(t)$ 的大型常微分方程（ODE）组 [@problem_id:4242520]：
+将这个近似代入[菲克第二定律](@keyword=fick_s_second_law|lang=zh-CN|style=Feynman)，我们就将单个 PDE 转化为了一个关于节点浓度 $C_i(t)$ 的大型常微分方程（ODE）组 [@problem_id:4242520]：
 $$ \frac{d\mathbf{c}}{dt} = \mathbf{A}\mathbf{c} + \mathbf{b}(t) $$
-其中 $\mathbf{c}$ 是一个包含了所有节点上物种 O 和 R 浓度的长向量。$\mathbf{A}$ 是一个代表扩散算子的巨大矩阵，而 $\mathbf{b}(t)$ 是一个包含边界条件的向量。
+其中 $\mathbf{c}$ 是一个包含了所有节点上物种 O 和 R 浓度的长向量。$\mathbf{A}$ 是一个代表[扩散算子](@keyword=diffusion_operator|lang=zh-CN|style=Feynman)的巨大矩阵，而 $\mathbf{b}(t)$ 是一个包含边界条件的向量。
 
-由于物种 O 和 R 的扩散在体相中是相互独立的，矩阵 $\mathbf{A}$ 具有**块对角结构**。每个块本身都是一个**对称三对角矩阵**，反映了中心差分格式的局部性（节点 $i$ 只与其近邻 $i-1$ 和 $i+1$ 相互作用）。这个矩阵的性质直接反映了扩散的物理本质：它的特征值是实数且非正，保证了数值解的稳定性，模拟了一个耗散过程；其内部行和为零，体现了扩散过程中的局部质量守恒 [@problem_id:4242520]。
+由于物种 O 和 R 的扩散在体相中是[相互独立](@keyword=mutual_independence|lang=zh-CN|style=Feynman)的，矩阵 $\mathbf{A}$ 具有**[块对角结构](@keyword=block_diagonal_structure|lang=zh-CN|style=Feynman)**。每个块本身都是一个**[对称三对角矩阵](@keyword=symmetric_tridiagonal_matrix|lang=zh-CN|style=Feynman)**，反映了[中心差分格式](@keyword=central_differencing_scheme|lang=zh-CN|style=Feynman)的局部性（节点 $i$ 只与其近邻 $i-1$ 和 $i+1$ 相互作用）。这个矩阵的性质直接反映了扩散的物理本质：它的特征值是实数且非正，保证了数值解的稳定性，模拟了一个耗散过程；其内部行和为零，体现了[扩散过程](@keyword=diffusion_process|lang=zh-CN|style=Feynman)中的局部质量守恒 [@problem_id:4242520]。
 
 #### 计算电流
 
-模拟的主要输出是浓度分布向量 $\mathbf{c}$。为了得到可与实验比较的电流，我们需要根据离散的浓度值计算电极表面的通量。这需要计算表面浓度梯度 $\partial C/\partial x |_{x=0}$ 的一个近似值。虽然可以使用简单的双点前向差分 $(C_1 - C_0)/\Delta x$，但为了提高精度，通常会采用更高阶的单边差分公式。例如，使用 $x=0, \Delta x, 2\Delta x$ 处的三点可以构建一个二阶精度的近似 [@problem_id:4242485]：
+模拟的主要输出是浓度分布向量 $\mathbf{c}$。为了得到可与实验比较的电流，我们需要根据离散的浓度值计算电极表面的通量。这需要计算表面浓度梯度 $\partial C/\partial x |_{x=0}$ 的一个近似值。虽然可以使用简单的双点[前向差分](@keyword=forward_differencing|lang=zh-CN|style=Feynman) $(C_1 - C_0)/\Delta x$，但为了提高精度，通常会采用更高阶的单边差分公式。例如，使用 $x=0, \Delta x, 2\Delta x$ 处的三点可以构建一个二阶精度的近似 [@problem_id:4242485]：
 $$ \left.\frac{\partial C_O}{\partial x}\right|_{x=0} \approx \frac{-3C_{O,0}^m + 4C_{O,1}^m - C_{O,2}^m}{2\Delta x} $$
-其中上标 $m$ 代表时间步。将此梯度代入法拉第定律即可计算出该时间步的电流。
+其中上标 $m$ 代表时间步。将此梯度代入[法拉第定律](@keyword=faraday_s_laws|lang=zh-CN|style=Feynman)即可计算出该时间步的电流。
 
-#### 时间离散化：处理初始奇点
+#### [时间离散化](@keyword=time_discretization|lang=zh-CN|style=Feynman)：处理[初始奇点](@keyword=initial_singularity|lang=zh-CN|style=Feynman)
 
-将 PDE 转化为 ODE 组后，我们还需要对时间进行离散化来求解它。常用的方法包括**后向欧拉法（Backward Euler, BE）**和**克兰克-尼科尔森法（Crank-Nicolson, CN）**。
+将 PDE 转化为 ODE 组后，我们还需要对时间进行离散化来求解它。常用的方法包括**[后向欧拉法](@keyword=backward_euler_method|lang=zh-CN|style=Feynman)（Backward Euler, BE）**和**[克兰克-尼科尔森](@keyword=crank_nicolson|lang=zh-CN|style=Feynman)法（Crank-Nicolson, CN）**。
 
-*   **后向欧拉法**是**一阶**精度方法，它非常稳定且具有强烈的数值阻尼。
-*   **克兰克-尼科尔森法**是**二阶**精度方法，在求解平滑问题时比 BE 更精确。
+*   **后向欧拉法**是**一阶**精度方法，它非常稳定且具有强烈的[数值阻尼](@keyword=numerical_damping|lang=zh-CN|style=Feynman)。
+*   **[克兰克-尼科尔森](@keyword=crank_nicolson|lang=zh-CN|style=Feynman)法**是**二阶**精度方法，在求解平滑问题时比 BE 更精确。
 
-然而，计时电流法在 $t=0$ 时存在一个**初始奇点**。电势的阶跃导致电流在理论上是无穷大的（$t^{-1/2}$ 行为）。这种解的不光滑性给数值方法带来了严峻挑战 [@problem_id:4242499]。对于这种非光滑问题，CN 方法会失去其二阶精度，更糟糕的是，由于其缺乏数值阻尼，它会在初始阶段产生严重的、非物理的数值振荡。
+然而，[计时电流法](@keyword=chronoamperometry|lang=zh-CN|style=Feynman)在 $t=0$ 时存在一个**[初始奇点](@keyword=initial_singularity|lang=zh-CN|style=Feynman)**。电势的阶跃导致电流在理论上是无穷大的（$t^{-1/2}$ 行为）。这种解的不[光滑性](@keyword=smoothness|lang=zh-CN|style=Feynman)给数值方法带来了严峻挑战 [@problem_id:4242499]。对于这种非光滑问题，CN 方法会失去其[二阶精度](@keyword=second_order_accuracy|lang=zh-CN|style=Feynman)，更糟糕的是，由于其缺乏[数值阻尼](@keyword=numerical_damping|lang=zh-CN|style=Feynman)，它会在初始阶段产生严重的、非物理的[数值振荡](@keyword=numerical_oscillations|lang=zh-CN|style=Feynman)。
 
-相比之下，BE 方法的强阻尼特性使其能够稳健地处理初始奇点，产生一个平滑、单调的解，尽管其局部精度较低。
+相比之下，BE 方法的强阻尼特性使其能够稳健地处理[初始奇点](@keyword=initial_singularity|lang=zh-CN|style=Feynman)，产生一个平滑、单调的解，尽管其局部精度较低。
 
 因此，最佳实践是一种**混合策略**：
-1.  在模拟的**初始阶段**（前几个时间步），使用鲁棒的**后向欧拉法**。这可以有效地抑制初始奇点带来的高频振荡，让解“平滑化”。
-2.  当解变得足够光滑后，切换到**克兰克-尼科尔森法**以利用其更高的精度进行后续的计算。
+1.  在模拟的**初始阶段**（前几个时间步），使用鲁棒的**后向欧拉法**。这可以有效地抑制[初始奇点](@keyword=initial_singularity|lang=zh-CN|style=Feynman)带来的[高频振荡](@keyword=high_frequency_oscillations|lang=zh-CN|style=Feynman)，让解“平滑化”。
+2.  当解变得足够光滑后，切换到**[克兰克-尼科尔森](@keyword=crank_nicolson|lang=zh-CN|style=Feynman)法**以利用其更高的精度进行后续的计算。
 
 一个物理上合理的切换判据是，当扩散层厚度已经扩展到足以被空间网格解析时才进行切换。例如，我们可以等到扩散长度 $\sqrt{D t}$ 覆盖了几个网格间距（例如，$\sqrt{D m \Delta t} \gtrsim 3 \Delta x$，其中 $m$ 是步数）后再从 BE 切换到 CN [@problem_id:4242499]。
 
-最后，值得注意的是，所有这些模拟都基于半无限扩散的假设。为了在有限的计算域中忠实地再现这一点，必须确保计算域的右边界 $L$ 足够远，以至于在整个模拟时间 $t_{max}$ 内，扩散层不会“撞到”边界。一条经验法则是设置 $L \gtrsim 6\sqrt{D t_{max}}$ [@problem_id:4242506]。
+最后，值得注意的是，所有这些模拟都基于半无限扩散的假设。为了在有限的计算域中忠实地再现这一点，必须确保计算域的右边界 $L$ 足够远，以至于在整个模拟时间 $t_{max}$ 内，[扩散层](@keyword=diffusion_layer|lang=zh-CN|style=Feynman)不会“撞到”边界。一条[经验法则](@keyword=68_95_99.7_rule|lang=zh-CN|style=Feynman)是设置 $L \gtrsim 6\sqrt{D t_{max}}$ [@problem_id:4242506]。

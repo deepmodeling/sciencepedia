@@ -80,7 +80,7 @@ $$
 \mathbf{x}(t) = \Psi(t)\mathbf{x}(0)
 $$
 
-This equation is profound. It says the state at any time $t$ is found by simply taking the initial state $\mathbfx(0)$ and "evolving" it forward with the [principal fundamental matrix](@keyword=principal_fundamental_matrix|lang=en-US|style=Feynman) $\Psi(t)$.
+This equation is profound. It says the state at any time $t$ is found by simply taking the initial state $\mathbf{x}(0)$ and "evolving" it forward with the [principal fundamental matrix](@keyword=principal_fundamental_matrix|lang=en-US|style=Feynman) $\Psi(t)$.
 
 How do we find this special matrix?
 1.  **Normalization:** If you already have *any* fundamental matrix $\Phi(t)$, you can convert it to the principal one with a simple formula that "resets" it to the identity at $t=0$:

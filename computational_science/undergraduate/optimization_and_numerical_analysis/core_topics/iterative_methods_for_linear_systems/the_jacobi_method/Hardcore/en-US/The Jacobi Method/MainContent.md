@@ -1,5 +1,5 @@
 ## Introduction
-Solving systems of linear equations is a cornerstone of computational science and engineering. While direct methods like Gaussian elimination provide exact solutions, their computational cost can become prohibitive for the massive systems that arise from modeling complex, real-world phenomena. This challenge gives rise to iterative methods, which offer a powerful alternative by starting with an initial guess and systematically refining it until a sufficiently accurate solution is reached. Among these, the Jacobi method stands out as one of the most fundamental and intuitive iterative schemes. It addresses the core problem of how to construct a sequence of approximations that converges to the true solution of a linear system.
+Solving [systems of linear equations](@keyword=systems_of_linear_equations|lang=en-US|style=Feynman) is a cornerstone of computational science and engineering. While direct methods like Gaussian elimination provide exact solutions, their computational cost can become prohibitive for the massive systems that arise from modeling complex, real-world phenomena. This challenge gives rise to iterative methods, which offer a powerful alternative by starting with an initial guess and systematically refining it until a sufficiently accurate solution is reached. Among these, the Jacobi method stands out as one of the most fundamental and intuitive iterative schemes. It addresses the core problem of how to construct a sequence of approximations that converges to the true solution of a linear system.
 
 This article provides a thorough exploration of the Jacobi method, designed to build a solid theoretical and practical understanding. The following sections will guide you through its core concepts and applications.
 
@@ -11,7 +11,7 @@ By navigating these sections, you will gain a comprehensive understanding of not
 
 ## Principles and Mechanisms
 
-Having established the context for iterative solvers in the previous section, we now turn our attention to the foundational principles and operational mechanisms of one of the simplest and most intuitive iterative schemes: the Jacobi method. This section will deconstruct the method from its component-wise formulation to its elegant matrix representation, analyze its computational structure, and rigorously establish the conditions under which it converges to a solution.
+Having established the context for [iterative solvers](@keyword=iterative_solvers|lang=en-US|style=Feynman) in the previous section, we now turn our attention to the foundational principles and operational mechanisms of one of the simplest and most intuitive iterative schemes: the Jacobi method. This section will deconstruct the method from its component-wise formulation to its elegant matrix representation, analyze its computational structure, and rigorously establish the conditions under which it converges to a solution.
 
 ### The Iterative Philosophy of the Jacobi Method
 
@@ -23,11 +23,11 @@ This can be expanded and the term involving $x_i$ isolated:
 $$ a_{i1}x_1 + a_{i2}x_2 + \dots + a_{ii}x_i + \dots + a_{in}x_n = b_i $$
 If we assume that the diagonal element $a_{ii}$ is non-zero, we can rearrange this equation to solve for $x_i$:
 $$ x_i = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1, j \neq i}^{n} a_{ij} x_j \right) $$
-This expression gives the exact value of $x_i$ in terms of the other components of the solution vector. This seems to present a circular dependency. However, the iterative leap of logic is to use the components of our *current* best guess, $\mathbf{x}^{(k)}$, on the right-hand side to compute an *updated* component, $x_i^{(k+1)}$, for our next guess. This transforms the equation into an explicit update rule. For each component $i = 1, 2, \dots, n$, the **Jacobi iteration** is defined by:
+This expression gives the exact value of $x_i$ in terms of the other components of the solution vector. This seems to present a [circular dependency](@keyword=circular_dependency|lang=en-US|style=Feynman). However, the iterative leap of logic is to use the components of our *current* best guess, $\mathbf{x}^{(k)}$, on the right-hand side to compute an *updated* component, $x_i^{(k+1)}$, for our next guess. This transforms the equation into an explicit update rule. For each component $i = 1, 2, \dots, n$, the **Jacobi iteration** is defined by:
 
 $$ x_i^{(k+1)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j=1, j \neq i}^{n} a_{ij} x_j^{(k)} \right) $$
 
-This formula forms the heart of the Jacobi algorithm. Starting with an initial vector $\mathbf{x}^{(0)}$, one computes all components of $\mathbf{x}^{(1)}$, then uses $\mathbfx^{(1)}$ to compute $\mathbf{x}^{(2)}$, and so on. A critical prerequisite is immediately apparent from this formula: for the update to be well-defined, every diagonal entry $a_{ii}$ of the matrix $A$ must be non-zero. If any $a_{ii} = 0$, the method fails at the outset, as the calculation would require division by zero [@problem_id:1396111].
+This formula forms the heart of the Jacobi algorithm. Starting with an initial vector $\mathbf{x}^{(0)}$, one computes all components of $\mathbf{x}^{(1)}$, then uses $\mathbf{x}^{(1)}$ to compute $\mathbf{x}^{(2)}$, and so on. A critical prerequisite is immediately apparent from this formula: for the update to be well-defined, every diagonal entry $a_{ii}$ of the matrix $A$ must be non-zero. If any $a_{ii} = 0$, the method fails at the outset, as the calculation would require division by zero [@problem_id:1396111].
 
 ### Matrix Formulation: A Fixed-Point Perspective
 
@@ -37,13 +37,13 @@ Here, $D$ is the diagonal matrix containing the diagonal entries of $A$, $L$ is 
 
 With this decomposition, the system $A\mathbf{x} = \mathbf{b}$ becomes:
 $$ (D + L + U)\mathbf{x} = \mathbf{b} $$
-Following the same logic as our component-wise derivation, we isolate the term involving the diagonal matrix $D$:
+Following the same logic as our component-wise derivation, we isolate the term involving the [diagonal matrix](@keyword=diagonal_matrix|lang=en-US|style=Feynman) $D$:
 $$ D\mathbf{x} = \mathbf{b} - (L + U)\mathbf{x} $$
 This equation is the matrix equivalent of solving for the diagonal variables. We now introduce the iterative scheme by using the vector from the $k$-th iteration on the right side to compute the vector for the $(k+1)$-th iteration:
 $$ D\mathbf{x}^{(k+1)} = \mathbf{b} - (L + U)\mathbf{x}^{(k)} $$
 Since we have already established that all diagonal elements of $A$ must be non-zero, the diagonal matrix $D$ is invertible. We can therefore multiply by $D^{-1}$ to obtain the explicit matrix form of the Jacobi iteration:
 $$ \mathbf{x}^{(k+1)} = -D^{-1}(L + U)\mathbf{x}^{(k)} + D^{-1}\mathbf{b} $$
-This equation has the canonical form of a **fixed-point iteration**, $\mathbf{x}^{(k+1)} = T \mathbf{x}^{(k)} + \mathbf{c}$. By comparison, we can identify the **Jacobi iteration matrix**, $T_J$, and the constant vector, $\mathbf{c}$ [@problem_id:2216324]:
+This equation has the [canonical form](@keyword=canonical_form|lang=en-US|style=Feynman) of a **[fixed-point iteration](@keyword=fixed_point_iteration|lang=en-US|style=Feynman)**, $\mathbf{x}^{(k+1)} = T \mathbf{x}^{(k)} + \mathbf{c}$. By comparison, we can identify the **Jacobi iteration matrix**, $T_J$, and the constant vector, $\mathbf{c}$ [@problem_id:2216324]:
 $$ T_J = -D^{-1}(L + U) \quad \text{and} \quad \mathbf{c} = D^{-1}\mathbf{b} $$
 The iteration matrix $T_J$ is sometimes also written as $T_J = I - D^{-1}A$, which is equivalent since $-D^{-1}(L+U) = -D^{-1}(A-D) = -D^{-1}A + D^{-1}D = I - D^{-1}A$.
 
@@ -57,11 +57,11 @@ As seen in this example, the entry $(T_J)_{32}$ is $-a_{32}/a_{33} = -(-4)/10 = 
 
 ### Parallelism and Computational Structure
 
-A defining and highly attractive feature of the Jacobi method is its inherent parallelism. Let us revisit the component-wise update formula:
+A defining and highly attractive feature of the Jacobi method is its inherent [parallelism](@keyword=parallelism|lang=en-US|style=Feynman). Let us revisit the component-wise update formula:
 $$ x_i^{(k+1)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j \neq i} a_{ij} x_j^{(k)} \right) $$
 Notice that to compute any new component $x_i^{(k+1)}$, the right-hand side requires only the constant values from $A$ and $\mathbf{b}$, and the component values from the *previous* iteration vector, $\mathbf{x}^{(k)}$. Critically, there is no dependence on any other newly computed component $x_j^{(k+1)}$ where $j \neq i$.
 
-This means that the calculations for all components of the new vector $\mathbf{x}^{(k+1)}$ are mutually independent. The update for $x_1^{(k+1)}$, $x_2^{(k+1)}$, ..., $x_n^{(k+1)}$ can all be performed simultaneously. In a parallel computing environment, one could assign the calculation for each component (or blocks of components) to a separate processor. These processors could compute their assigned values concurrently, and would only need to communicate and synchronize their results to assemble the full $\mathbf{x}^{(k+1)}$ vector before proceeding to the next iteration. This makes the Jacobi method particularly well-suited for implementation on parallel architectures, such as multi-core CPUs or GPUs, which can lead to significant speed-ups for large-scale systems [@problem_id:1396157].
+This means that the calculations for all components of the new vector $\mathbf{x}^{(k+1)}$ are mutually independent. The update for $x_1^{(k+1)}$, $x_2^{(k+1)}$, ..., $x_n^{(k+1)}$ can all be performed simultaneously. In a [parallel computing](@keyword=parallel_computing|lang=en-US|style=Feynman) environment, one could assign the calculation for each component (or blocks of components) to a separate processor. These processors could compute their assigned values concurrently, and would only need to communicate and synchronize their results to assemble the full $\mathbf{x}^{(k+1)}$ vector before proceeding to the next iteration. This makes the Jacobi method particularly well-suited for implementation on parallel architectures, such as multi-core CPUs or GPUs, which can lead to significant speed-ups for [large-scale systems](@keyword=large_scale_systems|lang=en-US|style=Feynman) [@problem_id:1396157].
 
 This computational independence distinguishes the Jacobi method from closely related schemes like the Gauss-Seidel method, which introduces a sequential dependency by using the most up-to-date values available within the same iteration.
 
@@ -78,30 +78,30 @@ $$ \mathbf{x}^{(k+1)} = T_J \mathbf{x}^{(k)} + \mathbf{c} $$
 Let us define the error vector at iteration $k$ as $\mathbf{e}^{(k)} = \mathbf{x} - \mathbf{x}^{(k)}$. To understand how the error evolves from one iteration to the next, we subtract the second equation from the first:
 $$ \mathbf{x} - \mathbf{x}^{(k+1)} = (T_J \mathbf{x} + \mathbf{c}) - (T_J \mathbf{x}^{(k)} + \mathbf{c}) $$
 $$ \mathbf{e}^{(k+1)} = T_J \mathbf{x} - T_J \mathbf{x}^{(k)} = T_J (\mathbf{x} - \mathbf{x}^{(k)}) $$
-This gives us the fundamental relationship for error propagation [@problem_id:2216354]:
+This gives us the fundamental relationship for [error propagation](@keyword=error_propagation|lang=en-US|style=Feynman) [@problem_id:2216354]:
 $$ \mathbf{e}^{(k+1)} = T_J \mathbf{e}^{(k)} $$
 By applying this relation recursively, we find that the error at any step $k$ is related to the initial error $\mathbf{e}^{(0)} = \mathbf{x} - \mathbf{x}^{(0)}$ by:
 $$ \mathbf{e}^{(k)} = (T_J)^k \mathbf{e}^{(0)} $$
 
 #### The Spectral Radius Condition
 
-From the error equation $\mathbf{e}^{(k)} = (T_J)^k \mathbf{e}^{(0)}$, it is clear that the error vector $\mathbf{e}^{(k)}$ will approach the zero vector as $k \to \infty$ for *any* choice of initial error $\mathbf{e}^{(0)}$ if and only if the matrix power $(T_J)^k$ approaches the zero matrix. A fundamental result from linear algebra states that for any square matrix $M$, the limit $\lim_{k \to \infty} M^k = 0$ if and only if its **spectral radius**, $\rho(M)$, is strictly less than 1. The spectral radius is defined as the maximum absolute value of the matrix's eigenvalues: $\rho(M) = \max_i |\lambda_i(M)|$.
+From the error equation $\mathbf{e}^{(k)} = (T_J)^k \mathbf{e}^{(0)}$, it is clear that the error vector $\mathbf{e}^{(k)}$ will approach the [zero vector](@keyword=zero_vector|lang=en-US|style=Feynman) as $k \to \infty$ for *any* choice of initial error $\mathbf{e}^{(0)}$ if and only if the matrix power $(T_J)^k$ approaches the zero matrix. A fundamental result from linear algebra states that for any square matrix $M$, the limit $\lim_{k \to \infty} M^k = 0$ if and only if its **spectral radius**, $\rho(M)$, is strictly less than 1. The spectral radius is defined as the maximum absolute value of the matrix's eigenvalues: $\rho(M) = \max_i |\lambda_i(M)|$.
 
 Therefore, the necessary and sufficient condition for the Jacobi method to converge for any initial guess $\mathbf{x}^{(0)}$ is:
 $$ \rho(T_J)  1 $$
-The spectral radius not only determines *if* the method converges, but also *how fast*. For large $k$, the behavior of the error norm is dominated by the spectral radius. The ratio of the norms of successive error vectors asymptotically approaches $\rho(T_J)$ [@problem_id:2163155]:
+The spectral radius not only determines *if* the method converges, but also *how fast*. For large $k$, the behavior of the error norm is dominated by the [spectral radius](@keyword=spectral_radius|lang=en-US|style=Feynman). The ratio of the norms of successive error vectors asymptotically approaches $\rho(T_J)$ [@problem_id:2163155]:
 $$ \lim_{k \to \infty} \frac{\|\mathbf{e}^{(k+1)}\|}{\|\mathbf{e}^{(k)}\|} = \rho(T_J) $$
-This means that $\rho(T_J)$ acts as the asymptotic linear convergence factor. An algorithm with $\rho(T_J) = 0.9$ will require, on average, many more iterations to reduce the error by a certain factor than one with $\rho(T_J) = 0.1$.
+This means that $\rho(T_J)$ acts as the asymptotic [linear convergence](@keyword=linear_convergence|lang=en-US|style=Feynman) factor. An algorithm with $\rho(T_J) = 0.9$ will require, on average, many more iterations to reduce the error by a certain factor than one with $\rho(T_J) = 0.1$.
 
 #### A Practical Sufficient Condition: Diagonal Dominance
 
-While the spectral radius condition is exact, computing the eigenvalues of $T_J$ can be computationally expensive, sometimes as difficult as solving the original system. It is therefore highly desirable to have a simpler condition, checkable by mere inspection of the matrix $A$, that guarantees convergence. Such a condition is provided by the property of **strict diagonal dominance**.
+While the spectral radius condition is exact, computing the eigenvalues of $T_J$ can be computationally expensive, sometimes as difficult as solving the original system. It is therefore highly desirable to have a simpler condition, checkable by mere inspection of the matrix $A$, that guarantees convergence. Such a condition is provided by the property of **[strict diagonal dominance](@keyword=strict_diagonal_dominance|lang=en-US|style=Feynman)**.
 
-A matrix $A$ is said to be **strictly diagonally dominant** (by rows) if, for every row, the absolute value of the diagonal entry is greater than the sum of the absolute values of all other off-diagonal entries in that row. Formally:
+A matrix $A$ is said to be **strictly [diagonally dominant](@keyword=diagonally_dominant|lang=en-US|style=Feynman)** (by rows) if, for every row, the absolute value of the diagonal entry is greater than the sum of the absolute values of all other off-diagonal entries in that row. Formally:
 $$ |a_{ii}|  \sum_{j=1, j \neq i}^{n} |a_{ij}| \quad \text{for all } i=1, \dots, n $$
-A key theorem in numerical analysis states that if a matrix $A$ is strictly diagonally dominant, then the Jacobi method is guaranteed to converge for any initial guess. This is because diagonal dominance is sufficient to prove that $\rho(T_J)  1$.
+A key theorem in numerical analysis states that if a matrix $A$ is strictly diagonally dominant, then the Jacobi method is guaranteed to converge for any initial guess. This is because [diagonal dominance](@keyword=diagonal_dominance|lang=en-US|style=Feynman) is sufficient to prove that $\rho(T_J)  1$.
 
-As an example of its application, consider a matrix dependent on a parameter $\alpha$, and we wish to find the values of $\alpha$ for which convergence is guaranteed. For the matrix $A = \begin{pmatrix} -12  \alpha  3 \\ 2\alpha  15  -5 \\ 1  -2  4\alpha \end{pmatrix}$, we enforce the diagonal dominance conditions on each row [@problem_id:1396128]:
+As an example of its application, consider a matrix dependent on a parameter $\alpha$, and we wish to find the values of $\alpha$ for which convergence is guaranteed. For the matrix $A = \begin{pmatrix} -12  \alpha  3 \\ 2\alpha  15  -5 \\ 1  -2  4\alpha \end{pmatrix}$, we enforce the [diagonal dominance](@keyword=diagonal_dominance|lang=en-US|style=Feynman) conditions on each row [@problem_id:1396128]:
 1.  Row 1: $|-12|  |\alpha| + |3| \implies 12  |\alpha| + 3 \implies |\alpha|  9$
 2.  Row 2: $|15|  |2\alpha| + |-5| \implies 15  2|\alpha| + 5 \implies 10  2|\alpha| \implies |\alpha|  5$
 3.  Row 3: $|4\alpha|  |1| + |-2| \implies 4|\alpha|  3 \implies |\alpha|  \frac{3}{4}$
@@ -110,10 +110,10 @@ For the Jacobi method to be guaranteed to converge, all three conditions must be
 
 #### A Point of Nuance: Sufficiency vs. Necessity
 
-It is crucial to understand that strict diagonal dominance is a *sufficient* condition for convergence, not a *necessary* one. If a matrix is strictly diagonally dominant, Jacobi convergence is guaranteed. However, if it is not, the method might still converge. The ultimate arbiter of convergence is always the spectral radius condition $\rho(T_J)  1$.
+It is crucial to understand that [strict diagonal dominance](@keyword=strict_diagonal_dominance|lang=en-US|style=Feynman) is a *sufficient* condition for convergence, not a *necessary* one. If a matrix is strictly diagonally dominant, Jacobi convergence is guaranteed. However, if it is not, the method might still converge. The ultimate arbiter of convergence is always the [spectral radius](@keyword=spectral_radius|lang=en-US|style=Feynman) condition $\rho(T_J)  1$.
 
-Consider two systems. The first, with matrix $A_1 = \begin{pmatrix} 4  -1  1 \\ 1  -5  2 \\ -2  1  6 \end{pmatrix}$, is strictly diagonally dominant, so convergence is guaranteed [@problem_id:2216352].
+Consider two systems. The first, with matrix $A_1 = \begin{pmatrix} 4  -1  1 \\ 1  -5  2 \\ -2  1  6 \end{pmatrix}$, is strictly [diagonally dominant](@keyword=diagonally_dominant|lang=en-US|style=Feynman), so convergence is guaranteed [@problem_id:2216352].
 
-Now consider a second system with matrix $A_2 = \begin{pmatrix} 2  -3 \\ 1  2 \end{pmatrix}$. For the first row, $|2| \ngtr |-3|$, so the matrix is not strictly diagonally dominant. We cannot use this theorem to guarantee convergence. However, we can compute the iteration matrix $T_J$ and its spectral radius directly.
+Now consider a second system with matrix $A_2 = \begin{pmatrix} 2  -3 \\ 1  2 \end{pmatrix}$. For the first row, $|2| \ngtr |-3|$, so the matrix is not strictly [diagonally dominant](@keyword=diagonally_dominant|lang=en-US|style=Feynman). We cannot use this theorem to guarantee convergence. However, we can compute the [iteration matrix](@keyword=iteration_matrix|lang=en-US|style=Feynman) $T_J$ and its spectral radius directly.
 $$ T_J = -D^{-1}(L+U) = -\begin{pmatrix} 1/2  0 \\ 0  1/2 \end{pmatrix} \begin{pmatrix} 0  -3 \\ 1  0 \end{pmatrix} = \begin{pmatrix} 0  3/2 \\ -1/2  0 \end{pmatrix} $$
-The eigenvalues $\lambda$ are found from $\det(T_J - \lambda I) = \lambda^2 + 3/4 = 0$, which gives $\lambda = \pm i \frac{\sqrt{3}}{2}$. The spectral radius is $\rho(T_J) = |\pm i \frac{\sqrt{3}}{2}| = \frac{\sqrt{3}}{2}$. Since $\frac{\sqrt{3}}{2} \approx 0.866  1$, the Jacobi method *will* converge for this system, even though it does not satisfy the diagonal dominance condition. This example underscores the distinction between a convenient sufficient condition and the fundamental necessary and sufficient condition for convergence.
+The eigenvalues $\lambda$ are found from $\det(T_J - \lambda I) = \lambda^2 + 3/4 = 0$, which gives $\lambda = \pm i \frac{\sqrt{3}}{2}$. The [spectral radius](@keyword=spectral_radius|lang=en-US|style=Feynman) is $\rho(T_J) = |\pm i \frac{\sqrt{3}}{2}| = \frac{\sqrt{3}}{2}$. Since $\frac{\sqrt{3}}{2} \approx 0.866  1$, the Jacobi method *will* converge for this system, even though it does not satisfy the [diagonal dominance](@keyword=diagonal_dominance|lang=en-US|style=Feynman) condition. This example underscores the distinction between a convenient sufficient condition and the fundamental necessary and sufficient condition for convergence.

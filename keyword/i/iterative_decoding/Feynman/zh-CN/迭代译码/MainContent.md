@@ -40,7 +40,7 @@ $$
 **校验节点的回合**：校验节点的任务是执行其规则。它接收所有来自其相连变量节点的传入消息。为了计算一条要发送*回*特定变量（比如 $v_4$）的消息，它会查看关于所有*其他*变量（$v_1, v_2, v_3$）的信念。它会问：“假设这些其他比特具有它们很可能具有的值，那么为了满足我的[奇偶校验](@keyword=parity_checking|lang=zh-CN|style=Feynman)规则，比特 $v_4$ 的值必须是什么？” 这是一个更复杂的计算，但其本质是XOR运算的“软”版本。公式看起来有点吓人，但它只是用LLR的语言来执行这种逻辑检查 [@problem_id:1638274] [@problem_id:1603935]：
 
 $$
-L_{c \to v_4} = 2 \arctanh\left( \prod_{i=1}^{3} \tanh\left(\frac{L_{v_i \to c}}{2}\right) \right)
+L_{c \to v_4} = 2 \operatorname{arctanh}\left( \prod_{i=1}^{3} \tanh\left(\frac{L_{v_i \to c}}{2}\right) \right)
 $$
 
 这种[信息交换](@keyword=information_interchange|lang=zh-CN|style=Feynman)在整个图上同时发生。信念被更新、提炼和传播。随着每一次迭代，变量节点处的LLR的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)趋于增大，从不确定性走向一个自信且（希望是）正确的判决。

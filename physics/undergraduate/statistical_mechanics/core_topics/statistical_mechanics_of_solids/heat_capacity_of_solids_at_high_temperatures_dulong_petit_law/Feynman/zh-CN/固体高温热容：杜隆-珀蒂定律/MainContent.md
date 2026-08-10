@@ -11,7 +11,7 @@
 
 ### 一个惊人的普适常数：$3R$
 
-首先，让我们把这个规律用数学的语言精确地描述出来。[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman)指出，对于由单一元素构成的简单晶体固体，在高温区，其**摩尔[定容热容](@keyword=constant_volume_heat_capacity|lang=zh-CN|style=Feynman)** $C_{V,m}$ 约等于 $3R$。这里的 $R$ 是**通用气体常数**，约等于 $8.314 \, \text{J/(mol·K)}$。因此，这个神秘的常数值大约是 $3 \times 8.314 \approx 24.9 \, \text{J/(mol·K)}$。
+首先，让我们把这个规律用数学的语言精确地描述出来。[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman)指出，对于由单一元素构成的简单晶体固体，在高温区，其**摩尔[定容热容](@keyword=constant_volume_heat_capacity|lang=zh-CN|style=Feynman)** $C_{V,m}$ 约等于 $3R$。这里的 $R$ 是**通用气体常数**，约等于 $8.314 \, \mathrm{J/(mol\cdot K)}$。因此，这个神秘的常数值大约是 $3 \times 8.314 \approx 24.9 \, \mathrm{J/(mol\cdot K)}$。
 
 这个定律的威力在于它的预测性。想象一下，你是一位[材料工程](@keyword=materials_engineering|lang=zh-CN|style=Feynman)师，得到了一块由未知重[元素组成](@keyword=elemental_composition|lang=zh-CN|style=Feynman)的晶体材料。你不需要知道它的具体结构或化学性质，只需要知道它的质量和[摩尔质量](@keyword=molar_mass|lang=zh-CN|style=Feynman)，就可以利用[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman)相当精确地计算出，在高温下将它升高一定温度需要多少热量 [@problem_id:1970416]。反过来，如果你通过实验测得一块已知质量的样品吸收的热量和温度变化，你甚至可以反推出这种未知元素的**摩尔质量** [@problem_id:1970453]。这在19世纪，无疑是一种非常强大的工具。
 
@@ -89,7 +89,7 @@
 
 这两者有什么不同呢？当你对一块固体加热时，它不仅温度会升高，体积通常也会膨胀。在定压条件下，系统为了膨胀，必须对外面的大气压力做功。这意味着，你输入的热量中，一部分用于增加原子的[振动能](@keyword=vibrational_energy|lang=zh-CN|style=Feynman)（即内能），另一部分则用于对外做功。因此，要使温度同样升高 $1$K，定压条件下需要比定容条件下提供更多的热量 [@problem_id:1970414]。
 
-所以，总有 $C_{P,m} > C_{V,m}$。这就是为什么实验测得的铅在室温下的[摩尔热容](@keyword=molar_specific_heat|lang=zh-CN|style=Feynman)（约 $26.4 \, \text{J·mol}^{-1}\text{·K}^{-1}$）会明显高于[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman)预测的 $3R$（约 $24.9 \, \text{J·mol}^{-1}\text{·K}^{-1}$）的原因。这个差值，恰恰与材料的热膨胀系数和[可压缩性](@keyword=compressibility|lang=zh-CN|style=Feynman)有关。
+所以，总有 $C_{P,m} > C_{V,m}$。这就是为什么实验测得的铅在室温下的[摩尔热容](@keyword=molar_specific_heat|lang=zh-CN|style=Feynman)（约 $26.4 \, \mathrm{J\cdot mol}^{-1}\mathrm{\cdot K}^{-1}$）会明显高于[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman)预测的 $3R$（约 $24.9 \, \mathrm{J\cdot mol}^{-1}\mathrm{\cdot K}^{-1}$）的原因。这个差值，恰恰与材料的热膨胀系数和[可压缩性](@keyword=compressibility|lang=zh-CN|style=Feynman)有关。
 
 #### 被“冻结”的自由电子
 

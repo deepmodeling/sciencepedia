@@ -20,12 +20,12 @@ These phantoms are not just a nuisance; they are objects of immense mystery and 
 
 For a long time, Ш was so mysterious that it was not even known if it was always finite. Here is where the Selmer group provides a stunning revelation. There is a fundamental and beautiful [short exact sequence](@keyword=short_exact_sequence|lang=en-US|style=Feynman) that functions like a cosmic balance sheet, connecting our three groups:
 
-$$0 \longrightarrow E(\mathbb{Q})/2E(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(2)}(E/\mathbb{Q}) \longrightarrow \Sha(E/\mathbb{Q})[2] \longrightarrow 0$$
+$$0 \longrightarrow E(\mathbb{Q})/2E(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(2)}(E/\mathbb{Q}) \longrightarrow \mathrm{Ш}(E/\mathbb{Q})[2] \longrightarrow 0$$
 
 In simple terms, since these are all [finite groups](@keyword=finite_groups|lang=en-US|style=Feynman), this means their sizes are related by a simple product:
-$$|\mathrm{Sel}^{(2)}(E/\mathbb{Q})| = |E(\mathbb{Q})/2E(\mathbb{Q})| \cdot |\Sha(E/\mathbb{Q})[2]|$$
+$$|\mathrm{Sel}^{(2)}(E/\mathbb{Q})| = |E(\mathbb{Q})/2E(\mathbb{Q})| \cdot |\mathrm{Ш}(E/\mathbb{Q})[2]|$$
 
-This equation is a miracle. On the left, we have the size of the Selmer group, something we can (with hard work) compute! On the right, we have two terms. The first, $|E(\mathbb{Q})/2E(\mathbb{Q})|$, is related to the rank $r$ of the curve (the number of independent [rational points](@keyword=rational_points|lang=en-US|style=Feynman)) and its rational 2-[torsion points](@keyword=torsion_points|lang=en-US|style=Feynman). The second, $|\Sha(E/\mathbb{Q})[2]|$, is the size of the 2-torsion part of the mysterious Shafarevich-Tate group.
+This equation is a miracle. On the left, we have the size of the Selmer group, something we can (with hard work) compute! On the right, we have two terms. The first, $|E(\mathbb{Q})/2E(\mathbb{Q})|$, is related to the rank $r$ of the curve (the number of independent [rational points](@keyword=rational_points|lang=en-US|style=Feynman)) and its rational 2-[torsion points](@keyword=torsion_points|lang=en-US|style=Feynman). The second, $|\mathrm{Ш}(E/\mathbb{Q})[2]|$, is the size of the 2-torsion part of the mysterious Shafarevich-Tate group.
 
 Think about what this means. If we can compute the Selmer group and independently determine the rank of the curve, this equation allows us to *measure the size of the obstruction group Ш*. We can use a computable object to get a handle on one of the most mysterious objects in all of mathematics. For example, if we are given a curve with rank $r=1$ and a certain torsion structure, and we compute its 2-Selmer group to have size 16, this balance sheet forces the 2-part of its Shafarevich-Tate group to have size 4 [@problem_id:3013177]. We have peered into the abyss and measured a piece of it.
 

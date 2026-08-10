@@ -37,7 +37,7 @@
 1.  [商拓扑](@keyword=topological_space_gluing|lang=zh-CN|style=Feynman) $\mathcal{T}_Q$，这是由映射 $\pi: X \to Y$ 产生的[终拓扑](@keyword=final_topology|lang=zh-CN|style=Feynman)。
 2.  [初拓扑](@keyword=initial_topology|lang=zh-CN|style=Feynman) $\mathcal{T}_I$，这是 $Y$ 上使我们族 $\mathcal{F}$ 中所有函数都连续的*最粗*拓扑。
 
-[商拓扑的泛性质](@keyword=universal_property_of_quotient_topology|lang=zh-CN|style=Feynman)为我们揭示了这两者之间的关系，给出了一个直接而优美的答案。一个函数 $g: Y \to \mathbb{R}$ 关于 $\mathcal{T}_Q$ 是连续的，当且仅当 $g \circ \pi$ 是连续的。这意味着我们的族 $\mathcal{F}$ 正是 $(Y, \mathcal{T}_Q)$ 上所有连续实值函数的集合。由于 $\mathcal{T}_I$ 是使这些函数连续的[最粗拓扑](@keyword=coarsest_topology|lang=zh-CN|style=Feynman)，它必须是[商拓扑](@keyword=topological_space_gluing|lang=zh-CN|style=Feynman)的子集：$\mathcalT_I \subseteq \mathcal{T}_Q$。
+[商拓扑的泛性质](@keyword=universal_property_of_quotient_topology|lang=zh-CN|style=Feynman)为我们揭示了这两者之间的关系，给出了一个直接而优美的答案。一个函数 $g: Y \to \mathbb{R}$ 关于 $\mathcal{T}_Q$ 是连续的，当且仅当 $g \circ \pi$ 是连续的。这意味着我们的族 $\mathcal{F}$ 正是 $(Y, \mathcal{T}_Q)$ 上所有连续实值函数的集合。由于 $\mathcal{T}_I$ 是使这些函数连续的[最粗拓扑](@keyword=coarsest_topology|lang=zh-CN|style=Feynman)，它必须是[商拓扑](@keyword=topological_space_gluing|lang=zh-CN|style=Feynman)的子集：$\mathcal{T}_I \subseteq \mathcal{T}_Q$。
 
 它们何时相等？何时*从外部*强加的结构与*为了内部*通过函数表达自身所需的结构完全匹配？答案是深刻的：等式成立当且仅当[商空间](@keyword=quotient_spaces|lang=zh-CN|style=Feynman) $(Y, \mathcal{T}_Q)$ 是**完全正则**的。一个[完全正则空间](@keyword=completely_regular_space|lang=zh-CN|style=Feynman)是这样一个空间，你总能用一个连续实值函数将一个点与一个[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)分离开。所以，[终拓扑](@keyword=final_topology|lang=zh-CN|style=Feynman)包含的[信息量](@keyword=surprisal|lang=zh-CN|style=Feynman)，恰好在它具有这种良好的分离性质时，能够被其到 $\mathbb{R}$ 的[连续函数](@keyword=continuous_function|lang=zh-CN|style=Feynman)所精确描述 [@problem_id:1553727]。这揭示了定义空间的映射与空间能支持的函数之间一种华丽的对偶性。
 

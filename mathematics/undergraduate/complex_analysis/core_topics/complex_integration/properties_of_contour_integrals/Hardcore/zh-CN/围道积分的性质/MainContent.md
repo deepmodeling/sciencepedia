@@ -26,7 +26,7 @@ $$
 = \int_C (u(x,y)dx - v(x,y)dy) + i \int_C (v(x,y)dx + u(x,y)dy)
 $$
 
-这个表达式揭示了复围线积分的本质：它等价于两个实线积分的[线性组合](@entry_id:154743)，其实部是 $\int_C u dx - v dy$，虚部是 $\int_C v dx + u dy$。
+这个表达式揭示了复围线积分的本质：它等价于两个实线积分的[线性组合](@keyword=linear_combinations|lang=zh-CN|style=Feynman)，其实部是 $\int_C u dx - v dy$，虚部是 $\int_C v dx + u dy$。
 
 例如，如果我们考虑一个被积函数本身是实值函数的情形，即 $f(z) = u(x,y)$（此时 $v(x,y)=0$），那么上述定义就简化为 [@problem_id:2259790]：
 
@@ -172,7 +172,7 @@ $$
 首先，计算路径长度 $L$。这是一个半径为 $R$ 的圆弧，其弧度为 $\pi/2$，因此其长度为 $L = \frac{\pi R}{2}$。
 
 接下来，寻找 $|f(z)| = \left| \frac{\ln(z)}{z^2 + a^2} \right|$ 在 $C$ 上的上界 $M$。我们需要分别处理分子和分母：
-- **分子**：路径上的点可以表示为 $z = R e^{i\theta}$，其中 $\theta \in [0, \pi/2]$。主对数分支 $\ln(z) = \ln|z| + i \Arg(z) = \ln R + i\theta$。因此，其模长为 $|\ln(z)| = \sqrt{(\ln R)^2 + \theta^2}$。由于 $\theta \le \pi/2$，我们可以得到一个上界：$|\ln(z)| \le \sqrt{(\ln R)^2 + (\pi/2)^2}$。
+- **分子**：路径上的点可以表示为 $z = R e^{i\theta}$，其中 $\theta \in [0, \pi/2]$。主对数分支 $\ln(z) = \ln|z| + i \operatorname{Arg}(z) = \ln R + i\theta$。因此，其模长为 $|\ln(z)| = \sqrt{(\ln R)^2 + \theta^2}$。由于 $\theta \le \pi/2$，我们可以得到一个上界：$|\ln(z)| \le \sqrt{(\ln R)^2 + (\pi/2)^2}$。
 - **分母**：利用**反三角不等式** $|z_1 + z_2| \ge ||z_1| - |z_2||$，我们有 $|z^2+a^2| \ge ||z^2| - |a^2|| = ||z|^2 - a^2| = |R^2 - a^2|$。因为 $R > a$，所以 $|z^2+a^2| \ge R^2 - a^2$。
 
 综合起来，我们得到 $|f(z)|$ 在路径 $C$ 上的一个上界 $M$：

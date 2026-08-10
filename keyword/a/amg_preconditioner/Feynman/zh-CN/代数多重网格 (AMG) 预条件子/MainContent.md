@@ -13,7 +13,7 @@
 
 但矩阵的规模只是问题的一半。真正的症结在于一个更微妙的属性，称为**条件数**，记为 $\kappa(A)$。你可以将[条件数](@keyword=condition_number|lang=zh-CN|style=Feynman)看作问题被“压扁”程度的度量。一个条件数低的矩阵表现得像一个漂亮的圆球，易于处理。而一个[条件数](@keyword=condition_number|lang=zh-CN|style=Feynman)高的矩阵则表现得像一个细长的椭圆，某些方向极其敏感，而其他方向则非常刚硬。对于许多物理问题，例如描述热量或压力的泊松方程，矩阵 $A$ 的[条件数](@keyword=condition_number|lang=zh-CN|style=Feynman)会随着网格变细而恶化。具体来说，它通常与网格间距 $h$ 的关系为 $\kappa(A) = \mathcal{O}(h^{-2})$ [@problem_id:3413446]。这是一场灾难！
 
-许多流行的迭代求解器，包括著名的**[共轭梯度](@keyword=conjugate_gradient|lang=zh-CN|style=Feynman) (CG)** 方法，其性能直接依赖于[条件数](@keyword=condition_number|lang=zh-CN|style=Feynman)。达到解所需的迭代次数大约与条件数的平方根成正比，即 $\mathcal{O}(\sqrt{\kappa(A)}) = \mathcalO(h^{-1})$ [@problem_id:3290951]。因此，如果你将网格加密十倍，求解器就需要十倍的迭代次数才能收敛。由于每次迭代现在处理的矩阵也大了一百倍，你的总计算时间会爆炸式增长。这就是细网格的暴政：你对精度的追求遭遇了指数级增长的计算成本。几十年来，这一障碍似乎是根本性的。
+许多流行的迭代求解器，包括著名的**[共轭梯度](@keyword=conjugate_gradient|lang=zh-CN|style=Feynman) (CG)** 方法，其性能直接依赖于[条件数](@keyword=condition_number|lang=zh-CN|style=Feynman)。达到解所需的迭代次数大约与条件数的平方根成正比，即 $\mathcal{O}(\sqrt{\kappa(A)}) = \mathcal{O}(h^{-1})$ [@problem_id:3290951]。因此，如果你将网格加密十倍，求解器就需要十倍的迭代次数才能收敛。由于每次迭代现在处理的矩阵也大了一百倍，你的总计算时间会爆炸式增长。这就是细网格的暴政：你对精度的追求遭遇了指数级增长的计算成本。几十年来，这一障碍似乎是根本性的。
 
 ### 双重[褶皱](@keyword=crumpling|lang=zh-CN|style=Feynman)的故事：[多重网格](@keyword=multigrid|lang=zh-CN|style=Feynman)思想
 

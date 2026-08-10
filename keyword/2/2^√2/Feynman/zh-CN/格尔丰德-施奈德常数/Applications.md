@@ -34,6 +34,6 @@ $\sqrt{2}$ 的影响超越了简单的运动，延伸到我们描述物理系统
 
 如果这还不够深刻，我们的最后一站将带我们到爱因斯坦的广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)和宇宙的形状本身。爱因斯坦教会我们，引力是[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的弯曲。在大多数情况下，空间和时间的区别是清晰的，[时间之矢](@keyword=arrow_of_time|lang=zh-CN|style=Feynman)无情地指向前方。但在爱因斯坦的方程中是否存在这种区别被打破的解？1949年，逻辑学家[库尔特·哥德尔](@keyword=kurt_gödel|lang=zh-CN|style=Feynman)发现了一个：一个旋转的宇宙模型。在这种[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的某些变体中，发生了非同寻常的事情。当你离开旋转中心越远，[时空](@keyword=space_time|lang=zh-CN|style=Feynman)构造变得如此扭曲，以至于超过某个[临界半径](@keyword=critical_radius|lang=zh-CN|style=Feynman)后，空间中的简单圆周路径变成了“[闭合类时曲线](@keyword=closed_timelike_curves|lang=zh-CN|style=Feynman)”。沿着这样的圆周旅行就是穿越时间，回到你的出发时刻。一台时间机器。
 
-值得注意的是，在至少一个这样的模型宇宙中，这个[临界半径](@keyword=critical_radius|lang=zh-CN|style=Feynman)——你必须旅行多远才能进入这些时间循环——由一个涉及我们数字的优美简洁的表达式给出：$r_{crit} = \arcsinh(1)$，它等于 $\ln(1 + \sqrt{2})$ [@problem_id:1818252]。$\sqrt{2}$ 这个简单正方形的对角线，竟然出现在定义爱因斯坦方程某个解中[时间旅行](@keyword=time_travel|lang=zh-CN|style=Feynman)阈值的公式里，这是对数学思想相互关联性的一个惊人证明。
+值得注意的是，在至少一个这样的模型宇宙中，这个[临界半径](@keyword=critical_radius|lang=zh-CN|style=Feynman)——你必须旅行多远才能进入这些时间循环——由一个涉及我们数字的优美简洁的表达式给出：$r_{crit} = \operatorname{arcsinh}(1)$，它等于 $\ln(1 + \sqrt{2})$ [@problem_id:1818252]。$\sqrt{2}$ 这个简单正方形的对角线，竟然出现在定义爱因斯坦方程某个解中[时间旅行](@keyword=time_travel|lang=zh-CN|style=Feynman)阈值的公式里，这是对数学思想相互关联性的一个惊人证明。
 
 从木匠的尺子到机械臂，从[数据分析](@keyword=data_analysis|lang=zh-CN|style=Feynman)到计算机模拟的稳定性，从量子相关的极限到[时间旅行](@keyword=time_travel|lang=zh-CN|style=Feynman)的可能性，数字 $\sqrt{2}$ 是一条不可磨灭的线索。它提醒我们，抽象的数学世界并非一个独立的领域，而是一种以惊人的保真度和优雅描述我们宇宙最深层结构的语言。

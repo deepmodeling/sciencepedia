@@ -24,9 +24,9 @@ BSD 猜想大胆地预言：
 1.  **秩部分**：$L(E,s)$ 在 $s=1$ 这个点的零点阶数，等于 $E(\mathbb{Q})$ 这个群的“秩”——也就是其上“独立”有理数点的个数。
 2.  **首项系数部分**：$L(E,s)$ 在 $s=1$ 处的泰勒展开的首项系数，由一系列深刻的算术[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)以一种极其精确的方式组合而成。
 
-这个猜想的“配方”本身就是一首数学的史诗。它断言，来自分析世界的一个数，等于一个由几何与代数世界中的各种基本要素构成的复杂分式。而在这个配方的分子中，赫然出现了 Ш [群的阶](@keyword=order_of_a_group|lang=zh-CN|style=Feynman) $|\Sha(E/\mathbb{Q})|$！
+这个猜想的“配方”本身就是一首数学的史诗。它断言，来自分析世界的一个数，等于一个由几何与代数世界中的各种基本要素构成的复杂分式。而在这个配方的分子中，赫然出现了 Ш [群的阶](@keyword=order_of_a_group|lang=zh-CN|style=Feynman) $|\mathrm{Ш}(E/\mathbb{Q})|$！
 
-$$ \lim_{s \to 1} \frac{L(E,s)}{(s-1)^r} \propto \frac{|\Sha(E/\mathbb{Q})| \cdot [\text{周期}] \cdot [\text{调节子}] \cdot \prod_p c_p}{|E(\mathbb{Q})_{\text{tors}}|^2} $$
+$$ \lim_{s \to 1} \frac{L(E,s)}{(s-1)^r} \propto \frac{|\mathrm{Ш}(E/\mathbb{Q})| \cdot [\text{周期}] \cdot [\text{调节子}] \cdot \prod_p c_p}{|E(\mathbb{Q})_{\text{tors}}|^2} $$
 
 公式中的 $\prod_p c_p$ 正是由所谓的玉河数（Tamagawa numbers）的乘积构成的，它们描述了曲线在各个素数 $p$ 处的局部退化行为。这个猜想告诉我们，Ш 群的阶——这个度量“幽灵”数量的神秘数字——竟然是构成宇宙基本算术配方的核心食材之一。它的存在，对于 $L$-函数的[精细结构](@keyword=fine_structure|lang=zh-CN|style=Feynman)至关重要。
 
@@ -38,7 +38,7 @@ Gross、Zagier 和 Kolyvagin 的工作是这场革命的高潮。他们聚焦于
 
 这个[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)就像一部精巧的密码机。一方面，它与[赫格纳点](@keyword=heegner_points|lang=zh-CN|style=Feynman)的高度（一个衡量点“算术复杂度”的量）紧密相连，而格罗斯-扎吉尔公式已经将后者与 $L$-函数的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)值联系起来。另一方面，它能严格地“控制”[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)（Selmer group）的大小。通过一种名为“下降”的计算技术，[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小又与有理点群的秩以及 Ш 群的大小直接相关。
 
-$$ |\mathrm{Sel}^{(2)}(E/\mathbb{Q})| = |E(\mathbb{Q})/2E(\mathbb{Q})| \cdot |\Sha(E/\mathbb{Q})[2]| $$
+$$ |\mathrm{Sel}^{(2)}(E/\mathbb{Q})| = |E(\mathbb{Q})/2E(\mathbb{Q})| \cdot |\mathrm{Ш}(E/\mathbb{Q})[2]| $$
 
 最终的结论是革命性的：对于[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为0或1的椭圆曲线，BSD 猜想的秩部分成立，并且，至关重要的是，Ш 群确实是一个[有限群](@keyword=finite_groups|lang=zh-CN|style=Feynman)！这是人类首次证明，这些“幽灵”的数量是有限的，它们并非无穷无尽、无法把握的怪物。这一成就不仅是 BSD 猜想道路上的里程碑，也极大地深化了我们对 Ш 群本身的理解。
 
@@ -48,7 +48,7 @@ $$ |\mathrm{Sel}^{(2)}(E/\mathbb{Q})| = |E(\mathbb{Q})/2E(\mathbb{Q})| \cdot |\S
 
 这个配对可以被想象成 Ш 群内部的一种“[双线性形式](@keyword=bilinear_form|lang=zh-CN|style=Feynman)”，它将两个 Ш 群中的元素映射到一个有理数模整数的群中。这个配对的一个关[键性](@keyword=bond_character|lang=zh-CN|style=Feynman)质是它是“交错的”，这意味着任何元素与自身的配对结果总是零。
 
-在[有限维向量空间](@keyword=finite_dimensional_vector_spaces|lang=zh-CN|style=Feynman)上，一个非退化的交错[双线性形式](@keyword=bilinear_form|lang=zh-CN|style=Feynman)只能存在于偶数维空间中。通过将这一线性代数的基本结果应用于 Ш 群的2-挠部分（即所有阶为2的元素构成的[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)），我们得出了一个惊人的结论：$\Sha(E/\mathbb{Q})[2]$ 作为一个在[二元域](@keyword=gf(2)|lang=zh-CN|style=Feynman) $\mathbb{F}_2$ 上的[向量空间](@keyword=vector_spaces|lang=zh-CN|style=Feynman)，其维数必须永远是偶数！
+在[有限维向量空间](@keyword=finite_dimensional_vector_spaces|lang=zh-CN|style=Feynman)上，一个非退化的交错[双线性形式](@keyword=bilinear_form|lang=zh-CN|style=Feynman)只能存在于偶数维空间中。通过将这一线性代数的基本结果应用于 Ш 群的2-挠部分（即所有阶为2的元素构成的[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)），我们得出了一个惊人的结论：$\mathrm{Ш}(E/\mathbb{Q})[2]$ 作为一个在[二元域](@keyword=gf(2)|lang=zh-CN|style=Feynman) $\mathbb{F}_2$ 上的[向量空间](@keyword=vector_spaces|lang=zh-CN|style=Feynman)，其维数必须永远是偶数！
 
 这就像一条隐藏的“[宇称守恒](@keyword=parity_conservation|lang=zh-CN|style=Feynman)”定律。无论[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)多么复杂，它所对应的“幽灵”群中，阶为2的“幽灵”所构成的空间的维数总得是0, 2, 4, ... 这样一个偶数。这种意想不到的规律性，强烈地暗示着 Ш 群背后存在着远比我们想象的更为深刻和优美的[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)。
 

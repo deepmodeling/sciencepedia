@@ -37,7 +37,7 @@ $$
 J_\lambda = \lambda I + N = \begin{pmatrix} \lambda & 0 & 0 \\ 0 & \lambda & 0 \\ 0 & 0 & \lambda \end{pmatrix} + \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}
 $$
 
-The matrix $N$ is called **nilpotent** because if you raise it to a high enough power, it becomes the zero matrix. For our $3 \times 3$ example, you can check that $N^2 = \begin{psmallmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{psmallmatrix}$ and $N^3=0$. This property is a fantastic gift.
+The matrix $N$ is called **nilpotent** because if you raise it to a high enough power, it becomes the zero matrix. For our $3 \times 3$ example, you can check that $N^2 = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}$ and $N^3=0$. This property is a fantastic gift.
 
 When we compute the exponential $\exp(J_\lambda t)$, because the two parts commute, we get $\exp((\lambda I + N)t) = \exp(\lambda t I) \exp(Nt) = e^{\lambda t} \exp(Nt)$. And because $N$ is nilpotent, the infinite series for its exponential becomes a finite polynomial!
 

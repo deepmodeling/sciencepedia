@@ -58,7 +58,7 @@ Determining the rank is one of the hardest open problems in mathematics. Why is 
 
 For our curve $E_n$, it's easy to see it has local solutions everywhere. For instance, the rational point $(0,0)$ exists, so it's a point in $\mathbb{R}$ and every $\mathbb{Q}_p$. So the curve is locally solvable. But as we know, there are numbers like $n=1$ and $n=2$ that are not congruent, meaning their corresponding curves have rank 0. For these curves, local solvability does *not* guarantee the existence of the kind of [global solution](@keyword=global_solution|lang=en-US|style=Feynman) we care about (one with $y \neq 0$). The Hasse principle fails in the context of our problem [@problem_id:3090624].
 
-The object that measures the failure of this principle is a mysterious and elusive group called the **Tate-Shafarevich group**, denoted $\Sha(E_n)$. Its elements represent "phantom" solutions that exist locally everywhere but have no global, rational counterpart. The difficulty of the congruent number problem is, in part, hidden in the shadows of this group.
+The object that measures the failure of this principle is a mysterious and elusive group called the **Tate-Shafarevich group**, denoted $\mathrm{Ш}(E_n)$. Its elements represent "phantom" solutions that exist locally everywhere but have no global, rational counterpart. The difficulty of the congruent number problem is, in part, hidden in the shadows of this group.
 
 ### Bridging Worlds: The L-function and a Grand Conjecture
 

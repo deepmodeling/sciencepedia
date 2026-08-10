@@ -37,7 +37,7 @@
 
 第一阶段是证明一个“较弱”的陈述：对于某个整数 $m \ge 2$（通常取 $m=2$），商群 $E(\mathbb{Q})/mE(\mathbb{Q})$ 是有限的。这是什么意思？群 $mE(\mathbb{Q})$ 由所有是 $m$ 的倍数的点组成。商群 $E(\mathbb{Q})/mE(\mathbb{Q})$ 是除以 $m$ 后的“[陪集](@keyword=cosets|lang=zh-CN|style=Feynman)”或余数的集合。证明这个群是有限的，意味着在模 $m$ 意义下，只有有限多种“类型”的点。
 
-这个证明技术性很强，涉及一个“从局部到整体”的论证。其思想是将这个商群[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)到一个更大、更有结构的对象中，称为**[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)**，该群是利用有理数的所有完备化（实数 $\mathbb{R}$ 和 $p$-进数 $\mathbb{Q}_p$）的信息构建的。然后证明这个[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)是有限的 [@problem_id:3022309]。一个美妙的微妙之处在于，[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)有时可能比我们感兴趣的有理点群更大。它们之间的差异由另一个神秘的对象——**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)** $\Sha$ 来衡量，该群由一些“幽灵”解组成，这些解在每个局部都存在，但无法拼接成一个全局的有理数解 [@problem_id:3022326]。对我们而言，关键的结论是，我们可以确定存在一个有限的“代表元”集合，称之为 $R_1, R_2, \dots, R_k$，使得任何点 $P \in E(\mathbb{Q})$ 都可以写成 $P = [m]Q + R_i$ 的形式，其中 $Q$ 是某个点，$R_i$ 是某个代表元。
+这个证明技术性很强，涉及一个“从局部到整体”的论证。其思想是将这个商群[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)到一个更大、更有结构的对象中，称为**[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)**，该群是利用有理数的所有完备化（实数 $\mathbb{R}$ 和 $p$-进数 $\mathbb{Q}_p$）的信息构建的。然后证明这个[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)是有限的 [@problem_id:3022309]。一个美妙的微妙之处在于，[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)有时可能比我们感兴趣的有理点群更大。它们之间的差异由另一个神秘的对象——**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)** $\mathrm{Ш}$ 来衡量，该群由一些“幽灵”解组成，这些解在每个局部都存在，但无法拼接成一个全局的有理数解 [@problem_id:3022326]。对我们而言，关键的结论是，我们可以确定存在一个有限的“代表元”集合，称之为 $R_1, R_2, \dots, R_k$，使得任何点 $P \in E(\mathbb{Q})$ 都可以写成 $P = [m]Q + R_i$ 的形式，其中 $Q$ 是某个点，$R_i$ 是某个代表元。
 
 **第二阶段：通过[高度函数](@keyword=height_functions|lang=zh-CN|style=Feynman)下降**
 

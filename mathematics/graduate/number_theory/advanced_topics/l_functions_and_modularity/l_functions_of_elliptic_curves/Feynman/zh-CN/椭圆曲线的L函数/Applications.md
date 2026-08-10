@@ -27,12 +27,12 @@ $$ \mathrm{ord}_{s=1} L(E,s) = \operatorname{rank}(E(\mathbb{Q})) $$
 #### 领导项：编码隐藏的算术结构
 
 如果 $L(E,1)=0$，故事还远未结束。BSD 猜想的最终部分，也是最完整的部分，是关于 $L(E,s)$ 在 $s=1$ 处泰勒展开的第一个非零系数（领导项）的。猜想预言，这个系数编码了关于曲线的几乎所有重要算术[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)：
-$$ \lim_{s\to 1} \frac{L(E,s)}{(s-1)^r} = \frac{\Omega_E \cdot \mathrm{Reg}_E \cdot |\Sha(E/\mathbb{Q})| \cdot \prod_p c_p}{|E(\mathbb{Q})_{\text{tors}}|^2} $$
+$$ \lim_{s\to 1} \frac{L(E,s)}{(s-1)^r} = \frac{\Omega_E \cdot \mathrm{Reg}_E \cdot |\mathrm{Ш}(E/\mathbb{Q})| \cdot \prod_p c_p}{|E(\mathbb{Q})_{\text{tors}}|^2} $$
 这个公式就像一个魔法咒语，右边的每一项都代表着一个深刻的算术概念。除了我们已经见过的周期 $\Omega_E$ 和有限解（[挠点](@keyword=torsion_points|lang=zh-CN|style=Feynman)）群的大小 $|E(\mathbb{Q})_{\text{tors}}|$ 之外，它还包含了：
 - **Regulator $\mathrm{Reg}_E$**：一个由曲线上独立解的“高度”（一种衡量解的复杂性的量）构成的[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)，它衡量了解的“大小”。
-- **Shafarevich-Tate 群 $\Sha(E/\mathbb{Q})$**：这是一个极其神秘的群，它衡量了“[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)”在这条椭圆曲线上失效的程度。通俗地说，它描述了那些在所有局部域（[实数域](@keyword=real_numbers_field|lang=zh-CN|style=Feynman)和 $p$-进[数域](@keyword=number_fields|lang=zh-CN|style=Feynman)）上都有解，但在全局（有理数域）上却没有解的方程。
+- **Shafarevich-Tate 群 $\mathrm{Ш}(E/\mathbb{Q})$**：这是一个极其神秘的群，它衡量了“[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)”在这条椭圆曲线上失效的程度。通俗地说，它描述了那些在所有局部域（[实数域](@keyword=real_numbers_field|lang=zh-CN|style=Feynman)和 $p$-进[数域](@keyword=number_fields|lang=zh-CN|style=Feynman)）上都有解，但在全局（有理数域）上却没有解的方程。
 
-在很长一段时间里，人们甚至不知道 $\Sha(E/\mathbb{Q})$ 是否总是一个有限群。L-函数的理论为攻克这一难题提供了关键武器。对于[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为 $0$ 或 $1$ 的情况（即 $L(E,s)$ 在 $s=1$ 处为零的阶数是 $0$ 或 $1$），数学家们利用与[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)相关的“Heegner 点”构造了一个名为“[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)”的代数工具。结合 Gross-Zagier 定理，这个系统能够精确地“夹逼”住 Selmer 群的大小，进而证明 $\Sha(E/\mathbb{Q})$ 中 $p$-部分对于几乎所有素数 $p$ 都是有限的，从而证明了整个群的有限性。[@problem_id:3024973] 这是 L-函数理论取得的巨大成功，它将一个纯粹的[解析性](@keyword=analyticity|lang=zh-CN|style=Feynman)质（[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为 $0$ 或 $1$）转变成了关于 $\Sha$ 这个深奥算术对象的一个里程碑式的定理。
+在很长一段时间里，人们甚至不知道 $\mathrm{Ш}(E/\mathbb{Q})$ 是否总是一个有限群。L-函数的理论为攻克这一难题提供了关键武器。对于[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为 $0$ 或 $1$ 的情况（即 $L(E,s)$ 在 $s=1$ 处为零的阶数是 $0$ 或 $1$），数学家们利用与[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)相关的“Heegner 点”构造了一个名为“[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)”的代数工具。结合 Gross-Zagier 定理，这个系统能够精确地“夹逼”住 Selmer 群的大小，进而证明 $\mathrm{Ш}(E/\mathbb{Q})$ 中 $p$-部分对于几乎所有素数 $p$ 都是有限的，从而证明了整个群的有限性。[@problem_id:3024973] 这是 L-函数理论取得的巨大成功，它将一个纯粹的[解析性](@keyword=analyticity|lang=zh-CN|style=Feynman)质（[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为 $0$ 或 $1$）转变成了关于 $\mathrm{Ш}$ 这个深奥算术对象的一个里程碑式的定理。
 
 ### 分析的引擎：通往其他世界的桥梁
 

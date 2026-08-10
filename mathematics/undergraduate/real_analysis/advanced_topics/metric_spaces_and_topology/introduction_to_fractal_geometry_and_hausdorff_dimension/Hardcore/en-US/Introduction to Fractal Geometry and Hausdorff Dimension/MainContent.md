@@ -5,7 +5,7 @@ This article provides a comprehensive introduction to this concept. In the first
 
 ## Principles and Mechanisms
 
-In the preceding chapter, we encountered geometric objects of immense complexity, whose structures defy the simple classification afforded by integer dimensions. The intuitive notion that a point is zero-dimensional, a line is one-dimensional, and a plane is two-dimensional proves inadequate for describing sets such as the Cantor set. While constructed from the simple unit interval, the standard middle-thirds Cantor set is simultaneously uncountable, yet possesses zero total length (or Lebesgue measure). It is a closed set, containing all its limit points, and more strongly, it is a perfect set, meaning every one of its points is a limit point—it contains no isolated points [@problem_id:1305158]. Such paradoxical properties demand a more nuanced and powerful tool for quantifying the "size" and "complexity" of a set. This chapter introduces the rigorous framework of Hausdorff measure and dimension, which generalizes the concept of dimension to any non-negative real number.
+In the preceding chapter, we encountered geometric objects of immense complexity, whose structures defy the simple classification afforded by integer dimensions. The intuitive notion that a point is zero-dimensional, a line is one-dimensional, and a plane is two-dimensional proves inadequate for describing sets such as the Cantor set. While constructed from the simple unit interval, the standard middle-thirds Cantor set is simultaneously uncountable, yet possesses zero total length (or Lebesgue measure). It is a [closed set](@keyword=closed_set|lang=en-US|style=Feynman), containing all its [limit points](@keyword=limit_points|lang=en-US|style=Feynman), and more strongly, it is a perfect set, meaning every one of its points is a [limit point](@keyword=limit_point|lang=en-US|style=Feynman)—it contains no isolated points [@problem_id:1305158]. Such paradoxical properties demand a more nuanced and powerful tool for quantifying the "size" and "complexity" of a set. This chapter introduces the rigorous framework of Hausdorff measure and dimension, which generalizes the concept of dimension to any non-negative real number.
 
 ### The Hausdorff Measure: A Refined System of Measurement
 
@@ -13,11 +13,11 @@ To measure the size of a subset $A$ of $\mathbb{R}^n$, we can attempt to cover i
 
 Let $A$ be a set in $\mathbb{R}^n$. A countable collection of sets $\{U_i\}_{i=1}^\infty$ is called a **$\delta$-cover** of $A$ if $A \subset \bigcup_{i=1}^\infty U_i$ and the diameter of each set, $\text{diam}(U_i) = \sup\{|x-y| : x, y \in U_i\}$, satisfies $\text{diam}(U_i)  \delta$ for all $i$. For any given dimension $s \ge 0$, we can measure the "size" of this cover by computing the sum $\sum_{i=1}^\infty (\text{diam}(U_i))^s$.
 
-To find the most efficient cover at a given scale $\delta$, we take the infimum of this sum over all possible $\delta$-covers of $A$. This defines the **$s$-dimensional pre-measure**:
+To find the most efficient cover at a given scale $\delta$, we take the infimum of this sum over all possible $\delta$-covers of $A$. This defines the **$s$-dimensional [pre-measure](@keyword=pre_measure|lang=en-US|style=Feynman)**:
 $$
 \mathcal{H}^s_\delta(A) = \inf \left\{ \sum_{i=1}^\infty (\text{diam}(U_i))^s \mid \{U_i\} \text{ is a } \delta\text{-cover of } A \right\}
 $$
-As we demand finer covers by letting $\delta \to 0$, the constraint on the diameters of the covering sets becomes tighter, which means the infimum can only increase or stay the same. Therefore, the limit exists and is defined as the **$s$-dimensional Hausdorff measure** of $A$:
+As we demand finer covers by letting $\delta \to 0$, the constraint on the diameters of the covering sets becomes tighter, which means the [infimum](@keyword=infimum|lang=en-US|style=Feynman) can only increase or stay the same. Therefore, the limit exists and is defined as the **$s$-dimensional Hausdorff measure** of $A$:
 $$
 \mathcal{H}^s(A) = \lim_{\delta \to 0^+} \mathcal{H}^s_\delta(A)
 $$
@@ -29,7 +29,7 @@ This reveals a remarkable "jump" property: for any given set $A$, there exists a
 $$
 \dim_H(A) = \inf\{ s \ge 0 : \mathcal{H}^s(A) = 0 \} = \sup\{ s \ge 0 : \mathcal{H}^s(A) = \infty \}
 $$
-At the critical dimension $d = \dim_H(A)$, the measure $\mathcal{H}^d(A)$ can be zero, finite and positive, or infinite. This value provides a highly refined measure of the set's complexity.
+At the [critical dimension](@keyword=critical_dimension|lang=en-US|style=Feynman) $d = \dim_H(A)$, the measure $\mathcal{H}^d(A)$ can be zero, finite and positive, or infinite. This value provides a highly refined measure of the set's complexity.
 
 ### Fundamental Properties and Initial Examples
 
@@ -39,11 +39,11 @@ Let us first apply this definition to simple sets to verify that it aligns with 
 
 Consider any countable set, such as the set of rational numbers $\mathbb{Q} \cap [0,1]$ [@problem_id:1305196]. Let the set be $S = \{q_i\}_{i=1}^\infty$. We can demonstrate that its Hausdorff dimension is 0. To do this, we must show that $\mathcal{H}^s(S) = 0$ for any $s > 0$.
 
-Fix $s > 0$. For any $\delta > 0$, we can construct a specific cover for $S$. Let $\epsilon$ be an arbitrary small positive number. For each point $q_i \in S$, we choose an open interval $U_i$ centered at $q_i$ with diameter $\text{diam}(U_i) = \epsilon / 2^i$. By choosing $\epsilon$ small enough, we can ensure $\text{diam}(U_i)  \delta$ for all $i$. This collection $\{U_i\}$ is a valid cover of $S$. The corresponding sum for this cover is:
+Fix $s > 0$. For any $\delta > 0$, we can construct a specific cover for $S$. Let $\epsilon$ be an arbitrary small positive number. For each point $q_i \in S$, we choose an [open interval](@keyword=open_interval|lang=en-US|style=Feynman) $U_i$ centered at $q_i$ with diameter $\text{diam}(U_i) = \epsilon / 2^i$. By choosing $\epsilon$ small enough, we can ensure $\text{diam}(U_i)  \delta$ for all $i$. This collection $\{U_i\}$ is a valid cover of $S$. The corresponding sum for this cover is:
 $$
 \sum_{i=1}^\infty (\text{diam}(U_i))^s = \sum_{i=1}^\infty \left(\frac{\epsilon}{2^i}\right)^s = \epsilon^s \sum_{i=1}^\infty \left(\frac{1}{2^s}\right)^i
 $$
-Since $s > 0$, the term $1/2^s$ is less than 1, and the geometric series on the right converges to a finite constant, say $C(s)$. The pre-measure is the infimum over all covers, so it must be less than or equal to the value for this specific cover:
+Since $s > 0$, the term $1/2^s$ is less than 1, and the geometric series on the right converges to a finite constant, say $C(s)$. The [pre-measure](@keyword=pre_measure|lang=en-US|style=Feynman) is the infimum over all covers, so it must be less than or equal to the value for this specific cover:
 $$
 \mathcal{H}^s_\delta(S) \le \epsilon^s C(s)
 $$
@@ -59,7 +59,7 @@ What about familiar one-dimensional objects, like the graph of a continuously di
 
 #### Stability under Unions
 
-A powerful and convenient property of Hausdorff dimension relates to set unions. For any countable collection of sets $\{A_i\}$, the dimension of their union is the supremum of their individual dimensions:
+A powerful and convenient property of Hausdorff dimension relates to set unions. For any countable collection of sets $\{A_i\}$, the dimension of their union is the [supremum](@keyword=supremum|lang=en-US|style=Feynman) of their individual dimensions:
 $$
 \dim_H\left(\bigcup_{i=1}^\infty A_i\right) = \sup_i \{ \dim_H(A_i) \}
 $$
@@ -67,9 +67,9 @@ For the union of two sets, this simplifies to $\dim_H(A \cup B) = \max\{\dim_H(A
 
 ### Dimension of Self-Similar Sets
 
-Many of the most famous fractals, including the Cantor set and the Sierpinski gasket, exhibit a property called **self-similarity**. A set is self-similar if it can be expressed as a union of smaller, scaled-down copies of itself. This geometric property leads to a remarkably simple formula for the set's Hausdorff dimension.
+Many of the most famous fractals, including the Cantor set and the Sierpinski gasket, exhibit a property called **[self-similarity](@keyword=self_similarity|lang=en-US|style=Feynman)**. A set is [self-similar](@keyword=self_similar|lang=en-US|style=Feynman) if it can be expressed as a union of smaller, scaled-down copies of itself. This geometric property leads to a remarkably simple formula for the set's Hausdorff dimension.
 
-Consider a self-similar set $F$ that is composed of $N$ non-overlapping copies of itself, with each copy scaled down by the same factor $r$ (where $0  r  1$). Let's find the dimension $d = \dim_H(F)$. At the $k$-th stage of an iterative construction of such a set, we can typically cover $F$ with $N^k$ small sets, each of diameter proportional to $r^k$. Let's approximate the $d$-dimensional measure using this natural cover. The sum of the diameters raised to the power $d$ would be roughly:
+Consider a [self-similar](@keyword=self_similar|lang=en-US|style=Feynman) set $F$ that is composed of $N$ non-overlapping copies of itself, with each copy scaled down by the same factor $r$ (where $0  r  1$). Let's find the dimension $d = \dim_H(F)$. At the $k$-th stage of an iterative construction of such a set, we can typically cover $F$ with $N^k$ small sets, each of diameter proportional to $r^k$. Let's approximate the $d$-dimensional measure using this natural cover. The sum of the diameters raised to the power $d$ would be roughly:
 $$
 \text{Number of pieces} \times (\text{Size of piece})^d \approx (N^k) \times (r^k)^d = (N r^d)^k
 $$
@@ -85,7 +85,7 @@ Solving for $d$ gives the Hausdorff dimension of the self-similar set:
 $$
 r^d = \frac{1}{N} \implies d \ln(r) = \ln(1/N) = -\ln(N) \implies d = \frac{\ln(N)}{\ln(1/r)}
 $$
-This dimension is often called the **similarity dimension**, and for many common fractals, it is equal to the Hausdorff dimension.
+This dimension is often called the **[similarity dimension](@keyword=similarity_dimension|lang=en-US|style=Feynman)**, and for many common fractals, it is equal to the Hausdorff dimension.
 
 Let's apply this formula to several key examples.
 
@@ -103,7 +103,7 @@ Let's apply this formula to several key examples.
 
 #### Measure at the Critical Dimension
 
-For a set $A$ with dimension $d = \dim_H(A)$, what is the value of the $d$-dimensional measure $\mathcal{H}^d(A)$? For self-similar sets, this value is often finite and positive. For the standard middle-thirds Cantor set $C$, with dimension $d = \ln(2)/\ln(3)$, it can be shown that $\mathcal{H}^d(C) = 1$ [@problem_id:1305157]. This is established by showing two inequalities. The upper bound, $\mathcal{H}^d(C) \le 1$, is found by using the natural covers from its construction. The lower bound, $\mathcalH^d(C) \ge 1$, is more subtle and requires a powerful tool known as the **Mass Distribution Principle**. One defines a probability measure on the set and shows that the measure of any small ball is bounded by its diameter raised to the power $d$. This implies that any cover must have a total $d$-dimensional size of at least 1.
+For a set $A$ with dimension $d = \dim_H(A)$, what is the value of the $d$-dimensional measure $\mathcal{H}^d(A)$? For [self-similar sets](@keyword=self_similar_sets|lang=en-US|style=Feynman), this value is often finite and positive. For the standard middle-thirds Cantor set $C$, with dimension $d = \ln(2)/\ln(3)$, it can be shown that $\mathcal{H}^d(C) = 1$ [@problem_id:1305157]. This is established by showing two inequalities. The upper bound, $\mathcal{H}^d(C) \le 1$, is found by using the natural covers from its construction. The lower bound, $\mathcal{H}^d(C) \ge 1$, is more subtle and requires a powerful tool known as the **Mass Distribution Principle**. One defines a probability measure on the set and shows that the measure of any small ball is bounded by its diameter raised to the power $d$. This implies that any cover must have a total $d$-dimensional size of at least 1.
 
 #### Relation to Lebesgue Measure
 
@@ -115,7 +115,7 @@ The remaining set, $C$, is still a Cantor-like set (nowhere dense and perfect), 
 
 #### Dimension under Mappings
 
-The behavior of Hausdorff dimension under functions is a cornerstone of geometric measure theory.
+The behavior of Hausdorff dimension under functions is a cornerstone of [geometric measure theory](@keyword=geometric_measure_theory|lang=en-US|style=Feynman).
 A function $f: X \to Y$ between metric spaces is **Lipschitz continuous** if there exists a constant $L > 0$ such that for all $x, y \in X$, $|f(x) - f(y)| \le L|x - y|$. Such a map can stretch distances, but only by a bounded factor. This control allows one to prove that Lipschitz maps do not increase Hausdorff dimension:
 $$
 \dim_H(f(X)) \le \dim_H(X)
@@ -124,4 +124,4 @@ If a map is **bi-Lipschitz**, meaning there exist constants $0  L_1 \le L_2$ suc
 $$
 \dim_H(f(X)) = \dim_H(X)
 $$
-This principle allows for the analysis of seemingly complex sets. For example, consider mapping the Cantor set $C$ onto a curve in the plane via $f(x) = (A \cos(\pi x), A \sin(\pi x))$ [@problem_id:1305185]. Although the image is a curve, its "fractal dust" nature comes from its domain. On the Cantor set, this mapping can be shown to be bi-Lipschitz. Therefore, the dimension of the resulting image is not 1, as one might guess for a curve, but is exactly the same as the dimension of the Cantor set itself: $\ln(2)/\ln(3)$. The geometric transformation distorts the set, but its underlying metric complexity, as measured by the Hausdorff dimension, is unchanged.
+This principle allows for the analysis of seemingly complex sets. For example, consider mapping the Cantor set $C$ onto a curve in the plane via $f(x) = (A \cos(\pi x), A \sin(\pi x))$ [@problem_id:1305185]. Although the image is a curve, its "fractal dust" nature comes from its domain. On the Cantor set, this mapping can be shown to be bi-Lipschitz. Therefore, the dimension of the resulting image is not 1, as one might guess for a curve, but is exactly the same as the dimension of the Cantor set itself: $\ln(2)/\ln(3)$. The [geometric transformation](@keyword=geometric_transformation|lang=en-US|style=Feynman) distorts the set, but its underlying metric complexity, as measured by the Hausdorff dimension, is unchanged.

@@ -21,7 +21,7 @@ $U = (3N_A) \times 2 \times \left(\frac{1}{2}k_B T\right) = 3 N_A k_B T = 3RT$
 
 $C_V = \left(\frac{\partial U}{\partial T}\right)_V = 3R$
 
-这个极其简洁而优美的结果，就是著名的**[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman) (Dulong-Petit law)**。它预言，所有简单结晶固体的摩尔[定容热容](@keyword=constant_volume_heat_capacity|lang=zh-CN|style=Feynman)量都是一个[普适常数](@keyword=universal_constants|lang=zh-CN|style=Feynman)，大约是 $25 \text{ J/(mol·K)}$。在室温下，这个定律惊人地准确！从铜、铁到金，许多[固体的热容](@keyword=heat_capacity_of_solids|lang=zh-CN|style=Feynman)量都徘徊在这个数值附近。这是一个巨大的成功，似乎经典物理学已经完美地解释了固体的热行为。[@problem_id:2489345]
+这个极其简洁而优美的结果，就是著名的**[杜隆-珀蒂定律](@keyword=dulong_petit_law|lang=zh-CN|style=Feynman) (Dulong-Petit law)**。它预言，所有简单结晶固体的摩尔[定容热容](@keyword=constant_volume_heat_capacity|lang=zh-CN|style=Feynman)量都是一个[普适常数](@keyword=universal_constants|lang=zh-CN|style=Feynman)，大约是 $25 \mathrm{J/(mol\cdot K)}$。在室温下，这个定律惊人地准确！从铜、铁到金，许多[固体的热容](@keyword=heat_capacity_of_solids|lang=zh-CN|style=Feynman)量都徘徊在这个数值附近。这是一个巨大的成功，似乎经典物理学已经完美地解释了固体的热行为。[@problem_id:2489345]
 
 ### 寒冷中的危机：与现实的冲突
 

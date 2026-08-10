@@ -1,48 +1,48 @@
 ## 引言
-在所有生命形式中，三磷酸腺苷（ATP）都是主要的能量货币，驱动着无数的细胞活动。然而，细胞究竟如何高效地将食物分子中储存的化学能转化为ATP？几十年来，这个问题的核心——电子传递与ATP合成之间的耦合机制——一直是个谜。早期的“化学耦合假说”始终无法找到其预测的能量中间体，为生物化学领域留下了一个巨大的知识鸿沟。正是在这一背景下，英国生物化学家Peter Mitchell于1961年提出了革命性的**化学渗透理论**，彻底改变了我们对细胞能量学的认知。
+在所有生命形式中，[三磷酸腺苷](@keyword=adenosine_triphosphate|lang=zh-CN|style=Feynman)（ATP）都是主要的能量货币，驱动着无数的细胞活动。然而，细胞究竟如何高效地将食物分子中储存的化学能转化为ATP？几十年来，这个问题的核心——[电子传递](@keyword=electron_transport|lang=zh-CN|style=Feynman)与[ATP合成](@keyword=atp_synthesis|lang=zh-CN|style=Feynman)之间的耦合机制——一直是个谜。早期的“[化学耦合](@keyword=chemical_coupling|lang=zh-CN|style=Feynman)假说”始终无法找到其预测的能量中间体，为生物化学领域留下了一个巨大的知识鸿沟。正是在这一背景下，英国生物化学家Peter Mitchell于1961年提出了革命性的**[化学渗透理论](@keyword=chemiosmotic_theory|lang=zh-CN|style=Feynman)**，彻底改变了我们对细胞能量学的认知。
 
-本文旨在系统性地解析这一诺贝尔奖级别的理论。我们将不再将目光局限于零散的生化反应，而是从一个整合的、基于物理化学原理的视角，理解能量转换的宏伟蓝图。读者将通过本文学习到化学渗透理论的精髓，以及它如何统一解释了从分子机器到生理功能的诸多现象。
+本文旨在系统性地解析这一诺贝尔奖级别的理论。我们将不再将目光局限于零散的生化反应，而是从一个整合的、基于物理化学原理的视角，理解能量转换的宏伟蓝图。读者将通过本文学习到[化学渗透理论](@keyword=chemiosmotic_theory|lang=zh-CN|style=Feynman)的精髓，以及它如何统一解释了从分子机器到生理功能的诸多现象。
 
-为实现这一目标，本文将分为三个核心章节。在“**原理与机制**”一章中，我们将深入剖析化学渗透的三个基本假说，定量分析作为其核心的质子动力势，并揭示ATP合酶这部精妙分子马达的工作原理。接下来，在“**应用与交叉学科联系**”一章中，我们将跳出基础理论，探讨化学渗透在实验验证、生理调控、疾病机制以及微生物多样性等广阔领域中的深远影响。最后，在“**动手实践**”部分，通过一系列计算和概念问题，读者将有机会亲手应用所学知识，巩固对这一复杂过程的理解。现在，让我们一同踏上这段探索生命能量奥秘的旅程。
+为实现这一目标，本文将分为三个核心章节。在“**原理与机制**”一章中，我们将深入剖析[化学渗透](@keyword=chemiosmosis|lang=zh-CN|style=Feynman)的三个基本假说，定量分析作为其核心的质子动力势，并揭示ATP合酶这部精妙[分子马达](@keyword=motor_proteins|lang=zh-CN|style=Feynman)的工作原理。接下来，在“**应用与交叉学科联系**”一章中，我们将跳出基础理论，探讨[化学渗透](@keyword=chemiosmosis|lang=zh-CN|style=Feynman)在实验验证、生理调控、疾病机制以及[微生物多样性](@keyword=microbial_diversity|lang=zh-CN|style=Feynman)等广阔领域中的深远影响。最后，在“**动手实践**”部分，通过一系列计算和概念问题，读者将有机会亲手应用所学知识，巩固对这一复杂过程的理解。现在，让我们一同踏上这段探索生命能量奥秘的旅程。
 
 ## 原理与机制
 
-在上一章中，我们介绍了细胞呼吸和ATP合成的宏观背景。本章将深入探讨其核心机制——Peter Mitchell提出的**化学渗透理论**。这一理论革命性地解释了电子传递的能量如何转化为ATP分子中高能磷酸键的化学能。我们将系统性地阐述该理论的基本原理、驱动力及其背后的精妙分子机器。
+在上一章中，我们介绍了[细胞呼吸](@keyword=cellular_respiration|lang=zh-CN|style=Feynman)和[ATP合成](@keyword=atp_synthesis|lang=zh-CN|style=Feynman)的宏观背景。本章将深入探讨其核心机制——Peter Mitchell提出的**[化学渗透理论](@keyword=chemiosmotic_theory|lang=zh-CN|style=Feynman)**。这一理论革命性地解释了[电子传递](@keyword=electron_transport|lang=zh-CN|style=Feynman)的能量如何转化为ATP分子中高能磷酸键的化学能。我们将系统性地阐述该理论的基本原理、驱动力及其背后的精妙分子机器。
 
-### 化学渗透的核心假说
+### [化学渗透](@keyword=chemiosmosis|lang=zh-CN|style=Feynman)的核心假说
 
-在20世纪60年代之前，生物化学家普遍认为电子传递链通过产生一种不稳定的、高能的磷酸化化学中间体，直接将磷酸基团转移给ADP来合成ATP。这种“化学耦合假说”始终未能找到其预测的中间体。1961年，Peter Mitchell提出了一个截然不同的模型，即化学渗透假说，其核心思想是，电子传递与ATP合成之间的能量耦合是间接的，通过一个跨膜的质子电化学梯度实现。该理论建立在三个基本假说之上 [@problem_id:2081324]。
+在20世纪60年代之前，生物化学家普遍认为电子传递链通过产生一种不稳定的、高能的磷酸化化学中间体，直接将磷酸基团转移给ADP来合成ATP。这种“[化学耦合](@keyword=chemical_coupling|lang=zh-CN|style=Feynman)假说”始终未能找到其预测的中间体。1961年，Peter Mitchell提出了一个截然不同的模型，即[化学渗透假说](@keyword=chemiosmotic_hypothesis|lang=zh-CN|style=Feynman)，其核心思想是，[电子传递](@keyword=electron_transport|lang=zh-CN|style=Feynman)与[ATP合成](@keyword=atp_synthesis|lang=zh-CN|style=Feynman)之间的[能量耦合](@keyword=energy_coupling|lang=zh-CN|style=Feynman)是间接的，通过一个跨膜的质子[电化学梯度](@keyword=electrochemical_gradient|lang=zh-CN|style=Feynman)实现。该理论建立在三个基本假说之上 [@problem_id:2081324]。
 
 **假说一：内膜的质子不通透性**
 
-化学渗透机制的第一个基石是，**线粒体内膜**（或细菌的细胞膜）对绝大多数离子，尤其是质子（$H^+$），是功能性不通透的。这种不通透性至关重要，因为它允许膜的一侧相对于另一侧维持一个显著的质子浓度差和电位差。如果膜是“泄漏”的，那么任何被泵出的质子都会立即扩散回来，无法形成稳定的电化学势梯度，整个能量转换系统也将随之崩溃。
+[化学渗透](@keyword=chemiosmosis|lang=zh-CN|style=Feynman)机制的第一个基石是，**线粒体内膜**（或细菌的[细胞膜](@keyword=cell_membrane|lang=zh-CN|style=Feynman)）对绝大多数离子，尤其是质子（$H^+$），是功能性不通透的。这种不通透性至关重要，因为它允许膜的一侧相对于另一侧维持一个显著的质子浓度差和[电位差](@keyword=potential_difference|lang=zh-CN|style=Feynman)。如果膜是“泄漏”的，那么任何被泵出的质子都会立即[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)回来，无法形成稳定的电[化学势梯度](@keyword=chemical_potential_gradient|lang=zh-CN|style=Feynman)，整个[能量转换](@keyword=energy_transformation|lang=zh-CN|style=Feynman)系统也将随之崩溃。
 
-这一假说的重要性可以通过一个假设情景来理解：如果一个基因突变导致线粒体内膜对质子的通透性增加，例如影响了关键磷脂**心磷脂**的合成，会发生什么？[@problem_id:2081361]。尽管电子传递链（ETC）和ATP合酶本身功能正常，但质子会不断地从跨膜间隙泄漏回基质，从而削弱甚至摧毁**质子动力势**。为了维持细胞生存所必需的ATP水平，细胞的调控系统会试图补偿。ETC会加速运转，消耗更多的氧气来泵出更多的质子，以对抗泄漏。然而，大部分通过泄漏途径返回基质的质子的能量，并没有被用于合成ATP，而是以热能的形式耗散掉了。因此，这种突变细胞将表现出**耗氧率增加**和**产热增加**，而ATP的合成效率则显著下降。这个过程被称为**解偶联**，它清晰地揭示了膜的完整性和不通透性是能量有效耦合的物理前提。
+这一假说的重要性可以通过一个假设情景来理解：如果一个基因突变导致线粒体内膜对质子的通透性增加，例如影响了关键磷脂**[心磷脂](@keyword=cardiolipin|lang=zh-CN|style=Feynman)**的合成，会发生什么？[@problem_id:2081361]。尽管[电子传递链](@keyword=electron_transport_chain|lang=zh-CN|style=Feynman)（ETC）和[ATP合酶](@keyword=atp_synthase|lang=zh-CN|style=Feynman)本身功能正常，但质子会不断地从跨膜间隙泄漏回基质，从而削弱甚至摧毁**质子动力势**。为了维持细胞生存所必需的ATP水平，细胞的调控系统会试图补偿。ETC会加速运转，消耗更多的氧气来泵出更多的质子，以对抗泄漏。然而，大部分通过泄漏途径返回基质的质子的能量，并没有被用于合成ATP，而是以热能的形式耗散掉了。因此，这种突变细胞将表现出**耗氧率增加**和**产热增加**，而ATP的合成效率则显著下降。这个过程被称为**解偶联**，它清晰地揭示了膜的完整性和不通透性是能量有效耦合的物理前提。
 
 **假说二：电子传递链的质子泵功能**
 
-化学渗透的第二个核心观点是，电子传递链中的特定复合物充当**质子泵**。当电子沿着ETC从高能供体（如NADH）流向低能受体（如$O_2$）时，释放出的自由能被用来将质子从线粒体基质（或其他细胞器基质）逆浓度梯度泵入膜间隙。
+[化学渗透](@keyword=chemiosmosis|lang=zh-CN|style=Feynman)的第二个核心观点是，电子传递链中的特定复合物充当**质子泵**。当电子沿着ETC从高能供体（如NADH）流向低能受体（如$O_2$）时，释放出的自由能被用来将质子从[线粒体基质](@keyword=mitochondrial_matrix|lang=zh-CN|style=Feynman)（或其他细胞器基质）逆[浓度梯度](@keyword=concentration_gradient|lang=zh-CN|style=Feynman)泵入膜间隙。
 
-这一能量转换过程的根本驱动力是电子传递链上相邻载体之间的**标准还原电位差**（$\Delta E'^\circ$）。一个自发的氧化还原反应，其$\Delta E'^\circ$为正值，对应的标准自由能变化（$\Delta G'^\circ$）为负值，表示能量的释放。该关系由以下公式描述：
+这一[能量转换](@keyword=energy_transformation|lang=zh-CN|style=Feynman)过程的根本驱动力是[电子传递链](@keyword=electron_transport_chain|lang=zh-CN|style=Feynman)上相邻载体之间的**[标准还原电位](@keyword=standard_reduction_potential|lang=zh-CN|style=Feynman)差**（$\Delta E'^\circ$）。一个自发的[氧化还原反应](@keyword=redox_reactions|lang=zh-CN|style=Feynman)，其$\Delta E'^\circ$为正值，对应的[标准自由能变](@keyword=standard_free_energy_change_2|lang=zh-CN|style=Feynman)化（$\Delta G'^\circ$）为负值，表示能量的释放。该关系由以下公式描述：
 
 $$
 \Delta G'^\circ = -nF\Delta E'^\circ
 $$
 
-其中，$n$是转移的电子摩尔数，$F$是法拉第常数（约$96,485 \text{ J/(V·mol)}$）。例如，在一个假设的细菌中，电子从还原态的载体FMP$_{red}$（$E'^\circ = -0.22 \text{ V}$）传递给氧化态的载体CZ$_{ox}$（$E'^\circ = +0.25 \text{ V}$），$\Delta E'^\circ$为$0.25 - (-0.22) = +0.47 \text{ V}$。对于2个电子的转移（$n=2$），释放的自由能约为$90.7 \text{ kJ/mol}$。如果将一个质子泵出膜的能量成本是$17.0 \text{ kJ/mol}$，那么这次电子传递释放的能量理论上最多可以驱动$90.7 / 17.0 \approx 5$个质子的跨膜运输 [@problem_id:2081349]。这清晰地说明了氧化还原能如何转化为用于建立质子梯度的功。
+其中，$n$是转移的电子摩尔数，$F$是[法拉第常数](@keyword=faraday_s_constant|lang=zh-CN|style=Feynman)（约$96,485 \mathrm{J/(V\cdot mol)}$）。例如，在一个假设的细菌中，电子从还原态的载体FMP$_{red}$（$E'^\circ = -0.22 \text{ V}$）传递给[氧化态](@keyword=oxidation_states|lang=zh-CN|style=Feynman)的载体CZ$_{ox}$（$E'^\circ = +0.25 \text{ V}$），$\Delta E'^\circ$为$0.25 - (-0.22) = +0.47 \text{ V}$。对于2个电子的转移（$n=2$），释放的自由能约为$90.7 \text{ kJ/mol}$。如果将一个质子泵出膜的能量成本是$17.0 \text{ kJ/mol}$，那么这次电子传递释放的能量理论上最多可以驱动$90.7 / 17.0 \approx 5$个质子的跨[膜运输](@keyword=membrane_transport|lang=zh-CN|style=Feynman) [@problem_id:2081349]。这清晰地说明了[氧化还原](@keyword=redox|lang=zh-CN|style=Feynman)能如何转化为用于建立质子梯度的功。
 
-在线粒体中，复合物I、III和IV是主要的质子泵。不同的电子供体将电子注入ETC的不同位置，这直接影响了总的质子泵出数量和最终的ATP产量。例如，**NADH**将电子交给复合物I，电子依次通过复合物I、III和IV，跨越三个质子泵位点。而**FADH₂**（通常由琥珀酸脱氢酶，即复合物II产生）则将电子交给复合物II，然后传递给泛醌，从而绕过了第一个质子泵——复合物I。因此，来自FADH₂的电子只利用了复合物III和IV两个泵位点。这就是为什么氧化一个NADH分子比氧化一个FADH₂分子能产生更多ATP的根本原因 [@problem_id:2081380]。
+在线粒体中，[复合物I](@keyword=c1_complex|lang=zh-CN|style=Feynman)、III和IV是主要的[质子泵](@keyword=proton_pump|lang=zh-CN|style=Feynman)。不同的电子供体将[电子注入](@keyword=electron_injection|lang=zh-CN|style=Feynman)ETC的不同位置，这直接影响了总的[质子泵](@keyword=proton_pump|lang=zh-CN|style=Feynman)出数量和最终的ATP产量。例如，**NADH**将电子交给[复合物I](@keyword=c1_complex|lang=zh-CN|style=Feynman)，电子依次通过[复合物I](@keyword=c1_complex|lang=zh-CN|style=Feynman)、III和IV，跨越三个质子泵位点。而**FADH₂**（通常由琥珀酸[脱氢酶](@keyword=dehydrogenase|lang=zh-CN|style=Feynman)，即[复合物II](@keyword=complex_ii|lang=zh-CN|style=Feynman)产生）则将电子交给[复合物II](@keyword=complex_ii|lang=zh-CN|style=Feynman)，然后传递给[泛醌](@keyword=ubiquinone|lang=zh-CN|style=Feynman)，从而绕过了第一个[质子泵](@keyword=proton_pump|lang=zh-CN|style=Feynman)——[复合物I](@keyword=c1_complex|lang=zh-CN|style=Feynman)。因此，来自FADH₂的电子只利用了[复合物III](@keyword=complex_iii|lang=zh-CN|style=Feynman)和IV两个泵位点。这就是为什么氧化一个NADH分子比氧化一个FAD[H₂分子](@keyword=h2_molecule|lang=zh-CN|style=Feynman)能产生更多ATP的根本原因 [@problem_id:2081380]。
 
-**假说三：ATP合酶利用质子流合成ATP**
+**假说三：[ATP合酶](@keyword=atp_synthase|lang=zh-CN|style=Feynman)利用质子流合成ATP**
 
-Mitchell的第三个假说是，质子沿其电化学梯度顺流返回基质，是通过一个特定的膜蛋白通道——**ATP合酶**（也称为F₁F₀-ATP合酶）进行的。质子回流释放的自由能驱动ATP合酶催化ADP和无机磷酸（$P_i$）合成ATP。这样，质子动力势就充当了电子传递和ATP合成之间的能量耦合中介，从而完美地解释了为何不需要化学中间体。
+Mitchell的第三个假说是，质子沿其[电化学梯度](@keyword=electrochemical_gradient|lang=zh-CN|style=Feynman)顺流返回基质，是通过一个特定的[膜蛋白](@keyword=membrane_proteins|lang=zh-CN|style=Feynman)通道——**[ATP合酶](@keyword=atp_synthase|lang=zh-CN|style=Feynman)**（也称为F₁F₀-ATP合酶）进行的。质子回流释放的自由能驱动[ATP合酶](@keyword=atp_synthase|lang=zh-CN|style=Feynman)催化ADP和无机磷酸（$P_i$）合成ATP。这样，质子动力势就充当了[电子传递](@keyword=electron_transport|lang=zh-CN|style=Feynman)和[ATP合成](@keyword=atp_synthesis|lang=zh-CN|style=Feynman)之间的[能量耦合](@keyword=energy_coupling|lang=zh-CN|style=Feynman)中介，从而完美地解释了为何不需要化学中间体。
 
 ### 质子动力势的定量描述
 
-**质子动力势**（proton-motive force, PMF, 记作 $\Delta p$）是跨膜储存的电化学势能的量度。它由两个部分组成：
+**质子动力势**（proton-motive force, PMF, 记作 $\Delta p$）是跨膜储存的[电化学势](@keyword=electrochemical_potential|lang=zh-CN|style=Feynman)能的量度。它由两个部分组成：
 
 1.  **化学势部分**：源于膜两侧的质子浓度差，通常用pH值之差（$\Delta \text{pH}$）来表示。
-2.  **电势部分**：源于跨膜的电荷分离，即膜电位（$\Delta \Psi$）。
+2.  **[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)部分**：源于跨膜的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)分离，即膜电位（$\Delta \Psi$）。
 
 将一摩尔质子从基质（in）移动到膜间隙（out）所需的总自由能变化（$\Delta G$）可以表示为这两部分贡献之和。反之，当一摩尔质子从膜间隙顺浓度梯度流回基质时，所释放的自由能就是这个值的负数。
 
@@ -54,65 +54,65 @@ $$
 $$
 代入数值计算可得，$\Delta G_{\text{chem}} \approx +4.57 \text{ kJ/mol}$。
 
-电势部分的自由能变化（$\Delta G_{\text{elec}}$）与膜电位有关：
+[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)部分的自由能变化（$\Delta G_{\text{elec}}$）与膜电位有关：
 $$
 \Delta G_{\text{elec}} = zF\Delta\Psi
 $$
-其中$z$是质子的电荷数（+1）。代入数值计算可得，$\Delta G_{\text{elec}} \approx +16.4 \text{ kJ/mol}$。
+其中$z$是质子的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)数（+1）。代入数值计算可得，$\Delta G_{\text{elec}} \approx +16.4 \text{ kJ/mol}$。
 
 因此，将一摩尔质子泵出基质所需要的总能量是这两者之和：
 $$
 \Delta G_{\text{total}} = \Delta G_{\text{chem}} + \Delta G_{\text{elec}} \approx 21.0 \text{ kJ/mol}
 $$
-这个$\Delta G_{\text{total}}$的大小，就是每摩尔质子顺浓度梯度流回基质时所能释放的能量。这个例子清楚地表明，在线粒体中，膜电位（$\Delta\Psi$）通常是质子动力势的主要贡献者。
+这个$\Delta G_{\text{total}}$的大小，就是每摩尔质子顺[浓度梯度](@keyword=concentration_gradient|lang=zh-CN|style=Feynman)流回基质时所能释放的能量。这个例子清楚地表明，在线粒体中，膜电位（$\Delta\Psi$）通常是质子动力势的主要贡献者。
 
-整个能量转换链条可以总结为：起始于NADH等分子中高能电子的**化学能**，通过ETC转化为跨膜质子梯度的**电化学势能**，再通过ATP合酶的旋转转化为**机械能**，最终以ATP分子中高能磷酸键的形式储存为**化学能** [@problem_id:2081387]。
+整个能量转换链条可以总结为：起始于NADH等分子中高能电子的**化学能**，通过ETC转化为跨膜[质子梯度](@keyword=proton_gradient|lang=zh-CN|style=Feynman)的**电化学势能**，再通过[ATP合酶](@keyword=atp_synthase|lang=zh-CN|style=Feynman)的旋转转化为**机械能**，最终以ATP分子中高能磷酸键的形式储存为**化学能** [@problem_id:2081387]。
 
 ### ATP合酶：一种旋转分子马达
 
-ATP合酶是自然界中最令人惊叹的分子机器之一。它由两个主要部分组成：嵌入内膜的**F₀部分**和伸入基质的**F₁部分**。
+[ATP合酶](@keyword=atp_synthase|lang=zh-CN|style=Feynman)是自然界中最令人惊叹的分子机器之一。它由两个主要部分组成：嵌入内膜的**F₀部分**和伸入基质的**F₁部分**。
 
-- **F₀部分**：主要功能是作为质子通道。它包含一个由多个c亚基组成的旋转环（**c-环**）和一个固定的a亚基。
-- **F₁部分**：是催化ATP合成的部位。它由一个固定的α₃β₃六聚体头部和一个可旋转的中心“柄”——γ亚基组成。这个γ亚基与F₀的c-环相连。
+- **F₀部分**：主要功能是作为质子通道。它包含一个由多个c亚[基组](@keyword=basis_set|lang=zh-CN|style=Feynman)成的旋转环（**c-环**）和一个固定的a亚基。
+- **F₁部分**：是催化[ATP合成](@keyword=atp_synthesis|lang=zh-CN|style=Feynman)的部位。它由一个固定的α₃β₃六聚体头部和一个可旋转的中心“柄”——γ亚[基组](@keyword=basis_set|lang=zh-CN|style=Feynman)成。这个γ亚基与F₀的c-环相连。
 
-质子流如何驱动ATP合成的？这可以通过**结合变构机制**（binding change mechanism）来解释 [@problem_id:2081381]。
+质子流如何驱动[ATP合成](@keyword=atp_synthesis|lang=zh-CN|style=Feynman)的？这可以通过**结合变构机制**（binding change mechanism）来解释 [@problem_id:2081381]。
 
-1.  **质子结合与c-环旋转**：质子从膜间隙通过a亚基上的一个半通道进入，并与c-环上的一个c亚基（通常是一个天冬氨酸或谷氨酸残基）结合。这个结合中和了该残基的负电荷，使其能够从亲水的通道环境旋转进入疏水的脂质双分子层环境。这个动作驱动了整个c-环相对于固定的a亚基发生步进式旋转。
+1.  **质子结合与c-环旋转**：质子从膜间隙通过a亚基上的一个[半通道](@keyword=hemichannel|lang=zh-CN|style=Feynman)进入，并与c-环上的一个c亚基（通常是一个天冬氨酸或谷氨酸残基）结合。这个结合中和了该残基的负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，使其能够从[亲水的](@keyword=hydrophilic|lang=zh-CN|style=Feynman)通道环境旋转进入疏水的脂质双分子层环境。这个动作驱动了整个c-环相对于固定的a亚基发生步进式旋转。
 2.  **γ亚基的联动旋转**：当c-环旋转时，与之刚性连接的γ亚基也随之在F₁的α₃β₃六聚体内部旋转。
 3.  **β亚基的构象变化**：γ亚基是不对称的，它的旋转就像一个凸轮轴，会依次挤压三个催化β亚基，迫使它们周期性地经历三种不同的构象：**疏松态（Loose, L）**、**紧张态（Tight, T）**和**开放态（Open, O）**。
     -   **L态**：疏松地结合ADP和$P_i$。
     -   **T态**：构象变得极为紧凑，将ADP和$P_i$紧紧“压”在一起，自发形成ATP。值得注意的是，在T态下，ATP的合成几乎不需要外界能量输入。
     -   **O态**：构象开放，对ATP的亲和力极低，从而将新合成的ATP分子释放出去。能量主要消耗在将β亚基从T态转变为O态以释放ATP这一步。
 
-因此，质子流通过F₀提供的能量，并非直接用于ATP的化学合成，而是用于驱动γ亚基旋转，从而支付将产物ATP从酶上释放出来的“构象能量”成本。
+因此，质子流通过F₀提供的能量，并非直接用于ATP的[化学合成](@keyword=chemical_synthesis|lang=zh-CN|style=Feynman)，而是用于驱动γ亚基旋转，从而支付将产物ATP从酶上释放出来的“构象能量”成本。
 
-### 化学渗透耦合的调控与整合
+### [化学渗透耦合](@keyword=chemiosmotic_coupling|lang=zh-CN|style=Feynman)的调控与整合
 
-电子传递和ATP合成通过质子动力势实现了**耦合**，但这种耦合是可调节的。细胞可以根据其能量需求，精确地控制耗氧速率。这一现象被称为**呼吸控制**。
+[电子传递](@keyword=electron_transport|lang=zh-CN|style=Feynman)和[ATP合成](@keyword=atp_synthesis|lang=zh-CN|style=Feynman)通过质子动力势实现了**耦合**，但这种耦合是可调节的。细胞可以根据其能量需求，精确地控制耗氧速率。这一现象被称为**[呼吸控制](@keyword=respiratory_control|lang=zh-CN|style=Feynman)**。
 
-我们可以通过一个经典的线粒体实验来理解呼吸控制 [@problem_id:2081360]。假设我们有一个悬浮着完整线粒体的溶液，其中含有充足的底物（如琥珀酸）和氧气，但缺少ADP。
+我们可以通过一个经典的线粒体实验来理解[呼吸控制](@keyword=respiratory_control|lang=zh-CN|style=Feynman) [@problem_id:2081360]。假设我们有一个悬浮着完整线粒体的溶液，其中含有充足的底物（如琥珀酸）和氧气，但缺少ADP。
 
-1.  **初始状态**：由于没有ADP作为磷酸化的底物，ATP合酶无法运转，质子无法通过它回流。ETC泵出的质子很快就在内膜上建立了很高的质子动力势。这种高“背压”会抑制ETC的活性，因此耗氧率非常低。这被称为**状态4呼吸**。
+1.  **初始状态**：由于没有ADP作为磷酸化的底物，[ATP合酶](@keyword=atp_synthase|lang=zh-CN|style=Feynman)无法运转，质子无法通过它回流。ETC泵出的质子很快就在内膜上建立了很高的质子动力势。这种高“[背压](@keyword=backpressure|lang=zh-CN|style=Feynman)”会抑制ETC的活性，因此耗氧率非常低。这被称为**状态4呼吸**。
 
 2.  **加入ADP**：当向体系中加入ADP时，ATP合酶被激活，开始利用质子动力势合成ATP。质子通过合酶流回基质，降低了质子动力势。这种“背压”的降低解除了对ETC的抑制，使其速率加快，因此耗氧率显著上升。这被称为**状态3呼吸**。
 
-3.  **加入寡霉素**：寡霉素是一种ATP合酶抑制剂，它通过堵塞F₀的质子通道来发挥作用。加入寡霉素后，即使存在ADP，质子回流的通路也被阻断。质子动力势会再次迅速升高，抑制ETC，耗氧率也随之降回低水平。
+3.  **加入[寡霉素](@keyword=oligomycin|lang=zh-CN|style=Feynman)**：[寡霉素](@keyword=oligomycin|lang=zh-CN|style=Feynman)是一种ATP合酶抑制剂，它通过堵塞F₀的质子通道来发挥作用。加入[寡霉素](@keyword=oligomycin|lang=zh-CN|style=Feynman)后，即使存在ADP，质子回流的通路也被阻断。质子动力势会再次迅速升高，抑制ETC，耗氧率也随之降回低水平。
 
-4.  **加入解偶联剂**：最后，加入一种名为2,4-二硝基苯酚（DNP）的化学解偶联剂。DNP是一种脂溶性小分子，可以携带质子穿过内膜，为质子提供一条绕过ATP合酶的“捷径”。这会彻底摧毁质子动力势。由于“背压”完全消失，ETC会以其最大速率运转，导致耗氧率飙升至最大值，但所有能量都以热的形式释放，不产生ATP。
+4.  **加入[解偶联剂](@keyword=uncouplers|lang=zh-CN|style=Feynman)**：最后，加入一种名为2,4-二硝基苯酚（DNP）的化学[解偶联剂](@keyword=uncouplers|lang=zh-CN|style=Feynman)。DNP是一种脂溶性小分子，可以携带质子穿过内膜，为质子提供一条绕过ATP合酶的“捷径”。这会彻底摧毁质子动力势。由于“[背压](@keyword=backpressure|lang=zh-CN|style=Feynman)”完全消失，ETC会以其最大速率运转，导致耗氧率飙升至最大值，但所有能量都以热的形式释放，不产生ATP。
 
-这个实验完美地证明了：耗氧速率（电子传递）是受ATP合成速率（ADP的可利用性）调控的，而它们之间的信使正是质子动力势。
+这个实验完美地证明了：耗氧速率（电子传递）是受[ATP合成](@keyword=atp_synthesis|lang=zh-CN|style=Feynman)速率（ADP的可利用性）调控的，而它们之间的信使正是质子动力势。
 
-### 超分子组织：呼吸体的概念
+### 超[分子组织](@keyword=molecular_organization|lang=zh-CN|style=Feynman)：呼吸体的概念
 
-最初的化学渗透模型（“流体模型”）假设ETC的各个复合物和移动载体（如泛醌和细胞色素c）在内膜中自由扩散并随机碰撞。然而，越来越多的证据支持一种“固态模型”，即ETC中的复合物I、III和IV（有时还包括复合物II）会组装成稳定的大分子结构，称为**呼吸超复合体**或**呼吸体**。
+最初的[化学渗透模型](@keyword=chemiosmotic_model|lang=zh-CN|style=Feynman)（“流体模型”）假设ETC的各个复合物和移动载体（如[泛醌](@keyword=ubiquinone|lang=zh-CN|style=Feynman)和[细胞色素c](@keyword=cytochrome_c|lang=zh-CN|style=Feynman)）在内膜中自由[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)并随机碰撞。然而，越来越多的证据支持一种“固态模型”，即ETC中的[复合物I](@keyword=c1_complex|lang=zh-CN|style=Feynman)、III和IV（有时还包括[复合物II](@keyword=complex_ii|lang=zh-CN|style=Feynman)）会组装成稳定的[大分子结构](@keyword=macromolecule_structure|lang=zh-CN|style=Feynman)，称为**呼吸超复合体**或**呼吸体**。
 
-这种超复合体结构具有重要的动力学优势。其中最主要的是实现了**底物通道化**（substrate channeling）。在呼吸体中，一个复合物产生的移动电子载体（如被复合物I还原的泛醌）无需在整个膜平面上长距离随机扩散去寻找下一个复合物（复合物III），而是可以直接被“传递”过去。
+这种超复合体结构具有重要的动力学优势。其中最主要的是实现了**底物通道化**（substrate channeling）。在呼吸体中，一个复合物产生的[移动电子载体](@keyword=mobile_electron_carriers|lang=zh-CN|style=Feynman)（如被[复合物I](@keyword=c1_complex|lang=zh-CN|style=Feynman)还原的[泛醌](@keyword=ubiquinone|lang=zh-CN|style=Feynman)）无需在整个膜平面上长距离随机[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)去寻找下一个复合物（[复合物III](@keyword=complex_iii|lang=zh-CN|style=Feynman)），而是可以直接被“传递”过去。
 
-我们可以通过一个简化的物理模型来量化这种优势 [@problem_id:2081333]。在一个随机分布的“流体模型”中，一个泛醌分子从复合物I到复合物III的平均渡越时间$t_{fluid}$，取决于它扩散到最近的复合物III所需的距离。而在一个呼吸体模型中，这个距离$t_{resp}$只是复合物内部一个固定的、很短的距离。根据二维随机行走的原理（$\langle r^2 \rangle = 4Dt$），渡越时间与平均扩散距离的平方成正比。计算表明，对于典型的膜蛋白密度，呼吸体结构可以将电子载体的渡越时间缩短数倍（例如，约5倍）。这种动力学上的提升，意味着整个电子传递链的效率和速率都得到了显著优化，减少了电子泄漏产生有害活性氧的几率。
+我们可以通过一个简化的物理模型来量化这种优势 [@problem_id:2081333]。在一个随机[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)的“流体模型”中，一个[泛醌](@keyword=ubiquinone|lang=zh-CN|style=Feynman)分子从[复合物I](@keyword=c1_complex|lang=zh-CN|style=Feynman)到[复合物III](@keyword=complex_iii|lang=zh-CN|style=Feynman)的平均渡越时间$t_{fluid}$，取决于它[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)到最近的[复合物III](@keyword=complex_iii|lang=zh-CN|style=Feynman)所需的距离。而在一个呼吸体模型中，这个距离$t_{resp}$只是复合物内部一个固定的、很短的距离。根据二维[随机行走](@keyword=random_walk|lang=zh-CN|style=Feynman)的原理（$\langle r^2 \rangle = 4Dt$），渡越时间与平均[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)距离的平方成正比。计算表明，对于典型的膜蛋白密度，呼吸体结构可以将[电子载体](@keyword=electron_carriers|lang=zh-CN|style=Feynman)的渡越时间缩短数倍（例如，约5倍）。这种动力学上的提升，意味着整个电子传递链的效率和速率都得到了显著优化，减少了电子泄漏产生有害[活性氧](@keyword=reactive_oxygen_species|lang=zh-CN|style=Feynman)的几率。
 
-### 氧化磷酸化的热力学效率
+### 氧化磷酸化的[热力学效率](@keyword=thermodynamic_efficiency|lang=zh-CN|style=Feynman)
 
-最后，我们可以综合运用上述原理，评估ATP合酶在真实细胞条件下的**热力学效率**。效率（$\eta$）定义为合成一摩尔ATP实际所需的能量（$\Delta G_{\text{ATP}}$）与驱动其合成的质子流所释放的能量（$\Delta G_{\text{protons}}$）之比。
+最后，我们可以综合运用上述原理，评估ATP合酶在真实细胞条件下的**[热力学效率](@keyword=thermodynamic_efficiency|lang=zh-CN|style=Feynman)**。效率（$\eta$）定义为合成一摩尔ATP实际所需的能量（$\Delta G_{\text{ATP}}$）与驱动其合成的质子流所释放的能量（$\Delta G_{\text{protons}}$）之比。
 
 $$
 \eta = \frac{\Delta G_{\text{ATP}}}{|\Delta G_{\text{protons}}|}
@@ -120,15 +120,15 @@ $$
 
 计算这个效率需要两步 [@problem_id:2081352] [@problem_id:2081387]：
 
-1.  **计算$\Delta G_{\text{ATP}}$**：在细胞内，ATP、ADP和$P_i$的浓度并非处于标准状态。实际的ATP合成自由能变化（$\Delta G_{\text{ATP}}$）需要通过以下公式计算，其中$\Delta G'^{\circ}_{\text{synth}}$是标准状态下的合成自由能（约$+30.5 \text{ kJ/mol}$）：
+1.  **计算$\Delta G_{\text{ATP}}$**：在细胞内，ATP、ADP和$P_i$的浓度并非处于标准状态。实际的[ATP合成](@keyword=atp_synthesis|lang=zh-CN|style=Feynman)自由能变化（$\Delta G_{\text{ATP}}$）需要通过以下公式计算，其中$\Delta G'^{\circ}_{\text{synth}}$是[标准状态](@keyword=standard_state|lang=zh-CN|style=Feynman)下的合成自由能（约$+30.5 \text{ kJ/mol}$）：
     $$
     \Delta G_{\text{ATP}} = \Delta G'^{\circ}_{\text{synth}} + RT\ln\left(\frac{[\text{ATP}]}{[\text{ADP}][\text{P}_i]}\right)
     $$
     在典型的细胞条件下，由于[ATP]远高于[ADP]，这个值通常远高于标准值，可能达到$45-55 \text{ kJ/mol}$。
 
-2.  **计算$|\Delta G_{\text{protons}}|$**：这一步需要知道驱动一分子ATP合成所需的质子数（$n_H$）和每摩尔质子回流释放的能量（$|\Delta G_{H^+}|$）。质子数$n_H$取决于ATP合酶c-环的亚基数量（$N_c$），通常为 $N_c/3$。例如，如果一个物种的c-环有8个亚基，那么合成1个ATP就需要$8/3$个质子。每摩尔质子释放的能量则由当时的质子动力势决定。
+2.  **计算$|\Delta G_{\text{protons}}|$**：这一步需要知道驱动一分子[ATP合成](@keyword=atp_synthesis|lang=zh-CN|style=Feynman)所需的质子数（$n_H$）和每摩尔质子回流释放的能量（$|\Delta G_{H^+}|$）。质子数$n_H$取决于[ATP合酶](@keyword=atp_synthase|lang=zh-CN|style=Feynman)c-环的亚基数量（$N_c$），通常为 $N_c/3$。例如，如果一个物种的c-环有8个亚基，那么合成1个ATP就需要$8/3$个质子。每摩尔质子释放的能量则由当时的质子动力势决定。
     $$
     |\Delta G_{\text{protons}}| = n_H \times |\Delta G_{H^+}| = \frac{N_c}{3} \times |F\Delta\Psi + 2.303RT\Delta\text{pH}|
     $$
 
-通过将真实的细胞生理参数代入计算，可以发现ATP合酶这部令人惊叹的分子机器的效率非常高，在某些条件下可以超过$0.8$（即80%），显示了其在能量转换方面的高度优化。这一计算完美地将化学渗透理论的各个方面——质子动力势、分子机器的化学计量和非平衡态热力学——整合在了一起。
+通过将真实的细胞生理参数代入计算，可以发现[ATP合酶](@keyword=atp_synthase|lang=zh-CN|style=Feynman)这部令人惊叹的分子机器的效率非常高，在某些条件下可以超过$0.8$（即80%），显示了其在能量转换方面的高度优化。这一计算完美地将[化学渗透理论](@keyword=chemiosmotic_theory|lang=zh-CN|style=Feynman)的各个方面——质子动力势、分子机器的化学计量和非平衡态[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)——整合在了一起。

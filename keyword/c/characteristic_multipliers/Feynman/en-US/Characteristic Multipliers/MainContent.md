@@ -57,7 +57,7 @@ Furthermore, these multipliers have a certain structure. If the original system 
 
 A good new theory should not throw away the old one; it should contain it as a special case. Let's test Floquet's theory on a simple [time-invariant system](@keyword=time_invariant_system|lang=en-US|style=Feynman), $\dot{\mathbf{x}} = A\mathbf{x}$, where $A$ is constant. We can treat this as a periodic system with any period $T$. What are its Floquet multipliers?
 
-The solution to this system is $\mathbf{x}(t) = \exp(At)\mathbfx(0)$. So, after one period $T$, we have $\mathbf{x}(T) = \exp(AT)\mathbf{x}(0)$. This means the [monodromy matrix](@keyword=monodromy_matrix|lang=en-US|style=Feynman) is simply $M = \exp(AT)$.
+The solution to this system is $\mathbf{x}(t) = \exp(At)\mathbf{x}(0)$. So, after one period $T$, we have $\mathbf{x}(T) = \exp(AT)\mathbf{x}(0)$. This means the [monodromy matrix](@keyword=monodromy_matrix|lang=en-US|style=Feynman) is simply $M = \exp(AT)$.
 
 The eigenvalues of a [matrix exponential](@keyword=matrix_exponential|lang=en-US|style=Feynman) $\exp(B)$ are related to the eigenvalues of $B$ in a beautiful way. If $\lambda$ is an eigenvalue of $B$, then $\exp(\lambda)$ is an eigenvalue of $\exp(B)$. Applying this, if the eigenvalues of $A$ are $\lambda_i$, then the eigenvalues of $AT$ are $\lambda_i T$. Therefore, the Floquet multipliers (the eigenvalues of $M=\exp(AT)$) are:
 

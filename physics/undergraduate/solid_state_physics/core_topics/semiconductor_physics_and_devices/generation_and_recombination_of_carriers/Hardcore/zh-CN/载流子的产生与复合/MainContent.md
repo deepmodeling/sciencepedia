@@ -1,29 +1,29 @@
 ## 引言
-在半导体物理的宏伟殿堂中，载流子的产生与复合是支撑其运作的双子基石。这两个看似相反的过程——一个创造出导电的电子和空穴，另一个使其湮灭——无时无刻不在发生，共同谱写着材料电学和光学性质的动态篇章。从您口袋里的智能手机屏幕，到屋顶上的太阳能电池板，所有半导体器件的性能本质上都受这两种微观过程的支配。
+在[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)物理的宏伟殿堂中，载流子的产生与复合是支撑其运作的双子基石。这两个看似相反的过程——一个创造出导电的[电子和空穴](@keyword=electrons_and_holes|lang=zh-CN|style=Feynman)，另一个使其湮灭——无时无刻不在发生，共同谱写着材料电学和光学性质的动态篇章。从您口袋里的智能手机屏幕，到屋顶上的[太阳能电池](@keyword=solar_cells|lang=zh-CN|style=Feynman)板，所有[半导体器件](@keyword=semiconductor_devices|lang=zh-CN|style=Feynman)的性能本质上都受这两种微观过程的支配。
 
 然而，我们如何从这些单个电子与空穴的生灭事件，过渡到对整个器件宏观行为的精确预测？这正是本文旨在解决的核心问题。我们将揭示隐藏在这些过程背后的物理规律，并展示它们如何成为连接基础理论与尖端技术的桥梁。
 
-在接下来的内容中，您将踏上一段系统性的学习之旅。在“原理与机制”一章，我们将深入剖析产生与复合的各种微观途径，包括辐射、Shockley-Read-Hall以及俄歇机制，并建立起描述它们的数学模型。随后，在“应用与跨学科连接”一章，我们将看到这些理论如何在光电探测器、LED、晶体管甚至光催化等真实世界场景中大放异彩。最后，通过“动手实践”环节，您将有机会运用所学知识解决具体问题，将抽象概念转化为强大的分析工具。让我们一同开始，探索支配半导体世界的这一基本法则。
+在接下来的内容中，您将踏上一段系统性的学习之旅。在“原理与机制”一章，我们将深入剖析产生与复合的各种微观途径，包括辐射、Shockley-Read-Hall以及俄歇机制，并建立起描述它们的数学模型。随后，在“应用与跨学科连接”一章，我们将看到这些理论如何在光电探测器、LED、晶体管甚至[光催化](@keyword=photocatalysis|lang=zh-CN|style=Feynman)等真实世界场景中大放异彩。最后，通过“动手实践”环节，您将有机会运用所学知识解决具体问题，将抽象概念转化为强大的分析工具。让我们一同开始，探索支配[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)世界的这一基本法则。
 
 ## 原理与机制
 
-在半导体物理学中，载流子的产生与复合是支配其电学和光学性质的两个最基本的过程。产生过程通过外部能量输入（如光或热）创造出导电的电子和空穴对，而复合过程则使它们湮灭，将能量以光或热的形式释放。这两个过程之间的动态平衡决定了半导体材料在特定条件下的载流子浓度，从而决定了从晶体管到太阳能电池和发光二极管等各类器件的性能。本章将深入探讨这些过程背后的基本原理和关键机制。
+在[半导体物理学](@keyword=semiconductor_physics|lang=zh-CN|style=Feynman)中，载流子的产生与复合是支配其电学和光学性质的两个最基本的过程。产生过程通过外部能量输入（如光或热）创造出导电的[电子和空穴](@keyword=electrons_and_holes|lang=zh-CN|style=Feynman)对，而复合过程则使它们湮灭，将能量以光或热的形式释放。这两个过程之间的[动态平衡](@keyword=dynamic_equilibrium|lang=zh-CN|style=Feynman)决定了[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)材料在特定条件下的载流子浓度，从而决定了从晶体管到[太阳能电池](@keyword=solar_cells|lang=zh-CN|style=Feynman)和[发光二极管](@keyword=light_emitting_diodes|lang=zh-CN|style=Feynman)等各类器件的性能。本章将深入探讨这些过程背后的基本原理和关键机制。
 
 ### 基础：热平衡状态下的产生与复合
 
-在任何给定温度 $T > 0 \text{ K}$ 下，半导体内部的原子晶格都在振动，同时与周围环境的热辐射场（黑体辐射）进行能量交换。这些热能足以持续地将价带中的电子激发到导带，从而产生电子-空穴对。这个过程被称为**热产生**。同时，导带中的电子也会自发地落回价带，与空穴复合。
+在任何给定温度 $T > 0 \text{ K}$ 下，[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)内部的原子[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)都在[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，同时与周围环境的[热辐射](@keyword=thermal_radiation|lang=zh-CN|style=Feynman)场（[黑体辐射](@keyword=blackbody_radiation|lang=zh-CN|style=Feynman)）进行能量交换。这些热能足以持续地将价带中的[电子激发](@keyword=electronic_excitations|lang=zh-CN|style=Feynman)到[导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)，从而产生[电子-空穴对](@keyword=electron_hole_pair|lang=zh-CN|style=Feynman)。这个过程被称为**热产生**。同时，导带中的电子也会自发地落回价带，与空穴复合。
 
-在不受光照或外加电场等外部扰动的**热平衡**状态下，半导体的宏观性质不随时间改变。这并非一个静态的画面，而是一个动态平衡的结果：载流子产生和复合的速率精确相等。即，总的产生速率 $G$ 必须等于总的复合速率 $R$。
+在不受光照或外加[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)等外部扰动的**热平衡**状态下，[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)的宏观性质不随时间改变。这并非一个静态的画面，而是一个[动态平衡](@keyword=dynamic_equilibrium|lang=zh-CN|style=Feynman)的结果：[载流子产生](@keyword=carrier_generation|lang=zh-CN|style=Feynman)和复合的速率精确相等。即，总的产生速率 $G$ 必须等于总的复合速率 $R$。
 
 $$
 G = R
 $$
 
-这个看似简单的宏观关系植根于一个更深刻的物理原理：**细致平衡原理 (Principle of Detailed Balance)**。该原理指出，在热平衡系统中，每一个微观过程的发生速率都精确等于其逆过程的发生速率。
+这个看似简单的宏观关系植根于一个更深刻的物理原理：**[细致平衡原理](@entry_id:200508) (Principle of Detailed Balance)**。该原理指出，在[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)系统中，每一个微观过程的发生速率都精确等于其逆过程的发生速率。
 
-为了更清晰地理解这一点，我们考虑一个直接带隙半导体，它与一个温度为 $T$ 的玻色子库（例如光子或声子）处于热平衡状态 [@problem_id:2805838]。考虑一个具体的跃迁过程：一个价带中能量为 $E_v$ 的电子，通过吸收一个能量为 $\hbar\omega = E_c - E_v$ 的玻色子，跃迁到导带中能量为 $E_c$ 的空态上。此过程的速率不仅取决于量子力学跃迁概率，还取决于相应初态和末态的占据情况。
+为了更清晰地理解这一点，我们考虑一个[直接带隙半导体](@keyword=direct_gap_semiconductor|lang=zh-CN|style=Feynman)，它与一个温度为 $T$ 的[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)库（例如[光子](@entry_id:145192)或[声子](@keyword=phonon|lang=zh-CN|style=Feynman)）处于热平衡状态 [@problem_id:2805838]。考虑一个具体的跃迁过程：一个价带中能量为 $E_v$ 的电子，通过吸收一个能量为 $\hbar\omega = E_c - E_v$ 的[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)，跃迁到[导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)中能量为 $E_c$ 的空态上。此过程的速率不仅取决于量子力学跃迁概率，还取决于相应初态和末态的占据情况。
 
-根据费米-狄拉克统计，能量为 $E$ 的电子态被占据的概率为 $f(E)$。因此，产生过程的速率正比于初始价带态被占据的概率 $f_v$，以及最终导带态为空的概率 $(1-f_c)$。此外，它还正比于可供吸收的、能量为 $\hbar\omega$ 的玻色子数量，该数量由玻色-爱因斯坦分布 $N(\omega)$ 描述。于是，这一对特定状态之间的**产生速率**可以写作：
+根据[费米-狄拉克统计](@keyword=fermi_dirac_statistics|lang=zh-CN|style=Feynman)，能量为 $E$ 的电子态被占据的概率为 $f(E)$。因此，产生过程的速率正比于初始价带态被占据的概率 $f_v$，以及最终[导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)态为空的概率 $(1-f_c)$。此外，它还正比于可供吸收的、能量为 $\hbar\omega$ 的[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)数量，该数量由[玻色-爱因斯坦分布](@keyword=bose_einstein_distribution|lang=zh-CN|style=Feynman) $N(\omega)$ 描述。于是，这一对特定状态之间的**产生速率**可以写作：
 
 $$
 R_{v \to c} = W_0 f_v (1 - f_c) N(\omega)
@@ -31,35 +31,35 @@ $$
 
 其中 $W_0$ 是一个与跃迁矩阵元相关的本征跃迁概率因子。
 
-其逆过程是复合：一个导带电子跃迁回价带空穴，并**发射**一个能量为 $\hbar\omega$ 的玻色子。量子力学指出，发射过程包含自发发射和受激发射两部分，其总概率正比于 $(N(\omega) + 1)$。因此，相应的**复合速率**为：
+其逆过程是复合：一个导带[电子跃迁](@keyword=electronic_transitions|lang=zh-CN|style=Feynman)回[价带](@keyword=valence_band|lang=zh-CN|style=Feynman)空穴，并**发射**一个能量为 $\hbar\omega$ 的[玻色子](@keyword=boson|lang=zh-CN|style=Feynman)。量子力学指出，发射过程包含自发发射和[受激发射](@keyword=stimulated_emission|lang=zh-CN|style=Feynman)两部分，其总概率正比于 $(N(\omega) + 1)$。因此，相应的**复合速率**为：
 
 $$
 R_{c \to v} = W_0' f_c (1 - f_v) [N(\omega) + 1]
 $$
 
-由于微观动力学的时间反演不变性（微观可逆性），正向和反向过程的本征跃迁概率是相同的，即 $W_0 = W_0'$。根据细致平衡原理，在热平衡下 $R_{v \to c} = R_{c \to v}$。这意味着：
+由于微观动力学的[时间反演不变性](@keyword=time_reversal_invariance|lang=zh-CN|style=Feynman)（[微观可逆性](@keyword=microscopic_reversibility|lang=zh-CN|style=Feynman)），正向和反向过程的本征跃迁概率是相同的，即 $W_0 = W_0'$。根据[细致平衡原理](@entry_id:200508)，在热平衡下 $R_{v \to c} = R_{c \to v}$。这意味着：
 
 $$
 f_v (1 - f_c) N(\omega) = f_c (1 - f_v) [N(\omega) + 1]
 $$
 
-这个等式可以通过代入费米-狄拉克分布 $f(E) = [\exp(\beta(E-\mu)) + 1]^{-1}$ 和玻色-爱因斯坦分布 $N(\omega) = [\exp(\beta\hbar\omega) - 1]^{-1}$ (其中 $\beta = 1/(k_B T)$) 而得到严格证明。由于这个等式对**每一对**微观状态 $(v, c)$ 都成立，那么将所有可能的跃迁路径加和起来，必然得出总的产生速率等于总的复合速率。这为 $G=R$ 提供了坚实的统计力学基础，并强调了热平衡是一个充满活力的动态过程，而非静止状态。
+这个等式可以通过代入[费米-狄拉克分布](@keyword=fermi_dirac_distribution|lang=zh-CN|style=Feynman) $f(E) = [\exp(\beta(E-\mu)) + 1]^{-1}$ 和[玻色-爱因斯坦分布](@keyword=bose_einstein_distribution|lang=zh-CN|style=Feynman) $N(\omega) = [\exp(\beta\hbar\omega) - 1]^{-1}$ (其中 $\beta = 1/(k_B T)$) 而得到严格证明。由于这个等式对**每一对**微观状态 $(v, c)$ 都成立，那么将所有可能的跃迁路径加和起来，必然得出总的产生速率等于总的复合速率。这为 $G=R$ 提供了坚实的[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学基础，并强调了热平衡是一个充满活力的动态过程，而非静止状态。
 
-### 驱动半导体偏离平衡
+### 驱动[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)偏离平衡
 
-当半导体受到外部激励时，例如用能量大于其带隙的光进行照射，热平衡状态就会被打破。光子被吸收，产生额外的电子-空穴对，这个过程称为**光产生**，其速率记为 $G_{opt}$。此时，总的产生速率变为热产生率 $G_{th}$ 与光产生率 $G_{opt}$之和。
+当[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)受到外部激励时，例如用能量大于其[带隙](@keyword=band_gaps|lang=zh-CN|style=Feynman)的光进行照射，[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)状态就会被打破。[光子](@entry_id:145192)被吸收，产生额外的电子-空穴对，这个过程称为**光产生**，其速率记为 $G_{opt}$。此时，总的产生速率变为热产生率 $G_{th}$ 与光产生率 $G_{opt}$之和。
 
 $$
 G_{total} = G_{th} + G_{opt}
 $$
 
-载流子浓度的增加使得复合过程的速率 $R$ 也随之增大。系统最终会达到一个新的**稳态 (steady state)**，在该状态下，总产生速率再次等于总复合速率：
+[载流子浓度](@keyword=charge_carrier_density|lang=zh-CN|style=Feynman)的增加使得复合过程的速率 $R$ 也随之增大。系统最终会达到一个新的**[稳态](@keyword=steady_states|lang=zh-CN|style=Feynman) (steady state)**，在该状态下，总产生速率再次等于总复合速率：
 
 $$
 R(n, p) = G_{th} + G_{opt}
 $$
 
-在稳态下，载流子浓度将高于其热平衡值。我们将超出平衡浓度的部分称为**超额载流子 (excess carriers)**，分别用 $\delta n$ 和 $\delta p$ 表示。由于光产生总是成对地创造电子和空穴，因此 $\delta n = \delta p$。此时的总载流子浓度为：
+在[稳态](@keyword=steady_states|lang=zh-CN|style=Feynman)下，载流子浓度将高于其[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)值。我们将超出平衡浓度的部分称为**超额载流子 (excess carriers)**，分别用 $\delta n$ 和 $\delta p$ 表示。由于光产生总是成对地创造电子和空穴，因此 $\delta n = \delta p$。此时的总载流子浓度为：
 
 $$
 n = n_0 + \delta n
@@ -68,15 +68,15 @@ $$
 p = p_0 + \delta p
 $$
 
-其中 $n_0$ 和 $p_0$ 是热平衡浓度。一个至关重要的后果是，在非平衡稳态下，载流子浓度的乘积不再遵守质量作用定律。在热平衡下，我们有 $n_0 p_0 = n_i^2$，其中 $n_i$ 是本征载流子浓度。而在光照下：
+其中 $n_0$ 和 $p_0$ 是热平衡浓度。一个至关重要的后果是，在[非平衡稳态](@keyword=non_equilibrium_steady_state_2|lang=zh-CN|style=Feynman)下，[载流子浓度](@keyword=charge_carrier_density|lang=zh-CN|style=Feynman)的乘积不再遵守[质量作用定律](@keyword=np_=_ni^2|lang=zh-CN|style=Feynman)。在[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)下，我们有 $n_0 p_0 = n_i^2$，其中 $n_i$ 是[本征载流子浓度](@keyword=intrinsic_carrier_concentration|lang=zh-CN|style=Feynman)。而在光照下：
 
 $$
 np = (n_0 + \delta n)(p_0 + \delta p) > n_0 p_0 = n_i^2
 $$
 
-这个 $np > n_i^2$ 的关系是半导体偏离热平衡的标志。例如，在一块掺杂浓度为 $N_d = 5.00 \times 10^{15} \text{ cm}^{-3}$ 的n型硅片中，在光照下达到稳态，若产生的超额载流子浓度为 $\delta n = \delta p = 1.00 \times 10^{14} \text{ cm}^{-3}$，则总的电子和空穴浓度分别变为 $n \approx 5.10 \times 10^{15} \text{ cm}^{-3}$ 和 $p \approx 1.00 \times 10^{14} \text{ cm}^{-3}$。其乘积 $np \approx 5.10 \times 10^{29} \text{ cm}^{-6}$，远大于硅在室温下的 $n_i^2 = (1.00 \times 10^{10} \text{ cm}^{-3})^2 = 1.00 \times 10^{20} \text{ cm}^{-6}$ [@problem_id:1779383]。
+这个 $np > n_i^2$ 的关系是[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)偏离热平衡的标志。例如，在一块掺杂浓度为 $N_d = 5.00 \times 10^{15} \text{ cm}^{-3}$ 的n型硅片中，在光照下达到[稳态](@keyword=steady_states|lang=zh-CN|style=Feynman)，若产生的超额载流子浓度为 $\delta n = \delta p = 1.00 \times 10^{14} \text{ cm}^{-3}$，则总的[电子和空穴](@keyword=electrons_and_holes|lang=zh-CN|style=Feynman)浓度分别变为 $n \approx 5.10 \times 10^{15} \text{ cm}^{-3}$ 和 $p \approx 1.00 \times 10^{14} \text{ cm}^{-3}$。其乘积 $np \approx 5.10 \times 10^{29} \text{ cm}^{-6}$，远大于硅在室温下的 $n_i^2 = (1.00 \times 10^{10} \text{ cm}^{-3})^2 = 1.00 \times 10^{20} \text{ cm}^{-6}$ [@problem_id:1779383]。
 
-由于 $np \neq n_i^2$，单一的费米能级 $E_F$ 已不足以描述非平衡下的电子和空穴布居。取而代之的是引入两个**准费米能级 (quasi-Fermi levels)**，$F_n$ 和 $F_p$，分别用于描述电子和空穴。它们与载流子浓度的关系定义为：
+由于 $np \neq n_i^2$，单一的[费米能级](@keyword=fermi_level|lang=zh-CN|style=Feynman) $E_F$ 已不足以描述非平衡下的[电子和空穴](@keyword=electrons_and_holes|lang=zh-CN|style=Feynman)布居。取而代之的是引入两个**[准费米能级](@keyword=quasi_fermi_levels|lang=zh-CN|style=Feynman) (quasi-Fermi levels)**，$F_n$ 和 $F_p$，分别用于描述电子和空穴。它们与[载流子浓度](@keyword=charge_carrier_density|lang=zh-CN|style=Feynman)的关系定义为：
 
 $$
 n = N_C \exp\left(-\frac{E_C - F_n}{k_B T}\right)
@@ -85,35 +85,35 @@ $$
 p = N_V \exp\left(-\frac{F_p - E_V}{k_B T}\right)
 $$
 
-综合起来，可以得到 $np = n_i^2 \exp\left(\frac{F_n - F_p}{k_B T}\right)$。准费米能级的分离程度 $(F_n - F_p)$ 直接量化了系统偏离热平衡的程度。
+综合起来，可以得到 $np = n_i^2 \exp\left(\frac{F_n - F_p}{k_B T}\right)$。[准费米能级](@keyword=quasi_fermi_levels|lang=zh-CN|style=Feynman)的分离程度 $(F_n - F_p)$ 直接量化了系统偏离[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)的程度。
 
 ### 主要的复合机制
 
-当超额载流子存在时，系统会通过多种途径进行复合以恢复平衡。这些途径可分为两大类：辐射复合和非辐射复合。
+当超额载流子存在时，系统会通过多种途径进行复合以恢[复平衡](@keyword=complex_balancing|lang=zh-CN|style=Feynman)。这些途径可分为两大类：[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)和[非辐射复合](@keyword=non_radiative_recombination|lang=zh-CN|style=Feynman)。
 
 #### 辐射（带间）复合
 
-**辐射复合**是指导带中的一个电子直接跃迁到价带，与一个空穴复合，并将能量以光子的形式释放出来。这是发光二极管（LED）和激光二极管（LD）发光的基础。对于带间跃迁，其净复合速率 $U$ 通常可以表示为：
+**[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)**是指[导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)中的一个电子直接跃迁到价带，与一个空穴复合，并将能量以[光子](@entry_id:145192)的形式释放出来。这是发光二极管（LED）和[激光二极管](@keyword=laser_diode|lang=zh-CN|style=Feynman)（LD）发光的基础。对于[带间跃迁](@keyword=interband_transitions|lang=zh-CN|style=Feynman)，其净复合速率 $U$ 通常可以表示为：
 
 $$
 U = B (np - n_i^2)
 $$
 
-其中 $B$ 是一个与材料相关的**辐射复合系数**。$Bnp$ 项代表总的复合速率，它正比于电子和空穴相遇的概率。$Bn_i^2$ 项则代表了热产生速率（即复合的逆过程），因此净速率是两者的差值。
+其中 $B$ 是一个与材料相关的**[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)系数**。$Bnp$ 项代表总的复合速率，它正比于电子和空穴相遇的概率。$Bn_i^2$ 项则代表了热产生速率（即复合的逆过程），因此净速率是两者的差值。
 
-辐射复合的效率高度依赖于半导体的**能带结构**。
+[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)的效率高度依赖于[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)的**[能带结构](@keyword=band_structure|lang=zh-CN|style=Feynman)**。
 
--   在**直接带隙 (direct bandgap)** 半导体（如 GaAs）中，导带的最低点（CBM）和价带的最高点（VBM）位于布里渊区中相同的波矢 $\vec{k}$ 位置（通常是 $\vec{k}=0$ 的 $\Gamma$ 点）。电子和空穴可以直接复合，因为晶格动量守恒很容易满足（光子的动量与晶格动量相比可以忽略不计）。因此，这类材料的辐射复合效率很高。
+-   在**直接带隙 (direct bandgap)** [半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)（如 GaAs）中，[导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)的最低点（CBM）和[价带](@keyword=valence_band|lang=zh-CN|style=Feynman)的最高点（VBM）位于布里渊区中相同的[波矢](@keyword=wavevector|lang=zh-CN|style=Feynman) $\vec{k}$ 位置（通常是 $\vec{k}=0$ 的 $\Gamma$ 点）。[电子和空穴](@keyword=electrons_and_holes|lang=zh-CN|style=Feynman)可以直接复合，因为[晶格动量](@keyword=quasimomentum|lang=zh-CN|style=Feynman)守恒很容易满足（[光子](@entry_id:145192)的动量与[晶格动量](@keyword=quasimomentum|lang=zh-CN|style=Feynman)相比可以忽略不计）。因此，这类材料的[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)效率很高。
 
--   在**间接带隙 (indirect bandgap)** 半导体（如 Si, Ge）中，CBM 和 VBM 位于不同的 $\vec{k}$ 位置。电子和空穴的复合伴随着一个很大的晶格动量变化。由于光子无法提供如此大的动量，复合过程必须借助第三个粒子——**声子 (phonon)** 的参与来满足动量守恒。例如，在一个假设的间接带隙材料 GeC 中，其 CBM 位于 $k_c = 1.25 \times 10^{10} \text{ m}^{-1}$，而 VBM 位于 $k=0$ [@problem_id:1779374]。当一个 CBM 处的电子与一个 VBM 处的空穴复合时，动量守恒要求 $\vec{k}_{e} + \vec{k}_{h} = \vec{k}_{\gamma} + \vec{q}_{ph}$。由于 $\vec{k}_h \approx 0$ 且 $\vec{k}_\gamma \approx 0$，声子必须带走几乎全部的电子动量，即 $\vec{q}_{ph} \approx \vec{k}_e$。这是一个三体过程（电子-空穴-声子），其发生概率远低于直接带隙中的二体过程。能量守恒也变为 $E_g = E_\gamma + E_{phonon}$（对于声子发射）。如果该 GeC 材料的带隙为 $2.10 \text{ eV}$，发射的声子能量为 $0.048 \text{ eV}$，那么出射光子的能量将是 $E_\gamma = 2.10 - 0.048 = 2.05 \text{ eV}$。由于需要声子辅助，间接带隙材料的辐射复合效率通常很低，这也是硅不适合用作高效发光材料的原因。
+-   在**间接带隙 (indirect bandgap)** [半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)（如 Si, Ge）中，CBM 和 VBM 位于不同的 $\vec{k}$ 位置。电子和空穴的复合伴随着一个很大的[晶格动量](@keyword=quasimomentum|lang=zh-CN|style=Feynman)变化。由于[光子](@entry_id:145192)无法提供如此大的动量，复合过程必须借助第三个粒子——**[声子](@keyword=phonon|lang=zh-CN|style=Feynman) (phonon)** 的参与来满足动量守恒。例如，在一个假设的[间接带隙](@keyword=indirect_bandgap|lang=zh-CN|style=Feynman)材料 GeC 中，其 CBM 位于 $k_c = 1.25 \times 10^{10} \text{ m}^{-1}$，而 VBM 位于 $k=0$ [@problem_id:1779374]。当一个 CBM 处的电子与一个 VBM 处的空穴复合时，[动量守恒](@keyword=momentum_conservation|lang=zh-CN|style=Feynman)要求 $\vec{k}_{e} + \vec{k}_{h} = \vec{k}_{\gamma} + \vec{q}_{ph}$。由于 $\vec{k}_h \approx 0$ 且 $\vec{k}_\gamma \approx 0$，[声子](@keyword=phonon|lang=zh-CN|style=Feynman)必须带走几乎全部的电子动量，即 $\vec{q}_{ph} \approx \vec{k}_e$。这是一个三体过程（电子-空穴-[声子](@keyword=phonon|lang=zh-CN|style=Feynman)），其发生概率远低于直接带隙中的二体过程。[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)也变为 $E_g = E_\gamma + E_{phonon}$（对于[声子](@keyword=phonon|lang=zh-CN|style=Feynman)发射）。如果该 GeC 材料的[带隙](@keyword=band_gaps|lang=zh-CN|style=Feynman)为 $2.10 \text{ eV}$，发射的[声子](@keyword=phonon|lang=zh-CN|style=Feynman)能量为 $0.048 \text{ eV}$，那么出射[光子](@entry_id:145192)的能量将是 $E_\gamma = 2.10 - 0.048 = 2.05 \text{ eV}$。由于需要[声子](@keyword=phonon|lang=zh-CN|style=Feynman)辅助，[间接带隙](@keyword=indirect_bandgap|lang=zh-CN|style=Feynman)材料的[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)效率通常很低，这也是硅不适合用作高效[发光材料](@keyword=light_emitting_materials|lang=zh-CN|style=Feynman)的原因。
 
-#### 非辐射复合：肖克莱-里德-霍尔（SRH）机制
+#### [非辐射复合](@keyword=non_radiative_recombination|lang=zh-CN|style=Feynman)：肖克莱-里德-霍尔（SRH）机制
 
-在实际的晶体中，不可避免地存在各种缺陷（如杂质原子、位错、晶界），这些缺陷会在半导体的禁带中引入局域的电子态，称为**陷阱 (traps)** 或**复合中心 (recombination centers)**。**肖克莱-里德-霍尔 (Shockley-Read-Hall, SRH)** 复合是一种通过这些陷阱态进行的非辐射过程，能量主要以声子的形式（即晶格振动或热）释放。
+在实际的晶体中，不可避免地存在各种缺陷（如杂质原子、[位错](@keyword=dislocation|lang=zh-CN|style=Feynman)、晶界），这些缺陷会在[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)的禁带中引入局域的电子态，称为**陷阱 (traps)** 或**复合中心 (recombination centers)**。**肖克莱-里德-霍尔 (Shockley-Read-Hall, SRH)** 复合是一种通过这些[陷阱态](@keyword=trap_states|lang=zh-CN|style=Feynman)进行的非辐射过程，能量主要以[声子](@keyword=phonon|lang=zh-CN|style=Feynman)的形式（即晶格振动或热）释放。
 
 SRH 复合是一个两步过程：
-1.  **电子俘获**：导带中的一个电子被一个空的陷阱态俘获。
-2.  **空穴俘获**：价带中的一个空穴被这个已占据电子的陷阱态俘获，这等效于陷阱中的电子与空穴复合，使陷阱重新变空。
+1.  **[电子俘获](@keyword=electron_capture|lang=zh-CN|style=Feynman)**：导带中的一个电子被一个空的[陷阱态](@keyword=trap_states|lang=zh-CN|style=Feynman)俘获。
+2.  **空穴俘获**：[价带](@keyword=valence_band|lang=zh-CN|style=Feynman)中的一个空穴被这个已占据电子的[陷阱态](@keyword=trap_states|lang=zh-CN|style=Feynman)俘获，这等效于陷阱中的电子与空穴复合，使陷阱重新变空。
 
 通过对陷阱能级上电子的俘获和发射过程进行细致的速率分析，可以推导出在任意载流子浓度 $n$ 和 $p$ 下的 SRH 净复合速率 [@problem_id:2805840]：
 
@@ -121,7 +121,7 @@ $$
 U_{SRH} = \frac{np - n_i^2}{\tau_p (n + n_1) + \tau_n (p + p_1)}
 $$
 
-这里的 $\tau_n = (c_n N_t)^{-1}$ 和 $\tau_p = (c_p N_t)^{-1}$ 分别是电子和空穴的**俘获寿命常数**，其中 $N_t$ 是陷阱浓度，$c_n$ 和 $c_p$ 是俘获系数。$n_1$ 和 $p_1$ 是与陷阱能级 $E_t$ 相关的辅助浓度参数，定义为当费米能级位于 $E_t$ 时的电子和空穴浓度：
+这里的 $\tau_n = (c_n N_t)^{-1}$ 和 $\tau_p = (c_p N_t)^{-1}$ 分别是[电子和空穴](@keyword=electrons_and_holes|lang=zh-CN|style=Feynman)的**俘获寿命常数**，其中 $N_t$ 是陷阱浓度，$c_n$ 和 $c_p$ 是俘获系数。$n_1$ 和 $p_1$ 是与陷阱能级 $E_t$ 相关的辅助浓度参数，定义为当费米能级位于 $E_t$ 时的[电子和空穴](@keyword=electrons_and_holes|lang=zh-CN|style=Feynman)浓度：
 
 $$
 n_1 = n_i \exp\left(\frac{E_t - E_i}{k_B T}\right)
@@ -130,93 +130,93 @@ $$
 p_1 = n_i \exp\left(-\frac{E_t - E_i}{k_B T}\right)
 $$
 
-其中 $E_i$ 是本征费米能级。
+其中 $E_i$ 是本征[费米能级](@keyword=fermi_level|lang=zh-CN|style=Feynman)。
 
-SRH 复合速率对陷阱能级 $E_t$ 的位置非常敏感。直观上，一个有效的复合中心需要能与导带和价带都进行高效的“沟通”。如果陷阱能级太靠近导带，它很容易俘获和释放电子，但与价带的空穴作用较弱；反之亦然。因此，位于禁带中央附近的陷阱通常是最高效的复合中心。
+SRH 复合速率对陷阱能级 $E_t$ 的位置非常敏感。直观上，一个有效的复合中心需要能与[导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)和[价带](@keyword=valence_band|lang=zh-CN|style=Feynman)都进行高效的“沟通”。如果陷阱能级太靠近[导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)，它很容易俘获和释放电子，但与[价带](@keyword=valence_band|lang=zh-CN|style=Feynman)的空穴作用较弱；反之亦然。因此，位于[禁带](@keyword=forbidden_zone|lang=zh-CN|style=Feynman)中央附近的陷阱通常是最高效的复合中心。
 
-我们可以通过最小化复合寿命（即最大化复合速率）来定量地找到最有效的陷阱能级 [@problem_id:1779381]。在低注入下的 p 型半导体中，电子是少数载流子，其寿命 $\tau_n$ 决定了复合速率。通过对 SRH 寿命公式求导并令其为零，可以得到使复合速率最大化的陷阱能级 $E_t^*$：
+我们可以通过最小化复合寿命（即最大化复合速率）来定量地找到最有效的陷阱能级 [@problem_id:1779381]。在低注入下的 p 型[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)中，电子是[少数载流子](@keyword=minority_carriers|lang=zh-CN|style=Feynman)，其寿命 $\tau_n$ 决定了复合速率。通过对 SRH 寿命公式求导并令其为零，可以得到使复合速率最大化的陷阱能级 $E_t^*$：
 
 $$
 E_t^* - E_i = \frac{k_B T}{2} \ln\left(\frac{\tau_{p0}}{\tau_{n0}}\right)
 $$
 
-其中 $\tau_{n0}$ 和 $\tau_{p0}$ 是与俘获截面相关的基本寿命参数。例如，对于一种 p 型硅，如果 $\tau_{n0} = 1.2 \text{ \mu s}$ 且 $\tau_{p0} = 0.30 \text{ \mu s}$，则在 $300 \text{ K}$ 时，最有效的陷阱能级位于 $E_t - E_i = \frac{0.0259 \text{ eV}}{2} \ln(1.2/0.3) \approx 0.0179 \text{ eV}$。这个结果表明，当电子和空穴俘获过程的速率相当时（即 $\tau_{n0} \approx \tau_{p0}$），最有效的陷阱能级恰好位于禁带中央 ($E_t \approx E_i$)。
+其中 $\tau_{n0}$ 和 $\tau_{p0}$ 是与[俘获截面](@keyword=capture_cross_section|lang=zh-CN|style=Feynman)相关的基本寿命参数。例如，对于一种 p 型硅，如果 $\tau_{n0} = 1.2 \mathrm{\mu s}$ 且 $\tau_{p0} = 0.30 \mathrm{\mu s}$，则在 $300 \text{ K}$ 时，最有效的陷阱能级位于 $E_t - E_i = \frac{0.0259 \text{ eV}}{2} \ln(1.2/0.3) \approx 0.0179 \text{ eV}$。这个结果表明，当电子和空穴俘获过程的速率相当时（即 $\tau_{n0} \approx \tau_{p0}$），最有效的陷阱能级恰好位于[禁带](@keyword=forbidden_zone|lang=zh-CN|style=Feynman)中央 ($E_t \approx E_i$)。
 
-#### 非辐射复合：俄歇（Auger）机制
+#### [非辐射复合](@keyword=non_radiative_recombination|lang=zh-CN|style=Feynman)：俄歇（Auger）机制
 
-**俄歇复合**是一种涉及三个载流子的非辐射过程。在一个俄歇事件中，一个电子和一个空穴复合，但它们释放的能量（约为 $E_g$）没有产生光子，而是被传递给了第三个载流子，使其被激发到导带或价带中能量更高或更低的状态。这个被激发的载流子随后会通过与晶格的多次散射，以声子的形式迅速将多余的能量耗散掉。
+**[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)**是一种涉及三个载流子的非辐射过程。在一个俄歇事件中，一个电子和一个空穴复合，但它们释放的能量（约为 $E_g$）没有产生[光子](@entry_id:145192)，而是被传递给了第三个载流子，使其被激发到[导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)或[价带](@keyword=valence_band|lang=zh-CN|style=Feynman)中能量更高或更低的状态。这个被激发的载流子随后会通过与[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)的多次散射，以[声子](@keyword=phonon|lang=zh-CN|style=Feynman)的形式迅速将多余的[能量耗散](@keyword=energy_dissipation|lang=zh-CN|style=Feynman)掉。
 
-由于需要三个粒子同时相互作用，俄歇复合的速率对载流子浓度有更强的依赖性。主要有两种俄歇过程 [@problem_id:2805867]：
+由于需要三个粒子同时相互作用，[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)的速率对载流子浓度有更强的依赖性。主要有两种[俄歇过程](@keyword=auger_process|lang=zh-CN|style=Feynman) [@problem_id:2805867]：
 
 -   **$nnp$ 过程**：两个电子和一个空穴参与。一个电子与空穴复合，能量传递给另一个电子。其速率为 $R_{nnp} = C_n n^2 p$。
--   **$ppn$ 过程**：一个电子和两个空穴参与。电子与一个空穴复合，能量传递给另一个空穴。其速率为 $R_{ppn} = C_p n p^2$。
+-   **$ppn$ 过程**：一个电子和两个空穴参与。电子与一个空穴复合，[能量传递](@keyword=energy_transfer|lang=zh-CN|style=Feynman)给另一个空穴。其速率为 $R_{ppn} = C_p n p^2$。
 
-总的俄歇复合速率为 $U_{Auger} = C_n n^2 p + C_p n p^2$。$C_n$ 和 $C_p$ 是俄歇系数，由材料的能带结构和库仑相互作用矩阵元决定。
+总的[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)速率为 $U_{Auger} = C_n n^2 p + C_p n p^2$。$C_n$ 和 $C_p$ 是俄歇系数，由材料的[能带结构](@keyword=band_structure|lang=zh-CN|style=Feynman)和库仑相互作用[矩阵元](@keyword=matrix_elements|lang=zh-CN|style=Feynman)决定。
 
-在直接带隙半导体中，三个粒子可以方便地重新分配能量和动量，因此俄歇复合是一个无需声子辅助的有效过程。哪种俄歇过程占主导，取决于多数载流子的类型。
+在[直接带隙半导体](@keyword=direct_gap_semiconductor|lang=zh-CN|style=Feynman)中，三个粒子可以方便地重新分配能量和动量，因此[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)是一个无需[声子](@keyword=phonon|lang=zh-CN|style=Feynman)辅助的有效过程。哪种[俄歇过程](@keyword=auger_process|lang=zh-CN|style=Feynman)占主导，取决于多数载流子的类型。
 
--   在 **n 型半导体**中，$n \gg p$。因此，$n^2p$ 远大于 $np^2$。$nnp$ 过程涉及两个多数载流子（电子）和一个少数载流子（空穴），其发生概率远高于需要两个少数载流子的 $ppn$ 过程。因此，**$nnp$ 过程占主导**。
--   在 **p 型半导体**中，$p \gg n$。同理，**$ppn$ 过程占主导**。
+-   在 **n 型[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)**中，$n \gg p$。因此，$n^2p$ 远大于 $np^2$。$nnp$ 过程涉及两个多数载流子（电子）和一个[少数载流子](@keyword=minority_carriers|lang=zh-CN|style=Feynman)（空穴），其发生概率远高于需要两个少数载流子的 $ppn$ 过程。因此，**$nnp$ 过程占主导**。
+-   在 **p 型[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)**中，$p \gg n$。同理，**$ppn$ 过程占主导**。
 
-俄歇复合在载流子浓度非常高时变得尤为重要，例如在激光二极管的工作条件下或高亮度 LED 中。
+[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)在[载流子浓度](@keyword=charge_carrier_density|lang=zh-CN|style=Feynman)非常高时变得尤为重要，例如在[激光二极管](@keyword=laser_diode|lang=zh-CN|style=Feynman)的工作条件下或高亮度 LED 中。
 
-### 复合动力学：注入水平的依赖性
+### [复合动力学](@keyword=recombination_dynamics|lang=zh-CN|style=Feynman)：注入水平的依赖性
 
 复合速率对超额载流子浓度 $\delta n$ 的依赖关系，即复合的**动力学阶数**，会随着注入水平的变化而改变。我们通常区分两种情况：低注入和高注入。
 
 #### 低注入水平 (Low-Level Injection)
 
-低注入是指超额载流子浓度远小于多数载流子浓度。以 n 型半导体为例，低注入意味着 $\delta n = \delta p \ll n_0$。在此条件下：
+低注入是指超额载流子浓度远小于多数载流子浓度。以 n 型[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)为例，低注入意味着 $\delta n = \delta p \ll n_0$。在此条件下：
 -   多数载流子（电子）浓度几乎不变：$n = n_0 + \delta n \approx n_0$。
 -   少数载流子（空穴）浓度显著增加：$p = p_0 + \delta p$。
 
-对于带间辐射复合，净速率为 $U = B(np - n_i^2)$。代入上述近似 [@problem_id:1779404]：
+对于带间[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)，净速率为 $U = B(np - n_i^2)$。代入上述近似 [@problem_id:1779404]：
 
 $$
 U \approx B(n_0 (p_0 + \delta p) - n_i^2) = B(n_0 p_0 + n_0 \delta p - n_i^2)
 $$
 
-利用热平衡关系 $n_0 p_0 = n_i^2$，上式简化为：
+利用[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)关系 $n_0 p_0 = n_i^2$，上式简化为：
 
 $$
 U \approx B n_0 \delta p
 $$
 
-这表明，在低注入下，净复合速率近似与**超额少数载流子浓度**成正比。这是一个**伪一级动力学**过程。这个结果非常重要，它允许我们定义一个**少数载流子寿命 (minority carrier lifetime)** $\tau_p$。净复合速率可以写成 $U = \delta p / \tau_p$，因此我们得到：
+这表明，在低注入下，净复合速率近似与**超额[少数载流子](@keyword=minority_carriers|lang=zh-CN|style=Feynman)浓度**成正比。这是一个**[伪一级动力学](@keyword=pseudo_first_order_kinetics|lang=zh-CN|style=Feynman)**过程。这个结果非常重要，它允许我们定义一个**[少数载流子寿命](@keyword=minority_carrier_lifetime|lang=zh-CN|style=Feynman) (minority carrier lifetime)** $\tau_p$。净复合速率可以写成 $U = \delta p / \tau_p$，因此我们得到：
 
 $$
 \tau_p = \frac{1}{B n_0}
 $$
 
-少数载流子寿命是衡量材料质量和器件性能的关键参数。它反比于多数载流子浓度，这意味着掺杂越重，少数载流子的复合就越快。
+[少数载流子寿命](@keyword=minority_carrier_lifetime|lang=zh-CN|style=Feynman)是衡量材料质量和器件性能的关键参数。它反比于多数载流子浓度，这意味着掺杂越重，少数载流子的复合就越快。
 
 #### 高注入水平 (High-Level Injection)
 
-高注入是指超额载流子浓度远大于平衡时的多数载流子浓度。对于 p 型材料，这意味着 $\delta n \gg p_0 \approx N_A$。在此条件下：
+高注入是指超额[载流子浓度](@keyword=charge_carrier_density|lang=zh-CN|style=Feynman)远大于平衡时的多数载流子浓度。对于 p 型材料，这意味着 $\delta n \gg p_0 \approx N_A$。在此条件下：
 -   $n = n_0 + \delta n \approx \delta n$
 -   $p = p_0 + \delta n \approx \delta n$
 
-此时，电子和空穴浓度近似相等，远超掺杂浓度。对于带间辐射复合，速率变为：
+此时，[电子和空穴](@keyword=electrons_and_holes|lang=zh-CN|style=Feynman)浓度近似相等，远超[掺杂浓度](@keyword=doping_concentration|lang=zh-CN|style=Feynman)。对于带间[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)，速率变为：
 
 $$
 U \approx B((\delta n)(\delta n)) = B(\delta n)^2
 $$
 
-这是一个**二级动力学**过程。我们可以通过比较低注入和高注入下的复合速率来突显这种变化。考虑一个 p 型样品，在低注入下超额浓度为 $\delta n_1 \ll N_A$，复合速率为 $R_1 \approx B N_A \delta n_1$。在高注入下超额浓度为 $\delta n_2 \gg N_A$，复合速率为 $R_2 \approx B (\delta n_2)^2$。两者之比为 [@problem_id:1779407]：
+这是一个**[二级动力学](@keyword=second_order_kinetics|lang=zh-CN|style=Feynman)**过程。我们可以通过比较低注入和高注入下的复合速率来突显这种变化。考虑一个 p 型样品，在低注入下超额浓度为 $\delta n_1 \ll N_A$，复合速率为 $R_1 \approx B N_A \delta n_1$。在高注入下超额浓度为 $\delta n_2 \gg N_A$，复合速率为 $R_2 \approx B (\delta n_2)^2$。两者之比为 [@problem_id:1779407]：
 
 $$
 \frac{R_2}{R_1} \approx \frac{B(\delta n_2)^2}{B N_A \delta n_1} = \frac{(\delta n_2)^2}{N_A \delta n_1}
 $$
 
-这个结果清晰地展示了复合动力学从线性依赖 $(\propto \delta n)$ 到二次方依赖 $(\propto (\delta n)^2)$ 的转变。
+这个结果清晰地展示了[复合动力学](@keyword=recombination_dynamics|lang=zh-CN|style=Feynman)从[线性依赖](@keyword=linear_dependency|lang=zh-CN|style=Feynman) $(\propto \delta n)$ 到二次方依赖 $(\propto (\delta n)^2)$ 的转变。
 
 #### 机制间的竞争
 
-在实际器件中，辐射复合、SRH 复合和俄歇复合同时存在，相互竞争。它们的相对重要性取决于材料质量（陷阱浓度 $N_t$）、温度和注入水平（载流子浓度）。
+在实际器件中，[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)、SRH 复合和[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)同时存在，相互竞争。它们的相对重要性取决于材料质量（陷阱浓度 $N_t$）、温度和注入水平（[载流子浓度](@keyword=charge_carrier_density|lang=zh-CN|style=Feynman)）。
 
-特别是在高注入条件下，俄歇复合与辐射复合的竞争尤为关键，它直接影响高功率 LED 的效率。我们已经知道，在高注入下 $n \approx p \approx \delta n$：
--   辐射复合速率 $R_{rad} \approx B (\delta n)^2$
--   俄歇复合速率 $R_{Auger} \approx (C_n + C_p) (\delta n)^3$
+特别是在高注入条件下，[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)与[辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)的竞争尤为关键，它直接影响高功率 LED 的效率。我们已经知道，在高注入下 $n \approx p \approx \delta n$：
+-   [辐射复合](@keyword=radiative_recombination|lang=zh-CN|style=Feynman)速率 $R_{rad} \approx B (\delta n)^2$
+-   [俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)速率 $R_{Auger} \approx (C_n + C_p) (\delta n)^3$
 
 考察两者的比率，即非辐射损失与有效发光之比 [@problem_id:1779396]：
 
@@ -224,18 +224,18 @@ $$
 \frac{R_{Auger}}{R_{rad}} \approx \frac{(C_n + C_p) (\delta n)^3}{B (\delta n)^2} = \frac{C_n + C_p}{B} \delta n
 $$
 
-这个比率与超额载流子浓度 $\delta n$ 成正比。这意味着，随着驱动电流增大（即 $\delta n$ 增大），俄歇复合的相对重要性会急剧上升，导致更多的能量以热的形式浪费掉，而不是产生光。这就是导致高功率 LED 效率随电流增加而下降的“效率下降”(efficiency droop) 现象的主要原因之一。
+这个比率与超额载流子浓度 $\delta n$ 成正比。这意味着，随着驱动电流增大（即 $\delta n$ 增大），[俄歇复合](@keyword=auger_recombination|lang=zh-CN|style=Feynman)的相对重要性会急剧上升，导致更多的能量以热的形式浪费掉，而不是产生光。这就是导致高功率 LED 效率随电流增加而下降的“[效率下降](@keyword=efficiency_droop|lang=zh-CN|style=Feynman)”(efficiency droop) 现象的主要原因之一。
 
-### 连接发射与吸收：一个热力学关联
+### 连接发射与吸收：一个[热力学关联](@keyword=thermodynamic_linkage|lang=zh-CN|style=Feynman)
 
-最后，我们回到热平衡状态，探讨一个深刻而优美的关系，它将半导体的发射光谱与吸收光谱联系起来。我们已经知道，在热平衡中，吸收和发射过程通过细致平衡原理相互关联。这启发我们，材料的吸收特性和发射特性之间必然存在一个普适的联系。
+最后，我们回到热平衡状态，探讨一个深刻而优美的关系，它将[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)的发射[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)与[吸收光谱](@keyword=absorption_spectrum|lang=zh-CN|style=Feynman)联系起来。我们已经知道，在[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)中，吸收和发射过程通过[细致平衡原理](@entry_id:200508)相互关联。这启发我们，材料的吸收特性和发射特性之间必然存在一个普适的联系。
 
-这个联系由 **van Roosbroeck–Shockley 关系**所描述。考虑一个处于温度 $T$、与黑体辐射场达到平衡的半导体。在任何一个微小的能量区间 $d(\hbar\omega)$ 内，光子的吸收速率必须等于发射速率。通过对这些速率进行细致的分析，可以将自发发射光谱 $R_{sp}(\hbar\omega)$（单位体积、单位时间、单位能量间隔内自发发射的光子数）与材料的吸收系数 $\alpha(\hbar\omega)$ 联系起来 [@problem_id:1779400]。
+这个联系由 **van Roosbroeck–Shockley 关系**所描述。考虑一个处于温度 $T$、与黑体辐射场达到平衡的[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)。在任何一个微小的能量区间 $d(\hbar\omega)$ 内，[光子](@entry_id:145192)的吸收速率必须等于发射速率。通过对这些速率进行细致的分析，可以将自发发射[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman) $R_{sp}(\hbar\omega)$（单位体积、单位时间、单位能量间隔内自发发射的[光子](@entry_id:145192)数）与材料的吸收系数 $\alpha(\hbar\omega)$ 联系起来 [@problem_id:1779400]。
 
-推导的核心思想是，在热平衡下，材料对黑体辐射场的净吸收为零。净吸收率是总吸收率减去受激发射率，而根据细致平衡，这恰好等于自发发射率。结合已知的普朗克黑体辐射谱密度公式，可以最终得到：
+推导的核心思想是，在热平衡下，材料对[黑体辐射](@keyword=blackbody_radiation|lang=zh-CN|style=Feynman)场的净吸收为零。净吸收率是总[吸收率](@keyword=absorptivity|lang=zh-CN|style=Feynman)减去受激发射率，而根据[细致平衡](@keyword=detailed_balance|lang=zh-CN|style=Feynman)，这恰好等于自发[发射率](@keyword=emissivity|lang=zh-CN|style=Feynman)。结合已知的普朗克[黑体辐射谱](@keyword=blackbody_spectrum|lang=zh-CN|style=Feynman)密度公式，可以最终得到：
 
 $$
 R_{sp}(\hbar\omega) = \alpha(\hbar\omega) \frac{n_r^2 \omega^2}{\pi^2 c^2 \hbar} \frac{1}{\exp\left(\frac{\hbar\omega}{k_B T}\right) - 1}
 $$
 
-其中 $n_r$ 是材料的折射率，$c$ 是真空光速。这个关系式意义非凡：它表明，只要我们通过实验测量出一个材料在某个温度下的吸收光谱 $\alpha(\hbar\omega)$，我们就可以通过计算直接得到它在该温度下的完整热平衡自发发射光谱。这完美体现了热力学和统计力学在连接看似无关的物理量方面的强大威力。
+其中 $n_r$ 是材料的[折射率](@keyword=index_of_refraction|lang=zh-CN|style=Feynman)，$c$ 是真空光速。这个关系式意义非凡：它表明，只要我们通过实验测量出一个材料在某个温度下的[吸收光谱](@keyword=absorption_spectrum|lang=zh-CN|style=Feynman) $\alpha(\hbar\omega)$，我们就可以通过计算直接得到它在该温度下的完整[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)自发发射[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)。这完美体现了[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)和[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学在连接看似无关的物理量方面的强大威力。

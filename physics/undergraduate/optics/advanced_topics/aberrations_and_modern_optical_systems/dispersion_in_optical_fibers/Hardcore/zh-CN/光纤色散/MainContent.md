@@ -44,7 +44,7 @@ $$ t_{\text{min}} = \frac{n_1 L}{c} $$
 
 其他光线则以不同角度 $\theta$ 在纤芯-包层界面上发生全内反射，并以“之”字形曲折前进。这些光线走过的实际路径长度为 $L / \cos\theta$，因此它们的传播时间为 $t(\theta) = \frac{n_1 L}{c \cos\theta}$。允许传播的最大角度 $\theta_{\text{max}}$ 对应于光线在纤芯-包层界面处以临界角入射的情况。根据斯涅尔定律，这对应于 $\cos\theta_{\text{max}} = n_2/n_1$。因此，最慢模式的传播时间为：
 $$ t_{\text{max}} = \frac{n_1 L}{c} \frac{n_1}{n_2} = \frac{n_1^2 L}{n_2 c} $$
-这两种极端情况之间的时间差，即最大模间[色散](@entry_id:263750)引起的脉冲展宽，为：
+这两种极端情况之间的时间差，即最大模间[色散](@keyword=chromatic_dispersion|lang=zh-CN|style=Feynman)引起的脉冲展宽，为：
 $$ \Delta t_{\text{modal}} = t_{\text{max}} - t_{\text{min}} = \frac{n_1 L}{c} \left( \frac{n_1}{n_2} - 1 \right) $$
 例如，对于一根长度为 $2.00 \text{ km}$、纤芯折射率 $n_1 = 1.485$、包层折射率 $n_2 = 1.460$ 的阶跃折射率多模光纤，其最大时间展宽约为 $169 \text{ ns}$。如此巨大的时间延迟差严重限制了多模光纤在长距离高速通信中的应用。[@problem_id:2240719]
 
@@ -78,7 +78,7 @@ $$ n(\omega) \approx 1 + \frac{N_v q^2}{2m\epsilon_0} \frac{\omega_0^2 - \omega^
 
 材料色散的大小通常用**材料色散参数** $D_m$ 来量化：
 $$ D_m(\lambda) = \frac{d}{d\lambda}\left(\frac{1}{v_g}\right) = -\frac{\lambda}{c} \frac{d^2n}{d\lambda^2} $$
-$D_m$ 的单位通常是 $\text{ps/(nm·km)}$，表示每公里光纤、每纳米谱宽所引起的群延迟变化。当 $D_m > 0$ 时，称为**正常色散**（Normal Dispersion）区域，长波长分量比短波长分量传播得慢。当 $D_m  0$ 时，称为**反常色散**（Anomalous Dispersion）区域，长波长分量比短波长分量传播得快。
+$D_m$ 的单位通常是 $\mathrm{ps/(nm\cdot km)}$，表示每公里光纤、每纳米谱宽所引起的群延迟变化。当 $D_m > 0$ 时，称为**正常色散**（Normal Dispersion）区域，长波长分量比短波长分量传播得慢。当 $D_m  0$ 时，称为**反常色散**（Anomalous Dispersion）区域，长波长分量比短波长分量传播得快。
 
 一个极其重要的波长是**零材料色散波长** $\lambda_{ZMD}$，在该点 $D_m=0$，即 $\frac{d^2n}{d\lambda^2}=0$。在标准石英玻璃中，这个波长大约在 $1.27 \text{ µm}$ 附近。通过对材料进行掺杂，可以调整零色散波长的位置。例如，对于一种其折射率由 $n(\lambda) = A + B/\lambda^2 - C\lambda^2$ 描述的新型玻璃，通过求解 $\frac{d^2n}{d\lambda^2} = 0$，我们可以找到其零色散点。[@problem_id:2226488]
 
@@ -107,7 +107,7 @@ $$ D_{total}(\lambda) = D_m(\lambda) + D_w(\lambda) $$
 
 色度色散的直接后果是脉冲展宽。一个初始宽度为 $\tau_0$、谱宽为 $\Delta\lambda$ 的光脉冲，在经过长度为 $L$、色散参数为 $D$ 的光纤后，其展宽后的宽度 $\tau_{out}$ 可以近似地用平方和根（quadrature addition）来计算：
 $$ \tau_{out} \approx \sqrt{\tau_0^2 + (D \cdot L \cdot \Delta\lambda)^2} $$
-这个公式清晰地表明，色散引起的展宽量与色散参数 $D$、传输距离 $L$ 和信号的谱宽 $\Delta\lambda$ 都成正比。例如，一个初始宽度为 $20.0 \text{ ps}$ 的高斯脉冲，在经过 $50.0 \text{ km}$ 且色散参数 $D = +17.0 \text{ ps/(nm·km)}$ 的光纤后，其宽度会展宽到约 $152 \text{ ps}$。[@problem_id:2226494]
+这个公式清晰地表明，色散引起的展宽量与色散参数 $D$、传输距离 $L$ 和信号的谱宽 $\Delta\lambda$ 都成正比。例如，一个初始宽度为 $20.0 \text{ ps}$ 的高斯脉冲，在经过 $50.0 \text{ km}$ 且色散参数 $D = +17.0 \mathrm{ps/(nm\cdot km)}$ 的光纤后，其宽度会展宽到约 $152 \text{ ps}$。[@problem_id:2226494]
 
 在波分复用（WDM）系统中，色度色散的另一个表现是不同波长信道之间的**群延迟差**。由于不同信道的中心波长不同，它们的群折射率 $n_g$ 也不同，导致它们到达终点的时间有差异。例如，在一段 $50.0 \text{ km}$ 的光纤中，波长为 $1540.0 \text{ nm}$ 和 $1560.0 \text{ nm}$ 的两个信道，其到达时间差可能达到 $20.7 \text{ ns}$，这个延迟差在需要信道间同步的系统中必须被考虑。[@problem_id:2226492]
 

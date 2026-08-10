@@ -41,7 +41,7 @@ $$ 3x^3 + 4y^3 + 5z^3 = 0 $$
 
 然而，在20世纪[数学史](@keyword=history_of_mathematics|lang=zh-CN|style=Feynman)上一个巨大的情节转折中，Ernst Selmer 证明了这样的有理数解并不存在 [@problem_id:3027894]。这些局部碎片，尽管完美成型，却无法拼接成一个全局的对象。这首局部的交响乐变成了一曲全局的嘈杂乐。
 
-这种失效并非随机混乱的标志。它指向一个更深、更微妙的算术结构层次。像[塞尔默曲线](@keyword=selmer_curve|lang=zh-CN|style=Feynman)这样的光滑三次曲线是一个**挠子**——一个“想要”成为椭圆曲线但缺少一个[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)来作为其群律原点的对象。所有这类潜在障碍的集合构成一个群，其中那些在各处局部平凡但在全局非平凡的元素，组成了著名的**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)**，通常记为 $\Sha$。[塞尔默曲线](@keyword=selmer_curve|lang=zh-CN|style=Feynman)是 $\Sha$ 中非平凡元素的典型例子。它代表了数论结构中一个隐藏的全局“扭曲”，这种扭曲对任何单一的局部观察者都是不可见的，但它阻止了全局谜题的解决。这种障碍也解释了为什么哈斯范数定理（一个关于域扩张中范数的[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)）对简单的循环扩张成立，但对更复杂的非阿贝尔扩张可能失效，因为在那些情况下，数域本身的理想类群就可能隐藏着这些微妙的障碍 [@problem_id:3027161]。
+这种失效并非随机混乱的标志。它指向一个更深、更微妙的算术结构层次。像[塞尔默曲线](@keyword=selmer_curve|lang=zh-CN|style=Feynman)这样的光滑三次曲线是一个**挠子**——一个“想要”成为椭圆曲线但缺少一个[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)来作为其群律原点的对象。所有这类潜在障碍的集合构成一个群，其中那些在各处局部平凡但在全局非平凡的元素，组成了著名的**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)**，通常记为 $\mathrm{Ш}$。[塞尔默曲线](@keyword=selmer_curve|lang=zh-CN|style=Feynman)是 $\mathrm{Ш}$ 中非平凡元素的典型例子。它代表了数论结构中一个隐藏的全局“扭曲”，这种扭曲对任何单一的局部观察者都是不可见的，但它阻止了全局谜题的解决。这种障碍也解释了为什么哈斯范数定理（一个关于域扩张中范数的[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)）对简单的循环扩张成立，但对更复杂的非阿贝尔扩张可能失效，因为在那些情况下，数域本身的理想类群就可能隐藏着这些微妙的障碍 [@problem_id:3027161]。
 
 ### 统一视角：[互反律](@keyword=reciprocity_laws|lang=zh-CN|style=Feynman)与更广阔的图景
 

@@ -56,7 +56,7 @@ $$
 对于任何给定的矩阵，比如在 $SL(2,\mathbb{R})$ 中的矩阵，我们可以显式地计算这个分解。例如，对于矩阵 $g = \begin{pmatrix} 3 & 1 \\ 2 & 1 \end{pmatrix}$，直接计算 $g^\top g$ 的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)表明，其内在的拉伸因子由一个参数 $t = \frac{1}{2}\ln\left(\frac{15+\sqrt{221}}{2}\right)$ 给出，这个参数定义了对角矩阵 $a = \mathrm{diag}(\exp(t), \exp(-t))$ [@problem_id:3031929]。更一般地，对于任何 $2 \times 2$ 矩阵 $g = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$，这个捕捉了变换“非旋转”部分的内禀拉伸参数 $t$，有一个极其紧凑和优雅的公式：
 
 $$
-t = \mu(g) = \frac{1}{2}\arccosh\left(\frac{a^2+b^2+c^2+d^2}{2}\right)
+t = \mu(g) = \frac{1}{2}\operatorname{arccosh}\left(\frac{a^2+b^2+c^2+d^2}{2}\right)
 $$
 
 这就是**嘉当投影** $\mu(g)$。它本质上衡量了矩阵 $g$ 到纯[旋转群](@keyword=rotation_group|lang=zh-CN|style=Feynman)的几何“距离” [@problem_id:2969854]。

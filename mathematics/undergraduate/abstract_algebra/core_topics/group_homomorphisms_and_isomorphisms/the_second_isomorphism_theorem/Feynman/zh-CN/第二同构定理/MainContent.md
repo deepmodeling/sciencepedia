@@ -57,7 +57,7 @@ $$ (SN)/N \cong S/(S \cap N) $$
 
 *   **视角二（这次我们先走捷径）：** $S \cap N$ 是什么？一次非平凡的翻转不可能是旋转，所以它们的交集只有单位元 $e$。因此，$S/(S \cap N) \cong S/\{e\} \cong S$。这是一个只有两个元素的群 $\mathbb{Z}_2$。
 
-*   **视角一：** 定理告诉我们，通过“大浓雾” $N$ 观察到的组合团队 $SN$ 也应该是一个 $\mathbb{Z}_2$ 结构。让我们验证一下。$SN$ 实际上包含了所有的旋转和翻转，它就是整个 $D_4$ 群 [@problem_id:1653913]。那么 $(SN)/N$ 就是 $D_4/N$。这个[商群](@keyword=factor_groups|lang=zh-CN|style=Feynman)的意义是什么？它是在问：“如果我们不在乎具体转了多少度，只关心一个操作‘是旋转还是翻转’，那么剩下的结构是什么？” 答案很简单：只有两种可能性，要么是“旋转类”（$N$ 本身），要么是“翻转类”（陪集 $sN$）。这个二元划分本身也构成了一个群，一个只有两个元素的群，正是 $\mathbbZ_2$！
+*   **视角一：** 定理告诉我们，通过“大浓雾” $N$ 观察到的组合团队 $SN$ 也应该是一个 $\mathbb{Z}_2$ 结构。让我们验证一下。$SN$ 实际上包含了所有的旋转和翻转，它就是整个 $D_4$ 群 [@problem_id:1653913]。那么 $(SN)/N$ 就是 $D_4/N$。这个[商群](@keyword=factor_groups|lang=zh-CN|style=Feynman)的意义是什么？它是在问：“如果我们不在乎具体转了多少度，只关心一个操作‘是旋转还是翻转’，那么剩下的结构是什么？” 答案很简单：只有两种可能性，要么是“旋转类”（$N$ 本身），要么是“翻转类”（陪集 $sN$）。这个二元划分本身也构成了一个群，一个只有两个元素的群，正是 $\mathbb{Z}_2$！
 
 即使在元素运算顺序至关重要的非交换世界里，这颗钻石依然闪耀着同样的光芒。它将一个复杂的群 ($D_4$) 的结构，巧妙地分解为更简单的部分之间的关系。这种思想在现代物理中极为重要，例如，描述[狭义相对论时空](@keyword=special_relativity_spacetime|lang=zh-CN|style=Feynman)的[庞加莱群](@keyword=poincaré_group|lang=zh-CN|style=Feynman)，就可以被理解为一个更简单的[洛伦兹群](@keyword=lorentz_group|lang=zh-CN|style=Feynman)和[时空](@keyword=space_time|lang=zh-CN|style=Feynman)平移群通过一种名为“半直积”的方式组合而成。而[第二同构定理](@keyword=diamond_isomorphism_theorem|lang=zh-CN|style=Feynman)正是分析这种组合结构的一把钥匙 [@problem_id:1839254]。
 

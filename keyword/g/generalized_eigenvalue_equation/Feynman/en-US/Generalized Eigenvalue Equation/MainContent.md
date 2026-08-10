@@ -75,7 +75,7 @@ Since $B$ is symmetric, so is $B^{-1/2}$, which means $(B^{-1/2})^\top = B^{-1/2
 $$
 \mathbf{y}_i^\top B^{-1/2} B B^{-1/2} \mathbf{y}_j = \mathbf{y}_i^\top I \mathbf{y}_j = \mathbf{y}_i^\top \mathbf{y}_j
 $$
-Because the transformed eigenvectors $\mathbf{y}_i$ and $\mathbfy_j$ are orthogonal, their inner product is zero (for $i \neq j$). This means our original [generalized eigenvectors](@keyword=generalized_eigenvectors|lang=en-US|style=Feynman) are orthogonal with respect to the $B$-metric! [@problem_id:1858673]. This beautiful result reveals the true nature of the problem: the [generalized eigenvectors](@keyword=generalized_eigenvectors|lang=en-US|style=Feynman) form a perfectly orthogonal basis, but in the specific geometry defined by the matrix $B$.
+Because the transformed eigenvectors $\mathbf{y}_i$ and $\mathbf{y}_j$ are orthogonal, their inner product is zero (for $i \neq j$). This means our original [generalized eigenvectors](@keyword=generalized_eigenvectors|lang=en-US|style=Feynman) are orthogonal with respect to the $B$-metric! [@problem_id:1858673]. This beautiful result reveals the true nature of the problem: the [generalized eigenvectors](@keyword=generalized_eigenvectors|lang=en-US|style=Feynman) form a perfectly orthogonal basis, but in the specific geometry defined by the matrix $B$.
 
 ### Walking the Tightrope: When the Metric Fails
 

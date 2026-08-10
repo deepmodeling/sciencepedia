@@ -31,7 +31,7 @@ $$ \Delta G = \Delta H - T\Delta S $$
 
 让我们通过一个处理工业废水的例子来感受一下 [@problem_id:2296906]。为了去除水中有毒的镉离子（$\text{Cd}^{2+}$），我们可以加入碳酸根离子（$\text{CO}_3^{2-}$），使其沉淀为固体的[碳酸](@keyword=carbonic_acid|lang=zh-CN|style=Feynman)镉（$\text{CdCO}_3(s)$）。
 $$ \text{Cd}^{2+}(aq) + \text{CO}_3^{2-}(aq) \rightarrow \text{CdCO}_3(s) $$
-通过计算我们发现，这个反应的[焓变](@keyword=enthalpy_change|lang=zh-CN|style=Feynman) $\Delta H^\circ$ 实际上是一个微小的正值（$+2.44 \text{ kJ/mol}$），意味着它是一个略微吸热的反应。单从能量角度看，它似乎不应该发生。然而，当我们计算[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)时，发现 $\Delta S^\circ$ 是一个相当大的正值（$+222.6 \text{ J/(mol·K)}$）。这是因为原本被水分子“囚禁”和高度有序化[排列](@keyword=permutation|lang=zh-CN|style=Feynman)的离子，在形成固体后，释放了大量的水分子，使得整个溶液的无序度大大增加。在室温（$298.15 \text{ K}$）下，$-T\Delta S^\circ$ 这一项变成了 $-66.4 \text{ kJ/mol}$，它强大的负值足以压倒微小的正焓变，使得最终的 $\Delta G^\circ$ 为 $-63.9 \text{ kJ/mol}$。因此，尽管反应需要吸收一点点热量，但在熵的强大驱动下，沉淀还是自发地、毫不犹豫地发生了。
+通过计算我们发现，这个反应的[焓变](@keyword=enthalpy_change|lang=zh-CN|style=Feynman) $\Delta H^\circ$ 实际上是一个微小的正值（$+2.44 \text{ kJ/mol}$），意味着它是一个略微吸热的反应。单从能量角度看，它似乎不应该发生。然而，当我们计算[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)时，发现 $\Delta S^\circ$ 是一个相当大的正值（$+222.6 \mathrm{J/(mol\cdot K)}$）。这是因为原本被水分子“囚禁”和高度有序化[排列](@keyword=permutation|lang=zh-CN|style=Feynman)的离子，在形成固体后，释放了大量的水分子，使得整个溶液的无序度大大增加。在室温（$298.15 \text{ K}$）下，$-T\Delta S^\circ$ 这一项变成了 $-66.4 \text{ kJ/mol}$，它强大的负值足以压倒微小的正焓变，使得最终的 $\Delta G^\circ$ 为 $-63.9 \text{ kJ/mol}$。因此，尽管反应需要吸收一点点热量，但在熵的强大驱动下，沉淀还是自发地、毫不犹豫地发生了。
 
 ### 熵的微妙之舞：不只是混乱
 

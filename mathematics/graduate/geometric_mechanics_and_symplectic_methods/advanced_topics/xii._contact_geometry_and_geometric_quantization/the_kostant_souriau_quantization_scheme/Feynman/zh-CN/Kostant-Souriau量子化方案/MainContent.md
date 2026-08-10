@@ -69,7 +69,7 @@ $$
 
 ### 极化：从“过大”的空间中选取物理态
 
-[预量子化](@keyword=prequantization|lang=zh-CN|style=Feynman)理论有一个致命的缺陷：它的[希尔伯特空间](@keyword=hilbert_spaces|lang=zh-CN|style=Feynman)“太大”了 [@problem_id:3777758]。以一个最简单的例子为例，考虑在直线 $\mathbb{R}$ 上运动的粒子，其相空间是 $M=\mathbb{R}^2$，坐标为位置 $q$ 和动量 $p$。我们熟悉的薛定谔量子化方案中，[波函数](@keyword=wave_functions|lang=zh-CN|style=Feynman)是位置的函数 $\psi(q)$，希尔伯特空间是 $L^2(\mathbb{R})$。然而，[预量子化](@keyword=prequantization|lang=zh-CN|style=Feynman)的[希尔伯特空间](@keyword=hilbert_spaces|lang=zh-CN|style=Feynman)却是相空间上的[平方可积函数](@keyword=square_integrable_functions|lang=zh-CN|style=Feynman)（或[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)），$L^2(\mathbbR^2)$，即同时依赖于位置和动量的函数 $\psi(q,p)$。
+[预量子化](@keyword=prequantization|lang=zh-CN|style=Feynman)理论有一个致命的缺陷：它的[希尔伯特空间](@keyword=hilbert_spaces|lang=zh-CN|style=Feynman)“太大”了 [@problem_id:3777758]。以一个最简单的例子为例，考虑在直线 $\mathbb{R}$ 上运动的粒子，其相空间是 $M=\mathbb{R}^2$，坐标为位置 $q$ 和动量 $p$。我们熟悉的薛定谔量子化方案中，[波函数](@keyword=wave_functions|lang=zh-CN|style=Feynman)是位置的函数 $\psi(q)$，希尔伯特空间是 $L^2(\mathbb{R})$。然而，[预量子化](@keyword=prequantization|lang=zh-CN|style=Feynman)的[希尔伯特空间](@keyword=hilbert_spaces|lang=zh-CN|style=Feynman)却是相空间上的[平方可积函数](@keyword=square_integrable_functions|lang=zh-CN|style=Feynman)（或[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)），$L^2(\mathbb{R}^2)$，即同时依赖于位置和动量的函数 $\psi(q,p)$。
 
 这个空间之所以“太大”，是因为它所承载的表示是**可约的 (reducible)**。这意味着存在非平凡的算符，它们与所有的[量子算符](@keyword=quantum_operators|lang=zh-CN|style=Feynman) $\widehat{f}$ 都对易。这在物理上是不可接受的，因为它意味着存在无法通过测量区分的量子态，理论中包含了冗余的自由度。薛定谔的表征是不可约的，这才是我们想要的。
 

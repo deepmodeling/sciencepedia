@@ -37,7 +37,7 @@ t_0 = \int_{0}^{1} \frac{da}{a H(a)}
 $$
 其中 $H(a) = H_0 \sqrt{\Omega_{m,0} a^{-3} + (1-\Omega_{m,0})}$。奇迹般地，这个积分可以被解析求解，从而得出了一个关于我们[宇宙年龄](@keyword=age_of_the_universe|lang=zh-CN|style=Feynman)的优美表达式 [@problem_id:1854483]：
 $$
-t_0 = \frac{2}{3 H_{0} \sqrt{1-\Omega_{m,0}}}\,\arcsinh\! \left(\sqrt{\frac{1-\Omega_{m,0}}{\Omega_{m,0}}}\right)
+t_0 = \frac{2}{3 H_{0} \sqrt{1-\Omega_{m,0}}}\,\operatorname{arcsinh}\! \left(\sqrt{\frac{1-\Omega_{m,0}}{\Omega_{m,0}}}\right)
 $$
 代入普朗克卫星等任务的最佳现代测量值（$H_0 \approx 67.4 \text{ km/s/Mpc}, \Omega_{m,0} \approx 0.315$），这个宇宙时钟给出了我们目前对宇宙年龄的最佳估计：**138亿年**。
 

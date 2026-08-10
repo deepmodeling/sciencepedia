@@ -58,7 +58,7 @@ $$
 $$
 当 $\phi$ 从大数值向0滚动时，这两个参数都会随之增大。比较一下，如果 $p > 2$，你会发现 $|\eta_V|$ 的数值比 $\epsilon_V$ 更大。因此，对于这类模型，通常是 $|\eta_V|=1$ 这个条件首先被满足，从而结束暴胀。例如，在一个简单的四次方势能 $V(\phi) = \frac{1}{4}\lambda\phi^4$（即 $p=4$）的模型中，[暴胀](@keyword=inflation|lang=zh-CN|style=Feynman)结束于 $\phi_{end} = \sqrt{12} M_{Pl} \approx 3.46 M_{Pl}$ [@problem_id:1907146]。
 
-而对于其他形状的势能，情况可能就不同了。例如，在一个假设的 $V(\phi) \propto [\sech(\phi/\mu)]^2$ 模型中，结束的条件就可能与模型常数 $\mu$ 有关 [@problem_id:1490462]。这告诉我们一个深刻的道理：[宇宙暴胀](@keyword=cosmological_inflation|lang=zh-CN|style=Feynman)的整部历史——它的发生、持续和终结——都被编码在了[暴胀子](@keyword=inflaton|lang=zh-CN|style=Feynman)势能 $V(\phi)$ 的数学形式之中。
+而对于其他形状的势能，情况可能就不同了。例如，在一个假设的 $V(\phi) \propto [\operatorname{sech}(\phi/\mu)]^2$ 模型中，结束的条件就可能与模型常数 $\mu$ 有关 [@problem_id:1490462]。这告诉我们一个深刻的道理：[宇宙暴胀](@keyword=cosmological_inflation|lang=zh-CN|style=Feynman)的整部历史——它的发生、持续和终结——都被编码在了[暴胀子](@keyword=inflaton|lang=zh-CN|style=Feynman)势能 $V(\phi)$ 的数学形式之中。
 
 ### 丈量膨胀：e-折叠数的倒计时
 

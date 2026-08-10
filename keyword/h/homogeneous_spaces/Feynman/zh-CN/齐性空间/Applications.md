@@ -42,6 +42,6 @@ $G/H$ 描述最引人注目的结果之一，就是能够使用纯代数计算�
 
 一个基本问题是：曲线 $C$ 是否有任何有理点？这等价于问挠子 $C$ 是否是“平凡的”——它是否只是 $E$ 的一个巧妙伪装？数论中的一个核心思想是[局部-全局原理](@keyword=hasse_principle|lang=zh-CN|style=Feynman)：如果一个方程在实数中和对每个素数 $p$ 的 $p$-进数中都有解（局部可解性），它是否必然在有理数中有解（全局可解性）？对于椭圆曲线的挠子，这个原理常常失效！可能存在一个挠子 $C$，它处处局部有解，但全局上没有[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)。
 
-这些“幽灵”解，处处局部存在但全局无处可寻，是数学中最深奥的谜团之一的关键。它们对应于一个特殊群——[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) $\Sha(E/\mathbb{Q})$——的非平凡元素。这个被猜想为有限的群，精确地度量了[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的[局部-全局原理](@keyword=hasse_principle|lang=zh-CN|style=Feynman)的失效程度，并且它是贝赫和斯温纳顿-戴尔猜想的核心对象，该猜想是七个千禧年大奖难题之一 [@problem_id:3013109]。[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)这个抽象概念，竟然出现在现代数论的核心地带，这是数学统一性的一个惊人例证。
+这些“幽灵”解，处处局部存在但全局无处可寻，是数学中最深奥的谜团之一的关键。它们对应于一个特殊群——[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) $\mathrm{Ш}(E/\mathbb{Q})$——的非平凡元素。这个被猜想为有限的群，精确地度量了[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的[局部-全局原理](@keyword=hasse_principle|lang=zh-CN|style=Feynman)的失效程度，并且它是贝赫和斯温纳顿-戴尔猜想的核心对象，该猜想是七个千禧年大奖难题之一 [@problem_id:3013109]。[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)这个抽象概念，竟然出现在现代数论的核心地带，这是数学统一性的一个惊人例证。
 
 从宇宙的形状到原子的[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)，再到寻找古代方程的整数解，[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)的概念提供了一种共同的语言和一套强大的工具。它教给我们一个深刻的教训：通过理解对称性，我们就能理解世界。

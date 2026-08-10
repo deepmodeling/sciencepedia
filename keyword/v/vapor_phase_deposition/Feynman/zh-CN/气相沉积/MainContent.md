@@ -46,7 +46,7 @@ $$SiH_4(g) \rightarrow Si(s) + 2H_2(g)$$
 
 如果一个过程能导致系统**[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman) (Gibbs Free Energy)** ($\Delta G$) 降低，那么它就是[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)上有利的。一个负的 $\Delta G$ 是大自然为反应开的绿灯。对于我们刚才讨论的硅烷[分解反应](@keyword=decomposition_reaction|lang=zh-CN|style=Feynman)，你可能会想，它怎么可能是自发的。我们是从无序的气体 ($SiH_4$) 变成高度有序的固体晶体 ($Si$)。这种有序度的增加（熵减少）难道不会使反应不利吗？
 
-这里存在一个美妙的微妙之处。反应是 $SiH_4(g) \rightarrow Si(s) + 2H_2(g)$。虽然我们形成了一摩尔有序的固体，但我们也从左边的一摩尔气体变成了右边的两摩尔气体！这种更多气体分子的产生导致了熵的显著增加。事实上，在标准条件下，该反应的总[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)为正的 $75.59\,\text{J/(mol·K)}$ [@problem_id:1342257]。这个正的熵变有助于使[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)为负，为反应提供了所需的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)推动力。这种“驱动力”并非固定不变；通过改变压力等工艺条件，我们可以调整 $\Delta G$ 的值，从而有效地促进或抑制沉积 [@problem_id:1280709]。
+这里存在一个美妙的微妙之处。反应是 $SiH_4(g) \rightarrow Si(s) + 2H_2(g)$。虽然我们形成了一摩尔有序的固体，但我们也从左边的一摩尔气体变成了右边的两摩尔气体！这种更多气体分子的产生导致了熵的显著增加。事实上，在标准条件下，该反应的总[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)为正的 $75.59\,\mathrm{J/(mol\cdot K)}$ [@problem_id:1342257]。这个正的熵变有助于使[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)为负，为反应提供了所需的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)推动力。这种“驱动力”并非固定不变；通过改变压力等工艺条件，我们可以调整 $\Delta G$ 的值，从而有效地促进或抑制沉积 [@problem_id:1280709]。
 
 但即使一个反应在[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)上是有利的，如果动力学壁垒太高，它也不会发生。这就是温度发挥作用的地方。对于大多数沉积过程，生长速率遵循**[阿伦尼乌斯方程](@keyword=arrhenius_equation|lang=zh-CN|style=Feynman) (Arrhenius equation)**，该方程告诉我们速率随温度呈[指数增长](@keyword=exponential_growth|lang=zh-CN|style=Feynman)。这种增长的“陡峭程度”取决于**活化能 (activation energy)** ($E_a$)，即反应发生必须克服的能垒。
 

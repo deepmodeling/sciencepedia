@@ -31,7 +31,7 @@ $$ C_P = \left(\frac{\partial H}{\partial T}\right)_P $$
 
 $$ C_P - C_V = nR $$
 
-其中，$n$ 是气体的摩尔数，$R$ 是[理想气体常数](@keyword=universal_gas_constant|lang=zh-CN|style=Feynman) [@problem_id:1983387]。这个公式告诉我们，对于1摩尔的[理想气体](@keyword=perfect_gases|lang=zh-CN|style=Feynman)，[定压热容](@keyword=constant_pressure_heat_capacity|lang=zh-CN|style=Feynman)比[定容热容](@keyword=constant_volume_heat_capacity|lang=zh-CN|style=Feynman)不多不少，正好大一个气体常数 $R$（约 $8.314 \, \text{J/mol·K}$）。这部分能量，就是气体温度升高1 K时，在恒定压力下膨胀做功所消耗的能量。
+其中，$n$ 是气体的摩尔数，$R$ 是[理想气体常数](@keyword=universal_gas_constant|lang=zh-CN|style=Feynman) [@problem_id:1983387]。这个公式告诉我们，对于1摩尔的[理想气体](@keyword=perfect_gases|lang=zh-CN|style=Feynman)，[定压热容](@keyword=constant_pressure_heat_capacity|lang=zh-CN|style=Feynman)比[定容热容](@keyword=constant_volume_heat_capacity|lang=zh-CN|style=Feynman)不多不少，正好大一个气体常数 $R$（约 $8.314 \, \mathrm{J/mol\cdot K}$）。这部分能量，就是气体温度升高1 K时，在恒定压力下膨胀做功所消耗的能量。
 
 那么，是不是所有物质的 $C_P$ 都一定大于 $C_V$ 呢？[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)给出了一个更普适的、也更深刻的回答：
 

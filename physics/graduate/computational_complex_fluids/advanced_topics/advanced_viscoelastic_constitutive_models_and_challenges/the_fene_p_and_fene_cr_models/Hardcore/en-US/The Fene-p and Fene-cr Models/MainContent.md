@@ -1,15 +1,15 @@
 ## Introduction
 The behavior of dilute polymer solutions under flow is a cornerstone of non-Newtonian fluid mechanics, presenting challenges that simpler fluid models cannot address. A key limitation of early theories is the assumption of infinitely extensible polymer chains, which leads to unphysical predictions like infinite stress in strong flows. The Finitely Extensible Nonlinear Elastic (FENE) models were developed to overcome this knowledge gap by incorporating the physical reality that polymer chains have a maximum length. This article provides a graduate-level exploration of two of the most influential FENE models: FENE-P and FENE-CR.
 
-The following chapters will guide you through this topic systematically. In **Principles and Mechanisms**, we will construct these models from the microscopic physics of a bead-spring dumbbell, explain the critical closure problem, and derive the final constitutive equations for both the FENE-P and FENE-CR variants. Next, in **Applications and Interdisciplinary Connections**, we will explore how these models predict key rheological phenomena, their utility in simulating complex flows, and their connection to experimental practice. Finally, **Hands-On Practices** will provide you with the opportunity to apply these concepts to solve concrete problems in rheological analysis and simulation.
+The following chapters will guide you through this topic systematically. In **Principles and Mechanisms**, we will construct these models from the microscopic physics of a bead-spring dumbbell, explain the critical closure problem, and derive the final [constitutive equations](@keyword=constitutive_equations|lang=en-US|style=Feynman) for both the FENE-P and FENE-CR variants. Next, in **Applications and Interdisciplinary Connections**, we will explore how these models predict key rheological phenomena, their utility in simulating complex flows, and their connection to experimental practice. Finally, **Hands-On Practices** will provide you with the opportunity to apply these concepts to solve concrete problems in rheological analysis and simulation.
 
 ## Principles and Mechanisms
 
-The behavior of dilute polymer solutions under flow is a canonical problem in non-Newtonian fluid mechanics. While the preceding chapter introduced the conceptual framework of using simplified microscopic models to derive macroscopic constitutive equations, this chapter delves into the specific principles and mechanisms of two of the most influential models: the Finitely Extensible Nonlinear Elastic–Peterlin (FENE-P) model and its important variant, the Finitely Extensible Nonlinear Elastic–Chilcott–Rallison (FENE-CR) model. We will construct these models from their physical origins, analyze their mathematical structure, compare their rheological predictions, and discuss the computational challenges they present.
+The behavior of dilute [polymer solutions](@keyword=polymer_solutions|lang=en-US|style=Feynman) under flow is a canonical problem in non-Newtonian fluid mechanics. While the preceding chapter introduced the conceptual framework of using simplified microscopic models to derive macroscopic [constitutive equations](@keyword=constitutive_equations|lang=en-US|style=Feynman), this chapter delves into the specific principles and mechanisms of two of the most influential models: the Finitely Extensible Nonlinear Elastic–Peterlin (FENE-P) model and its important variant, the Finitely Extensible Nonlinear Elastic–Chilcott–Rallison (FENE-CR) model. We will construct these models from their physical origins, analyze their mathematical structure, compare their rheological predictions, and discuss the computational challenges they present.
 
 ### From Microscopic Physics to Macroscopic Models
 
-The foundation of these models is the **bead-spring dumbbell**, which idealizes a flexible polymer chain as two beads connected by a spring. The beads represent centers of hydrodynamic drag, while the spring represents the entropic elasticity of the polymer chain.
+The foundation of these models is the **bead-spring dumbbell**, which idealizes a flexible polymer chain as two beads connected by a spring. The beads represent centers of hydrodynamic drag, while the spring represents the [entropic elasticity](@keyword=entropic_elasticity|lang=en-US|style=Feynman) of the polymer chain.
 
 #### The FENE Spring Potential and Force
 
@@ -23,23 +23,23 @@ Here, $H$ is the spring constant in the small-extension (Hookean) limit, and $R_
 
 $\boldsymbol{F}_s(\boldsymbol{R}) = -\frac{H}{1 - R^2/R_0^2} \boldsymbol{R}$
 
-As the extension $R$ approaches the limit $R_0$, the denominator approaches zero, and the restoring force diverges to infinity, correctly capturing the physical principle of **finite extensibility**.
+As the extension $R$ approaches the limit $R_0$, the denominator approaches zero, and the restoring force diverges to infinity, correctly capturing the physical principle of **[finite extensibility](@keyword=finite_extensibility|lang=en-US|style=Feynman)**.
 
 #### Connecting Microscopic and Macroscopic Parameters
 
-The continuum-level FENE-P and FENE-CR models are typically expressed using a set of macroscopic material parameters: an elastic modulus $G$, a relaxation time $\lambda$, and a dimensionless finite extensibility parameter $b$. These parameters are not arbitrary; they have direct physical interpretations rooted in the microscopic parameters of the dumbbell model [@problem_id:4106733].
+The continuum-level FENE-P and FENE-CR models are typically expressed using a set of macroscopic material parameters: an elastic modulus $G$, a relaxation time $\lambda$, and a dimensionless [finite extensibility](@keyword=finite_extensibility|lang=en-US|style=Feynman) parameter $b$. These parameters are not arbitrary; they have direct physical interpretations rooted in the microscopic parameters of the dumbbell model [@problem_id:4106733].
 
-1.  **Elastic Modulus ($G$)**: The elastic modulus in a dilute polymer solution arises primarily from entropic effects. It represents the stress scale associated with the thermal energy of the polymer chains. For a solution with a number density of dumbbells $n$ at an absolute temperature $T$, the modulus is given by:
+1.  **Elastic Modulus ($G$)**: The elastic modulus in a [dilute polymer solution](@keyword=dilute_polymer_solution|lang=en-US|style=Feynman) arises primarily from entropic effects. It represents the stress scale associated with the thermal energy of the polymer chains. For a solution with a [number density](@keyword=number_density|lang=en-US|style=Feynman) of dumbbells $n$ at an absolute temperature $T$, the modulus is given by:
     $G = n k_B T$
     where $k_B$ is the Boltzmann constant.
 
 2.  **Relaxation Time ($\lambda$)**: The characteristic relaxation time of the model is defined in the Hookean limit. It represents the time scale over which a stretched polymer coil returns to its equilibrium configuration due to a balance between the spring's restoring force and the hydrodynamic drag on the beads. For a dumbbell with a spring constant $H$ and a bead drag coefficient $\zeta$, the relaxation time for the second moment of the end-to-end vector (which governs stress) is:
     $\lambda = \frac{\zeta}{4H}$
 
-3.  **Finite Extensibility Parameter ($b$ or $L^2$)**: This dimensionless parameter quantifies the degree of finite extensibility. It is defined as the ratio of the maximum squared extension ($R_0^2$ or $Q_0^2$) to the mean-square end-to-end distance of the dumbbell at thermal equilibrium, $\langle R^2 \rangle_{\text{eq}}$. From the equipartition theorem for a three-dimensional harmonic oscillator, $\langle R^2 \rangle_{\text{eq}} = 3k_B T / H$. Therefore, the parameter, often denoted as $b$ or $L^2$, is:
+3.  **Finite Extensibility Parameter ($b$ or $L^2$)**: This dimensionless parameter quantifies the degree of [finite extensibility](@keyword=finite_extensibility|lang=en-US|style=Feynman). It is defined as the ratio of the maximum squared extension ($R_0^2$ or $Q_0^2$) to the [mean-square end-to-end distance](@keyword=mean_square_end_to_end_distance|lang=en-US|style=Feynman) of the dumbbell at thermal equilibrium, $\langle R^2 \rangle_{\text{eq}}$. From the [equipartition theorem](@keyword=equipartition_theorem|lang=en-US|style=Feynman) for a three-dimensional harmonic oscillator, $\langle R^2 \rangle_{\text{eq}} = 3k_B T / H$. Therefore, the parameter, often denoted as $b$ or $L^2$, is:
     $b = L^2 = \frac{R_0^2}{\langle R^2 \rangle_{\text{eq}}} = \frac{H R_0^2}{3k_B T}$
 
-This mapping provides the crucial link between the underlying molecular physics and the parameters that appear in the final macroscopic constitutive equations.
+This mapping provides the crucial link between the underlying [molecular physics](@keyword=molecular_physics|lang=en-US|style=Feynman) and the parameters that appear in the final macroscopic [constitutive equations](@keyword=constitutive_equations|lang=en-US|style=Feynman).
 
 ### The Conformation Tensor and the Closure Problem
 
@@ -51,17 +51,17 @@ The evolution of $\mathbf{A}$ in a flow field can be derived from the Smoluchows
 
 $\overset{\triangledown}{\mathbf{A}} = -\frac{2}{\zeta}(\langle \boldsymbol{R} \boldsymbol{F}_s \rangle - 2k_B T \mathbf{I})$
 
-Here, $\overset{\triangledown}{\mathbf{A}}$ is the **upper-convected time derivative**, which ensures that the evolution equation is frame-invariant (objective). It is defined as $\overset{\triangledown}{\mathbf{A}} = \frac{D\mathbf{A}}{Dt} - (\nabla\boldsymbol{u}) \cdot \mathbf{A} - \mathbf{A} \cdot (\nabla\boldsymbol{u})^T$, where $\frac{D}{Dt}$ is the material derivative and $\nabla\boldsymbol{u}$ is the velocity gradient tensor.
+Here, $\overset{\triangledown}{\mathbf{A}}$ is the **upper-convected time derivative**, which ensures that the evolution equation is frame-invariant (objective). It is defined as $\overset{\triangledown}{\mathbf{A}} = \frac{D\mathbf{A}}{Dt} - (\nabla\boldsymbol{u}) \cdot \mathbf{A} - \mathbf{A} \cdot (\nabla\boldsymbol{u})^T$, where $\frac{D}{Dt}$ is the [material derivative](@keyword=material_derivative|lang=en-US|style=Feynman) and $\nabla\boldsymbol{u}$ is the [velocity gradient tensor](@keyword=velocity_gradient_tensor|lang=en-US|style=Feynman).
 
 The polymeric contribution to the total stress, $\boldsymbol{\tau}_p$, is given by the **Kramers expression**, which also depends on the average spring force:
 
 $\boldsymbol{\tau}_p = n(\langle \boldsymbol{R} \boldsymbol{F}_s \rangle - k_B T \mathbf{I})$
 
-Notice the term $\langle \boldsymbol{R} \boldsymbol{F}_s \rangle$ appears in both equations. Substituting the FENE force law, this term becomes $H \langle \frac{\boldsymbol{R}\boldsymbol{R}}{1 - R^2/R_0^2} \rangle$. This presents a mathematical hurdle: the average of a ratio is not the ratio of averages. We cannot express this term exactly using only $\mathbf{A} = \langle \boldsymbol{R}\boldsymbol{R} \rangle$. This is known as the **closure problem**. The FENE-P and FENE-CR models represent two different solutions, or **closures**, to this problem.
+Notice the term $\langle \boldsymbol{R} \boldsymbol{F}_s \rangle$ appears in both equations. Substituting the FENE force law, this term becomes $H \langle \frac{\boldsymbol{R}\boldsymbol{R}}{1 - R^2/R_0^2} \rangle$. This presents a mathematical hurdle: the average of a ratio is not the ratio of averages. We cannot express this term exactly using only $\mathbf{A} = \langle \boldsymbol{R}\boldsymbol{R} \rangle$. This is known as the **closure problem**. The FENE-P and FENE-CR models represent two different solutions, or **[closures](@keyword=closures|lang=en-US|style=Feynman)**, to this problem.
 
 ### The FENE-P Model: The Peterlin Mean-Field Approach
 
-The FENE-P model employs the **Peterlin closure**, a mean-field approximation that replaces the microscopic variable $R^2$ in the denominator with its ensemble average, $\langle R^2 \rangle$ [@problem_id:4106738].
+The FENE-P model employs the **Peterlin closure**, a [mean-field approximation](@keyword=mean_field_approximation|lang=en-US|style=Feynman) that replaces the microscopic variable $R^2$ in the denominator with its ensemble average, $\langle R^2 \rangle$ [@problem_id:4106738].
 
 #### The Peterlin Approximation and the Emergence of $f(\mathbf{A})$
 
@@ -69,11 +69,11 @@ The approximation is formally stated as:
 
 $\left\langle \frac{\boldsymbol{R}\boldsymbol{R}}{1 - R^2/R_0^2} \right\rangle \approx \frac{\langle \boldsymbol{R}\boldsymbol{R} \rangle}{1 - \langle R^2 \rangle / R_0^2} = \frac{\mathbf{A}}{1 - \operatorname{tr}(\mathbf{A}) / R_0^2}$
 
-This introduces a scalar function, often denoted $f(\mathbf{A})$, which depends on the trace of the conformation tensor, $\operatorname{tr}(\mathbf{A}) = \langle R^2 \rangle$. This function encapsulates the nonlinear effect of finite extensibility at the macroscopic level.
+This introduces a scalar function, often denoted $f(\mathbf{A})$, which depends on the trace of the conformation tensor, $\operatorname{tr}(\mathbf{A}) = \langle R^2 \rangle$. This function encapsulates the nonlinear effect of [finite extensibility](@keyword=finite_extensibility|lang=en-US|style=Feynman) at the macroscopic level.
 
 #### Ensuring Thermodynamic Consistency: The Warner Function
 
-Direct substitution of the Peterlin approximation into the evolution equation for $\mathbf{A}$ leads to an inconsistency: the model does not predict the correct equilibrium conformation tensor. To resolve this, a corrected function is introduced that ensures the model satisfies the equilibrium condition $f(\mathbf{A}_{\text{eq}}) = 1$ [@problem_id:4106678]. This corrected function, sometimes called the **Warner function**, depends on the dimensionless extensibility parameter $b = L^2$. If we use a dimensionless conformation tensor $\tilde{\mathbf{A}} = \mathbf{A} / (k_B T / H)$, which is equal to the identity tensor $\mathbf{I}$ at equilibrium, the function takes the form:
+Direct substitution of the Peterlin approximation into the evolution equation for $\mathbf{A}$ leads to an inconsistency: the model does not predict the correct equilibrium [conformation tensor](@keyword=conformation_tensor|lang=en-US|style=Feynman). To resolve this, a corrected function is introduced that ensures the model satisfies the equilibrium condition $f(\mathbf{A}_{\text{eq}}) = 1$ [@problem_id:4106678]. This corrected function, sometimes called the **Warner function**, depends on the dimensionless extensibility parameter $b = L^2$. If we use a dimensionless [conformation tensor](@keyword=conformation_tensor|lang=en-US|style=Feynman) $\tilde{\mathbf{A}} = \mathbf{A} / (k_B T / H)$, which is equal to the identity tensor $\mathbf{I}$ at equilibrium, the function takes the form:
 
 $f(\tilde{\mathbf{A}}) = \frac{L^2 - 3}{L^2 - \operatorname{tr}(\tilde{\mathbf{A}})}$
 
@@ -93,11 +93,11 @@ The factor $G$ is the polymer modulus, and the function $f$ would be defined app
 
 ### The FENE-CR Model: The Chilcott-Rallison Modification
 
-While the FENE-P model is a direct consequence of the Peterlin closure, it exhibits some unphysical rheological behaviors, such as an unbounded extensional viscosity, and can be numerically challenging. The **FENE-CR model**, proposed by Chilcott and Rallison, is a modification designed to remedy these issues.
+While the FENE-P model is a direct consequence of the Peterlin closure, it exhibits some unphysical rheological behaviors, such as an unbounded [extensional viscosity](@keyword=extensional_viscosity|lang=en-US|style=Feynman), and can be numerically challenging. The **FENE-CR model**, proposed by Chilcott and Rallison, is a modification designed to remedy these issues.
 
 #### Motivation: Improving Physical Predictions and Numerical Tractability
 
-The core idea of the FENE-CR model is to retain the finite extensibility effect in the dynamics of the polymer conformation, but to simplify the relationship between stress and conformation. This pragmatic choice leads to more realistic predictions in strong extensional flows and often improves the numerical stability of simulations.
+The core idea of the FENE-CR model is to retain the [finite extensibility](@keyword=finite_extensibility|lang=en-US|style=Feynman) effect in the dynamics of the polymer conformation, but to simplify the relationship between stress and conformation. This pragmatic choice leads to more realistic predictions in strong extensional flows and often improves the numerical stability of simulations.
 
 #### A Decoupled Stress-Conformation Relation
 
@@ -105,7 +105,7 @@ The FENE-CR model achieves this by postulating a simple, Hookean-like relationsh
 
 #### The FENE-CR Constitutive Equations
 
-The structural difference between the two models is stark. For a conformation tensor $\mathbf{A}$ normalized to $\mathbf{A}_{\text{eq}} = \mathbf{I}$, the FENE-CR equations are [@problem_id:4106686] [@problem_id:410710]:
+The structural difference between the two models is stark. For a [conformation tensor](@keyword=conformation_tensor|lang=en-US|style=Feynman) $\mathbf{A}$ normalized to $\mathbf{A}_{\text{eq}} = \mathbf{I}$, the FENE-CR equations are [@problem_id:4106686] [@problem_id:410710]:
 
 **FENE-CR Evolution Equation:**
 $\overset{\triangledown}{\mathbf{A}} = -\frac{1}{\lambda} f(\mathbf{A}) [\mathbf{A} - \mathbf{I}]$
@@ -121,23 +121,23 @@ The structural differences between FENE-P and FENE-CR lead to distinct predictio
 
 #### The Hookean Limit: Recovering the Oldroyd-B Model
 
-A fundamental consistency check for any FENE model is its behavior in the limit of infinite extensibility ($b \to \infty$). In this limit, the FENE spring should behave as a simple Hookean spring, and the constitutive model should reduce to the **Oldroyd-B model**. For both FENE-P and FENE-CR, as $b \to \infty$, the function $f(\mathbfA) \to 1$. Substituting $f(\mathbfA)=1$ into the equations for both models yields the same set of equations:
+A fundamental consistency check for any FENE model is its behavior in the limit of infinite extensibility ($b \to \infty$). In this limit, the FENE spring should behave as a simple Hookean spring, and the constitutive model should reduce to the **Oldroyd-B model**. For both FENE-P and FENE-CR, as $b \to \infty$, the function $f(\mathbf{A}) \to 1$. Substituting $f(\mathbf{A})=1$ into the equations for both models yields the same set of equations:
 $\overset{\triangledown}{\mathbf{A}} = -\frac{1}{\lambda}[\mathbf{A} - \mathbf{I}]$
 $\boldsymbol{\tau}_p = G[\mathbf{A} - \mathbf{I}]$
 These are precisely the equations for the Oldroyd-B model. Thus, both models correctly capture the Hookean limit [@problem_id:4106738].
 
 #### Zero-Shear Viscosity: A Quantitative Comparison
 
-A more subtle comparison can be made by examining the zero-shear viscosity, $\eta_{p,0}$, predicted by each model in the limit of very low shear rates. By linearizing the constitutive equations around the equilibrium state, one can derive analytic expressions for $\eta_{p,0}$ as a function of the extensibility parameter $b$ [@problem_id:4106664]. The results, normalized by the Oldroyd-B viscosity $G\lambda$, are:
+A more subtle comparison can be made by examining the zero-shear viscosity, $\eta_{p,0}$, predicted by each model in the limit of very low shear rates. By linearizing the [constitutive equations](@keyword=constitutive_equations|lang=en-US|style=Feynman) around the equilibrium state, one can derive analytic expressions for $\eta_{p,0}$ as a function of the extensibility parameter $b$ [@problem_id:4106664]. The results, normalized by the Oldroyd-B viscosity $G\lambda$, are:
 
 -   **FENE-P**: $\frac{\eta_{p,0}}{G\lambda} = \frac{b}{b+2}$
 -   **FENE-CR**: $\frac{\eta_{p,0}}{G\lambda} = \frac{b-3}{b}$ (valid for $b>3$)
 
-These expressions reveal that for any finite $b$, both models predict a shear viscosity lower than the Oldroyd-B model. This phenomenon is known as **shear thinning**, where the viscosity decreases with increasing shear rate (or in this case, with increasing finite extensibility effect). The functional forms are different, highlighting that the choice of closure has a quantitative impact even in weak flows.
+These expressions reveal that for any finite $b$, both models predict a shear viscosity lower than the Oldroyd-B model. This phenomenon is known as **[shear thinning](@keyword=shear_thinning_2|lang=en-US|style=Feynman)**, where the viscosity decreases with increasing shear rate (or in this case, with increasing [finite extensibility](@keyword=finite_extensibility|lang=en-US|style=Feynman) effect). The functional forms are different, highlighting that the choice of closure has a quantitative impact even in weak flows.
 
 #### Behavior in Strong Flows: An Illustrative Calculation
 
-The most dramatic differences between the models appear in strong flows, such as steady uniaxial extension. In such a flow, one can solve the steady-state evolution equation to find the components of the conformation tensor $\mathbf{A}$. For the FENE-CR model, this involves solving a self-consistent algebraic equation for the Peterlin function $f$ [@problem_id:4106702]. For a given Weissenberg number $Wi = \lambda \dot{\epsilon}$ (where $\dot{\epsilon}$ is the extension rate) and extensibility $L^2 = b$, one can find the value of $f$ and, subsequently, the components of $\mathbf{A}$, such as the axial stretch component $A_{11}$. This calculation demonstrates that the conformation, and thus the stress, is a complex, nonlinear function of the flow strength and material parameters, a hallmark of viscoelastic models.
+The most dramatic differences between the models appear in strong flows, such as steady uniaxial extension. In such a flow, one can solve the steady-[state evolution](@keyword=state_evolution|lang=en-US|style=Feynman) equation to find the components of the conformation tensor $\mathbf{A}$. For the FENE-CR model, this involves solving a self-consistent algebraic equation for the Peterlin function $f$ [@problem_id:4106702]. For a given Weissenberg number $Wi = \lambda \dot{\epsilon}$ (where $\dot{\epsilon}$ is the extension rate) and extensibility $L^2 = b$, one can find the value of $f$ and, subsequently, the components of $\mathbf{A}$, such as the axial stretch component $A_{11}$. This calculation demonstrates that the conformation, and thus the stress, is a complex, nonlinear function of the flow strength and material parameters, a hallmark of [viscoelastic models](@keyword=viscoelastic_models|lang=en-US|style=Feynman).
 
 ### Computational Challenges and Modern Solutions
 
@@ -145,12 +145,12 @@ Implementing the FENE-P and FENE-CR models in numerical simulations, especially 
 
 #### Numerical Stiffness and Convective Instabilities
 
-The HWNP has two main sources. First, the evolution equation for $\mathbf{A}$ is a convection-dominated hyperbolic partial differential equation, which is prone to spurious numerical oscillations if not treated with appropriate stabilization schemes like the **Streamline Upwind/Petrov-Galerkin (SUPG)** method.
+The HWNP has two main sources. First, the evolution equation for $\mathbf{A}$ is a convection-dominated [hyperbolic partial differential equation](@keyword=hyperbolic_partial_differential_equation|lang=en-US|style=Feynman), which is prone to spurious [numerical oscillations](@keyword=numerical_oscillations|lang=en-US|style=Feynman) if not treated with appropriate stabilization schemes like the **Streamline Upwind/Petrov-Galerkin (SUPG)** method.
 
-Second, and more critically for FENE models, the relaxation term becomes extremely **stiff**. As the polymer stretches and $\operatorname{tr}(\mathbf{A})$ approaches the limit $b$, the function $f(\mathbf{A})$ diverges. In a time-dependent simulation, this requires an impractically small time step for an explicit time integration scheme to remain stable. The solution is to treat the stiff relaxation term **implicitly**, which allows for much larger, physically relevant time steps.
+Second, and more critically for FENE models, the relaxation term becomes extremely **stiff**. As the polymer stretches and $\operatorname{tr}(\mathbf{A})$ approaches the limit $b$, the function $f(\mathbf{A})$ diverges. In a time-dependent simulation, this requires an impractically small time step for an [explicit time integration](@keyword=explicit_time_integration|lang=en-US|style=Feynman) scheme to remain stable. The solution is to treat the stiff relaxation term **implicitly**, which allows for much larger, physically relevant time steps.
 
 #### Strategies for Robust Simulation: The Log-Conformation Method
 
-Even with stabilized advection and implicit relaxation, standard numerical methods can fail to preserve the physical constraints on the conformation tensor: it must remain symmetric and positive-definite ($\mathbf{A} \succ \mathbf{0}$). A powerful modern technique to enforce this constraint automatically is the **log-conformation method**. Instead of solving for $\mathbf{A}$ directly, the simulation solves for its matrix logarithm, $\boldsymbol{\Psi} = \log(\mathbf{A})$. The conformation tensor is then recovered via the matrix exponential, $\mathbf{A} = \exp(\boldsymbol{\Psi})$, which is guaranteed to be positive-definite for any real, symmetric $\boldsymbol{\Psi}$. This change of variables significantly improves the robustness and stability of viscoelastic flow simulations at high Weissenberg numbers, making the analysis of complex flows with FENE models computationally feasible.
+Even with stabilized advection and implicit relaxation, standard numerical methods can fail to preserve the physical constraints on the [conformation tensor](@keyword=conformation_tensor|lang=en-US|style=Feynman): it must remain symmetric and positive-definite ($\mathbf{A} \succ \mathbf{0}$). A powerful modern technique to enforce this constraint automatically is the **[log-conformation method](@keyword=log_conformation_method|lang=en-US|style=Feynman)**. Instead of solving for $\mathbf{A}$ directly, the simulation solves for its [matrix logarithm](@keyword=matrix_logarithm|lang=en-US|style=Feynman), $\boldsymbol{\Psi} = \log(\mathbf{A})$. The [conformation tensor](@keyword=conformation_tensor|lang=en-US|style=Feynman) is then recovered via the matrix exponential, $\mathbf{A} = \exp(\boldsymbol{\Psi})$, which is guaranteed to be positive-definite for any real, symmetric $\boldsymbol{\Psi}$. This change of variables significantly improves the robustness and stability of [viscoelastic flow](@keyword=viscoelastic_flow|lang=en-US|style=Feynman) simulations at high Weissenberg numbers, making the analysis of complex flows with FENE models computationally feasible.
 
-In summary, the FENE-P and FENE-CR models provide a rich theoretical framework for understanding and predicting the behavior of polymer solutions. They are derived from clear physical principles, but their translation into macroscopic equations requires a closure approximation. The choice of closure (FENE-P vs. FENE-CR) fundamentally alters the model's structure, leading to different rheological predictions and presenting unique computational challenges that have spurred the development of advanced numerical techniques.
+In summary, the FENE-P and FENE-CR models provide a rich theoretical framework for understanding and predicting the behavior of [polymer solutions](@keyword=polymer_solutions|lang=en-US|style=Feynman). They are derived from clear physical principles, but their translation into macroscopic equations requires a closure approximation. The choice of closure (FENE-P vs. FENE-CR) fundamentally alters the model's structure, leading to different rheological predictions and presenting unique computational challenges that have spurred the development of advanced numerical techniques.

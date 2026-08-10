@@ -29,13 +29,13 @@ $$R_{c}'' \equiv \frac{\Delta T}{q''}$$
 
 热接触电阻的概念极大地简化了涉及复合材料系统的热分析。通过将其视为一个分立的电路元件，我们可以方便地应用**热阻网络模型**（thermal resistance network model）。在一个一维稳态导热问题中，总热阻是各个部分热阻的串联之和。
 
-一个典型的例子是现代微电子器件的散热 [@problem_id:1866383]。考虑一个高性能CPU芯片，其产生的热量需要通过硅（Si）芯片、接触界面，最终传导至铝（Al）散热器。假设一个边长为 $s = 2.0 \text{ cm}$ 的方形硅芯片，厚度 $L_{Si} = 0.50 \text{ mm}$，其上产生 $P_g = 120 \text{ W}$ 的热量。芯片与散热器之间的单位面积热接触电阻为 $R_{t,c}'' = 1.2 \times 10^{-4} \text{ m}^2 \cdot \text{K/W}$。硅和铝的热导率分别为 $k_{Si} = 148 \text{ W/(m·K)}$ 和 $k_{Al} = 237 \text{ W/(m·K)}$。如果在距离界面 $L_{Al} = 6.0 \text{ mm}$ 处的散热器内部测得温度为 $T_{\text{sink}} = 45.0 \text{ °C}$，我们可以利用热阻网络计算芯片发热面的工作温度 $T_{\text{active}}$。
+一个典型的例子是现代微电子器件的散热 [@problem_id:1866383]。考虑一个高性能CPU芯片，其产生的热量需要通过硅（Si）芯片、接触界面，最终传导至铝（Al）散热器。假设一个边长为 $s = 2.0 \text{ cm}$ 的方形硅芯片，厚度 $L_{Si} = 0.50 \text{ mm}$，其上产生 $P_g = 120 \text{ W}$ 的热量。芯片与散热器之间的单位面积热接触电阻为 $R_{t,c}'' = 1.2 \times 10^{-4} \text{ m}^2 \cdot \text{K/W}$。硅和铝的热导率分别为 $k_{Si} = 148 \mathrm{W/(m\cdot K)}$ 和 $k_{Al} = 237 \mathrm{W/(m\cdot K)}$。如果在距离界面 $L_{Al} = 6.0 \text{ mm}$ 处的散热器内部测得温度为 $T_{\text{sink}} = 45.0 \text{ °C}$，我们可以利用热阻网络计算芯片发热面的工作温度 $T_{\text{active}}$。
 
 首先，计算热流通过的面积 $A = s^2 = (0.020 \text{ m})^2 = 4.0 \times 10^{-4} \text{ m}^2$，以及平均热通量 $q'' = P_g / A = 120 \text{ W} / (4.0 \times 10^{-4} \text{ m}^2) = 3.0 \times 10^5 \text{ W/m}^2$。
 
 系统总的单位面积热阻由三部分串联而成：硅芯片的体电阻 $R_{Si}''$，界面的接触电阻 $R_{t,c}''$，以及部分铝散热器的体电阻 $R_{Al}''$。
-$$R_{Si}'' = \frac{L_{Si}}{k_{Si}} = \frac{5.0 \times 10^{-4} \text{ m}}{148 \text{ W/(m·K)}} \approx 3.38 \times 10^{-6} \text{ m}^2 \cdot \text{K/W}$$
-$$R_{Al}'' = \frac{L_{Al}}{k_{Al}} = \frac{6.0 \times 10^{-3} \text{ m}}{237 \text{ W/(m·K)}} \approx 2.53 \times 10^{-5} \text{ m}^2 \cdot \text{K/W}$$
+$$R_{Si}'' = \frac{L_{Si}}{k_{Si}} = \frac{5.0 \times 10^{-4} \text{ m}}{148 \mathrm{W/(m\cdot K)}} \approx 3.38 \times 10^{-6} \text{ m}^2 \cdot \text{K/W}$$
+$$R_{Al}'' = \frac{L_{Al}}{k_{Al}} = \frac{6.0 \times 10^{-3} \text{ m}}{237 \mathrm{W/(m\cdot K)}} \approx 2.53 \times 10^{-5} \text{ m}^2 \cdot \text{K/W}$$
 
 总温降 $\Delta T_{total}$ 为热通量乘以总热阻：
 $$\Delta T_{total} = q'' (R_{Si}'' + R_{t,c}'' + R_{Al}'')$$
@@ -152,7 +152,7 @@ $$R_{\text{total\_bd}} = \frac{5\hbar^{3}\left(v_{Au}^{2}+v_{Si}^{2}\right)}{2\p
 
 TTM的核心思想是，在金属内部靠近界面的区域，电子和晶格（声子）可以处于不同的温度，分别记为电子温度 $T_e(z)$ 和声子温度 $T_p(z)$。这两个子系统通过一个体积能量交换项 $g(T_e - T_p)$ 相互作用，其中 $g$ 是**电子-声子耦合因子**。
 
-通过求解稳态下电子和声子的热传导方程组，可以导出一个更精细的有效界面[热导](@entry_id:189019) $G_{\mathrm{eff}}$。分析表明，总的有效界面热阻 $R_{\mathrm{eff}} = 1/G_{\mathrm{eff}}$ 由三个串联的电阻项构成：
+通过求解稳态下电子和声子的热传导方程组，可以导出一个更精细的有效界面[热导](@keyword=thermal_conductance|lang=zh-CN|style=Feynman) $G_{\mathrm{eff}}$。分析表明，总的有效界面热阻 $R_{\mathrm{eff}} = 1/G_{\mathrm{eff}}$ 由三个串联的电阻项构成：
 1.  **界面本身的卡皮察电阻** ($R_K = 1/H_K$)，描述金属声子与电介质声子之间的交换。
 2.  **金属薄膜的并联体电阻** ($R_{film,p} = L/(k_e+k_p)$)，其中 $k_e$ 和 $k_p$ 分别是电子和声子的热导率。
 3.  **非平衡热阻** ($R_{neq}$)，它源于电子和声子在达到热平衡前需要一定的空间距离。该项与电子-声子耦合因子 $g$ 和一个特征长度——**电子-声子热化长度** $\lambda$——密切相关。

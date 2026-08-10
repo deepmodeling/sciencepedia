@@ -62,7 +62,7 @@ y = x \frac{dy}{dx} + f\left(\frac{dy}{dx}\right)
 $$
 正如我们在手电筒问题中看到的，这个方程有两种解。第一种是一族直线 $y = cx + f(c)$，被称为通解。第二种是奇解，它是这族直线的包络。
 
-这种数学结构在**焦散线**现象中有着惊人的物理表现。[焦散线](@keyword=caustics|lang=zh-CN|style=Feynman)是你看到咖啡杯底部那条明亮的弯曲线，由光线从其内表面反射形成。每一条反射光线都是一条直线。所有反射光线的族群可以用[克莱罗方程](@keyword=clairaut_equation|lang=zh-CN|style=Feynman)来描述。那条明亮的[焦散曲线](@keyword=caustic_curve|lang=zh-CN|style=Feynman)正是这族光线的包络 [@problem_id:2164590]！这是光线“聚集”的地方，是光[线密度](@keyword=linear_mass_density|lang=zh-CN|style=Feynman)最高的地方。奇解的数学直接预测了这些美丽光斑的形状。对于由 $y = xp - \cosh(p)$ 描述的一族光线，其产生的焦散线是曲线 $y = x \arcsinh(x) - \sqrt{1+x^2}$，这个形状是直接使用寻找包络的技术推导出来的。
+这种数学结构在**焦散线**现象中有着惊人的物理表现。[焦散线](@keyword=caustics|lang=zh-CN|style=Feynman)是你看到咖啡杯底部那条明亮的弯曲线，由光线从其内表面反射形成。每一条反射光线都是一条直线。所有反射光线的族群可以用[克莱罗方程](@keyword=clairaut_equation|lang=zh-CN|style=Feynman)来描述。那条明亮的[焦散曲线](@keyword=caustic_curve|lang=zh-CN|style=Feynman)正是这族光线的包络 [@problem_id:2164590]！这是光线“聚集”的地方，是光[线密度](@keyword=linear_mass_density|lang=zh-CN|style=Feynman)最高的地方。奇解的数学直接预测了这些美丽光斑的形状。对于由 $y = xp - \cosh(p)$ 描述的一族光线，其产生的焦散线是曲线 $y = x \operatorname{arcsinh}(x) - \sqrt{1+x^2}$，这个形状是直接使用寻找包络的技术推导出来的。
 
 ### 曲线的隐藏架构
 

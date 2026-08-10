@@ -57,7 +57,7 @@ $$ \underbrace{|((l_1 s_1)j_1, (l_2 s_2)j_2)J M\rangle}_{\text{jj耦合}} \quad 
 
 这整个优美的[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)——这种优雅的对称性语言——建立在一系列看似随意的选择之上，这些选择被称为**相位约定**。角动量的基本[对易关系](@keyword=commutation_relations|lang=zh-CN|style=Feynman)固定了[矩阵元](@keyword=matrix_elements|lang=zh-CN|style=Feynman)的大小，但没有固定它们的符号。为了建立一个自洽的理论，物理学家们必须就这些符号达成一项“君子协定”。最广泛采用的是 **Condon-Shortley 相位约定**，它确保了所有 Clebsch-Gordan 系数和 Wigner 符号都是实数 [@problem_id:2874655]。
 
-我们为什么要关心几个负号？因为在量子力学中，是振[幅相](@keyword=magnitude_and_phase|lang=zh-CN|style=Feynman)加，而非概率相加。一个过程的总振幅通常是来自不同贡献路径的振幅的相干叠加：$\mathcal{A} = \mathcal{A}_1 + \mathcal{A}_2 + \dots$。概率则是 $|\mathcal{A}|^2$。如果你用来计算波函数（决定了和中的系数）的软件库是基于一种相位约定构建的，而你使用的相互作用值（决定了 $\mathcal{A}_i$）却来自使用另一种约定的来源，你可能会无意中搞错其中一项的符号。你可能计算的是 $|\mathcal{A}_1 - \mathcal{A}_2|^2$ 而不是 $|\mathcal{A}_1 + \mathcalA_2|^2$。这可能将相长干涉变为相消干涉，导致计算出的跃迁概率大错特错 [@problem_id:3602882]。
+我们为什么要关心几个负号？因为在量子力学中，是振[幅相](@keyword=magnitude_and_phase|lang=zh-CN|style=Feynman)加，而非概率相加。一个过程的总振幅通常是来自不同贡献路径的振幅的相干叠加：$\mathcal{A} = \mathcal{A}_1 + \mathcal{A}_2 + \dots$。概率则是 $|\mathcal{A}|^2$。如果你用来计算波函数（决定了和中的系数）的软件库是基于一种相位约定构建的，而你使用的相互作用值（决定了 $\mathcal{A}_i$）却来自使用另一种约定的来源，你可能会无意中搞错其中一项的符号。你可能计算的是 $|\mathcal{A}_1 - \mathcal{A}_2|^2$ 而不是 $|\mathcal{A}_1 + \mathcal{A}_2|^2$。这可能将相长干涉变为相消干涉，导致计算出的跃迁概率大错特错 [@problem_id:3602882]。
 
 这不是一个假设性的担忧。在涉及不同电子[组态混合](@keyword=configuration_mixing|lang=zh-CN|style=Feynman)的计算中，不一致的相位约定可以翻转态之间混合角 的符号。这反过来又可以翻转计算出的跃迁振幅的符号，从而改变对原子光谱中组合间[禁线](@keyword=forbidden_lines|lang=zh-CN|style=Feynman)等现象的预测 [@problem_id:2874655]。
 

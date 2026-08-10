@@ -39,7 +39,7 @@ $$
 
 ### 剪切与体积之舞：剪胀与[临界状态](@keyword=critical_state|lang=zh-CN|style=Feynman)
 
-这里是该理论真正焕发生机的地方。亚塑性函数 $\mathcalH$ 取决于内部[状态变量](@keyword=state_variables|lang=zh-CN|style=Feynman)的当前值，尤其是孔隙比 $e$。这种耦合产生了[颗粒材料](@keyword=granular_materials|lang=zh-CN|style=Feynman)最典型的行为之一：**剪胀**。
+这里是该理论真正焕发生机的地方。亚塑性函数 $\mathcal{H}$ 取决于内部[状态变量](@keyword=state_variables|lang=zh-CN|style=Feynman)的当前值，尤其是孔隙比 $e$。这种耦合产生了[颗粒材料](@keyword=granular_materials|lang=zh-CN|style=Feynman)最典型的行为之一：**剪胀**。
 
 想象一下剪切一盒弹珠。
 - 如果弹珠尽可能紧密地堆积（低孔隙比），它们若要相互错动，就必须向上越過邻近的弹珠。整个堆积体必须膨胀体积以容纳剪切。这种膨胀就是**剪胀** (dilation)。

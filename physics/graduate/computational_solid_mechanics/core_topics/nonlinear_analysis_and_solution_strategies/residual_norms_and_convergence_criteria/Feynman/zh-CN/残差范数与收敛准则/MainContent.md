@@ -110,7 +110,7 @@ $$
 
 当为了追求更高精度而加密网格时，我们模型中的自由度数量 $n_{\text{dof}}$ 会增加。如果我们使用一个固定的残差范数容差，例如 $\|\mathbf{r}\|_2 \le \tau$，会发生什么？由于求和的项数增多，这个准则在网格更密时会变得不成比例地严格。
 
-一个更具“[网格无关性](@keyword=grid_independence|lang=zh-CN|style=Feynman)”的度量是**均方根 (RMS) 残差**，即 $\|\mathbfr\|_2 / \sqrt{n_{\text{dof}}}$。它衡量的是每个自由度上的“平均”[不平衡力](@keyword=out_of_balance_force|lang=zh-CN|style=Feynman)。使用 $\|\mathbf{r}\|_2 / \sqrt{n_{\text{dof}}} \le \tau$ 或者 $\|\mathbf{r}\|_\infty \le \tau$ 作为准则，可以确保我们对“平衡”的评判标准不会随着网格密度的变化而随意漂移。[@problem_id:3595458]
+一个更具“[网格无关性](@keyword=grid_independence|lang=zh-CN|style=Feynman)”的度量是**均方根 (RMS) 残差**，即 $\|\mathbf{r}\|_2 / \sqrt{n_{\text{dof}}}$。它衡量的是每个自由度上的“平均”[不平衡力](@keyword=out_of_balance_force|lang=zh-CN|style=Feynman)。使用 $\|\mathbf{r}\|_2 / \sqrt{n_{\text{dof}}} \le \tau$ 或者 $\|\mathbf{r}\|_\infty \le \tau$ 作为准则，可以确保我们对“平衡”的评判标准不会随着网格密度的变化而随意漂移。[@problem_id:3595458]
 
 #### 问题五：现实之墙：有限精度的极限
 

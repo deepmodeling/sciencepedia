@@ -47,7 +47,7 @@ $$ \sigma_y = \sigma_0 + k_y d^{-1/2} $$
 
 *   最重要的部分是 $ d^{-1/2} $。为什么是-1/2次方？这个看似奇怪的指数，并非随意拼凑，它恰恰来源于[位错塞积](@keyword=dislocation_pile_up|lang=zh-CN|style=Feynman)理论所推导出的应[力场](@keyword=force_field|lang=zh-CN|style=Feynman)数学形式。它告诉我们，材料的强度增量与晶粒尺寸的平方根成反比。这意味着晶粒尺寸减半，带来的强度提升并不是两倍，而是 $\sqrt{2} \approx 1.414$ 倍。
 
-这个关系式赋予了工程师“点石成金”的能力。例如，通过快速冷却（[淬火](@keyword=quenching|lang=zh-CN|style=Feynman)）工艺，我们可以获得比缓慢冷却（退火）更细小的晶粒。假设一位工程师知道某种钢的霍尔-佩奇常数，通过计算就能精确预测，将晶粒尺寸从 $121.0 \text{ \mu m}$ 减小到 $16.0 \text{ \mu m}$，[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)来多大的强度提升 [@problem_id:1337588]。同样，如果一个生物医学植入物（如人造髋关节）对强度有明确要求，工程师可以利用这个公式，反推出为了达到 $400.0 \text{ MPa}$ 的目标强度，其钴铬合金材料的最大允许[晶粒尺寸](@keyword=grain_size|lang=zh-CN|style=Feynman)是多少 [@problem_id:1337634]。
+这个关系式赋予了工程师“点石成金”的能力。例如，通过快速冷却（[淬火](@keyword=quenching|lang=zh-CN|style=Feynman)）工艺，我们可以获得比缓慢冷却（退火）更细小的晶粒。假设一位工程师知道某种钢的霍尔-佩奇常数，通过计算就能精确预测，将晶粒尺寸从 $121.0 \mathrm{\mu m}$ 减小到 $16.0 \mathrm{\mu m}$，[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)来多大的强度提升 [@problem_id:1337588]。同样，如果一个生物医学植入物（如人造髋关节）对强度有明确要求，工程师可以利用这个公式，反推出为了达到 $400.0 \text{ MPa}$ 的目标强度，其钴铬合金材料的最大允许[晶粒尺寸](@keyword=grain_size|lang=zh-CN|style=Feynman)是多少 [@problem_id:1337634]。
 
 ### 法则的边界：当规则不再适用
 

@@ -10,7 +10,7 @@ A classic illustration begins with the geometric series, $\sum_{n=0}^{\infty} u^
 $$
 \arctan(x) = \int_0^x \frac{dt}{1+t^2} = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{2n+1}
 $$
-This method elegantly produces a result that would be tedious to derive using the standard Taylor formula involving repeated differentiation. A similar approach, starting with the substitution $u=t^2$ in the geometric series, gives the expansion for the derivative of the inverse hyperbolic tangent, $\frac{d}{dt}\arctanh(t) = \frac{1}{1-t^2}$. Subsequent integration provides the power series for $\arctanh(x)$ [@problem_id:1325298].
+This method elegantly produces a result that would be tedious to derive using the standard Taylor formula involving repeated differentiation. A similar approach, starting with the substitution $u=t^2$ in the geometric series, gives the expansion for the derivative of the inverse hyperbolic tangent, $\frac{d}{dt}\operatorname{arctanh}(t) = \frac{1}{1-t^2}$. Subsequent integration provides the power series for $\operatorname{arctanh}(x)$ [@problem_id:1325298].
 
 The generalized binomial theorem provides another powerful starting point. The derivative of the inverse sine function is $\frac{d}{dx}\arcsin(x) = (1-x^2)^{-1/2}$. While this function's higher derivatives become exceedingly complex, its series can be found by first expanding $(1-u)^{-1/2}$ using the binomial theorem, substituting $u=x^2$, and then integrating the resulting power series term-by-term [@problem_id:1325320].
 

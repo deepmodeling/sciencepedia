@@ -1,68 +1,68 @@
 ## Introduction
-Normal shock waves are one of the most striking and consequential phenomena in fluid dynamics, representing a near-instantaneous and irreversible change in the properties of a supersonic flow. These abrupt transitions, appearing as infinitesimally thin discontinuities in idealized models, are fundamental to understanding high-speed flight, propulsion systems, and even astrophysical events. The core challenge for engineers and scientists is to demystify this process: Why do shocks form? What physical laws govern the dramatic jumps in pressure, temperature, and density? And how can we predict and apply these effects? This article addresses these questions by providing a structured exploration of normal shock waves.
+Normal [shock waves](@keyword=shock_waves|lang=en-US|style=Feynman) are one of the most striking and consequential phenomena in fluid dynamics, representing a near-instantaneous and irreversible change in the properties of a [supersonic flow](@keyword=supersonic_flow|lang=en-US|style=Feynman). These abrupt transitions, appearing as infinitesimally thin discontinuities in idealized models, are fundamental to understanding high-speed flight, propulsion systems, and even astrophysical events. The core challenge for engineers and scientists is to demystify this process: Why do shocks form? What physical laws govern the dramatic jumps in pressure, temperature, and density? And how can we predict and apply these effects? This article addresses these questions by providing a structured exploration of [normal shock](@keyword=normal_shock|lang=en-US|style=Feynman) waves.
 
-The following chapters will guide you from fundamental theory to practical application. "Principles and Mechanisms" deconstructs the shock wave by applying the conservation laws of mass, momentum, and energy, culminating in the Rankine-Hugoniot relations that quantify the changes and exploring the thermodynamic mandate of entropy increase. "Applications and Interdisciplinary Connections" demonstrates the real-world impact of these principles in fields like aerospace engineering, where shocks dictate vehicle heating and engine performance, and in experimental physics using devices like shock tubes. Finally, "Hands-On Practices" will allow you to solidify your understanding by applying these concepts to solve practical engineering problems. We begin by examining the core principles that form the bedrock of normal shock theory.
+The following chapters will guide you from fundamental theory to practical application. "Principles and Mechanisms" deconstructs the shock wave by applying the conservation laws of mass, momentum, and energy, culminating in the Rankine-Hugoniot relations that quantify the changes and exploring the thermodynamic mandate of entropy increase. "Applications and Interdisciplinary Connections" demonstrates the real-world impact of these principles in fields like [aerospace engineering](@keyword=aerospace_engineering|lang=en-US|style=Feynman), where shocks dictate vehicle heating and engine performance, and in experimental physics using devices like shock tubes. Finally, "Hands-On Practices" will allow you to solidify your understanding by applying these concepts to solve practical engineering problems. We begin by examining the core principles that form the bedrock of [normal shock](@keyword=normal_shock|lang=en-US|style=Feynman) theory.
 
 ## Principles and Mechanisms
 
-A normal shock wave represents one of the most fundamental and striking phenomena in compressible fluid dynamics. It is a surface of abrupt, irreversible change in fluid properties that can form in a supersonic flow. To understand its behavior, we must analyze it through the lens of fundamental physical laws: the conservation of mass, momentum, and energy, as well as the second law of thermodynamics. This chapter will deconstruct the mechanics of a normal shock, moving from the foundational conservation principles to the quantitative relationships that govern property changes, and finally exploring the thermodynamic consequences of its inherent irreversibility.
+A [normal shock wave](@keyword=normal_shock_wave|lang=en-US|style=Feynman) represents one of the most fundamental and striking phenomena in [compressible fluid](@keyword=compressible_fluid|lang=en-US|style=Feynman) dynamics. It is a surface of abrupt, irreversible change in [fluid properties](@keyword=fluid_properties|lang=en-US|style=Feynman) that can form in a [supersonic flow](@keyword=supersonic_flow|lang=en-US|style=Feynman). To understand its behavior, we must analyze it through the lens of fundamental physical laws: the [conservation of mass](@keyword=conservation_of_mass|lang=en-US|style=Feynman), momentum, and energy, as well as the second law of thermodynamics. This chapter will deconstruct the mechanics of a [normal shock](@keyword=normal_shock|lang=en-US|style=Feynman), moving from the foundational conservation principles to the quantitative relationships that govern property changes, and finally exploring the thermodynamic consequences of its inherent irreversibility.
 
 ### The Governing Equations of a Normal Shock
 
-We begin by considering the idealized model of a **normal shock**: a stationary, infinitesimally thin discontinuity in a steady, one-dimensional, adiabatic flow. The conditions immediately upstream (pre-shock) are denoted by subscript 1, and those immediately downstream (post-shock) by subscript 2.
+We begin by considering the idealized model of a **[normal shock](@keyword=normal_shock|lang=en-US|style=Feynman)**: a stationary, infinitesimally thin discontinuity in a steady, one-dimensional, [adiabatic flow](@keyword=adiabatic_flow|lang=en-US|style=Feynman). The conditions immediately upstream (pre-shock) are denoted by subscript 1, and those immediately downstream (post-shock) by subscript 2.
 
-To derive the governing relations, we apply the integral conservation laws to a control volume that encloses the shock.
+To derive the governing relations, we apply the [integral conservation laws](@keyword=integral_conservation_laws|lang=en-US|style=Feynman) to a control volume that encloses the shock.
 
 **1. Conservation of Mass:**
-The principle of mass conservation dictates that the mass flow rate per unit area must be constant across the shock. This gives the continuity equation:
+The principle of mass conservation dictates that the mass flow rate per unit area must be constant across the shock. This gives the [continuity equation](@keyword=continuity_equation|lang=en-US|style=Feynman):
 $$
 \rho_1 V_1 = \rho_2 V_2
 $$
 where $\rho$ is the fluid density and $V$ is the velocity normal to the shock. This simple relation implies that if the density increases across the shock ($\rho_2 > \rho_1$), the velocity must decrease ($V_2  V_1$).
 
 **2. Conservation of Momentum:**
-The momentum equation states that the net force on the control volume (the pressure difference, $P_1 - P_2$, acting on the area) equals the net rate of momentum outflow. This yields:
+The [momentum equation](@keyword=momentum_equation|lang=en-US|style=Feynman) states that the net force on the [control volume](@keyword=control_volume|lang=en-US|style=Feynman) (the pressure difference, $P_1 - P_2$, acting on the area) equals the net rate of momentum outflow. This yields:
 $$
 P_1 A + \rho_1 V_1^2 A = P_2 A + \rho_2 V_2^2 A
 $$
-Dividing by the area $A$, we find that the quantity $P + \rho V^2$, known as the **impulse function** per unit area, is conserved across the shock:
+Dividing by the area $A$, we find that the quantity $P + \rho V^2$, known as the **[impulse function](@keyword=impulse_function|lang=en-US|style=Feynman)** per unit area, is conserved across the shock:
 $$
 P_1 + \rho_1 V_1^2 = P_2 + \rho_2 V_2^2
 $$
-This equation is crucial. It directly links the pressure change to the change in momentum flux. By combining it with the continuity equation, we can express the pressure ratio in terms of the upstream state and the density change, providing a direct link between thermodynamic and kinematic properties [@problem_id:1776654].
+This equation is crucial. It directly links the pressure change to the change in momentum flux. By combining it with the [continuity equation](@keyword=continuity_equation|lang=en-US|style=Feynman), we can express the [pressure ratio](@keyword=pressure_ratio|lang=en-US|style=Feynman) in terms of the upstream state and the density change, providing a direct link between thermodynamic and kinematic properties [@problem_id:1776654].
 
 **3. Conservation of Energy:**
-For an adiabatic flow with no external work or changes in potential energy, the steady-flow energy equation requires that the total energy of the fluid be conserved. This is expressed in terms of specific enthalpy, $h$:
+For an [adiabatic flow](@keyword=adiabatic_flow|lang=en-US|style=Feynman) with no external work or changes in potential energy, the [steady-flow energy equation](@keyword=steady_flow_energy_equation_2|lang=en-US|style=Feynman) requires that the total energy of the fluid be conserved. This is expressed in terms of [specific enthalpy](@keyword=specific_enthalpy|lang=en-US|style=Feynman), $h$:
 $$
 h_1 + \frac{1}{2}V_1^2 = h_2 + \frac{1}{2}V_2^2
 $$
-This leads to a profoundly important concept. The quantity $h_0 = h + \frac{1}{2}V^2$ is defined as the **specific stagnation enthalpy**, representing the total energy of the fluid. The energy equation thus states that the stagnation enthalpy is constant across a normal shock:
+This leads to a profoundly important concept. The quantity $h_0 = h + \frac{1}{2}V^2$ is defined as the **specific [stagnation enthalpy](@keyword=stagnation_enthalpy|lang=en-US|style=Feynman)**, representing the total energy of the fluid. The energy equation thus states that the [stagnation enthalpy](@keyword=stagnation_enthalpy|lang=en-US|style=Feynman) is constant across a [normal shock](@keyword=normal_shock|lang=en-US|style=Feynman):
 $$
 h_{0,1} = h_{0,2}
 $$
-For a calorically perfect gas (a gas with constant specific heats), enthalpy is directly proportional to temperature, $h = c_p T$. This implies that the **stagnation temperature**, $T_0$, defined by $h_0 = c_p T_0$, is also conserved across the shock [@problem_id:1782872]:
+For a [calorically perfect gas](@keyword=calorically_perfect_gas|lang=en-US|style=Feynman) (a gas with constant specific heats), enthalpy is directly proportional to temperature, $h = c_p T$. This implies that the **[stagnation temperature](@keyword=stagnation_temperature|lang=en-US|style=Feynman)**, $T_0$, defined by $h_0 = c_p T_0$, is also conserved across the shock [@problem_id:1782872]:
 $$
 T_{0,1} = T_{0,2}
 $$
-This is a cornerstone of normal shock analysis. While static properties like pressure and temperature change dramatically, the total energy of the flow, represented by $T_0$, remains unchanged because the process is adiabatic.
+This is a cornerstone of [normal shock](@keyword=normal_shock|lang=en-US|style=Feynman) analysis. While static properties like pressure and temperature change dramatically, the total energy of the flow, represented by $T_0$, remains unchanged because the process is adiabatic.
 
 ### The Thermodynamic Imperative: The Second Law
 
 The conservation laws provide a set of constraints, but they do not, by themselves, forbid all conceivable transitions. For instance, could a flow jump from subsonic to supersonic? Or could a shock wave cause a sudden expansion and drop in pressure? The answer to these questions lies in the second law of thermodynamics.
 
-A shock wave, with its extremely steep gradients in velocity and temperature compressed into a microscopic thickness, is a site of intense friction (viscous dissipation) and heat transfer. It is a fundamentally **irreversible** process. For any adiabatic, irreversible process, the second law of thermodynamics mandates that the specific **entropy**, $s$, must increase:
+A shock wave, with its extremely steep gradients in velocity and temperature compressed into a microscopic thickness, is a site of intense friction (viscous dissipation) and heat transfer. It is a fundamentally **irreversible** process. For any adiabatic, [irreversible process](@keyword=irreversible_process|lang=en-US|style=Feynman), the [second law of thermodynamics](@keyword=second_law_of_thermodynamics|lang=en-US|style=Feynman) mandates that the specific **entropy**, $s$, must increase:
 $$
 s_2  s_1
 $$
 This single condition acts as a gatekeeper, dictating the direction of all possible changes across a shock.
 
-Analysis of the conservation equations reveals that an entropy increase is only possible if the shock is compressive, meaning the static pressure increases ($P_2  P_1$). Furthermore, a compressive shock can only exist if the upstream flow is supersonic ($M_1  1$). This leads to the cardinal rule of normal shocks [@problem_id:1782903]:
+Analysis of the conservation equations reveals that an entropy increase is only possible if the shock is compressive, meaning the [static pressure](@keyword=static_pressure|lang=en-US|style=Feynman) increases ($P_2  P_1$). Furthermore, a compressive shock can only exist if the upstream flow is supersonic ($M_1  1$). This leads to the cardinal rule of normal shocks [@problem_id:1782903]:
 
-A normal shock wave can only occur in a supersonic flow ($M_1  1$), and it always transitions the flow to a subsonic state ($M_2  1$).
+A [normal shock wave](@keyword=normal_shock_wave|lang=en-US|style=Feynman) can only occur in a [supersonic flow](@keyword=supersonic_flow|lang=en-US|style=Feynman) ($M_1  1$), and it always transitions the flow to a subsonic state ($M_2  1$).
 
-Any other possibility is ruled out. A hypothetical "expansion shock" in a supersonic flow, for example, would result in a decrease in entropy, a direct violation of the second law of thermodynamics. Such a process is physically impossible [@problem_id:1776663]. Similarly, a shock wave cannot spontaneously form in a subsonic flow to accelerate it to supersonic speeds, as this would also correspond to an entropy decrease.
+Any other possibility is ruled out. A hypothetical "[expansion shock](@keyword=expansion_shock|lang=en-US|style=Feynman)" in a [supersonic flow](@keyword=supersonic_flow|lang=en-US|style=Feynman), for example, would result in a decrease in entropy, a direct violation of the second law of thermodynamics. Such a process is physically impossible [@problem_id:1776663]. Similarly, a shock wave cannot spontaneously form in a subsonic flow to accelerate it to supersonic speeds, as this would also correspond to an entropy decrease.
 
-In summary, the changes across a normal shock are uniquely determined:
+In summary, the changes across a [normal shock](@keyword=normal_shock|lang=en-US|style=Feynman) are uniquely determined:
 *   **Static Pressure ($P$)**: Increases
 *   **Static Density ($\rho$)**: Increases
 *   **Static Temperature ($T$)**: Increases
@@ -74,7 +74,7 @@ In summary, the changes across a normal shock are uniquely determined:
 
 ### The Rankine-Hugoniot Relations: Quantifying the Changes
 
-By solving the conservation equations for a perfect gas, we can derive a set of algebraic formulas known as the **Rankine-Hugoniot relations**. These relations quantify the changes in fluid properties across the shock as a function of only the upstream Mach number, $M_1$, and the specific heat ratio of the gas, $\gamma = c_p/c_v$.
+By solving the conservation equations for a perfect gas, we can derive a set of algebraic formulas known as the **Rankine-Hugoniot relations**. These relations quantify the changes in fluid properties across the shock as a function of only the upstream Mach number, $M_1$, and the [specific heat ratio](@keyword=specific_heat_ratio|lang=en-US|style=Feynman) of the gas, $\gamma = c_p/c_v$.
 
 The key ratios are:
 
@@ -82,7 +82,7 @@ The key ratios are:
 $$
 \frac{P_2}{P_1} = 1 + \frac{2\gamma}{\gamma+1}(M_1^2 - 1)
 $$
-Since $\gamma  1$ and a shock requires $M_1  1$, this equation confirms that $P_2/P_1$ is always greater than 1. For instance, consider a flow in air ($\gamma=1.4$) with an upstream Mach number of $M_1 = \sqrt{2.96}$. The pressure ratio would be approximately $3.29$, indicating a significant and sudden compression [@problem_id:1776612].
+Since $\gamma  1$ and a shock requires $M_1  1$, this equation confirms that $P_2/P_1$ is always greater than 1. For instance, consider a flow in air ($\gamma=1.4$) with an upstream Mach number of $M_1 = \sqrt{2.96}$. The [pressure ratio](@keyword=pressure_ratio|lang=en-US|style=Feynman) would be approximately $3.29$, indicating a significant and sudden compression [@problem_id:1776612].
 
 **Density Ratio:**
 $$
@@ -90,7 +90,7 @@ $$
 $$
 
 **Temperature Ratio:**
-Derived from the ideal gas law, $T = P/(\rho R)$, the temperature ratio is given by:
+Derived from the [ideal gas law](@keyword=ideal_gas_law|lang=en-US|style=Feynman), $T = P/(\rho R)$, the temperature ratio is given by:
 $$
 \frac{T_2}{T_1} = \frac{P_2/P_1}{\rho_2/\rho_1} = \frac{\left(1 + \frac{2\gamma}{\gamma+1}(M_1^2 - 1)\right) \left((\gamma-1)M_1^2 + 2\right)}{(\gamma+1)M_1^2}
 $$
@@ -100,19 +100,19 @@ For a shock in air ($\gamma=1.4$) with $M_1 = 2.5$ and an upstream temperature o
 $$
 M_2^2 = \frac{1 + \frac{\gamma-1}{2} M_1^2}{\gamma M_1^2 - \frac{\gamma-1}{2}}
 $$
-A rigorous analysis of this equation shows that for any $M_1  1$ and $\gamma  1$, the result will always be $M_2  1$, mathematically confirming that a normal shock always decelerates a flow from supersonic to subsonic speeds [@problem_id:1782903].
+A rigorous analysis of this equation shows that for any $M_1  1$ and $\gamma  1$, the result will always be $M_2  1$, mathematically confirming that a [normal shock](@keyword=normal_shock|lang=en-US|style=Feynman) always decelerates a flow from supersonic to subsonic speeds [@problem_id:1782903].
 
 ### Irreversibility, Entropy, and Stagnation Pressure Loss
 
-The most profound consequence of a shock's irreversibility is the loss of **stagnation pressure**, $P_0$. While stagnation temperature (total energy) is conserved, stagnation pressure, which represents the isentropic work potential of the flow, is not. This loss is directly and fundamentally tied to the generation of entropy.
+The most profound consequence of a shock's irreversibility is the loss of **[stagnation pressure](@keyword=stagnation_pressure|lang=en-US|style=Feynman)**, $P_0$. While [stagnation temperature](@keyword=stagnation_temperature|lang=en-US|style=Feynman) (total energy) is conserved, [stagnation pressure](@keyword=stagnation_pressure|lang=en-US|style=Feynman), which represents the isentropic work potential of the flow, is not. This loss is directly and fundamentally tied to the generation of entropy.
 
 The change in specific entropy for a perfect gas is given by the thermodynamic relation:
 $$
 \Delta s = s_2 - s_1 = c_p \ln\left(\frac{T_2}{T_1}\right) - R \ln\left(\frac{P_2}{P_1}\right)
 $$
-where $R$ is the specific gas constant. Using the Rankine-Hugoniot relations for $T_2/T_1$ and $P_2/P_1$, we can calculate the exact amount of entropy generated. For example, for Krypton gas ($\gamma=5/3$) flowing at $M_1 = 2.40$, the entropy jump is $\Delta s \approx 48.7 \text{ J/(kg·K)}$, a quantifiable measure of the process's irreversibility [@problem_id:1776608].
+where $R$ is the [specific gas constant](@keyword=specific_gas_constant|lang=en-US|style=Feynman). Using the Rankine-Hugoniot relations for $T_2/T_1$ and $P_2/P_1$, we can calculate the exact amount of entropy generated. For example, for Krypton gas ($\gamma=5/3$) flowing at $M_1 = 2.40$, the entropy jump is $\Delta s \approx 48.7 \mathrm{J/(kg\cdot K)}$, a quantifiable measure of the process's [irreversibility](@keyword=irreversibility|lang=en-US|style=Feynman) [@problem_id:1776608].
 
-The connection between this entropy increase and stagnation pressure loss is one of the most elegant results in gas dynamics. Recall the isentropic relation for stagnation pressure: $P_0/P = (T_0/T)^{\gamma/(\gamma-1)}$. By manipulating this definition along with the entropy equation and using the fact that $T_{0,1} = T_{0,2}$, we can derive the following exact relationship [@problem_id:663398]:
+The connection between this entropy increase and [stagnation pressure loss](@keyword=stagnation_pressure_loss|lang=en-US|style=Feynman) is one of the most elegant results in gas dynamics. Recall the isentropic relation for [stagnation pressure](@keyword=stagnation_pressure|lang=en-US|style=Feynman): $P_0/P = (T_0/T)^{\gamma/(\gamma-1)}$. By manipulating this definition along with the entropy equation and using the fact that $T_{0,1} = T_{0,2}$, we can derive the following exact relationship [@problem_id:663398]:
 $$
 \frac{P_{0,2}}{P_{0,1}} = \exp\left(-\frac{\Delta s}{R}\right)
 $$
@@ -127,11 +127,11 @@ As the upstream Mach number approaches unity, the shock becomes progressively we
 $$
 \Delta s \approx \frac{2\gamma R}{3(\gamma+1)^2}(M_1^2-1)^3
 $$
-This means that for very weak shocks, the entropy generation is exceedingly small. In the limit as $M_1 \to 1$, the shock wave becomes an isentropic compression wave, also known as a Mach wave. This shows that shock waves are the steepened limit of a continuous series of compression waves.
+This means that for very weak shocks, the [entropy generation](@keyword=entropy_generation|lang=en-US|style=Feynman) is exceedingly small. In the limit as $M_1 \to 1$, the shock wave becomes an [isentropic compression](@keyword=isentropic_compression|lang=en-US|style=Feynman) wave, also known as a Mach wave. This shows that shock waves are the steepened limit of a continuous series of compression waves.
 
 **The Strong Shock Limit ($M_1 \to \infty$):**
-In the opposite extreme, relevant to hypersonic flight and astrophysical phenomena, the upstream Mach number is very large. In this limit, the Rankine-Hugoniot relations simplify. Of particular interest is the density ratio, which approaches a finite maximum value:
+In the opposite extreme, relevant to [hypersonic flight](@keyword=hypersonic_flight|lang=en-US|style=Feynman) and astrophysical phenomena, the upstream Mach number is very large. In this limit, the Rankine-Hugoniot relations simplify. Of particular interest is the density ratio, which approaches a finite maximum value:
 $$
 \lim_{M_1 \to \infty} \frac{\rho_2}{\rho_1} = \frac{\gamma+1}{\gamma-1}
 $$
-This is a remarkable result. It implies that no matter how high the Mach number, a gas cannot be compressed indefinitely by a single normal shock. For a monatomic gas like Helium or Argon, where $\gamma = 5/3$, this limiting density ratio is exactly 4 [@problem_id:1776599]. For air, with $\gamma = 1.4$, the limit is 6. This physical ceiling on compression is a direct consequence of the energy conservation principle: as the upstream kinetic energy becomes enormous, a significant portion must be converted into downstream thermal energy (increasing $P_2$ and $T_2$), which resists further compression.
+This is a remarkable result. It implies that no matter how high the Mach number, a gas cannot be compressed indefinitely by a single [normal shock](@keyword=normal_shock|lang=en-US|style=Feynman). For a [monatomic gas](@keyword=monatomic_gas|lang=en-US|style=Feynman) like Helium or Argon, where $\gamma = 5/3$, this limiting density ratio is exactly 4 [@problem_id:1776599]. For air, with $\gamma = 1.4$, the limit is 6. This physical ceiling on compression is a direct consequence of the [energy conservation](@keyword=energy_conservation|lang=en-US|style=Feynman) principle: as the upstream kinetic energy becomes enormous, a significant portion must be converted into downstream thermal energy (increasing $P_2$ and $T_2$), which resists further compression.

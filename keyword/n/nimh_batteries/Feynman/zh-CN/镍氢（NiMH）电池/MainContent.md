@@ -49,7 +49,7 @@ $$ MH(s) + NiO(OH)(s) \rightarrow M(s) + Ni(OH)_2(s) $$
 
 理解了化学原理，我们就能回答每个人对电池都有的两个实际问题：它能用多久？以及它能提供多大功率？
 
-**容量**是衡量“能用多久”的指标。它是电池在耗尽前可以输送的总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量，通常以安培时（A·h）为单位。这基本上取决于你能装入电极的[活性物质](@keyword=active_matter|lang=zh-CN|style=Feynman)的量。反应的[化学计量关系](@keyword=stoichiometric_relationships|lang=zh-CN|style=Feynman)精确地告诉我们每摩尔反应物释放多少[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。例如，通过知道阴极中氢氧化氧镍的质量，我们可以使用法拉第常数——连接摩尔世界和[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)世界的桥梁——来精确计算电池在给定电流下可以维持多少小时 [@problem_id:1574390]。同样，阳极材料的理论**[比容量](@keyword=specific_capacity|lang=zh-CN|style=Feynman)**，通常以 A·h/kg 表示，告诉我们它按重量计算储存能量的效率。像 $LaNi_5$ 这样的合金可以储存六个氢原子，这转化为大约 $372 \text{ A·h/kg}$ 的理论容量——这是其吸[氢能](@keyword=hydrogen_energy|lang=zh-CN|style=Feynman)力的证明 [@problem_id:1574419]。
+**容量**是衡量“能用多久”的指标。它是电池在耗尽前可以输送的总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量，通常以安培时（A·h）为单位。这基本上取决于你能装入电极的[活性物质](@keyword=active_matter|lang=zh-CN|style=Feynman)的量。反应的[化学计量关系](@keyword=stoichiometric_relationships|lang=zh-CN|style=Feynman)精确地告诉我们每摩尔反应物释放多少[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。例如，通过知道阴极中氢氧化氧镍的质量，我们可以使用法拉第常数——连接摩尔世界和[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)世界的桥梁——来精确计算电池在给定电流下可以维持多少小时 [@problem_id:1574390]。同样，阳极材料的理论**[比容量](@keyword=specific_capacity|lang=zh-CN|style=Feynman)**，通常以 A·h/kg 表示，告诉我们它按重量计算储存能量的效率。像 $LaNi_5$ 这样的合金可以储存六个氢原子，这转化为大约 $372 \mathrm{A\cdot h/kg}$ 的理论容量——这是其吸[氢能](@keyword=hydrogen_energy|lang=zh-CN|style=Feynman)力的证明 [@problem_id:1574419]。
 
 另一方面，**功率**关系到“有多快”。它与电池可以提供的电流（$I$）有关。你可以有一个巨大的油箱（高容量），但如果油管很细，你就无法获得大功率。[镍氢电池](@keyword=nimh_batteries|lang=zh-CN|style=Feynman)提供高电流的能力来自于另一个巧妙的设计特点：它的电极不是实心块状材料。相反，它们是由极细的粉末制成的。
 

@@ -6,7 +6,7 @@
 
 硫同位素最直观的应用或许是作为示踪剂，就像侦探利用指纹识别罪犯一样。环境中不同来源的硫通常有其独特的同位素“指纹”，即$\delta^{34}\mathrm{S}$值。通过测量混合物的同位素组成，我们可以解析出其原始成分的贡献。
 
-想象一下，你是一位[大气科学](@keyword=atmospheric_science|lang=zh-CN|style=Feynman)家，正在研究南极[冰芯](@keyword=ice_cores|lang=zh-CN|style=Feynman)中捕获的硫酸盐颗粒的来源。这些颗粒可能来自海洋吹来的天然海盐喷雾，其特征$\delta^{34}\mathrm{S}$值约为$+21\,\permil$。它们也可能来自数千英里外输送来的工业污染（化石燃料燃烧），其$\delta^{34}\mathrm{S}$值通常要低得多，比如$+3\,\permil$。如果你对某一冰层的分析显示其总$\delta^{34}\mathrm{S}$值为$+9.6\,\permil$，你立刻就知道你正在研究一个混合物。一个简单的混合计算不仅能揭示污染的存在，还能确定其确切比例，让你能够逐年重建工业活动对地球上最偏远角落的影响历史[@problem_id:1888580]。同样的逻辑也可以用来区分由远方工业造成的[酸雨](@keyword=acid_rain|lang=zh-CN|style=Feynman)和由湿地局部生物成因硫排放造成的[酸雨](@keyword=acid_rain|lang=zh-CN|style=Feynman)[@problem_id:1829406]。
+想象一下，你是一位[大气科学](@keyword=atmospheric_science|lang=zh-CN|style=Feynman)家，正在研究南极[冰芯](@keyword=ice_cores|lang=zh-CN|style=Feynman)中捕获的硫酸盐颗粒的来源。这些颗粒可能来自海洋吹来的天然海盐喷雾，其特征$\delta^{34}\mathrm{S}$值约为$+21\,\text{‰}$。它们也可能来自数千英里外输送来的工业污染（化石燃料燃烧），其$\delta^{34}\mathrm{S}$值通常要低得多，比如$+3\,\text{‰}$。如果你对某一冰层的分析显示其总$\delta^{34}\mathrm{S}$值为$+9.6\,\text{‰}$，你立刻就知道你正在研究一个混合物。一个简单的混合计算不仅能揭示污染的存在，还能确定其确切比例，让你能够逐年重建工业活动对地球上最偏远角落的影响历史[@problem_id:1888580]。同样的逻辑也可以用来区分由远方工业造成的[酸雨](@keyword=acid_rain|lang=zh-CN|style=Feynman)和由湿地局部生物成因硫排放造成的[酸雨](@keyword=acid_rain|lang=zh-CN|style=Feynman)[@problem_id:1829406]。
 
 这种法医鉴定般的能力从全球大气延伸到局部河流系统。假设一条河流被污染，上游有两个潜在的工业“罪犯”：一个具有负$\delta^{34}\mathrm{S}$特征的发电厂，和一个具有高正值特征的矿石加工厂。通过分析生活在下游的固定滤食性动物（如淡水贻贝）的组织，我们可以获得河流化学成分的[时间平均](@keyword=time_averaging|lang=zh-CN|style=Feynman)样本。贻贝自身的$\delta^{34}\mathrm{S}$值就像一本账簿，记录了它从自然背景和两个工业来源吸收的硫的比例混合情况，从而使环保机构能够精确定位主要污染者[@problem_id:1854898]。
 
@@ -40,6 +40,6 @@
 
 我们关于硫同位素的知识最令人惊叹的应用，或许是在寻找[地外生命](@keyword=extraterrestrial_life|lang=zh-CN|style=Feynman)方面。我们如何才能在另一个星球上识别生命，特别是如果它是微生物且古老的？最有希望的生命印迹之一就是由生命产生的深刻的[同位素分馏](@keyword=isotopic_fractionation|lang=zh-CN|style=Feynman)。
 
-在地球上，[硫酸盐还原](@keyword=sulfate_reduction|lang=zh-CN|style=Feynman)菌产生的硫化物比它们消耗的[硫酸](@keyword=sulfuric_acid|lang=zh-CN|style=Feynman)盐在同位素上要“轻”得多（$\delta^{34}\mathrm{S}$值更低），其分馏程度（$\epsilon$）通常超过$40\,\permil$。虽然非生物过程也能使硫同位素发生分馏，但它们很少产生如此巨大且系统性的差异。因此，如果火星探测器分析一个古老的地质构造，发现硫酸盐矿床紧邻[黄铁矿](@keyword=pyrite|lang=zh-CN|style=Feynman)床，这将是一条线索。如果测得的[黄铁矿](@keyword=pyrite|lang=zh-CN|style=Feynman)$\delta^{34}\mathrm{S}$值比相邻的[硫酸](@keyword=sulfuric_acid|lang=zh-CN|style=Feynman)盐低$40\,\permil$以上，那将是极具吸[引力](@keyword=gravitational_force|lang=zh-CN|style=Feynman)的证据。如此巨大的同位素差异很难用纯粹的地质过程来解释，而会强烈暗示过去存在生命活动——这是数十亿年前火星新陈代谢留下的微弱同位素回声[@problem_id:2054848]。
+在地球上，[硫酸盐还原](@keyword=sulfate_reduction|lang=zh-CN|style=Feynman)菌产生的硫化物比它们消耗的[硫酸](@keyword=sulfuric_acid|lang=zh-CN|style=Feynman)盐在同位素上要“轻”得多（$\delta^{34}\mathrm{S}$值更低），其分馏程度（$\epsilon$）通常超过$40\,\text{‰}$。虽然非生物过程也能使硫同位素发生分馏，但它们很少产生如此巨大且系统性的差异。因此，如果火星探测器分析一个古老的地质构造，发现硫酸盐矿床紧邻[黄铁矿](@keyword=pyrite|lang=zh-CN|style=Feynman)床，这将是一条线索。如果测得的[黄铁矿](@keyword=pyrite|lang=zh-CN|style=Feynman)$\delta^{34}\mathrm{S}$值比相邻的[硫酸](@keyword=sulfuric_acid|lang=zh-CN|style=Feynman)盐低$40\,\text{‰}$以上，那将是极具吸[引力](@keyword=gravitational_force|lang=zh-CN|style=Feynman)的证据。如此巨大的同位素差异很难用纯粹的地质过程来解释，而会强烈暗示过去存在生命活动——这是数十亿年前火星新陈代谢留下的微弱同位素回声[@problem_id:2054848]。
 
 从追踪我们后院的污染，到解读行星灾变的历史，再到寻找我们的宇宙邻居，小小的硫同位素被证明是一种具有惊人力量和广度的工具。它见证了科学之美：通过仔细测量像两个原子比率这样简单的事物，我们能够阐明最复杂的系统，并提出最深刻的问题。

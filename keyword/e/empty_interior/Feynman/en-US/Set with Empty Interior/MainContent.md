@@ -59,7 +59,7 @@ Now we can start talking about topological "size". If [nowhere dense sets](@keyw
 
 We define a set to be of the **first category** (or **meager**) if it can be written as a countable union of [nowhere dense sets](@keyword=nowhere_dense_sets|lang=en-US|style=Feynman). Think of [meager sets](@keyword=meager_sets|lang=en-US|style=Feynman) as being topologically "negligible" or "small".
 -   The **Cantor set** is nowhere dense itself, so it's a [meager set](@keyword=meager_set|lang=en-US|style=Feynman) (a union of one [nowhere dense set](@keyword=nowhere_dense_set|lang=en-US|style=Feynman)).
--   The **rational numbers** $\mathbb{Q}$ are countable. We can list them all: $q_1, q_2, q_3, \dots$. Each individual point $\{q_n\}$ is a [nowhere dense set](@keyword=nowhere_dense_set|lang=en-US|style=Feynman) (it's closed and has an empty interior). Since $\mathbb{Q}$ is a countable union of these nowhere-dense singletons, $\mathbbQ$ is a [meager set](@keyword=meager_set|lang=en-US|style=Feynman).
+-   The **rational numbers** $\mathbb{Q}$ are countable. We can list them all: $q_1, q_2, q_3, \dots$. Each individual point $\{q_n\}$ is a [nowhere dense set](@keyword=nowhere_dense_set|lang=en-US|style=Feynman) (it's closed and has an empty interior). Since $\mathbb{Q}$ is a countable union of these nowhere-dense singletons, $\mathbb{Q}$ is a [meager set](@keyword=meager_set|lang=en-US|style=Feynman).
 
 So both our examples are "small" in this sense. This might lead you to believe that any set with an empty interior is meager. But prepare for one of the most profound results in analysis.
 

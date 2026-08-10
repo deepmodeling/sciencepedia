@@ -82,7 +82,7 @@ CG 法通过生成一系列逐渐逼近真实解的近似值来工作。其[收�
 
 这导出了一个惊人的结论。达到期望精度 $\varepsilon$ 所需的迭代次数 $m$ 近似由下式给出：
 $$
-m \ge \frac{\arccosh(1/\varepsilon)}{\arccosh(1/\rho)}
+m \ge \frac{\operatorname{arccosh}(1/\varepsilon)}{\operatorname{arccosh}(1/\rho)}
 $$
 注意这个公式中缺少了什么：矩阵规模 $n$。迭代次数仅取决于聚集半径 $\rho$ 和期望精度 $\varepsilon$ [@problem_id:3580697]。因为我们的循环预处理器确保了 $\rho$ 是一个与 $n$ 无关的小常数，所以当我们处理越来越大的问题时，求解器的[收敛速度](@keyword=rates_of_convergence|lang=zh-CN|style=Feynman)不会下降。我们实现了与规模无关的收敛。通过巧妙地用圆替换直线，我们不仅使计算的每一步都更快，还大大减少了我们需要的步数。这是结构与对称性的深刻胜利。
 

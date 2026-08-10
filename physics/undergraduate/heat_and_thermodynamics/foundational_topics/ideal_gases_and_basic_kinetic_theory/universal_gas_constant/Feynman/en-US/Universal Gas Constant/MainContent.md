@@ -21,7 +21,7 @@ This insight explains why the numerical value of $R$ seems to change depending o
 
 ### A Tale of Two Scales: From Moles to Molecules
 
-The name "universal gas constant" carries a heavy claim. Universal? For *all* gases? If you're an engineer working with, say, carbon dioxide, you might be more familiar with a *specific* gas constant, $R_{s}$, which has a unique value for every different gas. For $CO_2$, it's about $188.9 \, \text{J/(kg·K)}$. For helium, it's a whopping $2077 \, \text{J/(kg·K)}$. This seems to shatter the idea of universality.
+The name "universal gas constant" carries a heavy claim. Universal? For *all* gases? If you're an engineer working with, say, carbon dioxide, you might be more familiar with a *specific* gas constant, $R_{s}$, which has a unique value for every different gas. For $CO_2$, it's about $188.9 \, \mathrm{J/(kg\cdot K)}$. For helium, it's a whopping $2077 \, \mathrm{J/(kg\cdot K)}$. This seems to shatter the idea of universality.
 
 The key, as it so often is in science, lies in how you are counting. The [specific gas constant](@keyword=specific_gas_constant|lang=en-US|style=Feynman), $R_s$, relates pressure, volume, and temperature to the *mass* of the gas. Since a kilogram of tiny helium atoms contains many more particles than a kilogram of bulky carbon dioxide molecules, the constants are different.
 

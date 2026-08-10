@@ -1,110 +1,110 @@
 ## 引言
-酸敏感离子通道（Acid-Sensing Ion Channels, ASICs）是细胞感知其化学环境变化的关键分子传感器。作为质子门控的阳离子通道，它们在整个神经系统中广泛表达，能够将细胞外pH值的微小波动转化为强大的电信号。这种独特的能力使ASICs在多种生理过程中扮演着核心角色，从皮肤的疼痛感觉到大脑中的突触信息处理。然而，当组织pH值在缺血、炎症或癌症等病理状态下发生剧烈变化时，这些通道的功能失调也可能成为驱动疾病进展的关键因素。因此，理解ASICs的工作原理及其在健康与疾病中的作用，对于神经科学乃至整个生物医学领域都至关重要。
+酸敏感[离子通道](@keyword=ion_channels|lang=zh-CN|style=Feynman)（Acid-Sensing Ion Channels, [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)s）是细胞感知其化学环境变化的关键[分子传感器](@keyword=molecular_sensors|lang=zh-CN|style=Feynman)。作为质子门控的阳[离子通道](@keyword=ion_channels|lang=zh-CN|style=Feynman)，它们在整个神经系统中广泛表达，能够将细胞外pH值的微[小波](@keyword=wavelets|lang=zh-CN|style=Feynman)动转化为强大的电信号。这种独特的能力使[ASIC](@keyword=asics|lang=zh-CN|style=Feynman)s在多种生理过程中扮演着核心角色，从皮肤的疼痛感觉到大脑中的突触信息处理。然而，当组织pH值在缺血、炎症或癌症等病理状态下发生剧烈变化时，这些通道的功能失调也可能成为驱动疾病进展的关键因素。因此，理解[ASIC](@keyword=asics|lang=zh-CN|style=Feynman)s的工作原理及其在健康与疾病中的作用，对于神经科学乃至整个生物医学领域都至关重要。
 
-本文旨在为读者提供一个关于ASICs的全面而深入的视角，弥合其基础生物物理学与复杂生理功能之间的知识鸿沟。通过系统性的阐述，读者将全面了解这些迷人通道的多重面貌。文章将分为三个核心部分：
+本文旨在为读者提供一个关于[ASIC](@keyword=asics|lang=zh-CN|style=Feynman)s的全面而深入的视角，弥合其基础生物物理学与复杂生理功能之间的知识鸿沟。通过系统性的阐述，读者将全面了解这些迷人通道的多重面貌。文章将分为三个核心部分：
 
-*   **第一章：原理与机制**，将深入剖析ASICs的分子结构、亚基组装规则，并运用热力学和动力学理论，揭示其质子门控、离子选择和脱敏过程背后的物理化学原理。
-*   **第二章：应用与跨学科联系**，将视野扩展到宏观生物系统，探讨ASICs在感觉转导、中枢神经环路功能以及在缺血性卒中、癫痫和癌症等重大疾病中的关键角色，凸显其广泛的跨学科重要性。
-*   **第三章：动手实践**，将提供一系列计算和分析练习，帮助读者将理论知识应用于解决实际的生物物理问题，从而巩固和深化对ASIC功能的理解。
+*   **第一章：原理与机制**，将深入剖析[ASIC](@keyword=asics|lang=zh-CN|style=Feynman)s的[分子结构](@keyword=molecular_structure|lang=zh-CN|style=Feynman)、亚[基组](@keyword=basis_set|lang=zh-CN|style=Feynman)装规则，并运用[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)和动力学理论，揭示其质子门控、离子选择和脱敏过程背后的[物理化学](@keyword=physical_chemistry|lang=zh-CN|style=Feynman)原理。
+*   **第二章：应用与跨学科联系**，将视野扩展到宏观生物系统，探讨[ASIC](@keyword=asics|lang=zh-CN|style=Feynman)s在[感觉转导](@keyword=sensory_transduction|lang=zh-CN|style=Feynman)、中枢神经环路功能以及在缺血性卒中、癫痫和癌症等重大疾病中的关键角色，凸显其广泛的跨学科重要性。
+*   **第三章：动手实践**，将提供一系列计算和分析练习，帮助读者将理论知识应用于解决实际的生物物理问题，从而巩固和深化对[ASIC](@keyword=asics|lang=zh-CN|style=Feynman)功能的理解。
 
-通过这一结构化的学习路径，我们将从最基本的分子机制出发，逐步揭示ASICs如何成为连接微观分子世界与宏观生命现象的桥梁。
+通过这一结构化的学习路径，我们将从最基本的分子机制出发，逐步揭示[ASIC](@keyword=asics|lang=zh-CN|style=Feynman)s如何成为连接微观分子世界与宏观生命现象的桥梁。
 
 ## 原理与机制
 
 ### 分子结构与组装
 
-酸敏感离子通道（Acid-Sensing Ion Channels, ASICs）是上皮钠通道/线虫退化蛋白（ENaC/DEG）超家族的成员，它们是质子门控的阳离子通道。每个 ASIC 亚基都具有一个典型的拓扑结构：一个巨大的细胞外结构域（extracellular domain, ECD）、两个跨膜螺旋（TM1 和 TM2），以及较短的细胞内氮末端（N-terminus）和碳末端（C-terminus）。功能性的 ASIC 通道由三个这样的亚基组装成同源或异源三聚体。
+酸敏感离子通道（Acid-Sensing Ion Channels, [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)s）是上皮钠通道/[线虫](@keyword=nematodes|lang=zh-CN|style=Feynman)退化蛋白（ENaC/DEG）超家族的成员，它们是质子门控的阳离子通道。每个 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 亚基都具有一个典型的拓扑结构：一个巨大的细胞外结构域（extracellular domain, ECD）、两个[跨膜螺旋](@keyword=transmembrane_helix|lang=zh-CN|style=Feynman)（TM1 和 TM2），以及较短的细胞内氮末端（N-terminus）和碳末端（C-terminus）。功能性的 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 通道由三个这样的亚[基组](@keyword=basis_set|lang=zh-CN|style=Feynman)装成同源或异源三聚体。
 
-这些亚基的多样性是 ASIC 功能多样性的基础。哺乳动物中已鉴定出多种 ASIC 亚基（如 ASIC1a, ASIC1b, ASIC2a, ASIC2b, ASIC3, ASIC4），它们由不同的基因编码或通过可变剪接产生。这些不同的亚基在神经元和非神经元组织中差异性表达，并能够共存于同一细胞中，为形成具有不同特性的异源三聚体通道提供了可能。
+这些亚基的多样性是 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman) [功能多样性](@keyword=functional_diversity|lang=zh-CN|style=Feynman)的基础。哺乳动物中已鉴定出多种 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 亚基（如 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)1a, [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)1b, [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)2a, [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)2b, [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)3, [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)4），它们由不同的基因编码或通过[可变剪接](@keyword=alternative_splicing|lang=zh-CN|style=Feynman)产生。这些不同的亚基在神经元和非神经元组织中差异性表达，并能够共存于同一细胞中，为形成具有不同特性的异源三聚体通道提供了可能。
 
-通道的组装过程可以被近似地视为一个随机过程，其中可用的亚基库中的每种亚基被整合到三聚体中的概率等于其在库中的摩尔分数。假设在一个特定的神经元中，三种 ASIC 亚基以不同的摩尔分数共表达：ASIC1a ($p_1 = 0.4$)，ASIC2a ($p_2 = 0.4$) 和 ASIC2b ($p_3 = 0.2$)。根据多项式概率分布，形成一个包含 $n_1$ 个 ASIC1a，$n_2$ 个 ASIC2a 和 $n_3$ 个 ASIC2b 亚基（其中 $n_1+n_2+n_3=3$）的特定三聚体的概率为：
+通道的组装过程可以被近似地视为一个[随机过程](@keyword=stochastic_process|lang=zh-CN|style=Feynman)，其中可用的亚基库中的每种亚基被整合到三聚体中的概率等于其在库中的[摩尔分数](@keyword=mole_fraction|lang=zh-CN|style=Feynman)。假设在一个特定的神经元中，三种 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 亚基以不同的摩尔分数共表达：[ASIC](@keyword=asics|lang=zh-CN|style=Feynman)1a ($p_1 = 0.4$)，[ASIC](@keyword=asics|lang=zh-CN|style=Feynman)2a ($p_2 = 0.4$) 和 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)2b ($p_3 = 0.2$)。根据[多项式概率](@keyword=multinomial_probability|lang=zh-CN|style=Feynman)[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)，形成一个包含 $n_1$ 个 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)1a，$n_2$ 个 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)2a 和 $n_3$ 个 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)2b 亚基（其中 $n_1+n_2+n_3=3$）的特定三聚体的概率为：
 $$
 P(n_1, n_2, n_3) = \frac{3!}{n_1! n_2! n_3!} p_1^{n_1} p_2^{n_2} p_3^{n_3}
 $$
-这种随机组装的直接后果是，最终在细胞膜上表达的通道群体在组成上是异质的，从而在功能上也是多样化的。例如，亚基的组成直接决定了通道的基本功能和药理学特性。实验表明，由三个 ASIC2b 亚基组成的同源三聚体是无功能的，它们无法形成质子门控的电流。相反，任何包含至少一个 ASIC1a 或 ASIC2a 亚基的组合都是有功能的。此外，某些毒素，如来自蜘蛛毒液的 Psalmotoxin 1（PcTx1），对通道的抑制作用也依赖于亚基的特定组成，它特异性地抑制含有至少两个 ASIC1a 亚基的通道。基于这些规则，我们可以预测在上述假设的细胞中，由质子诱发的宏观电流中，能被饱和浓度的 PcTx1 抑制的比例。这个比例是包含至少两个 ASIC1a 亚基的功能性通道（即 $n_1 \ge 2$）的概率，与所有功能性通道的总概率之比 [@problem_id:2696061]。
+这种随机组装的直接后果是，最终在[细胞膜](@keyword=cell_membrane|lang=zh-CN|style=Feynman)上表达的通道群体在组成上是异质的，从而在功能上也是多样化的。例如，亚基的组成直接决定了通道的基本功能和药理学特性。实验表明，由三个 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)2b 亚[基组](@keyword=basis_set|lang=zh-CN|style=Feynman)成的同源三聚体是无功能的，它们无法形成质子门控的电流。相反，任何包含至少一个 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)1a 或 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)2a 亚基的组合都是有功能的。此外，某些毒素，如来自蜘蛛毒液的 Psalmotoxin 1（PcTx1），对通道的抑制作用也依赖于亚基的特定组成，它特异性地抑制含有至少两个 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)1a 亚基的通道。基于这些规则，我们可以预测在上述假设的细胞中，由质子诱发的[宏观电流](@keyword=macroscopic_current|lang=zh-CN|style=Feynman)中，能被饱和浓度的 PcTx1 抑制的比例。这个比例是包含至少两个 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)1a 亚基的功能性通道（即 $n_1 \ge 2$）的概率，与所有功能性通道的总概率之比 [@problem_id:2696061]。
 
-更进一步，细胞内还存在着复杂的质量控制机制，可以调节哪些组装好的通道能够成功转运到细胞表面。例如，可以设想一个工程化的细胞系，其中 ASIC2b 亚基携带一个内质网（ER）滞留信号，但该信号在与 ASIC1a 共组装时会被屏蔽。在这种情况下，任何包含 ASIC2b 但不含 ASIC1a 的三聚体都会在内质网中被截留和降解，无法到达细胞表面。这种规则使得最终在细胞膜上表达的通道群体不再是简单随机组装的结果，而是经过了一层“筛选”。要计算在这种条件下，表面表达的通道是异源三聚体（即包含至少两种不同亚基）的条件概率，就需要首先确定所有能够到达表面的通道组合及其总概率，然后确定其中属于异源三聚体的组合及其概率，最后计算两者的比值 [@problem_id:2696069]。这些例子凸显了一个核心原则：ASIC 的功能异质性源于亚基组合的多样性，而这种多样性受到亚基表达水平和细胞内质量控制的双重调控。
+更进一步，细胞内还存在着复杂的质量控制机制，可以调节哪些组装好的通道能够成功转运到细胞表面。例如，可以设想一个工程化的细胞系，其中 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)2b 亚基携带一个内质网（ER）滞留信号，但该信号在与 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)1a 共组装时会被屏蔽。在这种情况下，任何包含 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)2b 但不含 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)1a 的三聚体都会在内质网中被截留和降解，无法到达细胞表面。这种规则使得最终在[细胞膜](@keyword=cell_membrane|lang=zh-CN|style=Feynman)上表达的通道群体不再是简单随机组装的结果，而是经过了一层“筛选”。要计算在这种条件下，表面表达的通道是异源三聚体（即包含至少两种不同亚基）的[条件概率](@keyword=conditional_probability|lang=zh-CN|style=Feynman)，就需要首先确定所有能够到达表面的通道组合及其总概率，然后确定其中属于异源三聚体的组合及其概率，最后计算两者的比值 [@problem_id:2696069]。这些例子凸显了一个核心原则：[ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 的功能[异质性](@keyword=heteroplasmy|lang=zh-CN|style=Feynman)源于亚[基组](@keyword=basis_set|lang=zh-CN|style=Feynman)合的多样性，而这种多样性受到亚基表达水平和细胞内质量控制的双重调控。
 
-### 质子门控机制
+### 质子[门控机制](@keyword=gating_mechanisms|lang=zh-CN|style=Feynman)
 
-ASIC 作为配体门控离子通道，其门控开关的核心机制在于它如何感知细胞外 pH 值的下降，并将这一化学信号转化为通道孔道的构象变化。
+[ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 作为[配体门控离子通道](@keyword=ligand_gated_ion_channels|lang=zh-CN|style=Feynman)，其门控开关的核心机制在于它如何感知细胞外 pH 值的下降，并将这一化学信号转化为通道孔道的[构象变化](@keyword=conformational_change|lang=zh-CN|style=Feynman)。
 
-#### 变构门控的热力学
+#### 变构门控的[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)
 
-从根本上说，ASIC 的门控过程是一个变构（allosteric）过程。通道可以在至少两种主要构象状态之间进行热力学平衡转换：一个不导电的关闭（或静息）状态（$\mathrm{C}$），和一个允许离子通过的开放状态（$\mathrm{O}$）。在没有配体（质子）的情况下，通道本质上更倾向于关闭状态，这两种状态之间的自由能差，$\Delta G_{\mathrm{intr}} = G_{\mathrm{O}} - G_{\mathrm{C}}$，通常是正值，意味着开放状态的能量更高。
+从根本上说，[ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 的门控过程是一个变构（allosteric）过程。通道可以在至少两种主要构象状态之间进行热力学平衡转换：一个不导电的关闭（或静息）状态（$\mathrm{C}$），和一个允许离子通过的开放状态（$\mathrm{O}$）。在没有[配体](@keyword=ligand|lang=zh-CN|style=Feynman)（质子）的情况下，通道本质上更倾向于关闭状态，这两种状态之间的自由能差，$\Delta G_{\mathrm{intr}} = G_{\mathrm{O}} - G_{\mathrm{C}}$，通常是正值，意味着开放状态的能量更高。
 
 质子的结合起到了稳定开放状态的作用。根据 Monod-Wyman-Changeux (MWC) 模型，质子可以结合到关闭和开放两种构象上，但它对开放状态的亲和力（结合常数）高于对关闭状态的亲和力。这种差异性的结合稳定了开放构象，从而将构象平衡朝向开放状态移动。一个具有 $N$ 个相同且独立的质子结合位点的通道，其开放概率 $P_{\mathrm{O}}$ 可以表示为质子浓度 $[H^+]$ 的函数：
 $$
 P_{\mathrm{O}} = \frac{\left(1 + \frac{[\mathrm{H}^{+}]}{K_{\mathrm{O}}}\right)^N}{L_{0} \left(1 + \frac{[\mathrm{H}^{+}]}{K_{\mathrm{C}}}\right)^N + \left(1 + \frac{[\mathrm{H}^{+}]}{K_{\mathrm{O}}}\right)^N}
 $$
-其中，$L_0$ 是无配体时关闭与开放状态的平衡常数（$L_0 = [\mathrm{C}]/[\mathrm{O}] = \exp(\Delta G_{\mathrm{intr}}/RT)$），$K_{\mathrm{C}}$ 和 $K_{\mathrm{O}}$ 分别是质子与关闭状态和开放状态的解离常数 [@problem_id:2696043]。由于质子对开放状态的亲和力更高，因此 $K_{\mathrm{O}}  K_{\mathrm{C}}$。随着质子浓度 $[H^+]$ 的增加（即 pH 值的下降），分母中的第二项相对于第一项变得越来越大，使得 $P_{\mathrm{O}}$ 趋近于 1。
+其中，$L_0$ 是无[配体](@keyword=ligand|lang=zh-CN|style=Feynman)时关闭与开放状态的平衡常数（$L_0 = [\mathrm{C}]/[\mathrm{O}] = \exp(\Delta G_{\mathrm{intr}}/RT)$），$K_{\mathrm{C}}$ 和 $K_{\mathrm{O}}$ 分别是质子与关闭[状态和](@keyword=sum_of_states|lang=zh-CN|style=Feynman)开放状态的[解离常数](@keyword=dissociation_constant|lang=zh-CN|style=Feynman) [@problem_id:2696043]。由于质子对开放状态的亲和力更高，因此 $K_{\mathrm{O}}  K_{\mathrm{C}}$。随着质子浓度 $[H^+]$ 的增加（即 pH 值的下降），分母中的第二项相对于第一项变得越来越大，使得 $P_{\mathrm{O}}$ 趋近于 1。
 
-我们可以使用一个更简化的热力学模型来捕捉这一过程的本质。假设通道有 $n$ 个等效的质子结合位点，其质子化状态可以用酸解离常数 $\mathrm{p}K_a$ 来描述。质子化事件对门控自由能的贡献是加和的。在没有任何质子结合时，内在的门控自由能为 $\Delta G_{\mathrm{intr}} > 0$。每次质子化事件都会使开放状态相对稳定，贡献一个负的自由能变化 $\Delta g  0$。因此，总的门控自由能差可以写成：
+我们可以使用一个更简化的[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)模型来捕捉这一过程的本质。假设通道有 $n$ 个等效的质子结合位点，其[质子化状态](@keyword=protonation_states|lang=zh-CN|style=Feynman)可以用[酸解离常数](@keyword=acid_dissociation_constant_2|lang=zh-CN|style=Feynman) $\mathrm{p}K_a$ 来描述。质子化事件对门控自由能的贡献是加和的。在没有任何质子结合时，内在的门控自由能为 $\Delta G_{\mathrm{intr}} > 0$。每次质子化事件都会使开放状态相对稳定，贡献一个负的自由能变化 $\Delta g  0$。因此，总的门控自由能差可以写成：
 $$
 \Delta G_{\mathrm{tot}} = \Delta G_{\mathrm{intr}} + n \cdot f(\mathrm{pH}) \cdot \Delta g
 $$
 其中，$f(\mathrm{pH}) = \frac{1}{1+10^{\mathrm{pH}-\mathrm{p}K_a}}$ 是每个位点的质子化分数。通道的半数激活 pH 值（$\mathrm{pH}_{50}$）定义为开放和关闭状态概率相等时的 pH，此时 $\Delta G_{\mathrm{tot}} = 0$。通过求解这个方程，我们可以看到 $\mathrm{pH}_{50}$ 直接依赖于位点的 $\mathrm{p}K_a$ 值以及内在的门控能量和每个质子结合提供的偶联能量之间的平衡 [@problem_id:2696042]。
 
-这种质子结合与构象变化之间的能量偶联是门控的核心。我们可以将质子结合对构象平衡的贡献量化为**偶联自由能**（$\Delta G_{\mathrm{couple}}$）。对于一个具有多个结合位点的系统，偶联自由能可以通过比较质子在关闭状态和开放状态下与通道结合的总自由能来计算。每个结合位点对偶联自由能的贡献都取决于其在两种构象下的 $\mathrm{p}K_a$ 值差异。具体来说，对于第 $i$ 个位点，其在关闭态的酸解离常数为 $\mathrm{p}K_{a,i}^{(\mathrm{C})}$，在开放态为 $\mathrm{p}K_{a,i}^{(\mathrm{O})}$。在给定的 pH 值下，总的偶联自由能为：
+这种质子结合与[构象变化](@keyword=conformational_change|lang=zh-CN|style=Feynman)之间的能量偶联是门控的核心。我们可以将质子结合对构象平衡的贡献量化为**偶联自由能**（$\Delta G_{\mathrm{couple}}$）。对于一个具有多个结合位点的系统，偶联自由能可以通过比较质子在关闭[状态和](@keyword=sum_of_states|lang=zh-CN|style=Feynman)开放状态下与通道结合的总自由能来计算。每个结合位点对偶联自由能的贡献都取决于其在两种构象下的 $\mathrm{p}K_a$ 值差异。具体来说，对于第 $i$ 个位点，其在关闭态的[酸解离常数](@keyword=acid_dissociation_constant_2|lang=zh-CN|style=Feynman)为 $\mathrm{p}K_{a,i}^{(\mathrm{C})}$，在开放态为 $\mathrm{p}K_{a,i}^{(\mathrm{O})}$。在给定的 pH 值下，总的偶联自由能为：
 $$
 \Delta G_{\mathrm{couple}}(\mathrm{pH}) = RT \sum_{i} \left[ \ln\left(1 + 10^{\mathrm{p}K_{a,i}^{(\mathrm{C})} - \mathrm{pH}}\right) - \ln\left(1 + 10^{\mathrm{p}K_{a,i}^{(\mathrm{O})} - \mathrm{pH}}\right) \right]
 $$
-因为质子化稳定了开放状态，所以开放状态下位点的 $\mathrm{p}K_a$ 值通常更高（$\mathrm{p}K_{a,i}^{(\mathrm{O})} > \mathrm{p}K_{a,i}^{(\mathrmC)}$），这导致在酸性条件下 $\Delta G_{\mathrm{couple}}$ 为负值，从而驱动通道开放 [@problem_id:2696092]。
+因为质子化稳定了开放状态，所以开放状态下位点的 $\mathrm{p}K_a$ 值通常更高（$\mathrm{p}K_{a,i}^{(\mathrm{O})} > \mathrm{p}K_{a,i}^{(\mathrm{C})}$），这导致在酸性条件下 $\Delta G_{\mathrm{couple}}$ 为负值，从而驱动通道开放 [@problem_id:2696092]。
 
 #### 质子传感的结构基础
 
-上述热力学模型中的“质子结合位点”在物理上对应于 ASIC 细胞外结构域（ECD）中的特定区域。通过结构生物学和诱变技术，研究人员已经确定了一个被称为“酸性口袋”（acidic pocket）的区域，它位于不同亚基之间的界面或亚基内部的亚结构域之间。这个口袋富含可滴定的酸性氨基酸残基，如天冬氨酸（Asp）和谷氨酸（Glu）。
+上述[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)模型中的“质子结合位点”在物理上对应于 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 细胞外结构域（ECD）中的特定区域。通过[结构生物学](@keyword=structural_biology|lang=zh-CN|style=Feynman)和[诱变](@keyword=mutagenesis|lang=zh-CN|style=Feynman)技术，研究人员已经确定了一个被称为“酸性口袋”（acidic pocket）的区域，它位于不同亚基之间的界面或亚基内部的亚结构域之间。这个口袋富含可滴定的酸性氨基酸残基，如天冬氨酸（Asp）和谷氨酸（Glu）。
 
-结构-功能研究为这一观点提供了强有力的证据。例如，通过构建嵌合体通道，将对质子不敏感的 ASIC 亚型的 ECD 替换到敏感的 ASIC1a 中，可以观察到质子敏感性（以 $\mathrm{pH}_{50}$ 衡量）的急剧下降，而离子选择性或脱敏动力学等其他特性则不受影响。这清晰地表明，质子传感功能主要定位于 ECD [@problem_id:2696059]。更精确的实验是通过定点突变将酸性口袋中的关键谷氨酸或天冬氨酸残基中和为中性的谷氨酰胺或天冬酰胺。这类突变显著降低了通道对质子的表观亲和力（即 $\mathrm{pH}_{50}$ 向更酸的方向移动，数值减小）和门控的协同性（希尔系数降低）。这直接证明了这些羧基侧链作为质子受体的关键作用。此外，由于这些残基也参与形成某些毒素（如 PcTx1）的结合位点，中和它们也会削弱毒素的抑制作用 [@problem_id:2696050]。
+结构-功能研究为这一观点提供了强有力的证据。例如，通过构建嵌合体通道，将对质子不敏感的 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 亚型的 ECD 替换到敏感的 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)1a 中，可以观察到质子敏感性（以 $\mathrm{pH}_{50}$ 衡量）的急剧下降，而[离子选择性](@keyword=ion_selectivity|lang=zh-CN|style=Feynman)或脱敏动力学等其他特性则不受影响。这清晰地表明，质子传感功能主要定位于 ECD [@problem_id:2696059]。更精确的实验是通过定[点突变](@keyword=point_mutations|lang=zh-CN|style=Feynman)将酸性口袋中的关键谷氨酸或天冬氨酸残基中和为中性的谷氨酰胺或天冬[酰胺](@keyword=amides|lang=zh-CN|style=Feynman)。这类突变显著降低了通道对质子的表观亲和力（即 $\mathrm{pH}_{50}$ 向更酸的方向移动，数值减小）和门控的协同性（希尔系数降低）。这[直接证明](@keyword=direct_proof|lang=zh-CN|style=Feynman)了这些羧基[侧链](@keyword=side_chains|lang=zh-CN|style=Feynman)作为[质子受体](@keyword=proton_acceptor|lang=zh-CN|style=Feynman)的关键作用。此外，由于这些残基也参与形成某些毒素（如 PcTx1）的结合位点，中和它们也会削弱毒素的抑制作用 [@problem_id:2696050]。
 
-### 构象动力学：激活、脱敏与恢复
+### [构象动力学](@keyword=conformational_dynamics|lang=zh-CN|style=Feynman)：激活、脱敏与恢复
 
 质子结合触发了一系列复杂的构象变化，不仅导致通道开放，还最终使其进入一个非导电的脱敏状态。
 
 #### 门控构象变化
 
-ECD 的质子化如何传递到位于跨膜区的门？高分辨率的结构研究揭示了 ECD 内部复杂的亚结构域，包括“拇指”、“手指”、“关节”和“手掌”等。质子化被认为会引起这些亚结构域的相对运动。例如，两个竞争性的门控模型被提出来解释这一过程：
+ECD 的质子化如何传递到位于跨膜区的门？高分辨率的结构研究揭示了 ECD 内部复杂的亚结构域，包括“拇指”、“手指”、“关节”和“手掌”等。质子化被认为会引起这些亚结构域的[相对运动](@keyword=relative_motion|lang=zh-CN|style=Feynman)。例如，两个竞争性的门控模型被提出来解释这一过程：
 - **“铰链-钳夹”（hinge-and-clamp）模型**：质子化导致每个亚基内的酸性口袋塌陷，使亚基内部的残基彼此靠近，而在亚基之间的“腕部”区域几乎没有扩张。
 - **“虹膜样扩张”（iris-like dilation）模型**：质子化导致酸性口袋扩张，并在“腕部”和孔道外围产生协同的跨亚基扩张。
 
-这些模型可以通过测量通道不同位置的距离变化来进行检验。利用单分子荧光共振能量转移（smFRET）等技术，可以在通道的特定位置引入荧光供体和受体，通过测量它们的能量转移效率来实时监测距离变化。由于FRET效率 $E$ 与距离 $r$ 之间存在 $E = 1/(1 + (r/R_0)^6)$ 的关系（其中 $R_0$ 是福斯特半径），不同的距离变化模式会产生截然不同的FRET信号。例如，“铰链-钳夹”模型预测酸性口袋内的距离变短（FRET效率增加），而“虹膜样扩张”模型预测距离变长（FRET效率降低）。结合氢-氘交换质谱（HDX-MS）等技术，可以检测蛋白质特定区域的溶剂可及性和柔性变化，从而为区分这些动态模型提供互补的证据 [@problem_id:2696108]。
+这些模型可以通过测量通道不同位置的距离变化来进行检验。利用[单分子荧光共振能量转移](@keyword=single_molecule_fret|lang=zh-CN|style=Feynman)（[smFRET](@keyword=smfret|lang=zh-CN|style=Feynman)）等技术，可以在通道的特定位置引入荧光供体和受体，通过测量它们的[能量转移](@keyword=energy_transfer|lang=zh-CN|style=Feynman)效率来实时监测距离变化。由于FRET效率 $E$ 与距离 $r$ 之间存在 $E = 1/(1 + (r/R_0)^6)$ 的关系（其中 $R_0$ 是福斯特半径），不同的距离变化模式会产生截然不同的FRET信号。例如，“铰链-钳夹”模型预测酸性口袋内的距离变短（FRET效率增加），而“虹膜样扩张”模型预测距离变长（FRET效率降低）。结合氢-[氘](@keyword=deuterium|lang=zh-CN|style=Feynman)交换质谱（[HDX-MS](@keyword=hdx_ms|lang=zh-CN|style=Feynman)）等技术，可以检测蛋白质特定区域的溶剂可及性和柔性变化，从而为区分这些动态模型提供互补的证据 [@problem_id:2696108]。
 
 #### 离子渗透与选择性
 
-当构象变化传递到跨膜区，通道的“门”打开，形成一条贯穿细胞膜的离子通路。这个通路主要由三个亚基的 TM2 螺旋共同构成。决定离子能否通过以及通过速率的，是孔道最狭窄处的结构和静电特性，即**选择性过滤器**。在 ASIC1a 中，这个区域由一个富含甘氨酸（Gly）、丙氨酸（Ala）和丝氨酸（Ser）的“GAS带”构成，它被认为是钠离子选择性的关键决定因素 [@problem_id:2696050]。通道的功能模块化特性在这里再次得到体现：将 ASIC1a 的 TM2 螺旋替换为 ENaC 亚基的 TM2，会显著改变通道的离子选择性（如 $P_{\mathrm{Na}}/P_{\mathrm{Li}}$ 比值）和对孔道阻断剂（如阿米洛利）的亲和力，但对质子传感（$\mathrm{pH}_{50}$）没有影响。这有力地证明了孔道区（特别是 TM2）负责离子渗透和选择性，而 ECD 负责配体传感 [@problem_id:2696059]。
+当构象变化传递到跨膜区，通道的“门”打开，形成一条贯穿[细胞膜](@keyword=cell_membrane|lang=zh-CN|style=Feynman)的离子通路。这个通路主要由三个亚基的 TM2 螺旋共同构成。决定离子能否通过以及通过速率的，是孔道最狭窄处的结构和静电特性，即**[选择性过滤器](@keyword=selectivity_filter|lang=zh-CN|style=Feynman)**。在 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)1a 中，这个区域由一个富含甘氨酸（Gly）、丙氨酸（Ala）和丝氨酸（Ser）的“GAS带”构成，它被认为是钠[离子选择性](@keyword=ion_selectivity|lang=zh-CN|style=Feynman)的关键决定因素 [@problem_id:2696050]。通道的功能模块化特性在这里再次得到体现：将 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)1a 的 TM2 螺旋替换为 ENaC 亚基的 TM2，会显著改变通道的[离子选择性](@keyword=ion_selectivity|lang=zh-CN|style=Feynman)（如 $P_{\mathrm{Na}}/P_{\mathrm{Li}}$ 比值）和对孔道阻断剂（如阿米洛利）的亲和力，但对质子传感（$\mathrm{pH}_{50}$）没有影响。这有力地证明了孔道区（特别是 TM2）负责离子渗透和选择性，而 ECD 负责[配体](@keyword=ligand|lang=zh-CN|style=Feynman)传感 [@problem_id:2696059]。
 
 #### 脱敏与恢复的动力学
 
-在质子持续存在的情况下，ASIC 通道会快速进入一个非导电的**脱敏状态**（$D$）。这个过程在生理上至关重要，因为它限制了离子流的时间，防止细胞过度兴奋或离子失衡。脱敏过程本身也与 ECD 中的一个特定结构元件——$\beta11$-$\beta12$ 连接环（linker）的构象翻转（flip）紧密相关。对这个连接环进行突变，可以极大地加速或减缓脱敏速率，而几乎不影响通道的激活或离子选择性 [@problem_id:2696059]。
+在质子持续存在的情况下，[ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 通道会快速进入一个非导电的**脱敏状态**（$D$）。这个过程在生理上至关重要，因为它限制了离子流的时间，防止细胞过度兴奋或离子失衡。脱敏过程本身也与 ECD 中的一个特定结构元件——$\beta11$-$\beta12$ 连接环（linker）的构象翻转（flip）紧密相关。对这个连接环进行突变，可以极大地加速或减缓脱敏速率，而几乎不影响通道的激活或[离子选择性](@keyword=ion_selectivity|lang=zh-CN|style=Feynman) [@problem_id:2696059]。
 
-我们可以利用过渡态理论来理解突变如何影响脱敏动力学。从开放态（$O$）到脱敏态（$D$）的转换需要越过一个能量势垒，即过渡态（$TS$）。根据哈蒙德假说（Hammond's postulate），如果一个突变稳定了脱敏态 $D$，那么它很可能也稳定了结构上与之相似的过渡态 $TS$。假设一个突变使 $D$ 态和 $TS$ 态的自由能均降低了 $\Delta \Delta G  0$。这会导致从 $O$ 到 $D$ 的正向反应活化能（$G_{TS} - G_O$）降低，从而使脱敏速率加快。然而，从 $D$ 到 $O$ 的逆向恢复反应的活化能（$G_{TS} - G_D$）则保持不变，因为 $G_{TS}$ 和 $G_D$ 被同等程度地降低了。因此，这样的突变会加速脱敏，但不影响恢复速率。同时，由于脱敏态被相对稳定，脱敏平衡会向 $D$ 态倾斜，这表现为稳态脱敏曲线的半数失活 pH 值（$\mathrm{pH}_{50}^{\mathrm{SSD}}$）向更碱性的方向移动 [@problem_id:2696046]。
+我们可以利用[过渡态理论](@keyword=transition_state_theory_2|lang=zh-CN|style=Feynman)来理解突变如何影响脱敏动力学。从开放态（$O$）到脱敏态（$D$）的转换需要越过一个[能量势](@keyword=energy_potential|lang=zh-CN|style=Feynman)垒，即过渡态（$TS$）。根据[哈蒙德假说](@keyword=hammond_s_postulate|lang=zh-CN|style=Feynman)（Hammon[d'](@keyword=d_prime|lang=zh-CN|style=Feynman)s postulate），如果一个突变稳定了脱敏态 $D$，那么它很可能也稳定了结构上与之相似的过渡态 $TS$。假设一个突变使 $D$ 态和 $TS$ 态的自由能均降低了 $\Delta \Delta G  0$。这会导致从 $O$ 到 $D$ 的正向反应活化能（$G_{TS} - G_O$）降低，从而使脱敏速率加快。然而，从 $D$ 到 $O$ 的逆向恢复反应的活化能（$G_{TS} - G_D$）则保持不变，因为 $G_{TS}$ 和 $G_D$ 被同等程度地降低了。因此，这样的突变会加速脱敏，但不影响恢复速率。同时，由于脱敏态被相对稳定，脱敏平衡会向 $D$ 态倾斜，这表现为[稳态](@keyword=steady_states|lang=zh-CN|style=Feynman)脱敏曲线的半数失活 pH 值（$\mathrm{pH}_{50}^{\mathrm{SSD}}$）向更碱性的方向移动 [@problem_id:2696046]。
 
-通道从脱敏状态的恢复同样是一个受 pH 调控的动力学过程。在生理 pH（如 7.4）下，通道从脱敏状态恢复到静息状态。一个精细的动力学模型认为，恢复过程并非一步完成。首先，结合在脱敏通道上的质子必须先解离（$D_{\mathrm{H}} \rightleftharpoons D + \mathrm{H}^{+}$），然后去质子化的脱敏通道（$D$）才能以一个固有的速率（$k_{r0}$）恢复到静息状态（$R$）。如果质子解离是一个快速预平衡过程，那么总的恢复速率将由 pH 值和固有恢复速率共同决定。在较高的 pH（较低的质子浓度）下，去质子化的 $D$ 态比例更高，恢复就更快。其有效的一级恢复速率常数可以表示为：
+通道从脱敏状态的恢复同样是一个受 pH 调控的动力学过程。在生理 pH（如 7.4）下，通道从脱敏状态恢复到静息状态。一个精细的动力学模型认为，恢复过程并非一步完成。首先，结合在脱敏通道上的质子必须先解离（$D_{\mathrm{H}} \rightleftharpoons D + \mathrm{H}^{+}$），然后去质子化的脱敏通道（$D$）才能以一个固有的速率（$k_{r0}$）恢复到静息状态（$R$）。如果质子解离是一个快速[预平衡](@keyword=pre_equilibrium|lang=zh-CN|style=Feynman)过程，那么总的恢复速率将由 pH 值和固有恢复速率共同决定。在较高的 pH（较低的质子浓度）下，去质子化的 $D$ 态比例更高，恢复就更快。其有效的一级恢复速率常数可以表示为：
 $$
 k_{\mathrm{eff}} = k_{r0} \frac{K_{d}}{K_{d} + [\mathrm{H}^{+}]}
 $$
 其中 $K_d$ 是质子与脱敏通道的解离常数。这个模型解释了为什么从中和 pH 环境中恢复比从弱酸性环境中恢复要快得多，并允许我们精确计算在给定恢复 pH 下，通道恢复到特定比例所需的时间 [@problem_id:2696102]。
 
-### ASIC 功能的调控
+### [ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 功能的调控
 
-ASIC 通道的功能并非一成不变，而是受到多种内源性和外源性因素的精细调控，这些调控对于其在生理和病理过程中的作用至关重要。
+[ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 通道的功能并非一成不变，而是受到多种内源性和外源性因素的精细调控，这些调控对于其在生理和病理过程中的作用至关重要。
 
 #### 内源性与外源性调节剂
 
-ASIC 的活性可以被细胞微环境中的多种分子调节。一个关键的内源性调节剂是细胞外的二价阳离子，特别是钙离子（$\mathrm{Ca}^{2+}$）和锌离子（$\mathrm{Zn}^{2+}$）。在生理浓度下（毫摩尔级别），$\mathrm{Ca}^{2+}$ 对 ASIC1a 施加一种持续的（tonic）抑制作用，它提高了通道激活所需的质子浓度（即降低了 $\mathrm{pH}_{50}$），减小了峰电流，并加速了脱敏。因此，任何能够降低细胞外游离 $\mathrm{Ca}^{2+}$ 浓度的因素，都可能间接地增强 ASIC 的功能。
+[ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 的活性可以被细胞微环境中的多种分子调节。一个关键的内源性调节剂是细胞外的二价阳离子，特别是钙离子（$\mathrm{Ca}^{2+}$）和锌离子（$\mathrm{Zn}^{2+}$）。在生理浓度下（毫摩尔级别），$\mathrm{Ca}^{2+}$ 对 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman)1a 施加一种持续的（tonic）抑制作用，它提高了[通道激活](@keyword=channel_activation|lang=zh-CN|style=Feynman)所需的质子浓度（即降低了 $\mathrm{pH}_{50}$），减小了峰电流，并加速了脱敏。因此，任何能够降低细胞外游离 $\mathrm{Ca}^{2+}$ 浓度的因素，都可能间接地增强 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 的功能。
 
-一个生理上非常重要的例子是乳酸。在剧烈脑活动或缺血等情况下，细胞会产生大量乳酸。乳酸根离子是一种弱的 $\mathrm{Ca}^{2+}$ 螯合剂。当细胞外乳酸浓度升高时（例如达到 15 mM），它会结合一部分游离的 $\mathrm{Ca}^{2+}$，从而降低有效 $\mathrm{Ca}^{2+}$ 浓度。这解除了 $\mathrm{Ca}^{2+}$ 对 ASIC 的部分抑制，导致通道对质子的表观亲和力增加（$\mathrm{pH}_{50}$ 向碱性方向移动约 +0.3 个单位，对应于质子亲和力翻倍），峰电流增大，脱敏减慢。这种调节机制的标志是“遮蔽效应”（occlusion）：如果首先通过其他手段（如使用 EGTA）将细胞外 $\mathrm{Ca}^{2+}$ 浓度钳定在极低水平，那么乳酸的增强效应就会消失，因为其作用靶点（游离 $\mathrm{Ca}^{2+}$）已经不存在了。这种机制将细胞的代谢状态（乳酸水平）与神经元的质子敏感性联系起来 [@problem_id:2696097]。
+一个生理上非常重要的例子是乳酸。在剧烈脑活动或缺血等情况下，细胞会产生大量乳酸。乳酸根离子是一种弱的 $\mathrm{Ca}^{2+}$ 螯合剂。当细胞外乳酸浓度升高时（例如达到 15 mM），它会结合一部分游离的 $\mathrm{Ca}^{2+}$，从而降低有效 $\mathrm{Ca}^{2+}$ 浓度。这解除了 $\mathrm{Ca}^{2+}$ 对 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 的部分抑制，导致通道对质子的表观亲和力增加（$\mathrm{pH}_{50}$ 向碱性方向移动约 +0.3 个单位，对应于质子亲和力翻倍），峰电流增大，脱敏减慢。这种调节机制的标志是“遮蔽效应”（occlusion）：如果首先通过其他手段（如使用 EGTA）将细胞外 $\mathrm{Ca}^{2+}$ 浓度钳定在极低水平，那么乳酸的增强效应就会消失，因为其作用靶点（游离 $\mathrm{Ca}^{2+}$）已经不存在了。这种机制将细胞的代谢状态（乳酸水平）与神经元的质子敏感性联系起来 [@problem_id:2696097]。
 
 #### 脂质双分子层的调控
 
-离子通道镶嵌于细胞膜中，其构象和功能不可避免地受到周围脂质环境的影响。细胞膜并非一个被动的溶剂，而是 ASIC 功能的主动参与者和调节者。脂质可以通过至少两种方式影响 ASIC 的门控自由能，从而调节其质子敏感性。
+离子通道镶嵌于[细胞膜](@keyword=cell_membrane|lang=zh-CN|style=Feynman)中，其构象和功能不可避免地受到周围脂质环境的影响。[细胞膜](@keyword=cell_membrane|lang=zh-CN|style=Feynman)并非一个被动的溶剂，而是 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 功能的主动参与者和调节者。脂质可以通过至少两种方式影响 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 的门控自由能，从而调节其质子敏感性。
 
-一种方式是通过**宏观的物理力学特性**。细胞膜的厚度、曲率和刚度等属性可以影响通道在不同构象状态下的能量。例如，胆固醇是调节膜刚性的重要组分。增加膜中的胆固醇含量会增加膜的刚性，这可能会对通道从关闭态到开放态所需的大范围构象变化产生阻力。这种阻力表现为对开放状态的去稳定化作用（即 $\Delta G$ 增加），结果是通道需要更强的刺激（更低的 pH）才能被激活，表现为 $\mathrm{pH}_{50}$ 向酸性方向移动。
+一种方式是通过**宏观的物理力学特性**。[细胞膜](@keyword=cell_membrane|lang=zh-CN|style=Feynman)的厚度、曲率和刚度等属性可以影响通道在不同构象状态下的能量。例如，胆固醇是调节膜刚性的重要组分。增加膜中的[胆固醇](@keyword=cholesterol|lang=zh-CN|style=Feynman)含量会增加膜的刚性，这可能会对通道从关闭态到开放态所需的大范围[构象变化](@keyword=conformational_change|lang=zh-CN|style=Feynman)产生阻力。这种阻力表现为对开放状态的去稳定化作用（即 $\Delta G$ 增加），结果是通道需要更强的刺激（更低的 pH）才能被激活，表现为 $\mathrm{pH}_{50}$ 向酸性方向移动。
 
-另一种方式是**特异性的脂质-蛋白质相互作用**。某些特定的脂质分子，如多不饱和脂肪酸（PUFAs），可以作为变构调节剂，直接结合到通道蛋白的特定位点。例如，一种带负电荷的 PUFA 可能选择性地结合并稳定开放状态。这种结合会降低开放状态的自由能（即 $\Delta G$ 降低），从而使通道更容易被激活，表现为 $\mathrm{pH}_{50}$ 向碱性方向移动。
+另一种方式是**特异性的脂质-蛋白质相互作用**。某些特定的脂质分子，如[多不饱和脂肪酸](@keyword=polyunsaturated_fatty_acids|lang=zh-CN|style=Feynman)（PUFAs），可以作为[变构调节剂](@keyword=allosteric_modulator|lang=zh-CN|style=Feynman)，直接结合到[通道蛋白](@keyword=channel_proteins|lang=zh-CN|style=Feynman)的特定位点。例如，一种带负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的 PUFA 可能选择性地结合并稳定开放状态。这种结合会降低开放状态的自由能（即 $\Delta G$ 降低），从而使通道更容易被激活，表现为 $\mathrm{pH}_{50}$ 向碱性方向移动。
 
 这两种效应可以叠加。在一个复杂的模型中，我们可以量化胆固醇增加导致的去稳定化作用（正的 $\Delta G$ 贡献）和 PUFA 结合带来的稳定化作用（负的 $\Delta G$ 贡献）。总的脂质调节对 $\Delta G$ 的净贡献，$\Delta G_{\text{lipid}}$，将决定最终 $\mathrm{pH}_{50}$ 的移动方向和幅度。$\Delta G_{\text{lipid}}$ 的变化 $\Delta(\Delta G_{\text{lipid}})$ 与 $\mathrm{pH}_{50}$ 的位移 $\Delta\mathrm{pH}_{50}$ 之间的关系可以近似表示为：
 $$
 \Delta \mathrm{pH}_{50} = - \frac{\Delta(\Delta G_{\text{lipid}})}{n_H RT \ln(10)}
 $$
-这个关系清晰地表明，任何稳定开放状态的因素（$\Delta(\Delta G_{\text{lipid}})  0$）都会导致 $\mathrm{pH}_{50}$ 向碱性移动，而任何去稳定开放状态的因素（$\Delta(\Delta G_{\text{lipid}}) > 0$）都会导致 $\mathrm{pH}_{50}$ 向酸性移动 [@problem_id:2696047]。这为理解不同细胞类型（具有不同膜脂质组成）中 ASIC 功能的差异以及饮食和病理条件下膜脂质变化对神经元兴奋性的影响提供了理论基础。
+这个关系清晰地表明，任何稳定开放状态的因素（$\Delta(\Delta G_{\text{lipid}})  0$）都会导致 $\mathrm{pH}_{50}$ 向碱性移动，而任何去稳定开放状态的因素（$\Delta(\Delta G_{\text{lipid}}) > 0$）都会导致 $\mathrm{pH}_{50}$ 向酸性移动 [@problem_id:2696047]。这为理解不同细胞类型（具有不同[膜脂](@keyword=membrane_lipids|lang=zh-CN|style=Feynman)质组成）中 [ASIC](@keyword=asics|lang=zh-CN|style=Feynman) 功能的差异以及饮食和病理条件下[膜脂](@keyword=membrane_lipids|lang=zh-CN|style=Feynman)质变化对[神经元兴奋性](@keyword=neuronal_excitability|lang=zh-CN|style=Feynman)的影响提供了理论基础。

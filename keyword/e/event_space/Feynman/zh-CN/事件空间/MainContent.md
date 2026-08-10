@@ -50,7 +50,7 @@
 -   规则2：它对补集运算封闭吗？
     -   $\emptyset$ 的补集是 $\Omega$，它在 $\mathcal{F}$ 中。
     -   $\{a\}$ 的补集是 $\{s, e, d\}$，它在 $\mathcal{F}$ 中。
-    -   $\{s, e, d\}$ 的[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman)是 $\{a\}$，它在 $\mathcalF$ 中。
+    -   $\{s, e, d\}$ 的[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman)是 $\{a\}$，它在 $\mathcal{F}$ 中。
     -   $\Omega$ 的[补集](@keyword=complement_of_a_set|lang=zh-CN|style=Feynman)是 $\emptyset$，它在 $\mathcal{F}$ 中。
     是的，这条规则成立。
 -   规则3：它对并集运算封闭吗？因为它是一个有限集合，我们只需要检查有限并集。唯一需要检查的非平凡并集是 $\{a\} \cup \{s, e, d\} = \{a, s, e, d\} = \Omega$，它在 $\mathcal{F}$ 中。所有其他并集都是平凡的。

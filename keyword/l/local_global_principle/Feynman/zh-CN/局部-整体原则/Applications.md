@@ -38,9 +38,9 @@
 
 对于[二次型](@keyword=quadratic_forms|lang=zh-CN|style=Feynman)，[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)是一个可靠的向导。但对于[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)，它失效了。人们可以构造出与椭圆曲线相关的某些方程（称为*[扭子](@keyword=torsors|lang=zh-CN|style=Feynman) (torsor)*），它们“处处局部可解”——即在实数域和每一个 $p$-adic 域中都有解——然而，令人震惊的是，它们在有理数中**完全没有解** [@problem_id:3013109]。
 
-这一发现并非一次失败，而是一个启示。它表明存在一个隐藏的算术结构层，这一层是局部检查完全无法看到的。数学家们以其无穷的智慧，给这个神秘的障碍起了一个名字：**Tate-Shafarevich 群**，记作 $\Sha(E/\mathbb{Q})$。对于给定的[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman) $E$，该群的每个非单位元都对应着[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)的一个[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)。研究这个群，就是研究局部与全局世界有时无法连接的微妙原因。该原则的失效远非一个麻烦，而是成为一个指向更深、更神秘现实的路标 [@problem_id:3013109]。
+这一发现并非一次失败，而是一个启示。它表明存在一个隐藏的算术结构层，这一层是局部检查完全无法看到的。数学家们以其无穷的智慧，给这个神秘的障碍起了一个名字：**Tate-Shafarevich 群**，记作 $\mathrm{Ш}(E/\mathbb{Q})$。对于给定的[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman) $E$，该群的每个非单位元都对应着[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)的一个[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)。研究这个群，就是研究局部与全局世界有时无法连接的微妙原因。该原则的失效远非一个麻烦，而是成为一个指向更深、更神秘现实的路标 [@problem_id:3013109]。
 
-Tate-Shafarevich 群是现代数学中最神秘的对象之一。一个核心的未解问题，也是 Birch and Swinnerton-Dyer 猜想的一部分，是证明 $\Sha$ 永远是一个[有限群](@keyword=finite_groups|lang=zh-CN|style=Feynman)。但我们并非无能为力。数论学家们设计了巧妙的方法，如“Selmer 群”理论，它充当了 $\Sha$ 的一种代理。通过执行一次有限且可计算的“下降法”，我们可以计算出 Selmer 群的大小。这反过来又为我们提供了 Tate-Shafarevich 群大小的一个具体上界，使我们能够对[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)的[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)进行普查，并开始绘制这片隐藏的景观 [@problem_id:3013177]。
+Tate-Shafarevich 群是现代数学中最神秘的对象之一。一个核心的未解问题，也是 Birch and Swinnerton-Dyer 猜想的一部分，是证明 $\mathrm{Ш}$ 永远是一个[有限群](@keyword=finite_groups|lang=zh-CN|style=Feynman)。但我们并非无能为力。数论学家们设计了巧妙的方法，如“Selmer 群”理论，它充当了 $\mathrm{Ш}$ 的一种代理。通过执行一次有限且可计算的“下降法”，我们可以计算出 Selmer 群的大小。这反过来又为我们提供了 Tate-Shafarevich 群大小的一个具体上界，使我们能够对[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)的[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)进行普查，并开始绘制这片隐藏的景观 [@problem_id:3013177]。
 
 ### 旅程的终点
 

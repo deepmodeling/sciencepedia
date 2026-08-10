@@ -49,7 +49,7 @@ $$
 
 猜想不止于秩。它更进一步，预测了 $L(E,s)$在 $s=1$ 处第一个非零泰勒系数的精确值。这是猜想的第二部分，一个更精确的部分，其形式为一个非凡的方程 [@problem_id:3022294, 3025319]：
 $$
-\lim_{s\to 1}\frac{L(E,s)}{(s-1)^r} = \frac{\Omega_E \cdot \mathrm{Reg}_{E} \cdot |\Sha(E/\mathbb{Q})| \cdot \prod_{p} c_p}{|E(\mathbb{Q})_{\text{tors}}|^2}
+\lim_{s\to 1}\frac{L(E,s)}{(s-1)^r} = \frac{\Omega_E \cdot \mathrm{Reg}_{E} \cdot |\mathrm{Ш}(E/\mathbb{Q})| \cdot \prod_{p} c_p}{|E(\mathbb{Q})_{\text{tors}}|^2}
 $$
 这个公式看起来令人生畏，但让我们把它想象成一个宇宙配方。左边是来自 L-函数世界的解析量。右边是一锅算术原料，每一种都讲述着曲线故事的一部分。为了使方程成立，所有这些看似无关的数字必须完美协调，达到平衡。
 
@@ -59,11 +59,11 @@ $$
 
 - **$\mathrm{Reg}_{E}$ (调节子):** 它衡量由基础有理点构成的格的“体积”。它是通过**Néron-Tate 高**计算的，这是一种曲线上的对数距离函数。如果基础点在这种意义上“相距甚远”，Regulator 就很大。它是一个由[基点](@keyword=basepoint|lang=zh-CN|style=Feynman)之间的配对组成的矩阵的行列式，$\det(\langle P_i, P_j \rangle)$ [@problem_id:3025319]。对于秩为 0 的曲线，由于没有基础点，Regulator 就简单地定义为 1。
 
-- **$|E(\mathbb{Q})_{\text{tors}}|^2$ ([挠子群](@keyword=torsion_subgroup|lang=zh-CN|style=Feynman)):** 这是有限阶点个数的平方。这些是“简单”的解。它们出现在分母中，表明它们起着归一化的作用。整个公式是如此精妙，以至于我们有时可以用它从其他要素中推断出某个要素。例如，如果我们已知一条秩为 0 的曲线有 $L(E,1) = \Omega_E/8$，$|\Sha| = 1$，以及 $\prod c_p = 2$，那么 BSD 公式将迫使我们得出结论：$|E(\mathbb{Q})_{\text{tors}}|=4$ [@problem_id:3016599]。
+- **$|E(\mathbb{Q})_{\text{tors}}|^2$ ([挠子群](@keyword=torsion_subgroup|lang=zh-CN|style=Feynman)):** 这是有限阶点个数的平方。这些是“简单”的解。它们出现在分母中，表明它们起着归一化的作用。整个公式是如此精妙，以至于我们有时可以用它从其他要素中推断出某个要素。例如，如果我们已知一条秩为 0 的曲线有 $L(E,1) = \Omega_E/8$，$|\mathrm{Ш}| = 1$，以及 $\prod c_p = 2$，那么 BSD 公式将迫使我们得出结论：$|E(\mathbb{Q})_{\text{tors}}|=4$ [@problem_id:3016599]。
 
 - **$\prod c_p$ (Tamagawa 数):** 对于大多数素数，曲线表现良好。但对于一些“坏”素数，当模 $p$ 考虑时，曲线的方程会变得奇异。Tamagawa 数 $c_p$ 是针对这些坏素数的小整数修正因子。对于一个“好约化”的素数，$c_p=1$。对于一个坏素数，$c_p$ 取决于[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)的类型，可以用 Kodaira 记号来分类。例如，一条在 $p=2$ 处有 $IV$ 型约化的曲线有 $c_2=3$，在 $p=3$ 处有 $I_1$ 型约化的曲线有 $c_3=1$，使得总乘积 $\prod c_p = 3$ [@problem_id:3013117]。
 
-- **$|\Sha(E/\mathbb{Q})|$ (Shafarevich-Tate 群):** 这是整个故事中最神秘、最难以捉摸的角色。$\Sha(E/\mathbb{Q})$ 群，读作“Sha”，衡量的是“局部-整体”原则的失效程度。想象一下试图拼一个全球性的拼图。你可能检查了每一片，发现它与邻近的碎片*局部*完美契合。但当你试图组装整个拼图时，你发现这是不可能的。$\Sha$ 群就是这些“失败的解”——即被称为主[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)的几何对象——所构成的群，它们在[实数域](@keyword=real_numbers_field|lang=zh-CN|style=Feynman)和每个素数 $p$ 的[模算术](@keyword=modular_arithmetic|lang=zh-CN|style=Feynman)中都有解，却没有全局有理数解 [@problem_id:3013154, 3022289]。它代表了一种根本性的障碍。BSD 猜想预测这个群是有限的。另一个深刻的发现，由 Cassels 做出，是如果 $\Sha$ 是有限的，它的大小必须是一个完全平方数 [@problem_id:3022299]。
+- **$|\mathrm{Ш}(E/\mathbb{Q})|$ (Shafarevich-Tate 群):** 这是整个故事中最神秘、最难以捉摸的角色。$\mathrm{Ш}(E/\mathbb{Q})$ 群，读作“Sha”，衡量的是“局部-整体”原则的失效程度。想象一下试图拼一个全球性的拼图。你可能检查了每一片，发现它与邻近的碎片*局部*完美契合。但当你试图组装整个拼图时，你发现这是不可能的。$\mathrm{Ш}$ 群就是这些“失败的解”——即被称为主[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)的几何对象——所构成的群，它们在[实数域](@keyword=real_numbers_field|lang=zh-CN|style=Feynman)和每个素数 $p$ 的[模算术](@keyword=modular_arithmetic|lang=zh-CN|style=Feynman)中都有解，却没有全局有理数解 [@problem_id:3013154, 3022289]。它代表了一种根本性的障碍。BSD 猜想预测这个群是有限的。另一个深刻的发现，由 Cassels 做出，是如果 $\mathrm{Ш}$ 是有限的，它的大小必须是一个完全平方数 [@problem_id:3022299]。
 
 ### 猜想的回响：奇偶性原则
 

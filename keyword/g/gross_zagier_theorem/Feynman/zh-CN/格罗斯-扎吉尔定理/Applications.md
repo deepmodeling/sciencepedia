@@ -24,11 +24,11 @@
 
 [格罗斯-扎吉尔定理](@keyword=gross_zagier_theorem|lang=zh-CN|style=Feynman)的意义远不止于证明秩为正。完整的BSD猜想为L-函数的首项系数提供了一个惊人精确的公式，而不仅仅是其零点阶。对于一个秩为1的曲线，它预测：
 $$
-\frac{L'(E,1)}{1!} = \frac{\Omega_E R_E \cdot \#\Sha(E) \cdot \prod_{p} c_p}{(\#E(\mathbb{Q})_{\mathrm{tors}})^2}
+\frac{L'(E,1)}{1!} = \frac{\Omega_E R_E \cdot \#\mathrm{Ш}(E) \cdot \prod_{p} c_p}{(\#E(\mathbb{Q})_{\mathrm{tors}})^2}
 $$
-看看这个公式中的角色阵容！我们有实周期 $\Omega_E$，[挠子群](@keyword=torsion_subgroup|lang=zh-CN|style=Feynman)的大小 $\#E(\mathbb{Q})_{\mathrm{tors}}$，称为玉河数的局部因子 $c_p$，以及调节子 $R_E$（对于秩为1的情况，它就是生成元的高度）。但分子中赫然坐着 $\#\Sha(E)$，即[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的阶。这个群衡量了曲线上某个“局部-全局”原则的失效程度，长期以来一直是算术中最神秘的对象之一。一般情况下，甚至不知道它是否有限。
+看看这个公式中的角色阵容！我们有实周期 $\Omega_E$，[挠子群](@keyword=torsion_subgroup|lang=zh-CN|style=Feynman)的大小 $\#E(\mathbb{Q})_{\mathrm{tors}}$，称为玉河数的局部因子 $c_p$，以及调节子 $R_E$（对于秩为1的情况，它就是生成元的高度）。但分子中赫然坐着 $\#\mathrm{Ш}(E)$，即[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的阶。这个群衡量了曲线上某个“局部-全局”原则的失效程度，长期以来一直是算术中最神秘的对象之一。一般情况下，甚至不知道它是否有限。
 
-Gross、Zagier和Kolyvagin（GZK）的工作带来了第一个重大突破。对于满足赫格纳假设的[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为1的椭圆曲线，他们的结果证明了两个基本事实：[代数秩](@keyword=algebraic_rank|lang=zh-CN|style=Feynman)确实为1，并且[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) $\Sha(E)$ 是*有限的*。这是一项不朽的成就。这意味着BSD公式不再是一个数与一个可能无限的未知量之间的关系。它变成了一个由整数和可计算实数构成的具体方程。
+Gross、Zagier和Kolyvagin（GZK）的工作带来了第一个重大突破。对于满足赫格纳假设的[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为1的椭圆曲线，他们的结果证明了两个基本事实：[代数秩](@keyword=algebraic_rank|lang=zh-CN|style=Feynman)确实为1，并且[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) $\mathrm{Ш}(E)$ 是*有限的*。这是一项不朽的成就。这意味着BSD公式不再是一个数与一个可能无限的未知量之间的关系。它变成了一个由整数和可计算实数构成的具体方程。
 
 这将GZK机制转变为一个强大的计算工具。通过 meticulously 计算公式中的所有其他项——数值计算L-[导数](@keyword=derivative|lang=zh-CN|style=Feynman)、周期、由生成元高度得到的调节子、[挠群](@keyword=torsion_group|lang=zh-CN|style=Feynman)阶以及玉河数——我们可以分离出最后的未知数，并*解出[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的大小*。一个深刻、抽象的[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)变成了一个可计算的整数，从纯理论的领域被拉入算术的现实之中 [@problem_id:3090272]。
 

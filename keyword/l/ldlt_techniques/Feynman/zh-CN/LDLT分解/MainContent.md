@@ -53,7 +53,7 @@ $$ A^{(1)} = \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix} - \frac{1}{1} \begin{b
 
 但对于[不定矩阵](@keyword=indefinite_matrix|lang=zh-CN|style=Feynman)，即使这样做也可能不够。我们可能会遇到所有可用的对角线元素都很小且不稳定的情况。一个突破性的进展是认识到我们不必将自己局限于单个的 $1 \times 1$ 轴元。我们可以使用对角线上的一个 $2 \times 2$ 块作为我们的轴元。
 
-这就是杰出的 **Bunch-Kaufman 轴元选择策略**的精髓。在每一步，算法都会检查矩阵，并决定是使用一个稳定的 $1 \times 1$ 轴元，还是将两个变量配对，并使用一个稳定的 $2 \times 2$ 轴元块同时消去它们。这使得算法能够优雅地绕过有问题的对角[线元](@keyword=line_element|lang=zh-CN|style=Feynman)素。例如，一个对角线上为零但非对角[线元](@keyword=line_element|lang=zh-CN|style=Feynman)素很大的矩阵，如 $\begin{psmallmatrix} 0 & 5 \\ 5 & 0 \end{psmallmatrix}$，可以通过将整个块视为轴元来轻松处理。
+这就是杰出的 **Bunch-Kaufman 轴元选择策略**的精髓。在每一步，算法都会检查矩阵，并决定是使用一个稳定的 $1 \times 1$ 轴元，还是将两个变量配对，并使用一个稳定的 $2 \times 2$ 轴元块同时消去它们。这使得算法能够优雅地绕过有问题的对角[线元](@keyword=line_element|lang=zh-CN|style=Feynman)素。例如，一个对角线上为零但非对角[线元](@keyword=line_element|lang=zh-CN|style=Feynman)素很大的矩阵，如 $\begin{pmatrix} 0 & 5 \\ 5 & 0 \end{pmatrix}$，可以通过将整个块视为轴元来轻松处理。
 
 通过这种修改，我们的分解变成了 $P^{\top} L D L^{\top} P = A$，其中 $D$ 现在是一个**[块对角矩阵](@keyword=block_diagonal_matrix|lang=zh-CN|style=Feynman)**，包含 $1 \times 1$ 和 $2 \times 2$ 块的混合。我们用稍微复杂一些的 $D$ 的结构换取了一个对于任何[对称矩阵](@keyword=symmetric_matrix|lang=zh-CN|style=Feynman)（无论是否不定）都非常稳定和鲁棒的算法。
 

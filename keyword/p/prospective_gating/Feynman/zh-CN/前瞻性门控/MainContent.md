@@ -50,11 +50,11 @@ $$
 
 让我们想象一下正在进行一次心脏MRI。典型心率为每分钟 $75$ 次（bpm），这意味着一次心跳，或R-R间期，持续 $T_{RR} = 60/75 = 0.8\,\text{s}$。静止窗口可能只持续 $80\,\text{ms}$（$0.08\,\text{s}$）。如果每部分数据（一条相位编码线）需要 $4\,\text{ms}$ 来采集，我们可以计算出每次心跳能获取的最大线数：
 $$
-N_\max = \frac{80\,\text{ms}}{4\,\text{ms}} = 20 \text{ lines}
+N_{\max} = \frac{80\,\text{ms}}{4\,\text{ms}} = 20 \text{ lines}
 $$
 如果我们需要 $256$ 条线来形成一幅完整的图像，那么所需的最少心跳次数是：
 $$
-B_\min = \left\lceil \frac{256}{20} \right\rceil = \lceil 12.8 \rceil = 13 \text{ heartbeats}
+B_{\min} = \left\lceil \frac{256}{20} \right\rceil = \lceil 12.8 \rceil = 13 \text{ heartbeats}
 $$
 由于每次心跳需要 $0.8\,\text{s}$，总的最短扫描时间变为 $13 \times 0.8\,\text{s} = 10.4\,\text{s}$ [@problem_id:4911792]。请注意，我们实际采集数据的总时间仅为 $256 \times 4\,\text{ms} = 1.024\,\text{s}$。另外90%的时间都花在了等待上。
 

@@ -21,7 +21,7 @@ $$ \Delta G^\circ = -nFE^\circ_{\text{cell}} $$
 
 $$ \Delta G = \Delta G^\circ + RT \ln Q $$
 
-这里，$R$ 是理想气体常数（$8.314 \text{ J/(mol·K)}$），$T$ 是绝对温度（开尔文），$Q$ 是**反应商**。反应商 $Q$ 的形式与平衡常数 $K$ 相同，但它描述的是体系在任意时刻的反应物与产物活度（或浓度）的比值，而非仅在平衡状态下。
+这里，$R$ 是理想气体常数（$8.314 \mathrm{J/(mol\cdot K)}$），$T$ 是绝对温度（开尔文），$Q$ 是**反应商**。反应商 $Q$ 的形式与平衡常数 $K$ 相同，但它描述的是体系在任意时刻的反应物与产物活度（或浓度）的比值，而非仅在平衡状态下。
 
 将 $\Delta G = -nFE_{\text{cell}}$ 和 $\Delta G^\circ = -nFE^\circ_{\text{cell}}$ 代入上式，我们得到：
 
@@ -63,7 +63,7 @@ $$ Q = \frac{[B(\text{ox})]}{[B(\text{red})][M^{3+}]} = \left( \frac{[B(\text{ox
 
 然后，我们将这些值代入能斯特方程：
 
-$$ E_{\text{cell}} = 0.78 \text{ V} - \frac{(8.314 \text{ J/(mol·K)}) (310.15 \text{ K})}{(3) (96485 \text{ C/mol})} \ln(16667) $$
+$$ E_{\text{cell}} = 0.78 \text{ V} - \frac{(8.314 \mathrm{J/(mol\cdot K)}) (310.15 \text{ K})}{(3) (96485 \text{ C/mol})} \ln(16667) $$
 
 计算可得：
 
@@ -85,7 +85,7 @@ $$ \ln Q = \frac{(E^\circ_{\text{cell}} - E_{\text{cell}})nF}{RT} \quad \implies
 
 一个由镁和银电极组成的电池，其总反应为 $Mg(s) + 2Ag^{+}(aq) \rightarrow Mg^{2+}(aq) + 2Ag(s)$，标准电势 $E^\circ_{\text{cell}} = 3.17 \text{ V}$。如果在 $298.15 \text{ K}$ 测得其非标准电势为 $E_{\text{cell}} = 3.00 \text{ V}$，我们可以计算出当时的反应商 $Q$。此反应中 $n=2$。
 
-$$ \ln Q = \frac{(3.17 \text{ V} - 3.00 \text{ V})(2)(96485 \text{ C/mol})}{(8.314 \text{ J/(mol·K)})(298.15 \text{ K})} = \frac{(0.17 \text{ V})(192970 \text{ C/mol})}{2477.6 \text{ J/mol}} \approx 13.23 $$
+$$ \ln Q = \frac{(3.17 \text{ V} - 3.00 \text{ V})(2)(96485 \text{ C/mol})}{(8.314 \mathrm{J/(mol\cdot K)})(298.15 \text{ K})} = \frac{(0.17 \text{ V})(192970 \text{ C/mol})}{2477.6 \text{ J/mol}} \approx 13.23 $$
 
 $$ Q = \exp(13.23) \approx 5.59 \times 10^5 $$
 
@@ -105,7 +105,7 @@ $$ E_{\text{cell}} = 0 - \frac{RT}{nF} \ln Q = -\frac{RT}{nF} \ln \frac{[\text{M
 
 为了确定一种未知金属离子 $M^{n+}$ 的电荷 $n$，化学家构建了一个浓差电池。在 $298.15 \text{ K}$下，阴极侧的浓度恰好是阳极侧的10倍，测得的电池电势为 $0.0296 \text{ V}$。
 
-$$ 0.0296 \text{ V} = \frac{(8.314 \text{ J/(mol·K)}) (298.15 \text{ K})}{n (96485 \text{ C/mol})} \ln(10) $$
+$$ 0.0296 \text{ V} = \frac{(8.314 \mathrm{J/(mol\cdot K)}) (298.15 \text{ K})}{n (96485 \text{ C/mol})} \ln(10) $$
 
 我们可以解出 $n$：
 

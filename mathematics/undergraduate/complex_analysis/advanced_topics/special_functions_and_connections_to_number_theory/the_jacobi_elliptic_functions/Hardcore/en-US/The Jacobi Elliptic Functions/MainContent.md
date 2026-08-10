@@ -1,19 +1,19 @@
 ## Introduction
-While the trigonometric functions sine and cosine are pillars of mathematics and physics, they are fundamentally tied to the geometry of the circle and the dynamics of simple harmonic motion. Many real-world phenomena, from the swing of a large-amplitude pendulum to the propagation of waves in a nonlinear medium, defy description by these elementary functions. This gap highlights the need for a more powerful and general class of periodic functions. The Jacobi elliptic functions rise to this challenge, providing the natural mathematical language for a vast array of nonlinear and periodic systems.
+While the [trigonometric functions](@keyword=trigonometric_functions|lang=en-US|style=Feynman) [sine and cosine](@keyword=sine_and_cosine|lang=en-US|style=Feynman) are pillars of mathematics and physics, they are fundamentally tied to the geometry of the circle and the dynamics of simple harmonic motion. Many real-world phenomena, from the swing of a large-amplitude pendulum to the propagation of waves in a nonlinear medium, defy description by these [elementary functions](@keyword=elementary_functions|lang=en-US|style=Feynman). This gap highlights the need for a more powerful and general class of [periodic functions](@keyword=periodic_functions|lang=en-US|style=Feynman). The Jacobi elliptic functions rise to this challenge, providing the natural mathematical language for a vast array of nonlinear and periodic systems.
 
-This article serves as a comprehensive introduction to these remarkable functions. It begins by establishing their core principles, then explores their wide-ranging impact, and finally offers practical exercises to solidify understanding. The first chapter, **"Principles and Mechanisms,"** will lay the groundwork by defining the functions through elliptic integrals, exploring their fundamental identities, differential properties, and their behavior as doubly periodic functions in the complex plane. The second chapter, **"Applications and Interdisciplinary Connections,"** will demonstrate their utility by showcasing how they provide elegant solutions to problems in classical mechanics, nonlinear wave theory, and engineering. To conclude, the **"Hands-On Practices"** section will provide interactive problems designed to reinforce the theoretical concepts and build practical skills in manipulating these functions.
+This article serves as a comprehensive introduction to these remarkable functions. It begins by establishing their core principles, then explores their wide-ranging impact, and finally offers practical exercises to solidify understanding. The first chapter, **"Principles and Mechanisms,"** will lay the groundwork by defining the functions through [elliptic integrals](@keyword=elliptic_integrals|lang=en-US|style=Feynman), exploring their fundamental identities, differential properties, and their behavior as doubly [periodic functions](@keyword=periodic_functions|lang=en-US|style=Feynman) in the complex plane. The second chapter, **"Applications and Interdisciplinary Connections,"** will demonstrate their utility by showcasing how they provide elegant solutions to problems in classical mechanics, nonlinear wave theory, and engineering. To conclude, the **"Hands-On Practices"** section will provide interactive problems designed to reinforce the theoretical concepts and build practical skills in manipulating these functions.
 
 ## Principles and Mechanisms
 
-The Jacobi elliptic functions represent a significant generalization of the familiar trigonometric functions, arising naturally from the study of elliptic integrals. This chapter elucidates their fundamental principles, beginning with their integral definitions and exploring the algebraic and differential relationships that govern their behavior. We will establish their connections to elementary functions in limiting cases and conclude by examining their essential properties as doubly periodic functions in the complex plane.
+The Jacobi elliptic functions represent a significant generalization of the familiar [trigonometric functions](@keyword=trigonometric_functions|lang=en-US|style=Feynman), arising naturally from the study of [elliptic integrals](@keyword=elliptic_integrals|lang=en-US|style=Feynman). This chapter elucidates their fundamental principles, beginning with their integral definitions and exploring the algebraic and differential relationships that govern their behavior. We will establish their connections to [elementary functions](@keyword=elementary_functions|lang=en-US|style=Feynman) in limiting cases and conclude by examining their essential properties as doubly [periodic functions](@keyword=periodic_functions|lang=en-US|style=Feynman) in the complex plane.
 
 ### The Defining Integral and the Amplitude
 
-The foundation of the Jacobi elliptic functions lies in the **elliptic integral of the first kind**. This integral appears in various physical contexts, most classically in calculating the exact period of a simple pendulum. For a given **elliptic modulus** $k$, a real number satisfying $0 \le k \lt 1$, the relationship between the argument $u$ and an angle $\phi$, known as the **amplitude**, is defined by:
+The foundation of the Jacobi [elliptic functions](@keyword=elliptic_functions|lang=en-US|style=Feynman) lies in the **[elliptic integral of the first kind](@keyword=elliptic_integral_of_the_first_kind|lang=en-US|style=Feynman)**. This integral appears in various physical contexts, most classically in calculating the exact period of a simple pendulum. For a given **[elliptic modulus](@keyword=elliptic_modulus|lang=en-US|style=Feynman)** $k$, a real number satisfying $0 \le k \lt 1$, the relationship between the argument $u$ and an angle $\phi$, known as the **amplitude**, is defined by:
 $$
 u = F(\phi, k) = \int_{0}^{\phi} \frac{d\theta}{\sqrt{1 - k^2 \sin^2\theta}}
 $$
-This equation implicitly defines the amplitude as a function of the argument, denoted $\phi = \mathrm{am}(u, k)$. The three primary Jacobi elliptic functions are then defined as the sine, cosine, and a third related function of this amplitude.
+This equation implicitly defines the amplitude as a function of the argument, denoted $\phi = \mathrm{am}(u, k)$. The three primary Jacobi [elliptic functions](@keyword=elliptic_functions|lang=en-US|style=Feynman) are then defined as the sine, cosine, and a third related function of this amplitude.
 
 - The **sine amplitude**, denoted $\mathrm{sn}(u, k)$, is defined as:
   $$ \mathrm{sn}(u, k) = \sin(\phi) = \sin(\mathrm{am}(u, k)) $$
@@ -28,7 +28,7 @@ Notice that the integrand in the definition of $u$ is precisely the reciprocal o
 
 ### Fundamental Algebraic Identities
 
-The definitions based on the trigonometric functions of a common amplitude $\phi$ lead immediately to a set of fundamental algebraic identities, which are generalizations of the Pythagorean identity $\sin^2\phi + \cos^2\phi = 1$.
+The definitions based on the [trigonometric functions](@keyword=trigonometric_functions|lang=en-US|style=Feynman) of a common amplitude $\phi$ lead immediately to a set of fundamental algebraic identities, which are generalizations of the Pythagorean identity $\sin^2\phi + \cos^2\phi = 1$.
 
 By substituting the definitions of $\mathrm{sn}(u, k)$ and $\mathrm{cn}(u, k)$, we obtain the first primary identity:
 $$
@@ -44,7 +44,7 @@ This relation is crucial for expressing derivatives and solving differential equ
 
 ### Limiting Cases: Connections to Elementary Functions
 
-The true power and intuitive understanding of Jacobi elliptic functions are revealed by examining their behavior in the limiting cases of the modulus $k$.
+The true power and intuitive understanding of Jacobi [elliptic functions](@keyword=elliptic_functions|lang=en-US|style=Feynman) are revealed by examining their behavior in the limiting cases of the modulus $k$.
 
 #### The Trigonometric Limit: $k \to 0$
 
@@ -80,16 +80,16 @@ $$
 $$
 Using the fundamental identities, we can find the limits for the other functions:
 $$
-\mathrm{cn}(u, 1) = \sqrt{1 - \mathrm{sn}^2(u, 1)} = \sqrt{1 - \tanh^2 u} = \sech(u)
+\mathrm{cn}(u, 1) = \sqrt{1 - \mathrm{sn}^2(u, 1)} = \sqrt{1 - \tanh^2 u} = \operatorname{sech}(u)
 $$
 $$
-\mathrm{dn}(u, 1) = \sqrt{1 - 1^2 \cdot \mathrm{sn}^2(u, 1)} = \sqrt{1 - \tanh^2 u} = \sech(u)
+\mathrm{dn}(u, 1) = \sqrt{1 - 1^2 \cdot \mathrm{sn}^2(u, 1)} = \sqrt{1 - \tanh^2 u} = \operatorname{sech}(u)
 $$
-Thus, in the limit $k \to 1$, the Jacobi elliptic functions reduce to hyperbolic functions [@problem_id:2275371].
+Thus, in the limit $k \to 1$, the Jacobi [elliptic functions](@keyword=elliptic_functions|lang=en-US|style=Feynman) reduce to hyperbolic functions [@problem_id:2275371].
 
 ### Differential Properties and Equations
 
-The dynamic behavior of the Jacobi functions is captured by their derivatives. These can be derived elegantly from the integral definition using the fundamental theorem of calculus.
+The dynamic behavior of the Jacobi functions is captured by their derivatives. These can be derived elegantly from the integral definition using the [fundamental theorem of calculus](@keyword=fundamental_theorem_of_calculus|lang=en-US|style=Feynman).
 
 #### First Derivatives
 
@@ -121,37 +121,37 @@ These derivative rules, combined with the algebraic identities, allow us to form
 $$
 (y')^2 = \mathrm{cn}^2(u, k) \mathrm{dn}^2(u, k) = (1 - \mathrm{sn}^2(u, k))(1 - k^2\mathrm{sn}^2(u, k))
 $$
-This gives the first-order nonlinear differential equation for the sine amplitude:
+This gives the first-order [nonlinear differential equation](@keyword=nonlinear_differential_equation|lang=en-US|style=Feynman) for the sine amplitude:
 $$
 \left(\frac{dy}{du}\right)^2 = (1 - y^2)(1 - k^2y^2)
 $$
 This equation, along with the initial condition $y(0)=0$, is often taken as an alternative definition of $\mathrm{sn}(u, k)$ [@problem_id:2275335].
 
-By differentiating this first-order equation with respect to $u$, one can derive the second-order nonlinear differential equation. Differentiating $2y'y'' = -2y y'(1-k^2y^2) - 2k^2y y'(1-y^2)$ and simplifying gives:
+By differentiating this first-order equation with respect to $u$, one can derive the second-order [nonlinear differential equation](@keyword=nonlinear_differential_equation|lang=en-US|style=Feynman). Differentiating $2y'y'' = -2y y'(1-k^2y^2) - 2k^2y y'(1-y^2)$ and simplifying gives:
 $$
 \frac{d^2y}{du^2} = -(1+k^2)y + 2k^2 y^3
 $$
-This second-order nonlinear ODE is a hallmark of elliptic functions. We can verify our earlier limiting cases using this equation. For $k=0$, it reduces to $y'' = -y$, the simple harmonic oscillator equation whose solution with initial conditions $y(0)=0, y'(0)=1$ is indeed $y(u) = \sin(u)$ [@problem_id:2275389] [@problem_id:2275350]. For $k=1$, it becomes $y'' = -2y + 2y^3$, which is the differential equation satisfied by $y(u) = \tanh(u)$ [@problem_id:2275350].
+This second-order nonlinear ODE is a hallmark of elliptic functions. We can verify our earlier limiting cases using this equation. For $k=0$, it reduces to $y'' = -y$, the [simple harmonic oscillator equation](@keyword=simple_harmonic_oscillator_equation|lang=en-US|style=Feynman) whose solution with initial conditions $y(0)=0, y'(0)=1$ is indeed $y(u) = \sin(u)$ [@problem_id:2275389] [@problem_id:2275350]. For $k=1$, it becomes $y'' = -2y + 2y^3$, which is the differential equation satisfied by $y(u) = \tanh(u)$ [@problem_id:2275350].
 
 ### Properties in the Complex Plane
 
-The full richness of the Jacobi elliptic functions is realized when the argument $u$ is extended into the complex plane. They are **meromorphic** functions, meaning they are analytic everywhere except for a set of isolated poles.
+The full richness of the Jacobi [elliptic functions](@keyword=elliptic_functions|lang=en-US|style=Feynman) is realized when the argument $u$ is extended into the complex plane. They are **meromorphic** functions, meaning they are analytic everywhere except for a set of isolated poles.
 
 #### Double Periodicity and Fundamental Parallelogram
 
-Unlike trigonometric functions, which have a single real period (e.g., $2\pi$), the Jacobi elliptic functions possess two distinct periods, one real and one purely imaginary. They are **doubly periodic**. These periods are defined in terms of the **complete elliptic integral of the first kind**, $K(k)$, which is the value of the argument $u$ when the amplitude reaches $\pi/2$:
+Unlike [trigonometric functions](@keyword=trigonometric_functions|lang=en-US|style=Feynman), which have a single real period (e.g., $2\pi$), the Jacobi elliptic functions possess two distinct periods, one real and one purely imaginary. They are **doubly periodic**. These periods are defined in terms of the **complete [elliptic integral of the first kind](@keyword=elliptic_integral_of_the_first_kind|lang=en-US|style=Feynman)**, $K(k)$, which is the value of the argument $u$ when the amplitude reaches $\pi/2$:
 $$
 K(k) = \int_0^{\pi/2} \frac{d\phi}{\sqrt{1 - k^2 \sin^2\phi}}
 $$
 In the context of the simple pendulum, $4K(k)\sqrt{L/g}$ gives the exact period. In the small-angle limit ($k \to 0$), $K(0) = \pi/2$, correctly recovering the approximate period $2\pi\sqrt{L/g}$ [@problem_id:2275361].
 
-The two periods of the functions are $4K(k)$ and $2iK'(k)$, where $K'(k) = K(k')$ and $k' = \sqrt{1-k^2}$ is the **complementary modulus**. Any region in the complex plane spanned by two period vectors (e.g., $4K$ and $2iK'$) is called a **fundamental period parallelogram**. The behavior of the function within this parallelogram determines its behavior across the entire complex plane.
+The two periods of the functions are $4K(k)$ and $2iK'(k)$, where $K'(k) = K(k')$ and $k' = \sqrt{1-k^2}$ is the **complementary modulus**. Any region in the complex plane spanned by two period vectors (e.g., $4K$ and $2iK'$) is called a **[fundamental period](@keyword=fundamental_period|lang=en-US|style=Feynman) parallelogram**. The behavior of the function within this parallelogram determines its behavior across the entire complex plane.
 
 #### Poles and Order of the Function
 
-Within each fundamental parallelogram, an elliptic function has a finite number of poles. The number of poles, counted with multiplicity, is called the **order** of the function. A key theorem of elliptic functions states that the number of zeros is also equal to the order. Moreover, for any complex value $c$, the equation $f(u)=c$ has exactly `order` solutions within the parallelogram.
+Within each [fundamental parallelogram](@keyword=fundamental_parallelogram|lang=en-US|style=Feynman), an elliptic function has a finite number of poles. The number of poles, counted with multiplicity, is called the **order** of the function. A key theorem of [elliptic functions](@keyword=elliptic_functions|lang=en-US|style=Feynman) states that the number of zeros is also equal to the order. Moreover, for any complex value $c$, the equation $f(u)=c$ has exactly `order` solutions within the parallelogram.
 
-The functions $\mathrm{sn}(u,k)$, $\mathrm{cn}(u,k)$, and $\mathrm{dn}(u,k)$ are all elliptic functions of **order 2**. This means they have two poles and two zeros in each fundamental parallelogram, and for any $c \in \mathbb{C}$, the equation $\mathrm{sn}(u,k)=c$ (or $\mathrm{cn}(u,k)=c$, etc.) has exactly two solutions for $u$.
+The functions $\mathrm{sn}(u,k)$, $\mathrm{cn}(u,k)$, and $\mathrm{dn}(u,k)$ are all elliptic functions of **order 2**. This means they have two poles and two zeros in each [fundamental parallelogram](@keyword=fundamental_parallelogram|lang=en-US|style=Feynman), and for any $c \in \mathbb{C}$, the equation $\mathrm{sn}(u,k)=c$ (or $\mathrm{cn}(u,k)=c$, etc.) has exactly two solutions for $u$.
 
 We can analyze the location of these poles using identities that relate the function at shifted arguments. For example, the sine amplitude satisfies the identity:
 $$
@@ -159,4 +159,4 @@ $$
 $$
 This identity elegantly reveals the pole structure. Near $u=0$, we know $\mathrm{sn}(u,k) \approx u$. Therefore, for a point $v$ near $iK'$, let $v = u + iK'$. As $u \to 0$, $v \to iK'$, and we have $\mathrm{sn}(v, k) \approx \frac{1}{k \cdot u}$. This shows that $\mathrm{sn}(u,k)$ has a simple pole at $u=iK'$. Using the identity $\mathrm{cn}^2(u,k) = 1 - \mathrm{sn}^2(u,k)$, we can investigate the behavior of $\mathrm{cn}(u,k)$ near this pole. As $u \to iK'$, $\mathrm{sn}^2(u,k)$ behaves like a pole of order 2. Therefore, $\mathrm{cn}^2(u,k)$ must also have a pole of order 2 to balance the identity. A function whose square has a double pole must itself have a simple pole. Thus, $\mathrm{cn}(u,k)$ also has a simple pole at $u=iK'$ [@problem_id:2275375].
 
-The property of being order 2 has direct consequences. For instance, consider finding the number of solutions to an equation like $(\mathrm{cn}(u, k))^{2} - (2\sqrt{2}) \cdot \mathrm{cn}(u, k) + 1 = 0$ within a fundamental parallelogram [@problem_id:2275343]. Solving the quadratic for $\mathrm{cn}(u,k)$ yields two distinct values: $\mathrm{cn}(u,k) = \sqrt{2} + 1$ and $\mathrm{cn}(u,k) = \sqrt{2} - 1$. Since $\mathrm{cn}(u,k)$ is an order-2 function, it takes on every complex value exactly twice within the parallelogram (counting multiplicities). As these values are not critical values of the function (where the derivative is zero), each equation has two distinct solutions. Therefore, the original quadratic equation has a total of $2+2=4$ distinct solutions in the fundamental domain.
+The property of being order 2 has direct consequences. For instance, consider finding the number of solutions to an equation like $(\mathrm{cn}(u, k))^{2} - (2\sqrt{2}) \cdot \mathrm{cn}(u, k) + 1 = 0$ within a [fundamental parallelogram](@keyword=fundamental_parallelogram|lang=en-US|style=Feynman) [@problem_id:2275343]. Solving the quadratic for $\mathrm{cn}(u,k)$ yields two distinct values: $\mathrm{cn}(u,k) = \sqrt{2} + 1$ and $\mathrm{cn}(u,k) = \sqrt{2} - 1$. Since $\mathrm{cn}(u,k)$ is an order-2 function, it takes on every complex value exactly twice within the parallelogram (counting multiplicities). As these values are not critical values of the function (where the derivative is zero), each equation has two distinct solutions. Therefore, the original quadratic equation has a total of $2+2=4$ distinct solutions in the [fundamental domain](@keyword=fundamental_domain|lang=en-US|style=Feynman).

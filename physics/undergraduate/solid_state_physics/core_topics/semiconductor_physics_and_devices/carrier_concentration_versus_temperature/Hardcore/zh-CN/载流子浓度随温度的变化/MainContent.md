@@ -84,7 +84,7 @@ n_i = \sqrt{N_c N_v} \exp\left(-\frac{E_g}{2k_B T}\right)
 $$
 这个公式揭示了本征载流子浓度的两个关键依赖关系：它随着温度的升高呈指数增长（由 $\exp(-E_g/2k_B T)$ 项主导），并依赖于有效质量（通过 $N_c$ 和 $N_v$）。例如，如果两种材料具有相同的带隙和电子有效质量，但其中一种的空穴有效质量是另一种的两倍，那么它的本征载流子浓度将是另一种的 $2^{3/4}$ 倍 [@problem_id:1763677]。
 
-我们还可以定义一个 **本征费米能级 (intrinsic Fermi level)** $E_i$，它是本征半导体中的[费米能级](@entry_id:143215)。通过令 $n=p$ 求解 $E_F$，我们得到：
+我们还可以定义一个 **本征费米能级 (intrinsic Fermi level)** $E_i$，它是本征半导体中的[费米能级](@keyword=fermi_level|lang=zh-CN|style=Feynman)。通过令 $n=p$ 求解 $E_F$，我们得到：
 $$
 E_i = \frac{E_c + E_v}{2} + \frac{1}{2} k_B T \ln\left(\frac{N_v}{N_c}\right) = \frac{E_c + E_v}{2} + \frac{3}{4} k_B T \ln\left(\frac{m_h^*}{m_e^*}\right)
 $$
@@ -114,7 +114,7 @@ $$
 
 在许多实际情况中，温度足够高，使得所有施主和受主原子都已电离（$N_d^+ \approx N_d$, $N_a^- \approx N_a$）。在这种情况下，电中性方程简化为 $n - p = N_d - N_a$。结合 $n$ 和 $p$ 与 $E_F-E_i$ 的关系，我们可以推导出费米能级位置的一个非常普适和有用的解析表达式 [@problem_id:1763664]：
 $$
-E_F - E_i = k_B T \arcsinh\left(\frac{N_d - N_a}{2n_i}\right)
+E_F - E_i = k_B T \operatorname{arcsinh}\left(\frac{N_d - N_a}{2n_i}\right)
 $$
 这个表达式优美地将材料的净掺杂浓度 $(N_d - N_a)$、本征特性 ($n_i$) 和温度 ($T$) 联系在一起，共同决定了费米能级的位置，进而决定了材料的导电类型和导电能力。
 

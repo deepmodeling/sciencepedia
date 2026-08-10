@@ -21,7 +21,7 @@
 
 为什么要费尽周折建造这样一台严谨的机器？答案是，我们想要测量一个以难以捉摸而著称的东西：**[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)**。
 
-对于一条椭圆曲线——由方程如 $y^2 = x^3 + ax + b$ 定义的曲线——[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)是一个代数对象，它掌握着理解其有理数解的关键。它像一个守门人。曲线上的每个有理点都必须通过[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)才能存在。但[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)也可能包含其他更幽灵般的元素，它们并不对应于实际的点。这些额外的元素构成了神秘的**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)**，记为 $\Sha(E/\mathbb{Q})$，它衡量了数论中一个基本的“局部-整体”原则的失效程度[@problem_id:3029562]。
+对于一条椭圆曲线——由方程如 $y^2 = x^3 + ax + b$ 定义的曲线——[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)是一个代数对象，它掌握着理解其有理数解的关键。它像一个守门人。曲线上的每个有理点都必须通过[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)才能存在。但[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)也可能包含其他更幽灵般的元素，它们并不对应于实际的点。这些额外的元素构成了神秘的**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)**，记为 $\mathrm{Ш}(E/\mathbb{Q})$，它衡量了数论中一个基本的“局部-整体”原则的失效程度[@problem_id:3029562]。
 
 计算[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小长期以来被认为是该领域最困难的问题之一。这就像试图测量一团雾的大小。你可以看到它的影子，可以感受到它的影响，但你无法轻易地将它放到秤上。正是在这里，[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)的严谨性成为我们最大的优势。目标是利用这个钟表装置的严谨结构，为这团雾建造一个“笼子”，对其进行约束，证明它必须是有限的，并在某些情况下确定其确切的大小[@problem_id:3018714]。
 
@@ -33,7 +33,7 @@
 
 你可以对许多不同的素数重复这个过程，生成这些[导数](@keyword=derivative|lang=zh-CN|style=Feynman)类的一个大家族。这些类就是我们笼子的栏杆。Kolyvagin证明，这些[导数](@keyword=derivative|lang=zh-CN|style=Feynman)类具有一个显著的性质：它们被设计用来**零化**[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)。当你将一个Kolyvagin[导数](@keyword=derivative|lang=zh-CN|style=Feynman)类与[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的一个元素“配对”时，结果通常是零。
 
-如果你的初始[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)“足够非平凡”（这是我们将要回到的一个关键点），你就可以生成足够多的这些[导数](@keyword=derivative|lang=zh-CN|style=Feynman)类，来零化几乎整个[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)。唯一能在这场“围剿”中幸存的部分是那些具有非常特殊结构的部分。Kolyvagin的论证证明，在一个强大的[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)的攻击下，那个难以驾驭的[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)必须是有限的。这立刻意味着，神秘的[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) $\Sha$ 也必须是有限的！这是一个巨大的突破。我们第一次拥有了一台可以为许多椭圆曲线系统性地证明这些群的有限性的机器[@problem_id:3029562]。
+如果你的初始[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)“足够非平凡”（这是我们将要回到的一个关键点），你就可以生成足够多的这些[导数](@keyword=derivative|lang=zh-CN|style=Feynman)类，来零化几乎整个[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)。唯一能在这场“围剿”中幸存的部分是那些具有非常特殊结构的部分。Kolyvagin的论证证明，在一个强大的[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)的攻击下，那个难以驾驭的[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)必须是有限的。这立刻意味着，神秘的[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) $\mathrm{Ш}$ 也必须是有限的！这是一个巨大的突破。我们第一次拥有了一台可以为许多椭圆曲线系统性地证明这些群的有限性的机器[@problem_id:3029562]。
 
 ### 神谕：L-函数与效力证明
 
@@ -43,7 +43,7 @@
 
 奇迹般的联系是这样的：存在一个特殊的映射，称为**[调节子](@keyword=regulon|lang=zh-CN|style=Feynman)**，可以将我们来自[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)的几何的、幽灵般的[上同调类](@keyword=cohomology_class|lang=zh-CN|style=Feynman)转化为一个数。由Kato等巨擘在各种情况下证明的[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)基本定理指出，这个数，在不计一些无关紧要的因子的情况下，恰好是L-函数的特殊值$L(E,1)$。
 
-这意味着我们的[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)类 $c_1$ 是非平凡的，*当且仅当* $L(E,1)$ 非零。L-函数就像一个神谕，告诉我们我们的机器是否已启动。如果 $L(E,1) \neq 0$，Kolyvagin的机制就会全功率运行，约束[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)，并证明[椭圆曲线的秩](@keyword=ranks_of_elliptic_curves|lang=zh-CN|style=Feynman)为0且$\Sha(E/\mathbb{Q})$是有限的。如果L-函数有一个单零点（$L(E,1)=0$ 但 $L'(E,1) \neq 0$），一个涉及[赫格纳点](@keyword=heegner_points|lang=zh-CN|style=Feynman)的更精妙的版本则证明秩为1且$\Sha(E/\mathbb{Q})$是有限的[@problem_id:3029562]。
+这意味着我们的[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)类 $c_1$ 是非平凡的，*当且仅当* $L(E,1)$ 非零。L-函数就像一个神谕，告诉我们我们的机器是否已启动。如果 $L(E,1) \neq 0$，Kolyvagin的机制就会全功率运行，约束[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)，并证明[椭圆曲线的秩](@keyword=ranks_of_elliptic_curves|lang=zh-CN|style=Feynman)为0且$\mathrm{Ш}(E/\mathbb{Q})$是有限的。如果L-函数有一个单零点（$L(E,1)=0$ 但 $L'(E,1) \neq 0$），一个涉及[赫格纳点](@keyword=heegner_points|lang=zh-CN|style=Feynman)的更精妙的版本则证明秩为1且$\mathrm{Ш}(E/\mathbb{Q})$是有限的[@problem_id:3029562]。
 
 有时大自然会从中作梗。连接[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)与L-函数的公式包含局部因子，偶尔一个局部因子会因为“平凡”的原因而为零，掩盖了全局的图景。这种“[平凡零点](@keyword=trivial_zeros|lang=zh-CN|style=Feynman)”现象就像望远镜镜片上的一粒灰尘，挡住了我们观察恒星的视线[@problem_id:3016341]。当这种情况发生时，数学家必须构建一个“改进的[调节子](@keyword=regulon|lang=zh-CN|style=Feynman)”，这本质上是一种擦去镜片上灰尘的方法，以看清底层的L-函数[导数](@keyword=derivative|lang=zh-CN|style=Feynman)非零，从而证实[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)的威力。
 

@@ -49,7 +49,7 @@ The terms involving $k^2$ miraculously cancel! We are left only with the term co
 
 By equating this to the [surface integral](@keyword=surface_integral|lang=en-US|style=Feynman) from Green's identity, we arrive at the **Kirchhoff-Helmholtz integral theorem**. For a point $\mathbf{x}$ inside a volume $V$ bounded by a surface $S$, its value is given by [@problem_id:4143695]:
 
-$$ p(\mathbf{x}) = \oint_{S} \left( G(\mathbf{x}, \mathbf{r}') \frac{\partial p(\mathbf{r}')}{\partial n'} - p(\mathbf{r}') \frac{\partial G(\mathbfx, \mathbf{r}')}{\partial n'} \right) dS' $$
+$$ p(\mathbf{x}) = \oint_{S} \left( G(\mathbf{x}, \mathbf{r}') \frac{\partial p(\mathbf{r}')}{\partial n'} - p(\mathbf{r}') \frac{\partial G(\mathbf{x}, \mathbf{r}')}{\partial n'} \right) dS' $$
 
 This result is astonishing. It says that the value of the pressure field at *any* point inside a closed region is completely determined by the values of the pressure and its [normal derivative](@keyword=normal_derivative|lang=en-US|style=Feynman) on the boundary surface alone. The entire three-dimensional complexity of the wave field is encoded on its two-dimensional boundary. The field inside doesn't need to "know" about the sources that created it; all the necessary information has been transmitted to, and is stored on, the enclosing surface. The specific sign and form of the integral depend on whether we are looking at an interior or exterior problem, a choice which hinges on the direction of the normal vector $\mathbf{n}'$ [@problem_id:4143692] [@problem_id:4143709].
 

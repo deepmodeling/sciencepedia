@@ -50,15 +50,15 @@ $$ E(\mathbb{Q})/nE(\mathbb{Q}) \subseteq \mathrm{Sel}^{(n)}(E/\mathbb{Q}) \subs
 
 What accounts for the difference between the Selmer group and the (image of) the Mordell-Weil group? What are these extra elements in $\mathrm{Sel}^{(n)}(E/\mathbb{Q})$ that are locally soluble everywhere but do not come from a global rational point on $E$?
 
-The answer is one of the most beautiful syntheses in number theory. These extra elements are precisely the measure of the failure of the Hasse principle. The [quotient group](@keyword=quotient_group|lang=en-US|style=Feynman) is exactly the $n$-torsion part of the **Tate-Shafarevich group**, $\Sha(E/\mathbb{Q})[n]$, which by definition catalogues the elliptic curve [torsors](@keyword=torsors|lang=en-US|style=Feynman) that are locally soluble everywhere but have no global rational point.
+The answer is one of the most beautiful syntheses in number theory. These extra elements are precisely the measure of the failure of the Hasse principle. The [quotient group](@keyword=quotient_group|lang=en-US|style=Feynman) is exactly the $n$-torsion part of the **Tate-Shafarevich group**, $\mathrm{Ш}(E/\mathbb{Q})[n]$, which by definition catalogues the elliptic curve [torsors](@keyword=torsors|lang=en-US|style=Feynman) that are locally soluble everywhere but have no global rational point.
 
 This gives us the fundamental [short exact sequence](@keyword=short_exact_sequence|lang=en-US|style=Feynman) of arithmetic [@problem_id:3022326, @problem_id:3024972]:
-$$ 0 \longrightarrow E(\mathbb{Q})/nE(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(n)}(E/\mathbb{Q}) \longrightarrow \Sha(E/\mathbb{Q})[n] \longrightarrow 0 $$
+$$ 0 \longrightarrow E(\mathbb{Q})/nE(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(n)}(E/\mathbb{Q}) \longrightarrow \mathrm{Ш}(E/\mathbb{Q})[n] \longrightarrow 0 $$
 
 This sequence is a mathematical poem.
 - The first term encodes the structure of the rational points, and its size depends on the rank $r$.
 - The middle term is our computable bridge, the Selmer group, capturing all "potential" global solutions that are consistent with local data.
-- The third term is the obstruction, $\Sha(E/\mathbb{Q})[n]$, measuring exactly how many of those potential solutions are phantoms that vanish upon returning to the global world.
+- The third term is the obstruction, $\mathrm{Ш}(E/\mathbb{Q})[n]$, measuring exactly how many of those potential solutions are phantoms that vanish upon returning to the global world.
 
 From this sequence, a simple fact about finite groups tells us that $|E(\mathbb{Q})/nE(\mathbb{Q})|$ must divide $|\mathrm{Sel}^{(n)}(E/\mathbb{Q})|$. This gives us our final, practical tool: an inequality that bounds the rank [@problem_id:3024984].
 $$ |E(\mathbb{Q})[n]| \cdot n^r \le |\mathrm{Sel}^{(n)}(E/\mathbb{Q})| $$

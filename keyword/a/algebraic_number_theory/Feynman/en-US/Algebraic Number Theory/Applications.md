@@ -10,7 +10,7 @@ Let's see this in action with a Mordell equation like $y^2 = x^3-2$, which we ca
 $$(y + \sqrt{-2})(y - \sqrt{-2}) = x^3$$
 This new equation relates elements in a larger ring. Crucially, the ring $\mathbb{Z}[\sqrt{-2}]$ has unique factorization of elements (its class number is one). One can show that the two factors on the left, $(y + \sqrt{-2})$ and $(y - \sqrt{-2})$, are coprime. If the product of two coprime elements is a perfect cube, then each element itself must be a perfect cube, up to multiplication by a unit.
 $$y + \sqrt{-2} = \varepsilon \alpha^3$$
-for some unit $\varepsilon$ and some element $\alpha$ in $\mathcalO_K$.
+for some unit $\varepsilon$ and some element $\alpha$ in $\mathcal{O}_K$.
 
 And there it is! The problem has been transformed. The only units in $\mathbb{Q}(\sqrt{-2})$ are $\pm 1$, which are themselves cubes, so we can absorb them into $\alpha^3$. We are left with $y + \sqrt{-2}$ being a perfect cube of an element $a+b\sqrt{-2}$. By expanding $(a+b\sqrt{-2})^3$ and equating coefficients, we find the only integer solutions are $(x,y) = (3, \pm 5)$. The infinite search is reduced to a simple algebraic calculation. For more complex equations, or in fields where unique factorization of elements fails, the argument is more subtle. The obstruction is no longer just units, but also the class group. Even then, the problem is transformed from an unsolvable puzzle in the integers into a finite, structural problem about ideals and units in a [number field](@keyword=number_field|lang=en-US|style=Feynman), where tools like Dirichlet's Unit Theorem become essential [@problem_id:3014817]. This is a stunning victory of structure over brute force, a common theme in modern mathematics.
 

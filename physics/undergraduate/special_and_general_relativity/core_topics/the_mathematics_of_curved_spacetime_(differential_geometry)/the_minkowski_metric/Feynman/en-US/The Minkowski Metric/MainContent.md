@@ -104,7 +104,7 @@ A normal rotation in the x-y plane mixes x and y coordinates but keeps the dista
 A normal rotation is described by an angle, $\theta$. A [hyperbolic rotation](@keyword=hyperbolic_rotation|lang=en-US|style=Feynman), it turns out, is described by a parameter called **rapidity**, $\phi$. This "angle" of rotation in spacetime is related to the velocity by a simple and elegant formula [@problem_id:1868498]:
 
 $$
-\phi = \arctanh\left(\frac{v}{c}\right)
+\phi = \operatorname{arctanh}\left(\frac{v}{c}\right)
 $$
 
 This perspective is powerful. It tells us that what we perceive as "motion" (a change in velocity) is, from a deeper four-dimensional perspective, simply a change in our orientation within spacetime. The laws of physics, like the Minkowski metric, remain the same regardless of our orientation. The unity and beauty are breathtaking. The [spacetime interval](@keyword=spacetime_interval|lang=en-US|style=Feynman) is not merely a clever calculation; it is the fundamental measure of separation in the geometric world that we inhabit.

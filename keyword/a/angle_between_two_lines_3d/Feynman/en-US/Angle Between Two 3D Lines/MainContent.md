@@ -23,7 +23,7 @@ Now that we know how to find the direction vectors for our two lines, say $\math
 
 The dot product is a miraculous little operation that acts as a bridge, a kind of Rosetta Stone, translating between the world of numerical coordinates (algebra) and the world of shapes and angles (geometry). It has two, equally valid, definitions:
 
-1.  **The Algebraic Definition**: For two vectors $\mathbfv_1 = \langle a_1, b_1, c_1 \rangle$ and $\mathbf{v}_2 = \langle a_2, b_2, c_2 \rangle$, the dot product is a simple multiplication and addition: $\mathbf{v}_1 \cdot \mathbf{v}_2 = a_1 a_2 + b_1 b_2 + c_1 c_2$. The result is not a vector, but a single number (a scalar).
+1.  **The Algebraic Definition**: For two vectors $\mathbf{v}_1 = \langle a_1, b_1, c_1 \rangle$ and $\mathbf{v}_2 = \langle a_2, b_2, c_2 \rangle$, the dot product is a simple multiplication and addition: $\mathbf{v}_1 \cdot \mathbf{v}_2 = a_1 a_2 + b_1 b_2 + c_1 c_2$. The result is not a vector, but a single number (a scalar).
 
 2.  **The Geometric Definition**: The dot product is also defined as $\mathbf{v}_1 \cdot \mathbf{v}_2 = \|\mathbf{v}_1\| \|\mathbf{v}_2\| \cos\theta$, where $\|\mathbf{v}\|$ is the length (or magnitude) of the vector $\mathbf{v}$, and $\theta$ is the angle between the two vectors.
 

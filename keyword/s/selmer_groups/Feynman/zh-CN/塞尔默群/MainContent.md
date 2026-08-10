@@ -50,15 +50,15 @@ $$ E(\mathbb{Q})/nE(\mathbb{Q}) \subseteq \mathrm{Sel}^{(n)}(E/\mathbb{Q}) \subs
 
 [塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)与莫德尔-韦伊群（的像）之间的差异是什么？$\mathrm{Sel}^{(n)}(E/\mathbb{Q})$ 中那些在各处局部可解但并非来自 $E$ 上某个全局有理点的额外元素是什么？
 
-答案是数论中最优美的综合之一。这些额外的元素恰好是衡量[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)失效程度的标尺。这个[商群](@keyword=factor_groups|lang=zh-CN|style=Feynman)正是**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) (Tate-Shafarevich group)** 的 $n$-挠部分，即 $\Sha(E/\mathbb{Q})[n]$，根据定义，它汇集了那些在各处局部可解但没有全局有理点的椭圆曲线主[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)。
+答案是数论中最优美的综合之一。这些额外的元素恰好是衡量[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)失效程度的标尺。这个[商群](@keyword=factor_groups|lang=zh-CN|style=Feynman)正是**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) (Tate-Shafarevich group)** 的 $n$-挠部分，即 $\mathrm{Ш}(E/\mathbb{Q})[n]$，根据定义，它汇集了那些在各处局部可解但没有全局有理点的椭圆曲线主[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)。
 
 这给了我们算术基本[短正合序列](@keyword=short_exact_sequence|lang=zh-CN|style=Feynman) [@problem_id:3022326, @problem_id:3024972]：
-$$ 0 \longrightarrow E(\mathbb{Q})/nE(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(n)}(E/\mathbb{Q}) \longrightarrow \Sha(E/\mathbb{Q})[n] \longrightarrow 0 $$
+$$ 0 \longrightarrow E(\mathbb{Q})/nE(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(n)}(E/\mathbb{Q}) \longrightarrow \mathrm{Ш}(E/\mathbb{Q})[n] \longrightarrow 0 $$
 
 这个序列如同一首数学的诗。
 - 第一项编码了[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)的结构，其大小取决于秩 $r$。
 - 中间项是我们可计算的桥梁，[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)，它捕捉了所有与局部数据一致的“潜在”[全局解](@keyword=global_solution|lang=zh-CN|style=Feynman)。
-- 第三项是障碍，$\Sha(E/\mathbb{Q})[n]$，它精确地衡量了这些潜在解中有多少是返回到全局世界时便会消失的幻影。
+- 第三项是障碍，$\mathrm{Ш}(E/\mathbb{Q})[n]$，它精确地衡量了这些潜在解中有多少是返回到全局世界时便会消失的幻影。
 
 从这个序列，一个关于[有限群](@keyword=finite_groups|lang=zh-CN|style=Feynman)的简单事实告诉我们，$|E(\mathbb{Q})/nE(\mathbb{Q})|$ 必须整除 $|\mathrm{Sel}^{(n)}(E/\mathbb{Q})|$。这给了我们最终的实用工具：一个限制秩的不等式 [@problem_id:3024984]。
 $$ |E(\mathbb{Q})[n]| \cdot n^r \le |\mathrm{Sel}^{(n)}(E/\mathbb{Q})| $$

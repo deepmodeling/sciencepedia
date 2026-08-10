@@ -23,7 +23,7 @@
 
 愈合是“建设”与“拆除”之间的微妙平衡。当成纤维细胞进行建设时，一个称为**基质金属蛋白酶 (MMPs)** 的酶家族则扮演“拆除队”的角色，负责重塑和分解多余的胶原蛋白。它们的活性受到**[金属蛋白](@keyword=metalloproteins|lang=zh-CN|style=Feynman)酶组织抑制剂 (TIMPs)** 的制约。那位“工头”$TGF-\beta$ 则偏袒一方：它在刺激胶原蛋白生产的同时，也提高了 TIMPs 的水平，实际上是告诉“拆除队”去休息一下 [@problem_id:4841647]。最终结果就是胶原蛋白的大量积聚。
 
-大自然以其优雅的方式，甚至为这位“工头”设计了不同版本。**$TGF-\beta1$** 是那个激进的、促进[纤维化](@keyword=fibrations|lang=zh-CN|style=Feynman)的老板，而它的近亲 **$TGF-\beta3$** 更像一个微调者，与减少瘢痕形成和更具再生性的胎儿式愈合有关。我们可以想象，伤口的愈合结果取决于比值 $R(t) = \frac{[\mathrm{TGF}\mbox{-}\beta1]}{[\mathrm{TGF}\mbox{-}\beta3]}$。高比值预示着[纤维化](@keyword=fibrations|lang=zh-CN|style=Feynman)，而低比值则有利于再生 [@problem_id:4928951]。在增生性瘢痕中，显然是那个激进的工头 $TGF-\beta1$ 在主导一切。
+大自然以其优雅的方式，甚至为这位“工头”设计了不同版本。**$TGF-\beta1$** 是那个激进的、促进[纤维化](@keyword=fibrations|lang=zh-CN|style=Feynman)的老板，而它的近亲 **$TGF-\beta3$** 更像一个微调者，与减少瘢痕形成和更具再生性的胎儿式愈合有关。我们可以想象，伤口的愈合结果取决于比值 $R(t) = \frac{[\mathrm{TGF}\text{-}\beta1]}{[\mathrm{TGF}\text{-}\beta3]}$。高比值预示着[纤维化](@keyword=fibrations|lang=zh-CN|style=Feynman)，而低比值则有利于再生 [@problem_id:4928951]。在增生性瘢痕中，显然是那个激进的工头 $TGF-\beta1$ 在主导一切。
 
 ### 张力的暴政：当物理学劫持生物学
 

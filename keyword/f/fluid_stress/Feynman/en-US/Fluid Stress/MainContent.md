@@ -34,7 +34,7 @@ This little equation is one of the cornerstones of [fluid mechanics](@keyword=fl
 -   $\mu$ is the **dynamic viscosity**. This is a property of the fluid itself—its [intrinsic resistance](@keyword=intrinsic_resistance|lang=en-US|style=Feynman) to shear. Think of it as the fluid's "stickiness" or "thickness." Honey has a high $\mu$; air has a very low $\mu$. Its units are Pascal-seconds (Pa·s).
 -   $\frac{du}{dy}$ is the **velocity gradient**. It tells us how rapidly the fluid velocity is changing as we move between layers.
 
-In the simple case of Couette flow between two close plates, the velocity profile is just a straight line, so the gradient is constant: $\frac{du}{dy} = \frac{U}{h}$, where $h$ is the gap between the plates. The stress is therefore uniform throughout the fluid: $\tau = \mu \frac{U}{h}$ [@problem_id:1812139]. If you have oil with viscosity $0.0450 \text{ Pa·s}$ in a $0.2 \text{ mm}$ gap and you move the top surface at $0.75 \text{ m/s}$, you create a shear stress of about $169 \text{ Pa}$ inside the oil. This is a real, tangible force that you would have to exert to keep the plate moving.
+In the simple case of Couette flow between two close plates, the velocity profile is just a straight line, so the gradient is constant: $\frac{du}{dy} = \frac{U}{h}$, where $h$ is the gap between the plates. The stress is therefore uniform throughout the fluid: $\tau = \mu \frac{U}{h}$ [@problem_id:1812139]. If you have oil with viscosity $0.0450 \mathrm{Pa\cdot s}$ in a $0.2 \text{ mm}$ gap and you move the top surface at $0.75 \text{ m/s}$, you create a shear stress of about $169 \text{ Pa}$ inside the oil. This is a real, tangible force that you would have to exert to keep the plate moving.
 
 ### The Sources of Stress
 

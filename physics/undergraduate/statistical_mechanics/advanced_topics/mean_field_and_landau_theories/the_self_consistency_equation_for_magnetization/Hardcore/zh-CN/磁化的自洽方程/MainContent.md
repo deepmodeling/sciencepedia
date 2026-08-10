@@ -1,72 +1,72 @@
 ## 引言
-铁磁性，即材料在无外场时仍能展现宏观磁性的奇特现象，是凝聚态物理中最引人入胜的集体行为之一。这一现象源于微观层面亿万个电子自旋间的强相互作用。然而，直接求解这样一个庞大的多体系统的哈密顿量，在数学上几乎是不可能的。这一知识鸿沟促使物理学家寻求强大的近似方法，以揭示其背后的物理规律。
+铁磁性，即材料在无外场时仍能展现宏观磁性的奇特现象，是凝聚态物理中最引人入胜的集体行为之一。这一现象源于微观层面亿万个[电子自旋](@keyword=electron_spin|lang=zh-CN|style=Feynman)间的[强相互作用](@keyword=strong_nuclear_force|lang=zh-CN|style=Feynman)。然而，直接求解这样一个庞大的[多体系统](@keyword=many_body_systems|lang=zh-CN|style=Feynman)的[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)，在数学上几乎是不可能的。这一知识鸿沟促使物理学家寻求强大的近似方法，以揭示其背后的物理规律。
 
-本文旨在深入剖析解决这一问题的关键理论工具——外斯平均场理论，并聚焦于其核心，即磁化强度的自洽方程。通过本文的学习，读者将理解如何从一个复杂的相互作用系统出发，通过巧妙的近似，得到一个能够预测宏观磁性的简洁方程。
+本文旨在深入剖析解决这一问题的关键理论工具——[外斯平均场理论](@keyword=weiss_mean_field_theory|lang=zh-CN|style=Feynman)，并聚焦于其核心，即磁化强度的[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)。通过本文的学习，读者将理解如何从一个复杂的相互作用系统出发，通过巧妙的近似，得到一个能够预测宏观磁性的简洁方程。
 
-我们将分三步展开：首先，在“原理与机制”一章中，我们将系统地推导自洽方程，并分析其如何预言了铁磁相变和居里温度的存在。接着，在“应用与跨学科联系”一章中，我们将展示该方程如何被推广以描述更复杂的磁序和真实材料，并揭示其在材料科学、冷原子物理等领域的广泛联系。最后，在“动手实践”部分，你将有机会通过具体问题来巩固和应用所学知识。
+我们将分三步展开：首先，在“原理与机制”一章中，我们将系统地推导[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)，并分析其如何预言了铁[磁相变](@keyword=magnetic_phase_transitions|lang=zh-CN|style=Feynman)和居里温度的存在。接着，在“应用与跨学科联系”一章中，我们将展示该方程如何被推广以描述更复杂的磁序和真实材料，并揭示其在[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)、[冷原子](@keyword=cold_atoms|lang=zh-CN|style=Feynman)物理等领域的广泛联系。最后，在“动手实践”部分，你将有机会通过具体问题来巩固和应用所学知识。
 
 现在，让我们从构建平均场近似，推导这一深刻方程的“原理与机制”开始。
 
 ## 原理与机制
 
-在上一章中，我们介绍了铁磁性这一迷人的集体现象，即材料在没有外部磁场的情况下仍能表现出宏观磁矩。这种自发磁化源于微观磁矩（如电子自旋）之间的强相互作用。然而，精确描述一个包含万亿个相互作用粒子的系统在数学上是极其困难的。为了能够从理论上理解和预测铁磁相变，我们需要一个有效的近似方法。本章将深入探讨著名的外斯平均场理论（Weiss mean-field theory），并系统地推导和分析其核心——磁化强度的自洽方程。
+在上一章中，我们介绍了铁磁性这一迷人的[集体现象](@keyword=collective_phenomena|lang=zh-CN|style=Feynman)，即材料在没有外部[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的情况下仍能表现出宏观磁矩。这种[自发磁化](@keyword=spontaneous_magnetization|lang=zh-CN|style=Feynman)源于微观磁矩（如电子自旋）之间的强相互作用。然而，精确描述一个包含万亿个相互作用粒子的系统在数学上是极其困难的。为了能够从理论上理解和预测铁[磁相变](@keyword=magnetic_phase_transitions|lang=zh-CN|style=Feynman)，我们需要一个有效的近似方法。本章将深入探讨著名的[外斯平均场理论](@keyword=weiss_mean_field_theory|lang=zh-CN|style=Feynman)（Weiss mean-field theory），并系统地推导和分析其核心——磁化强度的[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)。
 
-### 平均场近似与有效哈密顿量
+### [平均场近似](@keyword=mean_field_approximation|lang=zh-CN|style=Feynman)与有效哈密顿量
 
-平均场理论的核心思想是一种巧妙的简化：它将系统中任意一个微观磁矩（例如，一个自旋）与其他所有磁矩之间的复杂、多体的相互作用，近似地替换为该磁矩与一个由所有其他磁矩共同产生的“平均场”或“分子场”（molecular field）之间的相互作用。这样，一个棘手的多体问题就被简化为一系列等效的、可在外场中求解的单体问题。
+平均场理论的核心思想是一种巧妙的简化：它将系统中任意一个微观磁矩（例如，一个自旋）与其他所有磁矩之间的复杂、多体的相互作用，近似地替换为该磁矩与一个由所有其他磁矩共同产生的“平均场”或“分子场”（molecular field）之间的相互作用。这样，一个棘手的多体问题就被简化为一系列等效的、可在外场中求解的[单体](@keyword=monomer|lang=zh-CN|style=Feynman)问题。
 
-为了更具体地理解这一近似，让我们从一个微观模型出发。考虑一个由$N$个自旋构成的晶格系统，其行为可以用伊辛模型（Ising model）来描述。其哈密顿量为：
+为了更具体地理解这一近似，让我们从一个微观模型出发。考虑一个由$N$个自旋构成的[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)系统，其行为可以用[伊辛模型](@keyword=ising_model|lang=zh-CN|style=Feynman)（Ising model）来描述。其[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)为：
 $$H = -J \sum_{\langle i,j \rangle} s_i s_j$$
-在此模型中，$s_i = \pm 1$代表位于格点$i$的自旋方向，$J > 0$是铁磁相互作用的交换耦合常数，求和符号$\sum_{\langle i,j \rangle}$表示对所有最近邻自旋对进行求和。每个自旋有$z$个最近邻，这个$z$被称为配位数。
+在此模型中，$s_i = \pm 1$代[表位](@keyword=epitopes|lang=zh-CN|style=Feynman)于格点$i$的自旋方向，$J > 0$是铁磁相互作用的[交换耦合](@keyword=exchange_coupling|lang=zh-CN|style=Feynman)常数，[求和符号](@keyword=sigma_notation|lang=zh-CN|style=Feynman)$\sum_{\langle i,j \rangle}$表示对所有最近邻自旋对进行求和。每个自旋有$z$个最近邻，这个$z$被称为配位数。
 
-在平均场近似下，我们忽略了自旋之间的涨落和关联，即假定任意两个不同自旋的乘积的热力学平均值可以被它们各自平均值的乘积所替代：
+在平均场近似下，我们忽略了自旋之间的涨落和关联，即假定任意两个不同自旋的乘积的[热力学平均](@keyword=thermodynamic_averaging|lang=zh-CN|style=Feynman)值可以被它们各自平均值的乘积所替代：
 $$\langle s_i s_j \rangle \approx \langle s_i \rangle \langle s_j \rangle \quad (i \neq j)$$
 对于一个均匀磁化的系统，每个格点的平均自旋都相同。我们定义无量纲的平均磁化强度为 $m = \langle s_i \rangle$。于是，系统的平均内能$U = \langle H \rangle$可以近似为：
 $$U \approx -J \sum_{\langle i,j \rangle} \langle s_i \rangle \langle s_j \rangle = -J m^2 \sum_{\langle i,j \rangle} 1$$
-在一个有$N$个格点的晶格上，最近邻的总对数为$\frac{Nz}{2}$（每个格点有$z$个邻居，为避免重复计算，除以2）。因此，系统的总内能为：
+在一个有$N$个格点的[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)上，最近邻的总对数为$\frac{Nz}{2}$（每个格点有$z$个邻居，为避免重复计算，除以2）。因此，系统的总内能为：
 $$U \approx -J m^2 \left(\frac{Nz}{2}\right)$$
 单位自旋的平均内能$u = U/N$则为：
 $$u(m) \approx -\frac{J z}{2} m^2$$
 这个结果与外斯早期提出的唯象理论中的能量表达式 $u(m) = -\frac{1}{2}\lambda m^2$ 形式完全一致。通过比较，我们为唯象参数$\lambda$找到了其微观起源 [@problem_id:2008694]：
 $$\lambda = Jz$$
-这表明，平均场相互作用的强度$\lambda$正比于微观交换耦合$J$和配位数$z$的乘积。配位数越高，意味着一个自旋感受到的“平均”影响越强，这与我们的直觉相符。
+这表明，[平均场相互作用](@keyword=mean_field_interaction|lang=zh-CN|style=Feynman)的强度$\lambda$正比于微观[交换耦合](@keyword=exchange_coupling|lang=zh-CN|style=Feynman)$J$和[配位数](@keyword=coordination_number|lang=zh-CN|style=Feynman)$z$的乘积。配位数越高，意味着一个自旋感受到的“平均”影响越强，这与我们的直觉相符。
 
-从另一个角度看，我们可以把作用在单个自旋$s_i$上的有效哈密顿量写出来。自旋$s_i$与其$z$个邻居的相互作用能为 $H_i = -s_i \sum_{j \text{ nn of } i} J s_j$。在平均场近似下，我们用邻居的平均值$\langle s_j \rangle = m$来替换瞬时值$s_j$：
+从另一个角度看，我们可以把作用在单个自旋$s_i$上的[有效哈密顿量](@keyword=effective_hamiltonians|lang=zh-CN|style=Feynman)写出来。自旋$s_i$与其$z$个邻居的相互作用能为 $H_i = -s_i \sum_{j \text{ nn of } i} J s_j$。在平均场近似下，我们用邻居的平均值$\langle s_j \rangle = m$来替换瞬时值$s_j$：
 $$H_i^{\text{eff}} \approx -s_i \sum_{j \text{ nn of } i} Jm = -s_i (zJm)$$
-这个表达式的形式与一个自旋在有效磁场$B_{\text{eff}}$中能量$E = - \mu s_i B_{\text{eff}}$完全一样。这表明，复杂的邻居相互作用被等效成一个与平均磁化强度$m$成正比的有效磁场，即外斯所称的“分子场”。
+这个表达式的形式与一个自旋在[有效磁场](@keyword=effective_magnetic_field|lang=zh-CN|style=Feynman)$B_{\text{eff}}$中能量$E = - \mu s_i B_{\text{eff}}$完全一样。这表明，复杂的邻居相互作用被等效成一个与平均磁化强度$m$成正比的有效磁场，即外斯所称的“分子场”。
 
-### 磁化强度的自洽方程
+### 磁化强度的[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)
 
-平均场近似将多体问题转化为单体问题，现在我们可以利用统计力学的标准方法来计算单个自旋在有效场中的平均磁化。然而，这个有效场本身又依赖于平均磁化。正是这种循环依赖关系，构成了“自洽”（self-consistency）的核心。
+[平均场近似](@keyword=mean_field_approximation|lang=zh-CN|style=Feynman)将多体问题转化为[单体](@keyword=monomer|lang=zh-CN|style=Feynman)问题，现在我们可以利用[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学的标准方法来计算单个自旋在有效场中的平均磁化。然而，这个有效场本身又依赖于平均磁化。正是这种[循环依赖](@keyword=circular_dependency|lang=zh-CN|style=Feynman)关系，构成了“自洽”（self-consistency）的核心。
 
-#### 自旋1/2系统
+#### [自旋1/2系统](@keyword=spin_one_half_systems|lang=zh-CN|style=Feynman)
 
 让我们考虑一个更普适的情形，系统中每个磁矩的大小为$\mu$。总磁化强度（单位体积的磁矩）为$M$，它与无量纲磁化强度$m$的关系为$M=n\mu m$，其中$n$为单位体积的磁矩数。有效场$B_{\text{eff}}$由外场$B_0$和与磁化强度$M$成正比的分子场$B_M = \lambda_v M$组成（$\lambda_v$为分子场常数）。
 $$B_{\text{eff}} = B_0 + \lambda_v M$$
-对于一个自旋1/2系统（磁矩可取$\pm\mu$），其在有效场中的能量为$E_{\pm} = \mp \mu B_{\text{eff}}$。根据玻尔兹曼分布，在温度$T$下，自旋取向为$+\mu$和$-\mu$的概率分别为：
+对于一个[自旋1/2系统](@keyword=spin_one_half_systems|lang=zh-CN|style=Feynman)（磁矩可取$\pm\mu$），其在有效场中的能量为$E_{\pm} = \mp \mu B_{\text{eff}}$。根据[玻尔兹曼分布](@keyword=boltzmann_distribution|lang=zh-CN|style=Feynman)，在温度$T$下，自旋取向为$+\mu$和$-\mu$的概率分别为：
 $$P_{\pm} \propto \exp(-\beta E_{\pm}) = \exp(\pm \beta \mu B_{\text{eff}})$$
-其中$\beta = 1/(k_B T)$，$k_B$是玻尔兹曼常数。
+其中$\beta = 1/(k_B T)$，$k_B$是[玻尔兹曼常数](@keyword=boltzmann_constant|lang=zh-CN|style=Feynman)。
 单个磁矩的平均值$\langle \mu \rangle$为：
 $$\langle \mu \rangle = \frac{(+\mu)\exp(\beta \mu B_{\text{eff}}) + (-\mu)\exp(-\beta \mu B_{\text{eff}})}{\exp(\beta \mu B_{\text{eff}}) + \exp(-\beta \mu B_{\text{eff}})} = \mu \tanh(\beta \mu B_{\text{eff}})$$
-系统的总磁化强度$M$是$n$倍的单个磁矩平均值。因此，我们得到了自洽方程：
+系统的总磁化强度$M$是$n$倍的单个磁矩平均值。因此，我们得到了[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)：
 $$M = n\mu \tanh\left(\frac{\mu (B_0 + \lambda_v M)}{k_B T}\right)$$
-这个方程之所以称为**自洽方程**，是因为待求量$M$同时出现在等式的左右两边。方程的解代表了一个稳定的状态，其中由平均磁化$M$产生的分子场，恰好能使得系统在热平衡下维持这个$M$值。[@problem_id:2008708] [@problem_id:2008720] [@problem_id:2008727]
+这个方程之所以称为**[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)**，是因为待求量$M$同时出现在等式的左右两边。方程的解代表了一个稳定的状态，其中由平均磁化$M$产生的分子场，恰好能使得系统在[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)下维持这个$M$值。[@problem_id:2008708] [@problem_id:2008720] [@problem_id:2008727]
 
 #### 更高自旋的系统
 
-平均场方法同样适用于具有更高总角动量量子数$J$的磁离子系统。此时，磁矩在磁场方向的投影可以取$2J+1$个离散值。例如，对于$J=1$的系统，磁量子数$m_J$可取$-1, 0, 1$。在有效场$B_{\text{eff}}$中，各能级的能量为 $E_{m_J} = g \mu_B m_J B_{\text{eff}}$（$g$为朗德g因子，$\mu_B$为玻尔磁子）。
+[平均场方法](@keyword=mean_field_method|lang=zh-CN|style=Feynman)同样适用于具有更高[总角动量量子数](@keyword=j_quantum_number|lang=zh-CN|style=Feynman)$J$的磁离子系统。此时，磁矩在[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)方向的投影可以取$2J+1$个离散值。例如，对于$J=1$的系统，磁量子数$m_J$可取$-1, 0, 1$。在有效场$B_{\text{eff}}$中，各能级的能量为 $E_{m_J} = g \mu_B m_J B_{\text{eff}}$（$g$为[朗德g因子](@keyword=landé_g_factor|lang=zh-CN|style=Feynman)，$\mu_B$为[玻尔磁子](@keyword=bohr_magneton|lang=zh-CN|style=Feynman)）。
 
-单个离子的配分函数为：
+单个离子的[配分函数](@keyword=sum_of_states|lang=zh-CN|style=Feynman)为：
 $$Z_1 = \sum_{m_J=-1}^{1} \exp(-\beta E_{m_J}) = \exp(\beta g \mu_B B_{\text{eff}}) + 1 + \exp(-\beta g \mu_B B_{\text{eff}}) = 1 + 2\cosh(\beta g \mu_B B_{\text{eff}})$$
 平均磁矩为：
 $$\langle \mu_z \rangle = \frac{1}{Z_1} \sum_{m_J=-1}^{1} (g \mu_B m_J) \exp(-\beta g \mu_B B_{\text{eff}}) = g\mu_B \frac{2\sinh(\beta g \mu_B B_{\text{eff}})}{1+2\cosh(\beta g \mu_B B_{\text{eff}})}$$
-系统的总磁化强度$M = n \langle \mu_z \rangle$，代入$B_{\text{eff}} = B_0 + \lambda_v M$，我们得到$J=1$系统下的自洽方程 [@problem_id:2008719]：
+系统的总磁化强度$M = n \langle \mu_z \rangle$，代入$B_{\text{eff}} = B_0 + \lambda_v M$，我们得到$J=1$系统下的[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman) [@problem_id:2008719]：
 $$M = n g \mu_B \frac{2\sinh\left(\frac{g \mu_B (B_0+\lambda_v M)}{k_B T}\right)}{1+2\cosh\left(\frac{g \mu_B (B_0+\lambda_v M)}{k_B T}\right)}$$
-对于任意$J$，该平均磁矩可以用布里渊函数$B_J(x)$来表示，自洽方程的一般形式为$M = n g \mu_B J B_J(\beta g \mu_B J B_{\text{eff}})$。双曲正切函数是$J=1/2$时的布里渊函数。
+对于任意$J$，该平均磁矩可以用[布里渊函数](@keyword=brillouin_function|lang=zh-CN|style=Feynman)$B_J(x)$来表示，[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)的一般形式为$M = n g \mu_B J B_J(\beta g \mu_B J B_{\text{eff}})$。[双曲正切函数](@keyword=tanh_function|lang=zh-CN|style=Feynman)是$J=1/2$时的[布里渊函数](@keyword=brillouin_function|lang=zh-CN|style=Feynman)。
 
-### 自发磁化与相变
+### [自发磁化](@keyword=spontaneous_magnetization|lang=zh-CN|style=Feynman)与[相变](@keyword=phase_change|lang=zh-CN|style=Feynman)
 
-铁磁性的标志是在没有外场（$B_0=0$）时出现非零磁化，即**自发磁化**。让我们回到更简单的自旋1/2系统，并令$B_0=0$。使用无量纲磁化强度$m = M/(n\mu)$和之前导出的微观参数$\lambda=Jz$（这里需要将$\lambda_v$与微观参数联系起来，$\lambda_v M = zJ m / \mu$，因此 $\lambda_v = zJ / (n\mu^2)$），自洽方程变为：
+[铁磁性](@keyword=ferromagnetism|lang=zh-CN|style=Feynman)的标志是在没有外场（$B_0=0$）时出现非零磁化，即**[自发磁化](@keyword=spontaneous_magnetization|lang=zh-CN|style=Feynman)**。让我们回到更简单的[自旋1/2系统](@keyword=spin_one_half_systems|lang=zh-CN|style=Feynman)，并令$B_0=0$。使用无量纲磁化强度$m = M/(n\mu)$和之前导出的微观参数$\lambda=Jz$（这里需要将$\lambda_v$与微观参数联系起来，$\lambda_v M = zJ m / \mu$，因此 $\lambda_v = zJ / (n\mu^2)$），[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)变为：
 $$m = \tanh\left(\frac{z J m}{k_B T}\right)$$
 这个方程的解对应于系统的可能平衡态。我们可以通过图形法来直观地分析其解。令$f_1(m) = m$和$f_2(m) = \tanh\left(\frac{zJ}{k_B T}m\right)$，方程的解就是这两条曲线的交点。
 
@@ -75,20 +75,20 @@ $$m = \tanh\left(\frac{z J m}{k_B T}\right)$$
 #### 高温区 ($T > T_c$)
 当温度$T$很高时，参数$\alpha = \frac{zJ}{k_B T}$很小。函数$f_2(m)$在原点附近的斜率为：
 $$\left. \frac{d f_2(m)}{dm} \right|_{m=0} = \left. \frac{zJ}{k_B T} \text{sech}^2\left(\frac{zJm}{k_B T}\right) \right|_{m=0} = \frac{zJ}{k_B T}$$
-在高温下，$\alpha  1$，即$f_2(m)$在原点的斜率小于$f_1(m)$的斜率（恒为1）。又因为对于任何$x>0$，总有$\tanh(x)  x$，这意味着对于所有$m>0$，$f_2(m)$的曲线始终在$y=m$直线的下方。因此，在$m>0$的区间内没有交点。由于函数的奇对称性，在$m0$区间亦然。此时，唯一的解就是$m=0$。系统处于顺磁态，没有自发磁化。[@problem_id:2008724]
+在高温下，$\alpha  1$，即$f_2(m)$在原点的斜率小于$f_1(m)$的斜率（恒为1）。又因为对于任何$x>0$，总有$\tanh(x)  x$，这意味着对于所有$m>0$，$f_2(m)$的曲线始终在$y=m$直线的下方。因此，在$m>0$的区间内没有交点。由于函数的奇对称性，在$m0$区间亦然。此时，唯一的解就是$m=0$。系统处于顺磁态，没有[自发磁化](@keyword=spontaneous_magnetization|lang=zh-CN|style=Feynman)。[@problem_id:2008724]
 
 #### 低温区 ($T  T_c$)
-当温度$T$足够低时，参数$\alpha > 1$。此时$f_2(m)$在原点的斜率大于1。这意味着在$m$很小的正数区域，$f_2(m)$的曲线在$y=m$直线的上方。然而，当$m$增大时，$\tanh$函数会趋于饱和值1，因此曲线最终必然会向下弯曲并与$y=m$直线相交于某点$m_0 > 0$。由于$f_2(m)$是奇函数，对称地，在$m0$区域也必然存在一个交点$-m_0$。因此，在低温区，我们共有三个解：$m=0$、$m=m_0$和$-m_0$。[@problem_id:2008692] 这两个非零解代表了方向相反的两个自发磁化状态。
+当温度$T$足够低时，参数$\alpha > 1$。此时$f_2(m)$在原点的斜率大于1。这意味着在$m$很小的正数区域，$f_2(m)$的曲线在$y=m$直线的上方。然而，当$m$增大时，$\tanh$函数会趋于饱和值1，因此曲线最终必然会向下弯曲并与$y=m$直线相交于某点$m_0 > 0$。由于$f_2(m)$是奇函数，对称地，在$m0$区域也必然存在一个交点$-m_0$。因此，在低温区，我们共有三个解：$m=0$、$m=m_0$和$-m_0$。[@problem_id:2008692] 这两个非零解代表了方向相反的两个[自发磁化](@keyword=spontaneous_magnetization|lang=zh-CN|style=Feynman)状态。
 
-#### 临界温度：居里温度 ($T_c$)
-从高温到低温，非零解出现的临界点发生在$f_2(m)$在原点的斜率正好等于1的时刻。这个临界温度被称为**居里温度**$T_c$。
+#### [临界温度](@keyword=critical_temperature|lang=zh-CN|style=Feynman)：居里温度 ($T_c$)
+从高温到低温，非零解出现的[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)发生在$f_2(m)$在原点的斜率正好等于1的时刻。这个[临界温度](@keyword=critical_temperature|lang=zh-CN|style=Feynman)被称为**居里温度**$T_c$。
 $$\left. \frac{d f_2(m)}{dm} \right|_{m=0, T=T_c} = \frac{zJ}{k_B T_c} = 1$$
-由此我们得到平均场理论预测的居里温度 [@problem_id:2008708] [@problem_id:2008720]：
+由此我们得到平均场理论预测的[居里温度](@keyword=curie_temperature|lang=zh-CN|style=Feynman) [@problem_id:2008708] [@problem_id:2008720]：
 $$T_c = \frac{zJ}{k_B}$$
-用宏观的分子场常数$\lambda_v$表示，则为 $T_c = \frac{n \mu^2 \lambda_v}{k_B}$。[@problem_id:2008727] 当$T  T_c$时，系统自发地进入铁磁有序态；当$T > T_c$时，系统转变为顺磁无序态。平均场理论成功地预测了这样一个二级相变的存在。
+用宏观的分子场常数$\lambda_v$表示，则为 $T_c = \frac{n \mu^2 \lambda_v}{k_B}$。[@problem_id:2008727] 当$T  T_c$时，系统自发地进入铁[磁有序](@keyword=magnetic_ordering|lang=zh-CN|style=Feynman)态；当$T > T_c$时，系统转变为顺磁无序态。平均场理论成功地预测了这样一个[二级相变](@keyword=second_order_transition|lang=zh-CN|style=Feynman)的存在。
 
-#### 居里-外斯定律
-在临界温度以上（$T>T_c$），若施加一个很弱的外场$B_0$，系统会产生一个小的磁化强度$M$。此时自洽方程的参数很小，我们可以使用线性近似$\tanh(x) \approx x$：
+#### [居里-外斯定律](@keyword=curie_weiss_law|lang=zh-CN|style=Feynman)
+在[临界温度](@keyword=critical_temperature|lang=zh-CN|style=Feynman)以上（$T>T_c$），若施加一个很弱的外场$B_0$，系统会产生一个小的磁化强度$M$。此时[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)的参数很小，我们可以使用线性近似$\tanh(x) \approx x$：
 $$M \approx n\mu \left(\frac{\mu (B_0 + \lambda_v M)}{k_B T}\right) = \frac{n\mu^2}{k_B T}B_0 + \frac{n\mu^2 \lambda_v}{k_B T}M$$
 整理后得到：
 $$M \left(1 - \frac{n\mu^2 \lambda_v}{k_B T}\right) \approx \frac{n\mu^2}{k_B T}B_0$$
@@ -96,43 +96,43 @@ $$M \left(1 - \frac{n\mu^2 \lambda_v}{k_B T}\right) \approx \frac{n\mu^2}{k_B T}
 $$M \left(1 - \frac{T_c}{T}\right) \approx \frac{n\mu^2}{k_B T}B_0 \implies M \left(\frac{T-T_c}{T}\right) \approx \frac{n\mu^2}{k_B T}B_0$$
 磁化率$\chi = \partial M / \partial B_0 |_{B_0 \to 0}$ 为：
 $$\chi = \frac{n\mu^2/k_B}{T-T_c} = \frac{C}{T-T_c}$$
-这就是著名的**居里-外斯定律**（Curie-Weiss Law），它描述了铁磁体在顺磁相区的磁化率行为，与实验观测高度吻合。常数$C=n\mu^2/k_B$被称为居里常数。[@problem_id:2008727]
+这就是著名的**[居里-外斯定律](@keyword=curie_weiss_law|lang=zh-CN|style=Feynman)**（Curie-Weiss Law），它描述了铁磁体在顺[磁相](@keyword=magnetic_phases|lang=zh-CN|style=Feynman)区的[磁化率](@keyword=magnetic_susceptibility|lang=zh-CN|style=Feynman)行为，与实验观测高度吻合。常数$C=n\mu^2/k_B$被称为居里常数。[@problem_id:2008727]
 
-### 解的稳定性与热力学视角
+### 解的稳定性与[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)视角
 
-在$T  T_c$时我们找到了三个解（$0, \pm m_0$），但系统在热平衡时会处于哪个状态呢？这需要分析解的稳定性。
+在$T  T_c$时我们找到了三个解（$0, \pm m_0$），但系统在[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)时会处于哪个状态呢？这需要分析解的稳定性。
 
 #### 迭代稳定性分析
-我们可以将自洽方程$m = f(m)$看作一个迭代映射$m_{n+1} = f(m_n)$。一个不动点$m^*$是否稳定，取决于其邻域内的迭代行为。如果微小扰动会随迭代次数增加而衰减，则不动点是稳定的；反之则不稳定。数学上，稳定不动点的条件是$|f'(m^*)|  1$。
+我们可以将[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)$m = f(m)$看作一个迭代映射$m_{n+1} = f(m_n)$。一个[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)$m^*$是否稳定，取决于其邻域内的迭代行为。如果微小扰动会随迭代次数增加而衰减，则[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)是稳定的；反之则不稳定。数学上，[稳定不动点](@keyword=stable_fixed_points|lang=zh-CN|style=Feynman)的条件是$|f'(m^*)|  1$。
 
 *   对于$m^*=0$的解：当$T  T_c$时，我们已经知道$f'(0) = T_c/T > 1$。这意味着任何偏离$m=0$的微小扰动都会被放大，因此$m=0$是一个**不稳定**解。
-*   对于$m^* = \pm m_0$的非零解：从$y=m$和$y=\tanh(m/t)$（其中$t=T/T_c$）的图像可以看出，在非零交点处，$\tanh$曲线的斜率总是小于直线$y=m$的斜率1。因此，对于这两个自发磁化解，我们总有$|f'(\pm m_0)|  1$。这两个解是**稳定**的。例如，对于一个假想的平衡态$m^* = \frac{\sqrt{3}}{2}$，通过计算可以验证其稳定性导数为$f'(m^*) = \frac{1}{2\sqrt{3}}\,\arctanh\left(\frac{\sqrt{3}}{2}\right)$，这是一个小于1的正数，表明该解是稳定的。[@problem_id:2008686]
+*   对于$m^* = \pm m_0$的非零解：从$y=m$和$y=\tanh(m/t)$（其中$t=T/T_c$）的图像可以看出，在非零交点处，$\tanh$曲线的斜率总是小于直线$y=m$的斜率1。因此，对于这两个[自发磁化](@keyword=spontaneous_magnetization|lang=zh-CN|style=Feynman)解，我们总有$|f'(\pm m_0)|  1$。这两个解是**稳定**的。例如，对于一个假想的平衡态$m^* = \frac{\sqrt{3}}{2}$，通过计算可以验证其稳定性导数为$f'(m^*) = \frac{1}{2\sqrt{3}}\,\operatorname{arctanh}\left(\frac{\sqrt{3}}{2}\right)$，这是一个小于1的正数，表明该解是稳定的。[@problem_id:2008686]
 
-因此，当系统冷却到$T_c$以下，原先稳定的顺磁态$m=0$变得不稳定，系统会自发地跃迁到两个稳定的铁磁态$\pm m_0$中的一个，从而产生自发磁化。
+因此，当系统冷却到$T_c$以下，原先稳定的顺磁态$m=0$变得不稳定，系统会自发地跃迁到两个稳定的铁磁态$\pm m_0$中的一个，从而产生[自发磁化](@keyword=spontaneous_magnetization|lang=zh-CN|style=Feynman)。
 
-#### 热力学自由能视角
-解的稳定性有更深刻的物理根源，它与系统的热力学自由能有关。在恒温恒容下，系统会演化到使亥姆霍兹自由能$F = U - TS$最小的状态。我们可以从第一性原理出发，通过最小化自由能来重新推导自洽方程，从而验证其物理意义。
+#### [热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)自由能视角
+解的稳定性有更深刻的物理根源，它与系统的[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)自由能有关。在恒温恒容下，系统会演化到使亥姆霍兹自由能$F = U - TS$最小的状态。我们可以从第一性原理出发，通过最小化自由能来重新推导[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)，从而验证其物理意义。
 
-对于一个由$N$个自旋1/2磁矩构成的系统，总磁化强度为$M$时，向上（$N_+$）和向下（$N_-$）的自旋数目是固定的。该宏观态对应的微观状态数 $\Omega = \binom{N}{N_+}$。利用斯特林近似$\ln(x!) \approx x\ln x - x$，系统的熵$S(M) = k_B \ln \Omega$可以表示为$M$的函数。
+对于一个由$N$个自旋1/2磁矩构成的系统，总磁化强度为$M$时，向上（$N_+$）和向下（$N_-$）的自旋数目是固定的。该宏观态对应的微观状态数 $\Omega = \binom{N}{N_+}$。利用[斯特林近似](@keyword=stirling_s_approximation|lang=zh-CN|style=Feynman)$\ln(x!) \approx x\ln x - x$，系统的熵$S(M) = k_B \ln \Omega$可以表示为$M$的函数。
 
 系统的亥姆霍兹自由能为：
 $$F(M) = U(M) - TS(M) = \left(-M B_0 - \frac{1}{2}\lambda M^2\right) - T S(M)$$
-平衡态对应于自由能的极小值，即$\frac{\partial F}{\partial M} = 0$。通过计算$U(M)$和$S(M)$对$M$的导数，可以证明，$\frac{\partial F}{\partial M} = 0$给出的方程，与我们之前通过统计力学方法得到的自洽方程完全相同 [@problem_id:2008713]。
+[平衡态](@keyword=equilibrium_states|lang=zh-CN|style=Feynman)对应于自由能的极小值，即$\frac{\partial F}{\partial M} = 0$。通过计算$U(M)$和$S(M)$对$M$的导数，可以证明，$\frac{\partial F}{\partial M} = 0$给出的方程，与我们之前通过[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学方法得到的[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)完全相同 [@problem_id:2008713]。
 
-这个结果意义重大：它表明自洽方程的解正是系统的自由能极值点。
+这个结果意义重大：它表明[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)的解正是系统的自由能极值点。
 *   在$T > T_c$时，$F(M)$函数图像是一个开口向上的单谷，最小值在$M=0$。系统唯一稳定的平衡态是顺磁态。
-*   在$T  T_c$时，$F(M)$变为一个双势阱形状，在$M=\pm M_0$处有两个对称的极小值（稳定解），而在$M=0$处是一个局域极大值（不稳定解）。
+*   在$T  T_c$时，$F(M)$变为一个[双势阱](@keyword=double_well_potential|lang=zh-CN|style=Feynman)形状，在$M=\pm M_0$处有两个对称的极小值（稳定解），而在$M=0$处是一个局域极大值（不稳定解）。
 
-相变过程可以被看作是系统自由能地貌（landscape）随温度变化的拓扑结构改变。
+[相变过程](@keyword=phase_change_processes|lang=zh-CN|style=Feynman)可以被看作是系统自由能地貌（landscape）随温度变化的拓扑结构改变。
 
 ### 平均场理论的适用性与局限
 
-平均场理论以其简洁优美，成功地解释了铁磁相变的核心特征：自发对称性破缺、临界温度的存在、以及高温区的居里-外斯定律。然而，它终究是一个近似理论，其核心假设——忽略涨落——导致了它在某些方面与真实情况存在偏差。
+平均场理论以其简洁优美，成功地解释了铁[磁相变](@keyword=magnetic_phase_transitions|lang=zh-CN|style=Feynman)的核心特征：自发对称性破缺、[临界温度](@keyword=critical_temperature|lang=zh-CN|style=Feynman)的存在、以及高温区的[居里-外斯定律](@keyword=curie_weiss_law|lang=zh-CN|style=Feynman)。然而，它终究是一个[近似理论](@keyword=approximation_theory|lang=zh-CN|style=Feynman)，其核心假设——忽略涨落——导致了它在某些方面与真实情况存在偏差。
 
-一个经典的例子是一维伊辛模型。将平均场理论应用于一维链（配位数$z=2$），我们得到自洽方程$m = \tanh(2Jm/k_B T)$，并预测存在一个非零的临界温度$T_c = 2J/k_B$ [@problem_id:2008689]。
+一个经典的例子是[一维伊辛模型](@keyword=one_dimensional_ising_model|lang=zh-CN|style=Feynman)。将平均场理论应用于一维链（配位数$z=2$），我们得到[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)$m = \tanh(2Jm/k_B T)$，并预测存在一个非零的临界温度$T_c = 2J/k_B$ [@problem_id:2008689]。
 
-然而，一维伊辛模型的精确解表明，其临界温度为$T_c = 0$。也就是说，在一维短程相互作用系统中，任何有限温度下都无法维持长程有序，不存在铁磁相变。平均场理论在这里给出了**定性错误**的预测。
+然而，[一维伊辛模型](@keyword=one_dimensional_ising_model|lang=zh-CN|style=Feynman)的精确解表明，其临界温度为$T_c = 0$。也就是说，在一维[短程相互作用](@keyword=short_range_interactions|lang=zh-CN|style=Feynman)系统中，任何有限温度下都无法维持长程有序，不存在铁[磁相变](@keyword=magnetic_phase_transitions|lang=zh-CN|style=Feynman)。平均场理论在这里给出了**定性错误**的预测。
 
-失败的根源在于**涨落**。在一维链中，破坏长程有序（例如，在一条长长的“全上”自旋链中翻转一个自旋，形成两个畴壁）所需的能量代价是有限的（$2J$）。但在热力学上，这种“缺陷”的引入会大大增加系统的熵。在任何$T>0$的温度下，熵的增益总是会战胜能量的代价，使得系统倾向于形成大量的畴，从而破坏长程磁有序。平均场理论用一个全局平均值取代了所有局域细节，完全抹杀了这种对有序性具有毁灭性打击的局域涨落，因此得出了错误的结论。
+失败的根源在于**涨落**。在一维链中，破坏长程有序（例如，在一条长长的“全上”自旋链中翻转一个自旋，形成两个[畴壁](@keyword=domain_walls|lang=zh-CN|style=Feynman)）所需的能量代价是有限的（$2J$）。但在[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)上，这种“缺陷”的引入会大大增加系统的熵。在任何$T>0$的温度下，熵的增益总是会战胜能量的代价，使得系统倾向于形成大量的畴，从而破坏长程磁有序。平均场理论用一个全局平均值取代了所有局域细节，完全抹杀了这种对有序性具有毁灭性打击的局域涨落，因此得出了错误的结论。
 
-总的来说，平均场理论的有效性与系统的维度密切相关。维度越高，配位数$z$越大，每个自旋感受到的邻居影响就越多，其行为就越接近于一个“平均”的环境。因此，涨落的影响随维度升高而减弱。平均场理论在三维系统中能给出定性正确（但定量上，如临界指数，不准确）的结果，在更高维度下则更为精确，并在无限维度或无限程相互作用模型中成为精确解。理解平均场理论的成功与失败，为我们后续学习更高级的理论（如重整化群）提供了重要的基础。
+总的来说，平均场理论的有效性与系统的维度密切相关。维度越高，配位数$z$越大，每个自旋感受到的邻居影响就越多，其行为就越接近于一个“平均”的环境。因此，涨落的影响随维度升高而减弱。平均场理论在三维系统中能给出定性正确（但定量上，如[临界指数](@keyword=critical_exponents|lang=zh-CN|style=Feynman)，不准确）的结果，在更高维度下则更为精确，并在无限维度或无限程相互作用模型中成为精确解。理解平均场理论的成功与失败，为我们后续学习更高级的理论（如重整化群）提供了重要的基础。

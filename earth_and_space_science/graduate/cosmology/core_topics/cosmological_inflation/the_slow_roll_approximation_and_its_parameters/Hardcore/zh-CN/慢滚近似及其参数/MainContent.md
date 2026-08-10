@@ -69,7 +69,7 @@ $$
 
 作为一个具体的例子，考虑一个由双曲正割函数描述的势能模型 [@problem_id:1490462]：
 $$
-V(\phi) = V_0 \left[ \sech\left(\frac{\phi}{\mu}\right) \right]^2
+V(\phi) = V_0 \left[ \operatorname{sech}\left(\frac{\phi}{\mu}\right) \right]^2
 $$
 其中 $V_0$ 和 $\mu$ 是正常数。我们可以计算其慢滚参数。首先，对数导数为 $\frac{V'}{V} = -\frac{2}{\mu}\tanh(\frac{\phi}{\mu})$。因此，第一个慢滚参数为（为方便计算，我们常采用约化普朗克单位 $M_{Pl}=1$）：
 $$
@@ -78,7 +78,7 @@ $$
 暴胀在 $\epsilon_V(\phi_{end}) = 1$ 时结束，这意味着 $\tanh^2(\frac{\phi_{end}}{\mu}) = \frac{\mu^2}{2}$。
 第二个慢滚参数 $\eta_V$ 可以通过计算 $V''/V$ 得到。一个更快捷的方法是利用恒等式 $\eta_V = M_{Pl}^2 \frac{d}{d\phi}(\frac{V'}{V}) + 2\epsilon_V$。计算可得：
 $$
-\eta_V(\phi) = M_{Pl}^2 \left( -\frac{2}{\mu^2} \sech^2\left(\frac{\phi}{\mu}\right) \right) + 2\epsilon_V = -\frac{2}{\mu^2}\left(1 - \tanh^2\left(\frac{\phi}{\mu}\right)\right) + \frac{4}{\mu^2} \tanh^2\left(\frac{\phi}{\mu}\right) = -\frac{2}{\mu^2} + \frac{6}{\mu^2} \tanh^2\left(\frac{\phi}{\mu}\right)
+\eta_V(\phi) = M_{Pl}^2 \left( -\frac{2}{\mu^2} \operatorname{sech}^2\left(\frac{\phi}{\mu}\right) \right) + 2\epsilon_V = -\frac{2}{\mu^2}\left(1 - \tanh^2\left(\frac{\phi}{\mu}\right)\right) + \frac{4}{\mu^2} \tanh^2\left(\frac{\phi}{\mu}\right) = -\frac{2}{\mu^2} + \frac{6}{\mu^2} \tanh^2\left(\frac{\phi}{\mu}\right)
 $$
 在暴胀结束的时刻，代入 $\tanh^2(\frac{\phi_{end}}{\mu}) = \frac{\mu^2}{2}$，我们得到：
 $$
@@ -197,7 +197,7 @@ $$
 $$
 r = -8 n_t
 $$
-这个关系被称为**单场慢滚暴胀[一致性关系](@entry_id:157858)**。它的重要性在于，它不依赖于暴胀势 $V(\phi)$ 的具体形式。因此，如果未来的宇宙学观测能够同时精确测量 $r$ 和 $n_t$，并验证这个关系，将为最简单的单场慢滚暴胀模型提供强有力的证据。
+这个关系被称为**单场慢滚暴胀[一致性关系](@keyword=consistency_relations|lang=zh-CN|style=Feynman)**。它的重要性在于，它不依赖于暴胀势 $V(\phi)$ 的具体形式。因此，如果未来的宇宙学观测能够同时精确测量 $r$ 和 $n_t$，并验证这个关系，将为最简单的单场慢滚暴胀模型提供强有力的证据。
 
 ### 高阶效应与精确检验
 

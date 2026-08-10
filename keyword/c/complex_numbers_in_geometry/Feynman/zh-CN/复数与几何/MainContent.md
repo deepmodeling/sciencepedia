@@ -50,9 +50,9 @@ $$ L(\gamma) = \int_{\gamma} ds_P = \int_{\gamma} \frac{|dz|}{y} $$
 
 一个更实用的公式，可以从度量推导出来，是：
 
-$$ d_{\mathbb{H}}(z_1, z_2) = \arccosh\left(1 + \frac{|z_1 - z_2|^2}{2 \operatorname{Im}(z_1) \operatorname{Im}(z_2)}\right) $$
+$$ d_{\mathbb{H}}(z_1, z_2) = \operatorname{arccosh}\left(1 + \frac{|z_1 - z_2|^2}{2 \operatorname{Im}(z_1) \operatorname{Im}(z_2)}\right) $$
 
-这个公式优雅地证实了我们早先的直觉。如果我们试图测量宇宙中一点 $z_1$ 到接近边界的一点 $z_2$ 的距离，$\operatorname{Im}(z_2)$ 趋于零。公式中的分数会爆炸，$\arccosh$ 的参数趋于无穷大，因此距离也是无穷大。边界确实是无法到达的。
+这个公式优雅地证实了我们早先的直觉。如果我们试图测量宇宙中一点 $z_1$ 到接近边界的一点 $z_2$ 的距离，$\operatorname{Im}(z_2)$ 趋于零。公式中的分数会爆炸，$\operatorname{arccosh}$ 的参数趋于无穷大，因此距离也是无穷大。边界确实是无法到达的。
 
 那么熟悉的形状呢？一个“圆”看起来像什么？圆只是距离一个中心点固定距离的所有点的集合。如果我们取双曲中心为 $z_0 = 2+3i$，双曲半径为 $R = \ln(2)$，并画出所有满足 $d_H(z, z_0) = R$ 的点 $z$，我们会得到一个令人惊讶的结果。这个形状是一个完美的欧几里得圆！但它不是你可能[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)的那个欧几里得圆。它的欧几里得中心向上移动了，其欧几里得半径也与朴素猜测的不同 [@problem_id:2272175]。就好像我们这个扭曲的空间扭曲了圆心的概念本身。
 

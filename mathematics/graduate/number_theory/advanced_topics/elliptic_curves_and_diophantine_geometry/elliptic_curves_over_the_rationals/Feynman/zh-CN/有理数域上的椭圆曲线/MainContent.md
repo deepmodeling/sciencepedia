@@ -136,14 +136,14 @@ $$
 
 ### 最后的幽灵：沙法列维奇-塔特群
 
-$|\operatorname{Sha}(E/\mathbb{Q})|$ 是什么？它代表了**沙法列维奇-塔特群 (Shafarevich-Tate group)** 的大小。这个群，通常简记为 $\Sha$，是椭圆曲线理论中最神秘的对象之一。
+$|\operatorname{Sha}(E/\mathbb{Q})|$ 是什么？它代表了**沙法列维奇-塔特群 (Shafarevich-Tate group)** 的大小。这个群，通常简记为 $\mathrm{Ш}$，是椭圆曲线理论中最神秘的对象之一。
 
-要理解 $\Sha$，我们需要了解**[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman) (Hasse principle)**。这个原则通俗地说就是：“一个方程如果在每个局部领域（即所有[完备域](@keyword=complete_fields|lang=zh-CN|style=Feynman) $\mathbb{Q}_p$ 和 $\mathbb{R}$）都有解，那么它在全球领域 $\mathbb{Q}$ 上也应该有解。”
+要理解 $\mathrm{Ш}$，我们需要了解**[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman) (Hasse principle)**。这个原则通俗地说就是：“一个方程如果在每个局部领域（即所有[完备域](@keyword=complete_fields|lang=zh-CN|style=Feynman) $\mathbb{Q}_p$ 和 $\mathbb{R}$）都有解，那么它在全球领域 $\mathbb{Q}$ 上也应该有解。”
 
 对于椭圆曲线 $E$ 本身，这个原则是成立的（因为它至少有 $\mathcal{O}$ 这个有理点）。但对于 $E$ 的“扭曲”形式——**[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman) (homogeneous spaces)**——[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)却可能失效！
 
-$\Sha$ 群正是度量这种失效程度的工具。$\Sha$ 中的每一个非平凡元素都对应着一个“[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)的失败案例”：一个在任何 $\mathbb{Q}_p$ 和 $\mathbb{R}$ 上都有解，但在 $\mathbb{Q}$ 上却找不到任何一个解的方程。因此，$\Sha$ 群就像是潜伏在算术世界中的“幽灵”，它们处处表现得像是有解，但在全球舞台上却匿迹遁形。
+$\mathrm{Ш}$ 群正是度量这种失效程度的工具。$\mathrm{Ш}$ 中的每一个非平凡元素都对应着一个“[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)的失败案例”：一个在任何 $\mathbb{Q}_p$ 和 $\mathbb{R}$ 上都有解，但在 $\mathbb{Q}$ 上却找不到任何一个解的方程。因此，$\mathrm{Ш}$ 群就像是潜伏在算术世界中的“幽灵”，它们处处表现得像是有解，但在全球舞台上却匿迹遁形。
 
-BSD猜想预言了这个神秘的 $\Sha$ 群是有限的，并将其大小精确地置于L函数和代数[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)的宏伟等式之中。这表明，连这些最难以捉摸的“幽灵”，也最终要服从[L函数](@keyword=l_functions|lang=zh-CN|style=Feynman)所制定的宇宙法则。
+BSD猜想预言了这个神秘的 $\mathrm{Ш}$ 群是有限的，并将其大小精确地置于L函数和代数[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)的宏伟等式之中。这表明，连这些最难以捉摸的“幽灵”，也最终要服从[L函数](@keyword=l_functions|lang=zh-CN|style=Feynman)所制定的宇宙法则。
 
 从一个光滑的几何形状，到点的加法；从有限生成的群结构，到局部-全局的分析；再到跨越数学世界的[模块化定理](@keyword=modularity_theorem|lang=zh-CN|style=Feynman)，最终汇聚于集大成的BSD猜想。[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的研究之旅，完美地展现了数学内在的**和谐、统一与深刻之美**。它邀请我们不断地去探索，在最简单方程的背后，还隐藏着多少未知的宇宙。

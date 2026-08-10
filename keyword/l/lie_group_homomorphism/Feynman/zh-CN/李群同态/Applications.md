@@ -8,7 +8,7 @@
 
 这个原理的一个优美例子是表示 (representation)，它就是一个从李群 $G$ 到一个[矩阵群](@keyword=matrix_groups|lang=zh-CN|style=Feynman)的同态 $\rho: G \to GL(V)$。这个[同态](@keyword=homomorphism|lang=zh-CN|style=Feynman)告诉我们 $G$ 的抽象元素如何作用于一个[向量空间](@keyword=vector_spaces|lang=zh-CN|style=Feynman) $V$。其在李代数上诱导的映射 $d\rho: \mathfrak{g} \to \mathfrak{gl}(V)$ 则告诉我们 $G$ 的*生成元*如何作用于 $V$。对于[旋转群](@keyword=rotation_group|lang=zh-CN|style=Feynman) $SO(n)$ 在空间 $\mathbb{R}^n$ 上的标准作用，这个无穷小作用极其直接：对于一个生成元 $X \in \mathfrak{so}(n)$（一个斜[对称矩阵](@keyword=symmetric_matrix|lang=zh-CN|style=Feynman)）和一个向量 $v \in \mathbb{R}^n$，其作用就是矩阵乘法 $Xv$ [@problem_id:2973562]。正是这本“词典”让物理学家和工程师能够将关于[连续对称性](@keyword=continuous_symmetry|lang=zh-CN|style=Feynman)（如旋转）的问题转化为易于处理的线性代数语言。
 
-这个“投影”映射常常揭示出令人惊讶的联系。考虑[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)映射 $\phi(A) = \det(A)$，它是一个从 $n \times n$ [酉矩阵](@keyword=unitary_matrix|lang=zh-CN|style=Feynman)群 $U(n)$ 到单位复数群 $U(1)$ 的同态。这个映射的无穷小版本是什么呢？答案是迹 (trace)！其诱导的[李代数](@keyword=lie_algebras|lang=zh-CN|style=Feynman)同态是 $d\phi(X) = \tr(X)$ [@problem_id:985258]。一个在群层面复杂的乘法性质，在代数层面变成了一个简单的加法性质。这就是[线性化](@keyword=linearization|lang=zh-CN|style=Feynman)的魔力所在。
+这个“投影”映射常常揭示出令人惊讶的联系。考虑[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)映射 $\phi(A) = \det(A)$，它是一个从 $n \times n$ [酉矩阵](@keyword=unitary_matrix|lang=zh-CN|style=Feynman)群 $U(n)$ 到单位复数群 $U(1)$ 的同态。这个映射的无穷小版本是什么呢？答案是迹 (trace)！其诱导的[李代数](@keyword=lie_algebras|lang=zh-CN|style=Feynman)同态是 $d\phi(X) = \operatorname{tr}(X)$ [@problem_id:985258]。一个在群层面复杂的乘法性质，在代数层面变成了一个简单的加法性质。这就是[线性化](@keyword=linearization|lang=zh-CN|style=Feynman)的魔力所在。
 
 ### 统一对称性：群中之群
 

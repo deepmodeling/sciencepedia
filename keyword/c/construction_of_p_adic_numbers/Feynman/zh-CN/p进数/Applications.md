@@ -22,7 +22,7 @@ $p$进空间的拓扑结构还隐藏着更大的惊喜。空间 $\mathbb{Z}_p$ �
 
 想象你是一名侦探，正在调查一桩罪案——比如，一个[丢番图方程](@keyword=diophantine_equations|lang=zh-CN|style=Feynman) $x^2 + y^2 = z^2$ 是否有整数解。[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)建议你“局部地”寻找线索。首先，你在实数 $\mathbb{R}$ 中检查现场。这个方程有实数解吗？（是的，显然有）。然后，你在每个$p$进世界中，对每个素数 $p$ 采集指纹。这个方程在 $\mathbb{Q}_2$ 中有解吗？在 $\mathbb{Q}_3$ 中？在 $\mathbb{Q}_5$ 中？等等。这个希望，被称为[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)（Hasse Principle），就是如果你在*每个*局部环境中都找到了解，那么你就能保证在整数或有理数中找到一个[全局解](@keyword=global_solution|lang=zh-CN|style=Feynman)。
 
-对于许多简单方程，这个原则完美适用。但真正的激动人心之处在于它*失效*的时候。有些方程，我们可以费尽心力地在实数和每一个 $\mathbbQ_p$ 中构造出解，但却不存在有理数解！[@problem_id:3027899]。这就像我们的侦探在每个独立地点都找到了相互一致的线索，但却无法将它们整合为一个连贯的全局故事。这些“[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)”不是失败；它们是指向更深、更微妙结构的标志。它们告诉我们，寻找[全局解](@keyword=global_solution|lang=zh-CN|style=Feynman)存在一些“障碍”，这些障碍在任何单一的局部图像中都是不可见的，只有当我们同时考虑所有局部世界时才会显现出来。
+对于许多简单方程，这个原则完美适用。但真正的激动人心之处在于它*失效*的时候。有些方程，我们可以费尽心力地在实数和每一个 $\mathbb{Q}_p$ 中构造出解，但却不存在有理数解！[@problem_id:3027899]。这就像我们的侦探在每个独立地点都找到了相互一致的线索，但却无法将它们整合为一个连贯的全局故事。这些“[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)”不是失败；它们是指向更深、更微妙结构的标志。它们告诉我们，寻找[全局解](@keyword=global_solution|lang=zh-CN|style=Feynman)存在一些“障碍”，这些障碍在任何单一的局部图像中都是不可见的，只有当我们同时考虑所有局部世界时才会显现出来。
 
 为了管理这支由局部世界组成的庞大军队，数学家们设计了一个真正宏伟的结构：**[阿代尔环](@keyword=adele_ring|lang=zh-CN|style=Feynman)**（ring of adeles），$\mathbb{A}_{\mathbb{Q}}$ [@problem_id:3027931]。[阿代尔环](@keyword=adele_ring|lang=zh-CN|style=Feynman)是一个将 $\mathbb{R}$ 和所有域 $\mathbb{Q}_p$ 打包在一起的单一对象。它就像一个宏大的控制面板，为有理数的每一个完备化都设置了调节旋钮。这使得数论学家能够用统一、优雅的语言来表述关于[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)及其障碍的问题。
 

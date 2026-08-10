@@ -55,7 +55,7 @@ $$ Q^T(QR\mathbf{x}) = (Q^T Q)R\mathbf{x} = I R\mathbf{x} = R\mathbf{x} $$
 
 On the other side, $\mathbf{b}$ becomes $Q^T \mathbf{b}$. And so, our complicated [least squares problem](@keyword=least_squares_problem_2|lang=en-US|style=Feynman) simplifies to the elegant and easily solvable equation:
 
-$$ R\mathbfx = Q^T \mathbf{b} $$
+$$ R\mathbf{x} = Q^T \mathbf{b} $$
 
 This is the central mechanism of the QR-based [least squares method](@keyword=least_squares_method|lang=en-US|style=Feynman) [@problem_id:1385308] [@problem_id:2218978]. We have replaced the original problem with a much simpler one. Because $R$ is upper-triangular, we can solve for the components of $\mathbf{x}$ one by one, starting from the last one and working our way backward—a process called **[back substitution](@keyword=back_substitution|lang=en-US|style=Feynman)**.
 

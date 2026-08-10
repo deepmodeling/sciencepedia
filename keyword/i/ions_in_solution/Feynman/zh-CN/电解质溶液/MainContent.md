@@ -37,7 +37,7 @@ $$ \text{HA}(aq) \rightleftharpoons \text{H}^+(aq) + \text{A}^-(aq) $$
 
 接下来，也是更深刻地，我们必须考虑**熵**，即无序度的量度。直觉可能会告诉你，在溶液中自由漫游的离子比它们整齐地堆积在固体晶体中时更无序。因此，从溶液中沉淀出固体，比如从硬水中形成水垢 ($CaCO_3$)，肯定会*减少*熵。但大自然给了我们一个惊喜。直接计算表明，该反应的[标准熵变](@keyword=standard_entropy_change|lang=zh-CN|style=Feynman)是很大的*正值* [@problem_id:1982722]。
 
-$$ Ca^{2+}(aq) + CO_3^{2-}(aq) \rightarrow CaCO_3(s) \qquad \Delta S^\circ = +203 \, \text{J/(mol·K)} $$
+$$ Ca^{2+}(aq) + CO_3^{2-}(aq) \rightarrow CaCO_3(s) \qquad \Delta S^\circ = +203 \, \mathrm{J/(mol\cdot K)} $$
 
 形成一个有序的固体怎么会创造更多的无序呢？秘密不在于离子，而在于它们所束缚的水分子。像 $Ca^{2+}$ 这样小而高[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的离子是强大的“暴君”。它们迫使其周围的极性水分子进入一种刚性的、类似冰的、高度有序的[排列](@keyword=permutation|lang=zh-CN|style=Feynman)，称为**水合壳**。这对水来说是一种熵值非常低的状态。当两个离子相遇并沉淀成晶体时，它们将被囚禁的水分子释放回主体液体中，在那里水分子可以自由翻滚和移动。这些被解放的水分子所带来的无序性爆炸是如此巨大，以至于超过了离子自身有序化的影响。这是一个崇高的教训：在[水溶液](@keyword=aqueous_solutions|lang=zh-CN|style=Feynman)的舞台上，溶剂从来不仅仅是一个被动的背景；它是一个主要角色。
 

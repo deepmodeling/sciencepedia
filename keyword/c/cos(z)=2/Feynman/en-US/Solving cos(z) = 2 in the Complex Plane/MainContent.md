@@ -106,7 +106,7 @@ With $x=2n\pi$, our equation for the real part simplifies to:
 $$
 (1)\cosh(y) = 2 \quad \implies \quad \cosh(y) = 2
 $$
-Solving for $y$ gives $y = \pm \arccosh(2)$, where $\arccosh$ is the inverse hyperbolic cosine. The value of $\arccosh(2)$ happens to be exactly $\ln(2+\sqrt{3})$. So we arrive at the very same conclusion: the solutions are $z = 2n\pi \pm i\ln(2+\sqrt{3})$. Both paths lead to the same destination, a beautiful confirmation of the consistency of mathematics.
+Solving for $y$ gives $y = \pm \operatorname{arccosh}(2)$, where $\operatorname{arccosh}$ is the inverse hyperbolic cosine. The value of $\operatorname{arccosh}(2)$ happens to be exactly $\ln(2+\sqrt{3})$. So we arrive at the very same conclusion: the solutions are $z = 2n\pi \pm i\ln(2+\sqrt{3})$. Both paths lead to the same destination, a beautiful confirmation of the consistency of mathematics.
 
 ### A Universe of "Impossible" Values
 

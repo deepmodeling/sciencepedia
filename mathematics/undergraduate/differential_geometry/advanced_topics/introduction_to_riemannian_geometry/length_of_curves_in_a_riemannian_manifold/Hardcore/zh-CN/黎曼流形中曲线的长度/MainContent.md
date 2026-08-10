@@ -85,7 +85,7 @@ $$L(\tilde{\gamma}) = \int_{a}^{b} \sqrt{g_{\gamma(t)}(\gamma'(t), \gamma'(t))} 
 
 一个鲜明的例子是比较抛物线 $y=x^2$ 从 $(0,0)$ 到 $(1,1)$ 在两种不同度量下的长度 [@problem_id:1650169]。
 在标准的欧几里得度量 $ds_E^2 = dx^2 + dy^2$ 下，长度是大家熟悉的弧长积分：
-$$L_E = \int_{0}^{1} \sqrt{1 + (\frac{dy}{dx})^2} \, dx = \int_{0}^{1} \sqrt{1 + 4x^2} \, dx = \frac{\sqrt{5}}{2} + \frac{1}{4}\arcsinh(2)$$
+$$L_E = \int_{0}^{1} \sqrt{1 + (\frac{dy}{dx})^2} \, dx = \int_{0}^{1} \sqrt{1 + 4x^2} \, dx = \frac{\sqrt{5}}{2} + \frac{1}{4}\operatorname{arcsinh}(2)$$
 然而，如果空间由一个位置相关的度量 $ds_R^2 = y^2 dx^2 + x^2 dy^2$ 统治，几何规则就改变了。沿着 $y=x^2$ 这条路径，我们有 $dy = 2x dx$，线元变为：
 $ds_R^2 = (x^2)^2 dx^2 + x^2 (2x dx)^2 = x^4 dx^2 + 4x^4 dx^2 = 5x^4 dx^2$
 因此 $ds_R = \sqrt{5} x^2 dx$。新的长度为：

@@ -46,7 +46,7 @@ The hyperbolic tangent function, $\tanh(x)$, approaches $1$ as $x$ goes to infin
 The power of mathematics allows us to capture this strange notion of distance in a single, elegant formula. Using the symmetries of the disk, one can find the hyperbolic distance $d_H$ between any two points $z_1$ and $z_2$ [@problem_id:1652521]:
 
 $$
-d_H(z_1, z_2) = 2 \arctanh\left(\left|\frac{z_1 - z_2}{1 - \bar{z_1}z_2}\right|\right)
+d_H(z_1, z_2) = 2 \operatorname{arctanh}\left(\left|\frac{z_1 - z_2}{1 - \bar{z_1}z_2}\right|\right)
 $$
 
 This formula perfectly encodes the stretching of space, all in one neat package.

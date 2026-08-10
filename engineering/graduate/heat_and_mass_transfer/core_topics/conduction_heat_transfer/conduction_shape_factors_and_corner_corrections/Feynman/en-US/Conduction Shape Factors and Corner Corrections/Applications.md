@@ -26,7 +26,7 @@ This is where the magic of mathematics comes in. Through a clever change of coor
 
 Solving in this new space and transforming back gives us the exact, [closed-form solution](@keyword=closed_form_solution|lang=en-US|style=Feynman) for the shape factor in the original, difficult geometry. For a cylinder of radius $a$ at a distance $d$ from a plane, the shape factor per unit length is found to be:
 $$
-S' = \frac{2\pi}{\arccosh\left(1+\frac{d}{a}\right)}
+S' = \frac{2\pi}{\operatorname{arccosh}\left(1+\frac{d}{a}\right)}
 $$
 This is a beautiful result. It not only gives us an exact answer but also reveals the physics in limiting cases. For instance, when the gap is very narrow ($d \ll a$), this exact formula simplifies to $S' \approx \pi\sqrt{2a/d}$, which is precisely the behavior we would intuit for one-dimensional conduction across a narrow, curved gap. The rigorous mathematics confirms and refines our physical intuition.
 

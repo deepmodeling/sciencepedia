@@ -43,7 +43,7 @@
 
 有趣的是，这两条规则只是**局部**的交通法规，它们只规定了每个“十字路口”（氧原子）的车流情况，却没有给整个城市的交通网络制定一个全局的、唯一的路线图。这导致了一个惊人的结果：在遵守这两条规则的前提下，整个冰晶体中的所有质子可以有天文数字般的多种不同排布方式！这种现象被称为“质子无序”（Proton Disorder）。
 
-伟大的化学家Linus Pauling曾经做过一个估算，他发现对于一个含有 $N$ 个水分子的冰晶体，其可能的质子排布方式数量 $W$ 约等于 $(3/2)^N$ [@problem_id:1782818]。根据[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学的基本原理，$S = k_B \ln W$（其中 $k_B$ 是玻尔兹曼常数），这意味着即使在绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)（$0$ K），当所有热运动都应停止时，冰的熵（代表混乱程度的物理量）仍然不为零！这被称为“[剩余熵](@keyword=residual_entropy|lang=zh-CN|style=Feynman)”（Residual Entropy）。计算表明，每摩尔冰的[剩余熵](@keyword=residual_entropy|lang=zh-CN|style=Feynman)约为 $S_m = R \ln(3/2) \approx 3.37 \text{ J/(mol·K)}$ [@problem_id:1782850]，这个理论值与实验测量结果惊人地一致。这是物理学中一个美妙的范例，展示了简单的微观规则如何涌现出宏观、可测量的奇特性质。
+伟大的化学家Linus Pauling曾经做过一个估算，他发现对于一个含有 $N$ 个水分子的冰晶体，其可能的质子排布方式数量 $W$ 约等于 $(3/2)^N$ [@problem_id:1782818]。根据[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学的基本原理，$S = k_B \ln W$（其中 $k_B$ 是玻尔兹曼常数），这意味着即使在绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)（$0$ K），当所有热运动都应停止时，冰的熵（代表混乱程度的物理量）仍然不为零！这被称为“[剩余熵](@keyword=residual_entropy|lang=zh-CN|style=Feynman)”（Residual Entropy）。计算表明，每摩尔冰的[剩余熵](@keyword=residual_entropy|lang=zh-CN|style=Feynman)约为 $S_m = R \ln(3/2) \approx 3.37 \mathrm{J/(mol\cdot K)}$ [@problem_id:1782850]，这个理论值与实验测量结果惊人地一致。这是物理学中一个美妙的范例，展示了简单的微观规则如何涌现出宏观、可测量的奇特性质。
 
 ### 动态的舞蹈：质子的跃迁与缺陷
 

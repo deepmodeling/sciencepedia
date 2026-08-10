@@ -118,11 +118,11 @@ $$
 
 正确的解决方案是构造一个与目标分布具有相同混合结构的提议分布，即**“尖峰和平板”提议（spike-and-slab proposal）**。如果目标测度为：
 $$
-\pi(\mathrm{d}x) = p_0 \delta_{x_0}(\mathrm{d}x) + (1-p_0) \pi_c(x)\mathrmd x
+\pi(\mathrm{d}x) = p_0 \delta_{x_0}(\mathrm{d}x) + (1-p_0) \pi_c(x)\mathrm{d} x
 $$
 那么一个合适的提议测度应具有类似形式：
 $$
-q_{\alpha}(\mathrm{d}x) = \alpha \delta_{x_0}(\mathrm{d}x) + (1-\alpha) q_c(x)\mathrmd x
+q_{\alpha}(\mathrm{d}x) = \alpha \delta_{x_0}(\mathrm{d}x) + (1-\alpha) q_c(x)\mathrm{d} x
 $$
 其中 $\alpha \in (0,1)$ 是一个可调参数。在这种情况下，Radon-Nikodym导数在整个支撑集上都是良好定义的：
 -   在原子点 $x_0$ 处： $w(x_0) = \frac{p_0}{\alpha}$
@@ -136,6 +136,6 @@ $$
 
 混合型随机变量的存在对这一要求构成了严重威胁。考虑一个由参数 $\theta$ 平移的混合随机变量 $X_\theta = \theta + Z$，其中 $Z$ 在 $0$ 处有一个原子 [@problem_id:3333829]。如果我们感兴趣的量是 $\psi(\theta) = E[\mathbf{1}_{\{X_\theta  0\}}]$，即 $\mathbb{P}(X_\theta  0)$，那么樣本路径是 $\mathbf{1}_{\{\theta + Z  0\}}$。对于那些 $Z=0$ 的结果（这是一个概率大于零的事件），当 $\theta$ 从负值变为正值时，指示函数会从 $0$ 跳到 $1$。这种在正概率事件集上的不连续性破坏了路径的可微性，导致 $\psi(\theta)$ 本身在 $\theta=0$ 处不连续，其导数不存在。因此，路径导数方法在此失效。
 
-一种处理这种不连续性的常见技术是**平滑化（smoothing）**或**抖动（jittering）**。例如，我们可以用一个小的随机扰动来平滑 $X_\theta$，定义 $X_\theta^\epsilon = X_\theta + \epsilon U$，其中 $U$ 是一个均值为零的连续随机变量（如均匀分布）。这样，函数 $\mathbf{1}_{\{X_\theta^\epsilon  0\}}$ 关于 $\theta$ 变得连续可微，使得路径导数可以应用到平滑后的问题上。然而，这种方法引入了偏差，该偏差随 $\epsilon \to 0$ 而减小。与此同时，梯度估计量的[方差](@entry_id:200758)通常会随着 $\epsilon \to 0$ 而爆炸（例如，以 $1/\epsilon$ 或 $1/\epsilon^2$ 的速率）。这揭示了在处理由原子测度引起的不连续性时，梯度估计中一个根本性的偏差-方差权衡。
+一种处理这种不连续性的常见技术是**平滑化（smoothing）**或**抖动（jittering）**。例如，我们可以用一个小的随机扰动来平滑 $X_\theta$，定义 $X_\theta^\epsilon = X_\theta + \epsilon U$，其中 $U$ 是一个均值为零的连续随机变量（如均匀分布）。这样，函数 $\mathbf{1}_{\{X_\theta^\epsilon  0\}}$ 关于 $\theta$ 变得连续可微，使得路径导数可以应用到平滑后的问题上。然而，这种方法引入了偏差，该偏差随 $\epsilon \to 0$ 而减小。与此同时，梯度估计量的[方差](@keyword=second_central_moment|lang=zh-CN|style=Feynman)通常会随着 $\epsilon \to 0$ 而爆炸（例如，以 $1/\epsilon$ 或 $1/\epsilon^2$ 的速率）。这揭示了在处理由原子测度引起的不连续性时，梯度估计中一个根本性的偏差-方差权衡。
 
 总之，混合型随机变量虽然在形式上只是离散和连续分布的简单结合，但它们的相互作用深刻地影响了变量的统计性质，并在蒙特卡洛模拟中引发了从期望估计到重要性抽样再到梯度计算等一系列独特的挑战。理解这些基本原理和机制对于设计严谨而高效的随机算法至关重要。

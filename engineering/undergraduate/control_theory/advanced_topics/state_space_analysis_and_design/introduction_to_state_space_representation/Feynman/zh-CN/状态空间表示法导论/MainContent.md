@@ -57,7 +57,7 @@ $$
 \mathbf{x}(t) = e^{At} \mathbf{x}(0)
 $$
 
-这个矩阵 $e^{At}$ 如同一个时间机器，能够将任意一个初始状态 $\mathbfx(0)$ “传送”到未来 $t$ 时刻的状态 $\mathbf{x}(t)$。它的内部结构，正是由矩阵 $A$ 的所有[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)和[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)所决定的 [@problem_id:1585635]。计算它可能需要一些线性代数的技巧，但其核心思想是，它把所有那些 $e^{\lambda t}$ 的行为模式打包在了一个矩阵里，为我们提供了一个预测未来的“水晶球”。
+这个矩阵 $e^{At}$ 如同一个时间机器，能够将任意一个初始状态 $\mathbf{x}(0)$ “传送”到未来 $t$ 时刻的状态 $\mathbf{x}(t)$。它的内部结构，正是由矩阵 $A$ 的所有[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)和[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)所决定的 [@problem_id:1585635]。计算它可能需要一些线性代数的技巧，但其核心思想是，它把所有那些 $e^{\lambda t}$ 的行为模式打包在了一个矩阵里，为我们提供了一个预测未来的“水晶球”。
 
 ### 戴上不同的眼镜：坐标变换
 

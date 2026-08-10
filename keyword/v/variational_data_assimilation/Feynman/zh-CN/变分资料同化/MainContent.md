@@ -36,7 +36,7 @@ $\mathbf{B}$ 矩阵可以防止这种情况。其非对角[线元](@keyword=line
 代价函数被扩展为对所有不同时间 $k$ 的观测不匹配度进行求和：
 
 $$
-J(\mathbf{x}_0) = \frac{1}{2} (\mathbf{x}_0 - \mathbf{x}_b)^\top \mathbf{B}^{-1} (\mathbfx_0 - \mathbf{x}_b) + \frac{1}{2} \sum_{k=0}^{N} \left(\mathbf{y}_k - h_k(m_{0 \to k}(\mathbf{x}_0))\right)^\top \mathbf{R}_k^{-1} \left(\mathbf{y}_k - h_k(m_{0 \to k}(\mathbf{x}_0))\right)
+J(\mathbf{x}_0) = \frac{1}{2} (\mathbf{x}_0 - \mathbf{x}_b)^\top \mathbf{B}^{-1} (\mathbf{x}_0 - \mathbf{x}_b) + \frac{1}{2} \sum_{k=0}^{N} \left(\mathbf{y}_k - h_k(m_{0 \to k}(\mathbf{x}_0))\right)^\top \mathbf{R}_k^{-1} \left(\mathbf{y}_k - h_k(m_{0 \to k}(\mathbf{x}_0))\right)
 $$
 
 这里，$\mathbf{x}_0$ 是我们要求解的初始状态，而 $m_{0 \to k}$ 是预报模式本身，它作为一个函数，将初始[状态传播](@keyword=state_propagation|lang=zh-CN|style=Feynman)到时间 $k$。模式不再仅仅是背景场的来源；它已经成为优化的一个基本部分，一个连接不同时刻状态的“强约束”。这创造了一幅系统演化的动力学一致图像，使得中午观测到海洋上风暴发展的信息可以直接修正六小时前的初始风场格局。

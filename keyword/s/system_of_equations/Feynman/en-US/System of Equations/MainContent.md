@@ -59,7 +59,7 @@ Just because we can write down a system of equations doesn't mean it has a solut
 
 Let's go back to our quantum chemistry equation, $(\mathbf{H} - E\mathbf{S})\mathbf{c} = \mathbf{0}$. There is always one incredibly boring solution: $\mathbf{c} = \mathbf{0}$. This is the **[trivial solution](@keyword=trivial_solution|lang=en-US|style=Feynman)**. It corresponds to a universe with no molecule, no electron—nothing. That's certainly *a* solution, but it's not the one we're living in! For physics to be interesting, we need a **non-trivial solution**, where the coefficients $\mathbf{c}$ are not all zero, describing an actual electron orbital.
 
-When can this happen? Linear algebra gives us a crisp, definitive answer. A non-trivial solution exists if, and only if, the matrix $(\mathbfH - E\mathbf{S})$ is "singular," which means its determinant is zero:
+When can this happen? Linear algebra gives us a crisp, definitive answer. A non-trivial solution exists if, and only if, the matrix $(\mathbf{H} - E\mathbf{S})$ is "singular," which means its determinant is zero:
 
 $$ \det(\mathbf{H} - E\mathbf{S}) = 0 $$
 

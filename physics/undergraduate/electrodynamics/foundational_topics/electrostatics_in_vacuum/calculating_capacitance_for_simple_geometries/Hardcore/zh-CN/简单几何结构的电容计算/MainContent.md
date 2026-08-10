@@ -1,71 +1,71 @@
 ## 引言
-电容是描述导体系统储存电荷和电能能力的核心物理量，在从基础电路到尖端电子器件的几乎所有电气应用中都扮演着至关重要的角色。然而，从其基本定义 $C = Q/V$ 到为特定几何结构和材料配置精确计算出电容值，需要系统性地应用静电学原理，这正是理论与实践之间的桥梁。本文旨在深入探讨这一过程，为读者提供一套强大而灵活的分析工具箱。
+电容是描述导体系统储存[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)和电能能力的核心物理量，在从基础电路到尖端电子器件的几乎所有电气应用中都扮演着至关重要的角色。然而，从其基本定义 $C = Q/V$ 到为特定几何结构和材料配置精确计算出电容值，需要系统性地应用静电学原理，这正是理论与实践之间的桥梁。本文旨在深入探讨这一过程，为读者提供一套强大而灵活的分析工具箱。
 
-本文将分为三个核心部分。首先，在“原理与机制”一章中，我们将建立一套通用的电容计算流程，并探讨如何应对均匀、非均匀、复合乃至各向异性电介质带来的挑战，同时介绍镜像法等高级技巧。接着，在“应用与跨学科联系”一章中，我们将展示这些原理如何在电气工程、材料科学、生物物理学等广阔领域中解决实际问题，揭示电容概念的深远影响。最后，“动手实践”部分将提供精选的练习，帮助您将理论知识转化为解决问题的能力。
+本文将分为三个核心部分。首先，在“原理与机制”一章中，我们将建立一套通用的电容计算流程，并探讨如何应对均匀、非均匀、复合乃至[各向异性电介质](@keyword=anisotropic_dielectrics|lang=zh-CN|style=Feynman)带来的挑战，同时介绍镜像法等高级技巧。接着，在“应用与跨学科联系”一章中，我们将展示这些原理如何在电气工程、[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)、生物物理学等广阔领域中解决实际问题，揭示电容概念的深远影响。最后，“动手实践”部分将提供精选的练习，帮助您将理论知识转化为解决问题的能力。
 
 现在，让我们从“原理与机制”开始，为计算各种几何形状的电容奠定坚实的基础。
 
 ## 原理与机制
 
-在对静电学基本定律有了深入理解之后，我们现在转向一个实际且核心的应用：计算电容器的电容。电容是衡量一个导体系统在给定电势差下储存电荷能力的物理量。从根本上说，电容 $C$ 定义为导体上的电荷量 $Q$ 与两导体间的电势差 $V$ 之比：
+在对[静电学](@keyword=electrostatics|lang=zh-CN|style=Feynman)基本定律有了深入理解之后，我们现在转向一个实际且核心的应用：计算[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)的电容。电容是衡量一个导体系统在给定[电势差](@keyword=potential_difference|lang=zh-CN|style=Feynman)下储存[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)能力的物理量。从根本上说，电容 $C$ 定义为导体上的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量 $Q$ 与两导体间的[电势差](@keyword=potential_difference|lang=zh-CN|style=Feynman) $V$ 之比：
 
 $$C = \frac{Q}{V}$$
 
-尽管定义简单，但计算特定几何构型的电容需要系统性地应用静电学原理。其通用计算流程可概括为以下几个步骤：
+尽管定义简单，但计算特定几何构型的电容需要系统性地应用[静电学](@keyword=electrostatics|lang=zh-CN|style=Feynman)原理。其[通用计算](@keyword=universal_computation|lang=zh-CN|style=Feynman)流程可概括为以下几个步骤：
 
-1.  **假设电荷分布**：首先，在两个导体上分别假设存在等量异号的电荷，即 $+Q$ 和 $-Q$。
-2.  **求解电场**：利用高斯定律或其他方法，根据此电荷分布求出导体间的电场 $\mathbf{E}$。如果存在电介质，通常先求解电位移矢量 $\mathbf{D}$ 会更为便捷。
-3.  **计算电势差**：通过对电场进行线积分，计算两导体间的电势差 $V = V_+ - V_- = -\int_{-}^{+} \mathbf{E} \cdot d\mathbf{l}$。
+1.  **假设[电荷分布](@keyword=charge_distribution|lang=zh-CN|style=Feynman)**：首先，在两个导体上分别假设存在等量异号的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，即 $+Q$ 和 $-Q$。
+2.  **求解[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)**：利用[高斯定律](@keyword=gauss_s_law|lang=zh-CN|style=Feynman)或其他方法，根据此[电荷分布](@keyword=charge_distribution|lang=zh-CN|style=Feynman)求出导体间的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $\mathbf{E}$。如果存在[电介质](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)，通常先求解[电位移矢量](@keyword=electric_displacement_vector|lang=zh-CN|style=Feynman) $\mathbf{D}$ 会更为便捷。
+3.  **计算[电势差](@keyword=potential_difference|lang=zh-CN|style=Feynman)**：通过对[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)进行线积分，计算两导体间的电势差 $V = V_+ - V_- = -\int_{-}^{+} \mathbf{E} \cdot d\mathbf{l}$。
 4.  **确定电容**：最后，将 $Q$ 和 $V$ 代入定义式 $C = Q/V$，即可得到电容的表达式。对于给定的几何结构和材料，电容是一个仅与几何尺寸和材料属性相关的常数。
 
-本章将系统地探讨如何将这一流程应用于各种几何构型，从简单的均匀介质系统到包含非均匀、复合乃至各向异性介质的复杂情况。
+本章将系统地探讨如何将这一流程应用于各种几何构型，从简单的均匀介质系统到包含非均匀、复合乃至[各向异性介质](@keyword=anisotropic_medium|lang=zh-CN|style=Feynman)的复杂情况。
 
-### 电介质在电容计算中的作用
+### [电介质](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)在电容计算中的作用
 
-电容器的性能可以通过在导体间填充电介质材料来显著提升。电介质的存在会改变空间中的电场分布，从而影响电容。为了精确处理这种情况，我们引入**电位移矢量** $\mathbf{D}$。它与电场 $\mathbf{E}$ 和介质的极化强度 $\mathbf{P}$ 相关，但其一个关键优势在于，它的高斯定律形式只与**自由电荷**相关：
+[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)的性能可以通过在导体间填充[电介质](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)材料来显著提升。[电介质](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)的存在会改变空间中的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)，从而影响电容。为了精确处理这种情况，我们引入**[电位移矢量](@keyword=electric_displacement_vector|lang=zh-CN|style=Feynman)** $\mathbf{D}$。它与[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $\mathbf{E}$ 和介质的[极化强度](@keyword=polarization_density|lang=zh-CN|style=Feynman) $\mathbf{P}$ 相关，但其一个关键优势在于，它的高斯定律形式只与**自由电荷**相关：
 
 $$\oint_S \mathbf{D} \cdot d\mathbf{A} = Q_{\text{free, encl}}$$
 
-这里的 $Q_{\text{free, encl}}$ 是高斯面 $S$ 包围的自由电荷，即我们放置在导体板上的电荷。这一定律极其有用，因为它使我们能够直接通过导体上的自由电荷 $Q$ 来确定 $\mathbf{D}$ 场，而无需预先知道电介质内部复杂的束缚电荷分布。
+这里的 $Q_{\text{free, encl}}$ 是[高斯面](@keyword=gaussian_surface|lang=zh-CN|style=Feynman) $S$ 包围的自由电荷，即我们放置在导体板上的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。这一定律极其有用，因为它使我们能够直接通过导体上的自由电荷 $Q$ 来确定 $\mathbf{D}$ 场，而无需预先知道[电介质](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)内部复杂的束缚[电荷分布](@keyword=charge_distribution|lang=zh-CN|style=Feynman)。
 
-引入电介质后，我们的计算流程相应地调整为：
+引入[电介质](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)后，我们的计算流程相应地调整为：
 
-1.  在内导体上假设自由电荷为 $+Q$（单位长度或单位面积的电荷为 $\lambda$ 或 $\sigma$）。
-2.  利用高斯定律 $\oint \mathbf{D} \cdot d\mathbf{A} = Q$ 求出导体间的电位移矢量 $\mathbf{D}$。由于对称性，这一步通常很简单。
-3.  通过材料的**本构关系** $\mathbf{D} = \epsilon(\mathbf{r})\mathbf{E}$ 求出电场 $\mathbf{E}$。这里的 $\epsilon(\mathbf{r})$ 是介电常数，它可以是空间位置的函数。
-4.  积分电场 $\mathbf{E}$ 得到电势差 $V$。
+1.  在内导体上假设自由电荷为 $+Q$（单位长度或单位面积的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)为 $\lambda$ 或 $\sigma$）。
+2.  利用高斯定律 $\oint \mathbf{D} \cdot d\mathbf{A} = Q$ 求出导体间的[电位移矢量](@keyword=electric_displacement_vector|lang=zh-CN|style=Feynman) $\mathbf{D}$。由于对称性，这一步通常很简单。
+3.  通过材料的**本构关系** $\mathbf{D} = \epsilon(\mathbf{r})\mathbf{E}$ 求出[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $\mathbf{E}$。这里的 $\epsilon(\mathbf{r})$ 是[介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman)，它可以是空间位置的函数。
+4.  积分[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $\mathbf{E}$ 得到电势差 $V$。
 5.  最后计算电容 $C = Q/V$。
 
-### 处理非均匀（非齐次）电介质
+### 处理非均匀（非齐次）[电介质](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)
 
-在许多现代电子元件中，所使用的电介质材料其属性并非均匀分布。介电常数 $\epsilon$ 可能随空间位置变化，即 $\epsilon = \epsilon(\mathbf{r})$。处理这类问题是检验我们对基本原理理解的绝佳方式。
+在许多现代电子元件中，所使用的[电介质](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)材料其属性并非[均匀分布](@keyword=equidistribution|lang=zh-CN|style=Feynman)。[介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman) $\epsilon$ 可能随空间位置变化，即 $\epsilon = \epsilon(\mathbf{r})$。处理这类问题是检验我们对基本原理理解的绝佳方式。
 
-#### 介电常数随半径变化的轴对称和球对称系统
+#### [介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman)随半径变化的[轴对称](@keyword=axial_symmetry|lang=zh-CN|style=Feynman)和球对称系统
 
-考虑一种特殊情况，其中介电常数的变化经过精心设计，以产生特定的场分布。例如，在一个球形电容器中，内外导体半径分别为 $a$ 和 $b$，中间填充的介电常数随半径 $r$ 变化，其关系为 $\epsilon(r) = \epsilon_0 (a/r)^2$。[@problem_id:1569955] 让我们来分析这种情况。
+考虑一种特殊情况，其中[介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman)的变化经过精心设计，以产生特定的场[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)。例如，在一个[球形电容器](@keyword=spherical_capacitor|lang=zh-CN|style=Feynman)中，内外导体半径分别为 $a$ 和 $b$，中间填充的[介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman)随半径 $r$ 变化，其关系为 $\epsilon(r) = \epsilon_0 (a/r)^2$。[@problem_id:1569955] 让我们来分析这种情况。
 
-根据球对称性，假设内球壳带电荷 $Q$，应用高斯定律于半径为 $r$ ($a  r  b$) 的球面，我们得到电位移矢量的大小：
+根据[球对称性](@keyword=spherical_symmetry|lang=zh-CN|style=Feynman)，假设内球壳带[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman) $Q$，应用高斯定律于半径为 $r$ ($a  r  b$) 的球面，我们得到[电位移矢量](@keyword=electric_displacement_vector|lang=zh-CN|style=Feynman)的大小：
 $D(r) \cdot 4\pi r^2 = Q \implies D(r) = \frac{Q}{4\pi r^2}$
 
-接下来，利用本构关系找到电场：
+接下来，利用本构关系找到[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)：
 $E(r) = \frac{D(r)}{\epsilon(r)} = \frac{Q/(4\pi r^2)}{\epsilon_0 (a/r)^2} = \frac{Q}{4\pi \epsilon_0 a^2}$
 
-一个非常有趣的结果出现了：尽管是在球形几何中，电场 $E$ 竟然是一个与半径 $r$ 无关的常数！这完全是由于介电常数 $\epsilon(r)$ 的特殊空间分布所致。电势差的计算因此变得异常简单：
+一个非常有趣的结果出现了：尽管是在球形几何中，[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $E$ 竟然是一个与半径 $r$ 无关的常数！这完全是由于[介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman) $\epsilon(r)$ 的特殊空间分布所致。电势差的计算因此变得异常简单：
 $V = \int_a^b E(r) dr = E \cdot (b-a) = \frac{Q}{4\pi \epsilon_0 a^2}(b-a)$
 
 最终，电容为：
 $C = \frac{Q}{V} = \frac{4\pi \epsilon_0 a^2}{b-a}$
 
-同样的情形也出现在同轴电缆中。如果两导体之间的介电常数分布为 $\epsilon(r) = \epsilon_1 b/r$ [@problem_id:1569988] 或 $\epsilon(r) = \epsilon_0 k a/r$ [@problem_id:1569963]，其中 $a, b$ 是内外导体的半径。通过类似的计算（应用柱对称的高斯定律），可以发现电场在 $a  r  b$ 的区域内同样是一个常数。例如，对于 $\epsilon(r) = \epsilon_0 k a/r$ 的情况，单位长度的电容为 $C_L = \frac{2\pi \epsilon_0 k a}{b - a}$。这些例子突显了通过材料工程（即设计 $\epsilon(\mathbf{r})$）来控制和塑造电场分布的可能性。
+同样的情形也出现在同轴电缆中。如果两导体之间的[介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman)[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)为 $\epsilon(r) = \epsilon_1 b/r$ [@problem_id:1569988] 或 $\epsilon(r) = \epsilon_0 k a/r$ [@problem_id:1569963]，其中 $a, b$ 是内外导体的半径。通过类似的计算（应用柱对称的[高斯定律](@keyword=gauss_s_law|lang=zh-CN|style=Feynman)），可以发现[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)在 $a  r  b$ 的区域内同样是一个常数。例如，对于 $\epsilon(r) = \epsilon_0 k a/r$ 的情况，单位长度的电容为 $C_L = \frac{2\pi \epsilon_0 k a}{b - a}$。这些例子突显了通过材料工程（即设计 $\epsilon(\mathbf{r})$）来控制和塑造[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)的可能性。
 
-#### 介电常数随坐标线性变化
+#### [介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman)随坐标线性变化
 
-现在考虑一个平行板电容器，极板面积为 $A$，间距为 $d$。两板之间填充的材料的介电常数从 $x=0$ 处的 $\kappa_1$ 线性变化到 $x=d$ 处的 $\kappa_2$。[@problem_id:1569987] 介电常数可以写为 $\kappa(x) = \kappa_1 + (\kappa_2 - \kappa_1)x/d$，因此 $\epsilon(x) = \epsilon_0 \kappa(x)$。
+现在考虑一个平行板电容器，极板面积为 $A$，间距为 $d$。两板之间填充的材料的[介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman)从 $x=0$ 处的 $\kappa_1$ 线性变化到 $x=d$ 处的 $\kappa_2$。[@problem_id:1569987] [介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman)可以写为 $\kappa(x) = \kappa_1 + (\kappa_2 - \kappa_1)x/d$，因此 $\epsilon(x) = \epsilon_0 \kappa(x)$。
 
-在这种平面几何中，假设极板带电荷密度为 $\sigma = Q/A$，由于板间没有自由电荷，电位移矢量 $D$ 在整个空间中是均匀的，大小为 $D = \sigma$。因此，电场 $E(x)$ 随位置变化：
+在这种平面几何中，假设极板带[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman)为 $\sigma = Q/A$，由于板间没有[自由电荷](@keyword=free_charge|lang=zh-CN|style=Feynman)，[电位移矢量](@keyword=electric_displacement_vector|lang=zh-CN|style=Feynman) $D$ 在整个空间中是均匀的，大小为 $D = \sigma$。因此，[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $E(x)$ 随位置变化：
 $E(x) = \frac{D}{\epsilon(x)} = \frac{Q/A}{\epsilon_0 \kappa(x)}$
 
-电势差是电场的积分：
+电势差是[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)的积分：
 $V = \int_0^d E(x) dx = \frac{Q}{A\epsilon_0} \int_0^d \frac{dx}{\kappa_1 + \frac{\kappa_2 - \kappa_1}{d}x}$
 
 这个积分的结果是：
@@ -74,20 +74,20 @@ $\int_0^d \frac{dx}{\kappa(x)} = \frac{d}{\kappa_2 - \kappa_1} \ln\left(\frac{\k
 因此，电容 $C = Q/V$ 为：
 $$C = \frac{A\epsilon_0}{\int_0^d \frac{dx}{\kappa(x)}} = \frac{A\epsilon_0(\kappa_2 - \kappa_1)}{d \ln(\kappa_2/\kappa_1)}$$
 
-这个结果揭示了一个普遍规律：对于沿电场方向变化的介电材料，电容的计算可以看作是无穷多个微小电容器的串联。每个微小电容器的电容为 $dC = \epsilon(x)A/dx$，它们的倒数相加（即积分）得到总电容的倒数。
+这个结果揭示了一个普遍规律：对于沿[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)方向变化的[介电材料](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)，电容的计算可以看作是无穷多个微小[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)的[串联](@keyword=catenation|lang=zh-CN|style=Feynman)。每个微小[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)的电容为 $dC = \epsilon(x)A/dx$，它们的倒数相加（即积分）得到总电容的倒数。
 
-### 复合电介质系统：串联与并联模型
+### 复合[电介质](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)系统：[串联](@keyword=catenation|lang=zh-CN|style=Feynman)与并联模型
 
-当电容器由多种不同的电介质材料填充时，我们可以通过将其分解为简单的串联和并联组合来计算总电容。
+当[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)由多种不同的[电介质](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)材料填充时，我们可以通过将其分解为简单的[串联](@keyword=catenation|lang=zh-CN|style=Feynman)和并联组合来计算总电容。
 
-*   **并联**：当不同介电材料的界面**平行**于电场线时，每个介电区域两端的电势差是相同的。这种情况下，总电容是各部分电容之和。$C_{total} = C_1 + C_2 + \dots$。一个典型的例子是一个垂直放置的圆柱形电容器，其一部分被液体电介质（介电常数为 $\kappa$）填充，另一部分为真空。[@problem_id:1569958] 如果填充高度占总长度 $L$ 的比例为 $f$，那么这个系统可以看作两个电容器并联：一个长度为 $fL$、填充介质为 $\kappa\epsilon_0$ 的电容器，和另一个长度为 $(1-f)L$、填充介质为 $\epsilon_0$ 的电容器。总电容为：
+*   **并联**：当不同[介电材料](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)的界面**平行**于[电场线](@keyword=electric_field_lines|lang=zh-CN|style=Feynman)时，每个介电区域两端的[电势差](@keyword=potential_difference|lang=zh-CN|style=Feynman)是相同的。这种情况下，总电容是各部分电容之和。$C_{total} = C_1 + C_2 + \dots$。一个典型的例子是一个垂直放置的[圆柱形电容器](@keyword=cylindrical_capacitor|lang=zh-CN|style=Feynman)，其一部分被液体[电介质](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)（[介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman)为 $\kappa$）填充，另一部分为真空。[@problem_id:1569958] 如果填充高度占总长度 $L$ 的比例为 $f$，那么这个系统可以看作两个[电容器并联](@keyword=capacitors_in_parallel|lang=zh-CN|style=Feynman)：一个长度为 $fL$、填充介质为 $\kappa\epsilon_0$ 的[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)，和另一个长度为 $(1-f)L$、填充介质为 $\epsilon_0$ 的[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)。总电容为：
     $C = C_{\text{liquid}} + C_{\text{vacuum}} = \frac{2\pi (\kappa\epsilon_0) fL}{\ln(b/a)} + \frac{2\pi \epsilon_0 (1-f)L}{\ln(b/a)} = \frac{2\pi\epsilon_0 L}{\ln(b/a)}(1 + f(\kappa-1))$
 
-*   **串联**：当不同介电材料的界面**垂直**于电场线时，穿过每个介电区域的电位移矢量 $D$ 是连续且相同的（假设界面无自由电荷）。总电势差是各部分电势差之和。这种情况下，总电容的倒数是各部分电容倒数之和。$\frac{1}{C_{total}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots$。
+*   **[串联](@keyword=catenation|lang=zh-CN|style=Feynman)**：当不同[介电材料](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)的界面**垂直**于电场线时，穿过每个介电区域的[电位移矢量](@keyword=electric_displacement_vector|lang=zh-CN|style=Feynman) $D$ 是连续且相同的（假设界面无自由电荷）。总电势差是各部分[电势差](@keyword=potential_difference|lang=zh-CN|style=Feynman)之和。这种情况下，总电容的倒数是各部分电容倒数之和。$\frac{1}{C_{total}} = \frac{1}{C_1} + \frac{1}{C_2} + \dots$。
 
-一个更复杂的例子可以很好地综合这两种情况。考虑一个正方形平行板电容器，其内部空间被两种介电常数分别为 $\kappa_1$ 和 $\kappa_2$ 的材料以棋盘格状填充。[@problem_id:1569962] 我们可以将这个电容器从中间沿平行于极板的方向和垂直于极板的方向切开，分成四个小块。整个电容器可以看作是左右两个部分并联。而左右每一半本身，又是上下两层介电材料的串联。
+一个更复杂的例子可以很好地综合这两种情况。考虑一个正方形[平行板电容器](@keyword=parallel_plate_capacitor_2|lang=zh-CN|style=Feynman)，其内部空间被两种[介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman)分别为 $\kappa_1$ 和 $\kappa_2$ 的材料以棋盘格状填充。[@problem_id:1569962] 我们可以将这个[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)从中间沿平行于极板的方向和垂直于极板的方向切开，分成四个小块。整个[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)可以看作是左右两个部分并联。而左右每一半本身，又是上下两层[介电材料](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)的[串联](@keyword=catenation|lang=zh-CN|style=Feynman)。
 
-对于右半部分（或左半部分），其面积为 $L^2/2$。它包含两层厚度为 $d/2$ 的介电材料，介电常数分别为 $\kappa_1$ 和 $\kappa_2$。这两层是串联的。它们的等效电容 $C_{\text{half}}$ 满足：
+对于右半部分（或左半部分），其面积为 $L^2/2$。它包含两层厚度为 $d/2$ 的[介电材料](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)，[介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman)分别为 $\kappa_1$ 和 $\kappa_2$。这两层是[串联](@keyword=catenation|lang=zh-CN|style=Feynman)的。它们的[等效电容](@keyword=equivalent_capacitance|lang=zh-CN|style=Feynman) $C_{\text{half}}$ 满足：
 $\frac{1}{C_{\text{half}}} = \frac{1}{C_1} + \frac{1}{C_2} = \frac{d/2}{\kappa_1\epsilon_0(L^2/2)} + \frac{d/2}{\kappa_2\epsilon_0(L^2/2)} = \frac{d}{\epsilon_0 L^2} \left(\frac{1}{\kappa_1} + \frac{1}{\kappa_2}\right)$
 $C_{\text{half}} = \frac{\kappa_1\kappa_2}{\kappa_1+\kappa_2} \frac{\epsilon_0 L^2}{d}$
 
@@ -96,53 +96,53 @@ $$C = \frac{2\kappa_1\kappa_2}{\kappa_1+\kappa_2} \frac{\epsilon_0 L^2}{d}$$
 
 这个例子有力地说明了如何通过识别串并联关系来分解复杂问题。
 
-### 超越理想模型：镜像法与边缘效应
+### 超越理想模型：[镜像法](@keyword=method_of_reflection|lang=zh-CN|style=Feynman)与[边缘效应](@keyword=edge_effects|lang=zh-CN|style=Feynman)
 
-对于一些具有特定边界条件的复杂几何结构，直接求解可能非常困难。**镜像法**提供了一种优雅而强大的替代方案，尤其适用于存在无限大接地导体平面的情况。
+对于一些具有特定边界条件的复杂几何结构，直接求解可能非常困难。**[镜像法](@keyword=method_of_reflection|lang=zh-CN|style=Feynman)**提供了一种优雅而强大的替代方案，尤其适用于存在无限大接地导体平面的情况。
 
-#### 镜像法的应用
+#### [镜像法](@keyword=method_of_reflection|lang=zh-CN|style=Feynman)的应用
 
-镜像法的核心思想是：用一个或多个虚拟的“镜像电荷”来替代边界（如接地平面），使得这些镜像电荷与原有电荷共同产生的电场在原边界位置上满足给定的电势条件（如 $V=0$）。根据静电场唯一性定理，如果在某个区域内找到了一个满足所有边界条件的解，那么这个解就是该区域内唯一的正确解。
+[镜像法](@keyword=method_of_reflection|lang=zh-CN|style=Feynman)的核心思想是：用一个或多个虚拟的“[镜像电荷](@keyword=image_charge|lang=zh-CN|style=Feynman)”来替代边界（如接地平面），使得这些镜像电荷与原有[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)共同产生的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)在原边界位置上满足给定的[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)条件（如 $V=0$）。根据静电场唯一性定理，如果在某个区域内找到了一个满足所有边界条件的解，那么这个解就是该区域内唯一的正确解。
 
-考虑一个半径为 $R$ 的导电半球放置在一个无限大接地导电平面上。[@problem_id:1569970] 半球与平面之间由一层极薄的绝缘层隔开，使它们可以处于不同电势。我们可以通过在平面下方放置一个完全相同的“镜像”半球，并使其带上与上方半球相反的电势（$-V_0$），来模拟接地平面的存在。由于对称性，这两个半球在 $z=0$ 平面上产生的电势恰好为零，完美地满足了边界条件。因此，原问题中上半空间的电场与这个由两个半球构成的完整系统的上半空间电场完全相同。
+考虑一个半径为 $R$ 的导电半球放置在一个无限大接地导电平面上。[@problem_id:1569970] 半球与平面之间由一层极薄的绝缘层隔开，使它们可以处于不同[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)。我们可以通过在平面下方放置一个完全相同的“镜像”半球，并使其带上与上方半球相反的[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)（$-V_0$），来模拟接地平面的存在。由于对称性，这两个半球在 $z=0$ 平面上产生的[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)恰好为零，完美地满足了边界条件。因此，原问题中上[半空间](@keyword=halfspaces|lang=zh-CN|style=Feynman)的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)与这个由两个半球构成的完整系统的上[半空间](@keyword=halfspaces|lang=zh-CN|style=Feynman)[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)完全相同。
 
-一个孤立的、半径为 $R$、电势为 $V_0$ 的完整球体的总电荷是 $Q_{\text{sphere}} = 4\pi\epsilon_0 R V_0$。在我们的镜像构造中，上下两个半球的电势差为 $2V_0$。然而，我们更感兴趣的是上半球在其自身电势为 $V_0$ （相对于地）时所带的电荷。由于场的线性叠加性，这个电荷恰好是孤立整球电荷的一半。因此，半球上的电荷为 $Q = \frac{1}{2} Q_{\text{sphere}} = 2\pi\epsilon_0 R V_0$。电容即为：
+一个孤立的、半径为 $R$、[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)为 $V_0$ 的完整球体的总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)是 $Q_{\text{sphere}} = 4\pi\epsilon_0 R V_0$。在我们的镜像构造中，上下两个半球的[电势差](@keyword=potential_difference|lang=zh-CN|style=Feynman)为 $2V_0$。然而，我们更感兴趣的是上半球在其自身[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)为 $V_0$ （相对于地）时所带的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。由于场的线性叠加性，这个[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)恰好是孤立整球[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的一半。因此，半球上的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)为 $Q = \frac{1}{2} Q_{\text{sphere}} = 2\pi\epsilon_0 R V_0$。电容即为：
 $$C = \frac{Q}{V_0} = 2\pi\epsilon_0 R$$
 
-另一个更高级的应用是计算一根半径为 $a$ 的长直导线，其轴线平行于接地平面，距离为 $h$ 时的单位长度电容。[@problem_id:1569984] 同样利用镜像法，我们用一根位于地下 $-h$ 处、带有相反线电荷密度的镜像导线来替代接地平面。这个问题就转化为一个双导线系统。该系统的精确解需要用到双极坐标系，最终得到的单位长度电容为：
-$$C_L = \frac{2\pi \epsilon_0}{\arccosh(h/a)}$$
+另一个更高级的应用是计算一根半径为 $a$ 的长直导线，其轴线平行于接地平面，距离为 $h$ 时的单位长度电容。[@problem_id:1569984] 同样利用[镜像法](@keyword=method_of_reflection|lang=zh-CN|style=Feynman)，我们用一根位于地下 $-h$ 处、带有相反[线电荷密度](@keyword=linear_charge_density|lang=zh-CN|style=Feynman)的镜像导线来替代接地平面。这个问题就转化为一个双导线系统。该系统的精确解需要用到双极[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)，最终得到的单位长度电容为：
+$$C_L = \frac{2\pi \epsilon_0}{\operatorname{arccosh}(h/a)}$$
 
 这个结果在输电线工程等领域有重要应用。
 
-#### 边缘效应修正
+#### [边缘效应](@keyword=edge_effects|lang=zh-CN|style=Feynman)修正
 
-理想平行板电容器模型假设电场完全被限制在极板之间且均匀分布。然而在现实中，电场会在极板边缘向外“发散”，形成所谓的**边缘场 (fringing field)**。这种边缘场的存在意味着，在相同的电势差下，极板上会储存比理想模型预测的更多的电荷，从而导致实际电容大于理想电容 $C_0 = \epsilon_0 A/d$。
+理想[平行板电容器](@keyword=parallel_plate_capacitor_2|lang=zh-CN|style=Feynman)模型假设[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)完全被限制在极板之间且[均匀分布](@keyword=equidistribution|lang=zh-CN|style=Feynman)。然而在现实中，[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)会在极板边缘向外“发散”，形成所谓的**[边缘场](@keyword=fringing_fields|lang=zh-CN|style=Feynman) (fringing field)**。这种[边缘场](@keyword=fringing_fields|lang=zh-CN|style=Feynman)的存在意味着，在相同的[电势差](@keyword=potential_difference|lang=zh-CN|style=Feynman)下，极板上会储存比理想模型预测的更多的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，从而导致实际电容大于理想电容 $C_0 = \epsilon_0 A/d$。
 
-精确计算边缘场非常复杂。但在 $d \ll R$（极板间距远小于其尺寸）的情况下，我们可以用一个近似的电荷密度分布来估算其影响。例如，对于一个半径为 $R$ 的圆形平行板电容器，其电荷密度 $\sigma(\rho)$（$\rho$ 为径向距离）可以近似为：
+精确计算[边缘场](@keyword=fringing_fields|lang=zh-CN|style=Feynman)非常复杂。但在 $d \ll R$（极板间距远小于其尺寸）的情况下，我们可以用一个近似的电荷密度[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)来估算其影响。例如，对于一个半径为 $R$ 的圆形平行板电容器，其[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman) $\sigma(\rho)$（$\rho$ 为径向距离）可以近似为：
 $\sigma(\rho) = \frac{\epsilon_0 V}{d} \left( 1 + \frac{d}{\pi\sqrt{R^2 - \rho^2}} \right)$ [@problem_id:1569946]
 
-该表达式的第一项对应于理想的均匀电荷密度，第二项则是对边缘处电荷密度急剧增加的修正。总电荷 $Q$ 通过对整个极板面积分得到：
+该表达式的第一项对应于理想的均匀电荷密度，第二项则是对边缘处[电荷密度](@keyword=charge_density|lang=zh-CN|style=Feynman)急剧增加的修正。总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman) $Q$ 通过对整个极板面积分得到：
 $Q = \int_0^R \sigma(\rho) 2\pi\rho d\rho = \int_0^R \frac{\epsilon_0 V}{d} \left( 1 + \frac{d}{\pi\sqrt{R^2 - \rho^2}} \right) 2\pi\rho d\rho$
 
-积分可以分为两部分。第一部分积分 $\int_0^R \frac{\epsilon_0 V}{d} 2\pi\rho d\rho$ 得到理想电荷 $Q_0 = \frac{\epsilon_0 V}{d}\pi R^2$，对应理想电容 $C_0$。第二部分是边缘效应的修正项 $\Delta Q$：
+积分可以分为两部分。第一部分积分 $\int_0^R \frac{\epsilon_0 V}{d} 2\pi\rho d\rho$ 得到理想[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman) $Q_0 = \frac{\epsilon_0 V}{d}\pi R^2$，对应理想电容 $C_0$。第二部分是[边缘效应](@keyword=edge_effects|lang=zh-CN|style=Feynman)的修正项 $\Delta Q$：
 $\Delta Q = \int_0^R \frac{\epsilon_0 V}{d} \frac{d}{\pi\sqrt{R^2 - \rho^2}} 2\pi\rho d\rho = 2\epsilon_0 V \int_0^R \frac{\rho d\rho}{\sqrt{R^2 - \rho^2}} = 2\epsilon_0 V R$
 
-因此，由边缘效应引起的电容修正量 $\Delta C = \Delta Q / V$ 为：
+因此，由[边缘效应](@keyword=edge_effects|lang=zh-CN|style=Feynman)引起的电容修正量 $\Delta C = \Delta Q / V$ 为：
 $$\Delta C = 2\epsilon_0 R$$
 
-这是一个重要且简洁的结果，它表明边缘电容修正主要与导体的周长（或线性尺寸）成正比，而非面积。
+这是一个重要且简洁的结果，它表明边缘电容修正主要与导体的[周长](@keyword=girth|lang=zh-CN|style=Feynman)（或线性尺寸）成正比，而非面积。
 
-### 各向异性介质中的电容
+### [各向异性介质](@keyword=anisotropic_medium|lang=zh-CN|style=Feynman)中的电容
 
-到目前为止，我们都假设电介质是**各向同性**的，即电位移矢量 $\mathbf{D}$ 与电场 $\mathbf{E}$ 的方向总是平行的，通过一个标量介电常数 $\epsilon$ 相关联。然而，在许多晶体材料中，材料的电响应依赖于电场的方向。这种材料被称为**各向异性**材料。
+到目前为止，我们都假设[电介质](@keyword=dielectric_materials|lang=zh-CN|style=Feynman)是**各向同性**的，即[电位移矢量](@keyword=electric_displacement_vector|lang=zh-CN|style=Feynman) $\mathbf{D}$ 与[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $\mathbf{E}$ 的方向总是平行的，通过一个标量[介电常数](@keyword=dielectric_constant|lang=zh-CN|style=Feynman) $\epsilon$ 相关联。然而，在许[多晶体](@keyword=polycrystals|lang=zh-CN|style=Feynman)材料中，材料的电响应依赖于[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)的方向。这种材料被称为**各向异性**材料。
 
-在各向异性介质中，本构关系由一个介电张量 $\boldsymbol{\epsilon}$ 描述：
+在[各向异性介质](@keyword=anisotropic_medium|lang=zh-CN|style=Feynman)中，[本构关系](@keyword=constitutive_relations|lang=zh-CN|style=Feynman)由一个[介电张量](@keyword=dielectric_tensor|lang=zh-CN|style=Feynman) $\boldsymbol{\epsilon}$ 描述：
 $D_i = \sum_{j=x,y,z} \epsilon_{ij} E_j$ 或简记为 $\mathbf{D} = \boldsymbol{\epsilon}\mathbf{E}$。
 
-现在，$\mathbf{D}$ 和 $\mathbf{E}$ 通常不再平行。让我们考虑一个平行板电容器，内部填充了均匀的各向异性晶体。假设晶体的主轴与我们的坐标轴 $(x, y, z)$ 对齐，此时介电张量为对角形式 $\boldsymbol{\epsilon} = \text{diag}(\epsilon_{xx}, \epsilon_{yy}, \epsilon_{zz})$。如果电容器极板的法向量 $\hat{n}$ 与 $x$ 轴成 $\theta$ 角，位于 $xz$ 平面内，即 $\hat{n} = (\cos\theta, 0, \sin\theta)$，我们来计算其单位面积电容。[@problem_id:1569985]
+现在，$\mathbf{D}$ 和 $\mathbf{E}$ 通常不再平行。让我们考虑一个[平行板电容器](@keyword=parallel_plate_capacitor_2|lang=zh-CN|style=Feynman)，内部填充了均匀的[各向异性晶体](@keyword=anisotropic_crystals|lang=zh-CN|style=Feynman)。假设晶体的主轴与我们的坐标轴 $(x, y, z)$ 对齐，此时[介电张量](@keyword=dielectric_tensor|lang=zh-CN|style=Feynman)为[对角形式](@keyword=diagonal_form|lang=zh-CN|style=Feynman) $\boldsymbol{\epsilon} = \text{diag}(\epsilon_{xx}, \epsilon_{yy}, \epsilon_{zz})$。如果[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)极板的[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman) $\hat{n}$ 与 $x$ 轴成 $\theta$ 角，位于 $xz$ 平面内，即 $\hat{n} = (\cos\theta, 0, \sin\theta)$，我们来计算其单位面积电容。[@problem_id:1569985]
 
-在平行板电容器内部，静电场 $\mathbf{E}$ 仍然是均匀的，且方向垂直于导体极板。因此，$\mathbf{E} = E_n \hat{n}$，其中 $E_n = V/d$ 是电场大小。
-电位移矢量为：
+在平行板电容器内部，[静电场](@keyword=electrostatic_field|lang=zh-CN|style=Feynman) $\mathbf{E}$ 仍然是均匀的，且方向垂直于导体极板。因此，$\mathbf{E} = E_n \hat{n}$，其中 $E_n = V/d$ 是[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)大小。
+[电位移矢量](@keyword=electric_displacement_vector|lang=zh-CN|style=Feynman)为：
 $\mathbf{D} = \boldsymbol{\epsilon} \mathbf{E} = E_n \boldsymbol{\epsilon} \hat{n}$
 由于 $\boldsymbol{\epsilon}$ 是张量，$\mathbf{D}$ 的方向通常不再与 $\hat{n}$ 相同。
 
@@ -155,4 +155,4 @@ $\hat{n}^T \boldsymbol{\epsilon} \hat{n} = \begin{pmatrix} \cos\theta  0  \sin\t
 单位面积的电容 $C/A = \sigma_f / V = \sigma_f / (E_n d)$ 为：
 $$\frac{C}{A} = \frac{\epsilon_{xx}\cos^2\theta + \epsilon_{zz}\sin^2\theta}{d}$$
 
-这个结果清晰地表明，对于各向异性介质，电容不仅取决于材料的本征属性（$\epsilon_{xx}, \epsilon_{zz}$），还强烈地依赖于晶体相对于电场的取向（角度 $\theta$）。这一原理是设计许多光学和电子器件（如液晶显示器）的基础。
+这个结果清晰地表明，对于[各向异性介质](@keyword=anisotropic_medium|lang=zh-CN|style=Feynman)，电容不仅取决于材料的本征属性（$\epsilon_{xx}, \epsilon_{zz}$），还强烈地依赖于晶体相对于[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)的取向（角度 $\theta$）。这一原理是设计许多光学和电子器件（如[液晶显示器](@keyword=liquid_crystal_display|lang=zh-CN|style=Feynman)）的基础。

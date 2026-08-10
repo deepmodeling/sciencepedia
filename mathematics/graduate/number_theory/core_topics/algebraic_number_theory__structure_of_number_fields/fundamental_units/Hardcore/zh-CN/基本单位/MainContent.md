@@ -114,10 +114,10 @@ $$ L(1, \chi_{d_K}) = \frac{2\pi h_K}{w_K \sqrt{|d_K|}} $$
 
 #### 代数K理论视角
 
-单位群可以在更广阔的代数K理论框架中得到诠释。对于一个交换环 $R$，其第一代数K群 $K_1(R)$ 定义为无限维一般线性群的[阿贝尔化](@entry_id:140523)，$K_1(R) = GL(R)/E(R)$，其中 $E(R)$ 是由初等矩阵生成的子群。
+单位群可以在更广阔的代数K理论框架中得到诠释。对于一个交换环 $R$，其第一代数K群 $K_1(R)$ 定义为无限维一般线性群的[阿贝尔化](@keyword=abelianization|lang=zh-CN|style=Feynman)，$K_1(R) = GL(R)/E(R)$，其中 $E(R)$ 是由初等矩阵生成的子群。
 
 行列式映射给出了一个满同态 $\det: K_1(R) \to R^\times$。其核被称为特殊K群 $SK_1(R)$。对于数域的整数环 $\mathcal{O}_K$，一个深刻的定理（由Bass, Milnor, Serre证明）指出 $SK_1(\mathcal{O}_K)$ 是平凡群。这导致了一个典范同构：
 $$ K_1(\mathcal{O}_K) \cong \mathcal{O}_K^\times = U_K $$
 在此同构下，一个单位 $u \in U_K$ 对应于由 $1 \times 1$ 矩阵 $(u)$ 代表的类。
 
-更有趣的是，域范数 $N_{K/\mathbb{Q}}$ 也可以在这个框架下通过函子性自然地导出。考虑从 $\mathbb{Z}$ 到 $\mathcal{O}_K$ 的环包含映射，它诱导了一个K群之间的同态 $K_1(\mathcal{O}_K) \to K_1(\mathbb{Z})$。我们知道 $K_1(\mathbb{Z}) \cong \mathbb{Z}^\times = \{\pm 1\}$。将一个单位 $u \in U_K$ 视为 $\mathcal{O}_K$ 上的乘法自同构 $m_u$。当我们将 $\mathcal{O}_K$ 视为一个秩为 $n$ 的自由 $\mathbb{Z}$-模时，$m_u$ 对应一个 $n \times n$ 的整矩阵 $M_u$。从 $K_1(\mathcalO_K)$ 到 $K_1(\mathbb{Z})$ 的映射正是将 $[(u)]$ 映到 $[M_u]$。最后，通过 $K_1(\mathbb{Z}) \cong \{\pm 1\}$ 的行列式同构，我们得到 $\det(M_u)$。根据定义，这个行列式正是 $u$ 的域范数 $N_{K/\mathbb{Q}}(u)$。这个视角优雅地将单位群和范数映射统一在代数K理论的普适框架之下。[@problem_id:3014810]
+更有趣的是，域范数 $N_{K/\mathbb{Q}}$ 也可以在这个框架下通过函子性自然地导出。考虑从 $\mathbb{Z}$ 到 $\mathcal{O}_K$ 的环包含映射，它诱导了一个K群之间的同态 $K_1(\mathcal{O}_K) \to K_1(\mathbb{Z})$。我们知道 $K_1(\mathbb{Z}) \cong \mathbb{Z}^\times = \{\pm 1\}$。将一个单位 $u \in U_K$ 视为 $\mathcal{O}_K$ 上的乘法自同构 $m_u$。当我们将 $\mathcal{O}_K$ 视为一个秩为 $n$ 的自由 $\mathbb{Z}$-模时，$m_u$ 对应一个 $n \times n$ 的整矩阵 $M_u$。从 $K_1(\mathcal{O}_K)$ 到 $K_1(\mathbb{Z})$ 的映射正是将 $[(u)]$ 映到 $[M_u]$。最后，通过 $K_1(\mathbb{Z}) \cong \{\pm 1\}$ 的行列式同构，我们得到 $\det(M_u)$。根据定义，这个行列式正是 $u$ 的域范数 $N_{K/\mathbb{Q}}(u)$。这个视角优雅地将单位群和范数映射统一在代数K理论的普适框架之下。[@problem_id:3014810]

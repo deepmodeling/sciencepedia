@@ -14,25 +14,25 @@ $$
 
 这条曲线有一个非凡的性质：如果你是一名在实数 $\mathbb{R}$ 中工作的侦探，你会找到解。如果你是一名在任何素数 $p$ 的 $p$-进数 $\mathbb{Q}_p$ 中工作的侦探，你同样会找到解。每一次局部调查都报告“案件告破”。然而，如果你试图找到一个 $(X, Y, Z)$ 都是有理数的解，你会失败。仅用模 9 算术就可以证明，这样的解不存在。这条曲线局部无处不在，但全局无处可寻。它完美地体现了其雅可比曲线的[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)中的一个非平凡元素[@problem_id:3022284]。它是一个可触摸的幽灵。
 
-看到一个这样的幽灵固然引人入胜，但我们能了解整个种群吗？$\Sha(E)$ 群是出了名地难以直接计算。然而，数学家们发展出一种巧妙的间接侦察策略，称为**下降法 (descent)**。其思想是通过捕获一个相关的、可计算的对象，即**[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman) (Selmer group)**，记作 $\mathrm{Sel}^{(n)}(E)$，来探测 $\Sha(E)$。
+看到一个这样的幽灵固然引人入胜，但我们能了解整个种群吗？$\mathrm{Ш}(E)$ 群是出了名地难以直接计算。然而，数学家们发展出一种巧妙的间接侦察策略，称为**下降法 (descent)**。其思想是通过捕获一个相关的、可计算的对象，即**[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman) (Selmer group)**，记作 $\mathrm{Sel}^{(n)}(E)$，来探测 $\mathrm{Ш}(E)$。
 
-想象 $\Sha(E)$ 是一座巨大而无法进入的堡垒。[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)就像我们能派进去的一队间谍。这些间谍是“[上同调类](@keyword=cohomology_class|lang=zh-CN|style=Feynman)”，它们得到了每个局部守卫的认证（它们在每个素数处都满足局部条件），但我们还不知道它们是真正的全局对象还是幻影。下降法理论的基本洞见是，这群间谍与我们已知的对象和我们希望了解的对象之间存在一个精确的关系[@problem_id:3013161]：
+想象 $\mathrm{Ш}(E)$ 是一座巨大而无法进入的堡垒。[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)就像我们能派进去的一队间谍。这些间谍是“[上同调类](@keyword=cohomology_class|lang=zh-CN|style=Feynman)”，它们得到了每个局部守卫的认证（它们在每个素数处都满足局部条件），但我们还不知道它们是真正的全局对象还是幻影。下降法理论的基本洞见是，这群间谍与我们已知的对象和我们希望了解的对象之间存在一个精确的关系[@problem_id:3013161]：
 $$
-0 \to E(\mathbb{Q})/nE(\mathbb{Q}) \to \mathrm{Sel}^{(n)}(E/\mathbb{Q}) \to \Sha(E/\mathbb{Q})[n] \to 0
+0 \to E(\mathbb{Q})/nE(\mathbb{Q}) \to \mathrm{Sel}^{(n)}(E/\mathbb{Q}) \to \mathrm{Ш}(E/\mathbb{Q})[n] \to 0
 $$
-这个[短正合序列](@keyword=short_exact_sequence|lang=zh-CN|style=Feynman)是一个强大的计算工具。它告诉我们，[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)包含两种间谍：一种来自我们曲线上实际的有理点（群 $E(\mathbb{Q})/nE(\mathbb{Q})$），另一种则对应于[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的 $n$-挠部分 $\Sha(E/\mathbb{Q})[n]$。由于[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)原则上是可计算的，我们可以利用这个序列来测量我们幽灵的一部分。如果我们计算出 $\mathrm{Sel}^{(n)}(E)$ 的大小，并减去来自有理点的部分的大小，剩下的就是 $\Sha(E/\mathbb{Q})[n]$ 的大小！
+这个[短正合序列](@keyword=short_exact_sequence|lang=zh-CN|style=Feynman)是一个强大的计算工具。它告诉我们，[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)包含两种间谍：一种来自我们曲线上实际的有理点（群 $E(\mathbb{Q})/nE(\mathbb{Q})$），另一种则对应于[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的 $n$-挠部分 $\mathrm{Ш}(E/\mathbb{Q})[n]$。由于[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)原则上是可计算的，我们可以利用这个序列来测量我们幽灵的一部分。如果我们计算出 $\mathrm{Sel}^{(n)}(E)$ 的大小，并减去来自有理点的部分的大小，剩下的就是 $\mathrm{Ш}(E/\mathbb{Q})[n]$ 的大小！
 
-例如，通过[椭圆曲线的秩](@keyword=ranks_of_elliptic_curves|lang=zh-CN|style=Feynman)和[挠子群](@keyword=torsion_subgroup|lang=zh-CN|style=Feynman)，计算 2-[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小可以揭示 $\Sha(E/\mathbb{Q})$ 中阶为 2 的元素的确切数量[@problem_id:3013177]。这种方法不仅限于乘以 $n$ 的映射；它更普遍地适用于任何同源 $\phi: E \to E'$，使我们能够接触到[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的其他部分，如 $\Sha(E/\mathbb{Q})[\phi]$ [@problem_id:712468]。这个难以捉摸的群并非完全遥不可及；我们已经找到了一种方法来测量它的影子。
+例如，通过[椭圆曲线的秩](@keyword=ranks_of_elliptic_curves|lang=zh-CN|style=Feynman)和[挠子群](@keyword=torsion_subgroup|lang=zh-CN|style=Feynman)，计算 2-[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小可以揭示 $\mathrm{Ш}(E/\mathbb{Q})$ 中阶为 2 的元素的确切数量[@problem_id:3013177]。这种方法不仅限于乘以 $n$ 的映射；它更普遍地适用于任何同源 $\phi: E \to E'$，使我们能够接触到[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的其他部分，如 $\mathrm{Ш}(E/\mathbb{Q})[\phi]$ [@problem_id:712468]。这个难以捉摸的群并非完全遥不可及；我们已经找到了一种方法来测量它的影子。
 
 ### 猜想的核心
 
-我们现在有了一个探测 $\Sha$ 的工具。但这引出了一个问题：为什么它的大小如此重要？答案在于可以说是数论中最重要的未决问题——**Birch与Swinnerton-Dyer (BSD) 猜想**。这个猜想提出了一个惊人的联系，它连接了椭圆曲线的冰冷、坚硬的算术世界和[复分析](@keyword=complex_analysis|lang=zh-CN|style=Feynman)的微妙、连续的世界。
+我们现在有了一个探测 $\mathrm{Ш}$ 的工具。但这引出了一个问题：为什么它的大小如此重要？答案在于可以说是数论中最重要的未决问题——**Birch与Swinnerton-Dyer (BSD) 猜想**。这个猜想提出了一个惊人的联系，它连接了椭圆曲线的冰冷、坚硬的算术世界和[复分析](@keyword=complex_analysis|lang=zh-CN|style=Feynman)的微妙、连续的世界。
 
 对于每一条椭圆曲线 $E$，人们可以写下它的一个[复分析](@keyword=complex_analysis|lang=zh-CN|style=Feynman)对象，称为哈瑟-韦伊 $L$-函数, $L(E, s)$。BSD 猜想的第一部分预测，$E$ 上[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)群的秩等于这个函数在中心点 $s=1$ 处的零点阶。但它更进一步。猜想的第二部分，也是更令人震惊的部分，给出了 $L$-函数在 $s=1$ 处泰勒级数首项的明确公式。就在这个公式的核心，我们的幽灵出现了：
 $$
-\frac{L^{(r)}(E,1)}{r!} = \frac{\#\Sha(E/\mathbb{Q}) \cdot R_E \cdot \Omega_E \cdot \prod_v c_v}{\left(\#E(\mathbb{Q})_{\mathrm{tors}}\right)^2}
+\frac{L^{(r)}(E,1)}{r!} = \frac{\#\mathrm{Ш}(E/\mathbb{Q}) \cdot R_E \cdot \Omega_E \cdot \prod_v c_v}{\left(\#E(\mathbb{Q})_{\mathrm{tors}}\right)^2}
 $$
-看！[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的大小， $|\Sha(E)|$ ，就出现在分子中[@problem_id:3025040]。一个从[复变量](@keyword=complex_variable|lang=zh-CN|style=Feynman)函数的解析行为中得出的数，被预测为一个有理数，其值直接依赖于这个衡量哈瑟原则失败程度的神秘[群的阶](@keyword=order_of_a_group|lang=zh-CN|style=Feynman)。这个公式将Ш从一个纯粹的障碍提升为曲线的一个基本[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)，与其秩或周期一样，对其身份至关重要。这不仅是有理数域上算术的一个奇特特征；该猜想以及Ш在其中的角色，自然地扩展到任何数域上的椭圆曲线，揭示了一种普适结构[@problem_id:3024989]。
+看！[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的大小， $|\mathrm{Ш}(E)|$ ，就出现在分子中[@problem_id:3025040]。一个从[复变量](@keyword=complex_variable|lang=zh-CN|style=Feynman)函数的解析行为中得出的数，被预测为一个有理数，其值直接依赖于这个衡量哈瑟原则失败程度的神秘[群的阶](@keyword=order_of_a_group|lang=zh-CN|style=Feynman)。这个公式将Ш从一个纯粹的障碍提升为曲线的一个基本[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)，与其秩或周期一样，对其身份至关重要。这不仅是有理数域上算术的一个奇特特征；该猜想以及Ш在其中的角色，自然地扩展到任何数域上的椭圆曲线，揭示了一种普适结构[@problem_id:3024989]。
 
 ### 联系之网：[模形式](@keyword=modular_forms|lang=zh-CN|style=Feynman)与宏大理论
 
@@ -44,7 +44,7 @@ $$
 
 最后，[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)在宏大的数学体系中处于什么位置？事实证明，椭圆曲线只是被称为**动机 (motives)** 的庞大对象类别中的一个例子。现在人们相信，BSD猜想只是一个更普遍的预测集合——即适用于所有动机的**布洛赫-加藤猜想 (Bloch-Kato conjecture)**——的一个具体实例。
 
-在这个宏大、统一的框架中，莫德尔-韦伊群的角色被推广为动机上同调群，而内龙-泰特正则子则被更抽象的动机正则子所取代。那么我们的幽灵呢？在这个一般理论中，*总是*存在一个猜想性的“沙法列维奇型群”，它扮演的角色与 $\Sha(E)$ 完全相同[@problem_id:3024964]。这揭示了[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的真正意义。它并非[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的[特有现象](@keyword=endemism|lang=zh-CN|style=Feynman)。它是算术普适原理的化身，一个似乎是数域上几何学基本特征的障碍群。对椭圆曲线的Ш的研究是检验这一数学宇宙统一愿景的重要试验场。
+在这个宏大、统一的框架中，莫德尔-韦伊群的角色被推广为动机上同调群，而内龙-泰特正则子则被更抽象的动机正则子所取代。那么我们的幽灵呢？在这个一般理论中，*总是*存在一个猜想性的“沙法列维奇型群”，它扮演的角色与 $\mathrm{Ш}(E)$ 完全相同[@problem_id:3024964]。这揭示了[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的真正意义。它并非[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的[特有现象](@keyword=endemism|lang=zh-CN|style=Feynman)。它是算术普适原理的化身，一个似乎是数域上几何学基本特征的障碍群。对椭圆曲线的Ш的研究是检验这一数学宇宙统一愿景的重要试验场。
 
 ### 结论
 

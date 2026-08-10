@@ -27,7 +27,7 @@
 
 **Hasse 原则**，或称[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)，是一个乐观的想法，即如果我们能*在所有局部域*中找到解（即在 $\mathbb{R}$ 和每个 $\mathbb{Q}_p$ 中），那么我们就应该能在有理数 $\mathbb{Q}$ 中找到一个[全局解](@keyword=global_solution|lang=zh-CN|style=Feynman)。对于某些问题，比如[二次方程](@keyword=second_degree_equation|lang=zh-CN|style=Feynman)，这个原则奇迹般地成立（Hasse-Minkowski 定理）。但对于亏格为一的曲线，它可能会戏剧性地失效。
 
-一个[扭子](@keyword=torsors|lang=zh-CN|style=Feynman) $C$ 可能在每个局部域 $\mathbb{Q}_v$ 中都有点，但在 $\mathbb{Q}$ 中却完全没有点 [@problem_id:3013109]。这样的[扭子](@keyword=torsors|lang=zh-CN|style=Feynman)是“处处局部平凡”但“全局非平凡”的。这就像你有一张藏宝图，在你访问的每个城市都完美无缺，但宝藏本身却并不存在。这些[扭子](@keyword=torsors|lang=zh-CN|style=Feynman)不仅仅是麻烦；它们自身构成一个群，一个精确度量 Hasse 原则失效程度的群。这个群就是著名的 **Tate-Shafarevich 群**，记作 $\Sha(E/\mathbb{Q})$ [@problem_id:3013154] [@problem_id:3022289]。$\Sha(E/\mathbb{Q})$ 中的每一个非平凡元素都是[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)的一个优美而又虚幻的[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)。
+一个[扭子](@keyword=torsors|lang=zh-CN|style=Feynman) $C$ 可能在每个局部域 $\mathbb{Q}_v$ 中都有点，但在 $\mathbb{Q}$ 中却完全没有点 [@problem_id:3013109]。这样的[扭子](@keyword=torsors|lang=zh-CN|style=Feynman)是“处处局部平凡”但“全局非平凡”的。这就像你有一张藏宝图，在你访问的每个城市都完美无缺，但宝藏本身却并不存在。这些[扭子](@keyword=torsors|lang=zh-CN|style=Feynman)不仅仅是麻烦；它们自身构成一个群，一个精确度量 Hasse 原则失效程度的群。这个群就是著名的 **Tate-Shafarevich 群**，记作 $\mathrm{Ш}(E/\mathbb{Q})$ [@problem_id:3013154] [@problem_id:3022289]。$\mathrm{Ш}(E/\mathbb{Q})$ 中的每一个非平凡元素都是[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)的一个优美而又虚幻的[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)。
 
 ### 一个可触及的幽灵：Selmer 曲线
 
@@ -39,21 +39,21 @@ Selmer 曲线是 Tate-Shafarevich 群中一个非平凡元素的完美体现。�
 
 ### 算术资产负债表
 
-所以我们有了这个神秘的群 $\Sha(E/\mathbb{Q})$，它度量着这些深刻的障碍。我们究竟该如何研究它呢？根据定义，它的元素极难找到！在这里，数学通过其最重要的公式之一揭示了其内在的统一性，这是一个如同宇宙算术资产负债表的[短正合序列](@keyword=short_exact_sequence|lang=zh-CN|style=Feynman)：
-$$ 0 \longrightarrow E(\mathbb{Q})/nE(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(n)}(E/\mathbb{Q}) \longrightarrow \Sha(E/\mathbb{Q})[n] \longrightarrow 0 $$
+所以我们有了这个神秘的群 $\mathrm{Ш}(E/\mathbb{Q})$，它度量着这些深刻的障碍。我们究竟该如何研究它呢？根据定义，它的元素极难找到！在这里，数学通过其最重要的公式之一揭示了其内在的统一性，这是一个如同宇宙算术资产负债表的[短正合序列](@keyword=short_exact_sequence|lang=zh-CN|style=Feynman)：
+$$ 0 \longrightarrow E(\mathbb{Q})/nE(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(n)}(E/\mathbb{Q}) \longrightarrow \mathrm{Ш}(E/\mathbb{Q})[n] \longrightarrow 0 $$
 不要被这些符号吓到。把它想象成一个会计等式 [@problem_id:3022289]。
 
 在左边，我们有 $E(\mathbb{Q})/nE(\mathbb{Q})$。这一项来自相关椭圆曲线 $E$ 上的**已知[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)**群。这是我们（有时）可以掌握的东西。
 
 在中间是 $n$-**Selmer 群**，$\mathrm{Sel}^{(n)}(E/\mathbb{Q})$。这是一种“搜索空间”。它是一个有限群，原则上我们可以用[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)来计算。它包含了从所有局部域中提炼出的信息。这是一个[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)“潜在”候选者的列表，但其中一些可能是冒名顶替者。
 
-在右边是 $\Sha(E/\mathbb{Q})[n]$，即我们神秘的障碍群中阶数整除 $n$ 的那部分元素。这一项恰好就是 Selmer 群中的“冒名顶替者”群——那些在局部看起来很好但在全局上失败的候选者。
+在右边是 $\mathrm{Ш}(E/\mathbb{Q})[n]$，即我们神秘的障碍群中阶数整除 $n$ 的那部分元素。这一项恰好就是 Selmer 群中的“冒名顶替者”群——那些在局部看起来很好但在全局上失败的候选者。
 
 这个序列的美妙之处在于，如果我们能计算出中间项（Selmer 群）和左边项（来自已知[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)）的大小，我们就能推断出右边项——我们的障碍群——的大小！
 
 让我们看看实际操作。假设我们有一条椭圆曲线 $E$，我们知道其有理点群为 $E(\mathbb{Q}) \cong \mathbb{Z} \oplus \mathbb{Z}/2\mathbb{Z}$。计算表明 $E(\mathbb{Q})/2E(\mathbb{Q})$ 项的大小为 4。现在，想象一个强大的计算告诉我们，这条曲线的 $2$-Selmer 群大小为 $\#\mathrm{Sel}^{(2)}(E/\mathbb{Q}) = 32 = 2^5$。资产负债表告诉我们：
-$$ \#\mathrm{Sel}^{(2)}(E/\mathbb{Q}) = \#(E(\mathbb{Q})/2E(\mathbb{Q})) \cdot \#\Sha(E/\mathbb{Q})[2] $$
-$$ 32 = 4 \cdot \#\Sha(E/\mathbb{Q})[2] $$
-这意味着 $\#\Sha(E/\mathbb{Q})[2] = 8$。这意味着什么？这意味着对于这条[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)，恰好有 8 个[同构类](@keyword=isomorphism_classes|lang=zh-CN|style=Feynman)的[扭子](@keyword=torsors|lang=zh-CN|style=Feynman)，它们处处局部可解，且周期整除 2。其中一个是平凡类（曲线自身，它有[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)）。另外**七个**则是 Hasse 原则的真正[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)！[@problem_id:3029565]。我们利用了可触及的信息，计算出了不可触及的幽灵的确切数量。
+$$ \#\mathrm{Sel}^{(2)}(E/\mathbb{Q}) = \#(E(\mathbb{Q})/2E(\mathbb{Q})) \cdot \#\mathrm{Ш}(E/\mathbb{Q})[2] $$
+$$ 32 = 4 \cdot \#\mathrm{Ш}(E/\mathbb{Q})[2] $$
+这意味着 $\#\mathrm{Ш}(E/\mathbb{Q})[2] = 8$。这意味着什么？这意味着对于这条[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)，恰好有 8 个[同构类](@keyword=isomorphism_classes|lang=zh-CN|style=Feynman)的[扭子](@keyword=torsors|lang=zh-CN|style=Feynman)，它们处处局部可解，且周期整除 2。其中一个是平凡类（曲线自身，它有[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)）。另外**七个**则是 Hasse 原则的真正[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)！[@problem_id:3029565]。我们利用了可触及的信息，计算出了不可触及的幽灵的确切数量。
 
 从一个没有原点的集合这样一个简单的概念出发，[扭子](@keyword=torsors|lang=zh-CN|style=Feynman)的概念变成了一个强大的透镜，通过它我们可以看到数论深层、隐藏的结构。它对对象进行分类，揭示障碍，并为数学中一些最大的开放问题提供了语言，比如那个难以捉摸的 Tate-Shafarevich 群总是有限的猜想，这是价值百万美元的 Birch and Swinnerton-Dyer 猜想的核心部分。在许多方面，理解这些“无家可归”的群的旅程，本身就是通往算术核心的旅程。

@@ -1,103 +1,103 @@
 ## 引言
-在物理学中，理解宏观世界的温度如何与微观粒子的运动联系起来，是统计力学的核心任务之一。一个处于热平衡的系统，其内部蕴含着巨大的能量，但这股能量是如何在无数个原子和分子之间进行分配的？能量均分定理正是为解答这一问题而生的强大理论，它以惊人的简洁性，为我们估算经典系统中微观自由度的平均能量提供了一把标尺。然而，这一定理并非放之四海而皆准，理解其适用边界与应用场景，对于准确地描绘物理世界至关重要。
+在物理学中，理解宏观世界的温度如何与微观粒子的运动联系起来，是[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学的核心任务之一。一个处于热平衡的系统，其内部蕴含着巨大的能量，但这股能量是如何在无数个原子和分子之间进行分配的？[能量均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)正是为解答这一问题而生的强大理论，它以惊人的简洁性，为我们估算经典系统中微观自由度的平均能量提供了一把标尺。然而，这一定理并非放之四海而皆准，理解其适用边界与应用场景，对于准确地描绘物理世界至关重要。
 
-本文旨在系统性地介绍能量均分定理，并展示其作为估算工具的强大能力。我们将通过三个章节的探索，带领读者从基本原理走向前沿应用。在**“原理和机制”**一章中，我们将深入阐释能量均分定理的核心内容，明确“二次自由度”的含义，并探讨当量子效应介入时，这一定理为何会失效。接着，在**“应用与交叉学科联系”**一章中，我们将穿越学科的边界，见证该定理如何被用于分析生物分子的涨落、电子器件中的热噪声，乃至星系团的动力学。最后，**“动手实践”**部分将通过具体问题，帮助您将理论知识转化为解决实际物理问题的能力。通过本次学习，您将掌握一个连接微观与宏观、贯穿众多科学领域的基本物理规律。
+本文旨在系统性地介绍[能量均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)，并展示其作为估算工具的强大能力。我们将通过三个章节的探索，带领读者从基本原理走向前沿应用。在**“原理和机制”**一章中，我们将深入阐释[能量均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)的核心内容，明确“二次自由度”的含义，并探讨当量子效应介入时，这一定理为何会失效。接着，在**“应用与[交叉](@keyword=chiasmata|lang=zh-CN|style=Feynman)学科联系”**一章中，我们将穿越学科的边界，见证该定理如何被用于分析生物分子的涨落、电子器件中的[热噪声](@keyword=thermal_noise|lang=zh-CN|style=Feynman)，乃至星系团的动力学。最后，**“动手实践”**部分将通过具体问题，帮助您将理论知识转化为解决实际物理问题的能力。通过本次学习，您将掌握一个连接微观与宏观、贯穿众多科学领域的基本物理规律。
 
 ## 原理和机制
 
-在统计力学的框架内，理解能量如何在构成系统的微观粒子间分配，是连接微观状态与宏观热力学性质的基石。能量均分定理（equipartition theorem）为我们提供了一个极其强大而简洁的工具，用于估算处于热平衡状态下经典系统的平均能量。本章将深入阐述该定理的核心原理、其广泛的应用，以及认识其适用范围的边界——即量子效应开始显现的领域。
+在[统计力](@keyword=statistical_forces|lang=zh-CN|style=Feynman)学的框架内，理解能量如何在构成系统的微观粒子间分配，是连接微观状态与宏观[热力学性质](@keyword=thermodynamic_properties|lang=zh-CN|style=Feynman)的基石。能量均分定理（equipartition theorem）为我们提供了一个极其强大而简洁的工具，用于估算处于[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)状态下经典系统的[平均能量](@keyword=average_energy|lang=zh-CN|style=Feynman)。本章将深入阐述该定理的核心原理、其广泛的应用，以及认识其[适用范围](@keyword=domain_of_validity|lang=zh-CN|style=Feynman)的边界——即量子效应开始显现的领域。
 
-### 能量均分定理：热能分配的基本法则
+### [能量均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)：热能分配的基本法则
 
-能量均分定理指出，对于一个处于热平衡温度 $T$ 的经典系统，其能量中每一个**二次自由度**（quadratic degree of freedom）都拥有 $\frac{1}{2}k_B T$ 的平均能量。这里，$k_B$ 是玻尔兹曼常数（$k_B \approx 1.38 \times 10^{-23} \, \text{J/K}$）。
+能量均分定理指出，对于一个处于热平衡温度 $T$ 的经典系统，其能量中每一个**二次自由度**（quadratic degree of freedom）都拥有 $\frac{1}{2}k_B T$ 的[平均能量](@keyword=average_energy|lang=zh-CN|style=Feynman)。这里，$k_B$ 是玻尔兹曼常数（$k_B \approx 1.38 \times 10^{-23} \, \text{J/K}$）。
 
-要理解这一定理，关键在于明确何为“二次自由度”。在系统的哈密顿量（即总能量表达式）中，任何一个与某个坐标或动量的平方成正比的项，都被称为一个二次自由度。其通用形式可以写作 $E_i = \alpha q_i^2$，其中 $q_i$ 可以是粒子的位置坐标（如 $x$）或动量分量（如 $p_x$），而 $\alpha$ 是一个常数。
+要理解这一定理，关键在于明确何为“二次自由度”。在系统的[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)（即总能量表达式）中，任何一个与某个坐标或动量的平方成正比的项，都被称为一个二次自由度。其通用形式可以写作 $E_i = \alpha q_i^2$，其中 $q_i$ 可以是粒子的位置坐标（如 $x$）或动量分量（如 $p_x$），而 $\alpha$ 是一个常数。
 
-这一定理的普适性源于其统计基础。一个状态的概率正比于其玻尔兹曼因子 $\exp(-E/k_B T)$。对于一个二次自由度 $E_i = \alpha q_i^2$，其平均能量的计算涉及到对所有可能状态的加权平均。计算结果表明，这个平均值总是 $\frac{1}{2}k_B T$，而与常数 $\alpha$ 的具体数值无关。这意味着，平均能量与粒子的质量、弹簧的劲度系数或分子的转动惯量等具体物理参数无关，仅依赖于温度。正是这种独立性，赋予了能量均分定理惊人的预测能力。
+这一定理的普适性源于其统计基础。一个状态的概率正比于其[玻尔兹曼因子](@keyword=boltzmann_factor|lang=zh-CN|style=Feynman) $\exp(-E/k_B T)$。对于一个二次自由度 $E_i = \alpha q_i^2$，其[平均能量](@keyword=average_energy|lang=zh-CN|style=Feynman)的计算涉及到对所有可能状态的加权平均。计算结果表明，这个平均值总是 $\frac{1}{2}k_B T$，而与常数 $\alpha$ 的具体数值无关。这意味着，平均能量与粒子的质量、弹簧的劲度系数或分子的转动惯量等具体物理参数无关，仅依赖于温度。正是这种独立性，赋予了能量均分定理惊人的预测能力。
 
-### 平动和转动中的能量分配
+### [平动](@keyword=translational_motion|lang=zh-CN|style=Feynman)和转动中的[能量分配](@keyword=energy_partition|lang=zh-CN|style=Feynman)
 
-能量均分定理最直接的应用体现在分析粒子和分子的运动上。
+[能量均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)最直接的应用体现在分析粒子和分子的运动上。
 
-#### 平动动能：典型的应用场景
+#### [平动动能](@keyword=translational_kinetic_energy|lang=zh-CN|style=Feynman)：典型的应用场景
 
-考虑一个质量为 $m$ 的粒子在三维空间中自由运动。其平动动能 $K$ 是由三个动量分量 $p_x, p_y, p_z$ 的平方项构成的：
+考虑一个质量为 $m$ 的粒子在三维空间中自由运动。其[平动动能](@keyword=translational_kinetic_energy|lang=zh-CN|style=Feynman) $K$ 是由三个动量分量 $p_x, p_y, p_z$ 的平方项构成的：
 
 $$
 K = \frac{p_x^2}{2m} + \frac{p_y^2}{2m} + \frac{p_z^2}{2m}
 $$
 
-这里，我们立刻可以识别出三个二次自由度。因此，根据均分定理，该粒子的平均平动动能为：
+这里，我们立刻可以识别出三个二次自由度。因此，根据[均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)，该粒子的平均[平动动能](@keyword=translational_kinetic_energy|lang=zh-CN|style=Feynman)为：
 
 $$
 \langle K \rangle = 3 \times \left( \frac{1}{2}k_B T \right) = \frac{3}{2}k_B T
 $$
 
-这个结论的适用范围远不止于理想气体。例如，即使在相互作用强烈的液相中，只要系统的哈密顿量可以分离为动能项和势能项，均分定理对动能部分的预测依然有效。一个处于其三相点温度 $T = 83.8 \, \text{K}$ 的液氩原子，其平均平动动能就可以通过此公式精确估算 [@problem_id:1899254]。计算可得 $\langle K \rangle = \frac{3}{2}(1.38 \times 10^{-23} \, \text{J/K})(83.8 \, \text{K}) \approx 1.73 \times 10^{-21} \, \text{J}$。
+这个结论的[适用范围](@keyword=domain_of_validity|lang=zh-CN|style=Feynman)远不止于[理想气体](@keyword=perfect_gases|lang=zh-CN|style=Feynman)。例如，即使在相互作用强烈的液相中，只要系统的[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)可以分离为动能项和[势能](@keyword=energy_potential|lang=zh-CN|style=Feynman)项，[均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)对动能部分的预测依然有效。一个处于其三相点温度 $T = 83.8 \, \text{K}$ 的液氩原子，其平均[平动动能](@keyword=translational_kinetic_energy|lang=zh-CN|style=Feynman)就可以通过此公式精确估算 [@problem_id:1899254]。计算可得 $\langle K \rangle = \frac{3}{2}(1.38 \times 10^{-23} \, \text{J/K})(83.8 \, \text{K}) \approx 1.73 \times 10^{-21} \, \text{J}$。
 
-该定理一个更引人注目的推论是，平均动能与粒子质量无关。在生物细胞质中，一个质量高达 $7.0 \times 10^{-21}$ kg 的核糖体复合物，与一个微小的水分子，在相同的温度下（例如人体体温 $37.0^\circ\text{C}$ 或 $310.15 \, \text{K}$），拥有完全相同的平均平动动能 $\frac{3}{2}k_B T \approx 6.42 \times 10^{-21} \, \text{J}$ [@problem_id:1899280]。当然，它们的平均速度会大相径庭，但能量的分配是均等的。
+该定理一个更引人注目的推论是，[平均动能](@keyword=average_kinetic_energy|lang=zh-CN|style=Feynman)与[粒子质量](@keyword=particle_mass|lang=zh-CN|style=Feynman)无关。在生物细胞质中，一个质量高达 $7.0 \times 10^{-21}$ kg 的[核糖体](@keyword=ribosome|lang=zh-CN|style=Feynman)复合物，与一个微小的水分子，在相同的温度下（例如人体体温 $37.0^\circ\text{C}$ 或 $310.15 \, \text{K}$），拥有完全相同的平均[平动动能](@keyword=translational_kinetic_energy|lang=zh-CN|style=Feynman) $\frac{3}{2}k_B T \approx 6.42 \times 10^{-21} \, \text{J}$ [@problem_id:1899280]。当然，它们的平均速度会大相径庭，但能量的分配是均等的。
 
-系统的维度直接决定了平动自由度的数量。如果一个粒子被束缚在二维表面上运动，例如一个被吸附在石墨烯片上的氦原子，那么它只有两个平动自由度（$x$ 和 $y$ 方向）。此时，其平均平动动能就变为 $\langle K \rangle = 2 \times (\frac{1}{2}k_B T) = k_B T$ [@problem_id:1899293]。
+系统的维度直接决定了[平动自由度](@keyword=translational_degrees_of_freedom|lang=zh-CN|style=Feynman)的数量。如果一个粒子被束缚在二维表面上运动，例如一个被吸附在[石墨烯](@keyword=graphene|lang=zh-CN|style=Feynman)片上的氦原子，那么它只有两个[平动自由度](@keyword=translational_degrees_of_freedom|lang=zh-CN|style=Feynman)（$x$ 和 $y$ 方向）。此时，其平均[平动动能](@keyword=translational_kinetic_energy|lang=zh-CN|style=Feynman)就变为 $\langle K \rangle = 2 \times (\frac{1}{2}k_B T) = k_B T$ [@problem_id:1899293]。
 
-#### 分子转动
+#### [分子转动](@keyword=molecular_rotations|lang=zh-CN|style=Feynman)
 
-对于分子而言，除了平动，还存在转动。转动动能同样可以表示为角动量的二次型。对于一个**线性分子**，如大气中的氮气（N$_2$），它可以围绕两个相互垂直且垂直于分子键轴的轴进行转动。围绕键轴本身的转动，其转动惯量极小，相关的量子能级间隔极大，因此在通常温度下不会被激发，不构成一个经典的二次自由度。因此，一个线性分子拥有 2 个转动自由度。在室温（如 $293 \, \text{K}$）下，一个氮分子的平均转动动能为 $\langle E_{\text{rot}} \rangle = 2 \times (\frac{1}{2}k_B T) = k_B T \approx 4.05 \times 10^{-21} \, \text{J}$ [@problem_id:1899307]。对于**非线性分子**，则存在 3 个转动轴，因此有 3 个转动自由度，平均转动动能为 $\frac{3}{2}k_B T$。
+对于分子而言，除了[平动](@keyword=translational_motion|lang=zh-CN|style=Feynman)，还存在转动。[转动动能](@keyword=rotational_kinetic_energy|lang=zh-CN|style=Feynman)同样可以表示为角动量的二次型。对于一个**线性分子**，如大气中的氮气（N$_2$），它可以围绕两个相互垂直且垂直于分子键轴的轴进行转动。围绕键轴本身的转动，其转动惯量极小，相关的[量子能级](@keyword=quantum_energy_levels|lang=zh-CN|style=Feynman)间隔极大，因此在通常温度下不会被激发，不构成一个经典的二次自由度。因此，一个线性分子拥有 2 个[转动自由度](@keyword=rotational_degrees_of_freedom|lang=zh-CN|style=Feynman)。在室温（如 $293 \, \text{K}$）下，一个氮分子的平均[转动动能](@keyword=rotational_kinetic_energy|lang=zh-CN|style=Feynman)为 $\langle E_{\text{rot}} \rangle = 2 \times (\frac{1}{2}k_B T) = k_B T \approx 4.05 \times 10^{-21} \, \text{J}$ [@problem_id:1899307]。对于**[非线性分子](@keyword=non_linear_molecules|lang=zh-CN|style=Feynman)**，则存在 3 个转动轴，因此有 3 个[转动自由度](@keyword=rotational_degrees_of_freedom|lang=zh-CN|style=Feynman)，平均[转动动能](@keyword=rotational_kinetic_energy|lang=zh-CN|style=Feynman)为 $\frac{3}{2}k_B T$。
 
 #### 从平均能量到均方根速率
 
-能量均分定理提供的是平均能量，但我们常常更关心粒子的典型运动速率。这可以通过计算均方根（RMS）速率 $v_{\text{rms}}$ 来实现。根据平均动能的定义，我们有：
+[能量均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)提供的是平均能量，但我们常常更关心粒子的典型运动速率。这可以通过计算[均方根](@keyword=root_mean_square|lang=zh-CN|style=Feynman)（RMS）速率 $v_{\text{rms}}$ 来实现。根据平均动能的定义，我们有：
 
 $$
 \langle K \rangle = \left\langle \frac{1}{2}mv^2 \right\rangle = \frac{1}{2}m\langle v^2 \rangle = \frac{3}{2}k_B T
 $$
 
-由此解出均方速率 $\langle v^2 \rangle = \frac{3k_B T}{m}$，进而得到均方根速率：
+由此解出均方速率 $\langle v^2 \rangle = \frac{3k_B T}{m}$，进而得到[均方根](@keyword=root_mean_square|lang=zh-CN|style=Feynman)速率：
 
 $$
 v_{\text{rms}} = \sqrt{\langle v^2 \rangle} = \sqrt{\frac{3k_B T}{m}}
 $$
 
-这个关系式让我们能够估算各种极端环境下的粒子速率。例如，在星系团内部，存在温度高达 $10^8 \, \text{K}$ 的稀薄等离子体。其中一个自由电子的均方根速率可以被估算为 $v_{\text{rms}} = \sqrt{3(1.38 \times 10^{-23})(10^8) / (9.11 \times 10^{-31})} \approx 6.74 \times 10^7 \, \text{m/s}$，这个速度大约是光速的 22% [@problem_id:1899267]。
+这个关系式让我们能够估算各种极端环境下的粒子速率。例如，在星系团内部，存在温度高达 $10^8 \, \text{K}$ 的稀薄等离子体。其中一个自由电子的[均方根](@keyword=root_mean_square|lang=zh-CN|style=Feynman)速率可以被估算为 $v_{\text{rms}} = \sqrt{3(1.38 \times 10^{-23})(10^8) / (9.11 \times 10^{-31})} \approx 6.74 \times 10^7 \, \text{m/s}$，这个速度大约是光速的 22% [@problem_id:1899267]。
 
-### 势能与振动能量的均分
+### [势能](@keyword=energy_potential|lang=zh-CN|style=Feynman)与[振动能](@keyword=vibrational_energy|lang=zh-CN|style=Feynman)量的均分
 
-均分定理的威力不止于动能，它同样适用于形式为二次的势能。
+均分定理的威力不止于动能，它同样适用于形式为二次的[势能](@keyword=energy_potential|lang=zh-CN|style=Feynman)。
 
 #### 谐振子势能
 
-最典型的例子是简谐振动。一个粒子在谐振势 $U(x) = \frac{1}{2}\alpha x^2$ 中运动，其中 $x$ 是偏离平衡位置的位移，$\alpha$ 是“弹簧”的劲度系数。这个势能项是坐标 $x$ 的二次函数，因此构成一个二次自由度。在热平衡中，其平均势能为：
+最典型的例子是简谐[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。一个粒子在谐振势 $U(x) = \frac{1}{2}\alpha x^2$ 中运动，其中 $x$ 是偏离[平衡位置](@keyword=equilibrium_position|lang=zh-CN|style=Feynman)的位移，$\alpha$ 是“弹簧”的[劲度系数](@keyword=spring_constant|lang=zh-CN|style=Feynman)。这个[势能](@keyword=energy_potential|lang=zh-CN|style=Feynman)项是坐标 $x$ 的二次函数，因此构成一个二次自由度。在热平衡中，其平均势能为：
 
 $$
 \langle U \rangle = \frac{1}{2}k_B T
 $$
 
-这个原理在现代实验技术中有直接体现。例如，在光镊实验中，一个被激光束缚的原子，其在阱中心的势能可以很好地用谐振势近似。即使在微开尔文（$\mu\text{K}$）的超低温下，该原子依然会因热搅动而振动，其平均势能精确地遵循均分定理的预测 [@problem_id:1899319]。
+这个原理在现代实验技术中有直接体现。例如，在[光镊](@keyword=optical_tweezers|lang=zh-CN|style=Feynman)实验中，一个被[激光](@keyword=laser|lang=zh-CN|style=Feynman)束缚的原子，其在阱中心的势能可以很好地用谐振势近似。即使在微开尔文（$\mu\text{K}$）的超低温下，该原子依然会因热搅动而[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，其平均[势能](@keyword=energy_potential|lang=zh-CN|style=Feynman)精确地遵循[均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)的预测 [@problem_id:1899319]。
 
-#### 热噪声与均方根位移
+#### [热噪声](@keyword=thermal_noise|lang=zh-CN|style=Feynman)与[均方根位移](@keyword=root_mean_square_displacement|lang=zh-CN|style=Feynman)
 
-正如我们可以从平均动能计算均方根速率，我们也可以从平均势能计算均方根位移，这通常被称为热噪声。对于谐振子：
+正如我们可以从平均动能计算均方根速率，我们也可以从平均势能计算[均方根位移](@keyword=root_mean_square_displacement|lang=zh-CN|style=Feynman)，这通常被称为[热噪声](@keyword=thermal_noise|lang=zh-CN|style=Feynman)。对于谐振子：
 
 $$
 \langle U \rangle = \left\langle \frac{1}{2}\alpha x^2 \right\rangle = \frac{1}{2}\alpha \langle x^2 \rangle = \frac{1}{2}k_B T
 $$
 
-解出均方位移 $\langle x^2 \rangle = \frac{k_B T}{\alpha}$，其均方根位移为：
+解出均方位移 $\langle x^2 \rangle = \frac{k_B T}{\alpha}$，其[均方根位移](@keyword=root_mean_square_displacement|lang=zh-CN|style=Feynman)为：
 
 $$
 x_{\text{rms}} = \sqrt{\langle x^2 \rangle} = \sqrt{\frac{k_B T}{\alpha}}
 $$
 
-这个结果对于纳米技术和精密测量至关重要。例如，一个原子力显微镜（AFM）的悬臂或一个纳米机电谐振器，无论制造得多么精密，其在室温下总会存在由热能驱动的微小振动。这个振动的均方根振幅 $x_{\text{rms}}$ 代表了该仪器测量精度的基本物理极限 [@problem_id:1899252]。对于一个劲度系数为 $k=2.5 \, \text{N/m}$ 的谐振器，在 $300 \, \text{K}$ 室温下的热振动幅度约为 $0.0407 \, \text{nm}$，这是一个微小但可测量的数值。
+这个结果对于[纳米技术](@keyword=nanotechnology|lang=zh-CN|style=Feynman)和精密测量至关重要。例如，一个[原子力显微镜](@keyword=atomic_force_microscope|lang=zh-CN|style=Feynman)（AFM）的悬臂或一个纳米机电谐振器，无论制造得多么精密，其在室温下总会存在由热能驱动的微小[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。这个[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的[均方根](@keyword=root_mean_square|lang=zh-CN|style=Feynman)振幅 $x_{\text{rms}}$ 代表了该仪器[测量精度](@keyword=measurement_precision|lang=zh-CN|style=Feynman)的基本物理极限 [@problem_id:1899252]。对于一个劲度系数为 $k=2.5 \, \text{N/m}$ 的谐振器，在 $300 \, \text{K}$ 室温下的热[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)幅度约为 $0.0407 \, \text{nm}$，这是一个微小但可测量的数值。
 
-#### 振动总能量
+#### [振动](@keyword=oscillation|lang=zh-CN|style=Feynman)总能量
 
-一个完整的一维谐振子（如模拟分子内的化学键振动）同时拥有动能和势能，其哈密顿量为 $H = \frac{p^2}{2m} + \frac{1}{2}\alpha x^2$。它包含两个二次自由度：一个动能项和一个势能项。因此，一个一维谐振子的总平均能量是动能和势能贡献之和：
+一个完整的一维谐振子（如模拟分子内的[化学键](@keyword=chemical_bonding|lang=zh-CN|style=Feynman)[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)）同时拥有动能和势能，其[哈密顿量](@keyword=hamiltonian_function|lang=zh-CN|style=Feynman)为 $H = \frac{p^2}{2m} + \frac{1}{2}\alpha x^2$。它包含两个二次自由度：一个动能项和一个[势能](@keyword=energy_potential|lang=zh-CN|style=Feynman)项。因此，一个一维[谐振子](@keyword=harmonic_oscillator|lang=zh-CN|style=Feynman)的总平均能量是动能和势能贡献之和：
 
 $$
 \langle E_{\text{vib}} \rangle = \langle K \rangle + \langle U \rangle = \frac{1}{2}k_B T + \frac{1}{2}k_B T = k_B T
 $$
 
-这个结论可以推广到更复杂的系统。通过将系统的复杂运动分解为一系列独立的简正模式（normal modes），我们可以对每个模式应用均分定理。例如，一个简化的线性三原子分子模型，如果只考虑其在一维直线上的运动，它可以被分解为一个整体的平动模式和两个内部的振动模式。平动模式只有一个动能自由度，贡献 $\frac{1}{2}k_B T$。每个振动模式都是一个独立的谐振子，各自贡献 $k_B T$。因此，该分子在一维运动中的总平均能量为 $\langle E \rangle = \frac{1}{2}k_B T + 2 \times (k_B T) = \frac{5}{2}k_B T$ [@problem_id:1899288]。
+这个结论可以推广到更复杂的系统。通过将系统的复杂运动分解为一系列独立的简正模式（normal modes），我们可以对每个模式应用[均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)。例如，一个简化的[线性三原子分子](@keyword=linear_triatomic_molecule|lang=zh-CN|style=Feynman)模型，如果只考虑其在一维直线上的运动，它可以被分解为一个整体的平动模式和两个内部的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式。[平动](@keyword=translational_motion|lang=zh-CN|style=Feynman)模式只有一个动能自由度，贡献 $\frac{1}{2}k_B T$。每个[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式都是一个独立的谐振子，各自贡献 $k_B T$。因此，该分子在[一维运动](@keyword=one_dimensional_motion|lang=zh-CN|style=Feynman)中的总平均能量为 $\langle E \rangle = \frac{1}{2}k_B T + 2 \times (k_B T) = \frac{5}{2}k_B T$ [@problem_id:1899288]。
 
 ### 经典理论的边界：量子效应与自由度的“冻结”
 
@@ -105,7 +105,7 @@ $$
 
 #### 经典近似的失效
 
-均分定理的推导假设了能量可以连续变化。然而，量子力学告诉我们，被束缚的运动（如转动和振动）的能量是量子化的，即只能取分立的能级。经典近似成立的条件是，热能的典型尺度 $k_B T$ 远大于相邻量子能级之间的能量间隔 $\Delta E$。
+均分定理的推导假设了能量可以连续变化。然而，量子力学告诉我们，被束缚的运动（如转动和[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)）的能量是量子化的，即只能取分立的能级。经典近似成立的条件是，热能的典型尺度 $k_B T$ 远大于相邻[量子能级](@keyword=quantum_energy_levels|lang=zh-CN|style=Feynman)之间的能量间隔 $\Delta E$。
 
 $$
 k_B T \gg \Delta E
@@ -113,26 +113,26 @@ $$
 
 当温度降低，或能级间隔 $\Delta E$ 很大时，这个条件不再满足，均分定理的预测将出现严重偏差。
 
-#### 交叉温度
+#### [交叉温度](@keyword=crossover_temperature|lang=zh-CN|style=Feynman)
 
-我们可以定义一个“交叉”温度 $T_{\text{cross}}$，在该温度下，热能恰好与量子能级间隔相当，即 $k_B T_{\text{cross}} \approx \Delta E$。对于一个振动频率为 $\nu$ 的谐振子，其能级间隔为 $\Delta E = h\nu$（其中 $h$ 是普朗克常数）。因此，其振动的特征温度为：
+我们可以定义一个“交叉”温度 $T_{\text{cross}}$，在该温度下，热能恰好与[量子能级](@keyword=quantum_energy_levels|lang=zh-CN|style=Feynman)间隔相当，即 $k_B T_{\text{cross}} \approx \Delta E$。对于一个[振动频率](@keyword=vibrational_frequencies|lang=zh-CN|style=Feynman)为 $\nu$ 的[谐振子](@keyword=harmonic_oscillator|lang=zh-CN|style=Feynman)，其能级间隔为 $\Delta E = h\nu$（其中 $h$ 是[普朗克常数](@keyword=planck_s_constant|lang=zh-CN|style=Feynman)）。因此，其[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的特征温度为：
 
 $$
 T_{\text{vib}} = \frac{h\nu}{k_B}
 $$
 
-当系统温度 $T \gg T_{\text{vib}}$ 时，该振动模式的行为接近经典谐振子，其平均能量趋向于 $k_B T$。然而，当 $T \ll T_{\text{vib}}$ 时，绝大多数振子没有足够的热能从基态激发到第一激发态，该自由度对储能几乎没有贡献，我们称之为被**“冻结”（frozen out）**。例如，金刚石中碳原子的振动频率非常高（$\nu \approx 3.0 \times 10^{13} \, \text{Hz}$），其对应的特征温度高达 $T_{\text{vib}} \approx 1440 \, \text{K}$ [@problem_id:1899289]。这意味着在室温（约 $300 \, \text{K}$）下，金刚石的振动模式远未被完全激活，其行为是高度量子化的。
+当系统温度 $T \gg T_{\text{vib}}$ 时，该[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式的行为接近[经典谐振子](@keyword=classical_harmonic_oscillator|lang=zh-CN|style=Feynman)，其[平均能量](@keyword=average_energy|lang=zh-CN|style=Feynman)趋向于 $k_B T$。然而，当 $T \ll T_{\text{vib}}$ 时，绝大多数[振子](@keyword=oscillator|lang=zh-CN|style=Feynman)没有足够的热能从[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)激发到第一[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)，该自由度对[储能](@keyword=energy_storage|lang=zh-CN|style=Feynman)几乎没有贡献，我们称之为被**“冻结”（frozen out）**。例如，金刚石中碳原子的[振动频率](@keyword=vibrational_frequencies|lang=zh-CN|style=Feynman)非常高（$\nu \approx 3.0 \times 10^{13} \, \text{Hz}$），其对应的特征温度高达 $T_{\text{vib}} \approx 1440 \, \text{K}$ [@problem_id:1899289]。这意味着在室温（约 $300 \, \text{K}$）下，金刚石的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式远未被完全激活，其行为是高度量子化的。
 
-#### 对热容的影响
+#### 对[热容](@keyword=heat_capacity|lang=zh-CN|style=Feynman)的影响
 
-自由度的“冻结”最显著地体现在固体的热容上。根据经典均分定理，一个由 $N$ 个原子组成的固体，每个原子在三维空间中振动，可以看作 $3N$ 个一维谐振子。每个谐振子贡献 $k_B T$ 的平均能量，总能量 $U = 3N k_B T$。因此，摩尔热容 $C_{V,m}$ 应该是 $3N_A k_B = 3R \approx 24.9 \, \text{J/(mol·K)}$（杜隆-珀蒂定律）。这在高温下对于许多金属是很好的近似。
+自由度的“冻结”最显著地体现在[固体的热容](@keyword=heat_capacity_of_solids|lang=zh-CN|style=Feynman)上。根据经典均分定理，一个由 $N$ 个原子组成的固体，每个原子在三维空间中[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，可以看作 $3N$ 个一维[谐振子](@keyword=harmonic_oscillator|lang=zh-CN|style=Feynman)。每个谐振子贡献 $k_B T$ 的平均能量，总能量 $U = 3N k_B T$。因此，[摩尔热容](@keyword=molar_heat_capacity|lang=zh-CN|style=Feynman) $C_{V,m}$ 应该是 $3N_A k_B = 3R \approx 24.9 \, \mathrm{J/(mol\cdot K)}$（[杜隆-珀蒂定律](@keyword=law_of_dulong_and_petit|lang=zh-CN|style=Feynman)）。这在高温下对于许多金属是很好的近似。
 
-然而，在室温及低温下，这个预测完全失败。量子力学给出了更精确的描述 [@problem_id:2673962]。对于一个振动模式，其对热容的贡献（每摩尔）不是一个常数 $R$，而是依赖于温度的函数：
+然而，在室温及低温下，这个预测完全失败。量子力学给出了更精确的描述 [@problem_id:2673962]。对于一个[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式，其对热容的贡献（每摩尔）不是一个常数 $R$，而是依赖于温度的函数：
 
 $$
 C_{V,m,\text{vib}} = R \left( \frac{\hbar\omega}{k_B T} \right)^2 \frac{\exp(\hbar\omega/k_B T)}{(\exp(\hbar\omega/k_B T) - 1)^2}
 $$
 
-其中 $\omega=2\pi\nu$ 是振动的角频率。这个表达式在高温极限（$k_B T \gg \hbar\omega$）下趋近于 $R$，与经典结果一致。但在低温极限（$k_B T \ll \hbar\omega$）下，它会指数级地趋向于 0，完美地描述了自由度的“冻结”现象。对于大多数分子，其振动频率对应的 $\hbar\omega$ 远大于室温下的 $k_B T$。因此，经典均分定理会系统性地高估分子的振动热容，因为在现实中，许多振动模式在室温下仍处于“冻结”或部分冻结的状态 [@problem_id:2673962]。
+其中 $\omega=2\pi\nu$ 是[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的[角频率](@keyword=break_frequency|lang=zh-CN|style=Feynman)。这个表达式在高温极限（$k_B T \gg \hbar\omega$）下趋近于 $R$，与经典结果一致。但在低温极限（$k_B T \ll \hbar\omega$）下，它会指数级地趋向于 0，完美地描述了自由度的“冻结”现象。对于大多数分子，其[振动频率](@keyword=vibrational_frequencies|lang=zh-CN|style=Feynman)对应的 $\hbar\omega$ 远大于室温下的 $k_B T$。因此，经典[均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)会系统性地高估分子的[振动热容](@keyword=vibrational_heat_capacity|lang=zh-CN|style=Feynman)，因为在现实中，许多[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式在室温下仍处于“冻结”或部分冻结的状态 [@problem_id:2673962]。
 
-综上所述，能量均分定理是估算高温或低频系统中能量分布的有力工具。然而，要正确应用它，必须时刻警惕其经典本质，并通过比较 $k_B T$ 和 $\Delta E$ 来判断其有效性，从而决定何时必须转向更为根本的量子统计描述。
+综上所述，[能量均分定理](@keyword=equipartition_theorem|lang=zh-CN|style=Feynman)是估算高温或低频系统中能量[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)的有力工具。然而，要正确应用它，必须时刻警惕其经典本质，并通过比较 $k_B T$ 和 $\Delta E$ 来判断其有效性，从而决定何时必须转向更为根本的量子统计描述。

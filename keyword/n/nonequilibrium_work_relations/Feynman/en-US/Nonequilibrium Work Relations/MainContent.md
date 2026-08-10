@@ -59,7 +59,7 @@ We can derive the Jarzynski equality directly from the Crooks theorem with just 
 
 ### Transient Miracles and the Second Law
 
-The Crooks theorem has a startling consequence. What happens if we observe a work value $W$ that is *less* than $\Delta F$? The theorem still holds, but now the ratio $P_F(W) / P_R(-W)$ is less than 1. This means that such an event is more likely to happen in the reverse process than the forward one. More importantly, it means that events where $W &lt; \Delta F$ can and do happen! These are sometimes called "transient violations" of the Second Law.
+The Crooks theorem has a startling consequence. What happens if we observe a work value $W$ that is *less* than $\Delta F$? The theorem still holds, but now the ratio $P_F(W) / P_R(-W)$ is less than 1. This means that such an event is more likely to happen in the reverse process than the forward one. More importantly, it means that events where $W < \Delta F$ can and do happen! These are sometimes called "transient violations" of the Second Law.
 
 This might seem like a heresy, but it's not. The Second Law, $\langle W \rangle \ge \Delta F$, is a statement about the *average* work. These theorems reveal the rich statistical structure underneath. Individual realizations can fluctuate, and some lucky trajectories can, by chance, find a particularly easy path, requiring less work than the equilibrium free energy difference.
 

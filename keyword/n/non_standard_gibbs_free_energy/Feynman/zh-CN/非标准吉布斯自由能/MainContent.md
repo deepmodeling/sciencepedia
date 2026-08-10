@@ -59,7 +59,7 @@ $\Delta G$ 是真正的、局部的、瞬时的驱动力。它回答了这样一
 
 考虑一个细胞内的生物反应，比如底物X异构化为产物Y，这个反应有一个不利的 $\Delta G^{\circ'}$，值为 $+7.50 \text{ kJ/mol}$ [@problem_id:2065017]。从理论上看，这像是一场艰苦的战斗。但在一个活细胞中，这个反应只是漫长代谢[流水线](@keyword=pipelining|lang=zh-CN|style=Feynman)中的一步。一旦一个Y分子形成，另一个酶就会立即将其夺走用于下一步反应。这使得Y的浓度保持在极低的水平。在给定的情景中，我们有 $[X] = 68.0 \text{ µM}$ 和 $[Y] = 1.20 \text{ µM}$。
 
-[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman)是 $Q = [Y]/[X] = 1.20/68.0 \approx 0.0176$。这是一个远小于1的数。其对数 $\ln(0.0176)$ 大约为 $-4.04$。在体温下，修正项 $RT \ln Q$ 大约变为 $(8.314 \times 10^{-3} \text{ kJ/mol·K})(298.15 \text{ K})(-4.04) \approx -10.0 \text{ kJ/mol}$。
+[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman)是 $Q = [Y]/[X] = 1.20/68.0 \approx 0.0176$。这是一个远小于1的数。其对数 $\ln(0.0176)$ 大约为 $-4.04$。在体温下，修正项 $RT \ln Q$ 大约变为 $(8.314 \times 10^{-3} \mathrm{kJ/mol\cdot K})(298.15 \text{ K})(-4.04) \approx -10.0 \text{ kJ/mol}$。
 
 现在我们来计算真正的驱动力：
 $$ \Delta G = \Delta G^{\circ'} + RT \ln Q \approx +7.50 \text{ kJ/mol} - 10.0 \text{ kJ/mol} = -2.5 \text{ kJ/mol} $$

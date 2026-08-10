@@ -56,22 +56,22 @@ $$
 
 现在，我们面临一个终极问题：一个处处局部可解的挠子，是否一定全局可解（即在 $\mathbb{Q}$ 上有理点）？换句话说，如果一个方程在实数上和在每一个 $p$-进数上都有解，它是否一定有有理数解？这就是著名的**[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)**。遗憾的是，对于椭圆曲线，答案是否定的。
 
-度量这种[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)失效程度的“度量衡”，正是大名鼎鼎的**[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman)**（Tate-Shafarevich 群），记为 $\Sha(E/\mathbb{Q})$。它的元素恰好就对应那些“幽灵”般的挠子：它们处处局部可解，但在全局上却一个[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)也找不到。
+度量这种[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)失效程度的“度量衡”，正是大名鼎鼎的**[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman)**（Tate-Shafarevich 群），记为 $\mathrm{Ш}(E/\mathbb{Q})$。它的元素恰好就对应那些“幽灵”般的挠子：它们处处局部可解，但在全局上却一个[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)也找不到。
 
 所有这些概念最终汇集到一条被称为**算术基本短正合列**的公式中 [@problem_id:3022286] [@problem_id:3022326]：
 $$
-0 \longrightarrow E(\mathbb{Q})/mE(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(m)}(E/\mathbb{Q}) \longrightarrow \Sha(E/\mathbb{Q})[m] \longrightarrow 0
+0 \longrightarrow E(\mathbb{Q})/mE(\mathbb{Q}) \longrightarrow \mathrm{Sel}^{(m)}(E/\mathbb{Q}) \longrightarrow \mathrm{Ш}(E/\mathbb{Q})[m] \longrightarrow 0
 $$
 这条公式如同一部戏剧，上演了我们迄今为止遇到的所有角色：
 - $E(\mathbb{Q})/mE(\mathbb{Q})$：来自**全局[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)**的贡献，对应着那些有[全局解](@keyword=global_solution|lang=zh-CN|style=Feynman)的挠子。
 - $\mathrm{Sel}^{(m)}(E/\mathbb{Q})$：所有**处处局部可解**的挠子构成的有限群。
-- $\Sha(E/\mathbb{Q})[m]$：两者之差，即那些作为[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)反例的**“幽灵”挠子**。
+- $\mathrm{Ш}(E/\mathbb{Q})[m]$：两者之差，即那些作为[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)反例的**“幽灵”挠子**。
 
-这个正合列告诉我们，有限的[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)包含了关于[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)群（通过商群 $E(\mathbb{Q})/mE(\mathbb{Q})$）和关于[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)失效（通过 $\Sha$ 群）的全部信息。计算[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小，就成了计算[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)秩的核心步骤。
+这个正合列告诉我们，有限的[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)包含了关于[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)群（通过商群 $E(\mathbb{Q})/mE(\mathbb{Q})$）和关于[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)失效（通过 $\mathrm{Ш}$ 群）的全部信息。计算[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小，就成了计算[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)秩的核心步骤。
 
 ### 伟大的统一：Birch 与 Swinnerton-Dyer 猜想
 
-我们已经构建了一套精巧复杂的算术理论，其中包含了[代数秩](@keyword=algebraic_rank|lang=zh-CN|style=Feynman) $r$、挠率[子群](@keyword=subgroup|lang=zh-CN|style=Feynman) $T$、[典范高](@keyword=canonical_height|lang=zh-CN|style=Feynman)导出的“体积”——正规子 $\mathrm{Reg}(E)$、局部信息汇总的 Tamagawa 数 $c_p$，以及神秘的 Tate-Shafarevich 群 $\Sha$。这些对象共同描绘了一幅关于[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)上[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)分布的深刻画卷。
+我们已经构建了一套精巧复杂的算术理论，其中包含了[代数秩](@keyword=algebraic_rank|lang=zh-CN|style=Feynman) $r$、挠率[子群](@keyword=subgroup|lang=zh-CN|style=Feynman) $T$、[典范高](@keyword=canonical_height|lang=zh-CN|style=Feynman)导出的“体积”——正规子 $\mathrm{Reg}(E)$、局部信息汇总的 Tamagawa 数 $c_p$，以及神秘的 Tate-Shafarevich 群 $\mathrm{Ш}$。这些对象共同描绘了一幅关于[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)上[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)分布的深刻画卷。
 
 现在，让我们把目光投向一个完全不同的领域：复分析。每条[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman) $E$ 都伴随着一个特殊的函数，称为它的 **Hasse-Weil L-函数**，$L(E,s)$。它由曲线在所有有限域上的点数信息编码而成。
 
@@ -83,8 +83,8 @@ $$
     $$
 2.  **首项系数部分：** $L(E,s)$ 在 $s=1$ 处泰勒展开的首项系数，由一个包含所有算术[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)的优美公式给出：
     $$
-    \frac{L^{(r)}(E,1)}{r!} = \frac{\#\Sha(E/\mathbb{Q}) \cdot \mathrm{Reg}(E) \cdot \Omega_E \cdot \prod_{p} c_p}{\#E(\mathbb{Q})_{\mathrm{tors}}^2}
+    \frac{L^{(r)}(E,1)}{r!} = \frac{\#\mathrm{Ш}(E/\mathbb{Q}) \cdot \mathrm{Reg}(E) \cdot \Omega_E \cdot \prod_{p} c_p}{\#E(\mathbb{Q})_{\mathrm{tors}}^2}
     $$
     其中 $\Omega_E$ 是与曲线在实数域上积分相关的实周期。
 
-这个猜想如同一座宏伟的桥梁，横跨了代数、几何与分析三大领域。它告诉我们，一个解析函数的局部行为（在 $s=1$ 点的性质），竟然精确地编码了[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)全部的核心算术信息——从群的无限部分的秩，到有限部分的挠率，再到衡量[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)失效的 $\Sha$ 群的大小。BSD 猜想被认为是21世纪最重要的数学问题之一，它所揭示的深刻统一性，至今仍在激励着一代又一代的数学家去探索数论世界中最美丽的奥秘。
+这个猜想如同一座宏伟的桥梁，横跨了代数、几何与分析三大领域。它告诉我们，一个解析函数的局部行为（在 $s=1$ 点的性质），竟然精确地编码了[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)全部的核心算术信息——从群的无限部分的秩，到有限部分的挠率，再到衡量[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)失效的 $\mathrm{Ш}$ 群的大小。BSD 猜想被认为是21世纪最重要的数学问题之一，它所揭示的深刻统一性，至今仍在激励着一代又一代的数学家去探索数论世界中最美丽的奥秘。

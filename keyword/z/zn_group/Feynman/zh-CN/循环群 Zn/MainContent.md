@@ -31,7 +31,7 @@
 
 也许最著名和最美丽的同态是连接我们抽象的钟表算术与圆的几何形状的那个。考虑 $n$ 次单位根群 $C_n$，它们是满足 $z^n = 1$ 的复数 $z$。这些数构成一个[乘法群](@keyword=multiplicative_group|lang=zh-CN|style=Feynman)，它们位于[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)的[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)上，像时钟上的小时一样完美地隔开。由
 $$ \phi([k]) = \exp\left(\frac{2\pi i k}{n}\right) $$
-定义的映射 $\phi: \mathbb{Z}_n \to C_n$ 是一个**同构**——一个完美的、一一对应的[同态](@keyword=homomorphism|lang=zh-CN|style=Feynman)。它表明[加法群](@keyword=additive_group|lang=zh-CN|style=Feynman) $\mathbb{Z}_n$ 和乘法群 $C_n$ 从抽象的角度来看，是*完全相同的结构*。在 $\mathbbZ_n$ 中进行数字加法，对应于在 $C_n$ 中进行[复数乘法](@keyword=complex_multiplication|lang=zh-CN|style=Feynman)（从而旋转点）[@problem_id:1626966]。
+定义的映射 $\phi: \mathbb{Z}_n \to C_n$ 是一个**同构**——一个完美的、一一对应的[同态](@keyword=homomorphism|lang=zh-CN|style=Feynman)。它表明[加法群](@keyword=additive_group|lang=zh-CN|style=Feynman) $\mathbb{Z}_n$ 和乘法群 $C_n$ 从抽象的角度来看，是*完全相同的结构*。在 $\mathbb{Z}_n$ 中进行数字加法，对应于在 $C_n$ 中进行[复数乘法](@keyword=complex_multiplication|lang=zh-CN|style=Feynman)（从而旋转点）[@problem_id:1626966]。
 
 那么反过来呢？给定圆上的一个点，比如 $z = \exp(i\theta)$，我们如何找到它对应的“小时” $k$？我们需要找到 $k$ 使得 $\theta = \frac{2\pi k}{n}$。这是一个简单的代数问题：$k = \frac{n \theta}{2\pi}$。所以，我们可以通过取复数的辐角来定义一个逆映射。但是哪个辐角呢？一个点的辐角可以写成 $\theta$，或 $\theta+2\pi$，或 $\theta-2\pi$，等等。这里发生了一件有趣的事情。假设我们将辐角 $\arg(z)$ 定义在区间 $[0, 2\pi)$ 内。那么映射 $\psi_1(z) = [ \frac{n \cdot \arg(z)}{2\pi} ]$ 完美地工作。但是如果我们使用[主辐角](@keyword=principal_argument|lang=zh-CN|style=Feynman) $\operatorname{Arg}(z)$，它位于 $(-\pi, \pi]$ 内呢？映射 $\psi_2(z) = [ \frac{n \cdot \operatorname{Arg}(z)}{2\pi} ]$ *也*完美地工作！对于某些点，括号内的公式可能会给出 $k-n$ 而不是 $k$，但在 $\mathbb{Z}_n$ 的世界里，$[k-n]$ 与 $[k]$ 是完全相同的元素。模运算，即 $\mathbb{Z}_n$ 的核心，优雅地解决了圆上角度的模糊性 [@problem_id:1806814]。
 
@@ -55,6 +55,6 @@ $$ \text{Hom}_{\mathbb{Z}}(\mathbb{Z}_n, \mathbb{Z}_m) \cong \mathbb{Z}_{\gcd(n,
 
 我们已经探索了 $\mathbb{Z}_n$ 的内部结构及其与其他群的关系。但是群本身的对称性呢？一个**[自同构](@keyword=automorphisms|lang=zh-CN|style=Feynman)**是从一个群到自身的同构——一种在保持整个结构的同时重新标记元素的方式。对于 $\mathbb{Z}_n$，一个自同构就是乘以一个生成元，即 $\phi_k(x) = kx$ 其中 $\gcd(k, n) = 1$。所有这些[自同构](@keyword=automorphisms|lang=zh-CN|style=Feynman)在[函数复合](@keyword=function_composition|lang=zh-CN|style=Feynman)下构成一个群，称为 $\text{Aut}(\mathbb{Z}_n)$。这个[群同构](@keyword=group_isomorphism|lang=zh-CN|style=Feynman)于整数模 $n$ 的乘法群 $(\mathbb{Z}/n\mathbb{Z})^\times$。
 
-这个由我们原始群的对称性构建的新群，有其自己的生命。它并不总是循环的。例如，$\text{Aut}(\mathbb{Z}_8) \cong (\mathbb{Z}/8\mathbb{Z})^\times = \{1, 3, 5, 7\}$ 不是循环的。那么，什么时候一个简单时钟的对称性群本身是一个简单时钟呢？答案是来自数论的一个深刻结果：$\text{Aut}(\mathbbZ_n)$ 是循环的，当且仅当 $n$ 是 1, 2, 4, $p^k$, 或 $2p^k$，其中 $p$ 是一个奇素数且 $k \ge 1$ [@problem_id:1785680]。
+这个由我们原始群的对称性构建的新群，有其自己的生命。它并不总是循环的。例如，$\text{Aut}(\mathbb{Z}_8) \cong (\mathbb{Z}/8\mathbb{Z})^\times = \{1, 3, 5, 7\}$ 不是循环的。那么，什么时候一个简单时钟的对称性群本身是一个简单时钟呢？答案是来自数论的一个深刻结果：$\text{Aut}(\mathbb{Z}_n)$ 是循环的，当且仅当 $n$ 是 1, 2, 4, $p^k$, 或 $2p^k$，其中 $p$ 是一个奇素数且 $k \ge 1$ [@problem_id:1785680]。
 
 从一个循环往复的时钟这个谦卑的想法出发，我们穿越了生成元、[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)、到其他世界的映射，甚至是对称性本身的对称性。群 $\mathbb{Z}_n$ 是[抽象代数](@keyword=abstract_algebra|lang=zh-CN|style=Feynman)世界的一个缩影，在这里，我们熟悉的整数算术规则产生了具有深刻优雅和惊人复杂性的结构。它告诉我们，有时，最简单的事物蕴含着最美丽的秘密。

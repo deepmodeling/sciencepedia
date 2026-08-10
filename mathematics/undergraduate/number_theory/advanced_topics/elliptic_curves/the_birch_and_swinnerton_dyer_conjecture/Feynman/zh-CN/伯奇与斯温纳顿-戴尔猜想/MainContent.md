@@ -84,7 +84,7 @@ $$
 BSD 猜想的雄心不止于此。它还对 L-函数在 $s=1$ 处的泰勒展开的首项系数给出了一个精确的预测公式：
 
 $$
-\lim_{s\to 1}\frac{L(E,s)}{(s-1)^{r}} = \frac{\Omega_E \cdot R_E \cdot \#\Sha(E) \cdot \prod_p c_p}{(\#T)^2}
+\lim_{s\to 1}\frac{L(E,s)}{(s-1)^{r}} = \frac{\Omega_E \cdot R_E \cdot \#\mathrm{Ш}(E) \cdot \prod_p c_p}{(\#T)^2}
 $$
 
 这个公式[@problem_id:3090217]中的每一个符号都代表着[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的一个深刻的算术[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)[@problem_id:3090299]：
@@ -92,8 +92,8 @@ $$
 - $R_E$ 是**正则子 (regulator)**，衡量无限多个[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)生成的格子的“体积”或“密度”。
 - $\prod c_p$ 是**玉河数 (Tamagawa numbers)** 的乘积，是对那些“坏”素数进行的修正。
 - $\#T$ 是[挠子群](@keyword=torsion_subgroup|lang=zh-CN|style=Feynman)的大小，即有限阶有理点的个数。
-- 最后，也是最神秘的，是**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) (Tate-Shafarevich group)** $\Sha(E)$ 的阶 $\#\Sha(E)$。
+- 最后，也是最神秘的，是**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) (Tate-Shafarevich group)** $\mathrm{Ш}(E)$ 的阶 $\#\mathrm{Ш}(E)$。
 
-$\Sha(E)$ 群衡量了一种所谓“[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)”的失效程度。它的元素可以被看作是与原曲线相关的“幽灵方程”——这些方程在每一个局部[数域](@keyword=number_fields|lang=zh-CN|style=Feynman)（实数和所有 $p$-进数）中都有解，但却没有任何一个全局的有理数解 [@problem_id:3090222]。BSD 猜想的公式要求 $\#\Sha(E)$ 必须是一个有限的数，但这本身就是一个非常困难的猜想，即**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)有限性猜想**。
+$\mathrm{Ш}(E)$ 群衡量了一种所谓“[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)”的失效程度。它的元素可以被看作是与原曲线相关的“幽灵方程”——这些方程在每一个局部[数域](@keyword=number_fields|lang=zh-CN|style=Feynman)（实数和所有 $p$-进数）中都有解，但却没有任何一个全局的有理数解 [@problem_id:3090222]。BSD 猜想的公式要求 $\#\mathrm{Ш}(E)$ 必须是一个有限的数，但这本身就是一个非常困难的猜想，即**[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)有限性猜想**。
 
 就这样，从一个简单的三次方程出发，我们踏上了一段跨越代数与分析的壮丽旅程。BSD 猜想如同一座灯塔，不仅指引着数论学家探索的方向，更揭示了数学世界中不同分支之间令人叹为观止的内在统一与和谐之美。

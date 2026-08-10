@@ -30,13 +30,13 @@ Gross-Zagier 定理是连接这个点与L-函数的魔法。它指出，这个�
 
 Kolyvagin 将此系统用作一种威力无穷的工具。通过研究这些点在模各种素数时投下的“影子”，他构造了一组“[导数](@keyword=derivative|lang=zh-CN|style=Feynman)上同调类”。这些类就像一张代数之网，捕获了[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)——一个包含并控制着莫德尔-韦伊群的对象。这个复杂过程的结果是一个*上限*：Kolyvagin 证明了 $E(\mathbb{Q})$ 的[代数秩](@keyword=algebraic_rank|lang=zh-CN|style=Feynman)*最多*为一。
 
-故事的高潮就在眼前。Gross-Zagier 定理告诉我们秩至少为一。Kolyvagin 的定理告诉我们秩最多为一。唯一剩下的可能性就是[代数秩](@keyword=algebraic_rank|lang=zh-CN|style=Feynman)*恰好*为一。BSD猜想的一个情形首次得到了证明。作为一个惊人的附加成果，Kolyvagin 的方法还证明了神秘的[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman) ($\Sha$) 是有限的，该群衡量了曲线上某种[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)的失效程度。
+故事的高潮就在眼前。Gross-Zagier 定理告诉我们秩至少为一。Kolyvagin 的定理告诉我们秩最多为一。唯一剩下的可能性就是[代数秩](@keyword=algebraic_rank|lang=zh-CN|style=Feynman)*恰好*为一。BSD猜想的一个情形首次得到了证明。作为一个惊人的附加成果，Kolyvagin 的方法还证明了神秘的[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman) ($\mathrm{Ш}$) 是有限的，该群衡量了曲线上某种[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)的失效程度。
 
 一个类似但技术上不同的论证，也利用科雷瓦金系统适用于[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为零的曲线（其中 $L(E,1) \neq 0$），证明了它们的[代数秩](@keyword=algebraic_rank|lang=zh-CN|style=Feynman)为零，意味着它们只有有限个[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)——再次，与BSD的预测完全一致。
 
 ### 超越秩：主公式一瞥
 
-BSD猜想的雄心甚至不止于预测秩。它还预测了L-函数首项系数的精确值。对于一个秩为一的曲线，它声称 $L'(E,1)$ 应等于一个由深层算术[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)组成的特定乘积：曲线的实周期、正则子（生成元的高度）、$\Sha$ [群的阶](@keyword=order_of_a_group|lang=zh-CN|style=Feynman)，以及其他局部因子。
+BSD猜想的雄心甚至不止于预测秩。它还预测了L-函数首项系数的精确值。对于一个秩为一的曲线，它声称 $L'(E,1)$ 应等于一个由深层算术[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)组成的特定乘积：曲线的实周期、正则子（生成元的高度）、$\mathrm{Ш}$ [群的阶](@keyword=order_of_a_group|lang=zh-CN|style=Feynman)，以及其他局部因子。
 
 Gross-Zagier-Kolyvagin 的机制已极其接近证明这个完整的公式。通过仔细追踪所有的比例常数，可以证明解析首项 $L'(E,1)$ 与算术预测值的商不一定是 $1$，但总是一个有理数的平方。这证明了BSD公式在“差一个有理数平方”的意义下成立。这就像测量一个自然界的基本常数并得到了正确的值，只是差了一个已知是完全平方数的校准因子。这个结果为BSD猜想的精确形式提供了第一个巨大的证据。
 

@@ -31,7 +31,7 @@ A robust subgrid model must include a set of criteria to identify gas that is ph
 
 The most fundamental criterion is a **density threshold**. Star formation is restricted to gas with a density $\rho$ exceeding a threshold $\rho_{\mathrm{th}}$ (or, equivalently, a number density $n_{\mathrm{H}} > n_{\mathrm{th}}$). A physically motivated way to set this threshold is to tie it directly to the simulation's resolution limit. By inverting the Jeans resolution criterion, we can define the threshold as the density at which the Jeans length becomes unresolved. For instance, we can require that star formation is triggered when the local Jeans length drops below a few grid cells, $\lambda_J  N_J \Delta x$. Solving for density, this yields a resolution-dependent threshold [@problem_id:3491889]:
 
-$$ \rho_{\mathrm{th}} = \frac{\pi k_{\mathrmB} T}{G \mu m_{\mathrmp} (N_{\mathrmJ}\Delta x)^2} $$
+$$ \rho_{\mathrm{th}} = \frac{\pi k_{\mathrm{B}} T}{G \mu m_{\mathrm{p}} (N_{\mathrm{J}}\Delta x)^2} $$
 
 This approach ensures that the subgrid model activates precisely where the simulation loses its ability to follow the collapse physically.
 

@@ -61,7 +61,7 @@ The **Molecular-Kinetic Theory of Wetting** offers a completely different, and e
 
 At equilibrium, when the [contact angle](@keyword=contact_angle|lang=en-US|style=Feynman) is at its static value $\theta_{e}$, the rates of forward and backward hopping are perfectly balanced. Now, if we try to push the liquid forward, the [dynamic contact angle](@keyword=dynamic_contact_angle|lang=en-US|style=Feynman) $\theta$ becomes larger than $\theta_{e}$. This creates an unbalanced thermodynamic force, making it slightly more favorable for molecules to hop forward into "dry" territory than to hop backward. The net result is a drift, a macroscopic velocity $U$. This theory directly connects the contact line speed to the temperature and the molecular-scale parameters of the system, like the jump frequency $k_0$ and jump length $\lambda$:
 $$
-\theta = \arccos\left(\cos\theta_{e} - \frac{2 n_{\ell} k_{B} T}{\gamma \lambda} \arcsinh\left(\frac{U}{2 \lambda k_{0}}\right)\right)
+\theta = \arccos\left(\cos\theta_{e} - \frac{2 n_{\ell} k_{B} T}{\gamma \lambda} \operatorname{arcsinh}\left(\frac{U}{2 \lambda k_{0}}\right)\right)
 $$
 This model provides a physical basis for the concept of **line friction**, where energy is dissipated directly at the one-dimensional contact line itself, rather than just in the bulk three-dimensional fluid. Some models phenomenologically combine both effects, attributing dissipation to both the viscous wedge and this localized line friction [@problem_id:4084753].
 

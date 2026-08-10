@@ -71,7 +71,7 @@ $$
 
 最后，我们使用那个神奇的公式。我们令 $y=x$ 得到对角线 $K(x,x)$，然后求它的导数。结果就是势本身：
 $$
-V(x) = -2\kappa^2 \sech^2(\kappa(x - x_0))
+V(x) = -2\kappa^2 \operatorname{sech}^2(\kappa(x - x_0))
 $$
 这是著名的“sech平方”[势阱](@keyword=potential_energy_well|lang=zh-CN|style=Feynman)，一个美丽的、对称的谷形。势的深度和形状由能量参数 $\kappa$ 决定，而它的位置 $x_0$ 由[归一化常数](@keyword=normalizing_constant|lang=zh-CN|style=Feynman) $C$ 设定。从一个单一束缚态的抽象知识，马尔琴科机器完美地重构了造成它的整个[势阱](@keyword=potential_energy_well|lang=zh-CN|style=Feynman)的形状。这展示了该理论深刻的力量和统一性。
 

@@ -21,7 +21,7 @@ $$
 
 这正是 X 射线（一种[电磁波](@keyword=electromagnetic_waves|lang=zh-CN|style=Feynman)）照射晶体时发生的衍射现象！晶体中[排列](@keyword=permutation|lang=zh-CN|style=Feynman)整齐的原子，就像一个微型衍射光栅，电子波在这些原子上散射，然后相互干涉。在某些方向上，波峰与波峰相遇，形成相长干涉（强度极大值）；在另一些方向上，波峰与波谷相遇，形成[相消干涉](@keyword=destructive_interference|lang=zh-CN|style=Feynman)（强度极小值）。Davisson-Germer 实验雄辩地证明了：电子，这种我们一直认为是微小台球的粒子，确实具有波动性。
 
-你可能会问：如果电子是波，那为什么我看不见一个棒球在空中飞过时发生衍射呢？为什么我们自己走路时不会像波一样穿过门框？[德布罗意方程](@keyword=de_broglie_equation|lang=zh-CN|style=Feynman)给出了答案。让我们来做一个简单的计算。一个质量为 $1500 \, \text{kg}$ 的汽车以 $25 \, \text{m/s}$（约 $90 \, \text{km/h}$）的速度行驶，它的动量 $p = mv$ 非常大。根据 $\lambda = h/p$，由于普朗克常数 $h$ 是一个极小的值（约 $6.626 \times 10^{-34} \, \text{J·s}$），这辆车的[德布罗意波长](@keyword=de_broglie_wavelength|lang=zh-CN|style=Feynman)会小到无法想象的程度，比一个原子核还要小得多。要观察到波的效应，波长必须与障碍物或孔径的尺寸相当。对于宏观物体来说，它们的波长实在太短，以至于波动性完全无法被察觉 [@2048003]。
+你可能会问：如果电子是波，那为什么我看不见一个棒球在空中飞过时发生衍射呢？为什么我们自己走路时不会像波一样穿过门框？[德布罗意方程](@keyword=de_broglie_equation|lang=zh-CN|style=Feynman)给出了答案。让我们来做一个简单的计算。一个质量为 $1500 \, \text{kg}$ 的汽车以 $25 \, \text{m/s}$（约 $90 \, \text{km/h}$）的速度行驶，它的动量 $p = mv$ 非常大。根据 $\lambda = h/p$，由于普朗克常数 $h$ 是一个极小的值（约 $6.626 \times 10^{-34} \, \mathrm{J\cdot s}$），这辆车的[德布罗意波长](@keyword=de_broglie_wavelength|lang=zh-CN|style=Feynman)会小到无法想象的程度，比一个原子核还要小得多。要观察到波的效应，波长必须与障碍物或孔径的尺寸相当。对于宏观物体来说，它们的波长实在太短，以至于波动性完全无法被察觉 [@2048003]。
 
 然而，在微观世界里，情况就完全不同了。一个电子的质量极小，即使以很高的速度运动，它的波长也正好与晶体中的原子间距相当。这使得[中子衍射](@keyword=neutron_diffraction|lang=zh-CN|style=Feynman)和电子显微镜等技术成为可能，科学家们正是利用[物质波](@keyword=matter_wave_2|lang=zh-CN|style=Feynman)来“看清”材料的原子结构。
 

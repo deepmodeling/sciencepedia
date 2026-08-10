@@ -41,7 +41,7 @@ $$
 
 虽然球状系统是一个很好的起点，但包括我们银河系在内的许多星系都是壮丽的扁平盘状结构。这里的物理学更加丰富。
 
-首先，考虑垂直方向。是什么阻止了银河系的盘面坍缩成一个无限薄的薄片？再一次，是恒星的随机运动，这次是垂直于银道面的方向。通过测量太阳附近恒星的密度和垂直速度弥散，我们可以使用垂直[金斯方程](@keyword=jeans_equation|lang=zh-CN|style=Feynman)来确定它们受到的总引力。这反过来告诉我们我们盘面局部区域的总质量。这个经典的实验，最早由 Jan Oort 构思，使我们能够称量我们自己的银河系邻域并确定[暗物质](@keyword=dark_matter|lang=zh-CN|style=Feynman)的局部密度[@problem_id:212182]。在一些理想化的情况下，比如在一个所有恒星都具有相同“温度”（等温）的盘中，[自引力](@keyword=self_gravity|lang=zh-CN|style=Feynman)与速度弥散之间的平衡会产生一个特定的、优雅的垂直[密度剖面](@keyword=density_profile|lang=zh-CN|style=Feynman)，$\rho(z) \propto \sech^2(z/z_0)$，这是[金斯方程](@keyword=jeans_equation|lang=zh-CN|style=Feynman)和[泊松方程](@keyword=poisson_s_equation|lang=zh-CN|style=Feynman)相互作用产生的直接预测[@problem_id:320055]。
+首先，考虑垂直方向。是什么阻止了银河系的盘面坍缩成一个无限薄的薄片？再一次，是恒星的随机运动，这次是垂直于银道面的方向。通过测量太阳附近恒星的密度和垂直速度弥散，我们可以使用垂直[金斯方程](@keyword=jeans_equation|lang=zh-CN|style=Feynman)来确定它们受到的总引力。这反过来告诉我们我们盘面局部区域的总质量。这个经典的实验，最早由 Jan Oort 构思，使我们能够称量我们自己的银河系邻域并确定[暗物质](@keyword=dark_matter|lang=zh-CN|style=Feynman)的局部密度[@problem_id:212182]。在一些理想化的情况下，比如在一个所有恒星都具有相同“温度”（等温）的盘中，[自引力](@keyword=self_gravity|lang=zh-CN|style=Feynman)与速度弥散之间的平衡会产生一个特定的、优雅的垂直[密度剖面](@keyword=density_profile|lang=zh-CN|style=Feynman)，$\rho(z) \propto \operatorname{sech}^2(z/z_0)$，这是[金斯方程](@keyword=jeans_equation|lang=zh-CN|style=Feynman)和[泊松方程](@keyword=poisson_s_equation|lang=zh-CN|style=Feynman)相互作用产生的直接预测[@problem_id:320055]。
 
 现在，让我们转向盘内的径向方向。在这里，情况主要由旋转主导。平衡引力的主要力是[离心力](@keyword=centrifugal_force|lang=zh-CN|style=Feynman)。一个在完美圆周上的孤星，其速度，即**[圆周速度](@keyword=circular_velocity|lang=zh-CN|style=Feynman)** $v_c$，被精确地调整以平衡引力。但一个真实的恒星族群并不孤单；它是一个群体，而这个群体有随机运动。这种随机运动，由[径向速度](@keyword=radial_velocity|lang=zh-CN|style=Feynman)弥散 $\sigma_R$ 量化，提供了额外的向外“压力”。
 

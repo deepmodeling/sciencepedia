@@ -32,7 +32,7 @@ This is the rank part of the BSD conjecture [@problem_id:3024968]. It proposes a
 But the conjecture goes even further. It predicts that the first non-zero term in the Taylor expansion of $L(E,s)$ at $s=1$—the very term that tells us the analytic rank is $r$—encodes a spectacular collection of the curve's most intimate arithmetic secrets [@problem_id:3022294]. The full conjecture states:
 
 $$
-\frac{L^{(r)}(E,1)}{r!} = \frac{\#\Sha(E/\mathbb{Q}) \cdot \mathrm{Reg}(E) \cdot \Omega_E \cdot \prod_{p} c_p}{\#E(\mathbb{Q})_{\mathrm{tors}}^2}
+\frac{L^{(r)}(E,1)}{r!} = \frac{\#\mathrm{Ш}(E/\mathbb{Q}) \cdot \mathrm{Reg}(E) \cdot \Omega_E \cdot \prod_{p} c_p}{\#E(\mathbb{Q})_{\mathrm{tors}}^2}
 $$
 
 Don't be intimidated by the formula! Think of it as a treasure map. On the left is the analytic world. On the right, a trove of arithmetic jewels:
@@ -40,7 +40,7 @@ Don't be intimidated by the formula! Think of it as a treasure map. On the left 
 -   $\mathrm{Reg}(E)$: The **regulator**, which measures the "volume" of the fundamental region spanned by our "comets."
 -   $\Omega_E$: The real period, a factor related to the curve's shape over the real numbers.
 -   $c_p$: The **Tamagawa numbers**, which correct for bad behavior at certain primes.
--   $\#\Sha(E/\mathbb{Q})$: The size of the mysterious **Tate-Shafarevich group**, an object that measures the failure of a certain "local-to-global" principle and is one of the deepest mysteries in the field.
+-   $\#\mathrm{Ш}(E/\mathbb{Q})$: The size of the mysterious **Tate-Shafarevich group**, an object that measures the failure of a certain "local-to-global" principle and is one of the deepest mysteries in the field.
 
 The BSD conjecture is not just about two numbers being equal; it's a precise, quantitative dictionary for translating between analysis and arithmetic.
 

@@ -79,7 +79,7 @@ $$ \frac{1}{\tau_{tot}} = \sum_i \frac{1}{\tau_i} = \frac{1}{\tau_{boundary}} + 
 
 *   **比热容**：根据德拜模型，晶格比热容在此温区遵循著名的 $T^3$ 定律，即 $C_V \propto T^3$ [@problem_id:1823867]。
 *   **平均自由程**：U-过程的散射率呈指数衰减，可以忽略。对于高纯度晶体，缺陷散射也较弱。因此，声子的平均自由程主要受限于样品尺寸，$\ell \approx L$，为一常数。
-*   **热导率**：结合以上两点，$\kappa \approx \frac{1}{3} C_V v \ell \propto T^3$。热导率随温度的三次方快速上升。这个区域也称为**卡西米尔极限 (Casimir limit)**。例如，对于一根特征尺寸为 $1.50 \, \text{mm}$、在 $20.0 \, \text{K}$ 下工作的金刚石棒，其边界散射主导的热导率可以通过积分所有声子模式的贡献来精确计算，得到的结果可以高达数千 $\text{W/(m·K)}$ [@problem_id:1823867]。
+*   **热导率**：结合以上两点，$\kappa \approx \frac{1}{3} C_V v \ell \propto T^3$。热导率随温度的三次方快速上升。这个区域也称为**卡西米尔极限 (Casimir limit)**。例如，对于一根特征尺寸为 $1.50 \, \text{mm}$、在 $20.0 \, \text{K}$ 下工作的金刚石棒，其边界散射主导的热导率可以通过积分所有声子模式的贡献来精确计算，得到的结果可以高达数千 $\mathrm{W/(m\cdot K)}$ [@problem_id:1823867]。
 
 #### 高温区 ($T \gtrsim \Theta_D$)
 
@@ -87,7 +87,7 @@ $$ \frac{1}{\tau_{tot}} = \sum_i \frac{1}{\tau_i} = \frac{1}{\tau_{boundary}} + 
 
 *   **比热容**：晶格比热容趋于一个恒定的经典值，即杜隆-珀蒂定律所描述的 $C_V \approx \text{const}$。
 *   **平均自由程**：声子-声子间的U-过程变得非常频繁，成为主导的散射机制。如前所述，此时的散射率与温度成正比，$\tau_U^{-1} \propto T$，因此平均自由程与温度成反比，$\ell \propto 1/T$。
-*   **热导率**：$\kappa \approx \frac{1}{3} C_V v \ell \propto 1/T$。热导率随着温度升高而下降。例如，若已知某材料在 $900 \, \text{K}$ 时的热导率为 $32.4 \, \text{W/(m·K)}$，基于此 $1/T$ 关系，可以预测其在 $1450 \, \text{K}$ 时的热导率将下降至 $\kappa_2 = 32.4 \times (900/1450) \approx 20.1 \, \text{W/(m·K)}$ [@problem_id:1823854]。
+*   **热导率**：$\kappa \approx \frac{1}{3} C_V v \ell \propto 1/T$。热导率随着温度升高而下降。例如，若已知某材料在 $900 \, \text{K}$ 时的热导率为 $32.4 \, \mathrm{W/(m\cdot K)}$，基于此 $1/T$ 关系，可以预测其在 $1450 \, \text{K}$ 时的热导率将下降至 $\kappa_2 = 32.4 \times (900/1450) \approx 20.1 \, \mathrm{W/(m\cdot K)}$ [@problem_id:1823854]。
 
 #### 峰值区
 

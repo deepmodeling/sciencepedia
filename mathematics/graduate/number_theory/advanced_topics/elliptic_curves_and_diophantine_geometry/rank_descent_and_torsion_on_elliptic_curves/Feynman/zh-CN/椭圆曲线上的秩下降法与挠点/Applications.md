@@ -58,19 +58,19 @@
 
 下降法引出了一片更深邃、更神秘的水域。[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)为 $E(\mathbb{Q})/2E(\mathbb{Q})$ 提供了一个上界，但它们是否相等？
 
-#### 幽灵群 $\Sha$
+#### 幽灵群 $\mathrm{Ш}$
 
-两者之差由一个名为[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman) $\Sha(E/\mathbb{Q})$ 的神秘对象所衡量。具体来说，我们有短正合列：
-$$0 \to E(\mathbb{Q})/2E(\mathbb{Q}) \to \mathrm{Sel}^{(2)}(E/\mathbb{Q}) \to \Sha(E/\mathbb{Q})[2] \to 0$$
-$\Sha$ 群的元素，可以被想象成一些“幽灵”解。它们是这样一些[丢番图方程](@keyword=diophantine_equations|lang=zh-CN|style=Feynman)的“解”，这些方程在每一个局部域 $\mathbb{R}$ 和 $\mathbb{Q}_p$ 中都有解，但偏偏在全局的 $\mathbb{Q}$ 上无解。它们是 Hasse 原理（局部可解推出全局可解）的“反例”。
+两者之差由一个名为[沙法列维奇-泰特群](@keyword=shafarevich_tate_group|lang=zh-CN|style=Feynman) $\mathrm{Ш}(E/\mathbb{Q})$ 的神秘对象所衡量。具体来说，我们有短正合列：
+$$0 \to E(\mathbb{Q})/2E(\mathbb{Q}) \to \mathrm{Sel}^{(2)}(E/\mathbb{Q}) \to \mathrm{Ш}(E/\mathbb{Q})[2] \to 0$$
+$\mathrm{Ш}$ 群的元素，可以被想象成一些“幽灵”解。它们是这样一些[丢番图方程](@keyword=diophantine_equations|lang=zh-CN|style=Feynman)的“解”，这些方程在每一个局部域 $\mathbb{R}$ 和 $\mathbb{Q}_p$ 中都有解，但偏偏在全局的 $\mathbb{Q}$ 上无解。它们是 Hasse 原理（局部可解推出全局可解）的“反例”。
 
-一个经典的例子是方程 $3X^3 + 4Y^3 + 5Z^3 = 0$。你可以验证，无论是在实数域还是在任何一个 $p$-adic 数域中，这个方程都有非[平凡解](@keyword=trivial_solution|lang=zh-CN|style=Feynman)。然而，通过巧妙的模 $9$ 同余分析，可以证明它没有任何非平凡整数（或有理）解。这个方程所代表的亏格 $1$ 曲线，就是一个 $\Sha$ 群中的非平凡元素 [@problem_id:3022284]。
+一个经典的例子是方程 $3X^3 + 4Y^3 + 5Z^3 = 0$。你可以验证，无论是在实数域还是在任何一个 $p$-adic 数域中，这个方程都有非[平凡解](@keyword=trivial_solution|lang=zh-CN|style=Feynman)。然而，通过巧妙的模 $9$ 同余分析，可以证明它没有任何非平凡整数（或有理）解。这个方程所代表的亏格 $1$ 曲线，就是一个 $\mathrm{Ш}$ 群中的非平凡元素 [@problem_id:3022284]。
 
-尽管 $\Sha$ 群的元素如此难以捉摸，但下降法却给了我们一个窥探它的窗口。通过前面的正合列，只要我们能计算出 $|\mathrm{Sel}^{(2)}(E/\mathbb{Q})|$ 和 $|E(\mathbb{Q})/2E(\mathbb{Q})|$（后者由秩和挠率决定），我们就能精确地计算出 $|\Sha(E/\mathbb{Q})[2]|$ 的大小！[@problem_id:3013177]
+尽管 $\mathrm{Ш}$ 群的元素如此难以捉摸，但下降法却给了我们一个窥探它的窗口。通过前面的正合列，只要我们能计算出 $|\mathrm{Sel}^{(2)}(E/\mathbb{Q})|$ 和 $|E(\mathbb{Q})/2E(\mathbb{Q})|$（后者由秩和挠率决定），我们就能精确地计算出 $|\mathrm{Ш}(E/\mathbb{Q})[2]|$ 的大小！[@problem_id:3013177]
 
 #### 数字与分析的交响曲：BSD 猜想
 
-[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)理论的巅峰，是 Birch 与 Swinnerton-Dyer (BSD) 猜想。这是一个宏伟的宣言，它声称[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的算术性质（如秩 $r$ 和 $\Sha$ 群）被一个纯粹分析的对象——它的 Hasse-Weil L-函数 $L(E,s)$——完全编码。
+[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)理论的巅峰，是 Birch 与 Swinnerton-Dyer (BSD) 猜想。这是一个宏伟的宣言，它声称[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的算术性质（如秩 $r$ 和 $\mathrm{Ш}$ 群）被一个纯粹分析的对象——它的 Hasse-Weil L-函数 $L(E,s)$——完全编码。
 
 猜想的核心部分断言，秩 $r$ 等于 $L(E,s)$ 在[中心点](@keyword=medoid|lang=zh-CN|style=Feynman) $s=1$ 处的零点阶。这就像说，一个物体的“重量”（算术秩）可以由它在某个特定频率上发出的声音的“静默程度”（L-[函数的零点](@keyword=zero_of_a_function|lang=zh-CN|style=Feynman)阶）来精确测量。
 
@@ -88,6 +88,6 @@ Gross-Zagier 定理石破天惊地指出，$L(E,s)$ 在 $s=1$ 的一阶[导数](
 
 最后的致命一击来自 Kolyvagin。他发现，为不同参数构造的 Heegner 点之间存在一种深刻的、相互兼容的“范数关系”，形成了一个所谓的“[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)”。这个高度结构化的[上同调类](@keyword=cohomology_class|lang=zh-CN|style=Feynman)系统，像一把精密的卡尺，可以从上方有效地夹住[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小。
 
-最终的结果是：在[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为 $0$ 或 $1$ 的情况下，Heegner 点的构造保证了[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)是非平凡的。Kolyvagin 的机器随之启动，它精确地计算出[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小，进而证明了 $E(\mathbb{Q})$ 的秩确实等于[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)，并且神秘的 $\Sha(E/\mathbb{Q})$ 群是有限的！[@problem_id:3024973]
+最终的结果是：在[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为 $0$ 或 $1$ 的情况下，Heegner 点的构造保证了[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)是非平凡的。Kolyvagin 的机器随之启动，它精确地计算出[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的大小，进而证明了 $E(\mathbb{Q})$ 的秩确实等于[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)，并且神秘的 $\mathrm{Ш}(E/\mathbb{Q})$ 群是有限的！[@problem_id:3024973]
 
 从一个简单的三次方程出发，我们的旅程跨越了[丢番图分析](@keyword=diophantine_analysis|lang=zh-CN|style=Feynman)、[代数数论](@keyword=algebraic_number_theory|lang=zh-CN|style=Feynman)、$p$-adic 分析、[伽罗瓦上同调](@keyword=galois_cohomology|lang=zh-CN|style=Feynman)、复分析（L-函数）和模形式理论。所有这些看似无关的领域，在[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的舞台上汇聚成一曲壮丽的交响乐。这正是数学内在统一性与和谐之美的最佳写照。

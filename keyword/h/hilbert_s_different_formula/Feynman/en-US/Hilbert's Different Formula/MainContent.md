@@ -15,7 +15,7 @@ The most fundamental numbers in these fields are their "integers," which form st
 
 ### The Different: A Yardstick for Ramification
 
-Let's ask a slightly more subtle question. What elements $x$ in the large field $L$ have the property that, even after multiplying by *any* integer $y$ from $\mathcalO_L$, the trace $\operatorname{Tr}_{L/K}(xy)$ still lands safely within the integers $\mathcal{O}_K$? This set of elements forms a "dual" object to $\mathcal{O}_L$, known as the **codifferent**, $\mathfrak{D}_{L/K}^{-1}$ [@problem_id:3022153].
+Let's ask a slightly more subtle question. What elements $x$ in the large field $L$ have the property that, even after multiplying by *any* integer $y$ from $\mathcal{O}_L$, the trace $\operatorname{Tr}_{L/K}(xy)$ still lands safely within the integers $\mathcal{O}_K$? This set of elements forms a "dual" object to $\mathcal{O}_L$, known as the **codifferent**, $\mathfrak{D}_{L/K}^{-1}$ [@problem_id:3022153].
 
 Because taking the trace of an integer in $\mathcal{O}_L$ already results in an integer in $\mathcal{O}_K$, it's clear that the ring of integers $\mathcal{O}_L$ is a subset of its own dual, the codifferent. This means the codifferent is "larger" than $\mathcal{O}_L$. To measure a deviation, it's often more natural to work with an object that is "smaller" than our reference. So, we flip the codifferent on its head by taking its algebraic inverse. This gives us the **[different ideal](@keyword=different_ideal|lang=en-US|style=Feynman)**, $\mathfrak{D}_{L/K}$. It's an ideal contained within the [ring of integers](@keyword=ring_of_integers|lang=en-US|style=Feynman) $\mathcal{O}_L$.
 

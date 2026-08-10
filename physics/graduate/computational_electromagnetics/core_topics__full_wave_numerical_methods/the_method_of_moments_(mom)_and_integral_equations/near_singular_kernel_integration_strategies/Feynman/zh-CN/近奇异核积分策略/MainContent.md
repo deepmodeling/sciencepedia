@@ -35,7 +35,7 @@
 
 在这个新[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)下，面积微元变成了 $dS = r\,dr\,d\theta$。注意这个多出来的因子 $r$！它就是我们的英雄。在[奇异点](@keyword=exceptional_points|lang=zh-CN|style=Feynman) $r=0$ 处，这个 $r$ 因子恰好也等于零。而我们的被积函数中棘手的部分是 $\frac{1}{R} = \frac{1}{\sqrt{r^2+d^2}}$。两者相乘，整个被积函数（乘以雅可比行列式后）的关键部分变成了 $\frac{r}{\sqrt{r^2+d^2}}$。当 $r \to 0$ 时，这个表达式趋向于 0；当 $r$ 很大时，它趋向于 1。它在任何地方都是光滑且行为良好的！通过这样一个简单的坐标变换，我们完美地“抵消”了近奇异性。这种方法，我们称之为“极坐标吹胀”（Polar Blow-up）。
 
-更进一步，我们可以设计一种更通用的正则化变换。例如，通过变量代换 $r = d\sinh(t)$，原来的积分 $\int_0^a \frac{r}{\sqrt{r^2+d^2}} dr$ 可以被精确地转化为一个关于[双曲正弦函数](@keyword=sinh(z)|lang=zh-CN|style=Feynman)的简单积分 $\int_0^{\arcsinh(a/d)} d\sinh(t) dt$。新的被积函数 $d\sinh(t)$ 在整个积分区间上是解析的，这使得[高斯积分](@keyword=integral_of_gaussian|lang=zh-CN|style=Feynman)等数值方法能够以指数级的速度收敛 [@problem_id:3333362]。
+更进一步，我们可以设计一种更通用的正则化变换。例如，通过变量代换 $r = d\sinh(t)$，原来的积分 $\int_0^a \frac{r}{\sqrt{r^2+d^2}} dr$ 可以被精确地转化为一个关于[双曲正弦函数](@keyword=sinh(z)|lang=zh-CN|style=Feynman)的简单积分 $\int_0^{\operatorname{arcsinh}(a/d)} d\sinh(t) dt$。新的被积函数 $d\sinh(t)$ 在整个积分区间上是解析的，这使得[高斯积分](@keyword=integral_of_gaussian|lang=zh-CN|style=Feynman)等数值方法能够以指数级的速度收敛 [@problem_id:3333362]。
 
 #### 策略二：Duffy 变换与分而治之
 

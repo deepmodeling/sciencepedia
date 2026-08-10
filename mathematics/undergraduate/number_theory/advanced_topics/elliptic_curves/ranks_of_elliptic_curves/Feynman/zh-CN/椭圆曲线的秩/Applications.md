@@ -52,11 +52,11 @@ $$
 
 另一种深刻的关系是**同源**（isogeny）。如果两条椭圆曲线 $E$ 和 $E'$ 是同源的，意味着它们之间存在一个保持群结构的映射。虽然它们的有理点群本身可能不同，但一个至关重要的事实是：**同源的椭圆曲线拥有完全相同的秩** [@problem_id:3089249]。这告诉我们，秩并不仅仅是某个具体方程的性质，而是与曲线内在结构相关的、更深层次的[不变量](@keyword=invariant|lang=zh-CN|style=Feynman)。
 
-**幽灵群（$\Sha$ 群）**
+**幽灵群（$\mathrm{Ш}$ 群）**
 
-我们提到下降法给出的只是秩的一个上界。为什么不是精确值？是什么造成了这种不确定性？答案引出了椭圆曲线理论中最神秘的对象之一：**Tate-Shafarevich 群**，通常记作 $\Sha(E/\mathbb{Q})$。
+我们提到下降法给出的只是秩的一个上界。为什么不是精确值？是什么造成了这种不确定性？答案引出了椭圆曲线理论中最神秘的对象之一：**Tate-Shafarevich 群**，通常记作 $\mathrm{Ш}(E/\mathbb{Q})$。
 
-你可以把 $\Sha$ 群的非平凡元素想象成“幽灵”。每一个这样的元素都对应一个几何对象（称为“主[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)”或“挠子”），它在每个局部域（实数域 $\mathbb{R}$ 和所有 $p$-进[数域](@keyword=number_fields|lang=zh-CN|style=Feynman) $\mathbb{Q}_p$）上看起来都应该有有理点，但在全局——在有理[数域](@keyword=number_fields|lang=zh-CN|style=Feynman) $\mathbb{Q}$ 上——却一个点也找不到。它们是 **Hasse 原理**的著名反例。这些“幽灵”在下降法中混淆了我们的视线，使得[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的规模被“夸大”了，从而让我们对秩的估计偏高 [@problem_id:3089246]。$\Sha$ 群的大小，正是从[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)计算精确秩的主要障碍，它就像是[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)世界中的“[暗物质](@keyword=dark_matter|lang=zh-CN|style=Feynman)”，我们知道它存在，但却极难捕捉和测量。
+你可以把 $\mathrm{Ш}$ 群的非平凡元素想象成“幽灵”。每一个这样的元素都对应一个几何对象（称为“主[齐性空间](@keyword=homogeneous_spaces|lang=zh-CN|style=Feynman)”或“挠子”），它在每个局部域（实数域 $\mathbb{R}$ 和所有 $p$-进[数域](@keyword=number_fields|lang=zh-CN|style=Feynman) $\mathbb{Q}_p$）上看起来都应该有有理点，但在全局——在有理[数域](@keyword=number_fields|lang=zh-CN|style=Feynman) $\mathbb{Q}$ 上——却一个点也找不到。它们是 **Hasse 原理**的著名反例。这些“幽灵”在下降法中混淆了我们的视线，使得[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)的规模被“夸大”了，从而让我们对秩的估计偏高 [@problem_id:3089246]。$\mathrm{Ш}$ 群的大小，正是从[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)计算精确秩的主要障碍，它就像是[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)世界中的“[暗物质](@keyword=dark_matter|lang=zh-CN|style=Feynman)”，我们知道它存在，但却极难捕捉和测量。
 
 ### 猜想之网：连接数学的前沿
 

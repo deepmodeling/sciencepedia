@@ -19,7 +19,7 @@ $$
 
 ### 惊人的简洁性：Trouton's Rule
 
-让我们像科学家一样，用一些数字来验证这一点。对于像二氯甲烷这样的常见溶剂，其[汽化熵](@keyword=entropy_of_vaporization|lang=zh-CN|style=Feynman)大约为 $89.7 \text{ J/(mol·K)}$ [@problem_id:1995433]。对于丙酮，大约是 $88.4 \text{ J/(mol·K)}$ [@problem_id:2025557]。你可以对苯、己烷或四氯化碳尝试计算，你会发现一个非凡的现象：这些数值都聚集在一个相似的数字周围，大约在 $85$ 到 $90 \text{ J/(mol·K)}$ 之间。
+让我们像科学家一样，用一些数字来验证这一点。对于像二氯甲烷这样的常见溶剂，其[汽化熵](@keyword=entropy_of_vaporization|lang=zh-CN|style=Feynman)大约为 $89.7 \mathrm{J/(mol\cdot K)}$ [@problem_id:1995433]。对于丙酮，大约是 $88.4 \mathrm{J/(mol\cdot K)}$ [@problem_id:2025557]。你可以对苯、己烷或四氯化碳尝试计算，你会发现一个非凡的现象：这些数值都聚集在一个相似的数字周围，大约在 $85$ 到 $90 \mathrm{J/(mol\cdot K)}$ 之间。
 
 这种奇特的一致性最早由 Frederick Trouton 在19世纪末注意到。**Trouton's rule** 是一项经验观察：对于许多简单、无相互作用的液体，其摩尔[汽化熵](@keyword=entropy_of_vaporization|lang=zh-CN|style=Feynman)大致恒定，约为[理想气体常数](@keyword=universal_gas_constant|lang=zh-CN|style=Feynman) $R$ 的 $10.5$ 倍。
 
@@ -43,7 +43,7 @@ $$
 
 #### 例外 1：有序液体
 
-让我们看看甲烷（CH₄），一个简单的[非极性分子](@keyword=nonpolar_molecules|lang=zh-CN|style=Feynman)。它的[汽化熵](@keyword=entropy_of_vaporization|lang=zh-CN|style=Feynman)约为 $73 \text{ J/(mol·K)}$ [@problem_id:1979662]，有点低，但还在合理范围内。现在考虑水（H₂O）。它的值高达 $109 \text{ J/(mol·K)}$，这是一个巨大的偏差！为什么？
+让我们看看甲烷（CH₄），一个简单的[非极性分子](@keyword=nonpolar_molecules|lang=zh-CN|style=Feynman)。它的[汽化熵](@keyword=entropy_of_vaporization|lang=zh-CN|style=Feynman)约为 $73 \mathrm{J/(mol\cdot K)}$ [@problem_id:1979662]，有点低，但还在合理范围内。现在考虑水（H₂O）。它的值高达 $109 \mathrm{J/(mol\cdot K)}$，这是一个巨大的偏差！为什么？
 
 答案是**[氢键](@keyword=hydrogen_bond|lang=zh-CN|style=Feynman)**。液态水并不像我们之前想象的那样，是分子的简单、混沌的混合体。它具有显著的局部结构。[氢键](@keyword=hydrogen_bond|lang=zh-CN|style=Feynman)形成一个动态、闪烁的网络，赋予液体一种“构型有序性”，而像甲烷这样的液体则缺乏这种有序性。当水沸腾时，不仅分子获得了[平动](@keyword=translational_motion|lang=zh-CN|style=Feynman)和转动的自由，系统还失去了这层额外的[氢键](@keyword=hydrogen_bond|lang=zh-CN|style=Feynman)有序性。因此，总的无序度增加要大得多。
 
@@ -51,7 +51,7 @@ $$
 
 #### 例外 2：[量子液体](@keyword=quantum_liquids|lang=zh-CN|style=Feynman)
 
-如果我们走向另一个极端，考虑在极低温度下沸腾的物质，会发生什么呢？以[液氦](@keyword=liquid_helium|lang=zh-CN|style=Feynman)为例，它仅在 $4.2 \text{ K}$ 时沸腾。如果我们计算它的[汽化熵](@keyword=entropy_of_vaporization|lang=zh-CN|style=Feynman)，得到的值只有大约 $20 \text{ J/(mol·K)}$。这不仅仅是一个小的偏差；这是规则的完全失效。实际值不到Trouton's rule预测值的四分之一 [@problem_id:1902564]。
+如果我们走向另一个极端，考虑在极低温度下沸腾的物质，会发生什么呢？以[液氦](@keyword=liquid_helium|lang=zh-CN|style=Feynman)为例，它仅在 $4.2 \text{ K}$ 时沸腾。如果我们计算它的[汽化熵](@keyword=entropy_of_vaporization|lang=zh-CN|style=Feynman)，得到的值只有大约 $20 \mathrm{J/(mol\cdot K)}$。这不仅仅是一个小的偏差；这是规则的完全失效。实际值不到Trouton's rule预测值的四分之一 [@problem_id:1902564]。
 
 在这里，我们进入了量子力学的领域。**[热力学第三定律](@keyword=third_law_of_thermodynamics|lang=zh-CN|style=Feynman)**指出，当温度趋近于绝对[零度](@keyword=nullity|lang=zh-CN|style=Feynman)时，完美物质的熵趋近于零。我们关于分子振动、翻滚的经典图像在此失效了。在 $4.2 \text{ K}$ 时，液氦已经处于一个量子有序度非常高的状态。开始时几乎没有热无序。因此，当它转变为气体时，熵的*增益*必然很小。Trouton's rule在氦上的失效是一个鲜明的提醒：在最低温度下，宇宙受量子规则支配，而非经典直觉。
 

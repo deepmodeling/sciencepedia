@@ -1,23 +1,23 @@
 ## 引言
-多重积分是高等数学的基石，它将单变量微积分中计算面积与体积的思想推广到更高维度。虽然在矩形区域上的积分计算相对直接，但现实世界中的科学与工程问题往往涉及由复杂曲线和曲面定义的区域。如何在这种“一般区域”上进行精确积分，便构成了从理论到应用的关键一步。本文旨在填补这一认知鸿沟，系统性地介绍在 ℝⁿ 一般区域上进行积分的核心理论、计算方法及其在多学科中的广泛应用。
+[多重积分](@keyword=multiple_integrals|lang=zh-CN|style=Feynman)是高等数学的基石，它将单变量微积分中计算面积与体积的思想推广到更高维度。虽然在矩形区域上的积分计算相对直接，但现实世界中的科学与工程问题往往涉及由复杂曲线和[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)定义的区域。如何在这种“一般区域”上进行精确积分，便构成了从理论到应用的关键一步。本文旨在填补这一认知鸿沟，系统性地介绍在 ℝⁿ 一般区域上进行积分的核心理论、计算方法及其在多学科中的广泛应用。
 
-在接下来的内容中，读者将踏上一段从原理到实践的旅程。在“原理与机制”一章，我们将深入学习如何利用迭代积分将多维问题降解为一系列可解的一维问题，并掌握强大的变量替换技术，包括雅可比行列式在坐标变换中的核心作用。随后的“应用与跨学科联系”一章将展示这些抽象工具的巨大威力，通过实例探讨它们如何用于计算物理量、分析物理场，乃至解决断裂力学和量子化学中的前沿问题。最后，通过“动手实践”部分精心设计的练习，您将有机会亲手应用这些方法，将理论知识转化为扎实的计算技能。让我们首先深入其核心原理，揭示处理复杂积分区域的精妙机制。
+在接下来的内容中，读者将踏上一段从原理到实践的旅程。在“原理与机制”一章，我们将深入学习如何利用[迭代积分](@keyword=iterated_integrals|lang=zh-CN|style=Feynman)将多维问题降解为一系列可解的一维问题，并掌握强大的[变量替换](@keyword=change_of_variables|lang=zh-CN|style=Feynman)技术，包括雅可比行列式在[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman)中的核心作用。随后的“应用与跨学科联系”一章将展示这些抽象工具的巨大威力，通过实例探讨它们如何用于计算物理量、分析物理场，乃至解决[断裂力学](@keyword=fracture_mechanics|lang=zh-CN|style=Feynman)和[量子化学](@keyword=quantum_chemistry|lang=zh-CN|style=Feynman)中的前沿问题。最后，通过“动手实践”部分精心设计的练习，您将有机会亲手应用这些方法，将理论知识转化为扎实的计算技能。让我们首先深入其核心原理，揭示处理复杂积分区域的精妙机制。
 
 ## 原理与机制
 
-在本章中，我们将深入探讨在 $\mathbb{R}^n$ 中的一般区域上计算多重积分的核心原理与关键机制。我们假定读者已经熟悉在矩形区域上的积分。本章的目标是，将这一基础推广到由更复杂的边界（如曲线或曲面）定义的区域，并掌握简化这些积分的强大技术。
+在本章中，我们将深入探讨在 $\mathbb{R}^n$ 中的一般区域上计算[多重积分](@keyword=multiple_integrals|lang=zh-CN|style=Feynman)的核心原理与关键机制。我们假定读者已经熟悉在矩形区域上的积分。本章的目标是，将这一基础推广到由更复杂的边界（如曲线或[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)）定义的区域，并掌握简化这些积分的强大技术。
 
-### 迭代积分：一种计算工具
+### [迭代积分](@keyword=iterated_integrals|lang=zh-CN|style=Feynman)：一种计算工具
 
-将多重积分转化为**迭代积分**（iterated integrals）是计算其数值的基本方法。这一思想源于富比尼定理（Fubini's Theorem），它允许我们在特定条件下将一个多重积分分解为一系列的单变量积分。对于一个三维空间 $\mathbb{R}^3$ 中的一般区域 $E$，其上的积分 $\iiint_E f(x,y,z) \, dV$ 可以通过“切片法”来理解。
+将[多重积分](@keyword=multiple_integrals|lang=zh-CN|style=Feynman)转化为**[迭代积分](@keyword=iterated_integrals|lang=zh-CN|style=Feynman)**（iterated integrals）是计算其数值的基本方法。这一思想源于[富比尼定理](@keyword=fubini_s_theorem|lang=zh-CN|style=Feynman)（Fubini's Theorem），它允许我们在特定条件下将一个[多重积分](@keyword=multiple_integrals|lang=zh-CN|style=Feynman)分解为一系列的单变量积分。对于一个三维空间 $\mathbb{R}^3$ 中的一般区域 $E$，其上的积分 $\iiint_E f(x,y,z) \, dV$ 可以通过“[切片法](@keyword=method_of_slicing|lang=zh-CN|style=Feynman)”来理解。
 
 首先，我们可以将区域 $E$ 投影到某个坐标平面（例如 $xy$ 平面）上，得到一个二维区域 $D$。对于 $D$ 中的每一个点 $(x,y)$，区域 $E$ 在其上方形成一条“竖线”，其 $z$ 坐标范围由两个函数 $z = g_1(x,y)$（下界）和 $z = g_2(x,y)$（上界）确定。这样，对 $z$ 的积分就可以先完成：
 $$ \int_{g_1(x,y)}^{g_2(x,y)} f(x,y,z) \, dz $$
-这个内层积分的结果是一个仅依赖于 $x$ 和 $y$ 的函数。随后，我们再将这个结果在二维区域 $D$ 上进行积分，从而得到原三重积分的值：
+这个内层积分的结果是一个仅依赖于 $x$ 和 $y$ 的函数。随后，我们再将这个结果在二维区域 $D$ 上进行积分，从而得到原[三重积分](@keyword=triple_integral|lang=zh-CN|style=Feynman)的值：
 $$ \iiint_E f(x,y,z) \, dV = \iint_D \left( \int_{g_1(x,y)}^{g_2(x,y)} f(x,y,z) \, dz \right) \, dA $$
-当然，区域 $D$ 上的二重积分本身也可以表示为一个迭代积分。
+当然，区域 $D$ 上的[二重积分](@keyword=double_integrals|lang=zh-CN|style=Feynman)本身也可以表示为一个[迭代积分](@keyword=iterated_integrals|lang=zh-CN|style=Feynman)。
 
-为了具体说明这个过程，考虑计算一个由坐标平面和平面 $x + 2y + z = 4$ 在第一卦限所围成的四面体的体积。这个体积可以表示为函数 $f(x,y,z)=1$ 在该四面体区域上的三重积分。通过将积分区域的边界条件转化为积分限，我们可以建立如下的迭代积分 [@problem_id:2303662]：
+为了具体说明这个过程，考虑计算一个由坐标平面和平面 $x + 2y + z = 4$ 在第一卦限所围成的四面体的体积。这个体积可以表示为函数 $f(x,y,z)=1$ 在该四面体区域上的[三重积分](@keyword=triple_integral|lang=zh-CN|style=Feynman)。通过将积分区域的边界条件转化为积分限，我们可以建立如下的[迭代积分](@keyword=iterated_integrals|lang=zh-CN|style=Feynman) [@problem_id:2303662]：
 $$ V = \int_{0}^{4} \int_{0}^{2 - \frac{x}{2}} \int_{0}^{4 - x - 2y} dz \, dy \, dx $$
 在这里，我们选择的积分顺序是 $dz \, dy \, dx$。这意味着：
 1.  **最内层积分 (对 $z$)**: 对于固定的 $(x, y)$， $z$ 从底面 $z=0$ 积分到顶面 $z = 4 - x - 2y$。
@@ -32,22 +32,22 @@ $$ \int_{0}^{2 - \frac{x}{2}} (4 - x - 2y) \, dy = \left[ (4-x)y - y^2 \right]_{
 $$ V = \int_{0}^{4} \left(4 - 2x + \frac{x^2}{4}\right) \, dx = \left[ 4x - x^2 + \frac{x^3}{12} \right]_{0}^{4} = 16 - 16 + \frac{64}{12} = \frac{16}{3} $$
 这个例子清晰地展示了如何将一个几何体的体积计算问题，系统地转化为一系列单变量微积分问题来求解。
 
-### 描述一般区域与交换积分次序
+### 描述一般区域与[交换积分次序](@keyword=swapping_order_of_integration|lang=zh-CN|style=Feynman)
 
-设置正确的积分限是多重积分计算中最具挑战性的步骤之一。一个区域的描述方式并非唯一，选择不同的积分顺序可能导致计算的难易程度截然不同。
+设置正确的积分限是[多重积分](@keyword=multiple_integrals|lang=zh-CN|style=Feynman)计算中最具挑战性的步骤之一。一个区域的描述方式并非唯一，选择不同的积分顺序可能导致计算的难易程度截然不同。
 
 在二维情况下，我们常将区域分为两类：
 - **I 型区域 (Type I)**：由 $a \le x \le b$ 和 $g_1(x) \le y \le g_2(x)$ 定义。积分形式为 $\int_a^b \int_{g_1(x)}^{g_2(x)} f(x,y) \, dy \, dx$。
 - **II 型区域 (Type II)**：由 $c \le y \le d$ 和 $h_1(y) \le x \le h_2(y)$ 定义。积分形式为 $\int_c^d \int_{h_1(y)}^{h_2(y)} f(x,y) \, dx \, dy$。
 
-有时，一个给定的积分顺序可能导致被积函数难以处理，此时**交换积分次序**（changing the order of integration）就显得至关重要。要做到这一点，核心在于准确地重新描述积分区域。
+有时，一个给定的积分顺序可能导致被积函数难以处理，此时**[交换积分次序](@keyword=swapping_order_of_integration|lang=zh-CN|style=Feynman)**（changing the order of integration）就显得至关重要。要做到这一点，核心在于准确地重新描述积分区域。
 
-考虑积分 $I = \int_{1}^{2} \int_{\exp(x)}^{e^2} f(x,y) \, dy \, dx$ [@problem_id:2303687]。该积分区域 $R$ 由不等式 $1 \le x \le 2$ 和 $e^x \le y \le e^2$ 描述。这是一个 I 型区域。为了交换积分次序，我们需要将其描述为 II 型区域。
+考虑积分 $I = \int_{1}^{2} \int_{\exp(x)}^{e^2} f(x,y) \, dy \, dx$ [@problem_id:2303687]。该积分区域 $R$ 由不等式 $1 \le x \le 2$ 和 $e^x \le y \le e^2$ 描述。这是一个 I 型区域。为了[交换积分次序](@keyword=swapping_order_of_integration|lang=zh-CN|style=Feynman)，我们需要将其描述为 II 型区域。
 首先确定 $y$ 的整体范围。当 $x$ 从 $1$ 变化到 $2$ 时，$y$ 的下界 $e^x$ 从 $e^1$ 变化到 $e^2$。$y$ 的上界是常数 $e^2$。因此，$y$ 的范围是 $[e, e^2]$。
 接下来，对于一个固定的 $y \in [e, e^2]$，我们来确定 $x$ 的范围。不等式 $e^x \le y$ 等价于 $x \le \ln(y)$。结合原有的条件 $1 \le x$，我们得到 $x$ 的新范围是 $1 \le x \le \ln(y)$。因此，交换次序后的积分为：
 $$ I = \int_{e}^{e^2} \int_{1}^{\ln(y)} f(x,y) \, dx \, dy $$
 
-在三维空间中，交换积分次序的原理相同，但过程更为复杂，因为存在 $3! = 6$ 种可能的积分顺序。这通常需要我们仔细分析定义区域的系列不等式。
+在三维空间中，[交换积分次序](@keyword=swapping_order_of_integration|lang=zh-CN|style=Feynman)的原理相同，但过程更为复杂，因为存在 $3! = 6$ 种可能的积分顺序。这通常需要我们仔细分析定义区域的系列不等式。
 
 例如，一个由积分 $I = \int_{0}^{1} \int_{0}^{1-y} \int_{0}^{y^2} f(x,y,z) \, dx \, dz \, dy$ 定义的区域 $E$ [@problem_id:2303675]，其边界由 $0 \le y \le 1$, $0 \le z \le 1-y$ 和 $0 \le x \le y^2$ 确定。如果我们想将积分顺序改为 $dy \, dx \, dz$，我们需要：
 1.  **确定外层变量 $z$ 的范围**：从 $y \le 1-z$ 和 $0 \le y \le 1$ 可知，$z$ 必须满足 $0 \le z \le 1$。
@@ -66,19 +66,19 @@ $$ I_2 = \int_{0}^{1} \int_{\sqrt{x}}^{1} \int_{0}^{1-y} f(x,y,z) \, dz \, dy \,
 因此，总积分可以写成两部分之和：
 $$ \iint_D f(x,y) \,dA = \int_{-2}^{1}\int_{-\sqrt{4-x^{2}}}^{\sqrt{4-x^{2}}} f(x,y)\,dy\,dx + \int_{1}^{4}\int_{-\sqrt{4-(x-2)^{2}}}^{\sqrt{4-(x-2)^{2}}} f(x,y)\,dy\,dx $$
 
-### 变量替换公式
+### [变量替换公式](@keyword=change_of_variables_formula|lang=zh-CN|style=Feynman)
 
-当积分区域或被积函数具有某种对称性或者特殊结构时，使用笛卡尔坐标 $(x, y, z)$ 可能会使计算变得异常繁琐。**变量替换**（change of variables）是一种强大的技术，通过切换到更适合问题几何特征的新坐标系（如极坐标、柱坐标、球坐标或自定义的曲线坐标），从而简化积分。
+当积分区域或被积函数具有某种对称性或者特殊结构时，使用[笛卡尔坐标](@keyword=cartesian_coordinates|lang=zh-CN|style=Feynman) $(x, y, z)$ 可能会使计算变得异常繁琐。**变量替换**（change of variables）是一种强大的技术，通过切换到更适合问题几何特征的新[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)（如极坐标、柱坐标、[球坐标](@keyword=spherical_coordinates|lang=zh-CN|style=Feynman)或自定义的[曲线坐标](@keyword=curvilinear_coordinates|lang=zh-CN|style=Feynman)），从而简化积分。
 
-变量替换的核心是**雅可比行列式**（Jacobian determinant）。假设我们有一个从 $uvw$-空间到 $xyz$-空间的坐标变换 $T(u,v,w) = (x(u,v,w), y(u,v,w), z(u,v,w))$。在 $uvw$-空间中一个无穷小的立方体，在 $xyz$-空间中的像是一个无穷小的平行六面体。这两个无穷小区域的体积（或面积）之比，就由雅可比行列式的绝对值给出。
+变量替换的核心是**[雅可比行列式](@keyword=jacobian_determinant|lang=zh-CN|style=Feynman)**（Jacobian determinant）。假设我们有一个从 $uvw$-空间到 $xyz$-空间的[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman) $T(u,v,w) = (x(u,v,w), y(u,v,w), z(u,v,w))$。在 $uvw$-空间中一个无穷小的立方体，在 $xyz$-空间中的像是一个无穷小的平行六面体。这两个无穷小区域的体积（或面积）之比，就由雅可比行列式的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)给出。
 
-变换的雅可比矩阵定义为：
+变换的[雅可比矩阵](@keyword=jacobian|lang=zh-CN|style=Feynman)定义为：
 $$ \frac{\partial(x,y,z)}{\partial(u,v,w)} = \begin{pmatrix} \frac{\partial x}{\partial u}  \frac{\partial x}{\partial v}  \frac{\partial x}{\partial w} \\ \frac{\partial y}{\partial u}  \frac{\partial y}{\partial v}  \frac{\partial y}{\partial w} \\ \frac{\partial z}{\partial u}  \frac{\partial z}{\partial v}  \frac{\partial z}{\partial w} \end{pmatrix} $$
-其行列式 $J(u,v,w) = \det\left(\frac{\partial(x,y,z)}{\partial(u,v,w)}\right)$ 描述了在点 $(u,v,w)$ 处体积的局部缩放因子。例如，考虑一个从 $(\sigma, \tau)$ 坐标到 $(x, y)$ 坐标的变换：$x = \sigma \tau$, $y = \frac{1}{2}(\tau^2 - \sigma^2)$ [@problem_id:2303677]。其雅可比行列式为：
+其[行列式](@keyword=determinant|lang=zh-CN|style=Feynman) $J(u,v,w) = \det\left(\frac{\partial(x,y,z)}{\partial(u,v,w)}\right)$ 描述了在点 $(u,v,w)$ 处体积的局部缩放因子。例如，考虑一个从 $(\sigma, \tau)$ 坐标到 $(x, y)$ 坐标的变换：$x = \sigma \tau$, $y = \frac{1}{2}(\tau^2 - \sigma^2)$ [@problem_id:2303677]。其雅可比行列式为：
 $$ J(\sigma, \tau) = \det\begin{pmatrix} \frac{\partial x}{\partial \sigma}  \frac{\partial x}{\partial \tau} \\ \frac{\partial y}{\partial \sigma}  \frac{\partial y}{\partial \tau} \end{pmatrix} = \det\begin{pmatrix} \tau  \sigma \\ -\sigma  \tau \end{pmatrix} = \tau^2 - (-\sigma^2) = \sigma^2 + \tau^2 $$
 这意味着面积微元之间的关系是 $dA_{xy} = |\sigma^2 + \tau^2| \, dA_{\sigma\tau} = (\sigma^2 + \tau^2) \, d\sigma d\tau$。
 
-**变量替换公式**可以概括如下：若 $R$ 是 $xy$-平面上的区域， $T$ 是一个从 $uv$-平面上的区域 $S$ 到 $R$ 的可逆 $C^1$ 变换，则
+**[变量替换公式](@keyword=change_of_variables_formula|lang=zh-CN|style=Feynman)**可以概括如下：若 $R$ 是 $xy$-平面上的区域， $T$ 是一个从 $uv$-平面上的区域 $S$ 到 $R$ 的可逆 $C^1$ 变换，则
 $$ \iint_R f(x,y) \, dA = \iint_S f(x(u,v), y(u,v)) \left| \frac{\partial(x,y)}{\partial(u,v)} \right| \, du \, dv $$
 这个公式的威力在于，我们可以选择一个变换 $T$，使得新的积分区域 $S$（例如一个矩形）和/或新的被积函数变得非常简单。
 
@@ -96,40 +96,40 @@ $$ \int_{1}^{2} 2u \left( \int_{0}^{1} v \, dv \right) du = \int_{1}^{2} 2u \lef
 
 #### 策略性地选择变换
 
-在某些情况下，积分区域的边界曲线本身就昭示了合适的变量替换。考虑由四条曲线 $y = e^x$, $y = 2e^x$, $y = 3 - e^x$, $y = 4 - e^x$ 所围成的区域 $R$ [@problem_id:2303654]。这些方程可以改写为 $y e^{-x} = 1$, $y e^{-x} = 2$, $y + e^x = 3$, $y + e^x = 4$。这启发我们进行变量替换：
+在某些情况下，积分区域的边界曲线本身就昭示了合适的[变量替换](@keyword=change_of_variables|lang=zh-CN|style=Feynman)。考虑由四条曲线 $y = e^x$, $y = 2e^x$, $y = 3 - e^x$, $y = 4 - e^x$ 所围成的区域 $R$ [@problem_id:2303654]。这些方程可以改写为 $y e^{-x} = 1$, $y e^{-x} = 2$, $y + e^x = 3$, $y + e^x = 4$。这启发我们进行变量替换：
 $$ u = y e^{-x}, \quad v = y + e^x $$
-在这个新的 $uv$-坐标系中，复杂的曲线边界变成了简单的直线边界，积分区域 $S$ 成了一个矩形：$1 \le u \le 2$, $3 \le v \le 4$。
-为了计算区域 $R$ 的面积 $A = \iint_R 1 \, dx \, dy$，我们需要 $dx\,dy$ 和 $du\,dv$ 之间的关系。我们计算从 $(x,y)$ 到 $(u,v)$ 变换的雅可比行列式：
+在这个新的 $uv$-[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中，复杂的曲线边界变成了简单的直线边界，积分区域 $S$ 成了一个矩形：$1 \le u \le 2$, $3 \le v \le 4$。
+为了计算区域 $R$ 的面积 $A = \iint_R 1 \, dx \, dy$，我们需要 $dx\,dy$ 和 $du\,dv$ 之间的关系。我们计算从 $(x,y)$ 到 $(u,v)$ 变换的[雅可比行列式](@keyword=jacobian_determinant|lang=zh-CN|style=Feynman)：
 $$ J = \det\begin{pmatrix} \frac{\partial u}{\partial x}  \frac{\partial u}{\partial y} \\ \frac{\partial v}{\partial x}  \frac{\partial v}{\partial y} \end{pmatrix} = \det\begin{pmatrix} -y e^{-x}  e^{-x} \\ e^x  1 \end{pmatrix} = -y e^{-x} - e^{-x}e^x = -u - 1 $$
-根据反函数定理，$\frac{\partial(x,y)}{\partial(u,v)} = \left(\frac{\partial(u,v)}{\partial(x,y)}\right)^{-1}$，因此面积微元的关系是 $dx\,dy = \left|\frac{1}{J}\right| du\,dv = \frac{1}{u+1} du\,dv$。面积计算于是简化为：
+根据[反函数定理](@keyword=inverse_mapping_theorem|lang=zh-CN|style=Feynman)，$\frac{\partial(x,y)}{\partial(u,v)} = \left(\frac{\partial(u,v)}{\partial(x,y)}\right)^{-1}$，因此面积微元的关系是 $dx\,dy = \left|\frac{1}{J}\right| du\,dv = \frac{1}{u+1} du\,dv$。面积计算于是简化为：
 $$ A = \int_{3}^{4} \int_{1}^{2} \frac{1}{u+1} \, du \, dv = \left( \int_{3}^{4} 1 \, dv \right) \left( \int_{1}^{2} \frac{1}{u+1} \, du \right) = 1 \cdot [\ln(u+1)]_{1}^{2} = \ln(3) - \ln(2) = \ln\left(\frac{3}{2}\right) $$
 这展示了通过巧妙构造坐标变换，可以将看似棘手的问题化繁为简。
 
 #### 物理量的计算
 
-多重积分是计算各种物理量（如质量、重心、转动惯量和体积）的基础工具。例如，一个底面为 $xy$-平面上由 $y=\sin(x)$ 和 $y=\cos(x)$ 在 $x \ge 0$ 的第一和第二交点（即 $x = \pi/4$ 和 $x=5\pi/4$）之间所围区域 $R$，且在点 $(x,y)$ 处的高度为 $h(x,y)=\gamma x^2$ 的立体雕塑，其体积 $V$ 可由积分 $\iint_R h(x,y) \, dA$ 给出 [@problem_id:2303660]。建立迭代积分：
+[多重积分](@keyword=multiple_integrals|lang=zh-CN|style=Feynman)是计算各种物理量（如质量、[重心](@keyword=center_of_gravity|lang=zh-CN|style=Feynman)、[转动惯量](@keyword=rotational_inertia|lang=zh-CN|style=Feynman)和体积）的基础工具。例如，一个底面为 $xy$-平面上由 $y=\sin(x)$ 和 $y=\cos(x)$ 在 $x \ge 0$ 的第一和第二交点（即 $x = \pi/4$ 和 $x=5\pi/4$）之间所围区域 $R$，且在点 $(x,y)$ 处的高度为 $h(x,y)=\gamma x^2$ 的立体雕塑，其体积 $V$ 可由积分 $\iint_R h(x,y) \, dA$ 给出 [@problem_id:2303660]。建立[迭代积分](@keyword=iterated_integrals|lang=zh-CN|style=Feynman)：
 $$ V = \int_{\pi/4}^{5\pi/4} \int_{\cos(x)}^{\sin(x)} \gamma x^2 \, dy \, dx = \gamma \int_{\pi/4}^{5\pi/4} x^2(\sin(x) - \cos(x)) \, dx $$
-此积分需要通过分部积分法来计算，尽管过程繁琐，但原理是清晰的：将一个物理问题转化为一个纯数学的积分计算。
+此积分需要通过[分部积分法](@keyword=integration_by_parts|lang=zh-CN|style=Feynman)来计算，尽管过程繁琐，但原理是清晰的：将一个物理问题转化为一个纯数学的积分计算。
 
-#### 反常多重积分
+#### 反常[多重积分](@keyword=multiple_integrals|lang=zh-CN|style=Feynman)
 
-当积分区域是无界的，或者被积函数在区域内某些点趋于无穷时，我们便遇到了**反常多重积分**（improper multiple integrals）。判断其是否收敛是首要任务。球坐标是处理关于原点有对称性的无界区域和被积函数的标准工具。
+当积分区域是无界的，或者被积函数在区域内某些点趋于无穷时，我们便遇到了**反常[多重积分](@keyword=multiple_integrals|lang=zh-CN|style=Feynman)**（improper multiple integrals）。判断其是否收敛是首要任务。球坐标是处理关于原点有对称性的无界区域和被积函数的标准工具。
 
 考虑一个重要的物理问题：确定积分 $I(p) = \iiint_V \frac{\exp(-(x^2+y^2+z^2))}{(x^2+y^2+z^2)^p} \,dV$ 的收敛性，其中 $p>0$，区域 $V$ 是位于两个圆锥 $z=a\sqrt{x^2+y^2}$ 和 $z=b\sqrt{x^2+y^2}$ ($a>b>0$) 之间的无限区域 [@problem_id:2303672]。
-在球坐标下，$x^2+y^2+z^2 = r^2$，体积微元 $dV = r^2\sin\varphi \,dr\,d\varphi\,d\theta$。圆锥方程 $z=c\sqrt{x^2+y^2}$ 变为 $r\cos\varphi = c(r\sin\varphi)$，即 $\cot\varphi=c$。因此，积分区域 $V$ 在球坐标下被简洁地描述为 $0 \le r  \infty$, $\arccot(a) \le \varphi \le \arccot(b)$ 和 $0 \le \theta  2\pi$。
+在球坐标下，$x^2+y^2+z^2 = r^2$，体积微元 $dV = r^2\sin\varphi \,dr\,d\varphi\,d\theta$。圆锥方程 $z=c\sqrt{x^2+y^2}$ 变为 $r\cos\varphi = c(r\sin\varphi)$，即 $\cot\varphi=c$。因此，积分区域 $V$ 在球坐标下被简洁地描述为 $0 \le r  \infty$, $\operatorname{arccot}(a) \le \varphi \le \operatorname{arccot}(b)$ 和 $0 \le \theta  2\pi$。
 积分变为：
-$$ I(p) = \int_{0}^{2\pi} d\theta \int_{\arccot a}^{\arccot b} \sin\varphi \,d\varphi \int_{0}^{\infty} \frac{\exp(-r^2)}{r^{2p}} r^2 \,dr $$
-角度部分的积分是一个与 $p$ 无关的正常数。因此，整个积分的收敛性完全取决于径向积分：
+$$ I(p) = \int_{0}^{2\pi} d\theta \int_{\operatorname{arccot} a}^{\operatorname{arccot} b} \sin\varphi \,d\varphi \int_{0}^{\infty} \frac{\exp(-r^2)}{r^{2p}} r^2 \,dr $$
+角度部分的积分是一个与 $p$ 无关的正常数。因此，整个[积分的收敛](@keyword=convergence_of_integrals|lang=zh-CN|style=Feynman)性完全取决于[径向积分](@keyword=radial_integrals|lang=zh-CN|style=Feynman)：
 $$ \int_{0}^{\infty} \exp(-r^2) r^{2-2p} \,dr $$
 我们需要在两个极限处分析收敛性：
 1.  **当 $r \to \infty$ 时**：指数衰减项 $\exp(-r^2)$ 的存在确保了积分总是收敛的，无论 $p$ 的值是多少。
-2.  **当 $r \to 0$ 时**：$\exp(-r^2) \approx 1$。积分的行为类似于 $\int_0^\epsilon r^{2-2p} \,dr$。根据p-积分判别法，该积分收敛当且仅当指数大于 $-1$，即 $2-2p > -1$，解得 $p  \frac{3}{2}$。
+2.  **当 $r \to 0$ 时**：$\exp(-r^2) \approx 1$。积分的行为类似于 $\int_0^\epsilon r^{2-2p} \,dr$。根据p-[积分判别法](@keyword=integral_test|lang=zh-CN|style=Feynman)，该[积分收敛](@keyword=integral_convergence|lang=zh-CN|style=Feynman)当且仅当指数大于 $-1$，即 $2-2p > -1$，解得 $p  \frac{3}{2}$。
 
-结合 $p>0$ 的前提，我们得出结论：该反常积分收敛的充要条件是 $0  p  \frac{3}{2}$。
+结合 $p>0$ 的前提，我们得出结论：该[反常积分](@keyword=infinite_integrals|lang=zh-CN|style=Feynman)收敛的充要条件是 $0  p  \frac{3}{2}$。
 
 #### 关于奇异变换的注记
 
-变量替换公式的一个精妙之处在于，即使雅可比行列式在定义域的某个子集上为零，该公式在一定条件下仍然成立。这种情况通常发生在变换将一个高维区域“压扁”到低维空间时。根据萨德定理（Sard's Theorem）的推广，如果雅可比行列式为零的点的集合（临界点集）的像集测度为零，那么它对积分值没有贡献。
+[变量替换公式](@keyword=change_of_variables_formula|lang=zh-CN|style=Feynman)的一个精妙之处在于，即使[雅可比行列式](@keyword=jacobian_determinant|lang=zh-CN|style=Feynman)在定义域的某个[子集](@keyword=subset|lang=zh-CN|style=Feynman)上为零，该公式在一定条件下仍然成立。这种情况通常发生在变换将一个高维区域“压扁”到低维空间时。根据[萨德定理](@keyword=sard_s_theorem|lang=zh-CN|style=Feynman)（Sard's Theorem）的推广，如果[雅可比行列式](@keyword=jacobian_determinant|lang=zh-CN|style=Feynman)为零的点的集合（[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)集）的像集[测度为零](@keyword=measure_zero|lang=zh-CN|style=Feynman)，那么它对积分值没有贡献。
 
 考虑一个从 $U=[0,2]\times[0,1]\times[0,1]$ 到 $\mathbb{R}^3$ 的映射 $\Phi(u,v,w) = (u, \psi(u)v^2, w)$，其中 $\psi(u)$ 在 $u \le 1$ 时为0，在 $u1$ 时为 $(u-1)^3$ [@problem_id:2303679]。其雅可比行列式为 $J = 2v\psi(u)$。当 $u \le 1$ 时，$\psi(u)=0$，因此雅可比行列式为零。
-这意味着定义域中 $u \le 1$ 的部分（即 $[0,1]\times[0,1]\times[0,1]$）被映射到 $xyz$ 空间中 $y=0$ 的一个平面区域上。这个平面区域是三维空间中的一个零测集，因此对体积积分 $\int_D f dV$ 没有贡献。所以，我们只需在雅可比行列式不为零的部分进行积分，即在 $u \in (1,2]$ 的对应区域上积分即可。这为处理看似“退化”或“奇异”的变换提供了坚实的理论依据。
+这意味着定义域中 $u \le 1$ 的部分（即 $[0,1]\times[0,1]\times[0,1]$）被映射到 $xyz$ 空间中 $y=0$ 的一个平面区域上。这个平面区域是三维空间中的一个[零测集](@keyword=sets_of_measure_zero|lang=zh-CN|style=Feynman)，因此对体积积分 $\int_D f dV$ 没有贡献。所以，我们只需在[雅可比行列式](@keyword=jacobian_determinant|lang=zh-CN|style=Feynman)不为零的部分进行积分，即在 $u \in (1,2]$ 的对应区域上积分即可。这为处理看似“退化”或“奇异”的变换提供了坚实的理论依据。

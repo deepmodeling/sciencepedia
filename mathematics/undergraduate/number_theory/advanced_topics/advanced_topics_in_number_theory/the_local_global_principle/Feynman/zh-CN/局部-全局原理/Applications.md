@@ -80,14 +80,14 @@ $$ \prod_v (a,b)_v = 1 $$
 
 #### 沙法列维奇-塔特群：衡量原则失效的尺度
 
-这些[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)的反例并非杂乱无章的怪物，它们构成了一个深刻的[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)，即**沙法列维奇-塔特群 (Shafarevich-Tate Group)**，记作$\Sha(E/\mathbb{Q})$ [@problem_id:3013154]。这个群的每一个非零元素，都对应着一个违反[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)的[亏格1曲线](@keyword=genus_1_curve|lang=zh-CN|style=Feynman)。因此，$\Sha$群精确地衡量了[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)在椭圆曲线世界中的“失效程度”。
+这些[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)的反例并非杂乱无章的怪物，它们构成了一个深刻的[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)，即**沙法列维奇-塔特群 (Shafarevich-Tate Group)**，记作$\mathrm{Ш}(E/\mathbb{Q})$ [@problem_id:3013154]。这个群的每一个非零元素，都对应着一个违反[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)的[亏格1曲线](@keyword=genus_1_curve|lang=zh-CN|style=Feynman)。因此，$\mathrm{Ш}$群精确地衡量了[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)在椭圆曲线世界中的“失效程度”。
 
-$\Sha$群是现代数论中一个核心的研究对象，它充满了神秘色彩。我们猜想它总是有限的，但至今无人能证明。它与著名的“贝赫和斯温纳顿-戴尔猜想”（千禧年大奖难题之一）紧密相关，该猜想试图将[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的算术性质（如其有理数点的秩和$\Sha$群的大小）与其分析性质（其L函数的行为）联系起来。
+$\mathrm{Ш}$群是现代数论中一个核心的研究对象，它充满了神秘色彩。我们猜想它总是有限的，但至今无人能证明。它与著名的“贝赫和斯温纳顿-戴尔猜想”（千禧年大奖难题之一）紧密相关，该猜想试图将[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的算术性质（如其有理数点的秩和$\mathrm{Ш}$群的大小）与其分析性质（其L函数的行为）联系起来。
 
 ### 结语：从确定性到新奥秘
 
 [局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)的旅程，是一部引人入胜的科学史诗。它始于一个优雅而强大的想法，成功地解决了关于二次型的古老难题，并与其他数学分支产生了意想不到的和谐共振。从线性代数中的矩阵分类，到[代数数论](@keyword=algebraic_number_theory|lang=zh-CN|style=Feynman)中的范数问题，再到分析中的[逼近理论](@keyword=approximation_theory|lang=zh-CN|style=Feynman)，它的思想无处不在，甚至在代数群的算术理论中，以**玉河数 (Tamagawa Number)** 这样的高级概念达到顶峰 [@problem_id:690364]。
 
-然而，最激动人心的部分或许是它的“失败”。当[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)在[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)面前止步时，它没有宣告理论的终结，反而揭示了数论世界中更深层次的结构和奥秘。它迫使我们发展出更精妙的工具，并提出了像$\Sha$群和BSD猜想这样引领着21世纪数学研究的宏伟问题。
+然而，最激动人心的部分或许是它的“失败”。当[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)在[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)面前止步时，它没有宣告理论的终结，反而揭示了数论世界中更深层次的结构和奥秘。它迫使我们发展出更精妙的工具，并提出了像$\mathrm{Ш}$群和BSD猜想这样引领着21世纪数学研究的宏伟问题。
 
 从一个解决问题的利器，到一个揭示新奥秘的探针，[局部-全局原则](@keyword=local_to_global_principle_2|lang=zh-CN|style=Feynman)完美地诠释了科学探索的真谛：每一个答案，都会引向一个更深刻的问题。

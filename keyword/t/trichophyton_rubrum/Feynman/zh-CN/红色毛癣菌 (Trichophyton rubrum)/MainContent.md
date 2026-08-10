@@ -7,13 +7,13 @@
 
 ### [角蛋白](@keyword=keratins|lang=zh-CN|style=Feynman)食者的挑战
 
-从本质上讲，*T. rubrum* 是一种**皮肤癣菌**（dermatophyte），这个名字的字面意思是“皮肤植物”，尽管它是一种真菌。它选择的食物是生物世界中最具韧性的材料之一：**角蛋白**（keratin）。[@problem_id:2285226] 这正是构成我们皮肤最外层、我们的头发和指甲的物质。[角蛋白](@keyword=keratins|lang=zh-CN|style=Feynman)不仅是食物，更是一座堡垒。它是一种结构蛋白，由长长的氨基酸链构成，但其真正的强度来自于无数[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)的紧密交联，特别是半胱氨酸残基之间强大的**[二硫键](@keyword=disulfide_bridge|lang=zh-CN|style=Feynman)**（$S \mbox{-} S$）。可以把它想象成一座由钢筋（蛋白质链）构成的建筑，然后在成千上万个点（[二硫键](@keyword=disulfide_bridge|lang=zh-CN|style=Feynman)）上被焊接在一起。这种结构异常坚韧，难以分解，这就是为什么你的头发和指甲如此耐用的原因。对大多数生物来说，[角蛋白](@keyword=keratins|lang=zh-CN|style=Feynman)是完全无法消化的。但对 *T. rubrum* 来说，这座堡垒就是一座宴会厅。那么，核心问题是：它是如何进入的？
+从本质上讲，*T. rubrum* 是一种**皮肤癣菌**（dermatophyte），这个名字的字面意思是“皮肤植物”，尽管它是一种真菌。它选择的食物是生物世界中最具韧性的材料之一：**角蛋白**（keratin）。[@problem_id:2285226] 这正是构成我们皮肤最外层、我们的头发和指甲的物质。[角蛋白](@keyword=keratins|lang=zh-CN|style=Feynman)不仅是食物，更是一座堡垒。它是一种结构蛋白，由长长的氨基酸链构成，但其真正的强度来自于无数[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)的紧密交联，特别是半胱氨酸残基之间强大的**[二硫键](@keyword=disulfide_bridge|lang=zh-CN|style=Feynman)**（$S \text{-} S$）。可以把它想象成一座由钢筋（蛋白质链）构成的建筑，然后在成千上万个点（[二硫键](@keyword=disulfide_bridge|lang=zh-CN|style=Feynman)）上被焊接在一起。这种结构异常坚韧，难以分解，这就是为什么你的头发和指甲如此耐用的原因。对大多数生物来说，[角蛋白](@keyword=keratins|lang=zh-CN|style=Feynman)是完全无法消化的。但对 *T. rubrum* 来说，这座堡垒就是一座宴会厅。那么，核心问题是：它是如何进入的？
 
 ### 围攻的艺术：两步攻击法
 
 面对[角蛋白](@keyword=keratins|lang=zh-CN|style=Feynman)这座堡垒，*T. rubrum* 采用了一种绝妙的两步策略，这是化学与生物化学的美妙相互作用，也是其成功的基石。它不只是猛攻城墙，而是系统地将其拆解。[@problem_id:4468229]
 
-首先是化学破坏。这种真菌分泌一种简单但强大的化学剂：**亚硫酸盐**（$SO_3^{2-}$）。这种分子是破坏赋予角蛋白刚性的二硫键的专家。通过一个称为**亚硫酸盐解**（sulfitolysis）的过程，亚硫酸盐化学性地切断 $S \mbox{-} S$ 交联，有效地切断了蛋白质“钢筋”之间的“焊点”。[@problem_id:4441589] 这种化学攻击并不会破坏角蛋白本身，但会显著地软化它，使紧[密堆积](@keyword=close_packing|lang=zh-CN|style=Feynman)的结构松散并解开。堡垒的墙壁不再是坚固的屏障，而是一个脆弱、易于进入的网状结构。
+首先是化学破坏。这种真菌分泌一种简单但强大的化学剂：**亚硫酸盐**（$SO_3^{2-}$）。这种分子是破坏赋予角蛋白刚性的二硫键的专家。通过一个称为**亚硫酸盐解**（sulfitolysis）的过程，亚硫酸盐化学性地切断 $S \text{-} S$ 交联，有效地切断了蛋白质“钢筋”之间的“焊点”。[@problem_id:4441589] 这种化学攻击并不会破坏角蛋白本身，但会显著地软化它，使紧[密堆积](@keyword=close_packing|lang=zh-CN|style=Feynman)的结构松散并解开。堡垒的墙壁不再是坚固的屏障，而是一个脆弱、易于进入的网状结构。
 
 只有到那时，第二波攻击才开始：酶促拆解。随着角蛋白结构被软化和暴露，真菌释放其重型武器——一系列统称为**[角蛋白](@keyword=keratins|lang=zh-CN|style=Feynman)酶**（keratinases）的分泌性酶。这些酶，包括强效的**[丝氨酸蛋白酶](@keyword=serine_protease|lang=zh-CN|style=Feynman)**和**[金属蛋白](@keyword=metalloproteins|lang=zh-CN|style=Feynman)酶**，是分子的剪刀。它们进入现在已变得易于接触的[角蛋白](@keyword=keratins|lang=zh-CN|style=Feynman)网格中，开始有条不紊地将长蛋白质链切成更小的片段——肽和氨基酸——这些是真菌可以吸收的营养物质。这种化学软化后继之以酶促消化的优雅组合拳，是皮肤癣菌征服角蛋白的通用战术。[@problem_id:4468229] [@problem_id:4441589]
 

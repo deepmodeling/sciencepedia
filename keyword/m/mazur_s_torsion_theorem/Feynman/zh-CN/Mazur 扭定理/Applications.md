@@ -42,7 +42,7 @@ Jean-Pierre Serre 在他的“开像定理”[@problem_id:3013181]中的工作�
 
 #### 不可见与无限
 
-Mazur 在[挠群](@keyword=torsion_group|lang=zh-CN|style=Feynman)上的工作不仅解决了一个经典问题，还开辟了全新的研究途径。数论中最难以捉摸的对象之一是 Tate-Shafarevich 群，记作 $\Sha(E/\mathbb{Q})$，它衡量了[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的“[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)”的失效程度。理解 $\Sha$ 是极其困难的。Mazur 的“可见性哲学”提供了一个策略。它建议，通过找到我们的曲线 $E$ 相关的[模形式](@keyword=modular_forms|lang=zh-CN|style=Feynman)与另一条曲线的模形式之间的算术“同余”，我们有时可以利用*另一条*曲线上的点来构造并“使可见”那些幽灵般的 $E$ 的 $\Sha$ 群的元素 [@problem_id:3013133]。
+Mazur 在[挠群](@keyword=torsion_group|lang=zh-CN|style=Feynman)上的工作不仅解决了一个经典问题，还开辟了全新的研究途径。数论中最难以捉摸的对象之一是 Tate-Shafarevich 群，记作 $\mathrm{Ш}(E/\mathbb{Q})$，它衡量了[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的“[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)”的失效程度。理解 $\mathrm{Ш}$ 是极其困难的。Mazur 的“可见性哲学”提供了一个策略。它建议，通过找到我们的曲线 $E$ 相关的[模形式](@keyword=modular_forms|lang=zh-CN|style=Feynman)与另一条曲线的模形式之间的算术“同余”，我们有时可以利用*另一条*曲线上的点来构造并“使可见”那些幽灵般的 $E$ 的 $\mathrm{Ш}$ 群的元素 [@problem_id:3013133]。
 
 这个连接不同数学世界的主题在 Iwasawa 理论的发展中达到了辉煌的高潮。在研究有限[挠群](@keyword=torsion_group|lang=zh-CN|style=Feynman)时开创的思想被推广到无限的情境。数学家们不再仅仅研究 $\mathbb{Q}$ 上的点，而是开始研究点在无限[数域](@keyword=number_fields|lang=zh-CN|style=Feynman)塔——分圆 $\mathbb{Z}_p$-扩张——上的行为 [@problem_id:3018714]。遍布这个塔的 Selmer 群集合构成一个宏伟的对象，一个“Iwasawa 模”。一些重要的定理，部分归功于 Mazur 本人，表明这个无限代数对象的结构，再次由一个分析对象——一个 p-进 L-函数——所支配。这场“无限上升”的顶峰是 Iwasawa 理论[主猜想](@keyword=main_conjecture|lang=zh-CN|style=Feynman)，由 Mazur 和 [Andrew Wiles](@keyword=andrew_wiles|lang=zh-CN|style=Feynman) 针对有理数域证明 [@problem_id:3020377]。这是我们所探讨思想的直接而深刻的后裔，表明代数与分析之间的桥梁不仅仅是椭圆曲线的一个奇特特征，而是编织在数论结构本身中的一个基本原则。
 

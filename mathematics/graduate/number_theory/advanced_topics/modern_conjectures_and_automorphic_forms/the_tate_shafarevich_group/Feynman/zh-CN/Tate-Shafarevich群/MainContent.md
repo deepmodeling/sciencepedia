@@ -19,20 +19,20 @@
 
 所以，Ш 的定义可以诗意地描述为：
 $$
-\Sha(E/\mathbb{Q}) = \{ \text{E 的挠子 C } | C(\mathbb{Q}_v) \neq \emptyset \text{ 对所有 v 成立，但 } C(\mathbb{Q}) = \emptyset \} \cup \{ \text{平凡挠子} \}
+\mathrm{Ш}(E/\mathbb{Q}) = \{ \text{E 的挠子 C } | C(\mathbb{Q}_v) \neq \emptyset \text{ 对所有 v 成立，但 } C(\mathbb{Q}) = \emptyset \} \cup \{ \text{平凡挠子} \}
 $$
 用更专业的[伽罗瓦上同调](@keyword=galois_cohomology|lang=zh-CN|style=Feynman)语言来说，挠子们被分类在韦伊-沙特莱群 $H^1(\mathbb{Q}, E)$ 中。[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)正是这个群中，在到所有局部[上同调群](@keyword=cohomology_groups|lang=zh-CN|style=Feynman) $H^1(\mathbb{Q}_v, E)$ 的“定位”映射下，都变成平凡元素的那些元素的集合。换句话说，它是这个全局到局部乘积映射的核（kernel）。
 
 $$
-\Sha(E/\mathbb{Q}) = \ker\Big(H^1(\mathbb{Q},E) \longrightarrow \prod_v H^1(\mathbb{Q}_v,E)\Big)
+\mathrm{Ш}(E/\mathbb{Q}) = \ker\Big(H^1(\mathbb{Q},E) \longrightarrow \prod_v H^1(\mathbb{Q}_v,E)\Big)
 $$
 
-这个群 Ш 度量了[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)在多大程度上失效了。如果 $\Sha(E/\mathbb{Q})$ 是平凡的（只包含一个元素），那就意味着对于 $E$ 的所有挠子，[局部-全局原理](@keyword=hasse_principle|lang=zh-CN|style=Feynman)都成立。如果它是非平凡的，那么每一个非零元素都对应着一个捉摸不定的“幽灵”，一个[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)的优雅反例。
+这个群 Ш 度量了[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)在多大程度上失效了。如果 $\mathrm{Ш}(E/\mathbb{Q})$ 是平凡的（只包含一个元素），那就意味着对于 $E$ 的所有挠子，[局部-全局原理](@keyword=hasse_principle|lang=zh-CN|style=Feynman)都成立。如果它是非平凡的，那么每一个非零元素都对应着一个捉摸不定的“幽灵”，一个[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)的优雅反例。
 
-那么，我们如何才能研究甚至计算这个捕风捉影般的群呢？直接从定义出发异常困难。幸运的是，数学家们发明了一种强大的技术，称为“下降（descent）”。其思想是，我们不直接研究 Ш 本身，而是研究它被某个整数 $n$ “整除”后的“影子”，即它的 $n$-挠部分 $\Sha(E/\mathbb{Q})[n]$。这个方法揭示了一个联系着三个关键对象的、美妙而深刻的[短正合序列](@keyword=short_exact_sequence|lang=zh-CN|style=Feynman)：
+那么，我们如何才能研究甚至计算这个捕风捉影般的群呢？直接从定义出发异常困难。幸运的是，数学家们发明了一种强大的技术，称为“下降（descent）”。其思想是，我们不直接研究 Ш 本身，而是研究它被某个整数 $n$ “整除”后的“影子”，即它的 $n$-挠部分 $\mathrm{Ш}(E/\mathbb{Q})[n]$。这个方法揭示了一个联系着三个关键对象的、美妙而深刻的[短正合序列](@keyword=short_exact_sequence|lang=zh-CN|style=Feynman)：
 
 $$
-0 \to E(\mathbb{Q})/nE(\mathbb{Q}) \to \mathrm{Sel}^{(n)}(E/\mathbb{Q}) \to \Sha(E/\mathbb{Q})[n] \to 0
+0 \to E(\mathbb{Q})/nE(\mathbb{Q}) \to \mathrm{Sel}^{(n)}(E/\mathbb{Q}) \to \mathrm{Ш}(E/\mathbb{Q})[n] \to 0
 $$
 
 让我们像费曼那样，把这个序列中的每一项都拆开来看看。
@@ -41,28 +41,28 @@ $$
 
 2.  **$\mathrm{Sel}^{(n)}(E/\mathbb{Q})$**：这就是**[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman) (Selmer group)**。它是整个故事的关键。你可以把[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)想象成一个“筛子”或者一个“初步筛选委员会”。它由一系列满足特定局部条件的“候选者”组成。这些条件足够强大，使得[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)是一个*有限*群，并且原则上是*可计算*的！这是巨大的进步。然而，这个筛子并不完美。它捕获了所有我们想要的“真实”解（来自 $E(\mathbb{Q})/nE(\mathbb{Q})$ 的部分），但同时也混入了一些“伪装者”——那些看起来像是解的局部碎片，但实际上它们来自那些全局无解的“幽灵”挠子。
 
-3.  **$\Sha(E/\mathbb{Q})[n]$**：这就是我们想要研究的目标——[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的 $n$-挠部分。它正是上述“伪装者”的集合。根据[短正合序列](@keyword=short_exact_sequence|lang=zh-CN|style=Feynman)的性质，它恰好是[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)这个“筛选委员会”在剔除了所有来自“真实”解的成员后，剩下的那一部分。
+3.  **$\mathrm{Ш}(E/\mathbb{Q})[n]$**：这就是我们想要研究的目标——[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)的 $n$-挠部分。它正是上述“伪装者”的集合。根据[短正合序列](@keyword=short_exact_sequence|lang=zh-CN|style=Feynman)的性质，它恰好是[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)这个“筛选委员会”在剔除了所有来自“真实”解的成员后，剩下的那一部分。
 
 这个序列告诉我们一个惊人的事实：有限且可计算的[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)，同时容纳了关于有理点群的信息和关于神秘的 Ш 群的信息。三者的基数（大小）之间存在一个简单的乘法关系：
 $$
-|\mathrm{Sel}^{(n)}(E/\mathbb{Q})| = |E(\mathbb{Q})/nE(\mathbb{Q})| \cdot |\Sha(E/\mathbb{Q})[n]|
+|\mathrm{Sel}^{(n)}(E/\mathbb{Q})| = |E(\mathbb{Q})/nE(\mathbb{Q})| \cdot |\mathrm{Ш}(E/\mathbb{Q})[n]|
 $$
 
 这个公式威力无穷。让我们来看一个思想实验。假设一位数论学家研究一条特定的[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman) $E$，并通过计算发现它的 2-[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman) $\mathrm{Sel}^{(2)}(E/\mathbb{Q})$ 的大小是 $32$。同时，她知道这条曲线的[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)群结构是 $\mathbb{Z} \oplus \mathbb{Z}/2\mathbb{Z}$，由此可以算出 $|E(\mathbb{Q})/2E(\mathbb{Q})| = 2^{2} = 4$。现在，运用上面的公式：
 $$
-32 = 4 \cdot |\Sha(E/\mathbb{Q})[2]|
+32 = 4 \cdot |\mathrm{Ш}(E/\mathbb{Q})[2]|
 $$
-瞧！我们立刻就能断定，这个神秘的 Ш 群的 2-挠部分 $\Sha(E/\mathbb{Q})[2]$ 的大小必然是 $32 / 4 = 8$。这意味着存在 8 个 2-挠的“幽灵”，其中一个是平凡的（代表着 $E$ 本身），其余 7 个则都是[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)的真实[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)！通过计算一个具体可得的[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)，我们竟然窥见了那个不可捉摸的 Ш 群的内部结构。
+瞧！我们立刻就能断定，这个神秘的 Ш 群的 2-挠部分 $\mathrm{Ш}(E/\mathbb{Q})[2]$ 的大小必然是 $32 / 4 = 8$。这意味着存在 8 个 2-挠的“幽灵”，其中一个是平凡的（代表着 $E$ 本身），其余 7 个则都是[哈斯原则](@keyword=local_global_principle|lang=zh-CN|style=Feynman)的真实[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)！通过计算一个具体可得的[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)，我们竟然窥见了那个不可捉摸的 Ш 群的内部结构。
 
 你可能会问，这个 Ш 群除了作为衡量一个漂亮原理的失败指标之外，还有什么更深远的意义吗？答案是肯定的，而且其意义之重大，足以撼动整个数论领域。Ш 群正是千禧年大奖难题之一——**贝赫和斯温纳顿-戴尔猜想 (Birch and Swinnerton-Dyer, BSD
 conjecture)** 的核心角色。
 
 BSD 猜想试图在[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的算术性质（比如有理点的数量）和它的解析性质（一个被称为 L-函数的复变函数的行为）之间建立一座桥梁。猜想的精致形式给出了 L-函数在特[定点](@keyword=fixed_points|lang=zh-CN|style=Feynman) $s=1$ 处的泰勒展开首项系数的精确表达式。这个公式堪称数论中的“$E=mc^2$”，它以一种令人叹为观止的方式将各种看似无关的量联系在一起：
 $$
-\frac{L^{(r)}(E,1)}{r!} = \frac{|\Sha(E/\mathbb{Q})| \cdot R_E \cdot \Omega_E \cdot \prod_v c_v}{|E(\mathbb{Q})_{\mathrm{tors}}|^2}
+\frac{L^{(r)}(E,1)}{r!} = \frac{|\mathrm{Ш}(E/\mathbb{Q})| \cdot R_E \cdot \Omega_E \cdot \prod_v c_v}{|E(\mathbb{Q})_{\mathrm{tors}}|^2}
 $$
-在这个公式里，$r$ 是曲线的秩，$L(E,s)$ 是 L-函数，$R_E$ 是与有理点几何结构相关的“正则子”，$\Omega_E$ 是一个与曲线几何形状相关的“周期”，$c_v$ 是一系列局部“玉河数”，$E(\mathbb{Q})_{\mathrm{tors}}$ 是有限的[有理挠点](@keyword=rational_torsion_points|lang=zh-CN|style=Feynman)群。而赫然出现在分子中的，正是我们一直在讨论的“幽灵”之群的大小——$|\Sha(E/\mathbb{Q})|$！这个猜想，如果成立，就意味着 Ш 群必须是**有限的**。Ш 的有限性，是数论中最重要的猜想之一。
+在这个公式里，$r$ 是曲线的秩，$L(E,s)$ 是 L-函数，$R_E$ 是与有理点几何结构相关的“正则子”，$\Omega_E$ 是一个与曲线几何形状相关的“周期”，$c_v$ 是一系列局部“玉河数”，$E(\mathbb{Q})_{\mathrm{tors}}$ 是有限的[有理挠点](@keyword=rational_torsion_points|lang=zh-CN|style=Feynman)群。而赫然出现在分子中的，正是我们一直在讨论的“幽灵”之群的大小——$|\mathrm{Ш}(E/\mathbb{Q})|$！这个猜想，如果成立，就意味着 Ш 群必须是**有限的**。Ш 的有限性，是数论中最重要的猜想之一。
 
-关于 Ш 的奇妙故事还没有结束。它自身还拥有一个精美的内部结构，由一个名为**[卡塞尔斯-泰特配对](@keyword=cassels_tate_pairing|lang=zh-CN|style=Feynman) (Cassels-Tate pairing)** 的数学工具所揭示。这是一个定义在 Ш 自身上的、非退化的、交错的配对。“交错”这个性质带来了一个惊人的推论：如果 Ш 是一个有限群，那么它的大小 $|\Sha(E/\mathbb{Q})|$ 必须是一个**完全平方数**！这就像一个关于幽灵世界的物理定律，规定了它们的总数只能是 1, 4, 9, 16, 25,... 这样的数字。
+关于 Ш 的奇妙故事还没有结束。它自身还拥有一个精美的内部结构，由一个名为**[卡塞尔斯-泰特配对](@keyword=cassels_tate_pairing|lang=zh-CN|style=Feynman) (Cassels-Tate pairing)** 的数学工具所揭示。这是一个定义在 Ш 自身上的、非退化的、交错的配对。“交错”这个性质带来了一个惊人的推论：如果 Ш 是一个有限群，那么它的大小 $|\mathrm{Ш}(E/\mathbb{Q})|$ 必须是一个**完全平方数**！这就像一个关于幽灵世界的物理定律，规定了它们的总数只能是 1, 4, 9, 16, 25,... 这样的数字。
 
 至此，我们看到了一幅壮丽的图景。从一个简单的局部-全局思想的微妙失败出发，我们引出了[泰特-沙法列维奇群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) Ш。这个衡量失败的群，通过[塞尔默群](@keyword=selmer_groups|lang=zh-CN|style=Feynman)这座桥梁，与曲线上可计算的、具体的有理点联系起来。它不仅没有被藏在理论的角落里，反而昂然屹立于宏伟的 BSD 猜想的中心，将算术、几何与分析紧密地编织在一起。它的结构受制于奇特的“完全平方”定律。至今，Ш 的有限性仍然是一个悬而未决的公开问题，激励着一代又一代的数学家去探索数论宇宙中最深邃的奥秘。

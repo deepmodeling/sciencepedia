@@ -27,7 +27,7 @@ $$
 
 Can these two matrices be the same? Let's see! By comparing the terms, we find that they are identical if we make the clever substitution $\gamma = \cosh(\phi)$ and $\gamma\beta = \sinh(\phi)$. If you remember your hyperbolic identities, you'll know that $\cosh^2(\phi) - \sinh^2(\phi) = 1$. Let's check our substitutions: $\gamma^2 - (\gamma\beta)^2 = \gamma^2(1-\beta^2)$. Since $\gamma^2 = 1/(1-\beta^2)$, this product is exactly 1! It works perfectly.
 
-We have found the "angle" of rotation in spacetime! By dividing the two substitutions, we get $\tanh(\phi) = \frac{\sinh(\phi)}{\cosh(\phi)} = \frac{\gamma\beta}{\gamma} = \beta$. So, the angle $\phi$ is given by $\phi = \arctanh(v/c)$ [@problem_id:1868498]. This angle has a special name: **rapidity**.
+We have found the "angle" of rotation in spacetime! By dividing the two substitutions, we get $\tanh(\phi) = \frac{\sinh(\phi)}{\cosh(\phi)} = \frac{\gamma\beta}{\gamma} = \beta$. So, the angle $\phi$ is given by $\phi = \operatorname{arctanh}(v/c)$ [@problem_id:1868498]. This angle has a special name: **rapidity**.
 
 What we have just discovered is a piece of profound beauty: a Lorentz boost, which describes the physics of moving from one [inertial frame](@keyword=inertial_frame|lang=en-US|style=Feynman) to another, is mathematically nothing more than a [hyperbolic rotation](@keyword=hyperbolic_rotation|lang=en-US|style=Feynman) in spacetime.
 

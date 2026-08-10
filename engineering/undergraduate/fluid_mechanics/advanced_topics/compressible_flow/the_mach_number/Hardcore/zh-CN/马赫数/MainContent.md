@@ -1,11 +1,11 @@
 ## 引言
-在流体力学，特别是高速气体动力学的广阔领域中，一个无量纲数扮演着无可替代的核心角色——它就是马赫数。当物体的速度接近或超过声速时，空气的行为会发生戏剧性的改变，不再能被视为简单的不可压缩流体。理解这一转变的钥匙，正是马赫数。它不仅仅是一个速度与声速的比值，更是揭示流体可压缩性、能量转换和波动现象物理本质的通用语言。本文旨在系统性地剖析马赫数，带领读者穿越从基础理论到前沿应用的知识图景。
+在[流体力学](@keyword=fluid_dynamics|lang=zh-CN|style=Feynman)，特别是高速气体动力学的广阔领域中，一个[无量纲数](@keyword=dimensionless_numbers|lang=zh-CN|style=Feynman)扮演着无可替代的核心角色——它就是马赫数。当物体的速度接近或超过声速时，空气的行为会发生戏剧性的改变，不再能被视为简单的不可压缩流体。理解这一转变的钥匙，正是马赫数。它不仅仅是一个速度与声速的比值，更是揭示流体可压缩性、能量转换和波动现象物理本质的通用语言。本文旨在系统性地剖析[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)，带领读者穿越从基础理论到前沿应用的知识图景。
 
-为了实现这一目标，本文将分为三个核心章节。首先，在“原理与机制”一章中，我们将深入探讨马赫数的定义、其作为可压缩性与能量比的深刻物理意义，并详细阐述它如何将流动划分为亚音速、跨音速、超音速等不同状态，以及激波和马赫锥等标志性现象的形成机理。接着，在“应用与跨学科联系”一章中，我们将视野从核心的航空航天领域，扩展到机械工程、地球物理学、天体物理学甚至粒子物理学，展示马赫数概念惊人的普适性与启发性。最后，通过一系列“动手实践”中的精选问题，读者将有机会亲手计算和应用马赫数，将理论知识转化为解决实际问题的能力。
+为了实现这一目标，本文将分为三个核心章节。首先，在“原理与机制”一章中，我们将深入探讨[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)的定义、其作为可压缩性与能量比的深刻物理意义，并详细阐述它如何将流动划分为亚音速、跨音速、超音速等不同状态，以及激波和马赫锥等标志性现象的形成机理。接着，在“应用与跨学科联系”一章中，我们将视野从核心的航空航天领域，扩展到机械工程、[地球物理学](@keyword=geophysics|lang=zh-CN|style=Feynman)、天体物理学甚至[粒子物理学](@keyword=particle_physics|lang=zh-CN|style=Feynman)，展示[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)概念惊人的普适性与启发性。最后，通过一系列“动手实践”中的精选问题，读者将有机会亲手计算和应用马赫数，将理论知识转化为解决实际问题的能力。
 
 ## 原理与机制
 
-在对流体力学的研究中，尤其是在涉及高速气流的领域，一个无量纲数扮演了核心角色，它就是**马赫数 (Mach number)**。马赫数不仅是区分不同流速状态的关键指标，更深刻地揭示了流体可压缩性的物理本质。本章将系统阐述马赫数的定义、物理意义、不同流态的划分，以及其在实际工程问题中的计算与应用。
+在对[流体力学](@keyword=fluid_dynamics|lang=zh-CN|style=Feynman)的研究中，尤其是在涉及高速气流的领域，一个无量纲数扮演了核心角色，它就是**马赫数 (Mach number)**。马赫数不仅是区分不同流速状态的关键指标，更深刻地揭示了流体可压缩性的物理本质。本章将系统阐述马赫数的定义、物理意义、不同[流态](@keyword=flow_regimes|lang=zh-CN|style=Feynman)的划分，以及其在实际工程问题中的计算与应用。
 
 ### 马赫数的定义：速度之比
 
@@ -15,85 +15,85 @@ $$
 M = \frac{V}{a}
 $$
 
-其中，$V$ 代表流体相对于物体的速度（或物体相对于流体的速度），而 $a$ 代表流体介质中的**当地声速 (local speed of sound)**。声速并非一个普适常数，而是流体自身状态的函数。它代表了微小压力扰动在介质中传播的速度。对于理想气体，声速可以通过以下公式计算：
+其中，$V$ 代表流体相对于物体的速度（或物体相对于流体的速度），而 $a$ 代表流体介质中的**当地声速 (local speed of sound)**。声速并非一个普适常数，而是流体自身状态的函数。它代表了微小压力扰动在介质中传播的速度。对于[理想气体](@keyword=perfect_gases|lang=zh-CN|style=Feynman)，声速可以通过以下公式计算：
 
 $$
 a = \sqrt{\gamma R T}
 $$
 
 在这个公式中：
-- $\gamma$ (伽马) 是气体的**比热容比 (ratio of specific heats)**，对于空气，其常温值约为 $1.4$。
-- $R$ 是该气体的**比气体常数 (specific gas constant)**，对于空气，其值为 $287 \, \text{J/(kg·K)}$。
+- $\gamma$ (伽马) 是气体的**[比热容比](@keyword=ratio_of_specific_heats|lang=zh-CN|style=Feynman) (ratio of specific heats)**，对于空气，其常温值约为 $1.4$。
+- $R$ 是该气体的**比气体常数 (specific gas constant)**，对于空气，其值为 $287 \, \mathrm{J/(kg\cdot K)}$。
 - $T$ 是气体的**绝对静温 (absolute static temperature)**，单位为开尔文 (K)。
 
-公式清晰地表明，声速与气体绝对温度的平方根成正比。这意味着在冷空气中，声速比在暖空气中要低。因此，一个以恒定真实空速飞行的物体，其马赫数会随着外界大气温度的变化而改变。强调“当地”声速至关重要，因为正是流场中每一点的即时状态决定了该点的声速，进而决定了该点的马赫数。使用一个标准参考值（如海平面温度）来计算高空飞行的马赫数，将会导致显著的误差 [@problem_id:1773446]。
+公式清晰地表明，声速与气体[绝对温度](@keyword=absolute_temperature|lang=zh-CN|style=Feynman)的平方根成正比。这意味着在冷空气中，声速比在暖空气中要低。因此，一个以恒定真实空速飞行的物体，其[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)会随着外界大气温度的变化而改变。强调“当地”声速至关重要，因为正是流场中每一点的即时状态决定了该点的声速，进而决定了该点的马赫数。使用一个标准参考值（如海平面温度）来计算高空飞行的[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)，将会导致显著的误差 [@problem_id:1773446]。
 
 ### 马赫数的物理意义
 
-马赫数的价值远不止于一个简单的速度比。它深刻地反映了流体行为的两个基本方面：可压缩性和能量分布。
+[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)的价值远不止于一个简单的速度比。它深刻地反映了流体行为的两个基本方面：可压缩性和能量[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)。
 
 #### 可压缩性的量度
 
-马赫数是判断流体**可压缩性 (compressibility)** 影响是否显著的首要指标。在流体力学中，一个普遍接受的经验法则是：当马赫数低于 $0.3$ 时，流体的密度变化通常可以忽略不计（一般小于 $5\%$)，此时可以将流动近似为**不可压缩流 (incompressible flow)**。这大大简化了分析，因为可以采用基于密度恒定假设的伯努利方程等工具。例如，在标准海平面温度（$288.15 \, \text{K}$）下，速度为 $100 \, \text{m/s}$ 的气流，其马赫数计算出来约为 $0.294$ [@problem_id:1763845]。这个值恰好位于 $0.3$ 的临界点附近，表明对于更高速度的流动，可压缩性效应将变得不可忽视。
+[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)是判断流体**[可压缩性](@keyword=compressibility|lang=zh-CN|style=Feynman) (compressibility)** 影响是否显著的首要指标。在[流体力学](@keyword=fluid_dynamics|lang=zh-CN|style=Feynman)中，一个普遍接受的[经验法则](@keyword=68_95_99.7_rule|lang=zh-CN|style=Feynman)是：当[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)低于 $0.3$ 时，流体的密度变化通常可以忽略不计（一般小于 $5\%$)，此时可以将流动近似为**不可压缩流 (incompressible flow)**。这大大简化了分析，因为可以采用基于密度恒定假设的[伯努利方程](@keyword=bernoulli_s_equation|lang=zh-CN|style=Feynman)等工具。例如，在标准海平面温度（$288.15 \, \text{K}$）下，速度为 $100 \, \text{m/s}$ 的气流，其[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)计算出来约为 $0.294$ [@problem_id:1763845]。这个值恰好位于 $0.3$ 的[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)附近，表明对于更高速度的流动，可压缩性效应将变得不可忽视。
 
-为了从根本上理解马赫数与可压缩性的关系，我们可以考虑一个思想实验：一种假想的**完全不可压缩流体** [@problem_id:1773402]。根据定义，这种流体的密度 $(\rho)$ 在任何压力 $(p)$ 变化下都保持恒定。声速的平方与等熵过程中压力对密度的偏导数成正比，即 $a^2 = (\partial p / \partial \rho)_s$。对于完全不可压缩的流体，微小的密度变化需要无穷大的压力变化，因此 $(\partial p / \partial \rho)_s \to \infty$，这意味着声速趋于无穷大。对于任何有限的流速 $V$，马赫数 $M = V/a$ 将趋近于零。这个极限情况揭示了一个深刻的联系：流动的可压缩性本质上源于扰动传播速度（声速）的有限性。当马赫数很小时，流动行为接近于声速无穷大的理想不可压缩情况。
+为了从根本上理解[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)与[可压缩性](@keyword=compressibility|lang=zh-CN|style=Feynman)的关系，我们可以考虑一个思想实验：一种假想的**完全不可压缩流体** [@problem_id:1773402]。根据定义，这种流体的密度 $(\rho)$ 在任何压力 $(p)$ 变化下都保持恒定。声速的平方与[等熵过程](@keyword=isentropic_process|lang=zh-CN|style=Feynman)中压力对密度的偏导数成正比，即 $a^2 = (\partial p / \partial \rho)_s$。对于完全不可压缩的流体，微小的密度变化需要无穷大的压力变化，因此 $(\partial p / \partial \rho)_s \to \infty$，这意味着声速趋于无穷大。对于任何有限的流速 $V$，[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman) $M = V/a$ 将趋近于零。这个极限情况揭示了一个深刻的联系：流动的可压缩性本质上源于扰动[传播速度](@keyword=propagation_velocity|lang=zh-CN|style=Feynman)（声速）的有限性。当[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)很小时，流动行为接近于声速无穷大的理想不可压缩情况。
 
 #### 动能与内能之比
 
-除了作为可压缩性的判据，马赫数还具有更深层次的能量意义。对于理想气体，可以证明马赫数的平方与流体微团的**宏观动能 (kinetic energy)** 和**微观内能 (internal energy)** 之比直接相关。
+除了作为[可压缩性](@keyword=compressibility|lang=zh-CN|style=Feynman)的判据，马赫数还具有更深层次的能量意义。对于[理想气体](@keyword=perfect_gases|lang=zh-CN|style=Feynman)，可以证明马赫数的平方与流体微团的**宏观动能 (kinetic energy)** 和**微观内能 (internal energy)** 之比直接相关。
 
-单位质量流体的动能为 $k = \frac{1}{2}V^2$，内能为 $u = c_v T$，其中 $c_v$ 是定容比热容。利用理想气体关系式 $a^2 = \gamma R T$ 和 $R = c_p - c_v = (\gamma - 1)c_v$，我们可以推导出：
+单位质量流体的动能为 $k = \frac{1}{2}V^2$，内能为 $u = c_v T$，其中 $c_v$ 是定容比[热容](@keyword=heat_capacity|lang=zh-CN|style=Feynman)。利用[理想气体](@keyword=perfect_gases|lang=zh-CN|style=Feynman)关系式 $a^2 = \gamma R T$ 和 $R = c_p - c_v = (\gamma - 1)c_v$，我们可以推导出：
 
 $$
 M^2 = \frac{V^2}{a^2} = \frac{2k}{\gamma R T} = \frac{2k}{\gamma (\gamma-1) c_v T} = \frac{2k}{\gamma (\gamma-1) u}
 $$
 
-这个关系表明，对于给定的气体（$\gamma$ 为常数），$M^2$ 正比于动能与内能之比 $k/u$ [@problem_id:1773385]。这揭示了马赫数的物理本质：它量化了流体定向运动的宏观能量相对于其分子无规热运动的微观能量的重要性。在风洞实验等模拟研究中，确保模型和原型之间的马赫数相等（即**马赫数相似性 (Mach number similitude)**）至关重要，因为它保证了这两种能量形式的相对平衡关系在模型和原型之间得以保持，从而确保了流动现象（如激波位置、压力分布）的相似性。
+这个关系表明，对于给定的气体（$\gamma$ 为常数），$M^2$ 正比于动能与内能之比 $k/u$ [@problem_id:1773385]。这揭示了[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)的物理本质：它量化了流体定向运动的宏观能量相对于其分子无规热运动的微观能量的重要性。在[风洞](@keyword=wind_tunnel|lang=zh-CN|style=Feynman)实验等模拟研究中，确保模型和原型之间的[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)相等（即**[马赫数相似性](@keyword=mach_number_similitude|lang=zh-CN|style=Feynman) (Mach number similitude)**）至关重要，因为它保证了这两种能量形式的相对平衡关系在模型和原型之间得以保持，从而确保了流动现象（如激波位置、压力分布）的相似性。
 
 ### 流动状态的划分
 
 根据马赫数的大小，流场可以被划分为几个不同的状态，每种状态都具有独特的物理特性：
 
-- **亚音速流 (Subsonic Flow, $M  1$)**: 在这种状态下，物体运动产生的压力扰动（声波）能以比物体更快的速度向各个方向传播，包括上游。因此，流场中的流体可以在物体到达之前就“感知”到物体的存在，并平稳地绕过物体。
+- **[亚音速流](@entry_id:192984) (Subsonic Flow, $M  1$)**: 在这种状态下，物体运动产生的压力扰动（声波）能以比物体更快的速度向各个方向传播，包括上游。因此，流场中的流体可以在物体到达之前就“感知”到物体的存在，并平稳地绕过物体。
 
-- **跨音速流 (Transonic Flow, $0.8  M  1.2$)**: 这是最复杂的流动状态。流场中会同时存在亚音速和超音速区域，例如，在飞机机翼的上表面可能出现局部超音速气流，而在其他区域仍为亚音速。这种混合流态会导致激波的产生和不稳定性，给飞行器的设计和控制带来巨大挑战。
+- **[跨音速流](@keyword=transonic_flow|lang=zh-CN|style=Feynman) (Transonic Flow, $0.8  M  1.2$)**: 这是最复杂的流动状态。流场中会同时存在亚音速和超音速区域，例如，在飞机机翼的上表面可能出现局部超音速气流，而在其他区域仍为亚音速。这种混合流态会导致激波的产生和不稳定性，给飞行器的设计和控制带来巨大挑战。
 
-- **超音速流 (Supersonic Flow, $M > 1$)**: 当物体速度超过声速时，它产生的压力扰动无法传播到其前方。所有扰动都被限制在物体后方一个锥形区域内。物体就像一个“不速之客”，在流体来不及“准备”的情况下闯入，导致流体性质（压力、密度、温度）发生剧烈、不连续的变化，形成**激波 (shock wave)**。
+- **[超音速流](@keyword=supersonic_flow|lang=zh-CN|style=Feynman) (Supersonic Flow, $M > 1$)**: 当物体速度超过声速时，它产生的压力扰动无法传播到其前方。所有扰动都被限制在物体后方一个锥形区域内。物体就像一个“不速之客”，在流体来不及“准备”的情况下闯入，导致[流体性质](@keyword=fluid_properties|lang=zh-CN|style=Feynman)（压力、密度、温度）发生剧烈、不连续的变化，形成**激波 (shock wave)**。
 
-- **高超音速流 (Hypersonic Flow, $M > 5$)**: 在极高的马赫数下，激波与物体表面之间的距离变得很小，形成薄薄的激波层。激波后的温度急剧升高，足以引起空气分子的离解和化学反应，此时必须考虑高温真实气体效应。
+- **高[超音速流](@keyword=supersonic_flow|lang=zh-CN|style=Feynman) (Hypersonic Flow, $M > 5$)**: 在极高的马赫数下，激波与物体表面之间的距离变得很小，形成薄薄的激波层。激波后的温度急剧升高，足以引起空气分子的离解和[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)，此时必须考虑高温[真实气体效应](@keyword=real_gas_effects|lang=zh-CN|style=Feynman)。
 
-### 实际应用中的马赫数
+### 实际应用中的[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)
 
-在航空航天等工程领域，马赫数的精确计算和应用是设计与分析的基础。
+在航空航天等工程领域，[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)的精确计算和应用是设计与分析的基础。
 
 #### 当地条件的重要性
 
-如前所述，马赫数对当地温度极为敏感。一架保持恒定真实空速的客机，当它从温暖气团飞入寒冷的极地气团时，由于外界温度 $T$ 下降，当地声速 $a = \sqrt{\gamma R T}$ 也随之减小。在 $V$ 不变的情况下，其飞行马赫数 $M = V/a$ 将会增大 [@problem_id:1801625]。这会影响飞机的气动性能和燃油效率，飞行员和飞行管理系统必须对此进行监控和调整。同样，一个从高空坠落的物体，其速度和所处高度的大气温度都在变化，因此其马赫数也在不断变化。要计算它在某一特定高度的马赫数，就必须使用该高度的瞬时速度和大气温度 [@problem_id:1801586]。
+如前所述，[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)对当地温度极为敏感。一架保持恒定真实空速的客机，当它从温暖气团飞入寒冷的极地气团时，由于外界温度 $T$ 下降，当地声速 $a = \sqrt{\gamma R T}$ 也随之减小。在 $V$ 不变的情况下，其飞行[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman) $M = V/a$ 将会增大 [@problem_id:1801625]。这会影响飞机的气动性能和燃油效率，飞行员和飞行管理系统必须对此进行监控和调整。同样，一个从高空坠落的物体，其速度和所处高度的大气温度都在变化，因此其[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)也在不断变化。要计算它在某一特定高度的[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)，就必须使用该高度的[瞬时速度](@keyword=instantaneous_velocity|lang=zh-CN|style=Feynman)和大气温度 [@problem_id:1801586]。
 
-#### 滞止温度与马赫数的关系
+#### [滞止温度](@keyword=stagnation_temperature|lang=zh-CN|style=Feynman)与[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)的关系
 
-在高速流动中，我们区分两种温度：**静温 (static temperature, $T$)** 和**滞止温度 (stagnation temperature, $T_0$)**。静温是与流体一起运动的观察者所测得的温度，代表了流体的内能。滞止温度则是当流体被绝热地减速至零速时所能达到的温度，它代表了流体的总能量（内能加动能）。对于理想气体的等熵流动，这两者通过马赫数联系起来：
+在高速流动中，我们区分两种温度：**静温 (static temperature, $T$)** 和**[滞止温度](@keyword=stagnation_temperature|lang=zh-CN|style=Feynman) (stagnation temperature, $T_0$)**。静温是与流体一起运动的观察者所测得的温度，代表了流体的内能。[滞止温度](@keyword=stagnation_temperature|lang=zh-CN|style=Feynman)则是当流体被绝热地减速至零速时所能达到的温度，它代表了流体的总能量（内能加动能）。对于理想气体的[等熵流](@keyword=isentropic_flow|lang=zh-CN|style=Feynman)动，这两者通过[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)联系起来：
 
 $$
 \frac{T_0}{T} = 1 + \frac{\gamma - 1}{2} M^2
 $$
 
-这个关系在实验空气动力学中非常有用。通过在飞行器表面的驻点（气流速度为零的点）安装温度探头测量 $T_0$，同时测量自由流的静温 $T$，就可以精确地计算出飞行马赫数，而无需直接测量速度和声速 [@problem_id:1801616]。
+这个关系在实验空气动力学中非常有用。通过在飞行器表面的[驻点](@keyword=stationary_points|lang=zh-CN|style=Feynman)（气流速度为零的点）安装温度探头测量 $T_0$，同时测量自由流的静温 $T$，就可以精确地计算出飞行马赫数，而无需直接测量速度和声速 [@problem_id:1801616]。
 
-#### 壅塞流与马赫数 1
+#### [壅塞流](@keyword=choked_flow|lang=zh-CN|style=Feynman)与马赫数 1
 
-在通过**收缩喷管 (converging nozzle)** 的气流中，存在一个重要的物理现象——**壅塞 (choking)**。当喷管出口压力足够低时（例如排向真空），出口处的气流速度会达到当地声速，即 $M=1$。此时，通过喷管的质量流量达到最大值，即使进一步降低出口背压，质量流量也不会再增加。这种情况称为**壅塞流 (choked flow)**。在壅塞状态下，出口速度 $V_e$ 就等于出口处的声速 $a_e$。这个原理是火箭和喷气发动机设计的基础。例如，对于一个从高压气罐向太空喷气的冷气推进器，其出口速度就可以通过计算壅塞条件下的声速来确定 [@problem_id:1773429]。
+在通过**[收缩喷管](@keyword=converging_nozzle|lang=zh-CN|style=Feynman) (converging nozzle)** 的气流中，存在一个重要的物理现象——**壅塞 (choking)**。当喷管出口压力足够低时（例如排向真空），出口处的气流速度会达到当地声速，即 $M=1$。此时，通过喷管的[质量流](@keyword=mass_flow|lang=zh-CN|style=Feynman)量达到最大值，即使进一步降低出口背压，质量流量也不会再增加。这种情况称为**[壅塞流](@keyword=choked_flow|lang=zh-CN|style=Feynman) (choked flow)**。在壅塞状态下，出口速度 $V_e$ 就等于出口处的声速 $a_e$。这个原理是火箭和[喷气发动机](@keyword=jet_engine|lang=zh-CN|style=Feynman)设计的基础。例如，对于一个从高压气罐向太空喷气的冷气推进器，其出口速度就可以通过计算壅塞条件下的声速来确定 [@problem_id:1773429]。
 
-### 超音速流与马赫锥
+### [超音速流](@keyword=supersonic_flow|lang=zh-CN|style=Feynman)与马赫锥
 
-超音速飞行的最直观体现就是**马赫锥 (Mach cone)** 的形成，以及与之相关的**音爆 (sonic boom)**。当一个物体以超音速飞行时，它在每个瞬间发出的声波（压力扰动）都以球形向外传播。但由于物体本身在高速前进，这些球形波阵面无法超越物体，它们会在物体后方叠加形成一个锥形的包络面，这个包络面就是马赫锥。马赫锥是一个强压力波面，即激波。
+[超音速飞行](@keyword=supersonic_flight|lang=zh-CN|style=Feynman)的最直观体现就是**马赫锥 (Mach cone)** 的形成，以及与之相关的**[音爆](@keyword=sonic_boom|lang=zh-CN|style=Feynman) (sonic boom)**。当一个物体以超音速飞行时，它在每个瞬间发出的声波（压力扰动）都以球形向外传播。但由于物体本身在高速前进，这些球形[波阵面](@keyword=wavefront|lang=zh-CN|style=Feynman)无法超越物体，它们会在物体后方叠加形成一个锥形的包络面，这个包络面就是马赫锥。马赫锥是一个强压力波面，即激波。
 
-马赫锥的几何形状由马赫数唯一确定。锥体的半顶角 $\mu$ 被称为**马赫角 (Mach angle)**，它与马赫数之间存在一个简单的关系：
+马赫锥的几何形状由马赫数唯一确定。锥体的[半顶角](@keyword=semi_vertical_angle|lang=zh-CN|style=Feynman) $\mu$ 被称为**马赫角 (Mach angle)**，它与[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)之间存在一个简单的关系：
 
 $$
 \sin \mu = \frac{a}{V} = \frac{1}{M}
 $$
 
-这个公式表明，马赫数越高，飞行器相对于声波传播的速度越快，马赫锥就越尖锐（即马赫角 $\mu$ 越小）。
+这个公式表明，[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)越高，飞行器相对于声波传播的速度越快，马赫锥就越尖锐（即马赫角 $\mu$ 越小）。
 
-这个几何关系有许多实际应用。例如，我们可以计算超音速飞机飞过头顶后，地面上的人需要多长时间才能听到音爆。这段时间延迟取决于飞机的高度 $h$ 和马赫数 $M$。飞机飞过头顶后，需要继续飞行一段水平距离，其后方的马赫锥才能扫到地面观察者 [@problem_id:1801631]。反之，通过精确测量地面上不同位置的传感器接收到音爆的时间和飞机的实时位置，我们也可以反向推算出飞机的飞行马赫数和速度 [@problem_id:1801655]。这充分展示了马赫数作为连接运动学与波动的物理桥梁，在理论分析和实际测量中都扮演着不可或缺的角色。
+这个几何关系有许多实际应用。例如，我们可以计算超音速飞机飞过头顶后，地面上的人需要多长时间才能听到音爆。这段时间延迟取决于飞机的高度 $h$ 和[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman) $M$。飞机飞过头顶后，需要继续飞行一段水平距离，其后方的马赫锥才能扫到地面观察者 [@problem_id:1801631]。反之，通过精确测量地面上不同位置的传感器接收到音爆的时间和飞机的实时位置，我们也可以反向推算出飞机的飞行[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)和速度 [@problem_id:1801655]。这充分展示了[马赫数](@keyword=mach_number|lang=zh-CN|style=Feynman)作为连接[运动学](@keyword=kinematics|lang=zh-CN|style=Feynman)与波动的物理桥梁，在理论分析和实际测量中都扮演着不可或缺的角色。

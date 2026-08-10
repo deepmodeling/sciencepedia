@@ -1,41 +1,41 @@
 ## 引言
-电化学世界中，能量的转换形式多种多样。我们熟知的伽伐尼电池大多通过不同化学物质间的氧化还原反应产生电流，但存在一种更为精妙的能量转换机制——电解质浓差电池。这类装置不依赖于化学物种的差异，而是巧妙地利用了物理世界中最基本的趋势之一：系统自发地从有序走向无序，从不均一走向均一。它的核心驱动力仅仅是同一种电解质在两个空间区域的浓度不同。理解浓差电池不仅是掌握电化学基础的关键，更是揭示自然界和工程技术中许多重要现象的钥匙。
+电化学世界中，能量的转换形式多种多样。我们熟知的[伽伐尼电池](@keyword=voltaic_cell|lang=zh-CN|style=Feynman)大多通过不同化学物质间的[氧化还原反应](@keyword=redox_reactions|lang=zh-CN|style=Feynman)产生电流，但存在一种更为精妙的能量转换机制——[电解质浓差电池](@keyword=electrolyte_concentration_cell|lang=zh-CN|style=Feynman)。这类装置不依赖于化学物种的差异，而是巧妙地利用了物理世界中最基本的趋势之一：系统自发地从有序走向无序，从不均一走向均一。它的核心驱动力仅仅是同一种[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)在两个空间区域的浓度不同。理解[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)不仅是掌握电化学基础的关键，更是揭示自然界和工程技术中许多重要现象的钥匙。
 
-本文旨在系统性地剖析电解质浓差电池。许多学习者可能难以将抽象的热力学熵增概念与可测量的电压联系起来，或不清楚这一原理如何延伸到化学传感、生物电和材料腐蚀等看似无关的领域。本文将填补这一知识鸿沟。
+本文旨在系统性地剖析[电解质浓差电池](@keyword=electrolyte_concentration_cell|lang=zh-CN|style=Feynman)。许多学习者可能难以将抽象的[热力学熵](@keyword=thermodynamic_entropy|lang=zh-CN|style=Feynman)增概念与可测量的电压联系起来，或不清楚这一原理如何延伸到[化学传感](@keyword=chemical_sensing|lang=zh-CN|style=Feynman)、生物电和材料腐蚀等看似无关的领域。本文将填补这一知识鸿沟。
 
-在接下来的内容中，我们将分三步深入探索这一主题。在“原理与机制”章节，我们将从热力学第一性原理出发，推导并应用能斯特方程来定量描述浓差电池的电势，并探讨其动态工作过程。随后，在“应用与跨学科联系”章节，我们将展示浓差电池原理如何作为一种通用工具，被广泛应用于分析化学、材料科学乃至生命科学等多个前沿领域。最后，通过“动手实践”部分提供的一系列计算问题，您将有机会巩固所学知识，将理论应用于解决实际问题。让我们首先从驱动这一切的根本原理开始。
+在接下来的内容中，我们将分三步深入探索这一主题。在“原理与机制”章节，我们将从[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)第一性原理出发，推导并应用能斯特方程来定量描述[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)的[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)，并探讨其动态工作过程。随后，在“应用与跨学科联系”章节，我们将展示[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)原理如何作为一种通用工具，被广泛应用于[分析化学](@keyword=analytical_chemistry|lang=zh-CN|style=Feynman)、[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)乃至生命科学等多个前沿领域。最后，通过“动手实践”部分提供的一系列计算问题，您将有机会巩固所学知识，将理论应用于解决实际问题。让我们首先从驱动这一切的根本原理开始。
 
 ## 原理与机制
 
-电解质浓差电池是一种特殊的伽伐尼电池，其产生电动势的驱动力并非源于两种不同的化学物质之间的氧化还原反应，而是源于同种电解质在两个半电池中存在的浓度差异。这种电池巧妙地将系统自发趋向浓度均匀的趋势转化为电能。本章节将深入探讨浓差电池的基本工作原理、决定其电势的关键因素，以及在电池运行过程中的动态变化和实际应用中的考量。
+[电解质浓差电池](@keyword=electrolyte_concentration_cell|lang=zh-CN|style=Feynman)是一种特殊的[伽伐尼电池](@keyword=voltaic_cell|lang=zh-CN|style=Feynman)，其产生电动势的驱动力并非源于两种不同的化学物质之间的[氧化还原反应](@keyword=redox_reactions|lang=zh-CN|style=Feynman)，而是源于同种[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)在两个半电池中存在的浓度差异。这种电池巧妙地将系统自发趋向浓度均匀的趋势转化为电能。本章节将深入探讨[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)的基本工作原理、决定其[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)的关键因素，以及在电池运行过程中的动态变化和实际应用中的考量。
 
-### 核心原理：熵增与化学势差
+### 核心原理：[熵增](@keyword=entropy_generation|lang=zh-CN|style=Feynman)与化学势差
 
-从热力学角度看，任何孤立系统都倾向于向着熵增加的方向自发演化。当两种不同浓度的溶液混合时，溶质粒子和溶剂分子会自发地扩散，直至体系各处的浓度变得均匀。这个混合过程是一个不可逆的熵增过程。浓差电池正是利用这一基本原理，通过巧妙的装置设计，使得离子的定向迁移必须通过外电路，从而将混合过程中的吉布斯自由能变化转化为电能。
+从[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)角度看，任何[孤立系统](@keyword=isolated_systems|lang=zh-CN|style=Feynman)都倾向于向着熵增加的方向自发演化。当两种不同浓度的溶液混合时，溶[质粒](@keyword=plasmid|lang=zh-CN|style=Feynman)子和溶剂分子会自发地[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)，直至体系各处的浓度变得均匀。这个混合过程是一个不可逆的熵增过程。[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)正是利用这一基本原理，通过巧妙的装置设计，使得离子的定向迁移必须通过外电路，从而将混合过程中的[吉布斯自由能变](@keyword=change_in_gibbs_free_energy|lang=zh-CN|style=Feynman)化转化为电能。
 
-一个典型的电解质浓差电池由以下几个部分构成：
+一个典型的[电解质浓差电池](@keyword=electrolyte_concentration_cell|lang=zh-CN|style=Feynman)由以下几个部分构成：
 1.  两个相同的电极。
-2.  两个半电池，分别装有同一种电解质但浓度不同的溶液。
+2.  两个半电池，分别装有同一种[电解质](@keyword=electrolytes|lang=zh-CN|style=Feynman)但浓度不同的溶液。
 3.  一根盐桥，用于连接两个半电池，构成完整的离子回路。
 
-由于两个半电池的电极材料和参与反应的离子种类完全相同，它们在标准状态下的电极电势 $E^{\circ}$ 也是相同的。因此，浓差电池的**标准电池电势** $E^{\circ}_{\text{cell}}$ 恒为零。
+由于两个半电池的电极材料和参与反应的离子种类完全相同，它们在[标准状态](@keyword=standard_state|lang=zh-CN|style=Feynman)下的[电极电势](@keyword=electrode_potential|lang=zh-CN|style=Feynman) $E^{\circ}$ 也是相同的。因此，[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)的**[标准电池电势](@keyword=standard_cell_potential|lang=zh-CN|style=Feynman)** $E^{\circ}_{\text{cell}}$ 恒为零。
 
 $E^{\circ}_{\text{cell}} = E^{\circ}_{\text{cathode}} - E^{\circ}_{\text{anode}} = 0$
 
-这意味着电池的电势完全来自于两个半电池之间电解质浓度的差异。浓度较高的一侧，离子具有较高的化学势；浓度较低的一侧，离子具有较低的化学势。正是这种**化学势差**驱动了整个电池的氧化还原反应。为了降低体系的总吉布斯自由能，高浓度侧的离子会倾向于发生还原反应（消耗离子），而低浓度侧的电极则倾向于发生氧化反应（生成离子）。因此，在浓差电池中：
+这意味着电池的[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)完全来自于两个半电池之间电解质浓度的差异。浓度较高的一侧，离子具有较高的化学势；浓度较低的一侧，离子具有较低的化学势。正是这种**化学势差**驱动了整个电池的[氧化还原反应](@keyword=redox_reactions|lang=zh-CN|style=Feynman)。为了降低体系的总[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)，高浓度侧的离子会倾向于发生还原反应（消耗离子），而低浓度侧的电极则倾向于发生氧化反应（生成离子）。因此，在[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)中：
 
 *   **阴极（Cathode）**：发生还原反应，位于**浓度较高**的半电池。
 *   **阳极（Anode）**：发生氧化反应，位于**浓度较低**的半电池。
 
-### 浓差电池电势的定量描述：能斯特方程
+### [浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)的定量描述：能斯特方程
 
-电池的电动势（EMF）可以通过能斯特方程进行定量描述。对于一个通用反应，能斯特方程的形式为：
+电池的电动势（EMF）可以通过[能斯特方程](@keyword=nernst_equation|lang=zh-CN|style=Feynman)进行定量描述。对于一个通用反应，能斯特方程的形式为：
 
 $E_{\text{cell}} = E^{\circ}_{\text{cell}} - \frac{RT}{nF} \ln Q$
 
-其中，$R$ 是理想气体常数 ($8.314 \text{ J/(mol·K)}$)，$T$ 是绝对温度，$n$ 是半反应中转移的电子摩尔数，$F$ 是法拉第常数 ($96485 \text{ C/mol}$)，$Q$ 是反应商。
+其中，$R$ 是理想气体常数 ($8.314 \mathrm{J/(mol\cdot K)}$)，$T$ 是绝对温度，$n$ 是[半反应](@entry_id:266806)中转移的电子摩尔数，$F$ 是法拉第常数 ($96485 \text{ C/mol}$)，$Q$ 是[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman)。
 
-如前所述，浓差电池的 $E^{\circ}_{\text{cell}} = 0$。我们以一个金属 $M$ 及其阳离子 $M^{z+}$ 构成的浓差电池为例：
+如前所述，[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)的 $E^{\circ}_{\text{cell}} = 0$。我们以一个金属 $M$ 及其阳离子 $M^{z+}$ 构成的[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)为例：
 $M(s) | M^{z+}(aq, C_{\text{dilute}}) || M^{z+}(aq, C_{\text{concentrated}}) | M(s)$
 
 阳极（低浓度侧，$C_{\text{dilute}}$）：$M(s) \rightarrow M^{z+}(aq, C_{\text{dilute}}) + ze^-$
@@ -44,64 +44,64 @@ $M(s) | M^{z+}(aq, C_{\text{dilute}}) || M^{z+}(aq, C_{\text{concentrated}}) | M
 总的等效过程是高浓度侧的离子转移到低浓度侧：
 $M^{z+}(aq, C_{\text{concentrated}}) \rightarrow M^{z+}(aq, C_{\text{dilute}})$
 
-该过程的反应商 $Q$ 为：
+该过程的[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman) $Q$ 为：
 $Q = \frac{[\text{M}^{z+}]_{\text{product}}}{[\text{M}^{z+}]_{\text{reactant}}} = \frac{a_{\text{dilute}}}{a_{\text{concentrated}}}$
 
-这里，$a$ 代表离子的**活度**，即其有效浓度。在理想稀溶液中，活度约等于其摩尔浓度 $C$。因此，能斯特方程可以写为：
+这里，$a$ 代表离子的**活度**，即其有效浓度。在[理想稀溶液](@keyword=ideal_dilute_solution_2|lang=zh-CN|style=Feynman)中，活度约等于其[摩尔浓度](@keyword=molarity|lang=zh-CN|style=Feynman) $C$。因此，能斯特方程可以写为：
 
 $E_{\text{cell}} = 0 - \frac{RT}{nF} \ln \left( \frac{C_{\text{dilute}}}{C_{\text{concentrated}}} \right) = \frac{RT}{nF} \ln \left( \frac{C_{\text{concentrated}}}{C_{\text{dilute}}} \right)$
 
-这个公式是计算理想浓差电池电势的核心。它明确指出，电势与温度成正比，与浓度比值的自然对数成正比。
+这个公式是计算理想[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)的核心。它明确指出，[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)与温度成正比，与浓度比值的自然对数成正比。
 
-**示例计算：** 让我们构建一个铜浓差电池。将两片相同的纯铜电极分别插入浓度为 $C_A=0.0750 \text{ M}$ 和 $C_B=0.5625 \text{ M}$ 的 $\text{CuSO}_4$ 溶液中，并通过盐桥连接，保持温度为 $305 \text{ K}$。铜离子的电荷为 $+2$，因此半反应 $\text{Cu}^{2+} + 2e^- \rightarrow \text{Cu}(s)$ 中转移的电子数 $n=2$。高浓度 ($C_B$) 侧为阴极，低浓度 ($C_A$) 侧为阳极。根据能斯特方程 [@problem_id:1557758]：
+**示例计算：** 让我们构建一个铜[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)。将两片相同的纯铜电极分别插入浓度为 $C_A=0.0750 \text{ M}$ 和 $C_B=0.5625 \text{ M}$ 的 $\text{CuSO}_4$ 溶液中，并通过盐桥连接，保持温度为 $305 \text{ K}$。铜离子的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)为 $+2$，因此[半反应](@entry_id:266806) $\text{Cu}^{2+} + 2e^- \rightarrow \text{Cu}(s)$ 中转移的电子数 $n=2$。高浓度 ($C_B$) 侧为阴极，低浓度 ($C_A$) 侧为[阳极](@keyword=anode|lang=zh-CN|style=Feynman)。根据[能斯特方程](@keyword=nernst_equation|lang=zh-CN|style=Feynman) [@problem_id:1557758]：
 
-$E_{\text{cell}} = \frac{RT}{nF} \ln \left( \frac{C_B}{C_A} \right) = \frac{(8.314 \text{ J/(mol·K)})(305 \text{ K})}{2 \cdot (96485 \text{ C/mol})} \ln \left( \frac{0.5625}{0.0750} \right)$
+$E_{\text{cell}} = \frac{RT}{nF} \ln \left( \frac{C_B}{C_A} \right) = \frac{(8.314 \mathrm{J/(mol\cdot K)})(305 \text{ K})}{2 \cdot (96485 \text{ C/mol})} \ln \left( \frac{0.5625}{0.0750} \right)$
 $E_{\text{cell}} \approx (0.01315 \text{ V}) \ln(7.5) \approx 0.0265 \text{ V}$
 
-这个计算表明，即使浓度差异仅为一个数量级左右，也能产生可测量的电势。反之，如果我们测得一个锌浓差电池的电势为 $0.02955 \text{ V}$，已知阴极浓度为 $1.50 \text{ M}$，温度为 $298.15 \text{ K}$ ($n=2$)，我们也可以反推出阳极的浓度 [@problem_id:1557752]：
+这个计算表明，即使浓度差异仅为一个[数量级](@keyword=order_of_magnitude|lang=zh-CN|style=Feynman)左右，也能产生可测量的[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)。反之，如果我们测得一个锌[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)的[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)为 $0.02955 \text{ V}$，已知阴极浓度为 $1.50 \text{ M}$，温度为 $298.15 \text{ K}$ ($n=2$)，我们也可以反推出阳极的浓度 [@problem_id:1557752]：
 
-$0.02955 \text{ V} = \frac{(8.314 \text{ J/(mol·K)})(298.15 \text{ K})}{2 \cdot (96485 \text{ C/mol})} \ln \left( \frac{1.50 \text{ M}}{C_{anode}} \right)$
+$0.02955 \text{ V} = \frac{(8.314 \mathrm{J/(mol\cdot K)})(298.15 \text{ K})}{2 \cdot (96485 \text{ C/mol})} \ln \left( \frac{1.50 \text{ M}}{C_{anode}} \right)$
 通过求解该方程，可以得到阳极的浓度 $C_{anode} \approx 0.150 \text{ M}$。
 
-对于不同的离子，转移的电子数 $n$ 会有所不同。例如，在一个由 $\text{Cr(NO}_3)_3$ 溶液构成的铬浓差电池中，半反应为 $\text{Cr}^{3+} + 3e^- \rightarrow \text{Cr}(s)$，因此 $n=3$ [@problem_id:1557730]。
+对于不同的离子，转移的电子数 $n$ 会有所不同。例如，在一个由 $\text{Cr(NO}_3)_3$ 溶液构成的铬[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)中，[半反应](@entry_id:266806)为 $\text{Cr}^{3+} + 3e^- \rightarrow \text{Cr}(s)$，因此 $n=3$ [@problem_id:1557730]。
 
 ### 电池运行的动态过程
 
-浓差电池一旦开始放电，就是一个动态演变的系统。外电路中的电子从阳极流向阴极，同时内电路（溶液和盐桥）中的离子发生迁移以维持电荷平衡。
+[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)一旦开始放电，就是一个动态演变的系统。外电路中的电子从阳极流向阴极，同时内电路（溶液和盐桥）中的离子发生迁移以维持[电荷平衡](@keyword=equilibrium_of_charges|lang=zh-CN|style=Feynman)。
 
 #### 电极质量变化与离子浓度演变
 
 随着电池的运行：
-*   在**阳极**（低浓度侧），金属电极不断被氧化成阳离子进入溶液，导致阳极**质量减少**，同时阳极半电池中阳离子的浓度升高。
+*   在**[阳极](@keyword=anode|lang=zh-CN|style=Feynman)**（低浓度侧），金属电极不断被氧化成阳离子进入溶液，导致[阳极](@keyword=anode|lang=zh-CN|style=Feynman)**质量减少**，同时阳极半电池中阳离子的浓度升高。
 *   在**阴极**（高浓度侧），溶液中的阳离子在电极表面被还原成金属，导致阴极**质量增加**，同时阴极半电池中阳离子的浓度降低。
 
 这些过程使得两个半电池的浓度差逐渐减小。根据能斯特方程，浓度比值 $\frac{C_{\text{concentrated}}}{C_{\text{dilute}}}$ 的减小将导致 $E_{\text{cell}}$ **持续下降**，直至两边浓度相等时，$E_{\text{cell}}$ 降为零，电池“耗尽” [@problem_id:1557754]。
 
-我们可以定量地分析这一过程。假设一个银浓差电池，阳极初始浓度为 $0.0100 \text{ M}$，阴极初始浓度为 $1.00 \text{ M}$。当电池运行一段时间后，假设有 $x$ 摩尔的银在阳极溶解，那么就有 $x$ 摩尔的银离子在阴极沉积。如果每个半电池的体积均为 $1.00 \text{ L}$，则新的浓度变为 $C_{anode} = 0.0100 + x$ 和 $C_{cathode} = 1.00 - x$。电池电势随之变为：
+我们可以定量地分析这一过程。假设一个银[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)，[阳极](@keyword=anode|lang=zh-CN|style=Feynman)初始浓度为 $0.0100 \text{ M}$，阴极初始浓度为 $1.00 \text{ M}$。当电池运行一段时间后，假设有 $x$ 摩尔的银在[阳极](@keyword=anode|lang=zh-CN|style=Feynman)溶解，那么就有 $x$ 摩尔的银离子在阴极沉积。如果每个半电池的体积均为 $1.00 \text{ L}$，则新的浓度变为 $C_{anode} = 0.0100 + x$ 和 $C_{cathode} = 1.00 - x$。电池[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)随之变为：
 
 $E_{\text{cell}} = \frac{RT}{F} \ln \left( \frac{1.00 - x}{0.0100 + x} \right)$
 
-通过测量电势的变化，我们可以反推出反应的进行程度 $x$，并进一步计算出阳极减少的质量（$m = x \cdot M_{Ag}$）或通过电路的总电荷量（$Q_{charge} = n \cdot x \cdot F$）[@problem_id:1557734] [@problem_id:1557754]。
+通过测量[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)的变化，我们可以反推出反应的进行程度 $x$，并进一步计算出阳极减少的质量（$m = x \cdot M_{Ag}$）或通过电路的总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量（$Q_{charge} = n \cdot x \cdot F$）[@problem_id:1557734] [@problem_id:1557754]。
 
-#### 盐桥的作用与离子迁移
+#### 盐桥的作用与[离子迁移](@keyword=ion_migration|lang=zh-CN|style=Feynman)
 
-盐桥在浓差电池中扮演着至关重要的角色，它有两个主要功能：一是构成闭合回路，允许离子在两个半电池之间迁移；二是维持两个半电池溶液的**电中性**。
+盐桥在[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)中扮演着至关重要的角色，它有两个主要功能：一是构成闭合回路，允许离子在两个半电池之间迁移；二是维持两个半电池溶液的**电中性**。
 
-让我们再次考虑一个银浓差电池，盐桥中含有 $\text{KNO}_3$ [@problem_id:1557753]。
-*   在阳极（低浓度 $\text{AgNO}_3$ 溶液），$\text{Ag} \rightarrow \text{Ag}^+ + e^-$ 反应使得溶液中正电荷增加。为了中和这部分多余的正电荷，盐桥中的阴离子（$\text{NO}_3^-$）会向阳极半电池迁移。
-*   在阴极（高浓度 $\text{AgNO}_3$ 溶液），$\text{Ag}^+ + e^- \rightarrow \text{Ag}$ 反应消耗了溶液中的正电荷，使得溶液中负电荷（原有的 $\text{NO}_3^-$）相对过剩。为了中和这部分负电荷，盐桥中的阳离子（$\text{K}^+$）会向阴极半电池迁移。
+让我们再次考虑一个银[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)，盐桥中含有 $\text{KNO}_3$ [@problem_id:1557753]。
+*   在阳极（低浓度 $\text{AgNO}_3$ 溶液），$\text{Ag} \rightarrow \text{Ag}^+ + e^-$ 反应使得溶液中正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)增加。为了中和这部分多余的正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，盐桥中的阴离子（$\text{NO}_3^-$）会向[阳极](@keyword=anode|lang=zh-CN|style=Feynman)半电池迁移。
+*   在阴极（高浓度 $\text{AgNO}_3$ 溶液），$\text{Ag}^+ + e^- \rightarrow \text{Ag}$ 反应消耗了溶液中的正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，使得溶液中负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)（原有的 $\text{NO}_3^-$）相对过剩。为了中和这部分负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，盐桥中的阳离子（$\text{K}^+$）会向阴极半电池迁移。
 
-因此，在盐桥内部，阴离子流向阳极，阳离子流向阴极，从而完成了整个电路。没有盐桥，电荷将在半电池中迅速累积，产生一个与电池电势方向相反的电场，瞬间中止电子的流动。
+因此，在盐桥内部，阴离子流向阳极，阳离子流向阴极，从而完成了整个电路。没有盐桥，[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)将在半电池中迅速累积，产生一个与电池[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)方向相反的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)，瞬间中止电子的流动。
 
 ### 扩展与实际考量
 
 #### pH电池
 
-浓差电池的概念可以推广到任何其电极电势依赖于某种离子浓度的体系。一个重要的例子是**pH电池**，它本质上是一种氢离子（$\text{H}^+$）的浓差电池 [@problem_id:1557764]。
+[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)的概念可以推广到任何其[电极电势](@keyword=electrode_potential|lang=zh-CN|style=Feynman)依赖于某种离子浓度的体系。一个重要的例子是**pH电池**，它本质上是一种氢离子（$\text{H}^+$）的[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman) [@problem_id:1557764]。
 
-考虑一个由两个标准氢电极（SHE）组成的电池，每个电极都由一个铂片浸入酸性溶液中，并通以 $1.00 \text{ bar}$ 的氢气构成。如果两个半电池的 pH 值不同，例如分别为 $\text{pH}_A = 2.50$ 和 $\text{pH}_B = 4.75$，就会产生电势。
+考虑一个由两个[标准氢电极](@keyword=standard_hydrogen_electrode|lang=zh-CN|style=Feynman)（SHE）组成的电池，每个电极都由一个铂片[浸入](@keyword=immersions|lang=zh-CN|style=Feynman)酸性溶液中，并通以 $1.00 \text{ bar}$ 的氢气构成。如果两个半电池的 pH 值不同，例如分别为 $\text{pH}_A = 2.50$ 和 $\text{pH}_B = 4.75$，就会产生[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)。
 
-氢电极的半反应为 $2\text{H}^+(aq) + 2e^- \rightleftharpoons \text{H}_2(g)$。其电极电势由能斯特方程给出：
+氢电极的[半反应](@entry_id:266806)为 $2\text{H}^+(aq) + 2e^- \rightleftharpoons \text{H}_2(g)$。其电极电势由[能斯特方程](@keyword=nernst_equation|lang=zh-CN|style=Feynman)给出：
 
 $E = E^{\circ} - \frac{RT}{2F} \ln \left( \frac{p_{\text{H}_2}}{[\text{H}^+]^2} \right)$
 
@@ -112,50 +112,50 @@ $E = \frac{RT}{F} \ln [\text{H}^+]$
 利用 $\text{pH} = -\log_{10}[\text{H}^+]$ 和 $\ln(x) = (\ln 10) \log_{10}(x)$，可将电极电势表示为 pH 的函数：
 $E = -\frac{RT \ln 10}{F} \text{pH}$
 
-pH 值较低（即 $[\text{H}^+]$ 较高）的半电池是阴极，pH 值较高（即 $[\text{H}^+]$ 较低）的半电池是阳极。因此，电池总电势为：
+pH 值较低（即 $[\text{H}^+]$ 较高）的半电池是阴极，pH 值较高（即 $[\text{H}^+]$ 较低）的半电池是[阳极](@keyword=anode|lang=zh-CN|style=Feynman)。因此，电池总[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)为：
 
 $E_{\text{cell}} = E_{\text{cathode}} - E_{\text{anode}} = \frac{RT \ln 10}{F} (\text{pH}_{\text{anode}} - \text{pH}_{\text{cathode}})$
 
-对于上述例子，$\text{pH}_A = 2.50$ (高 $[\text{H}^+]$) 是阴极，$\text{pH}_B = 4.75$ (低 $[\text{H}^+]$) 是阳极。在 $298.15 \text{ K}$ 时，$\frac{RT \ln 10}{F} \approx 0.0592 \text{ V}$，因此电势为：
+对于上述例子，$\text{pH}_A = 2.50$ (高 $[\text{H}^+]$) 是阴极，$\text{pH}_B = 4.75$ (低 $[\text{H}^+]$) 是[阳极](@keyword=anode|lang=zh-CN|style=Feynman)。在 $298.15 \text{ K}$ 时，$\frac{RT \ln 10}{F} \approx 0.0592 \text{ V}$，因此[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)为：
 
 $E_{\text{cell}} \approx 0.0592 \text{ V} \cdot (4.75 - 2.50) = 0.133 \text{ V}$
 
-这种原理是玻璃电极 pH 计等电化学传感器的基础。
+这种原理是玻璃电极 pH 计等[电化学传感器](@keyword=electrochemical_sensors|lang=zh-CN|style=Feynman)的基础。
 
-#### 活度、非理想性与液接电势
+#### 活度、非理想性与液接[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)
 
-在前面的讨论中，我们大多假设溶液是理想的，即离子的**活度** ($a$) 等于其**摩尔浓度** ($c$)。然而，在真实溶液中，尤其是浓度较高时，离子间的静电相互作用会使其行为偏离理想状态，此时活度应表示为 $a = \gamma \cdot c$，其中 $\gamma$ 是**活度系数**。能斯特方程严格来说应该使用活度而非浓度。
+在前面的讨论中，我们大多假设溶液是理想的，即离子的**活度** ($a$) 等于其**[摩尔浓度](@keyword=molarity|lang=zh-CN|style=Feynman)** ($c$)。然而，在真实溶液中，尤其是浓度较高时，离子间的[静电相互作用](@keyword=electrostatic_interactions|lang=zh-CN|style=Feynman)会使其行为偏离理想状态，此时活度应表示为 $a = \gamma \cdot c$，其中 $\gamma$ 是**[活度系数](@keyword=activity_coefficients|lang=zh-CN|style=Feynman)**。能斯特方程严格来说应该使用活度而非浓度。
 
-这种偏差可以解释实验值与理论计算值之间的差异。例如，如果测得的浓差电池电势显著高于使用浓度计算的理论值，这可能意味着低浓度侧的实际活度比其名义浓度更低 [@problem_id:1557721]。这可能是由于形成了络合物或发生了其他副反应，从而降低了自由离子的有效浓度。
+这种偏差可以解释实验值与理论计算值之间的差异。例如，如果测得的[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)显著高于使用浓度计算的理论值，这可能意味着低浓度侧的实际活度比其名义浓度更低 [@problem_id:1557721]。这可能是由于形成了络合物或发生了其他副反应，从而降低了[自由离子](@keyword=free_ions|lang=zh-CN|style=Feynman)的有效浓度。
 
 $E_{\text{cell}} = \frac{RT}{nF} \ln \left( \frac{a_{\text{conc.}}}{a_{\text{dilute}}} \right)$
 
 当 $a_{\text{dilute}}$ 意外减小时，分母变小，$\ln$ 项增大，导致 $E_{\text{cell}}$ 增大。
 
-另一个重要的实际问题是**液接电势** ($E_j$)。当两种不同浓度的电解质溶液直接接触时，由于正负离子的扩散速率（**离子迁移率**）不同，会在界面处产生微小的电荷分离，从而形成一个电势差。例如，在浓盐酸和稀盐酸的界面处，$\text{H}^+$ 离子的迁移率远大于 $\text{Cl}^-$ 离子。因此，$\text{H}^+$ 会更快地从浓溶液扩散到稀溶液中，导致稀溶液一侧带上微弱的正电荷，而浓溶液一侧带上微弱的负电荷。这个电势差定义为 $E_j = \phi_{\text{dilute}} - \phi_{\text{concentrated}}$，在此例中为正值 [@problem_id:1557736]。盐桥（特别是含有 $\text{K}^+$ 和 $\text{Cl}^-$ 或 $\text{NO}_3^-$ 等迁移率相近离子的盐桥）的主要目的之一就是将两个半电池溶液隔开，用两个几乎可以相互抵消的液接电势来代替原有的单一液接电势，从而将其影响降至最低。
+另一个重要的实际问题是**液接[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)** ($E_j$)。当两种不同浓度的[电解质溶液](@keyword=electrolyte_solutions|lang=zh-CN|style=Feynman)直接接触时，由于正负离子的[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)速率（**[离子迁移率](@keyword=ionic_mobility|lang=zh-CN|style=Feynman)**）不同，会在界面处产生微小的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)分离，从而形成一个[电势差](@keyword=potential_difference|lang=zh-CN|style=Feynman)。例如，在浓盐酸和稀盐酸的界面处，$\text{H}^+$ 离子的迁移率远大于 $\text{Cl}^-$ 离子。因此，$\text{H}^+$ 会更快地从浓溶液[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)到稀溶液中，导致稀溶液一侧带上微弱的正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，而浓溶液一侧带上微弱的负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。这个[电势差](@keyword=potential_difference|lang=zh-CN|style=Feynman)定义为 $E_j = \phi_{\text{dilute}} - \phi_{\text{concentrated}}$，在此例中为正值 [@problem_id:1557736]。盐桥（特别是含有 $\text{K}^+$ 和 $\text{Cl}^-$ 或 $\text{NO}_3^-$ 等迁移率相近离子的盐桥）的主要目的之一就是将两个半电池溶液隔开，用两个几乎可以相互抵消的液接[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)来代替原有的单一液接[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)，从而将其影响降至最低。
 
-### 热力学根源：混合熵
+### [热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)根源：[混合熵](@keyword=mixing_entropy|lang=zh-CN|style=Feynman)
 
-浓差电池电势的根本来源可以追溯到统计热力学中的混合熵。我们可以将溶液简化为一个晶格模型，溶质粒子和溶剂分子占据晶格点。将 $N_s$ 个溶质粒子和 $N_w$ 个溶剂分子混合，其微观状态数 $W$ 可由组合公式给出。根据玻尔兹曼熵公式 $S = k_B \ln W$ 和斯特林近似，可以推导出理想混合熵为 [@problem_id:1557733]：
+[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)的根本来源可以追溯到[统计热力学](@keyword=statistical_thermodynamics|lang=zh-CN|style=Feynman)中的[混合熵](@keyword=mixing_entropy|lang=zh-CN|style=Feynman)。我们可以将溶液简化为一个[晶格模型](@keyword=lattice_models|lang=zh-CN|style=Feynman)，溶[质粒](@keyword=plasmid|lang=zh-CN|style=Feynman)子和溶剂分子占据[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)点。将 $N_s$ 个溶[质粒](@keyword=plasmid|lang=zh-CN|style=Feynman)子和 $N_w$ 个溶剂分子混合，其微观状态数 $W$ 可由组合公式给出。根据[玻尔兹曼熵公式](@keyword=boltzmann_entropy_formula|lang=zh-CN|style=Feynman) $S = k_B \ln W$ 和[斯特林近似](@keyword=stirling_s_approximation|lang=zh-CN|style=Feynman)，可以推导出[理想混合](@keyword=ideal_mixing|lang=zh-CN|style=Feynman)熵为 [@problem_id:1557733]：
 
 $\Delta S_{\text{mix}} = -k_B (N_s \ln x_s + N_w \ln x_w)$
 
-其中 $x_s$ 和 $x_w$ 分别是溶质和溶剂的摩尔分数。对于理想混合，混合过程的吉布斯自由能变化仅由熵变贡献，即 $\Delta G_{\text{mix}} = -T \Delta S_{\text{mix}}$。将上式转化为摩尔量，得到：
+其中 $x_s$ 和 $x_w$ 分别是溶质和溶剂的[摩尔分数](@keyword=mole_fraction|lang=zh-CN|style=Feynman)。对于[理想混合](@keyword=ideal_mixing|lang=zh-CN|style=Feynman)，混合过程的吉布斯自由能变化仅由[熵变](@keyword=entropy_change|lang=zh-CN|style=Feynman)贡献，即 $\Delta G_{\text{mix}} = -T \Delta S_{\text{mix}}$。将上式转化为摩尔量，得到：
 
 $\Delta G_{\text{mix}} = RT (n_s \ln x_s + n_w \ln x_w)$
 
-溶质的化学势 $\mu_s$ 是吉布斯自由能对溶质摩尔数的偏导数，可以导出 $\mu_s = \mu_s^{\circ} + RT \ln x_s$。对于稀溶液，化学势可以近似表示为浓度的函数：$\mu = \mu^{\circ'} + RT \ln C$。
+溶质的化学势 $\mu_s$ 是[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)对溶质摩尔数的[偏导数](@keyword=partial_derivatives|lang=zh-CN|style=Feynman)，可以导出 $\mu_s = \mu_s^{\circ} + RT \ln x_s$。对于稀溶液，化学势可以近似表示为浓度的函数：$\mu = \mu^{\circ'} + RT \ln C$。
 
 当 $1$ 摩尔的 $M^{z+}$ 离子从高浓度（$C_{\text{conc.}}$）溶液转移到低浓度（$C_{\text{dilute}}$）溶液时，系统的吉布斯自由能变化为：
 
 $\Delta G = \mu_{\text{dilute}} - \mu_{\text{concentrated}} = RT \ln \left( \frac{C_{\text{dilute}}}{C_{\text{concentrated}}} \right)$
 
-在电化学电池中，吉布斯自由能的变化与电池所做的最大电功相关：$\Delta G = -nFE_{\text{cell}}$。联立这两个表达式：
+在电化学电池中，吉布斯自由能的变化与电池所做的[最大电功](@entry_id:265133)相关：$\Delta G = -nFE_{\text{cell}}$。联立这两个表达式：
 
 $-nFE_{\text{cell}} = RT \ln \left( \frac{C_{\text{dilute}}}{C_{\text{concentrated}}} \right)$
 
-整理后，我们重新得到了浓差电池的能斯特方程：
+整理后，我们重新得到了[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)的能斯特方程：
 
 $E_{\text{cell}} = \frac{RT}{nF} \ln \left( \frac{C_{\text{concentrated}}}{C_{\text{dilute}}} \right)$
 
-这个推导深刻地揭示了浓差电池的电动势本质上是系统通过离子迁移自发地增加混合熵，并将此过程中的自由能变化以电能形式释放出来的宏观体现。
+这个推导深刻地揭示了[浓差电池](@keyword=concentration_cells|lang=zh-CN|style=Feynman)的[电动势](@keyword=electromotive_force|lang=zh-CN|style=Feynman)本质上是系统通过[离子迁移](@keyword=ion_migration|lang=zh-CN|style=Feynman)自发地增加混合熵，并将此过程中的自由能变化以电能形式释放出来的宏观体现。

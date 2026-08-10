@@ -1,63 +1,63 @@
 ## 引言
-在结构生物学的世界里，我们的核心追求是在原子尺度上“看见”生命机器——生物大分子——从而揭示它们的功能奥秘。然而，透射电子显微镜苛刻的高真空环境与生物分子赖以生存的水环境之间存在着根本性的矛盾。传统方法如负染色法，虽然能提供分子的低分辨率轮廓，但其脱水和染色的过程会不可避免地引入结构假象，限制了我们对分子真实面貌的认知。如何在高真空下观测一个完全水合的、保持着天然构象的生物分子？这正是现代结构生物学面临的关键挑战。
+在结构生物学的世界里，我们的核心追求是在原子尺度上“看见”生命机器——[生物大分子](@keyword=biological_macromolecules|lang=zh-CN|style=Feynman)——从而揭示它们的功能奥秘。然而，[透射电子显微镜](@keyword=transmission_electron_microscopy|lang=zh-CN|style=Feynman)苛刻的高真空环境与[生物分子](@keyword=biomolecules|lang=zh-CN|style=Feynman)赖以生存的水环境之间存在着根本性的矛盾。传统方法如[负染色](@keyword=negative_staining|lang=zh-CN|style=Feynman)法，虽然能提供分子的低分辨率轮廓，但其脱水和染色的过程会不可避免地引入结构假象，限制了我们对分子真实面貌的认知。如何在高真空下观测一个完全水合的、保持着天然构象的[生物分子](@keyword=biomolecules|lang=zh-CN|style=Feynman)？这正是现代结构生物学面临的关键挑战。
 
-样品玻璃化冷冻技术为这一难题提供了革命性的解决方案。它通过以百万分之一秒量级的速度对样品进行超快速冷却，将包裹着生物分子的水“冻结”成一种类似玻璃的非晶态固体，即玻璃态冰。这一过程精妙地绕过了破坏性的冰晶形成，将生物大分子“定格”在其溶液中的天然构象。正是这项技术的突破，为冷冻电子显微镜（cryo-EM）打开了通往近原子分辨率的大门。
+样品玻璃化冷冻技术为这一难题提供了革命性的解决方案。它通过以百万分之一秒量级的速度对样品进行超快速冷却，将包裹着生物分子的水“冻结”成一种类似玻璃的[非晶态固体](@keyword=amorphous_solids|lang=zh-CN|style=Feynman)，即[玻璃态冰](@keyword=vitreous_ice|lang=zh-CN|style=Feynman)。这一过程精妙地绕过了破坏性的冰晶形成，将生物大分子“定格”在其溶液中的天然构象。正是这项技术的突破，为[冷冻电子显微镜](@keyword=cryogenic_electron_microscopy|lang=zh-CN|style=Feynman)（cryo-EM）打开了通往近[原子分辨率](@keyword=atomic_resolution|lang=zh-CN|style=Feynman)的大门。
 
-在接下来的内容中，我们将分三个章节深入探索这一关键技术。**第一章“原理与机制”**将揭示玻璃化冷冻背后的物理化学基础，解释为何超快冷却能形成玻璃态冰，以及如何克服热传递的障碍。**第二章“应用与交叉学科联系”**将展示该技术如何应用于从纯化蛋白到细胞原位的广泛研究场景，并推动多学科的融合。最后，在**第三章“动手实践”**中，你将通过具体问题来巩固对样品制备关键参数的理解。
+在接下来的内容中，我们将分三个章节深入探索这一关键技术。**第一章“原理与机制”**将揭示玻璃化冷冻背后的物理化学基础，解释为何超快冷却能形成[玻璃态冰](@keyword=vitreous_ice|lang=zh-CN|style=Feynman)，以及如何克服热传递的障碍。**第二章“应用与[交叉](@keyword=chiasmata|lang=zh-CN|style=Feynman)学科联系”**将展示该技术如何应用于从纯化蛋白到细胞原位的广泛研究场景，并推动多学科的融合。最后，在**第三章“动手实践”**中，你将通过具体问题来巩固对样品制备关键参数的理解。
 
 ## 原理与机制
 
-### 玻璃化冷冻的目标：保存天然构象
+### [玻璃化](@keyword=vitrification|lang=zh-CN|style=Feynman)冷冻的目标：保存天然构象
 
-在结构生物学中，我们的最终目标是以前所未有的清晰度“看到”生物大分子的三维结构，从而理解其功能机制。为了通过透射电子显微镜（TEM）对生物样品成像，必须将其置于高真空环境中。然而，生物分子在自然状态下存在于水溶液环境中，其结构和功能都依赖于与水分子的相互作用。直接将含水样品放入真空中会导致水分迅速蒸发，从而导致分子结构坍塌和破坏。
+在[结构生物学](@keyword=structural_biology|lang=zh-CN|style=Feynman)中，我们的最终目标是以前所未有的清晰度“看到”[生物大分子](@keyword=biological_macromolecules|lang=zh-CN|style=Feynman)的三维结构，从而理解其功能机制。为了通过[透射电子显微镜](@keyword=transmission_electron_microscopy|lang=zh-CN|style=Feynman)（TEM）对生物样品成像，必须将其置于高真空环境中。然而，[生物分子](@keyword=biomolecules|lang=zh-CN|style=Feynman)在自然状态下存在于水溶液环境中，其结构和功能都依赖于与水分子的相互作用。直接将含水样品放入真空中会导致水分迅速蒸发，从而导致[分子结构](@keyword=molecular_structure|lang=zh-CN|style=Feynman)坍塌和破坏。
 
-传统的方法，如**负染色法**（negative staining），通过用重金属盐（如乙酸铀）溶液包裹脱水的生物分子来解决这个问题。重金属盐在分子周围形成一个“模具”，其高原子序数能有效散射电子，从而在图像上产生蛋白质颗粒的负衬度轮廓。尽管这种方法对于观察分子的整体形状和评估样品纯度非常有用，但它存在根本性的局限性。脱水和与重金属盐的相互作用过程会不可避免地导致蛋白质构象的改变和扁平化。此外，染料本身的颗粒大小限制了最终所能达到的分辨率，通常只能达到约 20 埃（Å）的水平，远不足以解析原子级别的细节。
+传统的方法，如**[负染色](@keyword=negative_staining|lang=zh-CN|style=Feynman)法**（negative staining），通过用[重金属](@keyword=heavy_metals|lang=zh-CN|style=Feynman)盐（如[乙酸](@keyword=acetic_acid|lang=zh-CN|style=Feynman)铀）溶液包裹脱水的[生物分子](@keyword=biomolecules|lang=zh-CN|style=Feynman)来解决这个问题。[重金属](@keyword=heavy_metals|lang=zh-CN|style=Feynman)盐在分子周围形成一个“模具”，其高原子序数能有效散射电子，从而在图像上产生蛋白质颗粒的负衬度轮廓。尽管这种方法对于观察分子的整体形状和评估样品纯度非常有用，但它存在根本性的局限性。脱水和与重金属盐的相互作用过程会不可避免地导致[蛋白质构象](@keyword=protein_conformation|lang=zh-CN|style=Feynman)的改变和扁平化。此外，染料本身的[颗粒大小](@keyword=grain_size|lang=zh-CN|style=Feynman)限制了最终所能达到的分辨率，通常只能达到约 20 埃（Å）的水平，远不足以解析原子级别的细节。
 
-为了在近原子分辨率下研究生物分子的真实结构，我们需要一种方法能够在成像过程中保持其**近天然的、完全水合的状态**。这正是**低温电子显微镜（cryo-EM）**中**玻璃化冷冻**（vitrification）技术的核心优势所在 [@problem_id:2135225]。玻璃化冷冻的目标不是简单地“冻结”样品，而是以极快的速率将其冷却，使水分子来不及排列成有序的晶体结构，而是被“锁定”在它们在液态时的无序排列状态，形成一种非晶态的固体，即**玻璃态冰**（vitreous ice）。通过将蛋白质复合物包埋在这种玻璃态冰中，我们既保护了它们免受真空环境的破坏，又最大限度地保存了它们在溶液中的天然、水合构象，为实现高分辨率结构解析奠定了至关重要的基础。
+为了在近[原子分辨率](@keyword=atomic_resolution|lang=zh-CN|style=Feynman)下研究生物分子的真实结构，我们需要一种方法能够在成像过程中保持其**近天然的、完全水合的状态**。这正是**[低温电子显微镜](@keyword=cryo_electron_microscopy_(cryo_em)|lang=zh-CN|style=Feynman)（cryo-EM）**中**[玻璃化](@keyword=vitrification|lang=zh-CN|style=Feynman)冷冻**（vitrification）技术的核心优势所在 [@problem_id:2135225]。玻璃化冷冻的目标不是简单地“冻结”样品，而是以极快的速率将其冷却，使水分子来不及[排列](@keyword=permutation|lang=zh-CN|style=Feynman)成有序的[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)，而是被“锁定”在它们在液态时的无序[排列](@keyword=permutation|lang=zh-CN|style=Feynman)状态，形成一种[非晶态](@keyword=amorphous_state|lang=zh-CN|style=Feynman)的固体，即**[玻璃态冰](@keyword=vitreous_ice|lang=zh-CN|style=Feynman)**（vitreous ice）。通过将[蛋白质复合物](@keyword=protein_complexes|lang=zh-CN|style=Feynman)包埋在这种[玻璃态冰](@keyword=vitreous_ice|lang=zh-CN|style=Feynman)中，我们既保护了它们免受真空环境的破坏，又最大限度地保存了它们在溶液中的天然、水合构象，为实现[高分辨率结构](@keyword=high_resolution_structures|lang=zh-CN|style=Feynman)解析奠定了至关重要的基础。
 
-### 玻璃态冰：无定形水的物理学
+### [玻璃态冰](@keyword=vitreous_ice|lang=zh-CN|style=Feynman)：无定形水的物理学
 
-固态水，即我们通常所说的“冰”，在分子层面上有着截然不同的两种形态。当我们缓慢冷却液态水时，例如在冰箱中制作冰块，水分子有足够的时间和能量进行迁移和重新取向，最终排列成热力学上最稳定、能量最低的构型。这种构型具有长程有序的周期性结构，称为**晶格**（crystal lattice）。普通冰（Ice Ih）的晶格呈现出规则的六方对称性。这种缓慢冷却形成的冰被称为**晶态冰**（crystalline ice）。
+固态水，即我们通常所说的“冰”，在分子层面上有着截然不同的两种形态。当我们缓慢冷却液态水时，例如在冰箱中制作冰块，水分子有足够的时间和能量进行迁移和重新取向，最终[排列](@keyword=permutation|lang=zh-CN|style=Feynman)成[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)上最稳定、能量最低的构型。这种构型具有[长程有序](@keyword=long_range_order|lang=zh-CN|style=Feynman)的周期性结构，称为**[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)**（crystal lattice）。普通冰（Ice Ih）的[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)呈现出规则的六方对称性。这种缓慢冷却形成的冰被称为**晶态冰**（crystalline ice）。
 
-然而，在生物样品的制备中，晶态冰的形成是灾难性的。冰晶的生长过程会产生锋利的边缘，这些边缘会像微小的刀片一样物理性地穿透和破坏精巧的蛋白质结构。此外，冰晶在电子显微镜中会产生强烈的电子衍射，其信号会完全掩盖来自蛋白质颗粒的微弱信号，使成像变得不可能。
+然而，在生物样品的制备中，[晶态](@keyword=crystalline_state|lang=zh-CN|style=Feynman)冰的形成是灾难性的。冰晶的生长过程会产生锋利的边缘，这些边缘会像微小的刀片一样物理性地穿透和破坏精巧的[蛋白质结构](@keyword=protein_structure|lang=zh-CN|style=Feynman)。此外，冰晶在[电子显微镜](@keyword=electron_microscope|lang=zh-CN|style=Feynman)中会产生强烈的[电子衍射](@keyword=electron_diffraction|lang=zh-CN|style=Feynman)，其信号会完全掩盖来自蛋白质颗粒的微弱信号，使成像变得不可能。
 
-玻璃化冷冻技术旨在绕过这一问题。其核心在于以极高的速率（通常需要达到 $10^5$ 至 $10^6$ K/s）降低样品的温度。在这种超快速的冷却条件下，水分子根本没有足够的时间去寻找并排列成有序的晶格结构。取而代之的是，它们被瞬间“冻结”在它们于液态时所处的随机、无序的位置上。这种形成的固态水缺乏长程有序性，其分子排布更像是液态水的“快照”，因此被称为**无定形态**或**玻璃态**（amorphous or vitreous state）[@problem_id:2135292]。玻璃态冰的本质是一种非晶态固体，它像玻璃一样坚硬，但内部结构是无序的。由于没有晶体形成，它不会对生物大分子造成物理损伤，也不会产生干扰性的衍射伪影，从而为高质量的cryo-EM成像提供了理想的包埋介质。
+[玻璃化](@keyword=vitrification|lang=zh-CN|style=Feynman)冷冻技术旨在绕过这一问题。其核心在于以极高的速率（通常需要达到 $10^5$ 至 $10^6$ K/s）降低样品的温度。在这种超快速的冷却条件下，水分子根本没有足够的时间去寻找并[排列](@keyword=permutation|lang=zh-CN|style=Feynman)成有序的晶格结构。取而代之的是，它们被瞬间“冻结”在它们于液态时所处的随机、无序的位置上。这种形成的固态水缺乏长程有序性，其分子排布更像是液态水的“快照”，因此被称为**无定形态**或**玻璃态**（amorphous or vitreous state）[@problem_id:2135292]。[玻璃态冰](@keyword=vitreous_ice|lang=zh-CN|style=Feynman)的本质是一种[非晶态固体](@keyword=amorphous_solids|lang=zh-CN|style=Feynman)，它像玻璃一样坚硬，但内部结构是无序的。由于没有晶体形成，它不会对生物大分子造成物理损伤，也不会产生干扰性的衍射伪影，从而为高质量的cryo-EM成像提供了理想的包埋介质。
 
 ### 快速冷却的要求：热传递原理
 
-实现玻璃化冷冻的关键在于确保整个样品的冷却速率都超过水的临界冷却速率。这依赖于两个核心物理参数的优化：样品的厚度和冷冻剂的传热效率。
+实现玻璃化冷冻的关键在于确保整个样品的冷却速率都超过水的[临界冷却速率](@keyword=critical_cooling_rate|lang=zh-CN|style=Feynman)。这依赖于两个核心物理参数的优化：样品的厚度和冷冻剂的[传热效率](@keyword=heat_transfer_effectiveness|lang=zh-CN|style=Feynman)。
 
 #### 样品厚度的作用
 
-热量从样品内部传递到外部的冷冻剂需要时间，这个过程主要由热传导控制。直观地看，样品越厚，处于中心的区域距离冷却表面就越远，其热量传递到表面的路径就越长，因此冷却得也越慢。
+热量从样品内部传递到外部的冷冻剂需要时间，这个过程主要由[热传导](@keyword=thermal_conduction|lang=zh-CN|style=Feynman)控制。直观地看，样品越厚，处于中心的区域距离[冷却表](@keyword=cooling_schedule|lang=zh-CN|style=Feynman)面就越远，其热量传递到表面的路径就越长，因此冷却得也越慢。
 
-我们可以通过一个简化的物理模型来量化这一关系。考虑一个厚度为 $L$ 的含水薄膜，其热扩散系数为 $\alpha$。当它被瞬间浸入冷冻剂中时，其表面的温度被固定在冷冻剂的温度。样品中心的冷却过程由热传导方程描述。分析表明，达到某一目标温度所需的特征冷却时间 $\tau$ 与厚度的平方成正比：
+我们可以通过一个简化的物理模型来量化这一关系。考虑一个厚度为 $L$ 的含水薄膜，其[热扩散](@keyword=thermodiffusion|lang=zh-CN|style=Feynman)系数为 $\alpha$。当它被瞬间浸入冷冻剂中时，其表面的温度被固定在冷冻剂的温度。样品中心的冷却过程由热传导方程描述。分析表明，达到某一目标温度所需的特征冷却时间 $\tau$ 与厚度的平方成正比：
 
 $$
 \tau \propto L^2
 $$
 
-这意味着厚度的微小增加会导致冷却时间的急剧延长。例如，假设我们有两个样品，样品A的厚度为 $L_A$，样品B的厚度为 $L_B = 2 L_A$。根据上述关系，将样品B中心冷却到指定温度所需的时间 $\tau_B$ 将是样品A所需时间 $\tau_A$ 的四倍（$\tau_B / \tau_A = (2 L_A)^2 / L_A^2 = 4$）[@problem_id:2135287]。由于玻璃化要求在极短时间内完成冷却以避免冰晶成核，这种对厚度的二次方依赖性凸显了制备**超薄样品层**的极端重要性。
+这意味着厚度的微小增加会导致冷却时间的急剧延长。例如，假设我们有两个样品，样品A的厚度为 $L_A$，样品B的厚度为 $L_B = 2 L_A$。根据上述关系，将样品B中心冷却到指定温度所需的时间 $\tau_B$ 将是样品A所需时间 $\tau_A$ 的四倍（$\tau_B / \tau_A = (2 L_A)^2 / L_A^2 = 4$）[@problem_id:2135287]。由于[玻璃化](@keyword=vitrification|lang=zh-CN|style=Feynman)要求在极短时间内完成冷却以避免冰晶[成核](@keyword=nucleation|lang=zh-CN|style=Feynman)，这种对厚度的二次方依赖性凸显了制备**超薄样品层**的极端重要性。
 
-在cryo-EM样品制备中，这个超薄的液膜（通常厚度在10-100纳米）是通过在将样品滴加到EM载网上后，用滤纸进行**吸印**（blotting）来实现的 [@problem_id:2135282]。吸印步骤的主要目的就是移除多余的液体，从而形成一个足够薄的液膜。这个厚度不仅是为了实现玻璃化所必需的超快冷却速率，同时也是为了让电子束能够穿透样品和冰层进行有效成像。如果冰层过厚，大部分电子会发生非弹性散射，导致图像信噪比极低，无法解析出有用信息。
+在cryo-EM样品制备中，这个超薄的[液膜](@keyword=liquid_film|lang=zh-CN|style=Feynman)（通常厚度在10-100纳米）是通过在将样品滴加到EM载网上后，用滤纸进行**吸印**（blotting）来实现的 [@problem_id:2135282]。吸印步骤的主要目的就是移除多余的液体，从而形成一个足够薄的液膜。这个厚度不仅是为了实现[玻璃化](@keyword=vitrification|lang=zh-CN|style=Feynman)所必需的超快冷却速率，同时也是为了让电子束能够穿透样品和冰层进行有效成像。如果冰层过厚，大部分电子会发生[非弹性散射](@keyword=inelastic_scattering|lang=zh-CN|style=Feynman)，导致图像信噪比极低，无法解析出有用信息。
 
-#### 冷冻剂的选择与莱顿弗罗斯特效应
+#### 冷冻剂的选择与[莱顿弗罗斯特效应](@keyword=leidenfrost_effect|lang=zh-CN|style=Feynman)
 
 仅仅有超薄的样品还不够，我们还需要一种能够极快吸收热量的冷冻剂。一个看似矛盾但却至关重要的问题是：为什么我们通常使用沸点相对较高（184 K，约-89 °C）的液态乙烷或丙烷作为冷冻剂，而不是沸点低得多（77 K，约-196 °C）的液态氮？[@problem_id:2135246]
 
-答案在于一个被称为**莱顿弗罗斯特效应**（Leidenfrost effect）的物理现象。当一个温度远高于液体沸点的物体接触到该液体时，接触点处的液体会瞬间蒸发，在物体表面和周围的液体之间形成一层稳定的、具有隔热作用的蒸汽薄膜。
+答案在于一个被称为**[莱顿弗罗斯特效应](@keyword=leidenfrost_effect|lang=zh-CN|style=Feynman)**（Leidenfrost effect）的物理现象。当一个温度远高于液体沸点的物体接触到该液体时，接触点处的液体会瞬间蒸发，在物体表面和周围的液体之间形成一层稳定的、具有隔热作用的蒸汽薄膜。
 
-当我们将室温下的样品载网（约295 K）投入沸点极低的液氮（77 K）中时，巨大的温差使得莱顿弗罗斯特效应非常显著。一层氮气蒸汽层立即包裹住载网，将载网与液氮主体隔离开来。由于气体的导热性远差于液体，这层蒸汽层就像一个隔热毯，极大地阻碍了热量从样品传递到液氮，导致实际冷却速率大幅下降，通常不足以实现水的玻璃化。
+当我们将室温下的样品载网（约295 K）投入沸点极低的液氮（77 K）中时，巨大的温差使得[莱顿弗罗斯特效应](@keyword=leidenfrost_effect|lang=zh-CN|style=Feynman)非常显著。一层氮气蒸汽层立即包裹住载网，将载网与液氮主体隔离开来。由于气体的导热性远差于液体，这层蒸汽层就像一个隔热毯，极大地阻碍了热量从样品传递到[液氮](@keyword=liquid_nitrogen|lang=zh-CN|style=Feynman)，导致实际冷却速率大幅下降，通常不足以实现水的玻璃化。
 
 相比之下，液态乙烷的沸点（184 K）虽然更高，但与室温样品的温差较小。当载网投入液态乙烷时，虽然也会发生一些沸腾，但不足以形成一个稳定的、连续的隔热蒸汽层。液态乙烷能够与样品表面保持有效接触，利用其远高于气体的导热能力，实现高效的热量传递，从而达到玻璃化所需的冷却速率。
 
-我们可以通过一个简单的模型来量化莱顿弗罗斯特效应的影响 [@problem_id:2135263]。理想情况下的热流（热传递速率）由对流冷却决定，$Q'_{conv} = h_{conv} A (T_s - T_c)$，其中 $h_{conv}$ 是对流传热系数。而在莱顿弗罗斯特效应主导下，热流由通过厚度为 $L$ 的蒸汽层的热传导决定，$Q'_{cond} = k_{vap} A (T_s - T_c) / L$，其中 $k_{vap}$ 是蒸汽的导热系数。两者的比值揭示了效率的差异：
+我们可以通过一个简单的模型来量化[莱顿弗罗斯特效应](@keyword=leidenfrost_effect|lang=zh-CN|style=Feynman)的影响 [@problem_id:2135263]。理想情况下的热流（热传递速率）由[对流](@keyword=convection|lang=zh-CN|style=Feynman)冷却决定，$Q'_{conv} = h_{conv} A (T_s - T_c)$，其中 $h_{conv}$ 是[对流传热系数](@keyword=convective_heat_transfer_coefficient|lang=zh-CN|style=Feynman)。而在[莱顿弗罗斯特效应](@keyword=leidenfrost_effect|lang=zh-CN|style=Feynman)主导下，热流由通过厚度为 $L$ 的蒸汽层的热传导决定，$Q'_{cond} = k_{vap} A (T_s - T_c) / L$，其中 $k_{vap}$ 是蒸汽的[导热系数](@keyword=thermal_conductivity|lang=zh-CN|style=Feynman)。两者的比值揭示了效率的差异：
 
 $$
 \frac{Q'_{conv}}{Q'_{cond}} = \frac{h_{conv} L}{k_{vap}}
 $$
 
-使用典型的物理参数（例如，$h_{conv} \approx 3650 \text{ W m}^{-2} \text{K}^{-1}$, $k_{vap} \approx 0.0125 \text{ W m}^{-1} \text{K}^{-1}$, $L \approx 45.0 \text{ \mu m}$），计算出的比值可达13倍以上。这清晰地表明，克服或避免莱顿弗罗斯特效应对于实现超快冷却至关重要。
+使用典型的物理参数（例如，$h_{conv} \approx 3650 \text{ W m}^{-2} \text{K}^{-1}$, $k_{vap} \approx 0.0125 \text{ W m}^{-1} \text{K}^{-1}$, $L \approx 45.0 \mathrm{\mu m}$），计算出的比值可达13倍以上。这清晰地表明，克服或避免[莱顿弗罗斯特效应](@keyword=leidenfrost_effect|lang=zh-CN|style=Feynman)对于实现超快冷却至关重要。
 
 ### 玻璃化冷冻的实践流程：从载网到投入
 
@@ -67,26 +67,26 @@ $$
 
 标准的cryo-EM样品载网通常是在金属网格上覆盖一层多孔的非晶碳膜。然而，新制备的碳膜表面本质上是**疏水**的（hydrophobic），这意味着它会排斥水。如果直接将蛋白质水溶液滴加在这样的表面上，液滴会因为表面张力而呈球状，无法铺展成我们所需要的均匀薄膜。
 
-为了解决这个问题，需要在滴加样品前对载网进行**亲水化**（hydrophilic）处理，最常用的方法是**辉光放电**（glow-discharging）[@problem_id:2135244]。该过程将载网置于一个含有少量气体（通常是空气）的低压腔室中，并施加高电压产生等离子体。等离子体中含有高活性的离子和自由基，它们会轰击并与碳膜表面发生化学反应。这个过程会在疏水的碳氢表面引入含氧的**极性官能团**（如羟基-OH、羰基C=O、羧基-COOH）。这些极性基团可以与水分子形成氢键，从而显著增加表面的亲水性。从物理学角度看，这改变了固-液界面的能量平衡（如Young's方程所述），降低了水在碳膜上的接触角，使得水溶液能够均匀地铺展开来。
+为了解决这个问题，需要在滴加样品前对载网进行**亲水化**（hydrophilic）处理，最常用的方法是**辉光放电**（glow-discharging）[@problem_id:2135244]。该过程将载网置于一个含有少量气体（通常是空气）的低压腔室中，并施加高电压产生等离子体。等离子体中含有高活性的离子和[自由基](@keyword=free_radicals|lang=zh-CN|style=Feynman)，它们会轰击并与碳膜表面发生[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)。这个过程会在疏水的碳氢表面引入含氧的**极性官能团**（如羟基-OH、羰基C=O、羧基-COOH）。这些极性基团可以与水分子形成[氢键](@keyword=hydrogen_bonding|lang=zh-CN|style=Feynman)，从而显著增加表面的[亲水性](@keyword=hydrophilic|lang=zh-CN|style=Feynman)。从物理学角度看，这改变了固-液界面的能量平衡（如Young's方程所述），降低了水在碳膜上的接触角，使得[水溶液](@keyword=aqueous_solutions|lang=zh-CN|style=Feynman)能够均匀地铺展开来。
 
 #### 控制环境：湿度与蒸发
 
 在完成辉光放电处理后，载网被转移到自动化玻璃化设备（如Vitrobot）中。从滴加样品、吸印到投入冷冻剂的整个过程都在一个严格控制的环境腔室中进行。其中一个关键的控制参数是维持腔室内**接近饱和的高湿度**（通常 > 95%）[@problem_id:2135289]。
 
-这样做的首要原因是为了**最大限度地减少蒸发**。如前所述，通过吸印形成的液膜非常薄，其表面积与体积之比极大。在干燥的环境中，水分会从这个巨大的表面上迅速蒸发。由于只有水分子蒸发，样品中的溶质（如缓冲盐和蛋白质分子）会被留在体积不断减小的液滴中，导致其浓度急剧、不受控制地升高。浓度的改变会影响pH值、离子强度，甚至可能直接导致蛋白质变性或聚集，这完全违背了我们希望观察其天然状态的初衷。通过将环境湿度提高到接近饱和，空气中的水蒸气分压接近液体表面的饱和蒸气压，从而大大降低了净蒸发速率，确保了在投入冷冻剂前的短暂操作时间内，样品的化学环境保持稳定。
+这样做的首要原因是为了**最大限度地减少蒸发**。如前所述，通过吸印形成的[液膜](@keyword=liquid_film|lang=zh-CN|style=Feynman)非常薄，其表面积与体积之比极大。在干燥的环境中，水分会从这个巨大的表面上迅速蒸发。由于只有水分子蒸发，样品中的溶质（如缓冲盐和蛋白质分子）会被留在体积不断减小的液滴中，导致其浓度急剧、不受控制地升高。浓度的改变会影响pH值、[离子强度](@keyword=ionic_strength|lang=zh-CN|style=Feynman)，甚至可能直接导致[蛋白质变性](@keyword=protein_denaturation|lang=zh-CN|style=Feynman)或聚集，这完全违背了我们希望观察其天然状态的初衷。通过将环境湿度提高到接近饱和，空气中的水蒸气分压接近液体表面的饱和蒸气压，从而大大降低了净[蒸发速率](@keyword=evaporation_rate|lang=zh-CN|style=Feynman)，确保了在投入冷冻剂前的短暂[操作时间](@keyword=handling_time|lang=zh-CN|style=Feynman)内，样品的化学环境保持稳定。
 
 #### 应对样品伪影：气液界面
 
-尽管我们尽力创造理想条件，但在样品制备过程中仍存在一些固有的挑战，其中最主要的一个来源于**气液界面**（air-water interface）。当液膜通过吸印变得极薄时，大量的蛋白质分子被迫与这个界面接触。这种相互作用会产生两种主要的有害伪影：
+尽管我们尽力创造理想条件，但在样品制备过程中仍存在一些固有的挑战，其中最主要的一个来源于**气液界面**（air-water interface）。当[液膜](@keyword=liquid_film|lang=zh-CN|style=Feynman)通过吸印变得极薄时，大量的蛋白质分子被迫与这个界面接触。这种相互作用会产生两种主要的有害伪影：
 
-1.  **优势取向（Preferred Orientation）**：蛋白质分子并非各向同性的球体，其表面不同区域的化学性质（如电荷、疏水性）也不同。当与气液界面相互作用时，分子可能会以某种能量上有利的特定方式吸附在界面上，而不是在冰层中随机分布。这会导致在最终收集的成千上万张颗粒图像中，某些朝向的视图过多，而另一些则完全缺失，给后续的三维重构带来巨大困难，甚至使其无法完成。
+1.  **优势取向（Preferred Orientation）**：蛋白质分子并非各向同性的球体，其表面不同区域的化学性质（如[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)、[疏水性](@keyword=hydrophobic|lang=zh-CN|style=Feynman)）也不同。当与气液界面相互作用时，分子可能会以某种能量上有利的特定方式吸附在界面上，而不是在冰层中随机[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)。这会导致在最终收集的成千上万张颗粒图像中，某些朝向的视图过多，而另一些则完全缺失，给后续的三维重构带来巨大困难，甚至使其无法完成。
 
-2.  **蛋白质变性（Denaturation）**：除了取向问题，气液界面本身就可能对蛋白质结构造成破坏 [@problem_id:2135297]。蛋白质为了维持其在水溶液中的折叠状态，通常会将疏水性氨基酸残基埋藏在内部，而将亲水性残基暴露于表面。气液界面提供了一个独特的非极性环境（空气）。为了降低整个系统的自由能，蛋白质分子在吸附到界面时，可能会发生部分乃至完全的**去折叠（unfolding）**或**变性**，将其疏水的核心暴露给非极性的空气。这种结构上的破坏是不可逆的，意味着我们最终在显微镜下观察到的，可能已经不是具有生物活性的天然构象，而是一个受损的、无功能的结构。
+2.  **[蛋白质变性](@keyword=protein_denaturation|lang=zh-CN|style=Feynman)（Denaturation）**：除了取向问题，气液界面本身就可能对[蛋白质结构](@keyword=protein_structure|lang=zh-CN|style=Feynman)造成破坏 [@problem_id:2135297]。蛋白质为了维持其在[水溶液](@keyword=aqueous_solutions|lang=zh-CN|style=Feynman)中的折叠状态，通常会将[疏水性](@keyword=hydrophobic|lang=zh-CN|style=Feynman)氨基酸残基埋藏在内部，而将亲水性残基暴露于表面。气液界面提供了一个独特的非极性环境（空气）。为了降低整个系统的自由能，蛋白质分子在吸附到界面时，可能会发生部分乃至完全的**去折叠（unfolding）**或**[变性](@keyword=denaturation|lang=zh-CN|style=Feynman)**，将其疏水的核心暴露给非极性的空气。这种结构上的破坏是不可逆的，意味着我们最终在显微镜下观察到的，可能已经不是具有生物活性的天然构象，而是一个受损的、无功能的结构。
 
-### 玻璃化之后：维持亚稳态
+### [玻璃化](@keyword=vitrification|lang=zh-CN|style=Feynman)之后：维持亚稳态
 
-通过上述一系列精细的步骤，我们成功地将样品包埋在了玻璃态冰中。然而，必须认识到，玻璃态是一种**亚稳态**（metastable state）。从热力学角度看，晶态冰才是能量更低的稳定构型。玻璃态冰之所以能存在，仅仅是因为在极低的温度下，水分子缺乏足够的热能来进行重排。
+通过上述一系列精细的步骤，我们成功地将样品包埋在了[玻璃态冰](@keyword=vitreous_ice|lang=zh-CN|style=Feynman)中。然而，必须认识到，玻璃态是一种**亚稳态**（metastable state）。从[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)角度看，[晶态](@keyword=crystalline_state|lang=zh-CN|style=Feynman)冰才是能量更低的稳定构型。[玻璃态冰](@keyword=vitreous_ice|lang=zh-CN|style=Feynman)之所以能存在，仅仅是因为在极低的温度下，水分子缺乏足够的热能来进行重排。
 
-如果一个已玻璃化的样品被重新加热，一旦温度升高到某个临界点，水分子将重新获得足够的动能，开始向有序的晶态结构转变。这个从无定形的玻璃态转变为晶态的过程被称为**失透**或**去玻璃化**（devitrification）[@problem_id:2135296]。与初始的冰晶形成一样，失透过程同样会在样品内部生长出晶体，从而破坏蛋白质结构，并使样品对于cryo-EM分析失效。
+如果一个已[玻璃化](@keyword=vitrification|lang=zh-CN|style=Feynman)的样品被重新加热，一旦温度升高到某个[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)，水分子将重新获得足够的动能，开始向有序的[晶态](@keyword=crystalline_state|lang=zh-CN|style=Feynman)结构转变。这个从无定形的玻璃态转变为晶态的过程被称为**失透**或**去玻璃化**（devitrification）[@problem_id:2135296]。与初始的冰晶形成一样，失透过程同样会在样品内部生长出晶体，从而破坏蛋白质结构，并使样品对于cryo-EM分析失效。
 
-对于纯水而言，这个危险的相变开始显著发生的温度大约在**-135 °C (约138 K)** 左右。因此，为了确保样品在制备、储存、运输以及装载到电子显微镜的过程中始终保持其玻璃态，其温度**必须严格维持在该临界温度以下**。这正是为什么所有操作都必须在液氮（77 K）的保护下进行的原因，因为它提供了足够的安全温度裕度，以防止灾难性的失透现象发生。
+对于纯水而言，这个危险的[相变](@keyword=phase_change|lang=zh-CN|style=Feynman)开始显著发生的温度大约在**-135 °C (约138 K)** 左右。因此，为了确保样品在制备、储存、运输以及装载到电子显微镜的过程中始终保持其玻璃态，其温度**必须严格维持在该[临界温度](@keyword=critical_temperature|lang=zh-CN|style=Feynman)以下**。这正是为什么所有操作都必须在[液氮](@keyword=liquid_nitrogen|lang=zh-CN|style=Feynman)（77 K）的保护下进行的原因，因为它提供了足够的安全温度[裕度](@keyword=headroom|lang=zh-CN|style=Feynman)，以防止灾难性的失透现象发生。

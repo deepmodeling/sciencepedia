@@ -54,7 +54,7 @@ $$ E(\mathbb{Q}) \cong T \oplus \mathbb{Z}^r $$
 $$ 3X^3 + 4Y^3 + 5Z^3 = 0 $$
 这个方程定义了一个亏格为 1 的曲线。你可以在 $\mathbb{R}$ 中，在 $\mathbb{Q}_2$ 中，在 $\mathbb{Q}_3$ 中，在 $\mathbb{Q}_5$ 中，以及对每个素数，都找到它的解。它以优异的成绩通过了每一项局部测试。然而，Selmer 证明了它在有理数中没有解（除了平庸解 $X=Y=Z=0$）。
 
-这些幻影解，这些[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)的[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)，由一个特殊的群来衡量，这个群被称为 **Tate-Shafarevich 群**，记作 $\Sha(E)$ [@problem_id:3090348]。这个群是幻影的藏身之处。我们用来追寻秩的 Selmer 群既包含了真正的[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)，也包含了这些来自 $\Sha(E)$ 的幻影。计算秩的根本困难在于，我们必须找到一种方法来区分真实与虚幻。$\Sha(E)$ 的结构和大小在很大程度上仍然是神秘的；其有限性的猜想是该领域伟大的未解问题之一。
+这些幻影解，这些[局部-整体原则](@keyword=local_to_global_principle|lang=zh-CN|style=Feynman)的[反例](@keyword=counterexample|lang=zh-CN|style=Feynman)，由一个特殊的群来衡量，这个群被称为 **Tate-Shafarevich 群**，记作 $\mathrm{Ш}(E)$ [@problem_id:3090348]。这个群是幻影的藏身之处。我们用来追寻秩的 Selmer 群既包含了真正的[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman)，也包含了这些来自 $\mathrm{Ш}(E)$ 的幻影。计算秩的根本困难在于，我们必须找到一种方法来区分真实与虚幻。$\mathrm{Ш}(E)$ 的结构和大小在很大程度上仍然是神秘的；其有限性的猜想是该领域伟大的未解问题之一。
 
 ### 一个宏大的统一构想：Birch and Swinnerton-Dyer 猜想
 

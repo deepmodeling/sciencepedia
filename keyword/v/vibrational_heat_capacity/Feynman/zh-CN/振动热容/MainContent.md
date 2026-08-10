@@ -9,7 +9,7 @@
 
 现在，如果你是 19 世纪的物理学家，你可能会做出一个非常合理的猜测。你可以将晶体中的每个原子建模为一个由弹簧与其邻居相连的小球。在三维空间中，这个小球可以在三个方向上（上-下、左-右、前-后）摆动。经典力学定律通过一个强大的思想——**能量均分定理**——告诉我们，在给定的温度 $T$下，这些运动模式中的每一种平均应持有相同数量的能量：$k_B T$，其中 $k_B$ 是著名的[玻尔兹曼常数](@keyword=boltzmann_constant|lang=zh-CN|style=Feynman)。由于我们有 $N$ 个原子，每个原子可以以 3 种独立的方式[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，因此总振动能 $U$ 应该是 $U = 3N k_B T$。
 
-[定容热容](@keyword=constant_volume_heat_capacity|lang=zh-CN|style=Feynman) $C_V$ 只是当温度变化时能量的变化量。一个快速的计算得出了一个异常简单的结果：$C_V = \frac{\partial U}{\partial T} = 3N k_B$ [@problem_id:157295]。这就是 **Dulong-Petit 定律**。对于一摩尔原子，这个值大约是 $25 \text{ J/(mol·K)}$，而且值得注意的是，对于许多简单的固体来说，在室温下，这个预测是完全准确的！物理学似乎已经解决了这个问题。问题解决了。
+[定容热容](@keyword=constant_volume_heat_capacity|lang=zh-CN|style=Feynman) $C_V$ 只是当温度变化时能量的变化量。一个快速的计算得出了一个异常简单的结果：$C_V = \frac{\partial U}{\partial T} = 3N k_B$ [@problem_id:157295]。这就是 **Dulong-Petit 定律**。对于一摩尔原子，这个值大约是 $25 \mathrm{J/(mol\cdot K)}$，而且值得注意的是，对于许多简单的固体来说，在室温下，这个预测是完全准确的！物理学似乎已经解决了这个问题。问题解决了。
 
 但大自然总是比我们最初的猜测更微妙、更奇妙。当实验学家开发出将材料冷却到极低温度（接近绝对零度）的技术时，他们发现了令人震惊的事情。[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)根本没有保持恒定，而是随着温度接近零而骤降至零。在室温下如此成功的经典图景，在低温下却完全失效了。这是一场危机，也是一个美妙的线索，表明我们的理解中缺少了某些深刻的东西。
 

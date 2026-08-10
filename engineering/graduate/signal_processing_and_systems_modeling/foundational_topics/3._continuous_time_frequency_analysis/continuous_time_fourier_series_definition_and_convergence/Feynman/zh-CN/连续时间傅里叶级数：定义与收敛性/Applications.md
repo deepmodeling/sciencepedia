@@ -32,7 +32,7 @@
 
 #### 采样的数学模型：狄拉克梳状函数
 
-我们如何将一个连续信号 $x(t)$ 转换成离散的样本序列 $x[n]$？理想的采样过程，可以被数学家想象成用一个无限尖锐、间隔为 $T_s$ 的脉冲串——狄拉克梳状函数 $\Sha_{T_s}(t) = \sum_{n \in \mathbb{Z}} \delta(t - n T_s)$——去“敲击”连续信号。有趣的是，这个在时域上由无限多个离散脉冲构成的函数，它的傅里叶级数是什么样的呢？答案出奇地简单和优美：它的[傅里叶系数](@keyword=fourier_coefficients|lang=zh-CN|style=Feynman)是一个常数序列 [@problem_id:2860343] [@problem_id:2860347]。这意味着，时域中的一个梳状函数，在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中也是一个梳状函数！这揭示了时域的离散性与[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)的周期性之间深刻的对偶关系。
+我们如何将一个连续信号 $x(t)$ 转换成离散的样本序列 $x[n]$？理想的采样过程，可以被数学家想象成用一个无限尖锐、间隔为 $T_s$ 的脉冲串——狄拉克梳状函数 $\mathrm{Ш}_{T_s}(t) = \sum_{n \in \mathbb{Z}} \delta(t - n T_s)$——去“敲击”连续信号。有趣的是，这个在时域上由无限多个离散脉冲构成的函数，它的傅里叶级数是什么样的呢？答案出奇地简单和优美：它的[傅里叶系数](@keyword=fourier_coefficients|lang=zh-CN|style=Feynman)是一个常数序列 [@problem_id:2860343] [@problem_id:2860347]。这意味着，时域中的一个梳状函数，在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中也是一个梳状函数！这揭示了时域的离散性与[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)的周期性之间深刻的对偶关系。
 
 #### 混叠：[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)的重影
 

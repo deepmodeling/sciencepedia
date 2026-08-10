@@ -57,10 +57,10 @@ $$ L'(E/K, 1) = c(E, K) \cdot \hat{h}(P_K) $$
 
 假设 $E$ 在 $\mathbb{Q}$ 上的[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为一，即 $L'(E,1) \neq 0$。结合这一点与Gross-Zagier公式，我们可以找到一个合适的域 $K$，并证明其[赫格纳点](@keyword=heegner_points|lang=zh-CN|style=Feynman) $P_K$ 是非挠的。那么[有理点](@keyword=rational_points|lang=zh-CN|style=Feynman) $P_{\mathbb{Q}}=\operatorname{Tr}_{K/\mathbb{Q}}(P_K)$ 也将是无限阶的，从而证明 $\operatorname{rank}(E(\mathbb{Q})) \ge 1$。
 
-但秩*恰好*是一吗？BSD猜想的另一个神秘部分——有限的**[Tate-Shafarevich群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)** $\Sha(E/\mathbb{Q})$ 又如何呢？故事在这里随着Victor Kolyvagin的工作达到了高潮。
+但秩*恰好*是一吗？BSD猜想的另一个神秘部分——有限的**[Tate-Shafarevich群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman)** $\mathrm{Ш}(E/\mathbb{Q})$ 又如何呢？故事在这里随着Victor Kolyvagin的工作达到了高潮。
 
 Kolyvagin证明，我们构造的[赫格纳点](@keyword=heegner_points|lang=zh-CN|style=Feynman)并非孤立的奇迹。它们融入了一个宏大、连贯的结构中。通过考虑定义在一整族环类域上的[赫格纳点](@keyword=heegner_points|lang=zh-CN|style=Feynman)，他构造了一个强大的对象，称为**[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)** [@problem_id:3025003]。这个[上同调类](@keyword=cohomology_class|lang=zh-CN|style=Feynman)系统具有卓越的相容性。Kolyvagin证明，如果基础的[赫格纳点](@keyword=heegner_points|lang=zh-CN|style=Feynman) $P_K$ 是无限阶的（这正是Gross-Zagier在 $L'(E,1) \neq 0$ 时所保证的条件），那么这个[欧拉系统](@keyword=euler_systems|lang=zh-CN|style=Feynman)就是非平凡的。然后，他利用这种非平凡性来严格控制曲线的算术性质。
 
-他的惊人结论是：$E(\mathbb{Q})$ 的秩必须*恰好为一*，并且神秘的[Tate-Shafarevich群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) $\Sha(E/\mathbb{Q})$ 必须是有限的！[@problem_id:3024998, @problem_id:3025003]。
+他的惊人结论是：$E(\mathbb{Q})$ 的秩必须*恰好为一*，并且神秘的[Tate-Shafarevich群](@keyword=tate_shafarevich_group|lang=zh-CN|style=Feynman) $\mathrm{Ш}(E/\mathbb{Q})$ 必须是有限的！[@problem_id:3024998, @problem_id:3025003]。
 
 总而言之，Gross-Zagier和Kolyvagin的工作为[解析秩](@keyword=analytic_rank|lang=zh-CN|style=Feynman)为一的[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)（前提是存在一个合适的赫格纳域 $K$）完整证明了Birch-Swinnerton-Dyer猜想。它精确地证实了猜想的秩部分，甚至进一步证明了主系数 $L'(E,1)$ 的公式，其精度达到了一个有理数完全平方的模糊度——这是一个非凡的精确水平 [@problem_id:3024981]。由[赫格纳点](@keyword=heegner_points|lang=zh-CN|style=Feynman)建造的桥梁不仅将我们引向一块宝藏；它揭示了整个景观，并以辉煌的细节证实了我们地图的准确性。

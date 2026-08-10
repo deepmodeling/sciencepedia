@@ -1,67 +1,67 @@
 ## 应用与跨学科联系
 
-在前面的章节中，我们已经建立了电磁场的动量和动量守恒的理论框架。我们了解到，电磁场不仅携带能量，还携带线性动量和角动量。这些概念不仅仅是理论上的抽象，它们在从天体物理学到纳米技术，再到我们对基本物理定律本身的理解等众多领域中，都有着深刻而具体的应用。本章旨在通过一系列跨学科的应用实例，展示电磁动量原理的强大威力与广泛适用性。我们将不再重复核心原理的推导，而是聚焦于如何运用这些原理来分析和解决现实世界中的问题，从而揭示物理学不同分支之间的深刻联系。
+在前面的章节中，我们已经建立了[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)的动量和[动量守恒](@keyword=momentum_conservation|lang=zh-CN|style=Feynman)的理论框架。我们了解到，[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)不仅携带能量，还携带线性动量和角动量。这些概念不仅仅是理论上的抽象，它们在从天体物理学到[纳米技术](@keyword=nanotechnology|lang=zh-CN|style=Feynman)，再到我们对基本物理定律本身的理解等众多领域中，都有着深刻而具体的应用。本章旨在通过一系列跨学科的应用实例，展示[电磁动量](@keyword=electromagnetic_momentum|lang=zh-CN|style=Feynman)原理的强大威力与广泛适用性。我们将不再重复核心原理的推导，而是聚焦于如何运用这些原理来分析和解决现实世界中的问题，从而揭示物理学不同分支之间的深刻联系。
 
 ### 辐射压：光的推力
 
-我们最直观地体验电磁动量的方式是通过辐射压——即电磁波（如光）对其所照射的物体表面施加的压力。尽管这种力通常非常微弱，但在特定条件下，其效应却是显著且至关重要的。
+我们最直观地体验[电磁动量](@keyword=electromagnetic_momentum|lang=zh-CN|style=Feynman)的方式是通过辐射压——即[电磁波](@keyword=electromagnetic_wave|lang=zh-CN|style=Feynman)（如光）对其所照射的物体表面施加的压力。尽管这种力通常非常微弱，但在特定条件下，其效应却是显著且至关重要的。
 
 #### 基本概念：吸收、反射与动量传递
 
-根据我们在前几章建立的理论，能量为 $U$ 的光脉冲在真空中携带的动量大小为 $p = U/c$。当这个光脉冲与物体相互作用时，动量会发生转移，从而对物体产生一个冲量。例如，一个能量为 $45.0~\text{J}$ 的短激光脉冲被一个完美吸收体完全吸收时，它会给予该物体一个大小为 $J = U/c \approx 1.50 \times 10^{-7}~\text{N·s}$ 的冲量 [@problem_id:1808815]。
+根据我们在前几章建立的理论，能量为 $U$ 的光脉冲在真空中携带的动量大小为 $p = U/c$。当这个光脉冲与物体相互作用时，动量会发生转移，从而对物体产生一个冲量。例如，一个能量为 $45.0~\text{J}$ 的短[激光脉冲](@keyword=laser_pulses|lang=zh-CN|style=Feynman)被一个完美吸收体完全吸收时，它会给予该物体一个大小为 $J = U/c \approx 1.50 \times 10^{-7}~\mathrm{N\cdot s}$ 的冲量 [@problem_id:1808815]。
 
-对于持续的电磁波，动量的持续传递表现为一种力。如果一个表面完全吸收了功率为 $P_{\text{abs}}$ 的光，它所受到的辐射力大小为 $F_{\text{rad}} = P_{\text{abs}}/c$。如果表面是完美反射体，入射光束的动量将被反向。动量的变化量是入射动量的两倍，因此传递给表面的力也加倍，即 $F_{\text{rad}} = 2P_{\text{inc}}/c$，其中 $P_{\text{inc}}$ 是入射功率。对于一个反射率为 $\mathcal{R}$ 的不完美反射表面，部分光被吸收，部分被反射，总的作用力可以通过综合这两种效应来计算。例如，当一束具有非均匀强度分布（如高斯光束）的激光垂直入射到一个部分反射的圆盘上时，总作用力不仅取决于总功率 $P$，还取决于反射率 $\mathcal{R}$ 以及光束尺寸与圆盘尺寸的相对关系 [@problem_id:1808801]。
+对于持续的[电磁波](@keyword=electromagnetic_wave|lang=zh-CN|style=Feynman)，动量的持续传递表现为一种力。如果一个表面完全吸收了功率为 $P_{\text{abs}}$ 的光，它所受到的[辐射力](@keyword=radiative_force|lang=zh-CN|style=Feynman)大小为 $F_{\text{rad}} = P_{\text{abs}}/c$。如果表面是完美反射体，入射光束的动量将被反向。动量的变化量是入射动量的两倍，因此传递给表面的力也加倍，即 $F_{\text{rad}} = 2P_{\text{inc}}/c$，其中 $P_{\text{inc}}$ 是入射功率。对于一个反射率为 $\mathcal{R}$ 的不完美反射表面，部分光被吸收，部分被反射，总的作用力可以通过综合这两种效应来计算。例如，当一束具有非均匀[强度分布](@keyword=intensity_distribution|lang=zh-CN|style=Feynman)（如高斯光束）的[激光](@keyword=laser|lang=zh-CN|style=Feynman)垂直入射到一个部分反射的圆盘上时，总作用力不仅取决于总功率 $P$，还取决于[反射率](@keyword=reflectivity|lang=zh-CN|style=Feynman) $\mathcal{R}$ 以及光束尺寸与圆盘尺寸的相对关系 [@problem_id:1808801]。
 
 #### 技术与科学应用
 
 辐射压的概念催生了多项革命性的技术，并为天文学观测提供了新的工具。
 
-**光学悬浮与光镊**：激光束的辐射压足以克服微观粒子的重力，实现非接触式的悬浮和操控。在一个典型的光悬浮实验中，可以通过精确控制向上的激光束强度来悬浮一个微小的、具有特定质量和吸收特性的粒子。要悬浮一个完美吸收的球形粒子，所需的激光电场振幅 $E_0$ 直接取决于粒子的半径 $R$ 和密度 $\rho$ [@problem_id:1808825]。如果目标物体是完美反射体，例如一个薄圆盘，由于动量传递效率更高，达到相同悬浮力所需的激光总功率则会不同 [@problem_id:1808814]。这项技术，即“光镊”，已成为生物物理学和纳米科学中不可或缺的工具，用于操控单个细胞、病毒甚至DNA分子。
+**光学悬浮与光镊**：[激光](@keyword=laser|lang=zh-CN|style=Feynman)束的[辐射压](@keyword=radiation_pressure|lang=zh-CN|style=Feynman)足以克服微观粒子的重力，实现非接触式的悬浮和操控。在一个典型的光悬浮实验中，可以通过精确控制向上的[激光](@keyword=laser|lang=zh-CN|style=Feynman)束强度来悬浮一个微小的、具有特定质量和吸收特性的粒子。要悬浮一个完美吸收的球形粒子，所需的[激光](@keyword=laser|lang=zh-CN|style=Feynman)[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)振幅 $E_0$ 直接取决于粒子的半径 $R$ 和密度 $\rho$ [@problem_id:1808825]。如果目标物体是完美反射体，例如一个薄圆盘，由于[动量传递](@keyword=momentum_transfer|lang=zh-CN|style=Feynman)效率更高，达到相同悬[浮力](@keyword=buoyant_force|lang=zh-CN|style=Feynman)所需的[激光](@keyword=laser|lang=zh-CN|style=Feynman)总功率则会不同 [@problem_id:1808814]。这项技术，即“[光镊](@keyword=optical_tweezers|lang=zh-CN|style=Feynman)”，已成为生物物理学和[纳米科学](@keyword=nanoscience|lang=zh-CN|style=Feynman)中不可或缺的工具，用于操控单个细胞、病毒甚至DNA分子。
 
-**太阳帆与空间推进**：在广袤的太空中，来自太阳的持续光子流虽然压力微弱，但可以被巨大的、轻质的“太阳帆”收集，从而为航天器提供持续的推力。通过调整帆面相对于太阳光的方向，宇航员可以控制推力的大小和方向。一个理想的反射帆面比吸收帆面能产生两倍的推力，因此效率更高。对于一个在距恒星一定距离处展开太阳帆的宇航员来说，其可能获得的最大加速度取决于恒星的光度、帆的面积以及宇航员和帆的总质量 [@problem_id:1808779]。太阳帆技术为实现低成本、长周期的深空探索任务提供了可能。
+**[太阳帆](@keyword=solar_sails|lang=zh-CN|style=Feynman)与[空间推进](@keyword=space_propulsion|lang=zh-CN|style=Feynman)**：在广袤的太空中，来自太阳的持续[光子](@entry_id:145192)流虽然压力微弱，但可以被巨大的、轻质的“[太阳帆](@keyword=solar_sails|lang=zh-CN|style=Feynman)”收集，从而为航天器提供持续的推力。通过调整帆面相对于太阳光的方向，宇航员可以控制推力的大小和方向。一个理想的反射帆面比吸收帆面能产生两倍的推力，因此效率更高。对于一个在距恒星一定距离处展开[太阳帆](@keyword=solar_sails|lang=zh-CN|style=Feynman)的宇航员来说，其可能获得的最[大加速](@keyword=great_acceleration|lang=zh-CN|style=Feynman)度取决于恒星的光度、帆的面积以及宇航员和帆的总质量 [@problem_id:1808779]。[太阳帆](@keyword=solar_sails|lang=zh-CN|style=Feynman)技术为实现低成本、长周期的深空探索任务提供了可能。
 
-辐射压的来源不仅仅局限于高度准直的激光束或遥远的恒星。任何电磁辐射源，哪怕是家用的白炽灯泡，都会在其周围产生辐射压。例如，一个各向同性辐射的 $60.0$ 瓦灯泡，在 $2.00$ 米远处的一个完美吸收表面上产生的辐射压强虽然只有约 $3.98 \times 10^{-9}$ 帕斯卡，但这个微小的效应证明了电磁动量概念的普适性 [@problem_id:1808783]。
+[辐射压](@keyword=radiation_pressure|lang=zh-CN|style=Feynman)的来源不仅仅局限于高度准直的[激光](@keyword=laser|lang=zh-CN|style=Feynman)束或遥远的恒星。任何[电磁辐射](@keyword=electromagnetic_radiation|lang=zh-CN|style=Feynman)源，哪怕是家用的白炽灯泡，都会在其周围产生[辐射压](@keyword=radiation_pressure|lang=zh-CN|style=Feynman)。例如，一个各向同性辐射的 $60.0$ 瓦灯泡，在 $2.00$ 米远处的一个完美吸收表面上产生的[辐射压](@keyword=radiation_pressure|lang=zh-CN|style=Feynman)强虽然只有约 $3.98 \times 10^{-9}$ 帕斯卡，但这个微小的效应证明了[电磁动量](@keyword=electromagnetic_momentum|lang=zh-CN|style=Feynman)概念的普适性 [@problem_id:1808783]。
 
-更有趣的是，动量传递甚至可以发生在没有传播波的区域。在全内反射条件下，电磁场会渗透到第二种介质中，形成一种沿界面传播但在垂直界面方向上指数衰减的“倏逝场”。这个倏逝场仍然携带动量，其坡印亭矢量有一个平行于界面的分量。如果将一个微小吸收粒子置于这个场中，它将会受到一个平行于界面的推力。该力的大小不仅依赖于入射光强，还与两种介质的折射率、入射角以及粒子离界面的距离呈指数关系 [@problem_id:1808788]。这一现象在近场光学和超分辨率成像等前沿领域具有重要意义。
+更有趣的是，动量传递甚至可以发生在没有传播波的区域。在全内反射条件下，[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)会渗透到第二种介质中，形成一种沿界面传播但在垂直界面方向上指数衰减的“[倏逝场](@keyword=evanescent_field|lang=zh-CN|style=Feynman)”。这个[倏逝场](@keyword=evanescent_field|lang=zh-CN|style=Feynman)仍然携带动量，其坡印亭矢量有一个平行于界面的分量。如果将一个微小[吸收粒子](@keyword=sink_particles|lang=zh-CN|style=Feynman)置于这个场中，它将会受到一个平行于界面的推力。该力的大小不仅依赖于入射光强，还与两种介质的[折射率](@keyword=index_of_refraction|lang=zh-CN|style=Feynman)、入射角以及粒子离界面的距离呈指数关系 [@problem_id:1808788]。这一现象在[近场光学](@keyword=near_field_optics|lang=zh-CN|style=Feynman)和超分辨率成像等前沿领域具有重要意义。
 
-### 静态与准静态场中的动量
+### 静态与[准静态场](@keyword=quasistatic_fields|lang=zh-CN|style=Feynman)中的动量
 
-电磁动量的一个更深奥、更反直觉的方面是，它甚至可以存在于没有电磁波传播的“静态”或“准静态”场配置中。只要空间中同时存在不平行的电场 $\vec{E}$ 和磁场 $\vec{B}$，就会存在动量密度 $\vec{g} = \epsilon_0(\vec{E} \times \vec{B})$。这种通常被称为“隐藏动量”的场动量，对于维护物理系统的总动量守恒至关重要。
+[电磁动量](@keyword=electromagnetic_momentum|lang=zh-CN|style=Feynman)的一个更深奥、更反直觉的方面是，它甚至可以存在于没有[电磁波传播](@keyword=electromagnetic_wave_propagation|lang=zh-CN|style=Feynman)的“静态”或“准静态”场配置中。只要空间中同时存在不平行的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $\vec{E}$ 和[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman) $\vec{B}$，就会存在[动量密度](@keyword=momentum_density|lang=zh-CN|style=Feynman) $\vec{g} = \epsilon_0(\vec{E} \times \vec{B})$。这种通常被称为“隐藏动量”的[场动量](@keyword=field_momentum|lang=zh-CN|style=Feynman)，对于维护物理系统的总[动量守恒](@keyword=momentum_conservation|lang=zh-CN|style=Feynman)至关重要。
 
-#### 场动量的起源
+#### [场动量](@keyword=field_momentum|lang=zh-CN|style=Feynman)的起源
 
-考虑一个以恒定速度 $\vec{v}$ 运动的平行板电容器。在其自身的静止参考系中，电容器内部只有均匀的电场 $\vec{E}$。然而，在实验室参考系中，运动的电荷片会产生电流，从而在两板之间产生磁场 $\vec{B}$。这个 $\vec{B}$ 场垂直于 $\vec{E}$ 场，因此在两板之间的空间中存在非零的动量密度 $\vec{g}$，其大小与电荷密度 $\sigma$ 和速度 $v$ 直接相关 [@problem_id:1808810]。同样，一个带电的圆柱形电容器绕其轴线旋转时，旋转的电荷构成了环形电流，产生轴向磁场。这个磁场与原有的径向电场正交，于是在电容器的介质空间中储存了电磁动量 [@problem_id:1808818]。
+考虑一个以恒定速度 $\vec{v}$ 运动的[平行板电容器](@keyword=parallel_plate_capacitor_2|lang=zh-CN|style=Feynman)。在其自身的[静止参考系](@keyword=rest_frame|lang=zh-CN|style=Feynman)中，[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)内部只有均匀的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $\vec{E}$。然而，在实验室参考系中，运动的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)片会产生电流，从而在两板之间产生[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman) $\vec{B}$。这个 $\vec{B}$ 场垂直于 $\vec{E}$ 场，因此在两板之间的空间中存在非零的动量密度 $\vec{g}$，其大小与电荷密度 $\sigma$ 和速度 $v$ 直接相关 [@problem_id:1808810]。同样，一个带电的[圆柱形电容器](@keyword=cylindrical_capacitor|lang=zh-CN|style=Feynman)绕其轴线旋转时，旋转的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)构成了环形电流，产生轴向[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)。这个[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)与原有的[径向电场](@keyword=radial_electric_field|lang=zh-CN|style=Feynman)正交，于是在[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)的介质空间中储存了[电磁动量](@keyword=electromagnetic_momentum|lang=zh-CN|style=Feynman) [@problem_id:1808818]。
 
-甚至在完全静止的系统中，也可能储存角动量。一个经典的例子是在一个均匀带电球壳的中心放置一个点状磁偶极子。电荷产生的球对称径向电场与磁偶极子产生的磁场在空间中交错。尽管整个系统是静态的，但电场和磁场的叉乘在空间中产生了非零的角动量密度。通过对整个空间积分，可以发现这个系统在场中储存了净的电磁角动量，其方向与磁偶极矩的方向相同 [@problem_id:1808829]。这个惊人的结果表明，角动量可以“隐藏”在纯粹的静场配置中。
+甚至在完全静止的系统中，也可能储存角动量。一个经典的例子是在一个均匀带电球壳的中心放置一个点状磁偶极子。[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)产生的球对称[径向电场](@keyword=radial_electric_field|lang=zh-CN|style=Feynman)与[磁偶极子](@keyword=magnetic_dipole|lang=zh-CN|style=Feynman)产生的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)在空间中交错。尽管整个系统是静态的，但[电场和磁场](@keyword=electric_and_magnetic_fields|lang=zh-CN|style=Feynman)的叉乘在空间中产生了非零的角动量密度。通过对整个空间积分，可以发现这个系统在场中储存了净的电磁角动量，其方向与[磁偶极矩](@keyword=magnetic_dipole_moments|lang=zh-CN|style=Feynman)的方向相同 [@problem_id:1808829]。这个惊人的结果表明，角动量可以“隐藏”在纯粹的静场配置中。
 
-#### 动量守恒与“电磁质量”
+#### 动量守恒与“[电磁质量](@keyword=electromagnetic_mass|lang=zh-CN|style=Feynman)”
 
-这些“隐藏”的场动量并非可有可无的理论游戏，它们是动量守恒定律的忠实守护者。考虑一个由两个静止点电荷组成的系统，当一个外部磁场从零缓慢增加时，根据法拉第感应定律，变化的磁场会产生感应电场。这个感应电场会对电荷施加作用力，使它们获得机械动量。然而，计算表明，两个电荷获得的总机械动量并非为零。这是否意味着动量不守恒？答案是否定的。失去的动量恰好被储存在系统的最终电磁场中。初始时系统总动量为零（机械动量和场动量均为零）。在磁场建立后，系统获得的总机械动量与最终储存在场中的“隐藏”动量大小相等、方向相反，从而确保了整个系统的总动量（机械动量+场动量）始终为零 [@problem_id:1848331]。
+这些“隐藏”的[场动量](@keyword=field_momentum|lang=zh-CN|style=Feynman)并非可有可无的理论游戏，它们是[动量守恒](@keyword=momentum_conservation|lang=zh-CN|style=Feynman)定律的忠实守护者。考虑一个由两个静止[点电荷](@keyword=point_charges|lang=zh-CN|style=Feynman)组成的系统，当一个外部[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)从零缓慢增加时，根据[法拉第感应定律](@keyword=faraday_s_law_of_induction|lang=zh-CN|style=Feynman)，变化的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)会产生[感应电场](@keyword=induced_electric_field|lang=zh-CN|style=Feynman)。这个[感应电场](@keyword=induced_electric_field|lang=zh-CN|style=Feynman)会对[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)施加作用力，使它们获得[机械动量](@keyword=mechanical_momentum|lang=zh-CN|style=Feynman)。然而，计算表明，两个[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)获得的总[机械动量](@keyword=mechanical_momentum|lang=zh-CN|style=Feynman)并非为零。这是否意味着动量不守恒？答案是否定的。失去的动量恰好被储存在系统的最终[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)中。初始时系统[总动量](@keyword=total_linear_momentum|lang=zh-CN|style=Feynman)为零（[机械动量](@keyword=mechanical_momentum|lang=zh-CN|style=Feynman)和[场动量](@keyword=field_momentum|lang=zh-CN|style=Feynman)均为零）。在[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)建立后，系统获得的总[机械动量](@keyword=mechanical_momentum|lang=zh-CN|style=Feynman)与最终储存在场中的“隐藏”动量大小相等、方向相反，从而确保了整个系统的总动量（[机械动量](@keyword=mechanical_momentum|lang=zh-CN|style=Feynman)+[场动量](@keyword=field_momentum|lang=zh-CN|style=Feynman)）始终为零 [@problem_id:1848331]。
 
-场动量的概念也引出了“电磁质量”的想法。一个带电体在加速时，不仅需要改变其自身的机械动量，还需要改变其周围电磁场的动量。从惯性的角度看，改变场动量需要额外的力。因此，带电体表现出的惯性质量似乎比其“裸”质量要大。对于一个以低速运动的带电球壳，我们可以计算其周围场中储存的总动量 $\vec{P}_{\text{em}}$。这个动量正比于其速度 $\vec{v}$，即 $\vec{P}_{\text{em}} = m_{\text{em}} \vec{v}$。比例系数 $m_{\text{em}}$ 就被称为“电磁质量”，它完全由电荷 $Q$ 和半径 $R$ 决定 [@problem_id:1239373]。这个概念在狭义相对论的早期发展中扮演了重要角色，并深刻地揭示了质量、能量和场之间的内在联系。
+[场动量](@keyword=field_momentum|lang=zh-CN|style=Feynman)的概念也引出了“[电磁质量](@keyword=electromagnetic_mass|lang=zh-CN|style=Feynman)”的想法。一个带电体在加速时，不仅需要改变其自身的[机械动量](@keyword=mechanical_momentum|lang=zh-CN|style=Feynman)，还需要改变其周围[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)的动量。从惯性的角度看，改变[场动量](@keyword=field_momentum|lang=zh-CN|style=Feynman)需要额外的力。因此，带电体表现出的[惯性质量](@keyword=inertial_mass|lang=zh-CN|style=Feynman)似乎比其“裸”质量要大。对于一个以低速运动的带电球壳，我们可以计算其周围场中储存的[总动量](@keyword=total_linear_momentum|lang=zh-CN|style=Feynman) $\vec{P}_{\text{em}}$。这个动量正比于其速度 $\vec{v}$，即 $\vec{P}_{\text{em}} = m_{\text{em}} \vec{v}$。比例系数 $m_{\text{em}}$ 就被称为“[电磁质量](@keyword=electromagnetic_mass|lang=zh-CN|style=Feynman)”，它完全由[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman) $Q$ 和半径 $R$ 决定 [@problem_id:1239373]。这个概念在狭义相对论的早期发展中扮演了重要角色，并深刻地揭示了质量、能量和场之间的内在联系。
 
 ### 电动力学系统中的力与能流
 
-电磁动量的概念还为我们理解电路中的能量传输以及复杂系统中内部力的相互作用提供了全新的视角。
+[电磁动量](@keyword=electromagnetic_momentum|lang=zh-CN|style=Feynman)的概念还为我们理解电路中的能量传输以及复杂系统中内部力的相互作用提供了全新的视角。
 
 #### 电路中的能流
 
-一个经典但令人惊讶的应用是关于直流电路中能量如何流动。考虑一段有电阻的直导线，当有稳定电流通过时，它会因焦耳热而发热。我们通常认为能量是由电子携带并沿着导线流动的。然而，基于场的观点却描绘了一幅截然不同的图景。导线外部同时存在着驱动电流的（近似）轴向电场和由电流产生的环向磁场。这两个场通过坡印亭矢量 $\vec{S} = (\vec{E} \times \vec{B}) / \mu_0$ 描述了能流。令人惊讶的是，$\vec{S}$ 的方向是指向导线内部的！这意味着，为导线提供焦耳热的能量并非沿着导线流动，而是从周围的空间通过电磁场流入导线。流入导线的总功率恰好等于其消耗的电功率 $P=V^2/R$ [@problem_id:1808807]。由于动量密度与坡印亭矢量成正比（$\vec{g} = \vec{S}/c^2$），这也意味着动量正从外部空间持续地流向导线。
+一个经典但令人惊讶的应用是关于[直流电路](@keyword=dc_circuits|lang=zh-CN|style=Feynman)中能量如何流动。考虑一段有电阻的直导线，当有稳定电流通过时，它会因[焦耳热](@keyword=joule_heating|lang=zh-CN|style=Feynman)而发热。我们通常认为能量是由电子携带并沿着导线流动的。然而，基于场的观点却描绘了一幅截然不同的图景。导线外部同时存在着驱动电流的（近似）轴向[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)和由电流产生的[环向磁场](@keyword=toroidal_magnetic_field|lang=zh-CN|style=Feynman)。这两个场通过坡印亭矢量 $\vec{S} = (\vec{E} \times \vec{B}) / \mu_0$ 描述了能流。令人惊讶的是，$\vec{S}$ 的方向是指向导线内部的！这意味着，为导线提供[焦耳热](@keyword=joule_heating|lang=zh-CN|style=Feynman)的能量并非沿着导线流动，而是从周围的空间通过[电磁场](@keyword=electromagnetic_field|lang=zh-CN|style=Feynman)流入导线。流入导线的总功率恰好等于其消耗的[电功率](@keyword=electrical_power|lang=zh-CN|style=Feynman) $P=V^2/R$ [@problem_id:1808807]。由于[动量密度](@keyword=momentum_density|lang=zh-CN|style=Feynman)与坡印亭矢量成正比（$\vec{g} = \vec{S}/c^2$），这也意味着动量正从外部空间持续地流向导线。
 
-#### 通过麦克斯韦应力张量计算力
+#### 通过[麦克斯韦应力张量](@keyword=maxwell_stress_tensor|lang=zh-CN|style=Feynman)计算力
 
-麦克斯韦应力张量是计算电磁力的强大数学工具，它将力解释为动量在空间中的流动。通过在某个闭合曲面上对动量流（即应力张量）进行积分，就可以得到曲面内部所有电荷和电流所受到的总力。
+[麦克斯韦应力张量](@keyword=maxwell_stress_tensor|lang=zh-CN|style=Feynman)是计算[电磁力](@keyword=electromagnetic_forces|lang=zh-CN|style=Feynman)的强大数学工具，它将力解释为动量在空间中的流动。通过在某个闭合[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上对动量流（即应力张量）进行积分，就可以得到[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)内部所有[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)和电流所受到的总力。
 
-一个很好的例子是计算一个旋转带电球壳的两个半球之间的相互作用力。北半球对南半球施加的力包括两部分：一是静电排斥力，它试图将两个半球推开；二是由于球壳旋转（形成表面电流）而产生的磁力。旋转的电荷相当于一系列平行的电流环，它们之间会相互吸引。因此，磁力部分实际上是一个吸引力，它会部分抵消静电排斥力。通过计算作用在两个半球分界面（赤道面）上的麦克斯韦应力，可以精确地得到这个净作用力。有趣的是，如果将整个系统置于一个外部均匀磁场中，该外部磁场并不会对两个半球之间的相互作用力产生任何影响 [@problem_id:1808835]。这个例子完美地展示了如何利用场论的方法来解决复杂的内力问题。
+一个很好的例子是计算一个旋转带电球壳的两个半球之间的相互作用力。北半球对南半球施加的力包括两部分：一是[静电排斥](@keyword=electrostatic_repulsion|lang=zh-CN|style=Feynman)力，它试图将两个半球推开；二是由于球壳旋转（形成[表面电流](@keyword=surface_current|lang=zh-CN|style=Feynman)）而产生的磁力。旋转的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)相当于一系列平行的电流环，它们之间会相互吸引。因此，磁力部分实际上是一个吸[引力](@keyword=gravitational_force|lang=zh-CN|style=Feynman)，它会部分抵消静电排斥力。通过计算作用在两个半球分界面（赤道面）上的[麦克斯韦应力](@keyword=maxwell_stress|lang=zh-CN|style=Feynman)，可以精确地得到这个净作用力。有趣的是，如果将整个系统置于一个外部均匀[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)中，该外部[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)并不会对两个半球之间的相互作用力产生任何影响 [@problem_id:1808835]。这个例子完美地展示了如何利用场论的方法来解决复杂的内力问题。
 
 ### 前沿与概念挑战：介质中的光动量
 
-尽管电磁理论取得了巨大成功，但在某些领域，一些基本概念仍在被积极地讨论和研究。一个著名的例子是：光在折射率为 $n$ 的介质中的动量是多少？这个问题引发了长达一个世纪的“亚伯拉罕-闵可夫斯基之争”。
+尽管电磁理论取得了巨大成功，但在某些领域，一些基本概念仍在被积极地讨论和研究。一个著名的例子是：光在[折射率](@keyword=index_of_refraction|lang=zh-CN|style=Feynman)为 $n$ 的介质中的动量是多少？这个问题引发了长达一个世纪的“亚伯拉罕-闵可夫斯基之争”。
 
-亚伯拉罕（Abraham）认为动量是 $p = U/(nc)$，而闵可夫斯基（Minkowski）则认为是 $p = nU/c$。这两种理论都能在各自的框架内自洽，但它们预测的力学效应却不同。我们可以通过一个思想实验来探讨这个问题：一束激光从真空垂直入射到一个可自由移动的介质块上。在界面处，一部分光被反射，另一部分光透射进入介质。通过对整个“光+介质块”系统应用动量守恒定律，我们可以计算光对介质块施加的力。如果采用闵可夫斯基的动量表达式，计算结果惊人地显示，在某些条件下，介质块受到的力是指向光源的“拉力”，而不是直觉上的“推力” [@problem_id:1808817]。
+亚伯拉罕（Abraham）认为动量是 $p = U/(nc)$，而闵可夫斯基（Minkowski）则认为是 $p = nU/c$。这两种理论都能在各自的框架内自洽，但它们预测的力学效应却不同。我们可以通过一个思想实验来探讨这个问题：一束[激光](@keyword=laser|lang=zh-CN|style=Feynman)从真空垂直入射到一个可自由移动的介质块上。在界面处，一部分光被反射，另一部分光透射进入介质。通过对整个“光+介质块”系统应用动量守恒定律，我们可以计算光对介质块施加的力。如果采用闵可夫斯基的动量表达式，计算结果惊人地显示，在某些条件下，介质块受到的力是指向光源的“拉力”，而不是直觉上的“推力” [@problem_id:1808817]。
 
-实验已经证实了这种“拉力”的存在。然而，这并不意味着闵可夫斯基的理论是唯一正确的。如今，物理学家普遍认为，争论的根源在于如何将总动量在“场”和“物质介质”之间进行划分。不同的划分方式导致了不同的动量表达式和力学效应预测。这提醒我们，即使是像动量这样基础的物理概念，在与复杂物质相互作用时，其定义和解释也可能充满微妙之处，并持续激发着新的研究和更深刻的理解。
+实验已经证实了这种“拉力”的存在。然而，这并不意味着闵可夫斯基的理论是唯一正确的。如今，物理学家普遍认为，争论的根源在于如何将[总动量](@keyword=total_linear_momentum|lang=zh-CN|style=Feynman)在“场”和“物质介质”之间进行划分。不同的划分方式导致了不同的动量表达式和力学效应预测。这提醒我们，即使是像动量这样基础的物理概念，在与复杂物质相互作用时，其定义和解释也可能充满微妙之处，并持续激发着新的研究和更深刻的理解。
 
 ### 结论
 
-本章我们巡礼了电磁动量在各个领域的广泛应用。从驱动太阳帆的宏观力量，到操控单个分子的微观光镊；从解释电路能流的全新视角，到揭示静态场中“隐藏”动量的深刻内涵，我们看到，电磁动量不仅是一个自洽的理论概念，更是连接电磁学、力学、光学和相对论等不同物理分支的桥梁。它不仅为我们提供了解决实际问题的有力工具，也挑战着我们的物理直觉，将我们引向对自然规律更深层次的探索。这些应用实例充分证明，一个世纪前由麦克斯韦、坡印亭等人建立的场论思想，至今仍然充满活力，并不断在现代科学技术的前沿地带展现其强大的预测和解释能力。
+本章我们巡礼了[电磁动量](@keyword=electromagnetic_momentum|lang=zh-CN|style=Feynman)在各个领域的广泛应用。从驱动[太阳帆](@keyword=solar_sails|lang=zh-CN|style=Feynman)的宏观力量，到操控单个分子的微观光镊；从解释电路能流的全新视角，到揭示静态场中“隐藏”动量的深刻内涵，我们看到，[电磁动量](@keyword=electromagnetic_momentum|lang=zh-CN|style=Feynman)不仅是一个自洽的理论概念，更是连接电磁学、力学、光学和相对论等不同物理分支的桥梁。它不仅为我们提供了解决实际问题的有力工具，也挑战着我们的物理直觉，将我们引向对自然规律更深层次的探索。这些应用实例充分证明，一个世纪前由麦克斯韦、坡印亭等人建立的场论思想，至今仍然充满活力，并不断在现代科学技术的前沿地带展现其强大的预测和解释能力。

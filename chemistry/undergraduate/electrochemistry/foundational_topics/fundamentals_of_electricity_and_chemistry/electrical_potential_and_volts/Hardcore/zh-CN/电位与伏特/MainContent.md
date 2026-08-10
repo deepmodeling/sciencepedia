@@ -1,131 +1,131 @@
 ## 引言
-电势是电化学的基石，是理解和量化化学能与电能相互转换的关键物理量。然而，对于初学者而言，将这一抽象概念与电池如何供电、金属为何生锈、乃至生命活动如何维系等现实问题联系起来，往往存在挑战。本文旨在系统地弥合这一差距。在“原理与机制”一章中，我们将深入探讨电势的定义、其背后的热力学原理以及浓度如何通过能斯特方程影响电势。随后的“应用与跨学科联系”一章将展示这些基本原理如何在能源、材料、分析化学和生命科学等多个领域大放异彩。最后，通过“动手实践”部分，读者将有机会运用所学知识解决具体的计算和设计问题，从而巩固理解。
+[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)是电化学的基石，是理解和量化化学能与电能相互转换的关键物理量。然而，对于初学者而言，将这一抽象概念与电池如何供电、金属为何生锈、乃至生命活动如何维系等现实问题联系起来，往往存在挑战。本文旨在系统地弥合这一差距。在“原理与机制”一章中，我们将深入探讨[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)的定义、其背后的热力学原理以及浓度如何通过[能斯特方程](@keyword=nernst_equation|lang=zh-CN|style=Feynman)影响[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)。随后的“应用与跨学科联系”一章将展示这些基本原理如何在能源、材料、分析化学和生命科学等多个领域大放异彩。最后，通过“动手实践”部分，读者将有机会运用所学知识解决具体的计算和设计问题，从而巩固理解。
 
 ## 原理与机制
 
-在电化学领域，电势的概念是理解氧化还原反应能量学的核心。它量化了化学物质获得或失去电子的倾向，并直接关系到驱动电荷流动的电动势。本章将系统地阐述电势的基本原理，从标准条件下的定义扩展到实际应用中的复杂情境，并探讨其背后的热力学机制和动力学因素。
+在电化学领域，[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)的概念是理解氧化还原反应能量学的核心。它量化了化学物质获得或失去电子的倾向，并直接关系到驱动[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)流动的[电动势](@keyword=electromotive_force|lang=zh-CN|style=Feynman)。本章将系统地阐述[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)的基本原理，从标准条件下的定义扩展到实际应用中的复杂情境，并探讨其背后的[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)机制和动力学因素。
 
-### 电极电势与标准电池
+### [电极电势](@keyword=electrode_potential|lang=zh-CN|style=Feynman)与标准电池
 
-每个电化学电池都由两个**半电池**组成，其中分别发生氧化和还原半反应。**电极电势** ($E$) 是衡量一个半反应发生倾向的物理量，具体来说，是其作为还原反应发生的趋势。电势的绝对值无法测量，因此我们通过将其与一个公认的参比电极相比较来确定其相对值。
+每个电化学电池都由两个**半电池**组成，其中分别发生氧化和还原半反应。**电极电势** ($E$) 是衡量一个半反应发生倾向的物理量，具体来说，是其作为还原反应发生的趋势。[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)无法测量，因此我们通过将其与一个公认的[参比电极](@keyword=reference_electrodes|lang=zh-CN|style=Feynman)相比较来确定其相对值。
 
-国际上通用的基准是**标准氢电极 (Standard Hydrogen Electrode, SHE)**，其电极反应为：
+国际上通用的基准是**[标准氢电极](@keyword=standard_hydrogen_electrode|lang=zh-CN|style=Feynman) (Standard Hydrogen Electrode, SHE)**，其电极反应为：
 $$2H^{+}(aq, 1 \text{ M}) + 2e^{-} \rightleftharpoons H_{2}(g, 1 \text{ atm})$$
-在标准条件下（298.15 K，所有相关物质的活度均为1），SHE的电极电势被定义为精确的 $0$ 伏特。一个电极在标准条件下相对于SHE测得的电势被称为**标准还原电势** ($E^\circ$)。$E^\circ$ 值越正，表示该物质越容易被还原；$E^\circ$ 值越负，表示该物质越难以被还原，其共轭的氧化态物质则越容易被氧化。
+在标准条件下（298.15 K，所有相关物质的活度均为1），SHE的电极电势被定义为精确的 $0$ 伏特。一个电极在标准条件下相对于SHE测得的[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)被称为**[标准还原电势](@keyword=standard_reduction_potential|lang=zh-CN|style=Feynman)** ($E^\circ$)。$E^\circ$ 值越正，表示该物质越容易被还原；$E^\circ$ 值越负，表示该物质越难以被还原，其共轭的氧化态物质则越容易被氧化。
 
-一个半反应的氧化电势与相应还原反应的还原电势在数值上相等，但符号相反。这是因为逆转反应会使吉布斯自由能变号，而电势与吉布斯自由能成正比。例如，对于镁电极，其标准还原电势为-2.37 V [@problem_id:1551975]：
+一个[半反应](@entry_id:266806)的氧化[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)与相应还原反应的还原电势在数值上相等，但符号相反。这是因为逆转反应会使吉布斯自由能变号，而[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)与吉布斯自由能成正比。例如，对于镁电极，其[标准还原电势](@keyword=standard_reduction_potential|lang=zh-CN|style=Feynman)为-2.37 V [@problem_id:1551975]：
 $$Mg^{2+}(aq) + 2e^{-} \rightarrow Mg(s), \quad E^\circ_{\text{red}} = -2.37 \text{ V}$$
-其逆过程，即镁的氧化，其标准氧化电势则为：
+其逆过程，即镁的氧化，其标准氧化[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)则为：
 $$Mg(s) \rightarrow Mg^{2+}(aq) + 2e^{-}, \quad E^\circ_{\text{ox}} = -E^\circ_{\text{red}} = -(-2.37 \text{ V}) = +2.37 \text{ V}$$
 
-将两个不同的半电池通过盐桥（用于连通离子电路）和外部导线（用于连通电子电路）连接，即可构成一个**伽伐尼电池**（或称原电池）。在伽伐尼电池中，会自发发生氧化还原反应，将化学能转化为电能。为了确定哪个电极是阳极（发生氧化），哪个是阴极（发生还原），我们只需比较它们的标准还原电势：
+将两个不同的半电池通过盐桥（用于连通离子电路）和外部导线（用于连通电子电路）连接，即可构成一个**[伽伐尼电池](@keyword=voltaic_cell|lang=zh-CN|style=Feynman)**（或称原电池）。在[伽伐尼电池](@keyword=voltaic_cell|lang=zh-CN|style=Feynman)中，会自发发生[氧化还原反应](@keyword=redox_reactions|lang=zh-CN|style=Feynman)，将化学能转化为电能。为了确定哪个电极是阳极（发生氧化），哪个是阴极（发生还原），我们只需比较它们的[标准还原电势](@keyword=standard_reduction_potential|lang=zh-CN|style=Feynman)：
 
-- **阴极 (Cathode)**：具有更高（更正）$E^\circ$ 值的半反应，在此处发生还原。
-- **阳极 (Anode)**：具有更低（更负）$E^\circ$ 值的半反应，在此处发生氧化。
+- **阴极 (Cathode)**：具有更高（更正）$E^\circ$ 值的[半反应](@entry_id:266806)，在此处发生还原。
+- **[阳极](@keyword=anode|lang=zh-CN|style=Feynman) (Anode)**：具有更低（更负）$E^\circ$ 值的[半反应](@entry_id:266806)，在此处发生氧化。
 
-电池的总电势，即**标准电池电势** ($E^\circ_{\text{cell}}$)，可以通过阴极和阳极的标准还原电势计算得出：
+电池的总[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)，即**[标准电池电势](@keyword=standard_cell_potential|lang=zh-CN|style=Feynman)** ($E^\circ_{\text{cell}}$)，可以通过阴极和阳极的[标准还原电势](@keyword=standard_reduction_potential|lang=zh-CN|style=Feynman)计算得出：
 $$E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}$$
 
-考虑一个由镉 (Cd) 电极和锡 (Sn) 电极在标准条件下组成的伽伐尼电池。它们各自的标准还原电势为 [@problem_id:1551961]：
+考虑一个由镉 (Cd) 电极和锡 (Sn) 电极在标准条件下组成的[伽伐尼电池](@keyword=voltaic_cell|lang=zh-CN|style=Feynman)。它们各自的[标准还原电势](@keyword=standard_reduction_potential|lang=zh-CN|style=Feynman)为 [@problem_id:1551961]：
 $$Sn^{2+}(aq) + 2e^{-} \rightarrow Sn(s), \quad E^\circ = -0.14 \text{ V}$$
 $$Cd^{2+}(aq) + 2e^{-} \rightarrow Cd(s), \quad E^\circ = -0.40 \text{ V}$$
-由于锡的 $E^\circ$ 值（-0.14 V）高于镉的 $E^\circ$ 值（-0.40 V），因此锡电极是阴极，发生还原反应；镉电极是阳极，发生氧化反应。该电池的标准电势为：
+由于锡的 $E^\circ$ 值（-0.14 V）高于镉的 $E^\circ$ 值（-0.40 V），因此锡电极是阴极，发生还原反应；镉电极是[阳极](@keyword=anode|lang=zh-CN|style=Feynman)，发生氧化反应。该电池的标准电势为：
 $$E^\circ_{\text{cell}} = E^\circ_{\text{Sn}^{2+}/\text{Sn}} - E^\circ_{\text{Cd}^{2+}/\text{Cd}} = (-0.14 \text{ V}) - (-0.40 \text{ V}) = +0.26 \text{ V}$$
 正的 $E^\circ_{\text{cell}}$ 值表明该反应在标准条件下是自发的。
 
-为了简洁地表示一个电化学电池的结构，我们使用**电池图示法**（或称线性表示法）。其约定为：阳极在左，阴极在右。单竖线 | 代表相界面，双竖线 || 代表盐桥。对于上述镉-锡电池，其电池图示为：
+为了简洁地表示一个电化学电池的结构，我们使用**电池图示法**（或称[线性表示](@keyword=linear_representation|lang=zh-CN|style=Feynman)法）。其约定为：[阳极](@keyword=anode|lang=zh-CN|style=Feynman)在左，阴极在右。单竖线 | 代表相界面，双竖线 || 代表盐桥。对于上述镉-锡电池，其电池图示为：
 $$Cd(s) | Cd^{2+}(aq) || Sn^{2+}(aq) | Sn(s)$$
 
-### 电化学池的热力学
+### [电化学池](@keyword=electrochemical_cells|lang=zh-CN|style=Feynman)的[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)
 
-电池电势与化学反应的吉布斯自由能变 ($\Delta G$) 之间存在着直接的定量关系，这是连接宏观电学测量与微观化学反应热力学的桥梁。该关系式为：
+电池[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)与[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的[吉布斯自由能变](@keyword=change_in_gibbs_free_energy|lang=zh-CN|style=Feynman) ($\Delta G$) 之间存在着直接的定量关系，这是连接宏观电学测量与微观[化学反应热力学](@keyword=thermodynamics_of_chemical_reactions|lang=zh-CN|style=Feynman)的桥梁。该关系式为：
 $$\Delta G = -nFE_{\text{cell}}$$
-其中，$n$ 是在总反应方程式中转移的电子的摩尔数，$F$ 是**法拉第常数**，约等于 $96485 \text{ C/mol}$，代表每摩尔电子所带的电荷量。
+其中，$n$ 是在总反应方程式中转移的电子的摩尔数，$F$ 是**法拉第常数**，约等于 $96485 \text{ C/mol}$，代表每摩尔电子所带的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)量。
 
-这个方程揭示了电池电势的物理意义：$E_{\text{cell}}$ 是单位电荷（以库仑计）从电池中流过时可以做的最大非体积功。根据热力学第二定律，一个过程的自发性由 $\Delta G$ 的符号决定：
-- 如果 $E_{\text{cell}} > 0$，则 $\Delta G  0$，反应是**自发的**（伽伐尼电池）。
-- 如果 $E_{\text{cell}}  0$，则 $\Delta G  0$，反应是非自发的，需要从外界提供能量才能进行（电解池）。
+这个方程揭示了电池[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)的物理意义：$E_{\text{cell}}$ 是单位[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)（以[库仑计](@keyword=coulometer|lang=zh-CN|style=Feynman)）从电池中流过时可以做的最大[非体积功](@keyword=non_pv_work|lang=zh-CN|style=Feynman)。根据[热力学第二定律](@keyword=second_law_of_thermodynamics|lang=zh-CN|style=Feynman)，一个过程的自发性由 $\Delta G$ 的符号决定：
+- 如果 $E_{\text{cell}} > 0$，则 $\Delta G  0$，反应是**自发的**（[伽伐尼电池](@keyword=voltaic_cell|lang=zh-CN|style=Feynman)）。
+- 如果 $E_{\text{cell}}  0$，则 $\Delta G  0$，反应是非自发的，需要从外界提供能量才能进行（[电解池](@keyword=electrolytic_cells|lang=zh-CN|style=Feynman)）。
 - 如果 $E_{\text{cell}} = 0$，则 $\Delta G = 0$，反应处于**平衡状态**。
 
 在标准条件下，该关系变为：
 $$\Delta G^\circ = -nFE^\circ_{\text{cell}}$$
-这允许我们通过电化学测量来计算反应的标准吉布斯自由能变。例如，在一个标准的镍镉 (NiCd) 电池中，其半反应为 [@problem_id:1551976]：
+这允许我们通过电化学测量来计算反应的[标准吉布斯自由能变](@keyword=standard_gibbs_free_energy_change|lang=zh-CN|style=Feynman)。例如，在一个标准的镍镉 (NiCd) 电池中，其[半反应](@entry_id:266806)为 [@problem_id:1551976]：
 阴极: $NiO_2(s) + 2H_2O(l) + 2e^- \rightarrow Ni(OH)_2(s) + 2OH^-(aq), \quad E^\circ = +0.49 \text{ V}$
 阳极 (逆转): $Cd(s) + 2OH^-(aq) \rightarrow Cd(OH)_2(s) + 2e^-, \quad E^\circ_{\text{anode, red}} = -0.81 \text{ V}$
 
 总反应为：$NiO_2(s) + 2H_2O(l) + Cd(s) \rightarrow Ni(OH)_2(s) + Cd(OH)_2(s)$。
-标准电池电势为 $E^\circ_{\text{cell}} = 0.49 \text{ V} - (-0.81 \text{ V}) = 1.30 \text{ V}$。在此反应中，转移了 $n=2$ 摩尔电子。因此，标准吉布斯自由能变为：
+[标准电池电势](@keyword=standard_cell_potential|lang=zh-CN|style=Feynman)为 $E^\circ_{\text{cell}} = 0.49 \text{ V} - (-0.81 \text{ V}) = 1.30 \text{ V}$。在此反应中，转移了 $n=2$ 摩尔电子。因此，[标准吉布斯自由能变](@keyword=standard_gibbs_free_energy_change|lang=zh-CN|style=Feynman)为：
 $$\Delta G^\circ = -(2 \text{ mol}) \times (96485 \text{ C/mol}) \times (1.30 \text{ V}) = -250861 \text{ J/mol} \approx -251 \text{ kJ/mol}$$
-巨大的负值表明这是一个能量上非常有利的自发反应，适合用作电池。
+巨大的负值表明这是一个能量上非常有利的[自发反应](@keyword=spontaneous_reaction|lang=zh-CN|style=Feynman)，适合用作电池。
 
-理解电势 $E$ 和吉布斯自由能 $\Delta G$ 的一个关键区别在于它们的性质 [@problem_id:1551947]。$\Delta G$ 是一个**广延性质**（extensive property），它的大小与反应的物质的量成正比。如果将一个化学反应方程式的系数全部乘以3，那么反应的 $\Delta G$ 也会变为原来的3倍。然而，电势 $E$ 是一个**强度性质**（intensive property），它代表单位电荷的能量差（单位是 J/C 或 V），不依赖于体系的大小或反应方程式的写法。无论我们是考虑1摩尔反应还是3摩尔反应，两个电极之间的“电势差”是相同的。因此，改变反应方程式的系数会改变 $n$ 和 $\Delta G^\circ$，但 $E^\circ_{\text{cell}} = -\Delta G^\circ / (nF)$ 保持不变。
+理解[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman) $E$ 和吉布斯自由能 $\Delta G$ 的一个关键区别在于它们的性质 [@problem_id:1551947]。$\Delta G$ 是一个**[广延性质](@keyword=extensive_properties|lang=zh-CN|style=Feynman)**（extensive property），它的大小与反应的[物质的量](@keyword=molar_quantity|lang=zh-CN|style=Feynman)成正比。如果将一个[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)方程式的系数全部乘以3，那么反应的 $\Delta G$ 也会变为原来的3倍。然而，[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman) $E$ 是一个**[强度性质](@keyword=size_intensivity|lang=zh-CN|style=Feynman)**（intensive property），它代表单位[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的能量差（单位是 J/C 或 V），不依赖于体系的大小或反应方程式的写法。无论我们是考虑1摩尔反应还是3摩尔反应，两个电极之间的“[电势差](@keyword=potential_difference|lang=zh-CN|style=Feynman)”是相同的。因此，改变反应方程式的系数会改变 $n$ 和 $\Delta G^\circ$，但 $E^\circ_{\text{cell}} = -\Delta G^\circ / (nF)$ 保持不变。
 
 ### 能斯特方程：浓度的影响
 
-标准电势是在所有物质活度均为1的理想化条件下定义的。在实际应用中，反应物和产物的浓度（或更准确地说是活度）很少恰好是标准值。**能斯特方程 (Nernst equation)** 将电池电势与非标准条件下的浓度联系起来，它源于吉布斯自由能与反应商 ($Q$) 的关系 $\Delta G = \Delta G^\circ + RT \ln Q$。
+[标准电势](@keyword=standard_potential|lang=zh-CN|style=Feynman)是在所有物质活度均为1的理想化条件下定义的。在实际应用中，反应物和产物的浓度（或更准确地说是活度）很少恰好是标准值。**[能斯特方程](@keyword=nernst_equation|lang=zh-CN|style=Feynman) (Nernst equation)** 将电池[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)与非标准条件下的浓度联系起来，它源于[吉布斯自由能](@keyword=gibbs_free_energy|lang=zh-CN|style=Feynman)与[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman) ($Q$) 的关系 $\Delta G = \Delta G^\circ + RT \ln Q$。
 
 $$E_{\text{cell}} = E^\circ_{\text{cell}} - \frac{RT}{nF} \ln Q$$
 
-其中，$R$ 是理想气体常数 ($8.314 \text{ J/(mol·K)}$)，$T$ 是绝对温度 (K)，$Q$ 是**反应商**。$Q$ 的形式与平衡常数表达式相同，即产物活度的乘积除以反应物活度的乘积，各自的活度项都取其在总反应方程式中的化学计量系数作为指数。纯固体和纯液体的活度通常被认为是1。
+其中，$R$ 是理想气体常数 ($8.314 \mathrm{J/(mol\cdot K)}$)，$T$ 是绝对温度 (K)，$Q$ 是**[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman)**。$Q$ 的形式与[平衡常数](@keyword=equilibrium_constant|lang=zh-CN|style=Feynman)表达式相同，即产物活度的乘积除以反应物活度的乘积，各自的活度项都取其在总反应方程式中的[化学计量系数](@keyword=stoichiometric_coefficient|lang=zh-CN|style=Feynman)作为指数。纯固体和纯液体的活度通常被认为是1。
 
 以经典的锌铜（丹尼尔）电池为例，设想一个情景，其中 $[Zn^{2+}]$ 为 $0.50$ M，而 $[Cu^{2+}]$ 为 $0.0050$ M [@problem_id:1551987]。
 总反应: $Zn(s) + Cu^{2+}(aq) \rightarrow Zn^{2+}(aq) + Cu(s)$
-标准电势: $E^\circ_{\text{cell}} = E^\circ_{\text{Cu}^{2+}/\text{Cu}} - E^\circ_{\text{Zn}^{2+}/\text{Zn}} = (+0.34 \text{ V}) - (-0.76 \text{ V}) = 1.10 \text{ V}$
-反应商: $Q = \frac{[Zn^{2+}]}{[Cu^{2+}]} = \frac{0.50}{0.0050} = 100$
-在此反应中 $n=2$。在 $T=298$ K 时，电池的实际电势为：
+[标准电势](@keyword=standard_potential|lang=zh-CN|style=Feynman): $E^\circ_{\text{cell}} = E^\circ_{\text{Cu}^{2+}/\text{Cu}} - E^\circ_{\text{Zn}^{2+}/\text{Zn}} = (+0.34 \text{ V}) - (-0.76 \text{ V}) = 1.10 \text{ V}$
+[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman): $Q = \frac{[Zn^{2+}]}{[Cu^{2+}]} = \frac{0.50}{0.0050} = 100$
+在此反应中 $n=2$。在 $T=298$ K 时，电池的实际[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)为：
 $$E_{\text{cell}} = 1.10 \text{ V} - \frac{(8.314)(298)}{(2)(96485)} \ln(100) \approx 1.10 \text{ V} - 0.0592 \text{ V} = 1.04 \text{ V}$$
-由于产物浓度相对较高而反应物浓度相对较低（$Q  1$），电池的驱动力（电势）相比标准状态有所下降，但仍然是自发的。
+由于产物浓度相对较高而反应物浓度相对较低（$Q  1$），电池的驱动力（[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)）相比标准状态有所下降，但仍然是自发的。
 
-能斯特方程不仅可以计算非标准电势，还可以用来预测在特定浓度下反应的自发性。例如，将一根铜条浸入含有 $0.0150 \text{ M}$ $Hg_2^{2+}$ 和 $0.250 \text{ M}$ $Cu^{2+}$ 的溶液中 [@problem_id:1551930]。
+能斯特方程不仅可以计算非标准电势，还可以用来预测在特定浓度下[反应的自发性](@keyword=spontaneity_of_reactions|lang=zh-CN|style=Feynman)。例如，将一根铜条[浸入](@keyword=immersions|lang=zh-CN|style=Feynman)含有 $0.0150 \text{ M}$ $Hg_2^{2+}$ 和 $0.250 \text{ M}$ $Cu^{2+}$ 的溶液中 [@problem_id:1551930]。
 自发方向由标准电势决定：$E^\circ(Hg_2^{2+}/Hg) = +0.80 \text{ V}$ 大于 $E^\circ(Cu^{2+}/Cu) = +0.34 \text{ V}$，所以汞离子被还原，铜被氧化。
 总反应: $Cu(s) + Hg_2^{2+}(aq) \rightarrow Cu^{2+}(aq) + 2Hg(l)$
 标准电势: $E^\circ_{\text{cell}} = 0.80 \text{ V} - 0.34 \text{ V} = 0.46 \text{ V}$
-反应商: $Q = \frac{[Cu^{2+}]}{[Hg_2^{2+}]} = \frac{0.250}{0.0150} \approx 16.67$
-实际电势: $E_{\text{cell}} = 0.46 \text{ V} - \frac{RT}{2F} \ln(16.67) \approx 0.46 \text{ V} - 0.036 \text{ V} = +0.42 \text{ V}$
+[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman): $Q = \frac{[Cu^{2+}]}{[Hg_2^{2+}]} = \frac{0.250}{0.0150} \approx 16.67$
+实际[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman): $E_{\text{cell}} = 0.46 \text{ V} - \frac{RT}{2F} \ln(16.67) \approx 0.46 \text{ V} - 0.036 \text{ V} = +0.42 \text{ V}$
 由于计算出的 $E_{\text{cell}}$ 为正值，因此在该特定浓度下，铜会自发地溶解，将汞离子还原为液态汞。
 
-### 电势测量的应用与扩展
+### [电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)测量的应用与扩展
 
-电势测量是分析化学和材料科学中一种强大而通用的工具。以下是一些重要的应用和概念扩展。
+[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)测量是[分析化学](@keyword=analytical_chemistry|lang=zh-CN|style=Feynman)和[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)中一种强大而通用的工具。以下是一些重要的应用和概念扩展。
 
-#### 参比电极
-标准氢电极虽然是理论基准，但在实际操作中非常不便。因此，化学家们开发了多种**参比电极**，它们的电势相对于SHE是已知且稳定的。常见的参比电极包括**饱和甘汞电极 (Saturated Calomel Electrode, SCE)**，其电势在298.15 K时为 $+0.241$ V vs. SHE，以及银-氯化银电极 (Ag/AgCl)。通过测量待测电极与参比电极之间的电压，可以确定待测电极的电势。例如，我们可以通过这种方法来精确测定一个电对的标准还原电势 [@problem_id:1551924]。假设一个镉电极浸入 $0.0150$ M的 $Cd^{2+}$ 溶液中，测得其相对于SCE的电势差为 $0.698$ V，且镉电极为负极（阳极）。这意味着：
+#### [参比电极](@keyword=reference_electrodes|lang=zh-CN|style=Feynman)
+[标准氢电极](@keyword=standard_hydrogen_electrode|lang=zh-CN|style=Feynman)虽然是理论基准，但在实际操作中非常不便。因此，化学家们开发了多种**[参比电极](@keyword=reference_electrodes|lang=zh-CN|style=Feynman)**，它们的[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)相对于SHE是已知且稳定的。常见的[参比电极](@keyword=reference_electrodes|lang=zh-CN|style=Feynman)包括**[饱和甘汞电极](@keyword=saturated_calomel_electrode|lang=zh-CN|style=Feynman) (Saturated Calomel Electrode, SCE)**，其[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)在298.15 K时为 $+0.241$ V vs. SHE，以及[银-氯化银电极](@keyword=silver_silver_chloride_electrode|lang=zh-CN|style=Feynman) (Ag/AgCl)。通过测量待测电极与参比电极之间的电压，可以确定待测电极的[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)。例如，我们可以通过这种方法来精确测定一个电对的[标准还原电势](@keyword=standard_reduction_potential|lang=zh-CN|style=Feynman) [@problem_id:1551924]。假设一个镉电极浸入 $0.0150$ M的 $Cd^{2+}$ 溶液中，测得其相对于SCE的[电势差](@keyword=potential_difference|lang=zh-CN|style=Feynman)为 $0.698$ V，且镉电极为负极（[阳极](@keyword=anode|lang=zh-CN|style=Feynman)）。这意味着：
 $$E_{\text{cell}} = E_{\text{cathode}} - E_{\text{anode}} \implies 0.698 \text{ V} = E_{\text{SCE}} - E_{\text{Cd}}$$
-因此，镉电极在非标准条件下的电势为 $E_{\text{Cd}} = E_{\text{SCE}} - 0.698 \text{ V} = 0.241 \text{ V} - 0.698 \text{ V} = -0.457 \text{ V}$。然后，我们可以利用能斯特方程来反推其标准电势：
+因此，镉电极在非标准条件下的[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)为 $E_{\text{Cd}} = E_{\text{SCE}} - 0.698 \text{ V} = 0.241 \text{ V} - 0.698 \text{ V} = -0.457 \text{ V}$。然后，我们可以利用[能斯特方程](@keyword=nernst_equation|lang=zh-CN|style=Feynman)来反推其标准电势：
 $$E_{\text{Cd}} = E^\circ_{\text{Cd}^{2+}/\text{Cd}} - \frac{RT}{2F} \ln\left(\frac{1}{[Cd^{2+}]}\right)$$
 $$-0.457 \text{ V} = E^\circ_{\text{Cd}^{2+}/\text{Cd}} - \frac{RT}{2F} \ln\left(\frac{1}{0.0150}\right)$$
 求解可得 $E^\circ_{\text{Cd}^{2+}/\text{Cd}} \approx -0.403 \text{ V}$。
 
 #### pH值的影响
-当一个半反应涉及 $H^+$ 或 $OH^-$ 离子时，其电极电势将依赖于溶液的pH值。这为制造pH计和其他离子选择性电极提供了原理基础。考虑一个由锌电极和在pH=9.00缓冲溶液中工作的氢电极组成的电池 [@problem_id:1551970]。
+当一个半反应涉及 $H^+$ 或 $OH^-$ 离子时，其[电极电势](@keyword=electrode_potential|lang=zh-CN|style=Feynman)将依赖于溶液的pH值。这为制造[pH计](@keyword=ph_meter|lang=zh-CN|style=Feynman)和其他[离子选择性电极](@keyword=ion_selective_electrode|lang=zh-CN|style=Feynman)提供了原理基础。考虑一个由锌电极和在pH=9.00缓冲溶液中工作的氢电极组成的电池 [@problem_id:1551970]。
 总反应: $Zn(s) + 2H^{+}(aq) \rightarrow Zn^{2+}(aq) + H_{2}(g)$
-$E^\circ_{\text{cell}} = 0.76 \text{ V}$。在pH=9.00时，$[H^+] = 1.0 \times 10^{-9}$ M。若 $[Zn^{2+}] = 0.150$ M 且 $P_{H_2} = 1.00$ atm，则反应商 $Q$ 变得极大：
+$E^\circ_{\text{cell}} = 0.76 \text{ V}$。在pH=9.00时，$[H^+] = 1.0 \times 10^{-9}$ M。若 $[Zn^{2+}] = 0.150$ M 且 $P_{H_2} = 1.00$ atm，则[反应商](@keyword=reaction_quotient|lang=zh-CN|style=Feynman) $Q$ 变得极大：
 $$Q = \frac{[Zn^{2+}] P_{H_2}}{[H^{+}]^2} = \frac{0.150}{(1.0 \times 10^{-9})^2} = 1.5 \times 10^{17}$$
-根据能斯特方程，这会导致电势显著降低：
+根据[能斯特方程](@keyword=nernst_equation|lang=zh-CN|style=Feynman)，这会导致[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)显著降低：
 $$E_{\text{cell}} = 0.76 \text{ V} - \frac{RT}{2F} \ln(1.5 \times 10^{17}) \approx 0.76 \text{ V} - 0.508 \text{ V} = 0.252 \text{ V}$$
-尽管电势大幅下降，但仍为正值，表明反应在高pH下仍然是自发的，只是驱动力减弱了。
+尽管[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)大幅下降，但仍为正值，表明反应在高pH下仍然是自发的，只是驱动力减弱了。
 
-#### 络合效应与形式电势
+#### 络合效应与形式[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)
 溶液中的**络合剂**可以通过与金属离子形成稳定的络合物来显著改变该离子的“自由”浓度。根据能斯特方程，这种浓度变化会直接影响电极电势。这是一个极其重要的效应，在生物体系和分析化学中广泛存在。
 
-例如，考虑 $Fe^{3+}/Fe^{2+}$ 电对，其标准电势为 $+0.770$ V。如果向含有 $1.0$ M $Fe^{3+}$ 和 $1.0$ M $Fe^{2+}$ 的溶液中加入氰根离子 ($CN^-$)，$CN^-$ 会与 $Fe^{3+}$ 强烈络合形成极其稳定的 $[Fe(CN)_6]^{3-}$ 络合物，而与 $Fe^{2+}$ 的络合则弱得多 [@problem_id:1551948]。这导致自由的 $Fe^{3+}$ 浓度急剧下降到几乎为零（例如，降至 $10^{-25}$ M 量级）。结果，能斯特方程中的 $\ln(\frac{[Fe^{2+}]}{[Fe^{3+}]})$ 项变得非常大，使电极电势发生剧烈变化，从 $+0.770$ V 骤降至约 $-0.709$ V。这说明，$Fe^{3+}$ 的强络合作用极大地稳定了铁的氧化态，使其变得非常难以被还原。
+例如，考虑 $Fe^{3+}/Fe^{2+}$ 电对，其[标准电势](@keyword=standard_potential|lang=zh-CN|style=Feynman)为 $+0.770$ V。如果向含有 $1.0$ M $Fe^{3+}$ 和 $1.0$ M $Fe^{2+}$ 的溶液中加入氰根离子 ($CN^-$)，$CN^-$ 会与 $Fe^{3+}$ 强烈络合形成极其稳定的 $[Fe(CN)_6]^{3-}$ 络合物，而与 $Fe^{2+}$ 的络合则弱得多 [@problem_id:1551948]。这导致自由的 $Fe^{3+}$ 浓度急剧下降到几乎为零（例如，降至 $10^{-25}$ M 量级）。结果，[能斯特方程](@keyword=nernst_equation|lang=zh-CN|style=Feynman)中的 $\ln(\frac{[Fe^{2+}]}{[Fe^{3+}]})$ 项变得非常大，使电极电势发生剧烈变化，从 $+0.770$ V 骤降至约 $-0.709$ V。这说明，$Fe^{3+}$ 的强[络合作用](@keyword=complexation|lang=zh-CN|style=Feynman)极大地稳定了铁的[氧化态](@keyword=oxidation_states|lang=zh-CN|style=Feynman)，使其变得非常难以被还原。
 
-为了处理这种在特定介质中的电势变化，我们引入了**形式电势** ($E^{\circ'}$) 的概念。形式电势是在特定的、非标准的但明确定义的条件下（例如，在1.0 M的某种酸或缓冲液中），当氧化态物质的总分析浓度等于还原态物质的总分析浓度时的电极电势。
+为了处理这种在特定介质中的[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)变化，我们引入了**形式[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)** ($E^{\circ'}$) 的概念。形式[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)是在特定的、非标准的但明确定义的条件下（例如，在1.0 M的某种酸或[缓冲液](@keyword=buffer_solutions|lang=zh-CN|style=Feynman)中），当氧化态物质的总分析浓度等于还原态物质的总分析浓度时的电极电势。
 
-例如，在1.0 M硫酸介质中，$Fe^{3+}$ 和 $Fe^{2+}$ 都会与硫酸根离子形成络合物，但络合强度不同（$Fe^{3+}$ 的络合常数 $K_3$ 大于 $Fe^{2+}$ 的 $K_2$） [@problem_id:1551952]。由于 $Fe^{3+}$ 被更强地络合和稳定，其还原变得更加困难。这导致形式电势 $E^{\circ'}$ 低于标准电势 $E^\circ$。通过考虑络合平衡，可以推导出形式电势与标准电势的关系：
+例如，在1.0 M[硫酸](@keyword=sulfuric_acid|lang=zh-CN|style=Feynman)介质中，$Fe^{3+}$ 和 $Fe^{2+}$ 都会与[硫酸](@keyword=sulfuric_acid|lang=zh-CN|style=Feynman)根离子形成络合物，但络合强度不同（$Fe^{3+}$ 的络合常数 $K_3$ 大于 $Fe^{2+}$ 的 $K_2$） [@problem_id:1551952]。由于 $Fe^{3+}$ 被更强地络合和稳定，其还原变得更加困难。这导致形式[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman) $E^{\circ'}$ 低于标准电势 $E^\circ$。通过考虑[络合平衡](@keyword=complexation_equilibria|lang=zh-CN|style=Feynman)，可以推导出形式[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)与标准电势的关系：
 $$E^{\circ'} = E^\circ - \frac{RT}{F} \ln\left(\frac{1 + K_3[SO_4^{2-}]}{1 + K_2[SO_4^{2-}]}\right)$$
-代入数值计算，得到在1.0 M硫酸中的形式电势约为 $+0.681$ V，显著低于标准值 $+0.771$ V。形式电势在实际工作中非常有用，因为它直接反映了在特定“配方”的溶液中电对的真实氧化还原能力。
+代入数值计算，得到在1.0 M[硫酸](@keyword=sulfuric_acid|lang=zh-CN|style=Feynman)中的形式[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)约为 $+0.681$ V，显著低于标准值 $+0.771$ V。形式[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)在实际工作中非常有用，因为它直接反映了在特定“配方”的溶液中电对的真实氧化还原能力。
 
-### 超越平衡：过电势与电解池
+### 超越平衡：过[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)与电解池
 
-前面的讨论主要集中在自发进行的伽伐尼电池。然而，许多重要的电化学过程，如水的电解、金属电镀和工业合成，都是非自发的，需要外部电源来驱动，这些装置被称为**电解池**。
+前面的讨论主要集中在自发进行的[伽伐尼电池](@keyword=voltaic_cell|lang=zh-CN|style=Feynman)。然而，许多重要的电化学过程，如水的[电解](@keyword=electrolysis|lang=zh-CN|style=Feynman)、金属[电镀](@keyword=electroplating|lang=zh-CN|style=Feynman)和[工业合成](@keyword=industrial_synthesis|lang=zh-CN|style=Feynman)，都是非自发的，需要外部电源来驱动，这些装置被称为**电解池**。
 
-对于一个电解池，外加电压 ($V_{\text{applied}}$) 必须克服几个障碍。首先，它必须克服反应本身的热力学障碍，即**可逆电势** ($E_{\text{rev}}$)，其大小等于相应伽伐尼电池的 $|E_{\text{cell}}|$。其次，实际电极反应的速率并非无限快，需要额外的电压来克服动力学势垒，这部分额外的电压被称为**过电势** ($\eta$)。过电势是电极动力学缓慢程度的量度，代表了能量的损失。最后，电流通过具有电阻的电解质和电池组件时，会产生**欧姆压降** ($V_{\text{ohmic}} = IR_{\text{internal}}$)，这部分能量以热量的形式耗散掉。
+对于一个[电解池](@keyword=electrolytic_cells|lang=zh-CN|style=Feynman)，外加电压 ($V_{\text{applied}}$) 必须克服几个障碍。首先，它必须克服反应本身的[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)障碍，即**可逆[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)** ($E_{\text{rev}}$)，其大小等于相应[伽伐尼电池](@keyword=voltaic_cell|lang=zh-CN|style=Feynman)的 $|E_{\text{cell}}|$。其次，实际电极反应的速率并非无限快，需要额外的电压来克服动力学势垒，这部分额外的电压被称为**过[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)** ($\eta$)。过[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)是[电极动力学](@keyword=electrode_kinetics|lang=zh-CN|style=Feynman)缓慢程度的量度，代表了能量的损失。最后，电流通过具有电阻的电解质和电池组件时，会产生**[欧姆压降](@keyword=ohmic_drop|lang=zh-CN|style=Feynman)** ($V_{\text{ohmic}} = IR_{\text{internal}}$)，这部分能量以热量的形式耗散掉。
 
-因此，驱动一个电解池所需的总外加电压为：
+因此，驱动一个[电解池](@keyword=electrolytic_cells|lang=zh-CN|style=Feynman)所需的总外加电压为：
 $$V_{\text{applied}} = E_{\text{rev}} + \eta_{\text{total}} + V_{\text{ohmic}}$$
-其中 $\eta_{\text{total}}$ 是阳极和阴极过电势的总和。
+其中 $\eta_{\text{total}}$ 是[阳极和阴极](@keyword=anode_and_cathode|lang=zh-CN|style=Feynman)过[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)的总和。
 
-以工业碱性水电解为例，其目标是将水分解为氢气和氧气 [@problem_id:1551957]。该过程的热力学可逆电势 $E_{\text{rev}}$ 约为 $1.229$ V。然而，在实际操作中，尤其是在阳极发生的析氧反应 (OER) 动力学非常缓慢，需要很高的过电势（例如 $\eta_{\text{anode}} = 0.350$ V）。再加上欧姆损耗（例如 $V_{\text{ohmic}} = 0.200$ V），导致总外加电压远高于理论值（例如 $V_{\text{applied}} = 1.229 + 0.350 + 0.200 = 1.779$ V）。
+以工业碱性水[电解](@keyword=electrolysis|lang=zh-CN|style=Feynman)为例，其目标是将[水分解](@keyword=water_splitting_2|lang=zh-CN|style=Feynman)为氢气和氧气 [@problem_id:1551957]。该过程的[热力学](@keyword=thermodynamics|lang=zh-CN|style=Feynman)可逆[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman) $E_{\text{rev}}$ 约为 $1.229$ V。然而，在实际操作中，尤其是在阳极发生的[析氧反应 (OER)](@keyword=oxygen_evolution_reaction_(oer)|lang=zh-CN|style=Feynman) 动力学非常缓慢，需要很高的过[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)（例如 $\eta_{\text{anode}} = 0.350$ V）。再加上欧姆损耗（例如 $V_{\text{ohmic}} = 0.200$ V），导致总外加电压远高于理论值（例如 $V_{\text{applied}} = 1.229 + 0.350 + 0.200 = 1.779$ V）。
 
-电解池的**能量效率** ($\epsilon$) 定义为理论最低所需能量与实际消耗电能之比，即 $\epsilon = E_{\text{rev}} / V_{\text{applied}}$。从这个关系可以看出，过电势和欧姆电阻都是造成能量效率低下的直接原因。开发新型电催化剂，其目的就是为了在给定的电流密度下降低电极反应的过电势。例如，如果一种新催化剂能将阳极过电势从 $0.350$ V 降至 $0.250$ V，则所需的外加电压会相应降低，从而使电解过程的能量效率得到显著提升（在该例子中，效率分数增加了约 $0.0412$ 或 $4.12\%$）。这对于大规模储能和绿色氢气生产等技术至关重要。
+[电解池](@keyword=electrolytic_cells|lang=zh-CN|style=Feynman)的**[能量效率](@keyword=energy_efficiency|lang=zh-CN|style=Feynman)** ($\epsilon$) 定义为理论最低所需能量与实际消耗电能之比，即 $\epsilon = E_{\text{rev}} / V_{\text{applied}}$。从这个关系可以看出，过[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)和欧姆电阻都是造成能量效率低下的直接原因。开发新型[电催化](@keyword=electrocatalysis|lang=zh-CN|style=Feynman)剂，其目的就是为了在给定的电流密度下降低电极反应的过[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)。例如，如果一种新催化剂能将阳极过[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)从 $0.350$ V 降至 $0.250$ V，则所需的外加电压会相应降低，从而使电解过程的能量效率得到显著提升（在该例子中，效率分数增加了约 $0.0412$ 或 $4.12\%$）。这对于大规模储能和绿色[氢气生产](@keyword=hydrogen_production|lang=zh-CN|style=Feynman)等技术至关重要。

@@ -40,7 +40,7 @@ Of course, we often want to know the *shape* of the disk, not just its total mas
 When you plug this simple pressure law into the machinery of our two governing equations, a unique and elegant solution emerges. The density profile is not a Gaussian or an exponential, but a specific shape known as the hyperbolic secant squared [@problem_id:275301]:
 
 $$
-\rho(z) = \rho_0 \sech^2\left(\frac{z}{z_0}\right)
+\rho(z) = \rho_0 \operatorname{sech}^2\left(\frac{z}{z_0}\right)
 $$
 
 Here, $\rho_0$ is the density at the midplane, and $z_0$ is a characteristic **[scale height](@keyword=scale_height|lang=en-US|style=Feynman)** that tells us how "puffy" the disk is. A larger $z_0$ means a thicker, more spread-out disk. This isn't just a convenient mathematical function; it is the natural, self-consistent structure of a self-gravitating, isothermal system. All the parameters are locked together. The [scale height](@keyword=scale_height|lang=en-US|style=Feynman), for instance, is set by the balance between stellar motion and [self-gravity](@keyword=self_gravity|lang=en-US|style=Feynman): $z_0 = \sigma_z^2 / (\pi G \Sigma)$. A hotter disk (larger $\sigma_z$) or a less massive one (smaller $\Sigma$) will naturally be puffier.

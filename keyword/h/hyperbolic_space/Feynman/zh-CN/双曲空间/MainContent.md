@@ -46,7 +46,7 @@ $$
 数学的力量让我们能够用一个单一、优雅的公式来捕捉这种奇特的距离概念。利用圆盘的对称性，可以找到任意两点 $z_1$ 和 $z_2$ 之间的双曲距离 $d_H$ [@problem_id:1652521]：
 
 $$
-d_H(z_1, z_2) = 2 \arctanh\left(\left|\frac{z_1 - z_2}{1 - \bar{z_1}z_2}\right|\right)
+d_H(z_1, z_2) = 2 \operatorname{arctanh}\left(\left|\frac{z_1 - z_2}{1 - \bar{z_1}z_2}\right|\right)
 $$
 
 这个公式以一个简洁的形式完美地编码了空间的伸展。

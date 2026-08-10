@@ -43,7 +43,7 @@ The result is a fundamental principle of [paleoclimatology](@keyword=paleoclimat
 
 But here, nature throws us a beautiful curveball. The temperature of the water isn't the only thing that controls the shell's $\delta^{18}\text{O}$. What if the $\delta^{18}\text{O}$ of the *seawater itself* changes? This is exactly what happens during ice ages [@problem_id:1752794]. Water molecules with the lighter $^{16}\text{O}$ evaporate more easily. This water vapor travels to the poles, falls as snow, and gets locked away in massive continental ice sheets. The result? The world's oceans are left relatively enriched in the heavier $^{18}\text{O}$.
 
-This gives us two powerful insights from a single measurement: an increase in a foraminifer's $\delta^{18}\text{O}$ value can mean either (1) the water it lived in got colder, or (2) global ice volume increased, or (most likely) a combination of both. A shift from a $\delta^{18}\text{O}$ of $+1.0\permil$ to $+3.5\permil$ in a sediment core is the classic signature of entering an ice age: the water got colder, *and* massive ice sheets grew on the continents.
+This gives us two powerful insights from a single measurement: an increase in a foraminifer's $\delta^{18}\text{O}$ value can mean either (1) the water it lived in got colder, or (2) global ice volume increased, or (most likely) a combination of both. A shift from a $\delta^{18}\text{O}$ of $+1.0\text{‰}$ to $+3.5\text{‰}$ in a sediment core is the classic signature of entering an ice age: the water got colder, *and* massive ice sheets grew on the continents.
 
 #### Two Keys for Two Locks: Unraveling Temperature and Ice
 

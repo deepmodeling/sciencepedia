@@ -41,7 +41,7 @@ This method can solve some truly deep puzzles. Are our one-dimensional world, $\
 
 1.  Take the line $\mathbb{R}$ and remove a single point, say the origin $0$. What's left is $(-\infty, 0) \cup (0, \infty)$. The line has been broken in two. It is now disconnected.
 
-2.  Now take the plane $\mathbbR^2$ and remove a single point, say the origin $(0,0)$. What happens? Can you still get from any point to any other point? Of course! You can just walk around the hole. The space $\mathbb{R}^2 \setminus \{(0,0)\}$ remains connected (in fact, it's [path-connected](@keyword=path_connected|lang=en-US|style=Feynman)).
+2.  Now take the plane $\mathbb{R}^2$ and remove a single point, say the origin $(0,0)$. What happens? Can you still get from any point to any other point? Of course! You can just walk around the hole. The space $\mathbb{R}^2 \setminus \{(0,0)\}$ remains connected (in fact, it's [path-connected](@keyword=path_connected|lang=en-US|style=Feynman)).
 
 This is the smoking gun! If a [homeomorphism](@keyword=homeomorphism|lang=en-US|style=Feynman) existed between $\mathbb{R}$ and $\mathbb{R}^2$, it would have to map the "punctured line" homeomorphically to the "punctured plane." But one is disconnected and the other is connected. Since [connectedness](@keyword=connectedness|lang=en-US|style=Feynman) is a [topological invariant](@keyword=topological_invariant|lang=en-US|style=Feynman), this is a contradiction. Therefore, no such homeomorphism can exist. A line and a plane are, and always will be, topologically distinct.
 

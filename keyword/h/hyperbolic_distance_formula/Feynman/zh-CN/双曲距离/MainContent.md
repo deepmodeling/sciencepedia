@@ -58,10 +58,10 @@ $$
 为了找到这个函数，我们做物理学家会做的事：我们为一个我们已经知道答案的非常简单的情况计算它。我们取虚轴上的两个点，比如 $p_0=iy_1$ 和 $q_0=iy_2$。我们已经发现它们的距离是 $|\ln(y_2/y_1)|$。然后我们可以计算这些点的 $\delta$ 值，并找出两者之间的关系。由于对称性的力量，这个关系必须对*任何*两点都成立。这个优美论证的结果 [@problem_id:3031783] 就是著名的**双曲距离公式**：
 
 $$
-d_H(p, q) = \arccosh\left(1 + \frac{|p-q|^2}{2 \operatorname{Im}(p) \operatorname{Im}(q)}\right)
+d_H(p, q) = \operatorname{arccosh}\left(1 + \frac{|p-q|^2}{2 \operatorname{Im}(p) \operatorname{Im}(q)}\right)
 $$
 
-这里，$\arccosh$ 是反双曲余弦函数。这个单一的公式优雅地捕捉了所有的几何复杂性，告诉我们双曲平面中任意两点间可能的最短距离，而无需再进行任何微积分。
+这里，$\operatorname{arccosh}$ 是反双曲余弦函数。这个单一的公式优雅地捕捉了所有的几何复杂性，告诉我们双曲平面中任意两点间可能的最短距离，而无需再进行任何微积分。
 
 ### 圆盘中的宇宙：[庞加莱圆盘模型](@keyword=poincaré_disk_model|lang=zh-CN|style=Feynman)
 
@@ -70,7 +70,7 @@ $$
 距离公式看起来惊人地相似，其中项 $(1-|z|^2)$ 扮演了之前高度 $y$ 的角色。这个项衡量你离边界有多近；当你接近圆盘边缘时，它趋向于零。两点 $z_1$ 和 $z_2$ 之间的距离由下式给出 [@problem_id:1624676]：
 
 $$
-d_H(z_1, z_2) = \arccosh\left(1 + \frac{2|z_1 - z_2|^2}{(1-|z_1|^2)(1-|z_2|^2)}\right)
+d_H(z_1, z_2) = \operatorname{arccosh}\left(1 + \frac{2|z_1 - z_2|^2}{(1-|z_1|^2)(1-|z_2|^2)}\right)
 $$
 
 和之前一样，边界是无限远的。当一个点 $z$ 接近边界圆时，它与圆盘中心的距离趋于无穷大。我们可以非常精确地描述这一点：从原点到一个点 $z$ 的距离是 $d_H(0, z) = 2 \operatorname{arctanh}(|z|)$。当 $|z|$ 趋近于 1 时，这个距离像 $\ln(\frac{2}{1-|z|})$ 一样增长。这种对数发散优美地量化了将无限空间压缩到有限区域内的思想 [@problem_id:2245919]。
@@ -90,7 +90,7 @@ $$
 在这个模型中，几何的点是双曲面上的点，而[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman)——保持距离不变的变换——正是对狭义相对论至关重要的**洛伦兹变换** [@problem_id:992097]。双曲面上两点之间的双曲距离与两个相应惯性参考系之间的相对速度直接相关。这个公式惊人地简单而深刻：
 
 $$
-d(P_1, P_2) = \arccosh(-P_1 \cdot P_2)
+d(P_1, P_2) = \operatorname{arccosh}(-P_1 \cdot P_2)
 $$
 
 在这里，[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)是[闵可夫斯基时空](@keyword=minkowski_spacetime|lang=zh-CN|style=Feynman)中使用的[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)。这揭示了我们宇宙中可能的速度的抽象空间具有[双曲几何](@keyword=hyperbolic_geometry|lang=zh-CN|style=Feynman)的结构。我们一直在探索的这个奇怪的、非欧几里得的世界不仅仅是一种幻想；它就是运动本身的几何，是数学与物理世界之间深刻且常常出人意料的统一性的惊人证明。

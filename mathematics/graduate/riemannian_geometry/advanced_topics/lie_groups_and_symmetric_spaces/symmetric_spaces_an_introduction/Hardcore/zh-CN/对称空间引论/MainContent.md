@@ -82,7 +82,7 @@ $$ R(X,Y)Z = -[[X,Y],Z] $$
 我们可以利用**双曲面模型（hyperboloid model）**来深入探索双曲空间 $\mathbb{H}^n$ 的几何[@problem_id:2991771]。在此模型中，$\mathbb{H}^n$ 被嵌入到闵可夫斯基空间 $\mathbb{R}^{n+1}$ 中。
 -   **指数映射**：利用测地线是双曲面与过原点的二维平面的交线这一事实，可以推导出指数映射 $\exp_p(v)$ 的显式表达式。
 -   **距离公式**：两点 $p,q \in \mathbb{H}^n$ 之间的黎曼距离 $d(p,q)$ 可以通过它们在闵可夫斯基时空中的“内积” $\langle p,q \rangle_{n,1}$ 简洁地表示：
-    $$ d(p,q) = \arccosh(-\langle p, q \rangle_{n,1}) $$
+    $$ d(p,q) = \operatorname{arccosh}(-\langle p, q \rangle_{n,1}) $$
 -   **测地对称**：在庞加莱上半平面模型 $\mathbb{H}^2$ 中，点 $p=i$ 处的测地对称 $s_i$ 可以被具体地表示为莫比乌斯变换 $s_i(z) = -1/z$。这个映射确实满足不动点 $s_i(i)=i$ 和微分 $ds_i|_i = -\mathrm{Id}$ 的条件，并反转所有通过 $i$ 的测地线。
 
 在商空间 $\Gamma \backslash \mathbb{H}^2$ 中，闭合的测地线对应于 $\mathbb{H}^2$ 中双曲等距变换的平移轴。其长度 $\ell$ 与该双曲变换矩阵的特征值 $\lambda_>$ 直接相关：$\ell = 2\ln(\lambda_>)$ [@problem_id:2991774]。

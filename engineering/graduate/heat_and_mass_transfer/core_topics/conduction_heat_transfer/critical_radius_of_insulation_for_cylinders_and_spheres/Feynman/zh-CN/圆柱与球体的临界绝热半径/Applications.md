@@ -10,7 +10,7 @@
 
 [临界半径](@keyword=critical_radius|lang=zh-CN|style=Feynman)现象，正是这两种相互竞争效应之间“拔河比赛”的结果。对于一个很长的圆柱体（如管道或电线），这场比赛的胜负手在于外半径 $r_2$ 是否超过了临界值 $r_c = k/h$，其中 $k$ 是绝热材料的导热系数，而 $h$ 是表面的[对流换热系数](@keyword=convective_heat_transfer_coefficient|lang=zh-CN|style=Feynman)。
 
-让我们来点实际的。设想一种常见的绝热材料，其导热系数 $k$ 约为 $0.04 \, \text{W/(m·K)}$，它暴露在自然对流的空气中，其[换热系数](@keyword=heat_transfer_coefficient|lang=zh-CN|style=Feynman) $h$ 约为 $8 \, \text{W/(m}^2\text{·K)}$。根据公式，圆柱体的[临界半径](@keyword=critical_radius|lang=zh-CN|style=Feynman) $r_c$ 仅为 $5$ 毫米。这意味着，对于外半径小于 $5$ 毫米的细管或电线，包裹上这种绝热材料，反而会像给散热器增加翅片一样，[强化](@keyword=reinforcement|lang=zh-CN|style=Feynman)了散热效果！这在某些需要冷却电子元件的场景中或许是求之不得的，但在需要保温的热水细管上，则完全是弄巧成拙。当然，对于大多数工业管道（半径通常远大于 $5$ 毫米），我们已经处于“安全区”，增加绝热层总能起到保温作用。
+让我们来点实际的。设想一种常见的绝热材料，其导热系数 $k$ 约为 $0.04 \, \mathrm{W/(m\cdot K)}$，它暴露在自然对流的空气中，其[换热系数](@keyword=heat_transfer_coefficient|lang=zh-CN|style=Feynman) $h$ 约为 $8 \, \text{W/(m}^2\mathrm{\cdot K)}$。根据公式，圆柱体的[临界半径](@keyword=critical_radius|lang=zh-CN|style=Feynman) $r_c$ 仅为 $5$ 毫米。这意味着，对于外半径小于 $5$ 毫米的细管或电线，包裹上这种绝热材料，反而会像给散热器增加翅片一样，[强化](@keyword=reinforcement|lang=zh-CN|style=Feynman)了散热效果！这在某些需要冷却电子元件的场景中或许是求之不得的，但在需要保温的热水细管上，则完全是弄巧成拙。当然，对于大多数工业管道（半径通常远大于 $5$ 毫米），我们已经处于“安全区”，增加绝热层总能起到保温作用。
 
 有趣的是，几何形状在这场拔河比赛中扮演着至关重要的角色。如果我们考虑的不是长长的圆柱，而是一个球体，临界半径会变为 $r_{c,\text{sph}} = 2k/h$，是同等条件下圆柱体的两倍。为什么会这样？因为球体的表面积以半径的平方 ($A \propto r^2$) 增长，而圆柱体的表面积仅与半径成线性关系 ($A \propto r$)。对于球体，增加绝热层厚度带来的表面积增益效应更为显著，使得[对流](@keyword=convection|lang=zh-CN|style=Feynman)[热阻](@keyword=thermal_resistance|lang=zh-CN|style=Feynman)的降低在更大范围的半径内都占据主导地位。这精确地揭示了物理定律如何与几何形态和谐互动，共同谱写了热量传递的复杂乐章。
 

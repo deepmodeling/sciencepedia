@@ -24,7 +24,7 @@
 
 我们如何找到那些真正具有生物学变异性，而不仅仅是预期技术噪声的基因？主要有两种哲学方法 [@problem_id:4541189]。一种是使用简单的变换，比如常见的 `log(count + 1)`，它能驯服方差但不能完美地稳定它 [@problem_id:5066012]。然后，使用一个更复杂的[统计模型](@keyword=statistical_model|lang=zh-CN|style=Feynman)——[加权最小二乘法](@keyword=weighted_least_squares|lang=zh-CN|style=Feynman)（WLS）——该模型明确估计剩余的均值-方差趋势，并为每个观测值赋予一个“精确度权重”。这就是生物信息学中流行的 `voom` 方法背后的策略。
 
-另一种方法是寻求*完美的*透镜——一种专门为 $\mu + \alpha\mu^2$ 方差函数量身定制的变换。使用 delta 方法，我们可以推导出所需的确切函数形式。我们必须求解的积分 $\int (\mu + \alpha\mu^2)^{-1/2} d\mu$ 导出了一个优美且可能出人意料的函数：反双曲正弦，$\frac{2}{\sqrt{\alpha}}\,\arcsinh(\sqrt{\alpha\,\mu})$ [@problem_id:4382229]。应用此变换可使方差几乎恒定，从而允许使用更简单的下游模型来识别真正高度变异的基因。从[分子噪声](@keyword=molecular_noise|lang=zh-CN|style=Feynman)的特定模型到这种优雅的数学形式的旅程，是统计学与生物学深度联系的一个绝佳范例。
+另一种方法是寻求*完美的*透镜——一种专门为 $\mu + \alpha\mu^2$ 方差函数量身定制的变换。使用 delta 方法，我们可以推导出所需的确切函数形式。我们必须求解的积分 $\int (\mu + \alpha\mu^2)^{-1/2} d\mu$ 导出了一个优美且可能出人意料的函数：反双曲正弦，$\frac{2}{\sqrt{\alpha}}\,\operatorname{arcsinh}(\sqrt{\alpha\,\mu})$ [@problem_id:4382229]。应用此变换可使方差几乎恒定，从而允许使用更简单的下游模型来识别真正高度变异的基因。从[分子噪声](@keyword=molecular_noise|lang=zh-CN|style=Feynman)的特定模型到这种优雅的数学形式的旅程，是统计学与生物学深度联系的一个绝佳范例。
 
 ### 超越生物学：一个普遍的原则
 

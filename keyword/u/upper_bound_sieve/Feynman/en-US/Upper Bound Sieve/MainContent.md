@@ -48,7 +48,7 @@ We assume that the number of elements divisible by $d$ can be approximated by a 
 $$ |\mathcal{A}_d| \approx X \, g(d) $$
 Here, $X$ is the total size of our set $\mathcal{A}$, and $g(d)$ is a "density function" representing the proportion of numbers divisible by $d$. For many natural sets, this function $g(d)$ is multiplicative, meaning $g(mn) = g(m)g(n)$ when $m$ and $n$ are coprime. This reflects an intuitive idea: divisibility by 2 and [divisibility](@keyword=divisibility|lang=en-US|style=Feynman) by 3 are "independent events". The canonical example is sifting the set $\mathcal{A}=\{1, 2, \dots, N\}$. Here, we can take $X=N$, and the density of numbers divisible by $d$ is simply $g(d) = 1/d$ [@problem_id:3029464].
 
-Of course, our model is not perfect. The true count $|\mathcalA_d|$ will differ from the model's prediction $Xg(d)$. We call the difference an error term, or remainder:
+Of course, our model is not perfect. The true count $|\mathcal{A}_d|$ will differ from the model's prediction $Xg(d)$. We call the difference an error term, or remainder:
 $$ |\mathcal{A}_d| = X g(d) + R_d $$
 Substituting this into our quadratic form $Q(\lambda)$ splits it into two parts [@problem_id:3029450]:
 $$ Q(\lambda) = X \underbrace{\left( \sum_{d_1, d_2} \lambda_{d_1} \lambda_{d_2} g([d_1, d_2]) \right)}_{Q_g(\lambda)} + \underbrace{\left( \sum_{d_1, d_2} \lambda_{d_1} \lambda_{d_2} R_{[d_1, d_2]} \right)}_{Q_R(\lambda)} $$

@@ -21,7 +21,7 @@
 
 地震干涉技术的惊人结果是，一个[扩散](@keyword=diffusion|lang=zh-CN|style=Feynman)噪声场的[互相关](@keyword=cross_correlation|lang=zh-CN|style=Feynman)经过一些处理后，就变成了[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman)[@problem_id:3575690]。具体来说，[互相关函数](@keyword=cross_correlation_function|lang=zh-CN|style=Feynman) $C_{AB}(t)$ 的时间导数与从B到A的[格林函数](@keyword=green_s_functions|lang=zh-CN|style=Feynman) $G(\mathbf{x}_A, \mathbf{x}_B, t)$ 减去其时间反转版本 $G(\mathbf{x}_A, \mathbf{x}_B, -t)$ 成正比。这意味着通过被动地聆听噪声，我们创造了一个**虚拟源**。就好像我们在B台站放置了一个源，并在A台站记录结果，而我们自己从未产生任何信号。
 
-这种魔力依赖于自然界一种被称为**互易性**的深刻对称性。在大多数简单介质中，从A到B的路径与从B到A的路径是相同的；形式上，$G(\mathbfx_A, \mathbf{x}_B, t) = G(\mathbf{x}_B, \mathbf{x}_A, t)$。这个基本原理可以从波动方程本身推导出来，它确保了虚拟源实验在两个方向上都有效，并使得被动噪声和主动源实验之间的联系如此优雅[@problem_id:3602329]。
+这种魔力依赖于自然界一种被称为**互易性**的深刻对称性。在大多数简单介质中，从A到B的路径与从B到A的路径是相同的；形式上，$G(\mathbf{x}_A, \mathbf{x}_B, t) = G(\mathbf{x}_B, \mathbf{x}_A, t)$。这个基本原理可以从波动方程本身推导出来，它确保了虚拟源实验在两个方向上都有效，并使得被动噪声和主动源实验之间的联系如此优雅[@problem_id:3602329]。
 
 ### 游戏规则：[扩散波场](@keyword=diffuse_wavefield|lang=zh-CN|style=Feynman)
 
