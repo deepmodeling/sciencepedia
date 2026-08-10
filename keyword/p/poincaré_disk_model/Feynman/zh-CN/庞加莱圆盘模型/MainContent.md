@@ -40,17 +40,17 @@ $$ A = \frac{4\pi r_0^2}{1 - r_0^2} $$
 #### 距离
 既然我们知道了直线是什么，那么我们如何测量沿直线的距离呢？让我们从最简单的情况开始：从圆盘中心 $z_1=0$ 到某个其他点 $z_2=w$ 的距离。[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)是从原点出发的直线段。为了计算其长度，我们必须使用我们的弹性标尺，沿着这条路径对度量进行积分。长度 $\rho(0, w)$ 结果为：
 
-$$ \rho(0, w) = \int_0^{|w|} \frac{2 dt}{1-t^2} = 2 \arctanh(|w|) $$
+$$ \rho(0, w) = \int_0^{|w|} \frac{2 dt}{1-t^2} = 2 \operatorname{arctanh}(|w|) $$
 
-这个公式完美地捕捉了圆盘的本质。当 $|w|$ 趋近于 $1$（边界）时，它的反[双曲正切函数](@keyword=tanh_function|lang=zh-CN|style=Feynman) $\arctanh(|w|)$ 趋向于无穷大。从中心到边缘的距离是无限的。由此，我们还可以回答一个相关问题：一个真实双曲半径为 $\rho_0$ 的“双曲圆”的欧几里得半径 $r$ 是多少？一个双曲圆是与一个中心点保持恒定双曲距离的所有点的集合。如果中心是原点，答案可以通过求解 $\rho_0 = 2 \arctanh(r)$ 中的 $r$ 简单得到，即 $r = \tanh(\rho_0/2)$ [@problem_id:2279795]。无论真实半径 $\rho_0$ 有多大，欧几里得半径 $\tanh(\rho_0/2)$ 将永远小于1，巧妙地收纳在圆盘内部。
+这个公式完美地捕捉了圆盘的本质。当 $|w|$ 趋近于 $1$（边界）时，它的反[双曲正切函数](@keyword=tanh_function|lang=zh-CN|style=Feynman) $\operatorname{arctanh}(|w|)$ 趋向于无穷大。从中心到边缘的距离是无限的。由此，我们还可以回答一个相关问题：一个真实双曲半径为 $\rho_0$ 的“双曲圆”的欧几里得半径 $r$ 是多少？一个双曲圆是与一个中心点保持恒定双曲距离的所有点的集合。如果中心是原点，答案可以通过求解 $\rho_0 = 2 \operatorname{arctanh}(r)$ 中的 $r$ 简单得到，即 $r = \tanh(\rho_0/2)$ [@problem_id:2279795]。无论真实半径 $\rho_0$ 有多大，欧几里得半径 $\tanh(\rho_0/2)$ 将永远小于1，巧妙地收纳在圆盘内部。
 
 但是，如果两个任意点 $z_1$ 和 $z_2$ 都不在原点，它们之间的距离是多少呢？在这里，我们使用一个来自现代物理学和数学的强大思想：**对称性**。[庞加莱圆盘](@keyword=poincaré_disk|lang=zh-CN|style=Feynman)有一个丰富的[对称群](@keyword=symmetry_groups|lang=zh-CN|style=Feynman)，这些变换可以在不改变点之间双曲距离的情况下移动点。这些**[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman)**是一类特殊的函数，称为[莫比乌斯变换](@keyword=fractional_linear_transformation|lang=zh-CN|style=Feynman)。对于圆盘中的任意一点 $a$，都存在一个等距变换 $T_a$ 将 $a$ 移动到原点。
 
 这就是关键！为了找到 $z_1$ 和 $z_2$ 之间的距离，我们只需应用一个将 $z_1$ 移动到原点的等距变换。这个变换会将 $z_2$ 移动到某个新的点 $w$。由于[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman)保持距离不变，所以 $z_1$ 和 $z_2$ 之间的距离与原点和 $w$ 之间的距离完全相同。而我们已经知道如何计算后者了！这个优雅的技巧为我们提供了计算双曲距离的通用公式 [@problem_id:1652521]：
 
-$$ d_H(z_1, z_2) = 2 \arctanh\left(\left|\frac{z_1 - z_2}{1 - \overline{z_1}z_2}\right|\right) $$
+$$ d_H(z_1, z_2) = 2 \operatorname{arctanh}\left(\left|\frac{z_1 - z_2}{1 - \overline{z_1}z_2}\right|\right) $$
 
-这个公式是通往[庞加莱圆盘](@keyword=poincaré_disk|lang=zh-CN|style=Feynman)中所有距离的万能钥匙。作为一个练习，可以计算点 $z_1 = 1/2$ 和 $z_2 = i/2$ 之间的距离。代入一个相关（但等价）的公式，得到的距离为 $\arccosh(25/9)$ [@problem_id:1624676]，这是一个双曲测量员会测得的具体数值。
+这个公式是通往[庞加莱圆盘](@keyword=poincaré_disk|lang=zh-CN|style=Feynman)中所有距离的万能钥匙。作为一个练习，可以计算点 $z_1 = 1/2$ 和 $z_2 = i/2$ 之间的距离。代入一个相关（但等价）的公式，得到的距离为 $\operatorname{arccosh}(25/9)$ [@problem_id:1624676]，这是一个双曲测量员会测得的具体数值。
 
 #### 角度和面积
 [庞加莱圆盘模型](@keyword=poincaré_disk_model|lang=zh-CN|style=Feynman)最令人愉悦的特征之一是它与角度的关系。因为其度量是“共形的”（意味着它只缩放长度而不扭曲它们），两条相交[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)之间的夹角与它们在交点处的切线之间的欧几里得夹角完全相同。我们日常使用的量角器仍然可以用来测量角度！

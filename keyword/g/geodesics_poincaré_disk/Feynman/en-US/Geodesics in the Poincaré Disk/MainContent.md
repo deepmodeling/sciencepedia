@@ -28,7 +28,7 @@ To get a feel for this, let's calculate the distance from the center of the disk
 
 How do we measure the distance between two arbitrary points, $z_1$ and $z_2$, neither of which is at the center? Here we use another beautiful idea: **symmetry**. The Poincaré disk has a set of transformations (a special type of Möbius transformation) that act as "[rigid motions](@keyword=rigid_motions|lang=en-US|style=Feynman)." They move points around without changing hyperbolic distances, just like sliding or rotating a shape on a flat plane doesn't change its size. For any point $z_1$, we can find a transformation that moves it perfectly to the origin. This same transformation will move $z_2$ to a new point, let's call it $w$. Since the transformation is a rigid motion, the distance between $z_1$ and $z_2$ is the same as the distance between the origin and $w$. And we already know how to calculate that! This clever trick gives us a single, powerful formula for the distance between any two points [@problem_id:1652521]:
 $$
-d_H(z_1, z_2) = 2 \arctanh\left(\left|\frac{z_1 - z_2}{1 - \overline{z_1}z_2}\right|\right)
+d_H(z_1, z_2) = 2 \operatorname{arctanh}\left(\left|\frac{z_1 - z_2}{1 - \overline{z_1}z_2}\right|\right)
 $$
 This formula, born from the simple ideas of the metric and symmetry, governs all distances in this strange, stretched-out world.
 

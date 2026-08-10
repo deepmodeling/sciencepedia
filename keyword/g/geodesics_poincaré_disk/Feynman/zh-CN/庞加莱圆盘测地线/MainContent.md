@@ -28,7 +28,7 @@
 
 我们如何测量任意两点 $z_1$ 和 $z_2$ 之间的距离，而这两点都不在中心呢？这里我们使用另一个美妙的思想：**对称性**。[庞加莱圆盘](@keyword=poincaré_disk|lang=zh-CN|style=Feynman)有一组变换（一种特殊的[莫比乌斯变换](@keyword=fractional_linear_transformation|lang=zh-CN|style=Feynman)），其作用如同“[刚性运动](@keyword=rigid_motions|lang=zh-CN|style=Feynman)”。它们移动点的位置却不改变双曲距离，就像在平面上滑动或旋转一个形状不会改变它的大小一样。对于任意一点 $z_1$，我们都可以找到一个变换，将其精确地移动到原点。这个相同的变换会将 $z_2$ 移动到一个新点，我们称之为 $w$。由于该变换是[刚性运动](@keyword=rigid_motions|lang=zh-CN|style=Feynman)， $z_1$ 和 $z_2$ 之间的距离与原点和 $w$ 之间的距离相同。而我们已经知道如何计算后者了！这个聪明的技巧为我们提供了一个单一而强大的公式，用于计算任意两点之间的距离[@problem_id:1652521]：
 $$
-d_H(z_1, z_2) = 2 \arctanh\left(\left|\frac{z_1 - z_2}{1 - \overline{z_1}z_2}\right|\right)
+d_H(z_1, z_2) = 2 \operatorname{arctanh}\left(\left|\frac{z_1 - z_2}{1 - \overline{z_1}z_2}\right|\right)
 $$
 这个公式源于度量和对称性的简单思想，支配着这个奇特、被拉伸的世界中所有的距离。
 

@@ -51,6 +51,6 @@
 
 而且，当然，那条唯一的开放通道并非随意设置。酶已经雕刻了其[活性位点](@keyword=active_site|lang=zh-CN|style=Feynman)，以引导氢负离子以完美的[Bürgi-Dunitz角](@keyword=bürgi_dunitz_angle|lang=zh-CN|style=Feynman)，约$107^\circ$，攻击到羰基未被阻挡的一面。结果不是一个混乱的50:50的产物混合物，而是形成了一个单一、纯净的[立体异构体](@keyword=stereoisomers|lang=zh-CN|style=Feynman)。这种控制水平对于构建生命所依赖的特定手性分子至关重要。
 
-这种[立体化学](@keyword=stereochemistry|lang=zh-CN|style=Feynman)的精确性具有深远的能量后果。两条竞争路径之间仅有$4.85 \text{ kJ·mol}^{-1}$的活化能差（$\Delta \Delta G^{\ddagger}$）——一个微不足道的能量，比一个[氢键](@keyword=hydrogen_bond|lang=zh-CN|style=Feynman)的能量还小——在低温下就能导致产物的比例为20:1，而不是无用的1:1混合物。[@problem_id:2185764] 通过强制执行Bürgi-Dunitz轨迹，酶确保了反应不仅快速，而且极其选择性，精确地生产所需物质，并将浪费降到最低。
+这种[立体化学](@keyword=stereochemistry|lang=zh-CN|style=Feynman)的精确性具有深远的能量后果。两条竞争路径之间仅有$4.85 \mathrm{kJ\cdot mol}^{-1}$的活化能差（$\Delta \Delta G^{\ddagger}$）——一个微不足道的能量，比一个[氢键](@keyword=hydrogen_bond|lang=zh-CN|style=Feynman)的能量还小——在低温下就能导致产物的比例为20:1，而不是无用的1:1混合物。[@problem_id:2185764] 通过强制执行Bürgi-Dunitz轨迹，酶确保了反应不仅快速，而且极其选择性，精确地生产所需物质，并将浪费降到最低。
 
 从[量子轨道](@keyword=quantum_trajectory|lang=zh-CN|style=Feynman)的抽象形状中，浮现出一个简单的几何规则。这个规则，即[Bürgi-Dunitz角](@keyword=bürgi_dunitz_angle|lang=zh-CN|style=Feynman)，解释了化学家烧瓶中反应的结果，决定了哪些分子结构可以或不可以轻易制备，并为生命机器惊人的精确性提供了蓝图。它有力地提醒我们，支配我们世界的物理定律具有深刻而美丽的统一性。
