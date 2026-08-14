@@ -13,8 +13,6 @@ Let's think about this visually. Imagine a function, $f(x)$, that represents som
 
 Now, ask yourself a simple question: can we draw a flat, boring rectangle over the same interval $[a, b]$ that has the *exact same area* as the complex region under our wiggly curve?
 
-![Diagram showing a curve and a rectangle of equal area](https://example.com/mvt_diagram.png)
-
 It seems plausible. If we make the rectangle too short, its area will be too small. If we make it too tall, its area will be too large. Surely there must be a "just right" height, some value $h$, where the rectangle's area, which is just height times width or $h \cdot (b-a)$, perfectly matches the integral's area.
 
 This special height $h$ is what we call the **average value** of the function $f(x)$ over the interval $[a, b]$. It is the constant value that, if held over the entire interval, would produce the same total accumulation as the original, varying function. By rearranging our little equation, we arrive at the definition:

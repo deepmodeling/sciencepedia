@@ -13,8 +13,6 @@
 
 想象一个古老而巧妙的装置——[双金属片](@keyword=bimetallic_strip|lang=zh-CN|style=Feynman)，它正是这场对话的绝佳体现 [@problem_id:2394004]。将两种不同热膨胀系数的金属（比如钢和铜）牢固地焊接在一起。当对它均匀加热时，两种金属都想伸展，但它们的“意愿”并不同步——铜比钢更想伸长。然而，它们被牢牢地绑在一起，就如同两个被绑住手腕的人想以不同速度行走。结果如何？它们只能妥协，通过弯曲来解决这场“[分歧](@keyword=ramification|lang=zh-CN|style=Feynman)”。膨胀程度更大的那层金属在外侧，形成一个更长的弧线。就这样，纯粹的热能通过[热膨胀系数](@keyword=coefficient_of_thermal_expansion|lang=zh-CN|style=Feynman)的差异，转化为了宏观的机械运动。这个简单的原理，正是许多老式[恒温器](@keyword=thermostats|lang=zh-CN|style=Feynman)和热敏开关的核心。
 
-![](https://i.imgur.com/8x2LhQh.png)
-
 *图1：[双金属片](@keyword=bimetallic_strip|lang=zh-CN|style=Feynman)在受热时，由于两层金属的[热膨胀系数](@keyword=coefficient_of_thermal_expansion|lang=zh-CN|style=Feynman)不同而发生弯曲。*
 
 然而，如果结构无法自由地弯曲或伸展，情况又会如何呢？想象一下[燃气轮机](@keyword=gas_turbine|lang=zh-CN|style=Feynman)中一片高速旋转的叶片 [@problem_id:2394041]。它的一端被牢牢固定在轮盘上，另一端可能也受到某种约束。当炽热的燃气流过，叶片被急剧加热，并且温度分布极不均匀。叶片渴望膨胀，但被机械约束“无情”地阻止了。这种受挫的膨胀欲在材料内部积聚起巨大的“压力”，我们称之为[热应力](@keyword=thermal_stresses|lang=zh-CN|style=Feynman)（thermal stress）。
@@ -60,8 +58,6 @@ $$ c = \left[ \rho_f \left( \frac{1}{K_f} + \frac{D}{E_w t} \left(1 - \frac{\nu_
 $$ m\ddot{q} + (c + C_a)\dot{q} + (k + K_a)q = 0 $$
 
 这里，$m$、$c$ 和 $k$ 分别是结构的等效质量、阻尼和刚度。$C_a$ 和 $K_a$ 则是空气动力带来的附加阻尼和刚度。关键在于，$C_a$ 这一项，即所谓的“气动阻尼”，在特定条件下可能是负值！这意味着风不仅不耗散[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，反而像一个无形的推手，在持续地“反向阻尼”系统，为其注入能量。当总阻尼 $(c + C_a)$ 减小到零时，颤振便一触即发。1940年塔科马海峡大桥的戏剧性坍塌，正是这一物理现象在现实世界中最具警示意义的标志。
-
-![](https://i.imgur.com/k6A3RzD.gif)
 
 *图2：塔科马海峡大桥的颤振，是[流固耦合](@keyword=fluid_structure_interaction|lang=zh-CN|style=Feynman)失稳的经典案例。*
 

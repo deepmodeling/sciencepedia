@@ -12,7 +12,7 @@
 
 <br/>
 <center>
-    <img src="https://assets.test.logos.com/images/fall_ball_inelastic.gif" alt="一个[恢复系数](@keyword=coefficient_of_restitution|lang=zh-CN|style=Feynman)小于1的小球在地面上反复弹跳，每次弹跳的高度都比前一次低，直到最终静止在地面上。" width="350"/>
+
     <br>
     <small>图1：弹跳的小球。每一次与地面的接触都是一次ODE求解器需要精确捕捉的事件。</small>
 </center>
@@ -48,7 +48,7 @@
 
 <br/>
 <center>
-    <img src="https://assets.test.logos.com/images/lorenz_attractor.png" alt="洛伦兹[吸引子](@keyword=attractors|lang=zh-CN|style=Feynman)的三维轨迹，呈现出蝴蝶状的双翼结构。一条红色的点线标出了z坐标达到局部极大值的点，这些点构成了[分岔图](@keyword=bifurcation_diagrams|lang=zh-CN|style=Feynman)的数据。" width="500"/>
+
     <br>
     <small>图2：洛伦兹[吸引子](@keyword=attractors|lang=zh-CN|style=Feynman)。通过事件检测捕捉z坐标的局部极大值（红点），我们可以构建出揭示系统内在结构的[分岔图](@keyword=bifurcation_diagrams|lang=zh-CN|style=Feynman)。</small>
 </center>

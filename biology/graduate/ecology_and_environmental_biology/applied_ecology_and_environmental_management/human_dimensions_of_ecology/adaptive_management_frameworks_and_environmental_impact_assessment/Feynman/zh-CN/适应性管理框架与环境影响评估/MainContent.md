@@ -41,7 +41,7 @@ $$
 
 <br>
 <center>
-    <img src="https://i.imgur.com/B9B1ZqN.png" alt="Hysteresis loop showing alternative stable states in an ecological system." style="width: 70%;" />
+
     <br>
     <small><b>图1：备择稳定态与迟滞效应。</b> 当环境压力E缓慢增加时，系统状态会沿着上方的“理想分支”移动。当压力超过[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)$E_{c}^{+}$时，系统会突然崩溃到下方的“退化分支”。即便此时将压力减小，系统也不会立即恢复，而需要将压力降低到远低于[崩溃点](@keyword=breakdown_point|lang=zh-CN|style=Feynman)的另一个[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)$E_{c}^{-}$时，才可能跃回理想状态。两个[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)之间的区域就是所谓的**迟滞**（Hysteresis）区间。</small>
 </center>

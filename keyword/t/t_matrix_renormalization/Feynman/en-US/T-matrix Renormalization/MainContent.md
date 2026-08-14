@@ -13,7 +13,7 @@ Imagine two particles flying towards each other. They interact, and then fly awa
 
 But why stop there? After the first kick, the particles are still around. They could interact again. And again. And again, an infinite number of times before they finally fly apart for good. Visualizing this, physicists draw what they call **Feynman diagrams**. For two-particle scattering, the simplest sequence of repeated interactions looks like a ladder, so they are called **ladder diagrams**. The first rung is the single interaction $V$. The second rung is an interaction, a brief journey, and then another interaction. The third rung adds yet another interaction, and so on, to infinity.
 
-![A conceptual diagram showing the summation of ladder diagrams. The T-matrix is represented by a shaded blob, which is equal to a bare interaction V (a vertex) plus V followed by a two-[particle propagator](@keyword=particle_propagator|lang=en-US|style=Feynman) (a loop) and then the full T-matrix again.](https://i.imgur.com/example.png)
+ (a loop) and then the full T-matrix again.](https://i.imgur.com/example.png)
 
 Summing up an infinite number of things sounds like a headache. But physicists have a wonderful tool for packaging such [infinite series](@keyword=infinite_series|lang=en-US|style=Feynman): the **T-matrix**. Think of the T-matrix, $T$, as the *total*, effective interaction, encompassing all those infinite rungs of the ladder. The beauty of it is that it can be described by a wonderfully compact and self-referential equation, the **Lippmann-Schwinger equation**:
 

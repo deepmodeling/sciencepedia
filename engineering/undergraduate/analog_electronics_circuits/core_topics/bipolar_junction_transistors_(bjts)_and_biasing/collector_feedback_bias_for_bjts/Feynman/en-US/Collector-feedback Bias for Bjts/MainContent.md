@@ -13,7 +13,7 @@ The answer is one of the most beautiful and powerful ideas in all of science and
 
 Let's look at how this elegant trick is accomplished. The circuit in question is deceptively simple. We have our NPN Bipolar Junction Transistor (BJT), the workhorse of our amplifier. Its emitter is tied to ground. The collector is connected to a power supply, $V_{CC}$, through a **collector resistor**, $R_C$. Now, here comes the clever part: instead of connecting the base to the power supply through its own resistor (a simpler but less stable method called fixed bias), we connect the base to the *collector* through a **feedback resistor**, $R_B$.
 
-![Collector-feedback bias circuit diagram](placeholder_for_diagram.png) *(Imagine a simple diagram here showing a BJT with Rc from Vcc to collector, and Rb from collector to base, emitter to ground.)*
+ *(Imagine a simple diagram here showing a BJT with Rc from Vcc to collector, and Rb from collector to base, emitter to ground.)*
 
 What does this do? It creates a communication channel between the circuit’s output (the collector voltage) and its input (the base current). Let’s follow the logic, and you’ll see the magic unfold.
 

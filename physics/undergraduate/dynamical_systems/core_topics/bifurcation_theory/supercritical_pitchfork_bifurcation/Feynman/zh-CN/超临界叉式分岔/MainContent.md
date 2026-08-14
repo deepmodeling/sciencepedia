@@ -52,5 +52,4 @@ $$
 
 -   **当 $r  0$ 时**：戏剧性的变化发生了！原本在中心的 $-\frac{r}{2}x^2$ 项（系数为负）变成了一个向下的抛物线，它将中心区域“拱”了起来，形成了一个小山包，而 $x^4$ 项则确保了在远离中心的地方势能仍然是上升的。结果是，整个景观从一个单井势变成了**双井势**（见下图c）。$x=0$ 从曾经的谷底变成了山顶，成了一个不稳定的[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)。而它的两侧，在 $x = \pm\sqrt{r}$ 的位置，形成了两个新的、对称的谷底。这两个谷底就是系统新的[稳定平衡](@keyword=stable_equilibrium|lang=zh-CN|style=Feynman)点 [@problem_id:1712057]。
 
-![势能景观的变化](potential_landscape.png)
 _图：[势能函数](@keyword=potential_energy_function|lang=zh-CN|style=Feynman) $V(x, r) = -\frac{r}{2}x^2 + \frac{1}{4}x^4$ 随参数 $r$ 的变化。 (a) $r0$ 时为单井势； (b) $r=0$ 时为平底势； (c) $r0$ 时为双井势。稳定点对应谷底，不稳定点对应山顶。_

@@ -35,7 +35,7 @@
 
 现在，我们从地面观察这个运动中的[光钟](@keyword=optical_clocks|lang=zh-CN|style=Feynman)。当光从下面的镜子发出时，载具在向前运动。等光到达上面的镜子时，上面的镜子已经向前移动了一段距离。所以，对于地面观察者来说，光走的是一条斜线！同样，从上面反射回来，光走的也是一条斜线。
 
-![[光钟](@keyword=optical_clocks|lang=zh-CN|style=Feynman)示意图：左边是在载具参照系中光的路径，右边是在地面参照系中光的路径。](https://d2l-dev-bucket.s3.amazonaws.com/media/images/1824959-light-clock.png)
+示意图：左边是在载具参照系中光的路径，右边是在地面参照系中光的路径。](https://d2l-dev-bucket.s3.amazonaws.com/media/images/1824959-light-clock.png)
 
 很明显，这两条斜线的总长度要比 $2H$ 长。现在，爱因斯坦的第二条公设发挥了威力：虽然光的路径变长了，但它的速度对于地面观察者来说，必须仍然是 $c$！路程变长了，速度却不变，这意味着什么？唯一的解释就是：对于地面观察者来说，这个过程所花的时间 $\Delta t$ 变长了！
 

@@ -15,7 +15,7 @@
 在化学的殿堂里，有些[振动模式](@keyword=vibrational_modes|lang=zh-CN|style=Feynman)因其独特的形象而成为了“偶像”。[苯](@keyword=benzene|lang=zh-CN|style=Feynman)（$D_{6h}$）的“凯库勒[振动](@keyword=vibrational_motion|lang=zh-CN|style=Feynman)”（Kekulé vibration）就是其中之一[@problem_id:744209]。它描绘了[苯](@keyword=benzene|lang=zh-CN|style=Feynman)环中[碳](@keyword=carbon|lang=zh-CN|style=Feynman)-[碳](@keyword=carbon|lang=zh-CN|style=Feynman)单[双键](@keyword=double_bond|lang=zh-CN|style=Feynman)交替伸缩的景象，仿佛是[苯](@keyword=benzene|lang=zh-CN|style=Feynman)的两个[共振结构](@keyword=resonance_structures|lang=zh-CN|style=Feynman)在动态地相互转化。这个直观的化学图像，通过[投影算符](@keyword=projection_operators|lang=zh-CN|style=Feynman)得到了精确的数学表达。[投影算符](@keyword=projection_operators|lang=zh-CN|style=Feynman)作用在任意一个C-C键上，就能自动生成这个由六个键的伸缩交替组成的、具有 $B_{2u}$ [对称性](@keyword=symmetry|lang=zh-CN|style=Feynman)的特定[振动模式](@keyword=vibrational_modes|lang=zh-CN|style=Feynman)。
 
 <center>
-    <img src="https://i.imgur.com/4N5V0xY.png" alt="Pyrazine Molecule" style="width: 250px;"/>
+
     <br/>
     图1. 吡嗪分子。[对称性分析](@keyword=symmetry_analysis|lang=zh-CN|style=Feynman)对于理解其光物理性质至关重要。
 </center>

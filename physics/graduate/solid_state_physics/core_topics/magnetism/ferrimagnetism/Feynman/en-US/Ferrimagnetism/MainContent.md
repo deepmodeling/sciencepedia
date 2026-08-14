@@ -16,7 +16,7 @@ Ferrimagnetism is the most interesting case: a tug-of-war between two opposing t
 This simple idea of imperfect cancellation is the essence of ferrimagnetism [@problem_id:2801319]. Let's make it concrete. Imagine a hypothetical material where, for each [formula unit](@keyword=formula_unit|lang=en-US|style=Feynman), sublattice A consists of one magnetic ion with a magnetic moment of magnitude $3.0$ (in units of Bohr magnetons, $\mu_B$), while sublattice B has two magnetic ions, each with a moment of $5.0 \, \mu_B$. At absolute zero temperature, where everything is perfectly ordered, the total moment of sublattice A is $M_A = 1 \times 3.0 = 3.0 \, \mu_B$. The total moment of sublattice B is $M_B = 2 \times 5.0 = 10.0 \, \mu_B$. Since they point in opposite directions, the net magnetic moment is simply the difference between their magnitudes: $M_{net} = |M_B - M_A| = |10.0 - 3.0| = 7.0 \, \mu_B$ [@problem_id:1777038]. This is the source of the spontaneous magnetism in a ferrimagnet.
 
 <figure>
-    <img src="https://assets.bitdegree.org/online-learning-platforms/storage/media/2023/11/ferrimagnetism.png" alt="A diagram showing antiparallel [spin alignment](@keyword=spin_alignment|lang=en-US|style=Feynman) in ferrimagnetism, with unequal magnetic moments resulting in a net magnetic moment.">
+
     <figcaption>Figure 1: The ferrimagnetic tug-of-war. Two sublattices with magnetic moments $\vec{M}_A$ and $\vec{M}_B$ are aligned antiparallel. Because their magnitudes are unequal ($|\vec{M}_B| > |\vec{M}_A|$), a net magnetic moment $\vec{M}_{net}$ remains.</figcaption>
 </figure>
 

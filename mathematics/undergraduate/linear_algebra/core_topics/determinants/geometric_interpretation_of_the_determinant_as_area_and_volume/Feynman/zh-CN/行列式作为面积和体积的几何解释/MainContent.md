@@ -15,7 +15,7 @@
 
 <br/>
 <center>
-<img src="https://i.imgur.com/example_image.png" alt="一个正方形被对角矩阵变换为矩形，以说明面积缩放。" width="500"/>
+
 </center>
 <br/>
 

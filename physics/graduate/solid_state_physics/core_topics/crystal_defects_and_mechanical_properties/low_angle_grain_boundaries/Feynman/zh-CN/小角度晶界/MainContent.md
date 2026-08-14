@@ -29,7 +29,7 @@
 
 <center>
   <figure>
-    <img src="https://s3.laisky.com/public/wiki/images/2024/05/low-angle-grain-boundary-model.png" width="700" alt="(a) 一个[对称倾斜晶界](@keyword=symmetric_tilt_boundary|lang=zh-CN|style=Feynman)由一排间距为 D 的刃[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)构成。(b) 一个扭转晶界由一个正交的螺[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)网络构成。">
+
     <figcaption>(a) 一个[对称倾斜晶界](@keyword=symmetric_tilt_boundary|lang=zh-CN|style=Feynman)由一排间距为 D 的刃[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)构成。(b) 一个扭转[晶界](@keyword=grain_boundary|lang=zh-CN|style=Feynman)由一个正交的螺[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)网络构成。</figcaption>
   </figure>
 </center>
@@ -84,7 +84,7 @@ $$ \gamma(\theta) = E_0 \theta (A - \ln\theta) $$
 
 <center>
   <figure>
-    <img src="https://s3.laisky.com/public/wiki/images/2024/05/read-shockley-energy-curve.png" width="600" alt="Read-Shockley 能量曲线示意图，显示了能量随取向差角度 $\theta$ 的变化。能量在 $\theta_{max}$ 处达到峰值，标志着小角度模型的适用上限。">
+
     <figcaption>Read-Shockley 能量曲线示意图。能量在 $\theta_{max}$ 处达到峰值，标志着小角度模型的适用上限。超过此角度，[位错核心](@keyword=dislocation_core|lang=zh-CN|style=Feynman)严重重叠，[晶界](@keyword=grain_boundary|lang=zh-CN|style=Feynman)进入高角度区域。</figcaption>
   </figure>
 </center>

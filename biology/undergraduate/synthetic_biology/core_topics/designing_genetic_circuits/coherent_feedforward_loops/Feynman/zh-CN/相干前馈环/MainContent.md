@@ -14,8 +14,6 @@
 
 在基因世界里，这种结构非常普遍。一个主控[转录因子](@keyword=transcription_factor|lang=zh-CN|style=Feynman) $X$ 能够激活一个中间[转录因子](@keyword=transcription_factor|lang=zh-CN|style=Feynman) $Y$ 的表达，同时 $X$ 也能直接激活下游目标基因 $Z$ 的表达。而那个被激活的中间因子 $Y$，又会跑去激活同一个目标基因 $Z$。于是，一个由三个基因（$X, Y, Z$）和三条调控关系（$X \to Y$, $X \to Z$, $Y \to Z$）组成的三角形图案便出现在我们眼前。当这三条调控关系都是“激活”时，我们就得到了最经典的一种[相干前馈环](@keyword=coherent_feedforward_loop|lang=zh-CN|style=Feynman)——C1-FFL（Coherent Feed-forward Loop, Type 1）[@problem_id:2027071]。
 
-![A diagram of a Type 1 Coherent Feedforward Loop (C1-FFL). An input signal activates gene X. The protein X then activates both gene Y and gene Z. The protein Y, in turn, also activates gene Z. Gene Z is only expressed when activated by both X and Y (AND logic).](https://i.imgur.com/k6xJt8v.png)
-
 *图1：C1-FFL（[1型相干前馈环](@keyword=coherent_type_1_feedforward_loop|lang=zh-CN|style=Feynman)）的基本结构。$X$ 同时通过直接和间接两条路径激活 $Z$。*
 
 “相干”（Coherent）这个词在这里有非常精确的含义。它意味着从主控者 $X$ 到执行者 $Z$ 的所有路径，其最终的“信号符号”是相同的。在C1-FFL中，直接路径 $X \to Z$ 是激活（我们记为“+”号），间接路径 $X \to Y \to Z$ 的净效应是“激活”乘以“激活”，即 $(+) \times (+) = (+)$。两条路径都在说“前进！”，所以它们是“相干”的。

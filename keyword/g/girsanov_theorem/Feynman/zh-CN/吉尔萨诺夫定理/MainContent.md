@@ -1,6 +1,4 @@
-<![CDATA[
-## 引言
-在研究随时间随机演化的系统时，一个核心挑战是如何区分可预测的趋势和内在的、不可预测的噪声。从液体中微粒的[抖动](@keyword=dither|lang=zh-CN|style=Feynman)到股票价格的波动，许多现象都被建模为结合了确定性漂移和随机运动的[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)。分析这些过程可能非常复杂，因为漂移项常常使计算变得困难。如果我们能从数学上改变我们的视角，进入一个漂移消失的世界，从而在不失其本质的情况下简化问题，那会怎样？这正是[吉尔萨诺夫定理](@keyword=girsanov_s_theorem|lang=zh-CN|style=Feynman)所提供的力量，它是现代随机微积分的基石。本文旨在通过弥合其抽象表述与实际应用之间的鸿沟，来揭示这个深刻定理的奥秘。文章将提供一个全面的概述，从核心的“原理与机制”开始，我们将在此剖析[测度变换](@keyword=change_of_measure|lang=zh-CN|style=Feynman)的概念以及[拉东-尼科迪姆导数](@keyword=radon_nikodym_derivative|lang=zh-CN|style=Feynman)的作用。随后，“应用与跨学科联系”部分将带领我们遍览其多样化的应用，揭示[吉尔萨诺夫定理](@keyword=girsanov_s_theorem|lang=zh-CN|style=Feynman)如何成为现代金融的引擎、工程学的关键工具，以及通往物理学深层概念的桥梁。
+<到股票价格的波动，许多现象都被建模为结合了确定性漂移和随机运动的[随机过程](@keyword=random_process|lang=zh-CN|style=Feynman)。分析这些过程可能非常复杂，因为漂移项常常使计算变得困难。如果我们能从数学上改变我们的视角，进入一个漂移消失的世界，从而在不失其本质的情况下简化问题，那会怎样？这正是[吉尔萨诺夫定理](@keyword=girsanov_s_theorem|lang=zh-CN|style=Feynman)所提供的力量，它是现代随机微积分的基石。本文旨在通过弥合其抽象表述与实际应用之间的鸿沟，来揭示这个深刻定理的奥秘。文章将提供一个全面的概述，从核心的“原理与机制”开始，我们将在此剖析[测度变换](@keyword=change_of_measure|lang=zh-CN|style=Feynman)的概念以及[拉东-尼科迪姆导数](@keyword=radon_nikodym_derivative|lang=zh-CN|style=Feynman)的作用。随后，“应用与跨学科联系”部分将带领我们遍览其多样化的应用，揭示[吉尔萨诺夫定理](@keyword=girsanov_s_theorem|lang=zh-CN|style=Feynman)如何成为现代金融的引擎、工程学的关键工具，以及通往物理学深层概念的桥梁。
 
 ## 原理与机制
 

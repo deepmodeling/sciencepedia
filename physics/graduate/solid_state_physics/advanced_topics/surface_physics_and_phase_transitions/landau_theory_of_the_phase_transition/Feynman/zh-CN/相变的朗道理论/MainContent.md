@@ -49,7 +49,7 @@ $$ F(\eta, T) = F_0 + \frac{1}{2}A(T)\eta^2 + \frac{1}{4}B\eta^4 + \dots $$
 
     <br/>
     <center>
-    <img src="https://i.imgur.com/8QzXy2A.png" alt="Free energy above Tc" width="400"/>
+
     <br/>
     *图1: 当 $T > T_c$ 时，自由能地貌是一个以 $\eta=0$ 为最低点的“碗”。*
     </center>
@@ -60,7 +60,7 @@ $$ F(\eta, T) = F_0 + \frac{1}{2}A(T)\eta^2 + \frac{1}{4}B\eta^4 + \dots $$
 
     <br/>
     <center>
-    <img src="https://i.imgur.com/5J3dM4o.png" alt="Free energy below Tc" width="400"/>
+
     <br/>
     *图2: 当 $T < T_c$ 时，自由能地貌变成一顶“墨西哥草帽”，原先的中心点 $\eta=0$ 变得不稳定，出现了两个新的能量最低点。*
     </center>

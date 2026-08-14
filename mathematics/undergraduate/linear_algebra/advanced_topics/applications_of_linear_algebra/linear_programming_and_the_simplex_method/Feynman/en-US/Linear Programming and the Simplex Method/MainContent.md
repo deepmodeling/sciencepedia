@@ -32,7 +32,7 @@ When we impose all our constraints together, we carve out a specific region of s
 
 <br/>
 <figure style="text-align: center;">
-    <img src="https://i.imgur.com/G5ZeVsW.png" alt="A two-dimensional [feasible region](@keyword=feasible_region|lang=en-US|style=Feynman), which is a polygon formed by the [intersection](@keyword=intersection|lang=en-US|style=Feynman) of several half-planes defined by linear inequalities. The vertices of the polygon are highlighted." style="width: 50%;">
+
     <figcaption>Figure 1: Each constraint cuts away a part of the plane, leaving a [feasible region](@keyword=feasible_region|lang=en-US|style=Feynman) (a polytope). The solution must lie within this shape.</figcaption>
 </figure>
 <br/>

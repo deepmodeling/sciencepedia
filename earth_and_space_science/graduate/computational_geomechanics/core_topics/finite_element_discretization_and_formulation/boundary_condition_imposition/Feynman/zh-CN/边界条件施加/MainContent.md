@@ -21,5 +21,4 @@
 - 如果我们在土样的顶部放置一个透水性极好的多孔石，并连接到一个水位恒定的大水箱，那么土样顶部的[孔隙水压力](@keyword=pore_water_pressure|lang=zh-CN|style=Feynman)就被这个水箱的[水头](@keyword=hydraulic_head|lang=zh-CN|style=Feynman)固定了。无论土样内部如何变化，顶部的压力始终等于水箱的压力。这就是一个**[狄利克雷条件](@keyword=dirichlet_conditions|lang=zh-CN|style=Feynman)**：我们直接规定了压力 $p$ 的值。
 - 如果我们用一个不透水的盖子将土样顶部密封，那么我们就阻止了任何水的流出。我们规定的是法向通量 $q_n$ 为零。这是一个**[诺伊曼条件](@keyword=neumann_conditions|lang=zh-CN|style=Feynman)**。同样，如果我们用一个精密的注射泵以恒定的速率向土样中注水或抽水，我们规定的也是通量 $q_n$。此时，顶部的压力将如何响应，则成为我们需要求解的结果。
 
-![1D Consolidation Boundary Conditions](https://d2p608t06m57d9.cloudfront.net/computational_geomechanics_graduate/boundary_condition_imposition_3504256_media_1.png)
 *图1：一维固结试验中不同边界条件的物理实现。(A) 定水头（[狄利克雷条件](@keyword=dirichlet_conditions|lang=zh-CN|style=Feynman)）；(B) 不透水边界（齐次[诺伊曼条件](@keyword=neumann_conditions|lang=zh-CN|style=Feynman)）；(C) 定流量（非齐次[诺伊曼条件](@keyword=neumann_conditions|lang=zh-CN|style=Feynman)）。这些实验装置直观地展示了数学边界条件的物理意义。[@problem_id:3504256]*

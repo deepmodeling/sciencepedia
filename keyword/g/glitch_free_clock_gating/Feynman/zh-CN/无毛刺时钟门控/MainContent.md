@@ -11,7 +11,7 @@
 
 让我们想象一下，我们有一块数字逻辑——一组寄存器——我们想让它进入[休眠](@keyword=dormancy|lang=zh-CN|style=Feynman)状态。这些寄存器由主[时钟同步](@keyword=clock_synchronization|lang=zh-CN|style=Feynman)，这是一个不懈的鼓点，告诉它们何时工作。为了让它们休息，我们需要停止这个鼓点。最直接的想法是建立一个“守门人”：一个简单的与门。该门的一个输入是时钟信号，即我们的鼓点。另一个是 `enable` 信号。当 `enable` 为高电平时，鼓点通过；当它为低电平时，输出为静默。很简单，对吧？
 
-![一个仅使用与门的朴素[时钟门控](@keyword=clock_gating|lang=zh-CN|style=Feynman)电路。](https://static.sourcemaker.com/11e3b52d242699f018e698379ba5433d.svg)
+电路。](https://static.sourcemaker.com/11e3b52d242699f018e698379ba5433d.svg)
 
 然而，这个看似美妙简单的想法，在[数字设计](@keyword=digital_design|lang=zh-CN|style=Feynman)中却是一个经典的陷阱。它隐藏着两个根本性的危险。首先，[与门](@keyword=and_gate|lang=zh-CN|style=Feynman)本身需要微小但有限的时间来完成其工作。这种延迟意味着门控后的时钟信号会比主时钟稍晚到达，从而产生一种称为**[时钟偏斜](@keyword=clock_skew|lang=zh-CN|style=Feynman) (clock skew)** 的时序失配。在一个复杂的芯片中，不同部分需要以完美的时间同步进行通信，这种偏斜可能是灾难性的，就像一个交响乐队的不同声部演奏不[同步](@keyword=entrainment|lang=zh-CN|style=Feynman)一样 [@problem_id:1920665]。
 
@@ -21,7 +21,7 @@
 
 那么，我们如何构建一个更好的“守门人”呢？我们如何使用 `enable` 信号，而又不让其不确定的闪烁引发混乱？这个解决方案，在每个现代**[集成时钟门控](@keyword=integrated_clock_gating|lang=zh-CN|style=Feynman) (Integrated Clock Gating, ICG) 单元**中都能找到，并且非常巧妙。我们增加了一个“守卫”。
 
-![一个标准的基于锁存器的[无毛刺时钟门控](@keyword=glitch_free_clock_gating|lang=zh-CN|style=Feynman)电路。](https://static.sourcemaker.com/d9d20c29f4bbce700ac2e75e9b72459b.svg)
+电路。](https://static.sourcemaker.com/d9d20c29f4bbce700ac2e75e9b72459b.svg)
 
 这个“守卫”是一种称为**[电平敏感锁存器](@keyword=level_sensitive_latch|lang=zh-CN|style=Feynman) (level-sensitive latch)** 的特殊存储元件。可以这样理解：我们的时钟信号 (`clk`) 定义了世界的两种状态——时钟为低电平的“规划”阶段，和时钟为高电平的“行动”阶段。锁存器强制执行一条简单而巧妙的规则：任何关于是否使能时钟的决定，都必须在“规划”阶段最终确定。
 

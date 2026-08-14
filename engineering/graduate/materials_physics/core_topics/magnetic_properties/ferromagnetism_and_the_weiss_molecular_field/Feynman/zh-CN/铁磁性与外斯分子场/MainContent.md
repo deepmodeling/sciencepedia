@@ -56,11 +56,11 @@ $$ \lambda = \frac{2zJ}{\mu_0 n (g \mu_B)^2} $$
     我们可以通过一个优美的图形方法来理解这一过程。[磁化强度](@keyword=magnetization|lang=zh-CN|style=Feynman) $M$ 的大小最终需要满足一个[自洽方程](@keyword=self_consistency_equation|lang=zh-CN|style=Feynman)，对于最简单的自旋1/2系统，方程形式为：
     $$ m = \tanh\left(\frac{T_C}{T} m\right) $$
     其中 $m = M/M_{sat}$ 是归一化[磁化强度](@keyword=magnetization|lang=zh-CN|style=Feynman)。我们可以把这个方程看作是寻找两条曲线的交点：直线 $y=m$ 和曲线 $y=\tanh(\frac{T_C}{T} m)$。
-    
+
     <center>
-    <img src="https://i.imgur.com/G4i8g7X.png" alt="Graphical solution to the Weiss self-consistency equation" width="600"/>
+
     </center>
-    
+
     如图所示，当 $T > T_C$ 时，双曲正切曲线的初始斜率小于1，两条曲线只有唯一的交点 $m=0$，表示没有[自发磁化](@keyword=spontaneous_magnetization|lang=zh-CN|style=Feynman)。当 $T < T_C$ 时，双曲正切曲线的初始斜率大于1，除了 $m=0$ 之外，还出现了两个新的、[对称](@keyword=symmetry|lang=zh-CN|style=Feynman)的非零解。这标志着[自发磁化](@keyword=spontaneous_magnetization|lang=zh-CN|style=Feynman)从无到有的诞生！[@problem_id:1777504]
 
 *   **低温下，秩序获胜（$T < T_C$）**：当温度低于 $T_C$ 时，分子场的威力压倒了热运动。系统自发地选择了其中一个非零的[磁化](@keyword=magnetization|lang=zh-CN|style=Feynman)状态，并稳定下来。随着温度进一步降低，热扰动越来越弱，[磁化强度](@keyword=magnetization|lang=zh-CN|style=Feynman) $M$ 逐渐增大，并最终在[绝对零度](@keyword=absolute_zero|lang=zh-CN|style=Feynman)时达到饱和值 $M_{sat}$。魏斯理论甚至能精确预测，在刚刚低于 $T_C$ 的温区，[自发磁化](@keyword=spontaneous_magnetization|lang=zh-CN|style=Feynman)强度是如何“ tumbuh”的：

@@ -13,7 +13,6 @@
 
 例如，在一个包含5个顶点的[完全图](@keyword=complete_graphs|lang=zh-CN|style=Feynman) $K_5$ 中，如果我们选出5条边，它们恰好构成一个五边形（一个长度为5的圈），那么这个边的集合就是不独立的。为什么？因为它本身就是一个圈，违背了“无环”的独立性原则。[@problem_id:1509146]
 
-![$K_5$中的一个5-圈是一个相关集。](https://assets.test.logos.com/images/visual-aids/2c8c7d0d-2b4f-4d6d-8c11-9252c7929cd4.png)
 *图1：一个由5条边构成的圈。这个[边集](@keyword=edge_set|lang=zh-CN|style=Feynman)合是不独立的，因为它自身就包含了一个回路。*
 
 这个概念可以推向极致。最简单的独立集是什么？是**[空集](@keyword=empty_set|lang=zh-CN|style=Feynman)** $\emptyset$。它不包含任何边，自然也就不可能包含任何圈，所以它永远是独立的。[@problem_id:1509170] 而最简单的非独立集又是什么呢？想象一条连接顶点 $v$ 到它自身的边——一个**[自环](@keyword=self_loop|lang=zh-CN|style=Feynman)（loop）**。这个仅包含一条边的集合 $\{e\}$ 就构成了一个长度为1的圈！因此，它天生就是不独立的。自环是依赖性的最纯粹、最浓缩的体现。[@problem_id:1509163]
@@ -50,7 +49,7 @@ $$
 
 而桥则恰恰相反。一个桥是一条“关键”边，如果移除它，图的某个部分就会被孤立出去。它是一条“咽喉要道”。那么，一个基必须包含桥吗？答案是肯定的！对于一个连通图，它的任何一个基（生成树）都必须连接所有的顶点。如果你试[图构建](@keyword=graph_construction|lang=zh-CN|style=Feynman)一个[生成树](@keyword=spanning_trees|lang=zh-CN|style=Feynman)却不使用某条桥，那么这条桥所连接的两个部分就会被割裂，无法形成一棵连通所有顶点的树。因此，**任何桥都必须存在于图的每一个基之中**。[@problem_id:1509177] 在铁路网络中，如果一条轨道是连接两个区域的唯一线路，那么任何一个覆盖全国的骨干网络都必须包含这条线路。
 
-![一个含桥的图。桥（红色边）必须包含在每个[生成树](@keyword=spanning_trees|lang=zh-CN|style=Feynman)（基）中。](https://assets.test.logos.com/images/visual-aids/0e00ddfb-754a-41f3-8b4b-ca1b61cff9ea.png)
+（基）中。](https://assets.test.logos.com/images/visual-aids/0e00ddfb-754a-41f3-8b4b-ca1b61cff9ea.png)
 *图2：一个包含桥的图。红色的边是一座桥，任何该图的生成树（基）都必须包含这条边。*
 
 ### 隐藏的对称性：对偶与圈空间
@@ -67,7 +66,6 @@ $$
 
 这里的奇迹在于：[原图](@keyword=primal_graph|lang=zh-CN|style=Feynman) $G$ 的[图拟阵](@keyword=graphic_matroid|lang=zh-CN|style=Feynman) $M(G)$ 中的**圈**，与[对偶图](@keyword=dual_graphs|lang=zh-CN|style=Feynman) $G^*$ 中的**割集（bond，即最小的能使图不连通的[边集](@keyword=edge_set|lang=zh-CN|style=Feynman)）**，存在着一一对应的关系！[@problem_id:1509171] 换句话说，在原图中构成一个圈的一组边，恰好对应于在对偶图中切断网络的一组“最小”的边。
 
-![平面图 $K_4$ 中的一个圈对应其对偶图中的一个键。](https://assets.test.logos.com/images/visual-aids/0ef04136-1e0f-4318-97f2-1fb8ba668a6d.png)
 *图3：平面图 $K_4$（实线）和它的对偶图（虚线）。$K_4$ 中的一个圈（红色实线）恰好对应于对偶图中的一个割集（被圈包围的顶点引出的所有虚线边）。*
 
 这种“圈”与“割”之间的深刻对偶，是自然界对称性之美在数学中的一次华丽展现。[拟阵理论](@keyword=matroid_theory|lang=zh-CN|style=Feynman)以一种前所未有的方式，将这两个看似风马牛不及的概念——“循环”与“切割”——统一在了同一个框架之下，揭示了它们共同的组合本质。这正是我们探索这片抽象大陆的真正乐趣所在：发现那些连接万事万物的、简单而普适的法则。

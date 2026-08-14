@@ -14,12 +14,12 @@
 
 让我们从一个非常实际的场景开始：大学排课。假设一个系开设了多门课程，由于时间冲突，一些课程无法同时修读。我们可以建立一个“[冲突图](@keyword=conflict_graph|lang=zh-CN|style=Feynman)”$G$，每个顶点代表一门课，如果两门课时间冲突，就在它们之间连一条边。现在，一个学生希望在一个学期内尽可能多地上课，他该如何选择？他需要找到一个课程集合，其中任意两门课都没有时间冲突。在图论的语言里，这个集合就是一个**[独立集](@keyword=independent_sets|lang=zh-CN|style=Feynman)**——一组彼此之间没有任何边的顶点 [@problem_id:1377822]。找到最大的这种集合，就是所谓的**[最大独立集](@keyword=maximum_independent_set|lang=zh-CN|style=Feynman)问题**。
 
-![一个[冲突图](@keyword=conflict_graph|lang=zh-CN|style=Feynman)和它的[独立集](@keyword=independent_sets|lang=zh-CN|style=Feynman)](https://d2p3c33dc2k333.cloudfront.net/figures/1377822_1.png)
+和它的[独立集](@keyword=independent_sets|lang=zh-CN|style=Feynman)](https://d2p3c33dc2k333.cloudfront.net/figures/1377822_1.png)
 <center>图1：左边是课程[冲突图](@keyword=conflict_graph|lang=zh-CN|style=Feynman)，右边高亮的顶点构成一个独立集，代表一组可以被单个学生同时选择的无冲突课程。</center>
 
 这个问题听起来很复杂。让我们戴上“补图眼镜”看看。在补图 $\overline{G}$ 中，边的定义恰好相反：两门课之间有边，当且仅当它们**没有**时间冲突。那么，原来那个无冲突的课程集合（$G$ 中的[独立集](@keyword=independent_sets|lang=zh-CN|style=Feynman)），在 $\overline{G}$ 中会变成什么样呢？在这个集合里，由于任意两门课都没有冲突，所以在 $\overline{G}$ 中，它们之间**全都有边**相连！这正是**团**（Clique）的定义——一个所有顶点都相互连接的[子图](@keyword=subgraph|lang=zh-CN|style=Feynman)。
 
-![[补图](@keyword=complement_graph|lang=zh-CN|style=Feynman)中的团](https://d2p3c33dc2k333.cloudfront.net/figures/1377822_2.png)
+中的团](https://d2p3c33dc2k333.cloudfront.net/figures/1377822_2.png)
 <center>图2：在[补图](@keyword=complement_graph|lang=zh-CN|style=Feynman) $\overline{G}$ 中，边代表“兼容”。左图中的[独立集](@keyword=independent_sets|lang=zh-CN|style=Feynman)（无冲突课程）在右图中变成了一个团（完全兼容的课程组）。</center>
 
 这是一个石破天惊的发现：在一个图 $G$ 中寻找[最大独立集](@keyword=maximum_independent_set|lang=zh-CN|style=Feynman)，和在它的补图 $\overline{G}$ 中寻找[最大团](@keyword=maximum_clique|lang=zh-CN|style=Feynman)，是**完全等价**的两个问题！[@problem_id:1458491] 问题的本质没有变，只是我们看待它的角度变了。

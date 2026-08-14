@@ -14,7 +14,7 @@
 
 <br />
 <center>
-<img src="https://i.imgur.com/uP1jB9k.png" width="600">
+
 <br/>
 <small>图1：[垂直激发](@keyword=vertical_excitation|lang=zh-CN|style=Feynman)与绝热激发。分子在[基态](@keyword=basis_states|lang=zh-CN|style=Feynman) ($S_0$) 的[平衡位置](@keyword=equilibrium_position|lang=zh-CN|style=Feynman) $\mathbf{R}_g$ 吸收[光子](@keyword=photon|lang=zh-CN|style=Feynman)，[垂直跃迁](@keyword=vertical_transitions|lang=zh-CN|style=Feynman)到[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman) ($S_1$)，能量差为[垂直激发能](@keyword=vertical_excitation_energy|lang=zh-CN|style=Feynman)。随后，分子在 $S_1$ [势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)上弛豫到新的[平衡位置](@keyword=equilibrium_position|lang=zh-CN|style=Feynman) $\mathbf{R}_e$。$S_1$ 和 $S_0$ 两个[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)最低点之间的能量差是绝[热激发](@keyword=thermal_excitation|lang=zh-CN|style=Feynman)能。</small>
 </center>

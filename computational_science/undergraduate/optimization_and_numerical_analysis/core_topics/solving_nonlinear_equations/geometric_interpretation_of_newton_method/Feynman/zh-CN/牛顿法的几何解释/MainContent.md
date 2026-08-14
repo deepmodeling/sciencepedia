@@ -18,7 +18,7 @@
 这条切线是我们当前位置对真实曲线的“[最佳线性近似](@keyword=best_linear_approximation|lang=zh-CN|style=Feynman)”。既然我们想找的是曲线与 x 轴的交点，一个自然而然的想法就是：用这条切[线与](@keyword=wired_and|lang=zh-CN|style=Feynman) x 轴的交点，来作为我们对根的**下一个、更好的**近似值。我们把这个新的点记为 $x_{n+1}$。
 
 <center>
-<img src="https://i.imgur.com/gA3q1jO.png" alt="Geometric interpretation of a single Newton's method step." width="500">
+
 </center>
 
 从几何上看，这个过程形成了一个非常直观的直角三角形 [@problem_id:2176243] [@problem_id:2176220]。这个三角形的三个顶点分别是：
@@ -45,7 +45,7 @@ $$
 想象一个函数，它不仅单调递增 ($f'(x) > 0$)，而且还是“向上弯曲”的，就像一个碗一样（我们称之为严格[凸函数](@keyword=convex_functions|lang=zh-CN|style=Feynman)，$f''(x) > 0$）。在这种情况下，如果你从根 $r$ 的右侧任意一点 $x_0$ 出发，会发生什么奇妙的现象呢？[@problem_id:2176214]
 
 <center>
-<img src="https://i.imgur.com/x0HFLQ2.png" alt="Monotonic convergence for a convex function." width="500">
+
 </center>
 
 由于函数的凸性，任何一点的切线都会位于函数图像的“下方”。这意味着，从 $(x_0, f(x_0))$ 点出发的切线，它与 x 轴的交点 $x_1$ 必定会落在 $x_0$ 和真正的根 $r$ 之间。也就是说，$r < x_1 < x_0$。[牛顿法](@keyword=newton_method|lang=zh-CN|style=Feynman)让你前进了一大步，但又聪明地“刹住了车”，没有冲过头。
@@ -79,7 +79,7 @@ $$
 最直接的失败来自于遇到一个平坦的地方——即函数的局部极大值或极小值点。在这些点，切线是水平的，它的斜率 $f'(x_n)$ 为零 [@problem_id:2176250]。
 
 <center>
-<img src="https://i.imgur.com/K30VbQO.png" alt="Failure of Newton's method at a horizontal tangent." width="450">
+
 </center>
 
 几何上，一条水平的线（除非它本身就在 x 轴上）永远不会与 x 轴相交。代数上，牛顿法的迭代公式 $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$ 中出现了除以零的灾难性错误。此时，[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)会彻底崩溃，因为它不知道下一步该往哪里走。
@@ -93,7 +93,7 @@ $$
 在某些极端情况下，这种过冲会形成一个恶性循环，导致迭代序列离真正的根越来越远，最终走向无穷，我们称之为“发散”。一个经典且极具启发性的例子是函数 $f(x) = x^{1/3}$ [@problem_id:2176203]。它的根在 $x=0$。这个函数的图像在原点附近是垂直的，而在远离原点的地方则变得非常平缓。
 
 <center>
-<img src="https://i.imgur.com/A6sTr7a.gif" alt="Divergence of Newton's method for f(x) = x^(1/3)." width="450">
+
 </center>
 
 如果你从任意非零点 $x_k$ 出发，画一条切线，你会惊奇地发现，切[线与](@keyword=wired_and|lang=zh-CN|style=Feynman) x 轴的交点 $x_{k+1}$ 恰好等于 $-2x_k$！这意味着，每迭代一次，你的猜测值不仅跑到了相反的一侧，而且距离原点的距离还翻了一倍。迭代序列 $x_0, -2x_0, 4x_0, -8x_0, \dots$ 像一个失控的钟摆，振幅越来越大，离我们想去的宁静中心（根）越来越远。

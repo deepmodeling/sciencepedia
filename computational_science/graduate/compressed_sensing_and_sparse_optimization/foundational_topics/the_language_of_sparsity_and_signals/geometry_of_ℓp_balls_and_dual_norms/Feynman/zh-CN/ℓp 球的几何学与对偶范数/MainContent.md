@@ -31,5 +31,4 @@
 
 - **ℓ∞ 球 ($B_\infty^n$)** 是一个与坐标轴对齐的正方形或[超立方体](@keyword=hypercube|lang=zh-CN|style=Feynman)。它也有角点，比如在二维空间中的 $(1, 1)$ 或 $(1, -1)$，但这些角点是“稠密”的，它们的非零分量尽可能多。一个 $n$ 维的 ℓ∞ 球拥有 $2^n$ 个角点和 $2n$ 个与坐标轴垂直的平坦**面（facets）**。
 
-![Lp balls in 2D](https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lp_space_balls.svg/300px-Lp_space_balls.svg.png)
 *图1：二维空间中不同 p 值下的 ℓp [单位球](@keyword=unit_ball|lang=zh-CN|style=Feynman)。p=1 是菱形，p=2 是圆形，p=∞ 是正方形。*

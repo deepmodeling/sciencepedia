@@ -20,7 +20,7 @@ The first approach is one of profound, almost deceptive, simplicity. If out-of-f
 Instead of illuminating through the same objective that collects the image, LSFM introduces the excitation light from the side. A specialized [cylindrical lens](@keyword=cylindrical_lens|lang=en-US|style=Feynman) or a scanned beam shapes the light into a gossamer-thin sheet, a virtual plane of illumination that cuts through the specimen. A second objective, positioned orthogonally (at a 90-degree angle) to the first, is focused precisely onto this illuminated plane and captures the resulting [fluorescence](@keyword=fluorescence|lang=en-US|style=Feynman) with a sensitive camera.
 
 <center>
-<img src="httpse://i.imgur.com/example-light-sheet-diagram.png" alt="Diagram showing a light sheet entering a sample from the side, illuminating a single plane, and a detection objective collecting the [fluorescence](@keyword=fluorescence|lang=en-US|style=Feynman) from above." width="600"/>
+
 </center>
 
 The beauty of this approach is its inherent gentleness. Excitation is confined *geometrically*. Out-of-focus planes are simply left in the dark, eliminating out-of-focus [fluorescence](@keyword=fluorescence|lang=en-US|style=Feynman) and, critically, avoiding unnecessary photodamage in those regions [@problem_id:2648258] [@problem_id:2648295]. By acquiring an entire plane of data at once with a camera, LSFM is also incredibly fast and light-efficient, making it a champion for observing large fields of view over long periods [@problem_id:2648258].

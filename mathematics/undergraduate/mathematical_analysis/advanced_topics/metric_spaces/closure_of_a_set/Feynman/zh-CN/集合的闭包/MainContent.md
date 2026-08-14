@@ -18,7 +18,7 @@
 现在，我们可以给出闭包的第一个正式定义：一个点 $x$ 属于集合 $A$ 的闭包（记作 $\bar{A}$），当且仅当，**无论你围绕 $x$ 放置一个多么小的邻域，这个邻域内总能找到至少一个属于 $A$ 的点**。[@problem_id:1537624]
 
 <center>
-<img src="https://static.scholarity.ai/imgs/concepts/closure_neighborhood_illustration.png" alt="An illustration showing a point x with a neighborhood U. The neighborhood intersects with the set A, indicating that x is in the closure of A." width="400">
+
 <em>一个点 $x$ 在集合 $A$ 的闭包中，意味着任何包含 $x$ 的开放邻域 $U$ 都与 $A$ 有交集。</em>
 </center>
 

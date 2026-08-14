@@ -3,10 +3,6 @@ Simple diagrams like Lewis structures are powerful tools in chemistry, but they 
 
 This exploration is divided into two main parts. In the first chapter, **Principles and Mechanisms**, we will journey into the quantum mechanical heart of resonance, using simple and complex molecules to understand how delocalizing electrons leads to stabilization. We will examine the theoretical frameworks of Valence Bond and Molecular Orbital theory to see how they both converge on the same conclusion. Following this, the chapter on **Applications and Interdisciplinary Connections** will bridge theory and reality, showcasing how [resonance stabilization](@keyword=resonance_stabilization|lang=en-US|style=Feynman) dictates the [planarity](@keyword=planarity|lang=en-US|style=Feynman) of proteins, governs the rates of chemical reactions, and leaves a measurable energetic footprint that we can detect in the laboratory.
 
-
-
-![Figure 3: Non-equivalent resonance structures. Structure $\Psi_2$ is more stable as it allows conjugation between donor (D) and acceptor (A) groups.](https://i.imgur.com/k9f5h1U.png)
-
 ## Principles and Mechanisms
 
 Imagine you are asked to describe a rhinoceros to someone who has never seen one, but they are familiar with unicorns and dragons. You might say, "Well, it's a bit like a unicorn because it has a horn on its nose, but it's also a bit like a dragon because it's large, grey, and has tough skin." The rhinoceros is not literally a mix of these two mythical beasts; it is its own distinct creature. The problem is not with the rhino, but with the limitations of your descriptive language.

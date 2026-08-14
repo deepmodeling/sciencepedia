@@ -19,7 +19,6 @@ $$
 
 现在回到最核心的问题：这个系统的解是稳定的（始终保持在一定范围内摆动），还是不稳定的（振幅无限增长，就像秋千越荡越高）？这完全取决于参数 $a$ 和 $q$ 的取值。将 $(a, q)$ 平面画出来，我们会得到一幅壮观的“地图”，上面布满了稳定的“海洋”和不稳定的“舌形区域”。
 
-![Strutt Diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MathieuStability.svg/600px-MathieuStability.svg.png)
 <center><i>[马蒂厄方程](@keyword=mathieu_equation|lang=zh-CN|style=Feynman)的[稳定性图](@keyword=stability_diagrams|lang=zh-CN|style=Feynman)（Strutt 图）。白色区域代表稳定解，灰色区域代表不稳定解。</i></center>
 
 当参数 $(a, q)$ 落在白色区域时，所有的解都是有界的，系统是稳定的。但如果参数不巧落入了那些从 $a$ 轴的特[定点](@keyword=fixed_points|lang=zh-CN|style=Feynman)（$a=1, 4, 9, \dots$）延伸出来的灰色“舌头”里，就会发生[参量共振](@keyword=parametric_resonance|lang=zh-CN|style=Feynman)，解的振幅会[指数增长](@keyword=exponential_growth|lang=zh-CN|style=Feynman) [@problem_id:2174352]。以最宽也最重要的第一个[不稳定舌](@keyword=instability_tongues|lang=zh-CN|style=Feynman)形区域为例，它大致发生在 $a \approx 1$ 的附近。对于一个较小的驱动强度 $q$，一个近似的判据是，当 $a$ 处于 $1-q$ 和 $1+q$ 之间时，系统会变得不稳定 [@problem_id:716974]。这恰好解释了荡秋千的秘密：你必须以大约两倍于秋千自然频率的频率来“驱动”你的身体（改变重心），才能最有效地把能量泵入系统。

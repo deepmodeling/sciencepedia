@@ -8,8 +8,6 @@
 
 最常见的约束之一便是**非负性**。想象一下，我们正在分析一个[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)过程，张量的三个维度分别代表样品、时间和不同化学物质的浓度。显然，浓度不可能是负数。在这种情况下，我们要求分解出的所有因子矩阵都必须是非负的。这不仅仅是简单地将计算结果中的负数“掐掉”归零那么简单。这样做（即所谓的“钳位”），会破坏[最小二乘解](@keyword=least_squares_solution_2|lang=zh-CN|style=Feynman)的最优性，导致错误的结果。正确的做法是在ALS的每一步都求解一个**非负最小二乘（NNLS）**问题。这在数学上转化为一个带[不等式约束](@keyword=inequality_constraints|lang=zh-CN|style=Feynman)的凸二次规划问题，其解必须满足[Karush-Kuhn-Tucker](@keyword=karush_kuhn_tucker|lang=zh-CN|style=Feynman)（KKT）条件——这是一套描述约束优化问题最优解的普适准则。此外，从数值计算的角度看，求解非负最小二乘问题也需要更精密的算法，因为天真地构建并求解正规方程组会平方问题的[条件数](@keyword=condition_number|lang=zh-CN|style=Feynman)（$\kappa(H^{\top} H) = \kappa(H)^{2}$），对于[CP分解](@keyword=cp_decomposition|lang=zh-CN|style=Feynman)中常见的病态Khatri-Rao矩阵，这会极大地放大数值误差，导致解的不可靠。因此，诸如活动集法或[投影梯度法](@keyword=projected_gradient_method|lang=zh-CN|style=Feynman)等专业NNLS求解器是必不可少的，它们保证了解的正确性和数值稳定性 [@problem_id:3533220]。
 
-![](https://quicklatex.com/cache3/e6/ql_9aa17cf4dd706a19f4a0a758d4a63ee6_l3.png)
-
 *图：非负约束下的[CP分解](@keyword=cp_decomposition|lang=zh-CN|style=Feynman)，常用于[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)数据、图像分析等领域，其中因子代表物理上非负的量，如浓度或强度。*
 
 比非负性更强的约束是**[概率单纯形](@keyword=probability_simplex|lang=zh-CN|style=Feynman)约束**。在自然语言处理中，一个经典的“话题模型”旨在将一篇文档表示为不同话题的混合，而每个话题又表现为词汇表上的一个[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)。如果我们有一个张量，其维度分别是“文档”、“句子”和“词汇”，那么我们可能希望分解出的某个因子（比如代表话题的因子）的每一列都是一个[概率分布](@keyword=probability_distribution|lang=zh-CN|style=Feynman)——即所有元素非负，且加和为1。通过在ALS的目标函数中加入惩罚项，我们可以引导因子矩阵的列向量收敛到[概率单纯形](@keyword=probability_simplex|lang=zh-CN|style=Feynman)上 [@problem_id:1542436]。一个典型的做法是加入两个惩罚项：一个惩罚负值（如$\lambda_{NN} \sum (\max(0, -C_{ir}))^2$），另一个惩罚列和不为1（如$\lambda_{S1} \sum ((\sum_i C_{ir}) - 1)^2$）。这种带单纯形约束的[CP分解](@keyword=cp_decomposition|lang=zh-CN|style=Feynman)，与著名的[潜在狄利克雷分配](@keyword=latent_dirichlet_allocation|lang=zh-CN|style=Feynman)（LDA）模型在精神上高度契合，为我们提供了一种从张量视角理解和实现话题模型的强大途径。更有趣的是，一旦施加了这类约束，[CP分解](@keyword=cp_decomposition|lang=zh-CN|style=Feynman)固有的“尺度模糊性”便被消除了。在满足克鲁斯卡尔（Kruskal）唯一性条件（例如，$k_A + k_B + k_C \ge 2R + 2$）的前提下，分解结果除了分量的[排列](@keyword=permutation|lang=zh-CN|style=Feynman)顺序外是唯一的，这为[模型解释](@keyword=model_interpretation|lang=zh-CN|style=Feynman)提供了坚实的基础 [@problem_id:3533261]。
@@ -17,8 +15,6 @@
 ### 洞察动态与残缺的世界
 
 世界是运动不息的，我们的数据也常常带有时间的印记。例如，神经科学家记录下的脑电图数据，可以构成一个“时间 $\times$ 电极 $\times$ 试验”的三阶张量。我们有理由相信，大脑活动在时间上是平滑连续的，而不是剧烈跳变的。我们如何将这个先验知识告诉ALS算法呢？答案是**正则化**。我们可以在ALS的子问题中，对代表时间的那个因子$A$加上一个平滑惩罚项，例如$\frac{\gamma}{2} \| D A \|_F^2$，其中$D$是一个差分算子。这个简单的改动，使得求解$A$的[正规方程](@keyword=normal_equations|lang=zh-CN|style=Feynman)从一个标准的最小二乘问题，变成了一个[Tikhonov正则化](@keyword=tikhonov_regularization|lang=zh-CN|style=Feynman)问题，其解会倾向于更“平滑” [@problem_id:3533189]。更奇妙的是，如果这个差分算子是循环的，整个问题可以在[傅里叶变换](@keyword=fourier_transform|lang=zh-CN|style=Feynman)域中得到极其简洁的对角化表示。正则化的作用，等价于在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)上对高频分量进行衰减，其衰减因子$H(\omega) = 1 / (\beta \chi + 2\gamma(1 - \cos(\omega)))$清晰地揭示了[正则化参数](@keyword=regularization_parameter|lang=zh-CN|style=Feynman)$\gamma$是如何抑制高频噪声，从而提取出平滑的时间模式的。这优美地展示了代数操作（正则化）与信号处理（滤波）之间的深刻对偶性。
-
-![](https://quicklatex.com/cache3/7c/ql_75628588829377484433100259b6fe7c_l3.png)
 
 *图：通过对时间因子施加平滑正则化，[CP分解](@keyword=cp_decomposition|lang=zh-CN|style=Feynman)可以从嘈杂的[神经信号](@keyword=nerve_signal|lang=zh-CN|style=Feynman)（左）中提取出平滑的、有生理意义的潜在时间模式（右）。*
 
@@ -31,8 +27,6 @@ CP-ALS不仅能独立完成任务，它还能作为更宏大系统中的一个�
 在**[网络安全](@keyword=cybersecurity|lang=zh-CN|style=Feynman)**领域，服务器日志可以被组织成一个“IP地址 $\times$ 访问URL $\times$ 小时”的张量，记录了每个小时从各个IP到各个页面的访问次数。正常情况下，这种流量数据具有高度的规律性，可以用一个低秩的CP或Tucker模型很好地描述。然而，像[分布](@keyword=generalized_function|lang=zh-CN|style=Feynman)式[拒绝服务](@keyword=denial_of_service|lang=zh-CN|style=Feynman)（DDoS）攻击这样的异常事件，会表现为在某个特定时间、针对某个特定URL的流量从大量IP地址突然爆发。这种模式与正常的低秩结构格格不入。因此，我们可以先用CP-ALS对历史数据拟合一个“正常行为”模型。然后，用这个模型去预测新的数据，计算实际观测值与模型预测值之间的**残差**。在大部[分时](@keyword=time_sharing|lang=zh-CN|style=Feynman)间里，残差会很小；但当攻击发生时，残差会在攻击发生的那个小时急剧增大。通过监测残差能量的异常峰值，系统就能自动发出警报 [@problem_id:3282214]。在这里，[CP分解](@keyword=cp_decomposition|lang=zh-CN|style=Feynman)扮演了“背景建模”的角色，使得异常从背景中凸显出来。
 
 在生物医学和神经科学研究中，我们常常需要分析来自多个被试的数据（例如，多个人的大脑扫描数据）。每个被试的数据可以是一个张量，而我们有理由相信，尽管个体存在差异，但他们可能共享某些共同的神经活动模式。这启发了**耦合[张量分解](@keyword=tensor_decomposition|lang=zh-CN|style=Feynman)**的思想。假设我们有两组张量数据$\mathcal{X}^{(1)}$和$\mathcal{X}^{(2)}$，它们分别可以分解为$[A^{(1)}, B^{(1)}, C]$和$[A^{(2)}, B^{(2)}, C]$。注意到吗？因子$C$是它们共享的。在求解时，我们可以联合最小化两个张量的重构误差。在更新共享因子$C$时，我们会从两个数据集中汇集信息，其[正规方程](@keyword=normal_equations|lang=zh-CN|style=Feynman)的[系数矩阵](@keyword=coefficient_matrix|lang=zh-CN|style=Feynman)变为各数据集贡献的加权和：$G = w_1 H_1 + w_2 H_2$。这种信息池化（information pooling）极大地增强了对共享因子$C$估计的**可辨识性（identifiability）**和**数值稳定性**。即使单个数据集提供的信息很弱，不足以唯一确定$C$，但将多个数据集“捆绑”在一起后，[解的唯一性](@keyword=uniqueness_of_solutions|lang=zh-CN|style=Feynman)和鲁棒性会显著提升 [@problem_se:3533239]。这为跨个体、跨任务的模式比较和发现提供了严谨的数学框架。
-
-![](https://quicklatex.com/cache3/e3/ql_110a174092b77fcb42f61a1538fc1ae3_l3.png)
 
 *图：耦合[张量分解](@keyword=tensor_decomposition|lang=zh-CN|style=Feynman)示意图。多个张量（如不同被试的大脑活动数据）共享一个或多个因子（如共同的认知任务模式），联合分解可以更鲁棒地提取共享结构。*
 
@@ -47,8 +41,6 @@ CP-ALS不仅能独立完成任务，它还能作为更宏大系统中的一个�
 理解了问题的根源，我们便能设计出更智能的算法。
 - **稳定性**：当ALS子问题中的[正规方程](@keyword=normal_equations|lang=zh-CN|style=Feynman)病态时，直接求解会失败。我们可以借鉴**Levenberg-Marquardt**方法的思想，在[正规方程](@keyword=normal_equations|lang=zh-CN|style=Feynman)的[系数矩阵](@keyword=coefficient_matrix|lang=zh-CN|style=Feynman)$H$上增加一个阻尼项$\mu I$或$\mu \operatorname{diag}(H)$，变成求解$(H+\mu \dots)\delta = -g$ [@problem_id:3533250]。这个阻尼项就像在崎岖不平的山路上踩下刹车，保证了每一步都稳定。阻尼参数$\mu$的大小还可以根据每一步的“预测下降量”与“实际下降量”的比值来自适应调节，这正是现代[非线性优化](@keyword=nonlinear_optimization|lang=zh-CN|style=Feynman)中“信赖域”思想的体现。
 - **效率**：为了让求解过程更快，我们可以给ALS装上“涡轮增压”。**预条件**技术通过乘以一个近似[逆矩阵](@keyword=matrix_inverse|lang=zh-CN|style=Feynman)来改善正规方程的条件数，使得迭代求解器（如共轭梯度法）能更快收敛。例如，一个简单的**[雅可比预条件子](@keyword=jacobi_preconditioner|lang=zh-CN|style=Feynman)**只使用系数矩阵的对角线信息，计算代价极小，但在因子近似正交的理想情况下，它能将[条件数](@keyword=condition_number|lang=zh-CN|style=Feynman)直接降为完美的1 [@problem_id:3533213]。另一种更先进的策略是**[安德森加速](@keyword=anderson_acceleration|lang=zh-CN|style=Feynman)（Anderson Acceleration）**，它像一位经验丰富的棋手，不止看当前一步，而是回顾过去数步的“残差”历史，通过求解一个小型最小二乘问题来推断出一个“捷径”方向，从而跳出迭代的泥沼 [@problem_id:3533255]。当然，在[CP分解](@keyword=cp_decomposition|lang=zh-CN|style=Feynman)这个非凸世界里，这种大胆的跳跃可能会“跳过头”导致[目标函数](@keyword=objective_function|lang=zh-CN|style=Feynman)上升，因此需要配合重启或阻尼等“安全带”策略 [@problem_id:3533255]。
-
-![](https://quicklatex.com/cache3/e1/ql_49a941e779836371c667468114c003e1_l3.png)
 
 *图：[安德森加速](@keyword=anderson_acceleration|lang=zh-CN|style=Feynman)通过历史信息（蓝色点）外插出一个更优的更新方向（绿色箭头），从而比标准迭代（红色箭头）更快地逼近[不动点](@keyword=fixed_point|lang=zh-CN|style=Feynman)。*
 

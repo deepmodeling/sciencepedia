@@ -20,7 +20,7 @@
 当然不是。一条曲线也可以被看作是它所有**[切线](@keyword=tangent_line|lang=zh-CN|style=Feynman)**的集合。每一条[切线](@keyword=tangent_line|lang=zh-CN|style=Feynman)都可以由两个数字唯一确定：它的**斜率** $p = dy/dx$ 和它在 $y$ 轴上的**截距** $\psi$。如果我们能找到一个函数，告诉我们对于每一个斜率 $p$，对应的[切线](@keyword=tangent_line|lang=zh-CN|style=Feynman)截距 $\psi$ 是多少，即函数 $\psi(p)$，那么我们同样可以完美地重构出原来的曲线。
 
 <center>
-<img src="https://i.imgur.com/uG9p1Sg.png" width="500">
+
 <br>
 <small>图1：一条曲线（蓝色）既可以被看作点的集合，也可以被看作其[切线](@keyword=tangent_line|lang=zh-CN|style=Feynman)族（红色）的包络。[勒让德变换](@keyword=legendre_transformation|lang=zh-CN|style=Feynman)就是从“位置-高度”的视角切换到“斜率-截距”的视角。</small>
 </center>

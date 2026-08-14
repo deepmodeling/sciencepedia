@@ -15,8 +15,6 @@
 
 如果所有极点都位于[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)的左半部分（其实部为负），系统就是稳定的。任何扰动都会像水中的涟漪一样，随时间衰减消失。如果哪怕只有一个极点跑到了右半部分（其实部为正），系统就是不稳定的。扰动会被放大，导致系统响应无限增长，就像滚雪球一样越来越大。而如果极点恰好落在左半平面和右半平面之间的边界——[虚轴](@keyword=imaginary_axis|lang=zh-CN|style=Feynman)上，系统就处于“临界”状态，它会[持续振荡](@keyword=sustained_oscillations|lang=zh-CN|style=Feynman)，永不停止，就像一个完美的钟摆。
 
-![A diagram of the s-plane, showing the left-half plane (LHP) labeled 'Stable Region', the right-half plane (RHP) labeled 'Unstable Region', and the imaginary axis labeled 'Marginally Stable'. Several 'x' marks representing poles are scattered, with some in the LHP, some in the RHP, and a pair on the imaginary axis.](https://i.imgur.com/8a6g3lF.png)
-
 问题是，求解高阶多项式方程以找到所有极点是一项极其繁琐甚至不可能完成的任务。难道我们每次都要求解复杂的方程吗？幸运的是，19世纪的数学家们给了我们一个神奇的工具，它能让我们绕过求解方程的苦差事，直接判断极点的分布情况。这个工具就是**劳斯-赫尔维茨（Routh-Hurwitz）判据**。
 
 ### 劳斯表格：系统的“体检报告”

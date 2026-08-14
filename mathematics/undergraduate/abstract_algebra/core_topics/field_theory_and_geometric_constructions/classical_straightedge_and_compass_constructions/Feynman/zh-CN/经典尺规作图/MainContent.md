@@ -15,8 +15,6 @@
 
 想象两条从同一点$O$出发的射线。在一条射线上，你截取长度1和长度$a$。在另一条射线上，你截取长度$b$。通过一些巧妙的平行线构造，你就能得到一个长度恰好为 $a \cdot b$ 的线段。同样，只需稍作调整，你就能构造出 $a/b$ 的长度。例如，通过构造特定的相似三角形，我们可以从已知的长度 $1$ 和 $\alpha$ 出发，精确地作出长度为 $1/\alpha$ 的线段 [@problem_id:1781749]。
 
-
 图1：利用相似三角形（$\triangle OUP \sim \triangle OAB$）构造 $1/\alpha$。由 $\frac{OP}{OB} = \frac{OU}{OA}$ 可得 $OP = \frac{1 \cdot 1}{\alpha} = \frac{1}{\alpha}$。
 
-![Construction of sqrt(alpha)](https://i.imgur.com/2s44754.png)
 图2：利用半圆内的直角三角形构造 $\sqrt{\alpha}$。根据射影定理，$BD^2 = AB \cdot BC = 1 \cdot \alpha$，因此 $BD = \sqrt{\alpha}$。

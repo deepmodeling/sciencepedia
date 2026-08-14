@@ -37,7 +37,7 @@ $$
 ### 拆解这台机器：[应力张量](@keyword=stress_tensor|lang=zh-CN|style=Feynman)的分量与对称性
 
 这个神秘的[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $\boldsymbol{\sigma}$ 究竟是什么？在三维空间中，它可以被表示为一个 $3 \times 3$ 的矩阵。这个矩阵的九个分量 $\sigma_{ij}$ 各有其明确的物理意义：$\sigma_{ij}$ 代表作用在“第 $j$ 个坐标面”（法向量为 $\boldsymbol{e}_j$ 的平面）上，沿“第 $i$ 个坐标轴”（$\boldsymbol{e}_i$）方向的力分量。[@problem_id:2616500] 矩阵的对角线元素 $\sigma_{11}, \sigma_{22}, \sigma_{33}$ 是[正应力](@keyword=normal_stresses|lang=zh-CN|style=Feynman)，而非对角[线元](@keyword=line_element|lang=zh-CN|style=Feynman)素 $\sigma_{ij} (i \neq j)$ 则是剪应力。
-![一个无限小立方体上的[应力分量](@keyword=stress_components|lang=zh-CN|style=Feynman)。对角分量 $\sigma_{xx}, \sigma_{yy}, \sigma_{zz}$ 是[正应力](@keyword=normal_stresses|lang=zh-CN|style=Feynman)。非对角分量 $\sigma_{xy}, \sigma_{yx}$ 等是剪应力。](https://fsj-oss.oss-cn-shanghai.aliyuncs.com/prod/edu_topic_and_problem/Solid_Mechanics_Graduate/The_Cauchy_Stress_Tensor_with_Normal_and_Shear_Components/concepts/c001.png)
+。对角分量 $\sigma_{xx}, \sigma_{yy}, \sigma_{zz}$ 是[正应力](@keyword=normal_stresses|lang=zh-CN|style=Feynman)。非对角分量 $\sigma_{xy}, \sigma_{yx}$ 等是剪应力。](https://fsj-oss.oss-cn-shanghai.aliyuncs.com/prod/edu_topic_and_problem/Solid_Mechanics_Graduate/The_Cauchy_Stress_Tensor_with_Normal_and_Shear_Components/concepts/c001.png)
 
 让我们通过一个具体的例子来感受一下这台机器的运作。假设工程师们测得某点应力状态（单位为兆帕，MPa）为 [@problem_id:2229888]：
 $$

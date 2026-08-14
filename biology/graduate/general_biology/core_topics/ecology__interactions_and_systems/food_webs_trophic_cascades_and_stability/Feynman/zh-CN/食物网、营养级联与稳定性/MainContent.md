@@ -13,8 +13,6 @@
 
 让我们来看一个简单的假想例子。在一个海湾里，物种 A（一种藻类）被物种 B（一种小虾）和物种 C（一种贝类）取食，而 B 和 C 又都被物种 D（一种鱼）捕食。这个[食物网](@keyword=trophic_networks|lang=zh-CN|style=Feynman)可以简单地画成：
 
-![A simple food web diagram showing A eaten by B and C, and B and C eaten by D.](https-prod-us-east-1-first-cluster-i-0-128-111-23-228-202-17180-0/tmp/mindflow_images/2024-06-11/17_54_06/image_234.png)
-
 这张图直观地展示了能量流动的路径。但为了进行更深入的分析，我们可以把这些信息“翻译”成一种更强大的语言——矩阵。我们可以创建一个叫做**邻接矩阵**（Adjacency Matrix）$A$ 的表格。在这个矩阵中，如果物种 $i$ 被物种 $j$ 捕食，我们就在第 $i$ 行、第 $j$ 列记上 1，否则就记 0 [@problem_id:2799860]。对于我们上面的例子，如果物种顺序是 (A, B, C, D)，那么邻接矩阵就是：
 
 $$

@@ -10,7 +10,7 @@
 
 首先，想象两名探测车驾驶员，他们从一条赤道线上的两个邻近点出发，严格沿着“直线”（也就是[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)）向北极行驶。在平坦的欧氏空间里，我们直觉地认为两条平行线永远不会相交，它们的距离将永远保持不变。然而，在一个弯曲的世界里，情况就大相径庭了。在一个像地球一样的[正曲率](@keyword=positive_curvature|lang=zh-CN|style=Feynman)星球上，这两条最初平行的路径会逐渐靠拢，最终在北极点相遇。相反，如果他们在一个具有[负曲率](@keyword=negative_curvature|lang=zh-CN|style=Feynman)的马鞍形世界上行驶，他们的路径会不断分离，彼此越来越远 ([@problem_id:1652496])。这种[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)的汇聚或发散现象，被称为**测地偏离**，是曲率最直接、最物理的体现。[正曲率](@keyword=positive_curvature|lang=zh-CN|style=Feynman)将万物拉近，负曲率使万物分离，而零曲率则让它们保持“社交距离”。
 
-![[测地线偏离](@keyword=geodesic_deviation|lang=zh-CN|style=Feynman)](https://example.com/geodesic_deviation.png)
+](https://example.com/geodesic_deviation.png)
 
 一个更局域化的方法是画圆和三角形，这是每个文明都会的古老技艺。在一个平坦的平面上，一个半径为 $r$ 的圆，其周长是 $C = 2\pi r$。但在一个弯曲的空间里，这个熟悉的公式不再成立。如果你在一个球面上画一个以北极为圆心、半径为 $r$ 的圆（即一条纬线），你会发现它的周长“小于”$2\pi r$。相反，在双曲平面上，圆的周长会“大于”$2\pi r$。更精确地说，对于小的半径 $r$，周长可以近似地表示为 $C(r) \approx 2\pi r (1 - \frac{K}{6}r^2)$，其中 $K$ 就是高斯曲率 ([@problem_id:1652511])。[正曲率](@keyword=positive_curvature|lang=zh-CN|style=Feynman)使得圆周相对于其半径显得“更短”，而[负曲率](@keyword=negative_curvature|lang=zh-CN|style=Feynman)则使其“更长”。
 

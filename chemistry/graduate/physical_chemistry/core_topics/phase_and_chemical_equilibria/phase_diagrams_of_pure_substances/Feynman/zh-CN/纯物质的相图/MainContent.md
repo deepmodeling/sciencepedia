@@ -16,7 +16,7 @@
 通常情况下，气体的无序程度远大于液体，液体又大于固体，即 $s_g > s_l > s_s$。由于这个负号的存在，当我们画出 $g$ 随 $T$ 变化的图像时，会得到三条向下倾斜的直线（或曲线）。气相的熵最大，所以它的 $g-T$ 曲线最陡峭；固相的熵最小，曲线最平缓；液相介于两者之间 [@problem_id:2951259]。
 
 <center>
-<img src="https://i.imgur.com/gK9fIqI.png" alt="A schematic plot of molar Gibbs free energy G versus temperature T for the solid, liquid, and gas phases of a pure substance at a constant pressure P. The lines for each phase are shown with different slopes. The intersections of these lines determine the melting point (Tm) and boiling point (Tb). The stable phase at any temperature is the one with the lowest G value." width="600">
+
 <br>
 <small>图1：恒定压力下，摩尔吉布斯自由能 $g$ 随温度 $T$ 变化的示意图。在任何温度下，最低的那条线所代表的相就是稳定相。[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)就发生在两条线的交点处。</small>
 </center>
@@ -61,7 +61,7 @@ $$
 但水是一个著名的“叛逆者”。冰的密度比水小（冰块会浮在水上），这意味着水在结冰时体积会膨胀，而在熔化时体积会收缩！所以对于水，$v_l < v_s$，导致 $\Delta v_{fus} < 0$。由于 $\Delta s_{fus}$ 仍然是正的，[克拉佩龙方程](@keyword=clapeyron_equation|lang=zh-CN|style=Feynman)预言，水的固-液共存线斜率 $dP/dT$ 是**负的**！[@problem_id:2951342] [@problem_id:1985280]。
 
 <center>
-<img src="https://i.imgur.com/7b0tK3N.png" alt="Comparison of P-T phase diagrams for a typical substance and for water. The typical substance shows a solid-liquid coexistence line with a positive slope. Water shows a solid-liquid coexistence line with a negative slope." width="700">
+
 <br>
 <small>图2：典型物质（左）与水（右）的P-T[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)对比。注意水（右）的固液共存线（熔化曲线）具有独特的负斜率，这正是其反常密度行为的直接体现。</small>
 </center>
@@ -102,7 +102,7 @@ $$
 因此，氦-4 的[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)上没有传统的三相点，取而代之的是两个新的特殊点：一个点是气相、He I 和 He II 共存的地方；另一个点是固相、He I 和 He II 共存的地方 [@problem_id:1985258]。
 
 <center>
-<img src="https://i.imgur.com/uU2R3f1.png" alt="P-T phase diagram of Helium-4, showing the solid, liquid I, liquid II (superfluid), and gas phases. The lambda line separates liquid I and liquid II, and the absence of a solid-liquid-gas triple point is notable." width="500">
+
 <br>
 <small>图3：氦-4的P-T相图。注意其独特的 $\lambda$ 线，以及在低压下固相的缺失。</small>
 </center>

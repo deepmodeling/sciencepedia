@@ -17,8 +17,6 @@ A natural first thought is to find a single, smooth function that passes perfect
 
 Let’s take a realistic example from [nuclear physics](@keyword=nuclear_physics|lang=en-US|style=Feynman): the **Woods-Saxon potential** [@problem_id:3566031]. This function, $V(r) = -V_{0} / (1 + \exp((r-R)/a))$, describes the average force a single proton or neutron feels inside a nucleus. It's a smooth, well-behaved function, nearly flat in the center and falling off to zero at the nuclear "surface." Suppose we calculate its value at several equally spaced points and fit a single high-degree polynomial through them. What happens?
 
-![A schematic representation of the Runge phenomenon. A smooth, well-behaved function (black curve) is interpolated by a high-degree polynomial (red dashed curve) using equally spaced nodes (blue dots). The polynomial matches the function at the nodes but exhibits wild oscillations near the ends of the interval.](https://i.imgur.com/k6lP09V.png)
-
 Disaster. While the polynomial behaves nicely in the middle of our data range, it goes completely haywire near the ends, producing wild, unphysical oscillations. This pathological behavior is a classic issue known as the **Runge phenomenon**. Our simple, elegant approach has failed spectacularly. It turns out that forcing one polynomial to bend and twist to hit many [equispaced points](@keyword=equispaced_points|lang=en-US|style=Feynman) is like trying to fit a very long, stiff board to a wavy surface; it will inevitably pop up and down in unexpected places.
 
 ### The Art of Choosing Where to Look
@@ -30,8 +28,6 @@ To understand why, we need to think about how errors propagate. Imagine our expe
 For equally spaced points, the Lebesgue constant grows exponentially with the number of points, $\Lambda_n \sim 2^n$. This is a recipe for instability! The more data points we try to use, the more violently our interpolant will oscillate.
 
 So, how can we tame this beast? The solution is as beautiful as it is non-obvious. Instead of spacing our points evenly, we must cluster them more densely toward the ends of our interval. The optimal way to do this is by using **Chebyshev nodes** [@problem_id:3566026]. Imagine taking points that are equally spaced around a semicircle and then projecting them straight down onto the diameter below. Those projected points are the Chebyshev nodes.
-
-![A diagram showing the construction of Chebyshev nodes. Equally spaced points on the upper half of a unit circle are projected vertically onto the diameter (the interval from -1 to 1). The resulting nodes are clustered near the endpoints -1 and 1.](https://i.imgur.com/7gK8L9W.png)
 
 This specific, peculiar spacing is the magic ingredient. It counteracts the polynomial's natural tendency to wiggle at the edges. With Chebyshev nodes, the Lebesgue constant grows only logarithmically ($\Lambda_n \sim \ln(n)$), an astronomically slower rate than [exponential growth](@keyword=exponential_growth|lang=en-US|style=Feynman). By simply choosing *where* to measure more wisely, we can make polynomial interpolation a stable and powerful tool for many [smooth functions](@keyword=smooth_functions|lang=en-US|style=Feynman).
 

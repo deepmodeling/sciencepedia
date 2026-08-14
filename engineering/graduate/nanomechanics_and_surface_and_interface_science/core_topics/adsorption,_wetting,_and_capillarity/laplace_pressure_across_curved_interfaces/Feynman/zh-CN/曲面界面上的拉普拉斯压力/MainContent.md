@@ -18,7 +18,7 @@
 但如果表面是弯曲的呢？情况就变得有趣了。让我们在一个球形水滴的表面上切出一块极小的、近似方形的区域，就像在地球仪上画一个小方格。[@problem_id:2776513] 看看这个小方格的四条边。每一条边都受到来自其外部邻近区域的拉力。因为表面是弯曲的，这些拉力并非严格地背对背。相反，它们都略微朝向水滴的内部。
 
 <center>
-<img src="https://i.imgur.com/3f0Q9rE.png" width="500">
+
 </center>
 <center>
 <small>图1：在一个弯曲的界面上，表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)（红色箭头）在切向作用。由于曲率的存在，这些力的[合力](@keyword=net_force|lang=zh-CN|style=Feynman)（蓝色箭头）指向[曲率中心](@keyword=center_of_curvature|lang=zh-CN|style=Feynman)，产生一个净“向内”的力。</small>
@@ -47,7 +47,7 @@ $$
 在表面上的任意一点，我们可以通过包含该点法线（垂直于该点的[切平面](@keyword=tangent_plane|lang=zh-CN|style=Feynman)）的平面来切割表面，得到一系列的“法切线”。[@problem_id:2776515] 每一条法切线都有自己的曲率，描述了它在该方向上的弯曲程度。一个非凡的几何学定理（[欧拉定理](@keyword=euler_s_theorem|lang=zh-CN|style=Feynman)）告诉我们，我们不需要知道所有方向的曲率。我们只需要找到两个特殊的、相互垂直的方向：一个方向的弯曲程度最*大*，另一个方向最*小*。这两个曲率被称为**[主曲率](@keyword=principal_curvatures|lang=zh-CN|style=Feynman)**，记为 $ k_1 = 1/R_1 $ 和 $ k_2 = 1/R_2 $，其中 $ R_1 $ 和 $ R_2 $ 是对应的主[曲率半径](@keyword=radius_of_curvature|lang=zh-CN|style=Feynman)。
 
 <center>
-<img src="https://i.imgur.com/dssz22x.png" width="500">
+
 </center>
 <center>
 <small>图2：任何光滑[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)在局部都可以由两个相互垂直的[主曲率](@keyword=principal_curvatures|lang=zh-CN|style=Feynman) $k_1$ 和 $k_2$ 来描述。它们分别对应于[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)在该点弯曲得最厉害和最平缓的方向。</small>

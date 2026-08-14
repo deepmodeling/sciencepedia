@@ -34,7 +34,7 @@ $$V_{CE} = V_{CC} - I_C R_C$$
 现在，让我们隆重介绍今天的主角：[集电极反馈偏置](@keyword=collector_feedback_bias|lang=zh-CN|style=Feynman)电路。它的结构非常巧妙：不再从固定的电源 $V_{CC}$ 为基极提供电流，而是通过一个反馈电阻 $R_F$（在一些资料中也写作 $R_B$），从集电极这个“输出端”引回一部分信号来控制基极这个“输入端”。
 
 <center>
-    <img src="https://assets.bitbaste.com/images/topic/Collector-feedback%20bias%20for%20Bjts/concept.svg" alt="Collector-Feedback Bias Circuit Diagram" width="400"/>
+
     <br>
     <em>[集电极反馈偏置](@keyword=collector_feedback_bias|lang=zh-CN|style=Feynman)电路示意图</em>
 </center>

@@ -60,7 +60,7 @@ $$R = H_{max} - H_{obs}$$
 
 2.  **堆叠中每个字母的相对高度代表其频率**：在一个字母堆中，每个字母的高度由它的出现频率 $p$ 乘以该位置的总信息量 $R$ 决定 [@problem_id:2121492]。这正是[序列标识](@keyword=sequence_logo|lang=zh-CN|style=Feynman)超越共识序列的地方。回到之前那个 $40\%$ T、$30\%$ G、$30\%$ C的例子，[序列标识](@keyword=sequence_logo|lang=zh-CN|style=Feynman)图会显示一个以T为主，但G和C也占据了相当高度的字母堆。这种视觉上的细微差别，精确地反映了该位置上允许的氨基酸变化的“偏好”。
 
-![一个典型的[DNA结合](@keyword=dna_binding|lang=zh-CN|style=Feynman)位点的[序列标识](@keyword=sequence_logo|lang=zh-CN|style=Feynman)（Sequence Logo）。[横轴](@keyword=transverse_axis|lang=zh-CN|style=Feynman)代表序列位置，纵轴代表信息量（单位：比特）。在每个位置，字母堆的总高度表示该位置的保守程度，而每个字母的相对大小表示该碱基在该位置出现的频率。](https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/LexA_binding_site_sequence_logo.svg/600px-LexA_binding_site_sequence_logo.svg.png)
+位点的[序列标识](@keyword=sequence_logo|lang=zh-CN|style=Feynman)（Sequence Logo）。[横轴](@keyword=transverse_axis|lang=zh-CN|style=Feynman)代表序列位置，纵轴代表信息量（单位：比特）。在每个位置，字母堆的总高度表示该位置的保守程度，而每个字母的相对大小表示该碱基在该位置出现的频率。](https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/LexA_binding_site_sequence_logo.svg/600px-LexA_binding_site_sequence_logo.svg.png)
 
 图1：一个典型的DNA结合位点的[序列标识](@keyword=sequence_logo|lang=zh-CN|style=Feynman)（Sequence Logo）。总高度表示保守性，字母相对大小表示频率。来源：维基百科
 

@@ -28,7 +28,7 @@
 当我们收集了足够多的“谁、何处、何时”的线索后，我们需要一个思维框架来组织这些信息，并开始思考“为什么”。[流行病学](@keyword=epidemiology|lang=zh-CN|style=Feynman)中最经典、最直观的模型之一就是**[流行病学](@keyword=epidemiology|lang=zh-CN|style=Feynman)三角 (Epidemiological Triad)**。这个模型告诉我们，疾病的发生并非偶然，而是三个因素相互作用的结果：**病原体 (Agent)**、**宿主 (Host)** 和 **环境 (Environment)** [@problem_id:2063926]。
 
 <center>
-  <img src="https://i.imgur.com/E8WbL3g.png" alt="The Epidemiological Triad: Agent, Host, and Environment" width="450">
+
 </center>
 
 让我们用一个幼儿园爆发急性肠胃炎的例子来理解这个模型 [@problem_id:2063926]：

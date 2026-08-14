@@ -1,9 +1,8 @@
 ## 引言
 [转子-定子腔](@keyword=rotor_stator_cavity|lang=zh-CN|style=Feynman)——一个旋转表面与一个静止表面相邻的看似简单的布置——是科学与工程中最基本的构型之一。虽然其几何结构简单，但间隙内的[流体动力学](@keyword=hydrodynamics|lang=zh-CN|style=Feynman)却异常复杂，它主导着从喷气发动机的效率到我们细胞中能量产生的一切。这种复杂性提出了一个引人入胜的挑战：我们如何理解和预测被困在这个动态环境中的流体的行为？本文通过带领读者进行一次进入[转子-定子腔](@keyword=rotor_stator_cavity|lang=zh-CN|style=Feynman)世界的概念之旅来回答这个问题。我们将首先探索决定[流体运动](@keyword=fluid_motion|lang=zh-CN|style=Feynman)的核心物理原理和流动状态，包括密封系统和贯穿流系统之间的关键区别。在此之后，我们将通过考察其在重型机械、[微电子学](@keyword=microelectronics|lang=zh-CN|style=Feynman)乃至生命分子机器中的多样化应用，来发现这种设计的惊人通用性。接下来的章节，“原理与机制”和“应用与跨学科联系”，将揭示这一基础设计背后错综复杂的物理学及其广泛的影响。
 
-![图示将圆柱形间隙“展开”为平面[Couette流](@keyword=couette_flow|lang=zh-CN|style=Feynman)模型，[速度剖面](@keyword=velocity_profile|lang=zh-CN|style=Feynman)从转子表面(y=0)的U线性变化到定子表面(y=c)的0。](https://i.imgur.com/vHqJ9Fj.png)
+模型，[速度剖面](@keyword=velocity_profile|lang=zh-CN|style=Feynman)从转子表面(y=0)的U线性变化到定子表面(y=c)的0。](https://i.imgur.com/vHqJ9Fj.png)
 *图1：[润滑近似](@keyword=lubrication_approximation|lang=zh-CN|style=Feynman)。一个狭窄的环形间隙可以“展开”成一个简单的平面[Couette流](@keyword=couette_flow|lang=zh-CN|style=Feynman)。间隙中的[流体速度](@keyword=fluid_velocity|lang=zh-CN|style=Feynman)剖面是线性的。*
-
 
 *图2：两种基本的流动状态。（左）密封腔中的Batchelor[流形](@keyword=manifold|lang=zh-CN|style=Feynman)成一个带有旋转核心的循环单元。（右）施加径向贯穿流的Stewartson流导致一个非旋转的核心，并抑制了循环。*
 

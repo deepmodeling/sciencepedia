@@ -62,7 +62,7 @@ $$
 
 一个单独的[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)作为[同步器](@keyword=synchronizer|lang=zh-CN|style=Feynman)是极其危险的，因为下游的逻辑电路可能在它还没从[亚稳态](@keyword=metastable_states|lang=zh-CN|style=Feynman)中“醒来”时，就去读取它那模糊不清的输出了 [@problem_id:1947270]。怎么办？答案是，再加一个[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)，形成一个两级[同步器](@keyword=synchronizer|lang=zh-CN|style=Feynman)。
 
-![两级[同步器](@keyword=synchronizer|lang=zh-CN|style=Feynman)](https://example.com/2-stage-synchronizer.png)
+](https://example.com/2-stage-synchronizer.png)
 
 这里的思想非常优美和简单：第一个[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)（FF1）直接面对异步信号，它有发生[亚稳态](@keyword=metastable_states|lang=zh-CN|style=Feynman)的风险。但是，我们不直接使用它的输出。我们让它在原地“思考”整整一个[时钟周期](@keyword=clock_period|lang=zh-CN|style=Feynman)。在这段时间里，它有非常非常高的概率可以解决到某个稳定的‘0’或‘1’。然后，第二个[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)（FF2）再来采样FF1已经稳定下来的输出。
 

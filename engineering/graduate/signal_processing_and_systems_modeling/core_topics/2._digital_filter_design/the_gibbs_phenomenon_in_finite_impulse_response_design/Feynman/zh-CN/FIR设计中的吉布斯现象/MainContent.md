@@ -10,7 +10,7 @@
 让我们从一个思想实验开始。想象一下，你想要创造一个完美的信号“筛子”。这个筛子的功能非常明确：它允许某些频率的信号毫无阻碍地通过，同时完全、彻底地阻挡其他所有频率。在频率的世界里，这个筛子的特性就像一堵“砖墙”：在某个“[截止频率](@keyword=break_frequency|lang=zh-CN|style=Feynman)”$\omega_c$之内，信号的“通过率”是$1$；一旦超过这个频率，通过率立刻、瞬间地降为$0$。[@problem_id:2912672] 这种在数学上描述为一个矩[形函数](@keyword=shape_functions|lang=zh-CN|style=Feynman)的[理想低通滤波器](@keyword=ideal_low_pass_filter|lang=zh-CN|style=Feynman)，代表了我们对“完美”的终极追求。
 
 <center>
-<img src="https://assets.test.logos.com/images/fall2024/explainer/The_Gibbs_Phenomenon_in_Finite_Impulse_Response_Design_2.png" alt="图1：[理想低通滤波器](@keyword=ideal_low_pass_filter|lang=zh-CN|style=Feynman)的[频率响应](@keyword=frequency_response|lang=zh-CN|style=Feynman)。它在通带（$|\omega| \le \omega_c$）内完全通过信号，在[阻带](@keyword=stopband|lang=zh-CN|style=Feynman)（$|\omega| > \omega_c$）内完全阻断信号，在截止频率 $\omega_c$ 处有一个理想的、无限陡峭的跳变。" width="600">
+ \omega_c$）内完全阻断信号，在截止频率 $\omega_c$ 处有一个理想的、无限陡峭的跳变。" width="600">
 </center>
 <br>
 
@@ -27,7 +27,7 @@ $$h_d[n] = \frac{\omega_c}{\pi} \operatorname{sinc}\left(\frac{\omega_c n}{\pi}\
 这里，$\operatorname{sinc}(x) = \frac{\sin(\pi x)}{\pi x}$是一个非常重要的函数，它的形状就像在水面激起的一圈圈涟漪，中心是一个主波瓣，两侧是逐渐衰减的、永不停止的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。[@problem_id:2912672]
 
 <center>
-<img src="https://assets.test.logos.com/images/fall2024/explainer/The_Gibbs_Phenomenon_in_Finite_Impulse_Response_Design_3.png" alt="图2：[理想低通滤波器](@keyword=ideal_low_pass_filter|lang=zh-CN|style=Feynman)的脉冲响应——[sinc函数](@keyword=sinc_function|lang=zh-CN|style=Feynman)。它从负无穷延伸到正无穷，并且[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)永不完全停止。" width="600">
+
 </center>
 <br>
 
@@ -46,7 +46,7 @@ $$h_d[n] = \frac{\omega_c}{\pi} \operatorname{sinc}\left(\frac{\omega_c n}{\pi}\
 现在，想象一下，你用一把有点模糊的刷子（[狄利克雷核](@keyword=dirichlet_kernel|lang=zh-CN|style=Feynman)）去粉刷一个有着锐利边缘的形状（我们的砖墙）。结果会怎样？在远离边缘的地方，一切都很好。但在边缘本身，油漆不可避免地会“溢出”，形成一些凸起和波纹。
 
 <center>
-<img src="https://assets.test.logos.com/images/fall2024/explainer/The_Gibbs_Phenomenon_in_Finite_Impulse_Response_Design_4.png" alt="图3：频率域的卷积。理想的砖墙响应（蓝色）被[狄利克雷核](@keyword=dirichlet_kernel|lang=zh-CN|style=Feynman)（橙色）“涂抹”，产生了带有[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的实际响应（绿色）。" width="600">
+
 </center>
 <br>
 

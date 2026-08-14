@@ -11,7 +11,7 @@
 
 我们可以用一张“[反应坐标图](@keyword=reaction_coordinate_diagram|lang=zh-CN|style=Feynman)”来描绘这场舞蹈的能量起伏。这张图就像是舞蹈的乐谱，横轴代表舞蹈的进程（[反应坐标](@keyword=reaction_coordinate|lang=zh-CN|style=Feynman)），纵轴代表能量的高低。对于$S_N2$反应，这张图上只有一个孤零零的山峰，我们称之为“过渡态”（transition state）。反应物（舞者们开始的位置）需要翻越这座能量山峰，才能到达终点，变成产物。这座山峰的高度，即“活化能”（activation energy, $E_a$），决定了舞蹈的难易程度，也就是反应的快慢。山峰越高，反应越慢；反之亦然 [@problem_id:2212770]。
 
-![一个典型的[SN2反应](@keyword=sn2_reaction|lang=zh-CN|style=Feynman)[坐标图](@keyword=coordinate_map|lang=zh-CN|style=Feynman)，展示了反应物(R)、产物(P)和唯一的[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)(TS)。对于一个缓慢的[吸热反应](@keyword=endothermic_reaction|lang=zh-CN|style=Feynman)，能量关系为 E(TS) > E(P) > E(R)。](https://i.imgur.com/example.png)
+[坐标图](@keyword=coordinate_map|lang=zh-CN|style=Feynman)，展示了反应物(R)、产物(P)和唯一的[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)(TS)。对于一个缓慢的[吸热反应](@keyword=endothermic_reaction|lang=zh-CN|style=Feynman)，能量关系为 E(TS) > E(P) > E(R)。](https://i.imgur.com/example.png)
 
 既然是双人舞，那么舞蹈的节奏（[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)）自然取决于两位舞者的参与度。这两位舞者分别是：携带负电或[孤对电子](@keyword=lone_pairs|lang=zh-CN|style=Feynman)、渴望进攻的“亲核体”（nucleophile），以及带有即将离去基团的“底物”（substrate）。实验告诉我们，如果我们把其中任何一位舞者的浓度加倍，舞蹈的速度也会加倍。这证明了$S_N2$反应的速率同时依赖于亲核体和底物的浓度 [@problem_id:2212809]。这可以用一个简洁的数学关系来表达，即[速率方程](@keyword=reaction_rate_law|lang=zh-CN|style=Feynman)：
 

@@ -18,7 +18,7 @@
 现在，关键的概念来了。那个被电子占据的、能量最高的轨道，我们称之为**最高占据分子轨道**（Highest Occupied Molecular Orbital），简称 **HOMO**。而在它之上，那个未被电子占据的、能量最低的轨道，就是**最低未占分子轨道**（Lowest Unoccupied Molecular Orbital），简称 **LUMO**。对于氢分子而言，它的 HOMO 就是那个[成键轨道](@keyword=bonding_orbitals|lang=zh-CN|style=Feynman) $\sigma$，而 LUMO 则是反键轨道 $\sigma^*$ [@problem_id:1370309]。
 
 <center>
-<img src="https://i.imgur.com/k910I19.png" width="600" alt="H2 分子的 HOMO 和 LUMO">
+
 <br>
 <small>图1：[氢分子](@keyword=hydrogen_molecule|lang=zh-CN|style=Feynman) ($H_2$) 的分子轨道。两个 $1s$ 原子轨道组合形成一个低能量的 $\sigma$ 成键轨道 (HOMO) 和一个高能量的 $\sigma^*$ 反键轨道 (LUMO)。</small>
 </center>
@@ -38,7 +38,7 @@ HOMO 和 LUMO 就是分子暴露给外界的“前线”。HOMO 中的电子是�
 所以，我们可以通俗地把 HOMO 看作分子的“电子弹射座椅”，而 LUMO 则是“迎宾地毯”。
 
 <center>
-<img src="https://i.imgur.com/h5eM9F0.png" width="500" alt="HOMO/LUMO 能量与电离能/电子亲和能的关系">
+
 <br>
 <small>图2：Koopmans' 定理示意图。HOMO 的能量近似于[电离能](@keyword=ionization_potential|lang=zh-CN|style=Feynman)的负值，LUMO 的能量近似于电子亲和能的负值。</small>
 </center>
@@ -54,7 +54,7 @@ HOMO 和 LUMO 就是分子暴露给外界的“前线”。HOMO 中的电子是�
 我们来看一个经典的例子：氨（$NH_3$）和甲[硼烷](@keyword=boranes|lang=zh-CN|style=Feynman)（$BH_3$）的反应。氨是一个[路易斯碱](@keyword=lewis_base|lang=zh-CN|style=Feynman)，氮原子上有一对[孤对电子](@keyword=lone_pairs|lang=zh-CN|style=Feynman)，占据着分子的 HOMO，随时准备与他人分享。甲[硼烷](@keyword=boranes|lang=zh-CN|style=Feynman)则是一个路易斯酸，硼原子上有一个空置的 p 轨道，构成了分子的 LUMO，像一个急待填补的空缺。当它们相遇，反应就发生了：氨的 HOMO 伸出“援手”，将电子云倾倒入甲硼烷的 LUMO 中，形成了一个新的[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman) [@problem_id:1370322]。这就像一个完美的供体-受体握手，简单而深刻。
 
 <center>
-<img src="https://i.imgur.com/eB3MTrT.png" width="600" alt="BH3 和 NH3 的 [HOMO-LUMO](@keyword=homo_lumo_2|lang=zh-CN|style=Feynman) 相互作用">
+
 <br>
 <small>图3：氨 ([路易斯碱](@keyword=lewis_base|lang=zh-CN|style=Feynman)) 与甲硼烷 ([路易斯酸](@keyword=lewis_acids|lang=zh-CN|style=Feynman)) 的反应。氨的 HOMO ([氮孤对电子](@keyword=nitrogen_lone_pair|lang=zh-CN|style=Feynman)) 向甲[硼烷](@keyword=boranes|lang=zh-CN|style=Feynman)的 LUMO (硼的空 p 轨道) 给出电子，形成 B-N 键。</small>
 </center>

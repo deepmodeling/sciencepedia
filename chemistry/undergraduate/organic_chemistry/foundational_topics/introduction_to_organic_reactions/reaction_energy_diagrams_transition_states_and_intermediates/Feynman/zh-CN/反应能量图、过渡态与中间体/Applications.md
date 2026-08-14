@@ -15,7 +15,7 @@
 然而，更多的反应像是多乐章的奏鸣曲，包含了多个步骤，中间会经过一个或多个相对稳定的“休息站”，也就是[反应中间体](@keyword=reactive_intermediates|lang=zh-CN|style=Feynman)。例如，与 $E2$ 竞争的 $E1$ 消除反应就完全不同。它首先需要翻越第一座较高的山峰，形成一个高能量的[碳正离子中间体](@keyword=carbocation_intermediate|lang=zh-CN|style=Feynman)（一个山谷），然后这个中间体再翻越第二座较矮的山峰，最终得到产物 [@problem_id:2210185]。能量图清晰地告诉我们，这个反应最困难的一步（即速率决定步骤）是形成那个不稳定的碳正离子，这正是整个反应的瓶颈所在。
 
 <center>
-    <img src="https://i.imgur.com/uCD9K6k.png" alt="A reaction coordinate diagram contrasting a single-step concerted reaction (like E2) with a two-step reaction involving an intermediate (like E1). The E2 pathway shows one peak (transition state). The E1 pathway shows two peaks (transition states) separated by a valley (carbocation intermediate)." width="600">
+
     <br>
     <small>图1：协同反应 (如 $E2$) 与分步反应 (如 $E1$) 的能量图对比。协同反应只有一个[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)，而分步反应则经过一个或多个中间体。</small>
 </center>
@@ -63,7 +63,7 @@
 以**[共价催化](@keyword=covalent_catalysis|lang=zh-CN|style=Feynman)**为例，酶通过与底物形成一个瞬时的[共价键](@keyword=covalent_bonding|lang=zh-CN|style=Feynman)中间体，巧妙地将一个高不可攀的能量壁垒，分解为两个或多个容易跨越的小山丘。能量图直观地展示了，虽然反应路径变长了，但最高的能垒被显著降低了，从而实现了惊人的速率提升 [@problem_id:2037844]。
 
 <center>
-    <img src="https://i.imgur.com/rY68m2l.png" alt="A reaction coordinate diagram showing that an enzyme lowers the overall activation energy by providing an alternative pathway. The uncatalyzed reaction has a high single barrier. The enzyme-catalyzed reaction proceeds via a covalent intermediate, breaking the large barrier into two smaller ones." width="600">
+
     <br>
     <small>图2：酶催化（以[共价催化](@keyword=covalent_catalysis|lang=zh-CN|style=Feynman)为例）的能量图。酶通过形成一个中间体，将一个高的活化能壁垒 ($G_{TS,direct}$) 分解为两个较低的壁垒 ($G_{TS,1}$ 和 $G_{TS,2}$)，从而极大地加速了反应。</small>
 </center>

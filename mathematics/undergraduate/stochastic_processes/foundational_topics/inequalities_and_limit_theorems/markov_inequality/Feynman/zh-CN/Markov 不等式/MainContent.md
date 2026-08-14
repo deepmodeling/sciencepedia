@@ -71,7 +71,7 @@ $$
 
 <br>
 <div style="text-align:center;">
-  <img src="https://i.imgur.com/eBw1YJt.png" alt="Area under survival function" width="500"/>
+
   <p>图1：[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman) $E[X]$ 是[生存函数](@keyword=survival_function|lang=zh-CN|style=Feynman)曲线 $P(X > x)$ 下方的总面积。这个面积显然大于阴影矩形的面积 $a \cdot P(X \ge a)$。</p>
 </div>
 <br>

@@ -23,7 +23,7 @@ This expression, derived from the very definition of local density [@problem_id:
 
 A typical $g(r)$ for a simple liquid looks something like the plot below.
 
-![A typical [radial distribution function](@keyword=radial_distribution_function|lang=en-US|style=Feynman) g(r) for a simple liquid, showing an [excluded volume](@keyword=excluded_volume|lang=en-US|style=Feynman) region where g(r)=0, a high first peak, subsequent decaying oscillations, and approaching 1 at large r.](_placeholder_for_image_of_g(r)_)
+ g(r) for a simple liquid, showing an [excluded volume](@keyword=excluded_volume|lang=en-US|style=Feynman) region where g(r)=0, a high first peak, subsequent decaying oscillations, and approaching 1 at large r.](_placeholder_for_image_of_g(r)_)
 
 Let's break down its features, which are often modeled with simplified functions to make calculations easier, as seen in problems [@problem_id:2007548] and [@problem_id:1989823].
 

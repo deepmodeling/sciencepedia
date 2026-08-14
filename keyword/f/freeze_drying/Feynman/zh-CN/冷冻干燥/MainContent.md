@@ -1,7 +1,7 @@
 ## 引言
 我们如何保存脆弱的[生物材料](@keyword=biomaterials|lang=zh-CN|style=Feynman)，从拯救生命的[疫苗](@keyword=vaccine|lang=zh-CN|style=Feynman)到珍贵的活体微生物，以抵御时间的无情侵蚀？简单的冷冻会用冰晶损伤细胞，而风干则会造成破坏性的化学环境。本文探讨了一种精妙的解决方案——[冷冻干燥](@keyword=lyophilization|lang=zh-CN|style=Feynman)（或称[冻干](@keyword=lyophilization|lang=zh-CN|style=Feynman)），一个巧妙地让生物活性时钟暂停的过程。为充分领会这项技术，我们将开启一段两部分的旅程。第一章**原理与机制**将通过探索[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)的基本物理学、保护性[糖类](@keyword=carbohydrates|lang=zh-CN|style=Feynman)的作用以及将生物物质转变为稳定玻璃态的科学，来揭开该过程的神秘面纱。随后的**应用与跨学科联系**一章将揭示为何此方法如此具有革命性，展示其通过创造突破科学界限的常温稳定产品，对医学、生物技术和全球健康产生的变革性影响。
 
-![水的简化[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)，显示固相、液相和气相。三重相点被标记出来，[冷冻干燥](@keyword=lyophilization|lang=zh-CN|style=Feynman)的路径显示为三个步骤：(1) 等压冷却，(2) 等温（或近等温）降压，(3) [等压加热](@keyword=constant_pressure_heat_addition|lang=zh-CN|style=Feynman)。](https://i.imgur.com/Y4k3p5u.png)
+，显示固相、液相和气相。三重相点被标记出来，[冷冻干燥](@keyword=lyophilization|lang=zh-CN|style=Feynman)的路径显示为三个步骤：(1) 等压冷却，(2) 等温（或近等温）降压，(3) [等压加热](@keyword=constant_pressure_heat_addition|lang=zh-CN|style=Feynman)。](https://i.imgur.com/Y4k3p5u.png)
 
 ## 原理与机制
 

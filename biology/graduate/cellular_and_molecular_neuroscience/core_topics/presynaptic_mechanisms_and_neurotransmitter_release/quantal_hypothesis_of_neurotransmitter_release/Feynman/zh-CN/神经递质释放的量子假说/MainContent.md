@@ -25,7 +25,6 @@ $$ A = k \cdot q $$
 
 其中，$q$ 是单个量子的大小（quantal size），即一个mEPP的平均幅度；而 $k$ 是一个整数，代表了在一次刺激中成功释放的[量子数](@keyword=quantum_numbers|lang=zh-CN|style=Feynman)量。
 
-![Quantal Release Histogram](https://d2dr4pw5s144b1.cloudfront.net/2024-06-25/clx7s8t7p0011m808o7q509o0/414f09d2-9659-4bba-9585-8f430c5f2065.png)
 _图1：[神经递质释放](@keyword=neurotransmitter_release|lang=zh-CN|style=Feynman)的量子特性。自发的微小响应（mEPPs）幅度均一，定义了[量子大小](@keyword=quantal_size|lang=zh-CN|style=Feynman) $q$。由动作电位诱发的响应（EPPs）在低[释放概率](@keyword=release_probability|lang=zh-CN|style=Feynman)下呈现为 $q$ 的整数倍，包括释放失败（$0q$）。这揭示了[突触通讯](@keyword=synaptic_communication|lang=zh-CN|style=Feynman)的基本数字逻辑。[@problem_id:2744515]_
 
 ### 突触语言的两个关键参数：$q$ 和 $m$

@@ -55,7 +55,6 @@ $$
 
 将两个条件结合：衍射要发生，出射波矢 $\vec{k'}$ 的箭头既要落在[埃瓦尔德球](@keyword=ewald_sphere|lang=zh-CN|style=Feynman)面上，又要落在某个倒易点阵点 $\vec{G}$ 上。唯一的可能性就是：**当且仅当[埃瓦尔德球](@keyword=ewald_sphere|lang=zh-CN|style=Feynman)面恰好穿过除原点以外的任何一个倒易点阵点 $\vec{G}$ 时，衍射发生。** 此时，衍射波的方向就由球心 $C$ 指向那个被穿过的点 $\vec{G}$ 决定。
 
-<img src="https://i.imgur.com/e3gTuv4.png" width="600">
 *[埃瓦尔德构造](@keyword=ewald_construction|lang=zh-CN|style=Feynman)的示意图。入射波矢 $\vec{k}$ 的终点位于倒易点阵原点 O。以 $\vec{k}$ 的起点 C 为球心，以 $|\vec{k}|$ 为半径作[埃瓦尔德球](@keyword=ewald_sphere|lang=zh-CN|style=Feynman)。当球面穿过另一个倒易点 $\vec{G}$ 时，衍射发生。衍射[波矢](@keyword=wavevector|lang=zh-CN|style=Feynman) $\vec{k'}$ 从 C 指向 $\vec{G}$。矢量关系 $\vec{k} + \vec{G} = \vec{k'}$ 清晰可见，同时 $|\vec{k'}| = |\vec{k}|$ 因为它们都是球的半径。*
 
 ### 与老朋友重逢：从[埃瓦尔德构造](@keyword=ewald_construction|lang=zh-CN|style=Feynman)到[布拉格定律](@keyword=bragg_s_law|lang=zh-CN|style=Feynman)

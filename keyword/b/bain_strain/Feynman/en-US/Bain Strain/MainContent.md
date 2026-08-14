@@ -21,7 +21,7 @@ Let's see this in action with one of the most famous transformations in [metallu
 
 Herein lies the genius of Bain's insight. He noticed a hidden geometric connection. If you look at an FCC unit cell in just the right way, you can see a BCT cell hiding inside it! This BCT cell has its vertical axis aligned with one of the cube edges of the FCC cell, and its base axes rotated by 45 degrees. It turns out that this specific BCT cell that perfectly fits inside the FCC structure has an axial ratio of a very particular value: $c/a = \sqrt{2}$ [@problem_id:1289549].
 
-![Figure 1: The Bain correspondence. A BCT cell (in blue) can be identified within two adjacent FCC unit cells (in black). The Bain strain model describes the transformation from the FCC lattice (left, which is equivalent to a BCT with $c/a = \sqrt{2}$) to a general BCT [martensite](@keyword=martensite|lang=en-US|style=Feynman) lattice (right) via a simple compression and expansion.](https://i.imgur.com/u7q7M0l.png)
+ lattice (right) via a simple compression and expansion.](https://i.imgur.com/u7q7M0l.png)
 
 Once you see this, the transformation becomes astonishingly simple. To get from the FCC structure (which we now see as a BCT with $c/a = \sqrt{2}$) to the final BCC structure (which is just a BCT with $c/a = 1$), all nature has to do is perform a pure stretch: compress the hidden BCT cell along its long $c$-axis and simultaneously expand it along its two shorter $a$ and $b$ axes until they all become equal. For a transformation that preserves the volume, this means a dramatic compression of about 20% along one axis and an expansion of about 12% along the other two [@problem_id:1289549]. It’s like squeezing a tall, thin box into a perfect cube. This elegant path is the **Bain path**.
 

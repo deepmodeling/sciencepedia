@@ -13,8 +13,6 @@
 
 因此，我们的盒子可以这样定义：在从 $x=0$ 到 $x=L$ 的区域内，势能 $V(x)$ 为零，粒子可以自由活动；而在盒子外部（$x \le 0$ 或 $x \ge L$），势能 $V(x)$ 为无穷大。
 
-![Diagram of the potential for a particle in a one-dimensional box](https://study.com/cimages/multimages/16/potential_energy_well_blank.png)
-
 这堵无穷高的势能墙带来了什么后果呢？量子力学的一个基本要求是，任何物理系统的总能量都必须是有限的。总能量的[期望值](@keyword=expectation_values|lang=zh-CN|style=Feynman)包含了[动能和势能](@keyword=kinetic_and_potential_energy|lang=zh-CN|style=Feynman)两部分。如果粒子出现在势能无穷大的墙内区域，哪怕只有一丁点儿概率，它的平均势能也会变成无穷大，这显然是荒谬的。因此，唯一的可能性就是：粒子在墙内区域出现的概率必须绝对为零。在量子力学中，概率是由[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman) $\psi(x)$ 的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)平方 $|\psi(x)|^2$ 来描述的，所以我们得出的第一个结论是：在盒子外部，[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman) $\psi(x)$ 必须恒等于零。[@problem_id:2913831]
 
 那么，在墙壁的边界，$x=0$ 和 $x=L$ 处呢？这里，量子世界的另一个基本特性——连续性——登场了。[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman) $\psi(x)$ 在任何地方都必须是连续的，不能有突然的跳变。为什么？因为[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)与粒子的动能有关，一个不连续的、断裂的[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)意味着无限大的动能，这同样是被禁止的。既然[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)在墙外紧挨着边界的地方是零，那么为了保持连续性，它在边界本身也必须是零。[@problem_id:2792842]

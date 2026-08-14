@@ -20,7 +20,7 @@
 这个唯一的“最佳近似点” $p$ 被称为 $x$ 在 $M$ 上的**[正交投影](@keyword=orthogonal_projection|lang=zh-CN|style=Feynman)** (orthogonal projection)。定义它的关键特征是什么？正是我们最初的直觉：连接 $x$ 和 $p$ 的“误差”向量 $(x-p)$ 必须与子空间 $M$ 中的**每一个**向量都**垂直**（或称**正交**）。
 
 <center>
-<img src="https://i.imgur.com/8Fwq8fD.png" width="450">
+
 </center>
 <br>
 
@@ -49,7 +49,7 @@ $$
 [投影定理](@keyword=projection_theorem|lang=zh-CN|style=Feynman)最深刻的意义或许还不是“找到最近点”，而是它提供了一种分解整个空间的方法。对于任何一个子空间 $M$，我们可以定义它的**[正交补](@keyword=orthogonal_complements|lang=zh-CN|style=Feynman)** $M^\perp$。$M^\perp$ 包含了所有与 $M$ 中**每一个**向量都正交的向量。
 
 <center>
-<img src="https://i.imgur.com/qU3g46D.png" width="450">
+
 </center>
 <br>
 

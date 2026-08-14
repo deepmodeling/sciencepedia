@@ -22,7 +22,7 @@
 2.  **不能“误伤”任何一个整数解**：这个新的约束，必须被所有潜在的、符合逻辑的整数解（比如“1辆车，2艘船”、“2辆车，1艘船”等）所满足。换言之，你的凿子在削掉多余石料的同时，绝不能碰到隐藏在石头内部的“大卫像”的任何一部分。
 
 <center>
-    <img src="https://i.imgur.com/Gg5L7qG.png" alt="A diagram illustrating a valid cut. The shaded polygon is the LP relaxation feasible region. The dots are integer feasible points. The point x_LP is the fractional LP optimum. Line C1 is invalid because it cuts off an integer point. Line C2 is invalid because it does not cut off x_LP. Line C3 is a valid cut." width="600"/>
+
     <br>
     <small>图1：[切割平面](@keyword=cutting_planes|lang=zh-CN|style=Feynman)的艺术。蓝色区域是线性松弛得到的[可行域](@keyword=feasible_region|lang=zh-CN|style=Feynman)，黑点是所有可能的整数解。$x^*_{LP}$ 是松弛问题的最优解（一个非整数点）。切割 C1 是无效的，因为它切掉了可行的整数解。切割 C2 也是无效的，因为它没有切掉 $x^*_{LP}$。只有切割 C3 是一次“有效”的切割，它既切掉了 $x^*_{LP}$，又保留了所有的整数解。</small>
 </center>

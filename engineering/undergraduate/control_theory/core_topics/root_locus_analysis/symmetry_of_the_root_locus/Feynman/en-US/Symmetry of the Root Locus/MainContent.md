@@ -32,7 +32,7 @@ You might wonder if this symmetry is just an abstract algebraic coincidence. It'
 Let's see how symmetry plays out here. First, consider any test point on the real axis. What is the combined angle contribution from a pair of [complex conjugate poles](@keyword=complex_conjugate_poles|lang=en-US|style=Feynman), say at $p_1$ and $\bar{p}_1$? As shown in the figure below, for any point $s_{real}$ on the real axis, the vector from $p_1$ and the vector from $\bar{p}_1$ form angles that are equal in magnitude but opposite in sign ($\theta$ and $-\theta$). Their sum is exactly zero! This means that when checking the angle condition for points on the real axis, the complex pole pairs contribute nothing to the total angle. This dramatically simplifies things and is the reason the rule for a real-axis segment being on the locus only depends on the number of *real* [poles and zeros](@keyword=poles_and_zeros|lang=en-US|style=Feynman) to its right [@problem_id:1617818].
 
 <center>
-<img src="https://i.imgur.com/uRj0o1g.png" alt="Angle contributions from a [complex conjugate](@keyword=complex_conjugate|lang=en-US|style=Feynman) pole pair to a point on the real axis cancel out." width="400">
+
 </center>
 
 Now, what about a point $s_0$ that is *not* on the real axis? As we know, if our system's transfer function $G(s)H(s)$ has real coefficients, then it must satisfy the property $G(\bar{s})H(\bar{s}) = \overline{G(s)H(s)}$. For any complex number $z$, the angle of its conjugate is the negative of its own angle, i.e., $\angle \bar{z} = - \angle z$. Applying this, we get a beautiful result:

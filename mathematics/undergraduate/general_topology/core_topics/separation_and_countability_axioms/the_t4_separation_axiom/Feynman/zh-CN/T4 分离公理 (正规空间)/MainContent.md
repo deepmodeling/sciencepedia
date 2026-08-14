@@ -19,7 +19,7 @@
 但如果我们想做的更多呢？不仅仅是分离两个点，而是分离两个互不相交的、庞大的[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)？比如，想象一下在三维空间中分离两个不接触的实心球体。这正是 **T4公理** 所要处理的核心问题。一个空间如果既是[T1空间](@keyword=t1_space|lang=zh-CN|style=Feynman)，又能做到对任意两个不相交的[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman) $A$ 和 $B$，总存在两个互不相交的[开集](@keyword=open_set|lang=zh-CN|style=Feynman) $U$ 和 $V$，使得 $A$ 被 $U$ 包裹， $B$ 被 $V$ 包裹，那么我们就称这个空间是**正规的**（Normal），并称其为 **[T4空间](@keyword=t4_spaces|lang=zh-CN|style=Feynman)**。
 
 <center>
-  <img src="https://i.imgur.com/G5g30eM.png" width="450" alt="Illustration of the T4 separation axiom. Two disjoint closed sets A and B are separated by disjoint open sets U and V."/>
+
   <br>
   <small>图1：[T4空间](@keyword=t4_spaces|lang=zh-CN|style=Feynman)的核心思想——用不相交的[开集](@keyword=open_set|lang=zh-CN|style=Feynman)“缓冲区” $U$ 和 $V$ 分离不相交的[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman) $A$ 和 $B$。</small>
 </center>
@@ -35,7 +35,7 @@
 [乌雷松引理](@keyword=urysohn_s_lemma|lang=zh-CN|style=Feynman)说：在一个[T4空间](@keyword=t4_spaces|lang=zh-CN|style=Feynman)中，对于任意两个不相交的[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman) $A$ 和 $B$，必然存在一个从整个空间 $X$ 映射到实数区间 $[0, 1]$ 的**[连续函数](@keyword=continuous_function|lang=zh-CN|style=Feynman)** $f$，使得在集合 $A$ 上的每一点，函数值都为0；而在集合 $B$ 上的每一点，函数值都为1。
 
 <center>
-  <img src="https://i.imgur.com/w2Y8O8d.png" width="500" alt="Illustration of Urysohn's Lemma. A continuous function smoothly transitions from value 0 on set A to value 1 on set B."/>
+
   <br>
   <small>图2：[乌雷松引理](@keyword=urysohn_s_lemma|lang=zh-CN|style=Feynman)的直观展示。函数 $f$ 像一个平滑的“调[光开关](@keyword=optical_switch|lang=zh-CN|style=Feynman)”，在 $A$ 处是“关”（值为0），在 $B$ 处是“开”（值为1），并在两者之间连续过渡。</small>
 </center>

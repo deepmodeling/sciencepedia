@@ -47,8 +47,6 @@ $$ \frac{d\theta}{d\tau} = - \frac{1}{3}\theta^2 - \sigma^2 - R_{ab} u^a u^b $$
 
 想象在一个正在引力塌缩的巨大恒星内部，有一个假想的球面。现在，你在这个球面上的每一点同时向“外”和向“内”发出闪光。在通常的空间里，向外的光球会膨胀，面积越来越大；向内的光球会收缩，面积越来越小。但如果这个球面位于一个引力极强的区域，奇特的事情发生了：即使是那个被你定义为“向外”的闪光，它的光球面积也在收缩！
 
-![Trapped Surface](https://static.scientificamerican.com/sciam/assets/Image/2022/saw2022-p44-3.gif)
-
 一个所有出射光线都向内弯曲的闭合[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，就是一个被困[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)。它的形成是一个临界事件，标志着引力塌缩已经变得不可逆转。一旦形成被困[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，就意味着光都无法逃脱，更不用说任何有质量的物体了。
 
 Penrose的天才之处在于，他证明了只要一个被困[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)形成，并且物质满足[强能量条件](@keyword=strong_energy_condition|lang=zh-CN|style=Feynman)，那么劳氏致曲方程所预言的引力汇聚就会失控，最终必然导致[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)不完备——也就是[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)的形成。

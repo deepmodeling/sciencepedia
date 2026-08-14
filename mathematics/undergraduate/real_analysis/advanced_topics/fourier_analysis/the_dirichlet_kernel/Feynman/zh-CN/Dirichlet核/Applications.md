@@ -17,7 +17,7 @@
 考虑一个具有跳变[不连续点](@keyword=discontinuities|lang=zh-CN|style=Feynman)的信号，比如一个理想的方波（在电子学中很常见）或者图像中的锐利边缘。当我们用傅里叶级数的[部分和](@keyword=partial_sums|lang=zh-CN|style=Feynman)来重构这个方波时，在跳变点附近会出现一些奇怪的“振铃”或“过冲”。你可能会认为，只要我们增加[傅里叶级数](@keyword=fourier_series|lang=zh-CN|style=Feynman)的项数（即增大 $N$），这些过冲就会消失。但奇妙的是，它们并不会消失！随着 $N$ 的增大，这些[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)会被压缩得越来越靠近[不连续点](@keyword=discontinuities|lang=zh-CN|style=Feynman)，但第一个过冲的高度却顽固地保持在跳变高度的约 9% 左右。[@problem_id:2140330] 这个过冲峰值出现的位置也是完全可以预测的，它位于离跳变点 $x=0$ 大约 $\pi/N$ 的地方。[@problem_id:2140318]
 
 <center>
-  <img src="https://static.scholarity.ai/imgs-generating/20240505/3e1ed555-5cce-47a3-8da4-16a8c2d1b714.png" alt="Gibbs Phenomenon Illustration" width="600">
+
   <figcaption>图1：吉布斯现象示意图。当用有限项傅里叶级数逼近方波时，在[不连续点](@keyword=discontinuities|lang=zh-CN|style=Feynman)附近会出现顽固的过冲。[狄利克雷核](@keyword=dirichlet_kernel|lang=zh-CN|style=Feynman)的[旁瓣](@keyword=sidelobe|lang=zh-CN|style=Feynman)是这一现象的根本原因。</figcaption>
 </center>
 

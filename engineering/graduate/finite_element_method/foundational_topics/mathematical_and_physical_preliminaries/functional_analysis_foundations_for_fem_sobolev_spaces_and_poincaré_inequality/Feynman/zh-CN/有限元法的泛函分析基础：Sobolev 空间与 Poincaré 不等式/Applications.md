@@ -25,7 +25,7 @@
 [有限元法](@keyword=finite_element_method|lang=zh-CN|style=Feynman)的核心，即伽辽金方法，可以用这样一句话来概括：[有限元解](@keyword=finite_element_solutions|lang=zh-CN|style=Feynman)$u_h$是真实解$u$在我们选择的有限维子空间$V_h$上关于[能量内积](@keyword=energy_inner_product|lang=zh-CN|style=Feynman)的正交投影。[@problem_id:2561462]
 
 <center>
-<img src="https://i.imgur.com/dSOJvFf.png" alt="Galerkin Orthogonality as Orthogonal Projection" width="500"/>
+
 <br/>
 <em>图1：[伽辽金正交性](@keyword=galerkin_orthogonality|lang=zh-CN|style=Feynman)的几何直观。真实解$u$与[有限元解](@keyword=finite_element_solutions|lang=zh-CN|style=Feynman)$u_h$之间的误差$u-u_h$与近似空间$V_h$中的任何向量$v_h$都是“能量正交”的。这意味着$u_h$是在[能量范数](@keyword=energy_norm|lang=zh-CN|style=Feynman)意义下$V_h$中对$u$的最佳逼近。</em>
 </center>
@@ -77,7 +77,7 @@
 [有限元分析](@keyword=fem_analysis|lang=zh-CN|style=Feynman)的实践者手册总是告诫我们：要避免使用形状过于“细长”的三角形或[四边形单元](@keyword=quadrilateral_elements|lang=zh-CN|style=Feynman)。这背后的原因是什么？同样是[庞加莱不等式](@keyword=poincaré_inequality|lang=zh-CN|style=Feynman)！当我们分析一个各向异性的矩形单元（比如长为$h_1$宽为$h_2$）时，可以推导出局部的[庞加莱常数](@keyword=poincaré_constant|lang=zh-CN|style=Feynman)正比于$\max(h_1, h_2)$，即单元的最长边。[@problem_id:2560430] 这意味着，如果单元的长宽比很大，[误差估计](@keyword=error_estimation|lang=zh-CN|style=Feynman)中的常数就会变得很大，从而导致在给定的[计算成本](@keyword=computational_cost|lang=zh-CN|style=Feynman)下，精度会显著下降。理论再一次为工程实践中的经验法则提供了坚实的数学依据。
 
 <center>
-<img src="https://i.imgur.com/gA3q53w.png" alt="Anisotropic mesh element and Poincaré constant" width="550"/>
+
 <br/>
 <em>图2：在各向异性单元上，[庞加莱常数](@keyword=poincaré_constant|lang=zh-CN|style=Feynman)由最长边$h_1$控制。这解释了为什么高长宽比的单元会降低[有限元分析](@keyword=fem_analysis|lang=zh-CN|style=Feynman)的精度。</em>
 </center>

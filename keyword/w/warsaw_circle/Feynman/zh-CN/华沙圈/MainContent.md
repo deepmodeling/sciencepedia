@@ -11,8 +11,5 @@
 
 现在，让我们把这个图像变成一个具体的对象，一个拓扑空间。我们取 $x$ 在区间 $(0, 1]$ 上的那段图像，并为其添加所有的“极限点”。可以这样想：当曲线在 y 轴附近疯狂[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)时，它任意接近从 $(0, -1)$ 到 $(0, 1)$ 的[垂直线](@keyword=perpendicular_lines|lang=zh-CN|style=Feynman)段上的每一个点。因此，为了使我们的空间“完备”，我们必须包含这整条线段。得到的对象，如下所示，就是著名的**[拓扑学家的正弦曲线](@keyword=topologist_s_sine_curve|lang=zh-CN|style=Feynman)**。
 
-![The Topologist's Sine Curve, showing the graph of sin(1/x) and the limit segment on the y-axis.](https://i.imgur.com/gK2JkRz.png)
-
 华沙圈则是在此基础上，通过添加一条连接点 $(1, \sin(1))$ 和原点 $(0,0)$ 的弧线而构成的，从而形成一个闭合的环路。
 
-![The Warsaw Circle, which is the Topologist's Sine Curve plus an arc connecting (1, sin(1)) to the origin.](https://i.imgur.com/D4H8n6X.png)

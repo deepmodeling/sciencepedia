@@ -69,7 +69,7 @@ Phred分值是我们的第一道防线。它提供了逐个碱基的精细置信
 
 诊断是否需要归一化的一个简单而强大的方法是为每个样本的数据分布创建**箱线图**。箱[线图](@keyword=line_graphs|lang=zh-CN|style=Feynman)直观地总结了数据的最小值、下[四分位数](@keyword=quartiles|lang=zh-CN|style=Feynman)、中位数、上[四分位数](@keyword=quartiles|lang=zh-CN|style=Feynman)和最大值。如果实验没有偏倚，所有样本的箱体应该大致对齐在同一水平上。如果像下图中那样，一些箱体系统性地高于或低于其他箱体，这就是一个明确的信号，表明需要进行归一化以使样本具有可比性 [@problem_id:1425847]。
 
-![一张概念图，展示了四个箱[线图](@keyword=line_graphs|lang=zh-CN|style=Feynman)。样本A和D对齐，代表一个对照及其技术重复。样本B显著向上偏移，样本C显著向下偏移，表明存在需要归一化的系统性偏移。](placeholder_image.png)
+。样本A和D对齐，代表一个对照及其技术重复。样本B显著向上偏移，样本C显著向下偏移，表明存在需要归一化的系统性偏移。](placeholder_image.png)
 
 归一化的方法从简单到复杂不等。它可以像移动所有分布使其**中位数对齐（中位数中心化）**一样直接。对于更复杂的扭曲，我们可能会使用**[分位数归一化](@keyword=quantile_normalization|lang=zh-CN|style=Feynman)**，这个过程会强制使每个样本的整个分布完全相同。当我们知道批次效应的来源时，我们可以将其作为协变量纳入我们的[统计模型](@keyword=statistical_model|lang=zh-CN|style=Feynman)中，这实际上是在要求模型在估算感兴趣的生物学效应之前，“减去”由批次引起的变异 [@problem_id:4341312]。
 

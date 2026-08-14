@@ -18,7 +18,7 @@ But how can we describe this dialogue with precision? How does a single genotype
 To move beyond anecdotes, we need a way to visualize and quantify plasticity. The key tool for this is the **reaction norm**. A reaction norm is simply a graph that plots the phenotype produced by a single genotype across a continuous range of environmental conditions. It is, in a very real sense, a character portrait of that genotype's responsiveness.
 
 <center>
-<img src="https://i.imgur.com/K3Vw8V3.png" alt="Three types of reaction norms for two genotypes (A and B). Left: Parallel lines showing no GxE. Center: Non-parallel lines showing GxE without crossing. Right: Intersecting lines showing crossing GxE." width="800">
+
 <em>Figure 1: Reaction norms for two different genotypes (A and B) across an environmental gradient. Left: No Genotype-by-Environment interaction (G×E); the genotypes respond in parallel. Center: G×E exists as the responses differ in magnitude (different slopes). Right: A crossing G×E, where the rank order of the genotypes flips across environments.</em>
 </center>
 

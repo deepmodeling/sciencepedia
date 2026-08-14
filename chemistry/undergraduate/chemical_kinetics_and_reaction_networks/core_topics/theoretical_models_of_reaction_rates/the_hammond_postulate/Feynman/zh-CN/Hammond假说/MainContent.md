@@ -17,7 +17,7 @@
 
 <br>
 <center>
-<img src="https://i.imgur.com/G5g2mH2.png" alt="Reaction energy diagram showing an early transition state for an exothermic reaction and a late transition state for an endothermic reaction." width="600"/>
+
 <br>
 <small>图1：[反应坐标图](@keyword=reaction_coordinate_diagram|lang=zh-CN|style=Feynman)。左侧为[放热反应](@keyword=exothermic_reactions|lang=zh-CN|style=Feynman)，其过渡态（TS1）在能量和结构上都更接近反应物（“早[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)”）。右侧为[吸热反应](@keyword=endothermic_reaction|lang=zh-CN|style=Feynman)，其过渡态（TS2）在能量和结构上都更接近产物（“晚过渡态”）。</small>
 </center>

@@ -33,5 +33,5 @@ f(x) = \max(0, 1-2x) \quad \text{and} \quad g(x) = \max(0, 2x-1)
 $$
 Let's look at their graphs. The function $f(x)$ is a ramp that starts at $1$ at $x=0$ and decreases to $0$ at $x=1/2$. For the rest of the interval, from $x=1/2$ to $x=1$, it stays flat at zero. The function $g(x)$ does the opposite. It is flat at zero from $x=0$ to $x=1/2$, and then it rises as a ramp from $0$ to $1$ over the second half of the interval.
 
-![Graphs of two [zero-divisor](@keyword=zero_divisor_2|lang=en-US|style=Feynman) functions f(x) and g(x)](https://i.imgur.com/G3WwubR.png)
+ functions f(x) and g(x)](https://i.imgur.com/G3WwubR.png)
 *The functions $f(x)$ and $g(x)$ are [zero-divisors](@keyword=zero_divisors_2|lang=en-US|style=Feynman) in $C([0,1])$. Where one is non-zero, the other is zero, so their product is always zero.*

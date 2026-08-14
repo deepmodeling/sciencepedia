@@ -16,7 +16,7 @@
 让我们来看一个简单的思想实验。想象一个定义在 $[0, 1]$ 区间上的[函数序列](@keyword=function_sequences|lang=zh-CN|style=Feynman) $\{f_n\}_{n=1}^{\infty}$。在 $n=1$ 时，它是一个在 $[0, 1]$ 上高度为 1 的矩形。在 $n=2$ 时，它变成一个在 $[0, 1/2]$ 上高度为 2 的矩形。在 $n=3$ 时，它是在 $[0, 1/3]$ 上高度为 3 的矩形。依此类推，第 $n$ 个函数 $f_n(x)$ 是一个在区间 $(0, 1/n)$ 上高度为 $n$ 的矩形，在区间外则为 0。[@problem_id:31538]
 
 <center>
-<img src="https://i.imgur.com/Kz8j3qZ.png" width="600">
+
 <br>
 图1：一个“移动的凸起”函数序列。随着 $n$ 增大，[函数图像](@keyword=function_graph|lang=zh-CN|style=Feynman)变得越来越高、越来越窄，但其下方面积始终保持不变。
 </center>

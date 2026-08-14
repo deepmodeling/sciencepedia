@@ -16,7 +16,7 @@
 是的，确实会。但这正是它的高明之处。让我们来看看这个过程的内在逻辑。一个典型的[负反馈](@keyword=negative_feedback|lang=zh-CN|style=Feynman)放大系统可以简化为下图：
 
 <p align="center">
-<img src="https://i.imgur.com/8aM07M9.png" alt="Negative Feedback Block Diagram" width="500"/>
+
 </p>
 
 信号$V_{in}$进入系统，在一个“相加点”与反馈信号$V_f$相减，得到[误差信号](@keyword=error_signal|lang=zh-CN|style=Feynman)$V_e$。这个误差信号被一个具有巨大但可能不稳定的“开环增益”$A$的放大器放大，产生最终输出$V_{out}$。同时，反馈网络（我们的“尺子”）从输出中取出一部分，由反馈因子$\beta$决定，得到反馈信号$V_f = \beta V_{out}$。
@@ -33,7 +33,6 @@ A_f = \frac{A}{1 + A\beta}
 $$
 
 这个公式看似平淡无奇，却蕴含着电子学中最强大的思想之一。请注意分母中的“$+$”号——这正是“[负反馈](@keyword=negative_feedback|lang=zh-CN|style=Feynman)”的数学体现，它是一切魔法的起点。而$A\beta$这个乘积，我们称之为**环路增益 (Loop Gain, $T$)**。它代表了信号在“放大-反馈”这个闭环路径中走一圈所获得的增益。一个有趣而深刻的事实是，无论我们是在处理[电压放大器](@keyword=voltage_amplifier|lang=zh-CN|style=Feynman)、[电流放大器](@keyword=current_amplifier|lang=zh-CN|style=Feynman)还是其他任何类型的放大器，[环路增益](@keyword=loop_gain|lang=zh-CN|style=Feynman)$T$总是一个无量纲的纯数字[@problem_id:1306821]。这暗示了负反馈原理的普适性，它超越了具体的物理量，是一种纯粹的信息调控机制。
-
 
 ### 稳定性的幻象：当不确定性消失
 

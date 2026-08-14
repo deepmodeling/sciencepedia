@@ -16,7 +16,7 @@ The problem of [least squares](@keyword=least_squares|lang=en-US|style=Feynman) 
 The distance between our data point and any point $s$ on the table is the length of the vector $y-s$. We want to find the point $\hat{y}$ on the table that makes this length minimal. The key insight is that this minimum distance is achieved when the "error" vector, the line connecting $y$ to its shadow $\hat{y}$, is perpendicular—or **orthogonal**—to the tabletop itself. This error vector is what we call the **residual**, $r = y - \hat{y}$.
 
 <center>
-<img src="https://i.imgur.com/KDK1zQ3.png" width="400">
+
 <em>Figure 1: The [least squares solution](@keyword=least_squares_solution|lang=en-US|style=Feynman) $\hat{y}$ is the orthogonal projection of the data vector $y$ onto the [column space](@keyword=column_space|lang=en-US|style=Feynman) of $X$. The residual vector $r$ is orthogonal to the subspace.</em>
 </center>
 

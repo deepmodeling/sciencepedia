@@ -30,7 +30,7 @@ Now, let's step into the second universe: the "Universe of a Real Effect." Here,
 Here comes the crucial part: **Power is the overlap of these two worlds.** It is the proportion of the "Real Effect" universe that falls past the "line in the sand" you drew based on the "No Effect" universe.
 
 <center>
-<img src="https://i.imgur.com/G5qWJt9.png" alt="Two overlapping bell curves showing the null and alternative distributions. The rejection region is in the tail of the null distribution, and the power is the area of the alternative distribution within that rejection region." width="600">
+
 </center>
 <br>
 

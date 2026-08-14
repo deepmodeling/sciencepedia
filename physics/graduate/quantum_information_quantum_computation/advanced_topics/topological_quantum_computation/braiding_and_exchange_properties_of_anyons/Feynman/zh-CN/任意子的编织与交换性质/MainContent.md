@@ -22,7 +22,7 @@
 想象一下平面上的两个粒子，我们交换它们的位置。与三维世界不同，它们的运动轨迹现在是无法绕开彼此的“[世界线](@keyword=worldline|lang=zh-CN|style=Feynman)”（worldlines）。一次交换，就像一根绳子从另一根上面绕过去。如果再交换一次，这根绳子会再次缠绕，形成一个结结实实的双重缠绕，而不是解开回到原状。在二维空间里，“交换两次”这个操作本身就留下了不可磨灭的痕迹！[@problem_id:3007442]
 
 <center>
-<img src="https://i.imgur.com/kS5x87J.png" width="600" alt="Braid vs Permutation">
+
 <figcaption>左：二维空间中的[粒子交换](@keyword=particle_exchange|lang=zh-CN|style=Feynman)形成无法解开的“辫子”。右：三维空间中，交换路径可以自由绕开，交换两次等同于没有交换。</figcaption>
 </center>
 

@@ -17,8 +17,6 @@
 
 让我们来做一个思想实验。想象一块垂直于水面的正方形观察窗 [@problem_id:1740682]。水对它施加的压力从顶部的最小值线性增加到底部的最大值。如果你画出这个压力分布图，它会是一个梯形。总的作用力，就是这个梯形“压力图”的面积；而[压力中心](@keyword=center_of_pressure|lang=zh-CN|style=Feynman)，则是这个梯形图的“[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)”所在的位置。对于一个上窄下宽的梯形，它的[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)显然会比它高度的一半要更低一些。
 
-![Hydrostatic pressure distribution on a vertical plane surface](https://www.engineering-science.com/wp-content/uploads/2021/08/hydrostatic-force-on-vertical-plane-surface-scaled.jpg)
-
 这就揭示了一个核心原则：**对于[浸没](@keyword=submersions|lang=zh-CN|style=Feynman)在[均匀流](@keyword=uniform_flow|lang=zh-CN|style=Feynman)体中的垂直或倾斜表面，[压力中心](@keyword=center_of_pressure|lang=zh-CN|style=Feynman)总是位于其形心的下方。** 这是因为压力分布是“头轻脚重”的，更大的力作用在更深的位置，自然就把合力的作用点向下拉了。
 
 这个偏离的距离有多大呢？物理学家们通过微积分这个强大的工具发现了一个极其精妙的关系。对于一块垂直放置、边长为 $L$ 的方形板，如果其形心深度为 $h_c$，那么[压力中心](@keyword=center_of_pressure|lang=zh-CN|style=Feynman) $y_P$ 会比形心深一个微小的距离 $\delta = y_P - h_c$。这个距离的大小为：

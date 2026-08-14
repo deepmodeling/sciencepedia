@@ -45,8 +45,6 @@ $y_P = \left(\frac{b}{a}\right) \times (a \sin t) = b \sin t$
 
 这个参数方程的几何意义非常直观：从原点出发，画一条与 $x$ 轴夹角为 $t$ 的线，它与主辅助圆交于点 $Q$；过点 $Q$ 作一条垂直于 $x$ 轴的直线。椭圆上的对应点 $P$ 就在这条[垂直线](@keyword=perpendicular_lines|lang=zh-CN|style=Feynman)上，并且它的 $x$ 坐标与 $Q$ 相同，而 $y$ 坐标则是从 $Q$ 的 $y$ 坐标压缩 $b/a$ 倍得到的 [@problem_id:2109473]。
 
-![A diagram showing the relationship between a point P on the ellipse, a point Q on the major auxiliary circle, and the eccentric angle t.](https://i.imgur.com/example.png "Geometric construction of a point on an ellipse using the eccentric anomaly.")
-
 这个[参数方程](@keyword=parametric_equations|lang=zh-CN|style=Feynman)是一把威力无穷的钥匙。它将描述椭圆上点的位置这个二维问题，转化为了描述一个角度 $t$ 的一维问题，极大地简化了分析。
 
 ### 将新工具付诸实践：从行星轨道到几何瑰宝

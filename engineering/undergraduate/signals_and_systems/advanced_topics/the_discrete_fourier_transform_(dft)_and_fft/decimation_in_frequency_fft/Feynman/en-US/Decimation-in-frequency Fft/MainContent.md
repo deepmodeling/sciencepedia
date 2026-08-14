@@ -57,7 +57,7 @@ Let's call the inputs $a = x[n]$ and $b = x[n+N/2]$. The operations are:
 This set of operations—an addition, a subtraction, and a [complex multiplication](@keyword=complex_multiplication|lang=en-US|style=Feynman)—forms the fundamental computational unit of the DIF-FFT. When this process is drawn as a [signal-flow graph](@keyword=signal_flow_graph_2|lang=en-US|style=Feynman), the crisscross pattern of lines resembles a butterfly, and so it is called a **DIF butterfly** [@problem_id:1711087]. The entire FFT algorithm is nothing more than a cascade of these simple, elegant butterfly units.
 
 <figure style="text-align: center;">
-    <img src="https://i.imgur.com/G5g2mJc.png" alt="DIF Butterfly Diagram" width="350">
+
     <figcaption>The DIF-FFT Butterfly. Two inputs, *a* and *b*, are transformed into two outputs. The top output is a simple sum, while the bottom output involves a difference and a [complex multiplication](@keyword=complex_multiplication|lang=en-US|style=Feynman) by a twiddle factor *W*.</figcaption>
 </figure>
 

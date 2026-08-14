@@ -11,8 +11,6 @@
 
 现在，让我们把这个观察翻译成数学语言。假设这两个点是 $(a, f(a))$ 和 $(b, f(b))$。这两点横坐标的中点是 $\frac{a+b}{2}$，对应曲线上的一点是 $(\frac{a+b}{2}, f(\frac{a+b}{2}))$。而连接两端点的弦，在同样横坐标位置的高度，正是两个端点高度的平均值，即 $\frac{f(a)+f(b)}{2}$。
 
-![A diagram showing a convex function f(x). The chord connecting two points (a, f(a)) and (b, f(b)) is above the function curve. The inequality f((a+b)/2) <= (f(a)+f(b))/2 is highlighted.](https://i.imgur.com/example.png)
-
 因为弦在曲线之上，我们便得到了杰森不等式最简单的形式：
 
 $$

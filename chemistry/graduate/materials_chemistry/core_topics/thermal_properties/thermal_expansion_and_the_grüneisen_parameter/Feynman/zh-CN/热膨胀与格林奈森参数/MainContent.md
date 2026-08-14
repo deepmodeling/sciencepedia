@@ -20,7 +20,7 @@
 
 <br/>
 <center>
-<img src="https://i.imgur.com/k6Kx2Wc.png" width="700"/>
+
 <figcaption>图1：(左) 对称的[谐振子](@keyword=harmonic_oscillator|lang=zh-CN|style=Feynman)势能阱。原子在不同能量（温度）下[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，但其平均位置（虚线）始终不变，因此没有热膨胀。(右) 非对称的[非谐势](@keyword=anharmonic_potential|lang=zh-CN|style=Feynman)能阱。随着能量（温度）增加，原子[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)不对称地加剧，其平均位置向势能更平缓的一侧移动，导致[热膨胀](@keyword=thermal_expansion|lang=zh-CN|style=Feynman)。</figcaption>
 </center>
 <br/>

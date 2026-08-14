@@ -12,8 +12,6 @@
 
 圆柱面也是如此。如果你在圆柱表面上画两条平行的“直线”（比如沿着圆柱轴线的方向），它们将永远保持平行，绝不相交，就像在平面上一样 [@problem_id:1548939]。这是因为圆柱面的内在曲率为零，它的线元经过计算后会告诉我们，其[黎曼曲率张量](@keyword=riemannian_curvature_tensor|lang=zh-CN|style=Feynman)为零。这张“卷起来的纸”在几何上和一张平铺的纸并无二致。
 
-![圆柱面可以被展开成一个平面，因此它的内在几何是平坦的。](https://foundations.physics.gatech.edu/wp-content/uploads/2021/11/cylinder-flat-1024x261.png)
-
 然而，并非所有[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)都能被“展开”。球面和马鞍面就是典型的例子，它们具有内在的曲率。在这些“真正”弯曲的空间里，几何定律会发生奇妙的改变。例如，在被称为“双曲空间”的几何模型中（一个具有恒定[负曲率](@keyword=negative_curvature|lang=zh-CN|style=Feynman)的空间，像一个无限延伸的马鞍），从中心点出发的径向距离会以一种惊人的方式被拉伸。坐标上看起来只差一点点的距离，实际的物理距离（[固有距离](@keyword=proper_distance|lang=zh-CN|style=Feynman)）却可能非常遥远，甚至当你接近坐标的“边界”时，实际距离会趋向于无穷大 [@problem_id:1554094] [@problem_id:1554096]。这不仅仅是数学游戏，一些[宇宙学模型](@keyword=cosmology_models|lang=zh-CN|style=Feynman)就认为我们的宇宙可能具有类似的双曲几何结构。
 
 ### 爱因斯坦的伟大洞见：引力即几何

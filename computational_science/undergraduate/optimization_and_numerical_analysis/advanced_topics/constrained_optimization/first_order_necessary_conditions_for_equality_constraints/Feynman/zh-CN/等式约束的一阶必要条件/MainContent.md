@@ -20,7 +20,7 @@
 现在，让我们把这个画面翻译成几何语言。山体的[等高线](@keyword=level_curves|lang=zh-CN|style=Feynman)，是所有海拔高度相同的点连接成的线。梯度 $\nabla f$ 的另一个重要特性是，它总是与[等高线](@keyword=level_curves|lang=zh-CN|style=Feynman)垂直。现在，回到小径上的最高点。既然小径在这一点是水平的，那么它必然与穿过该点的等高线**相切**。如果小径与[等高线](@keyword=level_curves|lang=zh-CN|style=Feynman)相交，那就意味着它正在“上坡”或“下坡”，也就还没达到极值点。
 
 <center>
-    <img src="https://i.imgur.com/WbBfeyH.png" alt="A diagram showing that at the optimal point, the constraint curve (blue) is tangent to the level set of the objective function (orange dashed lines). The gradients of both functions, ∇f and ∇g, are parallel." style="width: 60%;"/>
+
     <br>
     <small><i>图1：在最优点（红点），目标函数的等高线（橙色虚线）与约束路径（蓝色实线）相切。这意味着两者的法向量——也就是梯度——指向同一方向。</i></small>
 </center>
@@ -44,7 +44,7 @@ $$
 让我们先用纯粹的几何直觉来思考。[目标函数](@keyword=objective_function|lang=zh-CN|style=Feynman) $f(\mathbf{x})$ 的等高线是一系列以原点为中心的同心圆（或球面）。约束是一个固定的平面。我们要找的，就是那个刚好与平面“相切”的、半径最小的球面。在那个切点，连接原点和切点的半径，必然与平面垂直。
 
 <center>
-    <img src="https://i.imgur.com/i9q53tK.png" alt="A sphere (level set of the objective function) tangent to a plane (constraint). The optimal vector x* is parallel to the plane's normal vector a." style="width: 50%;"/>
+
     <br>
     <small><i>图2：寻找平面上离原点最近的点，等价于找到一个最小的球面与该平面相切。在切点 $\mathbf{x}^*$，位置向量 $\mathbf{x}^*$ 必然与平面的法向量 $\mathbf{a}$ 平行。</i></small>
 </center>
@@ -120,7 +120,7 @@ $$
 让我们来看一个特殊的约束 [@problem_id:2216736]：$g(x,y) = y^2 - x^3 = 0$。如果你画出这条曲线，你会发现在原点 $(0,0)$ 处有一个非常尖锐的“尖点”（数学上称为歧点）。
 
 <center>
-    <img src="https://i.imgur.com/eBw9XnE.png" alt="The curve y^2=x^3 with a cusp at the origin. At this point, the gradient vanishes, and the Lagrange multiplier method fails." style="width: 50%;"/>
+
     <br>
     <small><i>图3：约束曲线 $y^2=x^3$ 在原点有一个[尖点](@keyword=cusps|lang=zh-CN|style=Feynman)。在这里，梯度的概念失效了，标准的[拉格朗日方法](@keyword=lagrangian_method|lang=zh-CN|style=Feynman)会给出矛盾的结果。</i></small>
 </center>

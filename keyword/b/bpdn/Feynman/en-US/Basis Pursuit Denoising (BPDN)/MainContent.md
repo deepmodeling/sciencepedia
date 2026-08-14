@@ -1,7 +1,7 @@
 ## Introduction
 In science and engineering, we constantly face a fundamental challenge: how can we reconstruct a rich, complex signal or image from a limited number of measurements? This problem arises everywhere, from an astronomer trying to form a picture of a distant galaxy to a doctor interpreting an MRI scan. Often, the data we can collect is far less than what seems necessary, leading to an "underdetermined" system where an infinite number of solutions could explain our observations. This predicament suggests that recovering the one true signal is an impossible task.
 
-However, a profound insight breaks this [deadlock](@entry_id:748237): the signals we seek are often inherently simple or "sparse." This means they can be described by a few significant elements in the right domain. Basis Pursuit Denoising (BPDN) is a powerful mathematical framework that leverages this principle of sparsity to find the simplest, most plausible solution among the infinite possibilities, even in the presence of measurement noise. This article demystifies BPDN, guiding you through its core concepts and transformative applications.
+However, a profound insight breaks this [deadlock](@keyword=deadlock|lang=en-US|style=Feynman): the signals we seek are often inherently simple or "sparse." This means they can be described by a few significant elements in the right domain. Basis Pursuit Denoising (BPDN) is a powerful mathematical framework that leverages this principle of sparsity to find the simplest, most plausible solution among the infinite possibilities, even in the presence of measurement noise. This article demystifies BPDN, guiding you through its core concepts and transformative applications.
 
 The first chapter, "Principles and Mechanisms," will uncover the theory behind BPDN. We will explore why minimizing the L1 norm is a clever and effective strategy, the geometric intuition that makes it work, and the theoretical guarantees that provide confidence in its results. Following that, the "Applications and Interdisciplinary Connections" chapter will showcase how BPDN has moved from a theoretical curiosity to a practical engine of innovation, enabling technologies like single-pixel cameras, faster MRI scans, and accelerated discovery in chemistry and geophysics.
 
@@ -19,13 +19,13 @@ How do we measure "simplicity" or "sparsity"? The most direct way is to count th
 
 Unfortunately, this path, while intuitive, is a computational nightmare. Searching for the solution with the fewest non-zero entries involves checking every possible combination of non-zero pixel locations. For a megapixel image, the number of combinations is greater than the number of atoms in the universe. This is a classic NP-hard problem; it is fundamentally intractable.
 
-This is where a moment of mathematical genius saves the day. Instead of the unwieldy $\ell_0$ norm, we use a brilliant substitute: the **$\ell_1$ norm**. The $\ell_1$ norm, written as $\|x\|_1$, is simply the sum of the [absolute values](@entry_id:197463) of all the entries in $x$: $\|x\|_1 = \sum_i |x_i|$. Remarkably, minimizing this much friendlier, convex function has an astonishing tendency to produce solutions that are also sparse! This clever substitution is the heart of a technique called **Basis Pursuit (BP)**. The problem becomes:
+This is where a moment of mathematical genius saves the day. Instead of the unwieldy $\ell_0$ norm, we use a brilliant substitute: the **$\ell_1$ norm**. The $\ell_1$ norm, written as $\|x\|_1$, is simply the sum of the [absolute values](@keyword=absolute_values|lang=en-US|style=Feynman) of all the entries in $x$: $\|x\|_1 = \sum_i |x_i|$. Remarkably, minimizing this much friendlier, convex function has an astonishing tendency to produce solutions that are also sparse! This clever substitution is the heart of a technique called **Basis Pursuit (BP)**. The problem becomes:
 
 $$
 \min_{x} \|x\|_1 \quad \text{subject to} \quad Ax = y
 $$
 
-This is a convex optimization problem, which, unlike its $\ell_0$ counterpart, can be solved efficiently . But why does this trick work? The answer lies in a beautiful geometric picture.
+This is a convex optimization problem, which, unlike its $\ell_0$ counterpart, can be solved efficiently [@problem_id:3460565]. But why does this trick work? The answer lies in a beautiful geometric picture.
 
 ### The Shape of Sparsity
 
@@ -37,5 +37,4 @@ Now, let's measure distance using the $\ell_1$ norm. The "balls" of constant $\e
 
 Let's repeat our experiment: inflate an $\ell_1$ diamond centered at the origin until it first touches the solution line. Because of the diamond's pointy corners, it is overwhelmingly likely that the first point of contact will be one of these corners! A corner, lying on an axis, has one of its coordinates equal to zero. And a coordinate that is zero is the very definition of sparsity.
 
-![Geometric comparison of L1 and L2 minimization. The L2 ball touches the line at a dense point, while the pointy L1 ball touches at a sparse point (on the axis).](https://i.imgur.com/kYqE3hL.png)
 *Geometric intuition: To find the smallest norm solution on the line (blue), we expand a norm ball from the origin. The round $\ell_2$ ball (dashed green) touches at a dense point. The pointy $\ell_1$ ball (dashed red) is likely to touch at a vertex on an axis—a sparse point.*

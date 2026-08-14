@@ -14,7 +14,7 @@
 这个定义听起来简单，但它蕴含着非常深刻且有些古怪的物理图像。如果我们画出它的“脾气图”——也就是它的电流-电压（I-V）特性曲线——会得到什么呢？[横轴](@keyword=transverse_axis|lang=zh-CN|style=Feynman)代表电压 $V$，纵轴代表电流 $I$。因为电压 $V$ 必须永远等于 $V_S$，所以这条曲线必然是一条在 $V = V_S$ 处的**垂直线** [@problem_id:1310447]。
 
 <center>
-<img src="https://i.imgur.com/3q15bFh.png" width="400" alt="I-V curve of an ideal voltage source">
+
 </center>
 <br>
 
@@ -35,7 +35,7 @@
 它的 I-V 特性曲线，恰好与电压源形成完美的对偶（duality）：一条在 $I = I_S$ 处的**水平线**。电流被锁死，但它两端的电压可以为了满足外部电路的要求而任意变化。
 
 <center>
-<img src="https://i.imgur.com/o9wP7s1.png" width="400" alt="I-V curve of an ideal current source">
+
 </center>
 <br>
 

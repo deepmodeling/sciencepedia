@@ -18,7 +18,7 @@
 
 <center>
 <figure>
-  <img src="https://static.scholarpedia.org/images/thumb/8/8c/Crooks_theorem_distributions.svg/400px-Crooks_theorem_distributions.svg.png" alt="Schematic representation of forward and reverse work distributions. The forward distribution P_F(W) and the reverse distribution P_R(-W) intersect at the value of the free energy difference ΔF." style="width:70%;">
+
   <figcaption>图1：前向和[反向过程](@keyword=backward_pass|lang=zh-CN|style=Feynman)的功分布示意图。根据 Crooks [涨落定理](@keyword=fluctuation_theorems|lang=zh-CN|style=Feynman)，前向功分布 $P_F(W)$ 和反向功分布 $P_R(-W)$ 的交点恰好位于自由能差 $\Delta F$ 处。这个交点为从非平衡实验中精确测量平衡性质提供了强大的方法。</figcaption>
 </figure>
 </center>

@@ -29,7 +29,7 @@ $$ \omega_k = e^{i \frac{2\pi k}{n}} = \cos\left(\frac{2\pi k}{n}\right) + i\sin
 
 <br>
 <center>
-<img src="https://assets.lemonsqueezy.com/media/2024/05/23/02/36/53/b77f884a-d68a-4950-8919-ff377c8eaccd/6th_roots_of_unity.png" alt="6th roots of unity forming a regular hexagon on the complex plane" width="400">
+
 <br>
 <small>图1：6次[单位根](@keyword=roots_of_unity|lang=zh-CN|style=Feynman)在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上构成一个正六边形。</small>
 </center>

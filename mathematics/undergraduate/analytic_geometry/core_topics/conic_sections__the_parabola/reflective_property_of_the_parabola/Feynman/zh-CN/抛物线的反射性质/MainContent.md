@@ -14,7 +14,7 @@
 想象在无限大的平原上，我们选定一个特殊的点，称之为**焦点**（Focus），再画一条直线，称之为**准线**（Directrix）。现在，开始一个游戏：找到平原上所有这样的点，它到焦点的距离，与它到准线的[垂直距离](@keyword=perpendicular_distance|lang=zh-CN|style=Feynman)，**完全相等**。你找到的所有这些点连接起来，就构成了一条完美的抛物线。
 
 <center>
-<img src="https://i.imgur.com/uG932q2.png" alt="Geometric definition of a parabola: The set of points P such that the distance PF (to the focus) equals the distance PM (to the directrix)." width="500">
+
 </center>
 <br>
 
@@ -33,7 +33,7 @@
 **所有平行于抛物线[对称轴](@keyword=axis_of_symmetry|lang=zh-CN|style=Feynman)入射的光线，经过反射后，都会精确地汇集到焦点上。**
 
 <center>
-<img src="https://i.imgur.com/8Qp2Lz7.gif" alt="Animation showing parallel rays reflecting off a parabola and converging at the focus." width="500">
+
 </center>
 <br>
 
@@ -54,7 +54,7 @@
 答案是同样令人惊叹的对称之美：**所有从焦点发出的光线，经过[抛物面镜](@keyword=parabolic_mirror|lang=zh-CN|style=Feynman)反射后，都会变成一束完美平行的光束射出。** 我们可以通过计算证明，无论光线射向镜面上的哪一点，反射后的光线斜率都将是 $0$ [@problem_id:2116340]。
 
 <center>
-<img src="https://i.imgur.com/8FkP8W1.gif" alt="Animation showing rays originating from the focus reflecting off a parabola into a parallel beam." width="500">
+
 </center>
 <br>
 
@@ -71,7 +71,7 @@
 让我们再来审视一下抛物线。对于其上任意一点 $P$，我们可以画出它的法线（垂直于切线的直线）。这条法线与抛物线的[对称轴](@keyword=axis_of_symmetry|lang=zh-CN|style=Feynman)（$x$ 轴）会有一个交点 $N$。从点 $P$ 向 $x$ 轴作一个投影点 $M$。线段 $MN$ 的长度，被称为**次法线**（Subnormal）的长度。
 
 <center>
-<img src="https://i.imgur.com/9S5n3vV.png" alt="Diagram showing the subnormal of a parabola." width="500">
+
 </center>
 <br>
 

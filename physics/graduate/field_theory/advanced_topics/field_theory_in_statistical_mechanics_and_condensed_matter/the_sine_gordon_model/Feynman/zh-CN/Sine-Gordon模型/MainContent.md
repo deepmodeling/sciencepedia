@@ -21,7 +21,7 @@ $$
 
 <br>
 <center>
-    <img src="https://i.imgur.com/kS94h8A.png" alt="Sine-Gordon Potential Landscape" width="600">
+
     <br>
     <small>图1：正弦-戈登势能 $V(\phi)$ 的周期性景观。山谷代表能量最低的“真空”态。</small>
 </center>
@@ -55,7 +55,7 @@ $$
 
 <br>
 <center>
-    <img src="https://i.imgur.com/xT5JgU6.png" alt="Sine-Gordon Kink Soliton" width="600">
+
     <br>
     <small>图2：一个[孤立子](@keyword=solitons|lang=zh-CN|style=Feynman)（扭结）的示意图。场 $\phi$ 的值从一个真空态（例如0）平滑地过渡到相邻的真空态（例如 $2\pi/\beta$）。这个“扭转”的能量是局域化的。</small>
 </center>

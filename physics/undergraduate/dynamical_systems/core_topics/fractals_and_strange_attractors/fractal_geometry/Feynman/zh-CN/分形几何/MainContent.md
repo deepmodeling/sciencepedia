@@ -16,7 +16,7 @@
 我们把这个三角形放进复印机，设置一个程序：制造三个副本，每个副本的大小都是原先的一半，然后将这三个小三角形分别放在原三角形的三个角上。按下“开始”按钮，我们得到了一个由三个小三角形组成的新图案。现在，如果我们把这个新图案再放回复印机，运行同样的程序呢？这个过程可以永无止境地进行下去。
 
 <center>
-<img src="https://i.imgur.com/rNlO51P.png" width="600">
+
 <em>[谢尔宾斯基三角形](@keyword=sierpinski_triangle|lang=zh-CN|style=Feynman)的迭代构造过程</em>
 </center>
 

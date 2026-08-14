@@ -20,7 +20,7 @@
 对于欧几里得范数，单位球是我们熟悉的圆形（在三维空间中是球体）。对于[曼哈顿范数](@keyword=manhattan_norm|lang=zh-CN|style=Feynman)，[单位球](@keyword=unit_ball|lang=zh-CN|style=Feynman)是一个旋转了45度的正方形（在三维空间中是一个八面体）。对于[最大范数](@keyword=maximum_norm|lang=zh-CN|style=Feynman)，单位球则是一个与坐标轴对齐的正方形（在三维空间中是一个立方体）。 [@problem_id:1859209]。
 
 <center>
-  <img src="https://i.imgur.com/GjT53Xk.png" width="600">
+
   <br>
   <small>图1：二维空间中不同范数下的单位球。蓝色圆是欧几里得范数 ($L_2$)，红色菱形是[曼哈顿范数](@keyword=manhattan_norm|lang=zh-CN|style=Feynman) ($L_1$)，绿色方块是[最大范数](@keyword=maximum_norm|lang=zh-CN|style=Feynman) ($L_\infty$)。</small>
 </center>

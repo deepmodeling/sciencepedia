@@ -17,7 +17,7 @@
 
 <center>
 <figure>
-  <img src="https://s3.us-west-2.amazonaws.com/prd-news-website-cache/images/articles/2021/04/co2-critical-point.gif" alt="二氧化碳在[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)附近，液相和气相的界限消失。">
+
   <figcaption>当温度和压力接近[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)时，液态和气态二氧化碳之间的界面（弯月面）消失，物质变成均一的[超临界流体](@keyword=supercritical_fluids|lang=zh-CN|style=Feynman)。</figcaption>
 </figure>
 </center>
@@ -46,7 +46,7 @@ $$
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/K1U1J6A.png" alt="物质的相图，展示了[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)和维多姆线">
+
   <figcaption>[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)展示了固态、液态和气态区域。液气共存线在[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)终止。从[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)延伸到超[临界区](@keyword=critical_region|lang=zh-CN|style=Feynman)域的虚线是维多姆线，它标志着物质从“类液态”到“类气态”快速但连续转变的轨迹。</figcaption>
 </figure>
 </center>

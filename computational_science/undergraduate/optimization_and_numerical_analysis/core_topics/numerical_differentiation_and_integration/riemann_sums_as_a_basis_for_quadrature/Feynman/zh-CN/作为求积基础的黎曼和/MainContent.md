@@ -20,7 +20,7 @@
 我们可以取每个窄条**左边端点**的高度 $f(x_i)$ 作为矩形的高度。这便是**左端点法则**。同样，我们也可以取**右边端点**的高度 $f(x_{i+1})$，这就是**右端点法则**。或者，我们可以更“公平”一点，取每个窄条**中点**的高度 $f(\frac{x_i+x_{i+1}}{2})$，这便是**[中点法则](@keyword=midpoint_rule|lang=zh-CN|style=Feynman)** [@problem_id:2198224]。
 
 <center>
-<img src="https://assets.test-files.org/photos/phy/riemann.png" width="600">
+
 <br>
 <small>图1：左端点、右端点和[中点法则](@keyword=midpoint_rule|lang=zh-CN|style=Feynman)的几何直观。它们都是用简单的矩形去逼近复杂曲线下的真实面积。</small>
 </center>
@@ -40,7 +40,7 @@ $$
 你可能会说：“但这些终究只是近似！” 没错。如果我们观察一条单调递增的曲线，比如 $y=x^2$，你会发现左端点矩形的高度总是当前区间里最低的，所以它的总面积必然小于真实面积。反之，右端点矩形则总是高估了真实面积 [@problem_id:2198188]。这些近似中存在着系统性的偏差。
 
 <center>
-<img src="https://assets.test-files.org/photos/phy/riemann_error.png" width="500">
+
 <br>
 <small>图2：对于单调递增的函数，左端点法则（蓝色）低估了面积，而右端点法则（红色）高估了面积。</small>
 </center>
@@ -86,7 +86,7 @@ $$
 然而，还有一个看似更不起眼的规则——**[中点法则](@keyword=midpoint_rule|lang=zh-CN|style=Feynman)**——隐藏着惊人的力量。让我们来做一个思想实验：用[中点法则](@keyword=midpoint_rule|lang=zh-CN|style=Feynman)去计算一条直线 $f(x) = mx+c$ 下方的面积。你会惊讶地发现，无论你把区间分得多宽，哪怕只用一个矩形，[中点法则](@keyword=midpoint_rule|lang=zh-CN|style=Feynman)给出的都是**精确解** [@problem_id:2198223]！
 
 <center>
-<img src="https://assets.test-files.org/photos/phy/midpoint_linear.png" width="400">
+
 <br>
 <small>图3：对于线性函数，中点矩形在右半边多出的面积（绿色小三角形）恰好等于它在左半边缺少的面积（红色小三角形）。误差完美抵消！</small>
 </center>

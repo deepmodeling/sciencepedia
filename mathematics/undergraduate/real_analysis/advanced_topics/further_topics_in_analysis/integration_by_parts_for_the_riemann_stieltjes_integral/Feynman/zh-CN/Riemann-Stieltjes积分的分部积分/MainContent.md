@@ -35,7 +35,7 @@ $$ \int_{a}^{b} f(x) \,d\alpha(x) + \int_{a}^{b} \alpha(x) \,df(x) = f(b)\alpha(
 
 <br>
 <center>
-<img src="https://i.imgur.com/GzXUwnk.png" alt="Geometric interpretation of integration by parts" width="500"/>
+
 </center>
 <br>
 

@@ -14,8 +14,6 @@
 
 这种“用简单轮廓近似复杂物体”的思想，在[计算机图形学](@keyword=computer_graphics|lang=zh-CN|style=Feynman)和游戏开发中更是大放异彩。想象一个复杂的宇宙飞船模型，它有成千上万个顶点。要判断两艘这样的飞船是否碰撞，逐一检查所有顶点和表面的几何关系将是一场计算灾难。一个聪明的“捷径”是，我们先为每艘飞船计算一个[凸包](@keyword=convex_hull|lang=zh-CN|style=Feynman)。如果这两个远比飞船本身简单的[凸包](@keyword=convex_hull|lang=zh-CN|style=Feynman)没有发生碰撞，那么飞船自身也绝无可能碰撞 [@problem_id:3224236]。这被称为“宽相[碰撞检测](@keyword=collision_detection|lang=zh-CN|style=Feynman)”，它极大地提升了模拟和游戏的性能，让我们的虚拟世界得以流畅运行。
 
-![](https://image.uislick.com/uislick/answer/3224353-t.png)
-
 从描述边界，我们自然而然地走向了分析形状。一个物体的形状“有多么不凸”？我们可以通过比较物体本身和它的凸包来量化这一点。物体轮廓与其[凸包](@keyword=convex_hull|lang=zh-CN|style=Feynman)之间的空隙，我们称之为“[凸性](@keyword=convexity|lang=zh-CN|style=Feynman)缺陷”（convexity defects）。这些缺陷的大小、数量和形状，就像一个几何指纹，可以用来识别和分类。例如，在计算机视觉中，通过分析手部轮廓的[凸性](@keyword=convexity|lang=zh-CN|style=Feynman)缺陷，我们就能识别出不同的手势 [@problem_id:3224264]。
 
 令人惊奇的是，同样的概念也出现在一个严肃的社会科学问题中。为了对抗“杰利蝾螈”（gerrymandering）——即为了党派利益而划分出形状怪异的选区——政治学家们提出了多种衡量选区“紧凑度”的指标。其中一个简单而有效的指标，就是选区自身的面积与其[凸包](@keyword=convex_hull|lang=zh-CN|style=Feynman)面积的比值 [@problem_id:3224225]。一个接近于 $1$ 的比值意味着选区形状饱满而“紧凑”，而一个很小的比值则可能暗示着一个被刻意拉伸和扭曲的“蝾螈”式选区。
@@ -29,8 +27,6 @@
 想象一个“特征空间”（feature space）。例如，我们可以将一次网络连接抽象成一个点，它的 $x$ 坐标是连接的持续时间， $y$ 坐标是传输的数据量。现在，如果我们收集了成千上万次“正常”网络连接的数据，它们会在这个二维[特征空间](@keyword=feature_space|lang=zh-CN|style=Feynman)中形成一片“云”。当一个新的连接请求到来时，我们如何判断它是否“异常”？一个简洁的几何方法是：我们为“正常”数据云构建一个[凸包](@keyword=convex_hull|lang=zh-CN|style=Feynman)。如果这个新数据点落在[凸包](@keyword=convex_hull|lang=zh-CN|style=Feynman)的内部或边界上，我们就认为它行为正常；如果它落在凸包之外，则很可能是一个需要警惕的异[常点](@keyword=ordinary_point|lang=zh-CN|style=Feynman) [@problem_id:3224284]。在这里，[凸包](@keyword=convex_hull|lang=zh-CN|style=Feynman)定义了一个“典型行为”的几何边界。
 
 这个思想可以引向一个更深刻的问题，这也是机器学习领域的核心问题之一。想象我们有两类数据点，比如红点和蓝点。我们能否画一条直线，将它们完美地分到直线两侧？这个问题被称为“[线性可分性](@keyword=linear_separability|lang=zh-CN|style=Feynman)”。一个惊人的几何定理告诉我们：两组点是线性可分的，当且仅当它们的凸包互不相交 [@problem_id:3224296]。这个原理是像支持向量机（SVM）这样强大分类[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的几何基石，这些[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的核心任务正是在寻找那条“最好”的分割线。
-
-![](https://image.uislick.com/uislick/answer/3224296-t.png)
 
 [凸包](@keyword=convex_hull|lang=zh-CN|style=Feynman)在抽象空间中最优美的应用之一，莫过于在[多目标优化](@keyword=multiobjective_optimization|lang=zh-CN|style=Feynman)问题中发现“帕累托前沿”（Pareto Front）。在现实世界中，我们常常面临需要权衡多个目标的决策。比如，我们想要一辆既便宜又省油的汽车，或者一种回报率高但风险又低的投资。通常，你无法同时将所有目标都达到最优；改善一个目标往往需要牺牲另一个。
 
@@ -49,8 +45,6 @@
 通过[计算机模拟](@keyword=computer_simulation|lang=zh-CN|style=Feynman)，我们可以生成成千上万条这样的随机路径，计算它们各自的凸包面积，然后取平均值。我们会发现一个极其简洁而优美的规律：这个平均面积 $\mathbb{E}[A_N]$ 与步数 $N$ 成正比，即 $\mathbb{E}[A_N] \propto N$ [@problem_id:2445677]。一个混乱的、随机的过程，其整体的几何尺度上，却呈现出如此简单的线性增长法则。[凸包算法](@keyword=convex_hull_algorithms|lang=zh-CN|style=Feynman)，这个纯粹的几何工具，成为了我们验证物理学定律的计算实验台。
 
 我们旅程的终点，将是[凸包](@keyword=convex_hull|lang=zh-CN|style=Feynman)最深刻、最令人赞叹的应用之一，它直接关联到物质世界的[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)现象。在[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)中，一个处于定温定容下的系统，总是趋向于使其亥姆霍兹自由能 $F$ 最小的状态。对于某种混合物，其自由能密度 $f$ 往往是其[组分浓度](@keyword=species_concentration|lang=zh-CN|style=Feynman) $x$ 的一个非凸函数，图形上可能出现一个“驼峰”。如果真是这样，系统会发现，与其处在“驼峰”上的高能量状态，不如“耍个小聪明”：它会自发地分离成两种不同的相，比如浓度为 $x_a$ 和 $x_b$ 的两相。这两种纯相的能量位于函数图上的两个低点，而[混合态](@keyword=mixed_states|lang=zh-CN|style=Feynman)的能量则位于连接这两点的“公切线”上。只要这条公切线低于原来的能量曲线，系统就会选择相分离。这就是为什么水会沸腾成蒸汽，合金会析出不同晶相——这是自然界寻求最低能量的必然结果。
-
-![](https://image.uislick.com/uislick/answer/2647328-t.png)
 
 现在，假设我们通过实验或模拟，得到了一系列带有噪声的自由能数据点 $(x_i, f_i)$。我们如何从这些杂乱的点中，找出那条决定[相平衡](@keyword=phase_equilibrium|lang=zh-CN|style=Feynman)的公切线呢？答案是如此地优雅，又如此地出人意料：我们只需计算这些数据点的**下凸包**（lower convex hull）。这个下凸包的各个边，就构成了系统的真实自由能曲线，其中平直的线段部分，不多不少，正好就是我们苦苦寻觅的公切线！这些线段被称为“[连接线](@keyword=tie_line_2|lang=zh-CN|style=Feynman)”（tie-lines），它们直接揭示了发生[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)的浓度区间，而线段的斜率，则给出了一个重要的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)量——化学势 [@problem_id:2647328]。在这里，计算几何中的[凸包](@keyword=convex_hull|lang=zh-CN|style=Feynman)构造，与物理化学中深刻的[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)理论，实现了完美的统一。计算凸包的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)，竟与大自然寻找其[稳定平衡](@keyword=stable_equilibrium|lang=zh-CN|style=Feynman)态的方式，如出一辙。
 

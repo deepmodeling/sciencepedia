@@ -10,11 +10,11 @@
 
 想象一下，我们将整个二维平面 $\mathbb{R}^2$ 沿着 $y$ 轴对折。这个操作可以用函数 $f(x,y) = (|x|, y)$ 来描述。左半平面被“折叠”到了右半平面上。这是一个[闭映射](@keyword=closed_map|lang=zh-CN|style=Feynman)吗？答案是肯定的。你可以直观地想象，无论你在平面上画一个多么奇形怪状的闭合区域（一个[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)），经过这次折叠后，它的像依然是一个闭合区域。它不会突然出现“缺口”或“边界漏洞”。这是因为这个变换本身是良性的，它本质上是由两个部分组成的：在右半平面 ($x \ge 0$)，它什么也没做（[恒等变换](@keyword=identity_transformation|lang=zh-CN|style=Feynman)）；在左半平面 ($x \lt 0$)，它做了一次关于 $y$ 轴的对称反射。反射和[恒等变换](@keyword=identity_transformation|lang=zh-CN|style=Feynman)都是保持[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)性的，它们的并集自然也保持了这种性质 [@problem_id:1536887]。
 
-![一个将平面沿y轴折叠的[闭映射](@keyword=closed_map|lang=zh-CN|style=Feynman)](httpsse://example.com/folding_map.png "f(x,y) = (|x|, y) 是一个[闭映射](@keyword=closed_map|lang=zh-CN|style=Feynman)")
+](httpsse://example.com/folding_map.png "f(x,y) = (|x|, y) 是一个[闭映射](@keyword=closed_map|lang=zh-CN|style=Feynman)")
 
 然而，并非所有看似简单的变换都如此“表现良好”。思考另一个极其常见的操作：投影。我们把二维平面 $\mathbb{R}^2$ 上的所有点都投影到 $x$ 轴上，即 $p_1(x, y) = x$。这看起来再简单不过了。但它是一个[闭映射](@keyword=closed_map|lang=zh-CN|style=Feynman)吗？让我们来看一个例子。考虑[双曲线](@keyword=hyperbola|lang=zh-CN|style=Feynman) $F = \{(x,y) \in \mathbb{R}^2 \mid xy=1\}$。这是一个[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)，因为它是由[连续函数](@keyword=continuous_function|lang=zh-CN|style=Feynman) $g(x,y) = xy$ 的水平集 $g^{-1}(\{1\})$ 定义的。现在，我们将它投影到 $x$ 轴上。它的像是什么？对于任何非零的 $x$，我们总能找到一个 $y = 1/x$ 使得 $(x,y)$ 在[双曲线](@keyword=hyperbola|lang=zh-CN|style=Feynman)上。所以，像集就是除了原点 $0$ 之外的整条[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)，即 $\mathbb{R} \setminus \{0\}$。这个集合不是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)！原点 $0$ 是它的一个极限点（比如取序列 $x_n = 1/n$，它在像集中，但趋近于 $0$），但 $0$ 本身却不在像集中。
 
-![投影不是[闭映射](@keyword=closed_map|lang=zh-CN|style=Feynman)：双曲线的投影产生了“漏洞”](https://example.com/projection_hyperbola.png "双曲线 xy=1 是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)，但它在x轴上的投影 \mathbb{R} \setminus \{0\} 不是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)")
+：双曲线的投影产生了“漏洞”](https://example.com/projection_hyperbola.png "双曲线 xy=1 是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)，但它在x轴上的投影 \mathbb{R} \setminus \{0\} 不是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)")
 
 这里发生了什么？信息在投影过程中“流失”了。当[双曲线](@keyword=hyperbola|lang=zh-CN|style=Feynman)上的点沿着分支向无穷远处移动时（$y \to \infty$ 或 $y \to -\infty$），它们的 $x$ 坐标却在向 $0$ 靠近。这个“从无穷远处来的极限”在投影后制造了一个“漏洞”。这个简单的例子 [@problem_id:1558074] 揭示了一个深刻的道理：那些允许点在某些维度上“逃逸到无穷”而其他维度保持有界的变换，往往不是[闭映射](@keyword=closed_map|lang=zh-CN|style=Feynman)。很多我们熟悉的函数，比如 $f(x) = \sin(x)$，也出于类似的原因而不是[闭映射](@keyword=closed_map|lang=zh-CN|style=Feynman) [@problem_id:1536864]。
 
@@ -29,8 +29,6 @@
 -   想象拿一根线段 $[0, 1]$，这是一个紧致空间。现在我们把它的两个端点 $0$ 和 $1$ “粘”在一起。我们就得到了一个圆圈 $S^1$。这个“粘合”过程就是一个连续映射 $q: [0, 1] \to S^1$。因为定义域是紧致的，而终点（圆圈）是[豪斯多夫空间](@keyword=hausdorff_spaces|lang=zh-CN|style=Feynman)，所以这个映射必然是[闭映射](@keyword=closed_map|lang=zh-CN|style=Feynman) [@problem_id:1537120]。
 
 -   更进一步，想象一个二维的[闭圆盘](@keyword=closed_disk|lang=zh-CN|style=Feynman) $D^2$（也是紧致的）。我们把它整个边界圆周上的所有点都“捏”到一起，变成一个点。你得到了什么？一个二维球面 $S^2$！这个过程在拓扑学和物理学中至关重要，它同样是一个[闭映射](@keyword=closed_map|lang=zh-CN|style=Feynman) [@problem_id:1536885]。
-
-![将圆盘的边界捏合成一点得到球面](https://example.com/disk_to_sphere.png "从紧致空间（圆盘）出发的[商映射](@keyword=quotient_map|lang=zh-CN|style=Feynman)是[闭映射](@keyword=closed_map|lang=zh-CN|style=Feynman)")
 
 紧致性是关键。如果我们把定义域换成非紧致的，比如半开半[闭区间](@keyword=closed_and_bounded_interval|lang=zh-CN|style=Feynman) $[0, 2\pi)$，再试图把它卷成一个圆，这个映射就不再是闭的了 [@problem_id:1537120]。同样，将整条实直线 $\mathbb{R}$ 卷成一个圆的映射 $q(t) = (\cos(2\pi t), \sin(2\pi t))$ 也不是[闭映射](@keyword=closed_map|lang=zh-CN|style=Feynman) [@problem_id:1536851]。在这两种情况下，我们都能找到一个定义域中的[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)，它的像在圆上“无限接近”某个点，却永远无法“抵达”，从而形成了一个非闭的像集。这一正一反的例子，完美地展现了紧致性在保证映射“行为良好”方面的核心作用。同样，在代数拓扑中构造的“[拓扑锥](@keyword=topological_cone|lang=zh-CN|style=Feynman)”也是基于这个原理，其构造映射总是一个[闭映射](@keyword=closed_map|lang=zh-CN|style=Feynman) [@problem_id:1590052]。
 

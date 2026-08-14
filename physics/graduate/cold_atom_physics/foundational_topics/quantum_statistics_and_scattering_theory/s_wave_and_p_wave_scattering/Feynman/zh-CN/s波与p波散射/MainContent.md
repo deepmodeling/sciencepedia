@@ -18,7 +18,7 @@
 更精确地说，在相互作用区域之外，零能量的原子[径向波函数](@keyword=radial_wavefunctions|lang=zh-CN|style=Feynman) $u(r)$ 的行为异常简单，它就是一条直线。这条直线的方程可以写成 $u(r) \propto (r - a_s)$。[@problem_id:2101620] 这里的 $a_s$ 有一个绝妙的几何意义：它是这条直[线与](@keyword=wired_and|lang=zh-CN|style=Feynman) $r$ 轴的交点。就好像原子波从无穷远处传来，撞上了一个半径为 $a_s$ 的“虚拟硬球”。
 
 <center>
-<img src="https://i.imgur.com/8Qv9ySO.png" width="500">
+
 </center>
 <center>图1：[s波散射长度](@keyword=s_wave_scattering_length|lang=zh-CN|style=Feynman) $a_s$ 的几何定义。外部的零能量[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)（蓝线）的[外推](@keyword=extrapolation|lang=zh-CN|style=Feynman)与 $r$ 轴的交点即为 $a_s$。正的 $a_s$ (左) 对应排斥性相互作用，而负的 $a_s$ (右) 对应吸引性相互作用。</center>
 

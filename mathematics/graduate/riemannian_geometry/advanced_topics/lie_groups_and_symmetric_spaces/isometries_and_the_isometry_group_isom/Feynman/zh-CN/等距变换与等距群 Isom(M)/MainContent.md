@@ -21,7 +21,7 @@
 
 一个经典的例子是，将一条实数轴 $\mathbb{R}$ 映射到一个圆周 $S^1$ 上。[@problem_id:2981262] 我们可以定义一个映射 $p:\mathbb{R} \to S^1$，它将实数轴上的点 $s$ 映射到圆周上[弧长](@keyword=arc_length|lang=zh-CN|style=Feynman)为 $s$ 的点。如果你是生活在这条线上的一维生物，当这条线被卷成一个圆时，你脚下的“地面”在任何一个局部小邻域内都没有任何变化。计算表明，这个映射确实将圆周上的度量“[拉回](@keyword=pullback|lang=zh-CN|style=Feynman)”到了直线上，两者完全吻合，即 $p^*g_{S^1} = g_{\mathbb{R}}$。所以，这是一个完美的[局部等距](@keyword=local_isometry|lang=zh-CN|style=Feynman)。
 
-![一个将直线 R 卷绕到圆 S¹ 上的[局部等距](@keyword=local_isometry|lang=zh-CN|style=Feynman)映射。](https://d2mvzyuse3lwjc.cloudfront.net/images/problems/2981262/Wrapping_R_around_S1.png)
+映射。](https://d2mvzyuse3lwjc.cloudfront.net/images/problems/2981262/Wrapping_R_around_S1.png)
 
 然而，这个映射显然不是全局意义上的“相同”。在直线上，点 $s=0$ 和点 $s=2\pi r$ 相距 $2\pi r$。但在圆周上，它们被映射到了同一个点！它们之间的距离从 $2\pi r$ 变成了 $0$。这个映射不是一一对应的，它把一个无限、不闭合的空间变成了一个有限、闭合的空间。
 

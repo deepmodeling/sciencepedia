@@ -12,7 +12,7 @@
 
 <center>
     <figure>
-        <img src="https://assets.test-files.org/materials/images/ac6892ee-48c0-4355-9a80-0a5665893d5b.png" alt="RLC电路的三种阻尼情况的[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)：[过阻尼](@keyword=overdamping|lang=zh-CN|style=Feynman)（左）、临界阻尼（中）、[欠阻尼](@keyword=underdamping|lang=zh-CN|style=Feynman)（右）。所有轨迹都趋向于原点的平衡状态。" style="width: 80%;">
+
         <figcaption>一个RLC电路的相空间图，展示了不同阻尼情况下的动态行为。左图是[过阻尼](@keyword=overdamping|lang=zh-CN|style=Feynman)，中图是[临界阻尼](@keyword=critical_damping|lang=zh-CN|style=Feynman)，右图是[欠阻尼](@keyword=underdamping|lang=zh-CN|style=Feynman)。这些轨迹的几何形状直观地反映了电路中[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)和电流的演化方式。[@problem_id:2426897]</figcaption>
     </figure>
 </center>
@@ -23,7 +23,7 @@
 
 <center>
     <figure>
-        <img src="https://assets.test-files.org/materials/images/f81c4e72-a0c5-430c-ab9a-245ed7e79391.png" alt="弗里德曼宇宙学模型的相空间图。(a, a_dot)平面展示了三种宇宙模型的演化轨迹：封闭宇宙(k=+1)会重新坍缩，而平坦(k=0)和开放(k=-1)宇宙会永远膨胀。" style="width: 60%;">
+
         <figcaption>宇宙的命运图谱：基于[弗里德曼方程](@keyword=friedmann_equations|lang=zh-CN|style=Feynman)的相空间图。轨迹的形状清晰地揭示了宇宙是会永远膨胀（开放和临界情况），还是最终会重新坍塌（封闭情况）。[@problem_id:2426877]</figcaption>
     </figure>
 </center>
@@ -40,7 +40,7 @@
 
 <center>
     <figure>
-        <img src="https://assets.test-files.org/materials/images/c21db333-e910-4ed5-a226-eb5e6484e03b.png" alt="两种[捕食者-猎物模型](@keyword=predator_prey_models|lang=zh-CN|style=Feynman)的[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)。左侧是经典的Lotka-Volterra模型，显示了中性稳定的周期性轨道。右侧是带有猎物逻辑增长的模型，显示轨迹螺旋式地趋向一个稳定的[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)。" style="width: 80%;">
+
         <figcaption>捕食者与猎物之舞。左图的经典Lotka-Volterra模型展现了永恒的追逐循环。右图加入环境限制后，系统演化出稳定的共存状态。[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)的几何变化揭示了[生态稳定性](@keyword=ecological_stability|lang=zh-CN|style=Feynman)的来源。[@problem_id:2426941]</figcaption>
     </figure>
 </center>

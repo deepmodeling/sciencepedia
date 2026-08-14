@@ -34,7 +34,7 @@ $$
 第一种方式充满戏剧性。入射的电子和它的[反物质](@keyword=antimatter|lang=zh-CN|style=Feynman)兄弟——[正电子](@keyword=positron|lang=zh-CN|style=Feynman)，迎头相撞，瞬间“湮灭”，将它们的全部质量和能量转化为一团纯粹的能量——一个高能量的**虚光子**（virtual photon）。这个[虚光子](@keyword=virtual_photons|lang=zh-CN|style=Feynman)只存在极短的时间，然后，就像变魔术一样，它又重新物质化，产生一对全新的电子和[正电子](@keyword=positron|lang=zh-CN|style=Feynman)，向着新的方向飞去。
 
 <center>
-<img src="https://i.imgur.com/E0l0s2B.png" width="300"/>
+
 <br>
 图1：巴哈散射的 s-channel（湮灭通道）图。
 </center>
@@ -46,7 +46,7 @@ $$
 第二种方式则平淡许多，但同样重要。电子和正电子并没有湮灭，它们更像是擦肩而过。在交错的瞬间，它们之间交换了一个[虚光子](@keyword=virtual_photons|lang=zh-CN|style=Feynman)。你可以把这想象成两个滑冰者，其中一人向另一个人扔出一个球，使得两人都被推开。这个交换的虚光子传递了动量和能量，改变了两个粒子的运动轨迹，使它们散射开来。
 
 <center>
-<img src="https://i.imgur.com/gKEn7J3.png" width="300"/>
+
 <br>
 图2：巴哈散射的 t-channel（散射通道）图。
 </center>

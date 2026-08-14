@@ -18,7 +18,7 @@
 更令人惊奇的是，这条最优路径所遵循的[运动方程](@keyword=equations_of_motion|lang=zh-CN|style=Feynman)，形式上与牛顿第二定律如出一辙，但有一个关键的区别：它所处的势能场 $V(q)$ 被完全颠倒了过来，变成了 $-V(q)$。换句话说，在想象时间里，粒子仿佛生活在一个“颠倒世界”中：原来的势垒（山丘）变成了[势阱](@keyword=potential_energy_well|lang=zh-CN|style=Feynman)（山谷），而原来的[势阱](@keyword=potential_energy_well|lang=zh-CN|style=Feynman)则变成了势垒 [@problem_id:2779746]。
 
 <center>
-<img src="https://i.imgur.com/8QO9LgX.png" alt="Inverted Potential" width="600"/>
+
 <br>
 <small>图1：在真实时间（左）中，粒子被能量为 $E$ 的势垒 $V(q)$ 所困。在想象时间（右）中，势能反转为 $-V(q)$，粒子可以“滚过”原来的势垒区域。</small>
 </center>
@@ -48,7 +48,7 @@ $$
 这种几何观点带来了惊人的预测。在许多[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)中，系统并不会乖乖地沿着能量最低的“山谷”底部前进。一个经典的例子是“轻-重-轻”原子构成的反应，如 $H + ClH \to HCl + H$。氢原子（轻）想要快速移动以减小动能的代价，而氯原子（重）则相对惰性。[瞬子](@keyword=instantons|lang=zh-CN|style=Feynman)路径会选择一条“捷径”，在[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)的拐角处直接切过，而不是沿着能量最低的路径走一个直角弯。这种“抄近道”（corner-cutting）的行为是纯粹的多维量子效应，它极大地提高了[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)，而[瞬子理论](@keyword=instanton_theory|lang=zh-CN|style=Feynman)能够完美地捕捉并定量描述它 [@problem_id:2779745]。这也启发我们，在计算[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)时，需要巧妙地定义一个与瞬子路径垂直的“分割面”，以获得最稳定、最精确的结果 [@problem_id:2779725]。
 
 <center>
-<img src="https://i.imgur.com/k2e4u1l.png" alt="Corner Cutting" width="500"/>
+
 <br>
 <small>图2：在多维[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)上，“能量最低路径”（虚线）可能是一个直角弯。为了减小动能代价，[瞬子](@keyword=instantons|lang=zh-CN|style=Feynman)路径（实线）会“抄近道”，展现出“角切割”效应。</small>
 </center>

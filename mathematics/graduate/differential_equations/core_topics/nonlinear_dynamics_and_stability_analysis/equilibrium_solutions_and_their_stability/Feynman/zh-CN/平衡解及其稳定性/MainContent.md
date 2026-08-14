@@ -27,7 +27,7 @@
 
 <br>
 <center>
-<img src="https://i.imgur.com/W7tG62g.png" alt="Phase line diagram showing stable, unstable, and semi-stable equilibria." width="600">
+
 <br>
 <small>图1：一维[相线图](@keyword=phase_line_diagram|lang=zh-CN|style=Feynman)。箭头显示了系统在不同区域的演化方向，决定了[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman) y=-1（稳定），y=0（不稳定）和 y=2（半稳定）的性质。灵感来源于问题 [@problem_id:2201290]。</small>
 </center>
@@ -60,7 +60,7 @@ $$
 
 <br>
 <center>
-<img src="https://i.imgur.com/7123L5E.png" alt="The Trace-Determinant Plane." width="600">
+
 <br>
 <small>图2：迹-[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)平面。这是一个强大的“地图”，通过计算矩阵的迹（$tr(A)$）和[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)（$det(A)$），我们可以快速确定二维[线性系统](@keyword=linear_systems|lang=zh-CN|style=Feynman)[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)的类型和稳定性。抛物线 $\Delta = (tr A)^2 - 4 det A = 0$ 是区分实[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)（节点/[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)）和[复特征值](@keyword=complex_eigenvalues|lang=zh-CN|style=Feynman)（螺线点/中心）的边界。</small>
 </center>
@@ -92,7 +92,7 @@ $$
 
 <br>
 <center>
-<img src="https://i.imgur.com/H1tI5zG.png" alt="Bifurcation Diagrams" width="700">
+
 <br>
 <small>图3：三种基本[分岔](@keyword=bifurcations|lang=zh-CN|style=Feynman)的示意图。[横轴](@keyword=transverse_axis|lang=zh-CN|style=Feynman)是控制参数 $r$，纵轴是[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman) $x^*$ 的位置。实线表示稳定平衡点，虚线表示不稳定平衡点。从左至右分别为：鞍-节[分岔](@keyword=bifurcations|lang=zh-CN|style=Feynman)、[跨临界分岔](@keyword=transcritical_bifurcation|lang=zh-CN|style=Feynman)和（超临界）[叉式分岔](@keyword=pitchfork_bifurcation|lang=zh-CN|style=Feynman)。这些图表展示了系统[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)的数量和稳定性如何随参数变化而发生质的改变。灵感来源于问题 [@problem_id:2197590]、[@problem_id:1675846] 和 [@problem_id:2201244]。</small>
 </center>

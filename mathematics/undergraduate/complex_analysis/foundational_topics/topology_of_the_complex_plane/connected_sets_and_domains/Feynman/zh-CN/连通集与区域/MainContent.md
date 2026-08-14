@@ -17,8 +17,6 @@
 
 再来考虑一个稍微复杂点的例子：由两个相交的圆盘组成的集合 $S_A = \{ z \in \mathbb{C} \mid |z - 1| < 2 \text{ or } |z + 1| < 2 \}$ [@problem_id:2235327]。尽管它的形状像个花生，但因为两个圆盘有重叠部分，你总能从一个圆盘走到另一个，所以整个集合仍然是[路径连通的](@keyword=path_connected|lang=zh-CN|style=Feynman)。
 
-![](https://image.oss-cn-beijing.aliyuncs.com/qgen/courses/2235327_0.png)
-
 现在，我们来做个小小的破坏。取一根笔直的线段，比如连接 $0$ 和 $2(3+4i)$ 的线段。它无疑是[路径连通的](@keyword=path_connected|lang=zh-CN|style=Feynman)。但如果我们从中挖掉一个点，比如中点 $3+4i$，会发生什么？[@problem_id:2235319]。这根线段立刻被分成了两半，你再也无法从靠近 $0$ 的一端走到靠近 $2(3+4i)$ 的另一端，除非你“跳”过那个被挖掉的空洞。这个集合不再是路径连通的了。
 
 更有趣的是，即使是两个[路径连通的](@keyword=path_connected|lang=zh-CN|style=Feynman)集合，它们的交集也未必是[路径连通的](@keyword=path_connected|lang=zh-CN|style=Feynman)。想象一条直线 $S_1$ (比如 $y=x$) 和一个圆圈 $S_2$ [@problem_id:2235333]。它们各自都是完美的[路径连通集](@keyword=path_connected_sets|lang=zh-CN|style=Feynman)。但如果它们恰好只相交于两个点，比如 $0$ 和 $1+i$，那么它们的交集 $S_3 = \{0, 1+i\}$ 只是两个孤立的点。你无法在 $S_3$ 内部从 $0$ “走”到 $1+i$。这提醒我们，即使是简单的操作，也可能产生意想不到的拓扑后果。
@@ -33,8 +31,6 @@
 
 考虑由两个互不接触的圆盘 $D_1$ 和 $D_2$ 组成的集合 $S = D_1 \cup D_2$ [@problem_id:2235314]。这个集合显然是不连通的。为什么？因为 $D_1$ 和 $D_2$ 本身就是两个互不相交的非空[开集](@keyword=open_set|lang=zh-CN|style=Feynman)！它们自己就构成了分割自己的“围栏”。$S$ 可以被完美地分解为 $D_1$ 和 $D_2$ 两部分，符合我们不连通的定义。
 
-![](https://image.oss-cn-beijing.aliyuncs.com/qgen/courses/2235314_0.png)
-
 这个定义威力十足，甚至能处理像只有两三个点的有限点集这样的简单情况。比如集合 $S = \{1+i, -2, 3-4i\}$ [@problem_id:2235346]。我们可以围绕点 $1+i$ 画一个足够小的开圆盘作为“围栏A”，再将围绕点 $-2$ 和 $3-4i$ 的两个小圆盘合并起来作为“围栏B”。只要这些小圆盘取得足够小，围栏A和围栏B就不会相交。这样，集合 $S$ 就被分割成了 $\{1+i\}$ 和 $\{-2, 3-4i\}$ 两个非空部分，每一部分都在各自的“围栏”里。因此，这个集合是不连通的。
 
 现在，你可能会想：路径[连通和](@keyword=connected_sum|lang=zh-CN|style=Feynman)这个基于“围栏”的连通定义，究竟有什么区别？在大多数我们日常遇到的“正常”集合里，它们是等价的。一个集合是[路径连通的](@keyword=path_connected|lang=zh-CN|style=Feynman)，当且仅当它是连通的。但数学的魅力就在于，它[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)我们超越“正常”，看到一些奇异而深刻的景象。
@@ -42,8 +38,6 @@
 ### 那条无法走过的路
 
 想象一条曲线 $y = \sin(1/x)$，当 $x$ 从右侧逼近 $0$ 时，这条曲线会以越来越疯狂的频率在 $y=1$ 和 $y=-1$ 之间[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。现在，我们把这条曲线（从某个正数 $x$ 到 $0$ 的部分）和它最终趋向的那段 $y$ 轴线段（从 $y=-1$ 到 $y=1$）合并在一起，构成一个集合 $C$。这个著名的集合被称为 **[拓扑学家的正弦曲线](@keyword=topologist_s_sine_curve|lang=zh-CN|style=Feynman)** [@problem_id:2235299]。
-
-![](https://image.oss-cn-beijing.aliyuncs.com/qgen/courses/2235299_0.png)
 
 这个集合是 **连通** 的吗？是的。你无法用一道“围栏”将[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的曲线部分与 $y$ 轴线段分开。因为曲线无限地贴近线段，任何包含线段的[开集](@keyword=open_set|lang=zh-CN|style=Feynman)（围栏）都不可避免地会“捕获”到一小段曲线。它们“粘”得太紧了，无法分离。
 

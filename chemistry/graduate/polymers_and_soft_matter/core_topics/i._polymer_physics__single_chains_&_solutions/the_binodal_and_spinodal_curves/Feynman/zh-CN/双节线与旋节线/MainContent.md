@@ -32,7 +32,7 @@ $$
 然而，当 $\chi$ 足够大时（分子间相互嫌弃），情况就变得有趣了。自由能曲线上会隆起一个“驼峰”，形成一个“[双势阱](@keyword=double_well_potential|lang=zh-CN|style=Feynman)”的形状。这个驼峰的存在，意味着在某个组分范围内，均匀[混合态](@keyword=mixed_states|lang=zh-CN|style=Feynman)不再是能量最低的状态。系统会发现，与其待在驼峰上或附近的高处，不如“跳”到两边的“深谷”里去。也就是说，它会自发地分离成两个不同组分、但自由能更低的相。
 
 <center>
-<img src="https://i.imgur.com/uR1dO3K.png" width="600" alt="Free energy curve showing convex shape (mixing) and double-well shape (demixing), with common tangent construction.">
+
 <br>
 图1：自由能曲线的形状决定了混合物的命运。左图：[凸函数](@keyword=convex_functions|lang=zh-CN|style=Feynman)曲线，系统均匀混合。右图：[双势阱](@keyword=double_well_potential|lang=zh-CN|style=Feynman)曲线，系统倾向于相分离。公切线（红色虚线）连接了两个平衡相的组分。
 </center>
@@ -74,7 +74,7 @@ $$
 最后，我们可以将所有这些概念汇总到一张**[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)**中，通常以温度 $T$ 为纵轴，组分 $\phi$ 为[横轴](@keyword=transverse_axis|lang=zh-CN|style=Feynman)。
 
 <center>
-<img src="https://i.imgur.com/8uO0M3j.png" width="550" alt="Phase diagram showing Binodal and Spinodal curves, identifying stable, metastable, and unstable regions, UCST and LCST behavior.">
+
 <br>
 图2：典型的[聚合物共混物](@keyword=polymer_blends|lang=zh-CN|style=Feynman)[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)。[双节线](@keyword=binodal_curve|lang=zh-CN|style=Feynman)（实线）和[旋节线](@keyword=spinodal_curve|lang=zh-CN|style=Feynman)（虚线）共同划分出稳定区、亚稳区和不稳定区。
 </center>

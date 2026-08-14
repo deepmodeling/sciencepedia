@@ -16,8 +16,6 @@
 
 想象一下，你有 $n$ 个完全相同的小球，想把它们放进一些盒子里。你可以把它们都放进一个盒子里，也可以把它们分成几堆。对数字 $n$ 的**[整数分拆](@keyword=integer_partitions|lang=zh-CN|style=Feynman)**（partition）正是这种思想的抽象。例如，对于 $n=3$，我们可以有 $(3)$（三个球在一堆），$(2,1)$（一堆两个，一堆一个）和 $(1,1,1)$（每堆一个）。每一个分拆方案，我们都用一个称为**[杨图](@keyword=young_diagrams|lang=zh-CN|style=Feynman)**（Young diagram）的图形来表示，它就像是为这些小球准备的，按行[排列](@keyword=permutation|lang=zh-CN|style=Feynman)的格子。
 
-![](https://s3.42share.com/2024/05/29/18bdc6d1d4d8fc2264c15383f982a7f5.png)
-
 现在，让我们把这 $n$ 个小球换成 $n$ 个标有 $1, 2, \dots, n$ 的不同物体。我们将这些数字填入[杨图](@keyword=young_diagrams|lang=zh-CN|style=Feynman)的格子中，每个数字用一次，就得到了一个**杨氏表**（Young tableau）。这代表了一种具体的[排列](@keyword=permutation|lang=zh-CN|style=Feynman)状态。
 
 但是，在表示理论的世界里，我们常常需要关注更本质的结构。想象一下，对于分拆 $\lambda=(2,1)$，我们把数字 $\{1, 2, 3\}$ 分成大小为 2 和 1 的两组。是把 $\{1, 2\}$ 放在第一行，还是 $\{2, 1\}$？从“分组”的角度看，这并无区别。我们只关心哪些数字在同一行，而不关心它们在行内的顺序。这种“模糊化”处理后的对象，我们称之为**恒列式**（tabloid），它代表了一整类行内元素相同但顺序不同的杨氏表 [@problem_id:1642405]。

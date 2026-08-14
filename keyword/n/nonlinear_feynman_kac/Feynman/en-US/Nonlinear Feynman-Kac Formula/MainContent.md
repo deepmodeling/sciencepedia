@@ -61,8 +61,6 @@ This equation has exactly the structure of a BSDE! By simply comparing this to t
 
 The first identity confirms the connection: the value process of the BSDE *is* the PDE solution evaluated along the random path. The second identity is the real revelation. It tells us what that mysterious control process $Z_t$ is. It is the **gradient (or slope) of the PDE solution**, modified by the volatility matrix $\sigma^\top$ [@problem_id:2971787]. This is a moment of profound unity. The abstract "control" needed to steer our value to its target in the BSDE world is precisely the sensitivity of the solution in the PDE world. The nonlinearity in the PDE that depends on the gradient of $u$ corresponds directly to the driver's dependence on $Z$ in the BSDE.
 
-![A diagram illustrating the connection between a semilinear PDE and a Forward-Backward SDE (FBSDE). The forward process X_t, driven by an SDE, serves as input to a BSDE for the pair (Y_t, Z_t). The nonlinear Feynman-Kac formula establishes that Y_t = u(t, X_t) and Z_t represents the gradient of u, linking the BSDE to the solution u of a semilinear PDE.](https://i.imgur.com/kS5x0C3.png)
-
 ### When Smoothness Fails: The Wisdom of Viscosity
 
 Our beautiful derivation relied on a crucial assumption: that a nice, smooth ($C^{1,2}$) solution $u(t,x)$ to our PDE actually exists. But what if it doesn't? Nature, and especially [nonlinear equations](@keyword=nonlinear_equations|lang=en-US|style=Feynman), can be messy.

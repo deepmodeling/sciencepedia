@@ -14,7 +14,7 @@ Wrong. And in that single word lies a world of beautiful, subtle, and mind-bendi
 Let's imagine a long, thin rod flying past us, oriented vertically, perpendicular to its direction of motion. Lorentz contraction doesn't apply to its length in this case, so you might expect it to look... well, like a vertical rod. But that's not what the camera captures.
 
 <center>
-<img src="https://i.imgur.com/rM7dYtP.png" width="600" alt="Diagram showing a rod moving horizontally. Light from the top and bottom ends travels to an observer. The light from the farther (top) end must be emitted earlier to arrive at the same time as light from the closer (bottom) end. In that time difference, the rod has moved forward, making the top end appear shifted horizontally relative to the bottom end.">
+
 </center>
 *Figure 1: Light from different parts of a moving object, emitted at different times, arrives at the observer simultaneously. This time delay causes the object to appear distorted.*
 

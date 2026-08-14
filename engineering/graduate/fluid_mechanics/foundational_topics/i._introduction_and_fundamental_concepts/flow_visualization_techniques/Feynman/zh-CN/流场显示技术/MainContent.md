@@ -15,7 +15,7 @@
 
 <br>
 <center>
-<img src="https://i.imgur.com/eQWf1Jj.png" width="700">
+
 <br>
 <small>图1. 三种基于[折射率](@keyword=refractive_index|lang=zh-CN|style=Feynman)的经典光学可视化技术。从左至右：纹影法对[折射率](@keyword=refractive_index|lang=zh-CN|style=Feynman)的二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)敏感，能够清晰地显示[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)等不连续结构。Schlieren法对一阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)敏感，能揭示密度梯度。[干涉法](@keyword=interferometry|lang=zh-CN|style=Feynman)则直接[测量折射率](@keyword=measuring_refractive_index|lang=zh-CN|style=Feynman)本身的变化，产生与密度等值的轮廓线（条纹）。</small>
 </center>

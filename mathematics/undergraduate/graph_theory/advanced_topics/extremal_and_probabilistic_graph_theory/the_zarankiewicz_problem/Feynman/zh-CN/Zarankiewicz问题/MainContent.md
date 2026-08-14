@@ -12,7 +12,7 @@
 想象一个最简单却又非同小可的场景。在一个由服务器和存储单元组成的网络中，我们规定：不允许任意两台不同的服务器连接到同一个存储单元对。换句话说，我们要禁止一种被称为“竞争四边形”的结构 [@problem_id:1357667]。这个结构在[图论](@keyword=graph_theory|lang=zh-CN|style=Feynman)语言中，不过是一个简单的四边形，即一个 $K_{2,2}$。它由两台服务器 $(u_1, u_2)$ 和两个存储单元 $(v_1, v_2)$ 组成，它们之间形成了四条连接 $(u_1,v_1), (u_1,v_2), (u_2,v_1), (u_2,v_2)$。
 
 <center>
-<img src="https://assets.bitdegree.org/learn/api/image-proxy/https://i.imgur.com/Kz3s2vG.png?force=true" alt="一个K_{2,2}子图的可视化，其中两个U分区顶点连接到两个V分区顶点" width="300">
+
 <br>
 禁止的 $K_{2,2}$ 结构
 </center>

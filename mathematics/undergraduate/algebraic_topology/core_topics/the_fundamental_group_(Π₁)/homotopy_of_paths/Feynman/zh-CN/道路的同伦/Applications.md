@@ -11,7 +11,7 @@
 但是，当我们给空间增添一点戏剧性时，情况就变得有趣多了。想象一下，在这片平原的中心，我们挖掉了一个点，或者立起了一根无法穿越的柱子。现在，这个空间就变成了一个“带洞的平面” [@problem_id:1657548]。
 
 <center>
-  <img src="https://assets.test.edusy.co/images/1566977_image.png" alt="[穿孔平面](@keyword=punctured_plane|lang=zh-CN|style=Feynman)" width="400">
+
   <br>
   <small>图1：在带洞的平面中，从点 P 到点 Q 的两条路径。一条（$f_1$）绕过“洞”的上方，另一条（$f_2$）绕过下方。你能将其中一条平滑地变成另一条而不经过那个洞吗？</small>
 </center>

@@ -39,10 +39,10 @@
 更令人叹为观止的是**分子内**的 Friedel-Crafts 反应。这是一种关环的绝佳策略。在一个精心设计的合成路线中，化学家首先可以利用[酸酐](@keyword=anhydrides|lang=zh-CN|style=Feynman)在苯环上引入一条带有羧酸的侧链。接着，通过一系列转化（如用 Clemmensen 还原将酮基还原为[亚甲基](@keyword=methylene|lang=zh-CN|style=Feynman)），得到一条柔性的、末端为羧酸的烷基链。然后，将羧酸转化为更活泼的[酰氯](@keyword=acyl_chloride|lang=zh-CN|style=Feynman)。最后，在 Lewis 酸的帮助下，这条侧链的[酰氯](@keyword=acyl_chloride|lang=zh-CN|style=Feynman)“尾巴”会回头攻击它所连接的苯环，关环形成一个全新的、与原有苯环稠合的环状结构。从简单的苯出发，通过这样一步步精心的设计与操作，我们最终搭建出了像**1-四氢萘酮**这样复杂的多环分子骨架。这完美地诠释了[有机合成](@keyword=organic_synthesis|lang=zh-CN|style=Feynman)中步步为营、最终实现宏伟目标的战略思想。
 
 <center>
-    <img src="https://i.imgur.com/KxX4r5N.png" alt="Synthesis of 1-tetralone via intramolecular Friedel-Crafts acylation" width="600"/>
+
     <br>
     <i>从苯到 1-四氢萘[酮的合成](@keyword=ketone_synthesis|lang=zh-CN|style=Feynman)策略，关键步骤是分子内的 Friedel-Crafts 酰化。</i>
-</center>   
+</center>
 
 另一类重要的环系合成是 **Staudinger 合成**，它通过酮烯与亚胺的 [2+2] [环加成反应](@keyword=cycloaddition_reactions|lang=zh-CN|style=Feynman)来制备 $\beta$-内[酰胺](@keyword=amide|lang=zh-CN|style=Feynman)。而酮烯本身，往往就是通过酰氯与非亲核性碱（如三乙胺）反应原位生成的。$\beta$-内[酰胺](@keyword=amide|lang=zh-CN|style=Feynman)是著名的[青霉素](@keyword=penicillin|lang=zh-CN|style=Feynman)和头孢菌素等抗生素的核心结构。因此，[酰氯](@keyword=acyl_chloride|lang=zh-CN|style=Feynman)的反应性在这里直接通向了拯救生命的[药物化学](@keyword=medicinal_chemistry|lang=zh-CN|style=Feynman)领域。化学家甚至可以通过调控亚胺上的[取代基](@keyword=substituent|lang=zh-CN|style=Feynman)，利用电子效应来精确控制反应的速率，这体现了[物理有机化学](@keyword=physical_organic_chemistry|lang=zh-CN|style=Feynman)原理在合成中的深刻应用 [@problem_id:2194319]。
 

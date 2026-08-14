@@ -5,10 +5,8 @@
 
 ## 原理与机制
 
-![A sphere as a submanifold within 3D Euclidean space. At a point p on the sphere, the tangent plane T_pS is shown as a 2D plane, which is a subspace of the 3D tangent space T_pM (which is R^3 itself).](https://i.imgur.com/8a6b1e7.png)
 *图1：球面作为三维欧氏空间中的一个子流形。在球面上一点 $p$，其切空间 $T_pS$ 是一个二维平面，它是三维环境空间 $T_pM$（即 $\mathbb{R}^3$）的一个子空间。*
 
-![A vector field Y on a submanifold S. The ambient covariant derivative nabla_X Y at a point p results in a vector that has both a tangential component (within T_pS) and a normal component (in N_pS).](https://i.imgur.com/G5qW77c.png)
 *图2：在[子流形](@keyword=submanifolds|lang=zh-CN|style=Feynman) $S$ 上沿切向量 $X$ 对切向量场 $Y$ 求环境协变导数。结果 $\nabla^M_X Y$ 通常既有切向分量，也有法向分量，并不完全位于[切空间](@keyword=tangent_spaces|lang=zh-CN|style=Feynman) $T_pS$ 内。*
 
 想象一下，你是一个生活在球面上的二维生物，就像经典科幻小说《平面国》里的居民一样。你的整个宇宙就是这个弯曲的二维表面。你无法“跳出”你的世界去从外部观察它。那么，你该如何理解你所在宇宙的几何形状呢？更进一步，你所在世界的几何，与那个将你的世界包裹在内的、更高维度的三维空间之间，又存在着怎样的深刻联系？这正是黎曼几何中[子流形理论](@keyword=submanifold_theory|lang=zh-CN|style=Feynman)试图回答的核心问题。

@@ -12,7 +12,7 @@
 首先，我们必须回到事物的本源。抛物线的灵魂是什么？它不是一个复杂的代数方程，而是一个极其简单、优美的几何定义：**平面内所有到一个固[定点](@keyword=fixed_points|lang=zh-CN|style=Feynman)（我们称之为焦点 $F$）和一条固定直线（我们称之为准线 $d$）距离相等的点的集合。**
 
 <center>
-<img src="https://i.imgur.com/vHq7h7t.png" width="400" alt="Definition of a parabola with focus F and directrix d. A point P is on the parabola if the distance PF is equal to the perpendicular distance from P to d.">
+
 </center>
 
 想象一下，你手里同时握着一根绳子的两端，一端钉在焦点 $F$ 上，另一端连接到一个可以在准线 $d$ 上滑动的T形尺的滑块上，同时用一支笔紧贴着绳子和T形尺的直边。当你移动T形尺时，笔尖画出的轨迹就是一条抛物线。这支笔尖到焦点的距离（绳长的一部分）永远等于它到准线的距离（T形尺直边的长度）。
@@ -38,7 +38,7 @@
 $$ \text{正焦弦长度} = P_1F + P_2F = 2p + 2p = 4p $$
 
 <center>
-<img src="https://i.imgur.com/39kZ9lS.png" width="450" alt="Geometric derivation of the length of the latus rectum.">
+
 </center>
 
 看！我们几乎没有进行任何计算，仅凭抛物线的定义，就推导出了[正焦弦](@keyword=latus_rectum|lang=zh-CN|style=Feynman)的长度是焦距的四倍。这个 $4p$ 是一个内禀属性，由[焦点与准线](@keyword=focus_and_directrix|lang=zh-CN|style=Feynman)间的根本距离所决定。
@@ -70,7 +70,7 @@ $$ y^2 = 4p(p) = 4p^2 \implies y = \pm 2p $$
 **[旋转不变性](@keyword=rotational_invariance|lang=zh-CN|style=Feynman)**：更强大的情况是旋转。想象一颗彗星的轨道是一个倾斜的抛物线，或者你遇到了一个包含 $xy$ 混合项的方程，如 $x^2 - 2xy + y^2 - 8\sqrt{2}x = 0$。这些情况意味着抛物线的[对称轴](@keyword=axis_of_symmetry|lang=zh-CN|style=Feynman)不再与我们的 $x$ 轴或 $y$ 轴平行。但[正焦弦](@keyword=latus_rectum|lang=zh-CN|style=Feynman)的长度有变吗？当然没有！
 
 <center>
-<img src="https://i.imgur.com/8Qj87Wk.gif" width="500" alt="Animation showing that the latus rectum length is invariant under rotation of the parabola.">
+
 </center>
 
 我们可以随时选择一个“更聪明”的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)——一个与抛物线自身[对称轴](@keyword=axis_of_symmetry|lang=zh-CN|style=Feynman)对齐的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)。在这个新的、旋转过的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman) $(X, Y)$ 中，方程会变回我们熟悉的形式，比如 $(Y+2)^2 = 4(X+1)$。在这里，我们立刻看出 $4p=4$，所以[正焦弦长](@keyword=length_of_latus_rectum|lang=zh-CN|style=Feynman)度为4。因为长度这个物理量在坐标旋转下是不变的，所以原始倾斜抛物线的[正焦弦长](@keyword=length_of_latus_rectum|lang=zh-CN|style=Feynman)度也是4。这个[不变性原理](@keyword=principle_of_invariance|lang=zh-CN|style=Feynman)是现代物理学的基石之一。
@@ -89,7 +89,7 @@ $$ y^2 = 4p(p) = 4p^2 \implies y = \pm 2p $$
 2.  **它们的交点恰好落在准线上，而且就在抛物线的对称轴上！**
 
 <center>
-<img src="https://i.imgur.com/G5X6N2I.png" width="450" alt="Tangents at the endpoints of the latus rectum intersect on the directrix and are perpendicular.">
+
 </center>
 
 这简直太美了！焦点、准线、[正焦弦](@keyword=latus_rectum|lang=zh-CN|style=Feynman)和切线，这些看似分离的元素，被一个简单而深刻的几何关系联系在一起。这告诉我们，在数学的世界里，万[物相](@keyword=phases_of_matter|lang=zh-CN|style=Feynman)互关联。焦点定义了抛物线，[正焦弦](@keyword=latus_rectum|lang=zh-CN|style=Feynman)表征了焦点处的宽度，而这个宽度的边界又通过切线“指向”了最初定义它的准线。这是一个完美的闭环，一首和谐的数学诗篇。

@@ -38,7 +38,7 @@ $$
 让我们把这个关系画成图，横坐标是[比能](@keyword=specific_energy|lang=zh-CN|style=Feynman) $E$，纵坐标是水深 $y$。你会得到一条奇妙的“C”形曲线，我们称之为[比能](@keyword=specific_energy|lang=zh-CN|style=Feynman)-水深关系曲线。这条曲线就像是解读[明渠流](@keyword=open_channel_flow|lang=zh-CN|style=Feynman)奥秘的“罗塞塔石碑”。
 
 <center>
-<img src="https://i.imgur.com/zEnD85r.png" alt="Specific Energy Diagram" width="500"/>
+
 </center>
 <center>比能-水深关系图</center>
 
@@ -74,7 +74,7 @@ $$
 比如，在一个圆形的管道中，或者在一个包含主河道与浅滩的复合渠道中，[比能](@keyword=specific_energy|lang=zh-CN|style=Feynman)与水深的关系曲线会变得更加奇特。它可能不再是简单的“C”形，而是在某个深度范围发生弯曲和折叠。
 
 <center>
-<img src="https://i.imgur.com/39S5I3c.png" alt="Complex Specific Energy Diagram" width="500"/>
+
 </center>
 <center>复合渠道中可能出现三个[交替水深](@keyword=alternate_depths|lang=zh-CN|style=Feynman)</center>
 

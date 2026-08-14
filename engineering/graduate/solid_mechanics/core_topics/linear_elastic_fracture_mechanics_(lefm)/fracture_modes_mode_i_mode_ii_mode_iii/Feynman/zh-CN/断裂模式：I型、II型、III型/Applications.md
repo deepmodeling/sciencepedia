@@ -8,7 +8,7 @@
 
 工程师们面对的，从来都不是无限大的完美平板。他们与桥梁、[压力容器](@keyword=pressure_vessel|lang=zh-CN|style=Feynman)、飞机引擎这些有具体形状、有限尺寸的构件打交道。在这些结构中，裂纹可能以任意角度潜伏着。一块仅受简单拉伸的钢板，如果其内部的微小裂纹恰好是倾斜的，那么在裂纹尖端，这个纯粹的拉力就会被“分解”成一个试图将裂纹张开的I型分量和一个试图让其错动的II型分量[@problem_id:2642728]。这就是“混合模式”断裂——它是规则，而非例外。通过应力变换，工程师可以精确计算出每种模式的强度（$K_I$ 和 $K_{II}$），从而判断这个倾斜的“伤口”是否危险。
 
-![图1：倾斜裂纹将单一的[远场](@keyword=far_zone|lang=zh-CN|style=Feynman)拉伸[应力分解](@keyword=stress_decomposition|lang=zh-CN|style=Feynman)为局部的I型（[正应力](@keyword=normal_stresses|lang=zh-CN|style=Feynman)）和II型（[剪应力](@keyword=shear_stress|lang=zh-CN|style=Feynman)）载荷。](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Stress_transformation_Slanted_Crack.svg/600px-Stress_transformation_Slanted_Crack.svg.png)
+拉伸[应力分解](@keyword=stress_decomposition|lang=zh-CN|style=Feynman)为局部的I型（[正应力](@keyword=normal_stresses|lang=zh-CN|style=Feynman)）和II型（[剪应力](@keyword=shear_stress|lang=zh-CN|style=Feynman)）载荷。](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Stress_transformation_Slanted_Crack.svg/600px-Stress_transformation_Slanted_Crack.svg.png)
 *图1：倾斜裂纹将单一的远场拉伸[应力分解](@keyword=stress_decomposition|lang=zh-CN|style=Feynman)为局部的I型（正应力）和II型（剪应力）载荷。这种[应力分解](@keyword=stress_decomposition|lang=zh-CN|style=Feynman)是评估真实世界结构中任意方向[裂纹稳定性](@keyword=crack_stability|lang=zh-CN|style=Feynman)的关键。*
 
 不仅如此，构件的几何形状本身也会极大地影响裂纹尖端的[应力集中](@keyword=stress_concentration|lang=zh-CN|style=Feynman)程度。一个位于板件边缘的裂纹，远比深埋在内部同样长度的裂纹要危险得多。为了应对这种情况，工程师们发展出了一套“几何修正因子”（通常用字母 $Y$ 表示）的概念。这个无量纲的数字，就像一个放大系数，修正了那个简洁的 $\sigma \sqrt{\pi a}$ 公式，将板的宽度、裂纹的位置和形状等所有几何细节都考虑了进去。通过 dimensional analysis （[量纲分析](@keyword=dimensional_analysis|lang=zh-CN|style=Feynman)）我们可以证明应力强度因子必然具有 $K_I = Y\sigma\sqrt{\pi a}$ 这样的形式，而 $Y$ 是关于所有[相关长度](@keyword=correlation_length|lang=zh-CN|style=Feynman)比值（如裂纹长度与板宽之比 $a/W$）的函数[@problem_id:2642620]。如今，工程师们拥有各种标准几何形状下 $Y$ 因子的“手册”和精确公式，这让他们能够将理想化的理论应用于评估几乎任何实际结构的安全。
@@ -37,7 +37,7 @@
 
 那么，当一个裂纹同时承受I型和II型载荷时，它究竟会在何时、以何种方式扩展呢？这引出了“[混合模式断裂](@keyword=mixed_mode_fracture|lang=zh-CN|style=Feynman)准则”的研究。工程师们通过大量实验发现，材料的断裂行为可以用一个在 $K_I/K_{Ic}$ 和 $K_{II}/K_{IIc}$ [坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)下的“断裂包络线”来描述。这个[包络线](@keyword=envelope_curve|lang=zh-CN|style=Feynman)定义了材料能够承受的所有 $K_I$ 和 $K_{II}$ 的安全组合。这些[包络线](@keyword=envelope_curve|lang=zh-CN|style=Feynman)往往可以通过经验公式，如 $(\frac{K_I}{K_{Ic}})^m + (\frac{K_{II}}{K_{IIc}})^n = 1$来拟合。通过精密的实验和复杂的[非线性最小二乘法](@keyword=nonlinear_least_squares|lang=zh-CN|style=Feynman)数据处理，科学家们可以为特定材料确定最合适的指数 $m$ 和 $n$，从而建立起预测其在复杂应力状态下行为的可靠模型[@problem_id:2642672]。
 
-![图2：一个典型的[混合模式断裂](@keyword=mixed_mode_fracture|lang=zh-CN|style=Feynman)包络线。坐标轴分别由归一化的I型和II型[应力强度因子](@keyword=stress_intensity_factors|lang=zh-CN|style=Feynman)表示。曲线内部的点代表安全状态，而当载荷组合达到曲线上的点时，断裂就会发生。](https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Mixed_Mode_Fracture_Envelope.svg/500px-Mixed_Mode_Fracture_Envelope.svg.png)
+包络线。坐标轴分别由归一化的I型和II型[应力强度因子](@keyword=stress_intensity_factors|lang=zh-CN|style=Feynman)表示。曲线内部的点代表安全状态，而当载荷组合达到曲线上的点时，断裂就会发生。](https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Mixed_Mode_Fracture_Envelope.svg/500px-Mixed_Mode_Fracture_Envelope.svg.png)
 *图2：一个典型的[混合模式断裂](@keyword=mixed_mode_fracture|lang=zh-CN|style=Feynman)包络线。坐标轴分别由[归一化](@keyword=normalization|lang=zh-CN|style=Feynman)的I型和II型[应力强度因子](@keyword=stress_intensity_factors|lang=zh-CN|style=Feynman)表示。曲线内部的点代表安全状态，而当载荷组合达到曲线上的点时，断裂就会发生。这条曲线的形状由材料特性决定。*
 
 在数字时代，我们拥有了更强大的工具来探索和应用[断裂模式](@keyword=fracture_modes|lang=zh-CN|style=Feynman)。
@@ -53,7 +53,6 @@
 - **坚果（[脆性](@keyword=brittleness|lang=zh-CN|style=Feynman)材料）**：当你用臼齿碾碎一颗杏仁时，牙齿对坚果施加了巨大的法向压力。臼齿相对“钝”的几何形状（大的曲率半径 $R$）和低摩擦的碾磨动作，在坚果表面下产生了经典的[赫兹接触应力](@keyword=hertzian_contact_stress|lang=zh-CN|style=Feynman)场，其中环向拉应力是主导。坚果壳这种干燥、低韧性的材料，其抗拉强度远低于抗压强度。因此，它最容易在拉应力最大的地方萌生I型（张开型）裂纹，并在一瞬间“爆裂”开来。
 
 - **牛排（韧性材料）**：当你用门牙或犬齿去“撕咬”一块牛排时，情况则大不相同。牙齿更尖锐（小的[曲率半径](@keyword=radius_of_curvature|lang=zh-CN|style=Feynman) $R$），并且伴随着强烈的剪切和滑动动作（高[摩擦系数](@keyword=coefficient_of_friction|lang=zh-CN|style=Feynman) $\mu$）。肉类的肌纤维结构使其具有很高的断裂韧性，特别是抗[I型断裂](@keyword=mode_i_fracture|lang=zh-CN|style=Feynman)的能力很强。然而，在牙齿施加的强烈剪切力下，材料内部的剪应力会迅速达到其“剪切屈服强度”，或者说，II型和III型的应力强度因子会率先达到临界值。于是，食物的破坏不再是脆性的爆裂，而是通过剪切滑移和撕裂的方式（即“切割”）来完成。
-
 
 *图3：食肉动物的裂齿（左）经过演化，形成了适合切割（II/III型剪切主导）柔韧肉类的尖锐结构。食草动物的臼齿（右）则演化出宽大的研磨面，适合通过碾压（I型拉伸主导）来破碎坚硬的植物种子。牙齿形态与食性之间的协同演化，正是[断裂力学](@keyword=fracture_mechanics|lang=zh-CN|style=Feynman)原理在自然选择中的体现。*
 

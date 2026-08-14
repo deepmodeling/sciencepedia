@@ -15,7 +15,7 @@ Now, let's try to build a similar patch of area in [polar coordinates](@keyword=
 
 Let’s be more careful. Imagine you are standing at the origin. If you take a step of length $dr$ along a certain angle, you've moved a distance $dr$. Now, from that point, suppose you pivot by a small angle $d\theta$. How far have you traveled along the arc? The distance is *not* just $d\theta$—an angle is not a length! The length of an arc is given by the radius multiplied by the angle (in [radians](@keyword=radians|lang=en-US|style=Feynman)). So the arc length you trace is $r\,d\theta$.
 
-![A diagram showing a polar [area element](@keyword=area_element|lang=en-US|style=Feynman).](https://i.imgur.com/example.png "A polar area element is a small patch bounded by two radii and two arcs. Its sides are approximately dr and r dθ.")
+.](https://i.imgur.com/example.png "A polar area element is a small patch bounded by two radii and two arcs. Its sides are approximately dr and r dθ.")
 
 This is the crucial insight! The further you are from the origin (the larger the $r$), the longer the path you trace for the same small swing in angle $d\theta$. Think of a slice of pizza: the crust end of the slice is much wider than the pointy bit at the center.
 

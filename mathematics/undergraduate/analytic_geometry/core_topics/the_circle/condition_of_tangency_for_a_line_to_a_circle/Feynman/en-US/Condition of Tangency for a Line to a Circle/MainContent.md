@@ -18,7 +18,7 @@ Forget the whole circle for a moment. Just think about its center. The shortest 
 Here, then, is the golden rule: **A line is tangent to a circle if and only if the shortest distance from the center of the circle to the line is exactly equal to the circle's radius.**
 
 <center>
-<img src="https://i.imgur.com/K3y7Z9R.png" alt="Diagram showing the distance from the center of a circle to a tangent line is equal to the radius r. For a [secant line](@keyword=secant_line|lang=en-US|style=Feynman), the distance d is less than r. For a non-intersecting line, the distance d is greater than r." width="600"/>
+
 </center>
 
 If this distance is *less* than the radius, the line must have plunged *inside* the circle, cutting it in two places. If the distance is *greater* than the radius, the line misses the circle completely. But when the distance is *exactly* the radius, $d=r$, we have the perfect, single-point touch of tangency. This single, intuitive geometric idea is the key to everything that follows.
@@ -77,7 +77,7 @@ Once again, a simple geometric insight is all we need. Remember that shortest pa
 So, a key property emerges: **The radius to the [point of tangency](@keyword=point_of_tangency|lang=en-US|style=Feynman) is always perpendicular to the tangent line.**
 
 <center>
-<img src="https://i.imgur.com/gK1qD4D.png" alt="Diagram showing that the radius to the point of tangency is perpendicular to the tangent line. The normal vector of the line is parallel to this radius." width="500"/>
+
 </center>
 
 This is incredibly useful. In [analytic geometry](@keyword=analytic_geometry|lang=en-US|style=Feynman), the orientation of a line $Ax+By+C=0$ is captured by its **[normal vector](@keyword=normal_vector|lang=en-US|style=Feynman)**, $\vec{n} = (A, B)$, which is a vector that points perpendicularly away from the line. Since the radius to the point of tangency is also perpendicular to the line, it must be parallel to this [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman)!

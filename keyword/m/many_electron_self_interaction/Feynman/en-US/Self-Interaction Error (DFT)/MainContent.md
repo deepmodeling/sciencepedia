@@ -37,8 +37,6 @@ Think about adding water to a glass. The weight increases linearly with the amou
 
 Now, here's the failure of our approximate methods. Most common functionals, like the Local Density Approximation (LDA) and Generalized Gradient Approximations (GGAs), don't obey this law. For them, the energy $E(N)$ is a smooth, **convex** function—it sags downward between the integer points.
 
-![A diagram showing the difference between the exact piecewise-linear E(N) curve and an approximate convex E(N) curve.](https://i.imgur.com/example.png "This is a placeholder for a real diagram.")
-
 Why is this "sag" so disastrous? Let's go back to our two separated atoms, A and B, with one extra electron to share. The total energy is $E_{\mathrm{tot}} = E_A(N_A) + E_B(N_B)$, where $N_A + N_B = 1$.
 
 -   **Exact Theory (Straight Lines):** If $E_A$ and $E_B$ are straight lines, the total energy $E_{\mathrm{tot}}$ is also a straight line. The minimum value of a straight line on an interval must be at one of its ends—either $N_A=1, N_B=0$ or $N_A=0, N_B=1$. The electron localizes completely, as it should.

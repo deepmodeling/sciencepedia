@@ -20,8 +20,6 @@
 
 这里的 $c$ 是一个基本速度，它等于格子间距 $\Delta x$ 除以时间步长 $\Delta t$。这意味着，在一个时间步长内，粒子恰好能从一个格子“跳”到它的邻居格子上。
 
-![](https://cdn.mathpix.com/snip/images/zFmPzR7A30t12lA_1e4Qc_H_z6C7D1D2_fN1Lq9Qk08.original.fullsize.png)
-
 但是，仅仅有方向还不够。每个方向上的粒[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)体所占的“权重”或比例也必须精心设定。对于D2Q9模型，这些权重 $w_i$ 分别是：
 - 静止粒子 ($i=0$)：$w_0 = 4/9$
 - 轴向粒子 ($i=1,2,3,4$)：$w_i = 1/9$

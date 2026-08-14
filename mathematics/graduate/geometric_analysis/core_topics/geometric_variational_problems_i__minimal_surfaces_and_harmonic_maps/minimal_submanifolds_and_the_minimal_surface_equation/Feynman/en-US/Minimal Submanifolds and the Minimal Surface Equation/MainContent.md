@@ -29,7 +29,7 @@ The variety doesn't stop there. Consider the **Scherk's surface**, which, in one
 
 <center>
   <figure>
-    <img src="https://i.imgur.com/r02B5aE.png" alt="Catenoid and Helicoid" width="600">
+
     <figcaption>The Catenoid (left) and the Helicoid (right), two classic minimal surfaces that are locally identical in their geometry.</figcaption>
   </figure>
 </center>

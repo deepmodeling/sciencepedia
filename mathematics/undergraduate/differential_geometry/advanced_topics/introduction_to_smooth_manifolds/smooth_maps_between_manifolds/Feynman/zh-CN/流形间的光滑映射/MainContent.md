@@ -14,7 +14,7 @@
 这正是数学家们定义[流形](@keyword=manifold|lang=zh-CN|style=Feynman)之间“[光滑映射](@keyword=smooth_maps|lang=zh-CN|style=Feynman)”的绝妙思想。一个从[流形](@keyword=manifold|lang=zh-CN|style=Feynman) $M$ 到[流形](@keyword=manifold|lang=zh-CN|style=Feynman) $N$ 的映射 $f$ 被称为 **光滑的(smooth)**，如果当我们在 $M$ 中的任意一点 $p$ 附近取一个[局部坐标](@keyword=local_coordinates|lang=zh-CN|style=Feynman)卡 $(U, \varphi)$，并在 $N$ 中 $f(p)$ 附近取一个局部坐标卡 $(V, \psi)$ 时，这个映射在“地图”上的样子——也就是复合映射 $\psi \circ f \circ \varphi^{-1}$ ——是一个从欧几里得空间 $\mathbb{R}^m$ 的一个[开集](@keyword=open_set|lang=zh-CN|style=Feynman)到 $\mathbb{R}^n$ 的一个[开集](@keyword=open_set|lang=zh-CN|style=Feynman)的光滑函数。这里的“光滑”是我们早已在微积分中熟悉的，意味着拥有任意阶连续偏导数。
 
 <center>
-<img src="https://i.imgur.com/e7j738A.png" width="600">
+
 <br>
 <small>图1：[光滑映射](@keyword=smooth_maps|lang=zh-CN|style=Feynman)的定义。映射 $f: M \to N$ 是否光滑，取决于其在局部坐标卡 $\varphi$ 和 $\psi$ 下的表示 $\psi \circ f \circ \varphi^{-1}$ 是否是[欧氏空间](@keyword=euclidean_space|lang=zh-CN|style=Feynman)之间的[光滑函数](@keyword=smooth_functions|lang=zh-CN|style=Feynman)。</small>
 </center>
@@ -42,7 +42,7 @@ $df_p: T_pM \to T_{f(p)}N$
 3.  **[局部微分同胚](@keyword=local_diffeomorphism|lang=zh-CN|style=Feynman) (Local Diffeomorphism)**：当源[流形](@keyword=manifold|lang=zh-CN|style=Feynman)和目标[流形](@keyword=manifold|lang=zh-CN|style=Feynman)的维数相同时，如果 $df_p$ 既是[单射](@keyword=injective_mapping|lang=zh-CN|style=Feynman)又是满射（即 **双射 (bijective)** 或 **同构 (isomorphism)**），我们就称 $f$ 在点 $p$ 是一个[局部微分同胚](@keyword=local_diffeomorphism|lang=zh-CN|style=Feynman)。这是一种最“良好”的行为。根据微积分中强大的 **[反函数定理](@keyword=inverse_function_theorem|lang=zh-CN|style=Feynman)**，这恰恰保证了 $f$ 在 $p$ 点附近是可逆的！也就是说，在局部上， $f$ 就像一个光滑的坐标变换。这对于物理学家来说至关重要，因为他们总是在寻找“好”的[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)来简化问题。如果一个[坐标变换](@keyword=coordinate_transformations|lang=zh-CN|style=Feynman)的雅可比矩阵[行列式](@keyword=determinant|lang=zh-CN|style=Feynman)不为零（这正是 $df_p$ 可逆的条件），那么这个变换就是一个有效的[局部坐标](@keyword=local_coordinates|lang=zh-CN|style=Feynman)系 [@problem_id:1677179]。
 
 <center>
-<img src="https://i.imgur.com/u7p3wzk.png" width="700">
+
 <br>
 <small>图2：[光滑映射](@keyword=smooth_maps|lang=zh-CN|style=Feynman)的局部行为。从左至右分别为浸入、淹没和[局部微分同胚](@keyword=local_diffeomorphism|lang=zh-CN|style=Feynman)的示意图，它们分别由其[微分](@keyword=pushforward|lang=zh-CN|style=Feynman) $df_p$ 的[单射](@keyword=injective_mapping|lang=zh-CN|style=Feynman)、[满射](@keyword=surjection|lang=zh-CN|style=Feynman)和[双射](@keyword=bijection|lang=zh-CN|style=Feynman)性质决定。</small>
 </center>

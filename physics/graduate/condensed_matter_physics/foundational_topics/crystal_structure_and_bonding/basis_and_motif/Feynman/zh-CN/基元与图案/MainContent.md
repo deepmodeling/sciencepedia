@@ -24,7 +24,7 @@ $晶体结构 = 晶格 + 基元$
 这个公式告诉我们，一个完整的[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)，是通过将一个基元精确地、不加改变地放置到每一个[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)点上而形成的。就像用同一枚印章，在网格纸的每一个格点上盖章，最终得到一整页的图案。
 
 <center>
-<img src="https://i.imgur.com/uS3kG3P.png" width="600">
+
 <br>
 图1：[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)的基本构成。(a) 一个抽象的二维[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)点阵。(b) 一个由两个不同原子组成的基元。(c) 将基元放置在每个[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)点上，形成完整的[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)。
 </center>
@@ -84,7 +84,7 @@ $\mathbf{r}_j = u_j \mathbf{a}_1 + v_j \mathbf{a}_2 + w_j \mathbf{a}_3$
 但是，我们也可以换一种完全不同的看法。我们可以把这个点阵看作是由一个个“瘦高”的长方形单元组成的。在这种看法下，这个结构可以被描述成一个**长方形[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)**（其[原胞](@keyword=primitive_unit_cell|lang=zh-CN|style=Feynman)是原来正方形的两倍大），配上一个包含两个原子的**双原子基元**（一个在长方形的角上，一个在中心）。
 
 <center>
-<img src="https://i.imgur.com/3W0k0Xv.png" width="500">
+
 <br>
 图2：同一个点阵的两种不同描述。左图：正方形[原胞](@keyword=primitive_unit_cell|lang=zh-CN|style=Feynman)（蓝色）和单原子基元。右图：长方形[原胞](@keyword=primitive_unit_cell|lang=zh-CN|style=Feynman)（红色）和双原子基元。两者生成的点阵完全相同。
 </center>

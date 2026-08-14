@@ -15,11 +15,7 @@
 
 然而，分子并非数学上的点。它们是弥散的、模糊的电子云。当我们仔细审视这种“模糊性”时，事情就变得有趣起来。让我们做一个思想实验：想象两个带电的“绒球”，而不是两个[点电荷](@keyword=point_charges|lang=zh-CN|style=Feynman)。当它们相距很远时，它们的行为与[点电荷](@keyword=point_charges|lang=zh-CN|style=Feynman)无异。但当它们靠近，甚至开始部分重叠时，情况就不同了。一个“绒球”内部的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)不会感受到另一个“绒球”全部的推力或拉力，因为它被对方的电子云部分“包裹”和“屏蔽”了。这种效应被称为**[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)穿透（Charge Penetration）**。结果是，近距离下的静电作用能偏离了简单的 $1/R$ 关系。描述这种偏离的数学形式出人意料地优美，它常常涉及到一种叫做“[误差函数](@keyword=error_function|lang=zh-CN|style=Feynman)”（$\text{erf}(x)$）的[特殊函数](@keyword=special_functions|lang=zh-CN|style=Feynman)，它平滑地将近距离的复杂行为过渡到远距离的[点电荷](@keyword=point_charges|lang=zh-CN|style=Feynman)行为 [@problem_id:2909111]。这告诉我们自然界的第一个深刻教训：尺度很重要，简化模型在微观世界的边缘会失效。
 
-
-
 _图1：[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)[穿透效应](@keyword=penetration_effect|lang=zh-CN|style=Feynman)示意图。当两个高斯电荷分布相距很远时，它们的行为类似于[点电荷](@keyword=point_charges|lang=zh-CN|style=Feynman)。当距离很近时，它们的密度发生重叠，[相互作用能](@keyword=interaction_energy|lang=zh-CN|style=Feynman)偏离了简单的 $1/R$ 库仑定律，在短程处表现出“阻尼”效应。_
-
-
 
 现在，考虑一个更普遍的情况：即使分子是[电中性](@keyword=charge_neutrality|lang=zh-CN|style=Feynman)的，比如水分子（$H_2O$），其内部电荷分布也可能是不均匀的，形成一个永久的电偶极矩（正负电荷中心不重合）。这个偶极子会在周围产生电场。当另一个分子（比如另一个水分子，或者一个本身没有偶极矩的甲烷分子）进入这个电场时，它的电子云会被“扭曲”或“变形”。原本[均匀分布](@keyword=uniform_distribution|lang=zh-CN|style=Feynman)的电子云会偏向偶极子的正电端，留下一个略带正电的原子核区域。瞧！一个原本没有偶极矩的分子，现在被诱导出了一个**[感应偶极矩](@keyword=induced_dipole_moment|lang=zh-CN|style=Feynman)（Induced Dipole）**。
 
@@ -35,11 +31,7 @@ _图1：[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)[穿透效应
 
 理论分析表明，在低重叠的近似下，这种排斥能的大小正比于两个分子间原子轨道交叠积分 $S$ 的平方（$E_{\text{exch}} \propto S^2$）[@problem_id:2909098]。交叠积分 $S$ 衡量了两个电子云在空间中重叠的程度。这个能量与 $S^2$ 的关系非常直观：重叠得越多，排斥力就指数级地急剧增大。正是这堵“Pauli之墙”，赋予了分子确定的形状和体积。
 
-
-
 _图2：交换-排斥能与轨道交叠的关系。随着交叠积分S的增加，能量急剧地[指数增长](@keyword=exponential_growth|lang=zh-CN|style=Feynman)，形象地说明了“Pauli墙”的概念。_
-
-
 
 然而，量子世界不仅有排斥，还有一种更为奇妙和普适的吸引力——**色散力（Dispersion Force）**，也称London力。想象两个完全中性、球形对称的原子，比如氦原子。它们没有净[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，也没有永久偶极矩。经典理论会告诉你它们之间没有任何相互作用。但实验说：不，它们之间有吸引力！
 
@@ -61,12 +53,7 @@ $$
 $E_{\mathrm{int}} = E_{\mathrm{elst}} + E_{\mathrm{exch}} + E_{\mathrm{ind}} + E_{\mathrm{disp}}$
 通过分析这个“能量账单”，我们就能知道，一个[氢键](@keyword=hydrogen_bond|lang=zh-CN|style=Feynman)的强大吸引力主要是由静电和感应贡献的，而两个甲烷分子间的微弱吸引力则几乎完全归功于色散力。值得注意的是，不同的EDA方案（如SAPT或ALMO）可能会对这些项的定义和计算方式有细微差别，这提醒我们，这些分解出来的能量项是帮助我们理解物理过程的有效构造，而非可以直接测量的物理量 [@problem_id:2909102]。
 
-
-
-![An example of an Energy Decomposition Analysis (EDA) bar chart for a hydrogen-bonded water dimer, showing that the total interaction energy is a balance of large attractive (Electrostatics, Induction, Dispersion) and large repulsive (Exchange) components.](https://i.imgur.com/uRkLgQ1.png)
 _图3：水二聚体的[能量分解分析](@keyword=energy_decomposition_analysis|lang=zh-CN|style=Feynman)（EDA）条形图示例。它显示了总相互作用能是大的吸引项（静电、感应、[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)）和大的排斥项（交换）之间平衡的结果。_
-
-
 
 除了在数字上分解，我们能否在空间中“看到”这些相互作用呢？答案是肯定的，这要归功于**非共价相互作用（NCI）**分析方法 [@problem_id:2453875] [@problem_id:2801179]。这个天才的想法是直接从总电子密度 $\rho(\mathbf{r})$ 这张最基本的“分子蓝图”中提取信息。
 

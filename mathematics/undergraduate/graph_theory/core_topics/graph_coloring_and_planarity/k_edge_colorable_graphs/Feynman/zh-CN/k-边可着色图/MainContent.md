@@ -44,7 +44,7 @@ $$ \chi'(G) = \Delta(G) \quad (\text{如果 } G \text{ 是偶图}) $$
 但是，世界并不总是那么井然有序。当图的结构变得更复杂，特别是当图中出现“奇数”成员组成的圈子时，情况就变了。最简单的例子就是一个**三角形**（$C_3$）。它有 3 个顶点，3 条边，每个[顶点的度](@keyword=degree_of_a_vertex|lang=zh-CN|style=Feynman)都是 2，所以 $\Delta=2$。我们能用 2 种颜色给它着色吗？试试看：给第一条边染成红色，第二条边染成蓝色，那么第三条边呢？它既与红边相邻，又与蓝边相邻，所以它不能是红色，也不能是蓝色。我们必须引入第三种颜色！[@problem_id:1516010]
 
 <center>
-<img src="https://static.commath.com/images/problems/1516010/C3-coloring.png" alt="A 3-cycle requires 3 edge colors, even though its maximum degree is 2." style="width: 250px;">
+
 <br>
 <small><i>一个简单的三角形就需要 $\Delta+1=3$ 种颜色。</i></small>
 </center>
@@ -95,7 +95,7 @@ $$ \chi'(G) \le \left\lfloor \frac{3}{2}\Delta(G) \right\rfloor $$
 让我们来做一个巧妙的变换。对于任何一个图 $G$，我们可以构造一个全新的图，称为它的**线图 (line graph)**，记作 $L(G)$。在线图中，原来 $G$ 的每一条**边**，都变成了 $L(G)$ 的一个**顶点**。如果 $G$ 中的两条边共享一个端点，那么在 $L(G)$ 中，它们对应的两个顶点之间就连一条边。
 
 <center>
-<img src="https://static.commath.com/images/problems/1515992/line-graph-example.png" alt="An example of a graph G and its corresponding line graph L(G)." style="width: 500px;">
+
 <br>
 <small><i>左图 $G$ 的[边着色](@keyword=proper_edge_coloring|lang=zh-CN|style=Feynman)问题，等价于右图 $L(G)$ 的[顶点着色](@keyword=vertex_coloring|lang=zh-CN|style=Feynman)问题。</i></small>
 </center>

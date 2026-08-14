@@ -23,8 +23,6 @@
 
 想象一下，磁力线是一组有弹性的橡皮筋。如果你想约束高压等离子体，就必须将这些橡皮筋弯曲并包围它。弯曲的橡皮筋中的[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)提供了[约束力](@keyword=constraint_forces|lang=zh-CN|style=Feynman)。现在，考虑一个简单的**磁镜**，这是一种常见的约束装置，其两端的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)比中间强。磁力线在中心向外凸出，朝向等离子体轴线凹陷。
 
-![一张示意图，显示了一个简单的磁镜，其磁力线向外弯曲，标记为“坏曲率”；以及一个磁尖，其磁力线向内弯曲，标记为“好曲率”。](https://example.com/bad_good_curvature.png)
-
 从等离子体的角度来看，这些向外弯曲的磁力线试图变直，从而将等离子体向外推。这种向外的推力作用完全像一个将等离子体从中心拉开的[引力场](@keyword=gravitational_field|lang=zh-CN|style=Feynman)。这就是我们所说的**坏曲率**。等离子体岌岌可危地栖息在一个“磁山”上，并有强烈的愿望滑下去。通过分析[储存在磁场中的能量](@keyword=energy_stored_in_magnetic_field|lang=zh-CN|style=Feynman)，可以严格证明，这样一个简单的[磁镜](@keyword=magnetic_mirror|lang=zh-CN|style=Feynman)构型对于交换模是内在不稳定的[@problem_id:358017] [@problem_id:233653]。
 
 相反，如果磁力线以另一种方式弯曲——朝向轴线是凸的，就像在**磁尖**中那样——它们就创造了一个“磁谷”。等离子体舒适地坐在谷底。这是**好曲率**，并且是内在稳定的。

@@ -14,7 +14,7 @@
 <br/>
 
 <center>
-  <img src="https://i.imgur.com/xO9yK07.png" alt="A 2f Fourier-transforming optical setup" width="600">
+
   <br/>
   <small>图1: 一个典型的2f傅里叶变换光路。物体被放置在透镜的前焦平面，其傅里叶变换呈现在后焦平面上。</small>
 </center>

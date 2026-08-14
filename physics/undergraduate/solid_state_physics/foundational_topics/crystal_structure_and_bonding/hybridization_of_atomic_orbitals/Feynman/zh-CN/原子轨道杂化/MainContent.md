@@ -18,7 +18,7 @@
 第一步，是**电子激发 (promotion)**。原子内部进行一次小小的重组，将一个能量较低的 $2s$ 轨道上的电子，“提升”到能量较高的空的 $2p$ 轨道上。现在，碳原子拥有了四个未配对的电子（一个在 $2s$，$3$ 个在 $2p$），具备了形成四个键的潜力。然而，天下没有免费的午餐。这次激发需要消耗能量。具体来说，这个能量成本恰好等于一个 $2p$ 电子和一个 $2s$ 电子的能量之差，即 $\Delta E = E_{2p} - E_{2s}$。根据计算，这笔“启动资金”大约需要 402 kJ/mol [@problem_id:1996337]。从能量角度看，这似乎是一笔亏本买卖，因为系统总是趋向于能量更低的状态。
 
 <center>
-<img src="https://i.imgur.com/gSsqp7H.png" width="700" alt="从碳原子的[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)（左）到[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)（中），再到[sp3杂化](@keyword=sp3_hybridization|lang=zh-CN|style=Feynman)态（右）的能量变化示意图。激发需要能量输入，但杂化轨道能量是原始[轨道能量](@keyword=orbital_energy|lang=zh-CN|style=Feynman)的加权平均值。">
+
 <figcaption>图1：碳原子从[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)到sp³杂化态的能量变化示意图。激发需要能量成本，但最终会通过成键获得巨大回报。</figcaption>
 </center>
 
@@ -39,7 +39,7 @@
 *   **$sp$ 杂化 (线性)**：在乙炔 ($C_2H_2$) 这样的[线性分子](@keyword=linear_molecules|lang=zh-CN|style=Feynman)中，碳原子更加“节俭”。它只用一个 $s$ 轨道和一个 $p$ [轨道混合](@keyword=orbital_mixing|lang=zh-CN|style=Feynman)，形成两个呈 $180^\circ$ 直线[排列](@keyword=permutation|lang=zh-CN|style=Feynman)的 $sp$ [杂化轨道](@keyword=hybrid_orbitals|lang=zh-CN|style=Feynman)，用于形成 $\sigma$ 骨架。剩下的两个 $p$ 轨道则互相垂直，都垂直于分子的轴线，它们将形成两个 $\pi$ 键，像两根管子一样套在 $\sigma$ 键的周围。
 
 <center>
-<img src="https://i.imgur.com/rA3O7A5.png" width="800" alt="sp3, sp2, 和 sp [杂化轨道](@keyword=hybrid_orbitals|lang=zh-CN|style=Feynman)的几何构型以及对应的分子实例：甲烷（四面体），乙烯（平面三角形），和乙炔（线性）。">
+
 <figcaption>图2：sp³（左）、sp²（中）和 sp（右）杂化方案及其对应的分子几何形状。未参与杂化的p轨道（紫色）用于形成[π键](@keyword=pi_bonds|lang=zh-CN|style=Feynman)。</figcaption>
 </center>
 

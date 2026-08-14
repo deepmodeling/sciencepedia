@@ -12,7 +12,7 @@
 让我们从最简单的情形开始：一束单一颜色的光（单色光）垂直地照射到光栅上。我们聚焦于两条相邻的细槽，它们之间的距离我们称之为光栅常数，记作 $d$。当光波通过这两条细槽后，向着与原方向成 $\theta$ 角的方向传播时，来自下方细槽的光波比来自上方细槽的光波需要多走一段路程。这段额外的路程，我们称之为“[光程差](@keyword=optical_path_difference|lang=zh-CN|style=Feynman)”（path difference）。
 
 <center>
-<img src="https://i.imgur.com/vHqQUnN.png" width="450">
+
 </center>
 <br>
 

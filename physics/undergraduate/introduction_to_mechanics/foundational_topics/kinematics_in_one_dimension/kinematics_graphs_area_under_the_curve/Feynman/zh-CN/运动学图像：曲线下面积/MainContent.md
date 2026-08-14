@@ -15,8 +15,6 @@
 
 让我们从最简单的情况开始，画一张“速度-时间”图（我们称之为 $v-t$ 图）。时间在横轴上，速度在纵轴上。对于刚才在高速公路上以恒定速度行驶的你来说，你的[速度-时间图](@keyword=velocity_time_graph|lang=zh-CN|style=Feynman)是一条水平的直线，因为你的速度始终没有改变。
 
-<img src="https://assets.test.eedi.com/application/images/2197269_1.png" alt="[恒定速度](@keyword=constant_velocity|lang=zh-CN|style=Feynman)下的[速度-时间图](@keyword=velocity_time_graph|lang=zh-CN|style=Feynman)" width="400">
-
 现在，看看这条线和时间轴之间形成的区域。它是一个矩形。这个矩形的高度是你的速度 $v$，宽度是你行驶的时间 $t$。矩形的面积是多少？就是高乘以宽，即 $v \times t$。这正是你行驶的距离！我们把一个简单的乘法问题，变成了一个几何问题——计算一个矩形的面积。
 
 这有什么了不起的？对于恒速运动来说，确实没什么。但这个想法是开启一扇大门的钥匙。
@@ -29,8 +27,6 @@
 
 它的[速度-时间图](@keyword=velocity_time_graph|lang=zh-CN|style=Feynman)不再是一条水平线，而是一条倾斜的直线。这条线、时间轴以及起始和结束时刻的竖直线围成了一个什么形状？一个梯形！
 
-<img src="https://assets.test.eedi.com/application/images/2197211_1.png" alt="[匀加速运动](@keyword=uniform_acceleration|lang=zh-CN|style=Feynman)下的[速度-时间图](@keyword=velocity_time_graph|lang=zh-CN|style=Feynman)" width="400">
-
 你可能会回忆起初中数学，梯形的面积公式是“（上底+下底）×高/2”。在这里，上底和下底就是初速度 $v_i$ 和末速度 $v_f$，高就是时间间隔 $T$。所以，这个梯形的面积是 $\frac{(v_i + v_f)T}{2}$。
 
 令人惊奇的是，通过[运动学](@keyword=kinematics|lang=zh-CN|style=Feynman)公式推导出的位移 $\Delta x$ 恰好也是这个值：$\Delta x = \frac{(v_i + v_f)T}{2}$。这绝非巧合！我们再次发现，位移就是[速度-时间图](@keyword=velocity_time_graph|lang=zh-CN|style=Feynman)下的面积。从矩形到梯形，我们的几何工具变得更强大了，它现在可以处理速度均匀变化的情况了。
@@ -42,8 +38,6 @@
 那么，如果我们画一张“加速度-时间”图（$a-t$ 图），它下面的面积又代表什么呢？
 
 让我们看看一个微型无人机的机动测试 [@problem_id:2197212]。它先是在 $T_1$ 时间内以恒定的加速度 $a_1$ 向前冲刺，紧接着在 $T_2$ 时间内以恒定的加速度 $-a_2$ 反向制动。它的 $a-t$ 图由两个矩形构成：一个在时间轴上方，面积为 $a_1 T_1$；一个在时间轴下方，面积为 $-a_2 T_2$。
-
-<img src="https://assets.test.eedi.com/application/images/2197212_1.png" alt="分段恒定加速度下的[加速度-时间图](@keyword=acceleration_time_graph|lang=zh-CN|style=Feynman)" width="400">
 
 整个过程下来，无人机速度的总变化量 $\Delta v$ 是多少呢？正是这两个矩形面积的代数和：$\Delta v = a_1 T_1 - a_2 T_2$。
 
@@ -74,8 +68,6 @@
 
 - **路程（Distance）**：但如果你想知道你的车一共跑了多长的路（就像汽车里程表记录的那样），你就不能让前进和后退的路程相互抵消。你需要把所有运动都看作是“有价值”的。这时，你需要计算所有面积的**[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)**之和。也就是说，把时间轴下方的面积也当作正值来累加。
 
-<img src="https://assets.test.eedi.com/application/images/2197227_1.png" alt="包含正负速度的[速度-时间图](@keyword=velocity_time_graph|lang=zh-CN|style=Feynman)" width="400">
-
 通过 $v-t$ 图，位移和路程这两个既相关又非常容易混淆的概念，被区分得一清二楚。位移是“旅程的净成果”，而路程是“旅途的总长度”。
 
 ### 字里行间的奥秘：从图中读出极值
@@ -99,8 +91,6 @@
 $$T = \int_{x_1}^{x_2} \frac{1}{v(x)} dx$$
 
 请仔细端详这个积分式！它告诉我们，总时间 $T$ 正是另一张全新图表下的面积——一张绘制了“**速度的倒数 $(1/v)$**”对“**位置 $(x)$**”的图！
-
-<img src="https://assets.test.eedi.com/application/images/2197241_1.png" alt="1/v vs. x 图" width="400">
 
 这简直太奇妙了！同样是“图下面积”这个核心思想，仅仅是更换了坐标轴上的物理量，它所代表的意义就从“位移”变成了“时间”。同样，对于一个在水中运动的探测器，我们可以通过计算“加速度倒数 $(1/a)$”对“速度 $(v)$”图下的面积来求得时间 [@problem_id:2197238]。
 

@@ -3,7 +3,7 @@
 
 本文将带领读者深入探索轨道的迷人世界。我们将从**第一部分：原则与机制**开始，通过几何、代数和函数等领域的生动例子，建立对轨道核心概念的直观理解。你将看到一个点如何在旋转下形成一个圆，一个矩阵如何在[共轭作用](@keyword=action_by_conjugation|lang=zh-CN|style=Feynman)下找到它的“同类”。接着，在**第二部分：应用与跨学科连接**中，我们将见证这一抽象概念的惊人威力，了解它如何成为[晶体学](@keyword=crystallography|lang=zh-CN|style=Feynman)、物理学、组合数学乃至[伽罗瓦理论](@keyword=galois_theory|lang=zh-CN|style=Feynman)等多个学科的基石，帮助科学家和数学家进行分类、计数和构建理论。通过这次旅程，你将发现，轨道不仅仅是一个代数术语，更是一种洞察世界潜在结构与统一之美的深刻思维方式。
 
-![图1: [旋转群](@keyword=rotation_group|lang=zh-CN|style=Feynman) $SO(2)$ 作用下，点 $(5,12)$ 的轨道是一个半径为 13 的圆。](https://i.imgur.com/2s3F2aR.png)
+ $SO(2)$ 作用下，点 $(5,12)$ 的轨道是一个半径为 13 的圆。](https://i.imgur.com/2s3F2aR.png)
 
 ## 原则与机制
 

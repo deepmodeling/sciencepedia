@@ -36,7 +36,7 @@ $$
 这就像在我们的概率山坡上，用一道 $y=x^2$ 的[抛物线](@keyword=parabola|lang=zh-CN|style=Feynman)形“围栏”划出一片区域。我们的任务就是计算这片区域上方的山体体积。我们通过积分来实现这一点：首先，将 $x$ 固定，沿着 $y$ 轴方向从 0 积分到 $x^2$，这相当于计算了一块垂直于 $x$ 轴的“山体切片”的面积。然后，我们把这些切片的面积从 $x=0$ 到 $x=1$ 全部加起来，就得到了我们想要的体积。
 
 <center>
-<img src="https://i.imgur.com/vH9b2q0.png" width="400">
+
 </center>
 <br>
 
@@ -53,7 +53,7 @@ $$
 现在，假设我们想计算缺陷出现在半径为 $r_1$ 和 $r_2$ 的两个同心圆之间的[环形](@keyword=annulus|lang=zh-CN|style=Feynman)区域内的概率。如果用我们之前的矩形切割法（[笛卡尔坐标](@keyword=cartesian_coordinates|lang=zh-CN|style=Feynman)），那将是一场噩梦。积分的边界会变得异常复杂。
 
 <center>
-<img src="https://i.imgur.com/a4gYl9d.png" width="500">
+
 </center>
 <br>
 

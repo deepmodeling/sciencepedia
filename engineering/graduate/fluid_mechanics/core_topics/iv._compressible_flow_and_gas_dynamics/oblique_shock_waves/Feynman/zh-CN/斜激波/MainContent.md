@@ -26,7 +26,7 @@
 真正经历“冲击”的，只有那个垂直撞向[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)的法向速度 $V_{1n}$。对于这个分量而言，它所遭遇的完完全全就是一个我们已经熟悉的**[正激波](@keyword=normal_shock_waves|lang=zh-CN|style=Feynman) (normal shock wave)**。所有那些我们为[正激波](@keyword=normal_shock_waves|lang=zh-CN|style=Feynman)推导出的复杂关系式——压力的剧增、密度的提高、温度的飙升——都可以在这里直接使用，只要我们把注意力完全集中在这个法向分量上。
 
 <center>
-<img src="https://i.imgur.com/WdC551q.png" width="600">
+
 <br>
 图1：将上游速度 $V_1$ 分解为垂直于[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)的法向分量 $V_{1n}$ 和平行于[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)的切向分量 $V_{1t}$。切向分量 $V_{2t}$ 穿过[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)后保持不变，而法向分量 $V_{2n}$ 则经历了一次[正激波](@keyword=normal_shock_waves|lang=zh-CN|style=Feynman)的压缩。
 </center>

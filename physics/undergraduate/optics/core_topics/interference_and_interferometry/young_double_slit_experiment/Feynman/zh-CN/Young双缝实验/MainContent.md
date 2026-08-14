@@ -14,7 +14,7 @@
 实验装置非常简洁：一束光照射到一块不透明的挡板上，板上有两条极其靠近的平行狭缝。光穿过这两条狭缝后，就像我们同时扔进池塘的两颗石子，形成了两个新的波源。这两束[光传播](@keyword=light_propagation|lang=zh-CN|style=Feynman)到远处的屏幕上，在屏幕的每一点相遇。
 
 <p align="center">
-  <img alt="Diagram of Young's double-slit experiment showing path difference." src="https://i.imgur.com/kS6Lg7f.png" width="600">
+
 </p>
 <p align="center"><i>图1：[杨氏双缝实验](@keyword=young_s_double_slit_experiment|lang=zh-CN|style=Feynman)几何示意图。从狭缝 $S_1$ 和 $S_2$ 到达屏幕上某点 $P$ 的光，其[光程差](@keyword=optical_path_difference|lang=zh-CN|style=Feynman) $\Delta L = d \sin\theta$ 决定了在该点发生[相长干涉](@keyword=constructive_interference|lang=zh-CN|style=Feynman)还是[相消干涉](@keyword=destructive_interference|lang=zh-CN|style=Feynman)。</i></p>
 

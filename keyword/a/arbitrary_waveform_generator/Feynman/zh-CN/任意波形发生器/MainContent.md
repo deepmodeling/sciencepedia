@@ -13,5 +13,5 @@
 
 我们能制作出什么样的波形呢？让我们试着创建一个简单的上升斜坡，即[锯齿波](@keyword=sawtooth_wave|lang=zh-CN|style=Feynman)。为了让电压平滑上升，我们应该从最低到最高逐级遍历电压电平。这对应于向 DAC 馈送一个简单递增的[二进制代码](@keyword=binary_code|lang=zh-CN|style=Feynman)序列：`000`、`001`、`010`、`011`、`100`、`101`、`110`、`111`。每当“时钟”滴答一次，DAC 就会接收下一个代码，并尽职地将其输出调整到下一个电压电平。结果是一个近似于直线的阶梯波，从最低电压攀升到最高电压 [@problem_id:1298394]。这就是 AWG 的基本魔力：一个按时间排序的数字序列在电压-时间域变成了一个形状。
 
-![一个3位[数模转换器](@keyword=digital_to_analog_converter|lang=zh-CN|style=Feynman)（DAC）生成一个[锯齿波](@keyword=sawtooth_wave|lang=zh-CN|style=Feynman)。数字代码000到111被顺序输入，产生一个阶梯式的模拟输出，该输出近似于一个平滑的斜坡。](https://assets.bitbanged.com/editor/figures/sawtooth-dac.svg)
+（DAC）生成一个[锯齿波](@keyword=sawtooth_wave|lang=zh-CN|style=Feynman)。数字代码000到111被顺序输入，产生一个阶梯式的模拟输出，该输出近似于一个平滑的斜坡。](https://assets.bitbanged.com/editor/figures/sawtooth-dac.svg)
 *图 1：一个递增的 3 位数字代码[序列生成](@keyword=sequence_generation|lang=zh-CN|style=Feynman)一个阶梯状的“锯齿”波形。每个数字代码对应一个离散的电压电平，形成对所需模拟信号的阶梯式近似。*

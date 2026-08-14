@@ -12,7 +12,7 @@
 第一个词汇是“骨架视图”（Skeletal View），你可能更熟悉它的另一个名字：“球棍模型”（Ball-and-Stick）。在这种视图中，我们将原子画成小球，用“棍子”连接那些通过[共价键](@keyword=covalent_bonding|lang=zh-CN|style=Feynman)结合的原子。这里的小球有多大呢？它们的大小通常与原子的**[共价半径](@keyword=covalent_radius|lang=zh-CN|style=Feynman)**成正比。[共价半径](@keyword=covalent_radius|lang=zh-CN|style=Feynman)本质上是原子在形成[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)时与其他原子“手拉手”的距离的一半。因为这个半径相对较小，所以我们能清晰地看到分子内部的连接方式——[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)的网络、骨架的走向、以及决定[蛋白质构象](@keyword=protein_conformation|lang=zh-CN|style=Feynman)的关键几何参数，如键角和二面角。这种视图牺牲了对分子真实体积的描绘，换来的是对其内部构造和连接性的无与伦比的清晰度 [@problem_id:2416474]。
 
 <center>
-    <img src="https://i.imgur.com/xO4b8zP.png" alt="A 'skeletal' or ball-and-stick view of a molecule on the left, emphasizing its bond network. A space-filling view of the same molecule on the right, emphasizing its steric volume." style="width: 70%;" />
+
     <figcaption>图1：左侧为强调[共价键](@keyword=covalent_bonding|lang=zh-CN|style=Feynman)网络的“骨架”视图，右侧为强调分子实际占据空间的“空间填充”视图。两者揭示了同一分子的不同“真相”。</figcaption>
 </center>
 

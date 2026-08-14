@@ -28,7 +28,7 @@
 
 <br/>
 <div align="center">
-  <img src="https://d2l-ai.s3.amazonaws.com/images/books/quantum-chemistry/vertical-adiabatic-reorg.svg" width="600" alt="[势能面](@keyword=potential_energy_surfaces|lang=zh-CN|style=Feynman)图解"/>
+
   <br/>
   <small>图1：[势能面](@keyword=potential_energy_surfaces|lang=zh-CN|style=Feynman)图解。展示了垂直[吸收](@keyword=absorption|lang=zh-CN|style=Feynman)、弛豫、垂直发射和[绝热跃迁](@keyword=adiabatic_transition|lang=zh-CN|style=Feynman)的过程。[垂直激发能](@keyword=vertical_excitation_energy|lang=zh-CN|style=Feynman)($\Delta E_{\text{vert}}$)是从基态[平衡](@keyword=equilibrium|lang=zh-CN|style=Feynman)构型($Q_g$)[垂直跃迁](@keyword=vertical_transitions|lang=zh-CN|style=Feynman)到[激发态](@keyword=excited_states|lang=zh-CN|style=Feynman)的能量。绝[热能](@keyword=thermal_energy|lang=zh-CN|style=Feynman)($\Delta E_{\text{ad}}$)是两个[势能面](@keyword=potential_energy_surfaces|lang=zh-CN|style=Feynman)最小值之间的能量差。弛豫/[重组能](@keyword=reorganization_energy|lang=zh-CN|style=Feynman)($\lambda_e$)是分子在[激发态](@keyword=excited_states|lang=zh-CN|style=Feynman)上从$Q_g$弛豫到$Q_e$所释放的能量。斯托克斯位移是[吸收](@keyword=absorption|lang=zh-CN|style=Feynman)能和发射能之差。</small>
 </div>

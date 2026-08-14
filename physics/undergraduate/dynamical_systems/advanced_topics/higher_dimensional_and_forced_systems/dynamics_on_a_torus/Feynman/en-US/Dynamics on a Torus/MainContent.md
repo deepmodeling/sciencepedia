@@ -11,7 +11,7 @@ When you hear "torus," you probably picture a doughnut. You can indeed describe 
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/G5g2U08.png" alt="A diagram showing a physical torus with toroidal angle phi and poloidal angle theta, and a flat torus represented as a square with opposite edges identified." width="600">
+
   <figcaption>Figure 1: Two views of a torus. Left: A physical torus in 3D space, parameterized by angles $\theta$ and $\phi$. Right: The much simpler "flat torus," a square where opposite edges are glued together. A straight line on the flat torus corresponds to a winding curve on the physical one.</figcaption>
 </figure>
 </center>

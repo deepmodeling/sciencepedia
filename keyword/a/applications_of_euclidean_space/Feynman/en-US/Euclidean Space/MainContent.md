@@ -15,7 +15,7 @@ Let's return to our salt flat. The "straight paths" we walk are examples of **ge
 
 This is absolutely not true for a curved space. Consider the surface of the Earth, which we can model as a sphere. The geodesics here are great circles (like the equator). If you and a friend start at the North Pole and walk south along different lines of longitude, you are both following geodesics. But once you cross the equator, you start getting closer again! If you continue all the way to the South Pole, an infinite number of "straight" paths from the North Pole all meet again. The path is no longer uniquely shortest past the halfway point.
 
-![A sketch showing [geodesics on a sphere](@keyword=geodesics_on_a_sphere|lang=en-US|style=Feynman) and a plane.](https://i.imgur.com/example.png "Geodesics on Sphere vs. Plane")
+ and a plane.](https://i.imgur.com/example.png "Geodesics on Sphere vs. Plane")
 
 This fundamental difference is captured by a quantity called **Gaussian curvature**. A flat plane has a Gaussian curvature of exactly zero. A sphere of radius $R$ has a [constant positive curvature](@keyword=constant_positive_curvature|lang=en-US|style=Feynman) of $\frac{1}{R^2}$. The brilliant mathematician Carl Friedrich Gauss discovered something astonishing in his **Theorema Egregium** ("Remarkable Theorem"): this curvature is *intrinsic* to the surface. It can be measured by an inhabitant living entirely within the 2D surface, using only a ruler to measure small triangles (their angles will add up to more than 180 degrees on a sphere).
 

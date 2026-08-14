@@ -12,7 +12,7 @@
 让我们仔细看看一个简单的酮，比如丙酮（$CH_3-C(=O)-CH_3$），也就是我们日常生活中洗甲水的主要成分。它有一个核心结构，叫做羰基（$C=O$），这是一个碳原子和氧原子通过双键连接的单元。与这个羰基碳直接相连的碳原子，我们称之为α-碳（alpha-carbon），而连在α-碳上的氢，就是α-氢。
 
 <center>
-<img src="https://i.imgur.com/B9Bw8pC.png" width="400" alt="Structure of acetone showing alpha-carbons and alpha-hydrogens">
+
 </center>
 <br>
 
@@ -21,7 +21,7 @@
 当一个强大的碱（比如我们在后面会遇到的明星分子LDA）真的把一个α-氢（质子）给夺走后，奇迹发生了。原来连接氢的那个α-碳带上了一个负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，形成了一个碳负离子。但这个负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)并不安分，它会立刻通过一种叫做“共振”的现象，与旁边的羰基双键共享。电子云在氧原子、羰基碳和α-碳之间流动，形成了一个新的物种——**[烯醇负离子](@keyword=enolates|lang=zh-CN|style=Feynman)（enolate）**。
 
 <center>
-<img src="https://i.imgur.com/o1nFvM1.png" width="600" alt="Resonance structures of the acetone enolate">
+
 </center>
 <br>
 
@@ -34,7 +34,7 @@
 这个连接过程是一个经典的**$S_N2$反应**，就像一次精准的“背后袭击”。[烯醇负离子](@keyword=enolates|lang=zh-CN|style=Feynman)的碳端从卤代烷的背后，向连接着[卤素](@keyword=halogens|lang=zh-CN|style=Feynman)的碳原子发起攻击，形成新的碳-碳键，同时将[卤素](@keyword=halogens|lang=zh-CN|style=Feynman)原子像弹射座椅一样“踢”出去。
 
 <center>
-<img src="https://i.imgur.com/uC569Vq.png" width="600" alt="SN2 reaction between an enolate and an alkyl halide">
+
 </center>
 <br>
 
@@ -49,7 +49,7 @@
 好了，我们知道了如何创造“粘性接口”和选择“插座”。但如果一个酮分子不止一个α-碳呢？比如，2-甲基环己酮，它的羰基两边都有α-碳，而且它们还不一样：一边（C6）连着两个氢，另一边（C2）只连着一个氢，还带着一个甲基。
 
 <center>
-<img src="https://i.imgur.com/Y5i918y.png" width="450" alt="Structure of 2-methylcyclohexanone showing two different alpha-positions">
+
 </center>
 <br>
 

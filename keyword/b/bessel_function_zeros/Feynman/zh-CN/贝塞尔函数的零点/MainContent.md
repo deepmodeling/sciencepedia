@@ -11,8 +11,6 @@
 
 所以，[贝塞尔函数](@keyword=bessel_function|lang=zh-CN|style=Feynman)本质上是一种**[阻尼振荡](@keyword=damped_oscillations|lang=zh-CN|style=Feynman)**。它的图像看起来像一个[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)，在远离原点时被逐渐压缩。函数的“零点”就是图像与[横轴](@keyword=transverse_axis|lang=zh-CN|style=Feynman)相交的点——即函数值恰好为零的点。
 
-![](https://i.imgur.com/83p0c29.png)
-
 *图1：[贝塞尔函数](@keyword=bessel_function|lang=zh-CN|style=Feynman) $J_0(x)$（蓝色）和 $J_1(x)$（橙色）的图像，展示了它们的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)、衰减特性及其零点（与x轴的交点）。*
 
 对于大多数贝塞尔函数而言，找到这些零点是一件棘手的事。但在某些特殊情况下，面纱揭开，我们看到了熟悉的面孔。对于阶数为 $-\frac{1}{2}$ 的[贝塞尔函数](@keyword=bessel_function|lang=zh-CN|style=Feynman)，它其实不过是一个伪装的余弦函数！[@problem_id:2127668]

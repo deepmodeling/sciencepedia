@@ -31,8 +31,6 @@ Now let's bring back the removal process. We'll keep it simple: a linear degrada
 
 With a flat, constant production curve (the linear case), you can only get one intersection. But with our S-shaped production curve? Suddenly, you can get *three* intersections for the same set of parameters! [@problem_id:1476977].
 
-
-
 *Figure 1: Finding the Balance. Steady states occur where the Production Rate (blue, S-shaped curve) equals the Removal Rate (orange, straight line). The sigmoidal nature of the production, a hallmark of positive feedback, allows for three points of intersection: a low state, an intermediate state, and a high state.*
 
 This is a profound revelation. The same underlying chemical "rules" (the same production and degradation functions) can permit three different balanced realities, three different possible steady concentrations for $X$. Mathematically, this corresponds to the fact that a nonlinear equation, such as the cubic polynomials that often arise in these models, can have multiple real solutions [@problem_id:1476977]. We have just uncovered the potential for a system to have a choice.
@@ -60,8 +58,6 @@ Now, let's play with our switch. Many biological systems have "control knobs"—
 Imagine our system is in the LOW state. We start slowly turning our control knob. In our landscape analogy, this is like slowly tilting the entire surface of hills and valleys. The LOW valley might get shallower and the HIGH valley deeper, but as long as our valley exists, our ball (the system state) stays put. But then, we reach a critical value of our control parameter. At this point, our LOW valley merges with the adjacent hill and vanishes completely! The landscape now has only one slope where our ball was, and it has no choice but to roll down into the deep, welcoming HIGH valley. The switch has just flipped ON.
 
 Now, let's reverse course and turn the knob back. Do we flip back OFF at the same point? No! Our ball is now in the HIGH valley. As we turn the knob back, the HIGH valley becomes shallower, but the system remains in its ON state, happily ignoring the point where it originally switched. It "remembers" it came from a high concentration. We must keep turning the knob back until we reach a *second* critical point, where the HIGH valley itself disappears, and the system crashes back down to the LOW state.
-
-![A hysteresis loop, showing how the system's state (concentration x) depends on the history of the control parameter.](https://i.imgur.com/K3wS18r.png)
 
 *Figure 2: The Hysteresis Loop. As the control parameter is increased, the system stays on the low branch until the upper turning point ($k_{d, crit, 1}$), where it jumps to the high branch. As the parameter is decreased, it stays high until the lower turning point ($k_{d, crit, 2}$), where it jumps back down. The state depends on its history.*
 

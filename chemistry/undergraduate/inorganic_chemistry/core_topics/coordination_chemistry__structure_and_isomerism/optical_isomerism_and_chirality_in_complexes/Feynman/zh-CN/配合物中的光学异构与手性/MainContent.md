@@ -32,7 +32,7 @@
 
 <br>
 <center>
-<img src="https://i.imgur.com/e3gT55z.png" alt="Comparison of trans and cis isomers of [Co(en)2Cl2]+" width="600">
+
 <br>
 <small>图1：trans-$[\text{Co(en)}_2\text{Cl}_2]^+$ (左) 具有对称中心和对称面，因而是非手性的。cis-$[\text{Co(en)}_2\text{Cl}_2]^+$ (右) 缺乏这些对称元素，呈现出手性结构，存在一对对映异构体 (Δ 和 Λ)。</small>
 </center>

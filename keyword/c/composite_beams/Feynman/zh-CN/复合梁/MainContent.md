@@ -17,7 +17,7 @@
 
 我们在计算中如何处理这个问题？我们可以写一套复杂的方程，但有一种更优雅的方法：**等效[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)法**。假设钢的刚度是铝的三倍（$E_{steel} = 3 E_{alum}$）。我们可以进行一个绝妙的虚构：我们假装整个梁都是由铝制成的。为了体现钢的额外强度，我们想象钢层的宽度是其实际宽度的三倍。这个虚构的、由单一材料构成的梁就是我们的“等效[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)”。
 
-![一张示意图，展示了一个双层[复合梁](@keyword=composite_beams|lang=zh-CN|style=Feynman)被转换为一个顶部[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)更宽的单一材料梁。](https://i.imgur.com/example.png "The transformed section method")
+被转换为一个顶部[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)更宽的单一材料梁。](https://i.imgur.com/example.png "The transformed section method")
 
 为什么这行得通？因为通过使钢的部分宽三倍，我们使其在相同应变下贡献了三倍的力，这正是真实的、更硬的钢所做的事情。现在我们可以找到中性轴（它将是这个新的、形状奇特的[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)的形心）和总的抗弯能力，即**[抗弯刚度](@keyword=bending_stiffness|lang=zh-CN|style=Feynman)**，就像我们对普通梁所做的那样。对于一般的层状梁，我们可以推导出一个强大的公式来计算其等效[抗弯刚度](@keyword=bending_stiffness|lang=zh-CN|style=Feynman)，这个公式能准确地告诉我们复合结构整体的刚度有多大 [@problem_id:2880536] [@problem_id:2670360]。这是一个绝佳的例子，说明一个巧妙的视角转变如何能将一个复杂问题简化。
 

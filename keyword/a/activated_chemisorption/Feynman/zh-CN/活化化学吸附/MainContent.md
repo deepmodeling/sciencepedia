@@ -25,8 +25,6 @@
 
 现在，关键点来了。在许多最重要的[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)中，从[物理吸附](@keyword=physical_adsorption|lang=zh-CN|style=Feynman)谷到[化学吸附](@keyword=chemical_adsorption|lang=zh-CN|style=Feynman)谷的路径并非平缓的下坡路。在它们之间横亘着一座小山，一个你必须攀登才能下降到最终稳定状态的山峰。这座山就是**[活化能垒](@keyword=activation_energy_barrier|lang=zh-CN|style=Feynman)**，$E_a$。必须攀登这座能量山的过程就是我们所说的**[活化化学吸附](@keyword=activated_chemisorption|lang=zh-CN|style=Feynman)**。山峰的顶点代表**过渡态**——一种不稳定的、短暂的构型，介于物理吸附的分子和最终的化学吸附产物之间 [@problem_id:1997731] [@problem_id:2664275]。
 
-![Potential Energy Diagram for Activated Chemisorption](https://firebasestorage.googleapis.com/v0/b/scholarly-assets.appspot.com/o/misc%2Factivated-chemisorption.png?alt=media&token=c2cecf16-b873-4f90-8edb-01a4bc318357 "A schematic potential energy diagram for a molecule undergoing activated chemisorption. The y-axis is potential energy and the x-axis is the distance from the surface. The diagram shows a shallow physisorption well and a deeper chemisorption well, separated by an activation energy barrier.")
-
 这个能垒的高度，从物理吸附阱的底部算起，就是**活化能**，假设在一个例子中为 $65$ kJ/mol [@problem_id:1997739]。要达到化学吸附态，一个分子必须至少拥有这么多能量。
 
 ### 机器中的幽灵：为何存在能垒？

@@ -31,8 +31,6 @@
 
 这种“推力”带来了革命性的好处。在真实的原子中，一个价电子（比如钾原子的 $4s$ 电子）的[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)为了与内层的 $1s, 2s, 3s$ 电子保持正交，必须在原子实区域内产生剧烈的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，形成多个“[节面](@keyword=nodal_planes|lang=zh-CN|style=Feynman)”（[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)为零的点）。这些[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)需要用非常复杂的数学函数（[基组](@keyword=basis_set|lang=zh-CN|style=Feynman)）来描述，计算成本高昂。但在[赝势](@keyword=effective_core_potentials|lang=zh-CN|style=Feynman)的“伪世界”里，由于内层电子已经消失，取而代之的是一个排斥的势，价电子的[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)不再需要通过[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)来维持正交性。因此，它的“赝[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)”在原子实区域可以变得异常平滑、没有节面。而在远离原子核的[化学键合](@keyword=chemical_bonding|lang=zh-CN|style=Feynman)区域，这个赝[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)与真实的[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)几乎完全重合 [@problem_id:1364339]。这种平滑性意味着我们可以用更简单、更少的数学函数（即一个更小的“[基组](@keyword=basis_set|lang=zh-CN|style=Feynman)”）来描述它，从而极大地节省了计算资源。这也厘清了一个重要概念：ECP 是替代原子实的“势”，而“[基组](@keyword=basis_set|lang=zh-CN|style=Feynman)”则是用来描述价电子在这个新势场中运动的“[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)”的数学工具箱 [@problem_id:1364320]。
 
-![](https://www.chegg.com/equation-images/d2a3e0b2-7bc9-411a-8c8a-7221ee546d1b-31-4TBP1.png)
-
 ### 品质控制：确保伪装天衣无缝
 
 当然，一个好的伪装不能有破绽。为了让赝势在各种化学环境中都能给出可靠的预测，科学家们设定了严格的“品质控制”规则。

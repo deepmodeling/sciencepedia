@@ -15,5 +15,4 @@ Consider a very basic type of function called a **simple function**, which is ju
 
 We can build a sequence of [simple functions](@keyword=simple_functions|lang=en-US|style=Feynman) to do this. For our first attempt, $s_1(x)$, we can cut the interval in half: the function is 0 on $[0, 0.5)$ and $0.5$ on $[0.5, 1]$. It's a two-step staircase. For our next attempt, $s_2(x)$, we use four steps. For $s_n(x)$, we use $2^n$ steps [@problem_id:1409883]. Each function in our sequence, $s_1, s_2, s_3, \ldots$, is a perfectly valid simple function.
 
-![A sequence of simple functions sn(x) approximating the function f(x)=x.](https://i.imgur.com/8QoN06I.png)
 *Figure 1: A sequence of simple functions $s_n(x)$ approximating the function $f(x)=x$. As n increases, the "steps" become finer and the approximation gets better.*

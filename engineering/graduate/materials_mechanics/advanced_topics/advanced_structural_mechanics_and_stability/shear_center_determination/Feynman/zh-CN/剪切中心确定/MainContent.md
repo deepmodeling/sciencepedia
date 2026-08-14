@@ -13,7 +13,7 @@
 
 <center>
   <figure>
-    <img src="https://assets.solidprincipia.com/uploads/concept/2024-04-18/shear-flow-channel-section.png" alt="Shear flow in a channel section under a vertical shear force. The shear flows in the flanges create a twisting moment." width="500">
+
     <figcaption>图1：槽形[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)在垂直[剪力](@keyword=shear_force|lang=zh-CN|style=Feynman)作用下的[剪切流](@keyword=shear_flow|lang=zh-CN|style=Feynman)分布。翼缘中的剪切流（水平箭头）形成一个力偶，产生一个绕腹板的扭转力矩。</figcaption>
   </figure>
 </center>

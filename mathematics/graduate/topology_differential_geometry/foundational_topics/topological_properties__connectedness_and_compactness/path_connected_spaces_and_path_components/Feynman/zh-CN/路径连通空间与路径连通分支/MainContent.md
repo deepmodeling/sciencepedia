@@ -21,7 +21,7 @@
 
 为了理解这个奇怪的现象，让我们认识一位[拓扑学](@keyword=topology|lang=zh-CN|style=Feynman)中大名鼎鼎的“捣蛋鬼”：[拓扑学家的正弦曲线](@keyword=topologist_s_sine_curve|lang=zh-CN|style=Feynman)。想象一下函数 $y = \sin(1/x)$ 在 $x$ 从 1 趋近于 0 时的图像。它会以越来越疯狂的频率在 $y=1$ 和 $y=-1$ 之间[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。现在，我们把这段曲线 $(0, 1]$ 上的图像，连同它在 $x=0$ 处的所有[极限点](@keyword=limit_points|lang=zh-CN|style=Feynman)——也就是线段 $\{(0, y) | -1 \le y \le 1\}$——放在一起，构成一个完整的空间。
 
-<center>![[拓扑学家的正弦曲线](@keyword=topologist_s_sine_curve|lang=zh-CN|style=Feynman)](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Topologist_sine_curve.svg/500px-Topologist_sine_curve.svg.png)</center>
+<center>](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Topologist_sine_curve.svg/500px-Topologist_sine_curve.svg.png)</center>
 
 这个空间是**连通**的。直观上看，你无法在不切断它的情况下，将它分成两个[分离](@keyword=fractionation|lang=zh-CN|style=Feynman)的部分。但是，它**不是[路径连通的](@keyword=path_connected|lang=zh-CN|style=Feynman)**。想象你是一个站在 $y$ 轴那条[垂直线](@keyword=perpendicular_lines|lang=zh-CN|style=Feynman)段上的蚂蚁。你无论如何努力，也无法“爬”到右边那条疯狂[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的曲线上。因为当你试图靠近 $x=0$ 的边界时，曲线的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)会变得无穷快，任何一条有限长度的路径都无法跨越这道天堑。
 

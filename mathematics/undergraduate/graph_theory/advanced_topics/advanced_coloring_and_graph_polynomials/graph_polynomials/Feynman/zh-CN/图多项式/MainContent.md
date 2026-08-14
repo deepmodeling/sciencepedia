@@ -18,7 +18,7 @@
 答案是肯定的，这个多项式被称为**[色多项式](@keyword=chromatic_polynomial|lang=zh-CN|style=Feynman)** (Chromatic Polynomial)。让我们来看一个简单的例子。想象一个“中心辐射型”的网络，我们称之为“枢纽图” $H_n$。它有一个中心“枢纽”顶点，连接着 $n-1$ 个“分支”顶点，而这些分支顶点之间互不相连 [@problem_id:1508364]。
 
 <center>
-<img src="https://assets.testdrive.ai/dalle/2024-05-14/c1dfb007-4f65-4fbd-8086-a94f005b6be4.png" alt="A simple hub-and-spoke graph, illustrating the coloring process." width="300">
+
 <br>
 <small>图1：一个简单的枢纽图 $H_5$。如何为它着色？</small>
 </center>

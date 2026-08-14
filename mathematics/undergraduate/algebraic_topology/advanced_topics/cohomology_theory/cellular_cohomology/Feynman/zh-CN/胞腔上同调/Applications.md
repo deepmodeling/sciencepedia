@@ -12,8 +12,6 @@
 
 想象一个最简单的网络：两个节点由一条边连接 [@problem_id:1637616]。这个空间是连通的，所以它的 $H^0(X;\mathbb{Z})$ 同构于 $\mathbb{Z}$，代表我们只能在整个空间上选择一个统一的整数值。如果我们将这个想法推广到一个由任意多个顶点和边组成的图（graph）[@problem_id:1637584]，我们会发现 $H^0(X;\mathbb{Z})$ 的秩（rank）恰好等于这个图的连通分支数 $p$。这是[上同调](@keyword=cohomology|lang=zh-CN|style=Feynman)与[图论](@keyword=graph_theory|lang=zh-CN|style=Feynman)之间最直接的联系：一个纯粹的代数计算，回答了一个关于连通性的基本几何问题。
 
-![](https://static.scholarfun.com/final/resource_images/1637584_0.png)
-
 当然，上同调的威力远不止于此。高维的上同调群揭示了空间中更微妙的“洞”和“[空腔](@keyword=hohlraum|lang=zh-CN|style=Feynman)”结构。以我们熟悉的二维环面 $T^2$（一个甜甜圈的表面）为例，它有一个0-胞腔（顶点）、两个1-胞腔（两条基本的循环路径 $a$ 和 $b$）和一个2-胞腔（整个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)）[@problem_id:1637606]。它的[上同调群](@keyword=cohomology_groups|lang=zh-CN|style=Feynman)是 $H^0(T^2;\mathbb{Z})\cong\mathbb{Z}$， $H^1(T^2;\mathbb{Z})\cong\mathbb{Z}\oplus\mathbb{Z}$（对应于沿 $a$ 和 $b$ 两个方向的独立“环绕”），以及 $H^2(T^2;\mathbb{Z})\cong\mathbb{Z}$（对应于整个封闭的“空腔”）。这个 $(\mathbb{Z}, \mathbb{Z}\oplus\mathbb{Z}, \mathbb{Z})$ 的序列，就是环面的代数指纹，它与球面 $S^2$ 的指纹 $(\mathbb{Z}, 0, \mathbb{Z})$ 截然不同，从代数上证明了你无法把一个篮球捏成一个甜甜圈。
 
 ### 洞察幽微：系数与挠扑的存在

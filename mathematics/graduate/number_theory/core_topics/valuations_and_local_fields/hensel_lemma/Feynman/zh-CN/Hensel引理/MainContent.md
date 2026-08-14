@@ -15,8 +15,6 @@
 
 一个在微积分中非常经典的思想是[牛顿法](@keyword=newton_method|lang=zh-CN|style=Feynman)。这个方法非常直观：我们在点 $(a_0, f(a_0))$ 处画出函数图像的切线。这条切线是函数在 $a_0$ 附近最好的[线性近似](@keyword=tangent_line_approximation|lang=zh-CN|style=Feynman)。然后我们问，这条切线在哪里与 x 轴相交？这个交点，我们称之为 $a_1$，理应是比 $a_0$ 更好的近似解。
 
-![Newton's Method](https://upload.wikimedia.org/wikipedia/commons/e/e0/NewtonIteration_Animation.gif)
-
 通过简单的几何推导，我们可以得到一个优美的迭代公式：
 
 $$

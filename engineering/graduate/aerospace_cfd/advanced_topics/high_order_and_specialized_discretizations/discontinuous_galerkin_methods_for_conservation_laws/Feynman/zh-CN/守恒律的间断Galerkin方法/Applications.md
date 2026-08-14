@@ -10,8 +10,6 @@ DG 方法的“原生土壤”无疑是[计算流体动力学](@keyword=computat
 
 想象一下，我们要[精确模拟](@keyword=exact_simulation|lang=zh-CN|style=Feynman)气流掠过飞机机翼的景象。机翼的几何形状——那些微妙的曲线和[弧度](@keyword=radians|lang=zh-CN|style=Feynman)——是产生[升力](@keyword=lift_force|lang=zh-CN|style=Feynman)的关键。一个优秀的数值方法必须能够“尊重”这些几何细节。DG 方法在这方面表现出色。由于它在每个单元内部使用高阶多项式，它可以非常精确地贴合像 NACA [翼型](@keyword=aerofoil|lang=zh-CN|style=Feynman)这样的复杂曲面边界，而不是用粗糙的阶梯状线条去近似。这种对几何的“高保真”描述，意味着我们能更准确地计算作用在机翼上的压力和剪切力，从而得到更可靠的[升力](@keyword=lift_force|lang=zh-CN|style=Feynman)和阻力预测 [@problem_id:3954978]。这不仅仅是画一幅更漂亮的画，它直接关系到飞行器的设计效率和安全性。
 
-![](https://assets.test.expertflow.cn/images/replicate-prediction-1df08960-d668-45b0-ac6b-9c3f0c3d9a6c.png)
-
 接着，考虑一个更棘手的问题：如何为一个在无垠天空中飞行的物体设定计算边界？我们的计算域总是有限的，但空气是“无限”的。我们不能简单地在计算域的边缘竖起一堵墙，因为那样会将波反射回来，产生虚假的干扰，污染整个计算结果。我们必须让计算域的边界表现得像“开放空间”。DG 方法通过其与[特征线理论](@keyword=theory_of_characteristics|lang=zh-CN|style=Feynman)的深刻联系，为我们提供了一个优雅的解决方案。例如，在[超音速流](@keyword=supersonic_flow|lang=zh-CN|style=Feynman)动中，所有信息都沿着特定的方向传播。在超音速入口处，所有信息都从外部流入，因此我们必须指定所有来自无穷远处的流动条件。而在超音速出口处，所有信息都从内部流出，我们则不应施加任何外部条件，只需让信息自由“流走”。DG 方法通过在边界上设置“幽灵单元”和使用基于物理的[黎曼求解器](@keyword=riemann_solvers|lang=zh-CN|style=Feynman)，可以完美地实现这种“与无穷远的对话”，确保计算的纯净性 [@problem_id:3954981]。
 
 当然，天空既有宁静的微风，也有狂暴的激波。从炸弹爆炸产生的[冲击波](@keyword=blast_wave|lang=zh-CN|style=Feynman)，到超音速飞机突破音障时形成的[音爆](@keyword=sonic_boom|lang=zh-CN|style=Feynman)，这些都是流动中出现极端不连续性的例子。一个强大的数值方法必须能够在不产生非物理振荡（例如，负密度或负压力）的情况下，稳健地捕捉这些现象。这要求方法不仅要精确，还要“强韧”。通过结合诸如 HLL (Harten-Lax-van Leer) 这样的特殊[数值通量](@keyword=numerical_flux|lang=zh-CN|style=Feynman)和[强稳定性保持 (SSP)](@keyword=strong_stability_preserving_(ssp)|lang=zh-CN|style=Feynman) [时间积分格式](@keyword=time_integration_schemes|lang=zh-CN|style=Feynman)，DG 方法可以被塑造成一种“[正定性](@keyword=positive_definiteness|lang=zh-CN|style=Feynman)保持”的工具。这意味着，即使面对初始条件中存在巨大压力差的[爆轰波](@keyword=detonation_waves|lang=zh-CN|style=Feynman)问题，或者流体被拉伸到接近真空的极端情况，我们的模拟也能始终保持物理上的合理性，忠实地反映自然规律 [@problem_id:3955002]。
@@ -26,11 +24,7 @@ DG 方法的威力远不止于工程应用。它的数学框架具有普适性�
 
 让我们把目光投向脚下的土地。雪崩、泥石流和火山碎屑流等[颗粒流](@keyword=granular_flow|lang=zh-CN|style=Feynman)是地球上最具破坏力的自然灾害之一。令人惊讶的是，这些由无数离散颗粒组成的系统，在宏观尺度上其行为可以用类似于流体的连续介质模型来描述，即所谓的“浅水方程”。这些方程是守恒律的一种形式，但增加了一个描述底部摩擦的源项。DG 方法可以被直接应用于求解这类“平衡律”方程。通过这种方式，我们可以模拟雪堆的坍塌和[演化过程](@keyword=evolutionary_process|lang=zh-CN|style=Feynman)，预测其流动范围和速度，为灾害预警和防治提供关键的科学依据 [@problem_id:2385238]。
 
-![](https://assets.test.expertflow.cn/images/replicate-prediction-8f5b80a1-c6da-49b8-a6d5-a82f3484f932.png)
-
 如果我们抬起头，将视野扩展到整个地球，我们会发现 DG 方法同样大有可为。全球气候模型和天气预报需要在球形的地球表面上求解大气动力学方程。在一个曲面上，“直线”变成了[大圆](@keyword=great_circle|lang=zh-CN|style=Feynman)弧，“平面”变成了球面三角形。DG 方法的优雅之处在于，它的核心思想——在单元上积分，通过边界通量进行交换——可以从平直的[笛卡尔](@keyword=descartes|lang=zh-CN|style=Feynman)空间完美地推广到弯曲的流形上。我们只需将散度定理换成曲面上的版本，将普通的法向量换成与边垂直且与曲面相切的“协[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman)”。这样，DG 方法就成了一个在地球表面追踪[污染物扩散](@keyword=pollutant_dispersion|lang=zh-CN|style=Feynman)、模拟风暴演化的天然工具 [@problem_id:2385210]。
-
-![](https://assets.test.expertflow.cn/images/replicate-prediction-4340c216-2d3b-410a-8671-55c82ff2f3da.png)
 
 再将目光投向更遥远的深空。宇宙中充满了由多种物质混合而成的流体。例如，一颗[超新星](@keyword=supernovae|lang=zh-CN|style=Feynman)的爆发，会将恒星内部通过核聚变产生的多种化学元素（如氦、碳、氧）以极高的速度抛入星际介质。要模拟这种过程，我们需要求解多组分流体动力学方程。这相当于在标准的[欧拉方程组](@keyword=euler_equations|lang=zh-CN|style=Feynman)之外，为每一种新组分的质量分数再增加一个守恒律方程。DG 方法的框架可以毫不费力地容纳这些额外的方程。它能精确地追踪不同物质交界面（例如，一团氦气“气泡”与周围空气的相互作用）的演化，以及激波穿过这些界面时发生的复杂反射和透射现象 [@problem_id:2385258]。这对于理解宇宙中元素的合成与分布至关重要。
 
@@ -49,8 +43,6 @@ DG 方法的适用性甚至超越了我们能直接感知的宏观世界，深�
 至此，我们看到 DG 方法可以模拟各种“流体”的守恒。但它能做的还远不止于此。它的核心机制是如此普适，以至于可以被用来求解那些不直接描述物质守恒的方程，甚至可以被应用在没有几何空间的抽象网络上。
 
 想象一下一片森林大火。火线的蔓延是一个几何形状随时间演变的过程。我们可以用一个“水平集函数” $\phi(x,y,t)$ 来描述这个形状，使得火线恰好是 $\phi=0$ 的等值线。火线的法向传播速度由风速、地形、植被类型等因素决定。这个过程可以用一个叫做“[哈密顿-雅可比方程](@keyword=hamilton_jacobi_equations|lang=zh-CN|style=Feynman)”的[偏微分](@keyword=partial_differentiation|lang=zh-CN|style=Feynman)方程来描述。虽然它不是一个守恒律，但它也是一种双曲型方程，其数值求解所需的“迎风”思想与 DG 方法不谋而合。我们可以借用为 DG 方法开发的[数值通量](@keyword=numerical_flux|lang=zh-CN|style=Feynman)（如 Engquist-Osher 格式）来构造一个稳定、可靠的方案，用于求解[水平集方程](@keyword=level_set_equation|lang=zh-CN|style=Feynman)，从而精确追踪火线、晶体生长、气泡演化等各种复杂界面的运动 [@problem_id:2385269]。
-
-![](https://assets.test.expertflow.cn/images/replicate-prediction-ce81e3a6-b51f-491b-85ca-b59a85be997a.png)
 
 最后，让我们将 DG 的思想推向极致的抽象。一个守恒律描述的是量的交换。这种交换不一定发生在物理空间中。想象一个社交网络，节点是用户，边是关注关系。一条“病毒式推文”的传播，可以被看作是“参与度”或“知晓度”这种抽象量的传播。我们可以将每个用户看作一个计算单元，将关注关系看作信息流动的通道。DG 方法的框架可以被移植到这种任意的“图”结构上，其中节点存储着“密度”，而数值通量则定义了信息如何在用户之间传递 [@problem_id:2385216] [@problem_id:2385233]。
 

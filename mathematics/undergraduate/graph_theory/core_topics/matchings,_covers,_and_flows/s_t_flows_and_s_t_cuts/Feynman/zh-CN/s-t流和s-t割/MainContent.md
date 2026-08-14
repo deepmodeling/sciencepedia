@@ -36,7 +36,7 @@
 
 <br>
 <center>
-<img src="https://i.imgur.com/Bf22eG4.png" alt="An illustration of an s-t cut. The nodes are partitioned into two sets, S (containing s) and T (containing t). The capacity of the cut is the sum of capacities of edges going from S to T." width="500">
+
 <br>
 <em>图1：一个 $s-t$ 割的示意图。节点被划分为 $S$ 和 $T$ 两个集合。[割的容量](@keyword=capacity_of_a_cut|lang=zh-CN|style=Feynman)是所有从 $S$ 指向 $T$ 的边的容量之和。</em>
 </center>
@@ -78,7 +78,7 @@ $$ |f| = (\text{从 } S \to T \text{ 的流量}) - (\text{一个非负数}) \leq
 
 <br>
 <center>
-<img src="https://i.imgur.com/gK49s3v.png" alt="An illustration of a residual graph with forward and backward edges." width="600">
+
 <br>
 <em>图2：[残差图](@keyword=residual_plots|lang=zh-CN|style=Feynman)的构建。左边是原始图和当前流量，右边是对应的[残差图](@keyword=residual_plots|lang=zh-CN|style=Feynman)，显示了剩余容量（前向边）和可撤销的流量（后向边）。</em>
 </center>

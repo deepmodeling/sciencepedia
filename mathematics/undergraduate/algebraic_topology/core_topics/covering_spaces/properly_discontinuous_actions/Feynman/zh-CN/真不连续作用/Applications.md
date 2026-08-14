@@ -15,7 +15,7 @@
 这个过程保证了最终得到的空间是“良好”的，即一个[拓扑流形](@keyword=topological_manifolds|lang=zh-CN|style=Feynman)，因为这个作用是“自由”且“正常不连续”的 [@problem_id:1692131]。所谓“自由”，是指除了单位元，没有群元素会固定任何一点；“正常不连续”则保证了当我们黏合时，不会把整个空间撕裂或揉成一团乱麻。
 
 <center>
-    <img src="https://i.imgur.com/example.png" alt="From Cylinder to Klein Bottle" width="600"/>
+
     <br>
     <small>图1：一个简单的“扭转”黏合规则（[群作用](@keyword=group_actions|lang=zh-CN|style=Feynman)），将平面带子从圆柱面（左）变成了莫比乌斯带（右）。</small>
 </center>
@@ -54,7 +54,7 @@
     -   **[双曲几何](@keyword=hyperbolic_geometry|lang=zh-CN|style=Feynman)**：在三维世界中，最“常见”的几何其实是双曲几何。绝大多数闭合[三维流](@keyword=three_dimensional_flow|lang=zh-CN|style=Feynman)形都拥有双曲结构，这意味着它们可以被写作 $\mathbb{H}^3 / \Gamma$，其中 $\mathbb{H}^3$ 是三维双曲空间，而 $\Gamma$ 是其[等距群](@keyword=isometry_group|lang=zh-CN|style=Feynman)的一个离散[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)。著名的威克斯[流形](@keyword=manifold|lang=zh-CN|style=Feynman)就是一个这样的例子 [@problem_id:2997864]。
 
 <center>
-    <img src="https://i.imgur.com/example2.png" alt="Thurston's 8 Geometries" width="700"/>
+
     <br>
     <small>图2：瑟斯顿的八种模型几何。每一个闭合的三维流形都可以被分解，且每一块都拥有这八种几何结构中的一种。许多这样的[几何流](@keyword=geometric_flows|lang=zh-CN|style=Feynman)形都是通过[商空间](@keyword=quotient_spaces|lang=zh-CN|style=Feynman)构造得到的。</small>
 </center>

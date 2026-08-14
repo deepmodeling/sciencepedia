@@ -18,7 +18,7 @@
 有了这两个主角，我们可以在一张能量地图上描绘整个过程。这张地图的横坐标是一个抽象的“[反应坐标](@keyword=reaction_coordinate|lang=zh-CN|style=Feynman)”，代表了从反应物构型到产物构型的所有环境变化。纵坐标则是体系的自由能。在这个[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中，反应物和产物的稳定状态可以被描绘成两条独立的抛物线。反应物的能量谷底是构象起点，而产物的能量谷底则代表构象终点。
 
 <center>
-    <img src="https://i.imgur.com/uGzFjJt.png" alt="Marcus Parabolas" width="600">
+
     <br>
     <small>图1：Marcus 理论中的能量抛物线示意图。反应的活化能 $\Delta G^{\ddagger}$ 由两条抛物线的交点位置决定。</small>
 </center>
@@ -74,7 +74,7 @@ $$
 将这些量子[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)引入模型后，我们的能量图景变得更加丰富。[@problem_id:2687164] 电子转移不再只有一条路径，而是可以通过多个**[振动跃迁](@keyword=vibrational_transitions|lang=zh-CN|style=Feynman)通道 (vibronic channels)** 进行。在反应中，一部分巨大的电子能量可以被用来激发这些量子[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式。
 
 <center>
-    <img src="https://i.imgur.com/eB6c6i5.png" alt="Jortner Model" width="600">
+
     <br>
     <small>图2：包含量子[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式（Englman-Jortner 模型）的能量图景。反应可以通过激发不同数量的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)量子（$v=0, 1, 2, ...$）的多个通道进行。</small>
 </center>

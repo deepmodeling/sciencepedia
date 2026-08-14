@@ -19,7 +19,7 @@
 
 <br >
 <div align="center">
-    <img src="https://assets.solidstate.wiki/figures/schottky-mott-rule.svg" width="700" alt="Energy band diagram illustrating the formation of a Schottky barrier according to the Schottky-Mott model.">
+
     <figcaption>图1：肖特基-莫特模型示意图。左侧为接触前金属 (M) 与n型[半导体](@keyword=semiconductors|lang=zh-CN|style=Feynman) (S) 的[能带](@keyword=electronic_bands|lang=zh-CN|style=Feynman)。右侧为接触后，[费米能级对齐](@keyword=fermi_level_alignment|lang=zh-CN|style=Feynman)，[半导体能带](@keyword=semiconductor_energy_bands|lang=zh-CN|style=Feynman)发生弯曲，形成一个高度为 $\Phi_{Bn}$ 的势垒。</figcaption>
 </div>
 <br >
@@ -74,7 +74,7 @@ $$
 
 <br >
 <div align="center">
-    <img src="https://assets.solidstate.wiki/figures/schottky-transport-mechanisms.svg" width="700" alt="Diagram showing the three main transport mechanisms across a Schottky barrier: Thermionic Emission (TE), Thermionic-Field Emission (TFE), and Field Emission (FE).">
+
     <figcaption>图2：跨越[肖特基势垒](@keyword=schottky_barrier|lang=zh-CN|style=Feynman)的三种主要输运机制。TE是纯粹的翻越；FE是纯粹的隧穿；TFE是[热激发](@keyword=thermal_excitation|lang=zh-CN|style=Feynman)和隧穿的结合。</figcaption>
 </div>
 <br >

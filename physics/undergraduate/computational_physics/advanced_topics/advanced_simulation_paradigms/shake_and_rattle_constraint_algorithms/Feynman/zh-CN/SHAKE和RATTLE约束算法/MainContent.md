@@ -39,7 +39,7 @@
 
 2.  **[拉回](@keyword=pullback|lang=zh-CN|style=Feynman)正轨（SHAKE 的位置校正）**：现在，SHAKE [算法](@keyword=algorithm|lang=zh-CN|style=Feynman)登场。它的任务是找到一个最小的校正，将粒子 $\mathbf{q}^{\ast}$ [拉回](@keyword=pullback|lang=zh-CN|style=Feynman)到圆周上。最自然、最直接的路径是什么？是沿着与圆周在该点垂直的方向进行移动。这个垂直方向，正是约束函数 $g(\mathbf{q})$ 的梯度方向 $\nabla g(\mathbf{q})$。SHAKE [算法](@keyword=algorithm|lang=zh-CN|style=Feynman)通过计算一个“约束力”（在数学上通过拉格朗日乘子实现），产生一个沿着梯度方向的位移，恰好将粒子放回到圆周上，使得 $g(\mathbf{q}^{n+1}) = 0$ 得到满足。对于由许多原子组成的复杂分子，约束网络相互交织（比如一个水分子有三个内部约束），SHAKE 会通过一个快速的迭代过程，像调整帐篷的拉索一样，逐个或成组地满足所有约束，直到整个分子恢复其刚性结构 [@problem_id:2651953] [@problem_id:2759507]。
 
-    ![SHAKE [算法](@keyword=algorithm|lang=zh-CN|style=Feynman)示意图：一个非约束步骤将粒[子带](@keyword=miniband|lang=zh-CN|style=Feynman)离约束[流形](@keyword=manifold|lang=zh-CN|style=Feynman)（虚线），SHAKE 校正将其沿梯度方向投影回去。](https://example.com/shake_diagram.png)
+    示意图：一个非约束步骤将粒[子带](@keyword=miniband|lang=zh-CN|style=Feynman)离约束[流形](@keyword=manifold|lang=zh-CN|style=Feynman)（虚线），SHAKE 校正将其沿梯度方向投影回去。](https://example.com/shake_diagram.png)
 
 3.  **速度正切（RATTLE 的速度校正）**：仅仅将位置[拉回](@keyword=pullback|lang=zh-CN|style=Feynman)正轨还不够。为了保证物理的真实性，粒子的速度必须始终与它的运动路径（圆周）相切。如果速度有一个指向圆心的分量，粒子下一刻就会“飞入”或“飞离”圆周，这不符合约束。RATTLE [算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的核心就在于 SHAKE 之后增加的这第二个关键步骤：它会校正粒子的最终速度 $\mathbf{v}^{n+1}$，确保它严格地垂直于约束梯度 $\nabla g(\mathbf{q}^{n+1})$，即 $\nabla g(\mathbf{q}^{n+1}) \cdot \mathbf{v}^{n+1} = 0$。
 

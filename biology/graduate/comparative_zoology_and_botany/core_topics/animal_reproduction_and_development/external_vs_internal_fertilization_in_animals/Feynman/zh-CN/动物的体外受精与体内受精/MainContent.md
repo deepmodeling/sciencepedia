@@ -23,7 +23,7 @@
 
 <br>
 <p align="center">
-  <img src="https://i.imgur.com/k9b6S9k.png" alt="A diagram distinguishing external fertilization in open water, internal fertilization inside a female's reproductive tract, and two intermediate cases: external insemination with internal fertilization (bivalve), and internal insemination with external fertilization (squid)." style="width: 80%;">
+
   <br>
   <figcaption>图1：受精模式的四种变化。从左至右：典型的[体外受精](@keyword=external_fertilization|lang=zh-CN|style=Feynman)（如珊瑚），典型的[体内受精](@keyword=internal_fertilization|lang=zh-CN|style=Feynman)（如哺乳动物），以及两种“混搭”模式——体外授精/[体内受精](@keyword=internal_fertilization|lang=zh-CN|style=Feynman)（如贻贝）和体内授精/[体外受精](@keyword=external_fertilization|lang=zh-CN|style=Feynman)（如鱿鱼）。核心区别在于精子递送的位置与[精卵融合](@keyword=sperm_egg_fusion|lang=zh-CN|style=Feynman)的位置是否一致。</figcaption>
 </p>
@@ -45,7 +45,7 @@
 
 <br>
 <p align="center">
-  <img src="https://i.imgur.com/gK9J63D.png" alt="A comparative diagram showing gametes in water versus air. In water, they are suspended and mixed. In air, the egg settles rapidly while the sperm drifts, and chemical cues dissipate quickly." style="width: 70%;">
+
   <br>
   <figcaption>图2：水与空气的物理特性对比。在水中，浮力与粘滞度使配子得以悬浮和混合。在空气中，巨大的密度差和低粘滞度导致卵子迅速沉降，[配子](@keyword=gametes|lang=zh-CN|style=Feynman)瞬间分离，宣告了[体外受精](@keyword=external_fertilization|lang=zh-CN|style=Feynman)的失败。</figcaption>
 </p>

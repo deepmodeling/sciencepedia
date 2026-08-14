@@ -42,7 +42,7 @@ $$
 如果说动态模态 $\boldsymbol{\phi}$ 描绘了“什么在动”，那么[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $\lambda$ 就精确地告诉我们“它如何动”。每一个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman) $\lambda$ 都是一个复数，我们可以把它画在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上。这个点的位置，蕴含了关于对应动态模态的全部信息。[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)（半径为 1 的圆）是这个舞台上的主角。[@problem_id:2387419]
 
 <center>
-    <img src="https://i.imgur.com/k6p5C6v.png" alt="DMD eigenvalues on the complex plane" width="600"/>
+
     <br>
     <small>图1：DMD [特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上的位置揭示了动态模态的行为。[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)是稳定性的[分界线](@keyword=separatrix|lang=zh-CN|style=Feynman)。图片改编自 Kutz et al. (2016)。</small>
 </center>

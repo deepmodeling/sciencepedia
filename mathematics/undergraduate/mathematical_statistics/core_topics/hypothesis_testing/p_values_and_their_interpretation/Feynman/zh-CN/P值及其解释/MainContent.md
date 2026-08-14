@@ -19,8 +19,6 @@ $$ p = P(Z \le z_{obs} | H_0) $$
 
 这里，$P(Z \le z_{obs} | H_0)$ 表示“在[零假设](@keyword=null_hypothesis|lang=zh-CN|style=Feynman) $H_0$ 成立的条件下，[检验统计量](@keyword=test_statistic|lang=zh-CN|style=Feynman) $Z$ 小于或等于我们观测到的值 $z_{obs}$ 的概率”。
 
-![](https://static.zaidalya.com/gpt_assets/p_value_left_tail.png)
-
 但有时，我们并不确定变化的方向。比如，一位研究员想知道某种新药是否对[血压](@keyword=blood_pressure|lang=zh-CN|style=Feynman)有“任何影响”，可能是升高，也可能是降低。这就是一个**双尾检验**（two-tailed test）。假设他观测到的效应值是 $t_{obs}$（一个正数），那么任何大于 $t_{obs}$ 或小于 $-t_{obs}$ 的结果，都会被认为同样“极端”。如果检验统计量的分布是对称的（例如T分布或[正态分布](@keyword=normal_distribution|lang=zh-CN|style=Feynman)），那么计算[P值](@keyword=p_value|lang=zh-CN|style=Feynman)的方法就很优雅：我们计算出单侧尾部的概率，然后乘以2。 [@problem_id:1942484]
 
 $$ p = 2 \times P(T \ge |t_{obs}| | H_0) = 2 \times (1 - F(|t_{obs}|)) $$

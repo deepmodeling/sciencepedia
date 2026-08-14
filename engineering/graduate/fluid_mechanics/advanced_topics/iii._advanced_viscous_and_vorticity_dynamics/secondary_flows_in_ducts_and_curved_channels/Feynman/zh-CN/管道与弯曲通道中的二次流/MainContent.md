@@ -21,7 +21,7 @@
 
 <br>
 <div align="center">
-    <img src="https://assets.lanl.gov/images/publications/1693/dean-vortices.png" alt="Dean Vortices in a curved pipe, showing two counter-rotating vortices." width="500"/>
+
     <br>
     <small>图1：弯管中经典的迪安涡。中心流体流向外侧（右），沿壁面返回内侧（左），形成一对反向旋转的涡旋。</small>
 </div>

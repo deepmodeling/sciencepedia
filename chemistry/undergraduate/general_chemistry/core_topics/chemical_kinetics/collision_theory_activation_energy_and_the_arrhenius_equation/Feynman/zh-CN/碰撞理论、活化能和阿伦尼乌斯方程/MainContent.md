@@ -29,8 +29,6 @@
 
 我们可以用一张**[势能图](@keyword=potential_energy_diagrams|lang=zh-CN|style=Feynman)**来形象地描绘这个过程。这张图的横坐标代表“反应进程”，纵坐标代表系统的势能。反应物位于一个能量的“山谷”，产物位于另一个能量更低或更高的“山谷”。而连接这两个山谷的路径上，必然存在一个能量的最高点，这个“山顶”就是过渡态 ([@problem_id:1985449])。活化能$E_a$就是从反应物的“山谷”爬到[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)“山顶”所需的高度。
 
-![Potential Energy Diagram](https://i.imgur.com/example.png "一个简单的[势能图](@keyword=potential_energy_diagrams|lang=zh-CN|style=Feynman)，展示了反应物、产物、过渡态、$E_a$和$\Delta H$")
-
 这里必须澄清一个至关重要的概念：活化能的高低与反应本身是放热还是吸热（即[反应焓](@keyword=reaction_enthalpy|lang=zh-CN|style=Feynman)变 $\Delta H$）没有必然联系。一个反应可以释放大量能量（$\Delta H \ll 0$），使其在[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)上极度“自发”，但如果它的活化能壁垒非常高，[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)在常温下可能慢到无法察觉。这就像一块巨石稳坐在悬崖边上，它拥有巨大的势能，一旦落下会释放巨大能量，但只要没有足够强的初始推力（活化能）将它推下悬崖，它就会一直待在那里 ([@problem_id:1985463])。这就是为什么许多在[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)上有利的反应在动力学上是稳定的。
 
 [过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)本身并不是一个可以被分离出来的稳定分子。它是一个极其短暂的原子排布，处于旧键将断未断、新键将成未成的瞬间，可以说是化学世界的“惊鸿一瞥” ([@problem_id:1985449])。

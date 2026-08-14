@@ -69,8 +69,6 @@ The philosophical basis for normalization is the **assumption of sparsity**: in 
 
 A simple yet powerful way to diagnose the need for normalization is to create **boxplots** of the data distribution for each sample. A boxplot visually summarizes the minimum, lower quartile, median, upper quartile, and maximum of the data. If the experiment is free of bias, the boxes for all samples should be roughly aligned at the same level. If, as in the figure below, some boxes are systematically higher or lower than others, it's a clear signal that normalization is needed to make the samples comparable [@problem_id:1425847].
 
-![A conceptual image of four boxplots. Samples A and D are aligned, representing a control and its technical replicate. Sample B is shifted significantly upward, and Sample C is shifted significantly downward, indicating systematic shifts that require normalization.](placeholder_image.png)
-
 The methods for normalization range from simple to complex. It can be as straightforward as shifting all distributions so their medians align (**median centering**). For more complex distortions, we might use **[quantile normalization](@keyword=quantile_normalization|lang=en-US|style=Feynman)**, a procedure that forces the entire distribution of each sample to be identical. When we know the source of a batch effect, we can include it as a covariate in our statistical models, effectively asking the model to "subtract" the variation due to the batch before it estimates the biological effect of interest [@problem_id:4341312].
 
 ### Why Quality Matters: From False Discoveries to Clinical Decisions

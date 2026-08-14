@@ -13,8 +13,6 @@
 
 例如，一个半径为 5 的三维[闭球](@keyword=closed_ball|lang=zh-CN|style=Feynman) $B = \{ (x, y, z) \in \mathbb{R}^3 \mid \sqrt{x^2 + y^2 + z^2} \le 5 \}$ 就是有界的。显然，这个集合里的任何一点到原点的距离都不会超过 5 [@problem_id:2324044]。同样，任何有限个点组成的集合，比如三维空间中的几个[孤立点](@keyword=isolated_point|lang=zh-CN|style=Feynman)，也必然是有界的。你总可以找到离原点最远的那个点，并以此为半径画一个球把它包住 [@problem_id:1333189]。
 
-![](https://file.zs.ai/20240508/173934-874b.png)
-
 相反地，哪些集合是无界的呢？想象一条无限延伸的抛物线 $S = \{ (x, y) \in \mathbb{R}^2 \mid x = y^2 \}$ [@problem_id:2324005]。无论你画多大的圆盘，这条抛物线总有部分会延伸到圆盘之外。同样，三维空间中的一个平面，比如由方程 $2x - 3y + z = 5$ 定义的集合，也是无界的。你可以在这个平面上沿着某个方向一直走下去，离原点越来越远 [@problem_id:2324014]。这些集合虽然在某些方面很“规整”，但它们向着无穷远方无限延伸，因此它们不是有界的。
 
 ### 闭包性：无处可逃的边界
@@ -24,8 +22,6 @@
 什么是极限点？想象一个点列（点的序列），这个序列中的所有点都来自某个集合 $S$。如果这个点列越来越接近某个点 $L$，我们就说 $L$ 是这个点列的极限。如果对于 *任何* 这样的收敛点列，它的极限点 $L$ *总是* 属于集合 $S$ 本身，那么 $S$ 就是一个[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)。它就像一个完美的监狱，任何试图通过收敛到边界来“越狱”的序列，最终都会发现它的终点仍然在监狱之内。
 
 让我们来看一个经典的例子。考虑集合 $S_1 = \{ 1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \dots \}$ [@problem_id:1333212]。这个集合中的点组成一个序列，它们越来越接近 0。因此，0 是这个集合的一个[极限点](@keyword=limiting_points|lang=zh-CN|style=Feynman)。但是，0 本身并不在 $S_1$ 中！$S_1$ 就像一个有“漏洞”的集合，它“漏掉”了自己的一个极限点。因此，$S_1$ 不是一个[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)。
-
-![](https://file.zs.ai/20240508/174950-c8de.png)
 
 现在，如果我们把这个漏洞“补上”，定义一个新的集合 $S_2 = \{ 1, \frac{1}{2}, \frac{1}{3}, \dots \} \cup \{0\}$，情况就不同了。这个集合包含了它唯一的[极限点](@keyword=limiting_points|lang=zh-CN|style=Feynman) 0，因此 $S_2$ 是一个[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)。
 
@@ -72,8 +68,6 @@
 现在我们有了一个既是“闭”又是“有界”的集合。按照[海涅-博雷尔定理](@keyword=heine_borel_theorem|lang=zh-CN|style=Feynman)，它应该是紧致的吧？但事实并非如此！
 
 考虑序列 $(e_1, e_2, e_3, \dots)$。这个序列中任意两点之间的距离都是 $\sqrt{2}$。它能有一个收敛的子序列吗？绝无可能！一个收敛的序列，其项与项之间的距离必须趋向于0。而这个序列的点永远在互相“躲避”，永远不会“聚集”在任何地方。
-
-![](https://file.zs.ai/20240508/182512-c2b6.png)
 
 我们找到了一个闭有界但非紧致的集合！[海涅-博雷尔定理](@keyword=heine_borel_theorem|lang=zh-CN|style=Feynman)在无限维空间中失效了。为什么？因为[无限维空间](@keyword=infinite_dimensional_spaces_2|lang=zh-CN|style=Feynman)实在是“太大”了。尽管我们把所有的点都限制在了一个有界的“球”里，但这个球里有无限多个相互垂直的维度可以供这些点“躲藏”。有限维度的“盒子”无论如何都会迫使点聚集，而无限维度的“盒子”却有足够的空间让无限个点彼此保持距离。
 

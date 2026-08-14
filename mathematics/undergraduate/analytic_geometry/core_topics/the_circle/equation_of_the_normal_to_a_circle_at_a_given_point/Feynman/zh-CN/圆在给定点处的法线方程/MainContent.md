@@ -23,7 +23,7 @@
 
 <br />
 <p align="center">
-  <img src="https://i.imgur.com/nJgqC0q.png" alt="A diagram showing that the normal line to a circle at any point P passes through the center C. The normal is perpendicular to the tangent at P." width="450"/>
+
   <em>图1：圆的法线的黄金法则——法线（红色）永远通过圆心 $C$，并与切线（蓝色）垂直。</em>
 </p>
 <br />

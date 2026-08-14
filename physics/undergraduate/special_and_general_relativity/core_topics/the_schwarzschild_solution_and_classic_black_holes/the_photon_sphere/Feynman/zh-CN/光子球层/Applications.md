@@ -13,7 +13,7 @@
 因此，当你从远处观察时，你的视线中会有一个特定的区域，来自这个方向的所有光线都被[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)“吞噬”了。这个区域的边界，正是由那些拥有临界瞄准参数的[光子](@keyword=photon|lang=zh-CN|style=Feynman)所勾勒出来的。它们从你身后遥远的星空出发，仿佛在[光子球](@keyword=photon_sphere|lang=zh-CN|style=Feynman)上进行了一次惊险的“擦边球”表演，然后恰好射入你的眼中。[光子球](@keyword=photon_sphere|lang=zh-CN|style=Feynman)就像一个巨大的引力“靶心”，决定了[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)能够捕获光线的范围。对于最简单的非旋转黑洞（史瓦西黑洞），这个临界瞄准参数被精确地确定为 $b_{\text{crit}} = 3\sqrt{3}M$ (采用几何单位)。
 
 <center>
-<img src="https://i.imgur.com/uG5tLz9.png" width="600" alt="Illustration shows light rays from a distant source being bent around a black hole. Rays with a small impact parameter are captured, while rays with a large impact parameter are deflected. Rays at the critical impact parameter form the edge of the black hole shadow.">
+
 <br>
 <small>图1：[光子球](@keyword=photon_sphere|lang=zh-CN|style=Feynman)是[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)剪影的“设计师”。从远方传来的光线，如果其路径过于靠近[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)（[瞄准参数](@keyword=impact_parameter|lang=zh-CN|style=Feynman)小于临界值），就会被捕获。恰好在临界路径上的光线，勾勒出了我们所能观测到的[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)剪影的轮廓。</small>
 </center>
@@ -31,7 +31,7 @@
 来自[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)后方遥远恒星或类星体的光，在靠近[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)时可能会被弯曲到如此剧烈的程度，以至于它会绕着[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)转上好几圈才最终挣脱引力束缚，飞向我们。这意味着，对于同一个光源，我们可以同时看到多个影像！一个几乎没怎么偏折的“直接”影像，以及一系列越来越暗、越来越扭曲的“[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)性影像”，分别对应于绕了[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)一圈、两圈、三圈……的光线。
 
 <center>
-<img src="https://i.imgur.com/8QeR9mX.png" width="600" alt="Diagram showing multiple light paths from a source to an observer, with some paths looping around the black hole near the photon sphere, creating relativistic images.">
+
 <br>
 <small>图2：[强引力透镜效应](@keyword=strong_gravitational_lensing|lang=zh-CN|style=Feynman)。来自遥远光源（如[类星体](@keyword=quasars|lang=zh-CN|style=Feynman)）的光线在经过[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)附近时，可以沿多条路径到达观测者。除了直接路径（0），光线还可能绕[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)一圈（1）、两圈（2）甚至更多圈，形成一系列[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)性影像。</small>
 </center>

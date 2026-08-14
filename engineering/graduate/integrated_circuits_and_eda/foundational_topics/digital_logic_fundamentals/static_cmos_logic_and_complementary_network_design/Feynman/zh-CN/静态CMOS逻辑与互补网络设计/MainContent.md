@@ -19,7 +19,7 @@
 
 让我们看看最简单的[CMOS逻辑门](@keyword=cmos_gate|lang=zh-CN|style=Feynman)——**反相器**。它由一个连接到电源 $V_{DD}$ 的PMOS（称为**[上拉网络](@keyword=pull_up_network|lang=zh-CN|style=Feynman), PUN**）和一个连接到地线的NMOS（称为**[下拉网络](@keyword=pull_down_network|lang=zh-CN|style=Feynman), PDN**）组成。输入信号同时连接到这两个晶体管的门极。
 
-![[CMOS](@keyword=complementary_metal_oxide_semiconductor|lang=zh-CN|style=Feynman) Inverter](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/CMOS_inverter.svg/200px-[CMOS](@keyword=complementary_metal_oxide_semiconductor|lang=zh-CN|style=Feynman)_inverter.svg.png)
+ Inverter](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/CMOS_inverter.svg/200px-[CMOS](@keyword=complementary_metal_oxide_semiconductor|lang=zh-CN|style=Feynman)_inverter.svg.png)
 
 现在，奇迹发生了：
 *   当输入为逻辑‘1’ ($V_{DD}$)：NMOS导通，将输出端拉到地（逻辑‘0’）。与此同时，PMOS关闭，切断了与电源的连接。

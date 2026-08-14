@@ -18,7 +18,7 @@
 这个简单的比喻恰好抓住了为何 $\pi_1$（[基本群](@keyword=fundamental_group|lang=zh-CN|style=Feynman)，研究一维圈）通常不可交换，而 $\pi_n$（对于 $n \ge 2$）却是可交换的几何核心 [@problem_id:1630810]。在一维情况下，你被“卡”在一条线上。要想交换两个不相交区间的顺序，它们在某个时刻必须“穿过”对方。但在二维或更高维度中，你拥有了额外的“机动空间”。一个物体可以“绕过”另一个物体。正是这“多余”的维度，赋予了我们交换操作的自由。
 
 <div align="center">
-<img src="https://i.imgur.com/kS5x84I.png" width="700" alt="A diagram contrasting the inability to swap two intervals on a line without intersection, with the ability to swap two squares in a plane by moving one around the other.">
+
 <br>
 <small>图1：在一维线段上，交换区间 $A$ 和 $B$ 的位置必然导致重叠。而在二维平面上，我们可以让方块 $A$ 绕过方块 $B$ 来交换它们的位置，全程保持分离。</small>
 </div>
@@ -61,7 +61,7 @@ $$
 3.  最后，我们将交换了位置的小方块重新“展开”，让 $g$ 占据左半边， $f$ 占据右半边。瞧！我们从 $f+_1 g$ 的某种形式（压缩版）连续地变成了 $g+_1 f$ 的某种形式（压缩版）。这整个过程就是所谓的“[同伦](@keyword=homotopy|lang=zh-CN|style=Feynman)”，证明了 $[f+_1 g] = [g+_1 f]$。
 
 <div align="center">
-<img src="https://i.imgur.com/r6m822u.gif" width="600" alt="An animation showing the homotopy that proves commutativity in pi_2. The left half (f) and right half (g) shrink to opposite corners, slide past each other, and then expand into the opposite halves.">
+
 <br>
 <small>图2：证明 $\pi_2$ 阿贝尔性的[同伦](@keyword=homotopy|lang=zh-CN|style=Feynman)过程。左半边的 $f$ 和右半边的 $g$ (代表 $f+_1 g$) 收缩到左上和右下角，然后相互“滑过”对方，最终扩展为 $g$ 在左、$f$ 在右 (代表 $g+_1 f$) 的形态。</small>
 </div>

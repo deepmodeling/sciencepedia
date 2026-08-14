@@ -19,8 +19,6 @@
 
 恐怕不能。考虑一个函数 $f(x) = \frac{x+2}{x-1}$，我们想在区间 $[0, 3]$ 上找到它的最大值 [@problem_id:1331312]。这个区间是闭合且有界的，看起来满足条件。但当我们考察这个函数时，会发现一个“陷阱”：在 $x=1$ 这个点，分母变成了零。[函数图像](@keyword=function_graph|lang=zh-CN|style=Feynman)在此处断裂，形成了一条垂直渐近线。当你从左边逼近 $x=1$ 时，函数值会奔向负无穷；从右边逼近时，则奔向正无穷。这条曲线在区间内部“撕裂”了，它根本没有最大值或最小值。
 
-![A graph showing a vertical asymptote at x=1 for the function f(x) = (x+2)/(x-1)](https://i.imgur.com/eGk3vjF.png)
-
 这里的教训是，**连续性是绝对必要的**。哪怕只有一个点不连续，整个保证就可能土崩瓦解。函数的曲线必须是完整无缺的。有时，这种“跳跃”甚至不一定奔向无穷大。想象一个在 $[0, 1]$ 上的函数，它在 $[0, 1)$ 区间上等于 $f(x) = x$，但在终点 $x=1$ 处，它突然“跳”到了 $f(1) = 0$ [@problem_id:1331320]。这个函数的数值可以无限接近 1，但永远无法“达到”1。它的上限是 1，却没有最大值，因为它恰好在要达到最大值的地方跳开了。连续性确保了函数不会在“冲顶”的最后一刻“退缩”。
 
 ### 第二根支柱：有界性——画作不能无限延伸
@@ -30,8 +28,6 @@
 答案依然是否定的。想象一下函数 $f(x) = x$ 在区间 $[0, \infty)$ 上。它显然是连续的，但它会一直增长下去，永无止境。你永远找不到一个“最高点”，因为无论你走到多远，总能走得更远，达到更高的高度。
 
 也许你会说，这太简单了。那么来看一个更“狡猾”的函数：$f(x) = x - 100 \cos(x)$，同样定义在 $[0, \infty)$ 上 [@problem_id:1580796]。这个函数在前进时会上下[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，但总体趋势是不断上升的。尽管它有无数的局部高峰，但没有一个“全球”的最高峰。无论你站在哪个山峰上，远处总有另一座更高的山峰在等着你。
-
-![A graph of f(x) = x - 100cos(x) showing an overall increasing trend with oscillations](https://i.imgur.com/S8WvV3w.png)
 
 定义域的**有界性**确保了我们的“搜索范围”是有限的。没有这条，连续的曲线也可能“一去不复返”，奔向无穷。有趣的是，一个函数在无界区域上可以是有界的（比如 $f(x) = \frac{1}{x+1}$ 在 $[0, \infty)$ 上），但它也可能无法达到它的上界。例如，函数 $f(x) = \arctan(x)$ 在 $[0, \infty)$ 上的值永远小于 $\frac{\pi}{2}$，它无限趋近于这个“天花板”，却永远不会触碰到它 [@problem_id:1331320]。因此，它有上界，却没有最大值。
 
@@ -56,8 +52,6 @@
 > **任何定义在紧致集合上的[连续函数](@keyword=continuous_function|lang=zh-CN|style=Feynman)，都必然在该集合上取得其[最大值和最小值](@keyword=maximum_and_minimum|lang=zh-CN|style=Feynman)。**
 
 这个表述的美妙之处在于它的普适性。它不再局限于简单的区间 $[a, b]$。例如，考虑一个由两个不相连的[闭区间](@keyword=closed_and_bounded_interval|lang=zh-CN|style=Feynman)组成的集合 $S = [0, 1] \cup [2, 3]$ [@problem_id:2323027]。这个集合不是一个连通的区间，但它依然是闭合且有界的，因此它是紧致的。[极值定理](@keyword=the_extreme_value_theorem|lang=zh-CN|style=Feynman)依然有效！任何在这个“破碎”的定义域上连续的函数，仍然必须有一个全局的[最大值和最小值](@keyword=maximum_and_minimum|lang=zh-CN|style=Feynman)。
-
-
 
 我们甚至可以把这个想法推广到更高维度。想象一下在一个二维平面上的[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman) $S^1 = \{(x,y) \in \mathbb{R}^2 \mid x^2+y^2=1\}$ [@problem_id:2323023]。这个圆是闭合的（它包含了所有[边界点](@keyword=boundary_points|lang=zh-CN|style=Feynman)），也是有界的（它被一个正方形完全包围）。因此，[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)是一个紧致集。这意味着，如果你在这样一个[圆环](@keyword=annulus|lang=zh-CN|style=Feynman)上测量任何连续变化的物理量，比如每一点的温度或者电势，那么你必然能找到一个最热点和一个最冷点。这个定理从一维的曲线优美地延伸到了二维的环、三维的球面，乃至更高维度的抽象空间。这正是数学力量的体现——从具体实例中提炼出普遍的、统一的深刻原理。
 

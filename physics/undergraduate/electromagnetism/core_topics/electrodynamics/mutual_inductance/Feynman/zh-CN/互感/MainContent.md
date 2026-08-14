@@ -21,7 +21,7 @@ $M$ 是一个奇妙的量。它与电流的大小、变化快慢都无关，只�
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/uG5kK0Q.png" alt="Magnetic field lines from a straight wire are parallel to the plane of a perpendicular loop, resulting in zero magnetic flux and zero mutual inductance." style="width: 60%;">
+
   <figcaption>图1：当直导线的磁感应线（蓝色圆圈）与线圈平面平行时，没有磁感应线“穿过”线圈面积，因此[磁通量](@keyword=magnetic_flux|lang=zh-CN|style=Feynman)和互感都为零。[@problem_id:1594000]</figcaption>
 </figure>
 </center>

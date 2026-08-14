@@ -34,7 +34,7 @@ $$ \sigma_{tot} = \int \frac{d\sigma}{d\Omega} d\Omega = \int C_0 d\Omega = C_0 
 那么，这个[微分散射截面](@keyword=differential_scattering_cross_section|lang=zh-CN|style=Feynman)——这个散射的“角分布指纹”——究竟是由什么决定的呢？答案是相互作用势 $V(r)$。对于一个给定的入射粒子，它的命运取决于它与靶心的“擦肩而过”的距离有多近。这个距离，我们称之为**冲击参数 (impact parameter)**，用 $b$ 表示。它是粒子初始运动轨迹到穿过靶心的平行线之间的[垂直距离](@keyword=perpendicular_distance|lang=zh-CN|style=Feynman)。
 
 <center>
-<img src="https://i.imgur.com/example_impact_parameter.png" width="400">
+
 </center>
 <br>
 

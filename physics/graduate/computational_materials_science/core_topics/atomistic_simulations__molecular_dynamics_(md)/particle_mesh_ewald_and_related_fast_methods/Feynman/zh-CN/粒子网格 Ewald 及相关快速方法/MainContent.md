@@ -24,7 +24,6 @@ Ewald 的想法是，我们可以将每一个[点电荷](@keyword=point_charges|
 1.  一个“**屏蔽[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)**”：它由原来的[点电荷](@keyword=point_charges|lang=zh-CN|style=Feynman) $q_i$ 和一个恰好抵消其[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)、中心重合但形态模糊的高斯[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)云（电荷密度为 $-q_i \exp(-\alpha^2 r^2)$）组成。这个组合的总[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)为零，其产生的[电势](@keyword=electric_potential|lang=zh-CN|style=Feynman)是一个短程作用，会随着距离迅速衰减。
 2.  一个“**补偿[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)**”：为了维持物理上的等价性，我们必须在同一位置再“加回”一个与之前相反的高斯[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)云（电荷密度为 $+q_i \exp(-\alpha^2 r^2)$）。这个补偿[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)云是平滑且弥散的。
 
-![Ewald Splitting](https://www.researchgate.net/profile/Tom-Young-7/publication/220412803/figure/fig1/AS:393699745124352@1470876579294/Illustration-of-the-Ewald-decomposition-A-point-charge-is-split-into-a-screened.png)
 _图：Ewald 分裂示意图。一个点电荷被分解为一个短程的屏蔽[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)和一个长程的、平滑的补偿高斯[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)云。_
 
 通过这个巧妙的数学构造，我们没有改变任何物理，只是将一个困难的计算任务分解成了两个相对简单的部分：

@@ -22,7 +22,7 @@
 真正的解决方案要精妙得多。我们为每个变量 $x_i$ 构建一个我们称之为“变量小工具”（variable gadget）的子图。想象一个菱形的结构，它有一个唯一的入口节点和一个唯一的出口节点。从入口到出口，有两条内部互不相交的道路可供选择：我们称之为“T路径”（代表真）和“F路径”（代表假）。
 
 <center>
-<img src="https://i.imgur.com/gKj3q6H.png" alt="A diagram of a variable gadget, showing an entry node, an exit node, and two parallel, disjoint paths between them labeled 'True path' and 'False path'." width="500">
+
 </center>
 <br>
 
@@ -49,7 +49,7 @@
 想象一下，每个变量小工具的T路径和F路径就像是两条高速公路。如果子句 $C_j$ 中包含文字 $x_i$（即 $x_i$ 为真时能满足 $C_j$），我们就从 $x_i$ 小工具的T路径（真值高速）上，修建一条通往子句节点 $c_j$（$j$ 号检查站）的岔路，然后再修一条路从 $c_j$ 返回T路径。同样，如果 $C_j$ 中包含文字 $\neg x_i$，我们就从 $x_i$ 小工具的F路径（假值高速）上修建类似的岔路。
 
 <center>
-<img src="https://i.imgur.com/lP1jVvL.png" alt="A diagram illustrating a clause gadget. A path along a variable's 'True' track has a detour option to visit a clause node 'c_j' and return, representing the satisfaction of the clause." width="600">
+
 </center>
 <br>
 

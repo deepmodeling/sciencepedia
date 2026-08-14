@@ -16,8 +16,6 @@
 
 更有趣的是，我们可以用模态公理来规定计算系统的行为准则。以著名的**邱奇-罗素（Church-Rosser）性质**为例，它在[计算理论](@keyword=theory_of_computation|lang=zh-CN|style=Feynman)中保证了“[殊途同归](@keyword=equifinality|lang=zh-CN|style=Feynman)”。该性质可以用一个双模态公理来表达：$\Diamond_1 \Box_2 p \to \Box_2 \Diamond_1 p$ ([@problem_id:2975814])。这条公理对应的克里普克框架性质是什么呢？它恰好是说，如果一个状态 $x$ 既可以通过 $R_1$ 到达 $y$，又可以通过 $R_2$ 到达 $z$，那么 $y$ 和 $z$ 必然能共同到达某个后继状态 $u$（$y$ 通过 $R_2$ 到达 $u$，$z$ 通过 $R_1$ 到达 $u$）。这形成了一个优美的“菱形闭包”！这个性质保证了无论你先选择哪条路径，总有办法重新汇合。对于[并行计算](@keyword=parallel_computing|lang=zh-CN|style=Feynman)和数据处理系统来说，这是一个至关重要的可靠性保证。
 
-![A diagram illustrating the diamond property for the Church-Rosser axiom.](https://static.artofproblemsolving.com/resources/media/tex/c/a/049e38e6cd8cb44186fde3d4c063b40026e4fbca.png)
-
 更进一步，我们如何判断两个看起来完全不同的系统（比如两套不同的地铁线路图）在“行为”上是等价的？也许一个系统内部结构复杂，另一个则很简单，但对一个只关心“能去哪儿”的乘客而言，它们可能毫无区别。这个“行为等价”的精确概念，在计算机科学中被称为**互模态（Bisimulation）** ([@problem_id:2975813])。两个系统若是互模态的，那么在一个系统中任何一步“进程”，在另一个系统中都能找到对应的一步，反之亦然。奇妙的是，基础[模态逻辑](@keyword=modal_logic|lang=zh-CN|style=Feynman)恰好是描述这种行为等价性的完美语言：两个有根[克里普克模型](@keyword=kripke_models|lang=zh-CN|style=Feynman)是互模态的，当且仅当它们满足完全相同的[模态逻辑](@keyword=modal_logic|lang=zh-CN|style=Feynman)公式。[模态逻辑](@keyword=modal_logic|lang=zh-CN|style=Feynman)不关心世界的“内部构造”（同构，isomorphism），只关心它们之间的“连接行为”（互模态，bisimulation）。这使得它成为分析并发系统和进程代数的天然语言。
 
 #### 哲学与人工智能：知识与信念的逻辑

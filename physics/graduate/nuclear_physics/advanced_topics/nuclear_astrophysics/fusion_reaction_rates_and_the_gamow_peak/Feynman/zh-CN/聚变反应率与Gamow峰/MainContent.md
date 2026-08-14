@@ -49,8 +49,6 @@ $$ R(E) \propto \exp\left(-\frac{E}{k_B T}\right) \times \exp\left(-\sqrt{\frac{
 
 这是一个绝妙的组合！[麦克斯韦-玻尔兹曼](@keyword=maxwell_boltzmann|lang=zh-CN|style=Feynman)因子在能量低时很大，但随着能量升高而迅速衰减；[伽莫夫因子](@keyword=gamow_factor|lang=zh-CN|style=Feynman)在能量低时极小，但随着能量升高而迅速增长。这两条曲线的乘积，必然会在某个中间能量达到一个峰值。这个峰值所在的能量，就是聚变反应发生得最频繁、最有效率的地方，我们称之为**[伽莫夫峰](@keyword=gamow_peak|lang=zh-CN|style=Feynman) (Gamow Peak)**，其对应的能量为 $E_0$。[@problem_id:2921676]
 
-![Gamow Peak](https://i.imgur.com/8x2t5gG.png "Gamow_Peak")
-
 -   在 $E \lt E_0$ 的区域，虽然有很多粒子，但它们的能量太低，几乎无法隧穿[库仑势垒](@keyword=coulomb_barrier|lang=zh-CN|style=Feynman)。
 -   在 $E \gt E_0$ 的区域，虽然粒子很容易隧穿，但它们的数量实在太稀少了。
 -   只有在 $E \approx E_0$ 这个狭窄的“窗口”里，粒子数量和隧穿概率达到了最佳平衡，贡献了绝大部分的聚变反应。
@@ -58,7 +56,6 @@ $$ R(E) \propto \exp\left(-\frac{E}{k_B T}\right) \times \exp\left(-\sqrt{\frac{
 通过简单的微积分，我们可以找到使指数部分最小化的能量 $E_0$，也就是[伽莫夫峰](@keyword=gamow_peak|lang=zh-CN|style=Feynman)的位置 [@problem_id:1902833]。计算结果表明，$E_0$ 远大于平均热能 $k_B T$，但仍然远小于[库仑势垒](@keyword=coulomb_barrier|lang=zh-CN|style=Feynman)的高度。这完美地解决了我们最初的悖论：[恒星聚变](@keyword=stellar_fusion|lang=zh-CN|style=Feynman)并非由平均能量的粒子主导，而是由那些能量远高于平均水平、但数量尚可的“精英粒子”，在量子隧穿的帮助下完成的。利用这一原理，我们甚至可以相当准确地估算出恒星启动聚变的“点火温度”，其结果与天体物理观测惊人地吻合。[@problem_id:1902833]
 
 我们还可以进一步分析这个峰的形状。通过在峰值能量 $E_0$ 附近做近似，可以发现[伽莫夫峰](@keyword=gamow_peak|lang=zh-CN|style=Feynman)非常像一个高斯分布。这个分布的**宽度** $\Delta$ 告诉我们，绝大多数聚变反应都发生在一个非常狭窄的能量范围——**伽莫夫窗口 (Gamow window)** 内。这个窗口的宽度，以及它如何随温度变化，对于精确计算反应率至关重要。[@problem_id:335058]
-
 
 ### 恒星的[恒温器](@keyword=thermostats|lang=zh-CN|style=Feynman)：一个深刻的[反馈机制](@keyword=feedback_mechanisms|lang=zh-CN|style=Feynman)
 

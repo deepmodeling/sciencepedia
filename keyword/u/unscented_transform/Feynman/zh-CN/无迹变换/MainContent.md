@@ -28,5 +28,5 @@
 
 这些点形成一个对称的[星形图](@keyword=star_graph|lang=zh-CN|style=Feynman)案，体现了我们原始分布的前两阶矩。
 
-![一个二维高斯分布的sigma点，展示了一个点在均值处，另外两个点沿[协方差](@keyword=covariance|lang=zh-CN|style=Feynman)椭圆的每个[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)分布。](https_latex_images_unscented_transform_sigma_points.png)
+椭圆的每个[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)分布。](https_latex_images_unscented_transform_sigma_points.png)
 *图1：一个二维分布的$2n+1=5$个sigma点。选择这些点是为了匹配原始不确定性椭圆的均值和协方差。*

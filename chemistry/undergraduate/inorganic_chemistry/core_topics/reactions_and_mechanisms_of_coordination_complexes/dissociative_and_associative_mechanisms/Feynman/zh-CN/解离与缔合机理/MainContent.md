@@ -25,7 +25,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/7H6l4iZ.png" alt="Potential energy profiles for dissociative (D) and associative (A) mechanisms, showing the change in coordination number and the formation of intermediates." width="600"/>
+
   <figcaption>图1：解离（D）机制与缔合（A）机制的势能剖面图。D机制通过一个较低配位数的中间体（如五配位），而A机制则通过一个较高[配位数](@keyword=coordination_number|lang=zh-CN|style=Feynman)的中间体（如七配位）。</figcaption>
 </figure>
 </center>

@@ -15,8 +15,6 @@ For example, if the population is currently 'Low', prey is abundant, and the pop
 
 We can visualize this as a sort of board game. The states are the squares, and the probabilities are the rules for moving your token.
 
-![State transition diagram showing three nodes (Low, Medium, High) with directed, weighted edges representing the probabilities of moving between states.](https://i.imgur.com/example.png "State Transition Diagram")
-
 Mathematically, we capture this entire game in a single, elegant object: the **transition matrix**, which we'll call $P$.
 
 $$

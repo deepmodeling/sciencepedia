@@ -16,7 +16,7 @@ Let's replace the water waves with light and the breakwater with a diffraction g
 Now, consider the light traveling outwards at some angle $\theta$ relative to the original direction. Look at the waves coming from two adjacent slits. If we are to see a bright spot in this direction, these two waves must arrive in perfect sync, crest on crest, trough on trough. This is the condition for **constructive interference**.
 
 <center>
-<img src="https://i.imgur.com/kS5x87J.png" alt="Geometric [path difference](@keyword=path_difference|lang=en-US|style=Feynman) for a [diffraction grating](@keyword=diffraction_grating|lang=en-US|style=Feynman)." width="500"/>
+
 </center>
 
 As you can see from the simple geometry, the wave from the lower slit has to travel an extra distance, $\Delta L$, to reach a distant observer. This path difference is simply $d \sin\theta$, where $d$ is the distance between the centers of the slits, called the **grating period** or spacing. For the waves to be in perfect sync, this extra distance must be exactly an integer number of wavelengths. Not one and a half wavelengths, not 0.7, but exactly 0, 1, 2, 3, or more full wavelengths. Any other value and they will, over thousands of slits, perfectly cancel out.

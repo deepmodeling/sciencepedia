@@ -51,7 +51,7 @@ $$
 如果我们不断重复这个三步舞曲，每次稍微改变一点激光的失谐量 $\delta$，然后测量最终处于[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的原子比例，我们就能画出一张图。这张图展现了 $P_e$ 作为 $\delta$ 的函数，它呈现出一系列美丽的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)条纹，就像下图所示，这就是著名的**[拉姆齐条纹](@keyword=ramsey_fringes|lang=zh-CN|style=Feynman)**。
 
 <center>
-<img src="https://i.imgur.com/uG9XnLp.png" width="600">
+
 <br>
 [拉姆齐条纹](@keyword=ramsey_fringes|lang=zh-CN|style=Feynman)：激发概率 $P_e$ 随失谐量 $\delta$ [振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。中央最亮的条纹对应于 $\delta=0$。
 </center>

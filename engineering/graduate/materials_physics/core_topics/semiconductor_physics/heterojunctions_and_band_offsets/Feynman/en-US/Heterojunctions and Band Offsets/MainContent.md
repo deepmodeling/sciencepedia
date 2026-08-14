@@ -22,7 +22,7 @@ Up to this point, our discussion could apply to a junction made of the same mate
 Because $E_g$ and $\chi$ are different for the two materials, when the bands bend to align the Fermi levels, the band edges themselves cannot line up perfectly across the interface. At the precise point of contact, there must be an abrupt jump, or [discontinuity](@keyword=discontinuity|lang=en-US|style=Feynman). The size of this jump in the "floor" of the conduction band is the **conduction [band offset](@keyword=band_offset|lang=en-US|style=Feynman)**, $\Delta E_c$, and the jump in the "ceiling" of the valence band is the **valence [band offset](@keyword=band_offset|lang=en-US|style=Feynman)**, $\Delta E_v$. These offsets are the single most important characteristic of a [heterojunction](@keyword=heterojunction|lang=en-US|style=Feynman). They create energy barriers that can block electrons, or energy wells that can trap them. By engineering these "cliffs" and "waterfalls" in the energy landscape, we can control the flow and location of [electrons and holes](@keyword=electrons_and_holes|lang=en-US|style=Feynman) with breathtaking precision.
 
 <center>
-<img src="https://i.imgur.com/example-band-diagram.png" width="600">
+
 <br>
 <em>Fig 1. A schematic of a Type I [heterojunction](@keyword=heterojunction|lang=en-US|style=Feynman), showing the constant Fermi level ($E_F$), [band bending](@keyword=band_bending|lang=en-US|style=Feynman) in the [depletion region](@keyword=depletion_region|lang=en-US|style=Feynman), and the crucial band offsets, $\Delta E_c$ and $\Delta E_v$, at the interface.</em>
 </center>

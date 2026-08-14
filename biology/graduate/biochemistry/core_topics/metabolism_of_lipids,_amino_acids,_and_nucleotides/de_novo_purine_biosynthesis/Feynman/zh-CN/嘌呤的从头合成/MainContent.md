@@ -23,7 +23,7 @@
 
 <br>
 <div align="center">
-<img src="https://i.imgur.com/uR1Ew1N.png" alt="Origins of the atoms in the purine ring" width="500"/>
+
 <br>
 <p>图1：嘌呤环中各原子的来源。生命用最简单的几种代谢“积木”，搭建出了信息分子的核心骨架。</p>
 </div>

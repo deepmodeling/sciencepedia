@@ -18,7 +18,7 @@ So, how do we build one of these strange beasts? One of the most beautiful and c
 Imagine we start with a straight line segment. This is our "initiator". Now, we apply a "generator" rule: we divide the line into three equal parts, remove the middle one, and in its place, we erect the other three sides of a square pointing outwards. What you're left with is a shape made of 5 smaller line segments, each one-third the size of the original. Now, here’s the magic: we apply this same rule to *each* of those 5 new segments. And then to the 25 segments that result from that. And on, and on, to infinity. The final object is a [fractal](@keyword=fractal|lang=en-US|style=Feynman) curve [@problem_id:860039].
 
 <center>
-    <img src="https://i.imgur.com/83uQImF.png" alt="Construction of a square-based Koch curve" width="600"/>
+
     <br/>
     <small><i>Figure 1: The first few iterations of constructing a [self-similar](@keyword=self_similar|lang=en-US|style=Feynman) [fractal](@keyword=fractal|lang=en-US|style=Feynman). The same simple rule, when applied repeatedly, generates infinite complexity.</i></small>
 </center>

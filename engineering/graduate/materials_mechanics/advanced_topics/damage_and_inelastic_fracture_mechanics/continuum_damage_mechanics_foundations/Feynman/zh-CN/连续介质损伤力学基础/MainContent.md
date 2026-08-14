@@ -17,7 +17,7 @@ CDM提供了一个强大的理论框架，它通过引入内部[状态变量](@k
 
 这个 $D$ 究竟代表什么？一个非常直观的想像是，它代表了在一个微小的[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)上，因为微裂纹和微孔洞而损失的承载面积的比例。[@problem_id:2873749] 想象一块瑞士奶酪，孔洞越多，奶酪就越“弱”。如果一个[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)上有 $40\%$ 的面积是孔洞，那么[损伤变量](@keyword=damage_variable|lang=zh-CN|style=Feynman) $D$ 就是 $0.4$。
 
-![一块有微孔洞的材料[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)](https://i.imgur.com/example.png "一个带有微孔洞的材料，其有效承载面积为 (1-D)A")
+](https://i.imgur.com/example.png "一个带有微孔洞的材料，其有效承载面积为 (1-D)A")
 
 这个简单的想法引出了一个核心概念：**有效应力（effective stress）**。我们用工程仪器测量的应力，我们称之为[名义应力](@keyword=nominal_stress|lang=zh-CN|style=Feynman) $\sigma$，是作用在整个[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)积 $A_0$ 上的力的结果。但是，真正“感受”到这个力的，是那些还未损坏的部分，也就是“[有效面积](@keyword=effective_area|lang=zh-CN|style=Feynman)” $A = (1-D)A_0$。作用在这部分上的应力，即有效应力 $\tilde{\sigma}$，显然要比[名义应力](@keyword=nominal_stress|lang=zh-CN|style=Feynman)大：
 $$
@@ -42,8 +42,6 @@ $$
 这个公式是连接宏观世界与微观损伤的桥梁！我们可以通过实验测量应力 $\sigma$ 和应变 $\varepsilon$，然后比较当前的刚度与初始刚度 $E_0$ 的比值，就能反推出那个隐藏的[损伤变量](@keyword=damage_variable|lang=zh-CN|style=Feynman) $D$ 的值。[@problem_id:2873749] 比如，如果我们发现材料的刚度下降到了原来的一半，我们就可以推断 $D \approx 0.5$。
 
 值得注意的是，损伤和我们可能更熟悉的**塑性（plasticity）**是两回事。塑性是指材料发生不可恢复的形状改变，比如你把一根回形针掰直，它不会自己变回去。但掰直了的回形针可能依然很“结实”，它的刚度并没有明显变化。而损伤，正如我们所见，其核心特征是让材料变“软”。在实验上，塑性表现为卸载后留下的永久变形，而损伤则表现为卸载-再加载曲线的斜率变小了。[@problem_id:2873734]
-
-![损伤与塑性的应力-应变曲线对比](https://i.imgur.com/example2.png "损伤导致刚度下降，而塑性导致永久变形。")
 
 ### 破坏的“引擎”：来自[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)的视角
 

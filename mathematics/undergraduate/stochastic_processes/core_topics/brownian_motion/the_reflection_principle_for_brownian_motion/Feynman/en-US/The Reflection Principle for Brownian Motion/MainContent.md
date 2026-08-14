@@ -22,7 +22,7 @@ Consider a path that *does* hit the line $a$. Let's call the very first time it 
 Now for the trick. We are going to create a new, "reflected" path. Up until the moment $\tau_a$ when it first hits the line, this new path is identical to the old one. But for every moment *after* $\tau_a$, we reflect the path's position across the line $a$. If the original path was at a position $B_s$, the new path $\tilde{B}_s$ will be at a position $2a - B_s$. Think of it as folding the graph paper along the line $y=a$ for all times after the first touch [@problem_id:1344189].
 
 <center>
-<img src="https://i.imgur.com/8Qj9wF4.png" alt="A diagram illustrating the reflection of a Brownian path. The original path (solid blue) starts at 0, hits level a at time tau_a, and ends at B_t below a. The reflected path (dashed red) is identical until tau_a, then becomes the mirror image of the original path across the line y=a, ending at 2a - B_t." width="500"/>
+
 <br>
 <i>Figure 1: A Brownian path (blue) hits level $a$ at time $\tau_a$ and ends at $B_t < a$. Its reflection (red) after $\tau_a$ ends at $\tilde{B}_t = 2a - B_t > a$.</i>
 </center>

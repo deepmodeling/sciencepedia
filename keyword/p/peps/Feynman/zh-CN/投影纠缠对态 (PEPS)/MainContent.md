@@ -13,7 +13,7 @@
 
 一个二维量子系统的整个、指数级复杂的[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)，是由一个单一、重复的构建单元构建的：一个**[张量](@keyword=tensor|lang=zh-CN|style=Feynman)**。把这个[张量](@keyword=tensor|lang=zh-CN|style=Feynman)想象成一种特殊的乐高积木。这块积木有一条伸入我们世界的“物理”腿——它代表了某个格点上的实际物理粒子，比如一个电子的自旋向上或向下。但它也有几条隐藏在视线之外的“虚拟”腿，用于与它的邻居连接。在一个方格格子上，每个[张量](@keyword=tensor|lang=zh-CN|style=Feynman)有四条虚拟腿，分别对应一个邻居：北、南、东、西 [@problem_id:3018468]。
 
-![一个 PEPS [张量](@keyword=tensor|lang=zh-CN|style=Feynman)，带有一个物理指标 (s) 和四个虚拟指标 (l,r,u,d)。](https://i.imgur.com/example.png)
+，带有一个物理指标 (s) 和四个虚拟指标 (l,r,u,d)。](https://i.imgur.com/example.png)
 
 当您将这些[张量](@keyword=tensor|lang=zh-CN|style=Feynman)铺设在网格上，并将一个[张量](@keyword=tensor|lang=zh-CN|style=Feynman)的每一条虚拟腿连接到其邻居的相应腿上时，完整的[量子态](@keyword=quantum_state|lang=zh-CN|style=Feynman)就出现了。这个态的完整描述，即发现粒子处于特定构型 $\{s_1, s_2, \dots, s_N\}$ 的振幅 $\Psi(s_1, s_2, \dots, s_N)$，是通过“收缩”这个庞大的网络——对这些内部虚拟连接的所有可能状[态求和](@keyword=sum_over_states_2|lang=zh-CN|style=Feynman)——得到的单个数字。
 

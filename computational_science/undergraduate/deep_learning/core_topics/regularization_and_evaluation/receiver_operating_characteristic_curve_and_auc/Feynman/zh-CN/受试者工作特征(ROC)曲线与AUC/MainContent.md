@@ -41,8 +41,6 @@
 
 将所有阈值对应的 $(\mathrm{FPR}, \mathrm{TPR})$ 点连接起来，我们就得到了一条曲线——这便是**[受试者工作特征曲线](@keyword=receiver_operating_characteristic|lang=zh-CN|style=Feynman)（Receiver Operating Characteristic Curve, [ROC曲线](@keyword=roc_curve|lang=zh-CN|style=Feynman)）**[@problem_id:3167151]。这条曲线描绘了分类器在所有可能的决策边界下的完整表现。
 
-![ROC Curve Example](https://deeplearning-cmu.github.io/assets/images/f23/L11_files/figure-markdown_strict/cell-11-output-2.png)
-
 一个优秀的分类器，其[ROC曲线](@keyword=roc_curve|lang=zh-CN|style=Feynman)会向左上角凸起。这意味着在获得高TPR（高召回率）的同时，能保持较低的FPR（低误报率）。而一条从 $(0,0)$ 到 $(1,1)$ 的对角线则代表了一个毫无分辨能力的分类器——它的表现如同随机猜测。
 
 我们可以通过一个简单的思想实验来理解[ROC曲线](@keyword=roc_curve|lang=zh-CN|style=Feynman)的构建过程[@problem_id:3167179]。想象你有一堆卡片，一些是代表病人的红卡，另一些是代表健康人的蓝卡。分类器给每张卡片都打了一个分。现在，你把所有卡片按分数从高到低[排列](@keyword=permutation|lang=zh-CN|style=Feynman)。你从分数最高的一张卡片开始，逐一翻开。每翻开一张红卡（正样本），就在ROC图上向上走一步（TPR增加）；每翻开一张蓝卡（负样本），就向右走一步（FPR增加）。这样走完所有卡片，你所经过的路径就构成了经验[ROC曲线](@keyword=roc_curve|lang=zh-CN|style=Feynman)。

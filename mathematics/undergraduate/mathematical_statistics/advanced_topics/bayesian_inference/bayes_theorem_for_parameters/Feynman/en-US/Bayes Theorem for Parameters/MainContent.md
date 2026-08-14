@@ -34,8 +34,6 @@ How can we assign a [prior belief](@keyword=prior_belief|lang=en-US|style=Feynma
 
 Now, we run an experiment. We show the button to 38 users, and 5 of them click it. This is our data. Just as before, we calculate the likelihood of this data for every possible value of $p$. Then, we multiply our prior curve by our likelihood curve, point by point. The resulting curve, once normalized so the total area under it is 1, is our **posterior distribution**.
 
-<img src="https://i.imgur.com/kU3tC4F.png" alt="Bayesian update from a flat prior to a peaked posterior" width="600"/>
-
 What you'll see is magical. The flat, non-committal prior is transformed by the data into a peaked curve. The peak of this new curve is centered around the observed proportion ($5/38 \approx 0.13$), but it's not a single spike. It's a distribution that shows our remaining uncertainty. Values near 0.13 are now considered very plausible, while values near 0.9 are deemed very unlikely. We have learned!
 
 ### A Partnership of Convenience: Conjugate Priors

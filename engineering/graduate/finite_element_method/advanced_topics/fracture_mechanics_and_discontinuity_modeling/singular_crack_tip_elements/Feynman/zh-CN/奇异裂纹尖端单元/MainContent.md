@@ -42,7 +42,7 @@ $$ u \propto \sqrt{r} $$
 而魔术就在于：对于围绕[裂纹尖端](@keyword=crack_tip|lang=zh-CN|style=Feynman)的那一圈单元，沿着从裂纹尖端辐射出去的边，我们把原本位于边长 $1/2$ 处的中点节点，悄悄地移动到边长 $1/4$ 的位置，让它更靠近裂纹尖端。就是这样，仅此而已。[@problem_id:2596473]
 
 <center>
-<img src="https://i.imgur.com/kS9lKz6.png" width="600">
+
 <br>
 <small>图1：标准[二次单元](@keyword=quadratic_element|lang=zh-CN|style=Feynman)（左）与[四分之一点单元](@keyword=quarter_point_elements|lang=zh-CN|style=Feynman)（右）的节点位置对比。仅仅是将中点节点移动到四分之一点，就赋予了单元模拟奇异性的神奇能力。</small>
 </center>

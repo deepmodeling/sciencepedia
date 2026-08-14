@@ -34,7 +34,7 @@ $$
 早期的计算流体力学先驱们为了解决这个悖论，提出了一个绝妙的方案：**[交错网格](@keyword=staggered_grid|lang=zh-CN|style=Feynman) (staggered grid)** [@problem_id:2516606]。其思想极其简单而优雅：不要把所有变量放在一起！我们将压力 $p$ 存储在网格单元的中心，而将速度分量存储在单元的面上。例如，水平速度 $u$ 存储在垂直面上，垂直速度 $v$ 存储在水平面上。
 
 <center>
-<img src="https://i.imgur.com/uF95I11.png" width="600" alt="Comparison of collocated and staggered grid arrangements.">
+
 <figcaption>图1：[同位网格](@keyword=collocated_grid|lang=zh-CN|style=Feynman)（左）将所有变量存储在单元中心，容易产生[压力-速度解耦](@keyword=pressure_velocity_decoupling|lang=zh-CN|style=Feynman)。[交错网格](@keyword=staggered_grid|lang=zh-CN|style=Feynman)（右）将速度分量存储在单元表面，自然地将压力差与面上的速度耦合起来。</figcaption>
 </center>
 

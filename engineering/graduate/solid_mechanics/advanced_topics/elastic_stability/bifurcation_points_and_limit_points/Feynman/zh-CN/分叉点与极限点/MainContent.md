@@ -22,7 +22,7 @@
 如果我们把这个过程画在载荷-位移图上，你会看到一条奇特的曲线。随着位移的增加，载荷先是上升，达到一个峰值，然后开始下降。这条路径在最高点处“折返回来”，形成一个光滑的“鼻子”。这个峰值点就是[极限点](@keyword=limiting_points|lang=zh-CN|style=Feynman)。[@problem_id:2618893] [@problem_id:2618895]
 
 <center>
-<img src="https://i.imgur.com/G34g25R.png" width="400">
+
 </center>
 <center>图1：[极限点](@keyword=limiting_points|lang=zh-CN|style=Feynman)示意图。载荷 $\lambda$ 达到峰值后，路径折返。</center>
 
@@ -43,7 +43,7 @@ $$
 这次，我们换一个道具：一把直尺。将它竖直放在桌子上，用手从顶端缓慢地向下施加压力。起初，尺子只会发生微不足道的均匀压缩，保持笔直。这是它的“主路径”。然而，当你的压力达到一个特定的临界值时——也就是著名的**[欧拉屈曲](@keyword=euler_buckling|lang=zh-CN|style=Feynman)载荷 (Euler buckling load)**——奇妙的事情发生了：尺子突然有了新的选择！它可以向左弯曲，也可以向右弯曲，形成一个优雅的弧形。[@problem_id:2618856]
 
 <center>
-<img src="https://i.imgur.com/8vH0142.png" width="400">
+
 </center>
 <center>图2：完美对称系统中的[叉式分岔](@keyword=pitchfork_bifurcation|lang=zh-CN|style=Feynman)。在[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman) $\lambda_{cr}$，出现了两条新的对称路径。</center>
 

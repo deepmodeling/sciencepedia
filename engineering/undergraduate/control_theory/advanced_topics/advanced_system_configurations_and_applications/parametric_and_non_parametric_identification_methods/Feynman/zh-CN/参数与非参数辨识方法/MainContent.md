@@ -16,7 +16,7 @@
 最经典的“戳一下”就是给系统一个**阶跃输入**（step input）——就像突然打开一个开关。然后，我们静静观察它的输出如何随时间变化。比如，一位工程师在测试一种新型的滤波器时，可以通过观察其阶跃响应曲线的形状，快速判断它的“内涵”。一个简单的[一阶系统](@keyword=first_order_systems|lang=zh-CN|style=Feynman)，其响应曲线的斜率在初始时刻达到最大，然后逐渐放缓，像是一个冲劲十足但后劲不足的短跑选手。然而，如果系统是二阶或更高阶的，它的响应曲线通常会呈现出优美的“S”形。它的斜率从零开始，逐渐加速到一个最大值，然后再减速，仿佛一位优雅的芭蕾舞者，起步平稳，中段发力，最后轻盈落地。通过简单地计算输出数据点之间的增量变化，我们就能捕捉到这种加速再减速的模式，从而判断出系统至少是二阶的，而不仅仅是一个简单的一阶系统 [@problem_id:1597889]。这第一瞥，虽然粗略，却已经揭示了系统内在复杂性的重要线索。
 
 <center>
-<img src="https://i.imgur.com/vHq0A28.png" width="600">
+
 <br>
 图1：[一阶系统](@keyword=first_order_systems|lang=zh-CN|style=Feynman)（左）与二阶系统（右）阶跃响应的典型区别。[二阶系统](@keyword=second_order_systems|lang=zh-CN|style=Feynman)的“S”形曲线暗示了更复杂的内部动态。
 </center>
@@ -32,7 +32,7 @@
 一个糟糕的提问者，只会反复问同一个问题。比如，如果我们只用一个单一频率的[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)去激励系统，会发生什么呢？系统也只会用同频率的[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)来“回答”你。我们确实可以了解系统在该频率下的特性，但这就像你只想通过问“你今天好吗？”来了解一个人的全部性格一样，得到的信息极其有限。对于一个需要确定4个未知参数的二阶系统，一个单一频率的[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)输入，在本质上只能提供两个维度的信息（正弦和余弦分量）。这导致我们建立的方程组存在无穷多解，根本无法唯一确定所有参数 [@problem_id:1597911]。这个现象有一个专门的术语，叫做输入信号不满足**[持续激励](@keyword=persistent_excitation|lang=zh-CN|style=Feynman)**（Persistent Excitation）条件。要唯一地确定一个有 $n$ 个参数的模型，你的输入信号必须足够“丰富”，至少能在 $n$ 个维度上激励系统。
 
 <center>
-<img src="https://i.imgur.com/N74QGzZ.png" width="600">
+
 <br>
 图2：不同输入信号的[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)。阶跃[信号能量](@keyword=signal_energy|lang=zh-CN|style=Feynman)集中在低频，[正弦信号](@keyword=sinusoidal_signals|lang=zh-CN|style=Feynman)能量集中在单一频率，而PRBS信号的能量则[均匀分布](@keyword=uniform_distribution|lang=zh-CN|style=Feynman)在很宽的频带上。
 </center>
@@ -62,7 +62,7 @@
 -   **Box-Jenkins (BJ)模型**：更进一步，物理世界中的噪声往往来源于不同的地方。例如，一个化工反应釜，既有来自[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)本身不确定性的“[过程噪声](@keyword=process_noise|lang=zh-CN|style=Feynman)”，也有来自温度传感器读数不准的“[测量噪声](@keyword=measurement_noise|lang=zh-CN|style=Feynman)”。这两种噪声的来源和特性截然不同。[ARMAX模型](@keyword=armax_model|lang=zh-CN|style=Feynman)将它们混为一谈，强迫它们共享同样的分母动态（$A(q)$）。而更强大的**[Box-Jenkins模型](@keyword=box_jenkins_model|lang=zh-CN|style=Feynman)**，$y(k) = \frac{B(q)}{F(q)}u(k) + \frac{C(q)}{D(q)}e(k)$，则彻底将系统动态和噪声动态分离开来。它用一套独立的参数（$F(q)$ 和 $B(q)$）描述系统，用另一套完全独立的参数（$D(q)$ 和 $C(q)$）描述噪声。这种结构的灵活性，使得我们能够更真实地反映物理世界的本质 [@problem_id:1597915]。
 
 <center>
-<img src="https://i.imgur.com/d9j813c.png" width="700">
+
 <br>
 图3：从简单到复杂的[参数模型](@keyword=parametric_models|lang=zh-CN|style=Feynman)族。模型的复杂性体现在对系统动态(G)和噪声动态(H)的描述方式上。BJ模型提供了最大的灵活性。
 </center>

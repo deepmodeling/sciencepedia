@@ -20,8 +20,6 @@
 
 这个简单的约束，为我们打开了一扇通往优美数学世界的大门。我们可以将这个问题可视化：让每一个变量（或者说，它的活跃范围）成为一个顶点，如果两个变量相互冲突，我们就在它们对应的顶点之间画一条边。这样，我们就得到了一张**[冲突图](@keyword=conflict_graph|lang=zh-CN|style=Feynman)（interference graph）**。
 
-![An example of an interference graph where variables are nodes and an edge indicates their live ranges overlap.](https://i.imgur.com/example-graph.png "一个[冲突图](@keyword=conflict_graph|lang=zh-CN|style=Feynman)示例")
-
 突然之间，[寄存器分配](@keyword=register_allocation|lang=zh-CN|style=Feynman)这个看似杂乱的工程问题，被转化成了一个经典的数学难题：**[图着色](@keyword=graph_coloring|lang=zh-CN|style=Feynman)（graph coloring）**。分配寄存器的过程，等价于用一组“颜色”去涂染图中的每一个顶点，并确保任意两个由边直接相连的顶点都拥有不同的颜色。在这里，可用的寄存器就是我们的“颜色”，而寄存器的数量 $k$ 就是我们拥有的颜[色数](@keyword=chromatic_number|lang=zh-CN|style=Feynman)量。为一个程序成功分配 $k$ 个寄存器，就等价于证明它的[冲突图](@keyword=conflict_graph|lang=zh-CN|style=Feynman)可以被 $k$ 种颜色恰当地着色，即找到一个有效的 **k-着色（k-coloring）** [@problem_id:3277933]。
 
 这个抽象过程的魅力在于，它揭示了问题的本质。这和我们玩数独（Sudoku）游戏有着异曲同工之妙。在数独中，我们要将数字填入格子，约束是每行、每列、每宫的数字不能重复。在[寄存器分配](@keyword=register_allocation|lang=zh-CN|style=Feynman)中，我们要将寄存器“填入”变量，约束是相互冲突的变量不能使用同一个寄存器。两者都是在给定约束下寻找[可行解](@keyword=feasible_solution|lang=zh-CN|style=Feynman)的**[约束满足问题](@keyword=constraint_satisfaction_problems|lang=zh-CN|style=Feynman)（constraint satisfaction problems）** [@problem_id:3277933]。

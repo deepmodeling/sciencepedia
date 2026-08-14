@@ -5,7 +5,7 @@ The first chapter, **"Principles and Mechanisms,"** will demystify the [magnetic
 
 Following this, the chapter on **"Applications and Interdisciplinary Connections"** will showcase how these principles translate into real-world technology. We will see how the stubborn memory of hard magnets is essential for everything from compasses and data storage to powerful [electric motors](@keyword=electric_motors|lang=en-US|style=Feynman), and how the easy-to-forget nature of soft magnets is crucial for an efficient power grid. This exploration will also venture into interdisciplinary frontiers, including medical applications of nanoparticles and the fascinating study of [magnetoreception](@keyword=magnetoreception|lang=en-US|style=Feynman) in animals.
 
-![A general hysteresis loop showing [remanence](@keyword=remanence|lang=en-US|style=Feynman) (Br) and [coercivity](@keyword=coercivity|lang=en-US|style=Feynman) (Hc).](https://i.imgur.com/uG9Z4i2.png)
+ (Br) and [coercivity](@keyword=coercivity|lang=en-US|style=Feynman) (Hc).](https://i.imgur.com/uG9Z4i2.png)
 
 ## Principles and Mechanisms
 

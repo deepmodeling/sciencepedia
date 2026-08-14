@@ -73,7 +73,6 @@ $$
 
 *   **[临界阻尼](@keyword=critical_damping|lang=zh-CN|style=Feynman)（Critically Damped）**，当 $\gamma = 2\omega_n$ 时：这是“恰到好处”的黄金状态。系统以最快的速度返回平衡位置，且不产生任何[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)或“过冲”。汽车的悬挂系统就是典型的[临界阻尼](@keyword=critical_damping|lang=zh-CN|style=Feynman)设计，它能在经过颠簸后迅速稳定车身，提供最佳的舒适性和操控性。
 
-<img src="https://assets.test.logos.com/images/courses/2151/problems/2151154/Damped_Oscillator_Solutions.png" alt="Three types of damped motion" style="width:70%; display:block; margin-left:auto; margin-right:auto;">
 <center><i>图：[欠阻尼](@keyword=underdamping|lang=zh-CN|style=Feynman)、临界阻尼和[过阻尼系统](@keyword=overdamped_system|lang=zh-CN|style=Feynman)的典型响应。</i></center>
 
 ### 驯服共振，拥抱现实

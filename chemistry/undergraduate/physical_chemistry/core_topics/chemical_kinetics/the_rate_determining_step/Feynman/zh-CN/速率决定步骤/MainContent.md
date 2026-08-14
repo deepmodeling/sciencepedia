@@ -21,7 +21,7 @@
 
 现在，让我们把视线从宏观的工厂[拉回](@keyword=pullback|lang=zh-CN|style=Feynman)到微观的分子世界。[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的进行，可以想象成分子们在一条崎岖的“能量地形图”上进行的一场徒步旅行。反应物位于一个山谷，产物位于另一个山谷，而连接它们的就是反应路径。这条路径并非坦途，而是需要翻越一座或多座“山脉”。[@problem_id:2019050]
 
-![一个双步反应的能量剖面图，展示了反应物(M)、中间体(I)、产物(P)以及两个[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)(TS1, TS2)的相对能量。](https://i.imgur.com/uRj04rJ.png)
+(TS1, TS2)的相对能量。](https://i.imgur.com/uRj04rJ.png)
 *图1：一个假设反应 $M \rightarrow I \rightarrow P$ 的能量剖面图。反应的每一步都必须越过一个能量壁垒，即[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)。*
 
 每一个反应步骤都对应着翻越一座“山峰”。这个山峰的顶点，是一个极其不稳定、稍纵即逝的[分子构型](@keyword=molecular_geometry|lang=zh-CN|style=Feynman)，我们称之为**过渡态（transition state）**。从所在的山谷（反应物或中间体）爬到山顶（过渡态）所需克服的能量高度，就是**活化能（activation energy, $E_a$）**。

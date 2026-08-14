@@ -27,8 +27,6 @@
 
 我们可以将 P-N-P-N 的四层结构巧妙地拆分为两个三层晶体管：一个 P-N-P 型晶体管 $T_1$ 和一个 N-P-N 型晶体管 $T_2$，它们紧密地耦合在一起。奇妙之处在于它们的连接方式：$T_1$ 的集电极（输出端）连接着 $T_2$ 的基极（输入端），而 $T_2$ 的集电极又反过来连接着 $T_1$ 的基极。[@problem_id:3876008]
 
-![SCR Two-Transistor Model](https://cdn.jsdelivr.net/gh/jojorabit/asset@main/img/20240722165035.svg)
-
 这形成了一个完美的**[正反馈](@keyword=positive_feedback|lang=zh-CN|style=Feynman) (positive feedback)** 循环。想象两个人手拉手旋转，一个人加速会带动另一个人也加速，而对方的加速又会反过来让你转得更快，形成一个不断加速的循环。这就是所谓的**[再生过程](@keyword=regenerative_processes|lang=zh-CN|style=Feynman) (regenerative process)**。
 
 在物理层面，这个过程是这样上演的：任何一个微小的初始电流（比如来自外部的触发信号，或是结的漏电流）注入到其中一个晶体管的基极，都会被放大后从集电极输出。这个被放大了的电流又被注入到另一个晶体管的基极，再次被放大，然后反馈给第一个晶体管。

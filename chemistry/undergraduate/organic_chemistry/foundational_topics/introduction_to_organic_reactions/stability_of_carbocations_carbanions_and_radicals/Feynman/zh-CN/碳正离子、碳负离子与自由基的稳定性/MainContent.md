@@ -20,7 +20,7 @@
 真正让邻居的帮助变得强大的，是一种更为精妙的机制，名为**[超共轭效应](@keyword=hyperconjugation|lang=zh-CN|style=Feynman)**（$hyperconjugation$）。这不再是简单的“推送”，而是一种“共享”。想象一下乙基碳正离子（$\text{CH}_3\text{CH}_2^+$），那个带正电的碳原子（我们称之为$\text{C}^+$）有一个空着的$p$轨道，像一个等待填充的空口袋。它旁边的甲基上，有三个$\text{C-H}$ $\sigma$键。这些$\sigma$键中的电子，虽然被束缚在键中，但它们的轨道可以与$\text{C}^+$的空$p$轨道发生部分重叠。这就像邻居不仅口头安慰你，还把自己的部分资源借给你共渡难关。电子从邻近的$\text{C-H}$ $\sigma$键流向空的$p$轨道，将正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)分散到了周围的氢原子上。[@problem_id:2200921]
 
 <center>
-<img src="https://i.imgur.com/kP8q3uF.png" alt="Hyperconjugation in ethyl carbocation" width="500">
+
 <br>
 <small>图1：乙基[碳正离子](@keyword=carbocations|lang=zh-CN|style=Feynman)的[超共轭效应](@keyword=hyperconjugation|lang=zh-CN|style=Feynman)。邻近甲基的$\text{C-H}$ $\sigma$键电子云与带正电碳的空$p$轨道重叠，从而分散了正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。</small>
 </center>
@@ -51,7 +51,7 @@
 一个经典的例子是[苄基自由基](@keyword=benzylic_radical|lang=zh-CN|style=Feynman)（$benzyl$ $radical$）。在这里，亚甲基（$-\text{CH}_2\cdot$）上的那个孤单电子并不孤单，它可以进入相邻苯环的$\pi$体系中“漫游”。通过共振，这个电子实际上分布在了四个不同的碳原子上：[亚甲基](@keyword=methylene|lang=zh-CN|style=Feynman)碳、两个邻位（$ortho$）碳和一个对位（$para$）碳。[@problem_id:2200902] 这种高度的[离域](@keyword=delocalization|lang=zh-CN|style=Feynman)使得[苄基自由基](@keyword=benzylic_radical|lang=zh-CN|style=Feynman)比任何简单的烷基[自由基](@keyword=free_radical|lang=zh-CN|style=Feynman)都要稳定得多。
 
 <center>
-<img src="https://i.imgur.com/G53tI3O.png" alt="Resonance in benzyl radical" width="600">
+
 <br>
 <small>图2：[苄基自由基](@keyword=benzylic_radical|lang=zh-CN|style=Feynman)的共振结构。未成对电子（红点所示）通过$\pi$体系分散到苯环的多个位置。</small>
 </center>
@@ -71,7 +71,7 @@
 思考一下这个难题：叔丁基[碳正离子](@keyword=carbocations|lang=zh-CN|style=Feynman)（一个典型的叔[碳正离子](@keyword=carbocations|lang=zh-CN|style=Feynman)）很稳定，但桥头碳正离子，例如双环[2.2.1]庚烷-1-基阳离子，虽然也是叔[碳正离子](@keyword=carbocations|lang=zh-CN|style=Feynman)，却异常地不稳定，甚至难以形成。为什么？[@problem_id:2200925]
 
 <center>
-<img src="https://i.imgur.com/kS9wV38.png" alt="Bridgehead carbocation vs. t-butyl carbocation" width="600">
+
 <br>
 <small>图3：左侧的桥头碳正离子无法实现平面构型，导致极度不稳定。右侧的叔丁基[碳正离子](@keyword=carbocations|lang=zh-CN|style=Feynman)可以自由地采取稳定的平面构型。</small>
 </center>

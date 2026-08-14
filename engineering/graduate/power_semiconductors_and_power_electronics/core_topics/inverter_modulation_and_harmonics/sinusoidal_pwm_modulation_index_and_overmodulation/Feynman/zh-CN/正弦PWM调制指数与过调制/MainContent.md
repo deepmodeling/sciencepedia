@@ -5,7 +5,6 @@
 
 在接下来的章节中，我们将首先在 **“原理与机制”** 中，深入探讨SPWM如何工作，解构[调制指数](@keyword=modulation_index|lang=zh-CN|style=Feynman)的物理意义，并探索从线性区到过调制区，直至六步波的完整演化路径。随后，在 **“应用与交叉学科的交响乐”** 中，我们将把视野扩展到真实世界，探讨[THI](@keyword=tinnitus_handicap_inventory_(thi)|lang=zh-CN|style=Feynman)PWM和SVM等高级策略如何突破电压极限，并分析控制、[热管](@keyword=heat_pipe|lang=zh-CN|style=Feynman)理、信号处理等学科如何与PWM技术交织，共同应对直流电压波动、数字控制延迟等实际挑战。最后，通过 **“动手实践”** 部分，你将有机会通过具体计算来巩固这些关键概念。
 
-![SPWM Generation by comparing a sinusoidal reference with a triangular carrier](https://d2p5jvea0m521i.cloudfront.net/problems/3879612/spwm_generation.png)
 *SPWM信号生成：通过比较正弦参考波和三角载波产生开关信号。*
 
 ## 原理与机制

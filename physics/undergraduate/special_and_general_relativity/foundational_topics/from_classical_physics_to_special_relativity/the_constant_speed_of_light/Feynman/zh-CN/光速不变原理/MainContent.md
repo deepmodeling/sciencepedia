@@ -18,7 +18,7 @@
 现在，让这个光钟以[速度](@keyword=velocity|lang=zh-CN|style=Feynman) $v$ 水平飞过你眼前。[@problem_id:1857360] [@problem_id:1857371] 从你（地面上的观测者）的角度看，光脉冲的路径不再是简单的上下往返。当光从下面的镜子出发时，上面的镜子已经向前移动了一段距离。为了追上那面移动的镜子，光必须走一条斜线。同样，在返回的路上，它走的也是一条斜线。
 
 <center>
-<img src="https://i.imgur.com/uT2xZ7L.png" alt="A diagram illustrating the light clock thought experiment for time dilation. On the left, the clock is at rest, and light travels vertically. On the right, the clock is moving, and a stationary observer sees the light travel along a longer, diagonal path." width="600">
+
 <br>
 <small><i>光钟[思想实验](@keyword=thought_experiments|lang=zh-CN|style=Feynman)。左图：[静止参考系](@keyword=rest_frame|lang=zh-CN|style=Feynman)中的光钟。右图：运动[参考系](@keyword=frames_of_reference|lang=zh-CN|style=Feynman)中的光钟，从静止观测者角度看，光需要走更长的对角线路径。</i></small>
 </center>

@@ -37,7 +37,6 @@ IC和LT模型都描述了一个动态的、随时间演化的过程。分析这�
 
 这样，我们就从原始的复杂网络 $G$ 中，得到了一个随机的、更稀疏的“实时边图” $L$。现在，奇迹发生了：从某个种子集 $S$ 开始的整个IC传播过程，其最终结果——所有被激活的节点——**完[全等](@keyword=congruences|lang=zh-CN|style=Feynman)价于**在这个静态的实时边图 $L$ 中，从 $S$ 出发沿着有向边可以到达的所有节点的集合 [@problem_id:4309727] [@problem_id:4309690]。
 
-![A conceptual diagram showing a graph G, and a corresponding live-edge graph L sampled from it. In L, some edges are 'live' (solid lines) and others are 'dead' (removed). The spread from a seed 'S' is shown as the set of nodes reachable from S in L.](https://i.imgur.com/example.png)
 *([概念图](@keyword=concept_mapping|lang=zh-CN|style=Feynman)：左侧为[原始图](@keyword=primal_graph|lang=zh-CN|style=Feynman)G，右侧为一次随机采样得到的实时边图L。从种子节点S出发，在L中可达的节点集合即为一次[传播过程](@keyword=spreading_processes|lang=zh-CN|style=Feynman)的结果。)*
 
 这个转变是革命性的。它把一个复杂的、动态的[随机过程](@keyword=random_processes|lang=zh-CN|style=Feynman)，变成了一个更简单的、静态的图论问题：在[随机图](@keyword=random_graphs|lang=zh-CN|style=Feynman)上的[可达性问题](@keyword=reachability_problem|lang=zh-CN|style=Feynman)。我们不再需要模拟时间的流逝，只需要问：“从种子出发，能走到多远？” 期望影响力 $\sigma(S)$也就变成了在所有可能的实时边图上，可达节点数量的平均值。

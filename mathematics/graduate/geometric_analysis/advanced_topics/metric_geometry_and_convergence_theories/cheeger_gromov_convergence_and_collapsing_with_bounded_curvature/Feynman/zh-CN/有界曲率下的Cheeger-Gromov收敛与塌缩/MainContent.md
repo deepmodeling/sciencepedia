@@ -23,7 +23,7 @@ $$
 
 <br/>
 <center>
-<img src="https://assets.test.logos.com/images/visual-aids/mat/3026727_Gromov-Hausdorff_distance.png" alt="两个[度量空间](@keyword=metric_spaces|lang=zh-CN|style=Feynman) X 和 Y 被[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)到一个公共的[度量空间](@keyword=metric_spaces|lang=zh-CN|style=Feynman) Z 中，以便计算它们之间的 Gromov-Hausdorff 距离。X 和 Y 之间的 Gromov-Hausdorff 距离被定义为在所有可能的[等距嵌入](@keyword=isometric_embedding|lang=zh-CN|style=Feynman)到任何公共空间 Z 中的 Hausdorff 距离的[下确界](@keyword=greatest_lower_bound|lang=zh-CN|style=Feynman)。" width="60%">
+
 <br>
 <figcaption>图1：Gromov-Hausdorff 距离的直观想法——将两个空间($X, Y$)置于一个更大的空间($Z$)中进行比较。</figcaption>
 </center>

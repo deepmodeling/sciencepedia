@@ -11,7 +11,6 @@ Our first stop is the surprisingly rich world of numbers, specifically the ways 
 
 Now, let's bring in our "mirror of duality." For a Young diagram, this mirror operation is simply a reflection across its main diagonal, the one running from the top-left to the bottom-right. This operation, called **conjugation**, swaps the rows and columns. The Young diagram for (3, 2) has columns of length 2, 2, and 1. So, its conjugate partition is (2, 2, 1). A completely new object!
 
-But what if a partition’s diagram is perfectly symmetrical across that diagonal? What if reflecting it leaves it unchanged? Such a partition is called **self-conjugate**. It is its own dual. For example, the partition (3, 2, 1) of the number 6 has a Young diagram that is perfectly symmetric. It is a visually perfect embodiment of self-duality .
+But what if a partition’s diagram is perfectly symmetrical across that diagonal? What if reflecting it leaves it unchanged? Such a partition is called **self-conjugate**. It is its own dual. For example, the partition (3, 2, 1) of the number 6 has a Young diagram that is perfectly symmetric. It is a visually perfect embodiment of self-duality [@problem_id:1658665].
 
-![Young diagram for the partition (3,2,1) showing its symmetry across the main diagonal.](https://i.imgur.com/uT0WOFm.png)
 *The Young diagram for the self-conjugate partition (3, 2, 1). Reflecting it across the diagonal leaves it unchanged.*

@@ -27,7 +27,7 @@
 
 <center>
 <figure>
-  <img src="https://d22d94b1-e408-4509-a1b9-3832c32145b4.png" alt="一个点质量由无质量弹簧悬挂，既能像钟摆一样摆动，又能径向[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。" style="width: 50%;">
+
   <figcaption>图1：弹簧摆。其位形由坐标 $(r, \theta)$ 确定。</figcaption>
 </figure>
 </center>
@@ -56,7 +56,7 @@ $$
 
 <center>
 <figure>
-  <img src="https://36d3957f-1d84-48f8-b11c-d784c0428989.png" alt="[双摆](@keyword=double_pendulum|lang=zh-CN|style=Feynman)在竖直平面内摆动，下方的摆锤连接在上一个摆锤的质量上。" style="width: 50%;">
+
   <figcaption>图2：[双摆](@keyword=double_pendulum|lang=zh-CN|style=Feynman)。一个复杂的耦合系统，由 $(\theta_1, \theta_2)$ 描述。</figcaption>
 </figure>
 </center>

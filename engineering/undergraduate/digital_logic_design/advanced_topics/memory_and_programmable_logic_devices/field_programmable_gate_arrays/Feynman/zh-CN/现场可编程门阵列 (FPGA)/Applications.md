@@ -12,7 +12,7 @@
 
 <center>
   <figure>
-    <img src="https://static.comms.engineering.v1.2/image/digital_logic_design/fpga_applications/Frequency_Divider_Using_CLB.png" alt="使用单个CLB（查找表和[D触发器](@keyword=d_flip_flop|lang=zh-CN|style=Feynman)）构建的二[分频器](@keyword=frequency_divider|lang=zh-CN|style=Feynman)。[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)的输出Q被反馈到LUT的输入，LUT编程为反相器，其输出连接到[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)的D输入。这导致Q在每个时钟上升沿翻转，产生一个半频的输出信号。" style="width: 70%;" />
+
     <figcaption>图1：利用最基本的CLB（可配置逻辑块）构建一个二[分频器](@keyword=frequency_divider|lang=zh-CN|style=Feynman)。通过将LUT配置为反相器，我们创造了一个在每个时钟周期都会翻转状态的电路，这正是[FPGA](@keyword=field_programmable_gate_array|lang=zh-CN|style=Feynman)可编程性的简单而深刻的体现。 ([@problem_id:1935041])</figcaption>
   </figure>
 </center>
@@ -31,7 +31,7 @@
 
 <center>
   <figure>
-    <img src="https://static.comms.engineering.v1.2/image/digital_logic_design/fpga_applications/SOC_Structure_on_FPGA.png" alt="FPGA上的片上系统（SoC）示意图，展示了一个硬核或软核处理器，通过AXI总线连接到各种外设，如DDR[内存控制器](@keyword=memory_controller|lang=zh-CN|style=Feynman)、一个自定义的硬件加速器（如[FIR滤波器](@keyword=fir_filters|lang=zh-CN|style=Feynman)）和标准接口（如SPI）。" style="width: 70%;" />
+
     <figcaption>图2：[FPGA](@keyword=field_programmable_gate_array|lang=zh-CN|style=Feynman)上实现的片上系统（SoC）概念图。它不仅仅是实现零散的逻辑功能，而是能够集成一个完整的计算系统，包括处理器（软核或硬核）、[内存控制器](@keyword=memory_controller|lang=zh-CN|style=Feynman)以及为特定任务量身定制的硬件加速器。</figcaption>
   </figure>
 </center>
@@ -50,7 +50,7 @@
 
 <center>
   <figure>
-    <img src="https://static.comms.engineering.v1.2/image/digital_logic_design/fpga_applications/FPGA_Floorplanning.png" alt="FPGA芯片的简化floorplan示意图。图中显示了CPU、[内存控制器](@keyword=memory_controller|lang=zh-CN|style=Feynman)（MEM）和视频处理（VID）等几个IP核的布局。箭头表示关键的数据路径，它们的物理距离（通过[曼哈顿距离](@keyword=manhattan_distance|lang=zh-CN|style=Feynman)估算）直接影响[信号传播延迟](@keyword=signal_propagation_delay|lang=zh-CN|style=Feynman)。" style="width: 70%;" />
+
     <figcaption>图3：[FPGA](@keyword=field_programmable_gate_array|lang=zh-CN|style=Feynman)的物理设计——floorplanning。IP核在芯片上的物理位置至关重要。将需要高速通信的模块（如CPU和[内存控制器](@keyword=memory_controller|lang=zh-CN|style=Feynman)）彼此靠近放置，可以缩短信号路径，从而满足严格的时序要求。 ([@problem_id:1934987])</figcaption>
   </figure>
 </center>

@@ -24,7 +24,7 @@
 让我们来看一个简单却极具启发性的例子。想象一个[二维流](@keyword=two_dimensional_flow|lang=zh-CN|style=Feynman)场，其速度由[矢量场](@keyword=vector_field|lang=zh-CN|style=Feynman) $\mathbf{F}(x, y) = x\mathbf{i} - y\mathbf{j}$ 描述。这个场被称为“马鞍场”。在 $x$ 轴上，流体是向外流动的（$x$ 越大，流速越快）。在 $y$ 轴上，流体是向[内流](@keyword=internal_flow|lang=zh-CN|style=Feynman)动的（$y$ 越大，流速越快地指向原点）。现在的问题是：在原点 $(0, 0)$，散度是正、是负，还是零？[@problem_id:2140604]
 
 <center>
-<img src="https://i.imgur.com/2bA6T3I.png" width="450">
+
 <br>
 <small>图1：马鞍场 $\mathbf{F} = x\mathbf{i} - y\mathbf{j}$。流体沿 $x$ 轴流出，沿 $y$ 轴流入。</small>
 </center>

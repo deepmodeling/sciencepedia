@@ -25,7 +25,7 @@
 这种“我中有你，你中有我”的反馈结构，正是记忆能够产生的核心。 [@problem_id:1971743] 每个门的输出都依赖于另一个门的输出，形成了一个闭合的循环。
 
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/SR-latch-NOR.svg" width="400" />
+
 <br>
 图1：由两个[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)耦合的 NOR 门构成的 SR [锁存器](@keyword=latch|lang=zh-CN|style=Feynman)
 </center>

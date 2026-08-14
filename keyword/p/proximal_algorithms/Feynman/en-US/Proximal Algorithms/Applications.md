@@ -1,6 +1,4 @@
-<![CDATA[## Applications and Interdisciplinary Connections
-
-Now that we have tinkered with the internal machinery of proximal algorithms and appreciated their elegant design, it is time to take them for a spin. We have in our hands a powerful conceptual tool, one that allows us to tackle problems that seem impossibly complicated by breaking them into two parts: a "smooth" part we can handle with familiar gradient-based methods, and a "simple" non-smooth part whose structure we can exploit with a clever trick—the [proximal operator](@keyword=proximal_operator|lang=en-US|style=Feynman).
+<.
 
 You might be wondering, is this just a neat mathematical curiosity? Or does it actually do anything? The answer is as profound as it is surprising. This single idea of "splitting" a problem has proven to be a kind of master key, unlocking challenges across a breathtaking range of scientific and engineering disciplines. It allows us to see things that were once invisible, build things that were once impossible to design, and even create forms of artificial intelligence that are faster and more reliable. Let us embark on a journey through some of these applications, to see for ourselves the beautiful unity of this principle at work.
 

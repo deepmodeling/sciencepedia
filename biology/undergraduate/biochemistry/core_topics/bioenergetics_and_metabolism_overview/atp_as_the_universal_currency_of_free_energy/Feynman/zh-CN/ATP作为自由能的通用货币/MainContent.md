@@ -16,7 +16,7 @@
 要理解 ATP，我们首先要看看它的构造。它并不复杂，由三部分组成：一个叫做腺嘌呤 (Adenine) 的含氮碱基，一个五碳的核糖 (Ribose)——两者合起来称为[腺苷](@keyword=adenosine|lang=zh-CN|style=Feynman) (Adenosine)，以及最关键的部分——一串由三个磷酸基团 (Phosphate) 组成的“尾巴”[@problem_id:2032592]。
 
 <center>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/ATP_structure.svg/600px-ATP_structure.svg.png" alt="ATP 分子结构，展示了腺嘌呤、核糖和三个磷酸基团。高能[磷酸酐键](@keyword=phosphoanhydride_bond|lang=zh-CN|style=Feynman)连接着 β 和 γ 磷酸基团，以及 α 和 β 磷酸基团。" width="500"/>
+
   <br>
   <small>ATP 的结构。能量主要储存在连接末端两个磷酸基团（β 和 γ）以及中间和第一个磷酸基团（α 和 β）的[磷酸酐键](@keyword=phosphoanhydride_bond|lang=zh-CN|style=Feynman)中。</small>
 </center>

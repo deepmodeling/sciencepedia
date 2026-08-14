@@ -34,7 +34,7 @@ $C \propto \epsilon_0 L$
 现实世界中的[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)很少是孤零零的一个物体。通常是两个或多个导体相互作用。最经典的就是平行板[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)，它的电容公式大家都很熟悉：$C = \epsilon_0 A/d$，$A$ 是极板面积，$d$ 是间距。现在，让我们来玩一个游戏。如果在这两块极板之间，正中央，悬浮放置一块完全相同但与外界绝缘的金属板，会发生什么？[@problem_id:1889814]
 
 <center>
-<img src="https://i.imgur.com/your-image-url.png" alt="A parallel-plate capacitor with a floating conducting slab in the middle." style="width: 50%;">
+
 </center>
 <br>
 

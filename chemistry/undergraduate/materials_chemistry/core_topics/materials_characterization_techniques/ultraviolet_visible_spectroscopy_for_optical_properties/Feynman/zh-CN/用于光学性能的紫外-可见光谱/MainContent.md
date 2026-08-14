@@ -16,7 +16,7 @@
 一个完美的例子是为深空探测器设计的窗户材料 [@problem_id:1345756]。科学家们希望它对[人眼](@keyword=human_eye|lang=zh-CN|style=Feynman)完全透明无色，同时能有效阻挡来自太阳的高能紫外线。这意味着什么呢？“透明无色”意味着它在可见光范围（大约 400 nm 到 700 nm）内几乎不吸收任何光，所以吸光度接近于零。“阻挡紫外线”则意味着它在紫外区（波长小于 400 nm）必须有强烈的吸收。因此，这种理想材料的光谱图会呈现出一条在可见光区平坦地贴近零线的曲线，而在紫外区则会急剧攀升，形成一道吸收的“高墙”。
 
 <center>
-<img src="https://i.imgur.com/8[R0](@keyword=r_naught|lang=zh-CN|style=Feynman)W09G.png" alt="An ideal UV-Vis spectrum for a UV-blocking transparent material. There is zero absorbance in the visible region (400-700 nm) and high absorbance in the UV region (<400 nm)." width="600"/>
+
 </center>
 <br>
 
@@ -37,7 +37,7 @@ $$ \Delta E = h\nu = \frac{hc}{\lambda} $$
 奇妙的是，我们可以通过设计分子的结构来“调谐”这个[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)。一个绝佳的例子是共轭体系——一种由交替的[单键](@keyword=single_bond|lang=zh-CN|style=Feynman)和双键构成的结构。在这样的体系中，$\pi$ 电子不再局限于两个原子之间，而是在整个[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)链上自由移动。想象一下，这个[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)链就像一条“电子的高速公路”。公路越长，电子的活动空间越大，根据量子力学的“盒中粒子”模型，能级之间的间隔就越小 [@problem_id:1345714]。
 
 <center>
-<img src="https://i.imgur.com/Fw4y6A9.png" alt="Comparison of conjugation lengths. Benzene has a small conjugated system. 1,4-diphenyl-1,3-butadiene has a very long, continuous conjugated system, leading to a smaller [HOMO-LUMO](@keyword=homo_lumo_2|lang=zh-CN|style=Feynman) gap." width="700"/>
+
 </center>
 <br>
 

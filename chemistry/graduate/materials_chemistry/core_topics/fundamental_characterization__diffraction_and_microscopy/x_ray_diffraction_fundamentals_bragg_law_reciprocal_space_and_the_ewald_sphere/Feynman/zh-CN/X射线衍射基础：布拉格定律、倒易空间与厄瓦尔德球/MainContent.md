@@ -28,7 +28,7 @@
 他们的洞察力在于，将晶体中成组成簇的原子想象成一层层平行的“镜面”。当一束[X射线](@keyword=x_ray|lang=zh-CN|style=Feynman)以角度 $\theta$ 射入这些原子平面时，一部分光会被第一层平面“反射”，另一部分则会穿透到更深层，被第二层、第三层……平面“反射”。
 
 <center>
-<img src="https://i.imgur.com/rNn0d2z.png" width="500">
+
 </center>
 <br>
 
@@ -91,7 +91,7 @@ $$ |\mathbf{q}| = \frac{4\pi}{\lambda} \left( \frac{n\lambda}{2d} \right) = \fra
 3.  以 $\mathbf{k}_{i}$ 的**起点**为球心，以其长度 $|\mathbf{k}_{i}|=2\pi/\lambda$ 为半径，画一个球面。这个球面就是[埃瓦尔德球](@keyword=ewald_sphere|lang=zh-CN|style=Feynman)。
 
 <center>
-<img src="https://i.imgur.com/uRj0p6C.png" width="600">
+
 </center>
 <br>
 

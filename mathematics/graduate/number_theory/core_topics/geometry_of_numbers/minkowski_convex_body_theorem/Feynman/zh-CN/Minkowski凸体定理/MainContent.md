@@ -27,7 +27,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/KkPjGqf.png" width="600">
+
   <figcaption>图1：(a) 一个格 $\Lambda$ (红点) 和它的一个[基本域](@keyword=fundamental_domain|lang=zh-CN|style=Feynman) (蓝色平行四边形)。(b) 几个中心对称[凸体](@keyword=convex_body|lang=zh-CN|style=Feynman)的例子：椭圆、矩形（二维立方体）、菱形（二维[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)[多面体](@keyword=polyhedra|lang=zh-CN|style=Feynman)）。</figcaption>
 </figure>
 </center>

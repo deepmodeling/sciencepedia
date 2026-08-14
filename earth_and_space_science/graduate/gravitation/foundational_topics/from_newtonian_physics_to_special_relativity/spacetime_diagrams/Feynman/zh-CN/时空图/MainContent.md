@@ -14,7 +14,7 @@
 为什么要这么做？这是一种优雅的“单位统一”手法。既然光速 $c$ 的单位是“米/秒”，那么 $ct$ 的单位就是“米”。这样一来，我们的[时空图](@keyword=spacetime_diagrams|lang=zh-CN|style=Feynman)两个坐标轴的单位就都是长度了。这不仅仅是为了数学上的美观，它有着深刻的物理意义：它将光速设定为宇宙的“标准尺度”。在这张图上，一束光的轨迹，即它的“世界线”（worldline），是一条与水平轴成45度角的直线，因为在时间 $\Delta t$ 内，它行进了 $\Delta x = c \Delta t$ 的距离。
 
 <center>
-    <img src="https://assets.test.eedi.com/res/images/1851688_Spacetime_Diagram_Plot.png" alt="A spacetime diagram showing an event at the origin and its future light cone, past light cone, and the 'elsewhere' region." width="400"/>
+
 </center>
 
 在这张图上：

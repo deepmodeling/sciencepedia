@@ -21,7 +21,7 @@
 
 <center>
   <figure>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Fracture_modes.svg/600px-Fracture_modes.svg.png" width="600" />
+
     <figcaption>图1：断裂的三种[基本模式](@keyword=fundamental_mode|lang=zh-CN|style=Feynman)：(I) 张开型, (II) 滑移型, (III) 撕开型。</figcaption>
   </figure>
 </center>

@@ -21,7 +21,7 @@ At its heart, the triangle is built on a rule of breathtaking simplicity: any nu
 But why this rule? Is it arbitrary? Not at all. This rule emerges naturally from one of the most fundamental acts in mathematics: counting. Imagine you are standing at the apex of a triangular grid of streets, like the network in a data routing system [@problem_id:1389987]. From any intersection, you can only travel down to the left or down to the right. How many different paths can you take to arrive at a specific intersection in, say, the $n$-th row?
 
 <center>
-<img src="https://i.imgur.com/uG9p1w4.png" width="400">
+
 </center>
 
 There is only one way to get to the apex, $S(0,0)$. To get to an intersection in the next row, say $S(1,0)$, you must have come from $S(0,0)$—one path. To get to $S(1,1)$, also one path. Now, what about $S(2,1)$, the middle point in row 2? You could have arrived from either $S(1,0)$ or $S(1,1)$. Since there's one path to each of those, there must be $1+1=2$ paths to $S(2,1)$. You see? The number of paths to any point is the sum of the paths to the points directly above it. This is precisely the rule of Pascal's Triangle!

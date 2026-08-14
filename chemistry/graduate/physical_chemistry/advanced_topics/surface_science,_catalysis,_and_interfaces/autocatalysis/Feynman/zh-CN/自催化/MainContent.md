@@ -27,7 +27,7 @@ $$ \frac{d[X]}{dt} = v = k[A][X] $$
 $$ \frac{dX}{dt} = kX(C - X) $$
 这个美妙的方程被称为**[逻辑斯谛方程](@keyword=logistic_equation|lang=zh-CN|style=Feynman)（logistic equation）**，它是描述在资源有限的情况下[种群增长](@keyword=population_growth|lang=zh-CN|style=Feynman)的经典模型。它的解——也就是 $X$ 的浓度随时间变化的曲线——是一条优美的**[S型曲线](@keyword=sigmoidal_curve|lang=zh-CN|style=Feynman)（sigmoidal curve）**。
 
-![一个典型的[S型增长](@keyword=sigmoidal_growth|lang=zh-CN|style=Feynman)曲线，分为三个阶段：滞后（诱导）期、[指数增长](@keyword=exponential_growth|lang=zh-CN|style=Feynman)期和饱和期。](https://www.researchgate.net/profile/Igor-Alliluyev/publication/349479633/figure/fig1/AS:993290641154048@1613813897486/A-typical-S-shaped-or-sigmoid-growth-curve-of-a-bacterial-population-modified-after.png)
+曲线，分为三个阶段：滞后（诱导）期、[指数增长](@keyword=exponential_growth|lang=zh-CN|style=Feynman)期和饱和期。](https://www.researchgate.net/profile/Igor-Alliluyev/publication/349479633/figure/fig1/AS:993290641154048@1613813897486/A-typical-S-shaped-or-sigmoid-growth-curve-of-a-bacterial-population-modified-after.png)
 
 这条曲线形象地讲述了一个完整的故事 [@problem_id:2627764]：
 1.  **诱导期（Lag Phase）**：在反应初期，$X$ 的数量非常少。虽然[正反馈机制](@keyword=positive_feedback_mechanisms|lang=zh-CN|style=Feynman)已经启动，但由于“[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)”本身太少，整个[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman) $v$ 非常缓慢，几乎难以察觉。曲线平缓，仿佛在积蓄力量。
@@ -62,7 +62,7 @@ $$ R_0 = (\text{繁殖速率}) \times (\text{平均寿命}) = (k a_0) \times \le
 $$ \frac{dx}{dt} = f(x) = -Cx^3 + Ax^2 - Dx + B $$
 一个三次方程，与之前的一元[二次方程](@keyword=second_degree_equation|lang=zh-CN|style=Feynman)（[逻辑斯谛方程](@keyword=logistic_equation|lang=zh-CN|style=Feynman)）有一个根本性的区别：它最多可以有三个实数解。这意味着，对于同一套外部参数（比如原料供应速率），系统可能存在三个[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)。通过稳[定性分析](@keyword=qualitative_analysis|lang=zh-CN|style=Feynman)可以发现，其中两个是稳定态（比如 $x_-$ 和 $x_+$），一个是介于它们之间的不稳[定态](@keyword=stationary_state|lang=zh-CN|style=Feynman) ($x_u$)。
 
-![[双稳态系统](@keyword=bistable_systems|lang=zh-CN|style=Feynman)的[势能景观](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)，存在两个稳定态（谷底）和一个不稳定态（山峰）。](https://www.researchgate.net/profile/Peter-Hinow/publication/329528991/figure/fig1/AS:702206437994496@1544430489246/A-double-well-potential-V-x-corresponding-to-a-bistable-system-The-local-minima-at.png)
+的[势能景观](@keyword=potential_energy_landscape|lang=zh-CN|style=Feynman)，存在两个稳定态（谷底）和一个不稳定态（山峰）。](https://www.researchgate.net/profile/Peter-Hinow/publication/329528991/figure/fig1/AS:702206437994496@1544430489246/A-double-well-potential-V-x-corresponding-to-a-bistable-system-The-local-minima-at.png)
 
 这种情况被称为**双稳态（bistability）**。系统可以稳定地处于一个低浓度的“关闭”（OFF）状态，也可以稳定地处于一个高浓度的“开启”（ON）状态。这就像一个电灯开关，可以被拨到“开”或“关”的位置。这种由简单的自催化规则在[开放系统](@keyword=open_systems|lang=zh-CN|style=Feynman)中涌现出的“开关”行为，被认为是构成细胞决策、信号传导和记忆等复杂生命功能的基础。[自催化](@keyword=autocatalysis|lang=zh-CN|style=Feynman)网络因此构成了生命系统的“[逻辑门](@keyword=logic_gates|lang=zh-CN|style=Feynman)”[@problem_id:2627721]。
 

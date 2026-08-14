@@ -28,7 +28,7 @@ $y[n] = b_0 x[n] + b_1 x[n-1] + b_2 x[n-2] + \dots + b_M x[n-M]$
 2.  **加法器 (Adder)**：将多个信号相加。
 3.  **延迟单元 (Delay Unit)**：将信号在时间上延迟一个单位。一个输入为 $w[n]$ 的延迟单元，其输出为 $w[n-1]$。
 
-![](https://static.scholarfun.com/教科书插图/[信号与系统](@keyword=signals_and_systems|lang=zh-CN|style=Feynman)/[FIR滤波器](@keyword=fir_filters|lang=zh-CN|style=Feynman)/1718633-direct-form-fir.png)
+/[FIR滤波器](@keyword=fir_filters|lang=zh-CN|style=Feynman)/1718633-direct-form-fir.png)
 
 [上图](@keyword=epigraphs|lang=zh-CN|style=Feynman)展示了如何用这些积木搭建一个简单的 FIR 滤波器。输入信号 $x[n]$ 兵分几路。一路直接乘以 $b_0$；另一路先经过一个延迟单元（变成 $x[n-1]$），再乘以 $b_1$；再下一路经过两个延迟单元（变成 $x[n-2]$），乘以 $b_2$，以此类推。最后，一个加法器将所有这些加权并延迟后的信号汇总，就得到了最终的输出 $y[n]$。这种结构被称为“直接型结构”，它清晰地展现了 FIR 滤波器“先延迟、再加权、后求和”的工作流程。
 

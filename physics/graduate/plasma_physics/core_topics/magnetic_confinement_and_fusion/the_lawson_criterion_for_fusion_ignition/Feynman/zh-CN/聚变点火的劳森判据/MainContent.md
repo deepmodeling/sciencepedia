@@ -85,7 +85,7 @@ $n \tau_E = \frac{3 k_B T}{\frac{1}{4} \langle \sigma v \rangle Q_\alpha - C_B \
 
 <br>
 <div align="center">
-  <img src="https://i.imgur.com/eBf9K8R.png" alt="Lawson Criterion Plot" width="600">
+
   <br>
   <small>图1：劳伦斯判据示意图。$n\tau_E$ 与温度 $T$ 的关系曲线呈现一个“山谷”形状。谷底对应的温度是实现点火最“经济”的选择，对于D-T反应，大约在1.5亿度左右。</small>
 </div>

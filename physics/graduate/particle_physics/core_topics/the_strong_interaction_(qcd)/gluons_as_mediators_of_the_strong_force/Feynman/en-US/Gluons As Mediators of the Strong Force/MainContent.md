@@ -26,7 +26,7 @@ The messengers of the [strong force](@keyword=strong_force|lang=en-US|style=Feyn
 This leads to a new kind of fundamental interaction vertex that has no counterpart in [electromagnetism](@keyword=electromagnetism|lang=en-US|style=Feynman): a point where three or even four [gluons](@keyword=gluons|lang=en-US|style=Feynman) can meet and interact.
 
 <center>
-<img src="https://i.imgur.com/7123L5W.png" alt="Comparison of [photon](@keyword=photon|lang=en-US|style=Feynman) and [gluon](@keyword=gluon|lang=en-US|style=Feynman) vertices" width="500">
+
 Figure 1: (Left) Photons do not interact with each other. (Right) Gluons, carrying [color charge](@keyword=color_charge|lang=en-US|style=Feynman), have three-[gluon](@keyword=gluon|lang=en-US|style=Feynman) and four-[gluon self-interaction](@keyword=gluon_self_interaction|lang=en-US|style=Feynman) vertices.
 </center>
 

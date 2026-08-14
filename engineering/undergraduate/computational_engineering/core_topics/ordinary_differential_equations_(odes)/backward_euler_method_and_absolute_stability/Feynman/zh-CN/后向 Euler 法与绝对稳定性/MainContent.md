@@ -62,7 +62,7 @@ $$
 
 <br>
 <div style="text-align: center;">
-<img src="https://assets.test.logos.com/images/Holistic/2d9f481c-ee0f-4318-91ac-1c9c0bcaaf3a.png" alt="Stability regions of Forward and Backward Euler methods" width="600">
+
 <p><i>图1：[前向欧拉法](@keyword=forward_euler_method|lang=zh-CN|style=Feynman)（左）的[稳定域](@keyword=stability_regions|lang=zh-CN|style=Feynman)是[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上一个小小的圆盘。[后向欧拉法](@keyword=implicit_euler_method|lang=zh-CN|style=Feynman)（右）的[稳定域](@keyword=stability_regions|lang=zh-CN|style=Feynman)则是另一个圆盘的广阔外部。灰色区域代表稳定区。</i></p>
 </div>
 <br>

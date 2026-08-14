@@ -29,13 +29,13 @@ $$
 
 考虑[向下取整函数](@keyword=floor_function|lang=zh-CN|style=Feynman) $f(x) = \lfloor x \rfloor$，它将一个数向下舍入到最近的整数[@problem_id:2163734]。它看起来像一个楼梯。它不是凸的；你可以轻易地在不同台阶上的两点之间画一条线段，而这条线段会从楼梯下方穿过。然而，它*是*拟凸的。如果你将这个楼梯地形淹没到任何高度$\alpha$，被淹没的区域总是形如 $(-\infty, k)$ 的一个不间断区间，其中$k$是某个整数。区间是一个[凸集](@keyword=convex_sets|lang=zh-CN|style=Feynman)，所以[向下取整函数](@keyword=floor_function|lang=zh-CN|style=Feynman)是拟凸的。
 
-![一张展示[向下取整函数](@keyword=floor_function|lang=zh-CN|style=Feynman)的图。在(0.5, 0)和(1.5, 1)之间的一条线段位于图像下方，表明它不是凸的。然而，任何穿过图像的水平线都显示，其左侧的次[水平集](@keyword=level_sets|lang=zh-CN|style=Feynman)总是一个单一的连续区间，这证明了其[拟凸性](@keyword=quasiconvexity|lang=zh-CN|style=Feynman)。](https://i.imgur.com/example_floor_function.png)
+的图。在(0.5, 0)和(1.5, 1)之间的一条线段位于图像下方，表明它不是凸的。然而，任何穿过图像的水平线都显示，其左侧的次[水平集](@keyword=level_sets|lang=zh-CN|style=Feynman)总是一个单一的连续区间，这证明了其[拟凸性](@keyword=quasiconvexity|lang=zh-CN|style=Feynman)。](https://i.imgur.com/example_floor_function.png)
 
 类似地，函数 $f(x) = x^3$ 不是凸的（它的二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)$6x$在$x<0$时为负），但由于它总是递增的，它的次水平集总是形如 $(-\infty, c]$ 的简单区间，所以它是拟凸的[@problem_id:2182881]。
 
 一个*非*[拟凸函数](@keyword=quasiconvex_functions|lang=zh-CN|style=Feynman)是什么样的呢？想象一个“W”形状，比如函数 $f(x) = x^4 - 2x^2$ 的图像。如果你将这个地形淹没到一个刚好高于其两个局部最小值但低于中心峰值的水位，你会得到两个独立的水坑。一个由两个不相交部分组成的集合不是[凸集](@keyword=convex_sets|lang=zh-CN|style=Feynman)。这个函数不是拟凸的[@problem_id:2182881]。[拟凸性](@keyword=quasiconvexity|lang=zh-CN|style=Feynman)，本质上，禁止了这些被更高山脊隔开的“不连通山谷”的存在。
 
-![函数f(x) = x^4 - 2x^2的图像，呈“W”形。在两个极小值之间画一条水平线，表明其次[水平集](@keyword=level_sets|lang=zh-CN|style=Feynman)由两个不连通的区间组成，证明了它不是拟凸的。](https://i.imgur.com/example_W_function.png)
+由两个不连通的区间组成，证明了它不是拟凸的。](https://i.imgur.com/example_W_function.png)
 
 ### 物理学家的困境：当[凸性](@keyword=convexity|lang=zh-CN|style=Feynman)失效时
 

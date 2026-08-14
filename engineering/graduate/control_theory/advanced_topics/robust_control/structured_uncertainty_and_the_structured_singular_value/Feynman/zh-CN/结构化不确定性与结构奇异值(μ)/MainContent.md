@@ -18,7 +18,7 @@
 这个回路是这样运作的：系统的内部状态会产生一个信号 $v$，这个信号进入不确定性模块 $\Delta$；$\Delta$ 对其进行“扭曲”或“扰动”，产生一个新的信号 $u$；这个信号 $u$ 再反馈回系统 $M$，影响系统的行为，进而改变信号 $v$。这形成了一个永无休止的博弈，我们称之为 **$M-\Delta$ [反馈回路](@keyword=feedback_loop|lang=zh-CN|style=Feynman)**。整个系统的表现，即从外部输入 $w$ 到性能输出 $z$ 的关系，可以通过一个名为**[线性分式变换](@keyword=linear_fractional_transformations|lang=zh-CN|style=Feynman)(Linear Fractional Transformation, LFT)**的数学工具来描述 [@problem_id:2750556]。
 
 <center>
-<img src="https://i.imgur.com/8f35tG4.png" width="400">
+
 <br>
 图1：M-Δ [反馈回路](@keyword=feedback_loop|lang=zh-CN|style=Feynman)示意图
 </center>
@@ -56,7 +56,7 @@ $$
 $\mu$ 最令人着迷的地方在于，它并非一个孤立的新概念，而是对我们已知概念的深刻统一和推广。它像一座桥梁，连接了控制理论中几个看似无关的基石 [@problem_id:2758662]。
 
 - **当结构被忽略时：回到[小增益定理](@keyword=small_gain_theorem_2|lang=zh-CN|style=Feynman)**
-  
+
   如果我们假设对不确定性一无所知，即 $\Delta$ 可以是任何形式的矩阵（我们称之为**[非结构化不确定性](@keyword=unstructured_uncertainty|lang=zh-CN|style=Feynman)**），那么 $\mu$ 会变成什么样呢？惊人的结果是，它恰好等于矩阵 $M$ 的**最大[奇异值](@keyword=singular_values|lang=zh-CN|style=Feynman)** $\bar{\sigma}(M)$！
   $$
   \mu_{\text{unstructured}}(M) = \bar{\sigma}(M)

@@ -29,7 +29,7 @@ $$ \frac{a+b}{2} \ge \sqrt{ab} $$
 请想象一条直线，上面有三点 $A, P, B$ 顺次[排列](@keyword=permutation|lang=zh-CN|style=Feynman)。设线段 $AP$ 的长度为 $a$，线段 $PB$ 的长度为 $b$。现在，以整个线段 $AB$ 为直径画一个半圆。从点 $P$ 向直径作一条垂线，交半圆于点 $Q$。
 
 <center>
-<img src="https://i.imgur.com/E1vRk5s.png" alt="Geometric proof of the AM-GM inequality for two variables." width="500">
+
 </center>
 
 在这个半圆中，我们可以找到 AM 和 GM 的化身：

@@ -28,7 +28,7 @@
 这个“最中心”的点有一个非常直观的金融学解释，它被称为**解析中心（analytic center）**。假设你正在构建一个投资组合，但你对市场未来的预期收益或风险一无所知。你唯一拥有的信息就是游戏规则——即所有的投资约束（例如，非负权重、行业暴露限制等）。在这种完全没有市场观点的情况下，你会如何投资？解析中心给出了一个答案：它是一个完全由约束条件驱动的、“最均衡”的投资组合。它通过最大化其与所有约束边界的“距离”乘积，来构建一个高度多元化、不偏向任何一个极端限制的基准。这是一种纯粹由[可行域](@keyword=feasible_region|lang=zh-CN|style=Feynman)几何形状决定的、最“中庸”的投资策略。[@problem_id:2402660]
 
 <figure>
-  <img src="https://i.imgur.com/example.png" alt="一条穿过[可行域](@keyword=feasible_region|lang=zh-CN|style=Feynman)多面体内部的平滑曲线，从解析中心附近开始，最终逼近一个顶点上的最优解。" width="600"/>
+
   <figcaption>[中心路径](@keyword=central_path|lang=zh-CN|style=Feynman)的概念图：它像一条隧道，从可行域的“中心”平滑地通向位于边界的最优解。</figcaption>
 </figure>
 

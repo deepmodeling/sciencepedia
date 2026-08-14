@@ -49,7 +49,7 @@ How do we visualize this? Electrochemists use a **Nyquist plot**, where they plo
 
 <br>
 <center>
-    <img src="https://assets.bitdegree.org/learn/warburg-impedance-nyquist-plot-example.png" alt="Nyquist plot showing a 45-degree line for Warburg Impedance" width="500">
+
     <br>
     <em>A typical Nyquist plot. The straight line at a 45° angle in the low-frequency region is the characteristic signature of Warburg impedance.</em>
 </center>

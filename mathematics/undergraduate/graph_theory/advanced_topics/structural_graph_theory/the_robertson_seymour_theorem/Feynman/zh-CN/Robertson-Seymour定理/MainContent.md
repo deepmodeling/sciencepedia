@@ -20,7 +20,7 @@
 让我们来看一个经典的例子。考虑一个正方形，也就是循环图 $C_4$。它没有三角形。但如果我们收缩其中任意一条边，比如连接顶点 1 和 2 的边，这两个顶点就会融合成一个新顶点，我们称之为 $w$。原本连接到 1 的边和连接到 2 的边，现在都连到了 $w$ 上。瞧！一个三角形 $K_3$ 凭空出现了。[@problem_id:1546327]
 
 <center>
-<img src="https://i.imgur.com/kH10tV5.png" alt="Edge contraction example: C4 becomes K3" width="500">
+
 <br>
 <em>图1：收缩 $C_4$ 的一条边（红色虚线所示），顶点 1 和 2 合并，形成了一个三角形 $K_3$。$K_3$ 是 $C_4$ 的一个[图子式](@keyword=graph_minors|lang=zh-CN|style=Feynman)，但不是其子图。</em>
 </center>
@@ -34,7 +34,7 @@
 对于某些关系来说，这是完全可能的。例如，如果我们考虑“[诱导子图](@keyword=induced_subgraph|lang=zh-CN|style=Feynman)”关系（induced subgraph，即选取一些顶点，并保留这些顶点之间*所有*的原始边），那么无限的循环[图序列](@keyword=graphical_sequence|lang=zh-CN|style=Feynman) $C_3, C_4, C_5, \dots$ 就是一个无限[反链](@keyword=antichain|lang=zh-CN|style=Feynman)。因为一个较小的循环图永远无法作为较大循环图的[诱导子图](@keyword=induced_subgraph|lang=zh-CN|style=Feynman)出现。[@problem_id:1546349]
 
 <center>
-<img src="https://i.imgur.com/vHqB37o.png" alt="Infinite antichain of cycles for induced subgraph relation" width="600">
+
 <br>
 <em>图2：对于[诱导子图](@keyword=induced_subgraph|lang=zh-CN|style=Feynman)关系，循环[图序列](@keyword=graphical_sequence|lang=zh-CN|style=Feynman) $C_3, C_4, C_5, \dots$ 构成一个无限[反链](@keyword=antichain|lang=zh-CN|style=Feynman)。</em>
 </center>
@@ -62,7 +62,7 @@
 这就像给每个无限的图家族一个独一无二的、有限的“指纹”。著名的 Kuratowski 定理早在 1930 年就为我们展示了这一思想的雏形：一个图是平面的，当且仅当它不包含完全图 $K_5$（5 个顶点两两相连）和[完全二分图](@keyword=complete_bipartite_graph|lang=zh-CN|style=Feynman) $K_{3,3}$（两组各 3 个顶点，组间完全连接）作为其[图子式](@keyword=graph_minors|lang=zh-CN|style=Feynman)。[@problem_id:1546336]
 
 <center>
-<img src="https://i.imgur.com/r6b3M7V.png" alt="Kuratowski's forbidden minors K5 and K3,3" width="400">
+
 <br>
 <em>图3：平面图的两个[禁忌图子式](@keyword=forbidden_minors|lang=zh-CN|style=Feynman)，$K_5$ 和 $K_{3,3}$。</em>
 </center>

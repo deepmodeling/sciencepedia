@@ -11,7 +11,7 @@
 量子力学关心的是作用量（action），而非仅仅是势能。正如我们在前一章看到的，隧穿速率由[欧几里得作用量](@keyword=euclidean_action|lang=zh-CN|style=Feynman) $S_E$ 指数决定，而作用量同时包含了势能和动能的贡献。想象一位徒步者想要从山的一侧到另一侧，他可以沿着平缓但蜿蜒的盘山公路走，这条路势能总在低处，但路程很长。或者，他可以抄近道，直接翻越一个稍微高一些的山脊。这条路更陡（势能更高），但路程短得多。哪种选择“总代价”最小，取决于路径的长度和陡峭程度的权衡 [@problem_id:2461109]。当[最小能量路径](@keyword=minimum_energy_path|lang=zh-CN|style=Feynman)弯曲时，[瞬子](@keyword=instantons|lang=zh-CN|style=Feynman)会选择一条更直、更短的路径“切过”弯道（corner-cutting），即使这意味着要穿过一个势能更高的区域。因为路径长度的缩短所节省的作用量，足以弥补因势能升高而付出的代价。
 
 <center>
-    <img src="https://i.imgur.com/7sP6K48.png" alt="A diagram contrasting the Minimum Energy Path (MEP) with the shorter corner-cutting instanton path on a 2D potential energy surface." width="600">
+
     <br>
     <small>图1：[最小能量路径](@keyword=minimum_energy_path|lang=zh-CN|style=Feynman)（MEP）与瞬子路径的对比。MEP（虚线）是势能最低的路径，但路程较长。[瞬子](@keyword=instantons|lang=zh-CN|style=Feynman)路径（实线）通过“切角”选择了一条更短的路径，尽管这需要穿过一个势能更高的区域，但总的作用量更小，从而主导了隧穿过程。</small>
 </center>

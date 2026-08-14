@@ -11,8 +11,6 @@
 
 对于[双曲线](@keyword=hyperbola|lang=zh-CN|style=Feynman)，这个想法同样适用。更妙的是，双曲线还为我们提供了一个绝佳的视觉线索。我们知道，双曲线有两条随着曲线延伸至无穷而无限逼近的直线，称为“[渐近线](@keyword=asymptotes|lang=zh-CN|style=Feynman)”。这两条看似永不相交的渐近线，实际上隐藏了一个秘密：**双曲线的两条[渐近线](@keyword=asymptotes|lang=zh-CN|style=Feynman)交点，恰好就是它的中心** [@problem_id:2111699]。这就像两条路标，准确地指向了双曲线的对称核心。
 
-![](https://www.geogebra.org/resource/BCA281yW/SyCSoA7WUCysoUys/material-BCA281yW.png)
-
 然而，纯粹的几何方法虽然直观，却依赖于我们能“看到”图形。如果只给我们一个冰冷的[代数方程](@keyword=algebraic_equations|lang=zh-CN|style=Feynman)，比如 $5x^2 + 6xy + 8y^2 - 2x + 36y - 10 = 0$ [@problem_id:2111682]，我们又该如何找到那个神秘的中心点呢？我们必须找到一种方法，将几何上的对称性翻译成代数的语言。
 
 ### 代数的“净化”：消除线性项

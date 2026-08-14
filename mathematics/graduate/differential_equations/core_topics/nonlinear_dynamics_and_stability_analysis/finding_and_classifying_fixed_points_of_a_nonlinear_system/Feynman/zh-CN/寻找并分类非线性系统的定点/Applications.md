@@ -12,7 +12,7 @@
 
 <center>
 <figure>
-  <img src="https://images.unsplash.com/photo-1599422484666-3893b8412853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80" alt="A winding road through a hilly landscape, visualizing a potential energy surface." style="width:70%;">
+
   <figcaption>图1：一个丘陵景观可以被看作是[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)的一个直观类比。山谷的底部是[稳定平衡](@keyword=stable_equilibrium|lang=zh-CN|style=Feynman)点，而山顶则是不稳定平衡点。</figcaption>
 </figure>
 </center>

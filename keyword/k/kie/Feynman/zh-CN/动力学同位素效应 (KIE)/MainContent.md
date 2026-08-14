@@ -17,8 +17,6 @@
 
 这个直觉是正确的。[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)的[振动频率](@keyword=vibrational_frequency|lang=zh-CN|style=Feynman)，及其零点能，都取决于质量。较轻的同位素导致更高的[振动频率](@keyword=vibrational_frequency|lang=zh-CN|style=Feynman)和更高的零点能。C-H键比C-D键是“更紧”、能量更高的弹簧。因此，在任何反应开始之前，我们就已经有了一个关键的区别：$\text{ZPE}_{\text{C-H}} > \text{ZPE}_{\text{C-D}}$。
 
-![A diagram showing the potential energy curve for a bond, with the lower ZPE level for the heavier isotope (D) and the higher ZPE level for the lighter isotope (H). The activation energy is shown as the energy difference from the ZPE level to the peak of the transition state barrier.](https://i.imgur.com/example.png "This is just a placeholder for a real image.")
-
 这对反应有何影响？要发生反应，C-H或C-D键必须断裂。这需要输入一定的能量，以达到一个不稳定的、高能量的原子排布，称为**过渡态**。可以把它想象成将弹簧拉伸到断裂点所需的能量。由于C-H键已经从一个较高的能级（其较高的零点能）开始，与C-D键相比，它只需要稍小一点的推动力就能达到过渡态。这个有效的能垒就是**活化能**，并且由于[零点能](@keyword=zero_point_energy|lang=zh-CN|style=Feynman)的差异，含H分子的活化能*低于*含D分子的活化能。
 
 活化能较低的反应更快。因此，断裂C-H键几乎总是比断裂其他方面相同的C-D键要快。这是[一级动力学同位素效应](@keyword=primary_kinetic_isotope_effect|lang=zh-CN|style=Feynman)的根本来源。我们将其定义为速率常数之比，$\mathrm{KIE} = k_{\text{light}}/k_{\text{heavy}}$，对于C-H键断裂反应，这个值通常大于1 [@problem_id:2677435]。

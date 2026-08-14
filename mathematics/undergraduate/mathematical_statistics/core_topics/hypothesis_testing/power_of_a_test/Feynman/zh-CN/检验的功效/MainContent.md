@@ -28,7 +28,7 @@
 由于随机性的存在，这两座“山峰”会有所重叠。我们的任务，就是要在这片重叠的迷雾中，划定一条“决策线”，也叫**临界值（critical value）** $\bar{x}_c$。这条线是根据我们愿意承担的[第一类错误](@keyword=type_i_error|lang=zh-CN|style=Feynman)风险 $\alpha$（比如 $\alpha = 0.01$）来确定的。我们声明：如果测得的样本平均值 $\bar{X}$ 超过了这条线，我们就拒绝“旧世界”的假设，宣布新工艺取得了成功。[@problem_id:1945712]
 
 <center>
-<img src="https://i.imgur.com/g8gK113.png" width="600">
+
 <em>图1：检验效力的直观表示。蓝色曲线代表[零假设](@keyword=null_hypothesis|lang=zh-CN|style=Feynman)下的[抽样分布](@keyword=sampling_distributions|lang=zh-CN|style=Feynman)，红色曲线代表备择假设下的[抽样分布](@keyword=sampling_distributions|lang=zh-CN|style=Feynman)。垂直虚线是基于[显著性水平](@keyword=significance_level|lang=zh-CN|style=Feynman) $\alpha$ 确定的临界值。效力（Power）是红色曲线下落在[拒绝域](@keyword=critical_region|lang=zh-CN|style=Feynman)（临界值右侧）的面积。</em>
 </center>
 
@@ -53,7 +53,7 @@
 增加样本量，并不会改变真实世界中山峰的位置（效应大小是固定的），但它会让这两座代表[样本均值分布](@keyword=sample_mean_distribution|lang=zh-CN|style=Feynman)的山峰变得更高、更瘦。为什么会这样？因为根据中心极限定理，[样本均值](@keyword=sample_mean|lang=zh-CN|style=Feynman)的[标准差](@keyword=standard_deviation|lang=zh-CN|style=Feynman)（即标准误）是 $\sigma/\sqrt{n}$。当 $n$ 增大时，标准误减小，意味着样本均值会更紧密地聚集在真实的[总体均值](@keyword=population_mean|lang=zh-CN|style=Feynman)周围。[@problem_id:1945721]
 
 <center>
-<img src="https://i.imgur.com/b9U6v57.png" width="600">
+
 <em>图2：样本量对效力的影响。当样本量 $n$ 增加时，[抽样分布](@keyword=sampling_distributions|lang=zh-CN|style=Feynman)变得更窄（方差减小）。即使效应大小（$\mu_1 - \mu_0$）不变，两个分布的重叠部分也会减少，从而增大了效力。</em>
 </center>
 
@@ -86,7 +86,7 @@
 一个设计优良、“无偏”的检验，其效力曲线会呈现出一种极其优美的形态：它会形成一个山谷，而**这个山谷的最低点，恰好就落在[零假设](@keyword=null_hypothesis|lang=zh-CN|style=Feynman)所对应的 $\theta_0$ 处。** [@problem_id:1945687]
 
 <center>
-<img src="https://i.imgur.com/0iQpC4A.png" width="500">
+
 <em>图3：无偏检验的效力函数示意图。效力在零假设 $\theta_0$ 处达到最小值 $\alpha$，并随着真实参数 $\theta$ 远离 $\theta_0$ 而增加。</em>
 </center>
 

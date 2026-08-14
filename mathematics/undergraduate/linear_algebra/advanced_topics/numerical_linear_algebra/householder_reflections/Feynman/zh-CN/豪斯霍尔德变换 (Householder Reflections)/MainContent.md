@@ -22,7 +22,7 @@
 反过来，如果一个向量恰好就是那根垂直于镜面的法线向量 $v$，那么反射它会发生什么？它会被完全“反弹”回来，方向颠倒，变成 $-v$。也就是说，$Hv = -v$。这说明，法线向量 $v$ 本身也是 $H$ 的一个**[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)**（eigenvector），其对应的**[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)**（eigenvalue）是 $-1$ （[@problem_id:17994]）。这太美妙了！一次反射的全部几何行为，都被这两个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)（$+1$ 和 $-1$）和它们对应的特征空间（[镜面](@keyword=mirror_plane|lang=zh-CN|style=Feynman)和法线）完美地概括了。
 
 <center>
-<img src="https://static.zaxtyson.com/MTAxMDE4Mw/9a410b06-4fcb-449e-88bd-b6d8a3916298.png" width="500" alt="[豪斯霍尔德反射](@keyword=householder_reflectors|lang=zh-CN|style=Feynman)的几何解释">
+
 </center>
 <div style="text-align: center; color: #888; font-size: 0.9em;">图1：一个向量 $x$ 关于超平面 $P$ 的反射。$v$ 是 $P$ 的法向量。</div>
 

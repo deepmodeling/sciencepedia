@@ -16,7 +16,7 @@
 当一束波（比如 X 射线）照射到这叠“镜子”上时，一部分波会被第一层镜子反射，另一部分会穿透到更深的层面再被反射。现在，请看下面这幅图景：
 
 <center>
-<img src="https://i.imgur.com/8Fk7uU1.png" alt="Illustration of Bragg's Law" width="500">
+
 </center>
 <br>
 

@@ -45,7 +45,7 @@ $$
 而对于[铁电体](@keyword=ferroelectrics|lang=zh-CN|style=Feynman)，其能量地形图则完全不同。在它转变为铁电相后，自由能函数呈现为一个对称的**[双势阱](@keyword=double_well_potential|lang=zh-CN|style=Feynman)**形状。它有两个能量完全相等且最低的谷底，分别对应于 $+\mathbf{P}_s$ 和 $-\mathbf{P}_s$ 两种极化状态。这两个状态都是稳定存在的。
 
 <center>
-<img src="https://i.imgur.com/v8tT8aL.png" alt="Free energy landscapes for a paraelectric, pyroelectric, and ferroelectric material." width="600"/>
+
 <br>
 <small>图1：(a) 顺电相的单[势阱](@keyword=potential_energy_well|lang=zh-CN|style=Feynman)，能量最低点在 $P=0$。(b) 普通热释电体的单[势阱](@keyword=potential_energy_well|lang=zh-CN|style=Feynman)，能量最低点在 $P = P_s$。(c) 铁电体的[双势阱](@keyword=double_well_potential|lang=zh-CN|style=Feynman)，存在两个能量相等的最低点 $P = \pm P_s$。</small>
 </center>

@@ -19,8 +19,6 @@
 1.  **s-偏振 (s-polarization)**：电场矢量的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)方向**垂直**于入射面。你可以想象电场像一条蛇，在平行于水面的方向上来回摆动。德语中“垂直”一词是 *senkrecht*，这便是“s”的来源。
 2.  **[p-偏振](@keyword=p_polarization|lang=zh-CN|style=Feynman) (p-polarization)**：电场矢量的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)方向**平行**于入射面。你可以想象电场像一只跃出水面的海豚，它的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)发生在这个包含它运动轨迹的竖直平面内。“p”代表“平行” (*parallel*)。
 
-<img src="https://assets.test-perf.chihai.geek-academy.com/storage/20240502/100557-271701-a1e6.png" alt="s-polarization and p-polarization" width="500">
-
 为什么要做如此区分？因为这两种偏振光与界面的相互作用方式截然不同。s-偏振的电场始终平行于界面，而[p-偏振](@keyword=p_polarization|lang=zh-CN|style=Feynman)的电场则会以某个角度“刺入”界面。这种几何上的差异导致了它们在反射和透射时遵循不同的规律。因此，自然界为它们准备了两套不同的[菲涅尔方程](@keyword=fresnel_s_equation|lang=zh-CN|style=Feynman)。任何一束[自然光](@keyword=unpolarized_light|lang=zh-CN|style=Feynman)，比如太阳光，都可以看作是这两种[偏振光](@keyword=polarized_light|lang=zh-CN|style=Feynman)的混合体。
 
 ### 最纯粹的相遇：迎头相撞
@@ -62,8 +60,6 @@ $$
 一个[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的电偶极子（我们的小天线）有一个基本特性：它**不会沿着自己的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)轴方向辐射能量**。
 
 在布儒斯特角入射时，发生了一件巧夺天工的事情：[折射](@keyword=refraction|lang=zh-CN|style=Feynman)光的方向，恰好使得介质内电子的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)方向（平行于[p-偏振](@keyword=p_polarization|lang=zh-CN|style=Feynman)的折射电场）正好指向了反射光应该出现的方向！既然小天线们不会朝这个方向“广播”，那么自然也就没有反射光了。
-
-<img src="https://assets.test-perf.chihai.geek-academy.com/storage/20240502/100609-847285-b9d9.png" alt="Brewster's angle mechanism" width="500">
 
 这个奇妙的物理图像还有一个优雅的几何推论：在布儒斯特角时，反射光线和[折射](@keyword=refraction|lang=zh-CN|style=Feynman)光线恰好相互垂直，夹角为90度。[@problem_id:1799716]
 

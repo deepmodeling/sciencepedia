@@ -57,7 +57,7 @@ $$F' = C - P + 1$$
 让我们画出不同相（比如液相 L 和固相 S）的[自由能](@keyword=free_energy|lang=zh-CN|style=Feynman) $G$ 随成分 $x$ 变化的曲线。在任意一个成分下，系统会选择那个 $G$ 值更低的相。[@problem_id:2494271]
 
 <p align="center">
-  <img src="https://i.imgur.com/uI925F8.png" width="600" alt="Common tangent construction for a two-phase equilibrium.">
+
   <br>
   <small>图1：两[相平衡](@keyword=phase_equilibrium|lang=zh-CN|style=Feynman)的[公切线构造](@keyword=common_tangent_construction|lang=zh-CN|style=Feynman)。当系统总成分 $x_0$ 介于 $x_S$ 和 $x_L$ 之间时，系统通过分解为成分分别是 $x_S$ 的固相和 $x_L$ 的液相，使其总[自由能](@keyword=free_energy|lang=zh-CN|style=Feynman) $G_{total}$ 落在[公切线](@keyword=common_tangents|lang=zh-CN|style=Feynman)上，这比任何单一相的能量（虚线部分）都低。</small>
 </p>
@@ -69,7 +69,7 @@ $$F' = C - P + 1$$
 那么，[不变反应](@keyword=invariant_reactions|lang=zh-CN|style=Feynman)的“为什么”呢？现在答案已经呼之欲出了。想象一下，随着温度的变化，这几条 $G(x)$ 曲线的形状和相对高低也在不断变化。在某个独一无二的、奇迹般的温度 $T_E$ 下，会发生一件极为特殊的事情：**一根笔直的尺子，可以同时与三条不同的[自由能](@keyword=free_energy|lang=zh-CN|style=Feynman)曲线（例如 $G^L$, $G^\alpha$, $G^\beta$）相切！**[@problem_id:2494318]
 
 <p align="center">
-  <img src="https://i.imgur.com/tY731Sg.png" width="600" alt="Triple common tangent construction for a eutectic invariant reaction.">
+
   <br>
   <small>图2：[共晶](@keyword=eutectic|lang=zh-CN|style=Feynman)[不变反应](@keyword=invariant_reactions|lang=zh-CN|style=Feynman)的三相[公切线构造](@keyword=common_tangent_construction|lang=zh-CN|style=Feynman)。在唯一的[共晶温度](@keyword=eutectic_temperature|lang=zh-CN|style=Feynman) $T_E$ 下，一条直线同时与液相(L)、固相$\alpha$和固相$\beta$的[自由能](@keyword=free_energy|lang=zh-CN|style=Feynman)曲线相切，从而将三相的成分和温度完全“锁定”。</small>
 </p>
@@ -83,7 +83,7 @@ $$F' = C - P + 1$$
 想象一根水平的联结线就是一根杠杆。它的两个端点分别是相 $\alpha$ 和相 $\beta$ 的成分 ($x_\alpha, x_\beta$)，代表两个重物的位置。而我们[合金](@keyword=alloys|lang=zh-CN|style=Feynman)的总成分 $x_0$，则像是这根杠杆的[支点](@keyword=branch_points|lang=zh-CN|style=Feynman)。[@problem_id:2494315]
 
 <p align="center">
-  <img src="https://i.imgur.com/8Qe7c6j.png" width="450" alt="Lever rule analogy.">
+
   <br>
   <small>图3：杠杆定律的[力学](@keyword=mechanics|lang=zh-CN|style=Feynman)类比。总成分 $x_0$ 是[支点](@keyword=branch_points|lang=zh-CN|style=Feynman)，两相的[质量分数](@keyword=mass_fraction|lang=zh-CN|style=Feynman) $f_\alpha$ 和 $f_\beta$ 就像是让杠杆保持[平衡](@keyword=equilibrium|lang=zh-CN|style=Feynman)的两个“重物”。</small>
 </p>

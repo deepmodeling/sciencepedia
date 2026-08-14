@@ -14,7 +14,7 @@
 
 <center>
 <figure>
-  <img src="https://s3.us-west-2.amazonaws.com/static.notion-static.com/36a77d54-2051-403d-88f2-8c9e54d6ae71/Hopf_fibration.svg" alt="Hopf[纤维化](@keyword=fibrosis|lang=zh-CN|style=Feynman)的示意图，展示了三维球面如何由缠绕在二维球面上的圆圈纤维构成。" style="width:70%;">
+
   <figcaption>图1：Hopf纤维化的艺术想象图。三维球面$S^3$可以被看作是由一系列的圆圈（纤维）“粘合”在二维球面$S^2$的每一点上构成的。在Berger球的坍缩中，正是这些纤维的尺寸被“拧”到了零。</figcaption>
 </figure>
 </center>

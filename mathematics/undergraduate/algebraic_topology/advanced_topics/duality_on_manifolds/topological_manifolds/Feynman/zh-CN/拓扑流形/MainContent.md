@@ -25,7 +25,6 @@
 
 想象一下，我们将圆圈放在平面上，从“北极点” $N=(0,1)$ 处放置一盏灯。这盏灯会把圆上除了北极点本身之外的所有点，都投影到下方的一条直线上。这个过程被称为**球极投影**（stereographic projection）。这张“地图”覆盖了除北极点外的整个圆。同样，我们可以在“南极点” $S=(0,-1)$ 处再放一盏灯，它会把除南极点外的所有点投影到另一条直线上。这两张地图拼在一起，就覆盖了整个圆 [@problem_id:1685906]。
 
-![](https://i.imgur.com/Kx4N09g.png)
 *图1：用两张球极投影坐标卡覆盖一个圆。从北极 N 的投影覆盖了除 N 外的整个圆，从南极 S 的投影覆盖了除 S 外的整个圆。*
 
 现在，关键问题来了：在两张地图重叠的区域，我们如何确保它们是一致的？换句话说，一个同时出现在两张地图上的点，它的坐标如何从一张地图转换到另一张？这个转换规则被称为**转换映射**（transition map）。对于我们用球极投影构造的圆的图册，如果你计算一下，会发现这个转换映射异常简洁：$t \mapsto 1/t$。这个简单的函数，就像一句咒语，蕴含了将直线“粘合”成一个圆圈所需的全部几何信息 [@problem_id:1685953]。它告诉我们，在一个[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)里趋向于无穷远的点，在另一个[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)里其实是趋向于原点。这正是把一条无限长的直线（$\mathbb{R}$）的两端“粘合”起来形成一个闭合回路的数学表达。
@@ -72,7 +71,6 @@
 
 这是一种更具雕塑感的创造方式：通过“粘合”或“认同”一个空间中的某些点来形成新的空间。最著名的例子是**[实射影平面](@keyword=real_projective_plane|lang=zh-CN|style=Feynman)** $\mathbb{R}P^2$。它的构造方法是：取一个球面 $S^2$，然后宣布任何一对正对的**[对径点](@keyword=antipodal_points|lang=zh-CN|style=Feynman)**（antipodal points）是同一个点。
 
-![](https://i.imgur.com/gK9fI5G.png)
 *图2：通过认同球面 $S^2$ 上的对径点（如 $p$ 和 $-p$）来构造实射影平面 $\mathbb{R}P^2$。*
 
 想象一下，你站在球面的某一点，而球心另一端的那个点与你所在的位置被视为“同一地点”。这是一个奇怪但完全合法的[二维流形](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，它不具备“方向性”（non-orientable），著名的[莫比乌斯带](@keyword=möbius_strip|lang=zh-CN|style=Feynman)就是它的一部分。理解这种“粘合”规则的一个好方法是思考什么样的函数可以在这个新空间上被良好定义。一个定义在 $S^2$ 上的函数，如果对于任何一对[对径点](@keyword=antipodal_points|lang=zh-CN|style=Feynman) $(x,y,z)$ 和 $(-x,-y,-z)$，它的取值都相同，那么这个函数就能“存活”到[商空间](@keyword=quotient_spaces|lang=zh-CN|style=Feynman) $\mathbb{R}P^2$ 上，因为它尊重了这个粘合规则 [@problem_id:1685946]。

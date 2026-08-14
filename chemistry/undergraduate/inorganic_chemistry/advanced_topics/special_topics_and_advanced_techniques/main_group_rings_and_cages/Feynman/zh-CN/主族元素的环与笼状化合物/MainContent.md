@@ -11,8 +11,6 @@
 
 我们的旅程从一个与化学界“明星分子”苯 ($C_6H_6$) 惊人相似的分子开始。这个分子被称为“[无机苯](@keyword=inorganic_benzene|lang=zh-CN|style=Feynman)”，[化学式](@keyword=chemical_formulas|lang=zh-CN|style=Feynman)为 $(HBNH)_3$，你可能更熟悉它的俗名——硼嗪。它的结构和苯一样，是一个六元环，但构成环骨架的不再是清一色的碳原子，而是硼原子和氮原子交替[排列](@keyword=permutation|lang=zh-CN|style=Feynman)。根据系统命名法，它的正式名称是1,3,5-三氮杂-2,4,6-三硼烷（borazine）[@problem_id:2267331]。
 
-![Borazine Structure](https://www.chem.ucla.edu/~harding/IGOC/B/borazine01.png)
-
 从表面上看，硼嗪是苯的完美“无机翻版”。它们拥有相同的电子数和相似的环状结构。你可能会猜想，它们的化学性质也应该大同小异。然而，大自然总是比我们想象的要巧妙得多。苯环中的碳-碳键是完全非极性的，电子云[均匀分布](@keyword=uniform_distribution|lang=zh-CN|style=Feynman)，整个环像一个坚固而宁静的堡垒。而硼嗪环中的硼-氮键则是极性的。氮的电负性比硼强得多，就像一个贪婪的邻居，把共享的电子云更多地拉向自己这边。这导致氮原子带上部分负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，成为一个容易被质子（如酸中的 $H^+$）攻击的“碱性”位点；而硼原子则带上部分正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，变成一个渴望电子的“酸性”位点。
 
 这种内在的极性赋予了硼嗪截然不同的化学“性格”。如果我们将苯和硼嗪都暴露在氯化氢（$HCl$）气体中，一个有趣的现象发生了：化学性质稳定的苯几乎不发生任何反应，像一位高冷的贵族。而硼嗪则会热情地与 $HCl$ 发生加成反应，HCl 分子中的氢原子加到氮原子上，氯原子加到邻近的硼原子上，就像一把钥匙精确地插入一把锁 [@problem_id:2267258]。这个简单的对比告诉我们一个深刻的道理：**结构相似不[代表性](@keyword=representativeness|lang=zh-CN|style=Feynman)质相同。原子间的[电负性](@keyword=electronegativity|lang=zh-CN|style=Feynman)差异，即成[键的极性](@keyword=bond_polarity|lang=zh-CN|style=Feynman)，是决定分子反应活性的关键。**

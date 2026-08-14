@@ -8,7 +8,7 @@
 
 这是一个简洁而深刻的思想实验。直觉告诉我们，顶盖的拖拽运动应该会在腔体内搅起一个[稳定旋转](@keyword=stable_rotation|lang=zh-CN|style=Feynman)的涡旋。如果我们选择的有限元配对（比如经典的泰勒-胡德（Taylor-Hood）单元）满足[inf-sup条件](@keyword=inf_sup_condition|lang=zh-CN|style=Feynman)，计算结果将完美地印证我们的物理直觉，清晰地呈现出这个主涡旋。然而，如果我们随意地选择一组“不兼容”的单元，比如对速度和压力使用相同阶次的连续线性插值（即$P_1/P_1$单元），灾难便会降临。计算出的压[力场](@keyword=force_field|lang=zh-CN|style=Feynman)会呈现出荒谬的、非物理的“棋盘格”[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，而速度场甚至可能完全静止，仿佛流体无视了顶盖的运动。
 
-![一个流动问题的稳定（左）与不稳定（右）[离散化](@keyword=discretization|lang=zh-CN|style=Feynman)压[力场](@keyword=force_field|lang=zh-CN|style=Feynman)对比。不稳定情况显示棋盘格模式。](https://s3.us-west-2.amazonaws.com/ai2-s2-pwc/figures/2017-pressure-robust-stokes-discretizations-2-fig1.png)
+压[力场](@keyword=force_field|lang=zh-CN|style=Feynman)对比。不稳定情况显示棋盘格模式。](https://s3.us-west-2.amazonaws.com/ai2-s2-pwc/figures/2017-pressure-robust-stokes-discretizations-2-fig1.png)
 
 *一个思想实验：对于一个流动问题，满足[inf-sup条件](@keyword=inf_sup_condition|lang=zh-CN|style=Feynman)的稳定离散（左）可以得到光滑、物理的压[力场](@keyword=force_field|lang=zh-CN|style=Feynman)；而违反该条件的离散（右）则会产生被称为“棋盘格”的非物理压力[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。稳定与不稳定之间的区别，正是[inf-sup条件](@keyword=inf_sup_condition|lang=zh-CN|style=Feynman)的威力所在。（请注意：此图仅为示意，不代表特定问题的精确解。）*
 

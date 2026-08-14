@@ -12,7 +12,7 @@
 想象一股完美的流体流经一个90度的墙角。这个问题看起来相当棘手，因为流体在墙角处的行为似乎很复杂。然而，十九世纪的物理学家和数学家们发现了一个绝妙的技巧，叫做**保形变换 (conformal mapping)**。对于这个90度的墙角问题，我们可以使用一个简单的数学变换 $Z = z^2$。这个变换就像施展了一个魔法，它能把这个直角[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)的第一象限（我们的流场）“摊平”成一个无限大的上半平面。原本棘手的墙角边界，现在变成了一条简单的直线！[@problem_id:512825]
 
 <center>
-<img src="https://i.imgur.com/8EbyH1t.png" width="600">
+
 </center>
 <center>图1：保形变换 $Z=z^2$ 将90度墙角区域映射为上半平面。</center>
 
@@ -29,7 +29,7 @@
 再次回到我们的理想流体世界。当流体从一个容器中通过一个孔口流出时，靠近孔口边缘的流体粒子并不会直直地向前冲，因为它们需要绕过边缘。这使得它们的路径向内弯曲。由于流体内部的粒子流线必须是平滑连续的，这种向内的趋势会传递到整个射流，导致整个水柱在离开孔口后继续收缩一小段距离，直到所有粒子的运动方向都变得彼此平行。
 
 <center>
-<img src="https://i.imgur.com/lM5tE40.png" width="500">
+
 </center>
 <center>图2：从孔口流出的射流发生脉流收缩现象。</center>
 
@@ -70,7 +70,7 @@
 最后，让我们将速度推向极致——**超音速**。当一个[超音速射流](@keyword=supersonic_jet|lang=zh-CN|style=Feynman)（如火箭发动机的尾焰）从喷管中喷出，如果其出口压力 $p_e$ 高于周围环境压力 $p_b$，它会经历一个剧烈的膨胀过程。但它会“膨胀过度”，导致其内部压力低于环境压力。于是，周围的压力又会把它向[内压](@keyword=internal_pressure|lang=zh-CN|style=Feynman)缩。这个压缩过程通常是通过形成**[斜激波](@keyword=oblique_shock_waves|lang=zh-CN|style=Feynman) (oblique shock waves)** 来实现的。[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)将气流方向折回，使其重新聚焦。然而，这个压缩过程同样也会“矫枉过正”，导致中心压力再次升高。如此循环往复，就在射流中形成了一系列明暗相间的菱形结构，被称为**[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)菱形 (shock diamonds)** 或**马赫环 (Mach rings)**。[@problem_id:512885]
 
 <center>
-<img src="https://i.imgur.com/Kz8lX3A.jpg" width="600">
+
 </center>
 <center>图3：F/A-18战斗机加力燃烧室产生的尾焰中清晰可见的[激波](@keyword=shock_waves|lang=zh-CN|style=Feynman)菱形。</center>
 

@@ -19,7 +19,7 @@
 
 所以，横流速度从零开始，必须在[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)内部某处增长到某个最大值，然后必须再减小回零。这就形成了一个典型的“S形”或**拐点**[速度剖面](@keyword=velocity_profile|lang=zh-CN|style=Feynman)。我们甚至可以用简单的函数来模拟它，例如 $W(y) = W_{0} ( y/\delta ) ( 1 - y/\delta )^2$，这个函数优美地捕捉了这种形状 [@problem_id:1745541]。
 
-![典型的[横流速度剖面](@keyword=crossflow_velocity_profile|lang=zh-CN|style=Feynman) W(y) 作为离表面距离 y 的函数。该剖面从零开始，增加到最大值，然后返回到零，必然产生一个[拐点](@keyword=inflection_points|lang=zh-CN|style=Feynman)。](placeholder.png)
+ W(y) 作为离表面距离 y 的函数。该剖面从零开始，增加到最大值，然后返回到零，必然产生一个[拐点](@keyword=inflection_points|lang=zh-CN|style=Feynman)。](placeholder.png)
 
 这个剖面最关键的特征是**拐点**——一个剖面曲率改变符号的点（其二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman) $W''(y)$ 为零）。对于我们的简单模型，这发生在 $y_{ip} = \frac{2}{3}\delta$ 的高度处 [@problem_id:1745541]。这个点不仅仅是一个数学上的奇特之处，它还是[层流](@keyword=laminar_flow|lang=zh-CN|style=Feynman)的“阿喀琉斯之踵”。
 

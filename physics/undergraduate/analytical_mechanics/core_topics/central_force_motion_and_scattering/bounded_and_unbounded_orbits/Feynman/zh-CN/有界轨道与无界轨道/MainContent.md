@@ -33,7 +33,7 @@ $$
 
 <br>
 <div align="center">
-  <img src="https://i.imgur.com/uCRH1oU.png" width="600" alt="Effective potential for an attractive inverse-square force.">
+
   <br>
   <small><i>图1：一个典型吸[引力](@keyword=gravitational_force|lang=zh-CN|style=Feynman)（如[引力](@keyword=gravitational_force|lang=zh-CN|style=Feynman)）的[有效势](@keyword=effective_potential|lang=zh-CN|style=Feynman)。真实势能（蓝色虚线）与[离心势垒](@keyword=centrifugal_barrier|lang=zh-CN|style=Feynman)（绿色虚线）相加，形成了一个“[势阱](@keyword=potential_well|lang=zh-CN|style=Feynman)”（红色实线）。粒子的[总能量](@keyword=total_energy|lang=zh-CN|style=Feynman) $E$ 决定了其运动范围。</i></small>
 </div>

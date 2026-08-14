@@ -12,7 +12,6 @@
 
 再来看一个更精巧的例子：你家中的**恒温空调**。它只有“开”和“关”两个离散模式。当它关闭时，室内温度 $T$ 会因散热而连续下降；当它开启时，温度则连续上升。但是，控制器并不会在温度恰好低于设定值 $T_{ref}$ 时就开启，高于时就关闭。如果那样，它会在设定点附近疯狂地“[抖动](@keyword=dither|lang=zh-CN|style=Feynman)”，既浪费能源又缩短寿命。聪明的工程师引入了“**迟滞**”（hysteresis）现象：只有当温度下降到一个较低的阈值 $T_{ref} - h$ 时才开启，然后一直工作到温度上升至一个较高的阈值 $T_{ref} + h$ 时才关闭。这种“懒人”策略，即在两个不同的阈值之间创造一个“不作为”的模糊地带，正是[混合系统](@keyword=hybrid_systems|lang=zh-CN|style=Feynman)控制思想的精髓体现，它保证了切换的平稳与高效 [@problem_id:2723712]。
 
-![](https://minio.cos.ap-guangzhou.myqcloud.com/agora-prod/images/5f80b2d6a5c13e63577d61b3699c75cf.svg)
 _图1：具有迟滞特性的恒温控制器。温度$x(t)$在下阈值$r-h$和上阈值$r+h$之间[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。只有当轨迹触及边界时，系统模式（开/关）才会发生离散切换。_
 
 这种离散控制与连续物理世界相结合的思想，是我们整个数字时代的基石。你所使用的任何数字设备，从智能手机到汽车的电控单元，其核心都是一个**[采样数据系统](@keyword=sampled_data_systems|lang=zh-CN|style=Feynman)**。一个连续运作的物理设备（“被控对象”），由一个以固定时间间隔 $h$ 进行计算和决策的[数字控制](@keyword=digital_control|lang=zh-CN|style=Feynman)器（如微处理器）来指挥。在每个采样时刻 $t_k = k h$，控制器读取系统状态 $x(t_k)$，计算出控制指令 $u(t_k)$，并在接下来的整个时间段 $[t_k, t_{k+1})$ 内保持该指令不变（这被称为“[零阶保持器](@keyword=zero_order_hold|lang=zh-CN|style=Feynman)”）。系统的演化因此呈现出一种奇特的节奏：在每个采样间隔内，它遵循由恒定输入驱动的[连续动力学](@keyword=continuous_dynamics|lang=zh-CN|style=Feynman)；而在采样时刻，控制律则发生一次离散的更新。将整个系统——包括被控对象的状态、控制器的时钟以及保持的输入值——联合起来看，它构成了一个完美的[混合系统](@keyword=hybrid_systems|lang=zh-CN|style=Feynman) [@problem_id:2712016]。

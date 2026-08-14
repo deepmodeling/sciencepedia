@@ -22,7 +22,7 @@ $$ \Delta \tau = \frac{2L}{c} $$
 现在，让我们换个视角。我在一个固定的空间站里，看着你的飞船以速度 $v$ 从我面前飞驰而过。我看到你的[光子](@keyword=photon|lang=zh-CN|style=Feynman)钟在做什么呢？当[光子](@keyword=photon|lang=zh-CN|style=Feynman)从下方的镜子向上移动时，整个时钟也在水平方向上移动了。因此，在我看来，[光子](@keyword=photon|lang=zh-CN|style=Feynman)并没有走一条笔直的垂直路线，而是走了一条斜线！[@problem_id:1856851]
 
 <center>
-<img src="https://i.imgur.com/eBf2s3k.png" width="600">
+
 <br>
 图1：从[静止参考系](@keyword=rest_frame|lang=zh-CN|style=Feynman)（空间站）和运动[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)（飞船）观察到的[光子](@keyword=photon|lang=zh-CN|style=Feynman)钟路径。
 </center>

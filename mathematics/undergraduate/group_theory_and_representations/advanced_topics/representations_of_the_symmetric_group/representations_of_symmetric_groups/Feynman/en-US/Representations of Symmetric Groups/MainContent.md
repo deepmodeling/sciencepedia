@@ -84,8 +84,6 @@ We now have a correspondence between partitions and irreps. But how big is the v
 
 First, draw the Young diagram for the partition $\lambda$. For each box in the diagram, its **hook** consists of the box itself, all boxes to its right in the same row, and all boxes below it in the same column. The **hook length** is the number of boxes in the hook.
 
-<img src="https://i.imgur.com/k6k3xrf.png" alt="Hook length example for partition (3,2,1). The box at (1,1) has a hook consisting of 5 boxes." width="300"/>
-
 For example, for the partition $(3,2,1)$, the hook length of the top-left box is 5 (itself, two to the right, two below). By calculating the hook length for every box, we get a diagram filled with numbers. For the partition $(3,2,1)$ of $n=6$, the hook lengths are:
 ```
 5 3 1

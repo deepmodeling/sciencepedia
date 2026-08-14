@@ -14,7 +14,7 @@
 想象一个极小的、被精确划分的“游泳池”，它的深度已知且非常浅。这就是我们所说的**血细胞计数板**或类似的工具，例如 **Petroff-Hausser 计数室**。这些设备上蚀刻着精细的网格，每一个大方格的面积（比如 $s \times s$）都是精确已知的。由于盖玻片和计数板之间的距离（深度 $h$）是固定的，因此每个大方格上方的液体体积就是一个确定的值：$V_{\text{方格}} = s^2 h$ [@problem_id:2526851]。
 
 <center>
-<img src="https://i.imgur.com/rN5y8u5.png" alt="A diagram of a Petroff-Hausser counting chamber, showing the grid and the fixed depth h. A magnified view shows bacteria within a large square." width="70%">
+
 <br>
 <i>图1：Petroff-Hausser 计数室的原理。通过计算已知体积（由方格面积 $s^2$ 和深度 $h$ 决定）内的[细胞数](@keyword=cellularity|lang=zh-CN|style=Feynman)量，我们可以估算整体浓度。</i>
 </center>
@@ -40,7 +40,7 @@
 对于培养物 X，一个菌落就对应一个活细胞。但对于培养物 Y，一个包含 5 个细胞的聚合体，只要其中**至少有1个**细胞是活的，它就能在平板上长成**一个**菌落。如果这个聚合体里有 5 个活细胞，它们也只会形成一个菌落！因此，CFU 计数得到的并不是活细胞的绝对数量，而是能够形成菌落的“功能单位”的数量。这个单位可能是一个细胞，也可能是一团细胞。CFU 这个概念，巧妙地将细胞的“生理活性”和它们的“物理聚集状态”融合在了一起。
 
 <center>
-<img src="https://i.imgur.com/8QOaxQ9.png" alt="An illustration comparing CFU from single cells versus aggregated cells. On the left, 5 single competent cells form 5 colonies. On the right, an aggregate of 5 competent cells forms only 1 colony." width="70%">
+
 <br>
 <i>图2：CFU 的真谛。即使活细胞数量相同，聚集状态也会显著影响最终的菌落计数。CFU 是一个功能单位，而非细胞的直接计数。</i>
 </center>
@@ -61,7 +61,6 @@
 
 除了平板计数，还有一种巧妙的活菌计数方法，称为**[最或然数法](@keyword=most_probable_number_method|lang=zh-CN|style=Feynman)（Most Probable Number, MPN）**。当微生物无法在固体培养基上形成菌落，或者我们处理的是浑浊的样品（如水或食物）时，MPN 就派上了用场。这个方法将样本进行[系列稀释](@keyword=serial_dilution|lang=zh-CN|style=Feynman)，然后将每个稀释度的样本分别接种到多管液体培养基中。经过培养后，我们只记录一个[二元结果](@keyword=binary_outcomes|lang=zh-CN|style=Feynman)：管子是变浑浊（阳性），还是保持澄清（阴性）。通过统计不同稀释度下阳性管的数量组合，比如“3-1-0”（即在 $10^{-1}$ 稀释度下3管阳性，在 $10^{-2}$ 下1管阳性，在 $10^{-3}$ 下0管阳性），概率论可以帮助我们反推出一个“最可能”的原始微生物浓度 [@problem_id:2526782]。MPN 方法再次展示了，即使面对全或无的简单结果，数学也能揭示出隐藏在背后的数量信息。
 
-
 ### 物理之眼：光与影的舞蹈
 
 前面两种方法，一种需要精细的操作和显微镜，另一种则需要漫长的等待。有没有一种方法，既快速、简便，又能实时监控微生物的生长呢？有，这就是**[浊度](@keyword=turbidity|lang=zh-CN|style=Feynman)法**，通常通过测量**[光密度](@keyword=optical_density|lang=zh-CN|style=Feynman)（Optical Density, OD）**来实现。
@@ -71,7 +70,7 @@
 答案是**散射（Scattering）** [@problem_id:2526836]。每一个微小的细菌，对于射向它的光线来说，都像一个微型的障碍物。光线撞击到细菌上，会向四面八方偏折，就像阳光照在尘埃上一样。标准的分光光度计探测器只接收沿直线穿过样本的光。那些被散射到其他方向的光，就永远无法到达探测器。于是，探测器误以为这部分光被“吸收”了，从而记录下一个“表观”的吸光度值，也就是我们所说的 OD。
 
 <center>
-<img src="https://i.imgur.com/uG5jRj3.png" alt="An illustration showing light passing through a cuvette. In a clear solution, light passes straight through. In a turbid solution, cells scatter light away from the detector." width="70%">
+
 <br>
 <i>图3：OD 测量的物理本质。浑浊不是因为吸收，而是因为细胞将光线散射出探测器的接收范围。</i>
 </center>
@@ -85,7 +84,7 @@
 但当培养液变得非常浓稠时，情况就变得复杂了 [@problem_id:2526802]。[光子](@keyword=photon|lang=zh-CN|style=Feynman)在穿过样本的旅程中，可能会经历多次散射，就像在“弹球机”里一样。一个被第一个细胞散射开的[光子](@keyword=photon|lang=zh-CN|style=Feynman)，有可能被第二个细胞“恰好”又散射回了探测器的方向。这种**多次散射（Multiple Scattering）**效应，使得探测器接收到的光比预期的要多，从而导致测得的 OD 值比真实浓度所对应的线性值要**低**。这就造成了在高浓度区，OD 曲线会“饱和”，呈现出**次线性（sublinear）**的特征。
 
 <center>
-<img src="https://i.imgur.com/gK6R8yv.png" alt="A graph showing OD vs. cell concentration. The relationship starts linear (single scattering) and becomes sublinear (multiple scattering) at high concentrations." width="60%">
+
 <br>
 <i>图4：OD 与浓度的关系。在低浓度时，关系是线性的。在高浓度时，由于多次散射效应，关系变为次线性。</i>
 </center>

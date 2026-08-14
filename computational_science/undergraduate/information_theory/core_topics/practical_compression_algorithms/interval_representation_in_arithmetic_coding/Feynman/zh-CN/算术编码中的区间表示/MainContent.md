@@ -5,8 +5,6 @@
 
 让我们首先进入[算术编码](@keyword=arithmetic_coding|lang=zh-CN|style=Feynman)的核心，理解其基本的原理与机制。
 
-![Initial partition of the [0, 1) interval for symbols A (P=0.8) and B (P=0.2).](https://i.imgur.com/gK9n7j0.png)
-
 ## 原理与机制
 
 想象一下，我们能否将一整部《战争与和平》压缩成一个单独的、唯一的数字？听起来像是魔法，但这正是[算术编码](@keyword=arithmetic_coding|lang=zh-CN|style=Feynman)（Arithmetic Coding）试图触及的优雅核心。它没有像霍夫曼编码那样，为每个字符分配一个固定的比特串（比如 A 是 `01`，B 是 `110`），而是采取了一种更为宏大和整体的视角：它将整个信息序列映射到数字线上的一个区间。

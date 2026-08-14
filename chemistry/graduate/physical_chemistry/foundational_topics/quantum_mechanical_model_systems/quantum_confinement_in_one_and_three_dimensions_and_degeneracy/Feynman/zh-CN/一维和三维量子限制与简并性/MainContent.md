@@ -19,8 +19,6 @@
 
 这个边界条件——$\psi(0) = 0$ 和 $\psi(L) = 0$——是整个故事的关键。它意味着，任何描述粒子状态的[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)，都必须像一根两端固定的吉他弦。当你拨动吉他弦时，它会[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，但它的两端始终固定不动。你不会得到任意形状的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，而是一系列特定的、和谐的驻波模式：基频、两倍频、三倍频……等等。
 
-![](https://www.physics.smu.edu/~scalise/apparatus/stringvibrator/lab/img/standing_waves.gif)
-
 *图：两端固定的琴弦只能以特定的驻波模式[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，其波长必须“恰好”能装入琴弦的长度。*
 
 粒子的[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)也是如此。为了满足两端为零的边界条件，它的波长 $\lambda$ 不能是任意的，而必须“恰好”能装进盒子里。也就是说，半波长的整数倍必须等于盒子的长度 $L$：

@@ -43,8 +43,6 @@ $$
 
 想象一个以原点为中心，宽为 $2a$，高为 $2b$ 的矩形。这个矩形，我们称之为[双曲线](@keyword=hyperbola|lang=zh-CN|style=Feynman)的“[基本矩形](@keyword=fundamental_rectangle|lang=zh-CN|style=Feynman)”（fundamental rectangle），就像是建造双曲线的[隐形](@keyword=cloaking|lang=zh-CN|style=Feynman)“脚手架”。现在，画出这个矩形的两条对角线。这两条对角线正好穿过原点，它们的斜率正是“高度的一半”除以“宽度的一半”，即 $\pm b/a$。[@problem_id:2128935]
 
-![A hyperbola with its fundamental rectangle and asymptotes](https://www.storyofmathematics.com/wp-content/uploads/2022/11/asymptotes-of-a-hyperbola.webp)
-
 这令人惊叹！那两条构成[双曲线](@keyword=hyperbola|lang=zh-CN|style=Feynman)命运的[渐近线](@keyword=asymptotes|lang=zh-CN|style=Feynman)，竟然就是这个[基本矩形](@keyword=fundamental_rectangle|lang=zh-CN|style=Feynman)的两条对角线。[双曲线](@keyword=hyperbola|lang=zh-CN|style=Feynman)本身则从矩形的左右两侧（或上下两侧）的[边界点](@keyword=boundary_points|lang=zh-CN|style=Feynman)出发，以[渐近线](@keyword=asymptotes|lang=zh-CN|style=Feynman)为导引，优雅地向无穷远延伸。参数 $a$ 和 $b$ 不再是抽象的符号，它们构成了这个看得见摸得着的几何框架。
 
 如果[双曲线](@keyword=hyperbola|lang=zh-CN|style=Feynman)的中心不在原点，而是在某个点 $(h, k)$ 呢？这就像把我们的整个“脚手架”连同曲线一起平移到了新的位置。曲线的形状、它的“陡峭程度”没有改变，所以渐近线的斜率也不会变。改变的只是它们穿过的[中心点](@keyword=medoid|lang=zh-CN|style=Feynman)。因此，[渐近线](@keyword=asymptotes|lang=zh-CN|style=Feynman)方程也相应地平移为：

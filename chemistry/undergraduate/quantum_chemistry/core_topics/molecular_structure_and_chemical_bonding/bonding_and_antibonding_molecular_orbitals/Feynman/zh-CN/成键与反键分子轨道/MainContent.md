@@ -3,7 +3,6 @@
 
 本文旨在系统地介绍[分子轨道理论](@keyword=molecular_orbital_theory|lang=zh-CN|style=Feynman)的核心——成键与[反键分子轨道](@keyword=antibonding_molecular_orbitals|lang=zh-CN|style=Feynman)的概念。你将学习到，这些轨道不仅仅是理论构建，更是理解和预测物质性质的有力工具。我们将从第一章“原理与机制”开始，探索电子波如何通过干涉形成分子轨道；接着，在第二章“应用与跨学科连接”中，我们将见证这一理论如何解释分子的稳定性、磁性、反应规则，并最终延伸至[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)的广阔领域，揭示从单个分子到宏观材料的内在统一性。
 
-![A schematic diagram showing the formation of bonding and antibonding molecular orbitals from two 1s atomic orbitals. Constructive interference leads to increased electron density between the nuclei (bonding orbital), while destructive interference leads to a nodal plane (antibonding orbital).](https://i.imgur.com/K9QzW9v.png)
 *图1：两个1s原子轨道组合形成σ[成键轨道](@keyword=bonding_orbitals|lang=zh-CN|style=Feynman)和[σ*反键轨道](@keyword=sigma_star|lang=zh-CN|style=Feynman)。[相长干涉](@keyword=constructive_interference|lang=zh-CN|style=Feynman)（下图）增加了核间电子密度，形成稳定的[成键轨道](@keyword=bonding_orbitals|lang=zh-CN|style=Feynman)。[相消干涉](@keyword=destructive_interference|lang=zh-CN|style=Feynman)（[上图](@keyword=epigraphs|lang=zh-CN|style=Feynman)）在核间形成了一个[节面](@keyword=nodal_planes|lang=zh-CN|style=Feynman)，导致不稳定的[反键轨道](@keyword=antibonding_orbitals|lang=zh-CN|style=Feynman)。*
 
 ## 原理与机制

@@ -17,7 +17,7 @@
 
 想象一下建造一座多层建筑。工程师们精心设计了每一层的用途，但他们没有意识到，这些楼层的特定排列方式——$p^{+}$层、$n^{-}$层、$p$层、$n^{+}$层——无意中构成了一个全新的、功能完全不同的结构。在 IGBT 内部，正是这种垂直堆叠的半导体层，创造了一个被称为 **[晶闸管](@keyword=silicon_controlled_rectifier_2|lang=zh-CN|style=Feynman)（Thyristor）** 或 **硅控整流器（SCR）** 的寄生四层器件 [@problem_id:3848717]。它并非设计之初的意图，却与 IGBT 主体结构[共生](@keyword=symbiosis|lang=zh-CN|style=Feynman)，像一个潜伏的火山，随时可能喷发。
 
-![IGBT 内部的寄生晶闸管等效电路。左侧是 IGBT 的简化[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)图，显示了 p+, n-, p, n+ 各层。右侧是等效的 pnp 和 npn 晶体管耦合模型，pnp 的集电极连接到 npn 的基极，npn 的集电极连接到 pnp 的基极，形成一个正反馈回路。](https://d2p5jvekl41v1z.cloudfront.net/production/attachments/3848717/1710188730-IGBT_Parasitic_SCR.png)
+图，显示了 p+, n-, p, n+ 各层。右侧是等效的 pnp 和 npn 晶体管耦合模型，pnp 的集电极连接到 npn 的基极，npn 的集电极连接到 pnp 的基极，形成一个正反馈回路。](https://d2p5jvekl41v1z.cloudfront.net/production/attachments/3848717/1710188730-IGBT_Parasitic_SCR.png)
 *图1：IGBT 内部的寄生晶闸管结构。左图展示了 IGBT 的物理分层，右图展示了其等效的、由两个晶体管耦合而成的[晶闸管](@keyword=silicon_controlled_rectifier_2|lang=zh-CN|style=Feynman)电路模型。这种结构是闩锁现象的根源。[@problem_id:3848717]*
 
 这个寄生晶闸管究竟是什么？我们可以把它想象成由两个更简单的晶体管“共谋”组成的。如图所示，这个四层结构可以被分解为两个相互耦合的双极晶体管：一个纵向的 $pnp$ 晶体管和一个横向的 $npn$ 晶体管 [@problem_id:3848689]。

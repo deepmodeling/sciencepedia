@@ -19,8 +19,6 @@
 
 如果我们继续增大反向[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)，材料会被反向磁化至饱和，然后再减小反向[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)、施加正向[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)……最终，我们会得到一个闭合的环形曲线，这就是**[磁滞回线](@keyword=hysteresis_loop|lang=zh-CN|style=Feynman)**。
 
-![Hysteresis Loop](https://upload.wikimedia.org/wikipedia/commons/e/e9/Hysteresis_loop.svg)
-
 现在，[软磁和硬磁材料](@keyword=soft_and_hard_magnetic_materials|lang=zh-CN|style=Feynman)的“签名”就清晰地呈现在我们眼前了：
 
 *   **[软磁材料](@keyword=soft_magnetic_materials|lang=zh-CN|style=Feynman)**：它们的[磁滞回线](@keyword=hysteresis_loop|lang=zh-CN|style=Feynman)通常是“又高又瘦”的。这意味着它们拥有很低的[矫顽力](@keyword=coercivity|lang=zh-CN|style=Feynman) $H_c$ 和较低的[剩磁](@keyword=remanence|lang=zh-CN|style=Feynman) $M_r$。它们很容易被磁化，也很容易退磁。

@@ -22,7 +22,7 @@
 通过在 S 形曲线最陡峭的点（拐点）画一条切线，我们可以用几何方法相当精确地估算出这三个参数。
 
 <center>
-  <img src="https://i.imgur.com/k9v8c3I.png" alt="Process Reaction Curve" width="600">
+
   <figcaption>图1：通过“轻推”法得到的[过程反应曲线](@keyword=process_reaction_curve|lang=zh-CN|style=Feynman)。切线法可以帮助我们估算系统的关键参数 $K$, $L$, 和 $T$。[@problem_id:2731978]</figcaption>
 </center>
 

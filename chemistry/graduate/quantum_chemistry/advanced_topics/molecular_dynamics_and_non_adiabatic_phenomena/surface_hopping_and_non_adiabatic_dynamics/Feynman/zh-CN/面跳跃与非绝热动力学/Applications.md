@@ -9,7 +9,7 @@
 传统的[计算化学方法](@keyword=computational_chemistry_methods|lang=zh-CN|style=Feynman)，如几何[结构优化](@keyword=structural_optimization|lang=zh-CN|style=Feynman)，主要用于寻找[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)上的最低点——也就是稳定的分子结构。但对于光化学过程，这种方法常常会束手无策。一个典型的例子是过氧化氢（$H_2O_2$）的[光解](@keyword=photolysis|lang=zh-CN|style=Feynman)。实验告诉我们，当$H_2O_2$分子吸收一个紫外[光子](@keyword=photon|lang=zh-CN|style=Feynman)跃迁到它的第一个[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)（$S_1$）后，它会迅速分解成两个[羟基自由基](@keyword=hydroxyl_radical|lang=zh-CN|style=Feynman)（$\cdot\text{OH}$）。如果你尝试在$S_1$[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)上对$H_2O_2$进行[几何优化](@keyword=geometric_optimization|lang=zh-CN|style=Feynman)，计算机会告诉你一个“失败”的结果：它会不停地拉长O-O键，能量持续降低，永远也找不到一个稳定的“山谷”。这并非计算的失败，而是对物理现实的精确描述——$S_1$态在O-O拉伸方向上是“排斥”的，或者说是“解离”的。分子一旦上到这个“山坡”上，唯一的命运就是滚落下去，直至断键 [@problem_id:1370877]。
 
 <center>
-    <img src="https://www.researchgate.net/profile/Sebastian-Mai/publication/323389278/figure/fig1/AS:631627063222312@1527603031260/Schematic-representation-of-a-photodissociation-reaction-of-a-diatomic-molecule-The.png" alt="Schematic representation of a photodissociation reaction. The molecule is excited from the ground state (S0) to a dissociative excited state (S1), leading to bond breaking." width="60%">
+
     <br>
     <small>图1：[光解离](@keyword=photodissociation|lang=zh-CN|style=Feynman)反应示意图。分子从[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)（$S_0$）被激发到一个解离的[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)（$S_1$），导致[化学键断裂](@keyword=chemical_bond_breaking|lang=zh-CN|style=Feynman)。这种“下坡”过程无法用寻找稳定点的[几何优化](@keyword=geometric_optimization|lang=zh-CN|style=Feynman)方法描述，而必须使用动力学方法，如[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)跳跃。</small>
 </center>

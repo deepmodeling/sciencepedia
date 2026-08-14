@@ -33,7 +33,7 @@
 
 但是，如果我们把它“翻译”到频率的“语言”里去呢？通过一种叫做**傅里叶变换 (Fourier Transform)** 的数学工具，我们发现这个复杂的波形，在频率世界里，仅仅由两个尖锐的脉冲构成！其他所有的频率分量都干干净净地是零。所以，一个在时域里稀疏度为6的信号，在傅里叶域里的稀疏度骤降为2。
 
-<center>![A sine wave is dense in time domain but sparse in frequency domain](https://i.imgur.com/example-image.png "一个在时域中密集的信号，在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中可能非常稀疏")</center>
+<center></center>
 <br>
 
 另一个更简单的例子是，想象一个信号在所有位置都一模一样，比如一个常数向量 $x = [C, C, C, C]^T$ [@problem_id:1612154]。它显然不稀疏。但如果我们用一种叫做**[哈尔小波](@keyword=haar_wavelet|lang=zh-CN|style=Feynman) (Haar Wavelet)** 的变换去看它，这个信号瞬间就变成了一个只有一个非零值的向量！第一个分量代表了信号的平均值（也就是C），而其他所有分量——代表着信号在不同尺度上的变化——全都变成了零。
@@ -70,7 +70,7 @@ $$ \underset{x \in \mathbb{R}^n}{\text{minimize}} \quad \|x\|_1 \quad \text{subj
 
 *   现在，我们来最小化$L_1$范数。$L_1$范数的[等值线](@keyword=level_curves|lang=zh-CN|style=Feynman)不再是圆，而是一个旋转了45度的“钻石”形状（菱形）。现在，我们同样以原点为中心，吹大这个“钻石”，直到它第一次碰到[解空间](@keyword=solution_space|lang=zh-CN|style=Feynman)那条直线。奇迹发生了！由于钻石有“尖角”，它极大概率会在它的某个顶点处与直线相切。而这些顶点，正好位于坐标轴上！一个落在坐标轴上的点，意味着它的其中一个坐标为零。这，就是[稀疏解](@keyword=sparse_solutions|lang=zh-CN|style=Feynman)！
 
-<center>![L1 minimization promotes sparsity while L2 minimization does not](https://i.imgur.com/example-image-2.png "[L1范数](@keyword=l1_norm_2|lang=zh-CN|style=Feynman)的“钻石”形状使其倾向于在坐标轴上找到解，从而产生稀疏性；而[L2范数](@keyword=l2_norm_2|lang=zh-CN|style=Feynman)的“圆形”则倾向于找到一个非稀疏的解。")</center>
+<center></center>
 <br>
 
 这个从$L_0$到$L_1$的转变，是[压缩感知](@keyword=compressive_sensing|lang=zh-CN|style=Feynman)从一个美丽的理论思想走向实用技术的关键一步。$L_1$最小化是一个凸优化问题，我们有非常高效的[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)来求解它。这个被称为**[基追踪](@keyword=basis_pursuit|lang=zh-CN|style=Feynman) (Basis Pursuit)** 的方法，给了我们一把打开宝藏的钥匙。

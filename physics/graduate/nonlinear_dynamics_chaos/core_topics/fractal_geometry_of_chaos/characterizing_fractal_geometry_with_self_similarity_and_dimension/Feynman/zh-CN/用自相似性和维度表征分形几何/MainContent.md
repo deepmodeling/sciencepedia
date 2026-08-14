@@ -15,8 +15,6 @@
 2.  擦掉中间那一段。
 3.  在留下的空隙处，向外搭建一个正方形的三条边，每条边的长度都等于我们擦掉的那段。
 
-![Generator for a square fractal](https://d22d05f322c3j3b1.s3.us-west-2.amazonaws.com/860039_1.png)
-
 在第一步之后，一条线段变成了由 5 条短线段组成的曲折形状。现在，奇迹即将发生：我们将这个法则应用到这 5 条新的线段上，然后是下一次迭代产生的所有 25 条线段，如此往复，永无止境。随着每一次迭代，我们的曲线变得越来越精细，越来越“粗糙”。初始那条光滑的线段，最终演化成一个无限复杂的“方形雪花”。
 
 这个过程揭示了一个深刻的道理：极其复杂的结构可以从一个极其简单的迭代规则中涌现。这个“创世法则”在数学上被称为 **[迭代函数系统](@keyword=iterated_function_systems|lang=zh-CN|style=Feynman)（Iterated Function System, IFS）**，它是一套收缩变换的集合。[分形](@keyword=fractal|lang=zh-CN|style=Feynman)就是这个系统反复迭代下最终达成的那个稳定、迷人的形态。

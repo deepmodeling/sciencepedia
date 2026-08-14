@@ -69,7 +69,7 @@ $$ k = \kappa \cdot k_\mathrm{TST} $$
 将这两种情况结合起来，我们得到了一个惊人的结论：[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman) $k$ 作为[摩擦系数](@keyword=coefficient_of_friction|lang=zh-CN|style=Feynman) $\gamma$ 的函数，并不是单调变化的。它从 $\gamma=0$ 时的零开始，随着 $\gamma$ 的增加而上升，达到一个峰值，然后随着 $\gamma$ 的进一步增加而下降。这种非单调的行为被称为“**Kramers 周转（Kramers turnover）**”。它揭示了[化学反应动力学](@keyword=chemical_reaction_kinetics|lang=zh-CN|style=Feynman)中一个深刻而优美的对偶性：[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)可以被能量的获取所限制，也可以被空间的移动所限制，而[摩擦力](@keyword=friction_force|lang=zh-CN|style=Feynman)在其中扮演了双重角色。
 
 <center>
-<img src="https://i.imgur.com/example-kramers-turnover.png" alt="Kramers Turnover" width="600"/>
+
 <br>
 <small>图1：Kramers 周转示意图。[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman) $k$ 随[摩擦系数](@keyword=coefficient_of_friction|lang=zh-CN|style=Feynman) $\gamma$ 的变化呈现非单调行为，在中间[摩擦](@keyword=friction|lang=zh-CN|style=Feynman)区域达到峰值。</small>
 </center>

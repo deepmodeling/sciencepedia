@@ -39,8 +39,6 @@
 
 然后你把它们画出来。
 
-![Anscombe's Quartet](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Anscombe%27s_quartet_3.svg/600px-Anscombe%27s_quartet_3.svg.png)
-
 第一张图（左上）正如你所预期的：一个有噪声但清晰的线性趋势。$0.82$ 的相关性和回归线在这里完全合理。然而，第二张图（右上）是一条完美的、平滑的曲线——一条抛物线。没有丝毫线性的迹象。第三张图（左下）显示了一条完美的直线，但有一个明显的[异常值](@keyword=outliers|lang=zh-CN|style=Feynman)，它将回归线和相关系数拖离了轨道。而第四张图（右下）则更奇怪：除了一个点之外，所有点都聚集在同一个 $x$ 值上，一个单一的有影响力的异常值定义了整个趋势。
 
 安斯库姆四重奏教给我们数据分析中最重要的一课：**务必，务必将你的[数据可视化](@keyword=data_visualization|lang=zh-CN|style=Feynman)。**[汇总统计](@keyword=summary_statistics|lang=zh-CN|style=Feynman)数据本身，就像是读了一本书的目录就以为自己理解了整本小说。它们可能具有极大的误导性，隐藏了非线性、异常值以及定义关系真实特征的各种其他有趣特性。世界充满了这些复杂的故事，比如一个孩子乳牙的数量，它先是增加，然后稳定几年，接着减少——这种模式是任何单一的直线都无法捕捉的[@problem_id:1953480]。

@@ -53,7 +53,7 @@ $$ z = C^{-1}(w) = i \frac{1 + w}{1 - w} $$
 
 <center>
   <figure>
-    <img src="https://static.scholarfun.com/ComplexAnalysis/Cayley_transform_grid.png" alt="Image showing how the Cayley transform maps a Cartesian grid in the upper half-plane to a curvilinear grid in the unit disk." style="width: 80%;">
+
     <figcaption>[凯莱变换](@keyword=cayley_transform|lang=zh-CN|style=Feynman)下的坐标网格变形：[上半平面](@keyword=upper_half_plane|lang=zh-CN|style=Feynman)中的笛卡尔网格（左）被映射为单位圆盘中的弯曲网格（右）。水平线变为在 $w=1$ 处相切的圆，垂直线变为与[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)正交的圆弧。</figcaption>
   </figure>
 </center>

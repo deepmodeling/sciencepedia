@@ -27,5 +27,4 @@ $$w_{12} < w_{11} \text{ and } w_{12} < w_{22}$$
 
 结果形成了一个形如山谷的景观 [@problem_id:1937066]。两个高点位于边缘（$p=0$ 和 $p=1$），而景观在某个中间[等位基因频率](@keyword=allele_frequency|lang=zh-CN|style=Feynman)处下降到最低点。作为一个整体，当种群维持两种等位基因的混合时，其成功率最低。这个“适应度谷”是低度显性的决定性特征。
 
-![A graph showing mean population fitness as a function of allele frequency 'p' under underdominance. The curve is a parabola opening upwards (concave up), with its minimum at an unstable equilibrium point between 0 and 1. The endpoints at p=0 and p=1 are local maxima, representing stable equilibria.](https://i.imgur.com/uR1dOQo.png)
 *图1：低度显性下的平均[适应度景观](@keyword=fitness_landscapes|lang=zh-CN|style=Feynman)。种群的平均适应度 $\bar{w}$ 在一个中间[等位基因频率](@keyword=allele_frequency|lang=zh-CN|style=Feynman) $\hat{p}$ 处最低。自然选择将推动种群“上山”，朝向两个稳定状态之一：固定在 $p=0$ 或 $p=1$。*

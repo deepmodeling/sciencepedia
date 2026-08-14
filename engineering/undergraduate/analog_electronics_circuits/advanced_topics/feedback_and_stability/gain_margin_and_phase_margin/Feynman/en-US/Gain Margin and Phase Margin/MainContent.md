@@ -48,7 +48,7 @@ In short, these two metrics are distinct but complementary guards against instab
 We can visualize both margins beautifully on a **Nyquist plot**, which traces the journey of $L(j\omega)$ in the complex plane as frequency increases. The phase margin is the angle between the plot's intersection with the unit circle and the negative real axis. The [gain margin](@keyword=gain_margin|lang=en-US|style=Feynman) is the reciprocal of where the plot crosses the negative real axis [@problem_id:1578060]. A healthy system gives that critical $-1$ point a wide berth.
 
 <center>
-<img src="https://i.imgur.com/example-image.png" alt="A diagram contrasting Bode and Nyquist plots, showing how to find GM and PM on each." width="700"/>
+
 *Figure 1: Gain and Phase Margins can be determined graphically from both the Bode plot (left), which separates magnitude and phase, and the Nyquist plot (right), which combines them. Both methods measure the "distance" of the loop response from the critical point $(-1, 0)$ that signifies the onset of oscillation.*
 </center>
 

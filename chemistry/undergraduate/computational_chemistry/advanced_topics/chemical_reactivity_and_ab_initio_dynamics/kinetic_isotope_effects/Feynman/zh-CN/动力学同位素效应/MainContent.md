@@ -32,7 +32,7 @@ $$ E_0 = \frac{1}{2}h\nu $$
 现在，让我们回到那两条不同高度的起跑线。C-H分子和C-D分子要翻越的是同一座能量山丘（因为[同位素](@keyword=isotopes|lang=zh-CN|style=Feynman)不影响[电子结构](@keyword=electronic_structure|lang=zh-CN|style=Feynman)，所以[势能面](@keyword=potential_energy_surfaces|lang=zh-CN|style=Feynman)是相同的）。但是，因为C-H的起跑线更高，它需要攀爬的高度就更短！[@problem_id:1520133]。相比之下，C-D从一个更稳定、能量更低的“山谷”出发，需要付出更多的努力才能到达山顶。
 
 <center>
-<img src="https://i.imgur.com/7eP213O.png" alt="Energy profile illustrating the Kinetic Isotope Effect. The C-H reactant has a higher zero-point energy (ZPE) than the C-D reactant. Both must reach the same transition state energy. Consequently, the activation energy for the C-H reaction (Ea,H) is lower than for the C-D reaction (Ea,D), leading to a faster reaction for the C-H compound." width="500">
+
 <br>
 <small>图1：[动力学同位素效应](@keyword=kinetic_isotope_effect|lang=zh-CN|style=Feynman)的能量示意图。由于[零点能](@keyword=zero_point_energy|lang=zh-CN|style=Feynman)的差异，C-H键的基态能量高于C-D键。要达到同一个[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)，C-H键断裂所需克服的[活化能](@keyword=activation_energy|lang=zh-CN|style=Feynman)（$E_{a,H}$）更低，因此反应更快。</small>
 </center>

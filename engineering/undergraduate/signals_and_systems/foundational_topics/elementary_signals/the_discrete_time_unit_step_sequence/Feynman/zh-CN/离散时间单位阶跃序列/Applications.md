@@ -11,7 +11,7 @@
 首先，它赋予了信号“生命”的起点。在现实世界中，任何过程都有一个开端。一个电路通电，一个[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)开始，一段音乐奏响——所有这些事件都标志着从“无”到“有”的转变。在[离散时间](@keyword=discrete_time|lang=zh-CN|style=Feynman)的世界里，这个角色由 $u[n]$ 扮演。任何一个函数 $f[n]$，无论它多么复杂，只要与 $u[n]$ 相乘，就立刻被赋予了 **因果性（causality）**。这意味着信号在 $n=0$ 之前的值都为零，它只存在于“现在”和“未来”。例如，一个指数衰减的信号 $(0.75)^n$ 本身在时间上是双向无限延伸的，但通过乘以 $u[n]$，我们就得到了一个更符合物理现实的信号 $h[n]=(0.75)^n u[n]$，它描述了一个从 $n=0$ 时刻开始的衰减过程，比如一个被敲击后逐渐平息的钟声 [@problem_id:1761154]。
 
 <center>
-  <img src="https://assets.test.logos.com/images/Signals_and_Systems_Undergraduate/causal_exponential_decay.png" width="450" alt="一个由[单位阶跃函数](@keyword=unit_step_function|lang=zh-CN|style=Feynman) u[n] 构成的因果指数衰减信号 h[n] = (0.75)^n u[n] 的图像。">
+
   <br>
   图1：一个因果信号 $h[n] = (0.75)^n u[n]$。单位阶跃序列 $u[n]$ 如同一个开关，确保了信号仅在 $n \ge 0$ 时存在。
 </center>
@@ -31,7 +31,7 @@
 更进一步，阶跃响应是连接时域行为和[频域分析](@keyword=frequency_domain_analysis|lang=zh-CN|style=Feynman)的桥梁。在现代控制理论中，系统的稳定性是首要问题。一个系统是否稳定，取决于其 **传递函数** $H(z)$ 的极点是否全部位于 $z$ 平面的[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)内。而传递函数、[阶跃响应](@keyword=step_response|lang=zh-CN|style=Feynman)和冲激响应三者紧密相连。例如，系统的[阶跃响应](@keyword=step_response|lang=zh-CN|style=Feynman)的 Z 变换 $S(z)$ 等于传递函数 $H(z)$ 乘以单位阶跃的 Z 变换 $U(z)$。这意味着，通过测量和分析一个系统的[阶跃响应](@keyword=step_response|lang=zh-CN|style=Feynman)——比如它的初值 $s[0]$ 和终值 $\lim_{n \to \infty} s[n]$——我们就能反推出其传递函数的关键参数，例如极点的位置，从而判断系统的稳定性 [@problem_id:1761126]。这一思想在[反馈控制系统](@keyword=feedback_control_systems|lang=zh-CN|style=Feynman)的设计中更是威力尽显。一个复杂的反馈系统，其稳定性最终归结为闭环[传递函数的[极](@keyword=poles_of_a_transfer_function|lang=zh-CN|style=Feynman)点位置](@article_id:335262)。而这个传递函数是由前向和反馈路径的特性共同决定的，这些特性又常常可以用最基础的因果指数序列（由 $u[n]$ 定义）来建模。因此，分析整个系统的稳定性，最终可以转化为一个关于构成该系统的基本参数的代数不等式 [@problem_id:1761149]。
 
 <center>
-  <img src="https://assets.test.logos.com/images/Signals_and_Systems_Undergraduate/feedback_control_system.png" width="500" alt="一个基本的负[反馈控制系统](@keyword=feedback_control_systems|lang=zh-CN|style=Feynman)的[框图](@keyword=block_diagrams|lang=zh-CN|style=Feynman)，输入为 X(z)，输出为 Y(z)，前向增益为 K，反馈路径为 H_f(z)。">
+
   <br>
   图2：一个[反馈控制系统](@keyword=feedback_control_systems|lang=zh-CN|style=Feynman)。[单位阶跃函数](@keyword=unit_step_function|lang=zh-CN|style=Feynman)常用于构建反馈路径模型（如 $h_f[n]=a^n u[n]$），而[阶跃响应分析](@keyword=step_response_analysis|lang=zh-CN|style=Feynman)则是判断整个闭环[系统稳定性](@keyword=system_stability|lang=zh-CN|style=Feynman)的关键。
 </center>

@@ -11,7 +11,7 @@
 想象一个最简单的例子：一个珠子被限制在一根半径为 $R$ 的圆形钢丝上运动 [@problem_id:2060162]。它的所有可能位置构成了一个圆，我们称之为**构型空间** $Q = S^1$。那么它的状态呢？一个完整的状态由它的位置 $q$（圆上的一个点）和它的速度 $v$ 共同描述。从物理上我们知道，速度向量必须与圆在该点相切。因此，在每个点 $q \in S^1$ 上，所有可能的速度组成了该点的切空间 $T_qS^1$。将所有点的所有可能状态汇集在一起，我们得到的正是圆的切丛 $TS^1$！这个几何对象在拓扑上是一个无限长的圆柱体 $S^1 \times \mathbb{R}$：底部的圆代表所有可能的位置，而沿着圆柱体的高，每个点都有一条直线，代表该位置上所有可能的速度（包括大小和方向）。
 
 <center>
-    <img src="https://i.imgur.com/kS5Y0iT.png" alt="Tangent bundle of a circle is a cylinder" width="400"/>
+
     <br/>
     <small>图1：圆（构型空间）的切丛（[状态空间](@keyword=state_space_2|lang=zh-CN|style=Feynman)）是一个圆柱体。在圆上的每一点，代表速度的切线都垂直于图面伸出，形成一个完整的一维[速度空间](@keyword=velocity_space|lang=zh-CN|style=Feynman)。</small>
 </center>
@@ -53,7 +53,7 @@
 然而，在球面上，著名的“[毛球定理](@keyword=hairy_ball_theorem|lang=zh-CN|style=Feynman)”告诉我们这是不可能的。任何试图给球面“梳毛”的尝试，最终都会在某处留下一个“发旋”——即一个[向量场](@keyword=vector_field|lang=zh-CN|style=Feynman)为零的点。这意味着球面的切丛 $TS^2$ 是一个非平凡的、带有内在扭曲的结构。
 
 <center>
-    <img src="https://i.imgur.com/x0qis9j.png" alt="Trivial vs non-trivial tangent bundles" width="600"/>
+
     <br/>
     <small>图2：环面（左）的切丛是平凡的，可以找到全局的、无处为零的[向量场](@keyword=vector_field|lang=zh-CN|style=Feynman)基底（如红色和蓝色箭头所示）。球面（右）的[切丛](@keyword=tangent_bundle|lang=zh-CN|style=Feynman)是非平凡的，“[毛球定理](@keyword=hairy_ball_theorem|lang=zh-CN|style=Feynman)”禁止了无处为零的切向量场存在。</small>
 </center>

@@ -17,12 +17,10 @@
 
 首先，最简单的情况是什么？一个没有任何“聚集地”的集合。想象一下，如果地图上的红点只有有限多个，比如三个或五个。对于任何一个点，你总可以画一个足够小的“护城河”将它与其他点隔离开来。在这个“护城河”里，除了它自己，再没有别的红点了。因此，**有限集没有任何极限点** [@problem_id:1307664]。这些点就像广阔宇宙中孤零零的星球，彼此相距遥远，无法形成星团。同样，即使一个集合有无限个点，但如果这些点都是“孤立”的，比如整数集$\mathbb{Z}$，你也可以在每个整数周围画一个半径为$0.5$的小圈，这个圈里就不会有其他整数。所以整数集也没有[极限点](@keyword=limiting_points|lang=zh-CN|style=Feynman)。
 
-![一个有限集中的点都是孤立的，可以在每个点周围画一个不包含其他点的邻域。](https://assets.test.logos.com/images/visual-aids/real-analysis/limit-point-finite-set-no-limit-point.png)
 *图1：对于一个[有限集](@keyword=finite_sets|lang=zh-CN|style=Feynman)（如 $\{-1, 0, 1\}$），每个点都是孤立的。我们可以围绕任意点（如 0）画一个小圈（邻域），这个圈内不包含集合中的任何其他点。因此，有限集没有[极限点](@keyword=limiting_points|lang=zh-CN|style=Feynman)。*
 
 现在，让我们来看一个更有趣的例子，集合$S = \{ 1/n \mid n \in \mathbb{N} \} = \{1, 1/2, 1/3, 1/4, \dots\}$。这个集合是无限的。它的点在数轴上不断向一个特殊的位置前进：$0$。当你越接近$0$，这些点就变得越密集。无论你在$0$的周围画一个多小的圈，比如半径为$\epsilon = 0.001$的圈，你总能在这个圈里找到集合$S$中的点（例如$1/1001, 1/1002, \dots$）。因此，$0$就是这个[集合的极限点](@keyword=limit_points_of_a_set|lang=zh-CN|style=Feynman)。最奇妙的是，$0$本身甚至不属于集合$S$！极限点可以是集合的“外来者”，它描述的是一种趋势，一个“目的地”，而不是集合成员的身份 [@problem_id:1307669]。
 
-![序列 {1/n} 的点在数轴上向 0 聚集。](https://assets.test.logos.com/images/visual-aids/real-analysis/limit-point-sequence-converging-to-zero.png)
 *图2：集合$S = \{1/n\}$的点向 0 “聚集”。无论在 0 周围画多小的邻域（图中虚线圆圈），总能找到$S$中的点。因此，0 是$S$的[极限点](@keyword=limiting_points|lang=zh-CN|style=Feynman)。*
 
 一个集合并非只能有一个“聚集地”。考虑集合$A = \{ (-1)^n \frac{n}{n+1} \mid n \in \mathbb{N} \}$。当你计算这个集合的元素时，你会发现它们好像有两个“人格”。偶数项$a_{2k} = \frac{2k}{2k+1}$会无限逼近$1$ (例如$2/3, 4/5, 6/7, \dots$)，而奇数项$a_{2k-1} = -\frac{2k-1}{2k}$则无限逼近$-1$ (例如$-1/2, -3/4, -5/6, \dots$)。因此，这个集合有两个[极限点](@keyword=limiting_points|lang=zh-CN|style=Feynman)：$1$和$-1$ [@problem_id:1307632] [@problem_id:1307634]。这就像一个粒子在两个“引力中心”之间来回跳跃，最终在两个地方都留下了密集的踪迹。

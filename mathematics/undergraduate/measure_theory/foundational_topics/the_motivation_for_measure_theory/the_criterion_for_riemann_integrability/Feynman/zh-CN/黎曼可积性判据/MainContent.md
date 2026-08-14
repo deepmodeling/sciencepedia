@@ -24,7 +24,6 @@
 
 比如，对于函数 $f(x) = 4x - x^2$ 在区间 $[0, 4]$ 上，我们可以很容易地计算出对于某个特定分割（例如，在 $0, 1, 3, 4$ 处分割）的[上和与下和](@keyword=upper_and_lower_sums|lang=zh-CN|style=Feynman) [@problem_id:2328172]。
 
-![Darboux Sums](https://d2jmkp20yym24a.cloudfront.net/online-tutor/1450097/solution_image.jpg)
 <center><i>图：用“高矩形”（蓝色）和“矮矩形”（橙色）来逼近曲线下的面积。</i></center>
 
 那么，那个神秘的“真实面积”（如果它存在的话）必然被夹在这两者之间：

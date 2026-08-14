@@ -38,7 +38,7 @@ From our new vantage point, their differences are not so arbitrary. Their identi
 -   A **parabola** is the perfect balancing act between the other two. It heads off to infinity, but only in one specific direction (along its axis). This means a parabola *is tangent to the [line at infinity](@keyword=line_at_infinity|lang=en-US|style=Feynman)*, touching it at a single point.
 
 <div align="center">
-<img src="https://i.imgur.com/L13iC0Y.png" width="700" alt="Illustration of how an ellipse, parabola, and hyperbola intersect the [line at infinity](@keyword=line_at_infinity|lang=en-US|style=Feynman). The ellipse has no real intersections, the parabola is tangent at one point, and the hyperbola intersects at two distinct points.">
+
 <br/>
 <em>The [classification of conics](@keyword=classification_of_conics|lang=en-US|style=Feynman) is elegantly unified by their intersection with the [line at infinity](@keyword=line_at_infinity|lang=en-US|style=Feynman). An ellipse has no real intersection points, a parabola is tangent at one point, and a hyperbola intersects at two distinct points.</em>
 </div>

@@ -19,7 +19,7 @@
 
 <br/>
 <div align="center">
-<img src="https://i.imgur.com/vH9iO07.png" width="350"/>
+
 <br/>
 <em>图1：[中子](@keyword=neutrons|lang=zh-CN|style=Feynman) (n) 与[质子](@keyword=protons|lang=zh-CN|style=Feynman) (p) 通过[交换](@keyword=crossing_over|lang=zh-CN|style=Feynman)一个虚拟[π介子](@keyword=pions|lang=zh-CN|style=Feynman) (π) 发生[散射](@keyword=scattering|lang=zh-CN|style=Feynman)的[费曼图](@keyword=feynman_diagrams|lang=zh-CN|style=Feynman)。</em>
 </div>
@@ -61,7 +61,7 @@ $a \approx c \cdot \Delta t \approx \frac{\hbar}{Mc}$
 
 <br/>
 <div align="center">
-<img src="https://i.imgur.com/eBwF4o4.png" width="500"/>
+
 <br/>
 <em>图2：在低能量下，一个重粒子 (Φ) 的[交换](@keyword=crossing_over|lang=zh-CN|style=Feynman)（左）可以被有效地看作一个直接的点状相互作用（右）。</em>
 </div>
@@ -88,7 +88,7 @@ $a \approx c \cdot \Delta t \approx \frac{\hbar}{Mc}$
 
 <br/>
 <div align="center">
-<img src="https://i.imgur.com/k910TqI.png" width="450"/>
+
 <br/>
 <em>图3：[卡西米尔效应](@keyword=casimir_effect|lang=zh-CN|style=Feynman)。板间的[虚光子](@keyword=virtual_photons|lang=zh-CN|style=Feynman)模式（[波长](@keyword=wavelength|lang=zh-CN|style=Feynman)）受到限制，而外部则不受限制，导致内外压力不[平衡](@keyword=equilibrium|lang=zh-CN|style=Feynman)，使板被推向一起。</em>
 </div>

@@ -18,8 +18,6 @@
 
 如果 $P$ 和 $Q$ 是同一个点呢？我们就不画弦，而是画曲线在 $P$ 点的切线。同样，这条切线会与曲线交于另一个点 $R$，而 $P+P$（或记作 $2P$）就是 $R$ 点关于 x 轴的[对称点](@keyword=point_of_symmetry|lang=zh-CN|style=Feynman)。
 
-![弦切法示例](https://www.researchgate.net/profile/Anjos-Assis/publication/224151755/figure/fig1/AS:392189917528064@1470516629986/The-chord-and-tangent-rule-for-the-addition-of-points-on-an-elliptic-curve-E-The-sum.png)
-
 这个过程看起来像一个巧妙的几何魔术。但它真的定义了一个有效的“加法”吗？它是否满足我们对加法所[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)的所有属性，比如存在一个“零元”（单位元），以及每个元素都有一个“相反数”（[逆元](@keyword=inverse_elements|lang=zh-CN|style=Feynman)）？为了回答这些问题，我们必须引入一个至关重要的角色。
 
 ### [无穷远点](@keyword=points_at_infinity|lang=zh-CN|style=Feynman)：我们的“北极星”
@@ -81,7 +79,7 @@ $$ y_3 = \lambda(x_1 - x_3) - y_1 $$
 -   环面上的逆元 $-z+\Lambda$，映射到[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)上的[逆元](@keyword=inverse_elements|lang=zh-CN|style=Feynman) $-P$。
 -   环面上的[数乘](@keyword=scalar_multiplication|lang=zh-CN|style=Feynman)运算 $z \mapsto nz$，对应于椭圆曲线上的倍点运算 $P \mapsto [n]P$。
 
-![从复数环面到[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)的映射](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Weierstrass_p_function_animation.gif/300px-Weierstrass_p_function_animation.gif)
+的映射](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Weierstrass_p_function_animation.gif/300px-Weierstrass_p_function_animation.gif)
 
 这幅图像彻底改变了我们的认知。那个神秘、复杂的弦切法，原来只是[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上简单加法在这个弯曲几何空间上的“投影”或“影子”。那个曾经让我们头疼的结合律，现在变得不证自明。这正是科学之美的极致体现——从不同的视角观察同一个事物，复杂的现象可能展现出惊人的简单性。
 

@@ -10,12 +10,12 @@
 
 首先，最直接的改造方案是彻底杜绝“禁止”状态的出现。我们如何保证 $S$ 和 $R$ 永远不会同时为1呢？一个绝妙而简洁的办法是，只用一个数据输入端 $D$，然后让 $S=D$，同时让 $R=\overline{D}$。这样一来，$S$ 和 $R$ 的值永远相反，完美地避开了 $S=R=1$ 的雷区。这种改造后的电路，其下一个状态 $Q(t+1)$ 将永远等于输入 $D$ 的值，它就成了一个“数据”（Data）[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)，简称[D触发器](@keyword=d_flip_flop|lang=zh-CN|style=Feynman) [@problem_id:1946104] [@problem_id:1946035]。[D触发器](@keyword=d_flip_flop|lang=zh-CN|style=Feynman)可以说是现代数字系统中使用最广泛的存储元件，因为它忠实地在每个时钟节拍“采样”并“锁存”数据，行为简单而可预测。
 
-![从SR[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)到[D触发器](@keyword=d_flip_flop|lang=zh-CN|style=Feynman)的转换](https://assets.test-ai-s3.s3.us-west-2.amazonaws.com/app/Test/2405/26/1946035_from_sr_to_d_flip-flop-01.png)
+到[D触发器](@keyword=d_flip_flop|lang=zh-CN|style=Feynman)的转换](https://assets.test-ai-s3.s3.us-west-2.amazonaws.com/app/Test/2405/26/1946035_from_sr_to_d_flip-flop-01.png)
 *图1：通过一个[非门](@keyword=not_gate|lang=zh-CN|style=Feynman)，将SR[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)改造为[D触发器](@keyword=d_flip_flop|lang=zh-CN|style=Feynman)，从根本上消除了 $S=R=1$ 的非法状态。*
 
 然而，规避问题只是其中一种思路。更富戏剧性的方法是直面那个“禁止”状态，并赋之予新的意义。这就要提到[JK触发器](@keyword=j_k_flip_flop|lang=zh-CN|style=Feynman)——一个功能更强大的“瑞士军刀”。与SR[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)相比，[JK触发器](@keyword=j_k_flip_flop|lang=zh-CN|style=Feynman)将 $J=1, K=1$ 的情况定义为“翻转”（Toggle）操作，即输出状态在每个时钟脉冲到来时都反转一次 [@problem_id:1945780]。这怎么实现呢？我们可以通过引入反馈，用组合逻辑电路将外部的J、K输入和[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)自身的输出 $Q$ 与 $\overline{Q}$ 结合起来，生成送往内部SR[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)的S和R信号。一个经典的实现方式是：$S = J \cdot \overline{Q}$ 和 $R = K \cdot Q$ [@problem_id:1946044]。通过这样的设计，SR[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)的“禁区”被巧妙地转化为[JK触发器](@keyword=j_k_flip_flop|lang=zh-CN|style=Feynman)的核心功能之一。
 
-![从SR[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)到[JK触发器](@keyword=j_k_flip_flop|lang=zh-CN|style=Feynman)的转换](https://assets.test-ai-s3.s3.us-west-2.amazonaws.com/app/Test/2405/26/1946044_jk_from_sr.png)
+到[JK触发器](@keyword=j_k_flip_flop|lang=zh-CN|style=Feynman)的转换](https://assets.test-ai-s3.s3.us-west-2.amazonaws.com/app/Test/2405/26/1946044_jk_from_sr.png)
 *图2：通过引入反馈和与门，SR[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)可以被“升级”为功能更强大的[JK触发器](@keyword=j_k_flip_flop|lang=zh-CN|style=Feynman)，将 $S=R=1$ 的问题转化为有用的“翻转”功能。*
 
 这种“翻转”能力至关重要。如果我们把一个[JK触发器](@keyword=j_k_flip_flop|lang=zh-CN|style=Feynman)的J和K输入都固定为高电平，它就变成了一个T（Toggle）[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)。每当时钟信号来一个脉冲，它的输出就翻转一次。这意味着输出信号的频率恰好是输入时钟频率的一半。这是一个最简单的[分频器](@keyword=frequency_divider|lang=zh-CN|style=Feynman) [@problem_id:1946034]。当然，我们也可以为一个SR[触发器](@keyword=flip_flop|lang=zh-CN|style=Feynman)构建一个带有“使能”端的[T触发器](@keyword=toggle_flip_flop|lang=zh-CN|style=Feynman)，当输入 $T=1$ 时翻转，当 $T=0$ 时保持不变，其逻辑是 $S = T \cdot \overline{Q}$ 和 $R = T \cdot Q$ [@problem_id:1946084]。

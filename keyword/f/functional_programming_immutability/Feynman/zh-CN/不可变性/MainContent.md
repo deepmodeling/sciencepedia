@@ -23,8 +23,6 @@
 
 当我们沿着树向下走以寻找插入点时，我们会创建我们访问过的节点的副本。当我们最终添加新的叶节点时，我们将其链接到我们刚刚创建的新父节点上。在返回的路上，我们将这个新父节点链接到它的新祖父节点，依此类推，一直到一个新的根节点。这里的关键洞见是：任何我们*没有*经过的子树都完全没有被触动。我们路径上的新节点只是*指向*这些现有的、未改变的子树。这被称为**[结构共享](@keyword=structural_sharing|lang=zh-CN|style=Feynman)**（structural sharing）。
 
-![A diagram showing path copying in a persistent binary search tree. When inserting a new node, only the nodes on the path from the root to the new node are copied. The new nodes point to the existing, unmodified subtrees, saving space and time.](placeholder.png)
-
 那么，代价是什么？我们不是复制整个包含 $n$ 个节点的树，而只复制从根到叶的一条路径上的节点。在一棵[平衡树](@keyword=balanced_tree|lang=zh-CN|style=Feynman)中，这条路径的长度大约是 $\log n$。因此，一次“更新”的成本不是 $O(n)$，而是一个更易于管理的 $O(\log n)$ [@problem_id:3216143]。我们为不可变性的巨大好处付出了一个小的对数级代价，并且我们可以通过计算新分配节点的数量来精确量化这个代价 [@problem_id:3216232]。
 
 这个原则非常稳健。即使对于像[红黑树](@keyword=red_black_tree|lang=zh-CN|style=Feynman)（Red-Black Trees）这样更复杂的[自平衡树](@keyword=self_balancing_trees|lang=zh-CN|style=Feynman)，它们通过旋转和重新着色来保持高效，所有这些再平衡操作都可以在新复制的路径上执行，从而在不触及旧树的情况下保持新树的[不变性](@keyword=invariance|lang=zh-CN|style=Feynman) [@problem_id:3226025]。

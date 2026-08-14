@@ -16,7 +16,7 @@
 2.  **矫顽力 ($H_c$)**：这是材料的“固执程度”。在撤销[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)后，为了完全消除材料的[剩磁](@keyword=remanence|lang=zh-CN|style=Feynman)（让 $M$ 降为零），我们必须施加一个反向的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)。这个反向[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的大小就是[矫顽力](@keyword=coercivity|lang=zh-CN|style=Feynman)。一个高 $H_c$ 的材料，就像一个意志坚定的顽固派，你需要费很大的劲才能让它改变主意。
 
 <center>
-<img src="https://i.imgur.com/B9BwYV7.png" width="600">
+
 <br>
 图1：硬磁材料（蓝色，宽的回线）与[软磁材料](@keyword=soft_magnetic_materials|lang=zh-CN|style=Feynman)（红色，窄的回线）的典型[磁滞回线](@keyword=hysteresis_loop|lang=zh-CN|style=Feynman)。硬磁材料具有高[剩磁](@keyword=remanence|lang=zh-CN|style=Feynman)和高[矫顽力](@keyword=coercivity|lang=zh-CN|style=Feynman)，而[软磁材料](@keyword=soft_magnetic_materials|lang=zh-CN|style=Feynman)则两者都很低。
 </center>

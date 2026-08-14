@@ -25,7 +25,7 @@
 所以，一个复杂的机电谐振系统，就这样被我们巧妙地翻译成了一个可以被基尔霍夫定律轻松驾驭的电路模型。这个模型不仅是一个漂亮的理论构造，它更是我们理解和预测晶体行为的强大工具。
 
 <div align="center">
-    <img src="https://assets.bitbili.com/2024/Pasted%20image%2020240723164440.png" alt="BVD模型图" width="450">
+
     <br>
     <small>图1：石英晶体的巴特沃斯-范戴克（BVD）[等效电路模型](@keyword=equivalent_circuit_model|lang=zh-CN|style=Feynman)</small>
 </div>

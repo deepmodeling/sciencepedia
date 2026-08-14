@@ -105,8 +105,6 @@ $$ -\nabla f(x^\star) \in \lambda \partial\|x^\star\|_1 \quad \iff \quad -\nabla
 
 我们通过求解不同参数（$\lambda$, $\tau$ 或 $\varepsilon$）下的[优化问题](@keyword=optimization_problem|lang=zh-CN|style=Feynman)，得到一系列最优解。将这些最优解对应的 (复杂度, 误差) 对画在这张图上，它们会形成一条曲线。这条曲线被称为**[帕累托前沿](@keyword=pareto_frontier|lang=zh-CN|style=Feynman) (Pareto Frontier)**。
 
-![A conceptual Pareto curve for sparsity vs. error. The x-axis is solution complexity (||x||₁) and the y-axis is data error (||Ax-y||₂). The curve is convex and decreasing, starting from high error/zero complexity and ending at low error/high complexity.](https://i.imgur.com/example-image.png)
-
 这条曲线代表了所有“最优”的权衡方案。任何在曲线上的点都是[帕累托最优](@keyword=pareto_optimality|lang=zh-CN|style=Feynman)的，意味着你无法在不增加复杂度的前提下减少误差，也无法在不增加误差的前提下降低复杂度。
 
 三种方法殊途同归：

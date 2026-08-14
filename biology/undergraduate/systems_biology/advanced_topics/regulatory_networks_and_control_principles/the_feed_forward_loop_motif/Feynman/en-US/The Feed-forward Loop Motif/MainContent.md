@@ -9,8 +9,6 @@ Imagine you are trying to build something out of LEGO blocks. You have a few sim
 
 At its heart, the FFL is a simple three-component arrangement. Let's call them $X$, $Y$, and $Z$. They are typically transcription factors—proteins that control whether a gene is turned on or off—and the genes they regulate. The master regulator, $X$, controls the target, $Z$, in two different ways simultaneously. First, there is a **[direct pathway](@keyword=direct_pathway|lang=en-US|style=Feynman)**: $X$ acts on $Z$ directly. Second, there is an **[indirect pathway](@keyword=indirect_pathway|lang=en-US|style=Feynman)**: $X$ first acts on an intermediate regulator, $Y$, which then, in turn, acts on $Z$.
 
-![Basic structure of a Feed-forward Loop showing a master regulator X, an intermediate Y, and a target Z, with both a direct (X to Z) and an indirect (X to Y to Z) pathway.](https://i.imgur.com/rN1n2pS.png)
-
 This simple triangular structure is the FFL. But the real genius lies in the details of the interactions. Each regulatory arrow can represent either **activation** (turning something on, which we can denote with a '+' sign) or **repression** (turning something off, denoted with a '-' sign). The true magic begins when we see what happens by mixing and matching these simple plus and minus signs.
 
 ### The Logic of Life: Coherent and Incoherent Pathways

@@ -21,4 +21,3 @@
 
 就这样，一个线性的公式被“唤醒”，变成了一棵层次分明的树。[@problem_id:1397590]
 
-![Expression tree for ((w + x) * (y - z)) / (u ^ v)](https://i.imgur.com/example-tree.png)

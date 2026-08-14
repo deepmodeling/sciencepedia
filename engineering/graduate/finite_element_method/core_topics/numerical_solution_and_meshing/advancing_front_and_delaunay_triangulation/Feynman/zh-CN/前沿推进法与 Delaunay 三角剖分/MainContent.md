@@ -32,7 +32,7 @@ $$ \kappa(K) \propto \frac{1}{h^2 \sin^2(\theta_{\min})} $$
 德劳内剖分还有一个美丽的“孪生兄弟”——**沃罗诺伊图**（Voronoi Diagram）[@problem_id:2540771]。想象每个点都是一个“国都”，它声称拥有平面上所有离它比离其他任何“国都”都近的土地。这样形成的“国家版图”就是沃罗诺伊图。每个“国家”（沃罗诺伊单元）都是一个[凸多边形](@keyword=convex_polygon|lang=zh-CN|style=Feynman)。而[德劳内三角剖分](@keyword=delaunay_triangulation|lang=zh-CN|style=Feynman)，就是连接所有拥有共同国界的“国都”而形成的连线图。这种“对偶”关系揭示了空间划分背后深刻的几何统一性：德劳内三角形的顶点是三个相邻沃罗诺伊单元的中心，而它的[外接圆](@keyword=circumcircle|lang=zh-CN|style=Feynman)圆心，恰恰就是这三个沃罗诺伊单元交汇的那个顶点。
 
 <center>
-<img src="https://static.newworldenter.com/fem-post-grad-adv-front-delaunay/concepts/delaunay_voronoi_duality.png" alt="Delaunay Triangulation and Voronoi Diagram Duality" width="500">
+
 <br>
 [德劳内三角剖分](@keyword=delaunay_triangulation|lang=zh-CN|style=Feynman)（黑色实线）与它的对偶——沃罗诺伊图（蓝色虚线）。每个沃罗诺伊顶点都是一个德劳内三角形的[外接圆](@keyword=circumcircle|lang=zh-CN|style=Feynman)圆心。
 </center>
@@ -51,7 +51,7 @@ $$ \kappa(K) \propto \frac{1}{h^2 \sin^2(\theta_{\min})} $$
 这会带来问题。想象一个有尖锐内凹角的几何域。即使我们在尖角附近放置了点，标准的德劳内[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)也可能生成一个横跨尖角的、非常瘦长的三角形。为什么？因为这个瘦三角形依然可以满足空圆特性——它的巨大[外接圆](@keyword=circumcircle|lang=zh-CN|style=Feynman)可能恰好“躲”过了域内的其他所有点 [@problem_id:2540757]。[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)完美地遵守了规则，但结果却违背了我们追求高质量网格的初衷。
 
 <center>
-<img src="https://static.newworldenter.com/fem-post-grad-adv-front-delaunay/concepts/unconstrained_vs_constrained_delaunay.png" alt="Unconstrained vs. Constrained Delaunay Triangulation" width="600">
+
 <br>
 左：标准的德劳内剖分忽略了内部的“墙”（红色虚线），生成了穿过它的边。右：约束德劳内剖分（CDT）强制保留了墙，并围绕它调整了三角形。
 </center>

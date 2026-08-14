@@ -35,7 +35,7 @@ $$ \sigma_{ij} \sim r^{-\frac{1}{n+1}} $$
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/7A9Q7R7.png" alt="A diagram comparing the stress distribution ahead of a crack tip in LEFM and EPFM. The LEFM curve shows a sharp, r^-0.5 singularity, rising steeply to infinity. The EPFM (HRR) curve shows a much weaker singularity, r^-1/(n+1), which levels off at a high but finite stress due to plastic yielding." style="width:70%">
+
   <figcaption>图 1. LEFM 与 EPFM（HRR 场）中裂纹尖端应力分布的对比。塑性变形显著降低了[应力奇异性](@keyword=stress_singularity|lang=zh-CN|style=Feynman)，使应力从理论上的无穷大变为一个巨大的有限值。</figcaption>
 </figure>
 </center>

@@ -23,7 +23,7 @@ $$ L = T - V $$
 
 <br/>
 <figure>
-    <img src="https://i.imgur.com/rN5gD4z.png" alt="A bead sliding on a parabolic wire. The position is described by the generalized coordinate x." style="width:70%;display:block;margin-left:auto;margin-right:auto;">
+
     <figcaption align = "center">图1：在[抛物线轨道](@keyword=parabolic_trajectory|lang=zh-CN|style=Feynman)上滑动的珠子。使用广义坐标 $x$ 可以极大地简化问题，我们只需计算动能 $T$ 和势能 $V$ 即可，而无需处理复杂的约束力。</figcaption>
 </figure>
 <br/>
@@ -98,7 +98,7 @@ $$ \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) - \frac{\partial
 
 <br/>
 <figure>
-    <img src="https://i.imgur.com/kR1F3W9.png" alt="Feynman path integral visualization showing destructive and constructive interference." style="width:80%;display:block;margin-left:auto;margin-right:auto;">
+
     <figcaption align = "center">图2：[费曼路径积分](@keyword=feynman_s_path_integral|lang=zh-CN|style=Feynman)示意图。远离经典路径（虚线）的路径（彩色实线）其作用量变化剧烈，对应的量子相位迅速[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，导致它们相互抵消。只有在经典路径及其附近，作用量变化平稳，相位一致，才能形成[相长干涉](@keyword=constructive_interference|lang=zh-CN|style=Feynman)。</figcaption>
 </figure>
 <br/>

@@ -23,7 +23,6 @@ So, we have a map of the territory—reliable ways to identify personality patte
 
 A powerful tool for visualizing this web is a **Directed Acyclic Graph (DAG)**. Imagine a diagram with nodes for key variables and arrows representing causal influences.
 
-![A simplified DAG illustrating the biopsychosocial model.](https://i.imgur.com/example.png "DAG Example")
 *A hypothetical Directed Acyclic Graph. P=Personality, SES=Socioeconomic Status, H0=Baseline Health, E=Stress, S=Social Support, M=Coping, Y=Health Outcome.*
 
 This simple picture tells a sophisticated story [@problem_id:4754764]. We see arrows from **Personality ($P$)** to **Stress ($E$)**, **Social Support ($S$)**, and the final **Health Outcome ($Y$)**. This immediately shows us why this is so hard to study. An observed link between personality and health could be because:

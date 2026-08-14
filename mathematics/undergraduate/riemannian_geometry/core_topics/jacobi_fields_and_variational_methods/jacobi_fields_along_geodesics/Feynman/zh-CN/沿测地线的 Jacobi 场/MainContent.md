@@ -11,5 +11,5 @@
 
 让我们把刚才北极的场景变得更精确一些。想象在我们的[流形](@keyword=manifold|lang=zh-CN|style=Feynman)上，有一族密邻的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)，就像一束光线穿过透镜。我们选取其中一条[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman) $\gamma(t)$ 作为参考。在任意时刻 $t$，从 $\gamma(t)$ 上的点指向其邻近[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)上对应点的微小向量，就是**[雅可比场](@keyword=jacobi_fields|lang=zh-CN|style=Feynman)（Jacobi field）**，我们记作 $J(t)$。它就像一个时刻变化的“分离向量”，精确地描述了邻近[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)与参考[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman) $\gamma(t)$ 之间的相对位置和距离 [@problem_id:3054888]。
 
-![一族从p点出发的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)，以及雅可比场J(t)](https://example.com/jacobi_field_intuition.png)
+，以及雅可比场J(t)](https://example.com/jacobi_field_intuition.png)
 *图1：雅可比场 $J(t)$ 描述了邻近[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)（虚线）相对于参考[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman) $\gamma(t)$（实线）的分离。*

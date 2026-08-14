@@ -21,7 +21,7 @@
 在顺排布置中，管子整齐地[排列](@keyword=permutation|lang=zh-CN|style=Feynman)成一个矩形网格，就像一个训练有素的方阵。我们可以用两个参数来描述这个“[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)”：垂直于主流方向的管心距，称为**横向管心距（transverse pitch）**，记为 $S_T$；沿着主流方向的管心距，称为**纵向管心距（longitudinal pitch）**，记为 $S_L$。
 
 <center>
-    <img alt="In-line and staggered tube bank arrangements showing transverse pitch ST, longitudinal pitch SL, and diagonal pitch SD. Fluid flow is from left to right." src="https://i.imgur.com/k6lPq50.png" width="600">
+
     <br>
     <small>图1：顺排与叉排[管束](@keyword=tube_banks|lang=zh-CN|style=Feynman)的几何定义</small>
 </center>
@@ -39,7 +39,7 @@
 想象一股平稳的水流，我们称之为**上游速度（approach velocity）** $V_{\infty}$，它代表了流体在遇到[管束](@keyword=tube_banks|lang=zh-CN|style=Feynman)前的速度。当这股“河流”遭遇[管束](@keyword=tube_banks|lang=zh-CN|style=Feynman)这个布满了障碍物的区域时，它被迫从管子之间的狭窄缝隙中穿过。根据[质量守恒定律](@keyword=law_of_conservation_of_mass|lang=zh-CN|style=Feynman)——简单地说，就是流体不会凭空消失或产生——流过更窄通道的流体必然会加速。这个在[管束](@keyword=tube_banks|lang=zh-CN|style=Feynman)最窄处达到的速度，我们称之为**最大速度（maximum velocity）** $V_{max}$ [@problem_id:2476464]。
 
 <center>
-    <img alt="Illustration of fluid flow accelerating from approach velocity V_infinity to maximum velocity V_max in the minimum gap area of a tube bank." src="https://i.imgur.com/83pjd53.png" width="500">
+
     <br>
     <small>图2：流体通过管间狭窄通道时速度加快</small>
 </center>
@@ -71,7 +71,7 @@
 **叉排布置（紊乱的狂欢）**：在叉排[管束](@keyword=tube_banks|lang=zh-CN|style=Feynman)中，根本没有“藏身之处”。从第一排管子间隙中喷出的高速射流，会直接、猛烈地**冲击（impinge）**到下一排管子的迎风面上。这种布置迫使流体走一条蜿蜒曲折的“Z”字形路径 [@problem_id:2476470]。
 
 <center>
-    <img alt="Comparison of flow paths in in-line (channeled) and staggered (tortuous) tube banks, highlighting the difference in wake shielding and jet impingement." src="https://i.imgur.com/8WwSOqR.png" width="600">
+
     <br>
     <small>图3：顺排的“通道效应”与叉排的“曲折路径”</small>
 </center>

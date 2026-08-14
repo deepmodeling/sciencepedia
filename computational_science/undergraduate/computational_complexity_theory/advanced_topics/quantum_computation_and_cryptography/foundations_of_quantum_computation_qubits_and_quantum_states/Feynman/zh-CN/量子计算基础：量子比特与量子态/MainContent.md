@@ -46,7 +46,7 @@ $|1\rangle$ 的部分因为符号相反而被完美抵消了！这种现象叫�
 
 <br>
 <div align="center">
-<img src="https://assets.bitdegree.org/online-learning-platforms/storage/media/2023/04/qubit-and-bloch-sphere.png" alt="Bloch Sphere" width="400"/>
+
 <br>
 <small>图1：[布洛赫球](@keyword=bloch_sphere|lang=zh-CN|style=Feynman)。北极是 $|0\rangle$，南极是 $|1\rangle$。赤道上的点代表测量概率均为50%的[叠加](@keyword=superposition|lang=zh-CN|style=Feynman)态，不同的经度代表不同的[相对相位](@keyword=relative_phase|lang=zh-CN|style=Feynman)。</small>
 </div>

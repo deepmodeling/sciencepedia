@@ -38,7 +38,7 @@ $$
 其中 $\boldsymbol{q}_k$ 是第 $k$ 个珠子的位置，并且满足环形边界条件 $\boldsymbol{q}_{P+1} = \boldsymbol{q}_1$。这个表达式就是 PIMD 方法的理论核心。[@problem_id:2659186]
 
 <center>
-<img src="https://i.imgur.com/83p7Q7b.png" alt="A quantum particle represented as a ring polymer" width="600">
+
 <br>
 <small>图1：量子粒子与[环状聚合物](@keyword=ring_polymer|lang=zh-CN|style=Feynman)的同构。一个“模糊”的量子粒子（左）可以在数学上等效地表示为一个由 $P$ 个经典珠子通过弹簧连接而成的[环状聚合物](@keyword=ring_polymer|lang=zh-CN|style=Feynman)（右）。项链的尺寸代表了粒子的量子[离域](@keyword=delocalization|lang=zh-CN|style=Feynman)程度。</small>
 </center>
@@ -79,7 +79,7 @@ $$
 这个现象不仅是一个技术细节，它深刻地揭示了动能和势能在[路径积分](@keyword=path_integration|lang=zh-CN|style=Feynman)图像中的物理本质：势能是“位置”的函数，而动能是“形状”或“曲率”的函数。
 
 <center>
-<img src="https://i.imgur.com/uNfQxJk.png" alt="A quantum particle represented as a ring polymer" width="600">
+
 <br>
 <small>图2：势能与动能的收敛。势能（左）主要依赖于[环状聚合物](@keyword=ring_polymer|lang=zh-CN|style=Feynman)的平均位置，对高频“锯齿”不敏感，因此收敛较快。动能（右）与路径的“曲折度”直接相关，依赖于所有[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式，包括高频模式，因此收敛较慢。</small>
 </center>

@@ -33,7 +33,7 @@ $$
 代数公式或许有些抽象，但[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)和[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)的几何意义却异常直观。让我们来看一个简单的变换：将二维平面上的所有矢量关于直线 $y=x$ 做一个镜像反射 [@problem_id:1360108]。
 
 <center>
-  <img src="https://i.imgur.com/qg4e0Wd.png" alt="Reflection across y=x" width="400">
+
 </center>
 
 想象一下，哪些矢量在这个“镜子”面前能“保持自我”？

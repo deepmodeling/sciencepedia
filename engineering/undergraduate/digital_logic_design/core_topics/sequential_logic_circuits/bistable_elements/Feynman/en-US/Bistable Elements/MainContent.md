@@ -16,7 +16,7 @@ You might imagine this creates a piece of memory. If the output is '1', the inpu
 The secret to true stability—to genuine memory—is not to fight oneself, but to find a partner. Imagine now we take *two* inverters. We connect the output of the first to the input of the second, and—this is the crucial step—we connect the output of the second *back* to the input of the first. We've created a loop of two negations.
 
 <center>
-<img src="https://i.imgur.com/8Q17M9s.png" alt="Two cross-coupled inverters forming a basic [latch](@keyword=latch|lang=en-US|style=Feynman). If Q is 1, it forces Q_bar to 0. This 0 feeds back and holds Q at 1. The state is stable." width="350">
+
 </center>
 
 Let's trace the logic. Suppose the output of the first inverter, let's call it $Q$, happens to be '1'. This '1' goes into the second inverter, which dutifully outputs a '0' at its terminal, which we'll call $\overline{Q}$. This '0' is then fed back to the input of the first inverter. And what does an inverter do with a '0' input? It outputs a '1'. So, the first inverter's output $Q$ is held at '1'. The circle is complete. The two inverters are now in a stable, self-reinforcing state: $Q=1$ and $\overline{Q}=0$. Each one's output confirms the other's input. It's a perfect logical handshake.

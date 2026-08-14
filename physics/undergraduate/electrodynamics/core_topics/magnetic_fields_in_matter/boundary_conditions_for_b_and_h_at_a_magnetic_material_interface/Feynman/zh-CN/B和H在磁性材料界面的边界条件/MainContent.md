@@ -16,7 +16,7 @@
 现在，让我们在两种介质的交界面上想象一个极小的、扁平的圆柱体，一半在介质1中，另一半在介质2中，就像一个嵌在边界上的“药盒”。由于[磁场](@keyword=magnetic_fields|lang=zh-CN|style=Feynman)线不能凭空消失或产生，那么从“药盒”顶部穿出的[磁场](@keyword=magnetic_fields|lang=zh-CN|style=Feynman)线数量，必定等于从底部穿入的数量（当药盒变得无限薄时，侧面的通量可以忽略不计）。
 
 <center>
-<img src="https://i.imgur.com/K12t370.png" width="450">
+
 </center>
 <center>
 <small>图1：用于推导$B$场法向分量[连续性](@keyword=continuity|lang=zh-CN|style=Feynman)的高斯“药盒”</small>
@@ -37,7 +37,7 @@ $$
 这次，我们想象一个微小的、细长的矩形回路，像一扇旋转门一样，一半在介质1，一半在介质2，长边平行于界面。根据[安培定律的积分形式](@keyword=ampere_s_law_integral_form|lang=zh-CN|style=Feynman)，$\oint \vec{H} \cdot d\vec{l}$ 等于穿过这个回路的总[自由电流](@keyword=free_currents|lang=zh-CN|style=Feynman)。
 
 <center>
-<img src="https://i.imgur.com/mO2j3A5.png" width="450">
+
 </center>
 <center>
 <small>图2：用于推导$H$场切向分量[边界条件](@keyword=boundary_conditions|lang=zh-CN|style=Feynman)的[安培环路](@keyword=amperian_loops|lang=zh-CN|style=Feynman)</small>
@@ -78,7 +78,7 @@ $$
 这意味着什么呢？假设外部[磁场](@keyword=magnetic_fields|lang=zh-CN|style=Feynman)以$60^\circ$角射向这块材料。经过计算可以发现，进入材料后，[磁场](@keyword=magnetic_fields|lang=zh-CN|style=Feynman)线几乎被“掰弯”到与[法线](@keyword=normal_line|lang=zh-CN|style=Feynman)成$89.99^\circ$角！[@problem_id:1568413] 换句话说，[磁场](@keyword=magnetic_fields|lang=zh-CN|style=Feynman)线几乎是贴着材料表面在内部走。
 
 <center>
-<img src="https://i.imgur.com/gK9dYyh.png" width="500">
+
 </center>
 <center>
 <small>图3：高[磁导率](@keyword=magnetic_permeability|lang=zh-CN|style=Feynman)材料将外部[磁场](@keyword=magnetic_fields|lang=zh-CN|style=Feynman)线“吸入”并[引导](@keyword=bootstrapping|lang=zh-CN|style=Feynman)，从而屏蔽内部空间。</small>

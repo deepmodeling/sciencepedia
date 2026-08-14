@@ -24,7 +24,7 @@ $$
 这里的 $\ast$ 符号就代表卷积。那么，这个起“涂抹”作用的“画笔” $W(f)$ 长什么样呢？对于一个简单的矩形窗，它的[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)是一个被称为 **sinc 函数** 的东西，其表达式为 $W(f) = T \frac{\sin(\pi f T)}{\pi f T}$ [@problem_id:1753691]。这个函数的图像中心有一个高耸的“主瓣”，两侧则跟着一串无限延伸、逐渐衰减的“旁瓣”。
 
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Rectangular_function_and_sinc_function.svg" width="600">
+
 <br>
 <small>图1：时域中的[矩形窗](@keyword=rectangular_window|lang=zh-CN|style=Feynman)（左）及其在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中的傅里叶变换——sinc 函数（右）。突然的截断在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中产生了无限的涟漪（旁瓣）。</small>
 </center>
@@ -46,7 +46,7 @@ $$
 我们可以使用各种形状更平滑的[窗函数](@keyword=windowing_functions|lang=zh-CN|style=Feynman)，比如 **汉宁窗** 或 **[汉明窗](@keyword=hamming_window|lang=zh-CN|style=Feynman)**。这些窗函数在中间是平坦的，但在边缘处会平滑地衰减到零。这样做的好处是巨大的：它们的[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)旁瓣水平比[矩形窗](@keyword=rectangular_window|lang=zh-CN|style=Feynman)低得多。例如，[汉明窗](@keyword=hamming_window|lang=zh-CN|style=Feynman)的最高旁瓣比主瓣低了大约 41 [分贝](@keyword=decibels|lang=zh-CN|style=Feynman)，而矩形窗只有 13 [分贝](@keyword=decibels|lang=zh-CN|style=Feynman)。这意味着更少的能量泄漏，从而大大提高了我们探测强信号旁边弱信号的能力 [@problem_id:1753684]。
 
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Comparison_of_window_functions_in_frequency_domain.svg" width="600">
+
 <br>
 <small>图2：不同[窗函数](@keyword=windowing_functions|lang=zh-CN|style=Feynman)在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)的比较（对数尺度）。矩形窗（蓝色）[旁瓣](@keyword=sidelobe|lang=zh-CN|style=Feynman)最高。汉宁窗（绿色）和[汉明窗](@keyword=hamming_window|lang=zh-CN|style=Feynman)（红色）的[旁瓣](@keyword=sidelobe|lang=zh-CN|style=Feynman)低得多，但主瓣更宽。</small>
 </center>

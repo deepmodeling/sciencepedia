@@ -20,7 +20,7 @@ $ \vec{J} = \sigma \vec{E} $
 答案是：通过积分，也就是把所有局域的贡献累加起来。让我们通过一个具体的例子来看看这个过程有多么强大。设想一个由两块同心导体球壳组成的器件，中间填充着电导率为 $\sigma$ 的均匀材料。内球壳半径为 $a$，外球壳半径为 $b$ [@problem_id:1811257]。
 
 <center>
-<img src="https://i.imgur.com/8e54s8h.png" width="400">
+
 <br>
 图1：在两同心球壳间，电流呈辐射状从内向[外流](@keyword=external_flow|lang=zh-CN|style=Feynman)动。
 </center>
@@ -44,7 +44,7 @@ $ R = \frac{1}{4\pi\sigma}\left(\frac{1}{a} - \frac{1}{b}\right) $
 想象一下光线从空气射入水中时发生的折射。令人惊讶的是，稳恒电流在跨越不同[电导率](@keyword=electrical_conductivity|lang=zh-CN|style=Feynman)介质的边界时，也会发生类似的“[折射](@keyword=refraction|lang=zh-CN|style=Feynman)”现象 [@problem_id:1811247]。
 
 <center>
-<img src="https://i.imgur.com/kK8k2oZ.png" width="450">
+
 <br>
 图2：电流线在穿越两种不同电导率 $(\sigma_1, \sigma_2)$ 的介质界面时发生“[折射](@keyword=refraction|lang=zh-CN|style=Feynman)”。
 </center>

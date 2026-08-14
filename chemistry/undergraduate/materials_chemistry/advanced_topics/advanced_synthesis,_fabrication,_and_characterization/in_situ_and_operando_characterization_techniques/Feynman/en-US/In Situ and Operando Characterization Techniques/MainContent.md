@@ -21,7 +21,7 @@ Now, we "roll the camera" with our *in situ* microscope and start heating. As th
 
 <center>
 <figure>
-    <img src="https://i.imgur.com/KzXqL2e.png" alt="A schematic showing the stages of melting and [recrystallization](@keyword=recrystallization|lang=en-US|style=Feynman) of a polymer as viewed under a hot-stage optical microscope. (a) At room temperature, bright [spherulites](@keyword=spherulites|lang=en-US|style=Feynman) are visible. (b) Above the melting temperature, the view is dark as the polymer is molten. (c) During cooling, new [spherulites](@keyword=spherulites|lang=en-US|style=Feynman) nucleate and grow. (d) The final state is a network of new [spherulites](@keyword=spherulites|lang=en-US|style=Feynman)." width="80%">
+
     <figcaption>**Figure 1.** An idealized *in situ* hot-stage microscopy experiment on a [semi-crystalline polymer](@keyword=semi_crystalline_polymer|lang=en-US|style=Feynman). The ability to watch the disappearance and reappearance of bright crystalline [spherulites](@keyword=spherulites|lang=en-US|style=Feynman) in real-time provides direct insight into melting and [crystallization kinetics](@keyword=crystallization_kinetics|lang=en-US|style=Feynman), which would be missed by only comparing the "before" and "after" states.</figcaption>
 </figure>
 </center>

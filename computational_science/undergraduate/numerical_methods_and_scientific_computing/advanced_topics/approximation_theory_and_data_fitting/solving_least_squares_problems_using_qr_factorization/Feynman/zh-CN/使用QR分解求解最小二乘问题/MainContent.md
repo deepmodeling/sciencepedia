@@ -17,8 +17,6 @@
 
 找到这个投影 $\boldsymbol{p}$ 后，原始向量 $\boldsymbol{b}$ 就可以被分解为两部分：一部分在平面内（$\boldsymbol{p}$），另一部分则垂直于这个平面。这个垂直分量，我们称之为**[残差向量](@keyword=residual_vector|lang=zh-CN|style=Feynman)** (residual vector) $\boldsymbol{r} = \boldsymbol{b} - \boldsymbol{p}$。最小二乘的“最小”，指的就是最小化这个[残差向量](@keyword=residual_vector|lang=zh-CN|style=Feynman)的长度（的平方），即 $\|\boldsymbol{r}\|_2^2 = \|\boldsymbol{A}\boldsymbol{x} - \boldsymbol{b}\|_2^2$。从几何上讲，当 $\boldsymbol{r}$ 与平面 $\text{Col}(\boldsymbol{A})$ 正交时，它的长度最短。
 
-![A diagram illustrating the projection of vector b onto the column space of A.](https://example.com/projection.png "[正交投影](@keyword=orthogonal_projection|lang=zh-CN|style=Feynman)的几何示意图")
-
 现在的问题是，如何计算这个投影 $\boldsymbol{p}$？如果[基向量](@keyword=basis_vector|lang=zh-CN|style=Feynman) $\boldsymbol{a}_1$ 和 $\boldsymbol{a}_2$ 既不垂直也不标准（长度不为1），计算过程会相当繁琐。但如果……我们能为这个平面找到一组“完美”的坐标轴呢？一组由相互垂直且长度为1的单位向量构成的基，即**标准正交基** (orthonormal basis)。
 
 这正是 **QR 分解**大显身手的时刻。对于一个列满秩的矩阵 $\boldsymbol{A} \in \mathbb{R}^{m \times n}$，它的“经济型”[QR分解](@keyword=qr_factorization|lang=zh-CN|style=Feynman)可以写成 $\boldsymbol{A} = \boldsymbol{Q}_1 \boldsymbol{R}_1$。其中，$\boldsymbol{Q}_1 \in \mathbb{R}^{m \times n}$ 的列向量构成了一组标准正交基，它们张成的空间与 $\boldsymbol{A}$ 的[列空间](@keyword=image_of_a_linear_transformation|lang=zh-CN|style=Feynman)完全相同，即 $\text{Col}(\boldsymbol{Q}_1) = \text{Col}(\boldsymbol{A})$。而 $\boldsymbol{R}_1 \in \mathbb{R}^{n \times n}$ 是一个可逆的上三角矩阵，它记录了如何通过[线性组合](@keyword=linear_combinations|lang=zh-CN|style=Feynman) $\boldsymbol{Q}_1$ 的列来恢复出 $\boldsymbol{A}$ 的列。

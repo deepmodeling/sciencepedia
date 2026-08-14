@@ -26,7 +26,7 @@ Picture an incoming X-ray beam hitting the crystal at an angle $\theta$ relative
 For a strong diffracted beam to emerge at the same angle $\theta$, the waves scattered from these adjacent planes must interfere constructively. Look at two parallel rays, one [scattering](@keyword=scattering|lang=en-US|style=Feynman) from the top plane and one from the plane just below it, separated by a distance $d$. The second ray has to travel a longer path. As shown in the diagram below, it must travel down to the second plane and back up.
 
 <center>
-<img src="https://i.imgur.com/k9b6M8s.png" width="450">
+
 *Figure 1: The geometry of Bragg's Law. The extra path traveled by the lower ray is $2d\sin\theta$.*
 </center>
 

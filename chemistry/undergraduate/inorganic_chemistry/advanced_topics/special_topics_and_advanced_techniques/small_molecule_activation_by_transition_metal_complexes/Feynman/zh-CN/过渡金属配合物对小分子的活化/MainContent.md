@@ -31,7 +31,7 @@
 
 这场握手最深远的影响是什么？答案就在“反键轨道”这个词上。在分子轨道理论中，向一个**反键轨道**填充电子，会直接削弱分子内部原有的[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)。对于 $CO$ 而言，当电子进入 $π^*$ 反键轨道后，碳氧[三键](@keyword=triple_bond|lang=zh-CN|style=Feynman)的强度就被削弱了。我们如何知道这件事真的发生了呢？我们可以“听”[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。[红外光谱](@keyword=ir_spectrum|lang=zh-CN|style=Feynman)测量显示，自由 $CO$ 分子的碳氧[键伸缩](@keyword=bond_stretching|lang=zh-CN|style=Feynman)振动频率在 $2143 \; \text{cm}^{-1}$ 左右，而在典型的金属羰基[配合物](@keyword=coordination_compound|lang=zh-CN|style=Feynman)如 $Cr(CO)_6$ 中，这个频率会显著下降到约 $2000 \; \text{cm}^{-1}$。这就像一根吉他弦，当它被拉得更松时，音调就会变低。[振动频率](@keyword=vibrational_frequency|lang=zh-CN|style=Feynman)的降低，正是 $C-O$ 键被“活化”削弱的直接证据。
 
-![一个简化的轨道相互作用图，展示了金属d轨道与CO分子轨道之间的σ-给予和π-反馈。σ-给予是从CO的HOMO（5[σ轨道](@keyword=sigma_orbitals|lang=zh-CN|style=Feynman)）到金属的空d轨道。π-反馈是从金属的填充d轨道到CO的LUMO（π*轨道）。](https://i.imgur.com/your-image-url.png "[Dewar-Chatt-Duncanson模型](@keyword=dewar_chatt_duncanson_model|lang=zh-CN|style=Feynman)示意图")
+）到金属的空d轨道。π-反馈是从金属的填充d轨道到CO的LUMO（π*轨道）。](https://i.imgur.com/your-image-url.png "[Dewar-Chatt-Duncanson模型](@keyword=dewar_chatt_duncanson_model|lang=zh-CN|style=Feynman)示意图")
 
 #### 一种普适的活化语言
 

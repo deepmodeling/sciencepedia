@@ -9,7 +9,6 @@
 
 这趟旅程将从重新定义“最优”开始。当我们放弃寻找单一答案的执念，转而拥抱权衡的艺术时，一幅更为广阔和深刻的设计图景便会展现在眼前。
 
-![A 2D plot showing a Pareto front. The x-axis is Objective 1 (e.g., Cost) and the y-axis is Objective 2 (e.g., Performance). Dominated solutions are in the background, while non-dominated solutions form a curve at the boundary, which is the Pareto Front.](https://i.imgur.com/uG95aL2.png)
 *图1：[帕累托前沿](@keyword=pareto_frontier|lang=zh-CN|style=Feynman)示意图。非支配解构成了所有可能设计中的性能边界，代表了最佳的权衡方案集合。*
 
 ## 原理与机制

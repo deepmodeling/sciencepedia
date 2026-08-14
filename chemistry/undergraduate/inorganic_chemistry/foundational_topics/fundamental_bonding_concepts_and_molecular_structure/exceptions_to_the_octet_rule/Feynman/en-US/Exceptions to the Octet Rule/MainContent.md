@@ -16,7 +16,7 @@ Our first stop is a group of molecules that we might call the "perpetually hungr
 A classic example is boron trifluoride, $BF_3$. Boron, from Group 13, brings only three valence electrons to the table. It forms single bonds with three fluorine atoms. If you do the electron bookkeeping, you'll find the central boron atom is only surrounded by six electrons (three bonds $\times$ two electrons/bond), not eight. Other simple molecules like beryllium hydride ($BeH_2$) and aluminum chloride ($AlCl_3$) find themselves in a similar predicament, with their central atoms having only four and six valence electrons, respectively [@problem_id:2251243].
 
 <center>
-<img src="https://i.imgur.com/example-BF3-structure.png" alt="Lewis structure of Boron Trifluoride showing an [incomplete octet](@keyword=incomplete_octet|lang=en-US|style=Feynman) on Boron." width="300"/>
+
 </center>
 *Figure 1: The Lewis structure of Boron Trifluoride ($BF_3$). The central boron atom is surrounded by only six valence electrons, forming an [incomplete octet](@keyword=incomplete_octet|lang=en-US|style=Feynman).*
 

@@ -35,8 +35,6 @@ $$ \Psi_{a\nu}(\mathbf{r},\mathbf{R}) \approx \phi_a(\mathbf{r};\mathbf{R})\,\ch
 
 笨重的原子核来不及对电子云的突然变化做出反应，它们的位置和动量在跃迁的瞬间保持不变。这就是**弗兰克-科登原理（Franck-Condon Principle）**的核心。[@problem_id:2929643] 在一个将分子能量画为原子核坐标函数（[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)图）的图像上，这个过程表现为一条**垂直的箭头**。分子从初始[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)上的某个位置，垂直向上“跳”到最终[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)的对应位置。
 
-![Franck-Condon Principle](https://i.imgur.com/7cT9M9j.png "图1：弗兰克-科登原理示意图。吸收过程（蓝色箭头）是一个从[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)（S₀）到[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)（S₁）的[垂直跃迁](@keyword=vertical_transitions|lang=zh-CN|style=Feynman)。跃迁最可能发生的位置是[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)[概率密度](@keyword=probability_density|lang=zh-CN|style=Feynman)最大的地方（平衡位置）。跃迁后，分子处于[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的高[振动能级](@keyword=vibrational_energy_levels|lang=zh-CN|style=Feynman)，然后通过[振动弛豫](@keyword=vibrational_relaxation|lang=zh-CN|style=Feynman)（波浪线）到达[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的[平衡位置](@keyword=equilibrium_position|lang=zh-CN|style=Feynman)。发射过程（荧光，绿色箭头）同样是垂直的，之后分子回到[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)，并通过[振动弛豫](@keyword=vibrational_relaxation|lang=zh-CN|style=Feynman)返回[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)平衡位置。")
-
 这个“[垂直跃迁](@keyword=vertical_transitions|lang=zh-CN|style=Feynman)”的概念是理解振动光谱结构的关键。跃迁之后，分子发现自己处于[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)的一个“斜坡”上，其原子核构型通常不是[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的稳定平衡构型。于是，原子核开始[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，就像一个被拉离[平衡位置](@keyword=equilibrium_position|lang=zh-CN|style=Feynman)的弹簧，最终通过与环境的能量交换（[振动弛豫](@keyword=vibrational_relaxation|lang=zh-CN|style=Feynman)）而稳定在新的[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)上。
 
 ### 重叠的规则（弗兰克-科登因子）
@@ -72,7 +70,7 @@ $$ \mathbf{M}_{fi} \approx \boldsymbol{\mu}_{fi}(\mathbf{R}_0) \langle \chi_{v'}
     2.  **弛豫**：处于高振动能级的[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)分子迅速通过[振动弛豫](@keyword=vibrational_relaxation|lang=zh-CN|style=Feynman)，回到[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的平衡位置 $Q_e$，释放出热量 $\lambda$。
     3.  **发射**：分子从[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)[平衡位置](@keyword=equilibrium_position|lang=zh-CN|style=Feynman) $Q_e$ [垂直跃迁](@keyword=vertical_transitions|lang=zh-CN|style=Feynman)回[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)，发射能量为 $E_{em} = E_{00} - \lambda$。
     4.  **弛豫**：回到[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)的分子再次通过[振动弛豫](@keyword=vibrational_relaxation|lang=zh-CN|style=Feynman)返回[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)[平衡位置](@keyword=equilibrium_position|lang=zh-CN|style=Feynman) $Q_g$，又释放出热量 $\lambda$。
-    
+
     这里的 $\lambda$ 被称为**重组能**，它是在一个[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)上，从一个平衡构型变化到另一个平衡构型所需的能量。吸收和发射能量的最大值之差（[斯托克斯位移](@keyword=stokes_shift|lang=zh-CN|style=Feynman)）恰好等于 $2\lambda$。这是一个何其优美的结果，它将一个宏观的光谱现象与分子内部的微观几何变化直接联系了起来！[@problem_id:2929630]
 
 ### 真实世界更复杂（超越简单模型）

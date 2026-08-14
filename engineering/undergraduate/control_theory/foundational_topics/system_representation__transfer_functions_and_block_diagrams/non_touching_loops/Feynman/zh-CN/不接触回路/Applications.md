@@ -12,8 +12,6 @@
 
 这种思想在电子世界中同样普遍。考虑一个由两个独立的[LC谐振电路](@keyword=lc_resonant_circuit|lang=zh-CN|style=Feynman)级联而成的[电子滤波器](@keyword=electronic_filters|lang=zh-CN|style=Feynman) [@problem_id:1595972]。如果这两个[谐振电路](@keyword=resonant_circuit|lang=zh-CN|style=Feynman)之间通过一个“理想”的放大器连接——它从前一级汲取信号，但不对其产生任何[负载效应](@keyword=loading_effect|lang=zh-CN|style=Feynman)，同时向后一级提供一个完美的电压源——那么这两个电路就实现了电气上的隔离。每个[谐振电路](@keyword=resonant_circuit|lang=zh-CN|style=Feynman)内部都有一个由电感和电容构成的[反馈回路](@keyword=feedback_loop|lang=zh-CN|style=Feynman)，决定了其自身的谐振特性。由于隔离，这两个回路互不相干，是无接触的。最终，整个滤波器的总传输函数就等于两个独立滤波器传输函数的乘积。工程师们正是通过这种刻意设计的“无接触”结构，来确保系统行为的可预测性和模块化。
 
-![A signal-flow graph showing two separate subsystems, representing non-touching loops.](https://static.hs.topaz.top/s/out/1722880797_15e219665bc8370125895782782cc440.png)
-
 当然，并非所有系统都如此“泾渭分明”。为了更深刻地理解无接触的含义，看一个“接触”的反例会很有启发。在一个典型的[级联控制](@keyword=cascade_control|lang=zh-CN|style=Feynman)系统（cascade control system）中，存在一个主回路（外环）和一个副回路（内环）[@problem_id:1595927]。例如，在化工过程中，外环可能控制最终产品的温度，而内环则控制加热蒸汽的流量。内环的整个运作过程——从测量蒸汽流量、与[设定值](@keyword=setpoint|lang=zh-CN|style=Feynman)比较、到调节阀门——都处在外环的前向通道上。这意味着外环的信号必须流经内环所在的节点。因此，这两个回路共享了节点和路径，它们是“接触”的。这种嵌套结构意味着它们的动力学行为紧密交织，无法像分析两个独立房间的温控那样将它们简单地分离开来。正是通过与这种紧密耦合的“接触”回路对比，我们才更能体会到“不接触环路”所带来的分析上的清晰与便利。
 
 ### 生命与社会的无形架构
@@ -33,8 +31,6 @@
 至此，我们已经看到不接触环路是分析各类系统时的一个便利特征。但故事并未结束，它还指向了系统背后更深邃的数学结构。一个系统中是否存在不接触环路，实际上揭示了该系统动力学本质的一个根本属性。
 
 在现代控制理论中，我们常用[状态空间](@keyword=state_space_2|lang=zh-CN|style=Feynman)方法来描述系统，其核心是[系统矩阵](@keyword=system_matrix|lang=zh-CN|style=Feynman) $A$。这个矩阵描绘了系统所有内部状态变量之间是如何相互影响的。一个惊人的联系是：如果系统矩阵 $A$ 是块对角（block-diagonal）的，即它可以被划分成几个互不相关的子矩阵[排列](@keyword=permutation|lang=zh-CN|style=Feynman)在对角线上，那么这在物理上就意味着整个系统可以被完美地分解成几个完全不相互作用的子系统 [@problem_id:1595995]。在[信号流图](@keyword=signal_flow_graph_2|lang=zh-CN|style=Feynman)的视角下，这就对应着最彻底的无接触形式：一个子系统内部的所有回路，都与另一个子系统内部的所有回路无接触。整个[信号流图](@keyword=signal_flow_graph_2|lang=zh-CN|style=Feynman)自然地“碎裂”成了几个独立的图。这种从矩阵代数的抽象语言到[信号流图](@keyword=signal_flow_graph_2|lang=zh-CN|style=Feynman)的直观图像的完美对应，展现了科学思想的统一之美。
-
-![The state-space matrix A being block-diagonal, corresponding to a signal-flow graph that decomposes into disconnected subgraphs.](https://static.hs.topaz.top/s/out/1722880816_a7e8e5033c46a6f6424905d6b412e2f8.png)
 
 而这个思想最令人叹为观止的应用，或许是在[非线性动力学](@keyword=nonlinear_dynamics|lang=zh-CN|style=Feynman)和[混沌理论](@keyword=chaos_theory|lang=zh-CN|style=Feynman)领域。想象一个复杂的四维[非线性系统](@keyword=nonlinear_systems|lang=zh-CN|style=Feynman)，它展现出一种周期性的运动，就像一个由两种不同频率的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)交织而成的复杂舞蹈 [@problem_id:1595955]。通过仔细审视其动力学方程，我们发现描述第一种[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的变量与描述第二种[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的变量在方程层面是相互分离的。这种结构上的分离——方程级别的“无接触”特性——意味着这个复杂[周期轨道的稳定性](@keyword=stability_of_periodic_orbits|lang=zh-CN|style=Feynman)，可以被分解为对每个独立[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)稳定性的分析。我们可以像分析两个独立的[LC谐振电路](@keyword=lc_resonant_circuit|lang=zh-CN|style=Feynman)一样，分别研究每个[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)模式的行为。这无疑是一个巨大的福音，因为它允许我们通过研究更简单的子问题来理解一个高度复杂的非线性现象。
 

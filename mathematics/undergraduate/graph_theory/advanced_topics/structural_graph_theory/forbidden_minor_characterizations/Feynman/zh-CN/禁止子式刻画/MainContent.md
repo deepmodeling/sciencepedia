@@ -38,7 +38,7 @@
 现在，让我们对 $C_4$ 的任意一条边进行收缩。奇迹发生了：原来的四边形瞬间坍缩成了一个三角形（$K_3$）！三角形是一个长度为3的圈，是[奇圈](@keyword=odd_cycles|lang=zh-CN|style=Feynman)的典型代表，它显然不是[二分图](@keyword=2_colorable_graph|lang=zh-CN|style=Feynman)。看，仅仅一步收缩，就让一个俱乐部成员“叛变”了。[@problem_id:1507875] [@problem_id:1505260]
 
 <center>
-<img src="https://i.imgur.com/K72VlQd.png" alt="Contraction of an edge in C4 results in K3" width="500">
+
 <br>
 <em>将一个正方形（$C_4$，[二分图](@keyword=2_colorable_graph|lang=zh-CN|style=Feynman)）的一条[边收缩](@keyword=edge_contraction|lang=zh-CN|style=Feynman)，会得到一个三角形（$K_3$，非[二分图](@keyword=2_colorable_graph|lang=zh-CN|style=Feynman)）。这表明二分图家族不是M小调封闭的。</em>
 </center>
@@ -71,7 +71,7 @@ $H$ 不可能同时“属于”又“不属于”家族 $\mathcal{F}$。这是�
 2.  **$K_{3,3}$**：著名的“三座房子，三样公共设施”问题图。尝试将3座房子分别连接到水、电、煤气，而不让任何管线[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)。你很快会发现这是不可能的。
 
 <center>
-<img src="https://i.imgur.com/vHqB3qB.png" alt="K5 and K3,3, the forbidden minors for planar graphs" width="600">
+
 <br>
 <em>平面图世界的两位“守门人”：$K_5$ 和 $K_{3,3}$。任何一个图，只要其“基因”中不含有这两者的M小调，它就是平面图。</em>
 </center>

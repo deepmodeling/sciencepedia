@@ -15,8 +15,6 @@
 
 **[线宽粗糙度 (LWR)](@keyword=line_width_roughness_(lwr)|lang=zh-CN|style=Feynman)** 则关注的是线条**宽度**的变化。在任意位置 $y$ 处，线条的宽度是 $W(y) = (\text{名义宽度}) + e_R(y) - e_L(y)$。LWR 就是这个宽度的标准差，$\sigma_W$，它量化了线条宽窄不一的程度 [@problem_id:4167977]。
 
-![Schematic of LER and LWR](https://d20v2fgath4yrp.cloudfront.net/images/semiconductor-manufacturing-process-modeling/ler_lwr_definitions_schematic.svg)
-
 *图 1：[线边缘粗糙度 (LER)](@keyword=line_edge_roughness_(ler)_2|lang=zh-CN|style=Feynman) 是单个边缘（如 $e_L(y)$ 或 $e_R(y)$）的波动。[线宽粗糙度 (LWR)](@keyword=line_width_roughness_(lwr)|lang=zh-CN|style=Feynman) 是线宽 $W(y)$ 的波动。*
 
 ### 边缘的共舞：关联性的魔力

@@ -49,7 +49,7 @@ $$
 3.  **应力[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)**：由于粘附力在接触边缘向内“拉扯”，[JKR模型](@keyword=jkr_model|lang=zh-CN|style=Feynman)预言在接触边缘的内部会形成一个理论上无穷大的“拉应力环”[@problem_id:2888384]。这正是材料被粘附力向内撕扯的直观体现。
 
 <center>
-<img src="https://static.scholarfun.com/final/2888384_0.png" alt="Stress distributions in JKR and DMT models" width="600">
+
 <br>
 <small>图1：[JKR模型](@keyword=jkr_model|lang=zh-CN|style=Feynman)（左）与[DMT模型](@keyword=dmt_model|lang=zh-CN|style=Feynman)（右）的应力分布示意图。[JKR模型](@keyword=jkr_model|lang=zh-CN|style=Feynman)将拉伸（粘附）[应力集中](@keyword=stress_concentration|lang=zh-CN|style=Feynman)在接触区域的边缘内部，形成一个“拉应力环”。而[DMT模型](@keyword=dmt_model|lang=zh-CN|style=Feynman)则将拉伸应力分布在接触区域之外的广阔空间中，接触区域内部则完全是类似[赫兹接触](@keyword=hertzian_contact|lang=zh-CN|style=Feynman)的挤压应力。[@problem_id:2888384]</small>
 </center>

@@ -45,8 +45,6 @@ $$ \alpha_R(\lambda) \propto \frac{1}{\lambda^4} $$
 
 现在，让我们把这几大内在损耗机制放在一张图上。在短波长端，我们有随 $\lambda^{-4}$ 急剧下降的瑞利散射；在长波长端，我们有随波长指数增长的[红外吸收](@keyword=infrared_absorption|lang=zh-CN|style=Feynman)。将两者叠加，我们惊奇地发现，它们之间形成了一个损耗极低的“峡谷”！
 
-![Attenuation Spectrum](https://i.imgur.com/example_attenuation_spectrum.png "A typical attenuation spectrum for silica fiber, showing the 'V' shape formed by Rayleigh scattering and Infrared absorption.")
-
 这就像一个两边是峭壁的V形山谷。物理学的美妙之处在于，我们可以用一个简单的数学模型来描述这个山谷 [@problem_id:2219654]：
 
 $$ \alpha(\lambda) = \frac{A}{\lambda^{4}} + B(\lambda) $$

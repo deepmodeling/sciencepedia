@@ -29,7 +29,7 @@
 
 <center>
   <figure>
-    <img src="https://assets.academic.expert/media/2024-05-20-09-54-44-tm_modes_illustration.svg" alt="Illustration of TM11 and TM21 mode E_z field patterns in a rectangular waveguide cross-section." style="width: 70%;">
+
     <figcaption>图1：TM$_{11}$ 和 TM$_{21}$ 模式在[波导](@keyword=waveguides|lang=zh-CN|style=Feynman)横截面上的纵向电场 $E_z$ 分布示意图。颜色深浅代表场强大小，图案必须在所有金属边界处为零。</figcaption>
   </figure>
 </center>

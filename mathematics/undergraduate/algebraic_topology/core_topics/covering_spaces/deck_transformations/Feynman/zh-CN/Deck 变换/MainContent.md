@@ -14,7 +14,7 @@
 这种“看不见的洗牌”就是一个**配变换**。更正式地说，一个配变换是一个从[覆盖空间](@keyword=covering_spaces|lang=zh-CN|style=Feynman) $E$ 到其自身的[同胚](@keyword=homeomorphism|lang=zh-CN|style=Feynman)（也就是一个连续的、可逆的、且逆映射也连续的变换），我们称之为 $h: E \to E$。它的“秘密”之处在于，对 $E$ 中的任何一点 $e$ 进[行变换](@keyword=row_operations|lang=zh-CN|style=Feynman)后再投影到 $B$ 中，其结果与直接将 $e$ 投影到 $B$ 中完全相同。用数学的语言来说，就是 $p \circ h = p$。
 
 <center>
-<img src="https://assets.omscs.io/notes/1646635_1.jpg" alt="A diagram showing that for a point e in E, applying the deck transformation h first and then projecting with p gives the same point p(e) in B as projecting directly." width="400"/>
+
 <br>
 <small>图1：配变换的定义。先经过配变换 $h$ 再投影 $p$，等同于直接投影 $p$。</small>
 </center>
@@ -36,7 +36,7 @@
 考虑将平面 $\mathbb{R}^2$ 铺满整个甜甜圈表面（环面 $T^2$）的覆盖 $p(x, y) = (\exp(i2\pi x), \exp(i2\pi y))$。它的配[变换群](@keyword=transformation_groups|lang=zh-CN|style=Feynman)是由整数格点确定的平移构成的：$h_{m,n}(x,y) = (x+m, y+n)$，其中 $m, n \in \mathbb{Z}$。显然，只要 $m$ 或 $n$ 不为零，这样的平移变换在 $\mathbb{R}^2$ 上就没有任何[不动点](@keyword=fixed_points|lang=zh-CN|style=Feynman) [@1646600]，这完美地印证了我们的结论。
 
 <center>
-<img src="https://assets.omscs.io/notes/1646600_1.png" alt="The plane R^2 covering a torus T^2. A grid on the plane maps to the torus. A translation on the plane by an integer vector is a deck transformation." width="500"/>
+
 <br>
 <small>图2：平面 $\mathbb{R}^2$ 作为环面 $T^2$ 的泛覆盖。平面上的整格点平移是一种没有不动点的配变换。</small>
 </center>
@@ -52,7 +52,7 @@
 奇妙的事情发生了：尽管 $\gamma$ 是一个回路（起点和终点相同），但它提升后的路径 $\tilde{\gamma}$ 的终点 $\tilde{\gamma}(1)$ 却不一定回到起点 $\tilde{b}_0$！它只会落在起点所在的纤维 $p^{-1}(b_0)$ 中的某一个点上。而我们已经知道，对于纤维中的任意两点，可能存在一个配变换将一个点映到另一个。事实正是如此：**$B$ 中的每一个回路 $\gamma$ 都唯一地对应着一个配变换 $\phi_\gamma$，这个变换恰好能将提升路径的起点 $\tilde{b}_0$ 移动到其终点 $\tilde{\gamma}(1)$** [@1679732]。
 
 <center>
-<img src="https://assets.omscs.io/notes/1679732_1.jpg" alt="A loop gamma in the base space B starting and ending at b0. Its lift tilde_gamma in the covering space E starts at tilde_b0 but ends at a different point tilde_b1 in the same fiber. A deck transformation phi_gamma maps tilde_b0 to tilde_b1." width="500"/>
+
 <br>
 <small>图3：基空间中的一个回路 $\gamma$ 提升到覆盖空间后，其终点 $\tilde{\gamma}(1)$ 定义了一个唯一的配变换 $\phi_\gamma$。</small>
 </center>

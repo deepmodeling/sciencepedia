@@ -22,7 +22,7 @@
 这个投影点是子空间里离原始点 $X$ “最近”的点。这个“最近”意味着它最小化了预测误差的平方均值，即 $E[(X - Y)^2]$，其中 $Y$ 是信息子空间里的任意一个向量。这就是为什么我们称条件期望为“最佳预测”的深层原因——它在几何上是无可辩驳的最优解 ([@problem_id:1438507])。
 
 <center>
-<img src="https://i.imgur.com/G3t1wQO.png" width="500">
+
 <br>
 <small>图1：条件期望的几何直观。[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman) $X$ 在由信息 $\mathcal{G}$ 所决定的子空间上的投影，就是条件期望 $E[X|\mathcal{G}]$。它是该子空间中与 $X$ “距离”最近的向量。</small>
 </center>
@@ -46,13 +46,13 @@ $$ E[X | \mathcal{G}] = X, \quad \text{如果 } X \text{ 已由信息 } \mathcal
 有了这个几何直观，我们就可以像玩积木一样，轻松地掌握操纵[条件期望](@keyword=conditional_expectation|lang=zh-CN|style=Feynman)的几条基本法则。
 
 1.  **线性法则 (Linearity)**：想象你有两个[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman) $X$ 和 $Y$，比如两支不同加密货币的价格波动。你对它们各自的最佳预测分别是 $E[X|\mathcal{G}]$ 和 $E[Y|\mathcal{G}]$。现在你构建了一个投资组合 $W = \alpha X + \beta Y$。那么，对这个投资组合的最佳预测是什么？几何投影的线性特性告诉我们，组合的投影等于投影的组合。也就是说，我们只需要简单地将各自的最佳预测按相同的比例组合起来即可 ([@problem_id:1438526])。
-    
+
     $$ E[\alpha X + \beta Y | \mathcal{G}] = \alpha E[X | \mathcal{G}] + \beta E[Y | \mathcal{G}] $$
 
 2.  **提取已知信息 (Taking Out What's Known)**：这是个非常强大的工具。假设我们要预测的量是 $Y^3 X$，而我们的信息包含了 $Y$ 的确切值。那么，$Y^3$ 这部分对于我们来说就是“已知”的常数。在进行预测时，我们可以把它从[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)运算中“提取”出来，就像从积分号里提出一个常数一样。我们只需要专注于预测我们未知的部分 $X$ 即可。
-    
+
     $$ E[Y^3 X | \sigma(Y)] = Y^3 E[X | \sigma(Y)] $$
-    
+
     这条规则极大地简化了计算，让我们能将复杂的问题分解为已知和未知两部分来处理 ([@problem_id:1438494])。
 
 ### 信息之塔：层层递进的智慧
@@ -60,13 +60,13 @@ $$ E[X | \mathcal{G}] = X, \quad \text{如果 } X \text{ 已由信息 } \mathcal
 在现实世界中，信息往往不是一次性获得的，而是一层一层揭开的。[条件期望](@keyword=conditional_expectation|lang=zh-CN|style=Feynman)的“塔式法则” (Tower Property) 完美地描述了这种信息逐步展开的过程。
 
 1.  **全[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)定律 (Law of Total Expectation)**：这是塔式法则最简单也最常用的形式。它说的是，对“所有可能预测”的平均，就等于最开始那个“未知的整体”的平均值。想象一位生态学家在研究昆虫的繁殖。每只雌虫产卵的数量 $N$ 是随机的，而每颗卵的孵化成功率 $P$ 也受环境影响而随机变化。要计算最终孵化出的幼虫数量 $X$ 的总平均值 $E[X]$，直接计算可能很复杂。但我们可以分两步走：首先，在给定产卵数 $N$ 和孵化率 $P$ 的条件下，我们能做出的最佳预测是 $E[X|N,P] = NP$。然后，我们对这个“预测”本身求平均，即 $E[NP]$。全[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)定律保证了 $E[X] = E[E[X|N,P]]$。这就像是说，你所有“条件下的局部平均”的平均，就是“全局平均” ([@problem_id:1438501])。
-    
+
     $$ E[X] = E[E[X | \mathcal{G}]] $$
 
 2.  **[迭代期望定律](@keyword=law_of_iterated_expectations|lang=zh-CN|style=Feynman) (Law of Iterated Expectations)**：这是一个更普适的法则。假设我们有两个信息层级，一个比较粗略 ($\mathcal{G}_1$)，一个比较精细 ($\mathcal{G}_2$)，其中 $\mathcal{G}_1 \subseteq \mathcal{G}_2$。比如，$\mathcal{G}_1$ 是只知道一次硬币投掷的结果，而 $\mathcal{G}_2$ 是既知道硬币结果又知道一次骰子投掷的结果。这条法则说，用精细信息 $\mathcal{G}_2$ 做了一次最佳预测后，再用粗略信息 $\mathcal{G}_1$ 对这个“预测”本身再做一次预测，其结果和你从一开始就只用粗略信息 $\mathcal{G}_1$ 进行预测是完全一样的。
-    
+
     $$ E[E[X | \mathcal{G}_2] | \mathcal{G}_1] = E[X | \mathcal{G}_1] $$
-    
+
     这背后蕴含着一个深刻的哲理：信息是不能被“凭空创造”的。用粗糙的信息去“平均”一个基于更精细信息得出的结果，只会将结果[拉回](@keyword=pullback|lang=zh-CN|style=Feynman)到粗糙信息所能达到的预测水平 ([@problem_id:1381958])。
 
 ### 让抽象落地：条件期望到底长什么样？

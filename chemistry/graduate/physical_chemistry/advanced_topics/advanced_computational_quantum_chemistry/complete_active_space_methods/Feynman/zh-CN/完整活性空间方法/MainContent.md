@@ -13,7 +13,7 @@
 
 <center>
 <figure>
-    <img src="https://i.imgur.com/rS2n5X8.png" alt="A diagram contrasting the incorrect RHF potential energy curve for H2 dissociation with the correct curve. The RHF curve incorrectly rises to a high energy level, representing an unphysical mixture of ionic and covalent states. The correct curve levels off at the energy of two separate hydrogen atoms." style="width: 70%;">
+
     <figcaption>图1：[氢分子](@keyword=hydrogen_molecule|lang=zh-CN|style=Feynman)解离的能量曲线。简单的 Restricted Hartree-Fock (RHF) 方法（蓝线）在键长拉大时给出了错误的、能量过高的结果，因为它错误地混合了离子态成分。正确的曲线（红线）描述了分子平稳地解离为两个中性的氢原子。</figcaption>
 </figure>
 </center>
@@ -40,7 +40,7 @@
 
 <center>
 <figure>
-    <img src="https://i.imgur.com/k4QYjA4.png" alt="A schematic showing the partitioning of molecular orbitals into inactive, active, and virtual spaces for a CASSCF calculation." style="width: 60%;">
+
     <figcaption>图2：[轨道空间](@keyword=orbit_space|lang=zh-CN|style=Feynman)的划分。在 CAS 方法中，轨道被分为三部分：始终被电子占满的非活性空间，电子可以自由排布的活性空间，以及始终为空的虚[轨道空间](@keyword=orbit_space|lang=zh-CN|style=Feynman)。</figcaption>
 </figure>
 </center>

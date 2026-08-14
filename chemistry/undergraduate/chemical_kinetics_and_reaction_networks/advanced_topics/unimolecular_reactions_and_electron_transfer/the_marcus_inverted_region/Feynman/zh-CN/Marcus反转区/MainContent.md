@@ -19,7 +19,7 @@ $$ U_R(x) = \frac{1}{2} C x^2 $$
 $$ U_P(x) = \frac{1}{2} C (x - x_0)^2 + \Delta G^\circ $$
 
 <center>
-<img src="https://i.imgur.com/GzC0pQx.png" alt="Intersecting parabolas representing reactant and product states." width="700">
+
 <br>
 图1：反应物（蓝色）和产物（红色）的[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)。反应需要越过两条抛物线的交点。
 </center>
@@ -55,7 +55,7 @@ $$ \Delta G^\ddagger = \frac{(\lambda + \Delta G^\circ)^2}{4\lambda} $$
     现在，高潮来临。如果我们继续增大驱动力，让它超过[重组能](@keyword=reorganization_energy|lang=zh-CN|style=Feynman)，会发生什么？产物抛物线继续下沉，它的谷底已经低于反应物抛物线了。此时，两条抛物线的交点不再向下了，反而开始沿着反应物抛物线的“左侧山壁”向上移动！这意味着，尽管反应的整体能量变得更有利，但体系为了到达转移点，却需要爬一个更高的坡。活化能 $\Delta G^\ddagger$ 重新开始增加，[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)随之下降 [@problem_id:1521232]。这就是反直觉的马库斯倒转区。一个驱动力为 $-1.90 \text{ eV}$ 的反应，可能比一个驱动力为 $-0.70 \text{ eV}$ 的反应慢得多，正是因为前者深深地落在了倒转区，具有更高的活化能 [@problem_id:1521226]。在这个区域内，活化能总是大于零的 [@problem_id:1521225]。
 
 <center>
-<img src="https://i.imgur.com/K7l04lU.png" alt="Marcus parabola showing the normal, activationless, and inverted regions." width="600">
+
 <br>
 图2：马库斯速率（或活化能）与反应驱动力的关系图。速率在 $-\Delta G^\circ = \lambda$ 时达到峰值，之后进入倒转区。
 </center>

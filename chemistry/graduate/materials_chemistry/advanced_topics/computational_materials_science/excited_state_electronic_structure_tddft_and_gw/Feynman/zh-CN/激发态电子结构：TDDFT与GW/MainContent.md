@@ -42,7 +42,7 @@ $$ E_{\text{gap}} = E_{\text{KS-gap}} + \Delta_{xc} $$
 这五个量通过一组耦合的积分方程自洽地联系在一起，构成了一个逻辑上完美闭环的理论体系。[@problem_id:2486759]
 
 <center>
-<img src="https://i.imgur.com/example.png" alt="Hedin's equations visualized as a pentagon of interconnected quantities: G, Σ, W, P, Γ." width="400">
+
 <br>
 <small>Hedin 方程组：一个优雅的[自洽循环](@keyword=self_consistent_cycle|lang=zh-CN|style=Feynman)，连接了多体物理中的五个核心角色。</small>
 </center>

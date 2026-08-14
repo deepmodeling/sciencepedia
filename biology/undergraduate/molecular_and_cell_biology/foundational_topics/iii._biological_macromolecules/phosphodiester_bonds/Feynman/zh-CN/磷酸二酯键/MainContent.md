@@ -19,7 +19,7 @@
 
 <br>
 <center>
-    <img src="https://i.imgur.com/B7mGgL9.png" alt="图1：[磷酸二酯键](@keyword=phosphodiester_bonds|lang=zh-CN|style=Feynman)的结构示意图。一个磷酸基团[连接](@keyword=concatenation|lang=zh-CN|style=Feynman)了上一个[核苷酸](@keyword=nucleotides|lang=zh-CN|style=Feynman)的3'[碳](@keyword=carbon|lang=zh-CN|style=Feynman)和下一个[核苷酸](@keyword=nucleotides|lang=zh-CN|style=Feynman)的5'[碳](@keyword=carbon|lang=zh-CN|style=Feynman)，形成了[3'-5'磷酸二酯键](@keyword=3__5__linkage|lang=zh-CN|style=Feynman)。" width="600">
+
     <br>
     <small><i>图1：[磷酸二酯键](@keyword=phosphodiester_bonds|lang=zh-CN|style=Feynman)的结构示意图。一个磷酸基团[连接](@keyword=concatenation|lang=zh-CN|style=Feynman)了上一个[核苷酸](@keyword=nucleotides|lang=zh-CN|style=Feynman)的3'[碳](@keyword=carbon|lang=zh-CN|style=Feynman)和下一个[核苷酸](@keyword=nucleotides|lang=zh-CN|style=Feynman)的5'[碳](@keyword=carbon|lang=zh-CN|style=Feynman)，形成了3'-5'磷酸二...</i></small>
 </center>

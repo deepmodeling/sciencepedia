@@ -13,7 +13,7 @@ After our brief introduction to the art of model building, you might be tempted 
 
 Imagine you're trying to find a mathematical rule that connects a handful of points on a graph. You could draw a simple, straight line that passes near most of them. It won't hit every point exactly, but it captures the general trend. Or, you could take a very powerful, flexible pencil and draw an incredibly wiggly line that weaves its way through *every single point*, with zero error. Which is the better "model"?
 
-![A sketch showing a few data points with a simple line ([underfitting](@keyword=underfitting|lang=en-US|style=Feynman)), a reasonable curve (good fit), and a highly wiggly line passing through every point ([overfitting](@keyword=overfitting|lang=en-US|style=Feynman)).](https://i.imgur.com/7w8p9n5.png)
+), a reasonable curve (good fit), and a highly wiggly line passing through every point ([overfitting](@keyword=overfitting|lang=en-US|style=Feynman)).](https://i.imgur.com/7w8p9n5.png)
 
 If your only goal is to minimize error on the points you already have, the wiggly line is the undisputed champion. But what happens when a new data point comes along? Your simple line will probably make a reasonable prediction. Your wiggly line, which contorted itself to capture every random jitter and [measurement error](@keyword=measurement_error|lang=en-US|style=Feynman) in the original data, will likely make a wild, terrible guess. It has "learned" the noise, not the signal.
 

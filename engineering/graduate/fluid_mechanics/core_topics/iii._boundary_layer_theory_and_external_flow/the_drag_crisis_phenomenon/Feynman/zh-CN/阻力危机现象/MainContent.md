@@ -16,7 +16,7 @@ $$ Re = \frac{\rho v D}{\mu} $$
 好了，有了雷诺数这个强大的工具，我们回到那个在空气中飞行的球。直觉告诉我们，球飞得越快（即 $Re$ 越大），阻力也应该越大。在很长一段 $Re$ 范围内，情况确实如此。[阻力系数](@keyword=drag_coefficient|lang=zh-CN|style=Feynman) $C_D$（一个用于量化阻力大小的[无量纲数](@keyword=dimensionless_numbers|lang=zh-CN|style=Feynman)）会缓慢变化。但当速度达到某个[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)时，一个令人震惊的现象发生了——[阻力系数](@keyword=drag_coefficient|lang=zh-CN|style=Feynman)突然间急剧下降！就好像有什么东西突然“松了手”，让球前进得更加轻松。这个现象，就是我们故事的主角：“[阻力危机](@keyword=drag_crisis|lang=zh-CN|style=Feynman)”（drag crisis）。
 
 <center>
-<img src="https://i.imgur.com/8fO1u9S.png" alt="Drag coefficient vs. Reynolds number for a smooth sphere" width="600"/>
+
 <br>
 <small>图1：光滑球体的[阻力系数](@keyword=drag_coefficient|lang=zh-CN|style=Feynman) $C_D$ 随雷诺数 $Re$ 的变化。注意在 $Re \approx 3 \times 10^5$ 附近那个戏剧性的“悬崖”，即[阻力危机](@keyword=drag_crisis|lang=zh-CN|style=Feynman)。</small>
 </center>
@@ -34,7 +34,7 @@ $$ Re = \frac{\rho v D}{\mu} $$
 这层被激活的[湍流边界层](@keyword=turbulent_boundary_layer|lang=zh-CN|style=Feynman)，就像一个精力充沛的登山者，拥有更强的能力去对抗那个“逆压梯度”的上坡路 [@problem_id:1799279]。因此，它能够紧贴着球体表面走得更远，将分离点大大推后。
 
 <center>
-<img src="https://i.imgur.com/Kz43A1C.png" alt="Flow separation on a sphere" width="700"/>
+
 <br>
 <small>图2：(左)亚临界流：[层流边界层](@keyword=laminar_boundary_layer|lang=zh-CN|style=Feynman)过早分离，形成宽大的尾流和巨大的压差阻力。(右)[超临界流](@keyword=supercritical_flow|lang=zh-CN|style=Feynman)：[湍流边界层](@keyword=turbulent_boundary_layer|lang=zh-CN|style=Feynman)延迟分离，形成狭窄的尾流，压差阻力急剧减小。</small>
 </center>

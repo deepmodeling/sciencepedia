@@ -36,8 +36,6 @@
 
 这解释了为什么在贯穿发生后，结构会跳转到一个遥远的点——它必须越过那段不稳定的、无法停留的“下坡路”。
 
-![](https://static.phy.so/p/snap-through_3600903.png)
-
 上图展示了一条典型的[S形曲线](@keyword=s_shaped_curve|lang=zh-CN|style=Feynman)。I段和III段是稳定的，因为载荷随位移增加。而II段是不稳定的，结构无法在加载过程中自然地停留在这一段的任何一点。
 
 ### 追踪失稳之路：控制策略的智慧
@@ -77,8 +75,6 @@ $$ \Pi(a; \lambda, \mu) = \frac{1}{4} a^4 + \frac{1}{2} \lambda a^2 + \mu a $$
 这个简单的三次方程，在三维空间 $(a, \lambda, \mu)$ 中描绘了一个美丽的折叠[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)。我们之前看到的S形[载荷-位移曲线](@keyword=load_displacement_curve|lang=zh-CN|style=Feynman)，不过是这个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)在特定 $\mu$ 值下的切片。
 
 而这个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)折叠部分的边界，投影到 $(\lambda, \mu)$ 控制[参数平面](@keyword=parameter_plane|lang=zh-CN|style=Feynman)上时，形成了一个尖锐的“尖点”形状，其边界由方程 $4\lambda^3 + 27\mu^2 = 0$ 完美定义。[@problem_id:3600910] 这个方程构成了一张“失稳地图”：如果你的加载参数 $(\lambda, \mu)$ 组合穿过了这条边界线，结构就会发生一次突变（snap）。
-
-![](https://static.phy.so/p/cusp_catastrophe_3600910.png)
 
 这个模型最深刻的启示在于参数 $\mu$ 的物理意义。除了是一个真实存在的侧向载荷外，它更普遍地代表了真实结构中微小而不可避免的**几何缺陷（imperfection）**。
 

@@ -24,7 +24,7 @@ This creates a beautiful and dynamic interplay. The concentration of the reactan
 If we were to plot the concentrations of these three species over time, we would see three distinct curves, each telling its part of the story [@problem_id:1479443]. The reactant $A$ is a curve of pure decay. The product $C$ is a curve of pure growth, rising to a plateau. And the intermediate $B$ is the curve that rises from nothing, reaches a summit, and then gracefully descends back to the baseline.
 
 <center>
-  <img src="https://i.imgur.com/vHqB3Kx.png" alt="Concentration profiles for A, B, and C in a consecutive reaction." width="600">
+
   <br>
   <em>Figure 1: The characteristic concentration profiles for a consecutive reaction $A \to B \to C$. The reactant $[A]$ decays, the product $[C]$ accumulates, and the intermediate $[B]$ rises to a maximum before falling.</em>
 </center>

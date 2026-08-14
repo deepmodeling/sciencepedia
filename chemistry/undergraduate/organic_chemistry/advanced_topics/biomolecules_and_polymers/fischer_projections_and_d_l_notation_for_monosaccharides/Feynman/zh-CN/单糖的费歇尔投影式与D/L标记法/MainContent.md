@@ -21,7 +21,7 @@ Fischer 的天才之处在于他建立了一套简洁的规则，将一个三维
 让我们以一个简单的四碳[醛糖](@keyword=aldose|lang=zh-CN|style=Feynman)（aldotetrose）为例。在其 Fischer 投影中，如果我们关注C3碳原子，其上的羟基（$-\text{OH}$）在右边，氢原子（$-\text{H}$）在左边。根据规则，这意味着 $-\text{OH}$ 和 $-\text{H}$ 基团实际上是从纸面上向你凸出来的（用楔形键表示），而连接C2和C4的碳链则向纸面后方凹陷（用虚线键表示）[@problem_id:2170606]。
 
 <center>
-<img src="httpsG5IvB4tL8nK2mR7pX6yA.png" alt="A figure showing the conversion from a Fischer projection of a chiral center to its 3D wedge-and-dash representation. The horizontal bonds (-H and -OH) are shown with wedges, pointing out of the page. The vertical bonds (to other carbons) are shown with dashes, pointing into the page." style="width: 70%;" />
+
 <br>
 Fischer 投影的奥秘：水平线代表伸出纸面的“拥抱”，垂直线代表深入纸后的“脊柱”。
 </center>
@@ -35,7 +35,7 @@ Fischer 投影的奥秘：水平线代表伸出纸面的“拥抱”，垂直线
 Fischer 再次展现了他的智慧，他没有试图去描述每一个[手性中心](@keyword=stereocenter|lang=zh-CN|style=Feynman)的复杂细节，而是建立了一个相对的命名体系——D/L 命名法。这个体系的核心是选择一个最简单的“标准尺”。这个“标准尺”就是[甘油醛](@keyword=glyceraldehyde|lang=zh-CN|style=Feynman)（glyceraldehyde），最简单的手性[醛糖](@keyword=aldose|lang=zh-CN|style=Feynman)。它存在两种[对映异构体](@keyword=enantiomers|lang=zh-CN|style=Feynman)。Fischer 将其中能使[偏振光](@keyword=polarized_light|lang=zh-CN|style=Feynman)顺时针旋转（右旋, +）的异构体定义为 **D-[甘油醛](@keyword=glyceraldehyde|lang=zh-CN|style=Feynman)**。
 
 <center>
-<img src="httpspT7kY6fR3wE1oG9jX8zC.png" alt="The Fischer projections of D-glyceraldehyde and L-glyceraldehyde. In D-glyceraldehyde, the -OH group on the chiral center is on the right. In L-glyceraldehyde, it is on the left." style="width: 50%;" />
+
 <br>
 D/L 体系的“标准尺”：D-[甘油醛](@keyword=glyceraldehyde|lang=zh-CN|style=Feynman)和 L-[甘油醛](@keyword=glyceraldehyde|lang=zh-CN|style=Feynman)。
 </center>

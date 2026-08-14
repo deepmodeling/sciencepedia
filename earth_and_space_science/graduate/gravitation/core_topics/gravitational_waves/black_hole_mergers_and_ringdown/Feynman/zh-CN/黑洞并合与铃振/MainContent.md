@@ -9,7 +9,7 @@
 
 <center>
 <figure>
-    <img src="https://i.imgur.com/G5gWcMv.png" alt="引力波信号的三个阶段：旋进、并合、铃宕。在铃宕阶段，振幅指数衰减，频率保持恒定。" width="600">
+
     <figcaption>图1：[双黑洞并合](@keyword=binary_black_hole_merger|lang=zh-CN|style=Feynman)产生的引力波信号。旋进（inspiral）阶段，频率和振幅都逐渐增加。并合（merger）是高度非线性的剧烈过程。最终的铃宕（ringdown）阶段，信号呈现为振幅指数衰减的[阻尼振荡](@keyword=damped_oscillations|lang=zh-CN|style=Feynman)。</figcaption>
 </figure>
 </center>

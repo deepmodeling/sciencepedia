@@ -24,7 +24,7 @@
 那么，谁能响应这“热量”的召唤呢？只有那些位于费米海“海面”附近的电子！这些电子的能量接近费米能 $E_F$。在它们“头顶上”，就有大量未被占据的空座位（高能级）。当外界提供一份能量，比如热能 $k_B T$ 时，这些处于“海面”的电子就可以轻松地吸收这份能量，一跃而起，跳到能量为 $E_F + k_B T$ 的[空位](@keyword=vacancies|lang=zh-CN|style=Feynman)上。
 
 <center>
-<img src="https://i.imgur.com/vHqjH9Z.png" width="600" alt="Fermi-Dirac distribution at T=0 and T>0">
+0">
 <br>
 <small>图1：[费米-狄拉克分布](@keyword=fermi_dirac_distribution|lang=zh-CN|style=Feynman)。在 $T=0\,$K 时（蓝色虚线），所有低于费米能 $E_F$ 的能级被完全占据。在 $T>0\,$K 时（红色实线），只有在[费米能](@keyword=fermi_energy|lang=zh-CN|style=Feynman)附近约 $k_B T$ 范围内的电子被激发到更高的能级，留下了空穴。</small>
 </center>

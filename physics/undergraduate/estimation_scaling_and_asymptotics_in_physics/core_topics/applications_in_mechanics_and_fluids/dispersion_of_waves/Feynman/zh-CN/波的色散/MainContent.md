@@ -14,7 +14,7 @@
 想象一个最简单的波包，它由两个频率和波长略有不同的完美[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)叠加而成。当你把它们加在一起时，你会看到一种“[拍频](@keyword=beats_frequency|lang=zh-CN|style=Feynman)”现象：一个高频的“[载波](@keyword=carrier_wave|lang=zh-CN|style=Feynman)”被一个移动得更慢的巨大“包络”所包裹 [@problem_id:1896624]。就像一长串人群，每个人都在四处走动，但整个人群作为一个整体，正缓缓地穿过广场。
 
 <center>
-<img src="https://i.imgur.com/rN5t2n1.png" width="600">
+
 </center>
 <br>
 

@@ -9,7 +9,7 @@
 首先，让我们来谈谈最直观、最震撼人心的应用：[磁悬浮](@keyword=magnetic_levitation|lang=zh-CN|style=Feynman)。当你将一块磁铁放在[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)上方时，它会稳稳地悬浮起来，仿佛挣脱了重力的束缚。这背后并非什么魔法，而是纯粹的[电磁学](@keyword=electricity_and_magnetism|lang=zh-CN|style=Feynman)。[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)会排斥其内部的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)，导致[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)线在[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)表面被“压缩”。这种被压缩的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)就像一个气垫，产生了一股强大的斥力，我们称之为[磁压力](@keyword=magnetic_pressure|lang=zh-CN|style=Feynman)（magnetic pressure）[@problem_id:1818571]。这股压力的大小与磁场强度的平方成正比，$P = B^2 / (2\mu_0)$。正是这种力量，支撑起了[磁悬浮](@keyword=magnetic_levitation|lang=zh-CN|style=Feynman)列车，使其能够以极高的速度贴地“飞行”，几乎不受摩擦力的影响。
 
 <center>
-    <img src="https://dims.llm-agent.io/mate/user/2024-06-21/asset/maglev.png" alt="Magnetic Levitation" width="500">
+
     <br>
     <small>图1：[磁悬浮](@keyword=magnetic_levitation|lang=zh-CN|style=Feynman)现象。[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)被[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)排斥，产生向上的压力，使得磁铁能够悬浮在空中。这是[迈斯纳效应](@keyword=the_meissner_effect|lang=zh-CN|style=Feynman)最直观的展示。</small>
 </center>
@@ -17,7 +17,7 @@
 其次，[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)是制造超强磁体的理想材料。医院里的[核磁共振](@keyword=nuclear_magnetic_resonance|lang=zh-CN|style=Feynman)成像（MRI）设备、[粒子加速器](@keyword=particle_accelerators|lang=zh-CN|style=Feynman)中用来约束高能粒子的巨型磁体，都依赖于超导线圈。但是，超导线圈中的电流是如何分布的呢？是不是像普通导线一样均匀流过整个[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)？[伦敦方程](@keyword=london_equations|lang=zh-CN|style=Feynman)给出了一个出乎意料的答案：不是。电流也被“排挤”到了导线的表面！在一个超导圆柱导线中，[电流密度](@keyword=current_density|lang=zh-CN|style=Feynman)$j_s(r)$从表面向内呈指数衰减，大部分电流都集中在薄薄的表面层内，这个厚度由[伦敦穿透深度](@keyword=london_penetration_depth|lang=zh-CN|style=Feynman)$\lambda_L$决定 [@problem_id:1818576]。对于[同轴电缆](@keyword=coaxial_transmission_line|lang=zh-CN|style=Feynman)这样的结构，电流同样贴着内外导体的表面流动，将[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)完美地限制在两者之间 [@problem_id:1818592]。理解这一点对于设计高效、稳定的[超导磁体](@keyword=superconducting_magnets|lang=zh-CN|style=Feynman)和电力[传输线](@keyword=transmission_lines|lang=zh-CN|style=Feynman)至关重要。
 
 <center>
-    <img src="https://dims.llm-agent.io/mate/user/2024-06-21/asset/supercurrent_distribution.png" alt="Current distribution in a superconducting wire" width="500">
+
     <br>
     <small>图2：超导导线中的电流分布。与普通导线不同，超导电流主要集中在表面一个由[伦敦穿透深度](@keyword=london_penetration_depth|lang=zh-CN|style=Feynman)$\lambda_L$决定的薄层内。</small>
 </center>
@@ -53,7 +53,7 @@
 另一个惊人的效应是“伦敦矩”（London moment）。将一个超导圆柱体绕其轴线旋转，它会自动产生一个沿轴向的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)！这个[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的大小为$\mathbf{B} = -(2m/q)\mathbf{\omega}$，与转动的[角速度](@keyword=angular_velocity|lang=zh-CN|style=Feynman)$\mathbf{\omega}$成正比 [@problem_id:1821261]。这个现象的根源在于载流子的惯性。当[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)开始旋转时，超导电子由于自身的“惰性”（质量$m$），会稍微滞后于[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的运动。这种相对运动等效于一个环形电流，从而产生了[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)。一个旋转的[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)就像一个[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的[陀螺仪](@keyword=gyroscope|lang=zh-CN|style=Feynman)，它直接将力学转动转化为了宏观的磁现象。
 
 <center>
-    <img src="https://dims.llm-agent.io/mate/user/2024-06-21/asset/london_moment.png" alt="London Moment" width="400">
+
     <br>
     <small>图3：伦敦矩效应。一个旋转的[超导体](@keyword=superconductor|lang=zh-CN|style=Feynman)（灰色圆柱）会自发产生一个与其角速度$\omega$成正比的内部[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)$B$。这是超导电子惯性的宏观体现。</small>
 </center>

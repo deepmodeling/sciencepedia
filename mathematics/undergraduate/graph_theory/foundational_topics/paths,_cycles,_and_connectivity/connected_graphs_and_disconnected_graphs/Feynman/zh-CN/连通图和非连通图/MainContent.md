@@ -16,7 +16,7 @@
 让我们来看一个有趣的例子。假设有一组整数作为顶点，如果两个顶点数值之和不是某个素数 $p$ 的倍数，它们之间就有一条边。我们想知道，在何种条件下这个图会变得不连通？[@problem_id:1491824] 这是一个将图论与数论美妙结合的问题。模运算是揭示这种结构的关键。例如，当 $p=5$ 时，我们注意到任何一个模5余1的数与一个模5余4的数相加，其和都是5的倍数。根据规则，这意味着在“余1”的顶点集与“余4”的顶点集之间不存在任何边。这种由算术性质导致的连接缺失，是图变得不连通的潜在原因，它完美地诠释了不连通的本质：**顶点集可以被分割成两个或多个非空子集，而这些子集之间没有任何边相连。**
 
 <center>
-<img src="https://i.imgur.com/kP636e1.png" width="450" alt="A graph partitioned into two components based on modular arithmetic.">
+
 </center>
 <div style="text-align: center; color: grey; font-size: 0.9em;">图1：顶点可以根据其算术性质（如模 $p$ 的余数）分裂成独立的社群，导致图不连通。</div>
 
@@ -41,7 +41,7 @@
 最脆弱的[连通图](@keyword=connected_graphs|lang=zh-CN|style=Feynman)是什么样的？答案是“树” [@problem_id:1491872]。树是一种刚好用 $n-1$ 条边连接 $n$ 个节点的图，它的美在于其“极简”——没有任何冗余。但也正因如此，它的每一条边都是“**桥**”（bridge），一旦移除，图就会断裂。一个典型的例子是[星形图](@keyword=star_graph|lang=zh-CN|style=Feynman)，一个中心节点连接着所有其他节点。移除任何一条边都会让一个外围节点被孤立。
 
 <center>
-<img src="https://i.imgur.com/vHqJ9cQ.png" width="500" alt="Examples of bridges and cut vertices in a network graph.">
+
 </center>
 <div style="text-align: center; color: grey; font-size: 0.9em;">图2：桥（红色）和[割点](@keyword=articulation_points|lang=zh-CN|style=Feynman)（蓝色）是网络的[单点故障](@keyword=single_point_of_failure|lang=zh-CN|style=Feynman)。移除 $(S_3, S_5)$ 会断开网络。</div>
 

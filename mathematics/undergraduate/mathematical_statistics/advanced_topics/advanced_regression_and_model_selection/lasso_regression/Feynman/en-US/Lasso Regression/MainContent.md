@@ -49,8 +49,6 @@ Here's the beautiful part [@problem_id:1928625]:
 
 And what does it mean to land on a corner like $(0, s)$? It means the optimal solution is $\beta_1=0$ and $\beta_2=s$. One of the coefficients is exactly zero! The sharp, non-differentiable corners of the L1 penalty's geometry are the direct cause of LASSO's feature-selecting superpower. The smooth, "democratic" circle of the L2 penalty shrinks both coefficients, but the "spiky," decisive diamond of the L1 penalty is happy to eliminate one entirely.
 
-<img src="https://i.imgur.com/Wb25lIq.png" alt="Geometric interpretation of LASSO and Ridge Regression. The RSS contours are ellipses. The LASSO constraint is a diamond, and the Ridge constraint is a circle. The solution is where the ellipse first touches the constraint region. For LASSO, this is likely to be at a corner, where a coefficient is zero." width="700"/>
-
 ### The Engine Under the Hood: A Constant, Unforgiving Push
 
 The geometric picture gives us a wonderful intuition. The underlying mathematical reason is just as elegant [@problem_id:1928610]. Think about the "force" the penalty term exerts on each coefficient, trying to push it towards zero.

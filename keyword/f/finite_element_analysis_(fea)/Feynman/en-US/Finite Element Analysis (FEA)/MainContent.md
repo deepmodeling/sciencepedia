@@ -21,8 +21,6 @@ How do we mathematically construct these piecewise approximations? We do it with
 
 Imagine a node, let's call it node $i$, sitting on our mesh. The hat function for this node, $\phi_i(x)$, is a beautifully simple creature. It has a value of exactly 1 at its "home" node $i$, and it slopes down linearly to a value of 0 at the neighboring nodes on either side. Everywhere else in the entire domain, its value is 0. It's literally a little triangular hat sitting on the mesh, with its peak at node $i$ [@problem_id:2423792].
 
-![](https://s3.laisky.com/uploads/2024/05/fea-hat-function.png)
-
 Now, here's the magic. Any [piecewise linear function](@keyword=piecewise_linear_function|lang=en-US|style=Feynman) on our mesh can be built by simply adding these [hat functions](@keyword=hat_functions|lang=en-US|style=Feynman) together, each scaled by the value of the function at that node. If we want to approximate a temperature profile $T(x)$, and we know the temperatures $T_i$ at each node $i$, our approximation $T_h(x)$ is just:
 
 $$T_h(x) = \sum_{i} T_i \phi_i(x)$$

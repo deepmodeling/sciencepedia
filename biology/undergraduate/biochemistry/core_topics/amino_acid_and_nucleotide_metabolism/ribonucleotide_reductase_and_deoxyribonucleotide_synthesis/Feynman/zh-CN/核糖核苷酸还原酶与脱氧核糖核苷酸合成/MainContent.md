@@ -17,8 +17,6 @@ RNR究竟施展了怎样的魔法？让我们凑近看看这块“砖”——�
 
 RNR的工作，就是精确地将这个2'位的羟基（-OH）替换成一个氢原子（-H）。从化学的角度看，这是一个令人惊叹的**还原反应**。如果我们计算一下2'号碳原子的[氧化态](@keyword=formal_oxidation_state|lang=zh-CN|style=Feynman)，会发现在反应前后，它的氧化态从0降到了-2。这意味着它得到了电子，被“还原”了 [@problem_id:2072665]。这就像一位技艺高超的雕刻家，从一块原料上精确地凿掉一小部分，创造出全新的功能。
 
-![The chemical reaction catalyzed by RNR, showing the conversion of a ribonucleoside diphosphate (NDP) to a deoxyribonucleoside diphosphate (dNDP) by replacing the 2'-OH group with a hydrogen atom.](https://i.imgur.com/k6wz7i3.png)
-
 *图1：[核糖核苷酸还原酶](@keyword=ribonucleotide_reductase|lang=zh-CN|style=Feynman)（RNR）催化的核心反应。它将核糖核苷二磷酸（NDP）的2'位羟基（-OH）精准地还原为一个氢原子，从而生成脱氧核糖核苷二磷酸（dNDP）。*
 
 值得注意的是，RNR选择的原料也很有讲究。它并非对细胞内所有的核糖[核苷酸](@keyword=nucleotide|lang=zh-CN|style=Feynman)下手，而是专门挑选那些处于“二磷酸”状态的分子（NDPs），即ADP、GDP、CDP和UDP [@problem_id:2072662]。这就像一条高效的流水线，从特定的中间产物开始加工，确保了整个生产流程的有序和高效。

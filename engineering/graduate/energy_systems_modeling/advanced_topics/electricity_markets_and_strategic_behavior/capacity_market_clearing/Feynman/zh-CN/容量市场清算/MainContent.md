@@ -21,7 +21,7 @@
 
 电网运营商会将所有这些报价从低到高排列，形成一个阶梯状的**供给曲线**，如图所示。这条曲线清晰地展示了，要获得不同总量的“可用性”，市场需要付出多高的代价。接着，运营商根据其对系统可靠性的需求，确定一个总采购量，我们称之为 $Q_{req}$。
 
-![一个典型的容量供给曲线，由多个[发电机](@keyword=electric_generator|lang=zh-CN|style=Feynman)的报价堆叠而成。](https://d2p5jvea0d18n4.cloudfront.net/published_project_images/2d69f333-64ec-4282-998f-a95728a5567b.png)
+的报价堆叠而成。](https://d2p5jvea0d18n4.cloudfront.net/published_project_images/2d69f333-64ec-4282-998f-a95728a5567b.png)
 
 拍卖的出清过程简单而优雅：运营商从价格最低的报价开始逐一接受，直到累计的容量恰好满足 $Q_{req}$。此时，被接受的**最后一个报价**（也就是边际报价）的价格，将成为市场中所有中标[发电机](@keyword=electric_generator|lang=zh-CN|style=Feynman)的**统一出清价格** (uniform clearing price)。[@problem_id:4074516] 无论是报价极低的廉价机组，还是价格恰好在出清线上的边际机组，它们每提供一单位的承诺容量，都会得到相同的报酬。
 

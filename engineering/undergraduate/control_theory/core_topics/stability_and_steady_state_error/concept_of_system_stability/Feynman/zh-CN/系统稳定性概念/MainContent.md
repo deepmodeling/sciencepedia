@@ -28,7 +28,7 @@
 - **稳定边界：虚轴 ($p = 0$)**：那如果极点正好落在“本初子午线”——虚轴上呢？此时 $p=0$，响应 $e^{0 \cdot t}=1$ 是一个常数。系统既不衰减也不发散，它会永远保持被扰动后的状态。这就像一个理想的、没有丝毫摩擦的钟摆，一旦开始，就永不停止。我们称之为“临界稳定”（marginally stable）。
 
 <div align="center">
-<img src="https://i.imgur.com/8N4N5B6.png" width="600" alt="Pole locations on the real axis and their corresponding impulse responses.">
+
 <figcaption>图1：[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)上不同位置的极点决定了系统的基本响应。[左半平面](@keyword=left_half_plane|lang=zh-CN|style=Feynman)的极点带来稳定，右半平面的极点导致不稳定。</figcaption>
 </div>
 
@@ -43,7 +43,7 @@
 一个经典的、甚至有些可怕的例子是飞机的“[气动弹性颤振](@keyword=aeroelastic_flutter|lang=zh-CN|style=Feynman)” [@problem_id:1564340]。在特定速度下，机翼会开始[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。如果此时系统的极点进入了右半平面（$\sigma > 0$），[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的幅度就会指数增长，最终可能导致机翼在空中解体。工程师们必须精心设计，确保在飞机的任何飞行状态下，所有关键的极点都牢牢地待在安全的[左半平面](@keyword=left_half_plane|lang=zh-CN|style=Feynman)。
 
 <div align="center">
-<img src="https://i.imgur.com/13kHh9H.png" width="600" alt="Pole locations in the complex plane and their corresponding impulse responses.">
+
 <figcaption>图2：复数极点的位置。实部 $\sigma$ 决定包络线（衰减或增长），虚部 $\omega$ 决定[振荡频率](@keyword=oscillation_frequency|lang=zh-CN|style=Feynman)。稳定性的关键仍然是极点是否在[左半平面](@keyword=left_half_plane|lang=zh-CN|style=Feynman)。</figcaption>
 </div>
 
@@ -68,7 +68,7 @@
 这个工具异常强大，因为它不仅能回答“是”或“否”的问题，还能帮助我们进行设计。例如，在控制一个系统时，我们通常会有一个可以调节的“增益” $K$（可以理解为控制的力度）。力度太小，效果不佳；但力度太大，则可能让系统从稳定变为不稳定 [@problem_id:1564358] [@problem_id:1564360]。利用劳斯判据，我们可以精确地计算出保持系统稳定的最大增益 $K_{max}$，从而在性能和稳定性的边缘找到最佳的[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)。
 
 > **跨界思维：数字世界的稳定性**
-> 
+>
 > 我们一直在讨论连续的物理系统，但在我们身处的数字时代，计算机控制无处不在。对于[数字滤波器](@keyword=digital_filters|lang=zh-CN|style=Feynman)、[数字控制](@keyword=digital_control|lang=zh-CN|style=Feynman)器等离散时间系统，稳定性的核心思想是相通的，但“地图”变了。我们不再使用 s 平面，而是 z 平面。稳定性的“安全区域”也不再是左半平面，而是[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)的内部。一个[离散系统](@keyword=discrete_systems|lang=zh-CN|style=Feynman)是稳定的，当且仅当其所有极点都位于[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上半径为 1 的圆圈之内 [@problem_id:1564356]。这再次印证了稳定性与[极点位置](@keyword=pole_location|lang=zh-CN|style=Feynman)之间存在着深刻而普适的联系。
 
 ### 深入迷雾：隐匿的危险与微妙之处

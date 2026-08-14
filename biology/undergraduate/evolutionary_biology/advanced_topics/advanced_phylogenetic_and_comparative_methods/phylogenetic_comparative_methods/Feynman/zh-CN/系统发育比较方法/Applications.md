@@ -14,7 +14,7 @@
 
 <center>
   <figure>
-    <img src="https://i.imgur.com/uVzU80g.png" width="800" alt="A diagram comparing a naive regression on raw species data with a regression on phylogenetically independent contrasts. The raw data shows a strong positive correlation, while the contrasts show no correlation.">
+
     <figcaption>图1：系统发育[伪重复](@keyword=pseudoreplication|lang=zh-CN|style=Feynman)的陷阱。左图：直接对物种性状值（原始数据）进行回归，可能显示出一种虚假的[强相关](@keyword=strong_correlation|lang=zh-CN|style=Feynman)性。右图：使用[系统发育独立比较](@keyword=phylogenetically_independent_contrasts|lang=zh-CN|style=Feynman)法（PICs）[转换数](@keyword=kcat_(turnover_number)|lang=zh-CN|style=Feynman)据后，揭示出两个性状之间并无演化上的关联。这清晰地表明了为何必须在比较分析中考虑物种的共享演化历史。</figcaption>
   </figure>
 </center>

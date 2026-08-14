@@ -11,13 +11,9 @@
 
 让我们从最简单的相机开始——[针孔相机](@keyword=pinhole_camera|lang=zh-CN|style=Feynman)。你可能会认为一个理想的针孔只是一个无限小的点，但现实中，它是在一块有厚度的材料上钻出的小孔。这个小孔的厚度本身就构成了一个微型隧道。对于从正前方射入的光线，这个隧道畅通无阻。但对于那些来自场景边缘，以一定角度射入的光线，它们很可能会在到达感光元件之前就撞上隧道的“内壁”。孔的厚度与直径的比值越大，这种“隧道视野”效应就越明显，导致图像中心最亮，向四周逐渐变暗。这就是最纯粹的**[机械渐晕](@keyword=mechanical_vignetting|lang=zh-CN|style=Feynman)** [@problem_id:2273090]。
 
-![](https://assets.test-king.com/langsmith_prompt_assets/undegrad_optics/Vignetting_1.png)
-
 *图1：针孔的厚度导致来自偏轴物点的光线（红色）比来自轴上物点的光线（蓝色）更容易被遮挡，这是一种[机械渐晕](@keyword=mechanical_vignetting|lang=zh-CN|style=Feynman)。*
 
 在现代相机镜头这样复杂得多的系统中，情况也是类似的，只是“隧道”的构成要复杂得多。镜头不是由单一镜片构成的，而是由一系列镜片、光圈叶片和镜筒等组件构成的精密组合。想象一下，一个由两个分开一定距离的开口组成的简化系统。从远方物体的一个点发出的光，会形成一束平行光。对于正对镜头的点（轴上点），光束平行于[光轴](@keyword=optic_axis|lang=zh-CN|style=Feynman)，可以轻松穿过两个开口。但对于偏离中心轴的点（离轴点），光束会以一个角度 $\theta$ 斜射进来。当这束光穿过第一个开口后，它会继续倾斜前进，到达第二个开口时，光束的整体位置已经发生了平移。如果角度 $\theta$ 足够大，第二个开口就会像一个错位的窗户，部分或全部遮挡住已经穿过第一个开口的光束 [@problem_id:2218550]。
-
-![](https://assets.test-king.com/langsmith_prompt_assets/undegrad_optics/Vignetting_2.png)
 
 *图2：在一个由两个光圈组成的简化镜头模型中，来自轴上点的光束（蓝色）完全通过。来自离轴点的光束（红色）在穿过第一个光圈后，部分被第二个光圈[遮挡](@keyword=occlusion|lang=zh-CN|style=Feynman)，导致[光通量](@keyword=luminous_flux|lang=zh-CN|style=Feynman)减少。*
 

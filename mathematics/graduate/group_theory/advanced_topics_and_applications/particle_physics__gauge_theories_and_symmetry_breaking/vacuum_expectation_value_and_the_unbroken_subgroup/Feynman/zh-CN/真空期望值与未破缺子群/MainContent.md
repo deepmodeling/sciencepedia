@@ -22,7 +22,7 @@
 在物理学中，我们通常用一个被称为“势能”$V(\Phi)$的函数来描述一个场$\Phi$的能量。对于我们的铅笔，$\Phi$可以是它倾斜的角度，势能最高点就是笔直站立的$\Phi=0$。一个引发自发对称性破缺的[势能函数](@keyword=potential_energy_function|lang=zh-CN|style=Feynman)，其形状通常被比喻为一个“墨西哥草帽”：帽子的正中心（$\Phi=0$）是一个对称但能量较高的点（不稳定），而最低的能量点则位于帽檐下方的整个圆形凹槽中。
 
 <center>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Mexican_hat_potential_polar.svg/400px-Mexican_hat_potential_polar.svg.png" alt="Mexican Hat Potential" width="300"/>
+
   <br/>
   <em style="font-size: 0.8em;">[墨西哥草帽势](@keyword=mexican_hat_potential|lang=zh-CN|style=Feynman)：[中心点](@keyword=medoid|lang=zh-CN|style=Feynman)是能量较高的对称态，而能量最低的真空态位于底部的圆形凹槽中。</em>
 </center>

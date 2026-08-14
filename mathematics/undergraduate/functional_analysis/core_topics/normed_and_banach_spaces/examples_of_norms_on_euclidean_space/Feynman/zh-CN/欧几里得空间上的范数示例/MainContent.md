@@ -40,8 +40,6 @@
 - 一个以原点为中心、顶点在坐标轴上的**菱形** $|x_1| + |x_2| \le 1$？也完全可以！它对应的正是**[曼哈顿范数](@keyword=manhattan_norm|lang=zh-CN|style=Feynman) $\|\mathbf{x}\|_1 = |x_1| + |x_2| + \dots$**。
 - 一个被挖掉中心的“甜甜圈”或者一个中心偏离原点的圆盘呢？它们立刻就暴露了：前者不包含原点且不是凸集，后者不关于原点对称。它们都不能成为[单位球](@keyword=unit_ball|lang=zh-CN|style=Feynman)。
 
-![Unit Balls](https://i.imgur.com/eGkH41P.png "图：L1、L2和L∞范数在二维空间中的单位球。从左到右分别是菱形、圆形和正方形。")
-
 看到这里，你是否感到一种奇妙的对应关系？抽象的代数公理，竟然与具体的几何形状[一一对应](@keyword=one_to_one_correspondence|lang=zh-CN|style=Feynman)。范数不再仅仅是一个公式，它是一种定义空间“形状”的方式。[欧几里得范数](@keyword=2_norm|lang=zh-CN|style=Feynman)的世界是“圆”的，[曼哈顿范数](@keyword=manhattan_norm|lang=zh-CN|style=Feynman)的世界是“方”的。
 
 ### 范数的“炼金术”：创造新的测量方式

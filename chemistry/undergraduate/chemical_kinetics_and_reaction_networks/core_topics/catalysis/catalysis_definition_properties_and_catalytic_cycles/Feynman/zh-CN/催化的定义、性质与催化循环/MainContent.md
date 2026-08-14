@@ -24,7 +24,7 @@
 在化学中，我们可以用一个“[反应能量曲线](@keyword=reaction_energy_profile|lang=zh-CN|style=Feynman)”来描绘这场“登山之旅”。纵轴代表系统的能量，[横轴](@keyword=transverse_axis|lang=zh-CN|style=Feynman)代表反应的进程。从反应物到产物，通常需要翻越一个能量“山峰”，这个山峰的顶点被称为**过渡态 (transition state)**，而从山脚到山顶所需攀爬的能量高度，就是**活化能 ($E_a$ 或 $\Delta G^\ddagger$)**。活化能越高，反应就越慢，因为只有少数能量足够的分子才能成功“翻山越岭”。
 
 <center>
-<img src="https://i.imgur.com/K3v8Q1G.png" alt="Reaction energy profile with and without a catalyst" width="600">
+
 </center>
 <br>
 

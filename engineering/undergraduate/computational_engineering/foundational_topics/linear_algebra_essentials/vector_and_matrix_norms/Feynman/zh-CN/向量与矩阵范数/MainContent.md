@@ -31,7 +31,7 @@ $$
 - **[无穷范数](@keyword=infinity_norm|lang=zh-CN|style=Feynman)**的[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)是一个正方形。
 
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Vector-p-norms.svg/450px-Vector-p-norms.svg.png" alt="Unit circles for 1, 2, and infinity norms" width="300"/>
+
 <br>
 <small>图1：1-[范数](@keyword=norm_(mathematics)|lang=zh-CN|style=Feynman)（菱形）、2-[范数](@keyword=norm_(mathematics)|lang=zh-CN|style=Feynman)（圆形）和[无穷范数](@keyword=infinity_norm|lang=zh-CN|style=Feynman)（正方形）在二维空间中的单位“圆”。</small>
 </center>
@@ -121,7 +121,7 @@ $$
 这种对偶关系在几何上体现为一种令人惊叹的[对称性](@keyword=symmetry|lang=zh-CN|style=Feynman) [@problem_id:2449554]。一个[范数](@keyword=norm_(mathematics)|lang=zh-CN|style=Feynman)的[单位球](@keyword=unit_ball|lang=zh-CN|style=Feynman) $B$，和它的[对偶范数](@keyword=dual_norm|lang=zh-CN|style=Feynman)的[单位球](@keyword=unit_ball|lang=zh-CN|style=Feynman) $B^∘$，互为**[极集](@keyword=polar_set|lang=zh-CN|style=Feynman) (polar set)**。一个经典的例子是：[无穷范数](@keyword=infinity_norm|lang=zh-CN|style=Feynman) $\|\cdot\|_\infty$ 的[单位球](@keyword=unit_ball|lang=zh-CN|style=Feynman)在[三维空间](@keyword=3d_space|lang=zh-CN|style=Feynman)中是一个立方体，而它的[对偶范数](@keyword=dual_norm|lang=zh-CN|style=Feynman)——也就是1-[范数](@keyword=norm_(mathematics)|lang=zh-CN|style=Feynman) $\|\cdot\|_1$——的[单位球](@keyword=unit_ball|lang=zh-CN|style=Feynman)则是一个正八面体。立方体和八面体，在几何上就是一对对偶多面体。
 
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cube_and_octahedron.jpg/300px-Cube_and_octahedron.jpg" alt="Duality of cube and octahedron" width="250"/>
+
 <br>
 <small>图2：立方体（$\ell_\infty$[范数](@keyword=norm_(mathematics)|lang=zh-CN|style=Feynman)[单位球](@keyword=unit_ball|lang=zh-CN|style=Feynman)的形状）和八面体（$\ell_1$[范数](@keyword=norm_(mathematics)|lang=zh-CN|style=Feynman)[单位球](@keyword=unit_ball|lang=zh-CN|style=Feynman)的形状）的对偶关系，完美诠释了[范数](@keyword=norm_(mathematics)|lang=zh-CN|style=Feynman)对偶的几何之美。</small>
 </center>

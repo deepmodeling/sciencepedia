@@ -15,8 +15,6 @@
 
 直觉告诉我们，从你站立的位置向铁轨做一条垂线，垂足就是那个距离你最近的点。这个简单的几何直觉，正是最小二乘法的灵魂所在。在数学的语言里，“垂直”被称为**正交 (Orthogonality)**。你当前位置 $b$ 与铁轨上最近点 $p$ 之间的连线，也就是我们所说的**误差向量 (error vector)** $e = b - p$，必须与铁轨本身（即向量 $a$）正交。
 
-![Geometric interpretation of projection](https_images._s3.amazonaws.com/PROD/2024/05/23/07/281b3ce5-c3c2-482a-ad0f-7f7243c535cd.png)
-
 这个点 $p$ 位于由 $a$ 张成的直线上，因此它必然可以写成 $p = \hat{\alpha}a$ 的形式，其中 $\hat{\alpha}$ 是一个我们待求的标量系数。误差向量就是 $b - \hat{\alpha}a$。正交性的要求意味着误差向量与[方向向量](@keyword=direction_vector|lang=zh-CN|style=Feynman) $a$ 的**内积 (inner product)**（或[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)）为零：
 
 $$

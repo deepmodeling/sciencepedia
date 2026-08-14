@@ -53,7 +53,7 @@ $$
 
 现在，想象一下在同一张图上绘制这两条曲线：一条直线（移热）覆盖在一条[S形曲线](@keyword=s_shaped_curve|lang=zh-CN|style=Feynman)（生热）上。它们可以相交多少次？有时，它们只相交一次。但如果条件合适——如果[S形曲线](@keyword=s_shaped_curve|lang=zh-CN|style=Feynman)足够陡峭，且直线恰好以某种方式穿过它——它们可以在**三个**不同的点相交[@problem_id:2638261]。
 
-![一张图表显示了一条S形的生热曲线（G(T)）与一条线性的移热线（R(T)）在三个点相交，标记为SS1、SS2和SS3。SS1和SS3是稳定[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)，而中间点SS2是不稳定的。](https://i.imgur.com/u5T2c1g.png)
+，而中间点SS2是不稳定的。](https://i.imgur.com/u5T2c1g.png)
 
 每个交点都是一个生热等于移热的有效[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)。这意味着对于*完全相同*的进料条件和冷却，反应器可以存在于三种不同的状态：一个反应缓慢的低温状态（“熄火”态），一个反应迅速的高温状态（“点燃”态），以及一个中间状态。
 

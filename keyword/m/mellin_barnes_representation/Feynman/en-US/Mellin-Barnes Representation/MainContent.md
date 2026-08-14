@@ -21,8 +21,6 @@ G(s) z^s = \Gamma(a+s) \Gamma(-s) (-z)^s
 $$
 This integrand has two sets of poles. The term $\Gamma(-s)$ places poles along the positive real axis at $s = 0, 1, 2, \ldots$. The term $\Gamma(a+s)$ places poles along the negative real axis at $s = -a, -a-1, -a-2, \ldots$. Our integration path $\mathcal{C}$ is a vertical line cleverly positioned right between these two families of poles, like a tightrope walker suspended between two cliffs.
 
-![An illustration of the Mellin-Barnes contour separating two sets of poles on the complex plane.](https://i.imgur.com/example.png "The integration contour C separates the poles of Gamma(-s) on the right from the poles of Gamma(a+s) on the left.")
-
 The integral as it stands is hard to calculate directly. But here, we can invoke one of the most powerful tools in a physicist's or mathematician's arsenal: **Cauchy's [residue theorem](@keyword=residue_theorem|lang=en-US|style=Feynman)**. The theorem tells us that the integral around a closed loop is determined entirely by the poles it encloses. So, instead of staying on our infinite vertical line, we can complete the path by drawing a giant semicircle, closing the loop. And this is where we face a choice, the fundamental choice that unlocks the dual nature of our magic machine. Do we close the loop to the left, or to the right?
 
 ### The Two Paths: Series and Asymptotics

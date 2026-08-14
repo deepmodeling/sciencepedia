@@ -19,7 +19,7 @@
 - **指数位 (Exponent)**：11 个比特，用于存储指数。
 - **分数位 (Fraction)**：52 个比特，用于存储尾数的小数部分。
 
-![[IEEE 754](@keyword=ieee_754|lang=zh-CN|style=Feynman) [binary64](@keyword=binary64|lang=zh-CN|style=Feynman) 格式的图示](https://www.cs.uoregon.edu/classes/18F/cis330/lectures/floating-point-ieee754.png)
+ [binary64](@keyword=binary64|lang=zh-CN|style=Feynman) 格式的图示](https://www.cs.uoregon.edu/classes/18F/cis330/lectures/floating-point-ieee754.png)
 
 但是，魔鬼藏在细节中。首先，为了表示一个规范化的数字，标准做了一个天才般的规定：尾数（在标准中称为 **significand**）的整数部分必须是 1。这被称为 **规范化 (normalization)**。例如，二[进制](@keyword=number_bases|lang=zh-CN|style=Feynman)的 $101.101$ 会被规范化为 $1.01101 \times 2^2$。既然整数部分总是 1，何必浪费一个比特去存储它呢？于是，这个前导的 1 成为了“**隐藏位 (hidden bit)**”——它存在于我们的想象中，但并不实际占用存储空间。这个简单的技巧，使得 52 位的分数位实际上提供了 53 位的精度！[@problem_id:3589130]
 

@@ -30,7 +30,7 @@ $$
 这个公式的几何意义美妙而直观：它就是两个函数图像之间最宽的“[垂直距离](@keyword=perpendicular_distance|lang=zh-CN|style=Feynman)”[@problem_id:1903417]。想象一下 $f(x)$ 和 $g(x)$ 的图像，在每一个 $x$ 坐标上，都有一条[连接](@keyword=concatenation|lang=zh-CN|style=Feynman)它们的[垂直线](@keyword=perpendicular_lines|lang=zh-CN|style=Feynman)段，这些线段的长度是 $|f(x) - g(x)|$。而 $\\|f-g\\|_{\\infty}$ 就是所有这些[垂直线](@keyword=perpendicular_lines|lang=zh-CN|style=Feynman)段中最长的那一根的长度。
 
 <center>
-    <img src="https://i.imgur.com/eB4mD47.png" alt="Geometric interpretation of the supremum norm distance between two functions f and g, showing the maximum vertical distance between their graphs." style="width: 60%;">
+
     <br>
     <small><b>图1：</b> 函数间距离的几何直观。$\\|f-g\\|_{\\infty}$ 是两函数图像 $y=f(x)$ 和 $y=g(x)$ 之间最大的[垂直距离](@keyword=perpendicular_distance|lang=zh-CN|style=Feynman)。</small>
 </center>

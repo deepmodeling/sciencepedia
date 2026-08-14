@@ -19,8 +19,6 @@
 
 无论是 $ \text{KMnO}_4 $ 还是 $ \text{OsO}_4 $，反应的第一步都是一个“协同”的[环加成反应](@keyword=cycloaddition_reactions|lang=zh-CN|style=Feynman)。想象一下 $ \text{OsO}_4 $ 分子，它像一个中心是锇原子，四个角是氧原子的四面体。当它靠近烯烃的 $ \pi $ 电子云时，其中两个氧原子会与烯烃的两个碳原子同时形成[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)。这个过程一步完成，就像一个三原子片段（$ \text{O=Os=O} $）与一个二原子片段（[烯烃](@keyword=alkenes|lang=zh-CN|style=Feynman)的 $ \text{C=C} $）协同作用，形成一个稳定的五元环中间体，我们称之为“[锇酸酯](@keyword=osmate_ester|lang=zh-CN|style=Feynman)”。
 
-![Cyclic Osmate Ester Formation](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/OsO4_dihydroxylation_mechanism.svg/600px-OsO4_dihydroxylation_mechanism.svg.png)
-
 正是这个环状结构，锁定了整个体系的几何构型。两个氧原子从一开始就位于环的同一侧，因此当后续步骤（水解）切断锇-氧键时，它们自然就留在了产物分子的同一侧。这就像你用一只手同时抓住两个苹果，无论你怎么移动，这两个苹果总是在你手的同一侧。这个简单的几何约束，就是*顺式*加成选择性的根源。
 
 ### 烧杯中的侦探故事：氧原子从何而来？

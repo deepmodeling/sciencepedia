@@ -14,7 +14,7 @@
 让我们从一个更简单、更直观的现象开始：一个在风中旋转的圆柱体。想象一下一艘奇特的船，它没有风帆，取而代之的是几根高大、光滑、并且在不停旋转的巨[大圆](@keyword=great_circle|lang=zh-CN|style=Feynman)筒。当风吹过这些旋转的圆筒时，船竟然能像有帆一样航行，甚至效率更高。这不是科幻小说，这是真实存在的 “[弗莱特纳旋筒](@keyword=flettner_rotor|lang=zh-CN|style=Feynman)船” (Flettner rotor ship)，它所利用的物理原理被称为[马格努斯效应](@keyword=magnus_effect|lang=zh-CN|style=Feynman) (Magnus effect) [@problem_id:1741804]。
 
 <center>
-  <img src="https://i.imgur.com/uR6oV25.png" alt="Flow around a spinning cylinder" width="600">
+
   <br>
   <small>图1：气流经过一个旋转圆柱。上方的流速因与圆柱表面同向而加快，下方的流速则因反向而减慢。</small>
 </center>
@@ -40,7 +40,7 @@ $$
 对于一个不旋转的圆柱体，气流会平滑地从它上下两侧流过，前后各有一个对称的驻点。然而，一旦圆柱体开始旋转，引入了环量 $\Gamma$，神奇的事情就发生了。环量会“扭曲”整个流场，导致这两个[驻点](@keyword=stagnation_points|lang=zh-CN|style=Feynman)发生移动 [@problem_id:1743080]。
 
 <center>
-  <img src="https://i.imgur.com/KqTylu2.png" alt="Stagnation points on a spinning cylinder" width="700">
+
   <br>
   <small>图2：环量 $\Gamma$ 对[驻点](@keyword=stagnation_points|lang=zh-CN|style=Feynman)位置的影响。随着旋转速度（即环量）增加，两个[驻点](@keyword=stagnation_points|lang=zh-CN|style=Feynman)向下移动并最终合并。</small>
 </center>
@@ -66,7 +66,7 @@ $$
 附体涡不能在翼尖凭空消失。根据[亥姆霍兹涡旋定理](@keyword=helmholtz_vortex_theorems|lang=zh-CN|style=Feynman)，涡旋不能在流体中中断。因此，当附体涡到达翼尖时，它会向后延伸，形成两个拖在机翼后面的强大涡旋，称为**翼尖涡 (tip vortices)** [@problem_id:682884]。在湿润的天气里，我们有时能看到大型客机翼尖拉出的两条白色水汽轨迹，那就是翼尖涡。
 
 <center>
-  <img src="https://i.imgur.com/r62b4zN.png" alt="Horseshoe vortex model and downwash" width="600">
+
   <br>
   <small>图3：有限机翼的马蹄涡模型。翼尖涡在附体涡的位置上诱导出向下的气流（[下洗流](@keyword=downwash|lang=zh-CN|style=Feynman)），这导致升力矢量向后倾斜，从而产生了[诱导阻力](@keyword=induced_drag|lang=zh-CN|style=Feynman)。</small>
 </center>
@@ -96,7 +96,7 @@ $$
 然而，在某些设计中（比如“[三角翼](@keyword=delta_wing|lang=zh-CN|style=Feynman)”飞机），这种分离不但无害，反而成为了巨大升力的来源。分离的气流会卷起一个高度稳定、[能量集中](@keyword=energy_compaction|lang=zh-CN|style=Feynman)的强大涡旋，它就像一个“迷你龙卷风”，紧紧地“趴”在机翼的上表面。这被称为**前缘涡 (Leading-Edge Vortex, LEV)** [@problem_id:1738016]。
 
 <center>
-  <img src="https://i.imgur.com/kS9F0aR.png" alt="Leading-edge vortex on a delta wing" width="500">
+
   <br>
   <small>图4：[三角翼](@keyword=delta_wing|lang=zh-CN|style=Feynman)上表面稳定的前缘涡。涡旋核心的极低压力区对机翼产生强大的吸力，从而提供额外的“[涡升力](@keyword=vortex_lift|lang=zh-CN|style=Feynman)”。</small>
 </center>

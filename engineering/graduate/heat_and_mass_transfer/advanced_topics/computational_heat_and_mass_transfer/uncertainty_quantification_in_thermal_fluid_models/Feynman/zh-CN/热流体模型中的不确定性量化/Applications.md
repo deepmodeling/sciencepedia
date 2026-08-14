@@ -12,7 +12,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/G5g2mJc.png" alt="[非线性](@keyword=nonlinearity|lang=zh-CN|style=Feynman)传播：输入端[对称](@keyword=symmetry|lang=zh-CN|style=Feynman)的高斯不确定性（如温度 T）通过一个[非线性](@keyword=nonlinearity|lang=zh-CN|style=Feynman)函数（如 T^4）后，输出端（如[热流](@keyword=heat_flow|lang=zh-CN|style=Feynman) q）的[分布](@keyword=generalized_functions|lang=zh-CN|style=Feynman)会变得不[对称](@keyword=symmetry|lang=zh-CN|style=Feynman)且均值发生偏移。" style="width: 70%;" />
+
   <figcaption>图1：[非线性](@keyword=nonlinearity|lang=zh-CN|style=Feynman)传播的效应。即使输入的不确定性是[对称](@keyword=symmetry|lang=zh-CN|style=Feynman)的（如[高斯分布](@keyword=normal_distribution|lang=zh-CN|style=Feynman)），经过一个[非线性模型](@keyword=nonlinear_models|lang=zh-CN|style=Feynman)（如 $q \propto T^4$）后，输出的不确定性[分布](@keyword=generalized_functions|lang=zh-CN|style=Feynman)也会变得不[对称](@keyword=symmetry|lang=zh-CN|style=Feynman)，其均值也会发生偏移。这是“不确定性的不确定性”——我们不仅对结果的值不确定，对其统计特性也可能不确定。</figcaption>
 </figure>
 </center>
@@ -41,7 +41,7 @@ UQ甚至可以反过来指导我们的科学探索过程本身。这就是“[�
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/x0R232e.png" alt="UQ指导下的决策流程图，从正向传播预测，到[可靠性分析](@keyword=reliability_analysis|lang=zh-CN|style=Feynman)，再到[稳健设计](@keyword=robust_design|lang=zh-CN|style=Feynman)和优化[实验设计](@keyword=experimental_design|lang=zh-CN|style=Feynman)。" style="width: 80%;" />
+
   <figcaption>图2：UQ在决策中的核心作用。它不仅能预测不确定性的后果（正向传播），还能帮助我们评估风险（[可靠性](@keyword=soundness|lang=zh-CN|style=Feynman)），设计出在真实世界中表现稳健的系统（[稳健设计](@keyword=robust_design|lang=zh-CN|style=Feynman)），甚至指导我们如何最高效地获取新知识（优化[实验设计](@keyword=experimental_design|lang=zh-CN|style=Feynman)）。</figcaption>
 </figure>
 </center>

@@ -32,7 +32,7 @@ $x_3 = -x_2 + u_3$
 让我们用这条规则“翻译”一下上面那组方程。对于节点 $x_2$，有两条支路指向它：一条来自 $x_1$，增益为 $2$；另一条是“[自环](@keyword=self_loop|lang=zh-CN|style=Feynman)”，从 $x_2$ 指向自己，增益为 $\frac{1}{5}$。因此，流入 $x_2$ 的信号总和就是 $2x_1 + \frac{1}{5}x_2$。这正是第二个方程的内容！你可以验证一下，整个[信号流图](@keyword=signal_flow_graph_2|lang=zh-CN|style=Feynman)精确地描绘了那组线性方程。
 
 <center>
-    <img src="https://i.imgur.com/gK2g4W5.png" alt="一个简单的[信号流图](@keyword=signal_flow_graph_2|lang=zh-CN|style=Feynman)示例，展示了节点、支路与增益。" style="width: 60%;" />
+
     <br>
     <small>图1：一个[信号流图](@keyword=signal_flow_graph_2|lang=zh-CN|style=Feynman)示例，它正是上面那组线性方程的直观体现。</small>
 </center>

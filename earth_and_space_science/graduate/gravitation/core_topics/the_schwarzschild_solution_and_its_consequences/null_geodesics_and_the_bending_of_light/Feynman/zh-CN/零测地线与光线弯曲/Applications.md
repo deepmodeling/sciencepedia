@@ -10,7 +10,7 @@
 
 <center>
     <figure>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Horseshoe_Einstein_ring_from_Hubble.jpg/1280px-Horseshoe_Einstein_ring_from_Hubble.jpg" alt="An Einstein ring observed by the Hubble Space Telescope, showing a distant galaxy lensed into a near-complete ring by a massive foreground galaxy." style="width:70%;">
+
         <figcaption>图1：由哈勃太空望远镜观测到的“马蹄形”[爱因斯坦环](@keyword=einstein_rings|lang=zh-CN|style=Feynman)。一个遥远的星系发出的光被前景的一个大质量星系弯曲，形成了一个近乎完整的光环。这是引力透镜效应的壮观展示。图片来源：ESA/Hubble & NASA</figcaption>
     </figure>
 </center>
@@ -43,7 +43,7 @@
 
 <center>
     <figure>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Event_Horizon_Telescope_SgrA%2A_Lensing.gif/600px-Event_Horizon_Telescope_SgrA%2A_Lensing.gif" alt="Animation showing the formation of the black hole shadow and lensing ring." style="width:70%;">
+
         <figcaption>图2：[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)[引力透镜效应](@keyword=gravitational_lensing|lang=zh-CN|style=Feynman)的可视化。光线在[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)附近被极度弯曲，一些光线被捕获，形成了中心的“阴影”，而另一些光线则被偏转，在阴影周围形成一个明亮的光环。图片来源：EHT Collaboration</figcaption>
     </figure>
 </center>

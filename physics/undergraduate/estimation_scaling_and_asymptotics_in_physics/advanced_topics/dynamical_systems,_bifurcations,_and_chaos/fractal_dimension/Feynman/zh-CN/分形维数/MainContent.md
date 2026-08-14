@@ -42,7 +42,7 @@ $$
 
 <center>
   <figure>
-    <img src="https://i.imgur.com/uF9dJ7c.png" width="600" alt="A Koch-like curve construction showing the initial segment and the generator made of 8 smaller segments.">
+
     <figcaption>图1：一个科赫式曲线的构造过程。一个简单的“生成元”通过无限迭代，创造出极其复杂的结构。</figcaption>
   </figure>
 </center>
@@ -67,7 +67,7 @@ $$
 
 <center>
   <figure>
-    <img src="https://i.imgur.com/gYfC7zS.png" width="400" alt="The Vicsek fractal, also known as the box fractal.">
+
     <figcaption>图2：维切克[分形](@keyword=fractal|lang=zh-CN|style=Feynman)。拓扑上它是一维的，但它的[分形](@keyword=fractal|lang=zh-CN|style=Feynman)维度约为1.46，揭示了其复杂的空间填充特性。</figcaption>
   </figure>
 </center>

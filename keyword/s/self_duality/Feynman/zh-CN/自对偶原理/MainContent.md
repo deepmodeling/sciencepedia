@@ -13,5 +13,5 @@
 
 但如果一个分拆的图在对角线上是完全对称的呢？如果反射后它保持不变呢？这样的分拆被称为**自[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)**。它就是它自己的对偶。例如，数字6的分拆(3, 2, 1)的[杨图](@keyword=young_diagrams|lang=zh-CN|style=Feynman)是完全对称的。它是[自对偶性](@keyword=self_duality|lang=zh-CN|style=Feynman)的完美视觉体现 [@problem_id:1658665]。
 
-![自[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)分拆 (3,2,1) 的[杨图](@keyword=young_diagrams|lang=zh-CN|style=Feynman)，显示其沿主对角线的对称性。](https://i.imgur.com/uT0WOFm.png)
+分拆 (3,2,1) 的[杨图](@keyword=young_diagrams|lang=zh-CN|style=Feynman)，显示其沿主对角线的对称性。](https://i.imgur.com/uT0WOFm.png)
 *自[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)分拆 (3, 2, 1) 的[杨图](@keyword=young_diagrams|lang=zh-CN|style=Feynman)。沿对角线反射后保持不变。*

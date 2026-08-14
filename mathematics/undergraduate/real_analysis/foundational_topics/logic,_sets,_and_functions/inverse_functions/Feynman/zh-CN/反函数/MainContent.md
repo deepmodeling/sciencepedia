@@ -23,8 +23,6 @@
 
 然而，当温度降低到某个“临界温度” $T_c$ 以下时，奇妙的事情发生了。在某个压力区间内，一个压力值可能对应三个不同的体积值！这听起来就像数学上的“单射”性质被打破了。物理上，这对应着[气体液化](@keyword=gas_liquefaction|lang=zh-CN|style=Feynman)的过程，即气液共存的状态。在同一个压力下，物质可以以纯气态、纯液态或者气液[混合态](@keyword=mixed_states|lang=zh-CN|style=Feynman)存在，它们占据的体积截然不同。
 
-
-
 在这个[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)之下，$P(V)$ 函数不再是全局单调的，它出现了“驼峰”和“凹谷”。它的[导数](@keyword=derivative|lang=zh-CN|style=Feynman) $\frac{dP}{dV}$ 在某些地方会从负值变为正值。数学上的[不可逆性](@keyword=irreversibility|lang=zh-CN|style=Feynman)，直接对应了物理世界中一个深刻而有趣的现象——[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)。当数学家说一个函数在某区域不可逆时，物理学家看到的是一个系统性质发生剧烈变化、出现新物态的信号。这种深刻的对应关系，正是科学之美的体现。使得函数可逆的最低温度 $T_{min}$，恰好是[导数](@keyword=derivative|lang=zh-CN|style=Feynman) $\frac{dP}{dV}$ 始终小于等于零，且恰好只在一个点上触及零的[临界状态](@keyword=critical_state|lang=zh-CN|style=Feynman)。
 
 ### 反函数的几何学：镜中之影
@@ -32,8 +30,6 @@
 如果一个函数 $y=f(x)$ 有反函数，我们通常将其记为 $y=f^{-1}(x)$，这里为了习惯，我们再次使用了 $x$ 作为自变量。从 $y=f(x)$ 到 $x=f^{-1}(y)$ 的转变，仅仅是交换了变量的角色。在[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)中，这意味着什么呢？
 
 这相当于交换了 $x$ 轴和 $y$ 轴。而实现这一操作的[几何变换](@keyword=geometric_transformations|lang=zh-CN|style=Feynman)，正是在坐标平面上沿着直线 $y=x$ 做一次镜像反射！函数 $f(x)$ 的图像和它的[反函数](@keyword=function_inverse|lang=zh-CN|style=Feynman) $f^{-1}(x)$ 的图像，是关于直线 $y=x$ 对称的。这是一个极其优美且直观的几何图像。你可以想象将函数 $f(x)$ 的图像画在一张透明的纸上，然后沿着对角线 $y=x$ 翻转过来，你看到的就是其反函数的图像。
-
-![The graph of a function f(x) and its inverse f⁻¹(x) are reflections of each other across the line y=x.](https://i.imgur.com/kQ4yJtL.png)
 
 这个简单的几何事实，是我们理解反函数许多性质的“万能钥匙”。
 

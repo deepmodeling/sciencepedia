@@ -48,7 +48,7 @@ $$
 
 这个简单的物理画面，完美地描述了动态、智能的[功率分配](@keyword=power_allocation|lang=zh-CN|style=Feynman)策略：**优先满足质量最好的[信道](@keyword=information_channel|lang=zh-CN|style=Feynman)，然后根据富余的功率，依次将[能量分配](@keyword=energy_disposal|lang=zh-CN|style=Feynman)给次好的[信道](@keyword=information_channel|lang=zh-CN|style=Feynman)，但始终保持所有活跃[信道](@keyword=information_channel|lang=zh-CN|style=Feynman)上的“信号加噪声”的总水平（也就是水位 $\mu = P_i + N_i$）一致。**
 
-![图示：[注水算法](@keyword=water_filling_algorithm|lang=zh-CN|style=Feynman)。容器底部的高度代表不同[信道](@keyword=information_channel|lang=zh-CN|style=Feynman)的噪声水平 N_i。注入的水量代表总功率 P_total。水面高度为 μ。每个[信道](@keyword=information_channel|lang=zh-CN|style=Feynman)分配到的功率 P_i 是水面 μ 与其底部 N_i 的高度差。噪声最高的[信道](@keyword=information_channel|lang=zh-CN|style=Feynman)可能分配不到任何功率。](water-filling.png)
+。容器底部的高度代表不同[信道](@keyword=information_channel|lang=zh-CN|style=Feynman)的噪声水平 N_i。注入的水量代表总功率 P_total。水面高度为 μ。每个[信道](@keyword=information_channel|lang=zh-CN|style=Feynman)分配到的功率 P_i 是水面 μ 与其底部 N_i 的高度差。噪声最高的[信道](@keyword=information_channel|lang=zh-CN|style=Feynman)可能分配不到任何功率。](water-filling.png)
 
 ### 功率的“激活”门槛
 

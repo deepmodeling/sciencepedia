@@ -19,7 +19,6 @@
 
 一个拓扑空间被称为**[正则空间](@keyword=t3_space|lang=zh-CN|style=Feynman) (regular space)**，如果对于空间中的任意一点 $p$ 和任意一个不包含该点的[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman) $F$，我们总能找到两个**互不相交的[开集](@keyword=open_set|lang=zh-CN|style=Feynman)** $U$ 和 $V$，使得 $p \in U$ 且 $F \subseteq V$。通常，当一个空间同时满足正则性和 $T_1$ 公理（即任何单点集都是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)）时，我们称之为 **$T_3$ 空间**。
 
-![Regular Space](https://static.artofproblemsolving.com/wiki/c/c5/Regular_space.png)
 *图1：[正则空间](@keyword=t3_space|lang=zh-CN|style=Feynman)中，点 $p$ 和[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman) $F$ 被不相交的[开集](@keyword=open_set|lang=zh-CN|style=Feynman) $U$ 和 $V$ 分隔。*
 
 这个定义本身已经很美妙了，但它使用了“[开集](@keyword=open_set|lang=zh-CN|style=Feynman)”这一特定工具。我们能不能用更普遍、更具物理直觉的“邻域”概念来重新描述它呢？当然可以！一个包含点或集合的[开集](@keyword=open_set|lang=zh-CN|style=Feynman)本身就是它们的邻域。反过来，任何邻域的定义都依赖于一个内置的[开集](@keyword=open_set|lang=zh-CN|style=Feynman)。因此，用不相交的[开集](@keyword=open_set|lang=zh-CN|style=Feynman)来分离，和用不相交的邻域来分离，是完全等价的。[@problem_id:1563549] 这就好像说，“我能在他和你之间画一条线”和“我能在你周围画个圈，在他周围也画个圈，两个圈不碰上”，表达的是同一个意思。
@@ -64,7 +63,6 @@ $$
 
 想象我们有两条平行的直线 $X = \mathbb{R} \times \{0, 1\}$。现在，我们施展一个“胶合”魔法：对于任何非零实数 $x$，我们将上方的点 $(x, 1)$ 与下方的点 $(x, 0)$ 粘在一起，把它们视为同一个点。但是，我们偏偏放过原点，让 $(0, 1)$ 和 $(0, 0)$ 保持独立。这样得到的商空间 $Y$ 就好像一条普通的直线，只是在“原点”这个位置，它分裂成了两个无法区分的“起源”，我们称之为 $p$ 和 $q$。[@problem_id:1536006]
 
-![Line with two origins](https://i.stack.imgur.com/rSGVQ.png)
 *图2：“带两个原点的直线”的示意图。除了原点外，上下两条线被粘合在一起。*
 
 这个新空间 $Y$ 是 $T_1$ 的，但它**不是正则的**！为什么呢？问题就出在两个“起源” $p$ 和 $q$ 身上。让我们试着分离它们。根据这个空间的构造，任何包含 $p$ 的[开邻域](@keyword=open_neighborhood|lang=zh-CN|style=Feynman)，都必须包含一段从下方直线继承来的形如 $(-\epsilon, \epsilon)\setminus\{0\}$ 的开区间。同理，任何包含 $q$ 的[开邻域](@keyword=open_neighborhood|lang=zh-CN|style=Feynman)，也必须包含一段从上方直线继承来的同样的[开区间](@keyword=open_intervals|lang=zh-CN|style=Feynman)。

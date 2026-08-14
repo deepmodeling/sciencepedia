@@ -17,7 +17,6 @@
 
 这正是我们的核心策略。实数轴只是[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman) ($z = x + iy$) 这片广阔天地中的一条线。我们的想法是，不再局限于这条线，而是将它扩展成一个封闭的回路。最常见的做法是，沿着[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)从 $-R$ 走到 $+R$，然后画一个巨大的半圆弧，从 $+R$ 返回到 $-R$，形成一个“D”形的封闭路径，我们称之为**围道 (contour)**。
 
-![A semicircular contour in the upper half-plane.](https://assets.bitdegree.org/learn/storage/media/images/c3b16757-b08e-4a66-9f89-73d8f8d6fb71.png)
 *图1：典型的上半平面半圆围道，由[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)上的线段 $[-R, R]$ 和半径为 $R$ 的半圆弧 $\Gamma_R$ 组成。*
 
 现在，魔法登场了。伟大的**[柯西留数定理](@keyword=cauchy_s_residue_theorem|lang=zh-CN|style=Feynman) (Cauchy's Residue Theorem)** 告诉我们，一个函数 $f(z)$ 沿着这样一条封闭路径的积分值，完全由它所包围的“特殊点”——**极点 (poles)** ——所决定。这就像一张藏宝图，整个[围道积分](@keyword=contour_integrals|lang=zh-CN|style=Feynman)就是宝藏的总价值，而极点就是地图上标记的“X”。宝藏的总价值等于 $2\pi i$ 乘以所有被包围的“X”的价值（即**[留数](@keyword=residue|lang=zh-CN|style=Feynman), residue**）之和。

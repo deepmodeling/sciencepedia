@@ -9,7 +9,6 @@
 
 这，正是[主成分分析](@keyword=principal_component_analysis|lang=zh-CN|style=Feynman)（Principal Component Analysis, PCA）的精髓所在。它是一种从纷繁复杂的数据中提炼出最重要信息的方法，一种寻找数据“[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)”的艺术。
 
-![A 2D scatter plot showing data points forming an elliptical cloud. The first principal component (PC1) is a line along the major axis of the ellipse, and the second principal component (PC2) is a line along the minor axis.](https://i.imgur.com/3h7f1gq.png)
 *图1：PCA寻找数据云团的主轴。PC1是方差最大的方向，PC2是与PC1正交且方差次大的方向。*
 
 ### 核心思想：寻找“最有趣”的方向

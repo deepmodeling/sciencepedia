@@ -12,7 +12,7 @@ Alright, let's get our hands dirty. We've had a glimpse of the "what" and "why" 
 First, we need a rule. A principle. If you're connecting points to make triangles, what makes one set of connections "better" than another? Imagine four points forming a convex quadrilateral. You can split it into two triangles in two ways. Which is better?
 
 <center>
-<img src="https://i.imgur.com/vHq93I7.png" alt="Two ways to triangulate a quadrilateral. The one on the right avoids skinny triangles." width="500">
+
 </center>
 <br>
 
@@ -25,7 +25,7 @@ But the true beauty of this idea is its universality. You might think this is ju
 There's another way to see this, another face to this geometric jewel. For any set of points, you can also draw its **Voronoi diagram**. This is a partition of space into regions, where each region consists of all the points closer to one particular site than to any other. It looks like a map of cellular territories. The astonishing thing is that the Delaunay [triangulation](@keyword=triangulation|lang=en-US|style=Feynman) is the exact **geometric dual** of the Voronoi diagram. If you draw a line connecting the sites of any two Voronoi regions that share a border, you get precisely the edges of the Delaunay [triangulation](@keyword=triangulation|lang=en-US|style=Feynman).
 
 <center>
-<img src="https://i.imgur.com/uI92wYf.png" alt="A Voronoi diagram (black lines) and its dual Delaunay triangulation (blue lines)." width="400">
+
 </center>
 <br>
 
@@ -44,7 +44,7 @@ One powerful strategy is **Divide and Conquer**. You take your big cloud of poin
 A different, more "organic" method is **randomized incremental construction**, famously realized in the **Bowyer-Watson algorithm**. You start with one giant "super-triangle" that encloses all your points. Then, you insert your points one by one, in a random order. Each time a new point lands in an existing triangle, it violates the empty [circumcircle](@keyword=circumcircle|lang=en-US|style=Feynman) rule for that triangle and potentially its neighbors. The algorithm identifies the "cavity" of all triangles whose circumcircles contain the new point, blows them away, and retriangulates the resulting polygonal hole by connecting the new point to all its boundary vertices.
 
 <center>
-<img src="https://i.imgur.com/z2x4S4j.gif" alt="Animation of the Bowyer-Watson algorithm inserting a point." width="500">
+
 </center>
 <br>
 

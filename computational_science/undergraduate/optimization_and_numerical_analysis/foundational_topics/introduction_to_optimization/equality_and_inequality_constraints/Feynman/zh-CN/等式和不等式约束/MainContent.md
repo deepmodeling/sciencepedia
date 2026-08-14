@@ -14,7 +14,7 @@
 让我们来看一个例子：假设一个信号传感器捕捉的数据点 $(x,y)$ 必须满足两个条件才能被认为是有效的。首先，它必须位于一个以原点为中心、半径为1的圆盘内部或边界上，即 $x^2 + y^2 \le 1$。其次，它的纵坐标 $y$ 必须大于或等于其横坐标的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)，即 $y \ge |x|$。这两个条件共同定义了一个有趣的可行域 [@problem_id:2168947]。它就像一块被V形切刀从一个圆形蛋糕上切下的部分。它的边界一部分是圆弧，一部分是折线，交汇处形成了尖锐的“顶点”。
 
 <center>
-  <img src="https://i.imgur.com/G9Cj0fH.png" alt="Feasible region for y >= |x| and x^2+y^2 <= 1" width="400"/>
+  = |x| and x^2+y^2 <= 1" width="400"/>
   <br>
   <small>图1：由 $x^2+y^2 \le 1$ 和 $y \ge |x|$ 定义的[可行域](@keyword=feasible_region|lang=zh-CN|style=Feynman)。[@problem_id:2168947]</small>
 </center>
@@ -37,7 +37,7 @@
 - 如果“家”在允许区域的左下方（$x_h < x_{min}$ 且 $y_h < y_{min}$），机器人会被“挤”到角落 $(x_{min}, y_{min})$。这时，两个约束都是有效的。
 
 <center>
-  <img src="https://i.imgur.com/J3c0HkE.png" alt="Active and inactive constraints" width="500"/>
+
   <br
   small图2：机器人手臂的最优位置是其“家”在[可行域](@keyword=feasible_region|lang=zh-CN|style=Feynman)上的投影。当家在区域外时，相应的边界约束变为[有效约束](@keyword=active_constraints|lang=zh-CN|style=Feynman)。[@problem_id:2168894]/small
 /center

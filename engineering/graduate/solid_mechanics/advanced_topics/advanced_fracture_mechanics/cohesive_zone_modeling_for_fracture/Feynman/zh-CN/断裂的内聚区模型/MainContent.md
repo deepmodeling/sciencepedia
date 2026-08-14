@@ -38,7 +38,7 @@ $$
 
 <br/>
 <center>
-    <img src="https://i.imgur.com/k9b6N1v.png" alt="A typical traction-separation curve showing initial stiffness, peak strength (σ_max), and final separation (δ_c)." style="width: 60%;"/>
+
     <br/>
     <em>图1：典型的牵[引力](@keyword=gravitational_force|lang=zh-CN|style=Feynman)-[分离](@keyword=fractionation|lang=zh-CN|style=Feynman)曲线，展示了初始[刚度](@keyword=stiffness|lang=zh-CN|style=Feynman)、峰值强度 $\sigma_{\max}$、以及最终[分离](@keyword=fractionation|lang=zh-CN|style=Feynman)距离 $\delta_c$。曲线下的面积代表[断裂能](@keyword=fracture_energy|lang=zh-CN|style=Feynman) $G_c$。</em>
 </center>

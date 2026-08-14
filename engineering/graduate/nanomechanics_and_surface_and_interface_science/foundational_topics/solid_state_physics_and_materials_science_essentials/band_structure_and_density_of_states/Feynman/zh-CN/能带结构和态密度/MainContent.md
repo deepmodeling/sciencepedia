@@ -19,7 +19,7 @@
 
 <br/>
 <div align="center">
-<img src="https://assets.yikun.io/articles/2765542_reciprocal_lattice_and_bz.svg" alt="A 2D square lattice in real space and its corresponding reciprocal lattice and first Brillouin zone." width="600"/>
+
 <p>图1：左侧为真实空间中的二维方格[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)，原子（蓝点）间距为 $a$。右侧为其对应的[倒易空间](@keyword=k_space|lang=zh-CN|style=Feynman)，其中的点（红点）构成了[倒易晶格](@keyword=reciprocal_lattice|lang=zh-CN|style=Feynman)，间距为 $2\pi/a$。中心阴影正方形区域就是[第一布里渊区](@keyword=first_brillouin_zone|lang=zh-CN|style=Feynman)。</p>
 </div>
 <br/>

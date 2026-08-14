@@ -33,8 +33,6 @@ $$
 
 想象一下你在一个未知的函数 $f(x)$ 上，当前位于点 $x_k$。你想找到使 $f(x)=0$ 的点。你不知道曲线的全貌，但你可以测量当前点的高度 $f(x_k)$ 和该点的[切线斜率](@keyword=tangent_line_slope|lang=zh-CN|style=Feynman) $f'(x_k)$。一个自然而聪明的想法是：沿着这条[切线](@keyword=tangent_line|lang=zh-CN|style=Feynman)走，直到它与 $x$ 轴相交，并将该交点作为你的下一个猜测点 $x_{k+1}$。
 
-![Newton's Method 1D](https://upload.wikimedia.org/wikipedia/commons/e/e0/NewtonIteration_Animation.gif)
-
 在多维的[结构分析](@keyword=structural_analysis|lang=zh-CN|style=Feynman)中，这个思想被完美地继承了下来。我们当前的位移猜测是 $\mathbf{u}_k$，它对应着一个非零的残差 $\mathbf{r}(\mathbf{u}_k)$。我们想找到一个微小的修正量 $\Delta\mathbf{u}$，使得新的位移 $\mathbf{u}_{k+1} = \mathbf{u}_k + \Delta\mathbf{u}$ 能让残差更接近于零。
 
 我们利用泰勒展开，在 $\mathbf{u}_k$ 附近对残差函数 $\mathbf{r}(\mathbf{u})$ 进行线性化：

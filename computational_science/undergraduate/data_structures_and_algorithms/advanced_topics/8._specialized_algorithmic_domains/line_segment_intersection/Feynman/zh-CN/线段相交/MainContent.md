@@ -21,8 +21,6 @@
 
 想象一下，你正沿着一条从点 $p$ 到点 $q$ 的路径行走。此时，你的朋友在点 $r$ 向你招手。为了面向他，你需要向左转还是向右转？这个问题，就是几何计算的基石——**方向测试 (orientation test)**。
 
-![方向测试的图示：逆时针（左转），顺时针（右转），共线（不转）](https://static.newton-project.org/handouts/20240730121118.webp)
-
 令人惊奇的是，这个“转向”问题可以用一个简单的代数表达式的符号来回答。给定三个点 $p=(p_x, p_y)$, $q=(q_x, q_y)$, $r=(r_x, r_y)$，我们可以计算一个值，它在几何上对应于由向量 $\vec{pq}$ 和 $\vec{pr}$ 构成的平行四边形的[有向面积](@keyword=signed_area|lang=zh-CN|style=Feynman)，这个值通常被称为二维**[叉积](@keyword=cross_product|lang=zh-CN|style=Feynman) (cross product)**：
 
 $$ V = (q_x - p_x)(r_y - p_y) - (q_y - p_y)(r_x - p_x) $$

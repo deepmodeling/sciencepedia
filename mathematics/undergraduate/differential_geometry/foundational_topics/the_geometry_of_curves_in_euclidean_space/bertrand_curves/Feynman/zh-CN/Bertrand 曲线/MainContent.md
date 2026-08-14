@@ -14,7 +14,7 @@
 让我们从一个最简单的场景开始。在同一个平面上，画两个以原点为中心的同心圆。它们能成为贝特朗侣吗？当然可以！对于任何一个圆，在它上面的任意一点，其主法线都精确地指向圆心。因此，对于两个同心圆，在任何一个从圆心发出的射线上的两个对应点，它们的主法线都重合了，完全符合定义。更有趣的是，这两个对应点之间的距离，恰好就是两个圆的半径之差 $|R_2 - R_1|$，这是一个恒定的值 [@problem_id:1625419]。这给了我们第一个重要线索：贝特朗侣之间，对应点的距离是恒定不变的。它们就像被一根看不见的、长度固定的“刚性连杆”连接在一起。
 
 <center>
-    <img src="https://i.imgur.com/n6tucdC.png" alt="Concentric circles as a Bertrand pair" width="400"/>
+
     <br>
     <small>图1：同心圆是最直观的贝特朗侣。在同一条半径上的对应点，它们的主[法线](@keyword=normal_line|lang=zh-CN|style=Feynman)（指向圆心）完全重合。</small>
 </center>
@@ -22,7 +22,7 @@
 从二维平面走向三维空间，情况会变得更复杂吗？让我们来看看螺旋线，这种兼具[旋转与平移](@keyword=rotation_and_translation|lang=zh-CN|style=Feynman)之美的曲线。考虑两条围绕同一根轴线盘旋的螺旋线，一条“胖”一些，一条“瘦”一些。通过直接计算我们可以惊奇地发现，只要它们的参数选择得当，它们的主[法线](@keyword=normal_line|lang=zh-CN|style=Feynman)向量在对应点上也可以是精确地共线的 [@problem_id:1625390]。这对螺旋线舞者，在盘旋上升的过程中，始终保持着主[法线](@keyword=normal_line|lang=zh-CN|style=Feynman)的完美对齐，它们也是一对贝特朗侣！
 
 <center>
-    <img src="https://i.imgur.com/393Wk5k.png" alt="A Bertrand pair of helices" width="400"/>
+
     <br>
     <small>图2：两条共轴的螺旋线。尽管它们在三维空间中盘旋，但它们的“拐弯方向”在对应点上始终保持共线，形成了一对贝特朗侣。</small>
 </center>

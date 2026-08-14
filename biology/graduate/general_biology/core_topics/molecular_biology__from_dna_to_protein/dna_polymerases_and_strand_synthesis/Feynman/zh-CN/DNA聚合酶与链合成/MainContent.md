@@ -15,11 +15,7 @@ DNA的精确复制是生命延续的基石，确保[遗传信息](@keyword=genet
 
 在我们的真实世界里（$5' \to 3'$ 合成），聚合酶催化生长链末端的 $3'$ 羟基（$-\mathrm{OH}$）[亲核攻击](@keyword=nucleophilic_attack|lang=zh-CN|style=Feynman)进入的 $dNTP$ 的第一个（$\alpha$）磷酸基团。随着新的磷酸二酯键形成，后两个磷酸基团（$\beta$ 和 $\gamma$）以焦磷酸（$PP_i$）的形式被释放，能量也随之释放，驱动了链的延长。这个过程非常优美：每一块新加入的砖头都自带能量 [@problem_id:2791971]。
 
-![](https://i.imgur.com/gO0XqK8.png)
-
 现在，让我们回到那个假想的 $3' \to 5'$ 世界。如果要在链的 $5'$ 端添加[核苷酸](@keyword=nucleotide|lang=zh-CN|style=Feynman)，那么[亲核攻击](@keyword=nucleophilic_attack|lang=zh-CN|style=Feynman)就必须由进入的[核苷酸](@keyword=nucleotide|lang=zh-CN|style=Feynman)的 $3'$ 羟基发起，攻击点则是生长链末端的 $5'$ 磷酸基团。为了让[反应能](@keyword=energy_of_reaction|lang=zh-CN|style=Feynman)够发生，这个生长链的末端必须被“激活”——也就是说，它必须携带高能的三磷酸基团。这意味着，能量不再由进入的“砖块”携带，而是预先储存在“建筑”的边缘 [@problem_id:2791919]。
-
-![](https://i.imgur.com/Y1gI7Wl.png)
 
 到目前为止，这似乎只是能量记账方式的不同。但真正的考验来自于“校对”（proofreading）机制。DNA 聚合酶并非完美无缺，偶尔会犯错。为了保证遗传信息的精确性，它内置了一个“删除键”——一个 $3' \to 5'$ 外切核酸酶活性，可以识别并切除刚刚错配的[核苷酸](@keyword=nucleotide|lang=zh-CN|style=Feynman)。
 

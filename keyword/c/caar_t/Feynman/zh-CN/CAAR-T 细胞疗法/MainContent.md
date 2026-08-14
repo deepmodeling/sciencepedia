@@ -5,7 +5,7 @@
 
 我们将首先深入细胞内部，揭示其**原理与机制**，探索嵌合受体的精巧结构、决定细胞是“冲刺型”还是“耐力型”的工程选择，以及在“体内战场”上面临的挑战。随后，我们将视野放大，考察该疗法的**应用与跨学科联系**，揭示其如何被独特地应用于自身免疫性疾病，以及它如何代表了免疫学、生物工程学乃至[数学生态学](@keyword=mathematical_ecology|lang=zh-CN|style=Feynman)的惊人融合。
 
-![A diagram illustrating the structure of a second-generation Chimeric Antigen Receptor (CAR). The extracellular domain consists of an scFv that recognizes a tumor antigen. It is connected via a hinge and transmembrane domain to intracellular signaling components: a costimulatory domain (like CD28 or [4-1BB](@keyword=4_1bb|lang=zh-CN|style=Feynman)) and the primary CD3-zeta activation domain.](https://i.imgur.com/example.png)
+) and the primary CD3-zeta activation domain.](https://i.imgur.com/example.png)
 *图1：新一代[嵌合抗原受体](@keyword=chimeric_antigen_receptor|lang=zh-CN|style=Feynman)的解剖结构。CAR是一种合成蛋白，它将[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)（scFv）的靶向能力嫁接到[T细胞](@keyword=t_cell_2|lang=zh-CN|style=Feynman)的杀伤机制（信号结构域）上，从而创造出一种强大且特异性的抗癌武器。*
 
 ## 原理与机制

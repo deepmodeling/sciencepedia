@@ -18,8 +18,6 @@
 
 现在，想象一下两条几乎平行的直线，它们以一个极其微小的角度相交 [@problem_id:3141654]。这个交点就是我们要求的解。此时，灾难悄然而至。如果你将其中一条直线稍微移动一点点——哪怕只是头发丝那么细的距离——它们的交点就会沿着近乎平行的方向“狂奔”出去很远。一个微不足道的输入扰动，导致了解决方案的巨大漂移。这就是**病态**（ill-conditioning）在几何上的直观体现。
 
-![Image of two nearly parallel lines intersecting. A small wiggle in one line causes a large shift in the intersection point.](https://example.com/ill_conditioned_lines.png)
-
 在更高维度上，每个方程定义了一个[超平面](@keyword=hyperplanes|lang=zh-CN|style=Feynman)。求解 $n$ 个方程的方程组，就是在寻找 $n$ 个[超平面](@keyword=hyperplanes|lang=zh-CN|style=Feynman)的共同交点。当这些超平面近乎“平行”时——从代数上看，这意味着矩阵 $A$ 的行向量们几乎是[线性相关](@keyword=linear_dependency|lang=zh-CN|style=Feynman)的——系统就变得病态。任何微小的扰动都可能导致交点在“解放”出的那个维度上产生巨大的位移。
 
 ### 罪魁祸首的指纹：[行列式](@keyword=determinant|lang=zh-CN|style=Feynman) vs. [条件数](@keyword=condition_number|lang=zh-CN|style=Feynman)

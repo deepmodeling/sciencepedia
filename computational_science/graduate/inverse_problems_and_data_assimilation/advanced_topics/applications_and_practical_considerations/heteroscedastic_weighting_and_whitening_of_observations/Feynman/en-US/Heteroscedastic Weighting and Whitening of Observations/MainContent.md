@@ -36,8 +36,6 @@ The story gets more interesting when measurement errors are not independent. Ima
 
 Geometrically, we can think of the uncertainty for two measurements as an "error ellipse." If the errors are independent, the ellipse's axes are aligned with the coordinate axes. If they are correlated, the ellipse is tilted.
 
-![Error Ellipses](https://www.googleapis.com/download/storage/v1/b/seer-prod-279520/o/resource%2Fknowledge_graph%2Fremote%2FLinearAlgebra_ErrorEllipses_en.png?generation=1701323380063717=media)
-
 In this situation, simply dividing each residual by its standard deviation is not enough. That procedure, sometimes called "standardization," corrects for the differing scales along the axes but completely ignores the tilt of the ellipse. It fails to decorrelate the errors, and so the resulting problem is not truly "white" [@problem_id:3388470].
 
 We need a more powerful transformation. We are looking for a matrix, let's call it the **whitening matrix** $W$, that can rotate and stretch our data in just the right way to turn that tilted error ellipse into a perfect circle (or, in higher dimensions, a hypersphere). Mathematically, we want to find a $W$ such that the new, transformed error $\boldsymbol{e}' = W\boldsymbol{e}$ has an identity matrix as its covariance:

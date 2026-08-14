@@ -28,7 +28,7 @@ The real universe is a dynamic and messy place. A star does not die in a uniform
 
 <br/>
 <figure style="text-align: center; width: 80%; margin: auto;">
-    <img src="https://i.imgur.com/2sS6Uo1.png" alt="An illustration showing the various factors that limit the maximum energy of [cosmic rays](@keyword=cosmic_rays|lang=en-US|style=Feynman) accelerated by a [supernova](@keyword=supernova|lang=en-US|style=Feynman) remnant shock. The diagram depicts a central explosion with an expanding shock front. Arrows indicate the acceleration process. Text boxes point out the [limiting factors](@keyword=limiting_factors|lang=en-US|style=Feynman): 'Age-Limited' with a clock icon, showing that the accelerator has a finite lifetime; 'Escape-Limited' with an arrow showing a particle diffusing away from the shock, indicating the finite size of the accelerator; and 'Loss-Limited' with a depiction of particle collisions in a dense cloud, representing energy losses that counteract acceleration.">
+
     <figcaption><b>Figure 1: The Cosmic Speed Limit.</b> The maximum energy a particle can gain from a [supernova](@keyword=supernova|lang=en-US|style=Feynman) remnant shock is not infinite. It's a three-way balancing act. The acceleration process is in a race against the clock (the age of the remnant), the leakiness of the magnetic 'box' (particle escape), and the friction of the medium (energy losses). The winner of this race determines the ultimate energy limit.</figcaption>
 </figure>
 <br/>

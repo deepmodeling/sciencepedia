@@ -20,7 +20,7 @@
 [小波](@keyword=wavelet|lang=zh-CN|style=Feynman)包则大胆地打破了这个规则：**在每一步，我们同时对近似[部分和](@keyword=partial_sums|lang=zh-CN|style=Feynman)细节部分都进行分解**。[@problem_id:2916272] 想象一个[二叉树](@keyword=binary_trees|lang=zh-CN|style=Feynman)，树根是原始信号。在第一层，它[分裂](@keyword=fission|lang=zh-CN|style=Feynman)成一个低通[分支](@keyword=clade|lang=zh-CN|style=Feynman)和一个高通[分支](@keyword=clade|lang=zh-CN|style=Feynman)。在标准[小波变换](@keyword=wavelet_transform|lang=zh-CN|style=Feynman)中，我们只会沿着低通[分支](@keyword=clade|lang=zh-CN|style=Feynman)继续向下生长。而在[小波](@keyword=wavelet|lang=zh-CN|style=Feynman)包分析中，每个[节点](@keyword=nodal_points|lang=zh-CN|style=Feynman)都会继续[分裂](@keyword=fission|lang=zh-CN|style=Feynman)，形成一棵茂盛的、完整的[二叉树](@keyword=binary_trees|lang=zh-CN|style=Feynman)。
 
 <center>
-<img src="https://i.imgur.com/xXkYvR2.png" width="600">
+
 </center>
 <center>
 <small>图1：标准[小波变换](@keyword=wavelet_transform|lang=zh-CN|style=Feynman)（左）与[小波](@keyword=wavelet|lang=zh-CN|style=Feynman)包分解（右）的频率划分对比。[小波](@keyword=wavelet|lang=zh-CN|style=Feynman)包提供了更灵活、更精细的频率“瓦片”。</small>
@@ -75,7 +75,7 @@ $$
     这里的 $\mathcal{U}$ 是更新算子。这是第二个“提升”步骤。
 
 <center>
-<img src="https://i.imgur.com/8E8u3D9.png" width="700">
+
 </center>
 <center>
 <small>图2：[提升方案](@keyword=lifting_scheme|lang=zh-CN|style=Feynman)的三个步骤：[分裂](@keyword=fission|lang=zh-CN|style=Feynman)、预测和更新。其反向过程（合成）只需颠倒顺序并改变加减号即可，天然保证[完美重构](@keyword=perfect_reconstruction|lang=zh-CN|style=Feynman)。</small>

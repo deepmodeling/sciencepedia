@@ -1,8 +1,4 @@
-<![CDATA[
-## 引言
-不等式代表了一种根本性的转变，从方程的确定性转向了可能性的广阔领域。方程 $x=5$ 确定了一个单一的位置，而不等式 $x  3$ 则占据了整个定义域，一个由特定规则支配的区域。本文深入探讨求解不等式的艺术与科学，超越简单的代数操作，揭示这些表述背后的潜在结构和深远的现实意义。挑战往往不仅在于找到一个解，更在于理解解集的形态和性质，并体会其重要性。
-
-本探索分为两部分。在第一部分“原理与机制”中，我们将揭示处理复杂不等式（特别是涉及[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)和[有理函数](@keyword=rational_functions|lang=zh-CN|style=Feynman)的不等式）的核心技巧。我们将学习如何使用[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)来划分数轴，并解释所得解的几何性质。随后，在“应用与跨学科联系”部分，我们将展示这些数学工具如何在计算机科学、控制理论、经济学乃至[演化生物学](@keyword=evolutionary_biology|lang=zh-CN|style=Feynman)等不同领域中，成为约束和稳定性的语言。读完本文，您不仅将学会如何求解不等式，还将理解为何它们是现代科学技术中最强大、最普遍的概念之一。
+<和[有理函数](@keyword=rational_functions|lang=zh-CN|style=Feynman)的不等式）的核心技巧。我们将学习如何使用[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)来划分数轴，并解释所得解的几何性质。随后，在“应用与跨学科联系”部分，我们将展示这些数学工具如何在计算机科学、控制理论、经济学乃至[演化生物学](@keyword=evolutionary_biology|lang=zh-CN|style=Feynman)等不同领域中，成为约束和稳定性的语言。读完本文，您不仅将学会如何求解不等式，还将理解为何它们是现代科学技术中最强大、最普遍的概念之一。
 ]]
 
 ## 原理与机制

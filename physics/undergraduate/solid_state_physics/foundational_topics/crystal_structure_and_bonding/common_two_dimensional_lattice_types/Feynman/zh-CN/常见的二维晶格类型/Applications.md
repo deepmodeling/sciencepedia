@@ -12,7 +12,7 @@
 
 <center>
 <figure>
-  <img src="https://assets.bitdegree.org/online-learning-platforms/storage/media/2023/10/running-bond-brick-pattern-as-a-crystal-structure.png" alt="A running-bond brick pattern visualized as a rectangular lattice with a two-point basis. The lattice points are marked, and the two bricks forming the basis are highlighted." style="width: 70%;">
+
   <figcaption>图1. 交错式砖墙图案可以被理解为一个矩形布拉维[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)（以黑点表示）与一个包含两块砖的基元（以不同颜色突出显示）的组合。这与[晶体学](@keyword=crystallography|lang=zh-CN|style=Feynman)的“[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)+基元”描述方式如出一辙。[@problem_id:1765515]</figcaption>
 </figure>
 </center>
@@ -47,7 +47,7 @@
 
 <center>
 <figure>
-  <img src="https://assets.bitdegree.org/online-learning-platforms/storage/media/2023/10/moir%C3%A9-superlattice-from-two-twisted-square-lattices.png" alt="Illustration of a Moiré superlattice formed by two identical square lattices rotated by a small angle relative to each other. A large-scale square pattern emerges." style="width: 70%;">
+
   <figcaption>图2. 当两层[正方晶格](@keyword=square_lattice|lang=zh-CN|style=Feynman)以微小角度扭转时，会形成一个周期远大于原子[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的[莫尔超晶格](@keyword=moiré_superlattices|lang=zh-CN|style=Feynman)。这个新出现的结构为电子提供了一个全新的势场，是“转角电子学”中涌现新奇物理现象的基础。[@problem_id:1765527]</figcaption>
 </figure>
 </center>

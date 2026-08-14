@@ -7,7 +7,7 @@
 
 我们对宇宙的理解，很大程度上建立在一个美妙的技巧之上：将复杂得令人望而生畏的问题，分解成一堆简单到可以轻松解决的小问题。想象一下，一个钟摆的摆动是如此简洁优美，其运动规律可以用一个简单的正弦函数来描述。但如果我们将两个钟摆用一根弹簧连接起来，会发生什么呢？它们的运动立刻变得复杂起来。一个摆的运动会通过弹簧影响另一个，反之亦然。这不再是两个独立的舞者，而是一对配合默契又相互牵绊的搭档，它们的舞步看起来杂乱无章、难以预测。
 
-面对这种耦合系统 (coupled system) 的复杂性，物理学家们发现了一种极其强大的思想工具，这就是**[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman) (Normal Modes)**。其核心思想惊人地简单：**任何一个复杂的、线性的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，无论看起来多么混乱，都可以被看作是几种基本[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式的叠加。** 
+面对这种耦合系统 (coupled system) 的复杂性，物理学家们发现了一种极其强大的思想工具，这就是**[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman) (Normal Modes)**。其核心思想惊人地简单：**任何一个复杂的、线性的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，无论看起来多么混乱，都可以被看作是几种基本[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式的叠加。**
 
 每一种[基本模式](@keyword=fundamental_mode|lang=zh-CN|style=Feynman)，即一个[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)，都具有自己独特的、固定的[振动频率](@keyword=vibrational_frequency|lang=zh-CN|style=Feynman)——我们称之为**[简正频率](@keyword=normal_frequencies|lang=zh-CN|style=Feynman) (Normal Frequency)**。在某一个特定的[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)下，系统中的所有部分都以相同的[简正频率](@keyword=normal_frequencies|lang=zh-CN|style=Feynman)步调一致地运动，它们要么同相（一起达到最大位移），要么反相（一个达到正向最大位移时，另一个恰好达到反向最大位移）。这些[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)就像是系统的“本征音色”，任何复杂的“和弦”（即实际运动）都是由这些纯净的“音色”按一定比例混合而成的。
 
@@ -26,7 +26,7 @@
 <br>
 <center>
     <figure>
-        <img src="https://i.imgur.com/Wp7u7t0.png" alt="Symmetric and Antisymmetric modes of two beads on a string." style="width: 70%;">
+
         <figcaption>图1：弦上双珠系统的两种[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)。左图为对称模，两珠同相运动。右图为反对称模，两珠反相运动。</figcaption>
     </figure>
 </center>

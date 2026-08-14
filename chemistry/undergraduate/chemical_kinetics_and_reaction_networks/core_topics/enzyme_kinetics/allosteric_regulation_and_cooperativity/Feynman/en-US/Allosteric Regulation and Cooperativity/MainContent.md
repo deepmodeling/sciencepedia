@@ -41,8 +41,6 @@ How do we "see" this cooperative behavior in the laboratory? We measure the enzy
 
 A simple, non-cooperative enzyme that follows Michaelis-Menten kinetics gives a **hyperbolic curve**. The rate climbs quickly at first and then gradually levels off as the enzyme becomes saturated. But an enzyme with positive [cooperativity](@keyword=cooperativity|lang=en-US|style=Feynman) shows a strikingly different signature: a **sigmoidal**, or S-shaped, curve.
 
-![Comparison of hyperbolic and sigmoidal curves](https://dev-api.queryst.com/knowledge/gallery/allosteric-coop-sig-hyp.png)
-
 What does this S-shape tell us? At low substrate concentrations, the enzyme is mostly "off," and the rate is slow. The subunits are reluctant to bind the first few substrate molecules. But as the concentration crosses a certain threshold, the system behaves as if a switch is flipped. The binding of a few molecules triggers the cooperative transition, and the activity of the enzyme surges dramatically before leveling off at its maximum rate.
 
 This switch-like behavior is described mathematically by the **Hill equation**:

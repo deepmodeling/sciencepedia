@@ -19,8 +19,6 @@ What does the profile of this crossflow velocity look like as we move away from 
 
 So, the crossflow velocity starts at zero, has to grow to some maximum value somewhere inside the boundary layer, and then must decrease back to zero. This creates a characteristic "S-shaped" or **inflectional** [velocity profile](@keyword=velocity_profile|lang=en-US|style=Feynman). We can even model it with simple functions, like $W(y) = W_{0} ( y/\delta ) ( 1 - y/\delta )^2$, which beautifully captures this shape [@problem_id:1745541].
 
-![A typical crossflow velocity profile W(y) as a function of distance y from the surface. The profile starts at zero, increases to a maximum, and returns to zero, necessarily creating an inflection point.](placeholder.png)
-
 The most crucial feature of this profile is the **inflection point**—a point where the profile's curvature changes sign (where its second derivative, $W''(y)$, is zero). For our simple model, this occurs at a height of $y_{ip} = \frac{2}{3}\delta$ [@problem_id:1745541]. This point isn't just a mathematical curiosity; it's the Achilles' heel of the laminar flow.
 
 ### The Seeds of Chaos: Rayleigh's Criterion and Inviscid Instability

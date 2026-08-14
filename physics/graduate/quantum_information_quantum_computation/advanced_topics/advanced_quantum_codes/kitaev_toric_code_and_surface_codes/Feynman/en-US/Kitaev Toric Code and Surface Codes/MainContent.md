@@ -11,7 +11,7 @@ Having introduced the concept of topological quantum computation, where informat
 
 Imagine a chessboard, but instead of pieces sitting in the squares, our quantum bits—our **qubits**—live on the *edges*. This grid of qubits is our quantum fabric, and for now, let’s imagine it’s wrapped around to form the surface of a donut, or a **torus**.
 
-![Figure 1: The [toric code](@keyword=toric_code|lang=en-US|style=Feynman) lattice on a torus, where qubits reside on the edges. Star operators ($A_s$) are defined at vertices (red), and plaquette operators ($B_p$) are defined on faces (blue).](https://i.imgur.com/8Qj8j9H.png)
+ lattice on a torus, where qubits reside on the edges. Star operators ($A_s$) are defined at vertices (red), and plaquette operators ($B_p$) are defined on faces (blue).](https://i.imgur.com/8Qj8j9H.png)
 
 Every system in nature has a ground state, a state of lowest energy where it’s most “comfortable.” What makes the [toric code](@keyword=toric_code|lang=en-US|style=Feynman)’s ground state so special? It’s defined not by telling each qubit what to do individually, but by imposing a set of simple, local "agreement" rules that they must all obey simultaneously. These rules are governed by operators called **stabilizers**. There are two kinds of rules for our fabric.
 

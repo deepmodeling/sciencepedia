@@ -21,7 +21,6 @@
 
 如何定量地描述这种“藕断丝连”的内聚作用呢？答案是引入内聚区模型的核心——**牵[引力](@keyword=gravitation|lang=zh-CN|style=Feynman)-分离位移关系（Traction-Separation Law, TSL）**。这是一种本构关系，它定义了作用于分离表面上的**牵[引力](@keyword=gravitation|lang=zh-CN|style=Feynman)** $\mathbf{t}$ （单位面积上的力）与两个表面之间的**分离位移** $\boldsymbol{\delta}$ （位移不连续量）之间的函数关系 [@problem_id:2871464]。
 
-![A typical traction-separation law (TSL) showing the initial stiffness, cohesive strength (T_max), and critical separation (δ_f). The area under the curve represents the fracture energy G_c.](https://i.imgur.com/KqBv3qG.png)
 *图1：典型的牵[引力](@keyword=gravitation|lang=zh-CN|style=Feynman)-分离位移关系曲线，展示了初始刚度、[内聚强度](@keyword=cohesive_strength|lang=zh-CN|style=Feynman)（$T_{\max}$）和临界分离位移（$\delta_f$）。曲线下的面积代表[断裂能](@keyword=fracture_energy|lang=zh-CN|style=Feynman) $G_c$。*
 
 一个典型的牵[引力](@keyword=gravitation|lang=zh-CN|style=Feynman)-分离位移曲线描绘了一场完整的“分手”故事：

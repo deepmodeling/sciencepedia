@@ -21,8 +21,6 @@
 
 任何一家公司 $x$，我们都可以计算一个分数 $H(x) = w \cdot x + b$ [@problem_id:2435450]。这个分数可以被看作是该公司的“财务健康指数”。如果分数大于零，我们预测它是健康的；如果小于零，我们预测它处于困境。分数的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)大小也很有意义：一个远离零的大分值，意味着模型对这个分类非常有信心，因为这家公司的特征点远离[分界线](@keyword=separatrix|lang=zh-CN|style=Feynman)。相反，一个接近零的分数则表明这家公司正处在“边界”上，模型对它的分类没什么把握。这对于评估那些信息有限的“薄文档”申请人（thin-file applicants）尤为重要，他们的得分往往不高，揭示了模型对其信誉状况的低[置信度](@keyword=confidence_levels|lang=zh-CN|style=Feynman) [@problem_id:2435425]。
 
-![A diagram showing a separating hyperplane with a margin. Two classes of data points (blue circles and red squares) are separated by a solid line (the hyperplane). Two dashed lines run parallel to the hyperplane, one on each side, touching the nearest data points of each class. These nearest points are circled and are the support vectors. The distance between the dashed lines is the margin.](https://i.imgur.com/u7q6zP4.png)
-
 回到“最好”街道的问题。SVM的目标是最大化街道两旁的“隔离带”，这个隔离带的宽度被称为**间隔**（margin）。这个间隔的边界由距离[分界线](@keyword=separatrix|lang=zh-CN|style=Feynman)最近的那些点决定——一边是最近的健康公司，另一边是最近的困境公司。正是这些最“边缘”、最难分类的点，像边界上的哨兵一样，“支撑”起了整个[分界线](@keyword=separatrix|lang=zh-CN|style=Feynman)。因此，它们被恰如其分地命名为**[支持向量](@keyword=support_vectors|lang=zh-CN|style=Feynman)**（support vectors）[@problem_id:2435470]。所有其他的点，无论它们离边界有多远，对[分界线](@keyword=separatrix|lang=zh-CN|style=Feynman)的位置都没有影响。模型只关心这些最关键的“边界案例”。
 
 你可能会问，为什么一条更宽的街道会更好？这背后隐藏着一个深刻而优美的思想：**稳健性**（robustness）。一个宽阔的间隔意味着我们的决策边界对于数据中的小扰动或“噪声”不敏感。想象一下，一个公司的财务数据总会有些许浮动。如果我们的分界线紧贴着数据点，那么一点点风吹草动就可能导致公司的分类从“健康”变为“困境”。而一个宽阔的间隔则提供了一个安全缓冲区。一个点需要经历相当大的“震动”，才能跨越整个隔离带，改变其分类。
@@ -62,8 +60,6 @@
 这里，SVM为我们展示了它最令人惊叹的魔法之一：**[核技巧](@keyword=kernel_trick|lang=zh-CN|style=Feynman)**（the kernel trick）。
 
 这个技巧的直觉非常简单：如果你无法在一个平面上用一条线分开两种颜色的点，那就把它们“弹”到一个更高维度的空间里去！想象一下，在一条直线上，红点在中间，蓝点在两端。你无法用一个“点”（一维空间里的[分界线](@keyword=separatrix|lang=zh-CN|style=Feynman)）来分割它们。但如果你使用一个简单的函数，比如 $x \to (x, x^2)$，将这条线上的点映射到一个二维平面上，它们就会落在一个抛物线上。现在，你只需要画一条水平线，就能将它们完美分开了！
-
-![A diagram illustrating the kernel trick. On the left, data points of two classes (red and blue) are shown in a 1D space and are not linearly separable. An arrow points to the right, where the same data points are mapped to a 2D space via a transformation. In the 2D space, the points form a parabolic shape and are now linearly separable by a straight line.](https://i.imgur.com/4l8qT3H.png)
 
 [核技巧](@keyword=kernel_trick|lang=zh-CN|style=Feynman)的真正魔力在于，我们根本不需要真正地进行这个高维映射。**核函数**（kernel function），例如最受欢迎的**径向[基函数](@keyword=basis_functions|lang=zh-CN|style=Feynman)（RBF）核**，允许我们在原始的低维空间里直接计算点在高维空间中的内积（可以理解为一种“相似度”），就好像我们真的身处那个高维空间一样。我们享受到了高维空间带来的强大分离能力，却避免了处理高维数据所带来的巨大计算开销（这被称为“[维度灾难](@keyword=curse_of_dimensionality|lang=zh-CN|style=Feynman)”）。
 

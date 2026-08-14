@@ -61,7 +61,7 @@ Think about it: a variable with a large expectation must have tail probabilities
 
 <br>
 <center>
-<img src="https://i.imgur.com/W2d4V9r.png" alt="Geometric interpretation of expectation and Markov's inequality" width="600">
+
 </center>
 <br>
 

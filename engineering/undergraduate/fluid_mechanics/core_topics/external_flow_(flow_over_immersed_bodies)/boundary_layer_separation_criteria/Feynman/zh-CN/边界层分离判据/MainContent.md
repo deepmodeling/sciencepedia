@@ -25,7 +25,6 @@ $$
 $$
 这里，$u$ 是平行于表面的流速，$y$ 是垂直于表面的距离，$y=0$ 就是固体表面，而 $\mu$ 是流体的[动力黏度](@keyword=dynamic_viscosity|lang=zh-CN|style=Feynman)。这个公式告诉我们，分离发生的那个点，壁面切应力恰好为零 [@problem_id:1737974]。从物理上讲，这意味着流体与表面之间的“拖拽”或“摩擦”效应在那一刻完全消失了。表面再也抓不住它身旁的流体了。
 
-![Velocity Profiles](https://i.imgur.com/example.png "附着流、[分离点](@keyword=breakaway_points|lang=zh-CN|style=Feynman)流和分离后流速剖面图")
 *图1：[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)速度剖面演化。(a) 附着流动，速度梯度在壁面处为正。(b) [分离点](@keyword=breakaway_points|lang=zh-CN|style=Feynman)，[速度梯度](@keyword=velocity_gradient|lang=zh-CN|style=Feynman)在壁面处为零。(c) 分离后的流动，壁面附近出现负的速度梯度，导致回流。*
 
 一旦越过这个“[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)”，在更下游的地方，逆压梯度这股强大的“逆风”甚至会使贴近壁面的流体开始向后流动！这就形成了**回流区**（Recirculation Zone）。此时，整个[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)就像被从表面“掀开”了一样，脱离了物体的表面，飘向主流之中。这就是**[边界层分离](@keyword=boundary_layer_separation|lang=zh-CN|style=Feynman)**（Boundary Layer Separation）——一个对空气动力学和流[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)学设计至关重要的现象。

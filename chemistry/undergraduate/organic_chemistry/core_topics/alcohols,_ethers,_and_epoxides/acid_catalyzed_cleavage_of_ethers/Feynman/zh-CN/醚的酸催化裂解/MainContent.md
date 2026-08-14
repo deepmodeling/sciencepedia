@@ -72,8 +72,6 @@ $$
 
 有一个绝佳的例子可以展示规则背后的深层物理原理。比较一下叔丁基甲基醚和1-甲氧基金刚烷。两者都是一个甲基连着一个三级碳。按照规则，它们都应该通过 $S_N1$ 机制快速反应。然而，实验结果却令人震惊：在相同的强酸条件下，叔丁基醚迅速反应，而金刚烷[醚](@keyword=ethers|lang=zh-CN|style=Feynman)却几乎纹丝不动！[@problem_id:2151814]
 
-<img alt="Comparison of tert-butyl group and adamantyl group structures" src="https://i.imgur.com/kS5Wlqk.png" width="600"/>
-
 *图：叔丁基（左）可以自由形成平面碳正离子，而金刚烷（右）的刚性笼状结构使其桥头碳（红色）无法变成平面构型。*
 
 奥秘在于几何形状。$S_N1$ 反应生成的碳正离子是 $sp^2$ 杂化的，具有[平面三角形](@keyword=trigonal_planar|lang=zh-CN|style=Feynman)的几何构型。叔丁基可以轻易地转变为这种平面结构。但是，金刚烷是一个刚性的笼状分子，其桥头堡位置的碳原子被牢牢锁定在[四面体构型](@keyword=tetrahedral_geometry|lang=zh-CN|style=Feynman)中，根本无法“压平”成一个平面。因此，形成桥头[碳正离子](@keyword=carbocations|lang=zh-CN|style=Feynman)的能量代价高得离谱，使得 $S_N1$ 路径被完全阻断。这个例子雄辩地证明了，[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)不仅遵循电子规则，更受到三维空间几何的严格制约。

@@ -14,7 +14,6 @@
 1.  **[直接通路](@keyword=direct_pathway|lang=zh-CN|style=Feynman)（t-channel）**：电子1散射成最终的电子3，同时电子2散射成电子4。它们通过交换一个[光子](@keyword=photon|lang=zh-CN|style=Feynman)来实现这一过程。
 2.  **交换通路（u-channel）**：电子1散射成最终的电子4，而电子2散射成电子3。同样，它们也通过交换一个[光子](@keyword=photon|lang=zh-CN|style=Feynman)。
 
-![t-channel and u-channel Feynman diagrams for Møller scattering](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Moller_scattering.svg/400px-Moller_scattering.svg.png)
 *图1：[莫勒散射](@keyword=møller_scattering|lang=zh-CN|style=Feynman)的两个费曼图。左边是t-channel（直接）过程，右边是u-channel（交换）过程。由于电子是全同[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)，总振幅是这两个图的振幅之差。*
 
 因为我们无法区分这两个最终状态，量子力学的规则要求我们把它们的[散射振幅](@keyword=scattering_amplitudes|lang=zh-CN|style=Feynman) $\mathcal{M}$ 加起来。但电子是[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)，它们遵循一个深刻的定律——[泡利不相容原理](@keyword=pauli_exclusion_principle|lang=zh-CN|style=Feynman)。这个原理的本质是，由两个或多个相同[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)组成的系统的总[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)（在这里体现为[散射振幅](@keyword=scattering_amplitudes|lang=zh-CN|style=Feynman)）在交换任意两个粒子时必须是反对称的。这意味着我们不能简单地将两个振幅相加，而是必须将它们相减！

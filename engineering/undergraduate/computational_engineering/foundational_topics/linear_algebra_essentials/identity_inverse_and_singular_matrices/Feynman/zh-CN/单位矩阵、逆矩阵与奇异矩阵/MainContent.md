@@ -38,7 +38,7 @@
 <br>
 
 <center>
-<img src="https://i.imgur.com/G5g2oJ9.png" width="600">
+
 <em>图1：一个非奇异矩阵将一个单位正方形（由[基向量](@keyword=basis_vector|lang=zh-CN|style=Feynman) $\mathbf{e}_1, \mathbf{e}_2$ 张成）变换为一个面积非零的平行四边形（由新向量 $\mathbf{a}_1, \mathbf{a}_2$ 张成）。而一个奇异矩阵则将该正方形压扁成一条线段，面积为零，信息丢失。</em>
 </center>
 <br>

@@ -52,7 +52,7 @@ Now we have both a disagreement score, $\chi^2$, and its context, the degrees of
 For any given number of degrees of freedom, there is a specific, theoretical probability distribution function that the $\chi^2$ statistic will follow if the [null hypothesis](@keyword=null_hypothesis|lang=en-US|style=Feynman) is true. The p-value is simply the area under the curve of this distribution from our observed $\chi^2$ value all the way to infinity [@problem_id:2379482].
 
 <center>
-<img src="https://i.imgur.com/example_image.png" alt="A chi-squared distribution curve showing the p-value as the area in the right tail." width="500"/>
+
 </center>
 
 A small p-value (e.g., $p < 0.05$) means that our observed result is very unlikely to have occurred by chance if our theory were true. It's a "statistically significant" result, and it gives us grounds to reject the null hypothesis. It doesn’t *prove* the theory is wrong, but it provides strong evidence against it. A large [p-value](@keyword=p_value|lang=en-US|style=Feynman), on the other hand, means the observed deviations are entirely consistent with random fluctuations. We "fail to reject" the [null hypothesis](@keyword=null_hypothesis|lang=en-US|style=Feynman), which lives to fight another day.

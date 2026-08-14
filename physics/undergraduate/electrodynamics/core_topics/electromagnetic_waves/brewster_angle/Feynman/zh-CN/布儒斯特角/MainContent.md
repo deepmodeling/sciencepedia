@@ -40,8 +40,6 @@ $$
 -   我们已经知道，在布鲁斯特角入射时，反射光线与透射光线刚好成 $90^\circ$ 角。
 -   将这两个事实结合起来：电子的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)方向**垂直于**透射光线，而透射光线又**垂直于**反射光线。这意味着，电子的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)轴线恰好**正对着**反射光线的传播方向！
 
-![Brewster Angle Dipole Radiation Model](https://artify-pro-files.s3.us-west-2.amazonaws.com/1715831968846_brewster_angle.png "在布鲁斯特角，介质中电子的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)方向（蓝色双箭头）恰好指向反射光的方向。由于偶极子不沿其轴向辐射，因此没有能量被反射。")
-
 根据[电偶极辐射](@keyword=electric_dipole_radiation|lang=zh-CN|style=Feynman)的定律，这些[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的电子无法向着自己[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)轴的方向辐射能量。因此，在反射光的方向上，没有任何电磁波被辐射出来。宏观上看来，就是反射光完全消失了 [@problem_id:1569713]。这个解释是如此美妙而直观：一个看似神奇的光学现象，最终归结为一个由[特殊几何](@keyword=special_geometry|lang=zh-CN|style=Feynman)[排列](@keyword=permutation|lang=zh-CN|style=Feynman)导致的、必然的物理结果。
 
 那么，为什么**s-[偏振光](@keyword=polarized_light|lang=zh-CN|style=Feynman)**没有布鲁斯特角呢？原因同样简单。对于s-偏振光，其电场始终垂直于入射面（可以想象成平行于界面）。因此，介质中的电子也只能被“横向”地来回驱动。无论[入射角](@keyword=angle_of_incidence|lang=zh-CN|style=Feynman)如何变化，这个横向的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)方向永远不可能正对着反射光的方向。因此，这些电子总能向反射方向辐射能量，s-[偏振光](@keyword=polarized_light|lang=zh-CN|style=Feynman)的反射永远不会消失。

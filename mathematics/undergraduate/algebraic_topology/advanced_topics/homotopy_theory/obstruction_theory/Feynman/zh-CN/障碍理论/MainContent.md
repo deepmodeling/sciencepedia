@@ -17,7 +17,7 @@
 
 <br/>
 <div align="center">
-    <img src="https://assets.bitdegree.org/space/user/2024/07/annuli.png" alt="两个不相连的环形区域，一些点分布在上面，有的连接方案可行，有的不可行。" width="500"/>
+
     <br>
     <figcaption>图1：电路板上的接线难题。如果所有待连接的点（如情况A和B）都在同一个环上，连接是可能的。如果点分布在两个环上（如情况C和D），则由于空间不连通，无法完成连接。</figcaption>
 </div>

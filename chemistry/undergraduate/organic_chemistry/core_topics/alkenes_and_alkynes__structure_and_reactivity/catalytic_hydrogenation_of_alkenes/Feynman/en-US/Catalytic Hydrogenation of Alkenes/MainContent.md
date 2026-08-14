@@ -23,8 +23,6 @@ Enter a fine powder of a metal like palladium (Pd), platinum (Pt), or nickel (Ni
 
 A [reaction coordinate diagram](@keyword=reaction_coordinate_diagram|lang=en-US|style=Feynman) makes this clear. Think of it as a plot of the energy of the system as the reaction progresses.
 
-![Reaction Coordinate Diagram](https://i.imgur.com/example.png "A diagram showing the high energy hill of the uncatalyzed reaction and the much lower hill of the catalyzed pathway. Both start and end at the same energy levels.")
-
 The catalyst lowers the activation energy from a prohibitively high value to a manageable one, allowing the reaction to proceed at a reasonable rate at room temperature. But *how* does it accomplish this feat? The magic happens on the surface.
 
 ### A Dance on the Surface: The Step-by-Step Mechanism

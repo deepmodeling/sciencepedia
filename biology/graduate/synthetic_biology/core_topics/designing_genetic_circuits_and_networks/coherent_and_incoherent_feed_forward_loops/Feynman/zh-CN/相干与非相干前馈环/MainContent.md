@@ -11,8 +11,6 @@
 
 一个典型的[前馈环](@keyword=feedforward_loops|lang=zh-CN|style=Feynman)路包含三个组件，我们称之为 $X$、$Y$ 和 $Z$。$X$ 是主调节因子，它像一个高级经理，同时调控着中间调节因子 $Y$（部门主管）和最终的目标基因 $Z$（工人）。同时，$Y$ 也负责调控 $Z$。这样就形成了两条从 $X$到 $Z$ 的调控路径：一条是 $X$ 直接到 $Z$ 的**直接路径**（$X \to Z$），另一条是经过 $Y$ 的**间接路径**（$X \to Y \to Z$）。[@problem_id:2722201]
 
-
-
 在分子世界里，“调控”可以是“激活”（开启或增强，我们用“+”号表示）或“抑制”（关闭或减弱，我们用“-”号表示）。间接路径的总体效果是什么呢？很简单，就像两个负号相乘得正号一样，我们只需将路径上每一步的符号相乘。例如，如果 $X$ 激活 $Y$（+），而 $Y$ 抑制 $Z$（-），那么间接路径 $X \to Y \to Z$ 的总体效果就是抑制性的（$(+) \times (-) = (-)$）。
 
 现在，最关键的问题来了：直接路径和间接路径的信号是“同心协力”还是“相互掣肘”？这引出了[前馈环](@keyword=feedforward_loops|lang=zh-CN|style=Feynman)路的第一个基本分类：
@@ -33,8 +31,6 @@
 
 现在，让我们给这个系统增加一个巧妙的规则，这也是生物系统中常见的逻辑：在 $Z$ 基因的[启动子区域](@keyword=promoter_region|lang=zh-CN|style=Feynman)设置一个**“与门”（AND-gate）**。这意味着，只有当 $X$ 和 $Y$ **同时**出现时，$Z$ 才能被激活。[@problem_id:2722221]
 
-![A diagram illustrating the C1-FFL with AND logic, showing that output Z is only produced when both the direct signal from X and the indirect signal from Y (which is delayed) are present.](https://i.imgur.com/eB3Mh0D.png)
-
 这下，整个故事就变得有趣了。当输入信号 $X$ 出现时，直接路径的信号会先到达 $Z$ 的门口，但“与门”是锁着的，因为它还在等待来自间接路径的 $Y$。只有当慢悠悠的 $Y$ 也赶到时，门才会打开，$Z$ 的生产才正式开始。因此，[系统响应](@keyword=system_response|lang=zh-CN|style=Feynman)的真实延迟，取决于那条**更慢的路径**：$\text{Delay}_{\text{ON}} \approx \max(\tau_{\textdir}, \tau_{\text{indir}})$。
 
 这种设计让 C1-FFL 变成了一个出色的**“持续性[信号检测](@keyword=signal_detection|lang=zh-CN|style=Feynman)器”**或**“短脉冲过滤器”**。如果输入信号 $X$ 只是一个短暂的、一闪而过的噪声，它在 $Y$ 还没来得及积累起来之前就消失了，那么 $Z$ 就永远不会被激活。细胞通过这种方式，学会了保持“耐心”，只对那些持续、有意义的信号做出反应，从而忽略了环境中的随机波动。
@@ -48,8 +44,6 @@
 #### 功能一：[脉冲发生器](@keyword=pulse_generators|lang=zh-CN|style=Feynman)
 
 想象一场激活与抑制的赛跑。当输入信号 $X$ 出现时，直接的激活路径 ($X \to Z$) 就像短跑选手，迅速提高了 $Z$ 的产量。$Z$ 的浓度开始上升。但与此同时，间接的抑制路径 ($X \to Y \to Z$) 也被触发了。抑制者 $Y$ 像一个长跑选手，速度稍慢，但它正在稳步积累。当 $Y$ 的浓度达到足够高时，它就会开始有力地抑制 $Z$ 的生产，使 $Z$ 的浓度回落。[@problem_id:2722189]
-
-
 
 这一先一后的时序差异（$\tau_{\text{dir}} < \tau_{\text{indir}}$）创造了一个完美的**瞬时脉冲**。系统对信号的**变化**做出了快速响应，但随后又“冷静”下来，回到一个较低的活动水平。这对于那些只需要短暂应答，而不需要长期改变状态的生物过程来说，是一种极其高效的策略。[@problem_id:2722209]
 

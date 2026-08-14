@@ -44,7 +44,7 @@ $$
 *   **[相速度](@keyword=phase_velocity|lang=zh-CN|style=Feynman) $v_p = \omega/k$**，正好是图像上点 $(k, \omega)$ 与坐标原点 $(0,0)$ 连线的斜率。
 *   **群速度 $v_g = d\omega/dk$**，则是在该点 $(k, \omega)$ 处切线的斜率。
 
-![A diagram showing the graphical interpretation of phase and group velocity on a dispersion curve. The phase velocity vp is the slope of the secant line from the origin to a point (k, ω) on the curve. The group velocity vg is the slope of the tangent line to the curve at that same point (k, ω).](https://i.imgur.com/example.png)  (这是一个描述性的图片占位符，实际文章中应配图)
+  (这是一个描述性的图片占位符，实际文章中应配图)
 
 现在，我们可以清楚地“看到”这两种速度的关系。
 

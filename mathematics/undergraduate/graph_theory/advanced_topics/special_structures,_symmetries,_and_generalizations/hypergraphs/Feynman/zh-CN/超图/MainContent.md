@@ -23,7 +23,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/83pL4I2.png" alt="A comparison of a simple graph and a hypergraph. The graph shows pairwise connections. The hypergraph shows a 3-person group (hyperedge e1) and a 4-person group (hyperedge e2), which cannot be simply represented in a graph." style="width: 70%;">
+
   <figcaption>图1：左侧是一个普通图，边连接着成对的顶点。右侧是一个超图，超边 $e_1$ 和 $e_2$ 分别连接了三个和四个顶点，捕捉了“群组”关系。</figcaption>
 </figure>
 </center>
@@ -95,7 +95,7 @@ $$
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/uG53A5x.png" alt="An illustration of duality in hypergraphs. On the left (primal), vertices are people and hyperedges are projects. On the right (dual), vertices are projects and hyperedges are formed by the projects a single person is in." style="width: 80%;">
+
   <figcaption>图2：[对偶变换](@keyword=duality_transformations|lang=zh-CN|style=Feynman)。左侧的原始超图中，顶点是人，超边是项目。在右侧的对偶[超图](@keyword=hypergraphs|lang=zh-CN|style=Feynman)中，顶点变成了项目，而每个人（如红色虚线所示的Alice）所参与的所有项目构成了一条新的超边。</figcaption>
 </figure>
 </center>

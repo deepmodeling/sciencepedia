@@ -32,7 +32,7 @@ GSEA 的核心机制既优雅又直观。我们可以用一个“夺旗游戏”
 这个得分的增减并非随意设定。增加的[步长](@keyword=step_size|lang=zh-CN|style=Feynman)正比于 $1/N_H$，而减少的[步长](@keyword=step_size|lang=zh-CN|style=Feynman)正比于 $1/N_{miss}$，其中 $N_H$ 是我们基因集 $S$ 中的基因总数，而 $N_{miss}$ 是不在 $S$ 中的基因总数。[@problem_id:1440843] 这保证了整个“旅程”的公平性。
 
 <center>
-<img src="https://i.imgur.com/uC0V6K8.png" width="700">
+
 <figcaption><b>图1. GSEA的“夺旗游戏”。</b>
 我们沿着按[表型](@keyword=phenotype|lang=zh-CN|style=Feynman)关联度排序的基因列表（赛道）前进。遇到属于目标基因集（蓝色旗帜）的基因，[富集分数](@keyword=enrichment_score|lang=zh-CN|style=Feynman)（绿色曲线）就上升；遇到其他基因，分数就下降。分数的峰值，即[富集分数](@keyword=enrichment_score|lang=zh-CN|style=Feynman)ES，反映了基因集成员是否在列表顶端或底端聚集。
 </figcaption>

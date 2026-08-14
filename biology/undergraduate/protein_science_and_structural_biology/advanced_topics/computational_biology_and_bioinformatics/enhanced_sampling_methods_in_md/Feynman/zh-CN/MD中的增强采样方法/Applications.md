@@ -8,7 +8,6 @@
 
 想象一下，你手里有一双无形但异常强大的“分子镊子”，可以夹住一个蛋白质分子的两端，然后缓缓地将其拉开。这听起来像是科幻小说，但这正是**导向[分子动力学](@keyword=molecular_kinetics|lang=zh-CN|style=Feynman) (Steered Molecular Dynamics, SMD)** 所做的事情。通过在模拟中施加一个随时间变化的虚拟拉力，我们可以精确模拟单[分子力](@keyword=molecular_forces|lang=zh-CN|style=Feynman)谱实验（例如用原子力显微镜 AFM 进行的实验）。我们可以实时测量将[蛋白质结构域](@keyword=protein_domains|lang=zh-CN|style=Feynman)从折叠态拉伸到解折叠态所需的力，从而绘制出一条[力-延伸曲线](@keyword=force_extension_curve|lang=zh-CN|style=Feynman)。这不仅仅是一个漂亮的计算练习，它帮助我们理解蛋白质作为“分子弹簧”的机械稳定性，这对于理解细胞如何感知和响应机械力（即[机械转导](@keyword=mechanotransduction|lang=zh-CN|style=Feynman)过程）至关重要 [@problem_id:2109804]。
 
-![Steered Molecular Dynamics](https://d2dr4dwv4i4d0n.cloudfront.net/discussions/2109804_unfold-protein-smd-simulation.gif)
 *图1. 导向[分子动力学](@keyword=molecular_kinetics|lang=zh-CN|style=Feynman) (SMD) 模拟蛋白质在外部拉力作用下的解折叠过程。这种方法如同在计算机中进行单[分子力](@keyword=molecular_forces|lang=zh-CN|style=Feynman)谱实验。*
 
 从“拉”一个分子，我们更进一步，想要“丈量”它运动的能量地形。细胞膜上遍布着各种[离子通道](@keyword=ion_channel|lang=zh-CN|style=Feynman)，它们像精密的门卫，选择性地让特定离子（如钾离子 $K^+$ 或钠离子 $Na^+$）通过。一个离子要穿过通道，就像一个徒步者要翻越一座山脉。它的路径上有“山谷”（能量较低的稳定结合位点），也有“山峰”（能量较高的屏障）。这些能量的高低起伏决定了离子能否通过以及通过的速率。
@@ -25,7 +24,6 @@
 
 然而，当过程变得更加复杂时，一个 CV 往往就不够了。例如，在研究两个蛋白质[单体](@keyword=monomer|lang=zh-CN|style=Feynman)如何相互靠近并组装成一个二聚体时，仅仅使用它们之间的距离作为 CV 是有缺陷的。它们可能靠得很近，但方向完全错误，就像两块拼图被错误地放在一起。为了真正描述结合过程，我们至少需要两个 CV：一个描述它们之间的**距离**，另一个则描述它们的**相对姿态**或正确接触界面的形成程度 [@problem_id:2109783]。一个好的 CV 组合能够清晰地区分“远未结合”、“靠近但未对准”和“正确结合”这几种状态。
 
-![Collective Variables for Dimerization](https://d2dr4dwv4i4d0n.cloudfront.net/discussions/2109783_dimerization-cv.png)
 *图2. 描述蛋白质二聚化过程的二维[集体变量](@keyword=collective_variables|lang=zh-CN|style=Feynman)。$r_{\mathrm{COM}}$ 代表两个[单体](@keyword=monomer|lang=zh-CN|style=Feynman)间的距离，$N_{\mathrm{nat}}$ 代表形成的天然接触数目。一个有效的结合路径（红线）需要同时考虑这两个维度。*
 
 那么，如果我们连路径长什么样都一无所知，又该怎么办呢？这正是蛋白质折叠研究长期面临的困境。一个无序的[多肽链](@keyword=polypeptide_chain|lang=zh-CN|style=Feynman)是如何找到其唯一的天然折叠结构的？这条路径是预先设定的，还是千变万化的？对于这类探索性问题，我们需要一种不依赖于预先定义的 CV 的方法。

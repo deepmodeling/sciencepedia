@@ -28,7 +28,7 @@
 <br>
 <center>
 <figure>
-  <img src="https://i.imgur.com/K3Vw8Vd.png" alt="Energy profile diagram showing the effect of potential on activation barriers for different beta values." width="600">
+
   <figcaption>图1：吉布斯自由能与[反应坐标](@keyword=reaction_coordinate|lang=zh-CN|style=Feynman)的关系图。施加阴极过电势 $\eta$ 使得产物（P）的能量相对于反应物（R）降低。[对称因子](@keyword=symmetry_factor|lang=zh-CN|style=Feynman) $\beta$ 决定了活化能垒 $\Delta G^\ddagger$ 降低的幅度。对于一个更像产物的过渡态（右图, $\beta > 0.5$），电势对活化能的降低效果比对称过渡态（左图, $\beta = 0.5$）更显著。</figcaption>
 </figure>
 </center>

@@ -15,7 +15,6 @@
 
 当[电子跃迁](@keyword=electronic_transitions|lang=zh-CN|style=Feynman)发生时，由于原子核间距 $R$ 保持不变，这个过程在[势能图](@keyword=potential_energy_diagrams|lang=zh-CN|style=Feynman)上表现为一条**垂直的直线** [@problem_id:1993620]。分子从[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)[势能曲线](@keyword=potential_energy_curves|lang=zh-CN|style=Feynman)上的一点，瞬间“跳”到[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)势能曲线上方与之垂直对齐的一点。这就是所谓的**[垂直跃迁](@keyword=vertical_transitions|lang=zh-CN|style=Feynman)**。这个简单的“垂直”概念，是理解整个[光谱强度](@keyword=spectral_intensity|lang=zh-CN|style=Feynman)分布的第一把钥匙。
 
-![A schematic diagram illustrating the Franck-Condon principle with a vertical transition from the ground electronic state (v''=0) to an excited electronic state. The potential energy curves are shown, along with the vibrational wavefunctions. The arrow indicates the vertical transition, where the internuclear distance R does not change.](https://i.imgur.com/example.png)
 *(图注：[弗兰克-康登原理](@keyword=franck_condon_principle|lang=zh-CN|style=Feynman)示意图。一个[垂直跃迁](@keyword=vertical_transitions|lang=zh-CN|style=Feynman)将分子从[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)的[振动能级](@keyword=vibrational_energy_levels|lang=zh-CN|style=Feynman) $v''=0$ 提升到[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的某个振动能级 $v'$。跃迁过程中，原子核间距 $R$ 保持不变。)*
 
 ### 量子世界的握手：[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)交叠

@@ -1,48 +1,48 @@
 ## 引言
-在现代电子系统中，高精度地将模拟世界的信息转换为数字信号是至关重要的环节，而Delta-Sigma（ΔΣ）模数转换器（ADC）正是实现这一目标的主流技术。它以其独特的架构，巧妙地解决了如何仅用低分辨率的内部元件（如1比特量化器）来实现极高输出精度的核心难题。这种“以速度换精度”的哲学背后蕴含着深刻的信号处理原理，但其实现过程也伴随着复杂的工程挑战和设计权衡。本文旨在系统性地揭示ΔΣ ADC背后的奥秘，弥合理论模型与工程实践之间的鸿沟。
+在现代电子系统中，高精度地将模拟世界的信息转换为[数字信号](@keyword=digital_signals|lang=zh-CN|style=Feynman)是至关重要的环节，而Delta-Sigma（ΔΣ）[模数转换器](@keyword=analog_to_digital_converter_2|lang=zh-CN|style=Feynman)（[ADC](@keyword=antibody_drug_conjugates|lang=zh-CN|style=Feynman)）正是实现这一目标的主流技术。它以其独特的架构，巧妙地解决了如何仅用低分辨率的内部元件（如1比特量化器）来实现极高输出精度的核心难题。这种“以速度换精度”的哲学背后蕴含着深刻的信号处理原理，但其实现过程也伴随着复杂的工程挑战和设计权衡。本文旨在系统性地揭示ΔΣ [ADC](@keyword=antibody_drug_conjugates|lang=zh-CN|style=Feynman)背后的奥秘，弥合理论模型与工程实践之间的鸿沟。
 
-为实现这一目标，本文将分为三个核心部分。首先，在“原理与机制”一章中，我们将奠定理论基础，从量化噪声的线性化模型讲起，深入剖析过采样和噪声整形这两大支柱技术如何协同工作，并探讨高阶调制器的稳定性问题。接着，在“应用与跨学科联系”一章中，我们将理论付诸实践，通过分析不同的架构选择（如单比特与多比特、MASH、连续时间等）及其在功耗、线性度上的权衡，来展示理论如何指导现实世界的工程决策，并探讨其在数字控制等交叉领域的应用。最后，“动手实践”部分将提供一系列计算和分析练习，帮助读者巩固所学知识，将理论概念转化为可操作的分析技能。
+为实现这一目标，本文将分为三个核心部分。首先，在“原理与机制”一章中，我们将奠定理论基础，从量化噪声的线性化模型讲起，深入剖析过采样和噪声整形这两大支柱技术如何协同工作，并探讨高阶调制器的稳定性问题。接着，在“应用与跨学科联系”一章中，我们将理论付诸实践，通过分析不同的架构选择（如单比特与多比特、MASH、连续时间等）及其在功耗、线性度上的权衡，来展示理论如何指导现实世界的工程决策，并探讨其在[数字控制](@keyword=digital_control|lang=zh-CN|style=Feynman)等交叉领域的应用。最后，“动手实践”部分将提供一系列计算和分析练习，帮助读者巩固所学知识，将理论概念转化为可操作的分析技能。
 
 ## 原理与机制
 
-本章深入探讨了构成Delta-Sigma（ΔΣ）模数转换器（ADC）核心工作的基本原理和关键机制。我们将从量化噪声的线性化模型出发，逐步揭示过采样和噪声整形这两大支柱如何协同作用，以实现仅用低分辨率量化器就能达到极高精度的目的。此外，我们还将讨论关键的电路架构选择及其对性能的影响，并阐述在高阶调制器设计中，性能与稳定性之间固有的权衡关系。
+本章深入探讨了构成Delta-Sigma（ΔΣ）[模数转换器](@keyword=analog_to_digital_converter_2|lang=zh-CN|style=Feynman)（[ADC](@keyword=antibody_drug_conjugates|lang=zh-CN|style=Feynman)）核心工作的基本原理和关键机制。我们将从[量化噪声](@keyword=quantization_noise|lang=zh-CN|style=Feynman)的线性化模型出发，逐步揭示过采样和噪声整形这两大支柱如何协同作用，以实现仅用低分辨率量化器就能达到极高精度的目的。此外，我们还将讨论关键的电路架构选择及其对性能的影响，并阐述在高阶调制器设计中，性能与稳定性之间固有的权衡关系。
 
-### 量化噪声的线性化模型
+### [量化噪声](@keyword=quantization_noise|lang=zh-CN|style=Feynman)的线性化模型
 
-任何数字信号处理系统的基础都是模拟信号的离散化，此过程必然引入量化误差。为了系统地分析ΔΣ调制器，我们首先需要为这个非线性过程建立一个可行的数学模型。
+任何[数字信号处理](@keyword=digital_signal_processing|lang=zh-CN|style=Feynman)系统的基础都是[模拟信号](@keyword=analog_signals|lang=zh-CN|style=Feynman)的离散化，此过程必然引入[量化误差](@keyword=quantization_error|lang=zh-CN|style=Feynman)。为了系统地分析ΔΣ调制器，我们首先需要为这个[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)过程建立一个可行的数学模型。
 
 #### 量化误差的统计特性
 
-考虑一个具有均匀阶跃大小为 $\Delta$ 的理想中间步进（mid-tread）量化器。对于落在量化器“颗粒区”（即未饱和）的输入信号，量化误差 $e$ 定义为输出值与输入值之差。一个被广泛采用且极为有效的简化模型，是将量化误差 $e[n]$ 视为一个随机过程，并作出以下核心假设 [@problem_id:4263988]：
-1.  误差序列 $e[n]$ 在时间上是互不相关的，即是一个“白噪声”过程。
+考虑一个具有均匀阶跃大小为 $\Delta$ 的理想中间步进（mid-tread）量化器。对于落在量化器“颗粒区”（即未饱和）的输入信号，量化误差 $e$ 定义为输出值与输入值之差。一个被广泛采用且极为有效的简化模型，是将量化误差 $e[n]$ 视为一个[随机过程](@keyword=random_processes|lang=zh-CN|style=Feynman)，并作出以下核心假设 [@problem_id:4263988]：
+1.  误差序列 $e[n]$ 在时间上是互不相关的，即是一个“[白噪声](@keyword=white_noise|lang=zh-CN|style=Feynman)”过程。
 2.  误差序列 $e[n]$ 与输入信号 $x[n]$ 互不相关。
 3.  误差的概率密度函数（PDF）在单个量化区间 $(-\Delta/2, \Delta/2]$ 上是均匀分布的。
 
-尽管这些假设对于简单的直流或正弦输入并不严格成立，但当调制器环路内部信号变得足够复杂和“繁忙”时，或者当有意引入“抖动”（dither）信号来随机化量化过程时，该模型便成为一个非常精确的近似 [@problem_id:4263988]。
+尽管这些假设对于简单的直流或[正弦输入](@keyword=sinusoidal_inputs|lang=zh-CN|style=Feynman)并不严格成立，但当调制器环路内部信号变得足够复杂和“繁忙”时，或者当有意引入“[抖动](@keyword=dithering|lang=zh-CN|style=Feynman)”（dither）信号来[随机化](@keyword=randomization|lang=zh-CN|style=Feynman)量化过程时，该模型便成为一个非常精确的近似 [@problem_id:4263988]。
 
 基于均匀分布的假设，我们可以推导出量化误差的总功率（即方差）。由于其概率密度函数 $p(e) = 1/\Delta$ 在区间 $[-\Delta/2, \Delta/2]$ 内，且在此之外为零，我们可以计算其均值和方差。误差的均值为零，其方差 $\sigma_e^2$（也即总噪声功率 $P_e$）为：
 $$
 \sigma_e^2 = E[e^2] = \int_{-\Delta/2}^{\Delta/2} e^2 p(e) de = \frac{1}{\Delta} \int_{-\Delta/2}^{\Delta/2} e^2 de = \frac{1}{\Delta} \left[ \frac{e^3}{3} \right]_{-\Delta/2}^{\Delta/2} = \frac{\Delta^2}{12}
 $$
-这个 $\sigma_e^2 = \Delta^2/12$ 的表达式是分析所有ADC量化噪声的基础 [@problem_id:4263958]。
+这个 $\sigma_e^2 = \Delta^2/12$ 的表达式是分析所有[ADC](@keyword=antibody_drug_conjugates|lang=zh-CN|style=Feynman)[量化噪声](@keyword=quantization_noise|lang=zh-CN|style=Feynman)的基础 [@problem_id:4263958]。
 
-#### 噪声功率谱密度
+#### [噪声功率谱密度](@keyword=noise_power_spectral_density|lang=zh-CN|style=Feynman)
 
-白噪声的假设意味着噪声功率在整个频域内是均匀分布的。对于一个以采样率 $f_s$ 工作的离散时间系统，其频率范围覆盖了从 $-f_s/2$ 到 $f_s/2$ 的奈奎斯特频带。因此，总噪声功率 $\sigma_e^2$ 被均匀地“铺”在这个宽度为 $f_s$ 的频带上。由此，我们可以定义量化噪声的双边功率谱密度（PSD），记为 $S_q(f)$：
+[白噪声](@keyword=white_noise|lang=zh-CN|style=Feynman)的假设意味着噪声功率在整个频域内是均匀分布的。对于一个以采样率 $f_s$ 工作的[离散时间系统](@keyword=discrete_time_systems|lang=zh-CN|style=Feynman)，其频率范围覆盖了从 $-f_s/2$ 到 $f_s/2$ 的奈奎斯特频带。因此，总噪声功率 $\sigma_e^2$ 被均匀地“铺”在这个宽度为 $f_s$ 的频带上。由此，我们可以定义量化噪声的双边[功率谱密度](@keyword=power_spectral_density|lang=zh-CN|style=Feynman)（PSD），记为 $S_q(f)$：
 $$
 S_q(f) = \frac{\sigma_e^2}{f_s} = \frac{\Delta^2}{12 f_s} \quad \text{for } |f| \le f_s/2
 $$
-这个表达式的单位是功率/赫兹（例如 $V^2/Hz$）。它表明，在任何一个小的频率窗口内，噪声功率的量是恒定的，这正是“白噪声”的特征 [@problem_id:4263958]。这个简单的模型是接下来所有分析的基石。
+这个表达式的单位是功率/赫兹（例如 $V^2/Hz$）。它表明，在任何一个小的频率窗口内，噪声功率的量是恒定的，这正是“[白噪声](@keyword=white_noise|lang=zh-CN|style=Feynman)”的特征 [@problem_id:4263958]。这个简单的模型是接下来所有分析的基石。
 
 ### 过采样的原理
 
-ΔΣ-ADC的第一个关键技术是**过采样（Oversampling）**。这意味着以远高于信号带宽所需奈奎斯特率的频率对输入信号进行采样。奈奎斯特采样定理指出，对于一个带宽为 $B$ 的信号，最低采样率应为 $2B$。过采样率（OSR）定义为实际采样率 $f_s$ 与奈奎斯特率 $2B$ 的比值：
+ΔΣ-[ADC](@keyword=antibody_drug_conjugates|lang=zh-CN|style=Feynman)的第一个关键技术是**过采样（Oversampling）**。这意味着以远高于信号带宽所需奈奎斯特率的频率对输入信号进行采样。[奈奎斯特采样定理](@keyword=nyquist_sampling_theorem|lang=zh-CN|style=Feynman)指出，对于一个带宽为 $B$ 的信号，最低[采样率](@keyword=sampling_rate|lang=zh-CN|style=Feynman)应为 $2B$。[过采样](@keyword=oversampling|lang=zh-CN|style=Feynman)率（OSR）定义为实际采样率 $f_s$ 与奈奎斯特率 $2B$ 的比值：
 $$
 OSR = \frac{f_s}{2B}
 $$
 其中 $B$ 是我们感兴趣的信号带宽 [@problem_id:4263984]。
 
-过采样的直接好处是所谓的“处理增益”（process gain）。如上所述，总的量化噪声功率 $\sigma_e^2 = \Delta^2/12$ 被分散在整个 $[ -f_s/2, f_s/2 ]$ 频带内。然而，我们只关心信号所在的频带 $[ -B, B ]$。通过一个理想的“砖墙式”数字低通滤波器，我们可以滤除信号频带之外的所有噪声。
+[过采样](@keyword=oversampling|lang=zh-CN|style=Feynman)的直接好处是所谓的“处理增益”（process gain）。如上所述，总的[量化噪声](@keyword=quantization_noise|lang=zh-CN|style=Feynman)功率 $\sigma_e^2 = \Delta^2/12$ 被分散在整个 $[ -f_s/2, f_s/2 ]$ 频带内。然而，我们只关心信号所在的频带 $[ -B, B ]$。通过一个理想的“砖墙式”数字低通滤波器，我们可以滤除信号频带之外的所有噪声。
 
 信号带内的噪声功率 $P_{in-band}$ 可以通过对噪声PSD在 $[-B, B]$ 区间上积分得到 [@problem_id:4264040]：
 $$
@@ -52,20 +52,19 @@ $$
 $$
 P_{in-band} = \frac{\Delta^2}{12} \cdot \frac{1}{OSR}
 $$
-这个结果揭示了一个基本原理：仅仅通过过采样（没有任何噪声整形），信号带内的量化噪声功率与OSR成反比 [@problem_id:4264040]。这意味着，如果我们将过采样率加倍，带内噪声功率就会减半，信噪比（SQNR）将提升3 dB。虽然有效，但这种改善是有限的。为了获得显著的性能提升，我们需要第二项关键技术：噪声整形。
+这个结果揭示了一个基本原理：仅仅通过[过采样](@keyword=oversampling|lang=zh-CN|style=Feynman)（没有任何噪声整形），信号带内的量化噪声功率与OSR成反比 [@problem_id:4264040]。这意味着，如果我们将过采样率加倍，带内噪声功率就会减半，[信噪比](@keyword=signal_to_noise_ratio_(snr)|lang=zh-CN|style=Feynman)（SQNR）将提升3 dB。虽然有效，但这种改善是有限的。为了获得显著的性能提升，我们需要第二项关键技术：噪声整形。
 
 ### 噪声整形的原理
 
-**噪声整形（Noise Shaping）**是ΔΣ调制器的核心思想。它通过一个反馈环路，对量化噪声的频谱进行“雕刻”，将其从低频的信号区域“推”向高频区域。随后，这些被推到高频的噪声可以通过数字低通滤波器轻易地滤除。
+**噪声整形（Noise Shaping）**是ΔΣ调制器的核心思想。它通过一个反馈环路，对量化噪声的[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)进行“雕刻”，将其从低频的信号区域“推”向高频区域。随后，这些被推到高频的噪声可以通过数字低通滤波器轻易地滤除。
 
 #### 线性化模型与传递函数
 
-为了分析噪声整形，我们使用图示的ΔΣ调制器线性化模型。在这个模型中，非线性的量化器被替换为一个增益为1的加法器，并引入一个加性噪声源 $e[n]$ 来代表量化误差。环路滤波器由传递函数 $H(z)$ 表示。
+为了分析噪声整形，我们使用图示的ΔΣ调制器线性化模型。在这个模型中，[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)的量化器被替换为一个增益为1的加法器，并引入一个加性噪声源 $e[n]$ 来代表量化误差。环路滤波器由传递函数 $H(z)$ 表示。
 
-![Linearized model of a Delta-Sigma modulator](placeholder_for_diagram)
 _（文本描述：一个标准的反馈系统框图。输入信号X(z)与反馈信号-Y(z)相加，其结果通过环路滤波器H(z)得到V(z)。量化噪声E(z)与V(z)相加得到输出Y(z)。Y(z)被反馈回输入端。）_
 
-通过对这个线性时不变（LTI）系统进行代数分析，我们可以推导出输出 $Y(z)$ 与两个输入——信号 $X(z)$ 和噪声 $E(z)$ ——之间的关系 [@problem_id:4263960]：
+通过对这个[线性时不变](@keyword=linear_time_invariant|lang=zh-CN|style=Feynman)（LTI）系统进行代数分析，我们可以推导出输出 $Y(z)$ 与两个输入——信号 $X(z)$ 和噪声 $E(z)$ ——之间的关系 [@problem_id:4263960]：
 $$
 Y(z) = \frac{H(z)}{1 + H(z)} X(z) + \frac{1}{1 + H(z)} E(z)
 $$
@@ -92,19 +91,19 @@ $$
 $$
 NTF(z) = \frac{1}{1 + \frac{z^{-1}}{1 - z^{-1}}} = 1 - z^{-1}
 $$
-$STF(z) = z^{-1}$ 意味着信号仅经历一个采样周期的延迟，这在信号频带内几乎是理想的。关键在于 $NTF(z) = 1 - z^{-1}$。为了看到它的整形效果，我们考察其在单位圆上的频率响应（令 $z = e^{j\omega}$，其中 $\omega = 2\pi f / f_s$ 是归一化角频率）：
+$STF(z) = z^{-1}$ 意味着信号仅经历一个采样周期的延迟，这在信号频带内几乎是理想的。关键在于 $NTF(z) = 1 - z^{-1}$。为了看到它的整形效果，我们考察其在[单位圆](@keyword=unit_circle|lang=zh-CN|style=Feynman)上的[频率响应](@keyword=frequency_response|lang=zh-CN|style=Feynman)（令 $z = e^{j\omega}$，其中 $\omega = 2\pi f / f_s$ 是归一化[角频率](@keyword=break_frequency|lang=zh-CN|style=Feynman)）：
 $$
 |NTF(e^{j\omega})| = |1 - e^{-j\omega}| = \sqrt{(1 - \cos\omega)^2 + (\sin\omega)^2} = \sqrt{2 - 2\cos\omega} = 2|\sin(\omega/2)|
 $$
-在低频处（$\omega \to 0$），我们可以使用小角度近似 $\sin(x) \approx x$，得到 $|NTF(e^{j\omega})| \approx \omega$。这意味着NTF在直流（DC）处有一个零点（$NTF(z=1) = 0$），并且其幅度随频率线性增加 [@problem_id:4264012]。这正是噪声整形的数学体现：在信号所在的低频区域，噪声被强烈抑制；而在高频区域，噪声被放大。
+在低频处（$\omega \to 0$），我们可以使用[小角度近似](@keyword=small_angle_approximation|lang=zh-CN|style=Feynman) $\sin(x) \approx x$，得到 $|NTF(e^{j\omega})| \approx \omega$。这意味着NTF在直流（DC）处有一个零点（$NTF(z=1) = 0$），并且其幅度随频率线性增加 [@problem_id:4264012]。这正是噪声整形的数学体现：在信号所在的低频区域，噪声被强烈抑制；而在高频区域，噪声被放大。
 
 ### 噪声整形性能分析
 
-噪声整形的效果可以通过计算经过整形后的带内噪声功率来量化。对于一个$L$阶调制器，其NTF被设计为在直流处有$L$个零点。因此，其低频响应近似为：
+噪声整形的效果可以通过计算经过整形后的带内噪声功率来量化。对于一个$L$阶调制器，其NTF被设计为在直流处有$L$个零点。因此，其[低频响应](@keyword=low_frequency_response|lang=zh-CN|style=Feynman)近似为：
 $$
 |NTF(e^{j\omega})| \propto \omega^L \quad (\text{for small } \omega)
 $$
-输出的噪声功率谱密度为 $S_{out}(f) = |NTF(e^{j\omega})|^2 S_q(f)$。我们再次对信号频带 $[0, B]$（对应归一化频率 $[0, \pi/OSR]$）进行积分，以求得带内噪声功率 $P_{n, \Sigma\Delta}$ [@problem_id:4263984]：
+输出的[噪声功率谱密度](@keyword=noise_power_spectral_density|lang=zh-CN|style=Feynman)为 $S_{out}(f) = |NTF(e^{j\omega})|^2 S_q(f)$。我们再次对信号频带 $[0, B]$（对应[归一化频率](@keyword=v_number|lang=zh-CN|style=Feynman) $[0, \pi/OSR]$）进行积分，以求得带内噪声功率 $P_{n, \Sigma\Delta}$ [@problem_id:4263984]：
 $$
 P_{n, \Sigma\Delta} \propto \int_0^{\pi/OSR} (\omega^L)^2 d\omega \propto \left[ \frac{\omega^{2L+1}}{2L+1} \right]_0^{\pi/OSR} \propto \left(\frac{1}{OSR}\right)^{2L+1}
 $$
@@ -112,34 +111,34 @@ $$
 $$
 P_{n, \Sigma\Delta} \approx \frac{\Delta^2}{12} \cdot \frac{\pi^{2L}}{2L+1} \cdot \frac{1}{OSR^{2L+1}}
 $$
-这个结果极为重要。它表明，对于一个$L$阶调制器，带内噪声功率以 $OSR$ 的 $(2L+1)$ 次方下降。这意味着每将OSR加倍，信噪比将提升 $10 \log_{10}(2^{2L+1}) \approx 3(2L+1)$ dB。
+这个结果极为重要。它表明，对于一个$L$阶调制器，带内噪声功率以 $OSR$ 的 $(2L+1)$ 次方下降。这意味着每将OSR加倍，[信噪比](@keyword=signal_to_noise_ratio_(snr)|lang=zh-CN|style=Feynman)将提升 $10 \log_{10}(2^{2L+1}) \approx 3(2L+1)$ dB。
 *   对于一阶调制器 ($L=1$)，SQNR每倍频程提升 9 dB。
-*   对于二阶调制器 ($L=2$)，SQNR每倍频程提升 15 dB。
+*   对于二阶调制器 ($L=2$)，SQNR每[倍频](@keyword=frequency_multiplication|lang=zh-CN|style=Feynman)程提升 15 dB。
 
-这种指数级的提升威力巨大。例如，一个问题探讨了用1比特的一阶ΔΣ ADC实现与理想14比特奈奎斯特ADC相媲美的信噪比（约86 dB）。计算表明，这需要大约959的过采样率。若音频信号带宽为22.05 kHz，则所需的采样频率高达42.3 MHz [@problem_id:1281270]。这个例子生动地展示了如何用极高的速度（过采样）来换取极高的精度（分辨率），即使量化器本身只有1比特。
+这种指数级的提升威力巨大。例如，一个问题探讨了用1比特的一阶ΔΣ [ADC](@keyword=antibody_drug_conjugates|lang=zh-CN|style=Feynman)实现与理想14比特奈奎斯特[ADC](@keyword=antibody_drug_conjugates|lang=zh-CN|style=Feynman)相媲美的[信噪比](@keyword=signal_to_noise_ratio_(snr)|lang=zh-CN|style=Feynman)（约86 dB）。计算表明，这需要大约959的过采样率。若音频信号带宽为22.05 kHz，则所需的[采样频率](@keyword=sampling_rate|lang=zh-CN|style=Feynman)高达42.3 MHz [@problem_id:1281270]。这个例子生动地展示了如何用极高的速度（过采样）来换取极高的精度（分辨率），即使量化器本身只有1比特。
 
 ### 架构考量与设计权衡
 
 理论上的性能提升必须在实际电路中实现，这引出了一系列关于架构选择和设计权衡的实际问题。
 
-#### 环路滤波器架构：CIFB vs. CIFF
+#### [环路滤波器](@keyword=loop_filter|lang=zh-CN|style=Feynman)架构：CIFB vs. CIFF
 
-实现高阶环路滤波器 $H(z)$ 的常用拓扑有两种：**带反馈的积分器级联（CIFB）**和**带前馈的积分器级联（CIFF）**。
-*   在**CIFB**架构中，输入信号和反馈信号在第一个积分器之前相减，整个信号路径流经积分器链。这意味着每个积分器的输出都必须承载输入信号的完整或经滤波的副本。对于低频或直流大信号输入，这会导致积分器输出产生巨大的摆幅，对电路的动态范围和功耗提出了严苛的要求 [@problem_id:4263955]。
-*   在**CIFF**架构中，通过引入从输入和各级积分器输出到量化器输入的加权前馈路径，可以创造出一条“信号捷径”。通过精心选择前馈系数，可以使得STF在整个频带内都近似为1。在这种情况下，进入积分器链的信号是输入信号与反馈信号之差 $X(z) - Y(z)$。由于 $Y(z) \approx STF(z)X(z) + NTF(z)E(z) \approx X(z) + NTF(z)E(z)$，这个差值近似为 $-NTF(z)E(z)$，即主要是经过滤波的量化噪声。因此，积分器主要处理噪声信号，而不再需要承载大的输入信号分量，从而极大地减小了内部节点的信号摆幅，放宽了对放大器动态范围的要求 [@problem_id:4263955]。
+实现高阶[环路滤波器](@keyword=loop_filter|lang=zh-CN|style=Feynman) $H(z)$ 的常用拓扑有两种：**带反馈的积分器级联（CIFB）**和**带前馈的[积分器](@keyword=integrator|lang=zh-CN|style=Feynman)级联（CIFF）**。
+*   在**CIFB**架构中，输入信号和反馈信号在第一个[积分器](@keyword=integrator|lang=zh-CN|style=Feynman)之前相减，整个信号路径流经积分器链。这意味着每个[积分器](@keyword=integrator|lang=zh-CN|style=Feynman)的输出都必须承载输入信号的完整或经滤波的副本。对于低频或直流大信号输入，这会导致积分器输出产生巨大的摆幅，对电路的动态范围和功耗提出了严苛的要求 [@problem_id:4263955]。
+*   在**CIFF**架构中，通过引入从输入和各级积分器输出到量化器输入的加权前馈路径，可以创造出一条“信号捷径”。通过精心选择前馈系数，可以使得STF在整个频带内都近似为1。在这种情况下，进入[积分器](@keyword=integrator|lang=zh-CN|style=Feynman)链的信号是输入信号与反馈信号之差 $X(z) - Y(z)$。由于 $Y(z) \approx STF(z)X(z) + NTF(z)E(z) \approx X(z) + NTF(z)E(z)$，这个差值近似为 $-NTF(z)E(z)$，即主要是经过滤波的量化噪声。因此，积分器主要处理噪声信号，而不再需要承载大的输入信号分量，从而极大地减小了内部节点的信号摆幅，放宽了对放大器动态范围的要求 [@problem_id:4263955]。
 
 #### 稳定性与高阶设计的挑战
 
-虽然增加调制器阶数 $L$ 可以获得更强的噪声整形能力和更高的信噪比，但这是有代价的：**稳定性**会随之下降。
+虽然增加调制器阶数 $L$ 可以获得更强的噪声整形能力和更高的[信噪比](@keyword=signal_to_noise_ratio_(snr)|lang=zh-CN|style=Feynman)，但这是有代价的：**稳定性**会随之下降。
 
-噪声传递函数NTF的特性是低频衰减和高频增益。为了实现更陡峭的低频衰减（即更大的 $L$），NTF在高频区的增益峰值 $|NTF|_{\infty}$ 往往会变得更高 [@problem_id:4263998]。这个峰值增益意味着在某个频率上，量化噪声会被显著放大。在真实的非线性系统中，这种放大的噪声会反馈到量化器的输入端。如果信号过大，超出了量化器的输入范围（饱和），线性模型就会失效，环路可能会变得不稳定，产生振荡或混沌行为。
+噪声传递函数NTF的特性是低频衰减和高频增益。为了实现更陡峭的低频衰减（即更大的 $L$），NTF在高频区的增益峰值 $|NTF|_{\infty}$ 往往会变得更高 [@problem_id:4263998]。这个峰值增益意味着在某个频率上，量化噪声会被显著放大。在真实的非线性系统中，这种放大的噪声会反馈到量化器的输入端。如果信号过大，超出了量化器的输入范围（饱和），[线性模型](@keyword=linear_models|lang=zh-CN|style=Feynman)就会失效，环路可能会变得不稳定，产生振荡或混沌行为。
 
-因此，$|NTF|_{\infty}$ 成为了衡量调制器稳定裕度的重要指标。对于最常用的1比特调制器，由于其量化器（一个比较器）具有强非线性，稳定性问题尤为突出。一个著名的经验设计准则，即**李氏稳定性判据（Lee's Stability Criterion）**，指出为了保证1比特ΔΣ调制的鲁棒稳定性，NTF的峰值增益应被限制在1.5左右，并且几乎肯定要小于2。这个准则并非一个严格的数学定理，而是基于大量非线性时域仿真和实际芯片测量得出的经验法则，为设计者提供了一个宝贵的实践指南 [@problem_id:4264020]。
+因此，$|NTF|_{\infty}$ 成为了衡量调制器[稳定裕度](@keyword=stability_margins|lang=zh-CN|style=Feynman)的重要指标。对于最常用的1比特调制器，由于其量化器（一个比较器）具有强[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)，稳定性问题尤为突出。一个著名的经验设计准则，即**李氏[稳定性判据](@keyword=stability_criterion|lang=zh-CN|style=Feynman)（Lee's Stability Criterion）**，指出为了保证1比特ΔΣ调制的[鲁棒稳定性](@keyword=robust_stability|lang=zh-CN|style=Feynman)，NTF的峰值增益应被限制在1.5左右，并且几乎肯定要小于2。这个准则并非一个严格的数学定理，而是基于大量[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)[时域仿真](@keyword=time_domain_simulation|lang=zh-CN|style=Feynman)和实际芯片测量得出的经验法则，为设计者提供了一个宝贵的实践指南 [@problem_id:4264020]。
 
 #### 多比特量化
 
 克服高阶设计稳定性的一个有效方法是采用**多比特量化器**。使用多比特（例如3-5比特）量化器带来两大好处 [@problem_id:4263998]：
 1.  **减小量化噪声**：对于相同的满量程范围，一个N比特量化器的阶跃大小 $\Delta$ 比1比特量化器小得多。由于总噪声功率与 $\Delta^2$ 成正比，注入环路的初始量化噪声就大大减小了。这直接降低了内部节点的信号摆幅，从而提高了稳定性。
-2.  **改善线性度**：多比特量化器的输入-输出特性（一个阶梯函数）比1比特量化器的符号函数更接近线性。这使得整个环路的行为更符合线性模型的预测，减小了因强非线性导致的不可预测行为的风险。
+2.  **改善线性度**：多比特量化器的输入-输出特性（一个[阶梯函数](@keyword=step_functions|lang=zh-CN|style=Feynman)）比1比特量化器的[符号函数](@keyword=signum_function|lang=zh-CN|style=Feynman)更接近线性。这使得整个环路的行为更符合线性模型的预测，减小了因强[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)导致的不可预测行为的风险。
 
-由于多比特调制器本质上更稳定，设计者可以采用更激进的NTF（即更高的阶数 $L$ 和更大的 $|NTF|_{\infty}$），在不牺牲稳定性的前提下，实现更卓越的噪声整形性能。然而，多比特调制器的代价是需要在反馈路径中加入一个同样高精度的数模转换器（DAC），其非线性会直接影响整个ADC的性能，需要额外的校准技术来修正，但这已超出了本章的范围。
+由于多比特调制器本质上更稳定，设计者可以采用更激进的NTF（即更高的阶数 $L$ 和更大的 $|NTF|_{\infty}$），在不牺牲稳定性的前提下，实现更卓越的噪声整形性能。然而，多比特调制器的代价是需要在反馈路径中加入一个同样高精度的[数模转换器](@keyword=digital_to_analog_converter|lang=zh-CN|style=Feynman)（DAC），其[非线性](@keyword=non_linearity|lang=zh-CN|style=Feynman)会直接影响整个[ADC](@keyword=antibody_drug_conjugates|lang=zh-CN|style=Feynman)的性能，需要额外的校准技术来修正，但这已超出了本章的范围。

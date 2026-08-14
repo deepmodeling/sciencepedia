@@ -12,7 +12,7 @@
 
 <center>
 <figure>
-  <img src="https://assets.bitdegree.org/online-learning-platforms/storage/media/2018/08/what-is-a-low-pass-filter-rc-circuit.png" alt="A diagram showing an RC low-pass filter circuit and its frequency response curve, indicating the cutoff frequency." style="width: 70%;">
+
   <figcaption>图1：一个简单的[RC低通滤波器](@keyword=rc_low_pass_filter|lang=zh-CN|style=Feynman)及其[频率响应](@keyword=frequency_response|lang=zh-CN|style=Feynman)。电路“偏爱”低频信号，并在截止频率 $\omega_c$ 之后开始衰减高频信号。</figcaption>
 </figure>
 </center>
@@ -31,7 +31,7 @@
 
 <center>
 <figure>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Relaxation_oscillator_animation.gif/300px-Relaxation_oscillator_animation.gif" alt="Animation of a relaxation oscillator showing the capacitor voltage oscillating between two thresholds." style="width: 50%;">
+
   <figcaption>图2：张弛[振荡器](@keyword=oscillators|lang=zh-CN|style=Feynman)的工作原理。电压在两个由继电器设定的阈值之间循环，形成一个稳定的[极限环](@keyword=limit_cycles|lang=zh-CN|style=Feynman)。</figcaption>
 </figure>
 </center>
@@ -50,7 +50,7 @@
 
 <center>
 <figure>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Chua_attractor.svg" alt="The double-scroll strange attractor of Chua's circuit." style="width: 50%;">
+
   <figcaption>图3：[蔡氏电路](@keyword=chua_s_circuit|lang=zh-CN|style=Feynman)的“双涡卷”[奇异吸引子](@keyword=strange_attractors|lang=zh-CN|style=Feynman)，这是确定性混沌在三维[状态空间](@keyword=state_space_2|lang=zh-CN|style=Feynman)中的一个经典图像。</figcaption>
 </figure>
 </center>

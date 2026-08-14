@@ -25,7 +25,7 @@ When we pull on a metal rod, it first behaves like a spring—this is the **elas
 
 From this point on, as we continue to stretch the material, something remarkable happens. To achieve each new increment of strain, we have to pull even harder. The stress required to keep it deforming keeps rising. This region of the curve, from the [yield point](@keyword=yield_point|lang=en-US|style=Feynman) up to the peak, is the visible signature of strain hardening [@problem_id:1338101]. It is the macroscopic graph of the microscopic dislocation traffic jam we just discussed.
 
-![A typical engineering [stress-strain curve](@keyword=stress_strain_curve|lang=en-US|style=Feynman) for a ductile metal, highlighting the elastic region, yielding, the [strain hardening](@keyword=strain_hardening|lang=en-US|style=Feynman) region (uniform plastic deformation), and the necking region leading to fracture.](image_placeholder_for_stress_strain_curve)
+ for a ductile metal, highlighting the elastic region, yielding, the [strain hardening](@keyword=strain_hardening|lang=en-US|style=Feynman) region (uniform plastic deformation), and the necking region leading to fracture.](image_placeholder_for_stress_strain_curve)
 
 This is a different kind of strengthening than, say, creating an alloy. **Solid-solution strengthening** is like scattering speed bumps (solute atoms) all over the atomic highways, creating a general, uniform resistance. Strain hardening, in contrast, is about creating roadblocks and traffic jams (dislocation tangles) that become more severe the more you use the roads [@problem_id:1338146].
 

@@ -23,7 +23,6 @@
 
 让我们用这个新工具来绘制最简单的宇宙模型——没有任何物质和引力的平直[时空](@keyword=space_time|lang=zh-CN|style=Feynman)，即[闵可夫斯基空间](@keyword=minkowski_space|lang=zh-CN|style=Feynman)。这就像在一张白纸上学习绘画技巧。经过[共形变换](@keyword=conformal_transformations|lang=zh-CN|style=Feynman)后，整个无限的[闵可夫斯基时空](@keyword=minkowski_spacetime|lang=zh-CN|style=Feynman)变成了一个漂亮的菱形。
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Penrose_diagram_for_Minkowski_spacetime.svg/500px-Penrose_diagram_for_Minkowski_spacetime.svg.png)
 *图1：闵可夫斯基时空的[彭罗斯图](@keyword=penrose_diagrams|lang=zh-CN|style=Feynman)。整个无限平直的[时空](@keyword=space_time|lang=zh-CN|style=Feynman)被压缩在了一个菱形内。*
 
 这个菱形的每一个点、每一条边都代表着原来无限[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中的特定“无穷远”区域。让我们来认识一下这些新的“边界”：
@@ -46,7 +45,6 @@
 
 经过这番“[乌龟坐标](@keyword=tortoise_coordinate|lang=zh-CN|style=Feynman)”的拉伸和随后的共形压缩，一幅远比闵可夫斯基菱形复杂和惊人的图像展现在我们面前。这就是**[最大解析延拓](@keyword=maximal_analytic_extension|lang=zh-CN|style=Feynman)的[史瓦西时空](@keyword=schwarzschild_spacetime|lang=zh-CN|style=Feynman)**的[彭罗斯图](@keyword=penrose_diagrams|lang=zh-CN|style=Feynman)。它之所以被称为“最大”，是因为在这张地图上，任何自由运动的物体或光线的路径（[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)）要么可以无限延伸下去，要么就终结于一个真正物理意义上的[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)（曲率无限大的地方），而不会在某个普通的点上戛然而止。这保证了我们的地图没有遗漏任何可到达的区域 [@problem_id:1838640]。
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Penrose_diagram_of_Schwarzschild_spacetime.svg/500px-Penrose_diagram_of_Schwarzschild_spacetime.svg.png)
 *图2：[最大解析延拓](@keyword=maximal_analytic_extension|lang=zh-CN|style=Feynman)的[史瓦西时空](@keyword=schwarzschild_spacetime|lang=zh-CN|style=Feynman)[彭罗斯图](@keyword=penrose_diagrams|lang=zh-CN|style=Feynman)。它包含了四个区域：I（我们的宇宙），II（[黑洞](@keyword=black_hole|lang=zh-CN|style=Feynman)内部），III（另一个宇宙），IV（[白洞](@keyword=white_hole|lang=zh-CN|style=Feynman)内部）。*
 
 这张图揭示了一个令人震惊的宇宙结构：

@@ -7,8 +7,6 @@
 
 最简单、最直观的想法或许就是“切片再相加”，这正是我们在初等微积分里学到的[黎曼和](@keyword=riemann_sums|lang=zh-CN|style=Feynman) (Riemann sum) 的精髓。想象一下，你想计算一条曲线下方的面积。一个朴素的方法是把这片区域切成许多窄窄的竖条，把每个竖条近似为一个梯形，然后把所有梯形的面积加起来。这就是**[梯形法则](@keyword=trapezoidal_rule|lang=zh-CN|style=Feynman) (Trapezoidal rule)**。
 
-![Image of the trapezoidal rule](https://upload.wikimedia.org/wikipedia/commons/d/dd/Trapezoidal_rule_illustration.png)
-
 我们用 $n$ 个梯形来近似，每个梯形的宽度（也就是步长，我们记为 $h$）就越小，我们得到的总面积也就越接近真实值。从数学上看，[梯形法则](@keyword=trapezoidal_rule|lang=zh-CN|style=Feynman)的近似值其实就是[左黎曼和与右黎曼和](@keyword=left_and_right_riemann_sums|lang=zh-CN|style=Feynman)的算术平均值。当我们的函数是单调的时候，这个近似值恰好被夹在[左黎曼和与右黎曼和](@keyword=left_and_right_riemann_sums|lang=zh-CN|style=Feynman)之间，这听起来是个非常“中庸”且合理的选择。[@problem_id:2435376] 只要函数是可积的，那么当我们让梯形的数量趋于无穷（也就是步长 $h \to 0$）时，这个近似值就会收敛到真实的积分值。[@problem_id:2435376] 这很棒，但问题是，“无穷”是一个我们永远无法在计算机上达到的概念。我们只能用有限的、甚至为了节省计算资源而不能太多的梯形。那么，有没有一种方法，能让我们用较少的计算量，就得到一个更好的结果呢？我们能比“埋头苦干，增加更多梯形”更聪明一点吗？
 
 ### 智慧的捷径：从已知错误中榨取正确答案
@@ -66,8 +64,6 @@ R_{i,j} = R_{i,j-1} + \frac{R_{i,j-1} - R_{i-1,j-1}}{4^{j-1} - 1}
 $$
 
 这个公式看起来可能有点吓人，但它的本质就是我们之前推导的那个思想：用一个合适的[线性组合](@keyword=linear_combinations|lang=zh-CN|style=Feynman)来消掉前一列方法的主要误差项。分母中的 $4^{j-1}-1$ 正是确保误差能够被精确抵消的关键系数。例如，从 $j=1$ ($O(h^2)$) 到 $j=2$ ($O(h^4)$)，系数是 $4^1-1=3$。从 $j=2$ ($O(h^4)$) 到 $j=3$ ($O(h^6)$)，系数是 $4^2-1=15$。[@problem_id:2198728] [@problem_id:2198772]
-
-![Image of a Romberg integration tableau](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Romberg_integration_tableau.svg/600px-Romberg_integration_tableau.svg.png)
 
 [龙贝格积分](@keyword=romberg_integration|lang=zh-CN|style=Feynman)表就像一部自动化的“精度提升机”。我们输入一些粗糙的[梯形法则](@keyword=trapezoidal_rule|lang=zh-CN|style=Feynman)结果，它就能逐列地为我们“提纯”出越来越精确的答案。通常，表格对角线上的值 $R_{i,i}$ 是在使用了相同数量的函数求值点的情况下能得到的最佳估计。[@problem_id:2198763]
 

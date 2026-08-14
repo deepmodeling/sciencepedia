@@ -36,8 +36,6 @@
 
 面对如此狡猾的敌人，我们的免疫系统岂能坐以待毙？进化给出了它的答案：IgA2亚型。IgA2的基因中发生了一个巧妙的缺失，导致其铰链区比IgA1短得多，恰好删除了被细菌[蛋白酶](@keyword=protease|lang=zh-CN|style=Feynman)识别和切割的那段序列。因此，IgA2对这些蛋白酶具有天然的抵抗力。[@problem_id:2238307] IgA1和IgA2在结构上的这点细微差别，生动地记录了宿主与病原体之间一场持续了千万年的“道高一尺，魔高一丈”的分子战争。
 
-![Papain and Pepsin Digestion](https://cdn.mathpix.com/snip/images/oWJ88o5Y0b-33N-yL-Jq2rMYt6jFjQhB4eFw6z-2w14.jpg)
-
 *图1. [蛋白酶](@keyword=protease|lang=zh-CN|style=Feynman)木瓜蛋白酶和[胃蛋白酶](@keyword=pepsin|lang=zh-CN|style=Feynman)对[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)分子的不同切割方式。木瓜[蛋白酶](@keyword=protease|lang=zh-CN|style=Feynman)在铰链区[二硫键](@keyword=disulfide_bridge|lang=zh-CN|style=Feynman)上方切割，产生两个独立的[Fab片段](@keyword=fab_fragment|lang=zh-CN|style=Feynman)和一个Fc片段。[胃蛋白酶](@keyword=pepsin|lang=zh-CN|style=Feynman)在二硫键下方切割，产生一个共价连接的F(ab')₂片段和降解的Fc部分。这一区别是理解[抗体结构](@keyword=antibody_structure|lang=zh-CN|style=Feynman)和功能的基础，也是制造用于研究和治疗的[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)片段的关键。[@problem_id:2238298]*
 
 ### 科学家作为工程师：构建更优[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)

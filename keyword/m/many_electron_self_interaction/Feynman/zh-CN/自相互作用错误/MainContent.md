@@ -37,7 +37,7 @@ $$
 
 现在，这就是我们近似方法的失败之处。大多数常见的泛函，如[局域密度近似](@keyword=local_density_approximation|lang=zh-CN|style=Feynman)（LDA）和[广义梯度近似](@keyword=generalized_gradient_approximation|lang=zh-CN|style=Feynman)（GGAs），不遵守这一定律。对它们来说，能量 $E(N)$ 是一个平滑的**凸**函数——它在整数点之间向下凹陷。
 
-![一张图表，显示了精确的[分段线性](@keyword=piecewise_linearity|lang=zh-CN|style=Feynman)E(N)曲线与近似的凸E(N)曲线之间的差异。](https://i.imgur.com/example.png "这是一个用于真实图表的占位符。")
+E(N)曲线与近似的凸E(N)曲线之间的差异。](https://i.imgur.com/example.png "这是一个用于真实图表的占位符。")
 
 为什么这种“凹陷”如此灾难性？让我们回到我们那两个分开的原子A和B，它们共享一个额外的电子。总能量是 $E_{\mathrm{tot}} = E_A(N_A) + E_B(N_B)$，其中 $N_A + N_B = 1$。
 

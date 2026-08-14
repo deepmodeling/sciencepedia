@@ -38,7 +38,7 @@ $$ (\text{[压力梯度](@keyword=pressure_gradient|lang=zh-CN|style=Feynman)})_
 - **竖直[速度](@keyword=velocity|lang=zh-CN|style=Feynman) $v$**，代表流体穿过**水平墙面（天花板和地板）**的快慢，我们就把它放在水平墙面的中心。
 
 <p align="center">
-    <img src="https://i.imgur.com/kP120gV.png" alt="Staggered Grid Layout" width="400">
+
     <br>
     <em>图1：[交错网格](@keyword=staggered_grid|lang=zh-CN|style=Feynman)（MAC网格）的布局。压力p位于单元中心，水平[速度](@keyword=velocity|lang=zh-CN|style=Feynman)u位于竖直面上，竖直[速度](@keyword=velocity|lang=zh-CN|style=Feynman)v位于水平面上。</em>
 </p>
@@ -59,7 +59,7 @@ $$ (\nabla \cdot \mathbf{u})_{i,j} \approx \frac{u_{i+1/2,j} - u_{i-1/2,j}}{\Del
 
 一旦我们接受了这个“[分离](@keyword=fractionation|lang=zh-CN|style=Feynman)”的世界观，我们就必须在所有事情上都贯彻它。在[交错网格](@keyword=staggered_grid|lang=zh-CN|style=Feynman)上解决问题，就像在一个独特的物理世界里生活，有它自己的一套规则。
 
-**规则一：力在哪里？** 
+**规则一：力在哪里？**
 假设我们要加入重力的影响。重力是一个[体力](@keyword=body_forces|lang=zh-CN|style=Feynman)，它作用于流体的每一个部分。我们应该把它放在哪里？答案是：**“对号入座”**。驱动水平[速度](@keyword=velocity|lang=zh-CN|style=Feynman) $u$ 的水平重力分量，自然应该被施加在 $u$ 所在的位置——竖直墙面上。同理，竖直重力分量应该施加在 $v$ 所在的位置——水平墙面上。对于一个更复杂的、局部的点力（比如模拟一个微型推进器），我们也需要用一个平滑的函数将这个力“分配”到它[周围](@keyword=entourages|lang=zh-CN|style=Feynman)的几个[速度](@keyword=velocity|lang=zh-CN|style=Feynman)点上，而不是粗暴地加在某一个格点上。每一种力，都必须找到它在[交错](@keyword=interleaving|lang=zh-CN|style=Feynman)世界里对应的[动量](@keyword=momentum|lang=zh-CN|style=Feynman)归宿 [@problem_id:2438345]。
 
 **规则二：世界的边缘**

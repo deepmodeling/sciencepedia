@@ -12,7 +12,7 @@ Everything—and I mean *everything*—we are about to discuss rests on a single
 This means the triangle formed by the points $P$, $C$, and $T$ is always a right-angled triangle, with the right angle at $T$. This isn't a coincidence or a special case; it's the very nature of tangency.
 
 <center>
-<img src="https://i.imgur.com/r6m5Ocy.png" alt="A diagram showing the right-angled triangle formed by the center of the circle (C), an external point (P), and the [point of tangency](@keyword=point_of_tangency|lang=en-US|style=Feynman) (T)." width="400"/>
+
 </center>
 
 Why is this so powerful? Because we know an awful lot about right-angled triangles! Suddenly, we can bring in one of the most famous tools in all of mathematics: the Pythagorean theorem. If we know the distance from our point $P$ to the center $C$, let's call it $D$, and we know the circle's radius, $r$, then the length of the tangent line from $P$ to $T$ is no longer a mystery. It's simply the third side of our right triangle. The Pythagorean theorem, $a^2 + b^2 = c^2$, tells us that $PT^2 + CT^2 = PC^2$. In our terms, this is:

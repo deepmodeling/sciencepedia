@@ -25,7 +25,7 @@
 
 <br>
 <center>
-<img src="https://i.imgur.com/eBf7pM8.png" alt="A simplified Jablonski Diagram showing key photophysical processes: absorption, vibrational relaxation, fluorescence, internal conversion, intersystem crossing, and phosphorescence." width="600">
+
 <br>
 <small>图1：简化的亚布隆斯基图，展示了分子光物理过程中的主要路径。</small>
 </center>

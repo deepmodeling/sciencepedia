@@ -16,7 +16,7 @@
 让我们看一个简单的例子，3-甲基-1-戊烯（3-methyl-1-pentene）。它的名字听起来很复杂，但它的骨架式却异常清晰。我们可以从这个结构中轻松地识别出碳原子的骨架，并辨认出哪些碳原子位于链的“端点”，即只与一个其他碳原子相连[@problem_id:2186453]。这种简化让我们能立即抓住分子的核心结构，而不被无数的氢原子所淹没。
 
 <p align="center">
-    <img src="https://assets.chem-steps.com/topic_images/organic_chemistry_undergraduate/organic_structural_conventions/2186453_chem.png" alt="Skeletal structure of 3-methyl-1-pentene, highlighting the three endpoint carbons." width="400"/>
+
 </p>
 <p align="center" style="font-size: 0.9em; color: grey;">图1：3-甲基-1-戊烯的骨架式。拐角和端点代表碳原子。三个标示出的碳原子是“端点”碳。</p>
 
@@ -35,7 +35,7 @@
 让我们来做一次“分子普查”。以[甲基乙烯基酮](@keyword=methyl_vinyl_ketone|lang=zh-CN|style=Feynman)（methyl vinyl ketone）[@problem_id:2186439] 为例，我们可以清晰地把它“解剖”开来，数出它包含10个$\sigma$键（构成了分子的框架）和2个$\pi$键（赋予了它特殊的反应性）。甚至对于像多巴胺[@problem_id:2186433] 这样复杂的[生物分子](@keyword=biological_molecules|lang=zh-CN|style=Feynman)，我们也能系统地清点出其内部所有的$\sigma$键和孤对电子（未参与成键的价电子）。这种分析让我们能够从电子的层面理解分子的结构和稳定性，而不是仅仅停留在画线的层面。
 
 <p align="center">
-    <img src="https://assets.chem-steps.com/topic_images/organic_chemistry_undergraduate/organic_structural_conventions/2186439_chem.png" alt="Decomposition of methyl vinyl ketone into sigma and pi bonds." width="500"/>
+
 </p>
 <p align="center" style="font-size: 0.9em; color: grey;">图2：[甲基乙烯基酮](@keyword=methyl_vinyl_ketone|lang=zh-CN|style=Feynman)中的$\sigma$键（蓝色）和$\pi$键（红色）。双键由一个$\sigma$键和一个$\pi$键构成。</p>
 
@@ -48,7 +48,7 @@
 当然，共振更多时候展现的是一种稳定与和谐，而非[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)。以[吡咯](@keyword=pyrrole|lang=zh-CN|style=Feynman)（pyrrole）为例[@problem_id:2186423]，这是一个五元环，其中一个碳被氮原子取代。氮原子上有一对[孤对电子](@keyword=lone_pairs|lang=zh-CN|style=Feynman)，但它们并不“安分守己”。这对电子会情不自禁地加入到环内的$\pi$电子体系中，一起翩翩起舞。通过弯曲的箭头，我们可以描绘出电子流动的轨迹，画出一系列带[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的共振结构。在这些结构中，氮原子带上了正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，而环上的某个碳原子则带上了负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。
 
 <p align="center">
-    <img src="https://assets.chem-steps.com/topic_images/organic_chemistry_undergraduate/organic_structural_conventions/2186423_chem.png" alt="Resonance structures of pyrrole showing delocalization of the nitrogen lone pair." width="600"/>
+
 </p>
 <p align="center" style="font-size: 0.9em; color: grey;">图3：[吡咯](@keyword=pyrrole|lang=zh-CN|style=Feynman)的共振。氮的孤对电子（左）[离域](@keyword=delocalization|lang=zh-CN|style=Feynman)到环中，形成一系列两性离子[共振结构](@keyword=resonance_structures|lang=zh-CN|style=Feynman)（右），负电荷分布在环的不同位置。</p>
 
@@ -67,7 +67,7 @@
 但规则总有让人迷惑的“例外”。看看丙二烯（allene, $H_2C=C=CH_2$）[@problem_id:2186452]。中间的碳原子连接了两个双键。根据简化规则，它应该是$sp^2$杂化吗？不是！这个碳原子只形成了两个$\sigma$键（分别连接两边的碳），因此它只需要两个[杂化轨道](@keyword=hybrid_orbitals|lang=zh-CN|style=Feynman)，即$sp$杂化。那剩下的两个 $p$ 轨道去哪了？它们恰好被用来形成两个**相互垂直**的$\pi$键，导致丙[二烯](@keyword=diene|lang=zh-CN|style=Feynman)呈现出独特的扭曲几何形状。这个例子完美地展示了，杂化理论不是死记硬背的规则，而是一个需要根据$\sigma$键和$\pi$键的数量来灵活应用的强大模型。
 
 <p align="center">
-    <img src="https://assets.chem-steps.com/topic_images/organic_chemistry_undergraduate/organic_structural_conventions/2186452_chem.png" alt="Orbital representation and geometry of allene." width="600"/>
+
 </p>
 <p align="center" style="font-size: 0.9em; color: grey;">图4：丙二烯（allene）的结构。中心碳原子为$sp$杂化，呈线性。两个$\pi$键（红色和蓝色）相互垂直，导致两端的$CH_2$基团也相互垂直。</p>
 

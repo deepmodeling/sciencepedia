@@ -32,7 +32,7 @@
 3.  **戏剧性的转折**：最有趣的情况发生了——如果上方和左侧的邻居都是蓝色的，但它们携带的标签却不同！比如，上方方块属于“2号湖”，左侧方块属于“5号湖”。这意味着什么？这意味着，我们刚刚通过当前这个方块，发现了一个惊人的事实：之前我们以为是两个独立湖泊的“2号湖”和“5号湖”，实际上是连通的！它们是同一个巨大湖泊的两个不同部分。
 
 <center>
-<img src="https://i.imgur.com/8vG8vWp.png" width="600">
+
 <br>
 图1：[霍申-科佩尔曼算法](@keyword=hoshen_kopelman_algorithm|lang=zh-CN|style=Feynman)的核心时刻。当扫描到灰色方块时，发现其上方和左侧的邻居分别带有标签1和2。这揭示了1号[簇](@keyword=orbifold|lang=zh-CN|style=Feynman)和2号[簇](@keyword=orbifold|lang=zh-CN|style=Feynman)实际上是连通的。
 </center>

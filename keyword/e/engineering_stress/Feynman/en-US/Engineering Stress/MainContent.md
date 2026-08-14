@@ -21,7 +21,7 @@ $$
 \sigma_T = \frac{F}{A_i}
 $$
 
-This is a measure of the instantaneous force intensity over the *current*, deformed area, and it corresponds to the famous **Cauchy [stress tensor](@keyword=stress_tensor|lang=en-US|style=Feynman)** in continuum mechanics [@problem_id:2708312]. 
+This is a measure of the instantaneous force intensity over the *current*, deformed area, and it corresponds to the famous **Cauchy [stress tensor](@keyword=stress_tensor|lang=en-US|style=Feynman)** in continuum mechanics [@problem_id:2708312].
 
 Because the area $A_i$ shrinks as the rod is pulled in tension, for the same applied force $F$, the [true stress](@keyword=true_stress|lang=en-US|style=Feynman) $\sigma_T$ will be larger than the engineering stress $\sigma_E$. The relationship is straightforward:
 
@@ -36,8 +36,6 @@ Of course, if you only stretch the rod a tiny amount, the area barely changes ($
 ### The Great Divergence: A Story of a Neck and a Peak
 
 Let's watch what happens during a full tensile test on a typical ductile metal, like a nickel superalloy [@problem_id:1339729]. If we plot the engineering stress versus the engineering strain (the fractional change in length), we see the stress rise steadily as the material deforms. But then, something strange happens. The curve reaches a maximum point and then begins to slope downwards, even as we continue to stretch the material. This peak value of engineering stress is one of the most important properties quoted for a material: the **Ultimate Tensile Strength (UTS)**. For a material like this, a typical UTS might be 1085 MPa.
-
-![A typical engineering stress-strain curve showing the UTS and the onset of necking.](https://i.imgur.com/example.png "Engineering Stress-Strain Curve")
 
 A falling stress suggests the material is getting weaker. But how can that be? We are still pulling on it, and it hasn't broken yet! The resolution to this paradox is not a change in the material's intrinsic properties, but a dramatic change in its geometry. At the exact moment the engineering stress reaches the UTS, a localized instability called **necking** begins [@problem_id:1339729]. The deformation, which had been spread uniformly along the rod's length, suddenly concentrates in one region. A "neck" forms, and this small section begins to thin down much more rapidly than the rest of the rod.
 

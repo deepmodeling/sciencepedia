@@ -33,5 +33,4 @@ f(x) = \max(0, 1-2x) \quad \text{and} \quad g(x) = \max(0, 2x-1)
 $$
 让我们看看它们的图像。函数 $f(x)$ 是一个斜坡，从 $x=0$ 处的 $1$ 开始，在 $x=1/2$ 处递减到 $0$。在区间的其余部分，从 $x=1/2$ 到 $x=1$，它保持为零。函数 $g(x)$ 则相反。它在 $x=0$到 $x=1/2$ 之间保持为零，然后在区间的后半部分从 $0$ 上升到 $1$。
 
-![Graphs of two zero-divisor functions f(x) and g(x)](https://i.imgur.com/G3WwubR.png)
 *函数 $f(x)$ 和 $g(x)$ 是 $C([0,1])$ 中的[零因子](@keyword=zero_divisors_2|lang=zh-CN|style=Feynman)。其中一个非零的地方，另一个就为零，因此它们的乘积恒为零。*

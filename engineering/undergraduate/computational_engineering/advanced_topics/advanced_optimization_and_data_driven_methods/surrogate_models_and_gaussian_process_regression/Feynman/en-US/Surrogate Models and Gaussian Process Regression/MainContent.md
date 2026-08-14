@@ -24,7 +24,7 @@ What's magical is that this updated collection of functions is *also* a Gaussian
 1.  The **Posterior Mean** $\mu(x_*)$: This is our *best guess* for the function's value at $x_*$. You can think of it as the average value of all the plausible functions that are left.
 2.  The **Posterior Variance** $\sigma^2(x_*)$: This is a measure of our *uncertainty*. In regions where we have a lot of data, all the plausible functions are forced to agree with each other, so the variance is low. In the vast, unexplored regions far from our data, the functions can diverge wildly, and our variance is high. This **epistemic uncertainty**—uncertainty due to lack of knowledge—is arguably the most powerful feature of a GP.
 
-![Illustration of a Gaussian Process fit to data. The solid line is the [posterior mean](@keyword=posterior_mean|lang=en-US|style=Feynman), and the shaded region represents the posterior variance (uncertainty), which is small near the data points and large far away from them.](https://i.imgur.com/KxT5v4s.png)
+, and the shaded region represents the posterior variance (uncertainty), which is small near the data points and large far away from them.](https://i.imgur.com/KxT5v4s.png)
 
 *Figure 1: A Gaussian Process surrogate. The model provides both a best guess (mean, solid line) and a measure of its own uncertainty (variance, shaded area). Uncertainty shrinks in regions with data and grows in unexplored regions.*
 

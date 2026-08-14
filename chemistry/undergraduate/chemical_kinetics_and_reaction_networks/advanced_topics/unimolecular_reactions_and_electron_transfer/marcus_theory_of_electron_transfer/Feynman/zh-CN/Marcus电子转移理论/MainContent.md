@@ -17,7 +17,7 @@
 
 <br/>
 <center>
-<img src="https://i.imgur.com/KjEaK8s.png" width="600" alt="Marcus theory potential energy surfaces, showing two parabolas for reactants and products."/>
+
 <br/>
 <small>图1：[马库斯理论](@keyword=marcus_theory|lang=zh-CN|style=Feynman)的自由能抛物线图。反应物（左侧）和产物（右侧）的自由能随反应坐标的变化。[电子转移](@keyword=electron_transfer|lang=zh-CN|style=Feynman)发生在两条抛物线的交点处。</small>
 </center>
@@ -67,7 +67,7 @@ $$
 
 <br/>
 <center>
-<img src="https://i.imgur.com/K9uXy8Z.png" width="600" alt="Marcus inverted region graph showing electron transfer rate vs. driving force."/>
+
 <br/>
 <small>图2：马库斯倒转区示意图。[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)（$k_{ET}$）随反应驱动力（$-\Delta G^0$）的变化。在正常区，速率随驱动力增加而增加。越过顶点（无垒区）后进入倒转区，速率反而随驱动力增加而减小。</small>
 </center>

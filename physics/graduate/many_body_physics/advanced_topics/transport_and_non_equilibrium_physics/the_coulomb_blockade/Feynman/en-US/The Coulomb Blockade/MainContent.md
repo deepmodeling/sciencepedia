@@ -64,7 +64,7 @@ $$
 This equation, the heart of the "orthodox model," tells us that the energy is minimized when the number of electrons $N$ is as close as possible to the continuous value $n_g$ set by the gate ([@problem_id:2977938]). We can picture this as a series of parabolas, one for each integer $N$, whose horizontal positions we can slide back and forth by turning the gate voltage "knob" (see Figure 1).
 
 <figure>
-    <img src="https://i.imgur.com/example.png" alt="A plot showing a series of parabolas for the energy E(N) vs. the gate charge n_g. Each parabola corresponds to a different integer number of electrons N. The ground state is the lowest parabola at any given n_g. The parabolas cross at half-integer values of n_g, which are the charge degeneracy points."/>
+
     <figcaption>Figure 1: The energy of the island for different numbers of electrons, N, as a function of the gate-induced charge n_g. At n_g = N + 1/2, the energies for N and N+1 electrons are equal (a charge degeneracy point), lifting the Coulomb blockade.</figcaption>
 </figure>
 

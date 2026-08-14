@@ -17,7 +17,7 @@
 
 一个简单的尝试是，总能量就是系统各处“局域能量密度”$\psi_0(c)$的总和。这个$\psi_0(c)$的形状通常像一个[双势阱](@keyword=double_well_potential|lang=zh-CN|style=Feynman)（double-well），有两个能量最低的“谷底”，分别对应于纯[A相](@keyword=a_phase|lang=zh-CN|style=Feynman)和纯B相的稳定状态。处于两个谷底之间的中间浓度态则能量较高，就像山峰一样，是不稳定的。
 
-![图片：一个典型的[双势阱](@keyword=double_well_potential|lang=zh-CN|style=Feynman)函数 $\psi_0(c)$，[横轴](@keyword=transverse_axis|lang=zh-CN|style=Feynman)是浓度c，纵轴是能量密度。在两个谷底 $c_A$ 和 $c_B$ 处能量最低，代表稳定的纯相。中间的凸起区域代表不稳定的混合相。](https://i.imgur.com/example.png)
+函数 $\psi_0(c)$，[横轴](@keyword=transverse_axis|lang=zh-CN|style=Feynman)是浓度c，纵轴是能量密度。在两个谷底 $c_A$ 和 $c_B$ 处能量最低，代表稳定的纯相。中间的凸起区域代表不稳定的混合相。](https://i.imgur.com/example.png)
 
 当系统某个区域的浓度恰好落在这个“山峰”上时，会发生什么？系统会想方设法降低能量，也就是让浓度向两边的谷底分化。根据最简单的[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)理论（Fick定律），[扩散通量](@keyword=diffusion_flux|lang=zh-CN|style=Feynman)正比于浓度梯度，而驱动力来自化学势$\mu = \partial\psi_0 / \partial c$的梯度。综合起来，浓度的演化方程大致是$\partial c / \partial t \propto \nabla^2 (\partial^2\psi_0 / \partial c^2)$。问题来了：在那个不稳定的“山峰”区域，$\psi_0(c)$对$c$的二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)是负的！这意味着扩散系数为负，方程变成了一个“[反向热方程](@keyword=backward_heat_equation|lang=zh-CN|style=Feynman)”。一个微小的浓度起伏，特别是波长极短的起伏，会被无限快地放大。这在数学上是“不适定”的 (ill-posed)，在物理上则意味着系统会瞬间分裂成无限细碎的结构，根本无法形成我们观察到的、具有确定厚度的界面。简单的局域能量模型，彻底失败了。[@problem_id:2922862]
 

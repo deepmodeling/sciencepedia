@@ -29,7 +29,7 @@ This is the entire philosophy in a nutshell. The simple, yet profound, innovatio
 
 <br>
 <div align="center">
-  <img src="https://i.imgur.com/kM0Iq5u.png" alt="L1 Architecture Diagram" width="700"/>
+
   <br>
   <small><b>Figure 1:</b> The core $\mathcal{L}_1$ architecture. The [fast adaptation](@keyword=fast_adaptation|lang=en-US|style=Feynman) law produces an estimate $\hat{\eta}$, which is "smoothed" by the [low-pass filter](@keyword=low_pass_filter|lang=en-US|style=Feynman) $C(s)$ before being applied to the plant. This decouples fast estimation (performance) from the control bandwidth (robustness).</small>
 </div>

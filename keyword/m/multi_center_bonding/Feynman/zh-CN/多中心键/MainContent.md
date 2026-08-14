@@ -19,5 +19,5 @@
 
 自然界设计的解决方案是**三中心二电子（3c-2e）键**。[乙硼烷](@keyword=diborane|lang=zh-CN|style=Feynman)的结构显示，两个硼原子由两个桥联氢原子连接，形成一个中心的菱形。另外四个氢原子是“端基”氢，以常规方式与硼成键。
 
-![显示桥联氢原子的[乙硼烷](@keyword=diborane|lang=zh-CN|style=Feynman)三维模型](https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Diborane-3D-balls.png/300px-Diborane-3D-balls.png)
+三维模型](https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Diborane-3D-balls.png/300px-Diborane-3D-balls.png)
 *[乙硼烷](@keyword=diborane|lang=zh-CN|style=Feynman)（$B_2H_6$）的结构。中心的两个氢原子桥联在两个硼原子之间。*

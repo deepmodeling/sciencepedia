@@ -11,8 +11,5 @@ Let's begin with a function you might have met in a calculus class: $y = \sin(1/
 
 Now, let's turn this graph into a concrete object, a [topological space](@keyword=topological_space|lang=en-US|style=Feynman). We take the piece of the graph for $x$ in the interval $(0, 1]$ and we add to it all of its "[limit points](@keyword=limit_points|lang=en-US|style=Feynman)." Think of it this way: as the curve oscillates wildly near the y-axis, it gets arbitrarily close to every single point on the vertical line segment from $(0, -1)$ to $(0, 1)$. So, to make our space "complete," we must include this entire segment. The resulting object, shown below, is the famous **Topologist's Sine Curve**.
 
-![The Topologist's Sine Curve, showing the graph of sin(1/x) and the limit segment on the y-axis.](https://i.imgur.com/gK2JkRz.png)
-
 The **Warsaw Circle** is then formed by adding an arc that connects one end of the curve, such as the point $(1, \sin(1))$, to a point on the limit segment, typically the origin $(0,0)$, without intersecting the rest of the curve.
 
-![The Warsaw Circle, which is the Topologist's Sine Curve plus an arc connecting (1, sin(1)) to the origin.](https://i.imgur.com/D4H8n6X.png)

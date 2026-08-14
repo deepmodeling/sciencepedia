@@ -15,7 +15,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/uRj0QeC.png" alt="A schematic showing corner-sharing TO4 tetrahedra forming a ring structure. T-sites are at the center of tetrahedra, and O-sites are the shared vertices." style="width: 70%;" />
+
   <figcaption>图1：[沸石](@keyword=zeolites|lang=zh-CN|style=Feynman)骨架的基本构造单元。$TO_4$ 四面体通过共享顶点（氧原子）形成 $T–O–T$ 桥，进而构成环、笼和孔道等结构。</figcaption>
 </figure>
 </center>

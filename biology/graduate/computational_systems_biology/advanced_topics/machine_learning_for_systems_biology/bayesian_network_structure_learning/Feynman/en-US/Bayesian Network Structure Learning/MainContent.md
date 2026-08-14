@@ -21,8 +21,6 @@ $$ P(x_1, \dots, x_n) = \prod_{i=1}^n P(x_i \mid \mathrm{Pa}(X_i)) $$
 
 where $\mathrm{Pa}(X_i)$ denotes the set of parents of node $X_i$ [@problem_id:3289714]. Imagine a small signaling pathway with four components, $A, B, C, D$, structured as in the diagram below, where $A$ influences both $B$ and $C$, $B$ also influences $C$, and $C$ is the sole influence on $D$.
 
-![A diagram of the DAG with edges A to B, A to C, B to C, and C to D.](image)
-
 Instead of needing to specify a giant table for the probability of every possible combination of states for $(A, B, C, D)$, we only need to provide the local rules: $P(A)$, $P(B \mid A)$, $P(C \mid A, B)$, and $P(D \mid C)$. The joint probability for any specific state $(a, b, c, d)$ is simply their product:
 
 $$ P(A=a, B=b, C=c, D=d) = P(A=a) \, P(B=b \mid A=a) \, P(C=c \mid A=a, B=b) \, P(D=d \mid C=c) $$

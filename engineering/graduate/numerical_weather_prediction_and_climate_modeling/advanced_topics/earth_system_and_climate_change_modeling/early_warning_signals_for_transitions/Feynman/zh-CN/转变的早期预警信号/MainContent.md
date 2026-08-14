@@ -17,7 +17,6 @@
 
 现在，想象一下这片地貌本身正在缓慢地变化——可能是一场无声的、持续了几个世纪的“地质运动”。我们曾经熟悉的那个深邃山谷，正在逐渐变得越来越平坦、越来越浅。
 
-![一个球在山谷中，山谷从深变浅](https://www.researchgate.net/profile/Marten-Scheffer/publication/235773838/figure/fig2/AS:392500054810629@1470590749842/The-ball-in-a-cup-analogy-for-the-stability-of-a-system-The-state-of-the-system-is.png)
 *图1：稳定性的“球与谷”模型。左边是深度稳定状态，右边是临近[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)的浅层[不稳定状态](@keyword=unstable_states|lang=zh-CN|style=Feynman)。*
 
 在这种情况下，再推一下小球会发生什么？由于坡壁变得平缓，将小球拉回谷底的恢复力减弱了。小球会晃晃悠悠地滚得更高、更远，并且需要更长的时间才能重新安顿下来。如果我们持续观察，会发现小球的每一次晃动都比上一次更“拖沓”、更“懒散”。

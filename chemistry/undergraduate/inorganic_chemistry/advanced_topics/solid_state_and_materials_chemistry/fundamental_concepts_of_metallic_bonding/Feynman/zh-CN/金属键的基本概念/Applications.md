@@ -12,7 +12,7 @@
 
 然而，当我们制造合金时，我们就在这个完美有序的结构中引入了“杂质”。假设我们制造黄铜，我们会用一些锌原子替换掉铜原子。锌原子和铜原子的大小略有不同，这就在原本平滑的原子层上造成了“凹凸不平”的扭曲。这些原子尺度的“[颠簸](@keyword=thrashing|lang=zh-CN|style=Feynman)”极大地阻碍了原子层的滑动，就像在滑动的扑克牌之间撒了一把沙子。你需要用更大的力才能推动它们。这就是为什么黄铜比纯铜硬得多的根本原因，这个过程被称为**固溶[强化](@keyword=reinforcement|lang=zh-CN|style=Feynman)** [@problem_id:2026751] [@problem_id:2254409]。
 
-![一个被[原子尺寸](@keyword=atomic_size|lang=zh-CN|style=Feynman)差异扰乱的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)示意图，显示了位错运动受阻。](https://example.com/solid_solution_strengthening.png)
+差异扰乱的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)示意图，显示了位错运动受阻。](https://example.com/solid_solution_strengthening.png)
 
 这种“掺杂”主要有两种方式。如果两种金属的[原子半径](@keyword=atomic_radius|lang=zh-CN|style=Feynman)相近（通常差异在15%以内），它们可以互相替换在[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中的位置，形成**[置换合金](@keyword=substitutional_alloy|lang=zh-CN|style=Feynman)**。古代的“琥珀金”（银金合金）就是一个绝佳的例子，银原子和金原子的半径惊人地相似，彼此可以无缝替换 [@problem_id:2254417]。如果一种原子的半径非常小，它可以钻入主金属[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的间隙中，形成**间隙合金**。最著名的例子莫过于钢——微小的碳原子填充在铁原子的间隙中，极大地增强了铁的强度和硬度 [@problem_id:2254395] [@problem_id:2026742]。
 
@@ -38,7 +38,7 @@
 
 **为什么金子是黄色的？** 这是一个古老而深刻的问题。简单的电子海洋模型会预测所有金属都应该是银白色的，因为自由电子可以反射所有频率的光，就像一面完美的镜子。那么，为什么黄金和铜与众不同呢？答案在于能带结构中的一个量子细节。在金原子中，能量较低且被电子填满的 `5d` [能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)与能量较高、部分填充的 `6sp` 导带之间的能量差恰好约为 $2.64 \text{ eV}$。这个能量对应于可见光谱中的蓝光。当白光照射到金表面时，蓝光[光子](@keyword=photon|lang=zh-CN|style=Feynman)刚好有足够的能量将一个 `5d` 电子“踢”到 `6sp` [能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)上而被吸收。由于蓝光被吸收了，反射回我们眼睛的就是剩下的颜色——黄色。这就是所谓的**[带间跃迁](@keyword=interband_transitions|lang=zh-CN|style=Feynman)** [@problem_id:2254413]。铜呈现红色也是出于类似的原因。
 
-![金的能带结构示意图，显示了d带到sp带的[电子跃迁](@keyword=electronic_transitions|lang=zh-CN|style=Feynman)吸收了蓝光。](https://example.com/gold_band_structure.png)
+吸收了蓝光。](https://example.com/gold_band_structure.png)
 
 **[光电效应](@keyword=the_photoelectric_effect|lang=zh-CN|style=Feynman)与[功函数](@keyword=work_function|lang=zh-CN|style=Feynman)**。将电子从金属表面完全剥离出来所需要的最小能量，我们称之为**[功函数](@keyword=work_function|lang=zh-CN|style=Feynman)**（$\Phi$）。这可以看作是电子离开“电子海洋俱乐部”所需支付的“门票”。这个性质对于制造光电阴极等光电器件至关重要。通过合金化，我们可以精确地“调制”功函数。例如，将低功函数的钾（K）和高功函数的钨（W）混合，可以制备出具有特定中间功函数的合金，以满足特定波长光的探测需求 [@problem_id:2254405]。
 

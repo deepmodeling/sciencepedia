@@ -15,8 +15,6 @@
 
 让我们沿着选定的下坡方向，把前方的地形剖开来看。我们可以画出一条一维的曲线，[横轴](@keyword=transverse_axis|lang=zh-CN|style=Feynman)是步长 $\alpha$，纵轴是对应的海拔高度 $f(x_k + \alpha p_k)$。我们把这条曲线函数记为 $\phi(\alpha)$ [@problem_id:2226190]。因为我们初始选择的是下坡方向，所以这条曲线在 $\alpha=0$ 处的初始斜率 $\phi'(0)$ 必然是负的。
 
-![A graph showing the function phi(alpha) versus alpha. The y-axis represents the function value, and the x-axis is the step length alpha. The curve starts at (0, phi(0)) and initially goes down. A straight line, representing the sufficient decrease condition, starts at the same point but goes down linearly and more steeply than the initial part of the curve. The Armijo condition states that the acceptable points on the curve must lie below this line.](https://i.imgur.com/example-armijo.png)
-
 最基本的要求是，新位置的海拔要比当前位置低，即 $\phi(\alpha) < \phi(0)$。但这还不够。如果我们只下降了微不足道的一点点，比如从海拔8848.86米降到8848.85米，这对于寻找最低谷几乎没有帮助。我们需要的是“[充分下降](@keyword=sufficient_decrease|lang=zh-CN|style=Feynman)”。
 
 [沃尔夫条件](@keyword=armijo_wolfe_conditions|lang=zh-CN|style=Feynman)的第一条，即**[阿米霍条件](@keyword=armijo_condition|lang=zh-CN|style=Feynman) (Armijo condition)**，正是为此而生。它要求：

@@ -53,7 +53,7 @@ $$
 大自然在这里展现了它惊人的智慧，它遵循着一条“最小作用量”般的深刻原理：**最终的应力状态，是在[屈服面](@keyword=yield_surface|lang=zh-CN|style=Feynman)上距离那个不可能的试探应力“最近”的点**。这个将试探应力“[拉回](@keyword=pullbacks|lang=zh-CN|style=Feynman)”到[屈服面](@keyword=yield_surface|lang=zh-CN|style=Feynman)上的过程，就是“返回映射” [@problem_id:2568895]。
 
 <p align="center">
-  <img src="https://assets.solidrust.net/articles/plasticity/return_mapping.svg" alt="Return Mapping" width="600">
+
   <br>
   <small>图1：返回映射示意图。蓝色的$\sigma^{\text{trial}}$是纯[弹性](@keyword=elasticity|lang=zh-CN|style=Feynman)假设下的试探应力，它“穿透”了[屈服面](@keyword=yield_surface|lang=zh-CN|style=Feynman)（虚线）。[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)将其“[拉回](@keyword=pullbacks|lang=zh-CN|style=Feynman)”到更新后的[屈服面](@keyword=yield_surface|lang=zh-CN|style=Feynman)（实线）上，得到最终的真实应力$\sigma_{n+1}$。这个“返回”的过程，就是[塑性](@keyword=plasticity|lang=zh-CN|style=Feynman)修正。</small>
 </p>

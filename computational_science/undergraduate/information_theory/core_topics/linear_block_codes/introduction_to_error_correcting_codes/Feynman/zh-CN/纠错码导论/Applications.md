@@ -10,7 +10,7 @@
 
 <br/>
 <center>
-    <img src="https://i.imgur.com/k2HlcY2.png" alt="一个2x2的乘积码示意图。数据比特位于左上角，行列的校验比特使得每行每列的比特之和为偶数。一个[单比特错误](@keyword=single_bit_error|lang=zh-CN|style=Feynman)会破坏一行和一列的校验，其交点即为错误位置。" width="400"/>
+
     <br/>
     <small>图1：一个简单的乘积码。通过检查行列的[奇偶性](@keyword=even_and_odd_parity|lang=zh-CN|style=Feynman)，可以精确定位并纠正单个比特错误。</small>
 </center>

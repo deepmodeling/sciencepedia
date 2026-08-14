@@ -15,6 +15,6 @@
 
 这个名字听起来可能有些吓人，但其背后的思想却异常优雅，甚至可以用一个简单的生活场景来类比：想象两个人背靠背地站着，如果其中一个人稍微向后倾斜，他会推向另一个人，而另一个人则会反过来给他一个支撑力，阻止他摔倒。这个系统有两个稳定的状态：两人都笔直站立，或者他们都找到一个互相依靠的倾斜角度。任何偏离这个平衡的微小动作都会被系统内部的力量纠正回来。
 
-![S[RAM](@keyword=root_apical_meristem_(ram)|lang=zh-CN|style=Feynman) butterfly curve](https://assets.bitbunnylab.com/wVfR4tG_sram_butterfly.png)
+|lang=zh-CN|style=Feynman) butterfly curve](https://assets.bitbunnylab.com/wVfR4tG_sram_butterfly.png)
 
 在电子世界里，我们用两个首尾相连、互相“背靠背”的 **反相器** (inverter) 来实现这个效果。一个反相器的作用很简单：输入高电平（代表 `1`），输出低电平（代表 `0`），反之亦然。当我们把两个反相器交叉耦合——即第一个的输出连接到第二个的输入，第二个的输出再连回第一个的输入——一个美妙的[正反馈](@keyword=positive_feedback|lang=zh-CN|style=Feynman)循环就诞生了 [@problem_id:1963468]。

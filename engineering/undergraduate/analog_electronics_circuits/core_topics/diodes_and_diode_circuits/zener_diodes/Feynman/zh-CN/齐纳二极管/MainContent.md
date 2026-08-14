@@ -53,6 +53,4 @@ $$I = I_s \left( \exp\left(\frac{V_D}{n V_T}\right) - 1 \right)$$
 
 最简单的齐纳稳压电路如下图所示：
 
-![Zener Regulator Circuit](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Zener_Diode_Regulator.svg/400px-Zener_Diode_Regulator.svg.png)
-
 一个不稳定的输入电压 $V_{in}$，串联一个限流电阻 $R_S$，然后连接到齐纳二极管，而你的负载（传感器，$R_L$）与齐纳二极管并联。输出电压 $V_{out}$ 就是[齐纳二极管](@keyword=zener_diode|lang=zh-CN|style=Feynman)两端的电压。

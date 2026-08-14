@@ -21,7 +21,7 @@
 
 <br/>
 <center>
-    <img src="https://i.imgur.com/rN9eQJq.png" width="400" alt="Venn diagram for two variables X and Y">
+
     <br/>
     <small>图1：两个变量的信息维恩图。每个圆代表一个变量的总熵，重叠部分代表共享的信息。</small>
 </center>
@@ -60,7 +60,7 @@ $$
 
 <br/>
 <center>
-    <img src="https://i.imgur.com/eBwFf1A.png" width="450" alt="Venn diagram for three variables X, Y, and Z">
+
     <br/>
     <small>图2：三个变量的信息维恩图。七个区域代表了信息在三个变量间所有可能的共享和独占方式。</small>
 </center>

@@ -31,7 +31,7 @@
 
 这种网状结构赋予了平滑肌奇妙的特性。它可以从多个方向上收缩，并且能承受极大的拉伸而功能不减，这对于需要不断扩张和收缩的膀胱或子宫来说至关重要。
 
-![图1：三种肌肉的结构对比。(A) 骨骼肌：高度有序的[肌小节](@keyword=sarcomere|lang=zh-CN|style=Feynman)[排列](@keyword=permutation|lang=zh-CN|style=Feynman)，形成清晰的横纹。(B) [心肌](@keyword=cardiac_muscle|lang=zh-CN|style=Feynman)：同样有横纹，但细胞通过[闰盘](@keyword=intercalated_disc|lang=zh-CN|style=Feynman)连接成网络。(C) [平滑肌](@keyword=smooth_muscle|lang=zh-CN|style=Feynman)：无横纹，收缩单位呈网状分布。图片改编自公开资料。](https://i.imgur.com/kK3fR2a.png)
+[排列](@keyword=permutation|lang=zh-CN|style=Feynman)，形成清晰的横纹。(B) [心肌](@keyword=cardiac_muscle|lang=zh-CN|style=Feynman)：同样有横纹，但细胞通过[闰盘](@keyword=intercalated_disc|lang=zh-CN|style=Feynman)连接成网络。(C) [平滑肌](@keyword=smooth_muscle|lang=zh-CN|style=Feynman)：无横纹，收缩单位呈网状分布。图片改编自公开资料。](https://i.imgur.com/kK3fR2a.png)
 
 #### 永不停歇的心脏：心肌的混合智慧
 

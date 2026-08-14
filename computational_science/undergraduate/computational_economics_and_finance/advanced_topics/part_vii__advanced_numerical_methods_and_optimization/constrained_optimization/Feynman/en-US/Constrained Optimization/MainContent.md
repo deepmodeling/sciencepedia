@@ -24,7 +24,7 @@ Picture this graphically. Your [utility function](@keyword=utility_function|lang
 Where is the highest point you can reach? It’s not at the very peak of the hill, unless by some miracle your [budget line](@keyword=budget_line|lang=en-US|style=Feynman) passes right through it. Instead, the highest point you can reach will be where your [budget line](@keyword=budget_line|lang=en-US|style=Feynman) just *kisses* one of the utility contour lines. At this [point of tangency](@keyword=point_of_tangency|lang=en-US|style=Feynman), the slope of the [budget line](@keyword=budget_line|lang=en-US|style=Feynman) is exactly equal to the slope of the utility contour.
 
 <center>
-<img src="https://i.imgur.com/G3GkYhS.png" alt="A diagram showing utility contours and a [budget line](@keyword=budget_line|lang=en-US|style=Feynman). The optimal point is where the [budget line](@keyword=budget_line|lang=en-US|style=Feynman) is tangent to the highest possible utility contour." width="500">
+
 </center>
 
 Think about what this means. The slope of the utility contour represents your personal **[marginal rate of substitution](@keyword=marginal_rate_of_substitution|lang=en-US|style=Feynman)** – the rate at which you're *willing* to trade a little bit of potion $y$ for a little bit of potion $x$ while keeping your satisfaction the same. The slope of the [budget line](@keyword=budget_line|lang=en-US|style=Feynman) is the **market rate of exchange** – the rate at which you're *forced* to trade them based on their prices. At the optimum, these two rates must be equal. If they weren't, you could always make yourself happier by trading a bit of one for the other!

@@ -17,8 +17,6 @@ Now let’s make it a bit more abstract. Suppose your "trail" is a perfect circl
 
 Think about the [level curves](@keyword=level_curves|lang=en-US|style=Feynman) of the area function, the curves where $A$ is constant. These are hyperbolas of the form $xy = \text{constant}$. As you increase the constant, the hyperbolas move further from the origin. You are looking for the largest possible constant such that the hyperbola $xy = \text{constant}$ just *touches* your constraint circle. If it crossed the circle, it would mean you could move along the circle to a point on an even higher area curve. If it didn't touch the circle at all, it would be an unattainable area. So, at the exact point of maximum area, the hyperbola and the circle must be perfectly **tangent**. They kiss at a single point, sharing the same tangent line. This geometric condition is the key!
 
-![A diagram showing a constraint circle (red) and level curves of an objective function (blue). The optimum is at the point of tangency.](https://i.imgur.com/K43r9u2.png)
-
 This "tangency" idea is the telltale sign of an optimum. Whether you are maximizing the area of a triangular bracket with a fixed hypotenuse [@problem_id:2173323] or designing a shipping container [@problem_id:2173355], the principle remains the same: at the optimal point, the [level surface](@keyword=level_surface|lang=en-US|style=Feynman) of the function you're optimizing is tangent to the surface of your constraint.
 
 ### From Tangency to an Equation: The Alignment of Gradients

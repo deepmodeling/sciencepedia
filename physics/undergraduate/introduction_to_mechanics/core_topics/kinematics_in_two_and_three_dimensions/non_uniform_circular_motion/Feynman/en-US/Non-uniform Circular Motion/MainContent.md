@@ -28,7 +28,7 @@ But as a few moments pass, your speed $v$ increases. The inward-pointing [radial
 The total force of friction is the vector sum of these two components. At the start, it points purely forward. As you spin faster, that force vector swings more and more toward the center of the platform. The angle $\phi$ between the [friction force](@keyword=friction_force|lang=en-US|style=Feynman) and the purely radial direction is given by $\tan\phi = \frac{\text{tangential component}}{\text{radial component}} = \frac{m a_t}{m a_r} = \frac{R\alpha}{R\alpha^2 t^2} = \frac{1}{\alpha t^2}$. It's a beautiful result! Initially ($t \to 0$), the angle is $\frac{\pi}{2}$ (purely tangential). After a long time ($t \to \infty$), the angle approaches zero (almost purely radial), because the centripetal demand completely overshadows the tangential push. The same principle governs the acceleration felt at the tip of a giant wind turbine blade as it spins up [@problem_id:2205060]. After just a few rotations, the acceleration is already pointing almost directly towards the central axis.
 
 <center>
-    <img src="https://i.imgur.com/kK3fNqX.png" alt="A diagram showing the tangential and radial components of acceleration for an object in non-[uniform circular motion](@keyword=uniform_circular_motion|lang=en-US|style=Feynman)." width="400"/>
+
 </center>
 
 ### The Rhythms of a Pendulum: Gravity's Guiding Hand

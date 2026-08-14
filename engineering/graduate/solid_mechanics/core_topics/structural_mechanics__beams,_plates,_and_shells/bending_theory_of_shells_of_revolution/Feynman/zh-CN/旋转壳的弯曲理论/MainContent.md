@@ -13,8 +13,6 @@
 
 让我们来看一个经典的例子：一个半径为 $R$ 的薄壁球形容器，内部承受着均匀的压力 $p$。如果我们沿任意一个平面切开这个球体，考察其中一半的受[力平衡](@keyword=force_balance|lang=zh-CN|style=Feynman)，我们会发现一个极为简洁的结果。内部压力作用在切口面积上的总推力，恰好由切口边缘上[均匀分布](@keyword=uniform_distribution|lang=zh-CN|style=Feynman)的拉力所平衡。通过简单的计算，我们能得到沿任何方向的薄膜内力（单位长度上的力）都是相同的，即 $N_{\varphi} = N_{\theta} = pR/2$ [@problem_id:2916862]。这里，$N_{\varphi}$ 和 $N_{\theta}$ 分别代表经线和纬线方向的内力。
 
-![Force balance on a spherical cap under internal pressure.](https://assets.test.logos.com/images/courses/solid_mechanics/2916862_sol.png)
-
 这个公式美得令人屏息！它告诉我们，球壳巧妙地利用自身的曲率，将垂直于表面的压力 $p$ 转化为了[均匀分布](@keyword=uniform_distribution|lang=zh-CN|style=Feynman)在壳体内部的拉力。没有弯曲，没有复杂的[应力集中](@keyword=stress_concentration|lang=zh-CN|style=Feynman)，只有纯粹的、均匀的拉伸。这正是大自然承载压力最经济、最有效的方式。许多工程结构，如储气罐和穹顶，都尽可能地利用这一原理。在[薄膜理论](@keyword=membrane_theory|lang=zh-CN|style=Feynman)的世界里，力如流水般顺滑地通过结构，一切都显得那么和谐与完美。
 
 ### 当梦境破碎：[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)的唤醒
@@ -39,7 +37,7 @@ $$
 \ell \sim \sqrt{Rt}
 $$
 
-这个简单的公式蕴含着深刻的物理。[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)的宽度 $\ell$ 既不单纯取决于曲率半径 $R$，也不单纯取决于厚度 $t$，而是两者的**几何平均值**！[@problem_id:2661627] [@problem_id:2682058] 
+这个简单的公式蕴含着深刻的物理。[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)的宽度 $\ell$ 既不单纯取决于曲率半径 $R$，也不单纯取决于厚度 $t$，而是两者的**几何平均值**！[@problem_id:2661627] [@problem_id:2682058]
 
 让我们来欣赏一下这个结果。一个[曲率半径](@keyword=radius_of_curvature|lang=zh-CN|style=Feynman)很大（比较平）或者厚度很薄的壳，其[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)会很宽；反之，一个曲率半径很小（很弯）或者很厚的壳，其[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)会很窄。这完全符合我们的直觉。当壳变得无限平坦（$R \to \infty$）时，$\ell$ 也趋于无穷，这意味着弯曲效应会影响整个结构——这恰恰就是我们所熟知的平[板理论](@keyword=plate_theory|lang=zh-CN|style=Feynman)！
 

@@ -12,7 +12,7 @@
 想象一下，你正盯着一个甜甜圈（在数学上，我们称之为“环面”或 $T^2$）。现在，想象一个小蚂蚁在这个甜甜圈的表面上爬行。它的运动可以被分解为两个独立的部分：一个是绕着甜甜圈中心大洞的运动，我们称之为经向运动，其角频率为 $\omega_1$；另一个是绕着甜甜圈管道本身的运动，我们称之为纬向运动，其[角频率](@keyword=break_frequency|lang=zh-CN|style=Feynman)为 $\omega_2$。这个简单的画面，其实是一个强大动力学系统的缩影，它的状态由两个角度 $(\theta_1, \theta_2)$ 唯一确定 [@problem_id:1720338]。
 
 <center>
-    <img src="https://i.imgur.com/G98wWdC.png" alt="A trajectory on a 2-torus" width="600"/>
+
     <br/>
     <small>图1：环面上的两种轨迹。左图：频率比为有理数，轨迹形成一个闭合的环路（[周期轨道](@keyword=periodic_orbits|lang=zh-CN|style=Feynman)）。右图：频率比为无理数，轨迹永不闭合，最终将密集地覆盖整个环面（[准周期轨道](@keyword=quasi_periodic_orbits|lang=zh-CN|style=Feynman)）。</small>
 </center>
@@ -63,7 +63,7 @@ $$
 这个不等式道出了[锁频](@keyword=frequency_locking|lang=zh-CN|style=Feynman)的本质：只有当耦合强度 $K$ 足够大，能够压制住固有的频率分歧 $\Delta\omega$ 时，[锁频](@keyword=frequency_locking|lang=zh-CN|style=Feynman)才可能发生。这就像两个音乐家合奏，如果他们的音准差别太大（$\Delta\omega$ 大），就需要非常大声地听对方的声音（$K$ 大）才能协调一致。
 
 <center>
-    <img src="https://i.imgur.com/kYqxtx4.png" alt="Arnold Tongues" width="500"/>
+
     <br/>
     <small>图2：[阿诺德舌](@keyword=instability_tongues|lang=zh-CN|style=Feynman)。在频率差-驱动力强度的参数平面上，[锁频](@keyword=frequency_locking|lang=zh-CN|style=Feynman)发生的区域形如舌状。舌尖对应驱动力为零，此时只有频率完全相同时才能[锁频](@keyword=frequency_locking|lang=zh-CN|style=Feynman)。随着驱动力增强，舌头变宽，允许[锁频](@keyword=frequency_locking|lang=zh-CN|style=Feynman)的频率范围也随之扩大。</small>
 </center>

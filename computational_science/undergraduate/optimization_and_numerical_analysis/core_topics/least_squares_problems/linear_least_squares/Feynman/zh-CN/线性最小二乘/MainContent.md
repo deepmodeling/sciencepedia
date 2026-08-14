@@ -22,7 +22,7 @@
 这个点是什么？想象一下，从点 $\mathbf{b}$ 向列空间这个“平面”打下一束垂直的光，这束光在平面上投下的影子，就是我们寻找的最佳近似点 $\mathbf{p}$。这个点 $\mathbf{p}$ 被称为 $\mathbf{b}$ 在[列空间](@keyword=image_of_a_linear_transformation|lang=zh-CN|style=Feynman) $\text{Col}(A)$ 上的**正交投影** [@problem_id:2185357]。
 
 <figure>
-  <img src="https://i.imgur.com/kS0B8rL.png" alt="A diagram showing the vector b being projected onto the column space of A. The projection is p, and the residual vector r = b - p is orthogonal to the subspace." style="width: 50%; display: block; margin-left: auto; margin-right: auto;"/>
+
   <figcaption align="center">图1：向量 $\mathbf{b}$、其在 $A$ 的列空间（一个平面）上的正交投影 $\mathbf{p}$，以及[残差向量](@keyword=residual_vector|lang=zh-CN|style=Feynman) $\mathbf{r}$ 之间的几何关系。最短的距离是通过正交性实现的。</figcaption>
 </figure>
 

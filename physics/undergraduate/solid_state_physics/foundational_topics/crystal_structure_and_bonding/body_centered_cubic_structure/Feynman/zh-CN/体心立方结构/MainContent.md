@@ -9,8 +9,6 @@
 
 我们理解[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)，通常从一个叫做“晶胞”的小单元开始。它就像这座无穷建筑中的一个标准“房间”，整个晶体就是这个房间在三维空间中不断重复的产物。对于BCC结构，最直观、最便于想象的[晶胞](@keyword=unit_cell|lang=zh-CN|style=Feynman)是一个立方体。在这个立方体的八个顶点上各有一个原子，此外，在立方体的正中心，还有一个原子——这便是“体心”二字的由来。
 
-![A diagram of the Body-Centered Cubic (BCC) unit cell, showing atoms at the 8 corners and 1 atom in the center of the cube.](https://i.imgur.com/example.png)
-
 一个看似简单的问题是：这个立方体“房间”里，到底“住”了几个原子？你可能会说，8个顶点加1个中心，一共9个。但别忘了，晶体是无穷重复的。每个顶点上的原子，实际上是被8个相邻的“房间”所共享的，就像公寓楼一个角落的柱子同时支撑着周围的多个房间一样。因此，每个顶点原子对我们这个房间的贡献只有$1/8$。而位于体心的那个原子，则完全属于我们这个房间，不受任何邻居的打擾。所以，一个BCC晶胞里实际包含的原子数是：
 
 $N = 8 \times (1/8) + 1 = 2$ 个原子。
@@ -44,8 +42,6 @@ $\text{APF} = \frac{\pi\sqrt{3}}{8} \approx 0.68$
 我们之前提到，包含两个原子的常规[立方晶胞](@keyword=cubic_unit_cells|lang=zh-CN|style=Feynman)只是为了方便观察，而更基本的原胞只包含一个原子。那么，这个基本“积木块”到底长什么样？物理学家Eugene Wigner和Frederick Seitz提出了一种绝妙的几何作图法来定义它：从一个原子出发，向它所有的邻居原子作连线，然后画出这些连线的中垂面；这些中垂面所包围起来的最小空间，就是这个原子“独占的领地”，被称为“[维格纳-赛兹原胞](@keyword=wigner_seitz_cell|lang=zh-CN|style=Feynman)”（Wigner-Seitz cell）。它代表了晶体中一个原子真正的“家”的形状，不多也不少，刚好填满整个空间。
 
 对于BCC结构，当我们施展这个几何魔法时，一个令人惊叹的形状浮现出来——它不是一个简单的立方体，而是一个“截角八面体”（Truncated Octahedron）[@problem_id:1762897]。这个美丽的十四面体，拥有6个正方形的面和8个正六边形的面。这些面，正是由该原子到它的6个次近邻和8个最近邻的中垂面切割而成的。这个复杂的形状，才是BCC晶体在最基本层次上的真实几何单元，它如同蜂巢的六边形结构一样，以最有效的方式 tessellate（铺满）整个三维空间。
-
-
 
 ### 用[X射线](@keyword=x_ray|lang=zh-CN|style=Feynman)“阅读”晶体：[倒空间](@keyword=reciprocal_space|lang=zh-CN|style=Feynman)的指纹
 

@@ -17,7 +17,7 @@ Haldane 的预言最初是基于复杂的[场论](@keyword=field_theory|lang=zh-
 
 <br/>
 <div align="center">
-<img src="https://i.imgur.com/G5y4g0b.png" alt="VBS Construction" width="700"/>
+
 <br/>
 <em>图1：AKLT[价键固体](@keyword=valence_bond_solid|lang=zh-CN|style=Feynman)（VBS）的构造。每个大圆圈代表一个物理的自旋-1 粒子，它由两个小圆圈（虚拟的自旋-1/2 单元）对称化得到。连接相邻格点虚拟单元的椭圆代表一个自旋单态“价键”。</em>
 </div>

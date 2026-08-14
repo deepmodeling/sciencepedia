@@ -20,7 +20,7 @@
 这个闭合失败的矢量 $\mathbf{b}$，就是[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)的“身份证”。它精确地、定量地描述了[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)所携带的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)畸变的“总量”。更妙的是，这个柏氏矢量具有[拓扑不变性](@keyword=topological_property|lang=zh-CN|style=Feynman)：只要你的行走路径（我们称之为**柏氏回路**，Burgers circuit）始终环绕着同一条[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)线，无论你走的路径是大是小，是方是圆，最终测量出的柏氏矢量 $\mathbf{b}$ 都是完全相同的。它只取决于[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)本身的性质，而不取决于你的测量方式。[@problem_id:2878753] 这使得柏氏矢量成为一个内禀的、极其强大的物理量。我们通常使用“右手法则”来确定其方向：如果你右手拇指指向[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)线的方向 $\mathbf{t}$，那么你四指环绕的方向就是柏氏回路的正方向，此时从回路终点指向起点的矢量就被定义为 $\mathbf{b}$。
 
 <p align="center">
-  <img src="https://i.imgur.com/G5C3i5d.png" alt="Burgers Circuit" width="600"/>
+
 </p>
 <p align="center"><i>图1：在完美[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中（左），一个原子步长的闭合回路会回到起点。在含有刃[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)的[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中（右），同样的回路会产生一个闭合失败，这个从终点（F）指向起点（S）的矢量就是柏氏矢量 $\mathbf{b}$。</i></p>
 
@@ -54,7 +54,7 @@
 最终得到的，就是一个含有[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)的弹性体！在这个过程中，我们人为地引入了一个位移不连续面，[位移场](@keyword=displacement_field|lang=zh-CN|style=Feynman)在该面上有一个等于 $\mathbf{b}$ 的跳变。这解释了为什么柏氏回路会不闭合：位移场不再是单值的。
 
 <p align="center">
-  <img src="https://i.imgur.com/8QzXkQ5.png" alt="Volterra Construction" width="600"/>
+
 </p>
 <p align="center"><i>图2：Volterra构造螺[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)（左）和刃[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)（右）的示意图。通过切割、相对位移 $\mathbf{b}$ 和重新粘贴，在弹性体中引入了[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)。</i></p>
 
@@ -77,7 +77,7 @@ $$ \frac{E}{L} = \frac{\mu b^2}{4\pi} \ln\left(\frac{R}{r_0}\right) $$
 **反应与节点**：[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)线可以相遇并形成节点，构成复杂的[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)网络。在这些节点处，柏氏矢量必须守恒。**Frank 法则**指出，如果我们将所有指向节点的[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)线的柏氏矢量相加，再减去所有离开节点的[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)线的柏氏矢量，结果必须为零。更简洁地，如果我们统一规定所有[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)线都指向节点，那么在节点处所有[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)的柏氏矢量之和必须为零：$\sum_i \mathbf{b}_i = \mathbf{0}$。[@problem_id:2816694] 这条规则就像电路中的[基尔霍夫电流定律](@keyword=kirchhoff_s_current_law|lang=zh-CN|style=Feynman)，只不过守恒的量是拓扑荷——柏氏矢量。
 
 <p align="center">
-  <img src="https://i.imgur.com/eQz0S17.png" alt="Dislocation Dissociation" width="600"/>
+
 </p>
 <p align="center"><i>图3：一条完美的[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)（柏氏矢量为 $\mathbf{b}$）可以离解成两条Shockley分[位错](@keyword=dislocations|lang=zh-CN|style=Feynman)（$\mathbf{b}_1$ 和 $\mathbf{b}_2$），中间夹着一层[堆垛层错](@keyword=stacking_faults|lang=zh-CN|style=Feynman)（Stacking Fault）。由于 $b_1^2 + b_2^2 < b^2$，该反应在能量上是有利的。</i></p>
 

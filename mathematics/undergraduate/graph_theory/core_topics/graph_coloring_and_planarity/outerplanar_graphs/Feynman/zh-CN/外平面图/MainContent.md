@@ -18,7 +18,7 @@
 想想看，如果我们有四个城镇，彼此之间都想建立直接的公路连接。这在图论中被称为完全图$K_4$。我们可以轻易地在纸上画出$K_4$而不让任何路[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)——比如，画一个三角形，然后把第四个城镇放在中心，连接到三个顶点。这是一个完美的平面图。但现在，请你试着遵守“海岸线法则”，把这四个城镇都放在一个圆圈上，然后用不[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)的直线连接它们。你会发现，这根本不可能！不论你怎么安排，总有一条连接会“卡”在里面，无法画出。这就是一个最简单的例子：$K_4$是平面图，但不是[外平面图](@keyword=outerplanar_graph|lang=zh-CN|style=Feynman) [@problem_id:1548686]。
 
 <center>
-    <img src="https://i.imgur.com/kP1i4qF.png" alt="A planar drawing of K4 on the left, and an attempted outerplanar drawing on the right showing a forced crossing." width="500">
+
     <br>
     <small>图1：左图是 $K_4$ 的一个平面画法，其中一个顶点在内部。右图尝试将所有顶点放在外部，但导致边[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)，说明 $K_4$ 不是[外平面图](@keyword=outerplanar_graph|lang=zh-CN|style=Feynman)。</small>
 </center>
@@ -32,7 +32,7 @@
 想象一下，你正在一块多边形的电路板的边缘均匀地放置了$v$个元件（顶点）。为了让连接最稳固，你需要在元件之间添加尽可能多的不[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)的导线（边）。最终，你会发现，整个多边形电路板被这些导线分割成了一系列互不重叠的三角形区域 [@problem_id:1527515]。这正是最大[外平面图](@keyword=outerplanar_graph|lang=zh-CN|style=Feynman)的几何本质——一个多边形的**[三角剖分](@keyword=triangulation|lang=zh-CN|style=Feynman)**。
 
 <center>
-    <img src="https://i.imgur.com/n14S37F.png" alt="A maximal outerplanar graph as a triangulation of a hexagon." width="350">
+
     <br>
     <small>图2：一个包含6个顶点的最大[外平面图](@keyword=outerplanar_graph|lang=zh-CN|style=Feynman)，它将一个六边形完美地[三角剖分](@keyword=triangulation|lang=zh-CN|style=Feynman)。它恰好有 $e = 2(6) - 3 = 9$ 条边，以及 $k = 6 - 2 = 4$ 个内部的三角形面。</small>
 </center>
@@ -46,7 +46,7 @@
 对于[外平面图](@keyword=outerplanar_graph|lang=zh-CN|style=Feynman)，这张“秘密地图”揭示了一个惊人的结构。对于任何一个结构稳固（2-连通）的[外平面图](@keyword=outerplanar_graph|lang=zh-CN|style=Feynman)，其内部区域的邻接关系图（[弱对偶](@keyword=weak_duality|lang=zh-CN|style=Feynman)图），必然是一棵**树**！[@problem_id:1498348] [@problem_id:1525459]。它没有任何环路。为什么呢？你可以直观地想象，如果这张秘密地图上有一个环，那就意味着一系列“领地”形成了一个包围圈。这个包围圈必然会“囚禁”住原图中的某些顶点或边，使它们无法待在“海岸线”上，这与[外平面图](@keyword=outerplanar_graph|lang=zh-CN|style=Feynman)的定义相矛盾。
 
 <center>
-    <img src="https://i.imgur.com/5lVlRz0.png" alt="A maximal outerplanar graph and its weak dual graph, which is a tree." width="600">
+
     <br>
     <small>图3：左边是一个最大[外平面图](@keyword=outerplanar_graph|lang=zh-CN|style=Feynman)。右边是它的[弱对偶](@keyword=weak_duality|lang=zh-CN|style=Feynman)图，每个点代表一个三角形面，边表示面之间共享边界。这个[对偶图](@keyword=dual_graphs|lang=zh-CN|style=Feynman)是一棵树。</small>
 </center>
@@ -62,7 +62,7 @@
 “小图”这个概念可以直观地理解为在图中进行“收缩边”和“删除边或顶点”操作后得到的“模式”。你可以把它想象成在一张复杂的电路图中寻找某种核心的、不可简化的电路模式。$K_4$和$K_{2,3}$就是外平面世界的两种“禁忌果实”。一旦在你的图结构中发现了这两种模式的痕迹，无论它被如何伪装，你的图就注定无法被“海岸线法则”所容纳。我们已经看到$K_4$的问题所在。而$K_{2,3}$，虽然本身是平面图，但你同样无法把它所有的5个顶点都画在海岸线上而不产生[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)。
 
 <center>
-    <img src="https://i.imgur.com/8QxQy6J.png" alt="The two forbidden minors for outerplanar graphs: K4 and K_2,3." width="400">
+
     <br>
     <small>图4：[外平面图](@keyword=outerplanar_graph|lang=zh-CN|style=Feynman)的两个禁忌小图，$K_4$ 和 $K_{2,3}$。任何图中若能通过收缩和删除操作得到这两种结构之一，它就不可能是[外平面图](@keyword=outerplanar_graph|lang=zh-CN|style=Feynman)。</small>
 </center>

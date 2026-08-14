@@ -18,7 +18,7 @@
 现在，让我们引入反馈。我们测量输出 $Y(s)$，并将其与我们[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)的目标值，即**参考输入** $R(s)$，进行比较。它们的差值 $E(s) = R(s) - Y(s)$ 被称为**误差信号**。这个误差信号被送入一个**控制器** $K(s)$，由控制器来决定下一步的输入 $U(s)$。整个结构就像一个环路：控制器的输出影响了被控对象，被控对象的输出反过来又影响了控制器的输入。这就是**闭环**或**反馈**系统。
 
 <center>
-  <img src="https://i.imgur.com/kS93LAn.png" alt="A standard negative feedback loop diagram" style="width: 70%;">
+
   <figcaption>图1：一个典型的负[反馈控制系统](@keyword=feedback_control_systems|lang=zh-CN|style=Feynman)[框图](@keyword=block_diagrams|lang=zh-CN|style=Feynman)</figcaption>
 </center>
 

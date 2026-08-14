@@ -5,7 +5,7 @@
 
 现在，让我们首先深入其核心，探究[路径积分分子动力学](@keyword=mass_loss|lang=zh-CN|style=Feynman)是如何在经典与量子之间架起一座坚实的桥梁的。
 
-![图1：[量子-经典同构](@keyword=quantum_classical_isomorphism|lang=zh-CN|style=Feynman)。一个量子粒子（左）在[路径积分表述](@keyword=path_integral_formulation|lang=zh-CN|style=Feynman)中被映射为一个由P个珠子（beads）组成的经典[环状聚合物](@keyword=ring_polymer|lang=zh-CN|style=Feynman)（右）。珠子之间由谐振弹簧连接，每个珠子都感受到真实的物理势能。聚合物的伸展范围体现了粒子的[量子不确定性](@keyword=quantum_uncertainty|lang=zh-CN|style=Feynman)。](https://www.acme-sciences.com/wp-content/uploads/2023/10/path-integral-representation.png)
+。一个量子粒子（左）在[路径积分表述](@keyword=path_integral_formulation|lang=zh-CN|style=Feynman)中被映射为一个由P个珠子（beads）组成的经典[环状聚合物](@keyword=ring_polymer|lang=zh-CN|style=Feynman)（右）。珠子之间由谐振弹簧连接，每个珠子都感受到真实的物理势能。聚合物的伸展范围体现了粒子的[量子不确定性](@keyword=quantum_uncertainty|lang=zh-CN|style=Feynman)。](https://www.acme-sciences.com/wp-content/uploads/2023/10/path-integral-representation.png)
 
 ## 原理与机制
 

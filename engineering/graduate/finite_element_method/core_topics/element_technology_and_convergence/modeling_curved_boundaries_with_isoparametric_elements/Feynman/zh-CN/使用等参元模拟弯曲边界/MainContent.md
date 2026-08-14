@@ -18,7 +18,7 @@
 我们可以建立一个映射关系，就像查词典一样，将父单元里的每一个点$(\xi, \eta)$都对应到物理空间中的一个点$(x, y)$。最简单的方法是线性插值。对于这个四边形的任意一条边，比如连接节点1和节点2的边，它在物理空间中的形状完全由这两个端点的坐标决定。数学上，这条边的参数方程是一个关于参数$\xi$的线性函数。这意味着，无论你如何移动这四个角点，这个单元的四条边永远都是直线 [@problem_id:2579788]。计算其曲率会发现，它永远为零。这就是为什么一个简单的四节点单元无法真正地“弯曲”。我们又回到了用标准矩形积木搭建圆球的窘境。
 
 <center>
-<img src="https://assets.digital-learning.org/activities/FEM-Curved-Boundaries/FEM-Curved-Boundaries-1.png" alt="一个四节点双线性单元的边总是直的。" width="600">
+
 <br>
 图1：一个四节点单元的边总是直的，因为它是由两个节点之间的线性插值定义的。
 </center>
@@ -28,7 +28,7 @@
 这就是**高阶单元**的魔力，例如八节点的“ serendipity”[四边形单元](@keyword=quadrilateral_elements|lang=zh-CN|style=Feynman)或六节点的[三角形单元](@keyword=triangular_elements|lang=zh-CN|style=Feynman) [@problem_id:2579729]。通过在父单元的边中点（例如，在$\xi=0, \eta=-1$处）增加一个节点，我们在定义几何形状时就多了一个“把手”。当我们将这个中点节点放置在两个角点之间的弧线上时，原本的直线就被“拉”成了一条二次曲线（抛物线）[@problem_id:2579796]。这虽然不总能完美匹配任意曲线（例如，抛物线无法精确表示圆弧 [@problem_id:2579751] [@problem_id:2579796]），但它已经是一个非常出色的近似了！一个[二次单元](@keyword=quadratic_element|lang=zh-CN|style=Feynman)的几何逼近误差通常与边长$h$的三次方($O(h^3)$)成正比，这是一个相当不错的精度 [@problem_id:2579729]。
 
 <center>
-<img src="https://assets.digital-learning.org/activities/FEM-Curved-Boundaries/FEM-Curved-Boundaries-2.png" alt="通过移动中点节点，[二次单元](@keyword=quadratic_element|lang=zh-CN|style=Feynman)的边可以弯曲成抛物线。" width="600">
+
 <br>
 图2：通过将中点节点（红色）从弦的中点移开，[二次单元](@keyword=quadratic_element|lang=zh-CN|style=Feynman)的边可以弯曲以逼近真实的曲线边界。
 </center>
@@ -50,7 +50,7 @@ $$ \mathbf{J}(\xi, \eta) = \frac{\partial \mathbf{x}}{\partial \boldsymbol{\xi}}
 这看起来很抽象，但它的几何意义却异常直观。矩阵的第一列$(\frac{\partial x}{\partial \xi}, \frac{\partial y}{\partial \xi})$告诉你：当你在父单元中沿着$\xi$方向迈出一个无穷小的步子时，你在物理空间中会移动到哪里。同样，第二列告诉你沿着$\eta$方向移动时的情况。换句话说，**[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)的两列就是物理单元中被“压弯”了的[局部坐标](@keyword=local_coordinates|lang=zh-CN|style=Feynman)系[基向量](@keyword=basis_vector|lang=zh-CN|style=Feynman)** [@problem_id:2579795]。通过这些[基向量](@keyword=basis_vector|lang=zh-CN|style=Feynman)，我们可以计算出物理空间中任意方向的切线或法向量[@problem_id:2579763]。
 
 <center>
-<img src="https://assets.digital-learning.org/activities/FEM-Curved-Boundaries/FEM-Curved-Boundaries-4.png" alt="[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)的列向量构成了物理空间中的[局部坐标](@keyword=local_coordinates|lang=zh-CN|style=Feynman)基。" width="600">
+
 <br>
 图3：雅可比矩阵将父单元（左）中的正交网格映射为物理空间（右）中的曲线网格。在任意一点，[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)的列向量 $\mathbf{g}_1$ 和 $\mathbf{g}_2$ 就是该点处[曲线坐标系](@keyword=curvilinear_coordinate_systems|lang=zh-CN|style=Feynman)的[局部基向量](@keyword=local_basis_vectors|lang=zh-CN|style=Feynman)。
 </center>

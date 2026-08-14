@@ -31,7 +31,7 @@ $$
 这两条曲线的交点，就是生产与清除速率相等的地方，也就是系统的[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)。
 
 <center>
-    <img src="https://i.imgur.com/kH0Jc0G.png" alt="Graphical analysis of bistability shows the intersection of a sigmoidal production curve and a linear degradation line at one or three points." style="width: 70%;" />
+
     <br>
     <small><b>图1：</b> [稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)的图形化分析。S形的生产曲[线与](@keyword=wired_and|lang=zh-CN|style=Feynman)线性的清除曲线的交点即为系统的[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)。在某些参数下（右图），可能存在三个交点，分别对应低、中、高三个[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)。而在另一些参数下（左图），则只有一个交点。</small>
 </center>
@@ -86,7 +86,7 @@ $$
 系统的[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)，就是 $x$ 和 $y$ 的浓度都不再变化的地方，也就是两条零增长线的交点。对于一个设计良好的跷跷板开关，这两条S形的零增长线同样可以产生三个交点。
 
 <center>
-    <img src="https://i.imgur.com/uUbrH0h.png" alt="Phase plane analysis of a toggle switch, showing two nullclines intersecting at three fixed points: two stable nodes and one saddle." style="width: 50%;" />
+
     <br>
     <small><b>图2：</b> 基因跷跷板开关的[相平面分析](@keyword=phase_plane_analysis|lang=zh-CN|style=Feynman)。红色和蓝色的曲线分别是x-零增长线和y-零增长线。它们有三个交点，对应三个[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)。外侧的两个是稳定点（实心圆），中间的是不稳定的[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)（空心圆）。箭头表示系统的演化方向。</small>
 </center>
@@ -106,7 +106,7 @@ $$
 2.  **降低的过程**：现在，我们反过来，从一个很高的浓度开始缓慢降低 $I$。系统会停留在“开”的状态，即使当 $I$ 的浓度已经低于刚才的开启阈值 $I_{\uparrow}$ 时，它依然保持“开”！直到 $I$ 降低到一个更低的阈值 $I_{\downarrow}$ 时，系统才会突然跳变回“关”的状态。
 
 <center>
-    <img src="https://i.imgur.com/vHq0gG7.png" alt="S-shaped steady-state curve illustrating hysteresis. The system follows the lower branch on the way up and the upper branch on the way down, creating a loop." style="width: 60%;" />
+
     <br>
     <small><b>图3：</b> 迟滞现象的示意图。系统的[稳态响应](@keyword=steady_state_response|lang=zh-CN|style=Feynman)曲线呈S形。当控制参数（如诱导剂浓度）缓慢增加时，系统沿下支移动，在$I_{\uparrow}$处跳到上支。当参数缓慢减小时，系统沿上支移动，在$I_{\downarrow}$处跳回下支。两条路径不重合，形成了一个“迟滞环”。</small>
 </center>

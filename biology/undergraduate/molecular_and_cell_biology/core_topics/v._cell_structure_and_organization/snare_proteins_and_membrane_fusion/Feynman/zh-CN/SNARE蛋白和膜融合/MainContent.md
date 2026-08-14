@@ -21,7 +21,6 @@
 
 这个“拉链”过程非同小可。在[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)中，一个典型的 SNARE 复合体由三个独立的蛋白质分子组成：囊泡上的一个蛋白（[突触小泡蛋白](@keyword=synaptobrevin|lang=zh-CN|style=Feynman) synaptobrevin）和靶膜上的两个蛋白（句法蛋白 syntaxin 和 SNAP-25）。尽管只有三个蛋白，但它们贡献了四个[螺旋结构](@keyword=helical_structure|lang=zh-CN|style=Feynman)域（SNAP-25 自己就贡献了两个），这四个螺旋紧紧地缠绕成一个“四螺旋束” [@problem_id:2338573]。
 
-![A diagram showing the three SNARE proteins (synaptobrevin, syntaxin, and SNAP-25) zippering together to form a four-helix bundle, pulling the vesicle and target membranes closer.](https://i.imgur.com/image_placeholder.png)
 *图1：SNARE 蛋白的“拉链”机制。囊泡上的 [v-SNARE](@keyword=v_snare|lang=zh-CN|style=Feynman) 和靶膜上的 [t-SNARE](@keyword=t_snare|lang=zh-CN|style=Feynman) 相互缠绕，形成一个稳定的四螺旋束。这个过程释放的能量，像一台分子绞车，将两个膜拉向彼此，最终驱动融合。*
 
 这个缠绕过程是一个从高能量、[不稳定状态](@keyword=unstable_states|lang=zh-CN|style=Feynman)（分离的[SNARE蛋白](@keyword=snares|lang=zh-CN|style=Feynman)）向极低能量、超稳定状态（完全缠绕的SNARE复合体）的自发转变。根据[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)基本原理，这个过程中释放的吉布斯自由能（$ΔG_{\text{zip}}$）并不会凭空消失，而是被转化为了实实在在的机械功 [@problem_id:2338580]。这股强大的力量，就像一台分子绞车，强行将囊泡膜和目标膜拉向彼此，克服它们之间天然存在的[静电排斥](@keyword=electrostatic_repulsion|lang=zh-CN|style=Feynman)和水化层阻力。这种将蛋白质折叠能直接转化为机械力来重塑生物膜的设计，是自然界中最令人叹为观止的杰作之一。细胞不需要在融合发生的瞬间消耗 ATP 这样的“燃料”，能量早已储存在 SNARE 蛋白自身的构象之中了。
@@ -35,7 +34,6 @@
 随着“拉链”越拉越紧，巨大的压力迫使两个膜最外层的脂质分子开始混合。想象一下两滴油珠在水面上相互靠近，最终并成一滴的瞬间。在细胞中，这个阶段被称为“半融合”（hemifusion）。此时，囊泡膜的外层（面向细胞质的一侧）已经与目标膜的外层融为一体，但它们的内层依然是分开的。这意味着，囊泡内的货物仍然被困在里面，无法释放 [@problem_id:2338586]。
 
 最后，随着压力的进一步积累，这个不稳定的半融合状态迅速瓦解，两个膜的内层也最终融合，形成一个被称为“融合孔”的微小通道。囊泡内的物质，如[神经递质](@keyword=neurotransmitter|lang=zh-CN|style=Feynman)，终于可以通过这个通道释放到细胞之外或目标区室之中。融合完成后，曾经的囊泡膜完全并入目标膜，而所有的 SNARE 蛋白现在都位于同一个融合后的膜上。这个状态的复合体被称为“顺式-SNARE 复合体”（cis-SNARE complex） [@problem_id:2338574]。
-
 
 *图2：[膜融合](@keyword=membrane_fusion|lang=zh-CN|style=Feynman)的步骤。从连接两个膜的“反式”复合体，到外层脂质混合的“半融合”状态，再到形成融合孔，最终所有蛋白都位于同一个膜上，形成“顺式”复合体。*
 

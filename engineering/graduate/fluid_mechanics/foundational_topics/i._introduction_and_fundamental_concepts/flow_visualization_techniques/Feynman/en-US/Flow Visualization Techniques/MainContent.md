@@ -37,7 +37,7 @@ What exactly is the shadowgram showing us? It's most sensitive where the *[gradi
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/G5T7tL5.png" width="700">
+
   <figcaption>Figure 1: The Three Musketeers of Optical Visualization. Shadowgraphy detects changes in ray deflection ([second derivative](@keyword=second_derivative|lang=en-US|style=Feynman) of 'n'). Schlieren detects the deflection itself (first [derivative](@keyword=derivative|lang=en-US|style=Feynman)). Interferometry detects the [phase shift](@keyword=phase_shift|lang=en-US|style=Feynman) caused by the integrated value of 'n' (zeroth [derivative](@keyword=derivative|lang=en-US|style=Feynman)).</figcaption>
 </figure>
 </center>

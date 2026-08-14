@@ -49,7 +49,7 @@ $$
 
 <br>
 <div style="text-align:center;">
-<img src="https://i.imgur.com/Gj3H6tH.png" alt="Semenov_diagram" width="500"/>
+
 <p style="font-size:0.9em;">图1：热生成（[S形曲线](@keyword=s_curve|lang=zh-CN|style=Feynman)）与热散失（直线）的关系图。交点A和C是稳定[稳态](@keyword=stable_state|lang=zh-CN|style=Feynman)，而B是不稳定[稳态](@keyword=stable_state|lang=zh-CN|style=Feynman)。当散热[线与](@keyword=wired_and|lang=zh-CN|style=Feynman)[生成曲线](@keyword=generating_curve|lang=zh-CN|style=Feynman)相切时，系统达到[临界状态](@keyword=criticality|lang=zh-CN|style=Feynman)，任何微小的扰动都可能导致温度从A点失控地跃升到更高的状态。</p>
 </div>
 <br>

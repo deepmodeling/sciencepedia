@@ -16,7 +16,7 @@
 这是一个绝妙的思维游戏，其答案揭示了一个核心概念。我们可以做一个简单的“手术”：沿着圆柱体的一条[母线](@keyword=generating_curve|lang=zh-CN|style=Feynman)把它剪开，然后平铺在桌面上。瞧！这个弯曲的表面变成了一个平坦的长方形。在你的二维世界里，这片长方形就是整个宇宙。现在，从 $P_1$ 到 $P_2$ 的最短路径显而易见：一条笔直的线段。现在我们再把这个长方形卷回圆柱体，那条直线就变成了一条优美的螺旋线。[@problem_id:1640185]
 
 <center>
-<img src="https://i.imgur.com/WpP8JCT.png" alt="Unrolling a cylinder to find the geodesic path." width="600">
+
 </center>
 <br>
 
@@ -51,7 +51,7 @@ $$
 - 如果 $K = 0$，就像在平面或圆柱面上，[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)是平坦的，$C(r)$ 就精确地等于 $2\pi r$（在 $r$ 很小时）。
 
 <center>
-<img src="https://i.imgur.com/k2e4kGv.png" alt="Geodesic circles on surfaces with positive, zero, and negative curvature." width="700">
+
 </center>
 <br>
 

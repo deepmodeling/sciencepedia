@@ -20,7 +20,7 @@ $$
 如果你亲自去验证一下，会惊奇地发现，这个方程的精确解竟然是 $y(t) = \cos t$！这是一个我们再熟悉不过的、光滑得不能再光滑的余弦函数。要描绘它，我们似乎并不需要太小的[步长](@keyword=step_size|lang=zh-CN|style=Feynman)。
 
 <p align="center">
-  <img alt="The smooth solution y(t)=cos(t) and the violent instability of an explicit method with a seemingly reasonable step size." src="https://assets.test.logos.com/images/Stiff_ODE_Example.svg" width="600">
+
 </p>
 <p align="center"><em>图1：精确解 $y(t) = \cos t$ (蓝色) 是平滑的。然而，使用一个看似合理的[步长](@keyword=step_size|lang=zh-CN|style=Feynman)，一个简单的[显式方法](@keyword=explicit_methods|lang=zh-CN|style=Feynman)（如[前向欧拉法](@keyword=forward_euler_method|lang=zh-CN|style=Feynman)）的计算结果（橙色）却会迅速[发散](@keyword=divergence|lang=zh-CN|style=Feynman)，产生毫无意义的剧烈[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。</em></p>
 
@@ -49,7 +49,7 @@ $$
 - [后向欧拉法](@keyword=implicit_euler_method|lang=zh-CN|style=Feynman)给出 $y_{n+1} = y_n + h\lambda y_{n+1}$，解出 $y_{n+1} = \frac{1}{1-h\lambda} y_n$。只要 $\lambda$ 的实部为负，对于任何正的[步长](@keyword=step_size|lang=zh-CN|style=Feynman) $h>0$，[放大因子](@keyword=amplification_factor|lang=zh-CN|style=Feynman) $|\frac{1}{1-h\lambda}|$ 都永远小于1！
 
 <p align="center">
-  <img alt="Stability regions for an explicit (Forward Euler) and an implicit (Backward Euler) method." src="https://assets.test.logos.com/images/Stability_Regions.svg" width="600">
+
 </p>
 <p align="center"><em>图2：绝对[稳定域](@keyword=stability_regions|lang=zh-CN|style=Feynman)（图中阴影区域）是[复数平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上 $z=h\lambda$ 的集合，在此区域内[数值方法](@keyword=numerical_methods|lang=zh-CN|style=Feynman)是稳定的。[显式方法](@keyword=explicit_methods|lang=zh-CN|style=Feynman)（如[前向欧拉法](@keyword=forward_euler_method|lang=zh-CN|style=Feynman)）的[稳定域](@keyword=stability_regions|lang=zh-CN|style=Feynman)很小（左），而[隐式方法](@keyword=implicit_methods|lang=zh-CN|style=Feynman)（如[后向欧拉法](@keyword=implicit_euler_method|lang=zh-CN|style=Feynman)）的[稳定域](@keyword=stability_regions|lang=zh-CN|style=Feynman)可以非常大，甚至覆盖整个[左半平面](@keyword=left_half_plane|lang=zh-CN|style=Feynman)（右），这被称为 [A-稳定性](@keyword=a_stability|lang=zh-CN|style=Feynman)。</em></p>
 

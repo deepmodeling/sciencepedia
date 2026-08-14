@@ -22,7 +22,7 @@
 然而，这个过程并非完美无瑕。你可能会注意到，即使我们叠加了成百上千个[谐波](@keyword=harmonic_waves|lang=zh-CN|style=Feynman)，在方波的“拐角”处，也就是信号急剧跳变的地方，总会出现一些讨厌的“[抖动](@keyword=dither|lang=zh-CN|style=Feynman)”或“过冲”。这个现象被称为**吉布斯现象（Gibbs phenomenon）**。[@problem_id:2436691] 这就像用光滑的曲线去画一个完美的直角，总会在角落处“画出头”一点点。这并非错误，而是[傅里叶分析](@keyword=fourier_analysis|lang=zh-CN|style=Feynman)内禀的特性，它揭示了一个深刻的道理：用无限平滑的工具去精确描述一个不连续的点，必然会付出一些代价。
 
 <center>
-<img src="https://assets.bit-by-bit.cn/machine-learning/signal-processing/gibbs-phenomenon.png" alt="Gibbs Phenomenon" width="600"/>
+
 </center>
 <center>图：利用傅里葉级数重构方波时，在不连续点附近出现的[吉布斯现象](@keyword=gibbs_phenomenon|lang=zh-CN|style=Feynman)。</center>
 
@@ -65,7 +65,7 @@ DFT 只能在一些特定的、离散的频率点上“观察”信号的[频谱
 一个只有零点的滤波器（称为**有限冲激响应FIR**滤波器）虽然稳定，但其频率选择性往往较差， notch 比较宽。为了得到一个响应陡峭、带宽可控的**无限冲激响应IIR**滤波器，我们需要巧妙地将[极点和零点](@keyword=poles_and_zeros|lang=zh-CN|style=Feynman)结合起来。例如，要实现一个窄带陷波器，我们可以在[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)上放置一对[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)零点以产生零陷，然后在它们后面、[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)内非常近的位置放置一对[共轭极点](@keyword=conjugate_poles|lang=zh-CN|style=Feynman)。极点的“助推”效应会抵消零点在旁边频率的衰减，从而使得陷波器的“凹坑”变得又深又窄。[@problem_id:2436710] 这种在z平面上排布[极点和零点](@keyword=poles_and_zeros|lang=zh-CN|style=Feynman)的艺术，就像在乐谱上谱写音符，让我们能够精确地塑造出几乎任何我们想要的[频率响应](@keyword=frequency_response|lang=zh-CN|style=Feynman)。
 
 <center>
-<img src="https://assets.bit-by-bit.cn/machine-learning/signal-processing/pole-zero-plot.png" alt="Pole-Zero Plot" width="500"/>
+
 </center>
 <center>图：通过在z平面[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)上放置零点（'o'）并在其后放置极点（'x'），可以设计一个窄带陷波器。</center>
 

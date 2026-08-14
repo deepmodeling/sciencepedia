@@ -15,7 +15,7 @@
 
 | 腐蚀、免疫与钝化 | 说明 |
 |:---|:---|
-| ![A Pourbaix diagram for a metal-water system, showing regions of immunity (metal is stable), corrosion (ions are stable), and passivation (oxide is stable).](https://static.docs.com/media/2024/05/20/pourbaix-diagram-regions.png) | 根据[Pourbaix图](@keyword=pourbaix_diagrams|lang=zh-CN|style=Feynman)，我们可以将材料的“命运”分为三类：**腐蚀**（corrosion）区，意味着金属会溶解成离子；**[钝化](@keyword=passivation|lang=zh-CN|style=Feynman)**（passivation）区，意味着金属表面会形成一层稳定的氧化物或[氢氧化](@keyword=hydrogen_oxidation|lang=zh-CN|style=Feynman)物保护膜，阻止进一步腐蚀；以及**免疫**（immunity）区，金属自身就是最稳定的形态，如同穿上了“免死金牌”[@problem_id:4236772]。 |
+|  | 根据[Pourbaix图](@keyword=pourbaix_diagrams|lang=zh-CN|style=Feynman)，我们可以将材料的“命运”分为三类：**腐蚀**（corrosion）区，意味着金属会溶解成离子；**[钝化](@keyword=passivation|lang=zh-CN|style=Feynman)**（passivation）区，意味着金属表面会形成一层稳定的氧化物或[氢氧化](@keyword=hydrogen_oxidation|lang=zh-CN|style=Feynman)物保护膜，阻止进一步腐蚀；以及**免疫**（immunity）区，金属自身就是最稳定的形态，如同穿上了“免死金牌”[@problem_id:4236772]。 |
 
 这张地图的边界线是如何划定的呢？当两个物相的吉布斯自由能（在电化学体系中，我们更严谨地称之为**[电化学势](@keyword=electrochemical_potential|lang=zh-CN|style=Feynman)**）相等时，它们就达到了平衡共存的状态[@problem_id:4239780]。这条[平衡线](@keyword=line_of_equilibria|lang=zh-CN|style=Feynman)，就构成了[Pourbaix图](@keyword=pourbaix_diagrams|lang=zh-CN|style=Feynman)上不同稳定区域之间的边界。想象一下，你正走在一座山脉的山脊上，向左一步会滚入左边的山谷，向右一步则会坠入右边的山谷，而山脊本身就是两个山谷（稳定区）的分界线。
 

@@ -27,7 +27,6 @@
 
 现在，让我们从“稀疏”的集合转向一个边界极其“狂野”的集合。想象一下在二维平面上的这样一个区域 $S$：它由所有满足 $y \ge x^2 \cos(1/x)$ (当 $x \ne 0$) 和 $y \ge 0$ (当 $x=0$) 的点 $(x,y)$ 构成。[@problem_id:2303813]
 
-![y = x^2 cos(1/x) 的图像](https://i.imgur.com/k9bT6Oq.png)
 *图1：函数 $y = x^2 \cos(1/x)$ 在原点附近的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)行为。集合 $S$ 位于该曲线及y轴正半轴的上方。*
 
 原点 $(0,0)$ 显然是这个集合的一员。但它是[内点](@keyword=interior_points|lang=zh-CN|style=Feynman)吗？我们来看看。函数 $y = x^2 \cos(1/x)$ 的边界在接近原点时会发生什么？$\cos(1/x)$ 这一项会随着 $x$ 趋向于 $0$ 而在 $-1$ 和 $1$ 之间无限次地疯狂[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。这意味着，集合 $S$ 的边界就像一条在原点附近疯狂摆动的蛇。无论你在原点周围画一个多么微小的圆盘（[开球](@keyword=open_balls|lang=zh-CN|style=Feynman)），这条蛇的尾巴总会从下方扫进你的圆盘里，切掉一块区域。也就是说，任何以原点为中心的圆盘里，总能找到一些 $y$ 坐标为负数的点，这些点不属于集合 $S$。因此，原点 $(0,0)$ 虽然属于这个集合，但它不是一个[内点](@keyword=interior_points|lang=zh-CN|style=Feynman)。它就在那条狂野的边界上，一个极其不“安全”的位置。这个例子生动地告诉我们，[内点](@keyword=interior_points|lang=zh-CN|style=Feynman)的定义是何等严格——你的“安全区”必须 **完全** 干净，不容任何“界外”的侵犯。

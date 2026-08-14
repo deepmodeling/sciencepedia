@@ -18,7 +18,7 @@
 当两个相对运动的表面形成一个收敛的间隙（一个“楔形”）时，运动的表面会像一个铲子一样，不断地将流体“铲”入这个越来越窄的通道。由于流体具有粘性，它无法瞬间逃逸，被迫在楔形内部积聚，从而导致压力急剧升高。这就是**流体[动压](@keyword=dynamic_pressure|lang=zh-CN|style=Feynman)润滑（Hydrodynamic Lubrication）**的核心——**楔形效应（Wedge Effect）**。
 
 <center>
-  <img src="https://i.imgur.com/uRj0D9o.png" alt="A diagram illustrating the wedge effect in a slider bearing, showing the converging gap, the velocity profile, and the resulting pressure distribution." width="600">
+
   <br>
   <small>图1：楔形效应示意图。运动的下表面将流体带入收敛的间隙，由于出口变窄，流体受挤压产生压力分布（图中$p(x)$曲线），形成承载力。</small>
 </center>
@@ -38,7 +38,7 @@ $$
 当两个表面相互垂直靠近时，它们之间的流体会被挤压。为了流出间隙，流体必须在平行于表面的方向上加速运动，而这必然要求一个[压力梯度](@keyword=pressure_gradient|lang=zh-CN|style=Feynman)来驱动它。因此，在间隙的中心区域会形成一个高压区，这个压力会抵抗表面的靠近。
 
 <center>
-  <img src="https://i.imgur.com/m2X2xY3.png" alt="A diagram illustrating the squeeze film effect between two parallel circular disks, one approaching the other." width="500">
+
   <br>
   <small>图2：挤压效应示意图。当上圆盘以速度$V$向下运动时，流体被向外挤出，中心区域产生高压以抵抗这种运动。</small>
 </center>

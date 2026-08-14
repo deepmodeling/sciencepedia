@@ -11,13 +11,9 @@
 
 让我们从最简单的几何对象开始：一个点。给一个点“增肥”是什么意思？很简单，就是在它周围画一个给定半径的圆盘（在二维空间）或球体（在三维空间）。现在，如果我们有一堆离散的点呢？如果我们给每个点都穿上一件半径为 $\epsilon$ 的“外衣”（一个开球），并且我们选择的 $\epsilon$ 足够小——比任意两点之间距离的一半还要小——那么这些外衣就不会互相触碰。我们得到的是一堆互不相交的“气泡”，每一个都包裹着一个点。从拓扑的角度看，这个集合就像是 $k$ 个彼此分离的、各自独立的三维空间（或者说 $n$ 维空间）。
 
-
-
 这很有趣，但当这些“外衣”开始相互作用时，事情就变得更加奇妙了。假设我们有两条平行的直线，它们像铁轨一样在三维空间中延伸。我们给整个铁轨系统“增肥”，定义它的[管状邻域](@keyword=tubular_neighborhoods|lang=zh-CN|style=Feynman)为所有距离铁轨小于 $\epsilon$ 的点的集合。
 
 如果半径 $\epsilon$ 很小，比两条铁轨间距 $d$ 的一半还小，那么我们得到的就是两个独立的、互不接触的圆柱体。这个邻域的边界，也就是所有距离铁轨恰好为 $\epsilon$ 的点，自然也是两个独立的圆柱面。但当我们不断增加 $\epsilon$，会发生什么？就在 $\epsilon$ 达到并超过 $d/2$ 的那一刻，两个圆柱体接触、融合，形成了一个类似花生壳的单一形状。它的边界也从两个分离的部分变成了一个连通的整体。这个[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman) $\epsilon/d = 1/2$ 标志着一个[拓扑相变](@keyword=topological_phase_transition|lang=zh-CN|style=Feynman)：边界的连通分支数从2变成了1。这个简单的例子告诉我们一个深刻的道理：[管状邻域](@keyword=tubular_neighborhoods|lang=zh-CN|style=Feynman)的形态不仅仅是简单地“增肥”，它还深刻地反映了被包裹物体的内在几何关系。
-
-
 
 ### 从直观到严谨：[法丛](@keyword=normal_bundle|lang=zh-CN|style=Feynman)的角色
 
@@ -26,8 +22,6 @@
 想象你在一条蜿蜒的山路上开车。在任何一点，你的车头指向的方向是“切线方向”，这是沿着道路前进的方向。而与路面垂直、指向天空的方向，就是“法线方向”。对于平面上的一条光滑曲线，在任何一点 $p$，除了切线方向，还有一个与之垂直的方向。所有沿着这个垂直方向的向量构成了一条直线，我们称之为在 $p$ 点的**法空间**（Normal Space）。
 
 如果我们把曲线上每一点的法空间都收集起来，就得到了一个称为**[法丛](@keyword=normal_bundle|lang=zh-CN|style=Feynman)**（Normal Bundle）的结构。你可以把[法丛](@keyword=normal_bundle|lang=zh-CN|style=Feynman)想象成一把刷子：刷子的木柄是我们的原始曲线，而从木柄上伸出的每一根刷毛，都代表了那一点的法空间。
-
-
 
 对于三维空间中的一个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，比如由方程 $z = f(x, y)$ 定义的山坡，在任何一点，它的[切空间](@keyword=tangent_spaces|lang=zh-CN|style=Feynman)是一个平面。而法空间则是与这个[切平面](@keyword=tangent_plane|lang=zh-CN|style=Feynman)垂直的一条直线。我们可以通过计算函数 $f$ 的[偏导数](@keyword=partial_derivatives|lang=zh-CN|style=Feynman)来精确地找到这个[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman)的方向，从而确定这根“刷毛”应该指向哪里。
 
@@ -49,15 +43,11 @@
 
 如果我们的曲线自己和自己相交了怎么办？比如一个“8”字形的曲线。它是一个从圆到平面的“[浸入](@keyword=immersions|lang=zh-CN|style=Feynman)”，但不是一个“[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)”，因为它在原点处与自身相交。如果我们试图围绕这个“8”字形曲线构造[管状邻域](@keyword=tubular_neighborhoods|lang=zh-CN|style=Feynman)，在[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)点附近，来自曲线不同部分“增肥”的区域会不可避免地相互碰撞、重叠。我们从抽象的[法丛](@keyword=normal_bundle|lang=zh-CN|style=Feynman)（一个完美的光滑圆柱）到平面的映射 $F(t, s) = \gamma(t) + s \cdot n(t)$ 不再是一对一的了。这意味着，虽然邻域作为一个集合仍然存在，但它不再是一个光滑的、没有自相交的“好”邻域了。[管状邻域定理](@keyword=tubular_neighborhood_theorem|lang=zh-CN|style=Feynman)的美好结论，通常要求我们的子流形是一个[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)，即没有自相交。
 
-
-
 #### 病症二：扭曲的[法丛](@keyword=normal_bundle|lang=zh-CN|style=Feynman)
 
 还有一个更微妙的问题：我们是否总能为整个物体定义一个一致的“朝外”方向？答案是否定的，最经典的例子就是**莫比乌斯带**（Möbius Strip）。
 
 想象一只蚂蚁，它的背上竖直地插着一根天线，这根天线始终垂直于莫比乌斯带的表面。蚂蚁从带子的中线上某一点出发，沿着中线爬行一圈。当它回到起点时，它会惊恐地发现，它的天线指向了与出发时完全相反的方向！这意味着莫比乌斯带是“不可定向的”。你无法在整个带子上区分“上”和“下”或“内”和“外”。它的[法丛](@keyword=normal_bundle|lang=zh-CN|style=Feynman)是“扭曲”的，不像普通圆柱那样可以简单地表示为 $S^1 \times \mathbb{R}$。这种拓扑上的扭曲，使得我们无法像之前那样简单地通过[法丛](@keyword=normal_bundle|lang=zh-CN|style=Feynman)构造一个“普通”的[管状邻域](@keyword=tubular_neighborhoods|lang=zh-CN|style=Feynman)。
-
-
 
 ### 终极启示：环境决定命运
 
@@ -68,8 +58,6 @@
 1.  我们将 $C$ 视为球面 $S^2$ 内的一个[子流形](@keyword=submanifolds|lang=zh-CN|style=Feynman)。在球面上，一个点的“法向”只有两个选择：沿着经线向“北”或向“南”。法空间是一维的。因此，$C$ 在 $S^2$ 里的[管状邻域](@keyword=tubular_neighborhoods|lang=zh-CN|style=Feynman)是一个二维的环状带，拓扑上就像一个**开环面**（open annulus）。
 
 2.  现在，我们将同一个圆 $C$ 视为整个三维欧氏空间 $\mathbb{R}^3$ 中的子流形。在 $\mathbb{R}^3$ 中，在 $C$ 的任何一点，其法空间不再是一条线，而是一个与切线垂直的二维平面。因此，$C$ 在 $\mathbb{R}^3$ 里的[管状邻域](@keyword=tubular_neighborhoods|lang=zh-CN|style=Feynman)是一个三维的物体，拓扑上就像一个**实心环面**（solid torus）的内部，也就是一个甜甜圈的“肉”。
-
-![Tubular neighborhood of a circle in S^2 (annulus) vs in R^3 (solid torus)](https://i.imgur.com/J3273e9.png)
 
 同一个圆，仅仅因为它所处的“宇宙”不同，它的“邻域”就从一个二维的带子变成了一个三维的甜甜圈！这完美地诠释了现代几何学的核心思想：几何关系是相对的，一个物体的属性离不开它所处的环境。
 

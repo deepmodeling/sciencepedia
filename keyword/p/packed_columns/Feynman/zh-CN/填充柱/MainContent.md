@@ -50,7 +50,7 @@ $H = A + \frac{B}{u} + C u$
 故事在这里变得非常精彩。让我们为两种柱类型绘制 van Deemter 曲线。
 填充柱的曲线从一个较高的位置开始（因为其 A 项不为零），下降到一个最小值，然后再次上升。[毛细管柱](@keyword=capillary_columns|lang=zh-CN|style=Feynman)的曲线从零开始（A=0），下降到非常非常低的位置，然后更平缓地上升。
 
-![一张概念图，显示了两条 van Deemter 曲线。“填充柱”曲线从一个正的 H 值开始，具有较高的 H_min，其 u_opt 位于左侧。“[毛细管柱](@keyword=capillary_columns|lang=zh-CN|style=Feynman)”曲线从原点开始，具有低得多的 H_min，其 u_opt 向右移动，处于更高的速度。](van_deemter_comparison.png)
+”曲线从原点开始，具有低得多的 H_min，其 u_opt 向右移动，处于更高的速度。](van_deemter_comparison.png)
 
 两个奇妙的事实跃然纸上 [@problem_id:1442656]：
 1.  [毛细管柱](@keyword=capillary_columns|lang=zh-CN|style=Feynman)的最低塔板高度（$H_{min}$）远低于填充柱。这意味着，单位长度上，[毛细管柱](@keyword=capillary_columns|lang=zh-CN|style=Feynman)从根本上提供了更高的分离效率。这种差异并非微不足道；对于相同长度的[毛细管柱](@keyword=capillary_columns|lang=zh-CN|style=Feynman)，其可实现的最大[理论塔板](@keyword=theoretical_plates|lang=zh-CN|style=Feynman)数可以比填充柱高出六倍以上 [@problem_id:1442611]。

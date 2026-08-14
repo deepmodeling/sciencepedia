@@ -5,7 +5,6 @@
 
 现在，让我们开始这趟旅程，首先深入其内部，探究那些让全桥变换器高效运转的核心原理与机制。
 
-![全桥、半桥、推挽拓扑对比](https://cdn.jsdelivr.net/gh/Arxiv-Lab/image-hosting-of-academic-paper-notes@main/202405/3841298_Push-pull-half-bridge-and-full-bridge-topologies.png)
 *图1：三种经典的隔离变换器拓扑：推挽、半桥与全桥。*
 
 ## 原理与机制

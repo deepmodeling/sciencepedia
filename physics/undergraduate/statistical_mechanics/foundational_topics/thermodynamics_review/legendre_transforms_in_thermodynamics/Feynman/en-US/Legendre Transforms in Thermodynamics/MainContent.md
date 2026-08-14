@@ -27,8 +27,6 @@ How can we swap a variable, like entropy, for something new, like temperature, w
 
 Don't let the fancy name intimidate you. The idea is remarkably simple and visual. Imagine you have a curve, say $y=f(x)$. The "standard" way to describe this curve is by listing all the points $(x,y)$ that lie on it.
 
-![](https://i.imgur.com/KzDqMhV.png)
-
 But there's another way! A smooth, convex curve can also be uniquely described by the set of all its tangent lines. What defines a line? Its slope, let's call it $p$, and its [y-intercept](@keyword=y_intercept|lang=en-US|style=Feynman), let's call it $\psi$. For any point on our curve, the slope is just the derivative, $p = \frac{dy}{dx}$. A little geometry shows that the y-intercept of the tangent line at point $x$ is given by $\psi = y - px = f(x) - x \frac{dy}{dx}$.
 
 The Legendre transform is simply the machine that takes you from the point-based description $f(x)$ to the tangent-line-based description, a new function $\psi(p)$. We have traded the variable $x$ for its conjugate "slope variable" $p$.

@@ -51,8 +51,6 @@ A powerful way to think about bistability and switching is to imagine the state 
 
 The cell, like the ball, will always seek the lowest point, settling into one of the two valleys. An inducer pulse is like giving the ball a temporary, well-aimed "kick"—just enough to push it over the hill and into the adjacent valley. Once the kick is over (the inducer is gone), the ball rests peacefully in its new location. The height of the hill, $\Delta U$, represents the energy barrier for switching and is a measure of the memory's stability. [@problem_id:2783224]
 
-<img src="https://i.imgur.com/G5g2mH5.png" alt="A potential energy landscape for a bistable toggle switch. The y-axis is potential energy U(x) and the x-axis represents the state of the switch. There are two deep valleys (stable states) separated by a central peak (unstable state). A ball representing the system's current state rests in one valley. An arrow shows how an external input (inducer) can push the ball over the peak into the other valley." width="600"/>
-
 ### The Real World is Messy: A Gallery of Imperfections
 
 Building these circuits in living cells is not as clean as drawing diagrams. The parts can be imperfect, leading to fascinating and important consequences.

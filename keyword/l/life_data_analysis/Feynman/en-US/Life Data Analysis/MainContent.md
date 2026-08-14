@@ -3,7 +3,7 @@ How long will a new lightbulb last? When might a patient's cancer recur? What is
 
 First, in the "Principles and Mechanisms" chapter, we will unpack the core concepts that make life data analysis unique. We will explore the crucial idea of data censoring, understand foundational tools like [life tables](@keyword=life_tables|lang=en-US|style=Feynman) and [survivorship curves](@keyword=survivorship_curves|lang=en-US|style=Feynman), and see why specialized statistical models are indispensable. Subsequently, the "Applications and Interdisciplinary Connections" chapter will take you on a journey across various scientific fields to witness these principles in action. From assessing the reliability of industrial components to reconstructing the life of ancient human relatives, you will discover the remarkable versatility and unifying power of modeling time-to-event data.
 
-![A graph showing the three types of [survivorship curves](@keyword=survivorship_curves|lang=en-US|style=Feynman). Type I starts high and drops sharply at the end. Type II is a straight diagonal line. Type III drops sharply at the beginning and then flattens out.](https://ast-static.s3.amazonaws.com/content-images/a-images/v3_dashboard/asset1900-1-1.png)
+. Type I starts high and drops sharply at the end. Type II is a straight diagonal line. Type III drops sharply at the beginning and then flattens out.](https://ast-static.s3.amazonaws.com/content-images/a-images/v3_dashboard/asset1900-1-1.png)
 *The three classic [survivorship curves](@keyword=survivorship_curves|lang=en-US|style=Feynman) tell different life stories. Type I (e.g., humans), Type II (e.g., some birds), and Type III (e.g., oysters).*
 
 ## Principles and Mechanisms

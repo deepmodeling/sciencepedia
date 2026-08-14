@@ -22,7 +22,7 @@ The presence of our positive charge $q$ attracts the free electrons within the c
 This is where the magic mirror comes in. The method of images tells us to do something audacious: *forget about the complicated conductor entirely*. Instead, pretend the [conducting plane](@keyword=conducting_plane|lang=en-US|style=Feynman) is a mirror. Place a fictitious "**[image charge](@keyword=image_charge|lang=en-US|style=Feynman)**" of equal magnitude and opposite sign, $-q$, behind the "mirror" at the exact same distance as the real charge is in front. Now we have a simple system of two point charges, our real charge $q$ and its phantom twin $-q$, in an empty space.
 
 <center>
-<img src="https://i.imgur.com/gK6kFpC.png" width="500">
+
 <em>Figure 1: The complex problem of a charge near a [conducting plane](@keyword=conducting_plane|lang=en-US|style=Feynman) (left) is replaced by the much simpler problem of two opposite charges in empty space (right). In the [physical region](@keyword=physical_region|lang=en-US|style=Feynman) ($y>0$), the solutions are identical.</em>
 </center>
 
@@ -53,7 +53,7 @@ Imagine a long, semi-infinite metal rod, and we're studying how heat diffuses al
 Once again, we use the method of images. To create a zero-slope condition, we can't use an opposite "image heat pulse," as that would create a steep temperature gradient. Instead, we must place a *positive* image pulse of the same strength at $-x'$. The two identical, spreading heat distributions meet at $x=0$, and their slopes, being equal and opposite, perfectly cancel out, ensuring zero heat flux across the boundary. The solution for the temperature on our semi-infinite rod is just the sum of the solutions for two heat pulses in an infinite rod [@problem_id:1157171].
 
 <center>
-<img src="https://i.imgur.com/dK46yUj.png" width="500">
+
 <em>Figure 2: For a Neumann (zero-flux) boundary, we use an image of the same sign. The symmetrical arrangement ensures the slope is zero at the boundary.</em>
 </center>
 
@@ -76,7 +76,7 @@ What if we have more than one mirror? Imagine two conducting planes joined at a 
 The charge $q$ at $(x_0, y_0)$ creates an image $-q$ at $(x_0, -y_0)$ in the "floor" mirror ($y=0$). It also creates an image $-q$ at $(-x_0, y_0)$ in the "wall" mirror ($x=0$). But we're not done! The mirror on the floor "sees" the image created by the wall, and creates an image of that image. And the wall sees the image from the floor and does the same. Miraculously, for a 90-degree corner, both of these "second-generation" images land at the same spot: $(-x_0, -y_0)$. This third image must have a positive charge, $+q$, to account for the double reflection of sign. With this set of three image charges, the potential is zero on both planes simultaneously, and the problem is solved [@problem_id:1157226].
 
 <center>
-<img src="https://i.imgur.com/5l3q8iU.png" width="450">
+
 <em>Figure 3: For a 90-degree corner, three image charges are needed to satisfy the boundary condition on both planes. This is like an image of an image.</em>
 </center>
 

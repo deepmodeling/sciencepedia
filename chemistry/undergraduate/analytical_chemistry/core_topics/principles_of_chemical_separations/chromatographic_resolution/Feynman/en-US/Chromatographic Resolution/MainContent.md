@@ -13,8 +13,6 @@ Chromatography is, in essence, a race for molecules. We send a mixture of substa
 
 Let’s look at a [chromatogram](@keyword=chromatogram|lang=en-US|style=Feynman). It's a plot of detector signal versus time. Each peak represents a different substance. If the peaks are far apart and don't touch, we say they are "well resolved." If they clump together into a single, lumpy mess, they are "unresolved." But most of the time, reality lies in between: the peaks overlap.
 
-![A diagram comparing poor resolution (overlapping peaks), moderate resolution, and baseline resolution (separated peaks).](https://i.imgur.com/2Xy3BwB.png)
-
 *Visualizing resolution: From a single unresolved lump (left) to two perfectly distinct, baseline-separated peaks (right).*
 
 To put a number on this "separateness," we define the **resolution**, $R_s$. It’s a beautifully simple idea. We take the difference in the arrival times of the two peak centers ($t_{R2}$ and $t_{R1}$) and divide it by their average spread, or width ($w_1$ and $w_2$). The official formula is:

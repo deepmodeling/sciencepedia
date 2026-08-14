@@ -21,5 +21,4 @@
 
 让我们通过一个简化的例子来理解。假设有一个假想金属X，其[普贝图](@keyword=pourbaix_diagrams|lang=zh-CN|style=Feynman)边界在一个思想实验中被描述 [@problem_id:1969818]。为了找出该金属在pH为2、电位为-0.40 V时的状态，我们只需在地图上找到这个坐标点。如果该点落入问题方程所定义的“[腐蚀](@keyword=corrosion|lang=zh-CN|style=Feynman)区”，我们就知道该金属有[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)上溶解的趋势。如果我们移动到pH为8、电位为0.00 V的位置，我们可能会跨越一条边界线，进入“[钝化](@keyword=passivation|lang=zh-CN|style=Feynman)区”。在这个新位置，金属将倾向于被一层保护性氧化物覆盖。而在pH为10、电位为-0.50 V时，我们可能会发现自己处于所有反应之下，进入了平静的“免疫”王国。[普贝图](@keyword=pourbaix_diagrams|lang=zh-CN|style=Feynman)为我们指明了方向。
 
-![A simplified Pourbaix diagram showing the regions of immunity, passivation, and corrosion for a metal. The x-axis is pH and the y-axis is potential (E). Lines on the diagram represent the boundaries between these states. The diagram illustrates how changing pH or potential can cause the metal to transition from one state to another, such as from corrosion to passivation.](https://i.imgur.com/uR2N8mX.png)
 *一张概念性的[普贝图](@keyword=pourbaix_diagrams|lang=zh-CN|style=Feynman)，描绘了免疫区、[腐蚀](@keyword=corrosion|lang=zh-CN|style=Feynman)区和钝化区作为电位和pH函数的分布。掌握这张图是预测金属行为的关键。*

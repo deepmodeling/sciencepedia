@@ -11,7 +11,7 @@
 最直观的例子或许就藏在我们童年时代的折纸和绘画中。想象一个正$n$边形，其中$n$是一个大于1的奇数。它的所有[对称操作](@keyword=symmetry_operations|lang=zh-CN|style=Feynman)（旋转和翻转）构成一个群，我们称之为二面体群$D_{2n}$。现在，让我们来审视它的结构。这个群里有一组旋转操作，它们自身构成一个[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)，也就是[弗罗贝尼乌斯核](@keyword=frobenius_kernel|lang=zh-CN|style=Feynman)。而任意一次翻转操作，例如以穿过某个顶点的[对称轴](@keyword=axis_of_symmetry|lang=zh-CN|style=Feynman)进行的翻转，它和单位元一起可以构成一个只有两个元素的[子群](@keyword=subgroup|lang=zh-CN|style=Feynman)，这就是[弗罗贝尼乌斯补](@keyword=frobenius_complement|lang=zh-CN|style=Feynman)。神奇之处在于，除了单位元，没有任何一个旋转元素可以被一次翻转“固定”。同样，对于这个补之外的任何操作（无论是其他旋转还是其他翻转），都无法在与这个补“相交”时找到除单位元以外的共同元素。这完美地体现了[弗罗贝尼乌斯群](@keyword=frobenius_groups|lang=zh-CN|style=Feynman)的定义！几何图形的对称性，就这样与一个深刻的[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)联系在了一起 [@problem_id:1619823]。
 
 <center>
-  <img src="https://www.cs.mcgill.ca/~cs507/notes/lecture10/d5.gif" alt="二面体群 D10" width="300"/>
+
   <br>
   <small>图1：正五边形的[对称群](@keyword=symmetry_groups|lang=zh-CN|style=Feynman) $D_{10}$ 是一个[弗罗贝尼乌斯群](@keyword=frobenius_groups|lang=zh-CN|style=Feynman)。旋转群 $C_5$ 是其核，任何一个由单次反射生成的 $C_2$ [子群](@keyword=subgroup|lang=zh-CN|style=Feynman)都是其补。</small>
 </center>
@@ -44,7 +44,7 @@
 一个绝佳的例子来自**化学与[分子光谱学](@keyword=molecular_spectroscopy|lang=zh-CN|style=Feynman)**。我们熟悉的氨分子（$NH_3$）是一个三角锥形分子，它的所有[对称操作](@keyword=symmetry_operations|lang=zh-CN|style=Feynman)构成的群在化学中被称为 $C_{3v}$ 点群。令人惊讶的是，$C_{3v}$ 群的结构正是一个[弗罗贝尼乌斯群](@keyword=frobenius_groups|lang=zh-CN|style=Feynman)（它同构于我们之前提到的[二面体群](@keyword=d_n_group|lang=zh-CN|style=Feynman) $D_6$）！在这里，绕着对称轴的三重旋转构成了核，而三次过顶点的镜面反射则与补的概念相对应 [@problem_id:2957779]。
 
 <center>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Ammonia-dimensions-from-Greenwood-Earnshaw-2D.svg/440px-Ammonia-dimensions-from-Greenwood-Earnshaw-2D.svg.png" alt="氨分子" width="250"/>
+
   <br>
   <small>图2：氨（$NH_3$）分子的对称性由 $C_{3v}$ [点群](@keyword=point_groups|lang=zh-CN|style=Feynman)描述，它是一个[弗罗贝尼乌斯群](@keyword=frobenius_groups|lang=zh-CN|style=Feynman)。群论和[特征标理论](@keyword=character_theory|lang=zh-CN|style=Feynman)是理解其振动光谱和分子轨道的关键工具。</small>
 </center>

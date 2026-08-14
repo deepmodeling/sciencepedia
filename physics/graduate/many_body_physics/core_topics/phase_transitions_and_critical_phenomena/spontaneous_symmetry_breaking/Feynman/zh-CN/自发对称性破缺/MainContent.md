@@ -31,7 +31,7 @@ $$
 
 <br>
 <center>
-<img src="https://i.imgur.com/uGzD68N.png" width="600" alt="Mexican Hat Potential">
+
 <br>
 <small>图1：[墨西哥帽势](@keyword=mexican_hat_potential|lang=zh-CN|style=Feynman)。当控制参数（如温度或压力）越过[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)时，势能的形状从左边的单[势阱](@keyword=potential_energy_well|lang=zh-CN|style=Feynman)变为右边的环形[势阱](@keyword=potential_energy_well|lang=zh-CN|style=Feynman)，系统必须自发选择一个非对称的[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)。</small>
 </center>

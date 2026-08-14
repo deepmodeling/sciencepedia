@@ -26,7 +26,7 @@
 对于一个处于[热平衡](@keyword=thermal_equilibrium|lang=zh-CN|style=Feynman)状态的、稳定的[等离子体](@keyword=plasma|lang=zh-CN|style=Feynman)，其[电子](@keyword=electrons|lang=zh-CN|style=Feynman)的速[度[分](@keyword=degree_distribution|lang=zh-CN|style=Feynman)布](@article_id:338885)通常遵循麦克斯韦[分布](@keyword=generalized_functions|lang=zh-CN|style=Feynman)。这个[分布](@keyword=generalized_functions|lang=zh-CN|style=Feynman)曲线看起来像一个钟形：[速度](@keyword=velocity|lang=zh-CN|style=Feynman)接近零的[电子](@keyword=electrons|lang=zh-CN|style=Feynman)最多，而[速度](@keyword=velocity|lang=zh-CN|style=Feynman)极高或极低的[电子](@keyword=electrons|lang=zh-CN|style=Feynman)则非常稀少。现在，关键来了：对于任何一个正的[速度](@keyword=velocity|lang=zh-CN|style=Feynman) $v$（即[波的传播](@keyword=wave_propagation|lang=zh-CN|style=Feynman)方向），这个[钟形曲线](@keyword=bell_curve|lang=zh-CN|style=Feynman)的斜率总是**负**的。这意味着什么？这意味着，[速度](@keyword=velocity|lang=zh-CN|style=Feynman)比 $v$ 稍慢的[电子](@keyword=electrons|lang=zh-CN|style=Feynman)，总是比[速度](@keyword=velocity|lang=zh-CN|style=Feynman)比 $v$ 稍快的[电子](@keyword=electrons|lang=zh-CN|style=Feynman)要**更多**。
 
 <center>
-<img src="https://i.imgur.com/B7x2r0y.png" width="600">
+
 _图1：麦克斯韦[速度分布函数](@keyword=velocity_distribution_function|lang=zh-CN|style=Feynman)。对于任意一个波的[相速度](@keyword=phase_velocity|lang=zh-CN|style=Feynman) $v_{ph}$，我们可以看到其左侧（[速度](@keyword=velocity|lang=zh-CN|style=Feynman)稍慢）的[粒子数](@keyword=occupation_numbers|lang=zh-CN|style=Feynman)（蓝色阴影）比其右侧（[速度](@keyword=velocity|lang=zh-CN|style=Feynman)稍快）的[粒子数](@keyword=occupation_numbers|lang=zh-CN|style=Feynman)（红色阴影）要多。这种不[对称性](@keyword=symmetry|lang=zh-CN|style=Feynman)是[朗道阻尼](@keyword=landau_damping|lang=zh-CN|style=Feynman)的根源。_
 </center>
 
@@ -49,7 +49,7 @@ $$
 一个典型的例子就是“双束[流不稳定性](@keyword=streaming_instability|lang=zh-CN|style=Feynman)”。想象一下，我们让一束[电子](@keyword=electrons|lang=zh-CN|style=Feynman)束（一团[速度](@keyword=velocity|lang=zh-CN|style=Feynman)相近的[电子](@keyword=electrons|lang=zh-CN|style=Feynman)）穿过一片静止的[等离子体](@keyword=plasma|lang=zh-CN|style=Feynman)。整个系统的[速度分布函数](@keyword=velocity_distribution_function|lang=zh-CN|style=Feynman)就不再是简单的钟形，而是在背景[等离子体](@keyword=plasma|lang=zh-CN|style=Feynman)的[钟形曲线](@keyword=bell_curve|lang=zh-CN|style=Feynman)上，[叠加](@keyword=superposition|lang=zh-CN|style=Feynman)了一个代表[电子](@keyword=electrons|lang=zh-CN|style=Feynman)束的“小山包”。[@problem_id:274550]
 
 <center>
-<img src="https://i.imgur.com/yU4w5jX.png" width="600">
+
 _图2：双束流系统的速[度[分](@keyword=degree_distribution|lang=zh-CN|style=Feynman)布](@article_id:338885)示意图。在“山包”的左侧（上升区），[分布函数](@keyword=distribution_function|lang=zh-CN|style=Feynman)的斜率为正。如果存在一个波，其[相速度](@keyword=phase_velocity|lang=zh-CN|style=Feynman)恰好落在这个区域，那么能量将从粒子流向波，导致波的[振幅](@keyword=amplitude|lang=zh-CN|style=Feynman)[指数增长](@keyword=exponential_growth|lang=zh-CN|style=Feynman)，这便是“[不稳定性](@keyword=lability|lang=zh-CN|style=Feynman)”。_
 </center>
 

@@ -61,7 +61,7 @@ $$
 
 第一个恒等式证实了这种联系：BSDE的价值过程*就是*沿随机路径求值的PDE解。第二个恒等式才是真正的启示。它告诉我们那个神秘的控制过程 $Z_t$ 是什么。它是**PDE解的梯度（或斜率）**，经波动率矩阵 $\sigma^\top$ 修正[@problem_id:2971787]。这是一个深刻统一的时刻。在BSDE世界中引导我们的价值达到其目标所需的抽象“控制”，恰好是PDE世界中解的敏感度。PDE中依赖于 $u$ 梯度的非线性项，直接对应于BSDE驱动项对 $Z$ 的依赖。
 
-![一张图示，说明了[半线性](@keyword=conjugate_linear|lang=zh-CN|style=Feynman)PDE和前向-后向SDE（FBSDE）之间的联系。由SDE驱动的前向过程X_t作为(Y_t, Z_t)对的BSDE的输入。[非线性费曼-卡茨公式](@keyword=nonlinear_feynman_kac_formula|lang=zh-CN|style=Feynman)确立了Y_t = u(t, X_t)，而Z_t代表u的梯度，从而将BSDE与[半线性](@keyword=conjugate_linear|lang=zh-CN|style=Feynman)PDE的解u联系起来。](https://i.imgur.com/kS5x0C3.png)
+PDE和前向-后向SDE（FBSDE）之间的联系。由SDE驱动的前向过程X_t作为(Y_t, Z_t)对的BSDE的输入。[非线性费曼-卡茨公式](@keyword=nonlinear_feynman_kac_formula|lang=zh-CN|style=Feynman)确立了Y_t = u(t, X_t)，而Z_t代表u的梯度，从而将BSDE与[半线性](@keyword=conjugate_linear|lang=zh-CN|style=Feynman)PDE的解u联系起来。](https://i.imgur.com/kS5x0C3.png)
 
 ### 当光滑性失效时：[粘性解](@keyword=viscosity_solutions|lang=zh-CN|style=Feynman)的智慧
 

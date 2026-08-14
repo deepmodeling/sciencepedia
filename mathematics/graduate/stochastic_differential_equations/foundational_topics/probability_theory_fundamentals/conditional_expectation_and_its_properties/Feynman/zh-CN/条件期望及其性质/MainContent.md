@@ -16,7 +16,7 @@
 现在，问题变成了：在你的“已知世界”中，哪个点是离“未知真相” $X$ 最近的？几何直觉告诉我们，这个最近的点就是 $X$ 在该子空间上的“[正交投影](@keyword=orthogonal_projection|lang=zh-CN|style=Feynman)”。这个投影，就是[条件期望](@keyword=conditional_expectation|lang=zh-CN|style=Feynman) $E[X|\mathcal{G}]$。[@3001889]
 
 <center>
-<img src="https://i.imgur.com/B9Bw8pC.png" width="500"/>
+
 </center>
 <br>
 

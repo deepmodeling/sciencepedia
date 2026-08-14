@@ -37,8 +37,6 @@
 
 就在这里，一位名叫 James Clapp 的工程师在1948年提出了一个看似微小却异常聪明的改进。他在[科尔皮兹振荡器](@keyword=colpitts_oscillator|lang=zh-CN|style=Feynman)的基础上，在[电感](@keyword=inductance|lang=zh-CN|style=Feynman) $L$ 旁边串联了第三个[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)，我们称之为 $C_3$。[@problem_id:1288703]
 
-![Clapp Oscillator Basic Topology](https://feynman.aivcamp.com/images/Analog_Electronics_Circuits_Undergraduate/Clapp_Oscillator_1.png)
-
 这样一来，决定频率的“心脏”就变成了由 $L, C_1, C_2, C_3$ 四个元件共同构成的谐振网络。它的谐振频率由以下公式给出：
 
 $$

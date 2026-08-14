@@ -24,7 +24,7 @@
 请看下图，当船倾斜后，从新[浮心](@keyword=center_of_buoyancy|lang=zh-CN|style=Feynman) $B'$ 引出一条代表浮力的垂线。这条垂线与船体原来的中心竖线（未倾斜时的重力与浮力作用线）会有一个交点。这个交点，就是**[稳心](@keyword=metacentre|lang=zh-CN|style=Feynman)**（Metacenter），我们用 $M$ 来表示。
 
 <center>
-    <img src="https://i.imgur.com/G5T7W0u.png" alt="Diagram showing G, B, and M" width="500"/>
+
     <br>
     <small>图1：当船体倾斜时，[浮心](@keyword=center_of_buoyancy|lang=zh-CN|style=Feynman)从 $B$ 移动到 $B'$。新的浮力作用线与原中心线的交点即为[稳心](@keyword=metacentre|lang=zh-CN|style=Feynman) $M$。</small>
 </center>

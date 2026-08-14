@@ -29,13 +29,13 @@ This seems abstract, but there's a wonderfully intuitive way to visualize it. Im
 
 Consider the [floor function](@keyword=floor_function|lang=en-US|style=Feynman), $f(x) = \lfloor x \rfloor$, which rounds a number down to the nearest integer [@problem_id:2163734]. It looks like a staircase. It’s not convex; you can easily draw a line segment between two points on different steps that passes underneath the staircase. However, it *is* quasiconvex. If you flood this staircase landscape up to any height $\alpha$, the flooded area is always an unbroken interval of the form $(-\infty, k)$ for some integer $k$. An interval is a [convex set](@keyword=convex_set|lang=en-US|style=Feynman), so the [floor function](@keyword=floor_function|lang=en-US|style=Feynman) is quasiconvex.
 
-![A diagram showing the [floor function](@keyword=floor_function|lang=en-US|style=Feynman). A line segment between (0.5, 0) and (1.5, 1) dips below the graph, showing it is not convex. However, any horizontal line drawn across the graph shows that the [sublevel set](@keyword=sublevel_set|lang=en-US|style=Feynman) to the left is always a single continuous interval, demonstrating [quasiconvexity](@keyword=quasiconvexity|lang=en-US|style=Feynman).](https://i.imgur.com/example_floor_function.png)
+. A line segment between (0.5, 0) and (1.5, 1) dips below the graph, showing it is not convex. However, any horizontal line drawn across the graph shows that the [sublevel set](@keyword=sublevel_set|lang=en-US|style=Feynman) to the left is always a single continuous interval, demonstrating [quasiconvexity](@keyword=quasiconvexity|lang=en-US|style=Feynman).](https://i.imgur.com/example_floor_function.png)
 
 Similarly, the function $f(x) = x^3$ is not convex (its second derivative, $6x$, is negative for $x<0$), but since it's always increasing, its sublevel sets are always simple intervals of the form $(-\infty, c]$, so it's quasiconvex [@problem_id:2182881].
 
 What does a *non*-quasiconvex function look like? Think of a "W" shape, like the graph of $f(x) = x^4 - 2x^2$. If you flood this landscape to a level just above its two [local minima](@keyword=local_minima|lang=en-US|style=Feynman) but below the central peak, you get two separate puddles. A set made of two disjoint pieces is not a convex set. This function is not quasiconvex [@problem_id:2182881]. Quasiconvexity, in essence, forbids the existence of these "disconnected valleys" separated by a higher ridge.
 
-![A diagram of the function f(x) = x^4 - 2x^2, which has a "W" shape. A horizontal line is drawn between the two minima, showing that the [sublevel set](@keyword=sublevel_set|lang=en-US|style=Feynman) consists of two disconnected intervals, proving it is not quasiconvex.](https://i.imgur.com/example_W_function.png)
+ consists of two disconnected intervals, proving it is not quasiconvex.](https://i.imgur.com/example_W_function.png)
 
 ### The Physicist's Dilemma: When Convexity Fails
 

@@ -18,7 +18,7 @@
 这个操作看似简单，却能产生惊人的效果。让我们来看一个经典的例子。考虑一个由四条边构成的正方形图（$C_4$）。这个图非常“安分”，它没有任何三角形。但是，如果我们收缩其中任意一条边，会发生什么呢？假设我们合并了两个相邻的顶点，原来的正方形立刻就变成了一个三角形（$K_3$）[@problem_id:1507885]！这就像一个魔术，从一个没有奇数环的“二分图”中，我们凭空创造出了一个奇数环 [@problem_id:1507875]。
 
 <center>
-<img src="https://i.imgur.com/G5g2mSo.png" alt="Contraction of an edge in a C4 to form a K3" width="500"/>
+
 <br>
 图1：将 $C_4$ （左）的一条[边收缩](@keyword=edge_contraction|lang=zh-CN|style=Feynman)，得到了 $K_3$ （右）。
 </center>

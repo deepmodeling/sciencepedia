@@ -20,7 +20,7 @@
 现在，让我们观察材料的“内部”。随便挑一个内部的电流圈，你会发现它的某条边上，电流向右流动。而它旁边的那个电流圈，在同一条边上，电流恰好向左流动。由于所有电流圈都相同，这两股电流大小相等、方向相反，于是它们的效果完美地抵消了！就像两排紧挨着的传送带，如果它们的接触面运动方向相反且速度相同，站在交界处的人会感觉什么都没发生。在磁铁的内部深处，每一对相邻的[微观电流](@keyword=microscopic_current|lang=zh-CN|style=Feynman)都在相互“掣肘”，导致宏观上看，内部没有任何净电流在流动。
 
 <center>
-<img src="https://i.imgur.com/gK9qJvB.png" alt="内部电流抵消示意图" width="500">
+
 <br>
 <small>图1：在均匀磁化的材料内部，相邻的[微观电流](@keyword=microscopic_current|lang=zh-CN|style=Feynman)圈（红色箭头）在接触边界处方向相反，宏观效应相互抵消。</small>
 </center>
@@ -28,7 +28,7 @@
 但是，在材料的“表面”呢？故事就完全不同了。位于最外层的那些电流圈，它们的外侧没有“邻居”来抵消它们的电流了。这些未被抵消的电流在整个材料的表面汇集起来，形成了一股宏观的、连续流动的电流。这股电流像一条环绕着磁铁的“护城河”，它不是由自由电子（像导线中的电子那样）构成的，而是由原子内部的[微观电流](@keyword=microscopic_current|lang=zh-CN|style=Feynman)在宏观边界上“累积”而成的。因此，我们称之为**[束缚面电流](@keyword=bound_surface_current|lang=zh-CN|style=Feynman)**（Bound Surface Current），记作 $\vec{K}_\text{b}$。
 
 <center>
-<img src="https://i.imgur.com/eBf2g6S.png" alt="[表面电流](@keyword=surface_current|lang=zh-CN|style=Feynman)累积示意图" width="500">
+
 <br>
 <small>图2：在材料的表面，最外层的电流圈没有邻居来抵消，它们的电流累积起来，形成一股宏观的[束缚面电流](@keyword=bound_surface_current|lang=zh-CN|style=Feynman) $\vec{K}_\text{b}$。</small>
 </center>
@@ -54,7 +54,7 @@ $$
 这种关系常常是出人意料的。例如，在一个无限长的圆柱体中，如果磁化强度 $\vec{M}$ 是沿着轴向的，但其大小随离轴心的距离 $s$ 而变化（比如 $\vec{M} = Cs^2 \hat{z}$），计算表明，由此产生的[束缚体电流](@keyword=bound_volume_current|lang=zh-CN|style=Feynman) $\vec{J}_\text{b}$ 竟然是绕着轴心打转的（$\vec{J}_\text{b} \propto -s\hat{\phi}$）[@problem_id:1568155]。反过来，如果磁化强度是绕着轴心打转的（$\vec{M} \propto -s\hat{\phi}$），产生的[束缚体电流](@keyword=bound_volume_current|lang=zh-CN|style=Feynman) $\vec{J}_\text{b}$ 反而是沿着轴心笔直向前的均匀电流（$\vec{J}_\text{b}$ 是一个常数矢量）[@problem_id:1568154]！
 
 <center>
-<img src="https://i.imgur.com/vHqB7w1.png" alt="非均匀磁化产生体电流" width="600">
+
 <br>
 <small>图3：当相邻[微观电流](@keyword=microscopic_current|lang=zh-CN|style=Feynman)圈强度不同时（由箭头粗细表示），内部电流无法完全抵消，从而产生宏观的[束缚体电流](@keyword=bound_volume_current|lang=zh-CN|style=Feynman) $\vec{J}_\text{b}$。</small>
 </center>

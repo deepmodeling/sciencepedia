@@ -15,7 +15,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/Gg5Lh3v.png" alt="Vectors in different tangent spaces on a sphere." width="400"/>
+
   <figcaption>图1：在球面上，不同点的切空间是不同的平面。直接比较两个切空间中的向量没有内在意义。</figcaption>
 </figure>
 </center>
@@ -68,7 +68,7 @@ $$
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/gKzckE8.png" alt="A machine with gears labeled Gamma." width="350"/>
+
   <figcaption>图2：克里斯托弗符号 $\Gamma^k_{ij}$ 就像联络这部机器的齿轮，它们本身看起来很奇怪，但共同协作产生了完美的[协变导数](@keyword=covariant_derivative|lang=zh-CN|style=Feynman)。</figcaption>
 </figure>
 </center>

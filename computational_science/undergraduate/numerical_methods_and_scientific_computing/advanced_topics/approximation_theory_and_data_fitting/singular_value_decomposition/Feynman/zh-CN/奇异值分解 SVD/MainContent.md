@@ -15,6 +15,4 @@
 
 让我们以一个二维的例子来感受一下。假设有一个矩阵 $A$ [@problem_id:1388951]。当它作用于[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)上所有的点时，这个圆会被拉伸和旋转，变成一个椭圆。这个椭圆有两条[对称轴](@keyword=axis_of_symmetry|lang=zh-CN|style=Feynman)，一条长的叫[半长轴](@keyword=semi_major_axis|lang=zh-CN|style=Feynman)，一条短的叫半短轴。SVD告诉我们的第一件事就是：**奇异值（singular values） $\sigma_i$ 正是这些轴的长度**。最大的奇异值 $\sigma_1$ 是[半长轴](@keyword=semi_major_axis|lang=zh-CN|style=Feynman)的长度，第二大的 $\sigma_2$ 是半短轴的长度，以此类推。
 
-![SVD geometric interpretation](https://assets.test.logos.com/logical-thinking/courses/132/svd-unit-circle-to-ellipse.png)
-
 *图1：一个矩阵 $A$ 将[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)（左）变换为一个椭圆（右）。[奇异值](@keyword=singular_values|lang=zh-CN|style=Feynman) $\sigma_1$ 和 $\sigma_2$ 是椭圆半轴的长度。*

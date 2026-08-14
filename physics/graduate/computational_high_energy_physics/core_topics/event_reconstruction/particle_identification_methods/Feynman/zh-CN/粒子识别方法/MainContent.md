@@ -57,5 +57,4 @@ $p = \gamma m \beta$
 
 *   **费米平台区**：在极端能量下，粒子强大的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)会使介质本身发生极化。这种极化效应会屏蔽掉远处原子，减弱了相互作用，从而使[能量损失](@keyword=energy_loss|lang=zh-CN|style=Feynman)的上升趋势饱和，进入一个平台区。
 
-![Bethe-Bloch Curve](https://pdg.lbl.gov/2023/reviews/rpp2022-rev-passage-particles-matter.pdf)
 *图：不同粒子（[π介子](@keyword=pions|lang=zh-CN|style=Feynman)、K介子、质子）的[平均能量](@keyword=average_energy|lang=zh-CN|style=Feynman)损失 $dE/dx$ 随动量变化的曲线。在“[相对论性上升](@keyword=relativistic_rise|lang=zh-CN|style=Feynman)区”，相同动量的不同粒子因其质量不同，具有不同的 $\beta\gamma$ 值，从而对应不同的 $dE/dx$。图片来源：Particle Data Group。*

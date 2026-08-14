@@ -12,8 +12,6 @@
 
 现在，让我们把目光从压力转向重力。想象一条从高山水库奔流而下的溪流，驱动着一个小型的**水力涡轮发电机**。这里的能量主角是势能 $gz$。水从高处 $z_1$ 流到低处 $z_2$，巨大的势能被释放出来。涡轮机就像一个巧妙的“能量捕手”，它横在水流中，让水流推动叶片旋转，从而将水的势能转化为轴功 $\dot{W}$，最终输出为电能。在这个场景下，动能和压力的变化通常是次要的，发[电功率](@keyword=electrical_power|lang=zh-CN|style=Feynman)几乎完全由水流的质量流量 $\dot{m}$ 和下落高度 $H$ 决定 [@problem_id:1892069]。
 
-![](https://jde-prod.oss-cn-shanghai.aliyuncs.com/search/1892069.png)
-
 当然，我们最常与热能打交道。你家里的**[冰箱](@keyword=refrigerators|lang=zh-CN|style=Feynman)**是如何[制冷](@keyword=refrigeration|lang=zh-CN|style=Feynman)的？它不是在“制造冷”，而是在“搬运热”。其背后的核心部件之一是位于冰箱背面的冷凝器。当你摸它时，会发现它是温的。这是因为在[制冷循环](@keyword=refrigeration_cycle|lang=zh-CN|style=Feynman)中，[制冷剂](@keyword=refrigerant|lang=zh-CN|style=Feynman)气体被压缩后，携带了从冰箱内部吸收的热量，以高压高温的状态进入冷凝器。在这里，它向厨房的空气释放热量 $\dot{Q}$，自身从气体[凝结](@keyword=coagulation|lang=zh-CN|style=Feynman)成液体。这个过程导致制冷剂的[比焓](@keyword=specific_enthalpy|lang=zh-CN|style=Feynman) $h$ 大幅下降。[稳流能量方程](@keyword=steady_flow_energy_equation_2|lang=zh-CN|style=Feynman)告诉我们，这部分减少的焓能，必须以热量的形式排出系统 [@problem_id:1892041]。在**飞机空调系统**中，我们也看到了类似但更精巧的应用。[压缩机](@keyword=compressor|lang=zh-CN|style=Feynman)对空气做功 $\dot{W}$，极大地提高了空气的焓，为后续的冷却和降压过程做好准备，最终为客舱送去冷气 [@problem_id:1857517]。
 
 在大型**发电厂**中，冷凝器扮演着同样关键但规模宏大得多的角色。蒸汽在推动涡轮机做功后，需要被冷却变回水，才能完成循环。这个过程在巨大的冷凝器中发生，大量的冷却水流过管道，带走蒸汽[凝结](@keyword=coagulation|lang=zh-CN|style=Feynman)时释放的巨额热量。要计算需要多少冷却水，工程师们正是应用了[稳流能量方程](@keyword=steady_flow_energy_equation_2|lang=zh-CN|style=Feynman)：他们对蒸汽和冷却水两个流体系统分别列出[能量平衡](@keyword=energy_balance|lang=zh-CN|style=Feynman)式，蒸汽损失的能量（焓变）等于冷却水获得的能量。方程就像一个天平，精确地平衡了能量的收支 [@problem_id:1892044]。
@@ -26,15 +24,11 @@
 
 在食品或制药工业中，如何将液体浓缩物（如果汁、牛奶）变成干粉？答案是**喷雾干燥**。这个过程听起来很复杂：将液体雾化成微小液滴，然后让它们与热空气接触，水分瞬间蒸发，留下固体粉末。工程师如何设计这样一座工厂？他们依赖的正是[稳流能量方程](@keyword=steady_flow_energy_equation_2|lang=zh-CN|style=Feynman)。将整个干燥塔视为一个[控制体](@keyword=control_volume|lang=zh-CN|style=Feynman)，能量的流入必须等于流出。热空气降温所释放的能量，必须精确地等于一系列过程所需能量的总和：加热固体物料、将液态水加热到[沸点](@keyword=boiling_point|lang=zh-CN|style=Feynman)、提供巨大的[汽化潜热](@keyword=latent_heat_of_vaporization|lang=zh-CN|style=Feynman) $h_{fg}$ 使水变成蒸汽，最后再将这些新生成的蒸汽加热到出口温度。通过这个总能量账本，工程师可以精确计算出需要多少热空气才能“收干”产品 [@problem_id:1892040]。
 
-![](https://jde-prod.oss-cn-shanghai.aliyuncs.com/search/1892040.png)
-
 如果过程本身就会产生热量呢？在**化学反应器**中，当[单体](@keyword=monomer|lang=zh-CN|style=Feynman)聚合成长链聚合物时，[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)的重新[排列](@keyword=permutation|lang=zh-CN|style=Feynman)会释放出能量，这被称为放热反应。这些化学能的释放，会体现在流体流出反应器时的[比焓](@keyword=specific_enthalpy|lang=zh-CN|style=Feynman) $h$ 低于流入时的[比焓](@keyword=specific_enthalpy|lang=zh-CN|style=Feynman)。如果不加以控制，反应器会持续升温，甚至可能失控。为了维持稳定的生产温度，必须用冷却夹套不断地移走热量 $\dot{Q}_{out}$。需要移走多少热量呢？[稳流能量方程](@keyword=steady_flow_energy_equation_2|lang=zh-CN|style=Feynman)给出了精确的答案 [@problem_id:1892053]。
 
 让我们把视线从工厂转向地球本身。**地热发电**是一种清洁的能源获取方式。从地下深处抽取的高压热水，在到达地表时通过一个节流阀。阀门使其压力骤然降低。这时会发生一个奇妙的现象——“[闪蒸](@keyword=flash_boiling|lang=zh-CN|style=Feynman)”。根据[稳流能量方程](@keyword=steady_flow_energy_equation_2|lang=zh-CN|style=Feynman)，[节流过程](@keyword=joule_thomson_expansion|lang=zh-CN|style=Feynman)是一个焓值守恒（$h_{in} = h_{out}$）的过程。由于低压下液态水的焓远低于高压热水的焓，为了保持总焓不变，一部分水必须瞬间汽化成蒸汽，因为蒸汽的焓非常高。这样产生的“液汽混合物”中的蒸汽，就可以被分离出来去驱动发电机了。方程不仅解释了为何会[闪蒸](@keyword=flash_boiling|lang=zh-CN|style=Feynman)，还能计算出到底有多少比例的水转化为了蒸汽 [@problem_id:1892059]。
 
 我们甚至可以为更宏大的自然现象建立模型。深海中的**[热液喷口](@keyword=hydrothermal_vents|lang=zh-CN|style=Feynman)**，那些被称为“黑烟囱”的构造，就像地球的烟囱。寒冷的海水渗入地壳裂缝，被下方的岩浆加热，然后以高温高速的状态喷回海洋。我们可以将这个喷口系统视为一个稳流装置。通过测量喷出流体的温度、速度和流量，并应用[稳流能量方程](@keyword=steady_flow_energy_equation_2|lang=zh-CN|style=Feynman)，[海洋学](@keyword=oceanography|lang=zh-CN|style=Feynman)家和[地球物理学](@keyword=geophysics|lang=zh-CN|style=Feynman)家能够估算出地壳向海洋传递热量的总速率 $\dot{Q}$。这为我们提供了一个窥探地球内部能量活动的独特窗口 [@problem_id:1892051]。
-
-![](https://jde-prod.oss-cn-shanghai.aliyuncs.com/search/1892051.png)
 
 ### 人体及前沿：生命、宇宙及万物
 

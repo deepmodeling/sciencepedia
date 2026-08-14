@@ -11,11 +11,7 @@ How can you do this? You can apply an external field, like a magnetic or electri
 
 As we gaze at this landscape, we see the energy [level curves](@keyword=level_curves|lang=en-US|style=Feynman) swooping and bending. And then, we notice two distinct types of encounters. Sometimes, two energy level lines will approach each other, and simply pass straight through one another, as if they were ghosts. This event, where two different states have the exact same energy for a specific value of our parameter, is called a **level crossing** or a **degeneracy**.
 
-![A diagram showing two lines crossing each other.](https://i.imgur.com/example_crossing.png "A genuine level crossing.")
-
 But much more often, something stranger happens. As two levels draw near, they seem to sense each other's presence. Instead of crossing, they veer away, repelling each other like magnets with the same pole. The closer they would have gotten, the stronger the repulsion. This phenomenon is known as an **avoided crossing** or **[level repulsion](@keyword=level_repulsion|lang=en-US|style=Feynman)**. It is, in fact, the default behavior in the quantum world. True crossings, it turns out, are the special exception, not the rule.
-
-![A diagram showing two curves approaching and then repelling each other.](https://i.imgur.com/example_avoided_crossing.png "An avoided crossing, or level repulsion.")
 
 Why should this be? Why would nature prefer to avoid these crossings? The answer lies in one of the deepest and most beautiful concepts in physics: the interplay between interaction and symmetry.
 

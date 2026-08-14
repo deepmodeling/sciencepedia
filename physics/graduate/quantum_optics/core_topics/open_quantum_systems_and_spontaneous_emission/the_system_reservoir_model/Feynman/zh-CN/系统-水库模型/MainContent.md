@@ -16,7 +16,7 @@
 那么，这个[谱密度](@keyword=spectral_density|lang=zh-CN|style=Feynman)从何而来？它并非凭空杜撰，而是源自对具体物理系统的细致分析。让我们来看一个真实的例子。在构建[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)机时，科学家们会将一个[超导量子比特](@keyword=superconducting_qubits|lang=zh-CN|style=Feynman)耦合到一根长长的超导传输线上，这根[传输线](@keyword=transmission_lines|lang=zh-CN|style=Feynman)就扮演了热库的角色。通过分析它们之间的电容耦合，我们可以推导出这个[热库](@keyword=heat_reservoir|lang=zh-CN|style=Feynman)的[谱密度](@keyword=spectral_density|lang=zh-CN|style=Feynman)。结果出人意料地简洁：$J(\omega)$ 正比于频率 $\omega$ [@problem_id:777072]。这种线性关系被称为“欧姆”[谱密度](@keyword=spectral_density|lang=zh-CN|style=Feynman)，因为它与普通电路中电阻的耗散行为非常相似。这是我们在自然界中遇到的最普遍、最基础的一种环境。
 
 <center>
-<img src="https://assets.LumiTeacher.com/images/2024-05-18/17-10-10_777072.png" alt="A superconducting qubit capacitively coupled to a transmission line, which acts as a reservoir. The spectral density J(ω) is derived from this physical model." width="500"/>
+
 </center>
 <center>
 <figcaption>图1：一个[超导量子比特](@keyword=superconducting_qubits|lang=zh-CN|style=Feynman)（系统）通过电容耦合到一根长传输线（热库）。这种物理设置可以被精确地映射到系统-[热库](@keyword=heat_reservoir|lang=zh-CN|style=Feynman)模型，其影响完全由一个简单的[谱密度](@keyword=spectral_density|lang=zh-CN|style=Feynman) $J(\omega) \propto \omega$ 捕获。</figcaption>

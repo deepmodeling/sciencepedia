@@ -16,7 +16,7 @@
 一个“好”的[有限元网格](@keyword=finite_element_mesh|lang=zh-CN|style=Feynman)，我们称之为**[协调网格](@keyword=conforming_mesh|lang=zh-CN|style=Feynman) (conforming mesh)**，也遵循着类似的、严格的几何规则 [@problem_id:2575999]。核心规则可以被诗意地描述为“面对面，边对边，点对点”。这意味着，任何两个相邻的网格单元（比如两个三角形），它们的交集要么是空的，要么必须是它们共同拥有的一条完整的边，或者一个完整的顶点。
 
 <center>
-<img src="https://i.imgur.com/3Yp7vVl.png" alt="Conforming vs. Non-conforming mesh" width="600"/>
+
 <br/>
 *图1：(左) [协调网格](@keyword=conforming_mesh|lang=zh-CN|style=Feynman)，单元之间完美匹配。(右) [非协调网格](@keyword=non_conforming_mesh|lang=zh-CN|style=Feynman)，出现了“[悬挂节点](@keyword=dangling_nodes|lang=zh-CN|style=Feynman)”（Hanging Node），这破坏了连续性。*
 </center>
@@ -30,7 +30,7 @@
 单纯形有一种惊人的、几乎是“魔术般”的特性：一个 $k$ 维[单纯形](@keyword=simplex|lang=zh-CN|style=Feynman)（例如一个 $k=3$ 的四面体）的完整拓扑结构——它包含哪些面、哪些边、哪些顶点，以及它们之间如何连接——完全由它的 $k+1$ 个顶点唯一确定 [@problem_id:2576087]。只要你告诉我一个四面体的四个顶点，我就能推导出它所有的六条边和四个面。任何顶点的子集都对应着一个低维的子单纯形（一个面、一条边或一个顶点）。
 
 <center>
-<img src="https://i.imgur.com/yU5GqW0.png" alt="Simplex structure" width="500"/>
+
 <br/>
 *图2：一个三维[单纯形](@keyword=simplex|lang=zh-CN|style=Feynman)（四面体）。它的四个顶点 $\{v_0, v_1, v_2, v_3\}$ 唯一确定了它的四个面（如 $\{v_0,v_1,v_2\}$）和六条边（如 $\{v_0, v_1\}$）。*
 </center>
@@ -66,7 +66,7 @@ $$
 这个简单的代数规则带来了一个惊人的结果。想象一下，我们将[边界算子](@keyword=boundary_operator|lang=zh-CN|style=Feynman) $\partial$ 应用于两个共享一条边的相邻三角形 $T_1$ 和 $T_2$ 的和。$T_1$ 的边界包含那条共享边，方向为正；而 $T_2$ 的边界也包含那条边，但由于相邻，其诱导的方向恰好为负。因此，当我们将两个边界相加时，这条内部共享边恰好相互抵消了！[@problem_id:2576083]
 
 <center>
-<img src="https://i.imgur.com/nJCVXb5.png" alt="Boundary cancellation" width="500"/>
+
 <br/>
 *图3：当计算两个相邻三角形边界的和时，共享的内部边（红色箭头）因方向相反相互抵消，只剩下外部边界。*
 </center>

@@ -26,7 +26,7 @@ $$
 3.  **第二次旋转 ($U$)**：$U$ 也是一个正交矩阵，它代表着最后一次旋转。它拿起刚刚被拉伸成的标准椭圆，将它旋转到最终的位置。椭圆的最终朝向，就由 $U$ 的列向量（称为 **左[奇异向量](@keyword=singular_vectors|lang=zh-CN|style=Feynman)**）决定。
 
 <center>
-<img src="https://assets.bitdegree.org/online-learning-platforms/storage/media/2023/04/svd-768x402.png" alt="SVD geometric interpretation" width="600"/>
+
 <br>
 <small>图1：SVD的几何诠释。任何线性变换都可以分解为一次旋转($V^T$)，一次沿轴拉伸($\Sigma$)，和另一次旋转($U$)的组合。</small>
 </center>

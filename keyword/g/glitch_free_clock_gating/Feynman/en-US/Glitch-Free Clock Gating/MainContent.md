@@ -11,7 +11,7 @@ In our journey to understand the world, we often find that the most elegant solu
 
 Let's imagine we have a block of [digital logic](@keyword=digital_logic|lang=en-US|style=Feynman)—a set of registers—that we want to put to sleep. These [registers](@keyword=registers|lang=en-US|style=Feynman) are synchronized by a master clock, a relentless drumbeat that tells them when to work. To give them a break, we need to stop this drumbeat. The most straightforward idea is to build a gatekeeper: a simple AND gate. One input to the gate is the [clock signal](@keyword=clock_signal|lang=en-US|style=Feynman), our drumbeat. The other is an `enable` signal. When `enable` is high, the drumbeat passes through; when it's low, the output is silent. Simple, right?
 
-![A naive [clock gating](@keyword=clock_gating|lang=en-US|style=Feynman) circuit using only an AND gate.](https://static.sourcemaker.com/11e3b52d242699f018e698379ba5433d.svg)
+ circuit using only an AND gate.](https://static.sourcemaker.com/11e3b52d242699f018e698379ba5433d.svg)
 
 This beautifully simple idea, however, is a classic trap in digital design. It hides two fundamental dangers. First, the AND gate itself takes a tiny but finite amount of time to do its job. This delay means the gated clock signal arrives slightly later than the main clock, creating a timing mismatch known as **[clock skew](@keyword=clock_skew|lang=en-US|style=Feynman)**. In a complex chip where different parts need to talk to each other in perfect time, this skew can be disastrous, like a conductor's sections playing out of sync [@problem_id:1920665].
 
@@ -21,7 +21,7 @@ The second, more insidious problem is the **glitch**. The `enable` signal itself
 
 So, how do we build a better gatekeeper? How can we use our `enable` signal without letting its indecisive flickers cause chaos? The solution, found in every modern **Integrated Clock Gating (ICG) cell**, is wonderfully clever. We add a bouncer.
 
-![A standard latch-based glitch-free [clock gating](@keyword=clock_gating|lang=en-US|style=Feynman) circuit.](https://static.sourcemaker.com/d9d20c29f4bbce700ac2e75e9b72459b.svg)
+ circuit.](https://static.sourcemaker.com/d9d20c29f4bbce700ac2e75e9b72459b.svg)
 
 This bouncer is a special type of memory element called a **[level-sensitive latch](@keyword=level_sensitive_latch|lang=en-US|style=Feynman)**. Think of it this way: our clock signal (`clk`) defines two states of the world—a "planning" phase when the clock is low, and an "action" phase when the clock is high. The [latch](@keyword=latch|lang=en-US|style=Feynman) enforces a simple, brilliant rule: any decision about whether to enable the clock must be finalized during the planning phase.
 

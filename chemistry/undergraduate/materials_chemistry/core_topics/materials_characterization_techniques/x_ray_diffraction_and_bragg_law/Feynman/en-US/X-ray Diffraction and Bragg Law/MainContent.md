@@ -17,8 +17,6 @@ This is the essence of X-ray diffraction. The "mirrors" are the planes of atoms 
 
 William Lawrence Bragg and his father, William Henry Bragg, first untangled this puzzle with a stroke of genius. Let's look at their reasoning. Consider two parallel waves of X-rays striking two adjacent [crystal planes](@keyword=crystal_planes|lang=en-US|style=Feynman) separated by a distance $d$. The angle between the incoming ray and the crystal plane is $\theta$.
 
-<img src="https://i.imgur.com/vH9J0yT.png" alt="Bragg Diffraction Geometry" width="500">
-
 As the diagram shows, the wave that travels to the second plane and reflects back out has to travel an extra distance compared to the wave reflecting from the top plane. This extra path length is made of two parts, shown in red. A little bit of trigonometry reveals this total [path difference](@keyword=path_difference|lang=en-US|style=Feynman) is $2d\sin\theta$.
 
 For the two scattered waves to emerge in lockstep—in phase—and reinforce each other, this extra distance must be an exact integer multiple of their wavelength, $\lambda$. If it's one wavelength, or two, or three, they add up perfectly. This is the condition for constructive interference, and it gives us the celebrated **Bragg's Law**:

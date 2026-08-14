@@ -10,7 +10,6 @@
 
 这揭示了一个极其深刻的道理：[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)在局部上就是“最直的”。它在每一点的行为，都无限接近于欧几里得空间中的直线。协变导数 $\nabla_{\dot{c}}\dot{c}$ 本质上就是考虑了空间弯曲之后的“真实”加速度，而[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)正是那条“真实加速度”为零的路径。这就像在自由下落的电梯里，你感觉不到重力，物理定律也恢复了最简单的形式——黎曼法向坐标扮演的，正是这样一个局部“[惯性参考系](@keyword=inertial_frame_of_reference|lang=zh-CN|style=Feynman)”的角色。
 
-![黎曼法向坐标示意图](https://static.scholarpedia.org/images/thumb/8/87/Geodesic_coordinates.png/300px-Geodesic_coordinates.png)
 *图1：黎曼法向[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)示意图。在此[坐标系](@keyword=coordinate_system|lang=zh-CN|style=Feynman)的原点，空间在“一阶”意义上是平坦的，这使得[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)在此处的行为如同欧几里得空间中的直线。*
 
 ### 地球上的导航艺术
@@ -67,7 +66,7 @@ $$ \mathcal{J}(c) = \int \left( \frac{1}{2} g(\dot{c}, \dot{c}) - W(c(t)) \right
 
 这个结论是石破天惊的。它意味着，仅仅通过测量你周围空间的局部弯曲程度，并发现它总是“正”的，你就可以断定你所处的宇宙是有限的！这在广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)中有着深远的影响，例如在[奇点定理](@keyword=singularity_theorems|lang=zh-CN|style=Feynman)的证明中，它预示着在引力作用下，[时空](@keyword=space_time|lang=zh-CN|style=Feynman)本身可能会在有限“时间”内终结。
 
-![[时空](@keyword=space_time|lang=zh-CN|style=Feynman)[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)示意图](https://i.ytimg.com/vi/6tQeivpFR4o/maxresdefault.jpg)
+[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)示意图](https://i.ytimg.com/vi/6tQeivpFR4o/maxresdefault.jpg)
 *图2：Bonnet-Myers 定理的思想与广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)中的[奇点定理](@keyword=singularity_theorems|lang=zh-CN|style=Feynman)密切相关，它们都展示了[正曲率](@keyword=positive_curvature|lang=zh-CN|style=Feynman)如何导致[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)（或自由落体路径）的汇聚，从而影响[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的全局结构。*
 
 ### 跨越边界：变分法的普世语言

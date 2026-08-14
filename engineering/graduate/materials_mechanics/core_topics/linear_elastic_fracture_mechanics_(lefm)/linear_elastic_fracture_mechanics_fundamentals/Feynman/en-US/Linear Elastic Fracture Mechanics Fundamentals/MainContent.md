@@ -20,7 +20,7 @@ Imagine a local [coordinate system](@keyword=coordinate_system|lang=en-US|style=
 *   **Mode III (The Anti-plane Shear Mode):** In this mode, the crack faces also slide past each other, but this time parallel to the crack front itself. Think of tearing a piece of paper by pulling the two halves in opposite directions. The relative displacement is in the $x_3$ direction, and the culprit is a tearing [shear stress](@keyword=shear_stress|lang=en-US|style=Feynman), `t_3`.
 
 <div align="center">
-<img src="https://i.imgur.com/5lVlU0P.png" alt="The three modes of fracture" width="600"/>
+
 <figcaption><b>Figure 1:</b> The three fundamental modes of fracture. Mode I is an opening or tensile mode. Mode II is a sliding or in-plane shear mode. Mode III is a tearing or anti-plane shear mode. Any arbitrary loading can be described as a combination of these three.</figcaption>
 </div>
 

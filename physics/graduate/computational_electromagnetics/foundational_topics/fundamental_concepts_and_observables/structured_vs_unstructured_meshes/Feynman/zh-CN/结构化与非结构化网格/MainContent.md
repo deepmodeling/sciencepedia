@@ -23,8 +23,6 @@
 
 想象一个由无数微小立方体构成的空间。Yee的巧妙之处在于，他没有把[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)（$\boldsymbol{E}$）和[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)（$\boldsymbol{H}$）的所有分量都堆在同一个地方，而是让它们进行了一场精心编排的“华尔兹”。[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)分量被放置在立方体的**棱的中心**，而[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)分量则被放置在**面的中心**。[@problem_id:3351149]
 
-![Yee Cell](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Yee_cell.svg/300px-Yee_cell.svg.png)
-
 这可不是随意的安排！回想一下法拉第[电磁感应](@keyword=electromagnetic_induction|lang=zh-CN|style=Feynman)定律的积分形式，$\oint_{\partial S} \boldsymbol{E} \cdot d\boldsymbol{l} = - \frac{d}{dt} \iint_S \boldsymbol{B} \cdot d\boldsymbol{a}$。它告诉我们，环绕一个面的电场线积分（电动势）等于穿过该面的磁通量的时间变化率。在Yee网格中，这一定律被活灵活现地展现出来：四个位于某个面边界棱上的[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)分量，正好可以用来计算环绕这个面的线积分；而这个积分的结果，则直接用来更新穿过这个面中心的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)分量。这是一种完美的物理图像，计算机的每一步运算都与麦克斯韦方程的物理内涵精确对应。
 
 更神奇的是，这种优美的结构附赠了一个“免费的午餐”。在连续的矢量分析中，有一个恒等式：任意[梯度的旋度](@keyword=curl_of_a_gradient|lang=zh-CN|style=Feynman)为零（$\nabla \times (\nabla \phi) = 0$），以及任意[旋度的散度](@keyword=divergence_of_a_curl|lang=zh-CN|style=Feynman)为零（$\nabla \cdot (\nabla \times \boldsymbol{E}) = 0$）。这意味着，如果初始[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)是无散的（$\nabla \cdot \boldsymbol{B} = 0$，即没有[磁单极子](@keyword=magnetic_monopoles|lang=zh-CN|style=Feynman)），那么它将永远保持无散。Yee网格的[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)，竟然能**自动地、精确地**满足这一离散版本的恒等式！[@problem_id:3351149] [@problem_id:3351154] 这不是近似，而是一个代数上的必然结果。这保证了算法的[长期稳定性](@keyword=long_term_stability|lang=zh-CN|style=Feynman)和物理真实性，避免了非物理现象的产生。

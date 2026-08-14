@@ -11,8 +11,6 @@ Let's start with something familiar: [sine and cosine](@keyword=sine_and_cosine|
 
 So, a Bessel function is essentially a **damped oscillation**. Its graph looks like a sine wave that's being squeezed as it moves away from the origin. The "zeros" of the function are simply the points where the graph crosses the horizontal axis—where the value of the function is exactly zero.
 
-![](https://i.imgur.com/83p0c29.png)
-
 *Figure 1: Graphs of the Bessel functions $J_0(x)$ (blue) and $J_1(x)$ (orange), showing their oscillating, decaying nature and their zeros (the points where they cross the x-axis).*
 
 For most Bessel functions, finding these zeros is a tricky business. But for some special cases, the curtain lifts and we see a familiar face. For the Bessel function of order $-\frac{1}{2}$, it turns out to be nothing more than a disguised cosine function! [@problem_id:2127668]

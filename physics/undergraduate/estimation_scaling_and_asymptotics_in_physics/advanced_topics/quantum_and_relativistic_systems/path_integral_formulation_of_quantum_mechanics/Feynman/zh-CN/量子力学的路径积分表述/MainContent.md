@@ -34,8 +34,6 @@ Feynman 的天才之处在于，他提出我们不能只数有多少条路径，
 
 Feynman 的方法和微积分的诞生如出一辙：化整为零，积少成多。我们将时间轴从初始时刻 $t_i$ 到最终时刻 $t_f$ 切成 $N$ 片极薄的“时间切片”，每一片的宽度是 $\epsilon$。[@problem_id:2136298] 一条连续的、弯曲的路径 $x(t)$，现在被近似成了一串由 $N-1$ 个中间点 $(x_1, x_2, \dots, x_{N-1})$ 连接起来的折线。
 
-![time_slicing](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Path-integral-time-slicing.svg/400px-Path-integral-time-slicing.svg.png)
-
 现在，“遍历所有路径”这个看似不可能的任务，就转化成了一个虽然复杂但可以想象的操作：对所有可能的中间位置 $x_1, x_2, \dots, x_{N-1}$ 进行积分。也就是说，我们要把粒子在每一个时间切片上可能出现的位置都过一遍。当时间切片数量 $N$ 趋向于无穷大时，积分的维度也随之趋向无穷大。[@problem_id:1920007] 这就是那个神秘的[路径积分](@keyword=path_integration|lang=zh-CN|style=Feynman)符号 $\int \mathcal{D}[q]$ 的真正含义——它是一个在无穷维[函数空间](@keyword=function_spaces|lang=zh-CN|style=Feynman)上的积分，一个对所有“历史”的终极求和。[@problem_id:2819381]
 
 那么，每一条这样被切碎的路径，它的振幅是什么呢？答案藏在物理学中最深刻的原理之一——作用量 $S$ 之中。对于每一个微小的路径片段（从 $x_j$ 到 $x_{j+1}$），它的振幅由 $e^{iS_j/\hbar}$ 给出，其中 $\hbar$ 是约化普朗克常数，而 $S_j$ 是这个片段的[经典作用量](@keyword=classical_action|lang=zh-CN|style=Feynman)，大约是 $\int (T-V)dt \approx \frac{m}{2\epsilon}(x_{j+1}-x_j)^2 - \epsilon V(\frac{x_j+x_{j+1}}{2})$。[@problem_id:2136298] 整条路径的总作用量就是 $S = \sum S_j$，总振幅就是所有片段振幅的乘积，即 $e^{iS/\hbar}$。
@@ -57,7 +55,7 @@ $$
 
 *   **靠近经典路径的“守序”路径**：经典路径有一个非常特殊的性质：它是作用量 $S$ 取[极值](@keyword=extrema|lang=zh-CN|style=Feynman)（通常是最小值）的路径。这意味着，在经典路径附近，即使路径有微小的变化，作用量 $S$ 的变化也非常小（一阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)为零）。因此，这一小簇路径的相位因子 $e^{iS/\hbar}$ 几乎指向同一个方向。当它们被加在一起时，它们会相互加强，产生“[相长干涉](@keyword=constructive_interference|lang=zh-CN|style=Feynman)”（constructive interference）。
 
-![path_interference](https://www.greelane.com/thmb/I0q3mX1p0dK4W5L898X7C3Y4Z0E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/feynman-path-integral-56a73c5f3df78cf77293a5a4.jpg)
+:max_bytes(150000):strip_icc()/feynman-path-integral-56a73c5f3df78cf77293a5a4.jpg)
 
 最终的结果是，只有那些紧密围绕在经典路径周围的路径束对总振幅有显著贡献，而其他所有离经叛道的路径都在相位的高速旋转中自我湮灭了。量子世界，通过这种优雅的“相位民主”，最终投票选出了唯一的经典路径，让我们在宏观尺度上得以看见。
 

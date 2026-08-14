@@ -16,7 +16,7 @@
 现在，我们对这个系统做一个微小的改动，引入一个标准的“噪声”项，也就是[布朗运动](@keyword=brownian_motion|lang=zh-CN|style=Feynman) $W_t$，得到一个对应的[随机微分方程](@keyword=stochastic_differential_equations|lang=zh-CN|style=Feynman)（SDE）：$dY_t = -Y_t dt + dW_t$。这个方程描述的是著名的[Ornstein-Uhlenbeck过程](@keyword=ornstein_uhlenbeck_process|lang=zh-CN|style=Feynman)。仅仅是增加了 $dW_t$ 这一项，路径的性质就发生了天翻地覆的变化[@problem_id:2994532]。它不再是一条光滑的曲线，而是一条永不停歇、剧烈[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的路径。虽然它在宏观上仍然表现出向[平衡位置](@keyword=equilibrium_position|lang=zh-CN|style=Feynman)回归的趋势，但微观上却充满了无穷无尽的细节和曲折。
 
 <center>
-  <img src="https://i.imgur.com/gK2JfrZ.png" width="700">
+
   <br>
   <small>图1：ODE解（蓝色）与对应SDE的[样本路径](@keyword=sample_paths|lang=zh-CN|style=Feynman)（橙色）对比。微小的随机项$dW_t$彻底改变了路径的几何性质。</small>
 </center>

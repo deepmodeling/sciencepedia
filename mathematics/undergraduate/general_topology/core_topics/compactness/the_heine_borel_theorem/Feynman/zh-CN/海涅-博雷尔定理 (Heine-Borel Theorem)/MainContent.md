@@ -18,7 +18,7 @@
 相反，如果一个集合是无界的，那它就无限延伸。比如一条直线 $S_B = \{(x, y) \in \mathbb{R}^2 \mid x + y = 1\}$，或者一条抛物线 $S = \{ (x, y) \in \mathbb{R}^2 \mid x - y^2 = 0 \}$，无论你画多大的泡泡，它们总有部分会伸到泡泡外面去。我们熟悉的整数集 $\mathbb{Z} = \{..., -2, -1, 0, 1, 2, ... \}$ 也是无界的，因为它在数轴上向两端无限延伸。
 
 <center>
-<img src="https://i.imgur.com/k9b8zL3.png" width="600">
+
 </center>
 <center>图1：[有界集](@keyword=bounded_sets|lang=zh-CN|style=Feynman)（如[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)）可以被一个更大的圆完全包含，而无界集（如直线）则会无限延伸出去。</center>
 

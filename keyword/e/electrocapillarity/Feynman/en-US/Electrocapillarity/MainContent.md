@@ -27,7 +27,7 @@ Let's play with this idea. Suppose you are in the lab and you make the potential
 
 Now, let's take a grand tour. Instead of just nudging the potential, let's sweep it across a wide range and plot the surface tension at each point. What we get is a beautiful, symmetric curve: an inverted parabola. This plot is the famous **[electrocapillary curve](@keyword=electrocapillary_curve|lang=en-US|style=Feynman)**.
 
-![A typical [electrocapillary curve](@keyword=electrocapillary_curve|lang=en-US|style=Feynman) showing surface tension as a function of [electrode potential](@keyword=electrode_potential|lang=en-US|style=Feynman).](placeholder_image.png "Electrocapillary Curve")
+ showing surface tension as a function of [electrode potential](@keyword=electrode_potential|lang=en-US|style=Feynman).](placeholder_image.png "Electrocapillary Curve")
 
 At the very peak of this curve, the surface tension reaches its absolute maximum value, $\gamma_{\text{max}}$. At a maximum, the slope of the curve is zero. Applying our trusty Lippmann equation, if $\frac{\partial \gamma}{\partial E} = 0$, then it must be that $\sigma = 0$. This unique potential, where the surface is electrically neutral, is called the **Potential of Zero Charge (PZC)** [@problem_id:1591196].
 

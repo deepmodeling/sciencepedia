@@ -14,7 +14,7 @@
 想象一个直径为 1 的完美球体，我们称之为**[黎曼球](@keyword=riemann_sphere|lang=zh-CN|style=Feynman)面 (Riemann Sphere)**。现在，将这个球体的南极 $S$ 点轻轻地放在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)的原点 $(0,0)$ 上。球体上除了北极 $N$ 之外的每一个点 $P$，都可以通过从北极 $N$ 出发画一条直线，穿过 $P$ 点，最终与[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)相交于唯一的一个点 $z$。反之亦然，平面上的每一个点 $z$ 也都对应着球面上唯一的一个点 $P$。这个美妙的对应关系被称为**[球极平面投影](@keyword=stereographic_projection|lang=zh-CN|style=Feynman) (Stereographic Projection)**。
 
 <center>
-<img src="https://i.imgur.com/3VwzY83.png" width="500">
+
 <br>
 <small>图1：[球极平面投影](@keyword=stereographic_projection|lang=zh-CN|style=Feynman)。球体上的点 $P$ 与[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上的点 $z$ 一一对应。</small>
 </center>

@@ -30,7 +30,7 @@
 <br>
 <div align="center">
 <figure>
-    <img src="https://i.imgur.com/G5g2o1j.png" alt="Three types of tumor microenvironments: immune-inflamed, immune-excluded, and immune-desert." width="80%">
+
     <figcaption>图1. [肿瘤微环境](@keyword=tumor_microenvironment|lang=zh-CN|style=Feynman)的三种主要类型。“炎性”微环境中，[免疫](@keyword=immunity|lang=zh-CN|style=Feynman)细胞（蓝色）深入肿瘤细胞（红色）巢穴。“排斥型”微环境中，[免疫](@keyword=immunity|lang=zh-CN|style=Feynman)细胞被困在肿瘤外的[基质](@keyword=stroma|lang=zh-CN|style=Feynman)区域。“荒漠型”微环境中，几乎没有[免疫](@keyword=immunity|lang=zh-CN|style=Feynman)细胞存在。</figcaption>
 </figure>
 </div>

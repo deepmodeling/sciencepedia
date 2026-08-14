@@ -12,7 +12,7 @@
 细胞膜中的磷脂分子比油滴更复杂：它们有一个亲水的“头”和两条疏水的“尾”。当这些分子进入水中时，它们面临一个选择：是形成像肥皂泡那样的微小球体（胶束），还是形成广阔的双层膜？对于拥有两条尾巴的[磷脂](@keyword=phospholipids|lang=zh-CN|style=Feynman)来说，几何学给出了答案。要将两条笨重的尾巴塞进一个球体的尖端，就像把两只脚塞进一只鞋尖一样，会造成巨大的空间浪费和内部“压力”。而形成双层结构，则能让它们的尾巴舒适地并排站立，同时将亲水的头部暴露给内外两侧的水环境。这既满足了疏水尾巴“避水”的需求，也满足了亲水头部“亲水”的愿望。最终，通过熵的驱动和几何的约束，生命的基础结构——脂质双分子层——便诞生了 [@problem_id:2650014]。
 
 <center>
-<img src="https://i.imgur.com/8QzXy2A.png" width="600" alt="Diagram showing phospholipids self-assembling into a bilayer versus a micelle, highlighting the packing differences of single-tailed vs. double-tailed lipids.">
+
 </center>
 <br>
 
@@ -109,7 +109,7 @@ $$
 想象一下在一条只能容纳一人通过的狭长走廊里。队伍末尾的人要想前进，必须等待前面的每一个人都向前移动。因此，追踪**任何一个特定离子**的运动，会发现它的位移与时间的平方根（$t^{1/2}$）成正比，这是一种比正常[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)（位移与 $t$ 成正比）慢得多的“[亚扩散](@keyword=subdiffusion|lang=zh-CN|style=Feynman)”行为。
 
 <center>
-<img src="https://i.imgur.com/b2bYj0T.png" width="600" alt="Illustration of single-file diffusion in a narrow channel, showing the knock-on mechanism where entry of one ion causes another to exit.">
+
 </center>
 <br>
 

@@ -20,7 +20,7 @@
 *   **III型（撕开型）**：再次想象那副扑克牌，但这次你不是推动顶部的牌，而是沿着牌的侧边，让它们“撕”开。在[III型断裂](@keyword=mode_iii_fracture|lang=zh-CN|style=Feynman)中，裂纹面沿着裂纹前缘的方向相互平行滑动。这就像撕开一页纸。[@problem_id:2824778]
 
 <center>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Crack_Modes.svg/600px-Crack_Modes.svg.png" alt="Three modes of fracture" width="600"/>
+
   <br/>
   <small>图1：断裂的三种基本模式。I型是张开，II型是平面内剪切，III型是平面外剪切（撕开）。</small>
 </center>
@@ -103,7 +103,7 @@ LEFM 的有效性，就在于这个[塑性区](@keyword=plastic_zone|lang=zh-CN|
 现在，想象一个非常厚的试件。[裂纹尖端](@keyword=crack_tip|lang=zh-CN|style=Feynman)内部的材料被周围的材料“夹”住了，无法在厚度方向上自由收缩。这种状态被称为**平面应变** (Plane Strain)。就像你盖上盖子去挤压一个牙膏管，内部的压力会急剧升高一样，这种侧向的约束会在裂纹尖端产生一个很高的、沿厚度方向的拉应力。这个额外的拉应力叠加在原有的应力上，形成一个**高三轴应力**状态。高三轴应力会抑制塑性变形（[剪切流](@keyword=shear_flow|lang=zh-CN|style=Feynman)滑），使得[塑性区](@keyword=plastic_zone|lang=zh-CN|style=Feynman)变得非常小。[塑性区](@keyword=plastic_zone|lang=zh-CN|style=Feynman)变小，[能量耗散](@keyword=energy_dissipation|lang=zh-CN|style=Feynman)减少，材料因此表现得更“脆”，其测得的[断裂韧性](@keyword=fracture_toughness|lang=zh-CN|style=Feynman)值也更低。[@problem_id:2824755]
 
 <center>
-  <img src="https://www.researchgate.net/profile/Filippo-Berto/publication/262295624/figure/fig2/AS:296683508129801@1447746200676/A-schematic-of-the-effect-of-the-thickness-B-on-the-fracture-toughness-K-c.png" alt="Effect of thickness on fracture toughness" width="500"/>
+
   <br/>
   <small>图2：[断裂韧性](@keyword=fracture_toughness|lang=zh-CN|style=Feynman)随试样厚度的变化。随着厚度增加，约束增强，韧性降低，并最终达到一个与厚度无关的最小值，即[平面应变断裂韧性](@keyword=plane_strain_fracture_toughness|lang=zh-CN|style=Feynman) $K_{Ic}$。</small>
 </center>

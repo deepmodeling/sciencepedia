@@ -3,8 +3,6 @@
 
 本文深入探讨了这个问题及其解决方案的根源：[导数](@keyword=derivative|lang=zh-CN|style=Feynman)[不连续性](@keyword=discontinuity|lang=zh-CN|style=Feynman)。它解决了简单DFT模型失败所造成的基础知识空白。在接下来的两章中，您将对这一关键概念有清晰的理解。在“原理与机制”一章中，我们将探索[基态能量](@keyword=ground_state_energy_2|lang=zh-CN|style=Feynman)令人惊讶的[分段线性](@keyword=piecewise_linearity|lang=zh-CN|style=Feynman)特性，揭示在整数电子数处的“扭折”如何产生一种[不连续性](@keyword=discontinuity|lang=zh-CN|style=Feynman)，而这种不连续性对于准确描述量子系统至关重要。随后，“应用与跨学科联系”将展示这一看似抽象的概念如何在计算[带隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)、描述[太阳能电池](@keyword=solar_cells|lang=zh-CN|style=Feynman)中的电荷转移过程、理解溶液中的化学以及开发下一代计算方法等方面具有深远的实际意义。
 
-![一张显示基态能量E与电子数N关系的图。曲线由连接整数N处各点的直线段组成，形成一个凸形。从N-1到N的线段斜率标记为-I，从N到N+1的斜率标记为-A。](https://i.imgur.com/example-image.png "精确总能量E作为电子数N的函数的[分段线性](@keyword=piecewise_linearity|lang=zh-CN|style=Feynman)行为。")
-
 ## 原理与机制
 
 想象一下，你想计算一颗钻石的颜色。这似乎是个简单的问题，对吗？物体的颜色由它吸收的光决定，而这又取决于将一个电子从其舒适的占据态踢到一个更高的空态所需的能量。这个能量差被称为**基本[带隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)**。几十年来，我们最强大的量[子模](@keyword=submodule|lang=zh-CN|style=Feynman)拟工具——[密度泛函理论 (DFT)](@keyword=density_functional_theory_dft|lang=zh-CN|style=Feynman) 的一大长期困扰与尴尬是，它在预测这些[带隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)方面惊人的失败。它常常会预测像金刚石这样的绝缘体应该是金属！要理解原因，我们必须踏上一段旅程，进入量子系统奇特而美丽的能量景观。

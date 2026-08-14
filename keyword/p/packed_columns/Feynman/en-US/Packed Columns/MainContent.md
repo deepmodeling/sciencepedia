@@ -50,8 +50,6 @@ So we have a battle: at low flow rates, longitudinal diffusion ($B/u$) dominates
 This is where the story gets really beautiful. Let's sketch the van Deemter curves for both column types.
 The curve for the packed column starts high (because of its non-zero A-term), dips to a minimum, and then rises again. The curve for the capillary column starts at zero (A=0), dips much, much lower, and rises more gently.
 
-![A conceptual plot showing two van Deemter curves. The 'Packed' curve starts at a positive H value, has a higher H_min, and its u_opt is to the left. The 'Capillary' curve starts from the origin, has a much lower H_min, and its u_opt is shifted to the right, at a higher velocity.](van_deemter_comparison.png)
-
 Two wonderful facts leap out [@problem_id:1442656]:
 1.  The minimum plate height ($H_{min}$) for the capillary column is far lower than for the packed column. This means, unit length for unit length, the capillary column offers fundamentally higher separation efficiency. The difference is not trivial; the maximum achievable number of [theoretical plates](@keyword=theoretical_plates|lang=en-US|style=Feynman) can be over six times greater for a capillary column of the same length [@problem_id:1442611].
 2.  The optimal velocity ($u_{opt}$) for the capillary column is significantly *higher*.

@@ -17,8 +17,6 @@
 
 这个公式就是我们的“量角器”。当角度 $\theta$ 随时间均匀增加时（例如 $\theta = -\omega t + \delta$），这个点就在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上优雅地旋转。现在，请注意看这个旋转的“影子”——它在实数轴（水平轴）上的投影。这个投影的位置坐标是什么？正是 $\cos(\theta)$！所以，我们那个来回[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)、看起来有点复杂的余弦波，其实可以被看作是[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上一个简单、均匀的圆周运动在实数轴上的投影。
 
-![Euler's Formula](https://upload.wikimedia.org/wikipedia/commons/7/71/Euler_formula.svg)
-
 这个发现是革命性的。我们把一个一维的、来回往复的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，升维成了一个二维的、平滑的旋转运动。物理上真实可测的场 $E(t)$ 就是这个复数表示 $\tilde{E}(t)$ 的实部：
 
 $$ E(t) = \text{Re}[\tilde{E}(t)] = \text{Re}[A e^{i(-\omega t + \delta)}] = A \cos(-\omega t + \delta) = A \cos(\omega t - \delta) $$

@@ -13,8 +13,6 @@
 
 这个简单的“两进两出”规则，催生了所谓的**[六顶点模型](@keyword=six_vertex_model|lang=zh-CN|style=Feynman)**。如果我们将[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)简化为二维方格网，并用箭头表示质子的相对位置，那么在每个顶点上，只有六种箭头构型是允许的。
 
-<img src="https://i.imgur.com/g8VvC6y.png" alt="Six-vertex configurations" width="300">
-
 这看起来像一个简单的组合游戏，但它蕴含着深刻的物理。这些局域的规则，会对整个系统的全局构型产生强烈的约束。这就像在一个大型拼图游戏中，每一块拼图的形状都限制了它邻居的可能性。不妨思考一个极小的例子：在一个 $2 \times 2$ 的网格上，并将其首尾相连，形成一个环面。你可能会认为有无数种方式来画箭头。但如果你严格遵守每个顶点的“[冰规则](@keyword=ice_rule|lang=zh-CN|style=Feynman)”，你会惊奇地发现，所有可能的全局构型只有 18 种！[@problem_id:1185010] 这个小小的计算揭示了一个核心思想：**局域约束导致全局关联**，这是[多体物理学](@keyword=many_body_physics_2|lang=zh-CN|style=Feynman)的核心主题之一。
 
 ### 从游戏到物理：[R矩阵](@keyword=r_matrix|lang=zh-CN|style=Feynman)

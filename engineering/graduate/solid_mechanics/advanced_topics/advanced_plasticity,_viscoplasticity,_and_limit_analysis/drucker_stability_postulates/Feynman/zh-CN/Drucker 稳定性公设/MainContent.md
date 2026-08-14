@@ -41,7 +41,7 @@ $$
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/your-image-url.png" alt="Convex yield surface illustration. The vector from a point σ₁ on the surface to a point σ₂ inside is shown, along with the normal vector ε̇ᵖ at σ₁. The angle between (σ₂-σ₁) and ε̇ᵖ is obtuse." width="500">
+
   <figcaption>图1：德鲁克稳定公设要求[屈服面](@keyword=yield_surface|lang=zh-CN|style=Feynman)（[弹性](@keyword=elasticity|lang=zh-CN|style=Feynman)域的边界）必须是凸的。对于[屈服面](@keyword=yield_surface|lang=zh-CN|style=Feynman)上任意一点 $\boldsymbol{\sigma}_1$ 及其关联的[塑性](@keyword=plasticity|lang=zh-CN|style=Feynman)[应变率](@keyword=strain_rate|lang=zh-CN|style=Feynman) $\dot{\boldsymbol{\varepsilon}}^p$（法向于表面），指向域内任意一点 $\boldsymbol{\sigma}_2$ 的向量 $(\boldsymbol{\sigma}_2 - \boldsymbol{\sigma}_1)$ 与 $\dot{\boldsymbol{\varepsilon}}^p$ 的[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)总是非正的，这确保了 $(\boldsymbol{\sigma}_1 - \boldsymbol{\sigma}_2) : \dot{\boldsymbol{\varepsilon}}^p \ge 0$。这幅几何图像是[材料稳定性](@keyword=material_stability|lang=zh-CN|style=Feynman)的直观体现。[@2631391]</figcaption>
 </figure>
 </center>

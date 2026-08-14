@@ -1,5 +1,5 @@
 ## Introduction
-In the quantum realm, not all particles are created equal. While our three-dimensional world is governed by [bosons and fermions](@keyword=bosons_and_fermions|lang=en-US|style=Feynman), two-dimensional systems can host exotic quasiparticles known as [anyons](@keyword=anyons|lang=en-US|style=Feynman), which possess a remarkable "memory" of their history. Building a consistent physical theory for these particles presents a unique challenge: how do we describe their interactions—their fusion and braiding—in a way that is free from paradox? This article addresses this fundamental question by diving into the algebraic heart of anyon theory. 
+In the quantum realm, not all particles are created equal. While our three-dimensional world is governed by [bosons and fermions](@keyword=bosons_and_fermions|lang=en-US|style=Feynman), two-dimensional systems can host exotic quasiparticles known as [anyons](@keyword=anyons|lang=en-US|style=Feynman), which possess a remarkable "memory" of their history. Building a consistent physical theory for these particles presents a unique challenge: how do we describe their interactions—their fusion and braiding—in a way that is free from paradox? This article addresses this fundamental question by diving into the algebraic heart of anyon theory.
 
 The first chapter, **"Principles and Mechanisms"**, will introduce the F-matrices and R-matrices, the grammar of anyon interactions, and reveal the non-negotiable consistency laws they must obey: the Pentagon and Hexagon Identities. Subsequently, **"Applications and Interdisciplinary Connections"** will explore how this rigid mathematical structure provides the blueprint for fault-tolerant quantum computers and forges surprising links with abstract mathematics. Finally, the **"Hands-On Practices"** section will offer concrete problems to solidify your understanding of this powerful framework.
 
@@ -28,7 +28,7 @@ Having a translation dictionary is one thing; having a *consistent* one is anoth
 Imagine we have four anyons: $a, b, c, d$. We can start with them all grouped to the left, like $(((ab)c)d)$, and transform them step-by-step into a state grouped to the right, $a(b(cd))$. As you can see in the diagram below, there are two distinct paths to get from one to the other, one involving three F-moves and the other involving two.
 
 <center>
-<img src="https://i.imgur.com/vHqB3qB.png" width="500"/>
+
 </center>
 
 If our world is to be consistent, the final result must be the same no matter which path we take. The two sequences of transformations must be equal. This requirement, when written out algebraically, gives a complex equation relating various F-symbols. This is the Pentagon Identity. It is the absolute, non-negotiable law of [associativity](@keyword=associativity|lang=en-US|style=Feynman). It is not an axiom we impose, but a condition we discover for the theory to be free of contradictions. The calculation of a transformation coefficient between different groupings of four [anyons](@keyword=anyons|lang=en-US|style=Feynman), as in problem [@162258], is a direct application of this identity, where the transformation is a sum over products of F-symbols corresponding to one of the paths.
@@ -44,7 +44,7 @@ Now we add the second key ingredient that makes this 2D world special: **braidin
 This process of exchanging two [anyons](@keyword=anyons|lang=en-US|style=Feynman) is described by another operator, the **R-matrix**. When we swap $a$ and $b$, the state picks up a phase or is transformed by a matrix, which we denote $R_c^{ab}$. The subscript $c$ is crucial: the result of the braid can depend on the total fusion outcome of the pair.
 
 <center>
-<img src="https://i.imgur.com/A6j4EZn.png" width="300"/>
+
 </center>
 
 Like the F-matrix, the R-matrix must be **unitary**. Braiding particles is a physical process that shouldn't create or destroy information or probability [@3021939]. This unitarity is our next core principle.
@@ -56,7 +56,7 @@ We now have two sets of rules: the F-matrices for re-grouping fusions, and the R
 Consider the process of braiding an anyon $c$ past a fused pair of [anyons](@keyword=anyons|lang=en-US|style=Feynman) $(ab)$. There are two ways to think about this, as shown in the diagram. We can either braid $c$ past the composite object $(ab)$, or we can first "un-fuse" the pair (using an F-move), braid $c$ past $a$ and $b$ individually, and then re-fuse them (with another F-move).
 
 <center>
-<img src="https://i.imgur.com/uVfE2wH.png" width="600"/>
+
 </center>
 
 For the theory to be consistent, both paths must yield the same result. This equality is the Hexagon Identity. It is the grand synthesis of fusion and braiding, ensuring that the dance of the anyons is compatible with their grammar. It beautifully illustrates the inherent unity of the theory.

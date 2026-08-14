@@ -11,7 +11,7 @@
 [相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)中最迷人的结构之一，是一条被称为**分界线（separatrix）**的特殊轨迹。对于[单摆](@keyword=simple_pendulum|lang=zh-CN|style=Feynman)而言，这条[分界线](@keyword=separatrix|lang=zh-CN|style=Feynman)将相空间清晰地划分为两个截然不同的“国度” [@problem_id:1130518]。线内是永恒[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的“有界王国”，线外则是不断翻滚的“无界领土”。这条分界线本身对应着一种极其特殊的运动：摆球以恰到好处的能量，正好能缓慢地到达最高点（一个不稳定的[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)）并停在那里。想象一下，初始能量稍有不足，它就只能在下方来回摆动；而初始能量稍稍多出一点点，它就能越过顶点，进入无休止的旋转。[分界线](@keyword=separatrix|lang=zh-CN|style=Feynman)，就是区分两种天差地别命运的“命运分水岭”。这种“差之毫厘，谬以千里”的敏感性，是所有非线性系统中一个反复出现的主题。
 
 <center>
-    <img src="https://assets.bitdegree.org/online-learning-platforms/storage/media/2023/07/phase_portrait-1.png" alt="A phase portrait of a simple pendulum, showing closed orbits for oscillation, open curves for rotation, and the separatrix that divides them." width="500">
+
     <br>
     <small>图1：[单摆](@keyword=simple_pendulum|lang=zh-CN|style=Feynman)的[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)。[闭合曲线](@keyword=closed_curves|lang=zh-CN|style=Feynman)代表[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，波浪形曲线代表旋转。红色的分界线将这两种截然不同的运动分离开来。</small>
 </center>
@@ -37,7 +37,7 @@
 - **[细胞周期](@keyword=cell_cycle|lang=zh-CN|style=Feynman)的时钟**：生命最根本的节律莫过于细胞分裂和增殖的周期。这个精确调控的过程，本质上是一个由分子构成的[生物钟](@keyword=biological_clocks|lang=zh-CN|style=Feynman)。一个经典的[细胞周期](@keyword=cell_cycle|lang=zh-CN|style=Feynman)模型，可以被看作是一个**[弛豫振荡器](@keyword=relaxation_oscillator|lang=zh-CN|style=Feynman)（relaxation oscillator）** [@problem_id:2790412]。它的行为不像单摆那样平滑，而是由两个截然不同的阶段组成：一个漫长的“能量积累”阶段，和一个极其迅速的“状态翻转”阶段。这背后的分子逻辑是：一个**快速的正反馈**回路创造了一个具有“记忆”效应的[双稳态开关](@keyword=bistable_switch|lang=zh-CN|style=Feynman)（即存在迟滞现象），而一个**慢速的[负反馈](@keyword=negative_feedback|lang=zh-CN|style=Feynman)**回路则像一个钟摆的推手，周期性地推动这个开关在“开”和“关”两个状态之间翻转。这种“慢积累-快释放”的设计，赋予了细胞周期时钟极大的**鲁棒性**，使其能够抵抗细胞内无时无刻不在发生的[分子噪声](@keyword=molecular_noise|lang=zh-CN|style=Feynman)的干扰，确保生命繁衍的精确无误 [@problem_id:2790412] [@problem_id:2535650]。
 
 <center>
-    <img src="https://i.imgur.com/KAVxJ7C.png" alt="A phase portrait of a relaxation oscillator, showing a slow trajectory along two branches and fast jumps between them." width="500">
+
     <br>
     <small>图2：一个典型的[弛豫振荡器](@keyword=relaxation_oscillator|lang=zh-CN|style=Feynman)相图。系统在稳定分支上缓慢演化（蓝色箭头），在“[拐点](@keyword=inflection_points|lang=zh-CN|style=Feynman)”处发生快速跳转（红色箭头），形成一个稳健的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)周期。</small>
 </center>

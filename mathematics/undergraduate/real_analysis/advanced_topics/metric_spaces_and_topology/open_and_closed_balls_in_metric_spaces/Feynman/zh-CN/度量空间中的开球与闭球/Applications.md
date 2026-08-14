@@ -12,7 +12,7 @@
 
 <center>
   <figure>
-    <img src="https://i.imgur.com/rMOKB3n.png" alt="An illustration comparing a Euclidean ball (a disk) with a ball in the French Metro Metric (a line segment and a small disk at the origin)." style="width: 70%;">
+
     <figcaption>图1：在[欧几里得度量](@keyword=euclidean_metric|lang=zh-CN|style=Feynman)（左）中，一个球是一个圆盘。但在法国地铁度量（右）中，以非原点为中心的球可能只是其所在轴上的一段线段。</figcaption>
   </figure>
 </center>
@@ -29,7 +29,7 @@
 
 <center>
   <figure>
-    <img src="https://i.imgur.com/vH3s11D.png" alt="A function f and an epsilon-ball around it, depicted as a shaded band between f(x)-epsilon and f(x)+epsilon." style="width: 60%;">
+
     <figcaption>图2：在 $C[0,1]$ 空间中，以函数 $f$ 为中心的球，可以被想象成一个环绕 $f$ 图像的“容差带”。任何图像完全落入此带的函数 $g$ 都属于这个球。</figcaption>
   </figure>
 </center>

@@ -26,7 +26,7 @@ $$ |f(x) - f(y)| \le L |x - y| $$
 [利普希茨条件](@keyword=lipschitz_condition|lang=zh-CN|style=Feynman) $|f(x) - f(y)| \le L |x - y|$ 意味着，整个函数的图像，除了 $(x_0, f(x_0))$ 这个顶点本身，都必须位于这个双锥体的“外部”或边界上。函数曲线绝不能“闯入”这个由斜率 $\pm L$ 界定的锥形禁区。由于我们可以在图像上的**任何**一点都放置这样一个双锥体，并且整个图像都服从这个约束，这就像给函数的“陡峭程度”上了一道无处不在的枷锁 [@problem_id:1308892]。函数的任何部分都不能比这个锥体更“尖”。
 
 <center>
-    <img src="https://i.imgur.com/vHq4e11.png" alt="Double Cone Property" style="width: 60%;"/>
+
     <br>
     <small>图1：[利普希茨连续性](@keyword=lipschitz_continuity|lang=zh-CN|style=Feynman)的双锥解释。[函数图像](@keyword=function_graph|lang=zh-CN|style=Feynman)在任何点 $(x_0, f(x_0))$ 处都不能进入由斜率 $\pm L$ 界定的锥形区域。</small>
 </center>

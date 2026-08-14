@@ -18,7 +18,7 @@
 通常，当分离位移 $\delta$ 很小时，[牵引](@keyword=entrainment|lang=zh-CN|style=Feynman)力 $T$ 会迅速增加到一个峰值，我们称之为材料的**[内聚强度](@keyword=cohesive_strength|lang=zh-CN|style=Feynman)** $T_{\max}$。这代表了材料能抵抗分离的最大“[粘性力](@keyword=viscous_forces|lang=zh-CN|style=Feynman)”。超过这个点后，随着分离位移 $\delta$ 继续增大，[牵引](@keyword=entrainment|lang=zh-CN|style=Feynman)力会逐渐减小，这个过程称为“软化”。最终，当分离达到一个临界值 $\delta_c$ 时，牵引力降为零，两个表面就彻底“分手”了，新的裂纹表面随之形成。
 
 <center>
-<img src="https://i.imgur.com/gOq715d.png" alt="Traction-Separation Law" width="600"/>
+
 <em>图1：典型的牵引力-分离律（TSL）曲线。曲线下的面积代表了[断裂能](@keyword=fracture_energy|lang=zh-CN|style=Feynman) $G_c$。</em>
 </center>
 

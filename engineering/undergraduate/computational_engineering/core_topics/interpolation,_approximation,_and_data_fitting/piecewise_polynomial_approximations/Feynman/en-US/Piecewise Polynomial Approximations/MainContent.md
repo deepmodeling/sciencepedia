@@ -13,7 +13,7 @@ Let's try to pass a single polynomial through a set of equally spaced points tak
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/5I2c6wY.png" alt="Illustration of Runge's phenomenon, showing a high-degree polynomial oscillating wildly at the ends of the interval, while a [cubic spline](@keyword=cubic_spline|lang=en-US|style=Feynman) provides a much better fit to the target function." width="600">
+
   <figcaption>Figure 1: The failure of a single high-degree polynomial (blue) versus the success of a piecewise [cubic spline](@keyword=cubic_spline|lang=en-US|style=Feynman) (green) for interpolating the Runge function (dashed red). The polynomial's ambition to fit all points with one equation leads to catastrophic oscillations.</figcaption>
 </figure>
 </center>

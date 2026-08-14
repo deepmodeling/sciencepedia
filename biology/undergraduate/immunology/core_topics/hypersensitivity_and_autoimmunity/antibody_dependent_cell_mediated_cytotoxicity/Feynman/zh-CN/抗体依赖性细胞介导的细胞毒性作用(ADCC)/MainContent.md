@@ -13,7 +13,7 @@ Imagine you are a general in a vast and complex army, the immune system. Your mi
 
 <br/>
 <center>
-    <img src="https://i.imgur.com/kS9Qj6q.png" width="700" alt="An antibody molecule with two distinct functional regions. The Fab region at the tips of the 'Y' arms is shown binding to an antigen on a target cell. The Fc region, the stem of the 'Y', is shown exposed and ready to interact with an immune cell.">
+
     <br>
     <small><b>图1：[抗体](@keyword=antibody|lang=zh-CN|style=Feynman)的结构与功能。</b> [抗体](@keyword=antibody|lang=zh-CN|style=Feynman)分子像一个“Y”形的[连接](@keyword=concatenation|lang=zh-CN|style=Feynman)器。其 Fab 区（顶部两臂）负责特异性地“抓住”目标细胞上的[抗原](@keyword=antigens|lang=zh-CN|style=Feynman)，而其 Fc 区（下方的“柄”）则作为信号，召唤[免疫系统](@keyword=immune_system|lang=zh-CN|style=Feynman)的其他成员。这是一个精妙的[分工](@keyword=division_of_labor|lang=zh-CN|style=Feynman)合作。</small>
 </center>
@@ -51,7 +51,7 @@ Imagine you are a general in a vast and complex army, the immune system. Your mi
 
 <br/>
 <center>
-    <img src="https://i.imgur.com/k6lP0Wn.png" width="700" alt="An NK cell forming an immunological synapse with an antibody-coated target cell. Lytic granules within the NK cell are shown moving towards the synapse, ready to be released directly at the target cell.">
+
     <br>
     <small><b>图2：[免疫突触](@keyword=immunological_synapse|lang=zh-CN|style=Feynman)与精准杀伤。</b> NK 细胞与靶细胞之间形成一个高度有序的接触区，即[免疫突触](@keyword=immunological_synapse|lang=zh-CN|style=Feynman)。这不仅稳定了[连接](@keyword=concatenation|lang=zh-CN|style=Feynman)，还[引导](@keyword=bootstrapping|lang=zh-CN|style=Feynman) NK 细胞内部的[细胞毒性](@keyword=cytotoxicity|lang=zh-CN|style=Feynman)颗粒（内含[穿孔素和颗粒酶](@keyword=perforin_and_granzymes|lang=zh-CN|style=Feynman)）向接触点集中，确保“弹药”能够被精确地投送到靶细胞上，避免伤及无辜。</small>
 </center>

@@ -17,7 +17,7 @@
 
 <br/>
 <center>
-<img src="https://i.imgur.com/eBf2g4W.png" width="600">
+
 <div style="font-size: 0.9em; color: #666; margin-top: 10px;">图1：岩盐（NaCl）结构。可以看作是[氯离子](@keyword=chloride_ions|lang=zh-CN|style=Feynman)（绿色）构成的[面心立方晶格](@keyword=fcc_lattice|lang=zh-CN|style=Feynman)，钠离子（紫色）填充在所有的八面体[间隙](@keyword=backlash|lang=zh-CN|style=Feynman)中。</div>
 </center>
 <br/>

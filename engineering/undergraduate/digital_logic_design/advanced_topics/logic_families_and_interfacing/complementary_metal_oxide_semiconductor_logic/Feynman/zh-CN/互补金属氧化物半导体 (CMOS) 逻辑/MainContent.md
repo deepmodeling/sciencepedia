@@ -15,8 +15,6 @@
 
 在一个最基本的[CMOS逻辑](@keyword=cmos_logic|lang=zh-CN|style=Feynman)门——反相器中，这两个晶体管被串联起来，连接在电源（我们称之为 $V_{DD}$，代表逻辑“1”）和地（GND，代表逻辑“0”）之间。P[MOS晶体管](@keyword=mos_transistor|lang=zh-CN|style=Feynman)，可以想象成一个“拉高”的专家，它连接着 $V_{DD}$。N[MOS晶体管](@keyword=mos_transistor|lang=zh-CN|style=Feynman)，则是一个“拉低”的能手，它连接着GND。它们的控制端（栅极）被连接在一起，作为逻辑门的输入端，而它们的连接点则作为输出端。
 
-![CMOS Inverter](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Cmospunpdn.svg/200px-Cmospunpdn.svg.png)
-
 这里的魔法在于它们的“互补”天性：
 
 *   当输入为低电平（逻辑“0”）时，PMOS守卫苏醒，打开通道，将输出端连接到 $V_{DD}$，输出高电平（逻辑“1”）。与此同时，NMOS守卫进入梦乡，它负责的通向GND的道路被彻底切断。

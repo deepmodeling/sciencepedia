@@ -51,7 +51,7 @@ $$
 
 <br>
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Sinc_function_%28both%29.svg/600px-Sinc_function_%28both%29.svg.png" alt="Sinc Function" width="500"/>
+
   <br>
   <small>图1：[矩形脉冲](@keyword=rectangular_pulse|lang=zh-CN|style=Feynman)在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中的“画像”——Sinc函数。一个在时域有限的信号，在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中却无限延伸。</small>
 </div>
@@ -77,7 +77,7 @@ sinc 函数的形状并非随意，它的每一个特征都与原始脉冲的物
 
 <br>
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Time-frequency-uncertainty.svg/600px-Time-frequency-uncertainty.svg.png" alt="Time-Frequency Tradeoff" width="600"/>
+
   <br>
   <small>图2：[时频不确定性原理](@keyword=time_frequency_uncertainty_principle|lang=zh-CN|style=Feynman)的直观展示。时域上窄的脉冲（[上图](@keyword=epigraphs|lang=zh-CN|style=Feynman)），其[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)分布更宽（下图）；而时域上宽的脉冲，其[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)分布更窄。</small>
 </div>
@@ -119,7 +119,7 @@ sinc [频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)中那些无�
 
 <br>
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Gibbs_phenomenon_on_a_square_wave.svg/600px-Gibbs_phenomenon_on_a_square_wave.svg.png" alt="Gibbs Phenomenon" width="500"/>
+
   <br>
   <small>图3：吉布斯现象。用有限带宽重构方波时，在不连续点附近产生的过冲和振铃，即便在带宽趋于无穷时，过冲也不会消失。</small>
 </div>

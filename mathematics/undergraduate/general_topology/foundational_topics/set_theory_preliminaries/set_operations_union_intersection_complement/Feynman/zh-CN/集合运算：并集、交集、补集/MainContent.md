@@ -67,7 +67,7 @@ $$ \overline{A \cap B} \subseteq \bar{A} \cap \bar{B} $$
 
 <br>
 <center>
-<img src="https://i.imgur.com/8Fk7LdK.png" alt="A visual representation of the complement of a Cartesian product." width="600">
+
 <br>
 <i>图1：(A × B)的补集 (灰色区域) 远大于 A^c × B^c (深灰色四个角)。[差集](@keyword=set_difference|lang=zh-CN|style=Feynman)正好是两个十字[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)的条带。</i>
 </center>

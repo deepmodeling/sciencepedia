@@ -21,7 +21,7 @@
 
 <br>
 <center>
-<img src="https://i.imgur.com/eBf2Hll.png" width="600">
+
 <br>
 <small>图1：[电子转移](@keyword=electron_transfer|lang=zh-CN|style=Feynman)的自由能[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)。两个抛物线分别代表反应物（R）和产物（P）态。反应需要越过一个由[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)交点决定的能垒（$\Delta G^\ddagger$）。</small>
 </center>
@@ -42,7 +42,7 @@
     $$
     \lambda_{in} = \sum_i \frac{1}{2} k_i (\Delta Q_i)^2
     $$
-    
+
     这个公式优美地告诉我们，分子内部的重组，本质上就是为一系列分子内部的“弹簧”[储能](@keyword=energy_storage|lang=zh-CN|style=Feynman)的过程。 [@problem_id:2637089]
 
 2.  **[外层重组能](@keyword=outer_sphere_reorganization_energy|lang=zh-CN|style=Feynman) ($\lambda_{out}$)**：这是重组能的主要贡献者，来源于**外部**溶剂环境的重新排布。溶剂分子的转动和位移，以适应新的[电荷分布](@keyword=charge_distribution|lang=zh-CN|style=Feynman)，需要克服分子间的相互作用力，这需要消耗能量。Marcus通过一个优雅的介电连续谱模型，推导出了计算 $\lambda_{out}$ 的著名公式。其核心在于，溶剂的极化响应可以分为两个部分：一个是几乎瞬时完成的电子云极化（由光频[介电常数](@keyword=permittivity|lang=zh-CN|style=Feynman) $\varepsilon_{op}$ 描述），另一个是相对缓慢的[分子取向](@keyword=molecular_orientation|lang=zh-CN|style=Feynman)极化（这部分与静态[介电常数](@keyword=permittivity|lang=zh-CN|style=Feynman) $\varepsilon_s$ 有关）。重组能恰恰与这个**缓慢**的[取向极化](@keyword=orientational_polarization|lang=zh-CN|style=Feynman)过程相关。其能量正比于一个被称为“Pekar因子”的项：
@@ -77,7 +77,7 @@ $$
 
 <br>
 <center>
-<img src="https://i.imgur.com/8QjSg3Q.png" width="800">
+
 <br>
 <small>图2：Marcus倒转区的几何解释。a) 正常区：交点在两顶点之间。b) 无垒区：产物抛物线恰好穿过反应物顶点（$\Delta G^\circ = -\lambda$），活化能为零。c) 倒转区：交点出现在反应物顶点的“左侧”，需要爬一个能量坡才能到达。 </small>
 </center>

@@ -10,7 +10,7 @@
 想象一下，我们让环戊[二烯](@keyword=diene|lang=zh-CN|style=Feynman)（一个环状的二烯[烃](@keyword=hydrocarbons|lang=zh-CN|style=Feynman)）与马来[酸酐](@keyword=anhydrides|lang=zh-CN|style=Feynman)（一个环状的亲双烯体）进行反应。这就像两位舞者相遇，它们可以通过不同的姿态拥抱在一起。一种姿态是，马来[酸酐](@keyword=anhydrides|lang=zh-CN|style=Feynman)的[官能团](@keyword=functional_groups|lang=zh-CN|style=Feynman)（[酸酐](@keyword=anhydrides|lang=zh-CN|style=Feynman)环）“蜷缩”在新形成的双环体系的“屋檐”下方，我们称之为**内型（endo）**加合物。另一种姿态则是，官能团“伸展”到“屋檐”之外，我们称之为**外型（exo）**加合物。
 
 <center>
-<img src="https://i.imgur.com/vHqB3qB.png" width="600" alt="Endo and Exo adducts of the Diels-Alder reaction between cyclopentadiene and maleic anhydride.">
+
 </center>
 
 一个自然而然的问题是：这两个产物是什么关系？它们看起来很像，但又不完全相同。它们是彼此的镜像（[对映异构体](@keyword=enantiomers|lang=zh-CN|style=Feynman)）吗？不，如果你仔细观察，会发现它们并非互为镜像。它们拥有完全相同的原子连接顺序，只是在三维空间中的排布不同，并且它们不是镜像关系。在化学的语言里，这种“非镜像的[立体异构体](@keyword=stereoisomers|lang=zh-CN|style=Feynman)”被称为**非对映异构体（diastereomers）** [@problem_id:2201694]。这就像是你的左手和右手是“对映异构体”，而你的左手和左脚则是“[非对映异构体](@keyword=diastereomers|lang=zh-CN|style=Feynman)”——都是你身体的一部分，但空间关系截然不同。
@@ -24,7 +24,7 @@
 举个例子，假设我们用两种几何形状不同的亲双烯体——顺式的马来酸二甲[酯](@keyword=ester|lang=zh-CN|style=Feynman)和反式的富马酸二甲酯——分别与环戊[二烯](@keyword=diene|lang=zh-CN|style=Feynman)反应 [@problem_id:2201681]。你会发现，顺式的反应物，其两个[酯](@keyword=ester|lang=zh-CN|style=Feynman)基（$\text{-COOCH}_3$）在双键的同一侧，反应后得到的产物中，这两个[酯](@keyword=ester|lang=zh-CN|style=Feynman)基也忠实地待在新生成六元环的同一侧。而反式的反应物，其[酯](@keyword=ester|lang=zh-CN|style=Feynman)基分居双键两侧，最终产物中它们也保持着“天各一方”的姿态。
 
 <center>
-<img src="https://i.imgur.com/B7lSjYk.png" width="700" alt="Stereospecificity of the Diels-Alder reaction. A cis-dienophile gives a cis-adduct, and a trans-dienophile gives a trans-adduct.">
+
 </center>
 
 这种“所见即所得”的特性，源于[Diels-Alder反应](@keyword=diels_alder_reaction|lang=zh-CN|style=Feynman)的**[协同机理](@keyword=concerted_mechanism|lang=zh-CN|style=Feynman)（concerted mechanism）**。两个新[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)的形成是同时发生的，没有中间步骤，整个过程一气呵成。这就像两位舞者在空中完成一个[同步](@keyword=entrainment|lang=zh-CN|style=Feynman)的跳跃和拥抱，他们最初的相对位置在动作完成时被完美定格。因此，当你看到一个顺式的亲双烯体参与反应时，你可以充满信心地预测，产物的对应[取代基](@keyword=substituent|lang=zh-CN|style=Feynman)也将是顺式的 [@problem_id:2201698]。
@@ -42,7 +42,7 @@
 为了理解[内型规则](@keyword=endo_rule|lang=zh-CN|style=Feynman)，我们需要请出[分子轨道理论](@keyword=molecular_orbital_theory|lang=zh-CN|style=Feynman)。想象一下，[二烯](@keyword=diene|lang=zh-CN|style=Feynman)烃的**最高占据分子轨道（HOMO）**和亲双烯体的**最低未占分子轨道（LUMO）**是这场反应的两位主角。它们的首要任务——也就是**主要[轨道相互作用](@keyword=orbital_interactions|lang=zh-CN|style=Feynman)**——是在[二烯](@keyword=diene|lang=zh-CN|style=Feynman)[烃](@keyword=hydrocarbons|lang=zh-CN|style=Feynman)的“两端”（C1和C4）与亲双烯体的双键碳之间形成新的 $\sigma$ 键。这个过程在内型和外型路径中是相似的。
 
 <center>
-<img src="https://i.imgur.com/vHq1A3B.png" width="700" alt="Primary vs. Secondary Orbital Overlap in the Endo Transition State.">
+
 </center>
 
 真正的区别在于一个“额外奖励”。在形成内型产物的过渡态中，亲双烯体上带有 $\pi$ 体系的取代基（比如马来[酸酐](@keyword=anhydrides|lang=zh-CN|style=Feynman)的羰基）恰好位于[二烯](@keyword=diene|lang=zh-CN|style=Feynman)[烃](@keyword=hydrocarbons|lang=zh-CN|style=Feynman) $\pi$ 体系的“正下方”。这个绝佳的位置使得取代基的 $\pi$ 体系可以与[二烯](@keyword=diene|lang=zh-CN|style=Feynman)[烃](@keyword=hydrocarbons|lang=zh-CN|style=Feynman)**内部**碳原子（C2和C3）的 $p$ 轨道发生额外的、建设性的重叠 [@problem_id:2201725]。这种额外的“握手”被称为**次级[轨道相互作用](@keyword=orbital_interactions|lang=zh-CN|style=Feynman)（secondary orbital overlap）** [@problem_id:2201666]。

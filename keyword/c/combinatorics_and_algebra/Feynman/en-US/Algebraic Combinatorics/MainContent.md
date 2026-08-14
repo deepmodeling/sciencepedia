@@ -13,8 +13,6 @@ What is the number 4? You could say it's $1+1+1+1$. Or $2+2$. Or $2+1+1$. Or $3+
 
 This seems almost childishly simple. But physicists and mathematicians have learned that the most profound ideas often come from taking simple things seriously. Instead of just listing these sums, let's visualize them. We can represent a partition using a **Young diagram** (or **Ferrers diagram**), which is just a collection of boxes arranged in left-justified rows. For the number 8, the partition $4+2+1+1$ gives us a diagram like this:
 
-![Young Diagram for (4,2,1,1)](https://i.imgur.com/WGLrYlJ.png)
-
 You can think of this diagram as a special kind of bar chart. The vertical axis simply indexes the rows (the "parts" of our sum), and the horizontal axis measures the length of each row (the size of each part) [@problem_id:1369920]. This simple geometric object, the humble Young diagram, is our fundamental building block. It is the "atom" of our combinatorial world. It gives a *shape* to a number.
 
 ### Order from Chaos: Standard Young Tableaux

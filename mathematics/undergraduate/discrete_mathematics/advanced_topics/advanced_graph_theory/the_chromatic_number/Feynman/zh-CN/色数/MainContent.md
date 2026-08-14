@@ -30,7 +30,7 @@ $$ \chi(G) \ge \omega(G) $$
 每当事情看起来如此简单时，大自然（或者说，数学）总会给我们带来惊喜。让我们来看一个奇特的网络结构 [@problem_id:1405190]。想象一个网络，它有一个中央枢纽（我们称之为 $c$），连接着五个外围节点（$v_1$ 到 $v_5$）。同时，这五个外围节点自身连接成一个环，就像一个五边形。
 
 <center>
-<img src="https://i.imgur.com/8QWv7n1.png" alt="A wheel graph with 6 vertices, a central vertex c connected to 5 vertices v1 to v5, which form a cycle." width="300">
+
 <br>
 一个中心顶点连接到一个5-环路所形成的[轮图](@keyword=wheel_graph|lang=zh-CN|style=Feynman)。
 </center>
@@ -52,7 +52,7 @@ $$ \chi(G) \ge \omega(G) $$
 现在，想象一个环路。如果环路有偶数个顶点（比如一个正方形，$C_4$），你可以轻松地交替使用两种颜色：红、蓝、红、蓝。没问题。但如果环路有奇数个顶点（比如一个三角形 $C_3$ 或五边形 $C_5$），你试试看：红、蓝、红……当你回到起点时，最后一个顶点会发现它的两个邻居颜色不同，但它自己哪个颜色都不能选！
 
 <center>
-<img src="https://i.imgur.com/z0XJ18c.png" alt="An even cycle (C6) being 2-colored, and an odd cycle (C5) failing to be 2-colored." width="500">
+
 <br>
 偶环可以轻松实现[2-着色](@keyword=2_coloring|lang=zh-CN|style=Feynman)，而奇环则无法做到。
 </center>
@@ -86,7 +86,7 @@ $$ \chi(G) \le \Delta(G) $$
 一群可以被染成相同颜色的顶点，它们之间必然没有任何边直接相连。这样的一个顶点集合，我们称之为**[独立集](@keyword=independent_sets|lang=zh-CN|style=Feynman) (independent set)**。一个[图着色](@keyword=graph_coloring|lang=zh-CN|style=Feynman)的过程，实际上就是将图的所有顶点划分成一系列互不相交的独立集的过程，每一个[独立集](@keyword=independent_sets|lang=zh-CN|style=Feynman)对应一种颜色。
 
 <center>
-<img src="https://i.imgur.com/h5Hq1yM.png" alt="A graph partitioned into three independent sets, each corresponding to a color." width="400">
+
 <br>
 图的着色等价于将其顶点划分为若干个独立集。
 </center>

@@ -18,5 +18,4 @@
 
 初看起来，一个四层的[半导体器件](@keyword=semiconductor_devices|lang=zh-CN|style=Feynman)似乎相当复杂。但物理学家的天赋在于化繁为简。我们可以巧妙地将这个 $pnpn$ 结构看作是两个晶体管——一个 $pnp$ 型和一个 $npn$ 型——的巧妙组合。想象一下，我们将 $npn$ 晶体管的集电极连接到 $pnp$ 晶体管的基极，同时将 $pnp$ 晶体管的集电极连接到 $npn$ 晶体管的基极。瞧，我们创造了一个完美的**[正反馈](@keyword=positive_feedback|lang=zh-CN|style=Feynman)**回路！[@problem_id:3876636]
 
-![Two-Transistor Model of an SCR](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Thyristor_Two-Transistor_Model_and_IV_Curve.svg/600px-Thyristor_Two-Transistor_Model_and_IV_Curve.svg.png)
 *图1：[晶闸管](@keyword=silicon_controlled_rectifier_2|lang=zh-CN|style=Feynman)的四层结构及其双晶体管等效模型。这种内部连接形成了一个正反馈回路。*

@@ -47,7 +47,7 @@ $$
 
 <br>
 <center>
-    <img src="https://i.imgur.com/uG9Z4f2.png" alt="地月系统[有效势能](@keyword=effective_potential_energy|lang=zh-CN|style=Feynman)[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)示意图，展示了五个[拉格朗日点](@keyword=lagrange_points|lang=zh-CN|style=Feynman)。L1, L2, L3是[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)，而L4和L5是势能高地。" style="width: 80%;">
+
     <br>
     <small><i>图1：地球-月球系统的有效势能[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)。这张“地形图”形象地展示了五个[拉格朗日点](@keyword=lagrange_points|lang=zh-CN|style=Feynman)。L1, L2, L3 像是山鞍，而 L4, L5 则是山丘的顶峰。</i></small>
 </center>

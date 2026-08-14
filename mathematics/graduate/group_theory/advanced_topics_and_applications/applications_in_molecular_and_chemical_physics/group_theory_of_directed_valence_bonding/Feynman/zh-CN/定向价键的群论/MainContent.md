@@ -30,7 +30,7 @@
 那么，我们如何知道一个轨道是什么“风味”的呢？答案就在所谓的**[特征标表](@keyword=character_tables|lang=zh-CN|style=Feynman)(Character Table)**中。对于每一个分子（根据其[对称元素](@keyword=symmetry_elements|lang=zh-CN|style=Feynman)集合被归类到特定的“点群”），都有一张对应的[特征标表](@keyword=character_tables|lang=zh-CN|style=Feynman)。这张表就像一本字典，将分子的几何操作（如旋转、反射）与“对称风味”（[不可约表示](@keyword=irreducible_representations|lang=zh-CN|style=Feynman)）联系起来。
 
 <center>
-<img src="https://assets.lemonsqueezy.com/media/2024/05/20/14/06/20/d2c556b6-d2bc-4424-9f44-8dcf065d6c8e/C2v_character_table.png" alt="C₂v Character Table" width="450">
+
 </center>
 <div style="text-align: center; font-style: italic; color: #666;">一个简单的[特征标表](@keyword=character_tables|lang=zh-CN|style=Feynman)示例（C₂v点群），它包含了[对称操作](@keyword=symmetry_operations|lang=zh-CN|style=Feynman)（E, C₂, σᵥ(xz), σᵥ(yz)）和[不可约表示](@keyword=irreducible_representations|lang=zh-CN|style=Feynman)（A₁, A₂, B₁, B₂）。</div>
 

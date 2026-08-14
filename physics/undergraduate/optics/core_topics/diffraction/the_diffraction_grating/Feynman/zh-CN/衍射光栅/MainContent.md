@@ -19,8 +19,6 @@
 
 让我们把目光聚焦于两个相邻的狭缝，它们的中心间距为 $d$。当一束波长为 $\lambda$ 的单色光垂直入射时，要使沿某个角度 $\theta$ 方向传播的两束光发生相长干涉，它们之间的光程差（path difference）必须正好是波长的整数倍。
 
-![](https://i.imgur.com/gK9SOxP.png)
-
 从[上图](@keyword=epigraphs|lang=zh-CN|style=Feynman)的简单几何关系中，我们可以看到，这个[光程差](@keyword=optical_path_difference|lang=zh-CN|style=Feynman)就是 $d\sin\theta$。因此，[相长干涉](@keyword=constructive_interference|lang=zh-CN|style=Feynman)的条件——也就是亮纹出现的位置——由下面这个极其简洁而深刻的方程决定：
 
 $$

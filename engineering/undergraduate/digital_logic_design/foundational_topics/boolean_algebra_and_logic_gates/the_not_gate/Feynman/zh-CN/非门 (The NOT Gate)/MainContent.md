@@ -29,7 +29,7 @@
 *   我们将它们的栅极连接在一起，作为共同的输入端。
 
 <center>
-    <img src="https://assets.bit-by-bit.cn/learning/v1/courses/digital-logic-design-undergraduate/the-not-gate/principles-and-mechanisms/cmos-inverter-schematic.png" alt="CMOS Inverter Schematic" width="300"/>
+
     <br>
     <small>图1：CMOS 反相器的基本结构。PMOS构成[上拉网络](@keyword=pull_up_network|lang=zh-CN|style=Feynman)，NMOS构成[下拉网络](@keyword=pull_down_network|lang=zh-CN|style=Feynman)，它们的协同工作实现了逻辑非的功能。</small>
 </center>

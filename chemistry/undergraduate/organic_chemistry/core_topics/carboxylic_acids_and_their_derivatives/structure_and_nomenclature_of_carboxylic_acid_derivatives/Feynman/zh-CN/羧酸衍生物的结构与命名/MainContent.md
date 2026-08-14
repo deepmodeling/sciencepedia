@@ -14,7 +14,7 @@
 一个羧酸分子，其结构通式为 $R-COOH$，包含一个关键的功能区，我们称之为羧基（carboxyl group）。这个区域由一个与氧原子形成双键的碳原子（即羰基，$C=O$）和另一个与该碳原子相连的羟基（$-OH$）组成。现在，请想象我们拿走这个羟基（$-OH$），剩下的是什么？我们得到了一个 $R-C(=O)-$ 片段，这就是我们所说的 **[酰基](@keyword=acyl_group|lang=zh-CN|style=Feynman)**。
 
 <center>
-    <img src="https://i.imgur.com/gK37dKq.png" width="500" />
+
 </center>
 
 这个[酰基](@keyword=acyl_group|lang=zh-CN|style=Feynman)，就是整个家族的核心。所有的[羧酸衍生物](@keyword=carboxylic_acid_derivatives|lang=zh-CN|style=Feynman)，无论外表如何变化，其本质都是一个酰基连接上了一个不同的“后缀”。这个“后缀”取代了原来羧酸中的羟基。正是这个被换掉的部分，决定了每个衍生物的独特“个性”和名字。

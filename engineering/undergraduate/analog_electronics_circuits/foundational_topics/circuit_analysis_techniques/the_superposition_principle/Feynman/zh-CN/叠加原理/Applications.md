@@ -20,8 +20,6 @@
 
 问得好！这恰恰引出了工程师们最伟大的创造之一：**线性化**。一个非线性器件，比如晶体管，它的行为曲线或许很复杂。但如果我们用一个[直流电源](@keyword=dc_power_supply|lang=zh-CN|style=Feynman)（DC偏置）将它的工作状态“固定”在曲线上的某一个点（即“静态工作点”），那么对于围绕这个点发生的微小信号波动，那段曲线看起来就几乎是一条直线了！
 
-![A non-linear curve being approximated by a straight line at a specific operating point.](https://image.gnwcdn.com/stop/12188/linearization.jpg "A non-linear response curve of a device. A DC bias sets a quiescent point (Q-point). For small AC signals around this point, the curve can be approximated by its tangent line, demonstrating the principle of small-signal linearization.")
-
 这意味着，对于微弱的交流信号，这个非线性器件的行为变得近似“线性”了。于是，叠加原理又可以大显身手了！我们可以将问题一分为二：首先，进行**直流分析**，忽略所有交流信号，计算出晶体管的[静态工作点](@keyword=operating_point|lang=zh-CN|style=Feynman)，这决定了它的放大能力等核心参数。然后，进行**交流[小信号分析](@keyword=small_signal_analysis|lang=zh-CN|style=Feynman)**，忽略所有[直流电源](@keyword=dc_power_supply|lang=zh-CN|style=Feynman)，研究电路如何放大输入的微弱交流信号。[@problem_id:1340839] [@problem_id:1340812] 最终，晶体管输出的总电压，就是那个稳定的直流电压，叠加上一个被放大了的交流波形。
 
 这种“先直流，后交流”的分析方法，是整个[模拟电子学](@keyword=analog_electronics|lang=zh-CN|style=Feynman)的灵魂。它让我们能够利用[叠加原理](@keyword=principle_of_superposition|lang=zh-CN|style=Feynman)，去设计和分析几乎所有的放大器、[振荡器](@keyword=oscillators|lang=zh-CN|style=Feynman)和滤波器。

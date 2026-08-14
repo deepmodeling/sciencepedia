@@ -33,7 +33,7 @@ Now, how do we describe the temperature *inside* each element? We'll assume the 
 
 We introduce a set of simple but ingenious **basis functions**, often called "[hat functions](@keyword=hat_functions|lang=en-US|style=Feynman)" or "shape functions." Imagine a node, say at position $x_j$. We define a [basis function](@keyword=basis_function|lang=en-US|style=Feynman) $\phi_j(x)$ that is a perfect "hat": it has a value of 1 at its own node $x_j$, and a value of 0 at all other nodes. It just linearly ramps up from 0 to 1, and back down to 0 over the adjacent elements.
 
-![A sketch of a hat function phi_j(x) centered at node x_j, being 1 at x_j and 0 at neighboring nodes x_{j-1} and x_{j+1}.](https://i.imgur.com/example.png) *(Conceptual image of a hat function)*
+ *(Conceptual image of a hat function)*
 
 Any [piecewise linear function](@keyword=piecewise_linear_function|lang=en-US|style=Feynman) can be built by simply adding up these [hat functions](@keyword=hat_functions|lang=en-US|style=Feynman), each multiplied by the desired value at its corresponding node. So, our approximate solution takes the form [@problem_id:2115162]:
 $$ T_h(x) = \sum_{j} U_j \phi_j(x) $$

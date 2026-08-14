@@ -13,8 +13,6 @@
 
 想象一下，你正通过一扇巨大而不透明的栅栏上的一个小圆孔，去窥探墙外一幅巨大的壁画。你能看到壁画的哪一部分？又能看到多大面积？你的直觉可能会告诉你，这取决于你离小孔有多近，以及壁画离栅栏有多远。这个直觉完全正确，而且背后蕴含着视场最基本的原理。[@problem_id:2229267]
 
-![A diagram showing an eye looking through a peephole at a mural. Light rays from the eye pass through the peephole to form a larger circle on the mural.](https://assets.test-king.com/langtime/2229267_1.png)
-
 *图1：通过小孔观察壁画。视场由眼睛、小孔和壁画之间的几何关系决定。*
 
 这里的美妙之处在于，整个过程遵循着简单的**相似三角形**法则。从小孔到你眼睛的距离 ($L_1$) 和小孔的半径 ($r$) 构成了一个小三角形；从壁画到你眼睛的距离 ($L_1+L_2$) 和你在壁画上能看到的区域半径 ($R$) 构成了一个大三角形。这两个三角形是相似的，因此它们的边长成比例：

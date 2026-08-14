@@ -12,7 +12,7 @@
 
 <center>
 <figure>
-    <img src="https://static.composing.academy/assets/knowledge-base/control-theory/impulse-response-and-the-convolution-integral/pure-delay-system-response.png" alt="一个纯[延迟系统](@keyword=delay_system|lang=zh-CN|style=Feynman)的脉冲响应和它对一个输入信号的作用。输入是一个脉冲串，输出是相同脉冲串的延迟版本。" style="width: 80%;" />
+
     <figcaption>图1：纯[延迟系统](@keyword=delay_system|lang=zh-CN|style=Feynman)的脉冲响应是一个移位的狄拉克δ函数。它将输入信号原封不动地在时间轴上平移。</figcaption>
 </figure>
 </center>
@@ -21,7 +21,7 @@
 
 <center>
 <figure>
-    <img src="https://static.composing.academy/assets/knowledge-base/control-theory/impulse-response-and-the-convolution-integral/first-order-system-step-response.png" alt="[一阶系统](@keyword=first_order_systems|lang=zh-CN|style=Feynman)的脉冲响应（指数衰减）和它对阶跃输入的响应（指数上升）。" style="width: 80%;" />
+
     <figcaption>图2：将指数衰减的脉冲响应与阶跃输入进行卷积，得到熟悉的指数上升[阶跃响应](@keyword=step_response|lang=zh-CN|style=Feynman)，这描述了RC电路充电等过程。</figcaption>
 </figure>
 </center>
@@ -74,7 +74,7 @@
 
 <center>
 <figure>
-    <img src="https://static.composing.academy/assets/knowledge-base/control-theory/impulse-response-and-the-convolution-integral/diffusion-vs-wave-impulses.png" alt="[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)系统（如热传导）和波动系统（如琴弦[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)）的典型脉冲响应的示意图。[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)响应是正的、平滑的；波动响应是[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的。" style="width: 80%;" />
+
     <figcaption>图3：脉冲响应的性质揭示了系统的根本物理特性。[扩散](@keyword=dispersal|lang=zh-CN|style=Feynman)系统的脉冲响应总是正的，体现了“抹平”效应。波动系统的脉冲响应是[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的，体现了能量的来回传递。</figcaption>
 </figure>
 </center>

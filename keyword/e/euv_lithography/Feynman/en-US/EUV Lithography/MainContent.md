@@ -33,8 +33,6 @@ The first startling new rule of EUV is this: **everything absorbs it**. Air, gla
 
 With EUV, this is impossible. There is no transparent material to make a lens or a mask substrate. This single fact forced a complete reinvention of optics. The entire machine, from the light source to the wafer, would have to be housed in a near-perfect vacuum. And every optical element—every "lens" and the mask itself—had to be a mirror.
 
-![euv_hall_of_mirrors](https://d206f6y85k5p6p.cloudfront.net/images/euv_hall_of_mirrors.png_thumbnail.png)
-
 But not just any mirror. An ordinary household mirror, typically a sheet of glass coated with silver, would simply absorb the EUV light. The solution is a marvel of materials science: the **distributed Bragg reflector (DBR)**. Each EUV mirror consists of 40 to 50 alternating layers of silicon and molybdenum, each layer just a few nanometers—a dozen or so atoms—thick. These layers are meticulously deposited with a precision that staggers the imagination. They are engineered so that the tiny reflections from each interface in the stack add up perfectly in phase for 13.5 nm light, resulting in a combined [reflectivity](@keyword=reflectivity|lang=en-US|style=Feynman) of about 70%. It's like a choir where dozens of weak voices sing in perfect unison to create a powerful note. Building a system with a dozen of these intricate, imperfect mirrors was the first monumental challenge of EUV. But it was far from the last.
 
 ### Shadows, Heat, and a Quantum Lottery

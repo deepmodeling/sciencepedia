@@ -18,7 +18,7 @@
 假设迷宫的结构非常简单，就像下图所示。从 $s$ 出发的所有路径都必须经过中间的某个节点，最终汇合到通往 $t$ 的两条关键通道上：$(u_2, t)$ 和 $(v_2, t)$。[@problem_id:1416900]
 
 <center>
-<img src="https://i.imgur.com/71239CV.png" alt="A simple directed graph for the Pathfinder's Peril game." style="width: 50%;">
+
 </center>
 
 如果你是阻挡者，并且你首先行动，一个绝妙的策略几乎是显而易见的。你的目标不是随机地搞破坏，而是瘫痪奔跑者的所有潜在可能性。你知道，无论奔跑者选择哪条路，他最终都必须依赖那两条通向终点的“生命线”之一。所以，你的策略就是：

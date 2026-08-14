@@ -20,7 +20,7 @@
 让我们来看一个绝佳的例子。想象一个数字[随机数生成器](@keyword=random_number_generator_(rng)|lang=zh-CN|style=Feynman)，它的“分辨率”可以不断提高。在第 $n$ 级分辨率下，它只能从集合 $\{\frac{1}{n}, \frac{2}{n}, \dots, \frac{n}{n}\}$ 中均匀地随机挑选一个数。这是一个离散的[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman) $Y_n$。它的CDF，$F_n(y)$，是一系列的小台阶，每级台阶的高度是 $1/n$。当 $n$ 还很小的时候，这幅“肖像画”看起来确实很“像素化”。但是，随着 $n$ 趋于无穷大，这些台阶变得越来越小，越来越密，最终它们完美地融合在一起，变成了一条光滑的斜线——这正是 $[0,1]$ 区间上[连续均匀分布](@keyword=continuous_uniform_distribution|lang=zh-CN|style=Feynman)的CDF [@problem_id:1292848]。一个离散的、阶梯状的“像素画”就这样收敛成了一幅连续的、光滑的“照片”！
 
 <center>
-  <img src="https://i.imgur.com/g8u2G97.png" alt="CDF of discrete uniform converging to continuous uniform" width="500"/>
+
   <br>
   <small>图1：[离散均匀分布](@keyword=discrete_uniform_distribution|lang=zh-CN|style=Feynman)的CDF（蓝色[阶梯函数](@keyword=staircase_function|lang=zh-CN|style=Feynman)）随着分辨率 $n$ 的增加，逐渐逼近[连续均匀分布](@keyword=continuous_uniform_distribution|lang=zh-CN|style=Feynman)的CDF（红色直线）。</small>
 </center>

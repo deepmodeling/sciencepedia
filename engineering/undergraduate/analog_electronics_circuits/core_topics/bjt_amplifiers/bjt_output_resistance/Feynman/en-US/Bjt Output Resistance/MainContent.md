@@ -26,7 +26,7 @@ So what? A narrower base means the "hill" for carriers to diffuse across becomes
 Physicists and engineers love to turn a physical story into a simple, useful model. If you take the sloped $I_C-V_{CE}$ lines from a real transistor and extend them backward, you'll discover something remarkable. They all seem to intersect at a single point on the negative voltage axis. The magnitude of this voltage intercept is a fundamental parameter of the transistor, called the **Early Voltage**, denoted as **$V_A$** [@problem_id:1284891].
 
 <center>
-    <img src="https://i.imgur.com/uG9Xm2e.png" alt="Graphical definition of Early Voltage" width="500"/>
+
     <br>
     <i>Figure 1: The output characteristics of a real BJT. The lines are not perfectly flat due to the Early effect. When extrapolated, they intersect at a point $-V_A$ on the voltage axis. A larger Early Voltage means flatter lines and a more ideal transistor.</i>
 </center>

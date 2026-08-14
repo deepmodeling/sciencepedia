@@ -16,7 +16,7 @@
 
 <br/>
 <center>
-<img src="https://i.imgur.com/kS5Y2wJ.png" alt="Orbital overlap diagram for ethene" width="500"/>
+
 <br/>
 <em>图1：[乙烯](@keyword=ethylene|lang=zh-CN|style=Feynman)分子的轨道示意图。所有六个原子（两个碳和四个氢）都位于同一个平面内，这是由 $sp^2$ 杂化决定的。垂直于这个平面的 $\pi$ 键由两个[p轨道](@keyword=p_orbitals|lang=zh-CN|style=Feynman)侧向重叠形成。</em>
 </center>
@@ -48,7 +48,7 @@ $$ \text{DU} = \frac{(2 \times 15 + 2) - 24}{2} = \frac{32 - 24}{2} = 4 $$
 
 <br/>
 <center>
-<img src="https://i.imgur.com/8Qeghg7.png" alt="E/Z Isomerism" width="500"/>
+
 <br/>
 <em>图2：E/Z异构的示意图。当双键的每个碳都连接两个不同的基团时，会产生两种空间[排列](@keyword=permutation|lang=zh-CN|style=Feynman)不同的异构体。</em>
 </center>
@@ -86,7 +86,7 @@ $$ \text{DU} = \frac{(2 \times 15 + 2) - 24}{2} = \frac{32 - 24}{2} = 4 $$
 
 <br/>
 <center>
-<img src="https://i.imgur.com/L12R9dJ.png" alt="Chirality of trans-cyclooctene" width="600"/>
+
 <br/>
 <em>图3：*反式*-环辛烯的对映异构体 (enantiomers)。环的扭曲使其具有手性，尽管分子中没有任何传统意义上的手性中心。</em>
 </center>

@@ -21,8 +21,6 @@
 
 在这个图谱中，每个节点（node）代表一段没有变异的 DNA 序列。而边（edge）则代表这些序列片段之间在至少一个个体中被观察到的邻接关系。当基因组中出现变异时，图谱上就会出现分支。[@problem_id:2476523] 例如，在一个 SNP 位点，参考基因组是 A，而另一些人是 G，那么图谱就会从一个共享的上游节点分岔，分别走向一个包含 A 的节点和一个包含 G 的节点，然后再汇合到一个共享的下游节点。这就形成了一个优美的“气泡”（bubble）结构。[@problem_id:2818225]
 
-![A diagram showing a SNP bubble](https://i.imgur.com/example.png "SNP Bubble")
-
 无论是 SNP、小的插入/删除，还是更复杂的[结构变异](@keyword=structural_variation|lang=zh-CN|style=Feynman)，都可以通过这种“[分岔](@keyword=bifurcations|lang=zh-CN|style=Feynman)-汇合”的模式来表示。任何一个个体的完[整基](@keyword=integral_basis|lang=zh-CN|style=Feynman)因组序列，都只是这张巨大网络中的一条特定路径（path）。而我们之前所说的“参考基因组”，也不再是唯一的权威，它仅仅是这张图谱中千万条路径里的一条而已。这种表示方法彻底摆脱了线性坐标的束缚，因为它关注的是节点之间的连接关系，而不是一个绝对的、一维的坐标。一个变异位点不再由一个模糊的数字坐标定义，而是由其在图谱拓扑结构中的位置精确定义。
 
 ### 图谱的形态：进化故事的肖像

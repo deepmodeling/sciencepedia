@@ -15,7 +15,7 @@ RMT 的第一个也是最自然的家园是量子物理学。Wigner 最初提出
 惊人的是，这种经典行为的转变在量子世界留下了清晰的指纹。体育场围栏的量子能谱看起来完全是“随机”的。能级之间存在“排斥”现象，即两个能级靠得非常近的概率极小，其间距分布完美地符合 [Wigner-Dyson 分布](@keyword=wigner_dyson_distribution|lang=zh-CN|style=Feynman)。与此相反，圆形围栏的[能级间距](@keyword=energy_level_spacing|lang=zh-CN|style=Feynman)则遵循泊松分布，表现出“扎堆”的倾向。同时，[混沌系统](@keyword=chaotic_systems|lang=zh-CN|style=Feynman)的高能本征[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)（[驻波](@keyword=standing_waves|lang=zh-CN|style=Feynman)）的节线呈现出复杂而不规则的图案，而可积系统则形成规则的网格 [@problem_id:2088242]。这种从[泊松统计](@keyword=poissonian_statistics|lang=zh-CN|style=Feynman)到 [Wigner-Dyson 统计](@keyword=wigner_dyson_statistics|lang=zh-CN|style=Feynman)的转变，正是从可积性到量子混沌的标志性信号。
 
 <center>
-    <img src="https://i.imgur.com/eBwF4oX.png" alt="Comparison of nodal patterns and level spacing distributions for a circular (integrable) and a stadium (chaotic) billiard. A: Regular nodal patterns and Poisson spacing for the circle. B: Irregular nodal patterns and Wigner-Dyson spacing for the stadium." style="width: 80%;"/>
+
     <br>
     <small>图1：圆形（可积）与体育场形（混沌）[量子台球](@keyword=quantum_billiards|lang=zh-CN|style=Feynman)的对比。可积系统（左）具有规则的[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)节线和泊松[能级间距分布](@keyword=level_spacing_distribution|lang=zh-CN|style=Feynman)。[混沌系统](@keyword=chaotic_systems|lang=zh-CN|style=Feynman)（右）则呈现出不规则的节线和 Wigner-Dyson 间距分布，后者是[随机矩阵理论](@keyword=random_matrix_theory|lang=zh-CN|style=Feynman)的标志。[@problem_id:2088242]</small>
 </center>
@@ -44,7 +44,7 @@ RMT 的威力远不止于能谱。在**介观物理**中，它还能预测电子
 这个惊人的巧合——被称为 Montgomery-Dyson-Odlyzko 定律——暗示着，黎曼 $\zeta$ 函数的零点，这些由素数唯一确定的、神圣不可动摇的数字，其统计分布规律竟然和一个随机[厄米矩阵](@keyword=hermitian_matrix|lang=zh-CN|style=Feynman)的[本征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)分布完全相同 [@problem_id:3019029]。就好像上帝在创造素数时，是从一个巨大的随机矩阵中“抽取”了它们一样。这一发现让人们开始猜想，可能存在某个未知的[量子混沌](@keyword=chaos_in_quantum_systems|lang=zh-CN|style=Feynman)系统，其能级恰好对应于 $\zeta$ 函数的零点。
 
 <center>
-    <img src="https://i.imgur.com/kS9Yn9V.png" alt="Comparison between the pair correlation of Riemann zeta zeros and GUE eigenvalues." style="width: 70%;" />
+
     <br>
     <small>图2：黎曼 $\zeta$ 函数零点间距（蓝点，由 A. Odlyzko 计算）与 GUE [随机矩阵](@keyword=stochastic_matrix|lang=zh-CN|style=Feynman)[本征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)间距（红线）的[对关联函数](@keyword=pair_correlation_function|lang=zh-CN|style=Feynman)惊人地吻合。这一联系是数论与物理学之间最深刻的桥梁之一。[@problem_id:3019029]</small>
 </center>

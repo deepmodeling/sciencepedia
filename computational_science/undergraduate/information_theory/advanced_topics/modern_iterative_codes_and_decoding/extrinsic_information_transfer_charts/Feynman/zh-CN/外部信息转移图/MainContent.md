@@ -53,7 +53,7 @@
 如此循环往复，阶梯一步步地延伸。我们可以观察到一个有趣的现象：随着迭代的进行，[信息量](@keyword=surprisal|lang=zh-CN|style=Feynman)不断增加，但每一步的“步长”（即每一轮迭代带来的互[信息增益](@keyword=information_gain|lang=zh-CN|style=Feynman)）通常会越来越小。这符合直觉：解决问题初期，任何一点线索都可[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)来巨大突破；而当谜底即将揭晓时，要获得最后一点点决定性的信息则变得越来越困难。
 
 <center>
-<img src="https://i.imgur.com/GCRbCem.png" alt="An EXIT chart showing the staircase-like decoding trajectory. The process starts at (0,0) and moves between the two decoder curves, climbing towards the point (1,1) of perfect information." style="width: 70%;" />
+
 <br>
 <small>图1：解码轨迹的可视化。迭代过程就像在两条解码器曲线之间攀爬的阶梯，从左下角的零信息点 $(0,0)$ 开始，逐步迈向右上角的完美信息点 $(1,1)$。</small>
 </center>

@@ -5,7 +5,6 @@ First, in "Principles and Mechanisms," we will untangle the two different notion
 
 ## Principles and Mechanisms
 
-![Construction of the Cantor Set](https://upload.wikimedia.org/wikipedia/commons/5/56/Cantor_set_in_seven_iterations.svg)
 *Visualizing the first few steps of a Cantor-like set construction. Credit: Wikipedia*
 
 So, we've been introduced to the curious idea of an "uncountable [null set](@keyword=null_set|lang=en-US|style=Feynman)." At first glance, this phrase feels like a contradiction in terms, like "a silent noise" or "a square circle." How can a set be so vast that you can't even count its elements, yet so meager that its total "size" is zero? To get to the heart of this beautiful paradox, we need to abandon our everyday intuition and, like a physicist entering the quantum realm, learn to speak a new language: the language of measure.

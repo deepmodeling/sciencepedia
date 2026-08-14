@@ -40,7 +40,7 @@ $$
 现在，让我们像切香肠一样，在链条的每一个格点之间都做一次这样的分解。这个过程虽然繁琐，但最终的产物却异常优美：整个复杂的[多体波函数](@keyword=many_body_wavefunction|lang=zh-CN|style=Feynman)被“拆解”成了一串小[张量](@keyword=tensor|lang=zh-CN|style=Feynman)（可以看作是矩阵）的乘积。这就是 MPS 的核心思想 [@problem_id:2445388]。
 <br>
 <center>
-<img src="https://i.imgur.com/kS9lSxt.png" width="600">
+
 <div style="font-size: 0.8em; color: grey;">图1：[矩阵乘积态](@keyword=matrix_product_states|lang=zh-CN|style=Feynman)（MPS）的图示。整个[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)由一系列三阶[张量](@keyword=tensor|lang=zh-CN|style=Feynman)（蓝色方块）通过虚拟“键”（水平黑线）连接而成。每个[张量](@keyword=tensor|lang=zh-CN|style=Feynman)还有一个指向下方的“物理腿”，代表该格点的物理状态。</div>
 </center>
 <br>

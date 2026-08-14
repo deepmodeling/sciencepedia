@@ -30,7 +30,7 @@ $$ \nabla f = -\lambda \nabla g $$
 
 让我们来看一个经典问题：在平面上，离原点最近的直线 $ax+by=c$ 上的点是哪个点？[@problem_id:4131]。我们想要最小化从原点到点 $(x, y)$ 的距离的平方，即[目标函数](@keyword=objective_function|lang=zh-CN|style=Feynman)是 $f(x, y) = x^2 + y^2$。约束条件是点必须在直线上，即 $g(x, y) = ax+by=c$。[目标函数](@keyword=objective_function|lang=zh-CN|style=Feynman)的等高线是以原点为中心的同心圆，而约束条件是一条直线。几何直觉告诉我们，当圆逐渐扩大，第一次接触到直线时，那个接触点就是离原点最近的点。在那个点，圆与直线相切。这意味着，圆在该点的半径（垂直于圆周，与 $\nabla f = (2x, 2y)$ 方向相同）必须与[直线的法向量](@keyword=normal_vector_of_a_line|lang=zh-CN|style=Feynman)（与 $\nabla g = (a, b)$ 方向相同）平行。这正是[拉格朗日乘子法](@keyword=lagrange_multiplier_methods|lang=zh-CN|style=Feynman)所描述的画面！
 
-![[拉格朗日乘子法](@keyword=lagrange_multiplier_methods|lang=zh-CN|style=Feynman)的几何直观：在约束曲线上的最优点，目标函数的[等高线](@keyword=level_curves|lang=zh-CN|style=Feynman)与约束曲线相切。这意味着它们的梯度向量是平行的。](https://d2l-ai.s3.amazonaws.com/uploads/asset/2024-03-29/lagrange-multiplier-zh-dark.svg)
+的几何直观：在约束曲线上的最优点，目标函数的[等高线](@keyword=level_curves|lang=zh-CN|style=Feynman)与约束曲线相切。这意味着它们的梯度向量是平行的。](https://d2l-ai.s3.amazonaws.com/uploads/asset/2024-03-29/lagrange-multiplier-zh-dark.svg)
 
 这个思想具有惊人的普适性。无论是在二维平面、三维空间还是更高维的抽象空间，无论目标是寻找卫星表面电势最高的地方 [@problem_id:2293314]，还是设计具有最佳增益的[数字滤波器](@keyword=digital_filters|lang=zh-CN|style=Feynman) [@problem_id:2293296]，其核心原理始终如一：在最优点，[目标函数](@keyword=objective_function|lang=zh-CN|style=Feynman)等值面与约束[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)必然相切，它们的[梯度向量](@keyword=gradient_vector|lang=zh-CN|style=Feynman)必然平行。当存在多个约束时，比如找到两个平面相交直线上离原点最近的点 [@problem_id:4155] [@problem_id:2293298]，或是一个球体和一个圆柱体相交曲线上的最高点 [@problem_id:2293282]，其思想会自然地推广：[目标函数](@keyword=objective_function|lang=zh-CN|style=Feynman)的梯度必须是所有约束函数梯度的[线性组合](@keyword=linear_combinations|lang=zh-CN|style=Feynman)，即 $\nabla f = -\sum_i \lambda_i \nabla g_i$。
 

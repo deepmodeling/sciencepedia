@@ -36,7 +36,7 @@ What do we see? If there were no noise, every cell would have the exact same amo
 
 <center>
 <figure>
-    <img src="https://i.imgur.com/uRj04mI.png" width="400">
+
     <figcaption><b>Figure 1.</b> A visual decomposition of noise. A scatter plot of two reporter proteins (e.g., YFP vs. CFP) reveals the sources of noise. The spread of data points along the diagonal ($Y=C$) is driven by shared extrinsic fluctuations affecting both reporters. The spread perpendicular to the diagonal is driven by independent intrinsic fluctuations unique to each reporter.</figcaption>
 </figure>
 </center>

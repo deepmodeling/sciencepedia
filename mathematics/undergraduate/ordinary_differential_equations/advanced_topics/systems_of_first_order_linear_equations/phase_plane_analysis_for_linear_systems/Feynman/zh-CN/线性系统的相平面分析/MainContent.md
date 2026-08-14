@@ -23,7 +23,7 @@ $$
 
 <br/>
 <div align="center">
-<img src="https://assets.test.logos.com.cn/images/2192270/8a731d51ed2cfc34e8910401a09d6f30.png" alt="Direction Field" style="width: 50%;">
+
 <figcaption>图1：一个简单的[方向场](@keyword=slope_fields|lang=zh-CN|style=Feynman)。每个箭头代表系统在该点的瞬时速度方向。</figcaption>
 </div>
 
@@ -49,7 +49,7 @@ $$
 
 <br/>
 <div align="center">
-<img src="https://assets.test.logos.com.cn/images/2192287/1a8da5e01b7a634458f31b67f10b784a.png" alt="Saddle Point" style="width: 50%;">
+
 <figcaption>图2：[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)。轨迹沿着一个方向（稳定[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)）汇入，沿着另一个方向（不稳定[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)）流出。</figcaption>
 </div>
 
@@ -69,7 +69,7 @@ $$
 
 <br/>
 <div align="center">
-<img src="https://assets.test.logos.com.cn/images/2192285/3dbe4fd6302e1c31ced5e2f75da5b34d.png" alt="Stable Spiral" style="width: 50%;">
+
 <figcaption>图3：[稳定焦点](@keyword=stable_focus|lang=zh-CN|style=Feynman)。轨迹盘旋着收敛于原点，如同RLC电路中的衰减[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。</figcaption>
 </div>
 

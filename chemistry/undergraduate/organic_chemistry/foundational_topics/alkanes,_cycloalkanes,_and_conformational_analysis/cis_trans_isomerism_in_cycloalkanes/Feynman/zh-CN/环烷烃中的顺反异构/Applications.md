@@ -10,7 +10,7 @@
 
 这门艺术被称为“[立体选择性](@keyword=stereoselectivity|lang=zh-CN|style=Feynman)合成”，其核心秘诀在于反应机理。不同的反应路径就像是使用不同的工具，它们会以特定的方式将原子组装起来。一个绝佳的例子是[烯烃的催化氢化](@keyword=catalytic_hydrogenation_of_alkenes|lang=zh-CN|style=Feynman)。当我们对一个环烯烃（例如1,2-二甲基环戊烯）进行[催化氢化](@keyword=catalytic_hydrogenation|lang=zh-CN|style=Feynman)时，反应物分子会吸附在金属[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)（如铂）的表面。氢分子也被吸附并解离成氢原子。然后，这两个氢原子会从*同一个方向*——也就是从金属表面这一侧——加成到双键上。这种“[顺式加成](@keyword=syn_addition|lang=zh-CN|style=Feynman)”（syn addition）的机理，意味着原本在双键上的两个甲基基团，会被“推”到环的另一侧，从而使它们彼此处于顺式关系。因此，这个反应几乎只生成顺式-1,2-二甲基环戊烷 [@problem_id:2160579]。
 
-![[催化氢化](@keyword=catalytic_hydrogenation|lang=zh-CN|style=Feynman)的[顺式加成](@keyword=syn_addition|lang=zh-CN|style=Feynman)](https://www.chem.ucla.edu/~harding/IGOC/D/dimethylcyclopentene01.png)
+的[顺式加成](@keyword=syn_addition|lang=zh-CN|style=Feynman)](https://www.chem.ucla.edu/~harding/IGOC/D/dimethylcyclopentene01.png)
 
 那么，如果我们想要得到反式异构体呢？我们只需要更换“工具箱”里的工具。例如，我们可以先用[间氯过氧苯甲酸](@keyword=m_cpba|lang=zh-CN|style=Feynman)（[m-CPBA](@keyword=m_cpba|lang=zh-CN|style=Feynman)）与[烯烃反应](@keyword=alkene_reactions|lang=zh-CN|style=Feynman)，在双键的一侧形成一个环氧环。然后，在酸性[水溶液](@keyword=aqueous_solutions|lang=zh-CN|style=Feynman)中，水分子会从与环氧环*相反*的一侧进攻，打开这个三元环。这个“[反式加成](@keyword=anti_addition|lang=zh-CN|style=Feynman)”（anti addition）的过程，最终会得到两个羟基位于环平面两侧的反式-1,2-二醇产物 [@problem_id:2160649]。
 

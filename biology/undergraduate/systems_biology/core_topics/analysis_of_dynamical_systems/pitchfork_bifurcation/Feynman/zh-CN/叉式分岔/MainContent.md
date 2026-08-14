@@ -33,7 +33,7 @@ $$
 - 当 $r$ 穿过 0 变为正数时，这个单井的底部隆起，变成一个山丘，同时在[两侧对称](@keyword=bilateral_symmetry|lang=zh-CN|style=Feynman)地形成了两个新的、更深的井。滚珠必须选择滚入左边或右边的井里。
 
 <center>
-<img src="https://i.imgur.com/KqjBf5i.png" alt="Potential energy landscape for a supercritical pitchfork bifurcation" width="600">
+
 </img>
 </center>
 <br>

@@ -16,7 +16,7 @@ Now, let’s cool the crystal down. As the temperature drops, something remarkab
 This is the essence of **[spontaneous symmetry breaking](@keyword=spontaneous_symmetry_breaking|lang=en-US|style=Feynman)**. The underlying rules (the shape of our energy "bowl") are perfectly symmetric, but the system's ground state is not. By choosing one valley over the other, the ball has broken the symmetry. In a ferroelectric crystal, the "ball" is the state of the system, and its position along one axis is the macroscopic **polarization**, $P$. The shape of the bowl is described by the **Landau free energy**. Above a critical temperature, $T_c$, the energy landscape has a single minimum at $P=0$. Below $T_c$, the shape changes to a "double-well," with two degenerate minima at non-zero values, $+P_s$ and $-P_s$ [@problem_id:2989765].
 
 <center>
-<img src="https://i.imgur.com/W29F1zK.png" width="600">
+
 </center>
 <center><i>The Landau [free energy landscape](@keyword=free_energy_landscape|lang=en-US|style=Feynman) for a [second-order phase transition](@keyword=second_order_phase_transition|lang=en-US|style=Feynman). Above $T_c$, the stable state is at $P=0$. Below $T_c$, the $P=0$ state becomes unstable, and two new, equivalent energy minima appear at the [spontaneous polarization](@keyword=spontaneous_polarization|lang=en-US|style=Feynman) values $\pm P_s$.</i></center>
 

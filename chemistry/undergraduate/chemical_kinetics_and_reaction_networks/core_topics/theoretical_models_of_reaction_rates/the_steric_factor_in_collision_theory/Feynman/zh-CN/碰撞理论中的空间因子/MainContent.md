@@ -36,7 +36,7 @@ $k = p \cdot Z \cdot \exp(-E_a / RT)$
 这种由分子三维结构引起的对反应的阻碍效应，化学家称之为**空间[位阻](@keyword=steric_hindrance|lang=zh-CN|style=Feynman)（steric hindrance）**。[空间因子](@keyword=steric_factor|lang=zh-CN|style=Feynman) $p$ 正是对此的定量描述。一个经典的例子可以戏剧性地展示空间[位阻](@keyword=steric_hindrance|lang=zh-CN|style=Feynman)的力量。考虑氨分子（$NH_3$）分别与两种结构不同但[化学式](@keyword=chemical_formulas|lang=zh-CN|style=Feynman)相同的分子（[同分异构](@keyword=isomerism|lang=zh-CN|style=Feynman)体）——1-溴丁烷和2-溴-2-甲基丙烷——发生反应。[@problem_id:1524437] 两种反应的活化能几乎完全相同，这意味着能量门槛是一样的。然而，实验测得，1-溴丁烷的[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)是其异构体2-溴-2-甲基丙烷的近5000倍！
 
 <center>
-<img src="https://i.imgur.com/your-image-url.png" alt="Comparison of 1-bromobutane and 2-bromo-2-methylpropane showing steric hindrance" width="600"/>
+
 <br>
 图1：(左) 1-溴丁烷，反应位点（与Br相连的碳）相对暴露。(右) 2-溴-2-甲基丙烷，反应位点被三个庞大的甲基基团（-CH3）像保镖一样团团围住。
 </center>

@@ -30,7 +30,6 @@ $h\nu \ge E_g$
 
 对于某些[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)，比如砷化镓（GaAs），它们的“[能带结构](@keyword=e_k_diagram|lang=zh-CN|style=Feynman)”恰好非常配合。价带的能量最高点（价带顶）和导带的能量最低点（导带底）正好位于同一个动量值上（通常是 $\vec{k}=0$）。
 
-![Direct Band Gap](https://www.tf.uni-kiel.de/matwis/amat/semi_en/kap_2/illustr/t2_3_1.gif)
 *图1：[直接带隙半导体](@keyword=direct_gap_semiconductor|lang=zh-CN|style=Feynman)的[能带图](@keyword=energy_band_diagram|lang=zh-CN|style=Feynman)。价带顶和导带底在同一动量值处，允许发生[垂直跃迁](@keyword=vertical_transitions|lang=zh-CN|style=Feynman)。*
 
 在这种情况下，一个能量刚好大于或等于 $E_g$ 的[光子](@keyword=photon|lang=zh-CN|style=Feynman)，可以轻松地将一个位于价带顶的电子“垂直”地举到[导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)底，整个过程一步到位，完美满足能量和动量守恒。这就是**直接跃迁**（Direct Transition）。由于这种跃迁效率很高，直接带隙材料通常具有很强的光吸收能力，是制造LED和激光器的理想选择。
@@ -39,7 +38,6 @@ $h\nu \ge E_g$
 
 然而，大自然并不总是如此“体贴”。对于另一些极其重要的[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)，比如我们信息时代的基石——硅（Si），情况就复杂了。在硅的[能带图](@keyword=energy_band_diagram|lang=zh-CN|style=Feynman)中，价带顶位于 $\vec{k}=0$ 处，但[导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)底却“跑”到了一个远离中心的位置 $\vec{K}_c$。
 
-![Indirect Band Gap](https://www.tf.uni-kiel.de/matwis/amat/semi_en/kap_2/illustr/t2_3_2.gif)
 *图2：[间接带隙](@keyword=indirect_bandgap|lang=zh-CN|style=Feynman)[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)的[能带图](@keyword=energy_band_diagram|lang=zh-CN|style=Feynman)。[价带](@keyword=valence_band|lang=zh-CN|style=Feynman)顶和[导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)底处于不同动量值，需要[声子](@keyword=phonons|lang=zh-CN|style=Feynman)辅助才能完成跃迁。*
 
 这时，一个能量为 $E_g$ 的[光子](@keyword=photon|lang=zh-CN|style=Feynman)就算能量足够，也无法完成跃迁。因为它无法提供从 $\vec{k}=0$ 到 $\vec{k}=\vec{K}_c$ 所需的巨大动量差。计算表明，这个动量差是[光子](@keyword=photon|lang=zh-CN|style=Feynman)自身动量的几千倍 [@1791927]。怎么办呢？电子需要一个“助推器”。

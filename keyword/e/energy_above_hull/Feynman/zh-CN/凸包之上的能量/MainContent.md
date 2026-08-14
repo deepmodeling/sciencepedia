@@ -21,6 +21,5 @@
 
 为了找到所有成分范围内的最终[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)，我们可以想象拿一根绳子，从纯A ($x_B=0$) 到纯B ($x_B=1$) ，在所有数据点下方拉紧。这根拉紧的绳子所遵循的路径勾勒出的就是我们所说的**下凸[包络线](@keyword=envelope_curve|lang=zh-CN|style=Feynman)**，或者更简单地称为**凸包**。
 
-![A diagram showing the construction of a convex hull for a binary system. Points representing different compounds are plotted on a graph of formation energy vs. composition. A line, the convex hull, connects the lowest-energy points, forming a lower boundary. Stable phases lie on the hull, while a metastable phase (AB) lies above it. The energy above hull is indicated by a vertical arrow from the metastable point down to the hull.](https://i.imgur.com/gKzT52a.png)
 *图1：凸包的构建。不同化合物（蓝点）在生成能与成分关系图上绘制。下凸包（黑色实线）连接了稳定相（$A$、$A_2B$、$AB_2$、$B$），形成了一个下边界。稳定相位于凸包上，而[亚稳相](@keyword=metastable_phases|lang=zh-CN|style=Feynman)（$AB$）位于凸包之上。其高于凸包的能量，即分解能，是从[亚稳相](@keyword=metastable_phases|lang=zh-CN|style=Feynman)点到连接其稳定相邻相的[连接线](@keyword=tie_line_2|lang=zh-CN|style=Feynman)的垂直距离。*
 

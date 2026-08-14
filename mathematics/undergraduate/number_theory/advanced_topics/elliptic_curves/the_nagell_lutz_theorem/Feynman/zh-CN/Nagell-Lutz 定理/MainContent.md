@@ -30,8 +30,6 @@ $$ \Delta = -16(4a^3 + 27b^2) $$
 2.  这条直[线与](@keyword=wired_and|lang=zh-CN|style=Feynman)[椭圆曲线](@keyword=non_singular_cubic_curve|lang=zh-CN|style=Feynman)必然会交于第三个点，我们称之为 $R'$。（根据[代数基本定理](@keyword=fundamental_theorem_of_algebra|lang=zh-CN|style=Feynman)，一条直线与一条三次曲线总共有三个交点，即使某些交点重合或在无穷远处。）
 3.  从 $R'$ 点画一条[垂直线](@keyword=perpendicular_lines|lang=zh-CN|style=Feynman)，它与曲线的另一个交点就是我们寻找的和 $P+Q$。这个点恰好是 $R'$ 关于 $x$ 轴的对称点。
 
-![弦切法示意图](https://example.com/chord_tangent_rule.png)
-
 这个简单的几何规则，定义了一个完备的阿贝尔群。[无穷远点](@keyword=points_at_infinity|lang=zh-CN|style=Feynman) $\mathcal{O}$ 是单位元（$P + \mathcal{O} = P$）；对于任何点 $P=(x,y)$，它的[对称点](@keyword=point_of_symmetry|lang=zh-CN|style=Feynman) $-P=(x,-y)$ 就是它的逆元，因为连接 $P$ 和 $-P$ 的竖直线交于[无穷远点](@keyword=points_at_infinity|lang=zh-CN|style=Feynman) $\mathcal{O}$，所以 $P+(-P) = \mathcal{O}$。
 
 更令人惊叹的是，这场几何之舞可以被精确地翻译成代数语言。给定点 $P=(x_P, y_P)$ 和 $Q=(x_Q, y_Q)$，它们的和 $P+Q$ 的坐标可以通过包含 $a, b$ 和 $P, Q$ 坐标的有理函数来计算。例如，当 $P \neq Q$ 时，直线的斜率是 $\lambda = \frac{y_Q - y_P}{x_Q - x_P}$；当 $P=Q$ 时，切线的斜率是 $\lambda = \frac{3x_P^2 + a}{2y_P}$。和的坐标则为：

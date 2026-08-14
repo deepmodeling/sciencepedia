@@ -10,7 +10,7 @@
 
 <div align="center">
     <figure>
-        <img src="https.s3.us-west-2.amazonaws.com/secure.notion-static.com/9783f98c-8f24-406d-b8d4-5394beee742f/pendulum_phase_portrait.png" alt="一个[单摆](@keyword=simple_pendulum|lang=zh-CN|style=Feynman)的[相空间](@keyword=phase_space|lang=zh-CN|style=Feynman)图" style="width: 70%;">
+
         <figcaption>图1：[单摆](@keyword=simple_pendulum|lang=zh-CN|style=Feynman)的[相空间](@keyword=phase_space|lang=zh-CN|style=Feynman)图。闭合曲线代表[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，波浪形曲线代表旋转。红色的[分界线](@keyword=separatrix|lang=zh-CN|style=Feynman)将两种行为[分离](@keyword=fractionation|lang=zh-CN|style=Feynman)开来。</figcaption>
     </figure>
 </div>

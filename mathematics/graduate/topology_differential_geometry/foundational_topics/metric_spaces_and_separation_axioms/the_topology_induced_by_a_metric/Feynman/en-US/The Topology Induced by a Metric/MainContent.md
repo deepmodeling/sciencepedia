@@ -25,7 +25,7 @@ Now, what does such a ball *look* like? Our Euclidean intuition screams "a circl
 Imagine you're in a city like Manhattan, where you can only travel along a grid of streets. The distance isn't "as the crow flies"; it's the number of blocks you travel east-west plus the number of blocks you travel north-south. This gives rise to the **[taxicab metric](@keyword=taxicab_metric|lang=en-US|style=Feynman)**: $d_1((x_1, y_1), (x_2, y_2)) = |x_1 - x_2| + |y_1 - y_2|$. What does an "[open ball](@keyword=open_ball|lang=en-US|style=Feynman)" of radius 1 look like now? It's the set of all points $(x, y)$ such that $|x| + |y| \lt 1$. Instead of a circle, you get a diamond shape, a square rotated by 45 degrees! [@problem_id:1584349]. This is a profound realization: the very "shape" of the local universe depends on how you choose to measure distance.
 
 <center>
-    <img src="https://i.imgur.com/uCjS2yY.png" alt="Open balls for d-infinity, d-2, and d-1 metrics" width="600"/>
+
     <figcaption>Figure 1: The '[unit ball](@keyword=unit_ball|lang=en-US|style=Feynman)'—the set of all points at a distance of 1 from the origin—looks very different depending on the metric used. The Euclidean metric ($d_2$) gives a circle, the [taxicab metric](@keyword=taxicab_metric|lang=en-US|style=Feynman) ($d_1$) gives a diamond, and the [maximum metric](@keyword=maximum_metric|lang=en-US|style=Feynman) ($d_\infty$) gives a square.</figcaption>
 </center>
 

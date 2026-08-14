@@ -21,8 +21,6 @@ G(s) z^s = \Gamma(a+s) \Gamma(-s) (-z)^s
 $$
 这个被积函数有两组极点。$\Gamma(-s)$ 项在正[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)上 $s = 0, 1, 2, \ldots$ 处产生极点。$\Gamma(a+s)$ 项在负[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)上 $s = -a, -a-1, -a-2, \ldots$ 处产生极点。我们的积分路径 $\mathcal{C}$ 是一条[垂直线](@keyword=perpendicular_lines|lang=zh-CN|style=Feynman)，巧妙地位于这两族极点之间，就像一个悬在两座悬崖之间的走钢丝者。
 
-![An illustration of the Mellin-Barnes contour separating two sets of poles on the complex plane.](https://i.imgur.com/example.png "The integration contour C separates the poles of Gamma(-s) on the right from the poles of Gamma(a+s) on the left.")
-
 这个积分本身很难直接计算。但在这里，我们可以调用物理学家或数学家工具箱中最强大的工具之一：**[柯西留数定理](@keyword=cauchy_s_residue_theorem|lang=zh-CN|style=Feynman)**。该定理告诉我们，沿闭合回路的积分完全由其所包围的极点决定。因此，我们可以画一个巨大的半圆来完成路径，形成一个闭环，而不必停留在无限长的垂直线上。而正是在这里，我们面临一个选择，一个解锁我们这台神奇机器双重性质的根本选择。我们是向左闭合回路，还是向右？
 
 ### 两条路径：级数与渐近

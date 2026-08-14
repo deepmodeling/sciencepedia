@@ -25,5 +25,4 @@
 
 每一种可能性，每一个独特的“故事”，都可以用一张**费曼图**来精确描绘。粒子们的路径是**线**，它们的相互作用是**顶点**。当我们试图计算电子从A到B的总概率时，原则上，我们需要画出所有可能的图，并把它们代表的数学表达式加起来。
 
-![Feynman Diagrams](https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bremsstrahlung-feynman-diagram.svg/300px-Bremsstrahlung-feynman-diagram.svg.png)
 *一个简单的费曼图示例，描述了电子辐射出一个[光子](@keyword=photon|lang=zh-CN|style=Feynman)的过程。*

@@ -27,7 +27,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/G9CjF93.png" alt="A diagram showing a pitchfork bifurcation. The horizontal axis is a control parameter like Reynolds number, and the vertical axis represents the state of the system, like flow asymmetry. A stable symmetric solution becomes unstable at a critical point, giving rise to two new stable asymmetric branches." style="width: 70%;">
+
   <figcaption>图1：[叉式分岔](@keyword=pitchfork_bifurcation|lang=zh-CN|style=Feynman)。当控制参数（如[雷诺数](@keyword=reynolds_number|lang=zh-CN|style=Feynman)）超过[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman) $Re_c$ 时，原先唯一的稳定解（对称流）变得不稳定（虚线表示），同时“分岔”出两个新的稳定解（不对称流）。这就像一个岔路口，系统必须选择一条路径。</figcaption>
 </figure>
 </center>
@@ -60,7 +60,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/kYq39E5.png" alt="A diagram showing a subcritical pitchfork bifurcation with a hysteresis loop. The solution curve forms an 'S' shape. The system can jump from the zero state to the upper stable branch, and to return, must follow a different path down to a lower critical point." style="width: 70%;">
+
   <figcaption>图2：[亚临界分岔](@keyword=subcritical_bifurcation|lang=zh-CN|style=Feynman)与滞后回线。解的曲线呈“S”形。系统在加热时，可能沿着下方的路径直到 $r_c$ 才开始[对流](@keyword=convection|lang=zh-CN|style=Feynman)（或者被扰动提前“跳”到上支）。而在冷却时，系统会停留在上方的[对流](@keyword=convection|lang=zh-CN|style=Feynman)态，直到 $r$ 降低到 $r_{sn}$ 点，才会“坠落”回静止状态。$r_{sn}$ 和 $r_c$ 之间的区域存在两个稳定的状态（静止和[对流](@keyword=convection|lang=zh-CN|style=Feynman)），系统处于哪个状态取决于它的历史。</figcaption>
 </figure>
 </center>

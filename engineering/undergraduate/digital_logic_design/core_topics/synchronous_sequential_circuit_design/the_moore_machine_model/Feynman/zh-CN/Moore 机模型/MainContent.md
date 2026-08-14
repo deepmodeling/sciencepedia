@@ -38,7 +38,7 @@
 如果说[状态表](@keyword=state_table|lang=zh-CN|style=Feynman)是机器的“法律条文”，那么[状态图](@keyword=state_diagram|lang=zh-CN|style=Feynman)就是它的“地图”，更加直观。在[摩尔机](@keyword=moore_machine|lang=zh-CN|style=Feynman)的[状态图](@keyword=state_diagram|lang=zh-CN|style=Feynman)中，输出值通常写在代表状态的圆圈内部，格式为“状态名/输出值”。这再次形象地强调了：状态本身就“拥有”它的输出。
 
 <center>
-    <img src="https://i.imgur.com/8SS6P7D.png" alt="Moore Machine State Diagram for 11 sequence detection" width="400"/>
+
     <br>
     <small>一个检测“11”序列的[摩尔机](@keyword=moore_machine|lang=zh-CN|style=Feynman)[状态图](@keyword=state_diagram|lang=zh-CN|style=Feynman)。输出（0或1）被标注在状态圆圈内。</small>
 </center>

@@ -75,7 +75,7 @@ $$
 
 This equation tells us that the damping provided by the Rayleigh model is inherently **frequency-dependent**. Let's look at a plot of this function.
 
-![A plot of the Rayleigh [damping ratio](@keyword=damping_ratio|lang=en-US|style=Feynman) as a function of frequency, showing the contribution from the mass-proportional term (decaying with frequency), the stiffness-proportional term (increasing with frequency), and their sum (a U-shaped curve).](https://i.imgur.com/example.png)
+ as a function of frequency, showing the contribution from the mass-proportional term (decaying with frequency), the stiffness-proportional term (increasing with frequency), and their sum (a U-shaped curve).](https://i.imgur.com/example.png)
 
 At **low frequencies**, the $\frac{\alpha}{2\omega_i}$ term dominates. The damping is high for very slow vibrations and decreases as the frequency increases. This is the regime controlled by [mass-proportional damping](@keyword=mass_proportional_damping|lang=en-US|style=Feynman).
 

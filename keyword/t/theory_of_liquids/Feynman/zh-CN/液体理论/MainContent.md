@@ -19,5 +19,4 @@
 
 就在这个排斥区之外，在 $r = \sigma$ 处，你会[期望](@keyword=expectation_value|lang=zh-CN|style=Feynman)找到很多邻居！它们紧紧地挤在我们中心球体的周围。这在 $g(r)$ 中形成了一个尖锐的高峰。这第一个峰代表“第一[配位层](@keyword=coordination_sphere|lang=zh-CN|style=Feynman)”，即直接相邻的邻居层。但这种有序性并不仅限于此。这些邻居又会组织下一层分子，形成一个更小、更宽的第二峰。如此继续下去，每个后续的峰都变得更弱、更宽，就像池塘里的涟漪，直到在很远的距离上，所有相关性都消失了。在远离我们中心分子的地方，其存在的记忆已经消失，液体只是一片均匀的海洋。在这些大距离上，$g(r)$ 会平滑地趋近于 1 [@problem_id:1993249]。这种相关性的衰减正是液体在没有长程有序的情况下具有**[短程有序](@keyword=short_range_order|lang=zh-CN|style=Feynman)**的定义。
 
-![A schematic plot of the radial distribution function g(r) for a simple liquid. The function is zero for r less than the particle diameter, then shows a series of decaying peaks representing shells of neighbors, and approaches 1 at large r.](https://i.imgur.com/G5g2mE7.png)
 *图1：简单液体的[径向分布函数](@keyword=radial_distribution_function|lang=zh-CN|style=Feynman) $g(r)$。它通过一系列相邻分子层揭示了隐藏的“[短程有序](@keyword=short_range_order|lang=zh-CN|style=Feynman)”。在长距离处，[相关性衰减](@keyword=decay_of_correlations|lang=zh-CN|style=Feynman)，$g(r)$ 趋近于1。*

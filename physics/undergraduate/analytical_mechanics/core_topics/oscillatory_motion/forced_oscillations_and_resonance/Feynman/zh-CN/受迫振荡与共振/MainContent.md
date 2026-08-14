@@ -17,7 +17,7 @@
 
 一个惊人的情况出现在我们精确地将驱动频率调到与[固有频率](@keyword=natural_frequency|lang=zh-CN|style=Feynman)完全相等时，即 $\omega = \omega_0$。这就像每一次都在秋千摆到最高点时给予完美的推动。每一次的推力都恰好与振子的速度同向，不断地为系统注入能量。结果是什么？在没有任何能量耗散（无阻尼）的情况下，振子的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)幅度会随着时间无限地线性增长！[@problem_id:2050845] 它的位移可以表示为 $x(t) = \frac{F_0}{2m\omega_0} t \sin(\omega_0 t)$。这个等式中的因子 $t$ 揭示了一个戏剧性的事实：时间越长，振幅越大，理论上将趋于无穷。这就是最纯粹形式的**共振**——一种能量的完美累积，可能导致毁灭性的结果。历史上，塔科马海峡大桥（Tacoma Narrows Bridge）的倒塌常被作为这种力量的经典例证。
 
-![一个振幅随时间线性增长的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)图像，[包络线](@keyword=envelope_curve|lang=zh-CN|style=Feynman)是两条斜向上的直线。](https://physics.recharge/placeholder.svg)
+图像，[包络线](@keyword=envelope_curve|lang=zh-CN|style=Feynman)是两条斜向上的直线。](https://physics.recharge/placeholder.svg)
 *图1：在理想共振条件下（$\omega = \omega_0$ 且无阻尼），[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)幅度随时间线性增长，直至系统被破坏。[@problem_id:2050845]*
 
 那么，如果我们稍微“[失谐](@keyword=detuning|lang=zh-CN|style=Feynman)”一点，让驱动频率 $\omega$ 与固有频率 $\omega_0$ 非常接近，但并不完全相等呢？这时，振子会同时“听到”两个声音：它自己想要[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的频率 $\omega_0$ 和我们强加给它的频率 $\omega$。这两种[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)的叠加会产生一种称为**拍频**（beats）的美妙现象。 [@problem_id:2050804] 你会看到振子的振幅周期性地由小变大，再由大变小，仿佛在呼吸。这就像两个音高略有差异的乐器同时演奏一个音符时，你会听到声音强度的周期性起伏。这个缓慢变化的振幅包络，其频率恰好是两个原始频率之差的一半。对于一座被风驱动的大楼，这种[拍频](@keyword=beats_frequency|lang=zh-CN|style=Feynman)现象可能意味着它会在几分钟的周期内经历从轻微摇晃到剧烈摇晃的循环。[@problem_id:2050804]
@@ -72,7 +72,7 @@ $\phi = \pi/2$ 意味着位移比驱动力滞后了四分之一个周期。但�
 
 这个公式告诉我们，对于任何有阻尼的系统（$\zeta > 0$），振幅[共振频率](@keyword=resonant_frequency|lang=zh-CN|style=Feynman) $\omega_R$ 总是**略低于**固有频率 $\omega_0$。这似乎有违直觉，但背后有一个精巧的平衡。虽然在 $\omega_0$ 处“弹性-惯性”阻抗为零，但“耗散”阻抗项 $b\omega$ 仍在随频率增加而增加。系统通过选择一个比 $\omega_0$ 稍低的频率，牺牲了一点“弹性-惯性”的抵消，换来了更小的阻尼损耗，从而使得总的阻抗分母达到真正的最小值。当然，对于大多数工程应用中的“轻阻尼”系统，$\zeta$ 非常小，$\omega_R$ 和 $\omega_0$ 的差别微乎其微，我们通常可以不加区分。
 
-![振幅-频率响应曲线，显示了不同阻尼（高Q、中Q、低Q）下的[共振峰](@keyword=resonant_peak|lang=zh-CN|style=Feynman)。](https://physics.recharge/placeholder.svg)
+。](https://physics.recharge/placeholder.svg)
 *图2：不同阻尼下的[共振曲线](@keyword=resonance_curve|lang=zh-CN|style=Feynman)。高[Q值](@keyword=quality_factor|lang=zh-CN|style=Feynman)（低阻尼）对应高而尖锐的[共振峰](@keyword=resonant_peak|lang=zh-CN|style=Feynman)，低Q值（高阻尼）对应矮而宽阔的响应。[@problem_id:2050830]*
 
 这就引出了我们故事中的另一个明星：**品质因子**（Quality Factor），或称 **Q 值**。Q 值是衡量一个振子优劣的黄金标准。一个非常直观的定义是：[@problem_id:2050828]

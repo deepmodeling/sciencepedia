@@ -32,7 +32,7 @@ $$ f(c) = \Omega c(1-c) + k_B T[c\ln c + (1-c)\ln(1-c)] $$
 但随着温度降低，熵的影响减弱，$\Omega$ 项开始显现其威力。如果 $\Omega > 0$，自由能曲线的中间部分会逐渐被“拱起”，形成一个“M”形的双驼峰结构 [@problem_id:2524711]。这片区域，就是奇迹发生的地方。
 
 <center>
-    <img src="https://i.imgur.com/example_phase_diagram.png" alt="自由能曲线与相图" width="600">
+
     <br>
     <i>图1：典型的具有双阱自由能曲线（上）及其对应的相图（下）。自由能曲线的形状决定了不同成分区域的稳定性。</i>
 </center>

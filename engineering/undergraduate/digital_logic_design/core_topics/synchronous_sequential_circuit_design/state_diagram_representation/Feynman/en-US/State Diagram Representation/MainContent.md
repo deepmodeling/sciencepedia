@@ -18,7 +18,7 @@ Imagine a simple digital music player. At any given moment, it's either `PLAYING
 Think of a simple digital pet. It can be `Happy`, `Sad`, or `Sleepy`. These are its states. If you `feed` it or `play` with it (these are inputs), its emotional state changes according to a set of rules. We can trace its entire emotional journey over time, step by step, just by knowing its starting state and the sequence of inputs it receives ([@problem_id:1962041]). This is the power of the [state diagram](@keyword=state_diagram|lang=en-US|style=Feynman): it makes the abstract concept of "memory" tangible and predictable. It's a flowchart for time.
 
 <center>
-<img src="https://i.imgur.com/Kz8F27D.png" alt="A simple [state diagram](@keyword=state_diagram|lang=en-US|style=Feynman) showing states as circles and transitions as arrows." width="400"/>
+
 <br/>
 <em>Figure 1: The basic elements of a [state diagram](@keyword=state_diagram|lang=en-US|style=Feynman). States are the stable "places" a machine can be, while transitions are the "paths" it takes in response to an input.</em>
 </center>
@@ -55,7 +55,7 @@ Now, let's trace the transitions. Start in $S_0$. If we get a `0`, nothing inter
 Now we're in $S_1$. What happens here? If another `1` comes in, our `10` pattern is broken, but the new `1` could be the start of the *next* `10` pattern. So we stay in $S_1$ and output `0` (Transition: $S_1 \xrightarrow{1/0} S_1$). But... if a `0` comes in while we're in $S_1$, that's it! We've found `10`! On this very transition, we output a `1`. Since the `0` doesn't help start a new `10` pattern, we go back to $S_0$ (Transition: $S_1 \xrightarrow{0/1} S_0$). This two-[state machine](@keyword=state_machine|lang=en-US|style=Feynman) perfectly detects the `10` sequence, including overlapping ones like in `1010` ([@problem_id:1962046]).
 
 <center>
-<img src="https://i.imgur.com/gHhG9K7.png" alt="A two-state Mealy machine for detecting the sequence '10'." width="450"/>
+
 <br/>
 <em>Figure 2: A Mealy machine for detecting '10'. The output '1' is generated on the transition from S1 to S0, which occurs upon receiving a '0' while in state S1.</em>
 </center>

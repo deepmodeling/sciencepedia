@@ -10,7 +10,7 @@
 
 我们已经知道，[红外吸收](@keyword=infrared_absorption|lang=zh-CN|style=Feynman)关注[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)过程中的偶极矩变化，而拉曼散射则关注[极化率](@keyword=polarizability|lang=zh-CN|style=Feynman)的变化。这导致了一个美妙的“互补性原则”。一个极性很强的[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)，比如丙酮分子中的羰基（$C=O$），在[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)时会引起巨大的偶极矩变化，因此在红外光谱中会产生一个非常强的吸收峰。然而，这个已经被高度极化的电子云，在[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)时其整体形状（极化率）的变化相对较小，导致其拉曼信号非常微弱 [@problem_id:1432038]。相反，对于像二氧化碳（$CO_2$）这样具有对称中心的高度对称分子，其[对称伸缩振动](@keyword=symmetric_stretch|lang=zh-CN|style=Feynman)——两个氧原子同时背离中心碳原子运动——并不会改变分子的净偶极矩（始终为零），因此在[红外光谱](@keyword=ir_spectrum|lang=zh-CN|style=Feynman)中是“沉默”的。但是，这个[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)显著地改变了分子电子云的总体积和形状，使其[极化率](@keyword=polarizability|lang=zh-CN|style=Feynman)发生变化，从而产生一个清晰的拉曼信号 [@problem_id:1329077]。
 
-<center>![示意图：CO2的[对称伸缩振动](@keyword=symmetric_stretch|lang=zh-CN|style=Feynman)。箭头表示原子运动方向。](https://d2p5jveklpc1ke.cloudfront.net/media/problem_images/1329077/co2.png)</center>
+<center>。箭头表示原子运动方向。](https://d2p5jveklpc1ke.cloudfront.net/media/problem_images/1329077/co2.png)</center>
 
 这个简单的例子揭示了一个深刻的道理：一个模式在一种光谱中是沉默的，可能恰恰在另一种光谱中“高声歌唱”。这种互补性是[结构化学](@keyword=structural_chemistry|lang=zh-CN|style=Feynman)家手中的王牌。
 

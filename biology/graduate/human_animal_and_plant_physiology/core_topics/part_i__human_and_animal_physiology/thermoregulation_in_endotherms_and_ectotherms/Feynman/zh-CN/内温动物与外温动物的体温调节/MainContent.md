@@ -54,7 +54,7 @@
 
 <br>
 <div align="center">
-    <img src="https://i.imgur.com/Kz8Mv34.png" alt="Scholander-Irving Curve" width="600"/>
+
     <br>
     <p>图1：[内温动物](@keyword=endotherm|lang=zh-CN|style=Feynman)[代谢率](@keyword=metabolic_rate|lang=zh-CN|style=Feynman)与环境温度的关系曲线（Scholander-Irving模型）。</p>
 </div>
@@ -77,7 +77,7 @@
 
 <br>
 <div align="center">
-    <img src="https://i.imgur.com/7bA7x3q.png" alt="Thermal Performance Curve" width="600"/>
+
     <br>
     <p>图2：[外温动物](@keyword=ectotherm|lang=zh-CN|style=Feynman)的热力表现曲线（TPC）。</p>
 </div>

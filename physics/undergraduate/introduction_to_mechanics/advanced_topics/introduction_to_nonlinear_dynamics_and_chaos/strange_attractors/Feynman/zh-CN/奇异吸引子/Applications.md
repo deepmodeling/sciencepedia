@@ -8,7 +8,7 @@
 
 我们旅程的起点，恰是奇异吸引子故事的诞生地——[大气科学](@keyword=atmospheric_science|lang=zh-CN|style=Feynman)。20世纪60年代，[气象学](@keyword=meteorology|lang=zh-CN|style=Feynman)家 Edward Lorenz 在试图用计算机模拟天气时，无意中发现了混沌的踪迹。他将描述大气[热对流](@keyword=thermal_convection|lang=zh-CN|style=Feynman)的复杂[流体动力学](@keyword=hydrodynamics|lang=zh-CN|style=Feynman)方程组，简化为了一个仅包含三个变量的系统。这个如今被称为“洛伦兹系统”的方程组，其解在相空间中描绘出的轨迹，正是我们所知的第一个[奇异吸引子](@keyword=strange_attractors|lang=zh-CN|style=Feynman)。[@problem_id:2206842] 这只著名的“洛伦兹蝴蝶”告诉我们，一个完全确定的、没有随机性的简单系统，也能够产生永不重复、看似随机的行为。
 
-![洛伦兹[吸引子](@keyword=attractors|lang=zh-CN|style=Feynman)，一个经典的奇异吸引子，展示了[混沌系统](@keyword=chaotic_systems|lang=zh-CN|style=Feynman)中的拉伸和折叠结构。](https://dims.physicool.com/image/fetch/w_600/https%3A//physicool.com/data/images/993e7bb0-b747-49f3-80c1-c96291a1005a.png)
+，一个经典的奇异吸引子，展示了[混沌系统](@keyword=chaotic_systems|lang=zh-CN|style=Feynman)中的拉伸和折叠结构。](https://dims.physicool.com/image/fetch/w_600/https%3A//physicool.com/data/images/993e7bb0-b747-49f3-80c1-c96291a1005a.png)
 *洛伦兹[吸引子](@keyword=attractors|lang=zh-CN|style=Feynman)，一个经典的[奇异吸引子](@keyword=strange_attractors|lang=zh-CN|style=Feynman)，展示了[混沌系统](@keyword=chaotic_systems|lang=zh-CN|style=Feynman)中的拉伸和折叠结构。*
 
 这一发现对[天气预报](@keyword=weather_forecasting|lang=zh-CN|style=Feynman)的意义是革命性的，也是令人沮丧的。它量化了所谓的“蝴蝶效应”：今天东京一只蝴蝶扇动翅膀，可能引起下个月纽约的一场风暴。这意味着，即使我们拥有完美的物理模型，对初始状态（如温度、压力、风速）哪怕最微小的测量误差，都会随着时间以指数方式增长。这个误差增长的速率由一个叫做“[最大李雅普诺夫指数](@keyword=top_lyapunov_exponent|lang=zh-CN|style=Feynman)” $\lambda$ 的量来刻画。[@problem_id:1935375] 当误差增长到与[天气系统](@keyword=weather_systems|lang=zh-CN|style=Feynman)本身的自然涨落相当的程度时，预报就失效了。这为长期[天气预报](@keyword=weather_forecasting|lang=zh-CN|style=Feynman)的准确性设定了一个基本且不可逾越的上限。即便我们投入巨资将测量精度提高一倍，所能换来的可靠预报时间的延长也只是一个固定的、由 $\ln(2)/\lambda$ 决定的有限增量。混沌，为我们的预测能力画下了一道无情的界线。

@@ -34,7 +34,7 @@
 
 而[形状记忆合金](@keyword=shape_memory_alloys|lang=zh-CN|style=Feynman)的能量图景则要有趣得多。它不是一个碗，而是有两个或多个“碗”的复杂地貌，我们称之为**非凸能量势 (non-convex energy potential)** [@problem_id:2661292]。一个碗代表[奥氏体](@keyword=austenite|lang=zh-CN|style=Feynman)相，另一个代表马氏体相 [@problem_id:2661309]。
 
-![图1：(左) 普通弹性材料的单谷能量曲线。(右) [形状记忆合金](@keyword=shape_memory_alloys|lang=zh-CN|style=Feynman)的双谷能量曲线，代表[奥氏体](@keyword=austenite|lang=zh-CN|style=Feynman)(A)和马氏体(M)两个稳定相。](https://i.imgur.com/kS5Y071.png)
+的双谷能量曲线，代表[奥氏体](@keyword=austenite|lang=zh-CN|style=Feynman)(A)和马氏体(M)两个稳定相。](https://i.imgur.com/kS5Y071.png)
 
 温度和应力就像是两只无形的手，可以改变这个能量地貌的形态。
 *   **温度**可以改变两个碗的相对深度。在高温下，[奥氏体](@keyword=austenite|lang=zh-CN|style=Feynman)碗更深，材料乐于待在奥氏体相。在低温下，马氏体碗更深，材料则更倾向于转变为马氏体。

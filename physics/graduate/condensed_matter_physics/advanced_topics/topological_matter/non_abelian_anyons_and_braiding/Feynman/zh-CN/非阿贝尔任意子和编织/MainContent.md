@@ -13,8 +13,6 @@
 
 现在，让我们把舞台降到一个二维平面上。情况发生了戏剧性的变化。粒子就像在一个拥挤舞池里跳舞的舞者，它们的路径被限制在二维平面内。它们不能像飞机一样从“上方”或“下方”绕过彼此。当两个[粒子交换](@keyword=particle_exchange|lang=zh-CN|style=Feynman)位置时，它们的[世界线](@keyword=worldline|lang=zh-CN|style=Feynman)在 $2+1$ 维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)中不可避免地发生了缠绕，就像编辫子一样。如果你想交换它们第二次，你无法解开第一次交换留下的“结”。相反，你让其中一根辫子股完全缠绕了另一根一圈。在拓扑学上，这绝非一个可以被轻易抹去的“无操作” [@problem_id:3007442]。
 
-![Braid Group vs Symmetric Group](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Braid_group_B3.svg/300px-Braid_group_B3.svg.png)
-
 这种无法解开的交换操作，其[代数结构](@keyword=algebraic_structure|lang=zh-CN|style=Feynman)不再是对称群，而是一个更丰富、更复杂的结构——“[辫群](@keyword=braid_groups|lang=zh-CN|style=Feynman)”$B_n$。[辫群](@keyword=braid_groups|lang=zh-CN|style=Feynman)的基本关系中，最关键的一条就是 $\sigma_i^2 \neq e$。两次连续的交换不再是平凡的！这为全新的[粒子统计](@keyword=particle_statistics|lang=zh-CN|style=Feynman)行为打开了大门。任何遵循[辫群](@keyword=braid_groups|lang=zh-CN|style=Feynman)统计的二维[准粒子](@keyword=quasiparticles|lang=zh-CN|style=Feynman)，我们都称之为“任意子”。它们可以是阿贝尔任意子，每次交换仅仅给系统状态附加上一个复数相位 $e^{i\theta}$（其中 $\theta$ 不再局限于 $0$ 或 $\pi$），也可以是接下来我们要讨论的、更加激动人心的[非阿贝尔任意子](@keyword=non_abelian_anyons|lang=zh-CN|style=Feynman)。
 
 ### 非阿贝尔革命：从相位到矩阵

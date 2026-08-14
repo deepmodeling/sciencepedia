@@ -42,7 +42,7 @@ Once you know the [dispersion relation](@keyword=dispersion_relation|lang=en-US|
 
 <br>
 <div align="center">
-  <img src="https://i.imgur.com/your-image-url.png" alt="A graph of a [dispersion relation](@keyword=dispersion_relation|lang=en-US|style=Feynman) ω(k), showing a point (k₀, ω₀). A dashed line from the origin to the point has a slope ω₀/k₀, representing the [phase velocity](@keyword=phase_velocity|lang=en-US|style=Feynman). A tangent line at the point has a slope dω/dk, representing the group velocity." width="500">
+
   <figcaption>Figure 1: Graphical interpretation of [phase velocity](@keyword=phase_velocity|lang=en-US|style=Feynman) (slope of the line from origin) and group velocity (slope of the tangent line) on a [dispersion relation](@keyword=dispersion_relation|lang=en-US|style=Feynman) curve.</figcaption>
 </div>
 <br>

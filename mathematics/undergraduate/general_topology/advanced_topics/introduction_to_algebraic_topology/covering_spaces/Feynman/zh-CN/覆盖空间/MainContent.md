@@ -18,7 +18,7 @@
 我们来看一个经典的例子。将[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman) $S^1$ 想象成一根橡皮筋。现在，我们把这根橡皮筋拉长一倍，然后将它缠绕在原来的圆上两圈。这个过程可以用一个复数映射 $p(z) = z^2$ 来描述，其中 $z$ 是[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)上的点。这个映射就是一个二重覆叠。对于底圆上的几乎任何一点 $b_0$，如果我们挖掉它正对面的点，得到一个[开邻域](@keyword=open_neighborhood|lang=zh-CN|style=Feynman) $U$, 那么这个 $U$ 在覆叠圆上的[原像](@keyword=preimage|lang=zh-CN|style=Feynman)，恰好是两个不相交的半圆，每一个半圆都被 $p$ 完美地映射回 $U$ [@problem_id:1645047]。这正是均匀覆叠的完美体现。
 
 <center>
-<img src="https://i.imgur.com/8QO9Iq5.png" width="400" />
+
 </center>
 <center><i>图1：映射 $p(z)=z^2$ 将[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)覆叠自身两周。底圆上除去一点（红色）的邻域 $U$（蓝色），其[原像](@keyword=preimage|lang=zh-CN|style=Feynman)是两个不相交的半圆（绿色和紫色）。</i></center>
 

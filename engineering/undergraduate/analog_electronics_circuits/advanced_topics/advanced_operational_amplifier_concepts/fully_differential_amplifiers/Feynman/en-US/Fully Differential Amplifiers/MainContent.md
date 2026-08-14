@@ -45,8 +45,6 @@ Let's see the power of this. Suppose you are trying to measure a tiny biomedical
 
 So, how do we build such a device? The classic, elegant structure is the **differential pair**, shown below in its simplest form. It consists of two identical transistors, M1 and M2, whose sources are tied together and connected to a "tail" [current source](@keyword=current_source|lang=en-US|style=Feynman), $I_{SS}$. This tail source is the key; it provides a fixed, total amount of current that the two transistors must share between them.
 
-![A simple MOSFET differential pair diagram](placeholder_for_diagram)
-
 Let's see how it responds to our two fundamental signal types.
 
 **Differential-Mode Operation:**

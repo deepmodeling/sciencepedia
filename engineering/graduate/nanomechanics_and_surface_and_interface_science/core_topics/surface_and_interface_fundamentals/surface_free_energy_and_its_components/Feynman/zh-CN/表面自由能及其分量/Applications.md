@@ -8,7 +8,7 @@
 
 想象一个悬挂在针尖上的小液滴。是什么决定了它的形状？是两种力量的持续“拔河”：地心引力试图将其拉长，而表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)（液体的[表面自由能](@keyword=surface_free_energy|lang=zh-CN|style=Feynman)）则努力使其保持能量最低的球形。这滴水的形状，就是这场战斗的“冻结”快照。通过精确拍摄液滴的轮廓，并用描述这种力学平衡的[杨-拉普拉斯方程](@keyword=young_laplace_equation|lang=zh-CN|style=Feynman)（Young-Laplace equation）进行分析，我们就能极其精确地计算出液体的表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)。这种被称为悬滴法（Pendant Drop Method）的技术，尤其是其现代化的形式——轴对称液滴形状分析（Axisymmetric Drop Shape Analysis, ADSA），已经成为表面科学实验室中的标准工具 [@problem_id:2791792]。它告诉我们，一个简单的形状背后，隐藏着深刻的物理平衡。
 
-![悬滴法示意图：重力与表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)之间的平衡决定了液滴的形状](https://d22d9c10-5345-4299-80b1-381c0022d861.png)
+之间的平衡决定了液滴的形状](https://d22d9c10-5345-4299-80b1-381c0022d861.png)
 
 测量液体的表面能相对直接，但固体呢？我们不能像拉伸液滴那样拉伸一块固体来测量其[表面能](@keyword=surface_energy|lang=zh-CN|style=Feynman)。这里的诀窍是，我们派遣一个“信使”——一滴我们熟知其性质的液体——去“侦察”固体表面。当液滴落在固体上时，它会形成一个特定的接触角 $\theta$。这个角度的大小，实际上是液滴在“权衡”是更愿意与固体表面接触，还是与自身保持接触的结果 [@problem_id:2791771]。通过测量这个接触角，我们可以计算出固-液界面的粘附功 $W_{SL}$，即把液体从固体表面剥离单位面积所需要做的功。这个粘附功直接与液体表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman) $\gamma_{LV}$ 和[接触角](@keyword=contact_angle|lang=zh-CN|style=Feynman) $\theta$ 相关，其关系式可以优雅地表达为杨-杜普雷方程（Young-Dupré equation）：$W_{SL} = \gamma_{LV}(1 + \cos\theta)$。
 
@@ -24,7 +24,7 @@
 
 在微机电系统（MEMS）和纳米机电系统（[NEMS](@keyword=nanoelectromechanical_systems|lang=zh-CN|style=Feynman)）的微观世界里，这种粘附力从一个有趣的物理现象变成了一场工程噩梦，即“粘附失效”（stiction）。微小的[悬臂梁](@keyword=cantilever_beam|lang=zh-CN|style=Feynman)、齿轮或镜片在运动过程中一旦接触，就可能因为[表面力](@keyword=surface_forces|lang=zh-CN|style=Feynman)而永久性地粘在一起，导致整个器件报废。如果在潮湿的环境中，情况会变得更糟。空气中的水蒸气会在接触点周围凝聚成一个纳米级的液桥，其[毛细力](@keyword=capillary_force|lang=zh-CN|style=Feynman)就像强力胶水一样，将两个表面紧紧吸附在一起，使得脱附力急剧增加 [@problem_id:2791737]。
 
-![MEMS[悬臂梁](@keyword=cantilever_beam|lang=zh-CN|style=Feynman)的粘附失效，由[毛细力](@keyword=capillary_force|lang=zh-CN|style=Feynman)和范德华力引起](https://d22d9c10-5345-4299-80b1-381c0022d861.png)
+的粘附失效，由[毛细力](@keyword=capillary_force|lang=zh-CN|style=Feynman)和范德华力引起](https://d22d9c10-5345-4299-80b1-381c0022d861.png)
 
 如何对抗这种微观“粘性”？答案是：以[表面能](@keyword=surface_energy|lang=zh-CN|style=Feynman)对抗表面能。工程师们设计出了一种被称为“[自组装](@keyword=self_assembly|lang=zh-CN|style=Feynman)单分子膜”（Self-Assembled Monolayers, SAMs）的绝妙涂层 [@problem_id:2787711]。想象一下，在硅表面上“种植”一片完美、整齐的“分子草坪”，这些分子的“根部”通过[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)牢牢地固定在基底上，而它们的“顶端”则是一种化学性质极其稳定的基团，比如 $-\mathrm{CF}_3$。这层仅有单个分子厚度的薄膜，将原本高表面能、亲水的二氧化硅表面，转变成了一个类似于特氟龙（Teflon）的极低[表面能](@keyword=surface_energy|lang=zh-CN|style=Feynman)的[疏水表面](@keyword=hydrophobic_surfaces|lang=zh-CN|style=Feynman)。这种超低表面能的表面既排斥水（从而消除了毛细管“胶水”），也与其他表面之间的[范德华吸引力](@keyword=van_der_waals_attraction|lang=zh-CN|style=Feynman)极弱。通过这种在分子尺度上的精准化学工程，我们成功地解决了宏观器件的可靠性问题。
 
@@ -36,7 +36,7 @@
 
 从最简单的生命形式开始。细菌为什么会附着在物体表面形成生物膜（biofilm）？无论是船体、医疗植入物还是我们的牙齿，[生物膜](@keyword=biological_membranes|lang=zh-CN|style=Feynman)的形成始于单个细菌的附着。这个初始的“着陆”过程，在很大程度上是一个[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)决策 [@problem_id:2479506]。在水环境中，一个表面相对亲水的细菌，会倾向于附着在同样是亲水的基底上，因为这样做可以最小化整个系统的总[界面自由能](@keyword=interfacial_free_energy|lang=zh-CN|style=Feynman)。相反，它会尽量避免附着在疏水的表面上。这个简单的“物以类聚”的原则，解释了为什么某些材料特别容易被生物污染。理解了这一点，我们就能反其道而行之，通过设计具有特定[表面能](@keyword=surface_energy|lang=zh-CN|style=Feynman)的材料来制造“抗生物污染”的表面。
 
-![细菌在不同亲[疏水性](@keyword=hydrophobic|lang=zh-CN|style=Feynman)表面的附着](https://d22d9c10-5345-4299-80b1-381c0022d861.png)
+表面的附着](https://d22d9c10-5345-4299-80b1-381c0022d861.png)
 
 从单个细胞放大到组织层面，我们看到了一个更加令人惊叹的景象。在胚胎发育过程中，不同类型的细胞如何知道自己的位置，并自发地分选、[排列](@keyword=permutation|lang=zh-CN|style=Feynman)，形成器官的复杂结构？早在几十年前，物理学家和生物学家就提出了一个激进但极具洞察力的想法：[细胞组织](@keyword=cellular_organization|lang=zh-CN|style=Feynman)可以被看作一种具有表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)的“液体”。这个被称为“差异粘附假说”（Differential Adhesion Hypothesis）的理论认为，细胞间粘附力更强的组织，其“[组织表面张力](@keyword=tissue_surface_tension|lang=zh-CN|style=Feynman)”也更高。当两种这样的“液体组织”混合在一起时，表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)较高的组织会像油滴在水中一样，聚集成球形并被表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)较低的组织包裹。这个简单的物理法则，竟然能够解释胚胎发育中许多复杂的细胞[重排](@keyword=derangement|lang=zh-CN|style=Feynman)和[组织形成](@keyword=tissue_formation|lang=zh-CN|style=Feynman)现象。更有趣的是，如果组织内的细胞具有[排列](@keyword=permutation|lang=zh-CN|style=Feynman)一致的极性，那么这种“[组织液](@keyword=interstitial_fluid|lang=zh-CN|style=Feynman)体”的表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)就可能不再是各向同性的，而是依赖于方向。这将导致组织聚合物呈现出非球形的、拉长的形状，为我们理解生物形态的起源提供了新的物理视角 [@problem_id:2685758]。
 

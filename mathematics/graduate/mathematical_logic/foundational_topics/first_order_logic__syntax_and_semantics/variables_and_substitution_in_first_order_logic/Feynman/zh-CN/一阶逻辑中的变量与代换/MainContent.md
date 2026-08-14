@@ -24,7 +24,7 @@
 在这个树状结构中，[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)（如 $\forall x$）像一盏灯，它会照亮其正下方的整个子树。这个被照亮的区域就是该[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)的**辖域**（scope）。任何位于某个 $\forall x$ 或 $\exists x$ 的辖域内的变量 `x` 的出现，都被认为是“被束缚的”。它被那个特定的[量词](@keyword=quantifiers|lang=zh-CN|style=Feynman)所控制，其意义仅限于该辖域内部。而任何不处于任何相应[量词辖域](@keyword=quantifier_scope|lang=zh-CN|style=Feynman)内的变量的出现，则是“自由的”。自由变量就像一个等待被赋值的参数，它的值需要从公式的外部环境中获得。
 
 <center>
-<img src="https://i.imgur.com/example.png" alt="一个公式的语法树，展示了量词 ∀x 的辖域，其中一个 x 被束缚，另一个 x 是自由的。" width="400"/>
+
 <br>
 <small>图1：在公式 $(\forall x \, P(x)) \land Q(x)$ 的语法树中，量词 $\forall x$ 的辖域是子公式 $P(x)$。因此，$P(x)$ 中的 $x$ 是被束缚的，而 $Q(x)$ 中的 $x$ 是自由的。</small>
 </center>

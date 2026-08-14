@@ -38,7 +38,6 @@ $$
 
 3.  **半[稳定平衡](@keyword=stable_equilibrium|lang=zh-CN|style=Feynman)点 (Semi-stable Equilibrium)**：箭头在一侧指向该点，而在另一侧背离该点。这是一个奇特的混合体。例如，在模型 $\frac{dP}{dt} = P^2(10-P)$ 中，[@problem_id:2160032] [平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman) $P=0$ 就是半稳定的。如果由于某种原因（这在物理上可能不现实）种群数量为负，它会向0靠近；但对于任何正的初始种群，它都会远离0。这种[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)通常与 $f(y)$ 中的偶数次幂因子有关，比如这里的 $P^2$。[@problem_id:2159988]
 
-![Phase Line Diagram](https://i.imgur.com/vj4Ea1F.png "一个典型的[相线图](@keyword=phase_line_diagram|lang=zh-CN|style=Feynman)，展示了[稳定点](@keyword=stationary_point|lang=zh-CN|style=Feynman)、不稳定点和半[稳定点](@keyword=stationary_point|lang=zh-CN|style=Feynman)。")
 *图1：一个典型的[相线图](@keyword=phase_line_diagram|lang=zh-CN|style=Feynman)。箭头显示了在不同区间内系统状态y的演化方向。y=0是稳定的，y=3是半稳定的，y=5是不稳定的。*
 
 ### 描绘旅程的轨迹：解曲线的形状

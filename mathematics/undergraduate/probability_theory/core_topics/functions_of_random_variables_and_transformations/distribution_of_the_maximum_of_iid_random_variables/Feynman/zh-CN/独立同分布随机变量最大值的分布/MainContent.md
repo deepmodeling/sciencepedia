@@ -3,8 +3,6 @@
 
 ## 原理与机制
 
-![CDF of the maximum of n U(0,1) variables for n=1, 2, 10, 100](https://i.imgur.com/kS9eZAY.png)
-
 我们已经对我们要探索的奇妙世界有了一个初步的印象——一个充满了[独立同分布](@keyword=independent_and_identically_distributed|lang=zh-CN|style=Feynman)（i.i.d.）[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)的世界。现在，我们要更深入一些，去探寻支配这个世界中“最大值”行为的核心原理和机制。这趟旅程就像是学习一门新的语言，一开始我们只会学习最基本的语法，但很快我们就能用它来写诗。
 
 ### 核心法则：一切的关键在于“所有”

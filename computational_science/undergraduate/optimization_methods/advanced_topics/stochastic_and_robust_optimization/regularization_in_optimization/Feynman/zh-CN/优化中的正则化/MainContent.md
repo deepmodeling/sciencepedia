@@ -35,8 +35,6 @@ $$
 
 $L_2$ 惩罚的几何图像非常直观。想象一下，在二维空间中，没有[正则化](@keyword=regularization|lang=zh-CN|style=Feynman)时，我们会在误差“地形图”上寻找最低点。加上 $L_2$ 正则化，相当于我们被限制在一个以原点为中心、半径不断增大的圆形区域内（在更高维度则是超球面）寻找最低点 [@problem_id:3172048]。误差的等高线（通常是椭圆）与这个圆形区域首次相切的点，就是我们的解。
 
-![L1 vs L2 geometry](https://d2mvzyuse3lwjc.cloudfront.net/doc/3172048_2.png)
-
 请注意这个圆形区域的边界是**平滑的**，没有任何尖角。因此，除非误差[等高线](@keyword=level_curves|lang=zh-CN|style=Feynman)的中心恰好就在某个坐标轴上，否则相切点几乎不可能发生在坐标轴上（即某个权重 $w_i$ 恰好为零的位置）。这意味着 $L_2$ [正则化](@keyword=regularization|lang=zh-CN|style=Feynman)会把所有权重都向零“收缩”（shrinkage），但它很少会把任何一个权重**恰好**收缩到零 [@problem_id:3172008]。它是一位“和平主义者”，倾向于削弱所有特征的影响力，而不是彻底淘汰任何一个。
 
 #### L1 正则化：[稀疏性](@keyword=sparsity|lang=zh-CN|style=Feynman)的魔术师

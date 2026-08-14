@@ -40,7 +40,7 @@ $$
 在控制系统中，我们构建一个“[反馈回路](@keyword=feedback_loop|lang=zh-CN|style=Feynman)”来实现这一点。它就像一个永远警觉的循环：测量输出 $y$，与参考 $r$ 比较得到误差 $e$，然后将误差输入给“控制器”（Controller）$C$，控制器根据误差的大小和趋势，计算出应该施加给“被控对象”（Plant）$G$ 的控制信号 $u$，从而改变输出 $y$，进而影响新的误差 $e$。这个循环周而复始，不知疲倦地将误差推向零。
 
 <div align="center">
-<img src="https://i.imgur.com/kS94hLd.png" alt="Canonical Feedback Loop" width="500"/>
+
 <br>
 <p style="text-align: center;">一个典型的单位负[反馈控制系统](@keyword=feedback_control_systems|lang=zh-CN|style=Feynman)。误差信号e(t)驱动控制器，控制器产生输入u(t)作用于被控对象，使其输出y(t)趋向于参考r(t)。</p>
 </div>
@@ -94,7 +94,7 @@ $$
 这种“错误的”初始响应带来了灾难性的后果。当你试图让系统快速响应时（比如，让无人机瞬间向前），控制器为了实现这个目标，必须强行驱动系统内部的某些[状态变量](@keyword=state_variables|lang=zh-CN|style=Feynman)。然而，由于RHP零点的存在，这个过程会激发一个**不稳定的内部动态**（即“[零点动态](@keyword=zero_dynamics|lang=zh-CN|style=Feynman)”），导致这些内部状态像滚雪球一样按指数规律 $e^{at}$ 疯狂增长（其中 $a$ 是RHP零点的位置）。为了最终稳定下来，控制器又必须拼尽全力去“[拉回](@keyword=pullback|lang=zh-CN|style=Feynman)”这些失控的内部状态。这一来一回的剧烈“挣扎”，最终会体现在输出上，表现为巨大的**过冲**（overshoot）或**下冲**（undershoot）。
 
 <div align="center">
-<img src="https://i.imgur.com/KxP1OIm.png" alt="RHP Zero Step Response" width="500"/>
+
 <br>
 <p style="text-align: center;">带有[右半平面零点](@keyword=right_half_plane_zero_2|lang=zh-CN|style=Feynman)的系统对阶跃输入的典型响应。注意那个初始的“下冲”，即“南辕北辙”的响应。</p>
 </div>
@@ -117,7 +117,7 @@ $$
 *   如果你的被控对象本身是**稳定**的（没有不稳定的 $p_i$），那么积分结果为零。这意味着 $\ln|S(j\omega)|$ 曲线下正负面积必须相等。这就像一个水床，你在一个地方把它按下去（在低频段抑制误差，实现良好跟踪），它必然会在别的地方鼓起来（在高频段放大误差，对噪声更敏感）。你无法把整个水床都按下去！这意味着，任何反馈控制器都必然会在某些频率段放大噪声，我们能做的，只是选择让这种放大发生在我们不太关心的频率范围。
 
 <div align="center">
-<img src="https://i.imgur.com/YgL1fG0.png" alt="Waterbed Effect" width="600"/>
+
 <br>
 <p style="text-align: center;">[波德灵敏度积分](@keyword=bode_s_sensitivity_integral|lang=zh-CN|style=Feynman)的“[水床效应](@keyword=waterbed_effect|lang=zh-CN|style=Feynman)”示意图。为了在低频获得性能增益（区域A，误差衰减），必须在某个高频付出代价（区域B，[误差放大](@keyword=error_amplification|lang=zh-CN|style=Feynman)）。对于稳定系统，两个区域的面积相等。</p>
 </div>

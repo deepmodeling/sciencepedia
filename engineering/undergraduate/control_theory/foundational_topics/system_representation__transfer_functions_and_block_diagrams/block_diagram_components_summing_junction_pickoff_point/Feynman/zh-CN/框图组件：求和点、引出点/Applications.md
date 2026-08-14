@@ -8,7 +8,7 @@
 
 让我们从最坚实、最熟悉的地方开始：经典力学。想象一个由质量块、弹簧和阻尼器构成的系统，就像汽车的悬挂系统一样。有外力 $F(t)$ 作用于它，同时弹簧的恢复力 $-kx(t)$ 和阻尼器的阻尼力 $-b\dot{x}(t)$ 在抵抗它。根据牛顿第二定律，作用在质量块上的净力 $F_{net}$ 是所有这些力的总和。一个[求和点](@keyword=summing_junction|lang=zh-CN|style=Feynman)在这里做什么呢？它正是这个物理定律的完美化身。它将所有输入的力（一个为正，两个为负）相加，其输出就是净力 $m\ddot{x}(t)$。所以，在这种情况下，[求和点](@keyword=summing_junction|lang=zh-CN|style=Feynman)并不仅仅是一个数学工具，它就是牛顿定律在图纸上的直接体现 [@problem_id:1559891]。
 
-![[质量-弹簧-阻尼器系统](@keyword=mass_spring_damper_system|lang=zh-CN|style=Feynman)的框[图表示](@keyword=graph_representations|lang=zh-CN|style=Feynman)](https://static.comms.engineering.osu.edu/prod/farside/sys_dyn_and_con/L2-Modeling-in-the-Frequency-Domain/Figures/Block_Diagram_of_Mass-Spring-Damper_System_w-labels.png)
+的框[图表示](@keyword=graph_representations|lang=zh-CN|style=Feynman)](https://static.comms.engineering.osu.edu/prod/farside/sys_dyn_and_con/L2-Modeling-in-the-Frequency-Domain/Figures/Block_Diagram_of_Mass-Spring-Damper_System_w-labels.png)
 
 *图1：一个[求和点](@keyword=summing_junction|lang=zh-CN|style=Feynman)完美地体现了牛顿第二定律，将作用在质量块上的所有力相加，从而得到净力。*
 

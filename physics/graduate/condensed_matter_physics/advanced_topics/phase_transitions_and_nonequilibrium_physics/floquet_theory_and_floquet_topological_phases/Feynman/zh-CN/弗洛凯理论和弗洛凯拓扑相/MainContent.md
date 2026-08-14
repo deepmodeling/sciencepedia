@@ -49,8 +49,6 @@ $$ |\psi_n(t)\rangle = e^{-i\varepsilon_n t/\hbar} |u_n(t)\rangle $$
 
 然而，大自然再次给了我们惊喜。考虑一个非常直观的模型：在一个二维方格子上，我们设计一个四步的驱动。每一步都只是简单地交换相邻格点上的粒子。这四步设计得非常巧妙，就像一个“圆舞曲”，让粒子在体材料中绕着一个小方格转了一圈，最后恰好回到了原点[@problem_id:2990448]。
 
-![A diagram illustrating the four-step swap drive. Step 1: horizontal swaps. Step 2: vertical swaps up. Step 3: horizontal swaps back. Step 4: vertical swaps down. In the bulk, a particle at (x,y) moves to (x+1,y), then (x+1,y+1), then (x,y+1), and finally back to (x,y). At an edge, the loop is broken, leading to net transport.](https://i.imgur.com/example.png "4-步交换驱动示意图")
-
 在每个周期结束时，体内的每个粒子都回到了原位，所以从频闪观测的角度看，什么也没发生。这意味着 $U(T) = \mathbb{I}$（单位算符），而等效的 $H_F = 0$。一个平庸的零哈密顿量，其所有[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)的[陈数](@keyword=chern_number|lang=zh-CN|style=Feynman)都为零。根据传统理论，这个系统应该是拓扑平庸的，不应该有任何边缘态。
 
 但现实是，如果你观察材料的边界，那里的“圆舞曲”被打断了。粒子无法完成一个完整的闭合回路，结果是在每个周期，它被净推向了边界的一个方向！这就形成了一个[单向传播](@keyword=unidirectional_propagation|lang=zh-CN|style=Feynman)的、极其稳固的[手性边缘态](@keyword=chiral_edge_states|lang=zh-CN|style=Feynman)。

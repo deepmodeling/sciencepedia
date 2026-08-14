@@ -9,8 +9,6 @@
 
 在物理学和工程学中，我们喜欢从一个优美的谎言开始，一个能捕捉问题本质的简化模型。对于梁的弯曲，这个优美的谎言就是著名的欧拉-伯努利假设：**“平面假设”**。它声称，在[梁弯曲](@keyword=beam_bending|lang=zh-CN|style=Feynman)时，原来垂直于梁轴线的平直横截面，在变形后依然保持为平面。[@problem_id:2670386] 想象一下，一根梁就像一叠无限薄的卡片，弯曲时，这些卡片只是相互之间发生了倾斜，但每张卡片自身仍然是平的。这个纯粹的几何假设带来了一个惊人而简洁的后果：沿着梁的横截面深度，应变 $ \varepsilon $ 是线性分布的。也就是说，距离中性轴（既不拉伸也不压缩的中心线）为 $y$ 的地方，其应变 $ \varepsilon_{xx} $ 正比于 $y$，可以写成 $ \varepsilon_{xx}(y) = \kappa y $，其中 $\kappa$ 是一个描述[梁弯曲](@keyword=beam_bending|lang=zh-CN|style=Feynman)程度的量，我们称之为“曲率”。
 
-![Schematic of linear strain distribution in a beam under bending](https://static.prepai.io/assets/2024-06-11/2670386-schematic-1.svg)
-
 当然，所有模型都有其适用范围。这个“平面假设”在我们处理细长梁时非常有效。但如果梁又短又粗，就像一块厚厚的砖头，那么[横截面](@keyword=cross_section|lang=zh-CN|style=Feynman)上的[剪切变形](@keyword=shear_deformation|lang=zh-CN|style=Feynman)就不可忽视，[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)会发生翘曲，这个简单的图像就不再精确了。这时候，我们需要一个更复杂的模型，比如铁木辛柯（Timoshenko）[梁理论](@keyword=beam_theory|lang=zh-CN|style=Feynman)。[@problem_id:2670317] 同样，如果梁的壁很薄，在受压时可能会像纸一样起皱，发生局部屈曲，这也会破坏“平面假设”。[@problem_id:2670386] 但现在，让我们先待在这个由细长梁构成的理想世界里，因为这里已经有足够多的精彩等着我们去发现。
 
 ### 材料的“脾气”：从弹簧到太妃糖
@@ -18,8 +16,6 @@
 有了描述变形的几何框架，我们还需要理解材料本身是如何响应这些变形的。想象梁是由无数根平行的纤维组成的。当我们拉伸其中一根纤维时会发生什么？起初，它的行为像一根完美的弹簧：拉力与伸长成正比，这就是胡克定律，应力 $ \sigma $ 与应变 $ \varepsilon $ 成正比，$ \sigma = E \varepsilon $，其中 $E$ 是杨氏模量。但是，当拉力大到一定程度，材料就“屈服”了。它不再遵循胡克定律，而是开始像一块被拉伸的太妃糖一样发生“流动”，即使应力不再增加，变形也会继续增长。
 
 对于理想的金属材料，我们可以用一个非常简洁的模型来描述这种行为：**[弹性-理想塑性模型](@keyword=elastic_perfectly_plastic_model|lang=zh-CN|style=Feynman)**。在这种模型中，当应力达到某个临界值——[屈服应力](@keyword=yield_stress|lang=zh-CN|style=Feynman) $ \sigma_y $ 之后，它就保持恒定，不再上升。
-
-![Stress-strain curve for an elastic-perfectly plastic material](https://static.prepai.io/assets/2024-06-11/2670345-schematic-1.svg)
 
 你可能会问，真实世界中的应力是三维的，我们怎么能用一个简单的单轴[屈服应力](@keyword=yield_stress|lang=zh-CN|style=Feynman) $ \sigma_y $ 来描述弯曲呢？这是一个非常深刻的问题。确实，我们需要像冯·米塞斯（von Mises）或特雷斯卡（Tresca）这样的多轴[屈服准则](@keyword=yield_criterion|lang=zh-CN|style=Feynman)来判断材料在复杂应力状态下是否屈服。但奇妙的是，在[纯弯曲](@keyword=pure_bending|lang=zh-CN|style=Feynman)的情况下，梁内部的应力状态主要是沿着梁长度方向的拉伸或压缩应力 $ \sigma_{xx} $，其他的[应力分量](@keyword=stress_components|lang=zh-CN|style=Feynman)都非常小。因此，我们可以近似地认为每根纤维都处于单轴应力状态。这意味着，无论是复杂的[冯·米塞斯准则](@keyword=von_mises_criterion|lang=zh-CN|style=Feynman)还是[特雷斯卡准则](@keyword=tresca_criterion|lang=zh-CN|style=Feynman)，最终都简化为同一个简单的条件：当 $ |\sigma_{xx}| $ 达到 $ \sigma_y $ 时，纤维就屈服了。[@problem_id:2670340] 这个伟大的简化让我们能够将一个复杂的三维塑性问题，变成了一系列并排的一维问题的集合，大大降低了分析的难度。
 
@@ -32,8 +28,6 @@
 2.  **初屈服时刻**：随着[弯矩](@keyword=bending_moments|lang=zh-CN|style=Feynman) $M$ 的增加，最外层纤维的应力率先达到[屈服应力](@keyword=yield_stress|lang=zh-CN|style=Feynman) $\sigma_y$。这一刻的[弯矩](@keyword=bending_moments|lang=zh-CN|style=Feynman)被称为**[屈服弯矩](@keyword=yield_moment|lang=zh-CN|style=Feynman) $M_y$**。对于一个矩形[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)，我们可以计算出 $ M_y = \frac{1}{6} b h^2 \sigma_y $，其中 $b$ 是宽度，$h$ 是高度。这是梁的[弹性极限](@keyword=elastic_limit|lang=zh-CN|style=Feynman)。[@problem_id:2670345]
 
 3.  **[弹塑性](@keyword=elastoplasticity|lang=zh-CN|style=Feynman)阶段**：当弯矩超过 $M_y$ 时，好戏真正开始了。最外层的纤维已经屈服，它们的应力被“钉”在了 $\sigma_y$ 上，无法再增加。为了抵抗更大的外部弯矩，内层的、仍处于弹性的纤维必须承担起更多的责任，它们的应力会继续增长。这导致应力分布不再是完美的三角形，它的两个尖端被“削平”了。随着[弯矩](@keyword=bending_moments|lang=zh-CN|style=Feynman)的持续增大，这个被削平的区域，也就是**[塑性区](@keyword=plastic_zone|lang=zh-CN|style=Feynman)**，会像一场革命一样从外向内不断蔓延。而中心部分仍然保持弹性的区域，我们称之为**弹性核心**。[@problem_id:2670345, 2908781]
-
-    ![Evolution of stress distribution in a rectangular beam from elastic to fully plastic](https://static.prepai.io/assets/2024-06-11/2670345-schematic-2.svg)
 
 4.  **全塑性极限**：这场“革命”的终点在哪里？当曲率 $\kappa$ 趋向于无穷大时，弹性核心会无限缩小，理论上整个[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)都进入了塑性状态。此时，应力分布变成了两个大小相等、方向相反的矩形块，整个受拉区应力恒为 $\sigma_y$，整个受压区应力恒为 $-\sigma_y$。梁[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)抵抗弯矩的能力达到了它的理论上限，这个极限[弯矩](@keyword=bending_moments|lang=zh-CN|style=Feynman)被称为**[塑性弯矩](@keyword=plastic_moment|lang=zh-CN|style=Feynman) $M_p$**。对于矩形[截面](@keyword=cross_section_2|lang=zh-CN|style=Feynman)，我们能算出 $ M_p = \frac{1}{4} b h^2 \sigma_y $。一旦达到 $M_p$，梁就无法再承受任何额外的[弯矩](@keyword=bending_moments|lang=zh-CN|style=Feynman)了。
 

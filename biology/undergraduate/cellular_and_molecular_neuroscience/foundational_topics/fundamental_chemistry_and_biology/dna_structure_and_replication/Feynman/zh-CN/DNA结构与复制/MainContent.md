@@ -17,8 +17,6 @@
 
 这里的关键在于碱基。DNA只有四种不同的碱基，就像字母表里只有四个字母：腺嘌呤（Adenine, A）、鸟嘌呤（Guanine, G）、胞嘧啶（Cytosine, C）和[胸腺](@keyword=thymus_gland|lang=zh-CN|style=Feynman)嘧啶（Thymine, T）。这四个字母并非杂乱无章，它们在化学结构上可以被清晰地分为两大家族。A和G拥有双环结构，体型较大，被称为**嘌呤**（Purines）；而C和T只有一个[单环](@keyword=simple_ring|lang=zh-CN|style=Feynman)，体型较小，被称为**嘧啶**（Pyrimidines）[@problem_id:2334397]。你只要记住一个简单的方法：“纯金”（嘌呤是A和G）就不会搞混。
 
-![Image of the four DNA bases, showing the double-ring structure of purines (A, G) and the single-ring structure of pyrimidines (C, T).](https://i.imgur.com/example.png)
-
 这些积木块通过磷酸基团和脱氧核糖的交替连接，手拉手形成一条长长的链条。这条链是有方向的，我们用化学上的术语将其两端标记为 $5'$ 端和 $3'$ 端（读作 "five-prime" 和 "three-prime"）。这个方向性看似微不足道，但它却是理解DNA一切行为的关键，我们稍后会看到它如何像一个严格的交通规则，支配着整个复制过程。
 
 然而，DNA这本书不是单页的，而是双页的。它著名的双[螺旋结构](@keyword=helical_structure|lang=zh-CN|style=Feynman)，由两条方向相反的链条组成——我们称之为**反平行**（antiparallel）。想象一条双向高速公路，一条车道向北，另一条向南。这就是DNA双链的样子。将这两条链条维系在一起的，是碱基之间的配对规则，这是一条简单而优美的法则：一个“大个子”嘌呤总是和一个“小个子”嘧啶配对。具体来说，A总是与T配对（通过两个[氢键](@keyword=hydrogen_bond|lang=zh-CN|style=Feynman)），G总是与C配对（通过三个[氢键](@keyword=hydrogen_bond|lang=zh-CN|style=Feynman)）。这种完美的互补性，就像一把钥匙配一把锁，不仅稳定了DNA的结构，更隐藏着其自我复制的奥秘。
@@ -60,8 +58,6 @@ $$
 接下来，主角——**DNA聚合酶**（DNA polymerase）——闪亮登场。这位“建筑大师”负责沿着模板链，将正确的[核苷酸](@keyword=nucleotide|lang=zh-CN|style=Feynman)积木块一个一个地连接起来，合成新的DNA链。然而，这位大师有一个非常古怪却不可动摇的“建筑规则”：**它只能将新的[核苷酸](@keyword=nucleotide|lang=zh-CN|style=Feynman)添加到生长中链条的 $3'$ 端** [@problem_id:2334415]。
 
 这个规则的背后，是深刻的化学原理。新[核苷酸](@keyword=nucleotide|lang=zh-CN|style=Feynman)的加入，是通过一次**[亲核攻击](@keyword=nucleophilic_attack|lang=zh-CN|style=Feynman)**（nucleophilic attack）完成的。生长中链条末端的 $3'$ 羟基（-OH）上的氧原子，会攻击新进入的[核苷酸](@keyword=nucleotide|lang=zh-CN|style=Feynman)（以三磷酸形式存在）最内侧的磷原子。这个攻击形成了一个新的[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)（磷酸二酯键），将新[核苷酸](@keyword=nucleotide|lang=zh-CN|style=Feynman)连接到链上，并释放出两个磷酸基团（焦磷酸），这个过程释放的能量驱动了反应的进行 [@problem_id:2334415]。由于[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的构型，这个攻击只能由 $3'$ 端的羟基发起，而不能由 $5'$ 端发起。因此，DNA合成的方向永远是 $5' \to 3'$。
-
-
 
 现在，一个巨大的难题出现了。我们知道DNA两条链是反平行的，而[复制叉](@keyword=replication_fork|lang=zh-CN|style=Feynman)是朝一个方向移动的。对于其中一条模板链（其方向是 $3' \to 5'$），DNA聚合酶可以很愉快地跟在[解旋酶](@keyword=helicase|lang=zh-CN|style=Feynman)后面，以 $5' \to 3'$ 的方向连续不断地合成一条新链。这条链被称为**前导链**（leading strand）。
 

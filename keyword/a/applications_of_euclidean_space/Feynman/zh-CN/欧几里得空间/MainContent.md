@@ -15,8 +15,6 @@
 
 对于一个弯曲空间，情况则完全不同。考虑地球表面，我们可以将其建模为一个球面。这里的[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)是大圆（如赤道）。如果你和朋友从北极出发，沿着不同的经线向南走，你们走的都是[测地线](@keyword=geodesic_path|lang=zh-CN|style=Feynman)。可一旦越过赤道，你们又会开始相互靠近！如果你们一直走到南极，从北极出发的无数条“直线”路径会再次汇合。路径在经过中点后便不再是唯一最短的了。
 
-![A sketch showing geodesics on a sphere and a plane.](https://i.imgur.com/example.png "Geodesics on Sphere vs. Plane")
-
 这一根本差异被一个称为**高斯曲率**（Gaussian curvature）的量所捕捉。一个平坦的平面其高斯曲率恰好为零。一个半径为 $R$ 的球面具有恒为正的曲率 $\frac{1}{R^2}$。杰出的数学家 Carl Friedrich Gauss 在其**[绝妙定理](@keyword=theorema_egregium|lang=zh-CN|style=Feynman)**（Theorema Egregium）中发现了一个惊人的事实：这种曲率是[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的*内蕴*属性（intrinsic）。一个完全生活在该二维[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)内的居民，仅用一把尺子测量小三角形（在球面上，其内角和会超过180度），就能测量出这个曲率。
 
 这带来了一个非常实际的后果：你无法创建一幅能保持距离不变的完美地球表面局部地图[@problem_id:1639974]。要制作地图，你必须将一部分球面（曲率为 $\frac{1}{R^2} > 0$）投影到一张平坦的纸上（曲率为 $0$）。由于一幅完美的地图应是一种**[等距变换](@keyword=isometry|lang=zh-CN|style=Feynman)**（isometry）——即保持距离不变的变换——它也必须保持内蕴的高斯曲率不变。但它们的曲率是不同的！这是不可能的。因此，你所见过的每一幅世界地图都是一种谎言；它必然会扭曲距离、角度或面积。例如，我们熟悉的墨卡托[投影法](@keyword=projection_methods|lang=zh-CN|style=Feynman)虽然保持了角度，却让格陵兰岛看起来比非洲还大，而实际上非洲的面积是格陵兰岛的14倍。这是将不可展平之物展平所付出的几何代价。

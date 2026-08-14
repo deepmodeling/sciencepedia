@@ -26,7 +26,7 @@
 现在，我们把一个静态的[匹配问题](@keyword=the_matching_problem|lang=zh-CN|style=Feynman)，变成了一个生动的“最大流”问题：我们能从源头 $s$ 最多“泵”出多少“流”，让它们通过这个网络，最终到达汇点 $t$？
 
 <center>
-<img src="https://i.imgur.com/83pCY8M.png" alt="Bipartite matching to max-flow reduction" width="600"/>
+
 </center>
 <br>
 

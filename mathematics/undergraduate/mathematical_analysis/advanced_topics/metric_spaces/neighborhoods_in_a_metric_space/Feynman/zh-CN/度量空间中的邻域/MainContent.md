@@ -26,7 +26,7 @@ $$
 例如，在二维平面 $\mathbb{R}^2$ 上，除了我们熟悉的[欧几里得距离](@keyword=euclidean_distance|lang=zh-CN|style=Feynman) $d_2 = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}$，还有一些同样合法的度量。想象一下你在一个方格状的城市里，只能沿着街道东西或南北行走，从点 $(x_1, y_1)$ 到 $(x_2, y_2)$ 的最短距离就是所谓的**[出租车度量](@keyword=taxicab_metric|lang=zh-CN|style=Feynman)**（Taxicab Metric）：$d_1 = |x_1-x_2| + |y_1-y_2|$。在这个度量下，一个“球”竟然是一个旋转了45度的正方形（菱形）！如果我们只关心在各个坐标方向上移动的最大距离，即**[最大度](@keyword=maximum_degree|lang=zh-CN|style=Feynman)量**（Maximum Metric）：$d_\infty = \max(|x_1-x_2|, |y_1-y_2|)$，那么一个“球”就是一个与坐标轴平行的正方形。[@problem_id:2308004]
 
 <center>
-<img src="https://i.imgur.com/k6lP09B.png" width="600">
+
 <br>
 图1：在[欧几里得度量](@keyword=euclidean_metric|lang=zh-CN|style=Feynman)（蓝色圆）、[最大度](@keyword=maximum_degree|lang=zh-CN|style=Feynman)量（灰色方块）和[出租车度量](@keyword=taxicab_metric|lang=zh-CN|style=Feynman)（红色菱形）下，半径为 $r$ 的“开球”形状各不相同。
 </center>

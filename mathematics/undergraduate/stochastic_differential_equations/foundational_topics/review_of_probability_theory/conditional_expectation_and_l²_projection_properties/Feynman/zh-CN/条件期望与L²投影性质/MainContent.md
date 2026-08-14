@@ -32,8 +32,6 @@
 
 这正是高中几何中一个我们无比熟悉的问题：从一个点到一个平面的最短距离是什么？答案是垂线段的长度。那个垂足，就是平面上离该点最近的点。这个垂足就是该点在平面上的**正交投影**。
 
-![](https://minio.apps.staging.cli.private.thoughtworks.cn/pai-images/01HXS8D8D3R4QW0QYFAG4SDB4X.png)
-
 [希尔伯特空间](@keyword=hilbert_spaces|lang=zh-CN|style=Feynman)的几何学告诉我们，答案是完全一样的！那个最小化均方误差的最佳预测 $Y^\star$，正是 $X_T$ 这个向量在“已知信息”子空间 $L^2(\mathcal{F}_s)$ 上的正交投影。[@problem_id:3045100] [@problem_id:3045165] 而这个独一无二的[正交投影](@keyword=orthogonal_projection|lang=zh-CN|style=Feynman)，正是我们所说的**[条件期望](@keyword=conditional_expectation|lang=zh-CN|style=Feynman)** $\mathbb{E}[X_T \mid \mathcal{F}_s]$。
 
 这个几何视角给了我们一个关于[条件期望](@keyword=conditional_expectation|lang=zh-CN|style=Feynman)的深刻洞见。它告诉我们，预测误差向量 $X_T - \mathbb{E}[X_T \mid \mathcal{F}_s]$ 必须与整个“已知信息”子空间 $L^2(\mathcal{F}_s)$ **正交**。这意味着，对于任何一个基于时刻 $s$ 信息的[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman) $Y \in L^2(\mathcal{F}_s)$，我们都有：

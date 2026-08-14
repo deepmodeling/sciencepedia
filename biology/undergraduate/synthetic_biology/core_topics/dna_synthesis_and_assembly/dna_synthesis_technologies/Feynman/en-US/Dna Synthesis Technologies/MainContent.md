@@ -1,8 +1,4 @@
-<![CDATA[
-## Introduction
-The ability to read the genetic code has defined biology for a generation, but the power to *write* it from scratch is a recent revolution. This capability, the artificial synthesis of DNA, is transforming biology from a science of observation into a true engineering discipline. It addresses the fundamental challenge of how to chemically construct life's master molecule with precision, moving beyond simple modifications to ground-up design. This article serves as your guide to this transformative technology. Across the following sections, you will gain a comprehensive understanding of how we write DNA and why it matters.
-
-The journey begins with "Principles and Mechanisms," which takes you under the hood of an automated DNA synthesizer to dissect the elegant four-stroke chemical engine of [phosphoramidite chemistry](@keyword=phosphoramidite_chemistry|lang=en-US|style=Feynman). We then explore "Applications and Interdisciplinary Connections," demonstrating how this core capability enables everything from advanced medical diagnostics and microbial factories to genome editing and futuristic data storage. Finally, "Hands-On Practices" will challenge you to apply these concepts by tackling real-world design problems, cementing your understanding of the engineering trade-offs central to synthetic biology.
+<. We then explore "Applications and Interdisciplinary Connections," demonstrating how this core capability enables everything from advanced medical diagnostics and microbial factories to genome editing and futuristic data storage. Finally, "Hands-On Practices" will challenge you to apply these concepts by tackling real-world design problems, cementing your understanding of the engineering trade-offs central to synthetic biology.
 ]]>
 
 ## Principles and Mechanisms

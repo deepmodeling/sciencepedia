@@ -23,7 +23,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/example.png" alt="A 'rational fan' - a union of lines with rational slopes passing through the origin." width="400"/>
+
   <figcaption>图1：有理扇。尽管它充满了“空隙”，但由于所有直线都交于一点，整个集合是连通的。</figcaption>
 </figure>
 </center>
@@ -60,7 +60,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/example2.png" alt="The topologist's sine curve, showing the oscillating graph part and the vertical line segment." width="500"/>
+
   <figcaption>图2：[拓扑学家的正弦曲线](@keyword=topologist_s_sine_curve|lang=zh-CN|style=Feynman)。它虽然是连通的，但你无法从[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)部分 $G$ “走”到左侧的线段 $L$ 上。</figcaption>
 </figure>
 </center>

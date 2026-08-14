@@ -19,7 +19,7 @@ CDF 不仅仅告诉你某个单一结果发生的概率；它告诉你，在某�
 
 <br>
 <center>
-<img src="https://i.imgur.com/G5c8Cez.png" alt="Discrete CDF vs Continuous CDF" width="700">
+
 <br>
 <small>图1：离散型[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)的CDF（左）像一个阶梯，在每个可能取值点发生跳跃。连续型[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)的CDF（右）则像一个平滑的斜坡，持续不断地累积概率。</small>
 </center>

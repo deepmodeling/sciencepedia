@@ -19,8 +19,6 @@
 
 然而，全局来看，浸入可能会产生问题。最经典的例子是“8”字形曲线。[@problem_id:1689854] 我们可以将一个圆（一维[流形](@keyword=manifold|lang=zh-CN|style=Feynman) $S^1$）光滑地映射到平面 $\mathbb{R}^2$ 上，形成一个“8”字形。在每一点上，曲线都是光滑的，它的切向量（[导数](@keyword=derivative|lang=zh-CN|style=Feynman)）永远不会是零，所以这是一个完美的[浸入](@keyword=immersions|lang=zh-CN|style=Feynman)。但是，这个“8”字在中心点与自身相交了。两个来自圆上的不同点被映射到了平面上的同一点。这意味着映射 $f$ 不是全局单射的。
 
-![Figure-eight immersion](https://i.imgur.com/example.png "一个浸入但非[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)的例子")
-
 这就引出了一个更严格、也更理想的概念：**[嵌入](@keyword=embedding|lang=zh-CN|style=Feynman)**。一个[光滑嵌入](@keyword=smooth_embedding|lang=zh-CN|style=Feynman)必须满足两个条件：
 1.  它是一个[浸入](@keyword=immersions|lang=zh-CN|style=Feynman)（局部无瑕疵）。
 2.  它在全局上是单射的，并且在拓扑上是“行为良好”的，即它本身和它的逆映射都是连续的（专业术语叫[同胚](@keyword=homeomorphism|lang=zh-CN|style=Feynman)到其像）。

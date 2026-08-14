@@ -18,7 +18,7 @@ Let's begin with two random variables, which we'll call $X$ and $Y$. Think of $X
 In our diagram, we draw two circles. The area of the first circle represents the total entropy of $X$, $H(X)$. The area of the second circle represents the total entropy of $Y$, $H(Y)$.
 
 <center>
-<img src="https://i.imgur.com/8Fk7d3o.png" alt="A Venn diagram with two overlapping circles labeled X and Y." width="300"/>
+
 </center>
 
 Now, what happens if these circles overlap? That overlap is where the magic happens. It represents the information that is *shared* between $X$ and $Y$. It’s the answer to the question: "How much does knowing $X$ reduce my uncertainty about $Y$?" And, wonderfully, it's a symmetric question: "How much does knowing $Y$ reduce my uncertainty about $X$?"
@@ -58,7 +58,7 @@ Our diagram also gives a beautifully simple reason why "conditioning cannot incr
 Things get even more interesting when we add a third variable, $Z$. Our diagram now has three overlapping circles, creating seven distinct regions [@problem_id:1667595].
 
 <center>
-<img src="https://i.imgur.com/uQoV8D9.png" alt="A Venn diagram with three overlapping circles labeled X, Y, and Z, creating seven distinct inner regions." width="400"/>
+
 </center>
 
 The same principles apply. The [joint entropy](@keyword=joint_entropy|lang=en-US|style=Feynman) of all three, $H(X,Y,Z)$, is the total area of the union of all three circles. But now we can ask more sophisticated questions.

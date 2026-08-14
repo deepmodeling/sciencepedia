@@ -3,7 +3,7 @@
 
 我们将分两部分展开探索。首先，“**原理与机制**”一章将深入到[离子晶体](@keyword=ionic_crystals|lang=zh-CN|style=Feynman)的微观世界，探讨其原子[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)的集体[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)（称为[声子](@keyword=phonons|lang=zh-CN|style=Feynman)）如何与光相互作用。我们将揭示这种相互作用如何产生负[介电函数](@keyword=dielectric_function|lang=zh-CN|style=Feynman)——这一奇特条件禁止光在晶体中传播，并迫使其被反射。随后，“**应用与跨学科联系**”一章将揭示这一单一物理原理如何成为一种强大的工具。我们将看到[剩余射线带](@keyword=reststrahlen_band|lang=zh-CN|style=Feynman)如何充当独特的材料“指纹”，并促成表面波的产生，这些表面波正在彻底改变[纳米光子学](@keyword=nanophotonics|lang=zh-CN|style=Feynman)、热能工程和高分辨率显微镜等领域。
 
-![一张图表，显示了[介电函数](@keyword=dielectric_function|lang=zh-CN|style=Feynman)实部epsilon_1和反射率R随频率的变化。[剩余射线带](@keyword=reststrahlen_band|lang=zh-CN|style=Feynman)在omega_TO和omega_LO之间被突出显示，在该区域epsilon_1为负，R接近1。]
+实部epsilon_1和反射率R随频率的变化。[剩余射线带](@keyword=reststrahlen_band|lang=zh-CN|style=Feynman)在omega_TO和omega_LO之间被突出显示，在该区域epsilon_1为负，R接近1。]
 
 ## 原理与机制
 

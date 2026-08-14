@@ -19,8 +19,6 @@
 
 假设我们的粘合规则是：将每个点 $z$ 与它的[共轭复数](@keyword=complex_conjugate|lang=zh-CN|style=Feynman) $\bar{z}$ 视为同一点。从几何上看，这相当于沿着实数轴（水平轴）将圆对折。上半圆的每一个点，在下半圆都有一个“镜像孪生兄弟”。当我们把每个点和它的孪生兄弟粘合在一起时，会发生什么呢？我们不再需要下半圆了，因为它们的信息已经完全包含在上半圆里了。我们留下的，就是一个从点 $1$（即 $z=1+0i$）延伸到点 $-1$（即 $z=-1+0i$）的半圆弧。这条弧在拓扑上和一个闭合的线段 $[0,1]$ 没有任何区别。通过一个简单的“折叠”对称性，我们把一个一维的圈变成了一个带两个端点的线段。[@problem_id:1664459] [@problem_id:1664468]
 
-![Folding a circle into a line segment](https://i.imgur.com/example.png "An illustration showing the circle being folded along the real axis, with the upper semicircle highlighted, which then transforms into a straight line segment.")
-
 现在，让我们换一本“粘合手册”。规则是：将圆上所有[相差](@keyword=phase_contrast|lang=zh-CN|style=Feynman) $2\pi/n$ 角度（比如 $n=3$ 时，就是 $120^\circ$）的点视为同一个点。这个群作用是旋转。想象一下，你站在圆心，每转动 $120^\circ$ 所看到的景象都被认为是“一样”的。这就像把圆周“包裹”了 $n$ 次。奇怪的是，当我们把这些点粘合后，得到的空间在拓扑上仍然是一个圆！只不过，我们绕这个新圆走一圈，相当于在原来的圆上走了 $n$ 圈。这个过程并没有改变圆的“圆性”。[@problem_id:1664459]
 
 这个“包裹”的思想可以延伸到二维。如果我们对一个闭合的圆盘 $D^2$ 应用同样的旋转规则，我们会发现，这个圆盘在粘合后，拓扑上仍然是一个圆盘。每一个不在圆心的点都和它旋转后的 $n-1$ 个副本粘合在一起，而圆心这个特殊的点，在旋转中保持不动，它自己形成一个轨道。最终，这个被“包裹”了 $n$ 次的圆盘，看起来还是一个圆盘。[@problem_id:1664442] 这些例子告诉我们一个反直觉的事实：有时候，经过一番复杂的粘合操作，空间的拓扑形态可能根本不会改变。

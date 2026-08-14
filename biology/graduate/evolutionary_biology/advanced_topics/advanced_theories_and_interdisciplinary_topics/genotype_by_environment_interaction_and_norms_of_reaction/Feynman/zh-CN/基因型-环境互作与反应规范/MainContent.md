@@ -20,7 +20,7 @@
 - **如果存在G×E**：这意味着反应[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)的曲线**不再平行**。一个基因型对环境变化的反应可能比另一个更剧烈。例如，在问题2718914的设想场景中，基因型$G_1$和$G_2$的反应[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)是平行的（它们对环境变化的响应幅度相同），因此它们之间没有G×E。但基因型$G_3$的反应线则要陡峭得多，这意味着它与$G_1$和$G_2$都存在G×E。
 
 <center>
-<img src="https://i.imgur.com/G5g2mJc.png" width="600">
+
 <br>
 <small>图1：反应[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)示意图。左图：平行线表示无G×E。右图：非平行线表示存在G×E。其中，反应[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)（Disordinal G×E）是一种特殊情况，但并非G×E发生的必要条件（Ordinal G×E）。</small>
 </center>

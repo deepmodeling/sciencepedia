@@ -20,7 +20,7 @@
 这个“原子核在电子跃迁期间位置保持不变”的观点，就是著名的**[弗兰克-康登原理](@keyword=franck_condon_principle|lang=zh-CN|style=Feynman)（Franck-Condon Principle）** 的核心思想。它告诉我们，电子跃迁在[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)上是一次**[垂直跃迁](@keyword=vertical_transitions|lang=zh-CN|style=Feynman)**。如下图所示，当分子从[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)（$g$）跃迁到[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)（$e$）时，它在原子核坐标（$Q$）上的位置并没有改变。它就像是原地“跳”到了上面那条势能曲线上。
 
 <center>
-<img src="https://i.imgur.com/xO4b24g.png" width="500" />
+
 </center>
 <center>
 图1：[弗兰克-康登原理](@keyword=franck_condon_principle|lang=zh-CN|style=Feynman)示意图。电子跃迁是垂直的，跃迁到不同振动能级（$v'$）的强度由初始[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)（$v''=0$）与最终[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)的重叠决定。

@@ -21,4 +21,4 @@
 
 但更有趣、也更常见的情形是，$b$ 并不在这个平面上，而是悬浮于平面之上或之下。此时，你无论如何调整指令 $x$，都无法让 $Ax$ 精确地等于 $b$。那么，平面上哪一点离 $b$ 最近呢？直觉告诉我们，这个最近点 $p$ 应该是 $b$ 在平面上的**[正交投影](@keyword=orthogonal_projection|lang=zh-CN|style=Feynman)**（orthogonal projection）。也就是说，连接 $b$ 和 $p$ 的向量（也就是残差向量 $r=b-p$）必须与整个平面 $\mathcal{R}(A)$ **正交**（orthogonal）。
 
-![图1：[最小二乘法](@keyword=method_of_least_squares|lang=zh-CN|style=Feynman)的几何直观。目标向量 $b$ 在矩阵 $A$ 的[列空间](@keyword=image_of_a_linear_transformation|lang=zh-CN|style=Feynman) $\mathcal{R}(A)$ 上的正交投影为 $p=Ax^*$。[残差向量](@keyword=residual_vector|lang=zh-CN|style=Feynman) $r=b-Ax^*$ 与 $\mathcal{R}(A)$ 中的任何向量（如 $Av$）正交。](https://i.imgur.com/8F2b5kR.png)
+的几何直观。目标向量 $b$ 在矩阵 $A$ 的[列空间](@keyword=image_of_a_linear_transformation|lang=zh-CN|style=Feynman) $\mathcal{R}(A)$ 上的正交投影为 $p=Ax^*$。[残差向量](@keyword=residual_vector|lang=zh-CN|style=Feynman) $r=b-Ax^*$ 与 $\mathcal{R}(A)$ 中的任何向量（如 $Av$）正交。](https://i.imgur.com/8F2b5kR.png)

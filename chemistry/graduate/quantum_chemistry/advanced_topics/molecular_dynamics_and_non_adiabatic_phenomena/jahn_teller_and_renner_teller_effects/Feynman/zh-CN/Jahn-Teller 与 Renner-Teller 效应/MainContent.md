@@ -36,7 +36,7 @@ $$
 这两个[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)描绘了一幅壮丽的景象。上表面 $E_{+}(\rho)$ 是一个碗状结构，其最低点在原点 $\rho=0$。而下表面 $E_{-}(\rho)$ 则完全不同：它在原点 $\rho=0$ 处形成一个尖点，然后向[外延](@keyword=epitaxy|lang=zh-CN|style=Feynman)伸，形成一个环形的“护城河”或者说“峡谷”。这个整体形状酷似一顶墨西哥宽边帽，因此被称为“[墨西哥帽势](@keyword=mexican_hat_potential|lang=zh-CN|style=Feynman)能面”。
 
 <center>
-    <img src="https://i.imgur.com/your-mexican-hat-image.png" alt="Mexican Hat Potential" width="500"/>
+
     <br>
     <em>图1：$E \otimes e$ 亚恩-泰勒效应的“墨西哥帽”[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)。高对称性构型（$\rho=0$）是一个不稳定的[锥形交叉](@keyword=conical_intersections|lang=zh-CN|style=Feynman)点，能量最低点位于一个半径为 $\rho_0$ 的环形槽中。</em>
 </center>

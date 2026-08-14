@@ -24,7 +24,7 @@
 理解了[弥散圆](@keyword=circle_of_confusion|lang=zh-CN|style=Feynman)，我们就可以用一种优美的几何方式来理解景深了。想象一束来自被摄物体上某一点的光，穿过相机的光圈（Aperture）后，它会形成一个圆锥体，我们称之为“光锥”。[光锥](@keyword=light_cones|lang=zh-CN|style=Feynman)的顶点，就是这个点清晰成像的位置。
 
 <center>
-<img src="https://i.imgur.com/G4Yx18v.png" width="600">
+
 </center>
 <center><i>图1：景深工作原理的几何示意图。只有位于对焦平面（Object Plane in Focus）上的物体才能在传感器（Sensor Plane）上形成一个清晰的点。位于对焦平面之前（Near Object）或之后（Far Object）的物体，其光锥会在传感器上形成一个直径为 $c$ 的[弥散圆](@keyword=circle_of_confusion|lang=zh-CN|style=Feynman)。</i></center>
 

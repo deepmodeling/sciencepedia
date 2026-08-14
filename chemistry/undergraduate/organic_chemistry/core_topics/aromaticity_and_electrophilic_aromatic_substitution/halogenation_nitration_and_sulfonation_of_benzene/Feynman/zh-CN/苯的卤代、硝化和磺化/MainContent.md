@@ -28,7 +28,7 @@
 **第二步：恢复与重生。** 这个 σ-[配合物](@keyword=coordination_compound|lang=zh-CN|style=Feynman)虽然暂时失去了[芳香性](@keyword=aromaticity|lang=zh-CN|style=Feynman)，但它并不孤单。这个正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)并不是固定在一个碳原子上，而是通过共振效应，在环上的特定位置（邻位和对位，即C2, C4, C6）之间来回“跳跃”，从而分散了[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)，稳定了自身 [@problem_id:2173750]。这就像一个烫手山芋在几个人手中快速传递，每个人分担的灼热感就大大降低了。最后，一个[弱碱](@keyword=weak_bases|lang=zh-CN|style=Feynman)（比如溶剂分子）会像一位温柔的助手，悄悄地取走与新基团相连的那个碳原子上的氢离子（$H^+$）。这个碳原子上的 C-H 键断裂，电子回流到环内，瞬间，芳香性如同凤凰涅槃般重生！一个全新的、被取代的苯分子诞生了。
 
 <center>
-    <img src="https://i.imgur.com/eG1YgWn.png" alt="General mechanism of electrophilic aromatic substitution" width="700"/>
+
     <br>
     <em>[亲电芳香取代反应](@keyword=electrophilic_aromatic_substitution|lang=zh-CN|style=Feynman)的通用机制：两步舞。第一步形成 σ-[配合物](@keyword=coordination_compound|lang=zh-CN|style=Feynman)，暂时破坏芳香性；第二步脱去质子，恢复[芳香性](@keyword=aromaticity|lang=zh-CN|style=Feynman)。</em>
 </center>
@@ -74,7 +74,7 @@ $HNO_3 + 2H_2SO_4 \rightleftharpoons NO_2^+ + H_3O^+ + 2HSO_4^-$
 -   **[磺化](@keyword=sulfation|lang=zh-CN|style=Feynman)反应的KIE > 2**：与硝化截然相反，[磺化](@keyword=sulfation|lang=zh-CN|style=Feynman)反应显示出显著的[动力学同位素效应](@keyword=kinetic_isotope_effect|lang=zh-CN|style=Feynman)（通常在2-4之间）[@problem_id:2173702]。这有力地证明了，在[磺化](@keyword=sulfation|lang=zh-CN|style=Feynman)反应中，C-H（或 C-D）键的断裂**正是在**决速步中发生的！这意味着什么呢？这意味着[磺化](@keyword=sulfation|lang=zh-CN|style=Feynman)的第一步——$SO_3$ 攻击苯环形成 σ-[配合物](@keyword=coordination_compound|lang=zh-CN|style=Feynman)——是一个快速且**可逆**的过程。这个中间体可以轻松地变回去，重新分解为苯和 $SO_3$。整个反应的瓶颈在于第二步，即碱夺取质子（或氘离子）以恢复芳香性的那一步。
 
 <center>
-    <img src="https://i.imgur.com/WlG2pYw.png" alt="Energy profiles for nitration and sulfonation" width="800"/>
+
     <br>
     <em>硝化与[磺化](@keyword=sulfation|lang=zh-CN|style=Feynman)的[反应能量曲线](@keyword=reaction_energy_profile|lang=zh-CN|style=Feynman)示意图。硝化（左）：第一步是高能垒的决速步（RDS），C-H键断裂在快速的第二步。[磺化](@keyword=sulfation|lang=zh-CN|style=Feynman)（右）：第一步是快速可逆的平衡，第二步C-H键断裂是决速步。</em>
 </center>

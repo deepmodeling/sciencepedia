@@ -23,7 +23,7 @@ Now, let's look at a slightly more interesting case, the sequence $f_n(x) = x + 
 
 <center>
 <figure>
-  <img src="https://assets.test.eedi.com/api/item-media/image/1342721-1.png-v1" alt="A graph showing uniform convergence. The [sequence of functions](@keyword=sequence_of_functions|lang=en-US|style=Feynman) f_n(x) (represented by blue curves) gets closer and closer to the limit function f(x)=x (a red line). The entire blue curve is contained within a narrow band (the [epsilon-tube](@keyword=epsilon_tube|lang=en-US|style=Feynman)) around the red line for large n." width="600">
+
   <figcaption>Figure 1: Uniform convergence. For large $n$, the function $f_n(x)$ is trapped entirely within a narrow '$\varepsilon$-tube' around the limit function $f(x)$. The required $n$ does not depend on the specific $x$.</figcaption>
 </figure>
 </center>
@@ -45,7 +45,7 @@ The pointwise limit $f(x)$ is a function that is 0 inside the interval $(-1,1)$,
 
 <center>
 <figure>
-  <img src="https://assets.test.eedi.com/api/item-media/image/2332398-1.png-v1" alt="A sequence of continuous functions approaching a discontinuous [step function](@keyword=step_function|lang=en-US|style=Feynman). The curves f_n(x) become steeper and steeper around x=1, forming a cliff." width="600">
+
   <figcaption>Figure 2: The emergence of a discontinuity. The sequence of [smooth functions](@keyword=smooth_functions|lang=en-US|style=Feynman) $f_n(x) = x^{2n}/(1+x^{2n})$ converges pointwise to a [step function](@keyword=step_function|lang=en-US|style=Feynman). The convergence cannot be uniform near the jump.</figcaption>
 </figure>
 </center>

@@ -10,8 +10,6 @@ SPH 的“[主场](@keyword=primary_fields|lang=zh-CN|style=Feynman)”无疑是
 
 首先，想象一下雨滴的破碎、气泡的升腾、或是海浪拍打海岸时卷起的壮观浪花。这些现象的共同点是它们都具有极其复杂、不断变化的自由表面和界面。对于基于固定网格的传统计算方法而言，追踪这些扭曲、融合、甚至碎裂的界面是一场噩梦。而 SPH 的拉格朗日（Lagrangian）本质在这里大放异彩。因为 SPH 粒子本身就代表了流体的一部分，它们自然地携带着界面移动，无需任何额外的追踪算法。然而，要精确模拟这些界面，挑战依然存在。例如，要模拟一个静态的水滴，就必须精确计算由表面张力引起的内外压力差，即[拉普拉斯压力](@keyword=laplace_pressure|lang=zh-CN|style=Feynman) $ \Delta p = 2\sigma/R $。这要求我们能从离散的粒子分布中准确地计算出界面的曲率。这本身就是一门艺术，需要平衡系统性的平滑误差（bias）和由粒子离散性带来的统计噪声（sampling noise）。只有通过精细的[误差分析](@keyword=error_analysis|lang=zh-CN|style=Feynman)，我们才能确定需要用多少粒子才能以给定的精度捕捉到这些微妙的界面物理 [@problem_id:3807011]。
 
-![](https://minicourse.lisyun.com/doc/wiki/asset/13c19e5d48354c46ab93eb6c33c375cc.webp)
-
 当然，大多数流体并非存在于无限空间中，它们被容器、管道或河床所约束。如何告诉 SPH 粒子“这里有一堵墙”？这是一个至关重要且颇具挑战性的问题。正如我们在真实世界中感知墙壁的方式有两种——要么看到它，要么撞上它——SPH 的边界条件处理也大致分为两类。第一种是“动态边界条件”（Dynamic Boundary Conditions, DBC），它通过在墙的另一侧布置“幽灵粒子”来模拟墙壁的存在。这些幽灵粒子拥有墙壁的属性（例如静止不动），并通过标准的 SPH 相互作用力告诉流体粒子：“嘿，别过来！”第二种方法是“排斥力边界”（Repulsive Boundary Force, RBF），它更像是设置了一道“[力场](@keyword=force_field|lang=zh-CN|style=Feynman)”。当流体粒子过于靠近墙壁时，会感受到一个强大的、将它们推开的排斥力。这两种方法各有优劣，在模拟如管道中的[泊肃叶流](@keyword=poiseuille_flow|lang=zh-CN|style=Feynman)（Poiseuille flow）这类基本问题时，精确评估它们引入的“滑移误差”（slip error），是验证和选择合适边界模型的关键一步 [@problem_id:4103004]。
 
 更进一步，真实世界的流体远比水要复杂。想一想番茄酱：轻轻晃动瓶子，它纹丝不动；用力一甩，它又变得很稀。这种黏度依赖于剪切速率的流体被称为“非牛顿流体”。血液、熔岩、聚合物熔体都属于这一类。SPH 方法天然适合模拟这类复杂的流体。因为每个 SPH 粒子都可以被看作一个独立的传感器，它能通过感知邻近粒子的[相对运动](@keyword=relative_motion|lang=zh-CN|style=Feynman)来计算局部的[速度梯度张量](@keyword=velocity_gradient_tensor|lang=zh-CN|style=Feynman) $ \nabla \mathbf{v} $ 和[应变率张量](@keyword=strain_rate_tensor_2|lang=zh-CN|style=Feynman) $ \mathbf{S} $。一旦知道了局部的应变率，就可以根据特定的[本构模型](@keyword=constitutive_models|lang=zh-CN|style=Feynman)（如[幂律模型](@keyword=power_law_model|lang=zh-CN|style=Feynman)）当场计算出该粒子所在位置的有效黏度 $ \mu(|\mathbf{S}|) $。这种局部性质的赋予能力，使得 SPH 在模拟具有复杂流变行为的材料时具有无与伦比的灵活性 [@problem_id:2439526]。
@@ -24,8 +22,6 @@ SPH 的诞生之地是天体物理学，这并非偶然。宇宙中的气体云�
 
 激波（shock wave）是[可压缩流体](@keyword=compressible_fluids|lang=zh-CN|style=Feynman)中的一种剧烈间断，气体属性在穿过一个极薄的层时发生跳变。飞机突破音障时的[音爆](@keyword=sonic_boom|lang=zh-CN|style=Feynman)、超新星爆发的冲击波，都是激波的例子。标准的 SPH 方法在处理这种间断时会遇到麻烦，产生非物理的振荡。为了解决这个问题，学者们引入了“人工黏性”（artificial viscosity）的概念——这是一种巧妙的数值技巧，它在粒子相互靠近时（即气体被压缩时）增加一个额外的[耗散力](@keyword=dissipative_forces|lang=zh-CN|style=Feynman)，将激波光滑地展宽到几个粒子的尺度上，从而稳定计算。为了在保证稳定性的同时尽可能减少不必要的耗散，人工黏性的设计非常精巧，其大小通常与当地声速 $ c_s $ 和粒子间的[相对速度](@keyword=relative_velocity|lang=zh-CN|style=Feynman)有关。更进一步，现代 SPH 方法借鉴了[有限体积法](@keyword=finite_volume_method|lang=zh-CN|style=Feynman)中处理激波的先进思想，发展出了所谓的“Godunov SPH”。它在每对相互作用的粒子之间求解一个微型的“[黎曼问题](@keyword=riemann_problem|lang=zh-CN|style=Feynman)”（一个经典的[激波管问题](@keyword=shock_tube_problem|lang=zh-CN|style=Feynman)），从而更物理、更精确地计算粒子间的相互作用力，极大地提升了对激波的捕捉能力 [@problem_id:3994543] [@problem_id:3498194]。无论是模拟航天器再入大气层，还是[星系碰撞](@keyword=galaxy_collisions|lang=zh-CN|style=Feynman)中的气体动力学，这些先进的激波捕捉技术都是 SPH 不可或缺的利器。
 
-![](https://minicourse.lisyun.com/doc/wiki/asset/c005ba3b2a59489280d908ff954e7c10.webp)
-
 从宇宙的宏大尺度转向微观的创生之初，SPH 同样扮演着重要的角色。在太阳系形成的早期，一个由气体和尘埃组成的“[原行星盘](@keyword=protoplanetary_disks|lang=zh-CN|style=Feynman)”环绕着年轻的太阳。行星的种子——星子（planetesimal），正是在这个盘中通过尘埃颗粒的不断碰撞和凝聚而形成的。我们可以用 SPH 的思想来模拟这个过程。在这个模型中，每个“粒子”不再是流体微元，而是一个真实的尘埃颗粒。它们在气体涡旋的带动下运动，同时受到与气体之间的阻力。当两个尘埃颗粒的距离小于它们半径之和，并且相对速度足够低（否则会撞碎）时，它们就会“凝聚”成一个更大的颗粒，并遵循[动量守恒](@keyword=momentum_conservation|lang=zh-CN|style=Feynman)和[质量守恒](@keyword=mass_conservation|lang=zh-CN|style=Feynman)。在这个过程中，SPH [核函数](@keyword=kernel_function|lang=zh-CN|style=Feynman)可以被用作一个强大的后处理工具，通过对所有尘埃颗粒进行核函数求和 $ \rho_{i}=\sum_{j} m_{j}\,W(\lVert\Delta\boldsymbol{x}_{ij}\rVert,h) $，我们可以随时计算出任意位置的尘埃密度，从而分析尘埃云的结构和演化 [@problem_id:2439523]。
 
 ### 回到地球：SPH 在地球物理与环境科学中的洞察
@@ -33,8 +29,6 @@ SPH 的诞生之地是天体物理学，这并非偶然。宇宙中的气体云�
 SPH 的能力同样能帮助我们更好地理解我们自己的星球。
 
 当地震在海底引发地壳的剧烈垂直位移时，其上方的整个水体被猛然抬升或拉低，从而产生巨大的能量，形成毁灭性的海啸。SPH 可以被用来模拟这一过程。通过求解“浅水方程”（一套适用于波长远大于水深的流体运动的简化方程），SPH 能够模拟从海底隆起产生初始波形，到长波在广阔大洋上的传播，再到最终在近岸区域的放大和登陆的全过程。在这种大规模模拟中，如何处理开放边界，让[波能](@keyword=wave_energy|lang=zh-CN|style=Feynman)够无反射地传出计算区域，是一个关键技术。通常采用“海绵层”（sponge layer）的方法，在边界附近设置一个阻尼区域，人为地耗散掉波的能量，就像海绵吸水一样 [@problem_id:2439516]。
-
-![](https://minicourse.lisyun.com/doc/wiki/asset/1206152a559d4c72ba1850117b8f9aa9.webp)
 
 在陆地上，河流的流动及其对河床的冲刷是地貌演化的核心驱动力。这本质上是一个流体（水）与颗粒物质（泥沙）相互作用的“两相流”问题。SPH 非常适合处理这类问题。我们可以使用两组 SPH 粒子，一组代表水，一组代表泥沙。它们之间通过拖拽力（drag）和[浮力](@keyword=buoyancy_force|lang=zh-CN|style=Feynman)（buoyancy）相互耦合。水流对泥沙颗粒施加作用力，当这个力足够大时，泥沙就会被启动和输运。通过计算流体施加在河床上的切应力 $ \tau_b $，并将其与颗粒的 submerged weight 进行比较，我们可以计算出一个关键的[无量纲参数](@keyword=nondimensional_parameters|lang=zh-CN|style=Feynman)——希尔兹数（Shields parameter, $ \Theta $），它直接预示了泥沙是否会开始运动。这对于预测[河流侵蚀](@keyword=fluvial_erosion|lang=zh-CN|style=Feynman)、水库淤积等问题至关重要 [@problem_id:3912366]。
 

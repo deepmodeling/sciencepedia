@@ -38,7 +38,7 @@ So far, we've talked about "shells." But we know from quantum mechanics that she
 The answer lies in a beautiful and subtle effect called **penetration**. Let's look at the radial probability distributions of the orbitals—a graph showing where the electron is most likely to be found at a certain distance from the nucleus.
 
 <center>
-<img src="https://i.imgur.com/K3yT2t8.png" width="600">
+
 _Caption: A comparison of the radial probability distributions for 2s and 2p orbitals. Notice the small inner lobe of the 2s orbital, which "penetrates" closer to the nucleus._
 </center>
 

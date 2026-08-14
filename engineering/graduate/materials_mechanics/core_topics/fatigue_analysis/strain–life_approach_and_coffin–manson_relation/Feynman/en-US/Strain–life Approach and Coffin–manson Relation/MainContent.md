@@ -59,8 +59,6 @@ $$
 $$
 This is the complete **[strain-life equation](@keyword=strain_life_equation|lang=en-US|style=Feynman)** [@problem_id:2920161]. Its beauty lies in its elegant simplicity and power. At short lives (low $ N_f $), the second term, with its large negative exponent $ c $, dominates. The equation essentially becomes the Coffin-Manson relation. At long lives (high $ N_f $), the second term decays to almost nothing, and the first term, with its smaller negative exponent $ b $, takes over. The equation becomes the Basquin relation. It seamlessly bridges the two worlds of LCF and HCF.
 
-<img src="https://i.imgur.com/8Qeun2N.png" alt="A schematic log-log plot of Strain vs. Reversals to Failure. It shows the total strain (epsilon_a) as a solid curve. This curve is the sum of two straight lines: the elastic strain line (epsilon_e, Basquin) and the plastic strain line (epsilon_p, Coffin-Manson). The plastic strain line has a steeper negative slope and dominates at low cycles (LCF). The [elastic strain](@keyword=elastic_strain|lang=en-US|style=Feynman) line has a shallower slope and dominates at high cycles (HCF). The two lines cross at the transition life (N_t)." width="600"/>
-
 ### Where Worlds Collide: The Transition Life
 
 This unified model provides a natural, non-arbitrary answer to the question: where does LCF end and HCF begin? The transition happens at the **transition life**, $ N_t $, where the damage from plasticity and elasticity are of equal importance. In other words, it's the life at which the plastic and [elastic strain](@keyword=elastic_strain|lang=en-US|style=Feynman) amplitudes are equal:

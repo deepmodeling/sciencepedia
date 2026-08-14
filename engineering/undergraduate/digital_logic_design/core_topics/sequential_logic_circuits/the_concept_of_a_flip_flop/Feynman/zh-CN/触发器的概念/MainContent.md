@@ -15,7 +15,7 @@
 
 数字电路的构建者们发现了一个异常优美的方法来实现这一点。他们没有去发明什么全新的神秘元件，而是把我们已经熟知的最简单的[逻辑门](@keyword=logic_gates|lang=zh-CN|style=Feynman)——比如“[与非门](@keyword=nand_gate|lang=zh-CN|style=Feynman)”（NAND gate）——以一种特殊的方式连接起来。想象有两个与非门，我们把第一个门的输出连接到第二个门的一个输入，再把第二个门的输出连接回第一个门的一个输入。这种“[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)耦合”的结构，就像两条互相咬住对方尾巴的蛇，形成了一个[反馈环](@keyword=feedback_loop|lang=zh-CN|style=Feynman)路。[@problem_id:1967179]
 
-![由[与非门](@keyword=nand_gate|lang=zh-CN|style=Feynman)构成的[SR锁存器](@keyword=set_reset_latch|lang=zh-CN|style=Feynman)](https://assets.bit-by-bit.cn/machine_learning/Digital_Logic_Design/flip-flop/sr_latch_nand.svg)
+构成的[SR锁存器](@keyword=set_reset_latch|lang=zh-CN|style=Feynman)](https://assets.bit-by-bit.cn/machine_learning/Digital_Logic_Design/flip-flop/sr_latch_nand.svg)
 图1：一个由两个[与非门](@keyword=nand_gate|lang=zh-CN|style=Feynman)[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)耦合构成的基本[SR锁存器](@keyword=set_reset_latch|lang=zh-CN|style=Feynman)。这种反馈是记忆的本质。
 
 这个简单的电路，被称为 **[SR锁存器](@keyword=set_reset_latch|lang=zh-CN|style=Feynman)（SR Latch）**，拥有两种稳定的状态。它的输出 $Q$ 可以是 $1$，也可以是 $0$。一旦进入其中一种状态，只要没有外部的“指令”，它就会一直保持下去。这就是“[双稳态](@keyword=bistability|lang=zh-CN|style=Feynman)”（bistable）的含义，也是所有数字记忆的基础。

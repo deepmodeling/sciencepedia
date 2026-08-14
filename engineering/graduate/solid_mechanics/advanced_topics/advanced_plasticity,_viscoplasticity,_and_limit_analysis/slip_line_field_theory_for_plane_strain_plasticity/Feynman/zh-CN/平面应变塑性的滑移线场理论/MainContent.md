@@ -69,7 +69,7 @@ $$ \tau_{xy} = k \sin(2\theta) $$
 
 <br>
 <center>
-<img src="https://i.imgur.com/example.png" alt="在[塑性区](@keyword=plastic_zone|lang=zh-CN|style=Feynman)内，两族滑移线（红色和蓝色）在每一点都相互正交，并与主应力方向（灰色箭头）成45度角。" style="width: 50%;">
+
 <figcaption>图1：滑移[线与](@keyword=wired_and|lang=zh-CN|style=Feynman)[主应力](@keyword=principal_stresses|lang=zh-CN|style=Feynman)方向的几何关系</figcaption>
 </center>
 <br>

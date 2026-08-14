@@ -44,7 +44,7 @@
 这听起来可能有点抽象，让我们来看一个绝佳的类比：国际象棋的棋盘。
 
 <center>
-<img src="https://i.imgur.com/Nq7gB51.png" width="300">
+
 </center>
 <br>
 

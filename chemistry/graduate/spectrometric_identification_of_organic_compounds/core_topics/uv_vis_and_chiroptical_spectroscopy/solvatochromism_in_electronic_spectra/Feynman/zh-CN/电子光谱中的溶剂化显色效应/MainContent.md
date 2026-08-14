@@ -21,8 +21,6 @@
 
 因此，溶剂化显色的核心秘密在于**差异化稳定（differential stabilization）**：溶剂对[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)和[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的稳定化程度不同。吸收光的能量不再是真空中的 $\Delta E_{gas}$，而是变成了 $\Delta E_{solv} = \Delta E_{gas} + (\Delta E_{solv,e} - \Delta E_{solv,g})$，其中 $\Delta E_{solv,g}$ 和 $\Delta E_{solv,e}$ 分别是溶剂对[基态](@keyword=ground_state|lang=zh-CN|style=Feynman)和[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的稳定化能（它们通常是负值）。[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)的移动，完全取决于括号里的这一项——稳定化能的*差值*。
 
-![Energy Level Diagram](https://i.imgur.com/example.png "An energy level diagram showing how differential stabilization of the ground state (Eg) and excited state (Ee) by a solvent leads to a change in the transition energy (ΔE).")
-
 ### 两种跃迁的故事：正溶剂化显色与负[溶剂化](@keyword=solvation|lang=zh-CN|style=Feynman)显色
 
 基于“差异化稳定”这一核心思想，我们可以预测[光谱](@keyword=optical_spectra|lang=zh-CN|style=Feynman)移动的方向。这主要取决于分子在激发前后，其偶极矩是如何变化的。[@problem_id:3723872]

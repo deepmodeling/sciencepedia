@@ -16,7 +16,7 @@
 但对于一个位于液体表面的分子来说，情况就大不相同了。它的下方和侧面有同伴拉着它，但上方却是空气或其他物质，那里的吸引力要弱得多。这就好比派对上一个人站在了墙角，只有一半方向有人与他互动。结果是，表面分子被一股净合力向液体内部拉去。
 
 <center>
-<img src="https://i.imgur.com/8vjVw5v.png" width="600" alt="Illustration of cohesive forces on molecules in the bulk versus at the surface of a liquid.">
+
 </center>
 <br>
 
@@ -29,7 +29,7 @@
 当一滴液体落在固体表面上时，事情变得更加有趣。这不再是液体自己的独角戏，而是一场涉及三方——固、液、气——的“拔河比赛”。这三相交汇于一条线上，我们称之为“三相接触线”。
 
 <center>
-<img src="https://i.imgur.com/xO4b8gD.png" width="500" alt="Illustration showing the balance of surface tensions at a three-phase contact line, defining the contact angle.">
+
 </center>
 <br>
 

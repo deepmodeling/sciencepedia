@@ -26,7 +26,7 @@
 让我们来描绘一幅生动的图像。想象一个“移动的、越长越高的驼峰”。在第 $n$ 场表演中，表演者 $f_n$ 在舞台的某个位置 $x_n$ 制造了一个非常高的尖峰，峰值为 $n$，但这个尖峰非常窄。到了第 $n+1$ 场，表演者 $f_{n+1}$ 制造了一个更高的尖峰，峰值为 $n+1$，但它更窄了，并且移动到了一个新的位置 $x_{n+1}$。
 
 <center>
-<img src="https://i.imgur.com/B707Nsm.png" alt="A sequence of taller and narrower 'tent' functions converging pointwise to zero." width="600">
+
 </center>
 <center> 一列“[帐篷函数](@keyword=hat_functions|lang=zh-CN|style=Feynman)”，它们越来越高、越来越窄，并向原点聚集。 </center>
 

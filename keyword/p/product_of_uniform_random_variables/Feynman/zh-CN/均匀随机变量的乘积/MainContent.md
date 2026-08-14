@@ -57,7 +57,6 @@ $$f_Z(z) = \frac{d}{dz} (z - z \ln(z)) = (1) - \left(1 \cdot \ln(z) + z \cdot \f
 
 就是它了。两个在$[0,1]$上的均匀随机数之积的[概率密度](@keyword=probability_density|lang=zh-CN|style=Feynman)由函数$f_Z(z) = -\ln(z)$给出。
 
-![Plot of the PDF f(z) = -ln(z) for z in (0,1)](https://i.imgur.com/xHh0J4Z.png)
 *两个独立U(0,1)[随机变量](@keyword=random_variable|lang=zh-CN|style=Feynman)之积的概率密度函数。*
 
 花点时间欣赏一下这个结果。我们从两个可以想象的最简单、最“平坦”的分布——[均匀分布](@keyword=uniform_distribution|lang=zh-CN|style=Feynman)，一条恒定的直线——开始。我们执行了简单的乘法运算。结果却是一条优雅、流畅的曲线。它根本不平坦！当$z$趋近于0时，函数$-\ln(z)$会飙升至无穷大。

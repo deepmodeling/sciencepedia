@@ -47,6 +47,4 @@
 
 更复杂的故事呢？一个电子正在走着，它激发出了一个“虚”的电子-空穴对（你可以想象成它暂时从真空里“借”了一点能量），这个电子-空穴对又相互作用，最后又湮灭，把能量还给真空，原来的电子继续前进。这个过程在[费曼图](@keyword=feynman_diagrams|lang=zh-CN|style=Feynman)中就会形成一个“圈”。
 
-![](https://minio.apps.staging.raid-monitor.com/public-permanent-storage/zhenghao-workspace/2024-05-16/b0f1a4e1-2550-4cc8-8314-8785ef98f244.png)
-
 *图注：一些简单的[费曼图](@keyword=feynman_diagrams|lang=zh-CN|style=Feynman)，“故事”可以变得任意复杂；一个可约图（左）可以被切断成两部分，一个[不可约图](@keyword=irreducible_diagrams|lang=zh-CN|style=Feynman)（右）则不能；[自洽方案](@keyword=self_consistent_scheme|lang=zh-CN|style=Feynman)的核心思想是用完整的[传播子](@keyword=propagators|lang=zh-CN|style=Feynman) $G$（粗线）来构建[自能](@keyword=self_energy|lang=zh-CN|style=Feynman) $\Sigma$。*

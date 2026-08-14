@@ -25,7 +25,7 @@
 
 仔细观察，我们可以发现一条新的边界线 $x+y=1$。这条线恰好通过点 $(1,0)$ 和 $(0,1)$，并且所有蓝色区域的点都满足 $x+y \le 1$。然而，那个我们不想要的分数顶点 $(\frac{2}{3}, \frac{2}{3})$ 却不满足这个不等式，因为 $\frac{2}{3} + \frac{2}{3} = \frac{4}{3} > 1$。因此，不等式 $x+y \le 1$ 就是一个完美的[切割平面](@keyword=cutting_planes|lang=zh-CN|style=Feynman)！它像一把锋利的刻刀，精确地削去了包含分数顶点的多余部分，让我们离真实的整数[解集](@keyword=solution_set|lang=zh-CN|style=Feynman)更近了一步。在这个简单的例子里，仅仅一刀，我们就精确地刻画出了整数解的[凸包](@keyword=convex_hull|lang=zh-CN|style=Feynman) [@problem_id:3115561]。
 
-![[切割平面](@keyword=cutting_planes|lang=zh-CN|style=Feynman) x+y=1 切割分数顶点 (2/3, 2/3) 的图像](https://i.imgur.com/example.png)
+ x+y=1 切割分数顶点 (2/3, 2/3) 的图像](https://i.imgur.com/example.png)
 
 ### 切割的逻辑之源：“非此即彼”的力量
 

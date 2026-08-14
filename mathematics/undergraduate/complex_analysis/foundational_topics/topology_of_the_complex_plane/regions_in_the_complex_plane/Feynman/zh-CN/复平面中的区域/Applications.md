@@ -11,7 +11,7 @@
 当我们从[线性](@keyword=linearity|lang=zh-CN|style=Feynman)函数转向[非线性](@keyword=nonlinearity|lang=zh-CN|style=Feynman)函数时，事情就变得更加激动人心了。考虑一个简单的函数 $f(z) = z^2$。它如何改变一个区域？让我们取一个位于[上半平面](@keyword=upper_half_plane|lang=zh-CN|style=Feynman)的单位半圆盘，即所有满足 $|z|<1$ 且[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman) $\text{Im}(z)>0$ 的点组成的区域。用[极坐标](@keyword=polar_coordinates|lang=zh-CN|style=Feynman)来看，$z = re^{i\theta}$，其中 $0<r<1$ 且 $0<\theta<\pi$。经过平方后，我们得到 $w = z^2 = r^2 e^{i2\theta}$。看，发生了什么？模长被平方了，所以 $r^2$ 仍然小于1；但角度被加倍了，从 $(0, \pi)$ 的范围变成了 $(0, 2\pi)$。这意味着，原来的“上半”平面被展开，覆盖了几乎整个[单位圆盘](@keyword=unit_disk|lang=zh-CN|style=Feynman)！唯一的例外是正[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)，因为角度 $2\theta$ 永远不会等于 $0$ 或 $2\pi$。这个简单的二次函数，就像折纸一样，将半个圆盘“展开”成一个带有切口的全圆盘 [@problem_id:2262323]。
 
 <center>
-    <img src="https://assets.test-files.org/images/TMM_2304_ComplexRegions_V2_Joukowsky.png" alt="Image of the Joukowsky transformation mapping a circle to an airfoil shape." width="600">
+
     <br>
     <small>图1：[Joukowsky变换](@keyword=joukowsky_transformation|lang=zh-CN|style=Feynman)可以将一个简单的圆形区域（及其外部）映射成类似飞机机[翼剖面](@keyword=aerofoil|lang=zh-CN|style=Feynman)（[翼型](@keyword=aerofoil|lang=zh-CN|style=Feynman)）的复杂形状。这使得研究复杂机翼[周围](@keyword=entourages|lang=zh-CN|style=Feynman)的空气流动，可以被转化为研究简单圆柱体[周围](@keyword=entourages|lang=zh-CN|style=Feynman)的流动，极大地简化了计算。</small>
 </center>
@@ -31,7 +31,7 @@
 在处理[大型线性系统](@keyword=large_linear_systems|lang=zh-CN|style=Feynman)时，我们经常需要知道系统的“[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)”在哪里。[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)是决定系统动态行为的“[魔数](@keyword=magic_numbers|lang=zh-CN|style=Feynman)”。**Gerschgorin圆盘定理** 为我们提供了一个巧妙的方法来定位它们 [@problem_id:1360105]。该定理不会精确地告诉你每个[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)的位置，但它会在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上画出一系列圆盘，并保证所有的[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)都“藏”在这些圆盘的并集之中。如果这些圆盘构成的整个区域都避开了原点 $0$，我们就能保证该系统是可逆的，这在[稳定性分析](@keyword=stability_analysis|lang=zh-CN|style=Feynman)中至关重要。
 
 <center>
-    <img src="https://assets.test-files.org/images/TMM_2304_ComplexRegions_V2_Stability.png" alt="Image showing the stability regions for different numerical methods (Euler, Backward Euler, and Trapezoidal)." width="700">
+
     <br>
     <small>图2：不同[数值方法](@keyword=numerical_methods|lang=zh-CN|style=Feynman)（如[前向欧拉法](@keyword=forward_euler_method|lang=zh-CN|style=Feynman)、[后向欧拉法](@keyword=implicit_euler_method|lang=zh-CN|style=Feynman)和[梯形法则](@keyword=trapezoidal_rule|lang=zh-CN|style=Feynman)）的[绝对稳定区域](@keyword=region_of_absolute_stability|lang=zh-CN|style=Feynman)。为了保证模拟结果不[发散](@keyword=divergence|lang=zh-CN|style=Feynman)，与系统相关的[复数](@keyword=complex_numbers|lang=zh-CN|style=Feynman) $z=h\lambda$ 必须落在这个区域内。[隐式方法](@keyword=implicit_methods|lang=zh-CN|style=Feynman)（如后向欧拉和[梯形法则](@keyword=trapezoidal_rule|lang=zh-CN|style=Feynman)）通常拥有更大的[稳定区域](@keyword=stability_regions|lang=zh-CN|style=Feynman)，允许使用更大的时间[步长](@keyword=step_size|lang=zh-CN|style=Feynman)进行计算。</small>
 </center>
@@ -58,7 +58,7 @@
 想象一张有四个国家的地图。有没有可能存在这样一条边界，你站在上面的任意一点，都能同时与所有四个国家接壤？在我们的现实世界里，这是不可能的。但在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)的牛顿世界里，这恰恰是现实！站在这样一个[边界点](@keyword=boundary_points|lang=zh-CN|style=Feynman)上，意味着你离每一种可能的最终命运都只有无限小的距离。一次微不足道的扰动，就能将你的最终归宿从一个根彻底改变为另一个。这些由简单迭代产生的区域边界，向我们展示了[确定性系统](@keyword=deterministic_system|lang=zh-CN|style=Feynman)中的混沌现象是多么精妙和普遍 [@problem_id:2262345]。
 
 <center>
-    <img src="https://assets.test-files.org/images/TMM_2304_ComplexRegions_V2_Mandelbrot.png" alt="Image of the Mandelbrot set with certain regions highlighted." width="500">
+
     <br>
     <small>图3：[Mandelbrot集合](@keyword=mandelbrot_set|lang=zh-CN|style=Feynman)，数学中最著名的[分形](@keyword=fractal|lang=zh-CN|style=Feynman)区域之一。图中不同颜色代表了点 $c$ 在迭代中逃逸到无穷远的[速度](@keyword=velocity|lang=zh-CN|style=Feynman)。集合内部（黑色区域）的点永远不会逃逸。计算这个区域的成本在不同位置差异巨大，为[并行计算](@keyword=parallel_computing|lang=zh-CN|style=Feynman)带来了挑战。</small>
 </center>

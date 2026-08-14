@@ -15,7 +15,7 @@
 
 <br>
 <div align="center">
-  <img src="https://i.imgur.com/kP4A62D.png" alt="A point P on a parabola is equidistant from the focus F and the directrix L." width="400"/>
+
   <br>
   <small>图1：[抛物线的焦点-准线定义](@keyword=parabola_focus_directrix_definition|lang=zh-CN|style=Feynman)。对于曲线上任意一点 $P$，它到焦点 $F$ 的距离（红线）等于它到准线 $L$ 的垂直距离（蓝线）。</small>
 </div>
@@ -84,7 +84,7 @@ $$ x^2 - 2xy + y^2 + 8x + 8y - 16 = 0 $$
 
 <br>
 <div align="center">
-  <img src="https://i.imgur.com/8G03Sg1.png" alt="Rays parallel to the axis of a parabola reflect and converge at the focus." width="450"/>
+
   <br>
   <small>图2：抛物线的反射特性。平行于[对称轴](@keyword=axis_of_symmetry|lang=zh-CN|style=Feynman)的光线（黄色）经抛物面反射后全部汇聚于焦点 $F$。</small>
 </div>

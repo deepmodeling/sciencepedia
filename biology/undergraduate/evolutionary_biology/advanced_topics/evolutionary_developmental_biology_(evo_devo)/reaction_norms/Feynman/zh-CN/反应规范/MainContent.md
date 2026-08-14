@@ -18,7 +18,7 @@
 对于一个特定的基因型，比如“阿尔法”基因型，它的“决策规则”可能可以被一个数学函数所描述。例如，它的成熟年龄 $A$ 可能会随着捕食风险指数 $p$ 的增加而线性下降。在[坐标图](@keyword=coordinate_map|lang=zh-CN|style=Feynman)上，我们将环境（捕食风险 $p$）放在x轴，将表型（成熟年龄 $A$）放在y轴，这条线——也就是阿尔法基因型的反应[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)——就直观地展示了它的生存策略。现在，如果我们发现了另一个“贝塔”基因型，它的反应[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)可能是弯曲的。在某个特定的捕食风险水平上，这两种基因型的鱼可能会在完全相同的年龄成熟，这一点正是它们反应[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)曲线的交点 [@problem_id:1958865]。
 
 <center>
-<img src="https.i.imgur.com/kS5x87J.png" alt="一条线性的反应[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)和一条非线性的反应[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)相交于一点。x轴代表[环境梯度](@keyword=environmental_gradients|lang=zh-CN|style=Feynman)（如捕食风险），y轴代表表型（如成熟年龄）。" width="500">
+
 <br>
 <small>图1：两种不同基因型（阿尔法和贝塔）对捕食风险的反应[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)。它们的曲线在某个特定的风险水平上相交，意味着在该环境下，它们的表型表现相同。</small>
 </center>
@@ -40,7 +40,7 @@
 现在，让我们来看一种更激动人心的情况。假设我们正在比较两种玉米品种（阿尔法和贝塔）在不同氮肥水平土壤中的产量 [@problem_id:1958923]。在贫瘠的土壤中，阿尔法品种表现更好；但在肥沃的土壤中，贝塔品种的产量却反超了。如果我们画出它们的反应[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)，我们会看到两条线并不平行——它们[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)了！
 
 <center>
-<img src="https.i.imgur.com/5u9g46r.png" alt="两条非平行的反应[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)在一个环境中相交。x轴是环境（如土壤肥力），y轴是表型（如产量）。" width="500">
+
 <br>
 <small>图2：基因型与环境的相互作用（G×E）。品种阿尔法在低氮环境中表现更优，而品种贝塔在高氮环境中产量更高。这种“相对优劣”随环境改变的现象，正是G×E相互作用的标志。</small>
 </center>

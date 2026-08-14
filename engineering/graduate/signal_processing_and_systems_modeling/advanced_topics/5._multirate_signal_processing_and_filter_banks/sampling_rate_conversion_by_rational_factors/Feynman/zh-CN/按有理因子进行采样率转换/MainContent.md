@@ -21,7 +21,7 @@
 
 这听起来不错，不是吗？但别忘了，[数字信号](@keyword=digital_signals|lang=zh-CN|style=Feynman)的[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)具有周期性，就像一个万花筒，每转动 $2\pi$ 弧度就会看到重复的图案。当原始[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)被压缩后，它在 $[-\pi, \pi]$ 这个主周期区间内占据的空间变小了，只占了 $[-\pi/L, \pi/L]$ 的范围。那么剩下的空间怎么办呢？大自然讨厌真空，信号处理的世界也是如此。这些空白地带会被原始[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)的“复制品”填满。我们称这些复制品为**镜像[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)**（spectral images）或“幽灵”。它们是升采样过程不请自来的副产品，是必须被驱除的噪声。
 
-![升采样在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中压缩基带[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)并产生镜像。](https://image.gnjos.com/course/2902299/upsample.png)
+中压缩基带[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)并产生镜像。](https://image.gnjos.com/course/2902299/upsample.png)
 *图1：升采样（[插值](@keyword=interpolation|lang=zh-CN|style=Feynman)）的效果。原始信号的[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)（上）在时间域插入零点后，在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)被压缩，并产生了多个“镜像”或“幽灵”[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)（下）。*
 
 #### 降采样的“[混叠](@keyword=spectral_folding|lang=zh-CN|style=Feynman)”：频率的假面舞会
@@ -34,7 +34,7 @@ Y(e^{j\omega}) = \frac{1}{M} \sum_{k=0}^{M-1} X\left(e^{j(\omega - 2\pi k)/M}\ri
 $$
 这个公式告诉我们，原始[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)中不同频段的内容，比如高频和低频，会被折叠、叠加到同一个频段内。这就像你看电影里快速旋转的车轮，它有时看起来是静止的，甚至是倒转的。这就是一种时间上的[混叠](@keyword=spectral_folding|lang=zh-CN|style=Feynman)。在信号处理中，高频信号在[降采样](@keyword=downsampling|lang=zh-CN|style=Feynman)后可能会“伪装”成低频信号，一旦[混叠](@keyword=spectral_folding|lang=zh-CN|style=Feynman)发生，就像把牛奶倒进了咖啡，你再也无法将它们完美分开了。
 
-![[降采样](@keyword=downsampling|lang=zh-CN|style=Feynman)在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中扩展[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)，若信号未被适当限带则会导致[混叠](@keyword=spectral_folding|lang=zh-CN|style=Feynman)。](https://image.gnjos.com/course/2902299/downsample.png)
+在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中扩展[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)，若信号未被适当限带则会导致[混叠](@keyword=spectral_folding|lang=zh-CN|style=Feynman)。](https://image.gnjos.com/course/2902299/downsample.png)
 *图2：降采样（抽取）的效果。如果信号（上）在[降采样](@keyword=downsampling|lang=zh-CN|style=Feynman)前没有被充分地带宽限制，那么在[频域](@keyword=frequency_domain|lang=zh-CN|style=Feynman)中被扩展的[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)将会发生重叠，导致不可逆的混叠失真（下）。*
 
 ### 伟大的妥协：用一个滤波器驯服两头猛兽

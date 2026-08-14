@@ -12,7 +12,7 @@
 然而，远离主轴的光线（“[边缘光线](@keyword=marginal_ray|lang=zh-CN|style=Feynman)”）的命运则大相径庭。这些光线撞击到[镜面](@keyword=mirror_plane|lang=zh-CN|style=Feynman)更边缘、更陡峭的部分。根据[反射定律](@keyword=law_of_reflection|lang=zh-CN|style=Feynman)——[入射角](@keyword=angle_of_incidence|lang=zh-CN|style=Feynman)等于反射角——这个更陡峭的表面会使光线发生更急剧的转折。结果是，这些[边缘光线](@keyword=marginal_ray|lang=zh-CN|style=Feynman)被“过度弯曲”了，它们与[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)的交点会比近轴焦点更靠近镜面。于是，我们期待的那个独一无二的焦点消失了，取而代之的是沿着主轴分布的一片模糊区域。这并非镜子制造上的瑕疵，而是[球面几何](@keyword=sphere_geometry|lang=zh-CN|style=Feynman)本身固有的特性。如果我们坐下来，用几何学进行一番严谨的推导，就会发现光线的交点位置明确地依赖于它入射时的高度 $h$[@problem_id:2255934]。这种不同高度的光线无[法汇](@keyword=normal_congruence|lang=zh-CN|style=Feynman)聚于同一点的现象，就是**[球面像差](@keyword=spherical_aberration|lang=zh-CN|style=Feynman) (Spherical Aberration)**。
 
 <center>
-    <img src="https://i.imgur.com/uKY1f6o.png" alt="Illustration of spherical aberration in a spherical mirror, where marginal rays focus closer to the mirror than paraxial rays." width="600"/>
+
     <br>
     <small>图1：[球面镜](@keyword=spherical_mirrors|lang=zh-CN|style=Feynman)的噩梦。平行光线并未汇聚于一点。[边缘光线](@keyword=marginal_ray|lang=zh-CN|style=Feynman)（红色）比近轴光线（蓝色）更早地与主轴相交，形成了模糊的[焦散线](@keyword=caustics|lang=zh-CN|style=Feynman)，而非一个清晰的焦点。</small>
 </center>
@@ -26,7 +26,7 @@
 既然不存在一个完美的焦点，那么我们应该把感光元件（如相机里的 CMOS 或我们的视网膜）放在哪里，才能得到最清晰的图像呢？答案既不在近轴焦点，也不在边缘焦点。想象一下，所有光线汇聚成一个光锥。在边缘焦点之前，所有光线都在向内收缩。经过边缘焦点之后，[边缘光线](@keyword=marginal_ray|lang=zh-CN|style=Feynman)开始发散，而近轴光线还在继续收缩。在这两者之间，必定存在一个位置，使得整个光斑的直径达到最小值。这个“最佳妥协”的位置，被光学家们赋予了一个可爱的名字——**[最小弥散圆](@keyword=circle_of_least_confusion|lang=zh-CN|style=Feynman) (Circle of Least Confusion)**。它是在这个不完美系统中我们能得到的“最清晰”的图像 [@problem_id:2255939]。
 
 <center>
-    <img src="https://i.imgur.com/Hl51Q8C.png" alt="Diagram showing the circle of least confusion formed between the marginal and paraxial foci." width="600"/>
+
     <br>
     <small>图2：在实践中寻找最佳焦点。[最小弥散圆](@keyword=circle_of_least_confusion|lang=zh-CN|style=Feynman)位于边缘焦点和近轴焦点之间，是光斑尺寸最小的位置，代表了实际成像的最佳位置。</small>
 </center>

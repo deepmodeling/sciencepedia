@@ -12,8 +12,6 @@
 
 答案是：在计算机里“建造”这座音乐厅。我们可以将音乐厅的二维或三维空间剖分成一个巨大的网格。空气中的声压扰动，就可以用我们熟悉的标量波动方程来描述。墙壁、天花板和地板可以被建模为边界条件。而真正的魔法在于，我们可以在这个虚拟空间中任意“悬挂”吸音板。在数值上，这相当于在[波动方程](@keyword=wave_equation|lang=zh-CN|style=Feynman)中引入一个空间依赖的阻尼项 $\sigma(x,y)$。在没有吸音板的地方，$\sigma=0$，[声波](@keyword=acoustic_waves|lang=zh-CN|style=Feynman)完美反射；在铺设了吸-音材料的区域，$\sigma > 0$，[声波](@keyword=acoustic_waves|lang=zh-CN|style=Feynman)的能量在每次反射时都会被部分吸收。通过运行[有限差分](@keyword=finite_differences|lang=zh-CN|style=Feynman)模拟，我们可以“听”到不同吸音板布局方案下的声学效果，例如计算大厅后排观众区域在声源停止后残留的声能，并从中选出最优设计 [@problem_id:2392882]。这不再是凭经验的猜测，而是基于物理[第一性原理](@keyword=ab_initio|lang=zh-CN|style=Feynman)的精确设计。
 
-![](https://www.notion.so/images/prototypes/ai-img/42217c99-53e7-4b53-a7c3-305d21a2c918.png)
-
 不仅是吸收声音，我们的方法同样能模拟声音的产生。天空中划过的超音速飞机，身后会拖曳着一声巨响——音爆。这道[冲击波](@keyword=blast_wave|lang=zh-CN|style=Feynman)的本质，是一个以超音速移动的声源持续不断地向外辐射[声波](@keyword=acoustic_waves|lang=zh-CN|style=Feynman)并叠加形成的。我们可以在二维[波动方程](@keyword=wave_equation|lang=zh-CN|style=Feynman)中加入一个移动的源项来模拟这架飞机。通过有限差分时域（FDTD）方法进行模拟，我们可以在虚拟的地面探测器上记录下声压随时间的变化。如果我们的模拟足够精确，我们将能重现音爆特有的“N”型波——一个领先的压缩波（正压）紧跟着一个[稀疏波](@keyword=rarefaction_waves|lang=zh-CN|style=Feynman)（[负压](@keyword=negative_pressure|lang=zh-CN|style=Feynman)），这正是超音速物体声学特征的鲜明印记 [@problem_id:2392928]。
 
 波动模拟的魅力也延伸到了我们创造的虚拟世界。在电影特效和视频游戏中，一面迎风飘扬的旗帜、一件随角色奔跑而摆动的衣袍，其背后往往就是一个求解[波动方程](@keyword=wave_equation|lang=zh-CN|style=Feynman)的数值引擎。然而，你是否曾感觉某些游戏中的布料看起来有些“僵硬”？它们似乎不情愿形成自然的褶皱，短促的波纹也传播得异常缓慢。
@@ -41,8 +39,6 @@
 [波动方程](@keyword=wave_equation|lang=zh-CN|style=Feynman)的威力远不止于地球。它同样是天体物理学家和宇宙学家探索宇宙的利器。
 
 让我们从地球的深处开始，潜入到液态金属构成的地核。这里是地球[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的发源地。在这个导电的、旋转的流体海洋中，磁力线就像被“冻结”在流体中一样。如果流体发生扰动，磁力线就会像被拨动的琴弦一样[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，产生一种名为“[阿尔芬波](@keyword=alfvén_waves|lang=zh-CN|style=Feynman)”的磁[流体动力学](@keyword=hydrodynamics|lang=zh-CN|style=Feynman)（MHD）波。这是一种[横波](@keyword=transverse_waves|lang=zh-CN|style=Feynman)，其中流体[质点](@keyword=point_mass|lang=zh-CN|style=Feynman)的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)速度 $\mathbf{v}$ 和[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的扰动 $\mathbf{b}$ 相互垂直，并共同垂直于背景[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的方向。再一次地，我们可以写出一组描述这种波动的[线性化](@keyword=linearization|lang=zh-CN|style=Feynman)[一阶偏微分方程](@keyword=first_order_pde|lang=zh-CN|style=Feynman)组，并使用如Lax-Wendroff等高精度[有限差分格式](@keyword=finite_difference_stencil|lang=zh-CN|style=Feynman)来模拟这些波在地核中的传播。通过研究这些波，科学家得以一窥那遥远、炽热、我们永远无法直接触及的世界的内部动态 [@problem_id:2392942]。
-
-![](https://www.notion.so/images/prototypes/ai-img/0cce8acd-e848-4395-816d-341eeb0f0237.png)
 
 现在，让我们把视线投向更遥远的深空。爱因斯坦的广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)告诉我们，大质量天体（如星系）会弯曲其周围的[时空](@keyword=space_time|lang=zh-CN|style=Feynman)。当来自遥远[类星体](@keyword=quasars|lang=zh-CN|style=Feynman)的光线经过这个“[时空](@keyword=space_time|lang=zh-CN|style=Feynman)透镜”时，它的路径会被偏折，就像光通过玻璃透镜一样。在理想的对准条件下，我们看到的将不再是一个单点光源，而是被分裂成多个像点，形成一个被称为“爱因斯坦十字”的奇妙景象。
 

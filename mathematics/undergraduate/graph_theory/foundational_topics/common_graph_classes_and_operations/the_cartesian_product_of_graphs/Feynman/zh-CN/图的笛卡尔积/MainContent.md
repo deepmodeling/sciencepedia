@@ -22,7 +22,7 @@
 这个简单的规则创造出了令人惊叹的结构。整个 $G \times H$ 图可以看作是由 $|V(H)|$ 个图 $G$ 的“副本”和 $|V(G)|$ 个图 $H$ 的“副本”[交织](@keyword=interleaving|lang=zh-CN|style=Feynman)而成。让我们看一个具体的例子。假设一个网络是由一个3个服务器的路径（$P_3$）和一个3个服务器的环（$C_3$）构建而成的，其结构为 $P_3 \times C_3$ [@problem_id:1538660]。你可以想象有3个 $C_3$ [圆环](@keyword=annulus|lang=zh-CN|style=Feynman)，像叠叠乐一样堆起来，然后用直线把每个[圆环](@keyword=annulus|lang=zh-CN|style=Feynman)上对应的服务器[连接](@keyword=concatenation|lang=zh-CN|style=Feynman)起来。这些[连接线](@keyword=tie_line_2|lang=zh-CN|style=Feynman)本身又构成了3个 $P_3$ 路径。
 
 <center>
-<img src="https://assets.test.logos.com/images/visualizations/p3_c3_product.png" alt="Drawing of P_3 x C_3 graph" width="400"/>
+
 <br>
 <small>图1：$P_3 \times C_3$ 的结构，可以看作是三个 $C_3$ 环（横向）通过 $P_3$ 路径（纵向）[连接](@keyword=concatenation|lang=zh-CN|style=Feynman)而成。</small>
 </center>

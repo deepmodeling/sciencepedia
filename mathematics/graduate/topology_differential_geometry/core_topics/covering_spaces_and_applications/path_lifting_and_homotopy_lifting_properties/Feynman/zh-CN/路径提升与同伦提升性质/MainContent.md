@@ -17,7 +17,7 @@
 
 <br>
 <figure>
-    <img src="https://assets.bitdegree.org/online-learning-platforms/storage/media/2023/07/what-is-latex-1.o.png" alt="A diagram showing the real line R covering the circle S^1, with points like 0, 1, 2 on R all mapping to the same point on S^1. Another diagram shows a cylinder covering a Möbius strip." style="width:70%; margin-left:auto; margin-right:auto; display:block"/>
+
     <figcaption style="text-align: center; font-style: italic;">图1：直线覆叠圆周与圆柱体覆叠莫比乌斯带的直观示意图。</figcaption>
 </figure>
 <br>

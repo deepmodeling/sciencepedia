@@ -13,7 +13,7 @@
 
 这个原理是我们的阿基米德[支点](@keyword=branch_points|lang=zh-CN|style=Feynman)。例如，考虑级数 $\sum (\frac{\cos(n\pi)}{n^{3/2}} + i \frac{n}{n^2+1})$。它的实部是 $\sum \frac{(-1)^n}{n^{3/2}}$，这是一个[绝对收敛](@keyword=absolute_convergence|lang=zh-CN|style=Feynman)的[交错级数](@keyword=alternating_series|lang=zh-CN|style=Feynman)（因为 $\sum 1/n^{3/2}$ 是一个 $p > 1$ 的 $p$-级数）。然而，它的虚部是 $\sum \frac{n}{n^2+1}$。通过与发散的[调和级数](@keyword=harmonic_series|lang=zh-CN|style=Feynman) $\sum 1/n$ 进行比较，我们发现虚部级数是发散的。因此，尽管它的实部非常“守规矩”地收敛了，但[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)的“失控”导致整个复数级数的旅程无法抵达终点，最终发散。[@problem_id:2236868]
 
-![一个[复数级数的收敛](@keyword=convergence_of_complex_series|lang=zh-CN|style=Feynman)性分解为实部和虚部各自的收敛性。图中展示了一个级数，其虚部收敛而实部发散，导致整个复数级数发散。](https://assets.test.logos.com/images/visual-aids/complex-series-convergence-real-imaginary.png)
+性分解为实部和虚部各自的收敛性。图中展示了一个级数，其虚部收敛而实部发散，导致整个复数级数发散。](https://assets.test.logos.com/images/visual-aids/complex-series-convergence-real-imaginary.png)
 **图1：** [复数级数的收敛](@keyword=convergence_of_complex_series|lang=zh-CN|style=Feynman)之旅。只有当“东西方向”（实部）和“南北方向”（虚部）的行程都分别到达终点时，总的旅程才会收敛。
 
 ### 收敛的层级：绝对与条件之分

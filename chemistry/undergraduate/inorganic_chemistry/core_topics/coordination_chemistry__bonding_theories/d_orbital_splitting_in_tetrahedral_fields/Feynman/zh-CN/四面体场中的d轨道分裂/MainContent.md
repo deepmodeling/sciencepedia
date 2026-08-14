@@ -17,7 +17,7 @@
 
 <br/>
 <center>
-    <img src="https://i.imgur.com/example-image.png" alt="A diagram illustrating the relationship between a tetrahedron and a cube, with ligands at four alternating corners of the cube and the metal ion at the center." width="400"/>
+
     <br/>
     <em>图1：将四面体置于立方体中。四个[配体](@keyword=ligands|lang=zh-CN|style=Feynman)（L）位于立方体的交替顶点，中心是金属离子（M）。这清楚地表明，[配体](@keyword=ligands|lang=zh-CN|style=Feynman)的方向位于坐标轴之间。</em>
 </center>

@@ -12,7 +12,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/rLzSj1T.png" width="600" alt="Families of orthogonal curves: equipotential lines (blue parabolas) and electric field lines (red ellipses).">
+
   <figcaption>图1：正交[曲线族](@keyword=family_of_curves|lang=zh-CN|style=Feynman)的优雅之舞。在一个假设的静电场中，蓝色抛物线代表[等势线](@keyword=equipotential_lines|lang=zh-CN|style=Feynman)，而红色椭圆代表电力线。在每一个交点，它们都相互垂直。这体现了势场与[力场](@keyword=force_field|lang=zh-CN|style=Feynman)之间深刻的几何关系 ([@problem_id:2173307])。</figcaption>
 </figure>
 </center>
@@ -35,7 +35,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/vH977rU.png" width="500" alt="Integral curves of a vector field in the Poincaré upper half-plane model, which are horizontal lines representing horocycles.">
+
   <figcaption>图2：在[庞加莱上半平面模型](@keyword=poincaré_upper_half_plane_model|lang=zh-CN|style=Feynman)中，一个简单的[矢量场](@keyword=vector_field|lang=zh-CN|style=Feynman) $X = y \frac{\partial}{\partial x}$ 产生的积分曲线是水平线。在双曲几何中，这些曲线是极限圆，是该弯曲空间的基本几何对象之一 ([@problem_id:1645710])。</figcaption>
 </figure>
 </center>
@@ -58,7 +58,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/H1tI5zG.png" width="600" alt="Illustration of [QTAIM](@keyword=qtaim|lang=zh-CN|style=Feynman) partitioning of a water molecule. Gradient paths of the electron density terminate at the nuclei, partitioning space into atomic basins.">
+
   <figcaption>图3：[量子化学](@keyword=quantum_chemistry|lang=zh-CN|style=Feynman)中的原子定义。空间中的每一点都有一条唯一的梯度路径（虚线）指向电子密度增长最快的方向。这些路径几乎都终止于原子核（密度极大值点）。所有终止于同一个原子核的路径集合构成了一个“[原子盆](@keyword=atomic_basin|lang=zh-CN|style=Feynman)地”，这就是在分子中的[原子的量子力学](@keyword=quantum_mechanics_of_atoms|lang=zh-CN|style=Feynman)定义。盆地之间的边界是零通量面 ([@problem_id:2801246])。</figcaption>
 </figure>
 </center>

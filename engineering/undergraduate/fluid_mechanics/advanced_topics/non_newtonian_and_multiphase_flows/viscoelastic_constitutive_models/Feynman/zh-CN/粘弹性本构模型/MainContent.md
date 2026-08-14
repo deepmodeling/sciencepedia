@@ -43,8 +43,6 @@ Deborah 数就像一副可以调节时间维度的眼镜，让我们看到同一
 
 想象一下，我们把一个弹簧和一个黏壶**串联**起来。这就是 **Maxwell 模型**，它是描述“会流动的固体”或“具有弹性的液体”的经典模型。
 
-![Maxwell Model](https://i.imgur.com/example.png "图1：Maxwell 模型，弹簧与黏壶串联。")
-
 它的组合方式决定了其独特的行为：
 $$
 \frac{d\epsilon}{dt} = \frac{1}{E}\frac{d\sigma}{dt} + \frac{\sigma}{\eta}
@@ -62,8 +60,6 @@ $$
 ### Kelvin-Voigt 模型：会“迟到”的固体
 
 如果我们换一种组合方式，把弹簧和黏壶**并联**起来呢？这就是 **Kelvin-Voigt 模型**。它常被用来描述那些表现出**延迟弹性**的黏弹性固体，比如一些凝胶和泡沫。
-
-![Kelvin-Voigt Model](https://i.imgur.com/example.png "图2：Kelvin-Voigt 模型，弹簧与黏壶[并联](@keyword=parallel_connection|lang=zh-CN|style=Feynman)。")
 
 [并联](@keyword=parallel_connection|lang=zh-CN|style=Feynman)结构意味着弹簧和黏壶必须[同步](@keyword=entrainment|lang=zh-CN|style=Feynman)发生形变。其本构关系是：
 $$

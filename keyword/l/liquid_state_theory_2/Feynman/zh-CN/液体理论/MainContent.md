@@ -23,7 +23,7 @@ $$dN(r) = \rho g(r) \times (4\pi r^2 dr)$$
 
 一个简单液体的典型 $g(r)$ 曲线如下图所示。
 
-![一个简单液体的典型[径向分布函数](@keyword=radial_distribution_function|lang=zh-CN|style=Feynman) g(r)，显示了 g(r)=0 的排斥体积区域、一个高的第一峰、随后的衰减[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，并在 r 较大时趋近于 1。](_placeholder_for_image_of_g(r)_)
+ g(r)，显示了 g(r)=0 的排斥体积区域、一个高的第一峰、随后的衰减[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)，并在 r 较大时趋近于 1。](_placeholder_for_image_of_g(r)_)
 
 让我们来分析它的特征，这些特征常常用简化的函数来建模以便于计算，如问题 [@problem_id:2007548] 和 [@problem_id:1989823] 所示。
 

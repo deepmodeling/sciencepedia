@@ -28,7 +28,7 @@ $$
 对于一个具有开放边界条件（OBC）的链，两端的[张量](@keyword=tensor|lang=zh-CN|style=Feynman)只有一个虚拟指标，而中间的[张量](@keyword=tensor|lang=zh-CN|style=Feynman)则有两个，一个连向左边，一个连向右边。整个结构就像一根由[张量](@keyword=tensor|lang=zh-CN|style=Feynman)珠子串起来的链条。
 
 <p align="center">
-<img src="https://i.imgur.com/vHqVp1A.png" width="500" />
+
 </p>
 <p align="center">
 <i>一个4位[量子比特](@keyword=qubit|lang=zh-CN|style=Feynman)链的开放边界[矩阵乘积态](@keyword=matrix_product_states|lang=zh-CN|style=Feynman)（MPS）的[张量网络](@keyword=tensor_networks|lang=zh-CN|style=Feynman)图。每个方块代表一个[张量](@keyword=tensor|lang=zh-CN|style=Feynman) $A_i$，竖直的腿是物理指标 $s_i$，水平的腿是收缩掉的虚拟指标 $\alpha_i$。</i>

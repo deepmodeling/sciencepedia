@@ -18,7 +18,7 @@
 但是，一个山峰和另一个山峰是不同的。有些山峰尖锐而陡峭，像一座险峻的孤峰；而另一些则平缓而宽阔，像一片平坦的高原。
 
 <center>
-<img src="https://i.imgur.com/example.png" alt="A sharp likelihood peak (left) indicates high information, while a flat peak (right) indicates low information." width="600"/>
+
 </center>
 <br>
 

@@ -39,8 +39,6 @@
 
 这引出了一个更迷人的问题：这些“孔道”是如何实现[离子选择性](@keyword=ion_selectivity|lang=zh-CN|style=Feynman)的？例如，claudin-2为何偏爱阳离子？答案隐藏在经典的静电学原理中。蛋白质是由氨基酸组成的，有些氨基酸侧链是带电的。例如，claudin蛋白质暴露在孔道内部的“环”上，可能存在谷氨酸这样的酸性氨基酸，它在生理pH下带负电。这些“固定”在孔道壁上的负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)（$X_f$）会在孔道内产生一个负的[静电势](@keyword=electrostatics_potential|lang=zh-CN|style=Feynman)（$\psi$）。根据[库仑定律](@keyword=coulomb_s_law|lang=zh-CN|style=Feynman)，这个负电势会吸引带正电的阳离子（如 $Na^+$）进入孔道，同时排斥带负电的阴离子（如 $Cl^-$）。这个简单的物理模型，被称为**[唐南平衡](@keyword=donnan_equilibrium|lang=zh-CN|style=Feynman)（Donnan equilibrium）**，完美地解释了[紧密连接](@keyword=zonula_occludens|lang=zh-CN|style=Feynman)孔道的[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)选择性。一个微小的氨基酸，通过基本的物理法则，决定了整个器官的物质转运特性。[@problem_id:2966668]
 
-![Donnan Equilibrium](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Donnan_effect_diagram.svg/450px-Donnan_effect_diagram.svg.png)
-
 ### 建筑队：支架与组装
 
 有了砖块，还需要一个高效的“建筑队”来将它们有序地组装起来。在[紧密连接](@keyword=zonula_occludens|lang=zh-CN|style=Feynman)的构建中，**支架蛋白（scaffolding proteins）**扮演了这一关键角色，其中最重要的成员是**ZO-1**。

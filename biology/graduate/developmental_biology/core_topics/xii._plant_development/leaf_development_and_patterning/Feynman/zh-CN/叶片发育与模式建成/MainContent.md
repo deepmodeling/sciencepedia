@@ -22,7 +22,7 @@
 4.  很快，一个小小的凸起（$P1$ 和 $P2$ 阶段）出现，新叶的雏形就此诞生。
 
 <p align="center">
-  <img alt="A schematic diagram of the process of leaf primordium initiation at the shoot apical meristem (SAM). It shows a cross-section of the SAM with the central zone (CZ) and a peripheral zone (PZ) where a new primordium is forming. Auxin (represented by red dots) accumulates at a specific site in the PZ, forming an auxin maximum. PIN1 auxin efflux carriers (represented by arrows on cell membranes) are shown converging their polarity towards this maximum, actively transporting auxin into the site. In the founder cells of the primordium (labeled P0), the meristem identity gene KNOX is shown as downregulated (symbolized by a crossed-out 'K'), while it remains active in the rest of the SAM." src="https://i.imgur.com/kS5x87J.png" width="600"/>
+
 </p>
 <p align="center">
   <small><b>图 1. 叶原基的起始。</b> 在[顶端分生组织](@keyword=apical_meristems|lang=zh-CN|style=Feynman)的周边区，[生长素](@keyword=auxin|lang=zh-CN|style=Feynman)通过 PIN1 蛋白的极性运输汇集形成一个浓度高峰。这个高峰触发了身份转变，KNOX 基因被抑制，从而启动了叶片的发育程序。</small>
@@ -82,7 +82,7 @@
 5.  这个“富者愈富”的过程不断自我加强，最终从一片弥散的生长素“沼泽”中，雕刻出一条条狭窄、高效的生长素“运河”。这些运河就是未来叶脉的蓝图。
 
 <p align="center">
-  <img alt="A diagram illustrating the concept of auxin canalization. On the left, a grid of cells shows diffuse auxin flow (small, faint arrows) and non-polarized PIN1 proteins (dots on cell membranes). On the right, after canalization, a clear channel of high auxin flux (large, bold arrows) has formed through a file of cells. In these cells, PIN1 proteins (bold arrows on membranes) are polarized in the direction of the flux, reinforcing the channel." src="https://i.imgur.com/eBf7pMh.png" width="600"/>
+
 </p>
 <p align="center">
   <small><b>图 2. 沟[流化](@keyword=fluidization|lang=zh-CN|style=Feynman)假说。</b> [生长素](@keyword=auxin|lang=zh-CN|style=Feynman)的流动（通量）会诱导细胞将更多的 PIN1 运输蛋白定位到这条线路上，从而提高运输效率。这种[正反馈机制](@keyword=positive_feedback_mechanisms|lang=zh-CN|style=Feynman)能将弥散的生长素流自我组织成狭窄的通道，形成叶脉的雏形。</small>

@@ -49,8 +49,6 @@ Let's look at the simplest possible case: the [hydrogen molecular ion](@keyword=
 
 Every two-atom interaction can be understood through this simple lens: a lower-energy, bonding combination and a higher-energy, antibonding combination.
 
-![MO_diagram_H2.png](https://assets.mn-res.com/image/upload/v1700627582/production/lesson_problem_file/2942536/H2__MO_Diagram.png)
-
 ### From Orbitals to Real Molecules: The Rules of the Game
 
 Now that we have a set of [molecular orbitals](@keyword=molecular_orbitals|lang=en-US|style=Feynman) with well-defined energy levels, we can build a real molecule by simply filling them with our available valence electrons, following three simple rules:

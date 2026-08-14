@@ -22,7 +22,7 @@
 <br>
 <center>
     <figure>
-        <img src="https://i.imgur.com/eBfJ9E4.png" width="600" alt="Comparison of Convex, Star-shaped, and non-Star-shaped domains.">
+
         <figcaption>图1：(a) 凸域：任意两点连线在域内。 (b) [星形域](@keyword=star_shaped_domain|lang=zh-CN|style=Feynman)（非凸）：存在一个星心（红点），可“看”到所有点。 (c) 非[星形域](@keyword=star_shaped_domain|lang=zh-CN|style=Feynman)：不存在任何一个点可以“看”到所有点。</figcaption>
     </figure>
 </center>

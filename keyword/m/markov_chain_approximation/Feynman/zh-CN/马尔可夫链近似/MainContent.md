@@ -15,8 +15,6 @@
 
 我们可以把这想象成一种棋盘游戏。状态是棋盘上的方格，而概率是移动棋子的规则。
 
-![State transition diagram showing three nodes (Low, Medium, High) with directed, weighted edges representing the probabilities of moving between states.](https://i.imgur.com/example.png "State Transition Diagram")
-
 在数学上，我们将整个游戏浓缩成一个单一、优雅的对象：**转移矩阵**，我们称之为 $P$。
 
 $$

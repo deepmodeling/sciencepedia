@@ -50,8 +50,6 @@ $C(s) = K \frac{Ts + 1}{\alpha T s + 1}$
 
 关键来了！由于 $0 < \alpha < 1$，所以分母 $ \alpha T $ 比 $ T $ 小，这导致 $1/(\alpha T)$ 比 $1/T$ 大。因此，[补偿器](@keyword=compensator|lang=zh-CN|style=Feynman)的极点（[引力源](@keyword=sources_of_gravity|lang=zh-CN|style=Feynman)）在地图上比零点（反[引力源](@keyword=sources_of_gravity|lang=zh-CN|style=Feynman)）离原点更远 [@problem_id:2718177]。
 
-![Pole-zero plot of a lead compensator](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Lead-compensator-pole-zero-plot.svg/300px-Lead-compensator-pole-zero-plot.svg.png)
-
 *图：[超前补偿器](@keyword=lead_compensator|lang=zh-CN|style=Feynman)的零点（圈）比极点（叉）更靠近原点。*
 
 当你把这个补偿器加入系统后，对于原系统那些“不听话”的极点来说，它们感受到一个更近的“推力”（来自零点）和一个更远的“拉力”（来自极点）。净效应就是一股强大的推力，这股力量会“掰弯”原有极点的运动轨迹（即[根轨迹](@keyword=root_locus|lang=zh-CN|style=Feynman)），将它们推向s平面的左侧更深处，也就是更稳定、响应更快的区域 [@problem_id:2718125]。从几何上看，零点提供的“超前”角度，总是大于极点造成的“滞后”角度，这净增的正角度，就是“[相位超前](@keyword=phase_lead|lang=zh-CN|style=Feynman)”的来源。

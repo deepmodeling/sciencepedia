@@ -65,7 +65,7 @@ $$
 让我们来看一个经典的例子：一个[蛋白质](@keyword=proteins|lang=zh-CN|style=Feynman) $X$ 能够激活自身的生产。这是一个[正反馈回路](@keyword=positive_feedback_loops|lang=zh-CN|style=Feynman)。它的生产速率是一条S形的[希尔函数](@keyword=hill_function|lang=zh-CN|style=Feynman)曲线（因为激活需要[协同性](@keyword=cooperativity|lang=zh-CN|style=Feynman)），而它的降解速率通常是一条直线（浓度越高，降解越快）。[@problem_id:2753479]
 
 <center>
-    <img alt="Bistability from positive feedback. The intersections of the synthesis curve (S-shaped) and degradation line (linear) represent steady states." src="https://i.imgur.com/u7q1E1H.png" width="600"/>
+
     <br/>
     <small>图1：[正反馈](@keyword=positive_feedback|lang=zh-CN|style=Feynman)创造[双稳态](@keyword=bistability|lang=zh-CN|style=Feynman)。S形的生产曲[线与](@keyword=wired_and|lang=zh-CN|style=Feynman)[线性](@keyword=linearity|lang=zh-CN|style=Feynman)的降解曲线的交点即为系统的[稳态](@keyword=stable_state|lang=zh-CN|style=Feynman)。左图（低[协同性](@keyword=cooperativity|lang=zh-CN|style=Feynman)）：只有一个[稳态](@keyword=stable_state|lang=zh-CN|style=Feynman)。右图（高[协同性](@keyword=cooperativity|lang=zh-CN|style=Feynman)）：出现三个[稳态](@keyword=stable_state|lang=zh-CN|style=Feynman)，其中上下两个为稳[定态](@keyword=stationary_states|lang=zh-CN|style=Feynman)（“关”和“开”），中间为[不稳定态](@keyword=unstable_states|lang=zh-CN|style=Feynman)。</small>
 </center>

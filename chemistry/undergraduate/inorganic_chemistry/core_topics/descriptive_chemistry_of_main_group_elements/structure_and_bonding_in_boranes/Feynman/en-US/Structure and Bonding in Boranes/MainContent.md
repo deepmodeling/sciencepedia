@@ -22,7 +22,7 @@ The structure of [diborane](@keyword=diborane|lang=en-US|style=Feynman) reveals 
 What about the remaining two hydrogens and four electrons? This is where the magic happens. The two boron atoms and the remaining two hydrogen atoms form a central rectangle. The two hydrogens, called **bridging hydrogens**, sit above and below the line connecting the two borons. Each bridging hydrogen is simultaneously bonded to *both* boron atoms. These are not two separate bonds; instead, each B-H-B unit is a single, unified bond called a **three-center, two-electron (3c-2e) bond**. It's a bridge built with three atoms but held together by only two electrons. With two of these B-H-B bridges, the remaining four electrons are used up ($2 \times 2 = 4$), and the molecule is complete. In total, [diborane](@keyword=diborane|lang=en-US|style=Feynman) is held together by four 2c-2e bonds and two 3c-2e bonds [@problem_id:2290306].
 
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Diborane-3D-balls.png" alt="The structure of [diborane](@keyword=diborane|lang=en-US|style=Feynman), showing two BH2 units linked by two bridging hydrogen atoms." width="300"/>
+
 <br>
 <i>The structure of [diborane](@keyword=diborane|lang=en-US|style=Feynman) ($B_2H_6$). The four outer (terminal) hydrogens are in a plane with the two boron atoms. The two bridging hydrogens sit above and below this plane, each forming a [3c-2e bond](@keyword=3c_2e_bond|lang=en-US|style=Feynman) with the two borons.</i>
 </center>

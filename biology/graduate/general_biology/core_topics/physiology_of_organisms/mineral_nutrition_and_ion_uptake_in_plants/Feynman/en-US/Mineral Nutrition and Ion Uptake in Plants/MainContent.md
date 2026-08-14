@@ -22,7 +22,7 @@ Nature, in its elegance, foresaw this problem. It created a second pathway, the 
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/G3H6iW6.png" alt="A diagram showing the two pathways for ion uptake in a plant root. The [apoplastic pathway](@keyword=apoplastic_pathway|lang=en-US|style=Feynman) (through cell walls) is shown being blocked by the Casparian strip at the endodermis. The [symplastic pathway](@keyword=symplastic_pathway|lang=en-US|style=Feynman) (through cytoplasm) requires ions to cross a plasma membrane, enforcing selectivity." width="80%">
+
   <figcaption>Figure 1. The Root's Checkpoint. The [apoplastic pathway](@keyword=apoplastic_pathway|lang=en-US|style=Feynman) is a non-selective route through cell walls, but it is blocked by the Casparian strip in the endodermis. This forces all water and solutes to cross a selective plasma membrane (the [symplastic pathway](@keyword=symplastic_pathway|lang=en-US|style=Feynman)) to enter the xylem, acting as a crucial "gatekeeper" for the plant. A defective barrier, as in certain mutants, allows toxic ions like Na+ to bypass this checkpoint and accumulate in the shoot [@problem_id:2816995].</figcaption>
 </figure>
 </center>

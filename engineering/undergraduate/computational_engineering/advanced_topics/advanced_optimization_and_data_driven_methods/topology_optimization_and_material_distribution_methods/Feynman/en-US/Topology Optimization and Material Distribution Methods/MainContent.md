@@ -52,7 +52,7 @@ Wrong. And this is perhaps the deepest and most subtle problem in topology optim
 A notorious symptom of this disease is the emergence of **checkerboard patterns**—alternating solid and void pixels that look like a chessboard. To the computer, on certain grids, this pattern appears artificially stiff, a numerical illusion it will gladly exploit to lower the compliance [@problem_id:2704253].
 
 <center>
-<img src="https://i.imgur.com/k9b6c07.png" alt="An image showing two topology optimized beams. The left beam has strong checkerboarding, an alternating pattern in the material. The right beam is the result after applying a density filter, showing a smooth and manufacturable structure." width="600"/>
+
 <br>
 *Figure 1: The effect of regularization. Left: A raw optimization shows severe [mesh dependence](@keyword=mesh_dependence|lang=en-US|style=Feynman) and checkerboarding. Right: The same problem with a density filter yields a smooth, mesh-independent, and manufacturable design.*
 </center>

@@ -21,7 +21,7 @@ Let’s imagine we mix two colorless solutions, like adding a clear solution of 
 This continues until we reach the [equivalence point](@keyword=equivalence_point|lang=en-US|style=Feynman). At that exact moment, we have run out of the initial [analyte](@keyword=analyte|lang=en-US|style=Feynman) ($Fe^{3+}$). No more product can be formed! So, as we continue to add the colorless titrant, the amount of colored product in the beaker stays constant. The [absorbance](@keyword=absorbance|lang=en-US|style=Feynman) curve abruptly flattens out, telling us the main reaction is over. The plot is a straight line upwards, followed by a horizontal line [@problem_id:1459860] [@problem_id:1459854]. This gives us a sharp "knee" in the graph, pointing directly to the equivalence volume.
 
 <center>
-<img src="https://i.imgur.com/kS9eYgZ.png" alt="Titration curve for colorless [analyte](@keyword=analyte|lang=en-US|style=Feynman) and titrant forming a colored product. Absorbance increases linearly before the [equivalence point](@keyword=equivalence_point|lang=en-US|style=Feynman) and becomes constant after." width="400"/>
+
 <br>
 <i>Figure 1: Creating color from nothing. Absorbance increases as the colored product is formed, then plateaus when the [analyte](@keyword=analyte|lang=en-US|style=Feynman) is consumed.</i>
 </center>
@@ -32,7 +32,7 @@ Now, let's flip the story. Suppose we start with a brilliantly colored solution,
 When we hit the [equivalence point](@keyword=equivalence_point|lang=en-US|style=Feynman), the last trace of the purple $MnO_4^−$ vanishes. The solution is now colorless. If we keep adding the colorless titrant, there's nothing left to change, so the [absorbance](@keyword=absorbance|lang=en-US|style=Feynman) remains at nearly zero. The resulting curve is an inverted version of the first: a line sloping down, which then becomes a flat line at the bottom of the graph.
 
 <center>
-<img src="https://i.imgur.com/J3g63xS.png" alt="Titration curve for a colored [analyte](@keyword=analyte|lang=en-US|style=Feynman) titrated with a colorless titrant. Absorbance decreases linearly before the [equivalence point](@keyword=equivalence_point|lang=en-US|style=Feynman) and remains near zero after." width="400"/>
+
 <br>
 <i>Figure 2: Watching color fade. The initial high [absorbance](@keyword=absorbance|lang=en-US|style=Feynman) from the colored [analyte](@keyword=analyte|lang=en-US|style=Feynman) decreases as it reacts, eventually reaching zero.</i>
 </center>
@@ -43,7 +43,7 @@ There is a third scenario: what if the titrant itself is the only colored specie
 But the moment we reach the [equivalence point](@keyword=equivalence_point|lang=en-US|style=Feynman), all the [analyte](@keyword=analyte|lang=en-US|style=Feynman) is gone. There's nothing left for the titrant to react with. Now, every new drop of colored titrant we add simply accumulates in the beaker. The solution begins to take on the color of the titrant, and the color gets deeper and deeper with every drop. The [absorbance](@keyword=absorbance|lang=en-US|style=Feynman), which was flat, now begins to rise linearly. The resulting curve is a distinct "V" shape, with the sharp vertex of the V marking the [equivalence point](@keyword=equivalence_point|lang=en-US|style=Feynman) precisely [@problem_id:1459867].
 
 <center>
-<img src="https://i.imgur.com/R0qDk7l.png" alt="Titration curve for a colorless [analyte](@keyword=analyte|lang=en-US|style=Feynman) titrated with a colored titrant. Absorbance is near zero before the [equivalence point](@keyword=equivalence_point|lang=en-US|style=Feynman) and increases linearly after." width="400"/>
+
 <br>
 <i>Figure 3: The rising tide. Absorbance is zero until the excess colored titrant begins to accumulate after the [equivalence point](@keyword=equivalence_point|lang=en-US|style=Feynman).</i>
 </center>

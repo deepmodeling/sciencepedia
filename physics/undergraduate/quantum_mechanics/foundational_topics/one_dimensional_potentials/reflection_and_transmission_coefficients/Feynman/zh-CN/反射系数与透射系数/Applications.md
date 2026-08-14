@@ -10,7 +10,7 @@
 
 当然，量子世界最著名的“魔术”莫过于**[量子隧穿](@keyword=quantum_mechanical_tunneling|lang=zh-CN|style=Feynman)**。一个能量低于势垒高度的粒子，在经典世界里会被永远地挡在外面。但在量子世界，它的[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)会像幽灵一样渗入势垒，并以指数形式衰减。如果势垒足够薄，[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)就有一定的概率“复活”在另一边，粒子就这样穿越了它本不应该能越过的障碍。利用[WKB近似](@keyword=wentzel_kramers_brillouin_approximation|lang=zh-CN|style=Feynman)，我们可以估算出粒子穿越各种形状势垒的概率，比如更接近真实物理情况的抛物线形貌势垒，这对于理解从放射性原子核的阿尔法衰变到[扫描隧道显微镜](@keyword=scanning_tunneling_microscope|lang=zh-CN|style=Feynman)（STM）的工作原理都至关重要 [@problem_id:2115704]。
 
-![图1：[全内反射](@keyword=total_internal_reflection|lang=zh-CN|style=Feynman)中倏逝波的示意图。当入射角大于临界角时，光波被完[全反射](@keyword=total_internal_reflection_(tir)|lang=zh-CN|style=Feynman)，但在第二种介质中会产生一个指数衰减的[倏逝场](@keyword=evanescent_field|lang=zh-CN|style=Feynman)。](https://d2p658mai1q17p.cloudfront.net/images/2217861.png)
+中倏逝波的示意图。当入射角大于临界角时，光波被完[全反射](@keyword=total_internal_reflection_(tir)|lang=zh-CN|style=Feynman)，但在第二种介质中会产生一个指数衰减的[倏逝场](@keyword=evanescent_field|lang=zh-CN|style=Feynman)。](https://d2p658mai1q17p.cloudfront.net/images/2217861.png)
 
 *图1. 光学中的[倏逝波](@keyword=evanescent_waves|lang=zh-CN|style=Feynman)是量子隧穿的完美模拟。在[全内反射](@keyword=total_internal_reflection|lang=zh-CN|style=Feynman)期间，尽管光被“完全”反射，但一个指数衰减的场（[倏逝波](@keyword=evanescent_waves|lang=zh-CN|style=Feynman)）仍然[渗透](@keyword=permeation|lang=zh-CN|style=Feynman)到[折射率](@keyword=refractive_index|lang=zh-CN|style=Feynman)较低的介质中。这个“幽灵”波是许多现代传感技术的核心。* [@problem_id:2217861]
 
@@ -30,7 +30,7 @@
 
 反射不仅可以被消除，还可以被用来“过滤”光。当非偏振光以一个特定的角度——**[布儒斯特角](@keyword=brewster_s_angle|lang=zh-CN|style=Feynman)**——入射到两种介质的交界面（例如空气和水）时，反射光将变成完全的[线偏振光](@keyword=linearly_polarized_light|lang=zh-CN|style=Feynman) [@problem_id:2217906]。这是因为在这个角度下，p偏振光（电场平行于入射面）的反射系数恰好为零。戴上偏光太阳镜可以有效消除来自水面或路面的眩光，利用的就是这个原理。对于像金属这样的吸收性材料，反射率虽然不能降到零，但也会在一个被称为“伪[布儒斯特角](@keyword=brewster_s_angle|lang=zh-CN|style=Feynman)”的角度达到最小值，这与非厄米量子系统中的现象形成了有趣的类比 [@problem_id:2217879]。
 
-![图2：[布儒斯特角](@keyword=brewster_s_angle|lang=zh-CN|style=Feynman)下[光的偏振](@keyword=light_polarization|lang=zh-CN|style=Feynman)。[非偏振光](@keyword=unpolarized_light|lang=zh-CN|style=Feynman)以布儒斯特角入射时，反射光完全由[s偏振](@keyword=s_polarization|lang=zh-CN|style=Feynman)光（电场垂直于入射面）组成。](https://d2p658mai1q17p.cloudfront.net/images/2217906.png)
+下[光的偏振](@keyword=light_polarization|lang=zh-CN|style=Feynman)。[非偏振光](@keyword=unpolarized_light|lang=zh-CN|style=Feynman)以布儒斯特角入射时，反射光完全由[s偏振](@keyword=s_polarization|lang=zh-CN|style=Feynman)光（电场垂直于入射面）组成。](https://d2p658mai1q17p.cloudfront.net/images/2217906.png)
 
 *图2. [布儒斯特角](@keyword=brewster_s_angle|lang=zh-CN|style=Feynman)是自然界中的偏振器。当阳光以大约 53° 的角度照射在水面上时，反射光将是高度偏振的。偏光太阳镜可以阻挡这种水平偏振的强光，从而减少眩光。* [@problem_id:2217906]
 

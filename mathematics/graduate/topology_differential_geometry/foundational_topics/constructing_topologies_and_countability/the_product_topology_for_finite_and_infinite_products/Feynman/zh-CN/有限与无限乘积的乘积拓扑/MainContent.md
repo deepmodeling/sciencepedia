@@ -14,7 +14,7 @@
 这个定义的精妙之处在于，它将乘[积空间](@keyword=product_spaces|lang=zh-CN|style=Feynman)中的性质与各个分量空间 (factor space) 中的性质直接地、优美地联系了起来。一个最经典的例子就是[序列的收敛](@keyword=convergence_of_a_sequence|lang=zh-CN|style=Feynman)。假设我们有一列在平面上跳动的点 $p_n = (x_n, y_n)$，它们正向着一个目标点 $p = (x, y)$ 移动。我们什么时候能说这列点“收敛”到了 $p$ 呢？[积拓扑](@keyword=product_of_topological_spaces|lang=zh-CN|style=Feynman)给出了一个无比直观的答案：[当且仅当](@keyword=if_and_only_if|lang=zh-CN|style=Feynman)这列点的 $x$ 坐标序列 $(x_n)$ 收敛到 $x$，并且 $y$ 坐标序列 $(y_n)$ 收敛到 $y$ 时。不多不少，正好是这样。对整体的考察，被完美地分解成了对各个部分的独立考察 [@problem_id:1581366]。
 
 <center>
-<img src="https://assets.test.logos.com/images/prod/1611.0.3524.2/asset-5ba609f7a60268.49015941.png" alt="A sequence of points converging in a product space. The projection of the sequence onto each factor space also converges." width="400">
+
 </center>
 <center><i>图1：序列 $(p_n)$ 在[积空间](@keyword=product_spaces|lang=zh-CN|style=Feynman) $X \times Y$ 中收敛于 $p$，[等价](@keyword=biconditional|lang=zh-CN|style=Feynman)于其在两个坐标轴上的投影 $(x_n)$ 和 $(y_n)$ 分别收敛于 $x$ 和 $y$。</i></center>
 
@@ -49,7 +49,7 @@ $$ B = (-1, 1) \times (0, 2) \times \mathbb{R} \times \mathbb{R} \times \dots $$
 [紧致性](@keyword=compactness|lang=zh-CN|style=Feynman)是[拓扑学](@keyword=topology|lang=zh-CN|style=Feynman)中一个极其重要的概念，粗略地说，它意味着空间不会“无限延伸”或存在“漏洞”。一个经典例子是[闭区间](@keyword=closed_and_bounded_interval|lang=zh-CN|style=Feynman) $[0,1]$。Tychonoff 定理告诉我们，一个令人难以置信的事实：即使我们将无穷多个紧致的 $[0,1]$ 区间相乘，得到的那个[无限维空间](@keyword=infinite_dimensional_spaces|lang=zh-CN|style=Feynman)——被称为**[希尔伯特立方体](@keyword=hilbert_cube|lang=zh-CN|style=Feynman) (Hilbert cube)** $\prod_{n=1}^\infty [0,1]$——本身也是一个紧致的空间 [@problem_id:1667474]。这完全颠覆了我们认为“无限维”就等于“无限大”的朴素直觉。仿佛[积拓扑](@keyword=product_of_topological_spaces|lang=zh-CN|style=Feynman)有一种魔力，能将无限的[紧致性](@keyword=compactness|lang=zh-CN|style=Feynman)“约束”在一起，形成一个整体的、紧致的结构。
 
 <center>
-<img src="https://assets.test.logos.com/images/prod/1611.0.3524.2/asset-017e887f1c1ac7.99411931.jpg" alt="An abstract representation of the Hilbert cube, an infinite-dimensional cube, shown as a complex, self-contained structure." width="500">
+
 </center>
 <center><i>图2：[希尔伯特立方体](@keyword=hilbert_cube|lang=zh-CN|style=Feynman) $\prod_{n \in \mathbb{N}} [0,1]$ 的艺术想象图。Tychonoff 定理保证了这个[无限维空间](@keyword=infinite_dimensional_spaces|lang=zh-CN|style=Feynman)是紧致的。</i></center>
 

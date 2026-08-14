@@ -12,7 +12,6 @@
 
 奇妙之处在于，在非常低的温度下，这个隧道电流对电压的[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)——即微分[电导](@keyword=electrical_conductance|lang=zh-CN|style=Feynman) $dI/dV$——正比于样品在针尖正下方位置、特定能量处的[电子态密度](@keyword=electronic_density_of_states|lang=zh-CN|style=Feynman)。具体来说，在电压为 $V$ 时，我们探测的是能量为 $E = E_F + eV$ 的[态密度](@keyword=density_of_states|lang=zh-CN|style=Feynman)。因此，通过扫描电压并记录 $dI/dV$ 的变化，我们实际上就是在直接绘制材料的态密度谱！实验上观测到的 $dI/dV$ 谱图中的每一个尖峰，都可能是一个[范霍夫奇点](@keyword=van_hove_singularity|lang=zh-CN|style=Feynman)的直接“肖像”。这使得我们不仅能确认[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)的存在，还能精确测量出它们在能量轴上的位置。
 
-![STM示意图](https://www.tf.uni-kiel.de/matwis/amat/sem/bilder_en/stm_schema_en.gif)
 *图1：扫描隧道显微镜（STM）工作原理示意图。通过测量微分[电导](@keyword=electrical_conductance|lang=zh-CN|style=Feynman) $dI/dV$ 随偏压 $V$ 的变化，可以直接探测材料表面的[电子态密度](@keyword=electronic_density_of_states|lang=zh-CN|style=Feynman)。*
 
 除了“触摸”电子，我们还可以用光来“照亮”它们。在**光学吸收实验**中，当一个[光子](@keyword=photon|lang=zh-CN|style=Feynman)被材料吸收时，它会激发一个电子从低能级的[价带](@keyword=valence_band|lang=zh-CN|style=Feynman)“跳跃”到高能级的[导带](@keyword=conduction_band|lang=zh-CN|style=Feynman)。这种跃迁的发生概率，与所有满足[能量和动量守恒](@keyword=conservation_of_energy_and_momentum|lang=zh-CN|style=Feynman)条件的“[价带](@keyword=valence_band|lang=zh-CN|style=Feynman)-导带”电子对的数量密切相关。这个数量由一个叫做“[联合态密度](@keyword=joint_density_of_states|lang=zh-CN|style=Feynman)” (Joint Density of States, JDOS) 的物理量来描述。

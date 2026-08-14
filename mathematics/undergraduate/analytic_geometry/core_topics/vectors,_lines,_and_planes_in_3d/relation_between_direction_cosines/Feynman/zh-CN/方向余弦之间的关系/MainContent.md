@@ -10,7 +10,7 @@
 让我们把这个空房间变成一个三维笛卡尔坐标系，有相互垂直的 $x, y, z$ 轴。现在，任何从原点出发的向量（比如我们那支箭）的方向都可以通过它与这三个正半轴的夹角来定义。我们把这三个角分别记为 $\alpha, \beta, \gamma$。
 
 <center>
-  <img src="https://i.imgur.com/vHq83Gq.png" alt="Direction angles of a vector" width="400"/>
+
 </center>
 <br>
 

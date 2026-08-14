@@ -10,5 +10,5 @@
 让我们从一个简单而迷人的思想实验开始。想象一下，任何一个[线性变换](@keyword=linear_algebra_transformations|lang=zh-CN|style=Feynman)——也就是任何一次矩阵乘法——在本质上都可以被看作是一个简单的三步过程：**旋转**，**拉伸**，最后再来一次**旋转**。这听起来可能有些不可思议，一个复杂的矩阵竟然只做了这么几件朴素的事情？但事实正是如此。
 
 为了让这个想法更具体，让我们在二维平面上观察。想象一个[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)，它包含了所有与原点距离为1的点。现在，我们用一个矩阵 $A$ 对这个圆上的每一个点进行变换。结果会是什么呢？一团乱麻？一个奇形怪状的图形？都不是。这个[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)会被精确地变成一个**椭圆**。
-![图1：一个[线性变换](@keyword=linear_algebra_transformations|lang=zh-CN|style=Feynman)将[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)（蓝色）转变为椭圆（绿色）的过程。SVD将这个过程分解为：一次旋转($V^T$)，一次沿坐标轴的拉伸($\Sigma$)，和第二次旋转($U$)。](https://upload.wikimedia.org/wikipedia/commons/2/2a/Singular_value_decomposition_visualisation.gif)
+将[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)（蓝色）转变为椭圆（绿色）的过程。SVD将这个过程分解为：一次旋转($V^T$)，一次沿坐标轴的拉伸($\Sigma$)，和第二次旋转($U$)。](https://upload.wikimedia.org/wikipedia/commons/2/2a/Singular_value_decomposition_visualisation.gif)
 这个事实本身就足够令人惊叹了。

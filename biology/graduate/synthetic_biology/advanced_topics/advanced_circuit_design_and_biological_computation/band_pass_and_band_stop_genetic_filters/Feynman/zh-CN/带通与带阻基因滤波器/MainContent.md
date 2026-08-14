@@ -47,7 +47,7 @@
 2.  **“慢”的抑制路径**：输入 $u$ 同时激活一个中间抑制因子 $z$，这个抑制因子 $z$ 再[去抑制](@keyword=disinhibition|lang=zh-CN|style=Feynman)输出 $y$。这是一条被延迟了的“刹车”信号。
 
 <div align="center">
-<img src="https://i.imgur.com/example_image.png" alt="Incoherent Feed-Forward Loop" width="400">
+
 <figcaption>图1：[非相干前馈环](@keyword=incoherent_ffl|lang=zh-CN|style=Feynman) (IFFL) 结构示意图。输入信号 u 同时通过一条快速的激活路径和一条较慢的抑制路径来调控输出 y。</figcaption>
 </div>
 
@@ -82,7 +82,7 @@ $$
 2.  其中一条路径比另一条有明显的[时间延迟](@keyword=time_lag|lang=zh-CN|style=Feynman) $\tau$。
 
 <div align="center">
-<img src="https://i.imgur.com/example_image2.png" alt="Band-stop filter via interference" width="400">
+
 <figcaption>图2：通过两条平行路径的相消干涉实现[带阻滤波器](@keyword=notch_filter|lang=zh-CN|style=Feynman)。当延迟路径的信号（蓝色）恰好与直接路径的信号（红色）反相时，它们的和（紫色）就被大大削弱了。</figcaption>
 </div>
 

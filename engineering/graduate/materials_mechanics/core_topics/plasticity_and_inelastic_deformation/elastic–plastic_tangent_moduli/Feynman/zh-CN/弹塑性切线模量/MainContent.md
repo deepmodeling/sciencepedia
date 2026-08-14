@@ -20,7 +20,7 @@
 3.  **[切线](@keyword=tangent_line|lang=zh-CN|style=Feynman)模量（Tangent Modulus, $E^{\mathrm{ep}}$）**：这才是我们故事的[主角](@keyword=principal_angles|lang=zh-CN|style=Feynman)。它是[应力-应变曲线](@keyword=stress_strain_curve|lang=zh-CN|style=Feynman)上某一点的**瞬时斜率**，定义为 $E^{\mathrm{ep}} = \mathrm{d}\sigma/\mathrm{d}\varepsilon$。它精确地告诉我们，在当前的[塑性](@keyword=plasticity|lang=zh-CN|style=Feynman)状态下，为了产生一个微小的应变增量 $\mathrm{d}\varepsilon$，需要施加多大的应力增量 $\mathrm{d}\sigma$。这正是预测材料未来行为的关键。
 
 <center>
-<img src="https://i.imgur.com/gK9q06B.png" width="500" />
+
 <br>
 图1：一维[应力-应变关系](@keyword=stress_strain_relationship|lang=zh-CN|style=Feynman)图中不同模量的示意。
 </center>

@@ -16,7 +16,7 @@ $$
 这是一个非常直观且强大的概念。但一个真正充满好奇心的人——比如伟大的物理学家 Richard Feynman——可能会盯着这张图，然后问一个看似天真的问题：“曲线下方的面积有明确的物理意义，那么曲线和纵轴围成的那块面积呢？它代表着什么？难道大自然会浪费掉这另一半的图形之美吗？”
 
 <center>
-<img src="https://i.imgur.com/gK9Qx4q.png" width="400">
+
 </center>
 <div style="text-align: center; font-size: 0.9em;">图1：应力-应变曲线。阴影部分（A）代表[应变能密度](@keyword=strain_energy_density|lang=zh-CN|style=Feynman) $U$，而（B）部分则代表其“对偶”——[余能](@keyword=complementary_energy|lang=zh-CN|style=Feynman)密度 $\hat{U}$。</div>
 

@@ -16,7 +16,7 @@
 这时，[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)登场了。它就像一位经验丰富的向导，告诉你：“嘿，别去爬那座主峰！我知道一条秘密的垭口，虽然路程可能曲折一些，但最高点比主峰低得多。” 这条新路径就是[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)提供的全新[反应机理](@keyword=chemical_mechanism|lang=zh-CN|style=Feynman)。[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)本身并不改变起点（A村）和终点（B村）的海拔——也就是说，它不改变反应的整体**[吉布斯自由能变](@keyword=change_in_gibbs_free_energy|lang=zh-CN|style=Feynman)** $\Delta G_{rxn}$。一个放热反应不会因为[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)而变得更放热，一个[平衡反应](@keyword=invariant_reactions|lang=zh-CN|style=Feynman)的最终[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)也不会因此移动。[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)的唯一使命，就是降低旅途中必须克服的最高海拔。
 
 <center>
-<img src="https://i.imgur.com/kS5x87J.png" alt="Reaction coordinate diagram for a catalyzed vs. uncatalyzed reaction" width="600"/>
+
 </center>
 > *图1：催化反应与非催化反应的[反应坐标图](@keyword=reaction_coordinate_diagram|lang=zh-CN|style=Feynman)。蓝色曲线代表非催化路径，其活化能为 $\Delta G^{\ddagger}_{uncat}$。红色曲线代表催化路径，它可能包含多个步骤（中间体I1, I2），但其路径上最高的能垒 $\Delta G^{\ddagger}_{cat}$ 远低于非催化路径。注意，反应的起点（A+C）和终点（B+C）的能量差（即总反应的 $\Delta G_{rxn}$）保持不变。*
 

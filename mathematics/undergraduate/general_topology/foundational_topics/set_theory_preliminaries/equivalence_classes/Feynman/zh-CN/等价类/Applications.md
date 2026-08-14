@@ -12,11 +12,7 @@
 
 我们从最简单的开始：一张平平无奇的正方形纸片。如果我们宣布，它的左边缘上的任意一点都与右边缘上处于同一高度的点“等价”，然后将这些等价的点“粘合”在一起，会发生什么？我们得到了一个圆柱体。这个“粘合”过程，在数学上就是通过等价关系来定义一个商空间。 [@problem_id:1542789]
 
-![Cylinder Construction](https://assets.test.eedi.com/application/images/1542789_sol.png)
-
 现在，让我们对“粘合”的规则做一个小小的改动。在粘合左右两条边之前，我们先将其中一条边扭转180度。也就是说，左边缘顶部的点与右边缘底部的点等价，左边缘底部的点与右边缘顶部的点等价。这条新的等价规则， $(0, y) \sim (1, 1-y)$，会创造出一个截然不同的宇宙：一个只有一个面、一条边界的**[莫比乌斯带](@keyword=möbius_strip|lang=zh-CN|style=Feynman)**（[Möbius strip](@keyword=möbius_strip|lang=zh-CN|style=Feynman)）。 [@problem_id:1543378] 这个简单的例子震撼地说明了[等价关系](@keyword=equivalence_relations|lang=zh-CN|style=Feynman)的力量：规则的微小变化，可以导致所构建世界的全局性质发生天翻地覆的改变。
-
-![Möbius Strip Construction](https://assets.test.eedi.com/application/images/1543378_sol.png)
 
 我们可以变得更有野心。既然能粘合简单的边，我们是否能粘合更复杂的对象？一个[莫比乌斯带](@keyword=möbius_strip|lang=zh-CN|style=Feynman)的边界本身就是一个圆。如果我们取两个莫比乌斯带，然后宣布第一个的边界与第二个的边界“等价”，并将它们粘合起来，我们会得到什么？一个**克莱因瓶**（Klein bottle）——一个没有“内部”和“外部”之分的瓶子，它为了闭合而必须穿过自身。 [@problem_id:1550849]
 

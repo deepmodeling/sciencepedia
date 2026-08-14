@@ -16,7 +16,7 @@
 这个装置，本质上是由两块[折射](@keyword=refraction|lang=zh-CN|style=Feynman)角极小（通常小于1度）的薄棱镜底边相贴而成。当来自单一[光源](@keyword=light_source|lang=zh-CN|style=Feynman) $S$ 的[光波](@keyword=light_waves|lang=zh-CN|style=Feynman)穿过它时，上半部分[波前](@keyword=wavefront|lang=zh-CN|style=Feynman)被向下偏折，下半部分[波前](@keyword=wavefront|lang=zh-CN|style=Feynman)被向上偏折。如果我们向后追溯这些偏折后的[光线](@keyword=light_rays|lang=zh-CN|style=Feynman)，它们看起来就像是从两个不同的、靠得很近的虚[光源](@keyword=light_source|lang=zh-CN|style=Feynman) $S_1$ 和 $S_2$ 发出的。
 
 <center>
-<img src="https://i.imgur.com/kS5x8A5.png" width="600">
+
 <br>
 图1：[菲涅尔双棱镜](@keyword=fresnel_s_biprism|lang=zh-CN|style=Feynman)将来自单一[光源](@keyword=light_source|lang=zh-CN|style=Feynman) S 的[波前分割](@keyword=division_of_wavefront|lang=zh-CN|style=Feynman)，形成两个相干的虚[光源](@keyword=light_source|lang=zh-CN|style=Feynman) S1 和 S2。
 </center>
@@ -45,7 +45,7 @@
 [菲涅尔双棱镜](@keyword=fresnel_s_biprism|lang=zh-CN|style=Feynman)是一种[分裂](@keyword=fission|lang=zh-CN|style=Feynman)[波前](@keyword=wavefront|lang=zh-CN|style=Feynman)的方法，但还有没有更简单的方式呢？答案是肯定的，而且简单得出奇：只需要一个[光源](@keyword=light_source|lang=zh-CN|style=Feynman)和一面镜子。这就是[劳埃德镜](@keyword=lloyd_s_mirror|lang=zh-CN|style=Feynman)（Lloy[d'](@keyword=d_prime|lang=zh-CN|style=Feynman)s Mirror）装置。
 
 <center>
-<img src="https://i.imgur.com/83p0y1h.png" width="600">
+
 <br>
 图2：[劳埃德镜](@keyword=lloyd_s_mirror|lang=zh-CN|style=Feynman)利用直接光和反射光形成[干涉](@keyword=interference|lang=zh-CN|style=Feynman)。反射光看起来来自虚[光源](@keyword=light_source|lang=zh-CN|style=Feynman) S'。
 </center>
@@ -57,7 +57,7 @@
 答案在于反射过程本身隐藏的一个深刻秘密。当光从光疏介质（如空气）入射到光密介质（如玻璃[镜面](@keyword=mirror_plane|lang=zh-CN|style=Feynman)）并发生反射时，其[电场](@keyword=electric_fields|lang=zh-CN|style=Feynman)[振动](@keyword=vibrational_motion|lang=zh-CN|style=Feynman)的相位会发生一个 $\pi$ 弧度（即180度）的[突变](@keyword=mutation|lang=zh-CN|style=Feynman)。你可以把它想象成一个向上[振动](@keyword=vibrational_motion|lang=zh-CN|style=Feynman)的波，在撞到[镜面](@keyword=mirror_plane|lang=zh-CN|style=Feynman)后，变成一个向下[振动](@keyword=vibrational_motion|lang=zh-CN|style=Feynman)的波“反弹”回来。
 
 <center>
-<img src="https://i.imgur.com/dK3fR3X.gif" width="500">
+
 <br>
 图3：一个波在[固定端反射](@keyword=fixed_end_reflection|lang=zh-CN|style=Feynman)时，会发生相[位反转](@keyword=bit_reversal|lang=zh-CN|style=Feynman)（相当于一个 $\pi$ 的[相移](@keyword=phase_shifts|lang=zh-CN|style=Feynman)）。
 </center>

@@ -24,7 +24,7 @@
 第一种是**升力诱导阻力（Induced Drag）**。这正是“升力的代价”的直接体现。为了产生升力，鸟翼下方会形成一个高压区，而上方则是一个低压区。空气总是想从高压区流向低压区，于是在翅膀的末端——翼尖——空气就会“偷偷地”从下方绕到上方，形成一股旋转的气流。想象一下水流过船桨末端时产生的漩涡，这便是翼尖涡（Wingtip Vortices）。
 
 <center>
-    <img src="https://i.imgur.com/uG25q5p.gif" alt="Wingtip vortices visualized in an F/A-18 Hornet during a high-g maneuver" width="600"/>
+
     <br>
     <small>翼尖涡的可视化。战斗机在高过载机动时，翼尖处因压力急剧降低而凝结的水汽，清晰地展现了强大的翼尖涡结构。[鸟类飞行](@keyword=bird_flight|lang=zh-CN|style=Feynman)时也会产生类似的[涡流](@keyword=vortex_flow|lang=zh-CN|style=Feynman)。</small>
 </center>
@@ -63,7 +63,7 @@ $$
 将这两种功率相加，我们就得到了著名的飞行功率“U”形曲线[@problem_id:2595887]。
 
 <center>
-    <img src="https://i.imgur.com/k4QYjA4.png" alt="U-shaped power curve for bird flight" width="500"/>
+
     <br>
     <small>[鸟类飞行](@keyword=bird_flight|lang=zh-CN|style=Feynman)的“U”形功率曲线。总功率（黑线）是诱导功率（蓝线）和寄生/剖面功率（红线）之和。曲线揭示了存在一个最小功率速度（$V_{mp}$，最长飞行时间）和一个最小阻力或最大航程速度（$V_{mr}$，最远飞行距离）。</small>
 </center>

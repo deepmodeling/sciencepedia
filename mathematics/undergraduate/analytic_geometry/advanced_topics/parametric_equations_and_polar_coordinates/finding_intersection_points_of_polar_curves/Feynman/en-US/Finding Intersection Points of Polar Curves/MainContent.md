@@ -18,7 +18,7 @@ $$
 This occurs when $\theta = \frac{\pi}{4}$ and $\theta = \frac{5\pi}{4}$ (within the range of one full circle). This gives us two intersection points. But if we plot these two [cardioid](@keyword=cardioid|lang=en-US|style=Feynman) curves, we see they both loop back and touch the center of our stage—the origin, or as we call it in polar coordinates, the **pole**.
 
 <center>
-    <img src="https://i.imgur.com/rQ0Y61P.png" alt="Two intersecting cardioids r=a(1+cos(theta)) and r=a(1+sin(theta)) showing three intersection points, including the pole." width="400"/>
+
     <br>
     <small><i>Figure 1: Two cardioids, $r=a(1+\cos\theta)$ and $r=a(1+\sin\theta)$, intersect at three distinct points. The simple algebraic solution only finds two. Where is the third?</i></small>
 </center>
@@ -61,7 +61,7 @@ Let's see this spectacular trick in action. Consider a circle $r = \sqrt{3}$ and
 If we naively set them equal, we get $\sqrt{3} = 2\sin(2\theta)$, which yields four solutions for $\theta$ in $[0, 2\pi)$. But if we plot them, we see eight intersections! Where did the other four come from?
 
 <center>
-    <img src="https://i.imgur.com/n1hXF1f.png" alt="A circle r=sqrt(3) and a four-petaled rose r=2sin(2theta), showing 8 intersection points." width="400"/>
+
     <br>
     <small><i>Figure 2: A circle and a four-petaled rose can intersect at many points. The ambiguity of $r$ means we must account for both positive and negative radii on the [rose curve](@keyword=rose_curve|lang=en-US|style=Feynman) to find them all.</i></small>
 </center>

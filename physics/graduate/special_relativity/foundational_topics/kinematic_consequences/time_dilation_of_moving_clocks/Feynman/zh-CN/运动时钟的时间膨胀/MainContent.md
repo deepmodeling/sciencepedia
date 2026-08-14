@@ -18,7 +18,7 @@ $$ \Delta\tau = \frac{2L_0}{c} $$
 现在，让我们把这个时钟放到一列高速飞驰的火车上，而你站在站台上观察。从你的视角看，当[光子](@keyword=photon|lang=zh-CN|style=Feynman)从下面的镜子向上运动时，火车载着整个时钟向前移动了一段距离。因此，[光子](@keyword=photon|lang=zh-CN|style=Feynman)走过的不再是一条垂直的短线，而是一条更长的斜线。同样，当[光子](@keyword=photon|lang=zh-CN|style=Feynman)从上面的镜子反射回来时，它走的也是另一条斜线。
 
 <p align="center">
-<img src="https://i.imgur.com/lQLdRIq.png" width="500" />
+
 </p>
 <p align="center">
 [光子](@keyword=photon|lang=zh-CN|style=Feynman)时钟：在静止参考系（左）和运动[参考系](@keyword=reference_frames|lang=zh-CN|style=Feynman)（右）中的光路。

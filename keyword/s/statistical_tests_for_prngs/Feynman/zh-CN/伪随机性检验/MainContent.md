@@ -35,7 +35,7 @@ PRNG最阴险的失败不在于单个数字的属性，而在于它们*之间*�
 
 但当我们停止观察流而开始观察数对时，这个把戏就暴露了。如果我们在二维图上绘制点 $(x_i, y_i)$，我们会看到什么？每个点都完美地落在直线 $y = 1 - x$ 上。我们的“随机”点并没有像一团尘埃一样填满单位正方形，而是描绘出一条单一、鲜明的直线。
 
-![一个通过一维检验但在二维中失败的[伪随机数生成器](@keyword=pseudorandom_number_generator|lang=zh-CN|style=Feynman)的教学示例。点 (x,y) 都落在直线 y=1-x 上。](https://storage.googleapis.com/test_data_public/problem_images/2429642/2d_visualization.png)
+的教学示例。点 (x,y) 都落在直线 y=1-x 上。](https://storage.googleapis.com/test_data_public/problem_images/2429642/2d_visualization.png)
 
 对于任何依赖二维随机性的模拟来说，这都是一个彻底的灾难，比如模拟粒子的散射或在地图上随机选择一个位置。一个二维[卡方检验](@keyword=chi_squared_test|lang=zh-CN|style=Feynman)，它将单位正方形划分为一个网格并检查每个单元格中的计数，将会惨败。虽然每个网格单元格的[期望计数](@keyword=expected_counts|lang=zh-CN|style=Feynman)大于零，但观测到的计数对于几乎所有单元格都将为零，除了那些恰好落在直线 $y=1-x$ 上的少数单元格。由此产生的 $\chi^2$ 值将是天文数字般的大，尖叫着“非随机！” [@problem_id:2429642]。
 

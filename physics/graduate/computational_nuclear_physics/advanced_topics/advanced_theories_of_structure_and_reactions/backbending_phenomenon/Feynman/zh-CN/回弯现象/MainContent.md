@@ -27,8 +27,6 @@
 
 第一张是**角动量-频率图（$I$ vs. $\omega$）**。在这张图中，我们通常将[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)的角动量 $I$（以[普朗克常数](@keyword=planck_s_constant|lang=zh-CN|style=Feynman) $\hbar$ 为单位）作为纵轴，旋转频率 $\omega$ 作为横轴。对于一个普通的转子，这条曲线应该平滑地向右上方延伸——角动量越大，转速越快。但在发生回弯的[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)中，这条曲线在某个[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)会突然“向后弯曲”。这意味着，[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)的角动量 $I$ 在急剧增加，而它的集体旋转频率 $\omega$ 却几乎不变，甚至短暂地减小了！这正是“[回弯](@keyword=backbending|lang=zh-CN|style=Feynman)”这个名字的由来 [@problem_id:3543317]。从能量上看，这显然是获得角动量的一种更“经济”的方式：[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)发现，与其费力地加速整个集体的转动，不如通过内部结构的重组——即让几个[核子](@keyword=nucleon|lang=zh-CN|style=Feynman)[排列](@keyword=permutation|lang=zh-CN|style=Feynman)起来——来一次性获得大量角动量。
 
-![I vs omega plot](https.dummyimage.com/600x400/ccc/000.png=I+vs+omega+plot+showing+backbending)
-
 然而，更敏锐的诊断工具是第二张图谱——**动态转动惯量图（$J^{(2)}$ vs. $\omega$）**。动态[转动惯量](@keyword=rotational_inertia|lang=zh-CN|style=Feynman) $J^{(2)}$ 定义为 $J^{(2)} = \frac{dI}{d\omega}$，它衡量的是增加单位旋转频率能带来多少角动量的增益，或者反过来说，为了增加一点角动量，需要在频率上付出多大的“代价”。对于平滑的集体旋转， $J^{(2)}$ 随 $\omega$ 平缓增加。但在[回弯](@keyword=backbending|lang=zh-CN|style=Feynman)点，由于角动量 $I$ 变化很大而频率 $\omega$ 变化很小（甚至为负），$J^{(2)}$ 会呈现出一个非常尖锐、高耸的峰 [@problem_id:3543275]。这个尖峰就像[心电图](@keyword=electrocardiogram|lang=zh-CN|style=Feynman)上的一个剧烈脉冲，精确地标记出了[原子核](@keyword=atomic_nucleus|lang=zh-CN|style=Feynman)内部发生剧烈结构变化的瞬间。从数学上看，$J^{(2)}$ 与能量-角动量曲线（$E$ vs. $I$）的曲率成反比，$J^{(2)} = (\frac{d^2E}{dI^2})^{-1}$。在[回弯](@keyword=backbending|lang=zh-CN|style=Feynman)处，能量随角动量的变化变得平缓，即曲率变小，从而导致 $J^{(2)}$ 的急剧增大 [@problem_id:3543275]。
 
 ### 微观世界的编舞：[准粒子](@keyword=quasiparticle|lang=zh-CN|style=Feynman)登上舞台

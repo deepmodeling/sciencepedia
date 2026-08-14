@@ -23,7 +23,7 @@ The world of rotations is not always as orderly as a gracefully turning satellit
 <br/>
 <div style="text-align: center;">
     <figure>
-        <img src="https://i.imgur.com/qL5tGno.gif" alt="Animation showing the Dzhanibekov effect on a T-handle." style="width: 50%;">
+
         <figcaption>The Dzhanibekov effect: A T-handle spun about its intermediate axis of inertia exhibits a periodic flip. This is a stable, predictable instability governed by Euler's equations.</figcaption>
     </figure>
 </div>

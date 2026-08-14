@@ -18,7 +18,7 @@
 现在，奇迹发生了。当我们将均匀流和偶极子这两个简单的积木叠加在一起时，会得到什么？[均匀流](@keyword=uniform_flow|lang=zh-CN|style=Feynman)想要勇往直前，但偶极子在中心创造了一个它无法进入的圆形禁区。最终的结果是——我们得到了一个完美描述均匀流绕过一个圆形柱面的数学模型！
 
 <center>
-<img src="https://i.imgur.com/7gK5Y9a.png" width="600">
+
 <br>
 <small>图1：[均匀流](@keyword=uniform_flow|lang=zh-CN|style=Feynman)（左）与偶极子（中）叠加，得到无环量绕圆柱流（右）。流线描绘了流体粒子的运动轨迹。</small>
 </center>
@@ -42,7 +42,7 @@
 现在，我们将这个涡旋叠加到之前的绕圆柱流场之上。想象一下，在圆柱体的上方，涡旋的旋转方向与均匀流动的方向相同，两者效应叠加，使得流速变得更快。而在圆柱体的下方，涡旋的旋转方向与均匀流相反，两者相互抵消，使得流速减慢。
 
 <center>
-<img src="https://i.imgur.com/Xy1jofS.png" width="600">
+
 <br>
 <small>图2：无环量绕流（左）叠加一个涡旋（中），得到有环量绕流（右）。流场不再上下对称，顶部的流速大于底部。</small>
 </center>

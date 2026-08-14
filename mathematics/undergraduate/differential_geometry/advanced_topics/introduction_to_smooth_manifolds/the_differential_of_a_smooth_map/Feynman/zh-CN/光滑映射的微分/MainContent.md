@@ -19,8 +19,6 @@
 
 这个 $dF_p$ 到底作用在什么东西上呢？它作用在“速度”上。想象你在 $p$ 点，可以朝任何方向以任何速率出发，所有这些可能的“[瞬时速度](@keyword=instantaneous_velocity|lang=zh-CN|style=Feynman)”的集合，构成了点 $p$ 的**[切空间](@keyword=tangent_spaces|lang=zh-CN|style=Feynman)** $T_pM$。它是一个[向量空间](@keyword=vector_spaces|lang=zh-CN|style=Feynman)，是依附在点 $p$ 上的“平坦世界”。微分 $dF_p$ 就是一个从输入空间的[切空间](@keyword=tangent_spaces|lang=zh-CN|style=Feynman) $T_pM$ 到输出空间的切空间 $T_{F(p)}N$ 的[线性映射](@keyword=linear_maps|lang=zh-CN|style=Feynman)。它告诉我们：如果你在 $p$ 点以一个特定的速度 $v$ 出发，那么经过 $F$ 这个映射之后，你在 $F(p)$ 点的[瞬时速度](@keyword=instantaneous_velocity|lang=zh-CN|style=Feynman)会是多少。
 
-![A diagram showing a smooth map F from manifold M to N. At a point p in M, the tangent space T_pM is shown. The map F takes p to F(p) in N. The differential dF_p is a linear map that takes a tangent vector v in T_pM to a new tangent vector dF_p(v) in the tangent space T_{F(p)}N.](https://i.imgur.com/example.png)
-
 ### 雅可比矩阵：[微分](@keyword=pushforward|lang=zh-CN|style=Feynman)的“说明书”
 
 我们如何具体地抓住这个抽象的[线性变换](@keyword=linear_algebra_transformations|lang=zh-CN|style=Feynman) $dF_p$ 呢？如果我们的空间是熟悉的欧几里得空间，比如 $\mathbb{R}^2$ 或 $\mathbb{R}^3$，那么答案出奇地简单：**[雅可比矩阵](@keyword=jacobian_matrix|lang=zh-CN|style=Feynman)（Jacobian Matrix）**。

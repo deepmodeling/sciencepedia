@@ -37,7 +37,6 @@ $t_R = t + \frac{2\epsilon - 1}{c}x = \text{常数}$
 
 在 $(x, ct)$ [坐标图](@keyword=coordinate_map|lang=zh-CN|style=Feynman)上，这条线的斜率 $d(ct)/dx = -(2\epsilon - 1)$。这意味着，我们对“同时性”的定义，无异于选择如何用一个“[超平面](@keyword=hyperplanes|lang=zh-CN|style=Feynman)”去“切”四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)。爱因斯坦的切法是“水平”的，而赖兴巴赫告诉我们，我们也可以“倾斜”着切。每一刀下去，得到的就是那个时刻的全宇宙——一个完全不同的“现在”。
 
-![Minkowski Diagram with Tilted Simultaneity](https://d2j3th62fbfal5.cloudfront.net/2024/05/20/4873ab330182ec5ff6d3187c320d3f66.png)
 *图：在标准的爱因斯坦约定($\epsilon=1/2$)下，同时性线(蓝线)与空间轴$x$平行。改变约定($\epsilon \neq 1/2$)会使同时性线(红线)发生倾斜。*
 
 ### 约定的代价：各向异性的光

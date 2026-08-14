@@ -15,8 +15,6 @@
 
 所以，[利普希茨条件](@keyword=lipschitz_condition|lang=zh-CN|style=Feynman)本质上是一个关于**全局斜率有界**的几何声明 [@problem_id:1699863]。它不允许函数图像上出现任何垂直的悬崖。你可以想象，在[函数图像](@keyword=function_graph|lang=zh-CN|style=Feynman)上的任何一点，都存在一个由斜率为 $+L$ 和 $-L$ 的直线构成的“锥体”，整个函数图像都必须保持在这个锥体内部，不能“逃逸”出去。
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d5a57a5c-7d31-4a57-9dca-fbc7c0ca6f63/Untitled.png)
-
 这个几何图像可以直接翻译成代数语言。对于函数 $f(y)$，如果我们取任意两点 $y_1$ 和 $y_2$，它们对应的函数值是 $f(y_1)$ 和 $f(y_2)$。那么[割线](@keyword=secant_line|lang=zh-CN|style=Feynman)的斜率就是 $\frac{f(y_1) - f(y_2)}{y_1 - y_2}$。[利普希茨条件](@keyword=lipschitz_condition|lang=zh-CN|style=Feynman)说的是，这个斜率的[绝对值](@keyword=absolute_value|lang=zh-CN|style=Feynman)被 $L$ 限制住了：
 $$
 \left| \frac{f(y_1) - f(y_2)}{y_1 - y_2} \right| \le L

@@ -22,7 +22,7 @@ Nature is fundamentally lazy. Any system will settle into the state that minimiz
 The genius of the theory is that the *shape* of this landscape changes with temperature. Above the critical temperature, $T_c$, the landscape is a simple bowl with its minimum at $\psi=0$. The system is disordered. As the temperature cools to $T_c$ and below, the bottom of the bowl rises, forming a hump, and two new, lower valleys appear at non-zero values of $\psi$. The ball rolls into one of these new valleys, and just like that, the system spontaneously picks an ordered state. A phase transition is nothing more than a topological change in the energy landscape [@problem_id:2002346].
 
 <center>
-<img src="https://i.imgur.com/uTj8fQz.png" alt="Ginzburg-Landau potential above, at, and below the critical temperature." width="600"/>
+
 </center>
 <center><i>The Ginzburg-Landau free energy landscape. Above $T_c$, the minimum is at $\psi=0$. Below $T_c$, this becomes an unstable peak, and two new minima appear at $\psi \neq 0$, representing the new ordered states.</i></center>
 

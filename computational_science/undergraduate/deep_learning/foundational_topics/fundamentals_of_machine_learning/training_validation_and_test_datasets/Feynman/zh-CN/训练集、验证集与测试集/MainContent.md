@@ -22,7 +22,6 @@
 
 一个绝佳的例子来自统计学中的**[前向逐步选择](@keyword=forward_stepwise_selection|lang=zh-CN|style=Feynman)（forward stepwise selection）**。在这个过程中，我们从一个最简单的模型开始，一次只增加一个最具预测能力的特征。可以从数学上证明，每增加一个新特征，模型在**训练集**上的[残差平方和](@keyword=residual_sum_of_squares|lang=zh-CN|style=Feynman)（RSS，一种衡量误差的指标）几乎总是单调递减的[@problem_id:3104976]。这意味着，从[训练误差](@keyword=training_error|lang=zh-CN|style=Feynman)来看，模型似乎变得越来越好。但这是一个危险的幻觉。如果我们用一个独立的**验证集**来评估模型，就会发现一条截然不同的“U”形曲线：起初，随着有效特征的加入，验证误差会下降，因为模型更好地捕捉了真实规律（降低了**偏差 (bias)**）；但当模型变得过于复杂，开始吸纳训练数据中的噪声时，验证误差反而会回升，因为它在新数据上的泛化能力变差了（增加了**方差 (variance)**）。
 
-![U型验证曲线](https://d2l.ai/_images/underfit-overfit.svg)
 *图1：[训练误差](@keyword=training_error|lang=zh-CN|style=Feynman)与验证误差的典型曲线。随着[模型复杂度](@keyword=model_complexity|lang=zh-CN|style=Feynman)增加，[训练误差](@keyword=training_error|lang=zh-CN|style=Feynman)单调下降，而验证误差呈现U形，揭示了[欠拟合](@keyword=underfitting|lang=zh-CN|style=Feynman)与[过拟合](@keyword=overfitting|lang=zh-CN|style=Feynman)区域。*
 
 这告诉我们一个最基本的道理：模型的训练成绩本身并不能作为其真实能力的可靠凭证。我们需要一个更公正的裁判。

@@ -20,7 +20,7 @@
 在任何给定的温度下，容器中的分子并非都以相同的速度运动。它们的速度遵循着一个统计分布，即麦克斯韦-玻尔兹曼分布。有的分子慢悠悠，有的风驰电掣。绝大多数分子的能量都处在平均水平附近，只有极少数“幸运儿”拥有远超平均值的巨大动能。
 
 <center>
-<img src="https://i.imgur.com/k9bAFHh.png" width="600">
+
 <br>
 <small>图1：[麦克斯韦-玻尔兹曼](@keyword=maxwell_boltzmann|lang=zh-CN|style=Feynman)能量分布。只有能量超过活化能 $E_a$ 的高能分子（阴影区域）才有可能发生反应。升高温度（从蓝色曲线到红色曲线）会使分布向高能区移动，高能分子的比例急剧增加。</small>
 </center>
@@ -34,7 +34,7 @@
 分子也不是简单的球形弹珠，它们有复杂的三维结构，有特定的“[活性位点](@keyword=active_site|lang=zh-CN|style=Feynman)”。要发生反应，通常需要一个分子的特定原子与另一个分子的特定原子在碰撞时精确地对准。比如，一个氯原子要从甲烷分子（$CH_4$）上夺走一个氢原子，它最好是从氢原子所在的一侧进攻，而不是一头撞上碳原子。
 
 <center>
-<img src="https://i.imgur.com/vHq0A6v.png" width="500">
+
 <br>
 <small>图2：一个简单的碰撞方向示意。左图的碰撞方向有利于反应发生，而右图则不利。</small>
 </center>
@@ -54,7 +54,7 @@
 在这幅地图上，稳定的分子（反应物和产物）对应着能量最低的“山谷”。而[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)，就是体系从一个山谷（反应物）翻山越岭，到达另一个山谷（产物）的旅程。体系会本能地选择最省力的路线，这条路线被称为**最低能量路径 (Minimum Energy Path, MEP)**。而这条路径上的最高点，就是两个山谷之间的一个“山口”或“[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)”。这个点，正是我们之前提到的**[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)**。它在沿着反应路径的方向上是能量最高点（不稳定，像山顶），但在所有垂直于此路径的方向上都是能量最低点（稳定，像峡谷的谷底）。这个[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)的能量与反应物山谷谷底的能量之差，就是最纯粹的、理论上的活化能。
 
 <center>
-<img src="https://i.imgur.com/k2gXf3o.png" width="600">
+
 <br>
 <small>图3：[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)的示意图。反应物和产物位于能量的山谷中，反应过程需要翻越一个能量[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)，即过渡态。</small>
 </center>
@@ -94,7 +94,7 @@ $$ \Delta E_0^{\ddagger} = (V^{\ddagger} + E_{\mathrm{ZPE}}^{\ddagger}) - (V_{\m
 第二抹，也是最令人着迷的色彩，是**[量子隧道效应](@keyword=quantum_tunneling|lang=zh-CN|style=Feynman) (Quantum Tunneling)**。在经典世界里，如果你没有足够的能量翻过一座山，你就永远不可能到达另一边。但在量子世界，粒子具有波动性，它们有一定的概率能够像幽灵一样“穿透”能量壁垒，即使它们的能量远低于壁垒的高度！
 
 <center>
-<img src="https://i.imgur.com/G4y86vD.png" width="550">
+
 <br>
 <small>图4：[量子隧道效应](@keyword=quantum_tunneling|lang=zh-CN|style=Feynman)。经典粒子（蓝球）能量不足，无法越过能垒。而量子粒子（[波包](@keyword=wave_packets|lang=zh-CN|style=Feynman)）则有一定的概率“[渗透](@keyword=permeation|lang=zh-CN|style=Feynman)”过去。</small>
 </center>

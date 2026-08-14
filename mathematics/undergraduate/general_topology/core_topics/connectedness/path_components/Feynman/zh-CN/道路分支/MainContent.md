@@ -36,7 +36,7 @@
 想象一下函数 $y = \sin(1/x)$ 在 $x$ 从 $1$ 逐渐趋近于 $0$ 时的图像。当 $x$ 变小时，$1/x$ 会急剧增大，导致 $\sin(1/x)$ 的值在 $-1$ 和 $1$ 之间疯狂地[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的频率越来越快，以至于当你到达 $x=0$ 时，这条曲线似乎想要同时穿过 $y$ 轴上从 $-1$ 到 $1$ 的所有点。
 
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Topologist_sine_curve.svg" width="400">
+
 <br>
 <small>[拓扑学家的正弦曲线](@keyword=topologist_s_sine_curve|lang=zh-CN|style=Feynman) $S = \{ (x, \sin(1/x)) \mid x \in (0, 1] \} \cup \{ (0, y) \mid y \in [-1, 1] \}$</small>
 </center>

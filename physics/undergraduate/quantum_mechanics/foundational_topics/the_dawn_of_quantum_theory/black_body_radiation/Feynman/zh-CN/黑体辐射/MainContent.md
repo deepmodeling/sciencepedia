@@ -15,7 +15,6 @@
 
 <br>
 
-![A hollow cavity with a small opening acts as a near-perfect blackbody. Radiation that enters the opening is trapped inside and absorbed after multiple reflections.](https://static.scholarfun.com/marvin/2023/10/24/115509-085-f5be-43a9-959c-490333555ae3.png)
 <center>图1：空腔上的小孔是对理想黑体的一个极好近似。</center>
 <br>
 

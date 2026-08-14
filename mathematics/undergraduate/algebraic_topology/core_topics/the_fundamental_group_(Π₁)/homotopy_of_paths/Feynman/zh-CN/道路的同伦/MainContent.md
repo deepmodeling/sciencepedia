@@ -28,7 +28,7 @@
 这第三条规则至关重要！如果我们放松了这个约束，允许端点在变形过程中四处漂移，那么任何路径都可以“收缩”到另一点上，我们就失去了比较路径的意义。比如，一个从 $(0,0)$ 到 $(1,1)$ 的路径，如果在变形时终点没有被固定在 $(1,1)$，那么它就不能称之为合格的[路径同伦](@keyword=path_homotopy_2|lang=zh-CN|style=Feynman) [@problem_id:1657561]。这就像你不能通过拔掉钉子的方式来“变形”你的橡皮筋。
 
 <center>
-<img src="https://i.imgur.com/uCgM5vK.png" width="400">
+
 </center>
 <center>
 <small>图1：[路径同伦](@keyword=path_homotopy_2|lang=zh-CN|style=Feynman)的可视化。单位正方形的底边映射为路径 $f$，顶边映射为路径 $g$。左、右两条边则始终被固定在起点 $x_0$ 和终点 $x_1$ 上。</small>
@@ -65,7 +65,7 @@
 *   **逆元的存在**：对于任意一条路径 $f$，我们可以定义它的**逆路径** $\bar{f}$，就是原路返回的路径。现在，如果我们先走 $f$，再走 $\bar{f}$，就得到了一个环路 $f \cdot \bar{f}$。这个环路就像一次“往返旅行”。直觉告诉我们，这次旅行应该可以“取消”，也就是收缩回起点。事实确实如此！环路 $f \cdot \bar{f}$ 总是[同伦](@keyword=homotopy|lang=zh-CN|style=Feynman)于常路径 [@problem_id:1657553]。这个变形过程，就像是慢慢缩短旅途的折返点，直到整个环路退化为起点。因此，$\bar{f}$ 的[同伦类](@keyword=homotopy_classes|lang=zh-CN|style=Feynman)正是 $f$ 的[同伦类](@keyword=homotopy_classes|lang=zh-CN|style=Feynman)的“逆元”。
 
 <center>
-<img src="https://i.imgur.com/k9m9m6m.gif" width="450">
+
 </center>
 <center>
 <small>图2：环路 $f \cdot \bar{f}$ 收缩为一点的[同伦](@keyword=homotopy|lang=zh-CN|style=Feynman)过程。这表明在同伦意义下，逆路径起到了代数中“逆元”的作用。</small>

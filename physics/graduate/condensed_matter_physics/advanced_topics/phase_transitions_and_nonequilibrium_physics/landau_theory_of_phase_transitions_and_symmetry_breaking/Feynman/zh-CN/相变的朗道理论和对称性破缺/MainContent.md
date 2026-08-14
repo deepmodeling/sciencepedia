@@ -45,7 +45,7 @@ $$
 2.  **当 $T < T_c$ 时（低温相）**: $a<0$。现在，$m^2$ 项的系数为负，[自由能](@keyword=free_energy|lang=zh-CN|style=Feynman)的形状发生了根本性的变化。它不再是一个简单的碗，而是在 $m=0$ 处有一个小凸起，在两边形成了两个更低的“坑”。这著名的形状常被称为“墨西哥帽”势（见下图b）。$m=0$ 从一个稳定的最低点变成了一个不稳定的最高点。系统会滚入其中一个坑里，取一个非零的值 $m_0 = \pm\sqrt{-a/b}$。系统**自发地**选择了一个方向（“+”或“-”），打破了 $m \to -m$ 的[对称性](@keyword=symmetry|lang=zh-CN|style=Feynman)。这就是**[自发对称性破缺](@keyword=spontaneous_symmetry_breaking|lang=zh-CN|style=Feynman)**。
 
 <center>
-    <img src="https://i.imgur.com/G4i3wYy.png" alt="Landau Free Energy" width="600">
+
     <br>
     <small>图：[朗道自由能](@keyword=landau_free_energy|lang=zh-CN|style=Feynman)随温度的变化。(a) $T > T_c$ 时，[自由能](@keyword=free_energy|lang=zh-CN|style=Feynman)只有一个位于 $m=0$ 的极小值。(b) $T < T_c$ 时，[自由能](@keyword=free_energy|lang=zh-CN|style=Feynman)出现两个位于 $m \ne 0$ 的极小值，系统发生[自发对称性破缺](@keyword=spontaneous_symmetry_breaking|lang=zh-CN|style=Feynman)。</small>
 </center>

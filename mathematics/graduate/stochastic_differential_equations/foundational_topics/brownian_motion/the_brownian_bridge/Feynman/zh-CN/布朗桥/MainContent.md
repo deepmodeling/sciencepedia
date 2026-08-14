@@ -29,7 +29,7 @@ $$
 
 <center>
   <figure>
-    <img src="https://i.imgur.com/rN5T1XJ.png" alt="A diagram showing a Wiener process path W(t), the secant line L(t)=tW(1), and the resulting Brownian bridge B(t) which starts and ends at 0." style="width: 80%;">
+
     <figcaption>图1：将一个维纳过程 $W(t)$（蓝色虚线）减去其起点和终点之间的割线 $L(t)=tW(1)$（红色虚线），就得到了被“[拉回](@keyword=pullback|lang=zh-CN|style=Feynman)”到原点的[布朗桥](@keyword=brownian_bridge|lang=zh-CN|style=Feynman) $B(t)$（黑色实线）。</figcaption>
   </figure>
 </center>

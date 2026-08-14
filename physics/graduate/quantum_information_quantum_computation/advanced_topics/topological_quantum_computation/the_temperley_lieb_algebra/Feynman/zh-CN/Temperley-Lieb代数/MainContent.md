@@ -14,7 +14,7 @@
 真正的“行动”来自于一组被称为 **生成元** 的特殊图形，记作 $e_i$。对于每个 $i$（从 1 到 $n-1$），$e_i$ 是一个奇特的图形：它在顶部用一个“帽子”（cap）将点 $i$ 和 $i+1$ 连接起来，在底部用一个“杯子”（cup）将点 $i$ 和 $i+1$ 连接起来，而所有其他的点则由直线垂直穿过。
 
 <center>
-<img src="https://i.imgur.com/G9c882L.png" alt="Diagrammatic representation of the identity element I and a generator e_i in TL_5(d)" width="400"/>
+
 <br>
 <small>图1：[Temperley-Lieb代数](@keyword=temperley_lieb_algebra|lang=zh-CN|style=Feynman) $TL_5(d)$ 中单位元 $I$ (左) 和生成元 $e_2$ (右) 的图形表示。</small>
 </center>
@@ -29,7 +29,7 @@
 
 我们玩的这个弦线游戏，实际上可以用一套严格的代数语言来描述。图形化的规则，只不过是帮助我们记忆三条核心代数关系式——即所谓的 **琼斯关系式** (Jones relations) 的聪明伪装。
 
-1.  **$e_i^2 = d e_i$** 
+1.  **$e_i^2 = d e_i$**
     这可能是最核心的一条规则。从图形上看，将一个 $e_i$ 堆叠在另一个 $e_i$ 上，它的“杯子”恰好与下面那个的“帽子”相遇，形成一个完美的闭环。根据游戏规则，我们消除这个闭环，得到一个因子 $d$，剩下的部分……恰好还是一个 $e_i$！这个简单的代数式，完美地捕捉了闭环的价值 $d$。
 
 2.  **$e_i e_{i \pm 1} e_i = e_i$**

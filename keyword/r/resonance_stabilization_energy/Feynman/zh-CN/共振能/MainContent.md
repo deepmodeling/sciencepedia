@@ -3,11 +3,7 @@
 
 本次探索分为两个主要部分。在第一章**原理与机制**中，我们将深入共振的量子力学核心，通过简单和复杂的分子来理解[电子离域](@keyword=electron_delocalization|lang=zh-CN|style=Feynman)如何导致稳定性。我们将考察[价键理论](@keyword=valence_bond_theory|lang=zh-CN|style=Feynman)和[分子轨道理论](@keyword=molecular_orbital_theory|lang=zh-CN|style=Feynman)的理论框架，看它们如何[殊途同归](@keyword=equifinality|lang=zh-CN|style=Feynman)，得出相同的结论。随后的**应用与跨学科联系**一章将连接理论与现实，展示共振稳定如何决定蛋白质的平面性、控制[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的速率，并留下我们可以在实验室中检测到的可测量的能量足迹。
 
-
-
-
-
-![图3：不等价的[共振结构](@keyword=resonance_structures|lang=zh-CN|style=Feynman)。结构 $\Psi_2$ 更稳定，因为它允许给电子基团(D)和[吸电子基团](@keyword=electron_withdrawing_groups|lang=zh-CN|style=Feynman)(A)之间发生[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)。](https://i.imgur.com/k9f5h1U.png)
+。结构 $\Psi_2$ 更稳定，因为它允许给电子基团(D)和[吸电子基团](@keyword=electron_withdrawing_groups|lang=zh-CN|style=Feynman)(A)之间发生[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)。](https://i.imgur.com/k9f5h1U.png)
 
 ## 原理与机制
 

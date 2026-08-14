@@ -36,8 +36,6 @@ $$
 
 于是，[中值定理](@keyword=mean_value_theorem|lang=zh-CN|style=Feynman)的方程 $s'(c) = \frac{s(t_2) - s(t_1)}{t_2 - t_1}$ 有了一个极其直观的几何画面：在一段光滑的曲线上，连接两个端点的割线已经画好。现在，你沿着曲线滑动一把直尺，让它始终与曲线相切。[中值定理](@keyword=mean_value_theorem|lang=zh-CN|style=Feynman)保证，你一定能找到一个位置，使得这把作为切线的直尺，与之前那条割线**完全平行** [@problem_id:1300993]。
 
-![Geometric interpretation of the Mean Value Theorem](https://d2jmvrsizmvf4x.cloudfront.net/HwnvS5QTgq2xprpTfG2w_mvt.gif)
-
 这个“一定存在”的点 $c$ 在哪里呢？定理本身并没有告诉我们如何找到它，只保证了它的存在。但在某些特殊而美妙的情况下，这个点的位置出奇地简单。例如，对于任何一条抛物线 $f(x) = ax^2 + bx + c$，无论你选取哪两个点 $x_1$ 和 $x_2$，那个神奇的点 $c$ 永远都精确地位于区间的正中间，即 $c = \frac{x_1 + x_2}{2}$ [@problem_id:2217276]。这是一个令人愉悦的发现，它将一个抽象的“存在性”定理，在一个熟悉的场景下变得具体而实在。
 
 ### 回归的艺术：[罗尔定理](@keyword=rolle_s_theorem|lang=zh-CN|style=Feynman)

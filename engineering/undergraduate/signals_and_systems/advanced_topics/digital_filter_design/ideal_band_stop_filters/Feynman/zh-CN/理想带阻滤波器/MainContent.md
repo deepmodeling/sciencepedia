@@ -13,8 +13,6 @@
 
 对于一个[理想带阻滤波器](@keyword=ideal_band_stop_filter|lang=zh-CN|style=Feynman)，这张图的样子就像一道“城墙”中间开了一个“深谷”[@problem_id:1725210]。在允许通过的频率范围（称为“通带”）里，增益不多不少，正好是 $1$，意味着信号原封不动地通过。而在需要阻挡的频率范围（称为“[阻带](@keyword=stopband|lang=zh-CN|style=Feynman)”），增益是绝对的 $0$，意味着这些频率的成分被彻底抹除。这里的转变是瞬时发生的，像悬崖一样陡峭，没有任何过渡。
 
-![Magnitude Response of an Ideal Band-stop Filter](https://d2p1s6dm22d64i.cloudfront.net/1725/e634ed1f24d7768b4ce1672322a3d008.svg)
-
 让我们看一个具体的例子。假设一个滤波器被设计用来阻挡 $50 \text{ Hz}$ 到 $1000 \text{ Hz}$ 之间的所有频率。现在，一个包含三个频率成分的信号 $x(t)$ 向它走来：
 $$x(t) = 2.5 \cos(2\pi \cdot 30 t) + 5.0 \cos(2\pi \cdot 600 t) + 3.0 \cos(2\pi \cdot 1200 t)$$
 

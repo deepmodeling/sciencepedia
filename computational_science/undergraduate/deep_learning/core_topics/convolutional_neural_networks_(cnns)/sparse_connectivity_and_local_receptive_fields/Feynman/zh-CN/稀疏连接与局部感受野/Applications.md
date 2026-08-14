@@ -10,7 +10,7 @@
 
 想象一个最基本的视觉任务：在一张被噪声干扰的图片中找到物体的边缘。我们该如何设计一个“边缘探测器”？一个非常自然的想法是，让这个探测器只观察一小块局部区域。通过比较这个小窗口内左右两侧像素的平均亮度差异，我们就能判断这里是否存在一个垂直的边缘。这个小窗口，就是我们所说的“[局部感受野](@keyword=local_receptive_fields|lang=zh-CN|style=Feynman)”。如果窗口太小，它很容易被单个噪声像素欺骗；如果窗口足够大，它就能通过平均来有效抑制噪声，从而更可靠地发现边缘。当然，这个窗口也不能无限大，它的大小需要与我们想探测的特征尺度相匹配。这精确地展示了[局部感受野](@keyword=local_receptive_fields|lang=zh-CN|style=Feynman)大小与信噪比之间的权衡，这是信号处理中的一个核心问题[@problem_id:3175463]。
 
-![一个简单的边缘检测器，通过比较[局部感受野](@keyword=local_receptive_fields|lang=zh-CN|style=Feynman)（receptive field）左右两侧的信号来工作。](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Haar-like_features.svg/400px-Haar-like_features.svg.png "一个简单的边缘检测器，其工作原理类似于一个 Haar-like 特征，通过比较局部区域的不同部分来提取信息。")
+（receptive field）左右两侧的信号来工作。](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Haar-like_features.svg/400px-Haar-like_features.svg.png "一个简单的边缘检测器，其工作原理类似于一个 Haar-like 特征，通过比较局部区域的不同部分来提取信息。")
 
 当我们将这些简单的局部探测器（比如[卷积核](@keyword=kernel_(filter)|lang=zh-CN|style=Feynman)）堆叠起来，就构成了强大的[卷积神经网络](@keyword=convolutional_neural_networks|lang=zh-CN|style=Feynman)（CNN）。第一层的[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)看到的是微小的像素邻域，它们学会识别边缘和颜色块。第二层的[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)观察第一层[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)的输出，从而将边缘和色块组合成纹理和简单的形状。随着层层递进，[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)的感受野不断扩大，它们“看”到的模式也越来越复杂和抽象，从纹理到物体的部件，再到完整的物体。这种由局部到全局的层次化特征学习，正是过去十年计算机视觉革命的基石。
 
@@ -34,7 +34,7 @@
 
 这意味着，一个$k$层的GNN能够捕捉到的性质，其半径不能超过$k$。例如，要计算一个原子的化学性质，如果这个性质只依赖于它自身的原子类型，那么$0$层[消息传递](@keyword=message_passing|lang=zh-CN|style=Feynman)就足够了。如果需要知道它的配位数（即与多少个其他原子成键），则需要$1$层[消息传递](@keyword=message_passing|lang=zh-CN|style=Feynman)来“问候”所有邻居。如果一个性质依赖于$2$跳邻域内所有原子的总和，那么就需要一个$2$层的GNN。因此，我们需要的网络深度$k$直接取决于我们试图预测的图性质的“局部性”半径[@problem_id:3175399]。
 
-![一个节点的 k-hop 邻域构成了它在 GNN 中的[感受野](@keyword=receptive_fields|lang=zh-CN|style=Feynman)。](https://distill.pub/2021/gnn-intro/images/classes-of-gnn.png "在[图神经网络](@keyword=graph_neural_networks|lang=zh-CN|style=Feynman)中，一个节点的[感受野](@keyword=receptive_fields|lang=zh-CN|style=Feynman)是其 k-hop 邻域，其中 k 是网络的层数。")
+。](https://distill.pub/2021/gnn-intro/images/classes-of-gnn.png "在[图神经网络](@keyword=graph_neural_networks|lang=zh-CN|style=Feynman)中，一个节点的[感受野](@keyword=receptive_fields|lang=zh-CN|style=Feynman)是其 k-hop 邻域，其中 k 是网络的层数。")
 
 然而，正如我们在CNN中遇到的挑战一样，纯粹的局部性也有其局限。想象一下像[肌联蛋白](@keyword=titin_protein|lang=zh-CN|style=Feynman)（Titin）这样的超大蛋白质分子，它的[氨基酸序列](@keyword=amino_acid_sequence|lang=zh-CN|style=Feynman)像一条长长的链条。在仅由[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)连接构成的图中，这条链的两个末端相距数千个“跳步”。这意味着，要让链条一端的信息传递到另一端，我们需要一个拥有数千层的GNN！这在计算上是不可行的，并且会引发“过平滑”（over-smoothing）等问题，即经过多轮[消息传递](@keyword=message_passing|lang=zh-CN|style=Feynman)后，所有节点的表示都趋于一致，失去了个性化的信息。这再次揭示了一个深刻的道理：当需要捕捉的依赖关系超出了[局部感受野](@keyword=local_receptive_fields|lang=zh-CN|style=Feynman)的范围时，我们就必须对模型或数据本身进行创新，比如在图中引入“捷径”——将三维空间中彼此靠近但在序列上相距遥远的节点连接起来[@problem_id:2395400]。这与ViT能够“跳跃”空间的能力形成了有趣的呼应。
 

@@ -34,7 +34,7 @@ $$
 让我们来看一个经典的[生物开关](@keyword=biological_switches|lang=zh-CN|style=Feynman)模型 [@problem_id:1476929] [@problem_id:1476947]。[蛋白质](@keyword=proteins|lang=zh-CN|style=Feynman) $X$ 的生产速率（$J_{in}$）由于[自催化](@keyword=autocatalysis|lang=zh-CN|style=Feynman)而呈现出一种 S 形（sigmoidal）曲线，而其降解速率（$J_{out}$）则是一个简单的[线性](@keyword=linearity|lang=zh-CN|style=Feynman)过程。[稳态](@keyword=stable_state|lang=zh-CN|style=Feynman)出现在生产速率等于降解速率的地方，也就是两条曲线的交点。
 
 <center>
-<img src="https://i.imgur.com/GzB9t5z.png" alt="Graphical representation of steady states in a bistable system. The S-shaped production curve and the linear degradation line intersect at three points, corresponding to two stable states (low and high) and one unstable state (middle)." width="500">
+
 </center>
 <br>
 

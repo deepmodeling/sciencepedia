@@ -25,7 +25,7 @@
 
 **第一条公理：度规兼容性（Metric-compatibility）**
 
-这条公理说的是：**在平行移动一个向量的过程中，它的长度和向量之间的角度都保持不变。** 
+这条公理说的是：**在平行移动一个向量的过程中，它的长度和向量之间的角度都保持不变。**
 
 想象一下，你在球面上画了两个箭头（[切向量](@keyword=tangent_vectors|lang=zh-CN|style=Feynman)），它们之间有一个夹角。现在你将这对箭头沿着一条曲线“平移”到另一点。“平移”的含义是，在每一步微小的移动中，你都确保箭头相对于它所在的局部空间“方向不变”。度规兼容性保证了，当你到达终点时，这对箭头的长度和它们之间的夹角与出发时一模一样。联络不会“扭曲”或“拉伸”由度规定义的几何结构。
 
@@ -34,8 +34,6 @@ $$
 X\big(g(Y,Z)\big) = g(\nabla_{X}Y,Z) + g(Y,\nabla_{X}Z)
 $$
 这个公式的左边是普通的方向导数，衡量内积 $g(Y,Z)$ 这个数值沿 $X$ 方向的变化率。右边则告诉我们这个变化率可以由 $Y$ 和 $Z$ 沿 $X$ 方向的协变导数来计算。正是这个法则，保证了当我们说 $\nabla_{\dot{\gamma}}Y=0$ 和 $\nabla_{\dot{\gamma}}Z=0$（即 $Y$ 和 $Z$ 沿着曲线 $\gamma$ 平行移动）时，它们的内积 $g(Y,Z)$ 对时间的[导数](@keyword=derivative|lang=zh-CN|style=Feynman)为零，即内积是个常数 [@problem_id:2974971]。
-
-![](https://minio.s3.bitiful.net/public-static-files/SupportFiles/explain_the_concept/riemannian_geometry/levi_civita_connection/1.png)
 
 **第二条公理：无挠性（Torsion-free）**
 

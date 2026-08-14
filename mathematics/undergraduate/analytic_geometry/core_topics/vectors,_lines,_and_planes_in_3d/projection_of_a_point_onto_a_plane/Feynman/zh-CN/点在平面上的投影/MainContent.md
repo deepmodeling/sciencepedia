@@ -16,7 +16,7 @@
 答案是：当这根绳子与地面垂直时。任何一条不垂直的路径，例如到地面上另一点 $R$ 的路径，都会与垂直路径 $PQ$ 和地面上的路径 $QR$ 构成一个直角三角形。斜边（$PR$）永远比直角边（$PQ$）长。
 
 <center>
-    <img src="https://i.imgur.com/K5P0pXq.png" alt="Geometric intuition of the shortest path from a point to a plane." width="450">
+
 </center>
 
 这个简单的几何事实是投影的基石。它告诉我们，从点 $P$ 到其投影点 $Q$ 的连线向量 $\vec{PQ}$，必须与平面 $\Pi$ **垂直**。
@@ -58,7 +58,7 @@ $$ \vec{q} = \vec{p} + \frac{d - \vec{p} \cdot \vec{n}}{||\vec{n}||^2}\vec{n} $$
 让我们换一个角度看问题。为了简化，我们先考虑一个穿过原点的平面（即 $d=0$）。空间中的任意一个向量 $\vec{p}$，都可以被唯一地分解成两个部分：一个部分 $\vec{p}_{\parallel}$ 完全*位于*平面内，另一个部分 $\vec{p}_{\perp}$ 则完全*垂直*于平面（即沿着法[向量方向](@keyword=vector_direction|lang=zh-CN|style=Feynman)）。所以，$\vec{p} = \vec{p}_{\parallel} + \vec{p}_{\perp}$。
 
 <center>
-    <img src="https://i.imgur.com/k9e7R9U.png" alt="Decomposition of a vector into parallel and perpendicular components." width="500">
+
 </center>
 
 用这种语言来描述，投影是什么？答案惊人地简单：**投影就是扔掉垂直分量的过程！**

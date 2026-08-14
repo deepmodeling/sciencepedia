@@ -29,7 +29,7 @@ For functions of real numbers, this difference can be visualized beautifully. Le
 
 Since the term $(x-3)^2$ is a square, its value can never be negative; it is always greater than or equal to zero. This means the smallest value $k(x)$ can ever take is $0 + 3 = 3$, which happens when $x=3$. For any other $x$, the value is greater than 3. The graph is a parabola opening upwards with its vertex at $(3, 3)$. The range—the set of all actual output values—is the interval $[3, \infty)$. But the codomain was all of $\mathbb{R}$. No matter what input $x$ we choose, we can never get an output of 2, or 0, or -10. There is a gap between the range and the [codomain](@keyword=codomain|lang=en-US|style=Feynman) [@problem_id:1297648]. The function is not surjective.
 
-![A graph of the function k(x)=(x-3)^2+3 showing the domain R, the [codomain](@keyword=codomain|lang=en-US|style=Feynman) R, and the range [3, infinity). The range is a [proper subset](@keyword=proper_subset|lang=en-US|style=Feynman) of the [codomain](@keyword=codomain|lang=en-US|style=Feynman).](https://i.imgur.com/example.png)
+ R, and the range [3, infinity). The range is a [proper subset](@keyword=proper_subset|lang=en-US|style=Feynman) of the [codomain](@keyword=codomain|lang=en-US|style=Feynman).](https://i.imgur.com/example.png)
 
 This is in stark contrast to a function like $f(x) = x^3 - 2x$. This cubic polynomial stretches from negative infinity to positive infinity. For any real number $y$ you can dream of, there is some real number $x$ such that $f(x)=y$. Its range is $\mathbb{R}$, which is equal to its [codomain](@keyword=codomain|lang=en-US|style=Feynman). This function is surjective.
 

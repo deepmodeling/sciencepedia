@@ -26,7 +26,7 @@ How does the [voltage follower](@keyword=voltage_follower|lang=en-US|style=Feynm
 To build a [voltage follower](@keyword=voltage_follower|lang=en-US|style=Feynman), we make one simple, yet profound, connection: we wire the output terminal directly back to the inverting (-) input. The input signal we want to copy, $V_{in}$, is then applied to the non-inverting (+) input.
 
 <center>
-<img src="https://i.imgur.com/Gj3i8E8.png" width="400" alt="Voltage Follower Circuit Diagram">
+
 <br>
 <em>Figure 1: The elegant simplicity of a [voltage follower](@keyword=voltage_follower|lang=en-US|style=Feynman) circuit. The output is fed directly back to the inverting input.</em>
 </center>

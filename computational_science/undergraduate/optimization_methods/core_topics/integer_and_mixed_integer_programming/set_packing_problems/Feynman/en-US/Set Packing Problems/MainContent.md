@@ -41,8 +41,6 @@ Looking at the problem through the lens of resources is one way. But as is often
 
 If two lab sessions, say $s_i$ and $s_j$, both require `(Monday 9am, Room 101)`, they are in conflict. We can't schedule both. Let's draw a picture of this. Imagine every possible session is a dot (a "vertex"). Whenever two sessions conflict, we draw a line (an "edge") between their dots. This picture is what we call the **[conflict graph](@keyword=conflict_graph|lang=en-US|style=Feynman)** [@problem_id:3181340].
 
-![Conflict Graph Analogy](https://i.imgur.com/example.png "A conceptual diagram showing lab sessions as nodes and overlaps as edges.")
-
 Now, our problem transforms. Choosing a valid, non-overlapping schedule is equivalent to finding a set of vertices in this graph such that no two vertices are connected by an edge. Such a set is called an **[independent set](@keyword=independent_set|lang=en-US|style=Feynman)**. Our goal of maximizing the total student capacity becomes finding the **[maximum weight independent set](@keyword=maximum_weight_independent_set|lang=en-US|style=Feynman)** in the [conflict graph](@keyword=conflict_graph|lang=en-US|style=Feynman).
 
 This is a profound shift. We've taken a problem about sets and resources and turned it into a problem about the geometry and structure of a network. This reveals that our scheduling puzzle is secretly the same problem faced by a network engineer trying to assign frequencies to cell towers (adjacent towers can't use the same frequency) or a biologist studying protein interactions. This underlying unity is one of the beautiful things about mathematics.

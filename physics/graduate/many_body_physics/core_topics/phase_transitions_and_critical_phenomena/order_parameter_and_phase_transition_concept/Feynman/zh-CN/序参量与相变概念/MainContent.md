@@ -34,7 +34,7 @@ $$ F(\eta, T) = F_0(T) + \frac{1}{2}A(T)\eta^2 + \frac{1}{4}B\eta^4 $$
 这种[序参量](@keyword=order_parameter|lang=zh-CN|style=Feynman)从零开始[连续增长](@keyword=continuous_growth|lang=zh-CN|style=Feynman)的[相变](@keyword=phase_transitions|lang=zh-CN|style=Feynman)，被称为**[二级相变](@keyword=continuous_phase_transitions|lang=zh-CN|style=Feynman)**或**[连续相变](@keyword=continuous_phase_transitions|lang=zh-CN|style=Feynman)**。
 
 <center>
-    <img src="https://i.imgur.com/your-image-link.png" alt="Landau Free Energy Landscape" width="600"/>
+
     <br/>
     <small>图1：[朗道自由能](@keyword=landau_free_energy|lang=zh-CN|style=Feynman)地貌随温度的变化。从高温的单谷（左）到[临界点](@keyword=tipping_points|lang=zh-CN|style=Feynman)的平底（中），再到低温的双谷（右），形象地展示了[二级相变](@keyword=continuous_phase_transitions|lang=zh-CN|style=Feynman)的发生机制。</small>
 </center>

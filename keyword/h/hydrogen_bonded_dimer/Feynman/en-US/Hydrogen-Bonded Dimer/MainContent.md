@@ -13,8 +13,6 @@ But this is not just a vague, shapeless attraction. The [hydrogen bond](@keyword
 
 Carboxylic acids like acetic or formic acid take this a step further. They form a spectacularly stable and symmetric cyclic dimer. Each molecule acts as both a [hydrogen bond donor](@keyword=hydrogen_bond_donor|lang=en-US|style=Feynman) and an acceptor, creating a beautiful eight-membered ring held together by *two* hydrogen bonds. It’s like two dancers clasping both hands, forming a stable, closed loop. This cyclic arrangement is the reason for their exceptional "stickiness."
 
-![Formic Acid Dimer](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Formic_acid_dimer.svg/300px-Formic_acid_dimer.svg.png)
-
 ### The Forces Within: A Quantum Tug-of-War
 
 To truly understand why these dimers form, we need to put on our quantum spectacles and look at the fundamental forces at play. Any interaction between two molecules is a delicate balance, a microscopic tug-of-war. Using powerful theoretical tools like Symmetry-Adapted Perturbation Theory (SAPT), we can dissect the total [interaction energy](@keyword=interaction_energy|lang=en-US|style=Feynman) into its physical components ([@problem_id:2780850]). For a [hydrogen bond](@keyword=hydrogen_bond|lang=en-US|style=Feynman), three main players dominate the scene:

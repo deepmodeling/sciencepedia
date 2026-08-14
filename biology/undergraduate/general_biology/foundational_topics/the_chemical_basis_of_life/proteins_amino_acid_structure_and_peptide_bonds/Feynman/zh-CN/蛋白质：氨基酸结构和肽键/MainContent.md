@@ -15,8 +15,6 @@
 
 出人意料的是，所有这20种氨基酸（除了一个特殊分子，我们稍后会谈到）都有一个共同的骨架。这个骨架的核心是一个碳原子，我们称之为**α-碳**（alpha-carbon, $C_{\alpha}$）。它像一个交通枢纽，通过[共价键](@keyword=covalent_bonding|lang=zh-CN|style=Feynman)连接着四个不同的部分：一个**氨基**（amino group, $-\text{NH}_2$），一个**羧基**（carboxyl group, $-\text{COOH}$），一个氢原子（$-H$），以及一个千变万化的**侧链**（side chain），也叫**R基团**（R-group）[@problem_id:2310657]。
 
-![一个通用氨基酸的结构](Generalized_amino_acid_structure)
-
 这个结构本身就蕴含着一种美妙的二重性。氨基是一个天生的“碱”，它上面的氮原子有一对孤对电子，随时准备接受一个质子（$H^{+}$），从而带上正[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)（$-\text{NH}_3^+$）。而[羧基](@keyword=carboxyl_group|lang=zh-CN|style=Feynman)则是一个典型的“酸”，它很容易丢掉一个质子，让自己带上负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)（$-\text{COO}^-$）。这种既能当酸又能当碱的特性，我们称之为**[两性](@keyword=amphoterism|lang=zh-CN|style=Feynman)**（amphoteric）。
 
 当一个氨基酸溶解在水中，比如我们体液的环境（pH值约7.4）中时，奇妙的事情发生了：氨基通常会“捡起”一个质子，而[羧基](@keyword=carboxyl_group|lang=zh-CN|style=Feynman)则会“丢掉”一个质子。结果，这个小分子同时拥有了一个正[电荷中心](@keyword=center_of_charge|lang=zh-CN|style=Feynman)和一个负[电荷中心](@keyword=center_of_charge|lang=zh-CN|style=Feynman)，但整体的净[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)为零。这种状态被称为**[偶极离子](@keyword=zwitterion|lang=zh-CN|style=Feynman)**（zwitterion）。
@@ -61,7 +59,7 @@
 
 这个看似微小的差异，揭示了一个关于[蛋白质结构](@keyword=protein_architecture|lang=zh-CN|style=Feynman)的核心秘密。这个键长的中间值意味着，肽键并非一个纯粹的[单键](@keyword=single_bond|lang=zh-CN|style=Feynman)，它具有大约40%的**部分双键特性**。这是怎么回事呢？答案是**共振**（resonance）。肽键的电子云并非固定不动，而是在两种或多种可能的结构之间“共振”。其中一个[共振结构](@keyword=resonance_structures|lang=zh-CN|style=Feynman)就是氨基的氮原子将其[孤对电子](@keyword=lone_pairs|lang=zh-CN|style=Feynman)共享给羰基碳，形成一个C=N双键，同时羰基氧带上负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。
 
-![[肽键](@keyword=peptide_bond|lang=zh-CN|style=Feynman)的共振结构](Peptide_bond_resonance)
+的共振结构](Peptide_bond_resonance)
 
 这个部分双键特性带来了两个至关重要的结构后果：
 
@@ -80,7 +78,7 @@
 
 而那个被锁定的肽键旋转角度，则被称为**omega (ω)角**，它通常保持在$180^{\circ}$（反式构型, trans）附近，因为这样可以使相邻的R基团处于[肽键](@keyword=peptide_bond|lang=zh-CN|style=Feynman)平面的两侧，避免空间碰撞 [@problem_id:2310685]。
 
-![[多肽链](@keyword=polypeptide_chain|lang=zh-CN|style=Feynman)主链的旋转角度](Phi_psi_omega_angles)
+主链的旋转角度](Phi_psi_omega_angles)
 
 然而，即使是φ和ψ角的旋转也不是完全自由的。当[主链](@keyword=parent_chain|lang=zh-CN|style=Feynman)旋转时，一个氨基酸的原子可能会与邻近氨基酸的原子发生**空间位阻**（steric hindrance），就像两只手肘在拥挤的电梯里会互相碰到一样。因此，对于大多数氨基酸来说，只有某些特定的(φ, ψ)角度组合是“允许”的。这些允许的区域可以通过**[拉马钱德兰图](@keyword=ramachandran_plot|lang=zh-CN|style=Feynman)**（Ramachandran plot）来可视化。
 

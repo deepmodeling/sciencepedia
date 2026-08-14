@@ -41,14 +41,14 @@
 
 我们的任务是找到一个由 $\Delta$ 股股票和一笔金额为 $B$ 的无风险借贷组成的投资组合，使其在到期时的价值恰好等于期权的价值。
 $$
-\begin{cases} 
+\begin{cases}
 \Delta \cdot S_u + B \cdot (1+r) = 20 \\
-\Delta \cdot S_d + B \cdot (1+r) = 0 
+\Delta \cdot S_d + B \cdot (1+r) = 0
 \end{cases}
 \implies
-\begin{cases} 
+\begin{cases}
 \Delta \cdot 120 + B \cdot 1.05 = 20 \\
-\Delta \cdot 90 + B \cdot 1.05 = 0 
+\Delta \cdot 90 + B \cdot 1.05 = 0
 \end{cases}
 $$
 这是一个简单的[二元一次方程](@keyword=ax+by=c|lang=zh-CN|style=Feynman)组。解这个方程组，我们得到 $\Delta = \frac{2}{3}$ 和 $B \approx -57.14$ 元。这意味着，我们只需要在期初买入 $\frac{2}{3}$ 股股票，并借入 $57.14$ 元，就能完美复制出这张期权的未来所有可能的回报。
@@ -80,7 +80,7 @@ $$ C_0 = \frac{1}{1.05} [0.5 \cdot 20 + (1-0.5) \cdot 0] = \frac{10}{1.05} \appr
 现实世界当然不止一步。股票的价格在未来会经历许多次波动。[CRR模型](@keyword=crr_model|lang=zh-CN|style=Feynman)巧妙地将单步模型串联起来，构建了一个**二叉树（binomial tree）**。设想到期时间为 $T$，我们将其切分成 $N$ 个小的时间步，每步长度为 $\Delta t = T/N$。在每一步，股价都遵循简单的上涨或下跌规则。
 
 <center>
-<img src="https://i.imgur.com/uQ9yC5z.png" width="600">
+
 <figcaption>一个三步[二叉树](@keyword=binary_trees|lang=zh-CN|style=Feynman)示意图</figcaption>
 </center>
 

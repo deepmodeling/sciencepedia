@@ -56,7 +56,7 @@ $$
 That formula might look intimidating, but it hides a picture of stunning simplicity. Imagine a semicircle of radius 1 sitting in the upper half-plane, centered at the origin. Now, walk along the curved edge of the semicircle and mark $n+1$ points that are equally spaced *by angle*. Finally, project these points straight down onto the horizontal diameter (the interval from -1 to 1). The locations where these projections land are precisely the Chebyshev nodes! [@problem_id:2187271]
 
 <center>
-<img src="https://i.imgur.com/uI9vVwY.png" alt="Geometric construction of Chebyshev nodes" width="500">
+
 </center>
 <br>
 

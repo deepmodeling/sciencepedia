@@ -14,7 +14,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/example.png" alt="A diagram showing a square in a Cayley graph formed by commuting generators a and b, starting from a vertex g. The path g -> ga -> gab is identical in endpoint to g -> gb -> gba." width="400">
+   ga -> gab is identical in endpoint to g -> gb -> gba." width="400">
   <figcaption>图1：通勤关系 $ab=ba$ 在[凯莱图](@keyword=cayley_graphs|lang=zh-CN|style=Feynman)中形成一个闭合的四边形。</figcaption>
 </figure>
 </center>

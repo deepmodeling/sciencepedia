@@ -19,8 +19,6 @@ $$
 
 一个粒子的[空间分布](@keyword=spatial_distribution|lang=zh-CN|style=Feynman)与其[动量分布](@keyword=momentum_distribution|lang=zh-CN|style=Feynman)紧密相连，这便是海森堡不确定性原理的核心思想。一个在空间中伸展得很开的[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)，在动量空间中会是怎样的呢？通过对上述[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)进行傅里叶变换，我们可以得到两个组分[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)相对运动的[动量分布](@keyword=momentum_distribution|lang=zh-CN|style=Feynman)。有趣的是，这个动量分布的**半高全宽 (FWHM)** 恰好是 $\frac{2}{a}$ ([@problem_id:1273780])。这是一个绝妙的结果！它告诉我们，分子的空间尺寸 $a$ 越大，其内部相对动量的分布就越窄。这就像一个懒洋洋地伸着懒腰的巨人，其内部的活动反而显得更为“平静”。
 
-![Momentum Distribution](https://assets.test.logos.com/images/topic_explain/1273780_momentum_dist.png)
-
 图1：[s波](@keyword=s_waves|lang=zh-CN|style=Feynman)[费什巴赫分子](@keyword=feshbach_molecules|lang=zh-CN|style=Feynman)中组分[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)的相对动量大小分布。该分布在 $k=1/a$ 处达到峰值，其半高全宽为 $2/a$。这直观地展示了[复合玻色子](@keyword=composite_bosons|lang=zh-CN|style=Feynman)的尺寸 $a$ 与其内部[动量分布](@keyword=momentum_distribution|lang=zh-CN|style=Feynman)之间的反比关系。
 
 [动量分布](@keyword=momentum_distribution|lang=zh-CN|style=Feynman)或许听起来有些抽象，那么我们能否“看”到[复合玻色子](@keyword=composite_bosons|lang=zh-CN|style=Feynman)的结构呢？答案是肯定的，我们可以通过散射实验来探测。想象一下，我们用一束光（或者电子）去“照射”这个[复合玻色子](@keyword=composite_bosons|lang=zh-CN|style=Feynman)。[光的散射](@keyword=scattering_of_light|lang=zh-CN|style=Feynman)方式将揭示其内部[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)的分布。这个信息被编码在一个叫做**[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)形状因子** $F(q)$ 的函数中，其中 $\hbar q$ 是传递给分子的动量。

@@ -16,7 +16,7 @@
 在 **三氯化磷 ($PCl_3$)** 分子中，磷原子与三个氯原子成键，用去了3个价电子。剩下的2个价电子形成了一对**孤对电子**。根据**[价层电子对互斥理论](@keyword=valence_shell_electron_pair_repulsion_theory|lang=zh-CN|style=Feynman) (VSEPR)**，这三对成键电子和一对孤对电子会相互排斥，占据一个近似四面体的空间。但[孤对电子](@keyword=lone_pairs|lang=zh-CN|style=Feynman)就像一个更“胖”、更“占地方”的电子云，它会更强烈地排斥成键电子对，把三个氯原子向下推。因此，$PCl_3$ 分子并非平面三角形，而是呈现出**三角锥形**的几何构型。这不对称的结构，加上P-Cl[键的极性](@keyword=bond_polarity|lang=zh-CN|style=Feynman)，使得$PCl_3$成为一个**极性分子**。这个孤对电子不仅塑造了分子的形状，还赋予了它作为碱和配体的能力——这是后文我们会深入探讨的重要特性 [@problem_id:2280468]。
 
 <center>
-  <img src="https://i.imgur.com/vHqjH8K.png" width="600"/>
+
   <figcaption>图1. $PCl_3$（左）的三角锥形结构由其孤对电子（黄色部分）塑造，使其成为极性分子。$PCl_5$（右）的[三角双锥](@keyword=trigonal_bipyramidal|lang=zh-CN|style=Feynman)结构高度对称，使其成为非极性分子。</figcaption>
 </center>
 
@@ -45,7 +45,7 @@
 在**三甲基膦**中，三个甲基 ($CH_3$) 是**给电子基团**。它们通过**诱导效应**，将电子云“推”向中心的磷原子。这使得磷原子上的孤对电子云密度变得更高，更加“富集”，就像一个富翁一样，更乐于将自己的电子“捐赠”给缺电子的金属原子（路易斯酸）。因此，$P(CH_3)_3$ 是一个相当强的**[路易斯碱](@keyword=lewis_base|lang=zh-CN|style=Feynman)**。
 
 <center>
-  <img src="https://i.imgur.com/R38w7bC.png" width="600"/>
+
   <figcaption>图2. 甲基的给电子效应（左）增强了$P(CH_3)_3$的碱性，而氟的强吸[电子效应](@keyword=electronic_effects|lang=zh-CN|style=Feynman)（右）极大地削弱了$PF_3$的碱性。</figcaption>
 </center>
 
@@ -60,7 +60,7 @@
 化学家 Chad Tolman 提出了一个非常直观的概念——**锥角 (cone angle)**，来量化配体的“胖瘦”。想象一下，配体像一把雨伞，金属原子在伞柄的顶端，锥角就是这把撑开的“伞”所覆盖的角度。$PMe_3$ 的锥角是 $118^\circ$，而 bulky 的 $P(t-Bu)_3$ 锥角则高达 $182^\circ$，几乎覆盖了金属中心的一[半空间](@keyword=halfspaces|lang=zh-CN|style=Feynman)！
 
 <center>
-  <img src="https://i.imgur.com/M6LsljH.png" width="400"/>
+
   <figcaption>图3. Tolman 锥角示意图。体积庞大的配体（如$P(t-Bu)_3$）具有更大的锥角，能够有效占据金属中心周围的空间。</figcaption>
 </center>
 
@@ -92,7 +92,7 @@
 - 中间的磷原子，左右都与链相连，因此它只有2个“自由”的末端氧原子。
 
 <center>
-  <img src="https://i.imgur.com/b9i9k9L.png" width="600"/>
+
   <figcaption>图4. 线性三聚[磷酸根](@keyword=phosphate|lang=zh-CN|style=Feynman)离子的结构。红圈标出的P-O-P键即为[磷酸酐键](@keyword=phosphoanhydride_bond|lang=zh-CN|style=Feynman)，是ATP等高能化合物的关键结构。</figcaption>
 </center>
 

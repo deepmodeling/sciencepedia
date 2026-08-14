@@ -3,7 +3,7 @@
 
 本文将带领读者深入探索SR[锁存器](@keyword=latch|lang=zh-CN|style=Feynman)的奥秘。在“原理与机制”一章中，我们将揭示其如何通过[反馈环](@keyword=feedback_loop|lang=zh-CN|style=Feynman)路实现记忆，并剖析其各种工作状态以及亚稳态的本质。接着，在“应用与跨学科连接”一章中，我们将走出理论，去发现SR锁存器在工业控制、[CPU设计](@keyword=cpu_design|lang=zh-CN|style=Feynman)、[硬件安全](@keyword=hardware_security|lang=zh-CN|style=Feynman)甚至合成生物学等不同领域中令人惊叹的应用。最后，通过“动手实践”部分，您将有机会将理论知识应用于解决具体的设计挑战。让我们一同启程，揭开数字记忆最核心的秘密。
 
-![由两个[交叉](@keyword=chiasmata|lang=zh-CN|style=Feynman)耦合的[或非门](@keyword=nor_gates|lang=zh-CN|style=Feynman)构成的SR锁存器电[路图](@keyword=path_graph|lang=zh-CN|style=Feynman)](https://static.scholarfun.com/marvin/prod/images/1720610300459-SR%20Latch%20(NOR).svg)
+耦合的[或非门](@keyword=nor_gates|lang=zh-CN|style=Feynman)构成的SR锁存器电[路图](@keyword=path_graph|lang=zh-CN|style=Feynman)](https://static.scholarfun.com/marvin/prod/images/1720610300459-SR%20Latch%20(NOR).svg)
 
 ## 原理与机制
 

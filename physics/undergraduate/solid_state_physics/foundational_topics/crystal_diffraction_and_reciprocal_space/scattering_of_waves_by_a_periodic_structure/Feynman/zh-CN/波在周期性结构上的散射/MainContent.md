@@ -29,8 +29,6 @@ $$
 
 第一种图景，由 William Henry Bragg 和 William Lawrence Bragg 父子提出，非常直观。想象一下，晶体是由一层层平行的原子“[镜面](@keyword=mirror_plane|lang=zh-CN|style=Feynman)”堆叠而成的。当一束波射入时，每一层原子面都会像镜子一样反射一小部分波。为了让来自不同层面的反射波能够相互加强，它们的[光程差](@keyword=optical_path_difference|lang=zh-CN|style=Feynman)必须恰好是波长的整数倍。
 
-![Bragg's Law](https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Bragg_law_2.svg/400px-Bragg_law_2.svg.png)
-
 通过简单的几何推导，我们就能得到著名的**[布拉格定律](@keyword=bragg_s_law|lang=zh-CN|style=Feynman)**（Bragg's Law）：
 
 $$
@@ -88,8 +86,6 @@ $$
 奇迹发生了：**任何恰好落在[埃瓦尔德球](@keyword=ewald_sphere|lang=zh-CN|style=Feynman)面上的倒易格点 $\vec{G}$，都对应一个可以被观测到的衍射斑点**。
 
 为什么？因为如果一个点 $\vec{G}$ 在球面上，那么从球心 $C$ 指向该点的矢量，正好就是散射波矢量 $\vec{k}'$。从几何关系上看，我们有 $\vec{k}' = \vec{k} + \vec{G}$（满足[劳厄条件](@keyword=laue_condition|lang=zh-CN|style=Feynman)），同时 $|\vec{k}'|$ 等于球的半径 $k$（满足[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)）。
-
-![Ewald Sphere](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Ewald_sphere.svg/400px-Ewald_sphere.svg.png)
 
 [埃瓦尔德球](@keyword=ewald_sphere|lang=zh-CN|style=Feynman)的构造，将抽象的衍射条件转化为了一个直观的几何问题。通过考察给定的入射波 $\vec{k}$ 和晶体的倒易点阵，我们可以精确地预测出衍射图样上会出现哪些斑点，以及它们的位置 [@problem_id:1800713]。它就像一部解码器，将晶体的结构信息翻译成了我们可以直接观测的衍射图谱。
 

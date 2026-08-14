@@ -1,6 +1,4 @@
-<![CDATA[
-## 引言
-在细胞通讯的复杂世界中，感知并响应外部环境的能力是生命本身的基础。从光与[嗅觉](@keyword=olfaction|lang=zh-CN|style=Feynman)的感知，到我们思想与情感的复杂编排，细胞依赖于精密的信号传导机器将外部线索转化为内部行动。但一个细胞究竟是如何“看见”一个激素或“听见”一个[神经递质](@keyword=neurotransmitter|lang=zh-CN|style=Feynman)的？这个基本问题的答案，存在于自然界最通用、最普遍的分子系统之一：G蛋白偶联受体（[GPCR](@keyword=gpcrs|lang=zh-CN|style=Feynman)）信号通路。本文将带领读者踏上一段旅程，揭开这个关键通讯网络的神秘面纱。本文将首先深入剖析其核心机制，探索[GPCR](@keyword=gpcrs|lang=zh-CN|style=Feynman)与G蛋白的结构，并详细阐述构成[信号转导](@keyword=signal_transduction|lang=zh-CN|style=Feynman)核心的、优雅的分步激活循环。随后，我们将拓宽视野，将这一基本机制与其在不同学科中的多样化角色联系起来——从细胞膜的生物物理学和神经系统的交响乐，到从疾病中汲取的教训和现代药物设计的前沿。读完本文，您将对这一分子[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)如何调控广泛的生理功能获得一个全面的理解。
+<的感知，到我们思想与情感的复杂编排，细胞依赖于精密的信号传导机器将外部线索转化为内部行动。但一个细胞究竟是如何“看见”一个激素或“听见”一个[神经递质](@keyword=neurotransmitter|lang=zh-CN|style=Feynman)的？这个基本问题的答案，存在于自然界最通用、最普遍的分子系统之一：G蛋白偶联受体（[GPCR](@keyword=gpcrs|lang=zh-CN|style=Feynman)）信号通路。本文将带领读者踏上一段旅程，揭开这个关键通讯网络的神秘面纱。本文将首先深入剖析其核心机制，探索[GPCR](@keyword=gpcrs|lang=zh-CN|style=Feynman)与G蛋白的结构，并详细阐述构成[信号转导](@keyword=signal_transduction|lang=zh-CN|style=Feynman)核心的、优雅的分步激活循环。随后，我们将拓宽视野，将这一基本机制与其在不同学科中的多样化角色联系起来——从细胞膜的生物物理学和神经系统的交响乐，到从疾病中汲取的教训和现代药物设计的前沿。读完本文，您将对这一分子[范式](@keyword=normal_forms|lang=zh-CN|style=Feynman)如何调控广泛的生理功能获得一个全面的理解。
 ]]>
 
 ## 原理与机制

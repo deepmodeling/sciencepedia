@@ -10,7 +10,7 @@
 现在，我们给这个固体加热。原子获得了能量，[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)得更加剧烈，就像一个小球在山谷里来回滚动的幅度变得更大了。如果这个山谷是完美对称的——就像一个标准的抛物线形状（物理上称为“[谐振子](@keyword=harmonic_oscillator|lang=zh-CN|style=Feynman)”势）——那么小球虽然[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)剧烈，但它向左和向[右偏](@keyword=positive_skew|lang=zh-CN|style=Feynman)离谷底的概率是完全一样的。因此，它在山谷中的“平均位置”始终就是谷底。换言之，**一个由完美[谐振子](@keyword=harmonic_oscillator|lang=zh-CN|style=Feynman)构成的晶体，无论温度多高，其原子的平均间距都不会改变，它将不会表现出任何[热膨胀](@keyword=thermal_expansion|lang=zh-CN|style=Feynman)！** [@problem_id:2530750]
 
 <center>
-<img src="https://i.imgur.com/bVgT6zS.png" width="600">
+
 <br>
 图1：[谐振子](@keyword=harmonic_oscillator|lang=zh-CN|style=Feynman)（对称）[势阱](@keyword=potential_energy_well|lang=zh-CN|style=Feynman)与非谐（不对称）[势阱](@keyword=potential_energy_well|lang=zh-CN|style=Feynman)中的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)。在[对称势](@keyword=symmetric_potential|lang=zh-CN|style=Feynman)阱中，振子的平均位置（红点）不随振幅改变。在不[对称势](@keyword=symmetric_potential|lang=zh-CN|style=Feynman)阱中，随着振幅（温度）增加，振子的平均位置向[右偏](@keyword=positive_skew|lang=zh-CN|style=Feynman)移，导致了[热膨胀](@keyword=thermal_expansion|lang=zh-CN|style=Feynman)。
 </center>

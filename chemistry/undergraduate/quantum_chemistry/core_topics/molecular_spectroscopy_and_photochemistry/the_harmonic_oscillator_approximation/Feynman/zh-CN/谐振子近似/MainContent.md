@@ -11,8 +11,6 @@
 
 这种相互作用可以用一个[势能曲线](@keyword=potential_energy_curves|lang=zh-CN|style=Feynman)来描述，它看起来像一个山谷（如下图所示）。山谷的最低点对应于分子的“平衡键长” $r_e$，这是系统最舒适、能量最低的状态。任何偏离这个平衡位置的拉伸或压缩都会导致能量升高。
 
-![A comparison between a realistic molecular potential (like the Morse potential) and its harmonic approximation near the equilibrium position.](https://i.imgur.com/kS9QJbZ.png "真实分子势能与[谐振子近似](@keyword=harmonic_oscillator_approximation|lang=zh-CN|style=Feynman)的比较")
-
 这条真实的势能曲线相当复杂。直接用它来解量子力学的方程会非常困难。那么，物理学家们会怎么做呢？他们会进行近似！如果我们只关心在山谷底部附近的小范围[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)（这正是大多数分子在正常温度下的状态），我们可以发现一个美妙的简化。任何平滑曲线在它的最低点附近，看起来都非常像一个抛物线。
 
 这不仅仅是一个直觉上的猜测，它背后有坚实的数学基础。我们可以用泰勒级数在[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman) $r_e$ 附近展开真实的势能函数 $U(r)$ [@problem_id:1405643]。展开后的第一项 $U(r_e)$ 是一个常数，它仅仅是能量零点的设置。第二项与一阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman) $(\frac{dU}{dr})_{r=r_e}$ 有关，但由于 $r_e$ 是能量最低点，此处的“斜率”（也就是作用力）为零，所以这一项消失了。因此，第一个有意义的、描述偏离平衡位置如何影响能量的项，是与二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)相关的项。这个二阶[导数](@keyword=derivative|lang=zh-CN|style=Feynman)描述了势能“山谷”在底部的“曲率”或“陡峭程度”。

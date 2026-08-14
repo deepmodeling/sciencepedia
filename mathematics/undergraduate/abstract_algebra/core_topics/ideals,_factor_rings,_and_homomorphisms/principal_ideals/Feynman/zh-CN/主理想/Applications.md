@@ -25,7 +25,7 @@
 让我们再次回到[高斯整数环](@keyword=ring_of_gaussian_integers|lang=zh-CN|style=Feynman) $\mathbb{Z}[i]$。[高斯整数](@keyword=gaussian_integers|lang=zh-CN|style=Feynman)可以被看作是[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上的一个正方形网格点。现在，我们来考察由单个高斯整数，比如 $1+i$，生成的主理想 $(1+i)$。这个理想包含了所有形如 $(1+i)(a+bi)$ 的元素，其中 $a$ 和 $b$ 是整数。如果我们将这些理想中的元素作为点在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上画出来，会得到什么图形呢？不是一条直线，也不是一堆杂乱无章的点，而是一个全新的、相对于原始网格旋转了45度并“放大”了的[方格点阵](@keyword=square_lattice|lang=zh-CN|style=Feynman)！ [@problem_id:1814925]
 
 <center>
-<img src="https://i.imgur.com/ag5PxtR.png" width="400">
+
 <br>
 <small>图1：[高斯整数环](@keyword=ring_of_gaussian_integers|lang=zh-CN|style=Feynman) $\mathbb{Z}[i]$（灰色点）与理想 $(1+i)$（黑色点）在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上的几何表示。理想形成了一个旋转的子[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)。</small>
 </center>

@@ -35,7 +35,7 @@
 
 <br>
 <div align="center">
-    <img src="https://assets.lemonsqueezy.com/media/2024/05/29/18/39/53/b77a0609-b427-449e-881c-d7cf38890915/beta-turns.png" alt="Beta-turn Types" style="width: 80%;" />
+
     <p>图1. 不同类型的[β-转角](@keyword=beta_turn|lang=zh-CN|style=Feynman)示意图。展示了I型、II型、I'型、II'型和VI型转角的骨架构象和关键[残基](@keyword=residue|lang=zh-CN|style=Feynman)。[氢键](@keyword=hydrogen_bond|lang=zh-CN|style=Feynman)用虚线表示。</p>
 </div>
 <br>

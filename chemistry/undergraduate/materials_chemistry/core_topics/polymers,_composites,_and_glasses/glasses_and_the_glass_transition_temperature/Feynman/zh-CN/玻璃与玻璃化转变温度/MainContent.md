@@ -25,7 +25,7 @@
 
 <br/>
 <div align="center">
-    <img src="https://i.imgur.com/K07G0e5.png" alt="Specific volume vs. temperature plot showing crystallization and glass formation." style="width: 70%;" />
+
     <br/>
     <em>图1：物质从液态冷却时形成晶体与玻璃的[比容](@keyword=specific_volume|lang=zh-CN|style=Feynman)-温度关系图。在[熔点](@keyword=melting_temperature|lang=zh-CN|style=Feynman) $T_m$ 处，结晶伴随着体积的突变。[玻璃化转变](@keyword=vitrification|lang=zh-CN|style=Feynman)则表现为在 $T_g$ 处斜率的改变，而非体积的跳跃。[@problem_id:1302284]</em>
 </div>

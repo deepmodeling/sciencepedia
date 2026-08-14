@@ -12,7 +12,6 @@
 
 平面应力理论为我们精确揭示了这一现象的秘密。考虑一个在远方受到均匀拉力 $\sigma_{\infty}$ 的无限大[薄板](@keyword=thin_plates|lang=zh-CN|style=Feynman)，如果板是完整的，板内每一点的应力都是 $\sigma_{\infty}$。但一旦我们在中心开一个圆形的小孔，情况就发生了戏剧性的变化。弹性力学告诉我们，应力线就像平稳流动的河水，遇到孔洞（障碍物）时，必须绕道而行。在孔洞的两侧，应力线变得密集，意味着应力急剧增大。利用[平面应力](@keyword=plane_stress|lang=zh-CN|style=Feynman)理论和优雅的复变函数方法可以精确算得，在垂直于拉伸方向的孔边，周向（环向）应力会飙升到[远场](@keyword=far_zone|lang=zh-CN|style=Feynman)应力的三倍，即 $\sigma_{\theta\theta}^{\max} = 3\sigma_{\infty}$ [@problem_id:2670047]。这个“3”不是一个粗略的估计，而是一个精确的理论结果！这个结果不依赖于材料的具体属性（如[杨氏模量](@keyword=young_s_modulus|lang=zh-CN|style=Feynman) $E$ 或[泊松比](@keyword=poisson_s_ratio|lang=zh-CN|style=Feynman) $\nu$），只与几何形状有关，这体现了物理规律的深刻普适性。
 
-![Stress concentration around a hole](https://static.comsol.com/cdn/farfuture/L603oFvFhO82oF4vQvJj-sF1W_gYl9H-A23uH0-S73Y/mtime:1692732952/stress-concentration-around-a-hole-in-a-plate-under-tension.png)
 *图1：受拉伸薄板中圆孔周围的应力分布。颜色越暖，表示应力越大。请注意孔口两侧的[应力集中](@keyword=stress_concentration|lang=zh-CN|style=Feynman)区域。这是一个说明性图像，而非基于真实数据。*
 
 这个看似简单的结论，是现代机械设计、航空航天和[土木工程](@keyword=civil_engineering|lang=zh-CN|style=Feynman)的基石。工程师在设计飞机机身、[压力容器](@keyword=pressure_vessel|lang=zh-CN|style=Feynman)或任何带有开口的结构件时，都必须仔细考虑[应力集中](@keyword=stress_concentration|lang=zh-CN|style=Feynman)效应，通过倒角、补强等方式来缓解它，否则灾难性的破坏就可能在远低于材料极限强度的载荷下发生。

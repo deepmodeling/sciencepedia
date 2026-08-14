@@ -23,8 +23,6 @@ $$
 
 想象一个在[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上[单位圆](@keyword=circle_s1|lang=zh-CN|style=Feynman)上以恒定速率运动的点。这个点的位置可以用 $e^{ix}$ 来描述。当 $x$ 增加时，这个点就在圆周上旋转。而 $\cos(x)$ 和 $\sin(x)$ 不过是这个旋转的点在[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)和虚轴上的投影，是它投下的两个“影子”。
 
-![Euler's Formula Visualization](https://upload.wikimedia.org/wikipedia/commons/7/71/Euler%27s_formula.svg)
-
 因此，我们可以用这些“旋转的指针” $e^{inx}$ 作为我们新的基本构件。$e^{inx}$ 代表一个指针，其旋转速度是[基频](@keyword=fundamental_frequency|lang=zh-CN|style=Feynman)的 $n$ 倍（如果 $n$ 是负数，则表示反向旋转）。这样，傅里叶级数就可以写成一个更紧凑、更对称的形式：
 
 $$

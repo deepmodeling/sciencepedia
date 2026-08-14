@@ -39,7 +39,7 @@ $$
 
 <br>
 <div align="center">
-<img src="https://i.imgur.com/example_image.png" width="500" alt="Illustration of a plane wave bouncing inside a waveguide, forming a TE10 mode.">
+
 <br>
 <i>图1：$\text{TE}_{10}$模式可以被看作是两束平面波在[波导](@keyword=waveguides|lang=zh-CN|style=Feynman)的宽壁之间来回反射并向前传播的叠加。反射角θ由波的频率和[波导](@keyword=waveguides|lang=zh-CN|style=Feynman)的尺寸决定。</i>
 </div>

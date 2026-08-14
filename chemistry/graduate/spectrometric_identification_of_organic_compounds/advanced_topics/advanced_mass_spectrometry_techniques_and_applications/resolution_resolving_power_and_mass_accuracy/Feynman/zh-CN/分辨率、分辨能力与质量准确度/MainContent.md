@@ -33,8 +33,6 @@ $$
 
 *   **10% 谷高 (10% Valley)**：这个定义直接描述了两个相邻谱峰的分离程度。它指的是当两个等高的相邻谱峰被分开时，它们之间的最低点（“山谷”）的高度恰好是峰高的10%。此时，两个峰顶之间的质荷比之差就是 $\Delta m_{10\%}$。
 
-![FWHM and 10% Valley](https://www.researchgate.net/profile/Ann-Knol-Celegin/publication/322818987/figure/fig2/AS:588362621456384@1517288632616/Definitions-of-mass-resolution-A-Two-neighboring-peaks-with-the-same-intensity-are.png)
-
 为什么强调这个区别如此重要？因为对于同样的仪器和同样的谱峰，用不同定义计算出的分辨本领数值会大相径庭！更复杂的是，这种差异还取决于谱峰的形状 [@problem_id:3721323]。在质谱中，谱峰形状通常可以近似为**高斯型 (Gaussian)** 或**洛伦兹型 (Lorentzian)**。
 
 通过数学推导我们可以发现 [@problem_id:3721323] [@problem_id:3721357]：

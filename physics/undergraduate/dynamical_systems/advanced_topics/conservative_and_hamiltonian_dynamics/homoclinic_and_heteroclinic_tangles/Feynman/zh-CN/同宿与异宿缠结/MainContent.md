@@ -21,7 +21,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/uR1623A.png" width="600">
+
   <figcaption>图1. (左) [同宿轨道](@keyword=homoclinic_orbit|lang=zh-CN|style=Feynman)：[不稳定流形](@keyword=unstable_manifold|lang=zh-CN|style=Feynman)(红色)和[稳定流形](@keyword=stable_manifold|lang=zh-CN|style=Feynman)(蓝色)在[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)之外相交，形成一个环。 (右) [异宿轨道](@keyword=heteroclinic_orbit|lang=zh-CN|style=Feynman)：一个[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)的不稳定流形连接到另一个[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)的[稳定流形](@keyword=stable_manifold|lang=zh-CN|style=Feynman)。</figcaption>
 </figure>
 </center>
@@ -42,7 +42,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/kH10R0i.png" width="400">
+
   <figcaption>图2. [同宿缠结](@keyword=homoclinic_tangle|lang=zh-CN|style=Feynman)的示意图。稳定流形(蓝色)和[不稳定流形](@keyword=unstable_manifold|lang=zh-CN|style=Feynman)(红色)的横截相交导致了无限复杂的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)和缠绕。</figcaption>
 </figure>
 </center>
@@ -55,7 +55,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/Hn11h82.png" width="600">
+
   <figcaption>图3. [斯梅尔马蹄映射](@keyword=smale_horseshoe_map|lang=zh-CN|style=Feynman)。一个区域被拉伸，然后折叠，再放回自身。反复进行这个过程会产生混沌。</figcaption>
 </figure>
 </center>

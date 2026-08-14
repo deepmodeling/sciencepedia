@@ -31,7 +31,7 @@ Let’s try it. Consider a simple, smooth, bell-shaped function, $f(x) = \frac{1
 
 <br>
 <div style="text-align:center;">
-<img src="https://i.imgur.com/G3tHqjW.png" width="600" alt="Illustration of Runge's phenomenon showing high-degree polynomial oscillating wildly at the edges of the interval when fitting equally spaced points on the Runge function."/>
+
 <br>
 <small><b>Figure 1: Runge's Phenomenon.</b> A high-degree polynomial fitted to equally spaced points on a [smooth function](@keyword=smooth_function|lang=en-US|style=Feynman) can exhibit wild [oscillations](@keyword=oscillations|lang=en-US|style=Feynman) near the interval's ends, leading to a very poor approximation.</small>
 </div>

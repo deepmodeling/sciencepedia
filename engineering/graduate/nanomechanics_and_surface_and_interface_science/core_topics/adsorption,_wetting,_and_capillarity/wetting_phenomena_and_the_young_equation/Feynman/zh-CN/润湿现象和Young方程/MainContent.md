@@ -26,7 +26,7 @@
 每一对物质的相遇，都有其独特的界面张力：$\gamma_{sl}$、$\gamma_{sv}$ 和 $\gamma_{lv}$。现在，想象一下这三者相遇的那条线——我们称之为**三相接触线**。在这条线上，三个界面张力就像三支队伍在进行一场拔河比赛，试图将这条线拉向自己的一方。[@problem_id:2937801]
 
 <center>
-<img src="https://i.imgur.com/K1xQqhL.png" alt="Force balance at the three-phase contact line" width="500">
+
 <br>
 <small>图1：三相接触线上的[力平衡](@keyword=force_balance|lang=zh-CN|style=Feynman)示意图。$\gamma_{sv}$ 试图拉动接触线以扩大干燥表面，$\gamma_{sl}$ 与 $\gamma_{lv}$ 的水平分力则试图拉动接触线以扩大湿润表面。</small>
 </center>

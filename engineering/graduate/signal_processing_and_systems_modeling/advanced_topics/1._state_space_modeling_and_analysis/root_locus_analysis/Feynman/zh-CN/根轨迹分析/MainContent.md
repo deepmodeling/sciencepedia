@@ -62,8 +62,6 @@ $$
 
 于是，这条看似复杂的数学规则，豁然开朗，变成了一幅生动的几何图像：**一个点 $s$ 在[根轨迹](@keyword=root_locus|lang=zh-CN|style=Feynman)上，当且仅当所有从“零点”指向该点的向量角度之和，减去所有从“极点”指向该点的向量角度之和，恰好等于 $180^\circ$ 的奇数倍** [@problem_id:2901841]。
 
-![Geometric interpretation of the angle condition](https://i.imgur.com/example.png "A test point s, with vectors pointing from open-loop poles and zeros. The sum of angles from zeros minus the sum of angles from poles must equal an odd multiple of 180 degrees.")
-
 这简直就像一场由零极点指挥的向量交响乐！通过这个简单的几何法则，我们可以徒手勾勒出根轨迹的大致形状。例如，[实轴](@keyword=real_line|lang=zh-CN|style=Feynman)上的一段是否属于根轨迹，只需要看它右边有多少个实数零极点：如果是奇数个，它就属于根轨迹；如果是偶数个，则不属于。
 
 轨迹从何处来，到何处去？当 $K=0$ 时，[特征方程](@keyword=characteristic_equation|lang=zh-CN|style=Feynman)退化为 $D(s)=0$，其根就是[开环极点](@keyword=open_loop_poles|lang=zh-CN|style=Feynman) $p_j$。当 $K \to \infty$ 时，方程近似为 $N(s)=0$，其根就是开环零点 $z_i$。因此，根轨迹的分支**始于[开环极点](@keyword=open_loop_poles|lang=zh-CN|style=Feynman)，终于开环零点**。如果极点比零点多，多出来的分支就会沿着特定的渐近线奔向无穷远处[@problem_id:2901863]。

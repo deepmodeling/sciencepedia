@@ -22,7 +22,7 @@ First, they can add up **in-phase**. Imagine the two [wave functions](@keyword=w
 But there is another possibility. The waves can combine **out-of-phase** ($\phi_A - \phi_B$), interfering destructively. Where one wave is a crest, the other is a trough. Between the two nuclei, they cancel each other out, creating a region of zero electron [probability](@keyword=probability|lang=en-US|style=Feynman)—a **nodal plane**. With no electron "glue" between them, the nuclei feel each other's positive charge more strongly, repelling each other. The system becomes less stable, and its energy is raised compared to the separated atoms. We have formed an **antibonding molecular orbital**, denoted with a star, like $\sigma_{2s}^*$ [@problem_id:1381447].
 
 <center>
-<img src="https://i.imgur.com/uTj8jQO.png" width="600">
+
 </center>
 *Figure 1: Constructive (top) and destructive (bottom) interference of two 1s [atomic orbitals](@keyword=atomic_orbitals|lang=en-US|style=Feynman) to form a bonding ($\sigma$) and an antibonding ($\sigma^*$) molecular orbital, respectively.*
 
@@ -63,7 +63,7 @@ The strength of this mixing depends on how close in energy the initial 2s and 2p
 This elegant principle explains why the MO diagram for N$_2$ looks different from the one for O$_2$—a detail that once puzzled chemists and now stands as a testament to the predictive power of symmetry arguments.
 
 <center>
-<img src="https://i.imgur.com/qLh3u8U.png" width="900">
+
 </center>
 *Figure 2: The effect of [s-p mixing](@keyword=s_p_mixing|lang=en-US|style=Feynman) on the valence MO [energy levels](@keyword=energy_levels|lang=en-US|style=Feynman). Left (e.g., N$_2$): Strong mixing inverts the order of the $\sigma_{2p}$ and $\pi_{2p}$ orbitals. Right (e.g., O$_2$): Weak mixing preserves the 'natural' order.*
 

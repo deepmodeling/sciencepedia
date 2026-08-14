@@ -21,7 +21,7 @@
 举个例子，一个简单的[数字通信](@keyword=digital_communications|lang=zh-CN|style=Feynman)系统使用四种不同的[电压](@keyword=voltage|lang=zh-CN|style=Feynman)水平作为信号，记为 $\{S_1, S_2, S_3, S_4\}$。系统设计决定了信号只可能与其标号相邻的信号发生[混淆](@keyword=confounding|lang=zh-CN|style=Feynman)。于是，$S_1$ 会与 $S_2$ [混淆](@keyword=confounding|lang=zh-CN|style=Feynman)，$S_2$ 会与 $S_1$ 和 $S_3$ [混淆](@keyword=confounding|lang=zh-CN|style=Feynman)，$S_3$ 会与 $S_2$ 和 $S_4$ [混淆](@keyword=confounding|lang=zh-CN|style=Feynman)。这个系统的[混淆](@keyword=confounding|lang=zh-CN|style=Feynman)图就是一条简单的路径：$S_1 - S_2 - S_3 - S_4$ [@problem_id:1669349]。
 
 <center>
-<img src="https://i.imgur.com/39Vw6u0.png" width="400"/>
+
 <br>
 图1：[路径图](@keyword=path_graph|lang=zh-CN|style=Feynman) $P_4$，表示四个信号的[线性](@keyword=linearity|lang=zh-CN|style=Feynman)[混淆](@keyword=confounding|lang=zh-CN|style=Feynman)关系。
 </center>
@@ -62,7 +62,7 @@
 但就在这里，[信息论](@keyword=information_theory|lang=zh-CN|style=Feynman)之父 [Claude Shannon](@keyword=claude_shannon|lang=zh-CN|style=Feynman) 发现了一个奇迹。他考察了一个看似极其简单的[混淆](@keyword=confounding|lang=zh-CN|style=Feynman)图——一个五边形，或者说 5-[循环图](@keyword=cycle_graph|lang=zh-CN|style=Feynman) $C_5$。想象五个信号 $\{0, 1, 2, 3, 4\}$，每个信号只与它在[圆环](@keyword=annulus|lang=zh-CN|style=Feynman)上的邻居[混淆](@keyword=confounding|lang=zh-CN|style=Feynman) [@problem_id:1669339]。
 
 <center>
-<img src="https://i.imgur.com/z482K6R.png" width="250"/>
+
 <br>
 图2：5-[循环图](@keyword=cycle_graph|lang=zh-CN|style=Feynman) $C_5$，一个经典的[零错误容量](@keyword=zero_error_capacity|lang=zh-CN|style=Feynman)反直觉例子。
 </center>

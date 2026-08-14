@@ -15,7 +15,6 @@ The action comes from the **generators**, denoted $e_i$. The diagram for $e_i$ i
 
 How do we "multiply" two diagrams, say $A$ and $B$, to get $AB$? We simply stack diagram $A$ on top of diagram $B$ and follow the connections. Now, here comes the magic. Sometimes, this stacking will create a closed loop of string in the middle, completely disconnected from the top and bottom boundaries. The central rule of the game is this: whenever such a loop appears, we can remove it, but at a cost. We must multiply our result by a special number, which we'll call $d$.
 
-![Diagrammatic multiplication in TL_n(d)](https://i.imgur.com/example.png)
 *(This is a placeholder for a visual aid. The image would show diagram A stacked on B, with a loop forming and then being removed, leaving a scalar factor d.)*
 
 These pictorial rules have direct algebraic consequences. They are the famous **Temperley-Lieb relations**:

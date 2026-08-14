@@ -15,7 +15,6 @@
 
 然而，正如自然界中没有免费的午餐一样，这种惊人的几何灵活性也带来了一个微妙而致命的挑战。想象一下，您的物体边界只是轻轻地“擦过”了一个网格单元的角落，在其中只留下了一个微不足道的“小切片”（sliver）。您可以想象，通过对物体进行极其微小的平移，我们总能创造出这样一个场景：某个网格单元与物理域的交集变得任意小 [@problem_id:2551921]。
 
-![A diagram showing a circular domain barely cutting a square mesh element, creating a small sliver-like intersection.](https://assets.test.logos.com/xxx/small_cut.png)
 *图1：一个小体积占比的“切片单元”。当圆形物理域（灰色区域）的边界几乎与背景网格单元的一个角点相切时，它们之间的交集（深灰色区域）的面积可能变得任意小。*
 
 这为什么是个问题呢？在[有限元方法](@keyword=finite_element_method|lang=zh-CN|style=Feynman)中，每个网格节点上的基函数（可以想象成一个个支撑在网格上的“小帐篷”）的“能量”或“刚度”，是通过在物理域内对其梯度进行积分来计算的。现在，如果一个[基函数](@keyword=basis_functions|lang=zh-CN|style=Feynman)的主要支撑区域（一个网格单元）中，只有一小部分位于物理域内，那么这个[基函数](@keyword=basis_functions|lang=zh-CN|style=Feynman)就好像“站在了针尖上” [@problem_id:2551879]。它在物理域内的“立足之地”非常小，导致其计算出的能量贡献也微乎其微 [@problem_id:2551871]。
@@ -36,7 +35,6 @@ $$
 
 [鬼点](@keyword=ghost_points|lang=zh-CN|style=Feynman)罚的核心思想是：我们虽然不关心函数在鬼域中的具体数值，但我们要求它必须平滑地从物理域延伸过去，保持数学上的“一致性”。它通过在被切割单元周边的**内部网格面**上添加一个惩罚项来实现这一点。这个惩罚项惩罚的是函数（或其[导数](@keyword=derivative|lang=zh-CN|style=Feynman)）跨越这些面的“跳跃” [@problem_id:2551937]。
 
-![A diagram illustrating the ghost penalty concept. A cut element is shown next to a full element. A penalty term is applied on the shared face, penalizing the jump of derivatives.](https://assets.test.logos.com/xxx/ghost_penalty.png)
 *图2：[鬼点](@keyword=ghost_points|lang=zh-CN|style=Feynman)罚机制。对于一个被边界切割的“坏”单元（左），其内部解的稳定性很差。[鬼点](@keyword=ghost_points|lang=zh-CN|style=Feynman)罚通过在它与一个“好”的邻居单元（右）之间的共享面上施加一个惩罚项，来约束其行为。这个惩罚项[惩罚函数](@keyword=penalty_function|lang=zh-CN|style=Feynman)[导数](@keyword=derivative|lang=zh-CN|style=Feynman)的跳跃，就像用一根弹簧将两个单元的解连接起来，从而将稳定性从“好”单元传递到“坏”单元。*
 
 想象一条由滑冰者组成的队伍，他们手拉着手。即使某个滑冰者脚下只有一小块冰面（小切片单元），他也不能随意做出剧烈的动作，因为这会拉扯到他旁边的同伴。[鬼点](@keyword=ghost_points|lang=zh-CN|style=Feynman)罚就像滑冰者之间紧握的双手，它确保了整个解的光滑过渡，将稳定性从那些完全位于物理域内的“稳定”单元，传递到了那些被切割的“不稳定”单元。

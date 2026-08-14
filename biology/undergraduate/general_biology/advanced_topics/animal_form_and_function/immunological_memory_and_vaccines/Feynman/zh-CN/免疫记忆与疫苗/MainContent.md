@@ -15,7 +15,6 @@
 
 这一次，那批“老兵”会立刻认出老对手。它们被激活的门槛更低，反应速度极快。几乎没有延迟，[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)生产线就全速开动，[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)浓度会以惊人的速度飙升，达到的峰值远高于初次应答，并且这种高水平的保护会持续更长时间。整个过程可以用一句话概括：更快、更强、更持久 [@problem_id:2298719]。这第二次相遇，展现了免疫记忆的全部力量：它不是简单的重复，而是一次基于经验的、压倒性的胜利。
 
-<img src="https://i.imgur.com/KDR21hM.png" alt="drawing" width="600"/>
 *图1：[初次免疫应答](@keyword=primary_immune_response|lang=zh-CN|style=Feynman)与[二次免疫应答](@keyword=secondary_immune_response|lang=zh-CN|style=Feynman)中[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)浓度的示意图。二次应答（蓝线）相比初次应答（红线），具有更短的延迟期、更快的反应速度和更高的[抗体](@keyword=antibodies|lang=zh-CN|style=Feynman)峰值。*
 
 ### [主动学习](@keyword=active_learning|lang=zh-CN|style=Feynman)与被动知识：两种[免疫力](@keyword=immunity|lang=zh-CN|style=Feynman)之道

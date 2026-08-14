@@ -7,8 +7,6 @@
 
 通过本次学习，您将掌握一种从根本上增强优化模型、提升求解效率的深刻思想。现在，让我们从第一章开始，揭开[有效不等式](@keyword=valid_inequality|lang=zh-CN|style=Feynman)背后的原理与机制。
 
-![A diagram illustrating valid, supporting, and facet-defining inequalities on a 2D triangular feasible region.](https://assets.test.com/images/3196839_valid_inequalities.png)
-
 ## 原理与机制
 
 在上一章中，我们已经对[整数规划](@keyword=integer_programming|lang=zh-CN|style=Feynman)问题有了初步的认识，它们就像是宇宙中隐藏的、由离散的、原子般的决策点构成的精致晶体。然而，直接处理这些[晶体结构](@keyword=crystal_structure|lang=zh-CN|style=Feynman)在计算上异常困难。因此，我们常常先研究一个更容易处理的替代品：线性规划（LP）松弛。这好比我们用一块光滑的石头来包裹住这颗珍贵的晶体——石头的边界平滑，易于分析，但它也包含了许多不属于晶体的“杂质”，也就是那些我们不想要的、毫无现实意义的分数解。

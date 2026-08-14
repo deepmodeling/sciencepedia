@@ -28,7 +28,7 @@ $x_{n+1} = g(x_n)$
 当我们在 $x_{n+1}=g(x_n)$ 的图像上作图时，会形成一个“[蛛网图](@keyword=cobweb_plot|lang=zh-CN|style=Feynman)”。如果 $|g'(x)|<1$，这个蛛网会盘旋着收缩，最终 spiraling in 到 $y=g(x)$ 和 $y=x$ 的交点——也就是[不动点](@keyword=fixed_points|lang=zh-CN|style=Feynman)。反之，如果 $|g'(x)|>1$，函数会“放大”距离，蛛网会发散，将我们无情地抛离[不动点](@keyword=fixed_points|lang=zh-CN|style=Feynman)。
 
 <center>
-    <img src="https://i.imgur.com/u5v0r4j.png" alt="Cobweb plots showing convergence and divergence" width="700">
+
     <br>
     <small>图1：[不动点迭代](@keyword=fixed_point_iteration|lang=zh-CN|style=Feynman)的[蛛网图](@keyword=cobweb_plot|lang=zh-CN|style=Feynman)。左图：$|g'(x)|<1$，迭代收敛。右图：$|g'(x)|>1$，迭代发散。</small>
 </center>
@@ -69,7 +69,7 @@ $e_{n+1} \approx \frac{g''(r)}{2} e_n^2$
 2.  **螺旋收敛**：如果 $g'(z_r)$ 包含虚部（旋转角度非0或$\pi$），那么误差向量每一步都会被旋转一个固定的角度。这将导致迭代点在复数平面上划出一条美丽的螺旋线，盘旋着飞向不动点。
 
 <center>
-    <img src="https://i.imgur.com/kS94h8A.png" alt="Spiral and direct convergence in the complex plane" width="700">
+
     <br>
     <small>图2：[复平面](@keyword=complex_plane|lang=zh-CN|style=Feynman)上的迭代轨迹。左图：$g'(z_r)$为非实数，迭代点螺旋收敛。右图：$g'(z_r)$为实数，迭代点直接收敛。</small>
 </center>

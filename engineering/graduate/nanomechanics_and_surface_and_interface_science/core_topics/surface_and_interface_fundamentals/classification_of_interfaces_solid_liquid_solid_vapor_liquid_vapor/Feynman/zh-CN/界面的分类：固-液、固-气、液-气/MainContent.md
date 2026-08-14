@@ -12,7 +12,7 @@
 这里，伟大的物理学家吉布斯（Josiah Willard Gibbs）为我们提供了一个绝妙的方案：一个“巧妙的谎言”。我们不必去处理那个混乱的、厚度不定的真实过渡区，而是用一个没有厚度的二维数学平面来取而代之，这个平面被称为“吉布斯划分面”（Gibbs dividing surface）[@problem_id:2766381]。这个划分面就像一刀切下了两个理想的、均匀的体相（比如，一边是均匀的水，另一边是均匀的空气）。
 
 <center>
-    <img src="https://i.imgur.com/G5iM8qF.png" alt="A diagram illustrating the Gibbs dividing surface. The real density profile is a smooth curve transitioning from the liquid phase density to the vapor phase density. The Gibbs model replaces this with a step function at the dividing surface z_G. The shaded areas represent the surface excess." style="width: 70%;" />
+
     <br>
     <small>图1：吉布斯划分面模型。真实的密度分布（平滑曲线）被一个理想的阶跃分布（虚线）所取代。划分面两侧的相被认为是均匀的体相，而真实体系与理想体系之间的任何物理量的差异，都被归结为界面本身的“[表面过剩量](@keyword=surface_excess|lang=zh-CN|style=Feynman)”（阴影部分面积）。</small>
 </center>
@@ -86,7 +86,7 @@ $$
 因此，晶体在平衡状态下的形状（所谓的“Wulff形”）通常不是光滑的球体，而是一个由多个平坦晶面构成的、棱角分明的[多面体](@keyword=polyhedra|lang=zh-CN|style=Feynman)。这正是我们在自然界中看到盐粒、雪花和宝石呈现出美丽、规则形状的原因[@problem_id:2766420]。
 
 <center>
-    <img src="https://i.imgur.com/e2oO8V1.png" alt="A comparison of the equilibrium shape of a liquid droplet (a sphere) and a crystalline solid (a faceted Wulff shape), related to their isotropic and anisotropic surface energy plots." style="width: 80%;" />
+
     <br>
     <small>图2：对称性决定形状。左侧：液体的[表面能](@keyword=surface_energy|lang=zh-CN|style=Feynman) $\gamma$ 各向同性（[圆形图](@keyword=circle_graph|lang=zh-CN|style=Feynman)），其平衡形状为球体。右侧：晶体的表面能 $\gamma(\mathbf{n})$ 各向异性（带[尖点](@keyword=cusps|lang=zh-CN|style=Feynman)的非[圆形图](@keyword=circle_graph|lang=zh-CN|style=Feynman)），其平衡形状为由低能晶面构成的多面体（Wulff形）。</small>
 </center>

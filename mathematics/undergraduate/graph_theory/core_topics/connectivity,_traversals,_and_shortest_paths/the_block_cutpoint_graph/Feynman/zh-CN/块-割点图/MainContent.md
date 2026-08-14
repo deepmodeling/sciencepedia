@@ -29,7 +29,7 @@
 就是这样！块[节点](@keyword=nodal_points|lang=zh-CN|style=Feynman)之间不直接相连，[割点](@keyword=cut_vertex|lang=zh-CN|style=Feynman)[节点](@keyword=nodal_points|lang=zh-CN|style=Feynman)之间也不直接相连。这是一种特殊的[二部图](@keyword=bipartite_graphs|lang=zh-CN|style=Feynman)（bipartite graph）。
 
 <center>
-<img src="https://i.imgur.com/8Q0Nq9P.png" alt="An example graph G and its corresponding block-cutpoint graph BC(G)." width="700">
+
 <br>
 <figcaption>图1：一个图G（左）及其对应的[块割点图](@keyword=block_cutpoint_graph|lang=zh-CN|style=Feynman)BC(G)（右）。圆形[节点](@keyword=nodal_points|lang=zh-CN|style=Feynman)代表[割点](@keyword=cut_vertex|lang=zh-CN|style=Feynman)，方形[节点](@keyword=nodal_points|lang=zh-CN|style=Feynman)代表块。</figcaption>
 </center>
@@ -76,7 +76,7 @@ $BC(G)$ 中[节点](@keyword=nodal_points|lang=zh-CN|style=Feynman)的度数（[
 答案就藏在块[割点](@keyword=cut_vertex|lang=zh-CN|style=Feynman)树 $BC(G)$ 中。因为 $BC(G)$ 是一棵树，所以从块[节点](@keyword=nodal_points|lang=zh-CN|style=Feynman) $B_A$ 到块[节点](@keyword=nodal_points|lang=zh-CN|style=Feynman) $B_Z$ 之间，有且仅有一条唯一的路径。**这条路径上经过的所有[割点](@keyword=cut_vertex|lang=zh-CN|style=Feynman)[节点](@keyword=nodal_points|lang=zh-CN|style=Feynman)，就对应了原图 $G$ 中从 $B_A$ 到 $B_Z$ 的所有路径都必须经过的[割点](@keyword=cut_vertex|lang=zh-CN|style=Feynman)集合**。[@problem_id:1538397]
 
 <center>
-<img src="https://i.imgur.com/8QG34bW.png" alt="Path between two blocks in a block-cutpoint tree." width="700">
+
 <br>
 <figcaption>图2：在BC(G)中，从块B<sub>5</sub>到块B<sub>7</sub>的[唯一路径](@keyword=unique_paths|lang=zh-CN|style=Feynman)经过了[割点](@keyword=cut_vertex|lang=zh-CN|style=Feynman)c<sub>4</sub>, c<sub>2</sub>, c<sub>5</sub>。这意味着在原图G中，任何从B<sub>5</sub>内部到B<sub>7</sub>内部的路径都必须经过这三个[割点](@keyword=cut_vertex|lang=zh-CN|style=Feynman)。</figcaption>
 </center>

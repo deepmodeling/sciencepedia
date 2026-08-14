@@ -9,7 +9,7 @@
 
 <br>
 <center>
-<img src="https://i.imgur.com/8f8K0s1.png" width="600">
+
 <br>
 <small>图1：使用下和（蓝色）与上和（橙色）来“包围”曲线下的面积。</small>
 </center>

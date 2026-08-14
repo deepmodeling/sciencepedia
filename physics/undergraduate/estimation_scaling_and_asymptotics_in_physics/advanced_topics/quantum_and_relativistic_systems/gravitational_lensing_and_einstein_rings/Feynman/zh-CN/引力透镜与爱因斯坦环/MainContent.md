@@ -5,7 +5,6 @@
 
 通过本次学习，您将不仅能欣赏到引力透镜的宇宙之美，更能掌握它作为科学工具的强大威力，理解物理学家如何利用这些被弯曲的光线，一步步构建起我们对宇宙的认知。
 
-![Diagram showing light from a distant galaxy being bent by a foreground galaxy cluster, resulting in multiple distorted images observed on Earth.](https://wp.physics.wisc.edu/astro/wp-content/uploads/sites/13/2021/01/lensing_graphic_updated.png)
 *图1：[引力透镜效应](@keyword=gravitational_lensing|lang=zh-CN|style=Feynman)示意图。来自遥远背景星系的光线在经过前景[星系团](@keyword=galaxy_clusters|lang=zh-CN|style=Feynman)时发生弯曲，使得地球上的观测者看到了多个扭曲、放大的像。*
 
 ## 原理与机制
@@ -21,7 +20,6 @@
 这不仅仅是一个比喻。广义[相对论](@keyword=relativity|lang=zh-CN|style=Feynman)给出了一个精确的预言：一束光以“影响参数” $b$（也就是光线原本的直线路径与大质量天体中心的最近距离）经过一个质量为 $M$ 的天体时，它的路径会偏转一个角度 $\alpha$。在大多数天体物理场景中，这个偏转角非常小，可以用一个优美的公式来描述 [@problem_id:1904033]：
 $$ \alpha = \frac{4GM}{c^2 b} $$
 让我们来欣赏一下这个公式。偏转角 $\alpha$ 与透镜天体的质量 $M$ 成正比——质量越大，[时空](@keyword=space_time|lang=zh-CN|style=Feynman)“凹陷”越深，光线偏转得越厉害，这很符合直觉。它与影响参数 $b$ 成反比——光线贴得越近，受到的引力效应越强，拐的弯也越大。公式中的 $G$ 是[引力常数](@keyword=gravitational_constant|lang=zh-CN|style=Feynman)，代表了引力相互作用的强度；而 $c^2$ 是光速的平方，一个巨大的数字，它告诉我们[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的“刚性”很强，需要巨大的质量才能使其发生显著的弯曲。
-
 
 ### 从[光线弯曲](@keyword=light_bending|lang=zh-CN|style=Feynman)到宇宙幻影
 

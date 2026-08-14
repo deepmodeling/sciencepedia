@@ -21,8 +21,6 @@
 
 想象一个节点，我们称之为节点 $i$，它位于我们的网格上。这个节点的[帽函数](@keyword=hat_functions|lang=zh-CN|style=Feynman) $\phi_i(x)$ 是一个极其简单的东西。它在其“本”节点 $i$ 处的值恰好为 1，并向两侧相邻节点线性下降至 0。在整个域的其他任何地方，其值均为 0。它就像一顶小小的三角形帽子，坐落在网格上，帽顶在节点 $i$ 处 [@problem_id:2423792]。
 
-![](https://s3.laisky.com/uploads/2024/05/fea-hat-function.png)
-
 现在，神奇之处来了。我们网格上的任何[分段线性函数](@keyword=piecewise_linear_functions|lang=zh-CN|style=Feynman)都可以通过简单地将这些[帽函数](@keyword=hat_functions|lang=zh-CN|style=Feynman)相加来构建，每个[帽函数](@keyword=hat_functions|lang=zh-CN|style=Feynman)都按其在该节点处函数的值进行缩放。如果我们想近似一个温度分布 $T(x)$，并且我们知道每个节点 $i$ 的温度 $T_i$，我们的近似值 $T_h(x)$ 就是：
 
 $$T_h(x) = \sum_{i} T_i \phi_i(x)$$

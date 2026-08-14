@@ -11,7 +11,6 @@
 
 想象一下，我们对一块磁性材料进行一次“个性测试”。我们把它放入一个线圈，通过控制电流来施加一个[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman) $H$，然后观察材料内部的[磁感应强度](@keyword=magnetic_flux_density|lang=zh-CN|style=Feynman) $B$ 如何变化。如果我们画出 $B$ 随 $H$ 变化的曲线，我们会得到一个闭合的环路，这就是大名鼎鼎的**磁滞回线**。这个环路，就是每一种[磁性材料](@keyword=magnetic_materials|lang=zh-CN|style=Feynman)独一无二的“个性档案”。
 
-![Hysteresis loop labeled with Saturation, Remanence, and Coercivity.](https://static.filestackapi.com/LGjSeGRDQm2tOq9s5J5B)
 *图1：一幅典型的[磁滞回线](@keyword=hysteresis_loop|lang=zh-CN|style=Feynman)，展示了饱和磁化、[剩磁](@keyword=remanence|lang=zh-CN|style=Feynman) ($B_r$) 和矫顽力 ($H_c$) 等关键特征。*
 
 在这个档案里，有几个关键指标，它们决定了材料的“脾气”：

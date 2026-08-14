@@ -18,7 +18,7 @@
 我们可以用一张图来描绘两个原子从遥远之处相互靠近时的能量变化。这张图被称为**[势能曲线](@keyword=potential_energy_curves|lang=zh-CN|style=Feynman)**，是理解所有凝聚态物质的关键。[横轴](@keyword=transverse_axis|lang=zh-CN|style=Feynman)是原子间的距离 $r$，纵轴是这对原子的总势能 $U(r)$。
 
 <center>
-<img src="https://i.imgur.com/G5g2X2d.png" alt="A general potential energy curve showing the attractive and repulsive regions, the equilibrium distance r₀, and the cohesive energy E_coh." style="width: 70%;" />
+
 </center>
 <br>
 

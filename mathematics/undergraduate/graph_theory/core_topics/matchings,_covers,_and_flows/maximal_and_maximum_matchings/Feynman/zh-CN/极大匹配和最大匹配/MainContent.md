@@ -3,10 +3,8 @@
 
 本文将引导你深入探索[极大匹配](@keyword=maximal_matching|lang=zh-CN|style=Feynman)与最大匹配的数学世界。在第一部分“核心概念”中，我们将揭示区分这两种匹配的本质，学习作为最优性试金石的[Berge引理](@keyword=berge_s_lemma|lang=zh-CN|style=Feynman)，并理解[Hall定理](@keyword=hall_s_theorems|lang=zh-CN|style=Feynman)与[Tutte定理](@keyword=tutte_s_theorem|lang=zh-CN|style=Feynman)如何揭示完美匹配存在的结构性瓶颈。随后，在第二部分“应用与跨学科连接”中，我们将看到这些抽象理论如何转化为解决现实问题的利器，其影响力横跨资源分配、[网络设计](@keyword=network_design|lang=zh-CN|style=Feynman)、[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)复杂性乃至前沿的系统生物学。现在，让我们从核心概念开始，踏上这段充满智慧与发现的旅程。
 
-
 *一条 M-[增广路径](@keyword=augmenting_path|lang=zh-CN|style=Feynman)。路径的边在匹[配边](@keyword=cobordism|lang=zh-CN|style=Feynman)（虚线）与非匹[配边](@keyword=cobordism|lang=zh-CN|style=Feynman)（实线）之间交替，且起点和终点都是未匹配的顶点。*
 
-![A blossom (odd cycle) found during an augmenting path search.](https://i.imgur.com/8Qj8n7f.png)
 *在寻找增广路径时，发现连接两个偶数层顶点的边，形成了一个奇数环，即“花朵”。*
 
 ## 核心概念

@@ -20,7 +20,7 @@
 2.  **旁系同源（Paralogy）**：现在想象留在一个城市里的那部分家族，其中一对夫妇生了两个孩子。这两个孩子在同一个家庭（基因组）里长大，他们是兄弟姐妹。这就是旁系同源。在演化中，这个“出生”事件就是**基因重复（gene duplication）**。在一个物种的基因组内，某个基因被意外地复制了一份。因此，**旁系同源基因（paralogs）**是在同一个基因组内，因基因重复事件而产生的[同源基因](@keyword=homologous_genes|lang=zh-CN|style=Feynman)。这对“兄弟”基因可以继续共存，一个可以维持原有的工作，另一个则可能“改行”，为生命的演化提供创新的原材料。
 
 <center>
-<img src="https://i.imgur.com/g8v9c2C.png" width="600"/>
+
 </center>
 <center><b>图1. [直系同源](@keyword=orthology|lang=zh-CN|style=Feynman)与旁系同源。</b> 直系同源基因（如$A_1$和$B_1$）的共同祖先分离于物种形成事件。旁系[同源基因](@keyword=homologous_genes|lang=zh-CN|style=Feynman)（如$B_1$和$B_2$）的[共同祖先](@keyword=common_ancestry|lang=zh-CN|style=Feynman)分离于[基因重复](@keyword=gene_duplication|lang=zh-CN|style=Feynman)事件。</center>
 
@@ -53,7 +53,7 @@
 2.  **[不完全谱系分选](@keyword=incomplete_lineage_sorting|lang=zh-CN|style=Feynman)（Incomplete Lineage Sorting, ILS）**：这是一个来自[群体遗传学](@keyword=population_genetics|lang=zh-CN|style=Feynman)的深刻见解，也可能是三个原因中最反直觉、最迷人的一个。让我们回到那个祖父母的比喻。假设祖父母中一人有蓝色眼睛的基因（等位基因），另一人有棕色眼睛的基因。他们有两个孩子（代表两个即将分化的物种谱系），并且每个孩子都遗传了这两种基因。现在，这两个孩子各自又有了后代（代表最终的物种A和B）。在遗传的随机“抽奖”中，完全有可能，你（物种A的后代）和你的远房表亲（来自另一个分支的物种C）都恰好遗传到了蓝色眼睛的基因，而你的亲兄弟（物种B的后代）却遗传到了棕色眼睛的基因。如果只看眼睛颜色这个“基因”，你的“家谱”就会把你和远房表亲放在一起，而不是你的亲兄弟！
 
     <center>
-    <img src="https://i.imgur.com/uTq8vA0.png" width="600"/>
+
     </center>
     <center><b>图2. [不完全谱系分选](@keyword=incomplete_lineage_sorting|lang=zh-CN|style=Feynman) (ILS) 示意图。</b> 尽管物种B与物种A的亲缘关系更近，但在基因层面，物种A的基因（红色）可能碰巧先与物种C的基因（红色）在更古老的祖先群体中找到[共同祖先](@keyword=common_ancestry|lang=zh-CN|style=Feynman)，导致基因树 ((A,C),B) 与[物种树](@keyword=species_tree|lang=zh-CN|style=Feynman) ((A,B),C) 不一致。</center>
 

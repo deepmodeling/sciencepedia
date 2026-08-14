@@ -10,13 +10,11 @@
 
 想象一位结构工程师正在分析一座哥特式大教堂的尖顶拱顶的稳定性 ([@problem_id:2412993])。她不可能去计算每一个原子的受力，那将是无法想象的计算量。取而代之，她会将拱顶的表面抽象成一个由数千个三角形或四边形面片组成的网格。计算机通过求解这些面片上的方程来模拟整个结构的应力分布。现在，问题来了：如果网格中存在一些极其狭长或畸形的“坏”三角形，计算结果可能会在这些地方显示出虚假的、极高的应力集中。这就像通过一个有瑕疵的镜头观察世界，你看到的瑕疵可能来自镜头本身，而非景物。通过应用**[拉普拉斯平滑](@keyword=laplace_smoothing|lang=zh-CN|style=Feynman)**（Laplacian smoothing）——我们之前讨论过的、将每个节点移动到其邻居平均位置的优雅过程——工程师可以“放松”这个虚拟结构，消除这些计算假象，从而更清晰地看到结构在真实载荷下的潜在薄弱点。这不仅仅是为了美观，更是为了确保模拟的准确性和设计的安全性。
 
-![图1：哥特式拱顶的网格模型](https://assets.test.logos.com/problems/2412993/gothic-vault-stress.png)
-
 *图1：哥特式拱顶的网格模型。左图：初始网格，存在一些质量较差的三角形（红色高亮）。右图：经过平滑处理后的网格。平滑操作可以改善单元形状，从而提高后续力学分析的准确性。图片源自对 [@problem_id:2412993] 的概念可视化。*
 
 这种思想在最前沿的制造技术中也大放异彩。思考一下**[3D打印](@keyword=3d_printing|lang=zh-CN|style=Feynman)**。我们不再满足于打印实心物体，而是希望创造出既轻便又坚固的智能结构。我们可以借鉴一个巧妙的策略：首先，用一个常规网格表示待打印的物体。然后，通过模拟分析其在预期载荷下的应力。最后，只保留那些承受高应力的网格边，形成一个稀疏的内部支撑结构，就像骨骼的内部构造一样。然而，这个“骨架”可能仍然存在几何上的尖角和不规则。此时，**应力感知平滑**（stress-aware smoothing）[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)就派上了用场 ([@problem_id:2412957])。它会移动节点来优化连接，但移动的幅度会根据局部应力进行调整——在高应力区域保持稳定，在低应力区域进行更大幅度的优化。最终，我们得到一个经过[拓扑优化](@keyword=topology_optimization|lang=zh-CN|style=Feynman)和几何平滑的轻质、高效的内部填充图案。
 
-![图2：受应[力场](@keyword=force_field|lang=zh-CN|style=Feynman)引导的3D打印内部填充图案](https://assets.test.logos.com/problems/2412957/3d-print-infill.png)
+引导的3D打印内部填充图案](https://assets.test.logos.com/problems/2412957/3d-print-infill.png)
 
 *图2：受应[力场](@keyword=force_field|lang=zh-CN|style=Feynman)引导的[3D打印](@keyword=3d_printing|lang=zh-CN|style=Feynman)内部填充图案。左图：初始的规则网格。右图：根据模拟的应[力场](@keyword=force_field|lang=zh-CN|style=Feynman)（中心区域应力高）保留了高应力区域的边，并对节点位置进行平滑优化，形成更高效的承力结构。图片源自对 [@problem_id:2412957] 的概念可视化。*
 
@@ -27,8 +25,6 @@
 当我们把目光从人造物转向自然界时，会发现网格的语言同样适用，甚至能揭示更深层次的规律。
 
 地质学家在模拟**河流三角洲的演变**时，会用一个动态变化的网格来追踪沉积物的堆积和河道的迁移 ([@problem_id:2412953])。河水带来的泥沙使河床不断向[外延](@keyword=epitaxy|lang=zh-CN|style=Feynman)伸，这在模型中表现为网格节点的位置更新。当主河道在一个地方停留太久，沉积作用会导致该区域的网格单元被极度拉伸和扭曲。这种“[网格质量](@keyword=mesh_quality|lang=zh-CN|style=Feynman)的恶化”并非计算错误，它恰恰是物理系统本身不稳定的信号！当某个单元的扭曲度超过一个[临界阈值](@keyword=critical_threshold|lang=zh-CN|style=Feynman)时，模型可以预测将发生一次“改道”（avulsion）——河流将废弃当前河道，在另一个地方冲刷出新的路径。在这里，[网格质量](@keyword=mesh_quality|lang=zh-CN|style=Feynman)从一个单纯的计算健康指标，升华为一个能够预测真实物理现象（如河流改道）的动态指示器。
-
-![图3：模拟河流三角洲演变](https://assets.test.logos.com/problems/2412953/river-delta-avulsion.png)
 
 *图3：模拟河流三角洲演变。网格的变形模拟了沉积物的堆积。当河道（图中蓝色条带）附近的网格单元（红色高亮）因过度拉伸而质量严重下降时，模型可以预测河流即将发生改道。图片源自对 [@problem_id:2412953] 的概念可视化。*
 
@@ -42,7 +38,7 @@
 
 想象一下，我们需要为一座城市规划一系列服务中心（如医院、消防站）的服务区。如何划分才算“公平”？一个自然的想法是，每个市民都应归属于离他最近的服务中心。这恰好定义了数学上的**沃罗诺伊图**（Voronoi diagram），其中每个服务中心对应一个[凸多边形](@keyword=convex_polygon|lang=zh-CN|style=Feynman)区域 ([@problem_id:2412985])。这些多边形就构成了一个网格。一个“好”的服务区可能是一个形状紧凑、接近圆形的区域，而不是一个狭长的“飞地”。我们可以用**纵横比**（aspect ratio）等[网格质量度量](@keyword=mesh_quality_metrics|lang=zh-CN|style=Feynman)来评价服务区的形状。更有趣的是，一个叫做**[劳埃德算法](@keyword=lloyd_s_algorithm|lang=zh-CN|style=Feynman)**（Lloy[d'](@keyword=d_prime|lang=zh-CN|style=Feynman)s algorithm）或**[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)沃罗诺伊剖分**（Centroidal Voronoi Tessellation, CVT）的平滑策略，可以通过一个简单的迭代过程来优化服务中心的布局：第一步，计算每个沃罗诺伊单元的几何[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)；第二步，将服务中心移动到它自己单元的[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)位置。重复此过程，服务中心的位置会趋于稳定，而它们对应的服务区（沃罗诺伊单元）也会变得越来越规则和“公平”。
 
-![图4：[劳埃德算法](@keyword=lloyd_s_algorithm|lang=zh-CN|style=Feynman)（CVT）优化服务区划分](https://assets.test.logos.com/problems/2412985/voronoi-cvt.png)
+（CVT）优化服务区划分](https://assets.test.logos.com/problems/2412985/voronoi-cvt.png)
 
 *图4：[劳埃德算法](@keyword=lloyd_s_algorithm|lang=zh-CN|style=Feynman)（CVT）优化服务区划分。左图：初始的随机站点及其沃罗诺伊图，单元形状不规则。右图：经过一次迭代（将每个站点移动到其单元的[质心](@keyword=center_of_mass|lang=zh-CN|style=Feynman)位置）后，重新生成的沃罗诺伊图，单元形状变得更加紧凑和均匀。图片源自对 [@problem_id:2412985] 的概念可视化。*
 

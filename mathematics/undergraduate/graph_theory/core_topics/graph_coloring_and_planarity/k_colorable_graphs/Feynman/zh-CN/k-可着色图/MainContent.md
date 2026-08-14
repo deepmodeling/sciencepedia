@@ -17,8 +17,6 @@
 
 想象一个没有任何环路的无线[传感器网络](@keyword=sensor_networks|lang=zh-CN|style=Feynman)，就像一棵树一样从一个中心节点分支出去([@problem_id:1515460])。我们可以轻松地用两种[信道](@keyword=information_channel|lang=zh-CN|style=Feynman)（比如“阿尔法”和“贝塔”）来配置它。我们只需从任意一个传感器（比如根节点）开始，给它分配“阿尔法”[信道](@keyword=information_channel|lang=zh-CN|style=Feynman)。然后，所有与它直接相连的邻居都分配“贝塔”[信道](@keyword=information_channel|lang=zh-CN|style=Feynman)。接着，我们再把这些邻居的所有未着色的邻居分配为“阿尔法”，如此往复，一层一层地交替分配下去。这个过程永远不会出错。为什么？因为这个网络结构中没有回路，你永远不会“绕回来”发现一个节点既需要是“阿尔法”又需要是“贝塔”，从而产生矛盾。
 
-![A tree graph being 2-colored, starting from the root and alternating colors level by level.](https://assets.test.logos.com/images/k_coloring_tree.png)
-
 *对于树状结构，双色着色总是可行的，只需从根部开始逐层交替颜色即可。*
 
 这种可以用两种颜色完美着色的图，我们称之为**二分图**。一个深刻而美妙的定理告诉我们：**一张图是[二分图](@keyword=2_colorable_graph|lang=zh-CN|style=Feynman)，当且仅当它不包含任何长度为奇数的环**。没有奇数环，就没有双色着色的矛盾。

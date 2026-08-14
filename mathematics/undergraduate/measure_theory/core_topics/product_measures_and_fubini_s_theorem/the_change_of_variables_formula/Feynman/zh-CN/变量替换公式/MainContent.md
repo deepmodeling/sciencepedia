@@ -21,7 +21,7 @@ $$
 这个变换对面积做了什么？让我们聚焦于原点附近的一个单位正方形，它的两个边由[基向量](@keyword=basis_vector|lang=zh-CN|style=Feynman) $\mathbf{e}_1 = (1,0)$ 和 $\mathbf{e}_2 = (0,1)$ 定义。变换之后，$\mathbf{e}_1$ 变成了 $(1.2, -0.1)$，而 $\mathbf{e}_2$ 变成了 $(0.5, 1.1)$。原来的单位正方形，现在变成了一个平行四边形。
 
 <center>
-<img src="https://i.imgur.com/u015s5u.png" width="500">
+
 *一个单位正方形在[线性变换](@keyword=linear_algebra_transformations|lang=zh-CN|style=Feynman)下变成一个平行四边形。其面积的缩放比例由变换[矩阵的[行列](@keyword=determinant_of_a_matrix|lang=zh-CN|style=Feynman)式](@article_id:303413)决定。*
 </center>
 

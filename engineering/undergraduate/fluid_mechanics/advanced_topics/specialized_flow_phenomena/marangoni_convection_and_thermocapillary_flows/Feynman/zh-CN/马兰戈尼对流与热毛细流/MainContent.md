@@ -25,8 +25,6 @@
 
 此时，油面中心的表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman) $\sigma$ 因为高温而变得最低，而边缘的表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)因为低温而保持较高。根据我们的核心法则，流体将从低[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)区（热中心）流向高[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)区（冷边缘）。于是，你会观察到油面上的流体正从中心向四周呈放射状流出。这就是典型的**[热毛细对流](@keyword=thermocapillary_convection|lang=zh-CN|style=Feynman)**（thermocapillary convection）。
 
-![](https://static.prepai.in/undergraduate/fluid-mechanics/marangoni-convection-and-thermocapillary-flows/1/1.png)
-
 现在，让我们来做一个思维上的“急转弯”。如果有一种奇特的合金，它的熔融态表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)反而随着温度的升高而*增大*呢？这种情况在某些含有特定杂质的合金[焊接](@keyword=soldering|lang=zh-CN|style=Feynman)中确实存在 [@problem_id:1773732]。当我们用激光加热这种熔融金属池的中心时，中心的温度最高，因此表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)也最高。此时，中心的强[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)会将周围较冷、[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)较低的液体*拉向*中心。于是，我们观察到的表面流动将是径向向内的。为了维持[质量守恒](@keyword=conservation_of_mass|lang=zh-CN|style=Feynman)，汇集到中心的流体必然会向下运动，在底部向外流动，再在边缘上升，形成一个与之前完全相反的环流。这个例子绝佳地说明了，驱动流动的不是“热”或“冷”本身，而是表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)的**高低**。
 
 ### 浓度旋钮：[溶质马兰戈尼效应](@keyword=solutal_marangoni_effect|lang=zh-CN|style=Feynman)
@@ -53,7 +51,7 @@
 
 那么，这两种机制哪个更重要呢？物理学家使用无量纲数来回答这类问题。[瑞利-贝纳尔对流](@keyword=rayleigh–bénard_convection|lang=zh-CN|style=Feynman)的强度由[瑞利数](@keyword=rayleigh_number|lang=zh-CN|style=Feynman) $Ra$ 描述，而马兰戈尼[对流](@keyword=convection|lang=zh-CN|style=Feynman)的强度由马兰戈尼数 $Ma$ 描述 [@problem_id:1773768]。
 
-$Ra = \frac{g \beta \Delta T d^3}{\nu \alpha}$  
+$Ra = \frac{g \beta \Delta T d^3}{\nu \alpha}$
 $Ma = \frac{\gamma \Delta T d}{\mu \alpha}$
 
 这里，$g$ 是[重力加速度](@keyword=acceleration_due_to_gravity|lang=zh-CN|style=Feynman)，$d$ 是液层厚度，$\Delta T$ 是温差，其他是流体物性参数。仔细观察这两个公式，你会发现一个惊人的秘密：$Ra$ 与重力 $g$ 成正比，并且与厚度的立方 $d^3$ 成正比。而 $Ma$ 与 $g$ 无关，只与厚度的一次方 $d$ 成正比！

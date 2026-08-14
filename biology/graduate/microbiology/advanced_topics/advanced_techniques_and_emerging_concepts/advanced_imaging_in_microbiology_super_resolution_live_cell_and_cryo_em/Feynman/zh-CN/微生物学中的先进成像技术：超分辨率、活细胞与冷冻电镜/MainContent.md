@@ -14,7 +14,7 @@
 想象一下，你站在海边，看着远方的波浪穿过防波堤的狭窄开口。你会注意到，穿过开口的波浪会向四周散开，形成一个扇形的波纹。光，作为一种[电磁波](@keyword=electromagnetic_waves|lang=zh-CN|style=Feynman)，也遵循着同样的规律。当光波穿过显微镜的透镜（一个有限的“开口”）时，它会不可避免地发生“衍射”——它会散开。这意味着，即使是一个无限小的点光源，经过显微镜后，在探测器上形成的也不会是一个无限小的光点，而是一个模糊的、中心亮、周围环绕着明暗交替圆环的图案。这个图案，我们称之为“[艾里斑](@keyword=airy_disk|lang=zh-CN|style=Feynman)”（Airy disk），它就是显微镜的“[点扩散函数](@keyword=point_spread_function_2|lang=zh-CN|style=Feynman)”（Point Spread Function, PSF）。
 
 <center>
-<img src="https://i.imgur.com/eQJt39l.png" width="600">
+
 <br>
 <small>图1：[点扩散函数](@keyword=point_spread_function_2|lang=zh-CN|style=Feynman)（PSF）的示意图。一个理想的点光源（左）通过光学系统后，由于衍射，其图像会变成一个模糊的[艾里斑](@keyword=airy_disk|lang=zh-CN|style=Feynman)（中），其强度分布如右图所示。这个模糊的程度从根本上限制了我们分辨两个邻近物体的能力。</small>
 </center>
@@ -40,7 +40,7 @@ $$d \approx \frac{\lambda}{2\mathrm{NA}}$$
 **受激发射损耗[显微术](@keyword=microscopy|lang=zh-CN|style=Feynman) (STED):** 如果说 SIM 像个聪明的密码破译员，那 STED 就更像个技艺高超的雕刻家。它的策略更为直接和暴力。想象一下，我们用一束绿色的激发光照射样品，这束光会激发一个[衍射极限](@keyword=diffraction_limit|lang=zh-CN|style=Feynman)大小（约 200 纳米）区域内的所有荧光分子。在这些分子即将发出荧光的一瞬间，我们用另一束强大的、甜甜圈形状的、红色的“损耗光”照射同一区域 [@problem_id:2468586]。这束“甜甜圈光”的中心强度为零，而周围强度极高。它的作用是通过“受激发射”过程，强制让“甜甜圈”光环下的所有已激发分子立刻回到[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)，并且发出与损耗光颜色完全相同的[光子](@keyword=photon|lang=zh-CN|style=Feynman)，这些[光子](@keyword=photon|lang=zh-CN|style=Feynman)可以被滤光片轻易地过滤掉。这样一来，只有位于“甜甜圈”中心的、未被损耗光照射到的极小区域内的分子，才有机会自然地发出荧光并被探测到。
 
 <center>
-<img src="https://i.imgur.com/kS9Qj6f.png" width="600">
+
 <br>
 <small>图2：[STED显微镜](@keyword=sted_microscopy|lang=zh-CN|style=Feynman)原理示意图。一束高斯形的激发光（绿色）和一束甜甜圈形的损耗光（红色）叠加。只有在甜甜圈中心零强度区域的荧光分子（黄色）可以发光，从而有效缩小了荧光发射点的尺寸，突破了衍射极限。</small>
 </center>
@@ -92,7 +92,7 @@ $$\mathrm{SNR} = \frac{N}{\sqrt{N + dt + \sigma_{r}^{2}}}$$
 这个三维重构的过程基于一个深刻的数学定理——**[中心切片定理](@keyword=central_slice_theorem|lang=zh-CN|style=Feynman)**（Projection-Slice Theorem）。它指出，一个三维物体在某个方向上的二维投影图像，其[二维傅里叶变换](@keyword=2d_fourier_transform|lang=zh-CN|style=Feynman)，恰好等于该三维物体自身三维傅里叶变换的一个中心切片，该切片垂直于投影方向。随着样品在真实空间中倾转，这个切片就在傅里叶空间中相应地绕着倾转轴旋转。
 
 <center>
-<img src="https://i.imgur.com/kP8Uq1L.png" width="700">
+
 <br>
 <small>图3：冷冻电镜断层成像中的“[缺失楔](@keyword=missing_wedge|lang=zh-CN|style=Feynman)”问题。由于机械限制，样品无法倾转完整的±90°。这导致在傅里叶空间中，对应于高倾角的数据无法被采集到，形成一个双锥形的“[缺失楔](@keyword=missing_wedge|lang=zh-CN|style=Feynman)”（图中红色区域）。这会导致最终重构的三维图像在Z轴方向的分辨率低于X和Y轴方向。</small>
 </center>

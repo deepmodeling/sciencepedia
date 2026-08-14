@@ -40,7 +40,7 @@ $$ \ln(V_n) = \ln(V_0) + \ln(R_1) + \ln(R_2) + \dots + \ln(R_n) $$
 
 这种不均匀的拉伸，创造出了一个奇特的形状：它从零点开始，迅速攀升到一个峰值，然后向右拖出一条长长的尾巴。这就是对数正态分布的标志性样貌——**[右偏](@keyword=positive_skew|lang=zh-CN|style=Feynman)态**。大多数数值都挤在左侧的低值区，而少数极大的数值构成了长长的右尾。从个人收入、城市人口规模，到科学论文的引用次数，这种“赢家通吃”的模式在现实世界中随处可见。
 
-![一个典型的对数正态分布，展示了其相对于[正态分布](@keyword=normal_distribution|lang=zh-CN|style=Feynman)的[右偏](@keyword=positive_skew|lang=zh-CN|style=Feynman)特性。](https://example.com/lognormal_skew.png)
+的[右偏](@keyword=positive_skew|lang=zh-CN|style=Feynman)特性。](https://example.com/lognormal_skew.png)
 
 ### 定位中心：众数、中位数与均值的芭蕾
 

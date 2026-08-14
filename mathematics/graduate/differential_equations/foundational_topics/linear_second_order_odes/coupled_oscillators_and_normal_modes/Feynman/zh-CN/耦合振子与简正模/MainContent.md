@@ -30,7 +30,7 @@ $$
 其中 $g$ 是重力加速度，$L$ 是摆长。
 
 <center>
-  <img src="https://i.imgur.com/uG21hYf.png" alt="In-phase mode of coupled pendulums" width="400"/>
+
   <br>
   <small>图1：同相[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)。两个摆同步摆动，中间的弹簧不发生形变。</small>
 </center>
@@ -44,7 +44,7 @@ $$
 这里，$k$ 是弹簧的劲度系数，$m$ 是摆锤的质量，$h$ 是弹簧连接点到悬挂点的距离。你看，频率的平方项多了一个正值，这清晰地表明了频率的增加。
 
 <center>
-  <img src="https://i.imgur.com/lM34eQj.png" alt="Out-of-phase mode of coupled pendulums" width="400"/>
+
   <br>
   <small>图2：反相[简正模](@keyword=normal_modes|lang=zh-CN|style=Feynman)。两个摆反向摆动，弹簧提供额外的恢复力，导致频率更高。</small>
 </center>

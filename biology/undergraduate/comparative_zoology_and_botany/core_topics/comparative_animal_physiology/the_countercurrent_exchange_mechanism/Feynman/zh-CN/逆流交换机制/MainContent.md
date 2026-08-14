@@ -15,7 +15,7 @@
 那么，这个过程的极限在哪里？即使我们把管子造得无限长，冷水最终能变得多热呢？答案是：它永远不可能比热水更热，甚至连热水最初的温度都达不到。在最理想的情况下，两条水流会达到一个共同的平衡温度 [@problem_id:1780185]。如果两条水流的流速和[热容](@keyword=thermal_capacitance|lang=zh-CN|style=Feynman)完全相同，这个最终的平衡温度，最多只能是它们初始温度的平均值 [@problem_id:1780208]。
 
 <center>
-<img src="https://i.imgur.com/8Q73G6h.png" alt="Temperature profiles for concurrent vs. countercurrent exchange" width="600"/>
+
 <br>
 <small>图1：顺流（左）与[逆流](@keyword=counterflow|lang=zh-CN|style=Feynman)（右）交换中的温度变化。顺流中，两流体温度趋于平均值。逆流中，冷流体出口温度可接近热流体入口温度。</small>
 </center>

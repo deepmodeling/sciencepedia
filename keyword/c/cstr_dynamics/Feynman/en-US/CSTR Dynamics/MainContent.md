@@ -53,8 +53,6 @@ The rate of heat generation, however, is a very different beast. Because it's ti
 
 Now, picture plotting these two curves on the same graph: a straight line (removal) laid over an S-shaped curve (generation). How many times can they intersect? Sometimes, they intersect only once. But if the conditions are right—if the S-curve is steep enough and the line cuts through it just so—they can intersect at **three** distinct points [@problem_id:2638261].
 
-![A graph showing a sigmoidal heat generation curve (G(T)) intersecting a linear heat removal line (R(T)) at three points, labeled SS1, SS2, and SS3. SS1 and SS3 are stable steady states, while the middle point, SS2, is unstable.](https://i.imgur.com/u5T2c1g.png)
-
 Each intersection is a valid steady state where generation equals removal. This means for the *exact same* feed conditions and cooling, the reactor can exist in three different states: a low-temperature state with slow reaction (the "extinguished" state), a high-temperature state with rapid reaction (the "ignited" state), and an intermediate state.
 
 But are all these states equally comfortable for the reactor? It turns out the middle state is profoundly unstable. It’s like balancing a pencil on its sharp tip; the slightest disturbance will cause it to fall into one of the other two states. The low and high-temperature states, however, are stable. This phenomenon of having more than one stable state is called **[bistability](@keyword=bistability|lang=en-US|style=Feynman)**. The system exhibits [hysteresis](@keyword=hysteresis|lang=en-US|style=Feynman): to move from the ignited state back to the extinguished one, you have to cool it down *far more* than the temperature at which it first ignited.

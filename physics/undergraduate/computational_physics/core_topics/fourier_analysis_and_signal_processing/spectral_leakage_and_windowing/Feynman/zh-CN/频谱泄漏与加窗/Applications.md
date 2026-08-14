@@ -9,7 +9,7 @@
 想象一束单色光穿过一道狭窄的单缝。在远场，我们会看到一个[衍射图样](@keyword=diffraction_patterns|lang=zh-CN|style=Feynman)：一个明亮的中央条纹，两侧伴随着一系列逐渐变暗的次级条纹。这个图样并非凭空出现，它正是光波通过有限宽度“窗口”（即狭缝）的必然结果。令人惊叹的是，这个衍射图样的[强度分布](@keyword=intensity_distribution|lang=zh-CN|style=Feynman)，在数学上与一个[矩形脉冲信号](@keyword=rectangular_pulse_signal|lang=zh-CN|style=Feynman)的功率谱**完全相同**。当我们对一个持续时间为 $T$ 的矩形信号进行傅里叶变换时，得到的正是一个 $\operatorname{sinc}$ 函数（即 $\sin(x)/x$），其平方就是我们在衍射实验中看到的[强度分布](@keyword=intensity_distribution|lang=zh-CN|style=Feynman)。光的能量“泄漏”到次级条纹中，这与信号处理中能量从主频泄漏到[旁瓣](@keyword=sidelobe|lang=zh-CN|style=Feynman)的现象，本质上是同一个故事 [@problem_id:2440569]。
 
 <center>
-    <img alt="Fraunhofer diffraction pattern from a single slit. The intensity plot shows a central bright fringe and diminishing side fringes, mathematically described by a sinc-squared function." src="https://www.tf.uni-kiel.de/matwis/amat/iss/kap_5/illustr/t5_1_1.gif" width="600">
+
     <br>
     <small>图1：单缝[夫琅禾费衍射](@keyword=fraunhofer_diffraction|lang=zh-CN|style=Feynman)图样。光的[强度分布](@keyword=intensity_distribution|lang=zh-CN|style=Feynman)遵循一个 $\operatorname{sinc}^2$ 函数，这与[矩形窗](@keyword=rectangular_window|lang=zh-CN|style=Feynman)的[功率谱](@keyword=power_spectrum|lang=zh-CN|style=Feynman)在数学上是等价的。这揭示了光学衍射和[信号频谱](@keyword=signal_spectrum|lang=zh-CN|style=Feynman)泄漏之间的深刻联系。</small>
 </center>

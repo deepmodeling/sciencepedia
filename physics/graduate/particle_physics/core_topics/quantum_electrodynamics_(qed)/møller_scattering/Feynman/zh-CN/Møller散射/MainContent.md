@@ -18,7 +18,7 @@
 物理学家[理查德·费曼](@keyword=richard_feynman|lang=zh-CN|style=Feynman)（[Richard Feynman](@keyword=richard_feynman|lang=zh-CN|style=Feynman)）为我们提供了一种绝妙的速记法来描绘这个过程，那就是**费曼图（Feynman diagram）**。它不是一张真实的照片，而是一幅[时空](@keyword=space_time|lang=zh-CN|style=Feynman)“地图”，记录了粒子间的互动。对于[电子-电子散射](@keyword=electron_electron_scattering|lang=zh-CN|style=Feynman)，最直接的想像是，一个电子（比如粒子1）踢出一个[光子](@keyword=photon|lang=zh-CN|style=Feynman)，然后变成了粒子3；另一个电子（粒子2）接住这个[光子](@keyword=photon|lang=zh-CN|style=Feynman)，变成了粒子4。这个过程，我们称之为**t-channel**图。
 
 <center>
-<img src="https://i.imgur.com/gK9J63X.png" width="400" />
+
 <br>
 图1：[莫勒散射](@keyword=møller_scattering|lang=zh-CN|style=Feynman)的t-channel（左）和u-channel（右）[费曼图](@keyword=feynman_diagrams|lang=zh-CN|style=Feynman)。虚线代表交换的虚光子。
 </center>

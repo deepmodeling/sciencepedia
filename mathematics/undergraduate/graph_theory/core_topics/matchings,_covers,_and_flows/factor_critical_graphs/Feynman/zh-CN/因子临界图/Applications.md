@@ -14,8 +14,6 @@
 
 一种强大的方法是“中心化增强”。想象有一个已经实现了[完美配对](@keyword=perfect_pairing|lang=zh-CN|style=Feynman)的偶数节点网络（即一个存在[完美匹配](@keyword=perfect_matching|lang=zh-CN|style=Feynman)的图 $G$）。现在，我们引入一个新的“超级中心”节点，并让它与原网络中的所有节点相连。这样诞生的新网络 $G'$ 就是一个[因子临界图](@keyword=factor_critical_graph|lang=zh-CN|style=Feynman) [@problem_id:1503711]。为什么呢？如果中心节点发生故障，网络就退回到了原来的 $G$，它本身就有一个完美匹配。如果原网络中的某个节点 $u$ 发生故障，那么新来的中心节点可以立即顶上，与原先和 $u$ 配对的节点 $w$ 形成新的配对，而网络的其余部分则维持原有的匹配。这个中心节点就像一个全能的“备用轮胎”，随时准备填补任何一个位置的空缺。
 
-![A factor-critical graph constructed by adding a central hub](https://assets.test.headai.cn/topic-images/graph-theory-undergraduate/Factor-critical%20Graphs_1503711.png)
-
 另一种优雅的构造方法是“顶点分裂”。我们可以取一个已有的[因子临界图](@keyword=factor_critical_graph|lang=zh-CN|style=Feynman)，选择其中任意一个顶点 $v$，然后用一个微小的三角形（三个新顶点 $t_1, t_2, t_3$）来替换它。同时，让这个三角形的每个顶点都连接到原先 $v$ 的所有邻居。神奇的是，经过这样一番“手术”，得到的新图 $G'$ 依然是因子临界的 [@problem_id:1503658]。这仿佛是生物细胞的分裂，一个鲁棒的结构在扩张和变得更复杂的同时，完美地继承了其核心的稳定性。
 
 这些构造性思想在工程设计中具有非凡的价值。它们揭示了一种模块化设计的哲学：我们可以将小的、已验证为因子临界的模块（比如两个“F型”[量子网络](@keyword=quantum_networks|lang=zh-CN|style=Feynman)模块）通过简单的连接（例如在各自模块中任取一个节点相连），就能构建出一个更大的、拥有[完美匹配](@keyword=perfect_matching|lang=zh-CN|style=Feynman)的复合系统 [@problem_id:1503678] [@problem_id:1547397]。这种从可靠组件构建复杂系统的能力，是所有现代工程学的基石。

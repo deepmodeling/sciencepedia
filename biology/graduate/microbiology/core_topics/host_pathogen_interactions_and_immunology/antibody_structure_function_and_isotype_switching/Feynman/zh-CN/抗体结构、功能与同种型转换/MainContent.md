@@ -15,7 +15,7 @@
 
 <br>
 <center>
-    <img src="https://i.imgur.com/gKjeyfA.png" alt="A diagram illustrating the basic 'Y' shape of an antibody, showing the two heavy chains and two light chains. The Fab (antigen-binding) and Fc (effector) regions are labeled." width="500">
+
     <br>
     <small>图1：[抗体](@keyword=antibody|lang=zh-CN|style=Feynman)的基本结构。一个由两条重链和两条轻链组成的“Y”形分子，清晰地分为负责结合[抗原](@keyword=antigens|lang=zh-CN|style=Feynman)的[Fab区](@keyword=fab_region|lang=zh-CN|style=Feynman)和负责执行[效应功能](@keyword=effector_functions|lang=zh-CN|style=Feynman)的[Fc区](@keyword=fc_region|lang=zh-CN|style=Feynman)。</small>
 </center>

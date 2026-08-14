@@ -40,7 +40,7 @@ We have our "resistance" ($1/UA$), but what about the "voltage"? What is the tru
 Consider the two primary ways to arrange the flow: **parallel flow**, where both fluids enter at the same end and flow in the same direction, and **[counterflow](@keyword=counterflow|lang=en-US|style=Feynman)**, where they enter at opposite ends and flow in opposite directions.
 
 <center>
-<img src="https://i.imgur.com/gK2Jp54.png" alt="Temperature profiles for parallel and [counterflow](@keyword=counterflow|lang=en-US|style=Feynman)" width="700"/>
+
 </center>
 <center><i>Temperature profiles in parallel flow (left) and [counterflow](@keyword=counterflow|lang=en-US|style=Feynman) (right) arrangements.</i></center>
 

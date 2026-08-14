@@ -14,7 +14,7 @@
 [卷积码](@keyword=convolutional_codes|lang=zh-CN|style=Feynman)的核心是一台非常简单的机器：一个**[移位寄存器](@keyword=shift_register|lang=zh-CN|style=Feynman)（shift register）**。你可以把它想象成一排小隔间，每个隔间里可以存放一个比特（0或1）。每当一个新的信息比特到来时，它会住进第一个隔间，而原来所有隔间里的比特则依次向后移动一格，最后一个比特则被“挤”出去，永远被遗忘。
 
 <center>
-<img src="https://i.imgur.com/kK3h9jS.png" width="500">
+
 <br>
 一个简单的[移位寄存器](@keyword=shift_register|lang=zh-CN|style=Feynman)模型
 </center>
@@ -76,7 +76,7 @@
 我们可以画一张**[状态图](@keyword=state_diagram|lang=zh-CN|style=Feynman)（state diagram）**。图中的每个节点代表[编码器](@keyword=encoders|lang=zh-CN|style=Feynman)的一个可能状态。从每个节点出发，都有两条带箭头的边，分别对应输入为“0”和“1”的情况。每条边上都标注着这次[状态转移](@keyword=state_transitions|lang=zh-CN|style=Feynman)产生的输出比特。这张图就像一部“命运之书”，完整记录了编码器从任何状态出发，遇到任何输入后将去向何方，以及会“喊”出什么 [@problem_id:1614422]。
 
 <center>
-<img src="https://i.imgur.com/gKkL5p8.png" width="450">
+
 <br>
 一个4[状态编码](@keyword=state_encoding|lang=zh-CN|style=Feynman)器的[状态转移图](@keyword=state_transition_graph|lang=zh-CN|style=Feynman)示例
 </center>
@@ -86,7 +86,7 @@
 [网格图](@keyword=trellis_diagram|lang=zh-CN|style=Feynman)的每一列代表一个时间点，列上的节点是该时刻所有可能的状态。从时间 $t$ 的每个状态出发，都有连向时间 $t+1$ 状态的路径，这构成了[网格图](@keyword=trellis_diagram|lang=zh-CN|style=Feynman)的一个“基本单元”。这个单元结构会随着时间的推移不断重复。整个[网格图](@keyword=trellis_diagram|lang=zh-CN|style=Feynman)描绘了从开始到结束，所有可能的编码路径，就像一张巨大的铁路网地图 [@problem_id:1614402]。任何一个合法的编码序列，都对应着[网格图](@keyword=trellis_diagram|lang=zh-CN|style=Feynman)上的一条从左到右的特定路径。这张图不仅美妙地展示了编码过程，更是未来解码（使用著名的[维特比算法](@keyword=viterbi_algorithm|lang=zh-CN|style=Feynman)）的根基所在。
 
 <center>
-<img src="https://i.imgur.com/D3YqA21.png" width="600">
+
 <br>
 [网格图](@keyword=trellis_diagram|lang=zh-CN|style=Feynman)将[状态图](@keyword=state_diagram|lang=zh-CN|style=Feynman)沿时间轴展开，形成路径网络
 </center>

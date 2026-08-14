@@ -23,7 +23,7 @@
 
 <center>
 <figure>
-  <img src="https://static.zaat.ai/Pictures/2024-06-25/vortex.png" alt="A depiction of a vortex (left, winding number +1) and an anti-vortex (right, winding number -1) in the 2D XY model. The arrows represent the spin vectors at different lattice sites." width="600"/>
+
   <figcaption>图1：[XY模型](@keyword=xy_model|lang=zh-CN|style=Feynman)中的涡旋（左，卷绕数+1）与反涡旋（右，[卷绕数](@keyword=winding_number|lang=zh-CN|style=Feynman)-1）的自旋构型示意图。箭头代表格点上的自旋矢量。</figcaption>
 </figure>
 </center>
@@ -77,7 +77,7 @@ $$
 
 <center>
 <figure>
-  <img src="https://static.zaat.ai/Pictures/2024-06-25/kt_transition.png" alt="A schematic showing the KT transition. Below the transition temperature, vortices and anti-vortices are bound in pairs (left). Above the transition temperature, they unbind and become free (right)." width="600"/>
+
   <figcaption>图2：Kosterlitz-Thouless (KT) [相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)示意图。在临界温度 $T_{KT}$ 以下，涡旋与反涡旋被束缚成对（左）。在 $T_{KT}$ 以上，它们发生“解离”，成为自由的激发（右）。</figcaption>
 </figure>
 </center>

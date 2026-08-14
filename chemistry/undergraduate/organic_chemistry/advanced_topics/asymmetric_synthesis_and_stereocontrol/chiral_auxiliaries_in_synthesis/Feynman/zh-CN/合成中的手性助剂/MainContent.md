@@ -40,7 +40,7 @@
 一个典型的埃文斯助剂分子看起来像这样（以 (4R,5S)-4-甲基-5-[苯](@keyword=benzene|lang=zh-CN|style=Feynman)基-2-噁唑烷酮为例）。它本身就是一个[手性](@keyword=chirality|lang=zh-CN|style=Feynman)分子，拥有固定的[手性中心](@keyword=chiral_center|lang=zh-CN|style=Feynman)。当我们想合成一个[手性](@keyword=chirality|lang=zh-CN|style=Feynman)[羧酸衍生物](@keyword=carboxylic_acid_derivatives|lang=zh-CN|style=Feynman)时，我们可以把一个[非手性](@keyword=achiral|lang=zh-CN|style=Feynman)的[酰基](@keyword=acyl_group|lang=zh-CN|style=Feynman)（比如丙[酰基](@keyword=acyl_group|lang=zh-CN|style=Feynman)，$-COCH_2CH_3$）[连接](@keyword=concatenation|lang=zh-CN|style=Feynman)到助剂的氮原子上 [@problem_id:2159667]。在这个[复合](@keyword=recombination|lang=zh-CN|style=Feynman)物中，噁唑烷酮环是我们的“[手性助剂](@keyword=chiral_auxiliary|lang=zh-CN|style=Feynman)”部分，而丙[酰基](@keyword=acyl_group|lang=zh-CN|style=Feynman)则是等待改造的“底物”部分。
 
 <center>
-    <img src="https://i.imgur.com/gK9qQ1k.png" alt="An N-acyl Evans oxazolidinone, showing the chiral auxiliary part and the substrate part." width="600">
+
     <br>
     <small>图1：一个典型的N-[酰基](@keyword=acyl_group|lang=zh-CN|style=Feynman)埃文斯助剂[复合](@keyword=recombination|lang=zh-CN|style=Feynman)物。[手性](@keyword=chirality|lang=zh-CN|style=Feynman)噁唑烷酮环是“助剂”，而丙[酰基](@keyword=acyl_group|lang=zh-CN|style=Feynman)是“底物”。</small>
 </center>
@@ -58,7 +58,7 @@
 当我们在反应中加入强碱（如LDA, 二异丙胺基[锂](@keyword=lithium|lang=zh-CN|style=Feynman)）时，它会从丙[酰基](@keyword=acyl_group|lang=zh-CN|style=Feynman)上夺走一个[质子](@keyword=protons|lang=zh-CN|style=Feynman)，形成一个所谓的“[烯醇负离子](@keyword=enolates|lang=zh-CN|style=Feynman)”。这时，带正电的[锂](@keyword=lithium|lang=zh-CN|style=Feynman)离子 $Li^+$ 不会袖手旁观。它会像一个精准的“分子夹”，同时与[烯醇负离子](@keyword=enolates|lang=zh-CN|style=Feynman)的氧原子和助剂噁唑烷酮环上的[羰基](@keyword=carbonyl_group|lang=zh-CN|style=Feynman)氧原子发生[配位](@keyword=complexation|lang=zh-CN|style=Feynman)。这种双点[配位](@keyword=complexation|lang=zh-CN|style=Feynman)被称为**[螯合](@keyword=chelation|lang=zh-CN|style=Feynman) (Chelation)**。
 
 <center>
-    <img src="https://i.imgur.com/2U5d40o.png" alt="Chelation model of an Evans enolate with a Lewis acidic metal cation." width="600">
+
     <br>
     <small>图2：金属离子（M）通过[螯合作用](@keyword=chelation|lang=zh-CN|style=Feynman)将[烯醇负离子](@keyword=enolates|lang=zh-CN|style=Feynman)锁定成一个刚性的六元环结构。助剂上的基团（R*）形成了一个有效的空间屏障。</small>
 </center>
@@ -82,7 +82,7 @@
 这是为什么呢？答案是，$TiCl_4$ 实在太“强大”了。它与进攻试剂（醛）的[结合能](@keyword=binding_energy|lang=zh-CN|style=Feynman)力极强，以至于它不再需要与助剂的[烯醇负离子](@keyword=enolates|lang=zh-CN|style=Feynman)形成那个我们之前讨论的、稳定的六元环“闭合”[螯合](@keyword=chelation|lang=zh-CN|style=Feynman)结构。反应转而通过一个所谓的**“开放”[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman) (Open Transition State)** 进行。在这个开放的模型里，决定反应结果的不再是[螯合](@keyword=chelation|lang=zh-CN|style=Feynman)锁定，而是两个分子片段之间为了避免[静电排斥](@keyword=electrostatic_repulsion|lang=zh-CN|style=Feynman)和空间拥挤而采取的一种更为松散的[排列](@keyword=permutations|lang=zh-CN|style=Feynman)方式。这套新的规则最终导向了与之前完全相反的[立体化学](@keyword=stereochemistry|lang=zh-CN|style=Feynman)结果。
 
 <center>
-    <img src="https://i.imgur.com/8Q0N6jN.png" alt="Comparison of closed (Zimmerman-Traxler) and open transition states." width="700">
+
     <br>
     <small>图3：对比“闭合”（左）和“开放”（右）两种[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)模型。不同的反应条件会导向不同的[反应路径](@keyword=reaction_path|lang=zh-CN|style=Feynman)，从而产生不同的产物。</small>
 </center>

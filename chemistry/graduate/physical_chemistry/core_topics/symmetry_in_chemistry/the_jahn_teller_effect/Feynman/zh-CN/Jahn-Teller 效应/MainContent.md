@@ -40,7 +40,7 @@ $$V_\pm(\rho) = \frac{1}{2}k\rho^2 \pm F\rho$$
 这个方程描绘了一幅怎样的图景呢？上面那个[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman) ($V_+$) 仍然像个碗。但下面那个 ($V_-$)，才是奇迹发生的地方。它不再以高对称点 ($\rho=0$) 为最低点。相反，高对称点成了一个尖锐的峰顶，而最低能量点则形成了一个连续的圆形深谷，环绕着中心的峰。整个形状酷似一顶墨西哥草帽！[@problem_id:2815158]
 
 <center>
-<img src="https://i.imgur.com/G36mxx4.png" alt="The Mexican Hat Potential" width="500">
+
 <br>
 “墨西哥草帽”[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)。高对称构型位于中心的尖峰，能量不稳定。体系会沿着[山坡](@keyword=hill_slope|lang=zh-CN|style=Feynman)“滑落”到环形的谷底，达到更低的能量，这对应于一个扭曲的几何构型。
 </center>

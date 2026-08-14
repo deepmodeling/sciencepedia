@@ -17,7 +17,6 @@
 
 这种[边缘态](@keyword=edge_states|lang=zh-CN|style=Feynman)与我们熟悉的导体截然不同。在普通的金属导线中，电子可以随时“掉头”（即反向散射）。而在另一种著名的拓扑物态——量子霍尔效应中，其[边缘态](@keyword=edge_states|lang=zh-CN|style=Feynman)是**手性的（chiral）**，更像一条单行道，所有电子都只能朝一个方向运动。[螺旋边缘态](@keyword=helical_edge_states|lang=zh-CN|style=Feynman)则介于两者之间：它有双向的车道，但每条车道都有严格的“准入规则”。这种独特的结构导致了一系列可以被实验直接探测的信号：在同一个边缘上，可以同时测量到方向相反、且由不同自旋电子构成的两股电流。[@problem_id:1825409] [@problem_id:3012511]
 
-![Helical vs Chiral Edge States](https://media.cheggcdn.com/media/f57/f572aae1-50e5-4f7f-8084-5f25a0a38f97/phpl1949S.png)
 <center>图1：(左) [量子自旋霍尔效应](@keyword=quantum_spin_hall_effect|lang=zh-CN|style=Feynman)的[螺旋边缘态](@keyword=helical_edge_states|lang=zh-CN|style=Feynman)，自旋相反的电子沿相反方向运动。(右) [量子霍尔效应](@keyword=quantum_hall_effect|lang=zh-CN|style=Feynman)的[手性边缘态](@keyword=chiral_edge_states|lang=zh-CN|style=Feynman)，所有电子沿相同方向运动。</center>
 
 ### 无法被散射的电子：时间反演的守护

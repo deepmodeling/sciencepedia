@@ -15,7 +15,6 @@
 
 当然，我们也可以在高温的“熔炉”中施展魔法。**[化学气相沉积](@keyword=chemical_vapor_deposition|lang=zh-CN|style=Feynman) (Chemical Vapor Deposition, CVD)** 是制造高质量[碳纳米管](@keyword=carbon_nanotubes|lang=zh-CN|style=Feynman)（Carbon Nanotubes, CNTs）等材料的常用技术。在这个过程中，微小的金属[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)颗粒就像是播下的种子。碳源气体在高温下分解，碳原子溶解到[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)中，达到过饱和后，便以[石墨烯](@keyword=graphene|lang=zh-CN|style=Feynman)片的形式“沉淀”出来，卷曲生长成[碳纳米管](@keyword=carbon_nanotubes|lang=zh-CN|style=Feynman)。这是一个涉及[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)驱动力与界面能量平衡的微妙舞蹈。我们甚至可以建立模型来预测，[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)颗粒是会随着纳米管的生长而“起飞”，位于管的顶端（[顶端生长](@keyword=tip_growth|lang=zh-CN|style=Feynman)模式），还是会牢牢地“锚定”在基底上，让纳米管从其根部长出（根部生长模式）。这取决于[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)与基底、[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)与新生成的碳管之间的粘附功能量[@problem_id:2945734]。
 
-![](https://www.intechopen.com/media/chapter/54256/media/F2.png)
 > 图2. 碳纳米管的[顶端生长](@keyword=tip_growth|lang=zh-CN|style=Feynman)（左）与根部生长（右）模式示意图。生长模式取决于[催化剂](@keyword=catalyst|lang=zh-CN|style=Feynman)与基底之间的相互作用。图片来源：IntechOpen。
 
 更酷炫的或许是 **脉冲激光沉积 (Pulsed Laser Deposition, PLD)**。想象一下用一道高能激光“蒸发”一块靶材，形成一团等离子体“烟云”，然后像喷漆一样将原子“喷涂”到基底上，形成一层完美的薄膜。这种技术在制备复杂氧化物薄膜方面大显身手。更有趣的是，我们可以通过控制生长环境中的氧气分压 ($p_{O_{2}}$) 来“调节”薄膜的性质。当氧气充足时，薄膜的生长接近热力学平衡；而当氧气稀薄时，生长过程则由动力学主导。氧气压力的变化会直接影响薄膜中“氧空位”（即氧原子缺失）的浓度。由于[氧空位](@keyword=oxygen_vacancy|lang=zh-CN|style=Feynman)通常会释放电子，成为导电的来源，因此，通过调节氧压，我们实际上是在进行“[缺陷工程](@keyword=defect_engineering|lang=zh-CN|style=Feynman)”，人为地控制着薄-薄膜的[导电性](@keyword=electrical_conductivity|lang=zh-CN|style=Feynman)[@problem_id:2945746]。
@@ -26,7 +25,6 @@
 
 **X 射线衍射 (X-ray Diffraction, XRD)** 就是这样一种技术。当 X 射线穿过晶体时，会被规律[排列](@keyword=permutation|lang=zh-CN|style=Feynman)的原子平面散射，形成特定的衍射图案，就像从晶格结构上弹奏出的“音符”。如果材料是由非常微小的晶粒（晶畴）组成的，这些“音符”听起来就会变得模糊不清，即衍射峰会变宽。通过分析峰的宽度，利用 **谢乐公式 (Scherrer equation)**，我们就可以反推出这些微小晶粒的平均尺寸。这个方法简洁而强大，是我们判断纳米材料尺寸的重要手段之一[@problem_id:2945741]。
 
-![](https://i.ytimg.com/vi/u5N2OKyT5mI/maxresdefault.jpg)
 > 图3. X射线衍射示意图，以及晶粒尺寸对衍射峰宽度的影响。小晶粒导致更宽的衍射峰。图片来源：YouTube 频道 Materials Science with Professor Omar。
 
 另一种强大的工具是 **拉曼光谱 (Raman Spectroscopy)**。它好比用一束光去“敲击”分子，然后倾听它如何“[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)”。对于[碳纳米管](@keyword=carbon_nanotubes|lang=zh-CN|style=Feynman)而言，不同的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)模式揭示了其不同的结构秘密。其中一种被称为“径向[呼吸模式](@keyword=breathing_mode|lang=zh-CN|style=Feynman) (Radial Breathing Mode, RBM)”的[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，其频率与纳米管的直径成反比——管子越细，“呼吸”得越快。这为我们提供了一种非破坏性地测量纳米管直径的绝佳方法。同时，光谱中的另一个特征——D 峰与 G 峰的强度比 ($I(D)/I(G)$)——则像一个“缺陷计数器”，其比值越高，通常意味着纳米管结构中的缺陷越多[@problem_id:2945713]。
@@ -39,7 +37,6 @@
 
 **量子点 (Quantum Dots, QDs)** 是这个舞台上最耀眼的明星之一。你可以把它们想象成“化学家制造的[人造原子](@keyword=artificial_atoms|lang=zh-CN|style=Feynman)”。它们的魔力在于，其颜色（即吸收和发射光的波长）完全由其尺寸决定。这背后的原理是 **量子限域效应 (quantum confinement effect)**。在一个微小的[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)纳米晶体中，[电子和空穴](@keyword=electrons_and_holes|lang=zh-CN|style=Feynman)（电子留下的带正电的[空位](@keyword=vacancies|lang=zh-CN|style=Feynman)）被“囚禁”在有限的空间里。根据量子力学，当空间变小时，粒子的能级会升高。因此，当我们把[量子点](@keyword=quantum_dots|lang=zh-CN|style=Feynman)做得越小，[电子的基态](@keyword=ground_state_of_electrons|lang=zh-CN|style=Feynman)能量就越高，导致它吸收和发射的光子能量也越高，颜色便从红色、橙色、绿色，一路向蓝色移动。我们甚至可以用一个简单的“[无限深球形势阱](@keyword=infinite_spherical_well|lang=zh-CN|style=Feynman)”模型来估算这种尺寸依赖的光学[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)[@problem_id:2945716]。正是这种尺寸可调的发光特性，使得[量子点](@keyword=quantum_dots|lang=zh-CN|style=Feynman)在高清显示技术 (QLED TV)、生物成像和[太阳能电池](@keyword=solar_cells|lang=zh-CN|style=Feynman)等领域大放异彩。
 
-![](https://i.ytimg.com/vi/ID4PzUS8y7g/maxresdefault.jpg)
 > 图4. [量子点](@keyword=quantum_dots|lang=zh-CN|style=Feynman)的尺寸与发光颜色。尺寸越小，发光波长越短（偏蓝）；尺寸越大，发光波长越长（偏红）。图片来源：YouTube 频道 Veritasium。
 
 **[碳纳米管 (CNTs)](@keyword=carbon_nanotubes_(cnts)|lang=zh-CN|style=Feynman)** 则展示了另一种惊人的[量子效应](@keyword=quantum_effects|lang=zh-CN|style=Feynman)——几何结构决定电子属性。想象一下将一张石墨烯（单层碳原子构成的[二维材料](@keyword=2d_materials|lang=zh-CN|style=Feynman)）的薄片卷成一个管子。令人难以置信的是，你“卷”它的方式——具体说是由其[手性矢量](@keyword=chiral_vector|lang=zh-CN|style=Feynman) $(n,m)$ 描述的角度和方式——竟然决定了它最终是成为导电的金属，还是具有[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)的[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)。一个简单的规则是，如果 $n-m$ 是 $3$ 的倍数，纳米管就是金属性的；否则，它就是[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)性的。我们甚至可以利用简单的[紧束缚模型](@keyword=tight_binding_model|lang=zh-CN|style=Feynman)，推导出其[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)性纳米管的[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)大小与其直径成反比的关系[@problem_id:2945750]。这种拓扑结构与电子性质之间深刻而直接的联系，为未来的[纳米电子学](@keyword=nanoelectronics|lang=zh-CN|style=Feynman)开辟了激动人心的道路。

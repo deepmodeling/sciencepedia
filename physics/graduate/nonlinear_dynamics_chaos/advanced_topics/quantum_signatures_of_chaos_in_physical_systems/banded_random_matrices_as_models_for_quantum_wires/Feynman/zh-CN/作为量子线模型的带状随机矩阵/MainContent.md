@@ -21,7 +21,7 @@
 这个“带宽” $b$ 可不是一个凭空捏造的参数，它有着深刻的物理意义。想象一下，我们不处理[一维链](@keyword=one_dimensional_chains|lang=zh-CN|style=Feynman)，而是一个二维的薄带，它有 $M$ 个原子那么宽。为了用我们的一维矩阵来描述它，我们可以像阅读书本一样，逐行地给原子编号。当你这样做时，你会惊奇地发现，一个原子跳到它在“跨越带宽”方向上的邻居——一个在物理空间上很近的跳跃——在我们的编号方案中，却可能是一个编号跨度非常大的跳跃。计算表明，这个最大的编号跨度正好就是这个二维带的宽度 $M$。因此，带宽 $b$ 直接对应于[量子线](@keyword=quantum_wires|lang=zh-CN|style=Feynman)在更高维度上的“宽度”或其内部连接的复杂性 [@problem_id:855890]。一个更大的 $b$ 意味着一个“更宽”的、通道更多的导线。
 
 <p align="center">
-    <img src="https://i.imgur.com/vHq8m0y.png" alt="Illustration of mapping a 2D lattice to a 1D chain, showing how nearest-neighbor hops in 2D can become long-range hops in 1D, defining the bandwidth 'b'." width="600">
+
     <em>图1：将一个宽度为 $M$ 的二维[晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)条带映射为一维链。在二维空间中的近邻跳跃（例如，垂直方向的跳跃），在展开后的一维链上可能变成一个长程跳跃，其最大的跳跃距离定义了[带状矩阵](@keyword=banded_matrices|lang=zh-CN|style=Feynman)的带宽 $b=M$。</em>
 </p>
 
@@ -68,7 +68,7 @@ $$
 那么，我们如何从理论上追踪这种囚禁效应呢？物理学家发展出了一种强大的数学工具——**转移矩阵方法 (transfer matrix method)**。我们可以把[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)在相邻两个格点上的幅值写成一个向量 $\mathbf{\Psi}_n = (\psi_n, \psi_{n-1})^T$。然后，我们可以构建一个矩阵 $M_n$ ，它能将这个向量从位置 $n$ “传播”到位置 $n+1$，即 $\mathbf{\Psi}_{n+1} = M_n \mathbf{\Psi}_n$。通过研究一长串这样的矩阵的乘积，我们就能揭示[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)在长距离下的行为，判断它最终是传播开去还是被局域化 [@problem_id:855869]。
 
 <p align="center">
-    <img src="https://i.imgur.com/83p1y3U.png" alt="Illustration showing the crossover from diffusive transport to localized transport as a function of system length L." width="700">
+
     <em>图2：从扩散到局域的转变。在短距离（$L \ll \xi$）上，电子行为类似[经典扩散](@keyword=classical_diffusion|lang=zh-CN|style=Feynman)。在长距离（$L \gg \xi$）上，量子干涉效应凸显，导致电子[波函数](@keyword=wavefunction|lang=zh-CN|style=Feynman)被局域化。导线的[电导](@keyword=electrical_conductance|lang=zh-CN|style=Feynman)行为在这两个区间截然不同。</em>
 </p>
 

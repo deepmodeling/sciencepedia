@@ -18,7 +18,7 @@
 让我们来看一个具体的例子。想象一个三维立方体的骨架。我们可以用多种方式把它拍扁画在纸上。下面就是两种不同的画法，分别对应图 $G_1$ 和 $G_2$。它们看起来相当不同，但它们实际上是同构的。找到它们之间的同构映射 $f$，就像是玩一个解谜游戏，你需要为 $G_1$ 的每个顶点在 $G_2$ 中找到它唯一的、正确的“灵魂伴侣”，使得整个连接结构严丝合缝地对应起来 [@problem_id:1379106]。
 
 <center>
-<img src="https://assets.test.aiedu.digipen.edu/images/1_1379106.png" alt="Two different drawings of a 3-cube graph" width="600">
+
 </center>
 <br>
 

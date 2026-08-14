@@ -1,7 +1,6 @@
 ## 引言
 在[材料科学](@keyword=material_science|lang=zh-CN|style=Feynman)领域，刚度是一项基本属性。对于[应力与应变](@keyword=stress_and_strain|lang=zh-CN|style=Feynman)成正比的简单弹性行为，杨氏模量能够很好地描述这一特性。然而，从超出极限的金属到承载蠕变的聚合物，大多数真实材料都表现出复杂的[非线性响应](@keyword=nonlinear_response|lang=zh-CN|style=Feynman)，这种简单的比例关系不再成立。这种非线性带来了一个关键挑战：当[应力-应变曲线](@keyword=stress_strain_curve|lang=zh-CN|style=Feynman)不再是直线时，我们该如何定义刚度？答案并不在于单一的数值，而在于理解两个既有区别又互为补充的概念：切线模量和[割线模量](@keyword=secant_modulus|lang=zh-CN|style=Feynman)。本文将深入探讨[割线模量](@keyword=secant_modulus|lang=zh-CN|style=Feynman)，阐明其作为平均刚度度量的作用。我们将首先探索其基本原理和机制，并将其与切线模量进行对比，以理解各自的适用时机与原因。随后，我们将审视其广泛的应用和跨学科联系，揭示这一概念对于解决工程和计算科学领域的实际问题是何等关键。
 
-![A stress-strain curve showing the tangent modulus as the slope of the tangent line at a point (P), and the secant modulus as the slope of the line from the origin (O) to that point (P).](https://i.imgur.com/gKj6lQG.png)
 *图 1：对于非线性[应力-应变曲线](@keyword=stress_strain_curve|lang=zh-CN|style=Feynman)，切线模量 ($E_t$) 是曲线上 P 点切线的斜率，代表瞬时刚度。[割线模量](@keyword=secant_modulus|lang=zh-CN|style=Feynman) ($E_s$) 是从原点 O 到 P 点的割线斜率，代表达到该状态的平均刚度。*
 
 ## 原理与机制

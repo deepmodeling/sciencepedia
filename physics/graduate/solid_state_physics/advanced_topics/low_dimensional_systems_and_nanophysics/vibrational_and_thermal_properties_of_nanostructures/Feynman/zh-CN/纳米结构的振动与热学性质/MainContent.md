@@ -16,7 +16,7 @@
 然而，当物质的几何形状和[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)方式改变时，[色散关系](@keyword=dispersion_relations|lang=zh-CN|style=Feynman)也会随之改变。想象一下一片只有一个原子厚的[二维材料](@keyword=2d_materials|lang=zh-CN|style=Feynman)，比如石墨烯。除了在平面内像鼓面一样[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，它还可以进行平面外的弯曲[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)，就像一张纸在风中飘动。这些被称为**挠曲[声子](@keyword=phonons|lang=zh-CN|style=Feynman) (flexural phonons)** 的模式遵循一种非常奇特的[二次色散关系](@keyword=quadratic_dispersion_relation|lang=zh-CN|style=Feynman)：$\omega = \alpha k^2$，其中 $\alpha$ 是一个与材料[弯曲刚度](@keyword=bending_stiffness|lang=zh-CN|style=Feynman)相关的常数 [@problem_id:255385]。
 
 <p align="center">
-    <img src="https://assets.solidstate.io/ssu/curriculum/vibrational-thermal-nanostructures/dispersion_1d_2d.svg" alt="Dispersion relations for 1D acoustic phonons and 2D flexural phonons" width="600"/>
+
     <br>
     <small>图1. 不同维度和模式下的[声子色散关系](@keyword=phonon_dispersion_relations|lang=zh-CN|style=Feynman)。左图：一维纳米线中声学声子（蓝色）的[线性色散关系](@keyword=linear_dispersion_relation|lang=zh-CN|style=Feynman) $\omega \propto k$。右图：[二维材料](@keyword=2d_materials|lang=zh-CN|style=Feynman)中挠曲[声子](@keyword=phonons|lang=zh-CN|style=Feynman)（绿色）的[二次色散关系](@keyword=quadratic_dispersion_relation|lang=zh-CN|style=Feynman) $\omega \propto k^2$。不同的色散关系导致了截然不同的物理性质。</small>
 </p>
@@ -40,7 +40,7 @@
 让我们先想象一个最理想的场景：在极低的温度下，有一根完美无瑕且极短的纳米线。[声子](@keyword=phonons|lang=zh-CN|style=Feynman)可以像子弹一样，从一端飞到另一端，中途不发生任何碰撞。这就是**[弹道输运](@keyword=ballistic_transport|lang=zh-CN|style=Feynman) (ballistic transport)**，如同在一条没有车辆、没有摩擦的超级高速公路上行驶。在这种理想极限下，通过单个[声子](@keyword=phonons|lang=zh-CN|style=Feynman)通道的热流速率存在一个令人惊叹的上限——**[热导量子](@keyword=quantum_of_thermal_conductance|lang=zh-CN|style=Feynman) (quantum of thermal conductance)**。这个值 $G = \frac{\pi^2k_B^2T}{3h}$（其中 $k_B$ 是[玻尔兹曼常数](@keyword=boltzmann_constant|lang=zh-CN|style=Feynman)，$h$ 是普朗克常数）是一个普适常数，仅与温度和[基本物理常数](@keyword=fundamental_physical_constants|lang=zh-CN|style=Feynman)有关，而与构成通道的具体材料无关 [@problem_id:255509]。这是一个深刻的发现，揭示了热流在量子尺度上的[基本单位](@keyword=fundamental_units|lang=zh-CN|style=Feynman)。
 
 <p align="center">
-    <img src="https://assets.solidstate.io/ssu/curriculum/vibrational-thermal-nanostructures/scattering_mechanisms.svg" alt="Phonon scattering mechanisms in a nanowire" width="700"/>
+
     <br>
     <small>图2. [声子](@keyword=phonons|lang=zh-CN|style=Feynman)在[纳米结构](@keyword=nanostructures|lang=zh-CN|style=Feynman)中的“坎坷旅程”。[声子](@keyword=phonons|lang=zh-CN|style=Feynman)（橙色[波包](@keyword=wave_packets|lang=zh-CN|style=Feynman)）的自由传播会受到多种散射机制的阻碍，包括与纳米线边界的碰撞（边界散射）、在不同材料界面处的反射（界面散射）以及与其他[声子](@keyword=phonons|lang=zh-CN|style=Feynman)或[晶格缺陷](@keyword=crystal_lattice_defects|lang=zh-CN|style=Feynman)的碰撞（[声子-声子散射](@keyword=phonon_phonon_scattering|lang=zh-CN|style=Feynman)等）。</small>
 </p>

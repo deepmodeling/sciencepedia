@@ -9,7 +9,7 @@
 我们的旅程始于一个经典而优美的话题：极小曲面。这些[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)，如同在肥皂水框架上形成的[皂膜](@keyword=soap_film|lang=zh-CN|style=Feynman)，总是在局部最小化自身的面积。在光滑的世界里，这意味着它们的[平均曲率](@keyword=mean_curvature|lang=zh-CN|style=Feynman) $H$ 处处为零。迭形的语言如何描述这一点？通过[第一变分](@keyword=first_variation|lang=zh-CN|style=Feynman)，我们发现一个光滑[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)是“驻定”的（stationary）——即其[面积的第一变分](@keyword=first_variation_of_area|lang=zh-CN|style=Feynman) $\delta V$ 对任何扰动都为零——当且仅当它的[平均曲率向量](@keyword=mean_curvature_vector|lang=zh-CN|style=Feynman) $H$ 为零。这两种表述是等价的。例如，我们可以通过直接计算证明，经典的[悬链面](@keyword=catenoid|lang=zh-CN|style=Feynman)（catenoid）作为一个迭形，其[第一变分](@keyword=first_variation|lang=zh-CN|style=Feynman)恒为零，这与它作为[极小曲面](@keyword=minimal_surfaces|lang=zh-CN|style=Feynman)的身份完美契合 [@problem_id:3036986]。
 
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Catenoid-animated.gif/300px-Catenoid-animated.gif" alt="Catenoid" width="250"/>
+
 </center>
 <center>[悬链面](@keyword=catenoid|lang=zh-CN|style=Feynman)，一个经典的极小曲面，在迭形的框架下被理解为一个“驻定迭形”。</center>
 
@@ -18,7 +18,7 @@
 迭形理论为这种“Y”形结构提供了严格的数学模型。我们可以证明，这样一个由三条夹角为 $120^\circ$ 的射线组成的结构，正是一个驻定的1维迭形 [@problem_id:3037007]。它的[第一变分](@keyword=first_variation|lang=zh-CN|style=Feynman)处处为零，即使在原点这个“[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)”处也是如此！这个例子告诉我们，迭形的“驻定性”概念比光滑[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的“[平均曲率](@keyword=mean_curvature|lang=zh-CN|style=Feynman)为零”更为根本和普适。
 
 <center>
-<img src="https://i.imgur.com/B7E20W7.png" alt="Y-Junction" width="300"/>
+
 </center>
 <center>物理[皂膜](@keyword=soap_film|lang=zh-CN|style=Feynman)中常见的“Y”形[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)，在数学上被精确地描述为一个驻定迭形。</center>
 
@@ -33,7 +33,7 @@
 如果在一个驻定[极小曲面](@keyword=minimal_surfaces|lang=zh-CN|style=Feynman)上，任何微小的法向扰动都会导致面积增加（或至少不减少），我们就称这个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)是“稳定”的（stable）。第二变分的计算引出了一个至关重要的算子——[Jacobi算子](@keyword=jacobi_operator|lang=zh-CN|style=Feynman) $L\phi = \Delta_{M}\phi + |A|^{2}\phi$，其中 $\phi$ 是法向扰动函数，$\Delta_M$ 是[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上的[Laplace算子](@keyword=laplace_operator|lang=zh-CN|style=Feynman)，$|A|^2$ 是第二基本形式的范数平方 [@problem_id:3036979]。一个极小曲面是稳定的，当且仅当[Jacobi算子](@keyword=jacobi_operator|lang=zh-CN|style=Feynman)的最小[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)非负 [@problem_id:3036974]。这个判据将一个全局的稳定性问题，转化为了一个局部的[谱几何](@keyword=spectral_geometry|lang=zh-CN|style=Feynman)问题。那些不稳定的[极小曲面](@keyword=minimal_surfaces|lang=zh-CN|style=Feynman)（比如[悬链面](@keyword=catenoid|lang=zh-CN|style=Feynman)的一部分），就像山脊上的[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)，虽然自身是[临界点](@keyword=critical_points|lang=zh-CN|style=Feynman)，但存在某些方向可以让它“滑下山坡”，面积变得更小。
 
 <center>
-<img src="https://i.imgur.com/7vj7V0x.png" alt="Stability" width="450"/>
+
 </center>
 <center>稳定与不稳定：[稳定极小曲面](@keyword=stable_minimal_surface|lang=zh-CN|style=Feynman)（左）是面积的局部最小值，像山谷的底部。[不稳定极小曲面](@keyword=unstable_minimal_surfaces|lang=zh-CN|style=Feynman)（右）是[鞍点](@keyword=saddle_point|lang=zh-CN|style=Feynman)，存在使其面积减小的形变方向。</center>
 
@@ -52,7 +52,7 @@
 这意味着，[极小曲面](@keyword=minimal_surfaces|lang=zh-CN|style=Feynman)的几何，作为一种宏观的、理想化的结构，竟然可以从描述微观粒子相互作用的[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)中“涌现”出来。迭形理论之所以是描述这一现象的完美语言，正是因为它能够处理极限过程中可能出现的[拓扑变化](@keyword=topological_changes|lang=zh-CN|style=Feynman)和[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)。这为我们理解自然界中自[组织结构](@keyword=tissue_architecture|lang=zh-CN|style=Feynman)的形成提供了深刻的数学洞见。
 
 <center>
-<img src="https://i.imgur.com/8QoAotY.png" alt="Phase Transition" width="500"/>
+
 </center>
 <center>[Allen-Cahn方程](@keyword=allen_cahn_equation|lang=zh-CN|style=Feynman)模拟的[相分离](@keyword=phase_separation|lang=zh-CN|style=Feynman)（左）与极限下的极小曲面（右）。迭形理论连接了这两个看似无关的世界。</center>
 

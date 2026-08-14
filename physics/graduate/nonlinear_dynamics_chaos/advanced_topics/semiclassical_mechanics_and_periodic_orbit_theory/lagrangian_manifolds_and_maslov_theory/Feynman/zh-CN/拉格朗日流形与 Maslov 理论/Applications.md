@@ -14,7 +14,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/023jV9A.png" width="600" alt="(左) 椭圆反射镜中的[焦散线](@keyword=caustics|lang=zh-CN|style=Feynman)。 (右) [折射](@keyword=refraction|lang=zh-CN|style=Feynman)现象产生的焦散线，例如通过非均匀介质或在波浪状表面。">
+
   <figcaption>(左) 椭圆反射镜中的焦散线。(右) 通过非均匀介质或在波浪状表面折射产生的焦散线。</figcaption>
 </figure>
 </center>
@@ -31,7 +31,7 @@
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/2s44j33.png" width="600" alt="开尔文船尾迹和引力透镜。">
+
   <figcaption>(左) 轮船的开尔文尾迹，其V形边界是焦散线。 (右) 星系团作为引力透镜，将背景星系的光扭曲成弧形，形成壮观的[宇宙焦散](@keyword=cosmic_caustics|lang=zh-CN|style=Feynman)现象。</figcaption>
 </figure>
 </center>

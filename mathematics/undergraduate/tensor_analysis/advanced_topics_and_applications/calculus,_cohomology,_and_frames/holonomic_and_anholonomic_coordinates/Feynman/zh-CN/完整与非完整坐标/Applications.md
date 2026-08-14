@@ -16,7 +16,7 @@
 
 <center>
 <figure>
-  <img src="https://dims.physera.com/wysiwyg/images/articles/2021/08/17/parallel-parking-animation.gif" alt="Parallel parking maneuver, a classic example of nonholonomic motion." width="400"/>
+
   <figcaption>图1：侧方停车。通过一系列前后移动和转向，汽车可以在垂直于车轮的方向上实现净位移，这是[非完整系统](@keyword=nonholonomic_systems|lang=zh-CN|style=Feynman)才能完成的标志性动作。</figcaption>
 </figure>
 </center>

@@ -31,7 +31,7 @@ $$ \mathbf{x}_{k+1} = T\mathbf{x}_k + \mathbf{c} $$
 
 <br>
 <center>
-    <img src="https://assets.test.logos.com/images/1846253/1846253-Geometric_Iteration_Process.png" alt="Geometric interpretation of an iterative method" style="width: 50%;">
+
     <br>
     <small>图1：通过在两条线之间交替进行垂[直和](@keyword=direct_sum|lang=zh-CN|style=Feynman)水平投影来寻找交点。这个迭代过程在几何上清晰地展示了向[不动点](@keyword=fixed_points|lang=zh-CN|style=Feynman)收敛的“舞蹈”。</small>
 </center>

@@ -15,8 +15,6 @@
 
 为了真正“看”到弗兰克-史达林机制在起作用，让我们潜入左心室，观察一次心跳的完整周期。我们可以用一个美妙的图形来描绘这个过程，它被称为“[压力-容积环](@keyword=pressure_volume_loop|lang=zh-CN|style=Feynman)”（Pressure-Volume loop, P-V loop）。这个环的[横轴](@keyword=transverse_axis|lang=zh-CN|style=Feynman)是心室内的血液容积 ($V$)，纵轴是心室内的压力 ($P$)。
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/d5a570ab-7d3d-4c3e-8123-28ad17718e8d/Untitled.png)
-
 心跳的舞蹈开始于舒张[末期](@keyword=telophase|lang=zh-CN|style=Feynman)，心室完成充血，此时容积达到最大，即**舒张末期容积** ($V_{\mathrm{ED}}$)，这代表了心脏的**[前负荷](@keyword=preload|lang=zh-CN|style=Feynman)**。接着，心室开始收缩，压力急剧上升，但容积不变（[等容收缩](@keyword=isovolumetric_contraction|lang=zh-CN|style=Feynman)期）。当心室内压力超过主动脉压力时，主动脉瓣打开，血液被射出，心室容积减小（射血期）。最后，心室容积达到最小值，即**收缩[末期](@keyword=telophase|lang=zh-CN|style=Feynman)容积** ($V_{\mathrm{ES}}$)，主动脉瓣关闭，心室开始舒张，压力下降，为下一次充血做准备。
 
 现在，让我们来做一个思想实验[@problem_id:2616243]。假设在两次心跳中，我们保持心脏的收缩能力和它需要对抗的动脉压力（[后负荷](@keyword=afterload|lang=zh-CN|style=Feynman)）完全不变。在第一次心跳中，我们让心室正常充盈，比如 $V_{\mathrm{ED}}$ 为 $120\,\mathrm{mL}$。在第二次心跳中，我们增加回心血量，让心室充盈得更满，比如 $V_{\mathrm{ED}}$ 增加到 $150\,\mathrm{mL}$。我们会观察到什么神奇的现象？

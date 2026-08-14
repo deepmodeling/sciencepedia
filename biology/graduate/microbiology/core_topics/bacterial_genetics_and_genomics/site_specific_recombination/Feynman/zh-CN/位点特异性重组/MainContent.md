@@ -21,7 +21,7 @@
 
 <br/>
 <center>
-    <img src="https://i.imgur.com/kP8X5c9.png" alt="图1：重组位点的模块化结构。两个反向重复的臂区（蓝色）供[重组酶](@keyword=recombinase|lang=zh-CN|style=Feynman)结合，中间的非对称间隔区（橙色）赋予位点一个方向（箭头所示）。" style="width: 70%;" />
+
     <br/>
     <em>图1：重组位点的模块化结构。两个反向重复的臂区（蓝色）供[重组酶](@keyword=recombinase|lang=zh-CN|style=Feynman)结合，中间的非对称间隔区（橙色）赋予位点一个方向（箭头所示）。</em>
 </center>
@@ -51,7 +51,7 @@
 
 <br/>
 <center>
-    <img src="https://i.imgur.com/2s2H6J6.png" alt="图2：转酯化反应的[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)原理。重组酶（E-OH）通过形成一个与DNA磷酸二酯键能量相当的蛋白质-DNA[共价中间体](@keyword=covalent_intermediate|lang=zh-CN|style=Feynman)（E-O-P），实现了DNA链的断裂和重连而无需外部能量输入。" style="width: 80%;" />
+
     <br/>
     <em>图2：转酯化反应的[能量守恒](@keyword=conservation_of_energy|lang=zh-CN|style=Feynman)原理。重组酶（E-OH）通过形成一个与DNA磷酸二酯键能量相当的蛋白质-DNA[共价中间体](@keyword=covalent_intermediate|lang=zh-CN|style=Feynman)（E-O-P），实现了DNA链的断裂和重连而无需外部能量输入。整个过程的[吉布斯自由能变](@keyword=change_in_gibbs_free_energy|lang=zh-CN|style=Feynman)化 $\Delta G \approx 0$。</em>
 </center>
@@ -73,12 +73,11 @@
 
 <br/>
 <center>
-    <img src="https://i.imgur.com/6XyUaO0.png" alt="图3：[酪氨酸重组酶](@keyword=tyrosine_recombinases|lang=zh-CN|style=Feynman)的“两步舞”机制。通过两次独立的单链交换，中间形成一个霍利迪[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)（HJ）结构，最终完成重组。" style="width: 90%;" />
+
     <br/>
     <em>图3：[酪氨酸重组酶](@keyword=tyrosine_recombinases|lang=zh-CN|style=Feynman)的“两步舞”机制。通过两次独立的单链交换，中间形成一个霍利迪[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)（HJ）结构，最终完成重组。</em>
 </center>
 <br/>
-
 
 #### 丝氨酸家族：刚猛的“180度翻转”
 
@@ -92,7 +91,7 @@
 
 <br/>
 <center>
-    <img src="https://i.imgur.com/z0Jq93f.png" alt="图4：[丝氨酸重组酶](@keyword=serine_recombinases|lang=zh-CN|style=Feynman)的“180度翻转”机制。四条链同时断裂后，一个二聚体（蓝色）相对于另一个（灰色）旋转180度，然后重新连接，一步完成重组。" style="width: 80%;" />
+
     <br/>
     <em>图4：[丝氨酸重组酶](@keyword=serine_recombinases|lang=zh-CN|style=Feynman)的“180度翻转”机制。四条链同时断裂后，一个二聚体（蓝色）相对于另一个（灰色）旋转180度，然后重新连接，一步完成重组。</em>
 </center>

@@ -1,6 +1,4 @@
-<![CDATA[
-## 引言
-优化是现代科学的引擎，但其最强大的工具——[梯度下降法](@keyword=steepest_descent|lang=zh-CN|style=Feynman)，在面对当今数据科学挑战中常见的[非光滑函数](@keyword=non_smooth_functions|lang=zh-CN|style=Feynman)的“尖锐边缘”时会失效。涉及[稀疏性](@keyword=sparsity|lang=zh-CN|style=Feynman)、约束或复杂结构先验的问题，例如 LASSO 中的 L1 范数，恰好在关键点上缺乏明确定义的梯度，这使得我们无法直接求解它们，从而产生了一个根本性的鸿沟。本文通过介绍[近端算法](@keyword=proximal_algorithms|lang=zh-CN|style=Feynman)来填补这一鸿沟，这是一个旨在“分而治之”这些困难优化问题的强大框架。在接下来的章节中，您将揭示这种方法的优雅机制。“原理与机制”部分将剖析其核心组成部分，介绍[近端算子](@keyword=proximal_operators|lang=zh-CN|style=Feynman)以及结合了梯度步和结构校正的前向后向[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)。随后的“应用与跨学科联系”部分将展示这一个简单的想法如何为从[医学成像](@keyword=medical_imaging|lang=zh-CN|style=Feynman)、天文学到工程设计乃至人工智能架构等领域带来革命性的进步。
+<，在面对当今数据科学挑战中常见的[非光滑函数](@keyword=non_smooth_functions|lang=zh-CN|style=Feynman)的“尖锐边缘”时会失效。涉及[稀疏性](@keyword=sparsity|lang=zh-CN|style=Feynman)、约束或复杂结构先验的问题，例如 LASSO 中的 L1 范数，恰好在关键点上缺乏明确定义的梯度，这使得我们无法直接求解它们，从而产生了一个根本性的鸿沟。本文通过介绍[近端算法](@keyword=proximal_algorithms|lang=zh-CN|style=Feynman)来填补这一鸿沟，这是一个旨在“分而治之”这些困难优化问题的强大框架。在接下来的章节中，您将揭示这种方法的优雅机制。“原理与机制”部分将剖析其核心组成部分，介绍[近端算子](@keyword=proximal_operators|lang=zh-CN|style=Feynman)以及结合了梯度步和结构校正的前向后向[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)。随后的“应用与跨学科联系”部分将展示这一个简单的想法如何为从[医学成像](@keyword=medical_imaging|lang=zh-CN|style=Feynman)、天文学到工程设计乃至人工智能架构等领域带来革命性的进步。
 
 ## 原理与机制
 

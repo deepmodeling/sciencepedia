@@ -21,7 +21,7 @@
 
 <br/>
 <center>
-<img src="https://i.imgur.com/gKjW2aJ.png" alt="Reaction coordinate diagrams for exothermic and endothermic reactions, illustrating the Hammond Postulate." width="700">
+
 </center>
 <br/>
 

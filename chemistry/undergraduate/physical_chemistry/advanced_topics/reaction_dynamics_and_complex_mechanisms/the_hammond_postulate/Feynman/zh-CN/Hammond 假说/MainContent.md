@@ -15,7 +15,7 @@
 
 <br/>
 <center>
-<img src="https://i.imgur.com/KzU5z5W.png" alt="Reaction coordinate diagrams for exothermic and endothermic reactions, illustrating the Hammond Postulate." width="700">
+
 <br/>
 <small>图1：放热反应（左）与[吸热反应](@keyword=endothermic_reaction|lang=zh-CN|style=Feynman)（右）的[反应坐标图](@keyword=reaction_coordinate_diagram|lang=zh-CN|style=Feynman)。哈蒙德假设指出，过渡态（山峰）在结构上更接近能量上离它最近的稳[定态](@keyword=stationary_state|lang=zh-CN|style=Feynman)（山谷）。</small>
 </center>

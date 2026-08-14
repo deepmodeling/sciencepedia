@@ -16,7 +16,7 @@
 
 <center>
     <figure>
-        <img src="https://d2j3s9v51z73bs.cloudfront.net/images/learning_materials/2982398_Clairaut_s_relation_on_a_surface_of_revolution/Clairaut_s_relation_on_a_surface_of_revolution.png" alt="Clairaut's relation on a surface of revolution" style="width: 70%;">
+
         <figcaption>图1：旋转[曲面上的[测地](@keyword=geodesics_on_a_surface|lang=zh-CN|style=Feynman)线](@article_id:315648)。由于[旋转对称](@keyword=rotational_symmetry|lang=zh-CN|style=Feynman)性（由[基灵矢量场](@keyword=killing_vector_fields|lang=zh-CN|style=Feynman) $\partial/\partial\theta$ 描述），乘积 $f(r)\sin\alpha$ 沿着路径保持恒定。</figcaption>
     </figure>
 </center>

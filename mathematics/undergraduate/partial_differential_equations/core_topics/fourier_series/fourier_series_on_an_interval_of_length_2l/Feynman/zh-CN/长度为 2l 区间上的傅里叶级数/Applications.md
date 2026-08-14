@@ -8,7 +8,7 @@
 
 例如，简单的信号波形，如某些[天线辐射方向图](@keyword=antenna_radiation_pattern|lang=zh-CN|style=Feynman)或信号脉冲中可能出现的抛物线形状 ($f(x) = L^2 - x^2$)，可以通过[傅里叶级数](@keyword=fourier_series|lang=zh-CN|style=Feynman)被精确地表示为一系列余弦[波的叠加](@keyword=wave_superposition|lang=zh-CN|style=Feynman) [@problem_id:2103880]。同样，在电子学和声学中无处不在的三角波，也可以被分解为一系列[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)的和 [@problem_id:2103887]。而在数字电子世界中，作为信息基本单元的方波或矩形脉冲，同样也能被拆解成无限个正弦和余弦分量 [@problem_id:2103905]。傅里叶级数，尤其是其优雅的复数形式，让我们能够看透这些波形的“内心”，看到它们是由哪些频率成分构成的。
 
-![一个周期性方波可以被分解为一系列[正弦波](@keyword=sinusoid|lang=zh-CN|style=Feynman)。随着谐波项的增加，合成波形越来越接近原始方波。](https://static.smart-study.com/media/2024/07/04/104358/8271708ac863be244d2d46e3dbe77e48.png)
+。随着谐波项的增加，合成波形越来越接近原始方波。](https://static.smart-study.com/media/2024/07/04/104358/8271708ac863be244d2d46e3dbe77e48.png)
 
 这一分解能力直接引出了信号处理的核心思想。如果我们想改变信号的“音色”或滤除噪声该怎么办？答案出奇地简单：只需调整[傅里叶级数](@keyword=fourier_series|lang=zh-CN|style=Feynman)中各个频率分量的系数即可！这便是滤波的本质。
 

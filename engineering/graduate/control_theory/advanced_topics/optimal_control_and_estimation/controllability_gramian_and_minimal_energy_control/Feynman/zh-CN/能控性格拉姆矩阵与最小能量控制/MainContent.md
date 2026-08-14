@@ -53,7 +53,7 @@ $$
 
 <center>
 <figure>
-  <img src="https://i.imgur.com/uGzHqB2.png" alt="An illustration of the reachable set as an ellipsoid defined by the controllability Gramian. The eigenvectors of the Gramian are the principal axes. A large eigenvalue corresponds to an 'easy to control' direction, while a small eigenvalue corresponds to a 'hard to control' direction." style="width: 70%;">
+
   <figcaption>图1：[可达集](@keyword=reachable_set|lang=zh-CN|style=Feynman)[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)。[可控性](@keyword=controllability|lang=zh-CN|style=Feynman)格兰姆[矩阵](@keyword=matrix|lang=zh-CN|style=Feynman) $W_c(T)$ 的[特征向量](@keyword=eigenvector|lang=zh-CN|style=Feynman)定义了[椭球](@keyword=ellipsoid|lang=zh-CN|style=Feynman)的[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)方向，而[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)的大小则决定了在这些方向上能达到的“远近”。小[特征值](@keyword=eigenvalue|lang=zh-CN|style=Feynman)对应的方向难以抵达，需要消耗巨大能量。</figcaption>
 </figure>
 </center>

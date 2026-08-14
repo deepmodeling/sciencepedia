@@ -16,8 +16,6 @@
 
 对自旋的精确操控，还催生了人类最精准的计时工具。在**[原子钟](@keyword=atomic_clocks|lang=zh-CN|style=Feynman)**和**[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)**中，研究人员使用类似MRI中的射频脉冲序列，例如**[拉姆齐干涉法](@keyword=ramsey_interferometry|lang=zh-CN|style=Feynman)**[@problem_id:2025096]，来操控单个原子的自旋状态。通过一个“脉冲-等待-脉冲”的序列，我们可以极其精确地测量自旋在自由演化期间积累的相位。这个相位就像时钟的指针，它的每一次“滴答”都来自于原子[自旋稳定](@keyword=spin_stabilization|lang=zh-CN|style=Feynman)而普适的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。正是基于对这种量子节拍的精确测量，我们才得以定义国际标准时间。同时，自旋的向上和向下状态，也构成了[量子计算](@keyword=quantum_computation|lang=zh-CN|style=Feynman)机的基本单元——**[量子比特](@keyword=qubit|lang=zh-CN|style=Feynman)（qubit）**[@problem_id:2025112]，所有量子算法的奇迹都建立在对这些[量子比特](@keyword=qubit|lang=zh-CN|style=Feynman)的精确操控之上。
 
-![A diagram illustrating the basic principle of Ramsey interferometry.](https://static.compuai.com/static/images/course/2025/03/f303798af9ddb38580482209778e88e8.png)
-
 ### 宇宙与物质的合唱：从[化学键](@keyword=chemical_bond|lang=zh-CN|style=Feynman)到星系图
 
 自旋的影响力远远超出了实验室的磁铁和精密仪器。它在物质的基本构成和宇宙的宏大结构中，都扮演着核心角色。

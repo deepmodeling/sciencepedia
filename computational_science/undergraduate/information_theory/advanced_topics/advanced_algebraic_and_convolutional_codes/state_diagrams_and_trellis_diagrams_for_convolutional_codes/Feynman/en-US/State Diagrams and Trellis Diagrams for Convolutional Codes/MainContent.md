@@ -28,7 +28,7 @@ Each path on this map takes us from a *current state* to a *next state*. But it 
 This compact diagram is a complete blueprint of the encoder’s behavior. It's time-invariant; the rules don't change whether it's the 5th bit or the 5 millionth bit of your message.
 
 <center>
-<img src="https://i.imgur.com/example-state-diagram.png" alt="A simple [state diagram](@keyword=state_diagram|lang=en-US|style=Feynman) with four states (S0, S1, S2, S3) and transitions labeled with input/output." width="450"/>
+
 </center>
 <div align="center"><i>A typical [state diagram](@keyword=state_diagram|lang=en-US|style=Feynman) for an encoder with four states ($m=2$). Every state has two outgoing branches, one for input '0' (solid line) and one for input '1' (dashed line).</i></div>
 
@@ -58,7 +58,7 @@ The [state diagram](@keyword=state_diagram|lang=en-US|style=Feynman) is a perfec
 Imagine taking the [state diagram](@keyword=state_diagram|lang=en-US|style=Feynman) and cloning it at each moment in time. The states are drawn in a column at time $t=0$, then again at $t=1$, $t=2$, and so on. The transition paths now connect states from one time step to the next. The structure of connections between any two adjacent time columns, say from $t$ to $t+1$, is *structurally identical* to the original [state diagram](@keyword=state_diagram|lang=en-US|style=Feynman) [@problem_id:1660275]. The trellis is simply the [state diagram](@keyword=state_diagram|lang=en-US|style=Feynman)'s life story playing out over time.
 
 <center>
-<img src="https://i.imgur.com/example-trellis.png" alt="A [trellis diagram](@keyword=trellis_diagram|lang=en-US|style=Feynman) showing states evolving over three time steps." width="600"/>
+
 </center>
 <div align="center"><i>A [trellis diagram](@keyword=trellis_diagram|lang=en-US|style=Feynman) unrolls the [state diagram](@keyword=state_diagram|lang=en-US|style=Feynman) over time. An input sequence, like `101`, carves a unique path through the trellis.</i></div>
 

@@ -30,7 +30,7 @@ $$
 想象一个[胶子](@keyword=gluons|lang=zh-CN|style=Feynman)在空间中传播。由于它自己也带着[色荷](@keyword=color_charge|lang=zh-CN|style=Feynman)，它可以“凭空”分裂成两个新的胶子，这两个[胶子](@keyword=gluons|lang=zh-CN|style=Feynman)随后又可以重新合并成一个。这个过程无时无刻不在发生，使得一个胶子周围总是环绕着一团不断生灭的虚拟胶子云。
 
 <center>
-<img src="https://i.imgur.com/Gj0Uq27.png" width="250">
+
 <br>
 <small>一个[胶子](@keyword=gluons|lang=zh-CN|style=Feynman)（波浪线）在传播过程中分裂为两个虚拟[胶子](@keyword=gluons|lang=zh-CN|style=Feynman)再重新合并，这是胶子[自能](@keyword=self_energy|lang=zh-CN|style=Feynman)图的一部分。</small>
 </center>
@@ -48,7 +48,7 @@ $$
 然而，更精彩的还在后面。考虑一个正反夸克对湮灭并产生两个[胶子](@keyword=gluons|lang=zh-CN|style=Feynman)的过程 $q\bar{q} \to gg$。在最简单的图景中，我们可以画出两个“[费曼图](@keyword=feynman_diagrams|lang=zh-CN|style=Feynman)”，分别代表夸克通过交换一个虚拟夸克来实现这一过程。但是，如果我们只计算这两个图，然后用[胶子](@keyword=gluons|lang=zh-CN|style=Feynman)动量替换其[极化矢量](@keyword=polarization_vector|lang=zh-CN|style=Feynman)，我们得到的结果并不为零！这似乎违反了规范不变性这一神圣的法则。
 
 <center>
-<img src="https://i.imgur.com/Gj0Uq27.png" width="400">
+
 <br>
 <small>在夸克-反夸克湮灭为两个[胶子](@keyword=gluons|lang=zh-CN|style=Feynman)的过程中，前两个（t-道和[u-道](@keyword=u_channel|lang=zh-CN|style=Feynman)）图本身不满足[规范不变性](@keyword=gauge_invariance|lang=zh-CN|style=Feynman)。必须引入第三个包含三[胶子](@keyword=gluons|lang=zh-CN|style=Feynman)顶角的图（s-道），才能使总振幅满足规范不变性。</small>
 </center>

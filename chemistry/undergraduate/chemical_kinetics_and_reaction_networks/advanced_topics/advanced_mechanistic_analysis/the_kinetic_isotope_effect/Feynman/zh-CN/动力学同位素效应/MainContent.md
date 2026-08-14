@@ -35,7 +35,7 @@ $$ E_0 = \frac{1}{2}h\nu $$
 
 <br>
 <div align="center">
-    <img src="https://i.imgur.com/E8l2d9F.png" alt="Reaction coordinate diagram illustrating the Kinetic Isotope Effect." width="600">
+
     <p>图1：[动力学同位素效应](@keyword=kinetic_isotope_effect|lang=zh-CN|style=Feynman)的[反应坐标图](@keyword=reaction_coordinate_diagram|lang=zh-CN|style=Feynman)。由于[零点能](@keyword=zero_point_energy|lang=zh-CN|style=Feynman)不同，C-H 键的[活化能](@keyword=activation_energy|lang=zh-CN|style=Feynman) ($E_{a,H}$) 低于 C-D 键的[活化能](@keyword=activation_energy|lang=zh-CN|style=Feynman) ($E_{a,D}$)。</p>
 </div>
 <br>
@@ -89,7 +89,7 @@ KIE 的美妙之处在于，它的大小不仅仅是一个数字，它是一条�
 
 <br>
 <div align="center">
-    <img src="https://i.imgur.com/k28bU0f.png" alt="Arrhenius plot showing curvature due to quantum tunneling." width="600">
+
     <p>图2：隧穿效应的迹象。在低温下（$1/T$ 值较大），实验数据（红线）偏离了基于经典模型的[线性预测](@keyword=linear_prediction|lang=zh-CN|style=Feynman)（虚线），显示出向上的弯曲，表明 KIE 异常增大。</p>
 </div>
 <br>

@@ -20,7 +20,7 @@ To make this idea of sublattices concrete, let's look at a couple of classic blu
 Consider the **[body-centered cubic (bcc)](@keyword=body_centered_cubic_(bcc)|lang=en-US|style=Feynman)** lattice, familiar from elements like iron, where atoms sit at the corners and the center of a cube. If we mix atoms $A$ and $B$ randomly on this lattice, we get a disordered bcc [solid solution](@keyword=solid_solution|lang=en-US|style=Feynman). But what if we impose order? If all the $A$ atoms occupy the corner sites and all the $B$ atoms occupy the body-center sites, we create the beautiful and highly symmetric **B2 structure** (also known as the [cesium chloride](@keyword=cesium_chloride|lang=en-US|style=Feynman) type). Each atom is now surrounded by eight neighbors of the opposite kind. While the atom positions are a subset of the [bcc lattice](@keyword=bcc_lattice|lang=en-US|style=Feynman), the chemical ordering means the structure's true translational symmetry is simpler—that of a primitive cube with a two-atom ($A$ at $(0,0,0)$ and $B$ at $(\frac{1}{2}, \frac{1}{2}, \frac{1}{2})$) basis [@problem_id:2493925].
 
 <center>
-<img src="https" width="600" alt="Diagram showing a disordered [bcc lattice](@keyword=bcc_lattice|lang=en-US|style=Feynman) with random atoms transforming into an ordered B2 lattice with one type of atom at the corners and another at the center.">
+
 *Figure 1: The transition from a disordered [body-centered cubic (bcc)](@keyword=body_centered_cubic_(bcc)|lang=en-US|style=Feynman) [solid solution](@keyword=solid_solution|lang=en-US|style=Feynman) to the ordered B2 structure. The underlying lattice points are the same, but the chemical identity of the atoms becomes ordered onto two distinct sublattices.*
 </center>
 
@@ -51,7 +51,7 @@ So far, our ordering principles have been based on assigning different atoms to 
 These are the **Frank-Kasper phases**, a family of complex but fascinating intermetallic structures. One of the most common is the **C15 Laves phase**, with a [stoichiometry](@keyword=stoichiometry|lang=en-US|style=Feynman) of $AB_2$. These phases form when the radius ratio of the components is just right, ideally when $r_A/r_B \approx \sqrt{3/2} \approx 1.225$ [@problem_id:2493975].
 
 <center>
-<img src="https" width="600" alt="Diagram illustrating the C15 Laves phase structure, highlighting the different [coordination polyhedra](@keyword=coordination_polyhedra|lang=en-US|style=Feynman) around the larger A atoms and smaller B atoms.">
+
 *Figure 2: The complex C15 Laves structure, an example of a Frank-Kasper phase. Stability is dictated not by a simple sublattice decoration, but by the efficient geometric packing of two different-sized atoms into a tetrahedrally-coordinated network.*
 </center>
 

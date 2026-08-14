@@ -16,7 +16,7 @@
 为了精确量化这一点，数学家引入了一个叫做**高斯曲率**（Gaussian curvature），记为 $K$ 的概念。在一个像球面那样所有方向都“同向”弯曲的点，高斯曲率为正。在一个像马鞍那样在不同方向上“反向”弯曲的点，[高斯曲率](@keyword=gaussian_curvature|lang=zh-CN|style=Feynman)为负。而对于一个圆柱面，沿着它的轴线方向是平直的（曲率为零），所以它的[高斯曲率](@keyword=gaussian_curvature|lang=zh-CN|style=Feynman)处处为零。一个甜甜圈（环面）是一个绝佳的例子 [@problem_id:2916879]：它的外圈像球面，拥有正的[高斯曲率](@keyword=gaussian_curvature|lang=zh-CN|style=Feynman)；而它的内圈则像马鞍，拥有负的高斯曲率。
 
 <center>
-<img src="https://i.imgur.com/k6lP09L.png" width="600">
+
 *图1：环面（Torus）上不同点的高斯曲率。外圈（红色）为正，内圈（蓝色）为负，顶/底圈（绿色）为零。*
 </center>
 

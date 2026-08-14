@@ -31,7 +31,7 @@ $$ |(ab)_e, c; d\rangle = \sum_{f} [F^{abc}_d]_{ef} |a, (bc)_f; d\rangle $$
 
 <br/>
 <center>
-<img src="https://i.imgur.com/xT5033W.png" width="500"/>
+
 <br/>
 图1：[五边形恒等式](@keyword=pentagon_identity|lang=zh-CN|style=Feynman)的图示。它保证了对四个粒子进行重新组合的两种不同路径是[等价](@keyword=biconditional|lang=zh-CN|style=Feynman)的。每条边代表一步F-变换。
 </center>
@@ -53,7 +53,7 @@ $$ |(ab)_e, c; d\rangle = \sum_{f} [F^{abc}_d]_{ef} |a, (bc)_f; d\rangle $$
 
 <br/>
 <center>
-<img src="https://i.imgur.com/qUeP1rD.png" width="700"/>
+
 <br/>
 图2：[六边形恒等式](@keyword=hexagon_identity|lang=zh-CN|style=Feynman)的图示。它保证了编织与融合操作的兼容性。
 </center>

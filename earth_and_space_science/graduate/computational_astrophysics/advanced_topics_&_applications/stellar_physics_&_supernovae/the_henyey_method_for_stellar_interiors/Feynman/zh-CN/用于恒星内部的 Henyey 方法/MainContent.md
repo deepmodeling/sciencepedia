@@ -67,8 +67,6 @@ $$ \frac{y_{i} - y_{i-1}}{m_i - m_{i-1}} \approx f\left(\frac{y_i+y_{i-1}}{2}, \
 
 由于我们采用了“洋葱切片”式的离散化，第 $i$ 个壳层的物理状态只直接依赖于它的近邻，即第 $i-1$ 和第 $i+1$ 个壳层。这意味着，在巨大的[雅可比矩阵](@keyword=jacobian|lang=zh-CN|style=Feynman)中，绝大多数元素都是零！非零元素仅仅集中在主对角线和紧邻主对角线的两条次对角线上。这种结构被称为**块三对角**（block-tridiagonal）结构 [@problem_id:3540510] [@problem_id:3540573]。
 
-![Block tridiagonal matrix structure. Non-zero elements (blocks) are only on the main diagonal, and the diagonals immediately above and below it.](https://i.imgur.com/e8pU4i4.png)
-
 这种[稀疏结构](@keyword=sparsity_structure|lang=zh-CN|style=Feynman)是[Henyey方法](@keyword=henyey_method|lang=zh-CN|style=Feynman)计算效率的基石。它允许我们使用极其高效的线性代数算法（如块[托马斯算法](@keyword=tridiagonal_matrix_algorithm|lang=zh-CN|style=Feynman)）来求解修正步骤，而不是陷入对一个巨大[稠密矩阵](@keyword=dense_matrix|lang=zh-CN|style=Feynman)的蛮力求解中 [@problem_id:3540578]。这种结构之美，正是物理的局域性在数学上的直接体现。
 
 #### 雅可比矩阵中的微观物理

@@ -31,7 +31,7 @@
 在**[逆流](@keyword=counterflow|lang=zh-CN|style=Feynman)**[换热器](@keyword=heat_exchanger|lang=zh-CN|style=Feynman)中，情况则大不相同。[热流](@keyword=heat_flow|lang=zh-CN|style=Feynman)体和冷流体从相反的两端进入。想象两位舞者从舞台的两端出发，相向而行，擦肩而过后各自走向对方的起点。[热流](@keyword=heat_flow|lang=zh-CN|style=Feynman)体在前进过程中不断冷却，但它遇到的总是越来越“冷”的冷流体（因为冷流体是刚进入的）。反之亦然。这种流动方式使得整个[换热器](@keyword=heat_exchanger|lang=zh-CN|style=Feynman)内的温[差分](@keyword=finite_difference|lang=zh-CN|style=Feynman)布可以更加均匀。
 
 <center>
-  <img src="https://i.imgur.com/kS9F0aE.png" width="700" alt="Temperature profiles for parallel-flow and counter-flow heat exchangers.">
+
   <br>
   <small>图1：[平行流](@keyword=parallel_flows|lang=zh-CN|style=Feynman)（左）与[逆流](@keyword=counterflow|lang=zh-CN|style=Feynman)（右）[换热器](@keyword=heat_exchanger|lang=zh-CN|style=Feynman)中的典型温[度分布](@keyword=degree_distribution|lang=zh-CN|style=Feynman)。在[平行流](@keyword=parallel_flows|lang=zh-CN|style=Feynman)中，温差急剧减小。在[逆流](@keyword=counterflow|lang=zh-CN|style=Feynman)中，温差可以保持得更为均匀。</small>
 </center>

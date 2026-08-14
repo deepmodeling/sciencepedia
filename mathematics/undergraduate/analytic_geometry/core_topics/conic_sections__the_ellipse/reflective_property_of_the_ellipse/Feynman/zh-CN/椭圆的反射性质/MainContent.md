@@ -24,7 +24,7 @@ $$|F_1P| + |PF_2| = 2a$$
 要回答这个问题，我们需要在反射点 $P$ 处进行局部放大。想象在 $P$ 点有一面极小的镜子，它与椭圆曲线在该点相切。从焦点 $F_1$ 射来的光线是“入射光”，而射向焦点 $F_2$ 的光线是“反射光”。根据[反射定律](@keyword=law_of_reflection|lang=zh-CN|style=Feynman)，入射光与反射光必须与[法线](@keyword=normal_line|lang=zh-CN|style=Feynman)（垂直于切线的直线）夹角相等。这反过来等价于说，入射光线 $F_1P$ 和反射光线 $PF_2$ 与切线本身所成的角度是相等的。
 
 <center>
-<img src="https://i.imgur.com/G5g2mJc.png" width="500" alt="The reflective property of an ellipse. The normal line at P bisects the angle F₁PF₂.">
+
 </center>
 <div style="text-align: center; font-size: 0.9em; margin-top: -10px;">图1：椭圆的反射特性。在任意点 $P$，$F_1P$ 和 $F_2P$  与该点的切线夹角相等。因此，垂直于切线的[法线](@keyword=normal_line|lang=zh-CN|style=Feynman)平分角 $\angle F_1PF_2$。</div>
 

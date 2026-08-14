@@ -46,7 +46,7 @@
 最终得到的，就是[偏序集](@keyword=partially_ordered_sets|lang=zh-CN|style=Feynman)的“骨架”。例如，考虑两个简单的序集 $A=\{0, 1\}$ 和 $B=\{0, 1, 2\}$，它们都使用普通的 $\le$ 关系。我们可以在它们的[笛卡尔积](@keyword=cartesian_product|lang=zh-CN|style=Feynman) $A \times B$ 上定义一个**积序**：$(a_1, b_1) \preceq (a_2, b_2)$ 当且仅当 $a_1 \le a_2$ 并且 $b_1 \le b_2$。这个新偏序集的哈斯图是一个漂亮的二维网格，就像一个被拉伸的棋盘 [@problem_id:1389210]。
 
 <center>
-<img src="https://i.imgur.com/8QzXkOQ.png" alt="Hasse diagram for product order" width="250">
+
 </center>
 <center>积序 $\{0, 1\} \times \{0, 1, 2\}$ 的哈斯图</center>
 

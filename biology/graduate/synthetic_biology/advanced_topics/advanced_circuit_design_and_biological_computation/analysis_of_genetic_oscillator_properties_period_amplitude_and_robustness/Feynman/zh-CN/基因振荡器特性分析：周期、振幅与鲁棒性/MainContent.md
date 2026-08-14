@@ -27,8 +27,6 @@ $$
 
 我们通常用一个叫做“[希尔函数](@keyword=hill_function|lang=zh-CN|style=Feynman) (Hill function)”的数学形式来描述这种开关式的调控，其中的“[希尔系数](@keyword=hill_coefficient|lang=zh-CN|style=Feynman)” $n$ 量化了这种非线性的陡峭程度。当 $n=1$ 时，反应是平缓的；但当 $n$ 很大时（例如，$n=8$ 或更高），调控曲线就变得像一个数字开关：在某个蛋白质浓度阈值之下，基因是“开”的；一旦超过这个阈值，基因就突然被“关”了 [@problem_id:2714232]。
 
-![Hill Function](https://latex.codecogs.com/svg.latex?%5Cfrac%7Bk%7D%7B1%2Bz%5En%7D)
-
 为什么这种开关般的行为如此重要？因为它极大地增强了反馈的“力量”。一个平缓的反馈可能不足以引起剧烈的过冲，但一个陡峭的开关式反馈，结合[时间延迟](@keyword=time_lag|lang=zh-CN|style=Feynman)，[几乎必然](@keyword=almost_surely|lang=zh-CN|style=Feynman)会导致系统在“全开”和“全关”状态之间剧烈摆动。事实上，对于许多理论模型，比如一个三基因组成的[环形振荡器](@keyword=ring_oscillator|lang=zh-CN|style=Feynman)（类似于著名的“repressilator”），我们可以精确地证明，只有当[希尔系数](@keyword=hill_coefficient|lang=zh-CN|style=Feynman) $n$ 超过一个特定的临界值（在这个模型中是 $n>2$），系统才可能产生持续的[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)。低于这个非线性阈值，无论其他参数如何，系统最终都会稳定在一个固定的状态 [@problem_id:2714232]。
 
 所以，现在我们凑齐了三位一体：一个**负反馈**回路，确保系统不会失控；一个足够长的**[时间延迟](@keyword=time_lag|lang=zh-CN|style=Feynman)**，导致系统反应滞后，产生过冲；以及一个足够强的**非线性**（通常是开关般的协同调控），来放大这些过冲，驱动系统在不同状态间持续摆动 [@problem-id:2714265]。缺少任何一个要素，这个分子时钟的齿轮就无法啮合。

@@ -33,7 +33,7 @@
 这三部分合起来，形成一个漂亮的“L”形。例如，在分拆 $\lambda = (5, 4, 2, 1)$ 的[杨图](@keyword=young_diagrams|lang=zh-CN|style=Feynman)中，对于方格 $(2, 2)$，它的臂包含它右边的方格 $(2, 3)$ 和 $(2, 4)$，它的腿包含它下面的方格 $(3, 2)$。因此，它的钩就由 $\\{(2, 2), (2, 3), (2, 4), (3, 2)\\}$ 这些方格组成。
 
 <center>
-<img src="https://i.imgur.com/rN9kG0K.png" width="300"/>
+
 <br>
 <small>图1：分拆 $\lambda=(5,4,2,1)$ 中方格 $(2,2)$ 的钩（红色部分）。</small>
 </center>
@@ -102,7 +102,7 @@ $$\prod_{i=1}^n (n-i+1) = n \times (n-1) \times \dots \times 1 = n!$$
 我们的探索还有更深一层。如果我们把一个[杨图](@keyword=young_diagrams|lang=zh-CN|style=Feynman)沿着主对角线（从左上到右下）翻转，我们会得到一个新的[杨图](@keyword=young_diagrams|lang=zh-CN|style=Feynman)，它对应一个新的分拆，称为原分拆的**[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)分拆**，记为 $\lambda'$。例如，分拆 $(4,2,1)$ 的[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)分拆是 $(3,2,1,1)$。
 
 <center>
-<img src="https://i.imgur.com/K72QOAp.png" width="400"/>
+
 <br>
 <small>图2：分拆 $\lambda=(4,2,1)$ 和其[共轭](@keyword=conjugacy|lang=zh-CN|style=Feynman)分拆 $\lambda'=(3,2,1,1)$。</small>
 </center>

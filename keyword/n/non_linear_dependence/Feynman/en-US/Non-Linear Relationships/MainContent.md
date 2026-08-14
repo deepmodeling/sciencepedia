@@ -39,8 +39,6 @@ Based on these numbers, you would conclude that the four datasets tell the same 
 
 Then you plot them.
 
-![Anscombe's Quartet](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Anscombe%27s_quartet_3.svg/600px-Anscombe%27s_quartet_3.svg.png)
-
 The first plot (top left) looks just as you'd expect: a noisy but clear linear trend. The correlation of $0.82$ and the regression line make perfect sense here. The second plot (top right), however, is a perfect, smooth curve—a parabola. There's no hint of linearity. The third plot (bottom left) shows a perfect straight line, but with one glaring outlier that has dragged the regression line and the correlation coefficient off course. And the fourth plot (bottom right) is even stranger: all but one of the points are clustered at the same $x$ value, with a single [influential outlier](@keyword=influential_outlier|lang=en-US|style=Feynman) defining the entire trend.
 
 Anscombe's Quartet teaches us the most important lesson in data analysis: **Always, always visualize your data.** Summary statistics, on their own, are like reading a book's table of contents and thinking you've understood the novel. They can be profoundly misleading, hiding non-linearity, [outliers](@keyword=outliers|lang=en-US|style=Feynman), and all sorts of other interesting features that define the true character of the relationship. The world is full of these complex stories, like the number of baby teeth a child has, which first increases, then plateaus for a few years, then decreases—a pattern no single straight line could ever hope to capture [@problem_id:1953480].

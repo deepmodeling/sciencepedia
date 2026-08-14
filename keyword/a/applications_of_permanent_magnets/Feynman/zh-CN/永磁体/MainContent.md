@@ -5,8 +5,6 @@
 
 随后的**“应用与跨学科联系”**一章将展示这些原理如何转化为现实世界的技术。我们将看到，硬磁体“固执”的记忆对于从指南针、[数据存储](@keyword=data_storage|lang=zh-CN|style=Feynman)到强大的电动机等一切都至关重要，而软磁体“健忘”的特性对于高效的电网又是何等关键。这一探索还将涉足跨学科的前沿领域，包括纳米颗粒的医学应用以及对动物磁感应的有趣研究。
 
-![A general hysteresis loop showing remanence (Br) and coercivity (Hc).](https://i.imgur.com/uG9Z4i2.png)
-
 ## 原理与机制
 
 想象一下，你是一名星探，但你寻找的不是运动员或艺术家，而是能成为下一代卓越磁体的材料。你会寻找哪些品质呢？有些材料在暴露于[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)时会自身磁化，但一旦外部[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)消失，它们就会立刻忘记自己的磁性。它们就像易受影响的追随者，容易动摇，但自身缺乏任何信念。而另一些材料，一旦被磁化，便能以惊人的韧性保持其磁力。这些正是我们为[永磁体](@keyword=permanent_magnets|lang=zh-CN|style=Feynman)所寻找的材料——磁学世界中固执而坚定的冠军。

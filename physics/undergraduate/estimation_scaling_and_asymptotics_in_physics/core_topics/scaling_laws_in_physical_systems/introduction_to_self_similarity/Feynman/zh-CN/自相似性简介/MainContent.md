@@ -14,7 +14,7 @@
 这只是第一步。真正神奇的地方在于**迭代**。现在，我们对这五个新的、更小的线段中的每一个都重复刚才的规则。然后再对生成的所有更小的线段重复这个过程，一遍又一遍，永无止境。这个过程就像一个指令被无限[递归](@keyword=recursion|lang=zh-CN|style=Feynman)调用，从一条简单的直线中，生长出了一段无限精细、无限曲折的曲线 ([@problem_id:1909268])。
 
 <center>
-  <img src="https://i.imgur.com/Wk23M1E.png" alt="Koch-like curve construction" width="600">
+
   <br>
   <small>图1：从一条直线段开始，通过简单的迭代规则生成复杂的“城墙”曲线。</small>
 </center>

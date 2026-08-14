@@ -29,7 +29,7 @@
 
 由于项 $(x-3)^2$ 是一个平方，它的值永远不会是负数；它总是大于或等于零。这意味着 $k(x)$ 能取到的最小值是 $0 + 3 = 3$，这在 $x=3$ 时发生。对于任何其他的 $x$，其值都大于 3。该函数的图像是一条开口向上、顶点在 $(3, 3)$ 的抛物线。值域——所有实际输出值的集合——是区间 $[3, \infty)$。但[陪域](@keyword=codomain|lang=zh-CN|style=Feynman)是整个 $\mathbb{R}$。无论我们选择什么输入 $x$，我们永远无法得到 2、0 或 -10 这样的输出。在值域和陪域之间存在一个间隙。[@problem_id:1297648] 这个函数不是[满射](@keyword=surjection|lang=zh-CN|style=Feynman)的。
 
-![函数 k(x)=(x-3)^2+3 的图像，显示了定义域 R、[陪域](@keyword=codomain|lang=zh-CN|style=Feynman) R 和值域 [3, infinity)。值域是陪域的一个[真子集](@keyword=proper_subset|lang=zh-CN|style=Feynman)。](https://i.imgur.com/example.png)
+ R 和值域 [3, infinity)。值域是陪域的一个[真子集](@keyword=proper_subset|lang=zh-CN|style=Feynman)。](https://i.imgur.com/example.png)
 
 这与像 $f(x) = x^3 - 2x$ 这样的函数形成鲜明对比。这个三次多项式从负无穷延伸到正无穷。对于你能想到的任何实数 $y$，总存在某个实数 $x$ 使得 $f(x)=y$。它的值域是 $\mathbb{R}$，与其陪域相等。这个函数是满射的。
 

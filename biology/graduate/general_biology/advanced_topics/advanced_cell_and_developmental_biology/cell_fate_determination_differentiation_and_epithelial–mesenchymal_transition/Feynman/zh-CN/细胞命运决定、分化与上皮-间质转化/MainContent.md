@@ -30,7 +30,7 @@
 想象一个从高处延伸下来的、布满沟壑和山谷的斜坡。一个弹珠从山顶（代表着高潜能的初始细胞，如胚胎干细胞）滚落。随着它向下滚动，它会进入不同的岔路和山谷。每一个山谷的底部，都代表着一种最终的、分化了的细胞命运。山谷越深，代表着这个命运越稳定，弹珠越难从中逃逸。[@problem_id:2782450]
 
 <center>
-    <img src="https://i.imgur.com/G5qWtmc.png" alt="Waddington's Epigenetic Landscape" width="600"/>
+
     <br>
     <small>瓦丁顿景观：一个细胞（弹珠）从高潜能状态滚落，进入不同的山谷（细胞命运）。</small>
 </center>
@@ -56,7 +56,7 @@
 想象两个基因 $x$ 和 $y$，它们互相抑制对方的表达。$x$ 的产量越高，对 $y$ 的抑制就越强；反之亦然。这种简单的“你死我活”的结构，被称为“[拨动开关](@keyword=toggle_switch|lang=zh-CN|style=Feynman)”或“双[负反馈](@keyword=negative_feedback|lang=zh-CN|style=Feynman)环”。[@problem_id:2782413]
 
 <center>
-    <img src="https://i.imgur.com/Ceh99bH.png" alt="Toggle Switch" width="400"/>
+
 </center>
 
 它的动力学行为可以用一对简单的方程来描述：

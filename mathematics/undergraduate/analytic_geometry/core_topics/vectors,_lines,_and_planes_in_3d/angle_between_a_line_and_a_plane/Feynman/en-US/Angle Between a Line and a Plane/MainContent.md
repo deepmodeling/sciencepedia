@@ -16,7 +16,7 @@ Every flat surface, or **plane**, has a defining characteristic: a direction tha
 Now, let's go back to our flying spear. Its path is a straight line, which also has a direction, represented by a **[direction vector](@keyword=direction_vector|lang=en-US|style=Feynman)**, $\vec{d}$. The real angle we want, let's call it $\phi$, is the one between the spear's path and the ground. But instead of measuring $\phi$, let's consider the angle between the spear's [direction vector](@keyword=direction_vector|lang=en-US|style=Feynman) $\vec{d}$ and the flagpole's direction—the [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman) $\vec{n}$. Let's call this second angle $\theta$.
 
 <center>
-<img src="https://i.imgur.com/g88R4tQ.png" width="450">
+
 </center>
 
 Look at the geometry. The [normal vector](@keyword=normal_vector|lang=en-US|style=Feynman) $\vec{n}$ is perpendicular to the plane, forming a $90$-degree angle with any line drawn on that plane, including the spear's "shadow." You can see that the angle between the spear and the normal ($\theta$) and the angle between the spear and the plane ($\phi$) must add up to $90$ degrees. They are **complementary angles**:

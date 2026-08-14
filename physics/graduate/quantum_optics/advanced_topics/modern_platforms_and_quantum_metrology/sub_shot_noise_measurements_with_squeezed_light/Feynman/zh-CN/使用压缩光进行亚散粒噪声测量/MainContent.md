@@ -20,7 +20,7 @@ $$
 对于我们所说的真空态，大自然做出了最“公平”的选择：它将不确定性均匀地分配给所有可能的[正交](@keyword=quadrature|lang=zh-CN|style=Feynman)分量。无论你从哪个“角度”去观察，涨落的大小都是一样的。如果我们把 $\hat{X}$ 和 $\hat{P}$ 作为坐标轴画一个[相空间](@keyword=phase_space|lang=zh-CN|style=Feynman)图，真空态的不确定性区域就像一个完美的圆形“绒球”（fuzzball）。这个圆形绒球的半径，就代表了所谓的“[散粒噪声](@keyword=shot_noise|lang=zh-CN|style=Feynman)”（shot noise）或“[标准量子极限](@keyword=standard_quantum_limit|lang=zh-CN|style=Feynman)”（Standard Quantum Limit, SQL）。它源于光是由[不连续](@keyword=discontinuity|lang=zh-CN|style=Feynman)的[光子](@keyword=photons|lang=zh-CN|style=Feynman)组成的这一基本事实，是经典测量方法无法逾越的噪声屏障。
 
 <center>
-<img src="https://i.imgur.com/your-image-link-for-vacuum-state.png" width="400" alt="Phase space representation of a vacuum state, showing a circular uncertainty region."/>
+
 </center>
 <div style="text-align: center; font-style: italic;">图1：真空态在[相空间](@keyword=phase_space|lang=zh-CN|style=Feynman)中的不确定性区域，如同一个圆形的“绒球”，其半径代表了[标准量子极限](@keyword=standard_quantum_limit|lang=zh-CN|style=Feynman)。</div>
 
@@ -31,7 +31,7 @@ $$
 这就是“[压缩光](@keyword=squeezed_light|lang=zh-CN|style=Feynman)”思想的精髓。想象一下，你用双手去挤压这个圆形的绒球，把它在一个方向上压扁。为了保持（或大于）原有的“体积”（[不确定性原理](@keyword=uncertainty_principle|lang=zh-CN|style=Feynman)的要求），绒球在与挤压方向垂直的方向上必然会相应地膨胀。最终，这个圆形的绒ball变成了一个[椭圆](@keyword=ellipse|lang=zh-CN|style=Feynman)。
 
 <center>
-<img src="https://i.imgur.com/your-image-link-for-squeezed-state.png" width="400" alt="Phase space representation of a squeezed state, showing an elliptical uncertainty region."/>
+
 </center>
 <div style="text-align: center; font-style: italic;">图2：[压缩态](@keyword=squeezed_states|lang=zh-CN|style=Feynman)的[相空间](@keyword=phase_space|lang=zh-CN|style=Feynman)表示。不确定性区域被“挤压”成[椭圆](@keyword=ellipse|lang=zh-CN|style=Feynman)形，一个[正交](@keyword=quadrature|lang=zh-CN|style=Feynman)分量的涨落减小，而其[共轭](@keyword=resonance|lang=zh-CN|style=Feynman)[正交](@keyword=quadrature|lang=zh-CN|style=Feynman)分量的涨落增大。</div>
 

@@ -16,7 +16,7 @@
 你的第一反应可能是“没有”。在你的[局部坐标](@keyword=local_coordinates|lang=zh-CN|style=Feynman)系里，它一直指向“东方”。但让我们从太空中俯瞰这个冰球。赤道上的“东方”指向一个方向，而靠近北极的“东方”则指向一个完全不同的三维空间方向！尽管在你的[局部坐标](@keyword=local_coordinates|lang=zh-CN|style=Feynman)纸上，这个矢量分量没变，但矢量本身确确实实地转动了。
 
 <center>
-  <img src="https://i.imgur.com/kH10E7y.png" width="500">
+
   <br>
   <small>图1：在球面上，沿着经线从A点移动到B点，“向东”的矢量方向在三维空间中发生了改变。</small>
 </center>

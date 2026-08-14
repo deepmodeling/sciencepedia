@@ -22,7 +22,7 @@
 
 <br>
 <center>
-    <img src="https://dims.phys.libretexts.org/@api/deki/files/9017/12.3.1_Stress-Strain_relationship_for_ductile_materials.png?revision=1" alt="Typical engineering stress-strain curve for a ductile metal." style="width: 70%;">
+
     <br>
     <small>图1：一种[延性金属](@keyword=ductile_metals|lang=zh-CN|style=Feynman)的典型工程[应力-应变曲线](@keyword=stress_strain_curve|lang=zh-CN|style=Feynman)，展示了弹性区、[屈服点](@keyword=yield_point|lang=zh-CN|style=Feynman)、加工硬化区、颈缩和[断裂点](@keyword=scission_point|lang=zh-CN|style=Feynman)。</small>
 </center>

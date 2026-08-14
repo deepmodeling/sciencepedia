@@ -15,8 +15,6 @@ To grasp the theorem, let’s leave calculus aside for a moment and think like a
 
 When you first arrive, the pickings are easy, so the curve rises steeply. As the resource depletes, your rate of gathering slows, and the curve begins to flatten. This shape—starting steep and getting shallower—is called a **curve of diminishing returns**. It’s a law of life: the more you exploit something, the harder it gets to find more. In mathematical terms, while your total gain $g(t)$ is always increasing as long as you stay, the *rate* of gain—the slope of the curve, $g'(t)$—is constantly decreasing [@problem_id:2515938].
 
-![Graphical representation of the Marginal Value Theorem.](https://biorender.com/static/mvt-graph.png)
-
 Now, let's add the cost of travel. Getting from one patch to the next takes time, a travel time $T$. During this time, you gather nothing. We can represent this on our graph as a shift to the left from the origin. Your total time for a cycle of foraging is the travel time *plus* the time you spend in the patch, $t+T$. The total energy you get is $g(t)$. Therefore, your long-term average rate of gain is simply the total energy divided by the total time:
 
 $$

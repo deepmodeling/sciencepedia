@@ -14,7 +14,7 @@
 想象一下，一个系统最终会走向何方？一个滚入碗底最终静止的小球，它的最终状态是一个**[不动点](@keyword=fixed_points|lang=zh-CN|style=Feynman) (fixed point)**。不论你从碗的哪个边缘释放，它最终都会被“吸引”到这个唯一的静止位置。再想象一个靠电池驱动的钟摆，它不知疲倦地以恒定的节奏摆动。它的最终状态是一种永恒的重复，一条闭合的环路，我们称之为**极限环 (limit cycle)** [@problem_id:2215442]。例如，范德波尔振子 (van der Pol oscillator) 所描述的系统，无论从何处开始，其轨迹最终都会被吸引到一个独特的、稳定的闭合回路上，既不会停下，也不会无限远离。
 
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Van_der_Pol_oscillator_phase_portrait.svg" width="400">
+
 <br>
 <small>图1：范德波尔振子的[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)。无论从何处开始（除了不稳定的原点），轨迹都螺旋式地趋向于一个闭合的[极限环](@keyword=limit_cycles|lang=zh-CN|style=Feynman)。</small>
 </center>
@@ -62,7 +62,7 @@ $$
 奇异吸引子的形成正是如此。系统的动力学在一个方向上拉伸相空间的“流体”，在另一个方向上则将其压缩，然后通过全局性的非线性效应将其折叠回来，从而使整个结构保持有界。这个反复进行的过程，在**[庞加莱截面](@keyword=poincaré_surface_of_section|lang=zh-CN|style=Feynman)**（一个巧妙地切过吸引子的平面，用以观察轨迹每次穿过它时留下的“足迹”）上，会产生一个具有[分形](@keyword=fractal|lang=zh-CN|style=Feynman)结构的复杂图案。
 
 <center>
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Roessler_attractor_Poincare_map.svg" width="400">
+
 <br>
 <small>图2：罗斯勒 (Rössler) [吸引子](@keyword=attractors|lang=zh-CN|style=Feynman)的[庞加莱截面](@keyword=poincaré_surface_of_section|lang=zh-CN|style=Feynman)。轨迹每次穿过平面时留下的点，并不形成简单的图形，而是构成一个类似康托集的[分形](@keyword=fractal|lang=zh-CN|style=Feynman)结构，这正是“[拉伸与折叠](@keyword=stretching_and_folding|lang=zh-CN|style=Feynman)”机制的直观体现。</small>
 </center>

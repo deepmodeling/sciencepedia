@@ -31,7 +31,7 @@
 
 <center>
 <figure>
-  <img src="https://dims.phys.univ-tours.fr/images/fig/bcc_bz.png" width="400" alt="[BCC晶格](@keyword=bcc_lattice|lang=zh-CN|style=Feynman)的[第一布里渊区](@keyword=first_brillouin_zone|lang=zh-CN|style=Feynman)（菱形十二面体）">
+
   <figcaption>[体心立方](@keyword=body_centered_cubic_(bcc)|lang=zh-CN|style=Feynman)（BCC）[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)的[第一布里渊区](@keyword=first_brillouin_zone|lang=zh-CN|style=Feynman)——一个菱形十二面体。它由12个菱形面构成，其复杂的几何形状直接反映了[晶格](@keyword=crystalline_lattice|lang=zh-CN|style=Feynman)在[倒易空间](@keyword=k_space|lang=zh-CN|style=Feynman)中的[对称性](@keyword=symmetry|lang=zh-CN|style=Feynman)。</figcaption>
 </figure>
 </center>
@@ -70,7 +70,7 @@
 
 <center>
 <figure>
-  <img src="https://www.doitpoms.ac.uk/tlplib/brillouin_zones/images/extended_reduced_zone.gif" width="600" alt="[能带](@keyword=electronic_bands|lang=zh-CN|style=Feynman)的扩展和简约方案示意图">
+
   <figcaption>[能带](@keyword=electronic_bands|lang=zh-CN|style=Feynman)的扩展（左）与简约（右）区域方案。在扩展方案中，[能带](@keyword=electronic_bands|lang=zh-CN|style=Feynman)是分段的[抛物线](@keyword=parabola|lang=zh-CN|style=Feynman)，在[布里渊区](@keyword=brillouin_zone|lang=zh-CN|style=Feynman)边界处因[周期性势场](@keyword=periodic_potential|lang=zh-CN|style=Feynman)而断开，[形成能](@keyword=formation_energy|lang=zh-CN|style=Feynman)隙。在简约方案中，所有[能带](@keyword=electronic_bands|lang=zh-CN|style=Feynman)都被“折叠”回[第一布里渊区](@keyword=first_brillouin_zone|lang=zh-CN|style=Feynman)，形成连续的[能带结构](@keyword=electronic_band_structure|lang=zh-CN|style=Feynman)，[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)表现为不同[能带](@keyword=electronic_bands|lang=zh-CN|style=Feynman)之间的能量间隔。</figcaption>
 </figure>
 </center>

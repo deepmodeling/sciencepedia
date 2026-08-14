@@ -1,13 +1,10 @@
 ## 引言
 在数学的广袤世界中，寻找函数的[极值](@keyword=extrema|lang=zh-CN|style=Feynman)或方程的解，就像在一张无垠的地图上寻宝，常常令人感到无助。我们如何能确保搜寻范围不是无限的，目标一定存在于其中？这就引出了数学分析中的一个核心概念——**紧致性 (Compactness)**，它为我们的“寻宝”之旅提供了一座“用栅栏围起来的花园”，保证了任务的可行性。然而，“紧致性”的正式定义相当抽象。幸运的是，在熟悉的欧几里得空间（如直线、平面或三维空间）中，[海涅-博雷尔定理](@keyword=heine_borel_theorem|lang=zh-CN|style=Feynman)为我们提供了一把钥匙，将这个抽象概念转化为两个直观的几何性质。本文旨在揭开[海涅-博雷尔定理](@keyword=heine_borel_theorem|lang=zh-CN|style=Feynman)的神秘面纱。我们将首先深入剖析其核心思想，即紧致性与“闭合且有界”的[等价关系](@keyword=equivalence_relations|lang=zh-CN|style=Feynman)，并探索其带来的强大保证；接着，我们将跨越学科界限，领略该定理在保证解的存在性、分析抽象结构等方面的广泛应用；最后，我们将探讨该定理的边界，理解其为何在某些数学世界中会“失效”，从而更深刻地体会数学结构的内在之美。
 
-![A finite set of points being enclosed by a circle.](https://assets.test.edusight.net/2324040_bounded.png)
 *一个[有界集](@keyword=bounded_sets|lang=zh-CN|style=Feynman)可以被一个足够大的圆盘完全包围。*
 
-![A sequence in [0,1) converging to 1, which is outside the set.](https://assets.test.edusight.net/2324019_limit_point.png)
 *序列 $x_n = 1 - 1/(n+2)$ 位于集合 $[0,1)$ 中，但其极限点 1 却在集合之外，表明该集合不是[闭集](@keyword=closed_set|lang=zh-CN|style=Feynman)。*
 
-![A continuous function on a compact set attains its maximum and minimum.](https://assets.test.edusight.net/2324042_extreme_value.png)
 *在一个紧致（闭合且有界）的区域上，[连续函数](@keyword=continuous_function|lang=zh-CN|style=Feynman)必能取到其[最大值和最小值](@keyword=maximum_and_minimum|lang=zh-CN|style=Feynman)。*
 
 ## 原理与机制

@@ -68,7 +68,7 @@ $E = \frac{1}{2}\mu \dot{r}^2 + U_{\text{eff}}(r)$
 现在，整个天体运动的剧本就写在了 $U_{\text{eff}}(r)$ 的图像上。它是一个[吸引势](@keyword=attractive_potential|lang=zh-CN|style=Feynman)（$-1/r$）和一个排斥势（$1/r^2$）的叠加，形成了一个“山谷”的形状。
 
 <div align="center">
-<img src="https://i.imgur.com/kGf4C1c.png" alt="Effective Potential for Inverse-Square Force" width="600"/>
+
 <br>
 图1：[平方反比力](@keyword=inverse_square_force|lang=zh-CN|style=Feynman)下的有效势能曲线。真实引力势与角动量壁垒叠加，形成一个[势阱](@keyword=potential_energy_well|lang=zh-CN|style=Feynman)。总能量 $E$ 决定了轨道的类型。
 </div>

@@ -10,7 +10,6 @@
 
 想象一下，你想接收来自遥远星系的微弱无线电信号。你需要一面能将所有平行射来的信号精确汇集到一点的天线。什么样的形状拥有这种“几何天赋”呢？答案就是 **抛物面 (paraboloid)**。[抛物面](@keyword=paraboloid|lang=zh-CN|style=Feynman)有一种神奇的反射特性：所有平行于其[对称轴](@keyword=axis_of_symmetry|lang=zh-CN|style=Feynman)的光[线或](@keyword=wired_or|lang=zh-CN|style=Feynman)电磁波，经过它的一次反射后，都会不偏不倚地抵达同一个点——焦点。这正是卫星电视天线、射电望远镜以及汽车前灯和聚光太阳能收集器背后的核心原理 [@problem_id:2140947]。这种将分散能量汇集于一点的能力，是抛物面几何赋予工程学的宝贵礼物。
 
-![一张图表，显示平行光线从抛物面反射并汇聚于焦点。](https://assets.bitdegree.org/online-learning-platforms/storage/media/2023/04/how-does-a-parabolic-reflector-work.png)
 图1. [抛物面](@keyword=paraboloid|lang=zh-CN|style=Feynman)的反射聚焦特性示意图。所有平行于[主轴](@keyword=principal_axes|lang=zh-CN|style=Feynman)的入射光线都会汇聚到焦点 F。
 
 现在，让我们把灯打开。你是否想过，计算机是如何知道怎样在屏幕上投下逼真的阴影的？这其实是一个经典的几何问题。当一个点光源照亮一个物体，比如一个 **椭球 (ellipsoid)**，阴影的边界是由那些恰好与物体表面相切的光线所决定的。这些光线共同构成一个“阴影锥”，它与屏幕（一个平面）相交的轮廓，就是我们看到的阴影。要计算出这个阴影的形状和大小，就必须精确求解光线、[二次曲面](@keyword=quadric_surfaces|lang=zh-CN|style=Feynman)和平面之间的几何关系 [@problem_id:2140948]。因此，从电影特效到视频游戏，逼真的三维计算机图形学的背后，都离不开对[二次曲面](@keyword=quadric_surfaces|lang=zh-CN|style=Feynman)几何性质的深刻理解和计算。

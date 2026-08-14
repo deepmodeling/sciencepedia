@@ -25,7 +25,7 @@
 
 <br>
 <div align="center">
-    <img src="https://i.imgur.com/eBf2K0t.png" alt="Marcus Theory Potential Energy Surfaces" style="width: 70%;" />
+
     <figcaption style="font-size: 0.9em; color: #555;">图1：[Marcus理论](@keyword=marcus_theory|lang=zh-CN|style=Feynman)的[势能面](@keyword=potential_energy_surface|lang=zh-CN|style=Feynman)示意图。反应物（蓝色）和产物（红色）的自由能被描绘为[反应坐标](@keyword=reaction_coordinate|lang=zh-CN|style=Feynman)的抛物线函数。电子转移发生在两条曲线的交点，即[过渡态](@keyword=activated_complex|lang=zh-CN|style=Feynman)（$q^‡$），此时体系需要克服一个活化能垒 $\Delta G^‡$。 </figcaption>
 </div>
 <br>
@@ -70,11 +70,10 @@ $$ \lambda_o = \frac{e^2}{4\pi\epsilon_0} \left(\frac{1}{2r_D} + \frac{1}{2r_A} 
 
 <br>
 <div align="center">
-    <img src="https://i.imgur.com/8HkP7wF.png" alt="Marcus Inverted Region" style="width: 70%;" />
+
     <figcaption style="font-size: 0.9em; color: #555;">图2：[Marcus反转区](@keyword=marcus_inverted_region|lang=zh-CN|style=Feynman)。随着反应驱动力（$-\Delta G^\circ$）的增加，[反应速率](@keyword=reaction_rates|lang=zh-CN|style=Feynman)（$k_{et}$）先是增加（正常区），在 $-\Delta G^\circ = \lambda$ 时达到顶点（无[活化能垒](@keyword=activation_energy_barrier|lang=zh-CN|style=Feynman)区），然后出人意料地开始下降（反转区）。</figcaption>
 </div>
 <br>
-
 
 这个看似荒谬的预测——**当反应的[热力学](@keyword=thermomechanics|lang=zh-CN|style=Feynman)驱动力超过某个阈值后，反应反而会变慢**——就是著名的**[Marcus反转区](@keyword=marcus_inverted_region|lang=zh-CN|style=Feynman)（Marcus Inverted Region）** [@problem_id:1379560]。它完全颠覆了人们对[化学反应](@keyword=chemical_reaction|lang=zh-CN|style=Feynman)的传统认知。从图形上看，当产物抛物线相对于反应物抛物线下降得“太深”时，它们的交点反而会移动到反应物抛物线更高的位置上，导致了更大的活化能垒。这个反直觉的预测后来在实验上被完美证实，为Marcus赢得了1992年的诺贝尔化学奖，也展示了深刻物理洞察力超越朴素直觉的强大力量。
 

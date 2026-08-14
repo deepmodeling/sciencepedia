@@ -8,7 +8,6 @@
 
 我们旅程的第一站，始于一个你我童年时都可能玩过的东西——肥皂泡。当你吹出一个肥皂泡时，是什么决定了它完美的球形？答案是表面[张力](@keyword=tension_force|lang=zh-CN|style=Feynman)。液膜总是试[图收缩](@keyword=graph_contraction|lang=zh-CN|style=Feynman)到最小的表面积，以降低其势能。然而，它还要包住一定体积的空气。这个“在固定体积下寻求最小表面积”的问题，正是一个经典的变分问题 [@problem_id:2984408]。大自然给出的答案是一个球面——一个具有恒定[平均曲率](@keyword=mean_curvature|lang=zh-CN|style=Feynman)（Constant Mean Curvature, CMC）的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)。这里的平均曲率，正是由泡内外气压差决定的。
 
-![Soap bubbles demonstrating minimal surfaces and constant mean curvature surfaces.](https://images.unsplash.com/photo-1596724335162-8c2909673891)
 *图1：肥皂泡和肥皂膜。肥皂泡（球形）是恒定[平均曲率](@keyword=mean_curvature|lang=zh-CN|style=Feynman)[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)的绝佳范例，它在固定体积下使表面积最小化。而平整的肥[皂膜](@keyword=soap_film|lang=zh-CN|style=Feynman)则是[极小曲面](@keyword=minimal_surfaces|lang=zh-CN|style=Feynman)（[平均曲率](@keyword=mean_curvature|lang=zh-CN|style=Feynman)为零）的物理实现。*
 
 那么，如果我们让内外压强相等，情况又会如何呢？此时，肥皂膜不再需要束缚任何体积，它唯一的“目标”就是将自身面积最小化，没有任何附加条件。这正是平均曲率处处为零的**[极小曲面](@keyword=minimal_surfaces|lang=zh-CN|style=Feynman)** [@problem_id:2984408, @problem_id:3033276]。如果你用一个金属丝框蘸一下肥皂水，形成的平整皂膜就是一个[极小曲面](@keyword=minimal_surfaces|lang=zh-CN|style=Feynman)。它成了求解[极小曲面方程](@keyword=minimal_surface_equation|lang=zh-CN|style=Feynman)的一个美妙的[物理模拟](@keyword=physics_simulations|lang=zh-CN|style=Feynman)器。

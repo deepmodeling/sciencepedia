@@ -10,7 +10,6 @@
 
 首先，让我们在这片真空中施加一个强大的[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman) $B$。直觉可能会告诉我们，强大的外场会破坏精巧的[量子关联](@keyword=quantum_correlations|lang=zh-CN|style=Feynman)，从而削弱质量间隙。但现实恰恰相反！[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)会迫使[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)的运动“量子化”到称为[朗道能级](@keyword=landau_levels|lang=zh-CN|style=Feynman)的特定轨道上，这反而增强了它们之间的有效相互作用，使得形成凝聚、产生质量变得更加容易。这种现象被称为“磁催化”（magnetic catalysis），其结果是质量间隙 $m$ 随着[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)的增强而变大 [@problem_id:404669]。
 
-![](https://www.tf.uni-kiel.de/matwis/amat/iss/kap_5/illustr/landau_levels.png)
 <center>图1. 强[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)下电子能级量子化为朗道能级。这一效应增强了[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)间的相互作用，促进了动力学质量的生成。</center>
 
 接着，我们来“加热”这片真空。与[磁场](@keyword=magnetic_field|lang=zh-CN|style=Feynman)不同，温度 $T$ 的效应更符合我们的直觉。[热涨落](@keyword=thermal_fluctuations|lang=zh-CN|style=Feynman)会扰乱[费米子凝聚](@keyword=fermion_condensate|lang=zh-CN|style=Feynman)的秩序，当温度足够高，超过一个临界值 $T_c$ 时，质量间隙将完全消失，系统恢复到手征对称的“平凡”真空状态。这就像冰在高温下融化成水，是一个经典的[相变过程](@keyword=phase_change_processes|lang=zh-CN|style=Feynman) [@problem_id:404715]。
@@ -25,7 +24,6 @@
 
 答案是肯定的，这种连接不同真空的“畴壁”（domain wall）结构被称为**[拓扑孤子](@keyword=topological_solitons|lang=zh-CN|style=Feynman)**（topological soliton），或简称为“扭结”（kink）。在 Gross-Neveu 模型中，它由一个平滑变化的场构型 $\sigma_K(x) = m \tanh(mx)$ 描述。这个孤子并非基本粒子，而是整个场的集体激发，但它表现得就像一个稳定、实在的粒子，拥有确定的质量 [@problem_id:404815]。
 
-![](https://media.cheggcdn.com/media/251/2517ae2e-e4f6-4357-9524-7472091c6e13/phpjG7qVn.png)
 <center>图2. 扭结[孤子](@keyword=solitons|lang=zh-CN|style=Feynman) (kink soliton) 的剖面图。它平滑地连接了两个不同的真空态（$\sigma = -m$ 和 $\sigma = +m$）。</center>
 
 更奇妙的事情发生在当一个原始的[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)遇到这个“墙”时。量子力学预言了一个惊人的现象：[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)会被这个孤子“俘获”，并被束缚在这道墙上。令人震惊的是，这个被束缚的[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)态的能量恰好为零 $E=0$！ [@problem_id:404695]。一个原本有质量的[费米子](@keyword=fermion|lang=zh-CN|style=Feynman)，在[拓扑孤子](@keyword=topological_solitons|lang=zh-CN|style=Feynman)的背景下，变成了一个局域化的、无质量的激发。这个由 Jackiw 和 Rebbi 发现的深刻结果揭示了拓扑学与粒子物理的深层联系。

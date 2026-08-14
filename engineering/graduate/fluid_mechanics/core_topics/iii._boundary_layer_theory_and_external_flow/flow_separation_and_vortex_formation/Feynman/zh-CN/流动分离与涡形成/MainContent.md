@@ -25,7 +25,7 @@
 
 <br>
 <center>
-    <img src="https://i.imgur.com/Y3Ue6Fm.png" alt="Illustration of flow separation over a cylinder, showing attached flow, adverse pressure gradient, separation point, and the turbulent wake." style="width: 80%;" />
+
     <br>
     <small>图1：流体流经圆柱体。在前半部分，顺压梯度使流动保持附着。在后半部分，逆压梯度导致[边界层](@keyword=boundary_layer|lang=zh-CN|style=Feynman)内的流体能量耗尽，最终在[分离点](@keyword=breakaway_points|lang=zh-CN|style=Feynman)脱离表面，形成一个低压的[湍流尾流](@keyword=turbulent_wake|lang=zh-CN|style=Feynman)区。</small>
 </center>
@@ -51,7 +51,7 @@
 
 <br>
 <center>
-    <img src="https://i.imgur.com/uM9eCqY.gif" alt="Animation showing the roll-up of a shear layer into a von Kármán vortex street behind a cylinder." style="width: 80%;" />
+
     <br>
     <small>图2：[剪切层](@keyword=shear_layer|lang=zh-CN|style=Feynman)的不稳定性导致其卷曲，形成交替[脱落](@keyword=abscission|lang=zh-CN|style=Feynman)的涡旋，即[冯·卡门涡街](@keyword=von_kármán_vortex_street|lang=zh-CN|style=Feynman)。</small>
 </center>

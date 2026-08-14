@@ -17,7 +17,7 @@
 
 <br>
 <center>
-<img src="https://i.imgur.com/uRj0p69.png" width="600">
+
 </center>
 <div style="text-align: center; color: #888; font-size: 0.9em;">图1：在[均匀流](@keyword=uniform_flow|lang=zh-CN|style=Feynman)中，水体的重力分量（驱动力）与河床和河岸的[摩擦力](@keyword=friction_force|lang=zh-CN|style=Feynman)（[阻力](@keyword=drag_force|lang=zh-CN|style=Feynman)）[相平衡](@keyword=phase_equilibrium|lang=zh-CN|style=Feynman)。</div>
 <br>
@@ -77,7 +77,7 @@ $C$ 的值主要取决于什么呢？**粗糙度**。一个用光滑混凝土浇
 
 <br>
 <center>
-<img src="https://i.imgur.com/8Qz5KkI.png" width="500">
+
 </center>
 <div style="text-align: center; color: #888; font-size: 0.9em;">图2：相同[截面](@keyword=cross_section|lang=zh-CN|style=Feynman)积的宽浅渠道（左）与窄深渠道（右）。宽浅渠道的[湿周](@keyword=wetted_perimeter|lang=zh-CN|style=Feynman)更短，[水力半径](@keyword=hydraulic_radius|lang=zh-CN|style=Feynman)更大，输流效率更高。</div>
 <br>

@@ -13,7 +13,7 @@
 <br/>
 <center>
 <figure>
-    <img src="https://assets.test-preparation.org/images/2024-06-25-05-40-10-lotka-volterra.jpeg" alt="[Lotka-Volterra 模型](@keyword=lotka_volterra_models|lang=zh-CN|style=Feynman)的[相图](@keyword=phase_portraits|lang=zh-CN|style=Feynman)，展示了捕食者和猎物种群的周期性波动。" style="width:70%;">
+
     <figcaption>图1：洛特卡-沃尔泰拉（Lotka-Volterra）[捕食者-猎物模型](@keyword=predator_prey_models|lang=zh-CN|style=Feynman)的相图。[预测-校正方法](@keyword=predictor_corrector_methods|lang=zh-CN|style=Feynman)可以精确地追踪这些复杂的、相互交织的[种群动态](@keyword=population_dynamics|lang=zh-CN|style=Feynman)轨迹。</figcaption>
 </figure>
 </center>
@@ -38,7 +38,7 @@
 <br/>
 <center>
 <figure>
-    <img src="https://assets.test-preparation.org/images/2024-06-25-05-40-59-method-of-lines.jpeg" alt="线方法的示意图，将一个连续的二维区域离散化为网格点，从而将一个[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)转化为一个大型的[常微分方程组](@keyword=ode_system|lang=zh-CN|style=Feynman)。" style="width:80%;">
+
     <figcaption>图2：“线方法”示意图。通过在空间上进行离散化，一个描述热传导或[流体运动](@keyword=fluid_motion|lang=zh-CN|style=Feynman)的[偏微分方程](@keyword=partial_differential_equation|lang=zh-CN|style=Feynman)（PDE）被转化成一个关于每个网格点上值的[常微分方程](@keyword=ordinary_differential_equations|lang=zh-CN|style=Feynman)（ODE）系统。然后，我们可以使用[预测-校正方法](@keyword=predictor_corrector_methods|lang=zh-CN|style=Feynman)来求解这个庞大的ODE系统，从而模拟整个场的演化。</figcaption>
 </figure>
 </center>
@@ -69,7 +69,7 @@
 <br/>
 <center>
 <figure>
-    <img src="https://assets.test-preparation.org/images/2024-06-25-05-41-35-gradient-descent.jpeg" alt="[梯度下降法](@keyword=steepest_descent|lang=zh-CN|style=Feynman)在[损失函数](@keyword=loss_functions|lang=zh-CN|style=Feynman)[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)上寻找最小值的示意图，可被视为求解梯度流ODE的欧拉预测步骤。" style="width:70%;">
+
     <figcaption>图3：机器学习中的优化过程。梯度下降可以被理解为求解一个名为“[梯度流](@keyword=gradient_flows|lang=zh-CN|style=Feynman)”的[微分方程](@keyword=differential_equation|lang=zh-CN|style=Feynman)的“预测”步骤。更高级的优化器则加入了“校正”步骤，利用曲率信息来更快、更稳定地找到最小值。</figcaption>
 </figure>
 </center>

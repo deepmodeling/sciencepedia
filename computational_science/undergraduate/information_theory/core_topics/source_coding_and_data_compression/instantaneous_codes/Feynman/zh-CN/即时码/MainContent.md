@@ -26,7 +26,7 @@
 想象一棵二叉树，从根节点出发，向左走代表“0”，向右走代表“1”。每一个我们想要编码的符号都住在这棵树的一个叶子节点上（也就是没有分叉的末端节点）。从根节点走到某个叶子节点的路径，就构成了这个符号的二进制码字。
 
 <center>
-<img src="https://i.imgur.com/L7XWvWc.png" width="450" alt="A binary tree representing the prefix code {0, 10, 110, 111}. The symbols are located at the leaf nodes.">
+
 <figcaption>图1：一个代表[前缀码](@keyword=instantaneous_codes|lang=zh-CN|style=Feynman) {0, 10, 110, 111} 的[二叉树](@keyword=binary_trees|lang=zh-CN|style=Feynman)。每个码字对应从根到一个叶子节点的唯一路径。</figcaption>
 </center>
 

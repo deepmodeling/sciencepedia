@@ -13,8 +13,6 @@
 
 让我们把一个原子想象成一个简单的力学系统。它有一个重的、带正电的核心，以及一个轻的、代表其电子云的虚拟粒子，即**杜鲁德粒子（Drude particle）**，它带有负[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)。为了让这个模型完整，我们用一根假想的弹簧将杜鲁德粒子连接到核心上。[@problem_id:3418163]
 
-![Drude Oscillator Model](https://d2xlm7vr28opnh.cloudfront.net/cdn/problem_thumbnail/202404/3418163.png)
-
 现在，当我们施加一个外部[电场](@keyword=electric_field|lang=zh-CN|style=Feynman) $ \mathbf{E} $ 时会发生什么？[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)会对正核心和负杜鲁德粒子施加大小相等、方向相反的力。这会拉伸弹簧，使杜鲁德粒子相对于核心发生位移。弹簧会产生一个恢复力，试图将杜鲁德粒子[拉回](@keyword=pullback|lang=zh-CN|style=Feynman)原位，这个力的大小与位移 $ \mathbf{x} $ 成正比（就像胡克定律一样）。
 
 当系统[达到平衡](@keyword=equilibration|lang=zh-CN|style=Feynman)时，[电场](@keyword=electric_field|lang=zh-CN|style=Feynman)力与弹簧的恢复力达到平衡。设杜鲁德[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)为 $ -q_D $（核心[电荷](@keyword=electric_charge|lang=zh-CN|style=Feynman)为 $ +q_D $），弹簧的[劲度系数](@keyword=spring_constant|lang=zh-CN|style=Feynman)为 $ k $，那么力的平衡可以写成：

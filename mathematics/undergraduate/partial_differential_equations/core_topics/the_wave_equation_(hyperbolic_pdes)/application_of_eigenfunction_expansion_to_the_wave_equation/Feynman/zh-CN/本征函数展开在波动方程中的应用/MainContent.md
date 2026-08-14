@@ -23,7 +23,7 @@ $$
 
 <br/>
 <div align="center">
-    <img src="https://i.imgur.com/B94j4hE.png" alt="Vibrational Modes of a String" width="600">
+
     <figcaption>图1：一根固定弦的前四个本征模（$n=1, 2, 3, 4$）。每一个模式都是一个[驻波](@keyword=standing_waves|lang=zh-CN|style=Feynman)，拥有自己独特的[振动频率](@keyword=vibrational_frequency|lang=zh-CN|style=Feynman)。</figcaption>
 </div>
 <br/>

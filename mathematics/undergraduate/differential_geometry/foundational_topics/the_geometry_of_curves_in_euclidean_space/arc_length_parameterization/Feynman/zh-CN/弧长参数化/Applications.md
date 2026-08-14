@@ -12,7 +12,7 @@
 
 <center>
     <figure>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Catenary_arch.svg/800px-Catenary_arch.svg.png" alt="A catenary curve and a catenary arch." style="width:70%;">
+
         <figcaption>图1：一根悬挂的链条形成的[悬链线](@keyword=catenary_curve|lang=zh-CN|style=Feynman)（上），以及将其反转后得到的在建筑中广泛应用的[悬链线](@keyword=catenary_curve|lang=zh-CN|style=Feynman)拱（下）。计算其长度是[弧长](@keyword=arc_length|lang=zh-CN|style=Feynman)积分的直接应用。</figcaption>
     </figure>
 </center>
@@ -35,7 +35,7 @@
 
 <center>
     <figure>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/NautilusCutawayLogarithmicSpiral.jpg/800px-NautilusCutawayLogarithmicSpiral.jpg" alt="A cutaway of a Nautilus shell, showing its logarithmic spiral structure." style="width:60%;">
+
         <figcaption>图2：鹦鹉螺壳的切面，展现了完美的[对数螺线](@keyword=logarithmic_spiral|lang=zh-CN|style=Feynman)。这种自然形态的长度和生长模式可以用弧长来精确描述 [@problem_id:1624414]。</figcaption>
     </figure>
 </center>

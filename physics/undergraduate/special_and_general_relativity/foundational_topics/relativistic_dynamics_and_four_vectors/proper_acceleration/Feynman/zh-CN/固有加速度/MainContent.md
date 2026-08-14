@@ -35,8 +35,6 @@ $$ \alpha = \gamma^2 a $$
 
 这个区别有着实实在在的物理后果。在那个旋转空间站里，如果宇航员的速度接近光速，他感受到的“[人工重力](@keyword=artificial_gravity|lang=zh-CN|style=Feynman)”（[固有加速度](@keyword=invariant_acceleration|lang=zh-CN|style=Feynman) $\alpha$）会比牛顿力学预言的向心加速度 $a = v^2/R$ 大整整 $\gamma^2$ 倍！这意味着，在极高速度下，要产生同样的“重力感”，所需的旋转实际上比经典物理计算的要“温和”一些。
 
-![An illustration showing the difference between proper acceleration and coordinate acceleration in linear and circular motion.](https://i.imgur.com/example.png "Proper vs. Coordinate Acceleration")
-
 ### 四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)的优美画卷
 
 虽然我们通过区分不同情况得到了 $\alpha$ 和 $a$ 的关系，但这似乎有点零敲碎打。物理学家追求的是一种更普适、更优美的描述。为此，我们需要将我们的舞台从三维空间扩展到四维[时空](@keyword=space_time|lang=zh-CN|style=Feynman)。

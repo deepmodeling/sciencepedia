@@ -18,7 +18,7 @@
 这条曲线就像一个山谷（如下图所示）。原子们最“喜欢”待在谷底，这个位置对应着它们之间的平衡距离 $r_0$。在这个位置，引力与斥力完美平衡，系统能量最低。
 
 <center>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Lennard-jones_potential.svg/600px-Lennard-jones_potential.svg.png" alt="Lennard-Jones Potential" style="width: 50%;">
+
   <br>
   <small><i>原子间相互作用的[势能曲线](@keyword=potential_energy_curves|lang=zh-CN|style=Feynman)。原子间的平衡距离 $r_0$ 位于势能“谷底”。</i></small>
 </center>

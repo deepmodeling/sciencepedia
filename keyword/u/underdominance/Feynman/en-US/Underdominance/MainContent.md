@@ -27,5 +27,5 @@ What does this landscape look like for underdominance? If everyone in the popula
 
 The result is a landscape shaped like a valley [@problem_id:1937066]. The two high points are at the edges ($p=0$ and $p=1$), and the landscape dips down to a minimum at some intermediate [allele frequency](@keyword=allele_frequency|lang=en-US|style=Feynman). The population, as a whole, is least successful when it maintains a mix of both alleles. This "fitness valley" is the defining feature of underdominance.
 
-![A graph showing mean population fitness as a function of allele frequency 'p' under underdominance. The curve is a parabola opening upwards (concave up), with its minimum at an [unstable equilibrium](@keyword=unstable_equilibrium|lang=en-US|style=Feynman) point between 0 and 1. The endpoints at p=0 and p=1 are local maxima, representing stable equilibria.](https://i.imgur.com/uR1dOQo.png)
+ point between 0 and 1. The endpoints at p=0 and p=1 are local maxima, representing stable equilibria.](https://i.imgur.com/uR1dOQo.png)
 *Figure 1: The mean fitness landscape for underdominance. The population's average fitness, $\bar{w}$, is lowest at an intermediate allele frequency, $\hat{p}$. Natural selection will push the population 'uphill' towards one of the two stable states: fixation at $p=0$ or $p=1$.*

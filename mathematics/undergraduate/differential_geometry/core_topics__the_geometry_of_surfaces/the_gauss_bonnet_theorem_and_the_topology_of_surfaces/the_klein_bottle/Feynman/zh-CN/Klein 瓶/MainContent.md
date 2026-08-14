@@ -15,8 +15,6 @@
 1.  首先，将正方形的左边和右边对齐黏合。也就是说，对于边上的任意一点 $(0, y)$，我们都将它与 $(1, y)$ 等同起来。这会把一张平坦的纸变成一个圆柱筒。
 2.  然后，我们将圆柱筒的两个开口——也就是原来正方形的顶边和底边——对齐黏合。即，将任意一点 $(x, 0)$与 $(x, 1)$ 等同起来。瞧，一个完美的环面就诞生了。
 
-
-
 现在，让我们来制作[克莱因瓶](@keyword=klein_bottle|lang=zh-CN|style=Feynman)。我们保留第一步，将左边和右边直接黏合：$(0, y) \sim (1, y)$，形成一个圆柱筒。但在第二步，我们引入一个“扭转”。我们不再将底边与顶边直接对齐，而是将底边翻转过来再与顶边黏合 [@problem_id:1678027]。用数学语言来说，就是将点 $(x, 0)$与点 $(1-x, 1)$ 等同起来。
 
 想象一下，你是一个二维小人，沿着底边从左到右散步。当你走到点 $(x, 0)$ 时，你突然被“传送”到了顶边的点 $(1-x, 1)$。注意，你的位置不仅变了，你的方向也颠倒了！如果你原来是从左往右走，现在你发现自己是从右往左走了。正是这个小小的扭转，创造了一个全新的宇宙。
@@ -37,8 +35,6 @@
 
 由于黏合映射 $(x,y) \mapsto (1-x, 1-y)$（这是一个更完整的局部描述），它的“右方”方向向量 $\mathbf{e}_1$ 被变成了 $-\mathbf{e}_1$。它手里的时钟指针，在经历了一次“直行”旅行后，竟然指向了左边！[@problem_id:1678045] [@problem_id:1678064] 整个空间对于它来说，完成了一次镜像翻转。
 
-
-
 这意味着在[克莱因瓶](@keyword=klein_bottle|lang=zh-CN|style=Feynman)上，你无法全局地、一致地定义“右”和“左”，或者“上”和“下”。任何试图定义“朝外”的箭头，只要沿着这样一条扭转的路径走一圈，就会变成“朝内”。因此，这个瓶子没有内部，也没有外部，它只有一个面。如果你想给它涂色，你会发现你从任何一点开始，最终都能不穿过边界地涂满整个表面。
 
 ### 另一种拼装艺术：两张莫比乌斯带的联姻
@@ -48,8 +44,6 @@
 一个[莫比乌斯带](@keyword=möbius_strip|lang=zh-CN|style=Feynman)是通过将一个长纸条的一端扭转 $180^\circ$ 后与另一端黏合而成的。它的特点是只有一个面和一条边界。现在，一个自然的问题是：我们能“封住”这条唯一的边界，从而创造一个没有边界的单侧世界吗？
 
 答案是肯定的，而其结果正是克莱因瓶 [@problem_id:1642780]。想象一下，你拿着两条[莫比乌斯带](@keyword=möbius_strip|lang=zh-CN|style=Feynman)。每一条都有一条长长的、单一的边界。现在，你像缝衣服一样，将这两条边界线逐点缝合在一起。
-
-![Klein Bottle from Two Mobius Strips](https.i.imgur.com/E1L2S4F.gif)
 
 这是一个美妙的“拓扑手术”。我们从两个有边界的[单侧曲面](@keyword=one_sided_surface|lang=zh-CN|style=Feynman)出发，通过消除它们的边界，最终得到了一个无边界的[单侧曲面](@keyword=one_sided_surface|lang=zh-CN|style=Feynman)。我们可以通过一个叫做“欧拉示性数”($\chi$)的[拓扑不变量](@keyword=topological_invariants|lang=zh-CN|style=Feynman)来验证这一点。对于一个[莫比乌斯带](@keyword=möbius_strip|lang=zh-CN|style=Feynman) $M$，$\chi(M) = 0$。当我们把两个[莫比乌斯带](@keyword=möbius_strip|lang=zh-CN|style=Feynman) $M_1, M_2$ 沿着它们的边界（一条圆，$\chi(S^1)=0$）黏合时，新[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman) $K$ 的欧拉示性数为：
 $$ \chi(K) = \chi(M_1) + \chi(M_2) - \chi(S^1) = 0 + 0 - 0 = 0 $$

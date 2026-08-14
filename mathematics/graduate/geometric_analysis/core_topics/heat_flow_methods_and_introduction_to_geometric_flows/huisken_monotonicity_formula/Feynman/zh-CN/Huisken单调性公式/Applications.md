@@ -14,7 +14,7 @@
 
 一个著名的例子是“脖颈收缩”（neck-pinching）[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)。当一个哑铃状的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)演化时，连接两个球体的细长“脖子”会变得越来越细，最终断裂。通过Huisken公式这台显微镜，我们发现这个收缩过程的切流模型正是一个无限长的标[准圆](@keyword=director_circle|lang=zh-CN|style=Feynman)柱面 $S^{n-1} \times \mathbb{R}$，它作为一个整体在径向上均匀收缩 [@problem_id:2979785] [@problem_id:2979784]。其他已知的[自收缩子](@keyword=self_shrinkers|lang=zh-CN|style=Feynman)还包括最简单的收缩球面，以及由Angenent发现的、更为精巧的收缩环面等。它们共同构成了一个[奇异模](@keyword=singular_moduli|lang=zh-CN|style=Feynman)型的“动物园” [@problem_id:2979785]。
 
-![哑铃状[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)在平均曲率流下演化，形成脖颈收缩[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)。](https://www.researchgate.net/profile/Gang-Tian-3/publication/220468926/figure/fig1/AS:668783422668817@1536461877478/From-left-to-right-a-dumbbell-developing-a-neck-pinch-singularity-a-cylinder-its.png)
+在平均曲率流下演化，形成脖颈收缩[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)。](https://www.researchgate.net/profile/Gang-Tian-3/publication/220468926/figure/fig1/AS:668783422668817@1536461877478/From-left-to-right-a-dumbbell-developing-a-neck-pinch-singularity-a-cylinder-its.png)
 *图1：哑铃状[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)在[平均曲率流](@keyword=motion_by_mean_curvature|lang=zh-CN|style=Feynman)下演化，形成一个脖颈收缩[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)。在[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)处进行抛物重整化（blow-up），我们看到的切流是一个标准的收缩圆柱面。[Huisken单调性公式](@keyword=huisken_s_monotonicity_formula|lang=zh-CN|style=Feynman)是理解这一过程的核心工具。*
 
 ### [高斯密度](@keyword=gaussian_density|lang=zh-CN|style=Feynman)：[奇点](@keyword=singularities|lang=zh-CN|style=Feynman)的“指纹”

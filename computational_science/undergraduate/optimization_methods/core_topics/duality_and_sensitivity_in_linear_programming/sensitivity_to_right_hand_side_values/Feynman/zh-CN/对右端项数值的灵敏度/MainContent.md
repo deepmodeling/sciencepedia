@@ -25,8 +25,6 @@
 
 现在，假设我们改变其中一个约束的右侧值 $b$。在几何上，这意味着对应的边界线发生了平移。这条线的移动会带着它所定义的顶点一起“跳舞” [@problem_id:3179211]。
 
-![Geometric Interpretation of Sensitivity](https://i.imgur.com/example.png "A diagram showing a feasible region changing as a constraint line moves, causing the optimal vertex to shift.")
-
 当最优顶点 $x^\star(b)$ 随着 $b$ 的变化而移动时，最优目标值 $v(b) = c^\top x^\star(b)$ 也随之改变。这个变化的速率 $\frac{dv}{db}$ 正是我们的[影子价格](@keyword=shadow_prices|lang=zh-CN|style=Feynman)！这个速率取决于两件事：顶点移动的速度和方向，以及这个移动方向在[目标函数](@keyword=objective_function|lang=zh-CN|style=Feynman)梯度 $c$ 方向上的投影。对于[线性规划](@keyword=linear_programming|lang=zh-CN|style=Feynman)，由于顶点的位置是 $b$ 的线性函数，我们会发现这个变化率在一个特定区域内是恒定的。这为我们提供了第一个深刻的洞察：影子价格在局部是稳定的。
 
 ### 价值的代数：对偶与互补松弛

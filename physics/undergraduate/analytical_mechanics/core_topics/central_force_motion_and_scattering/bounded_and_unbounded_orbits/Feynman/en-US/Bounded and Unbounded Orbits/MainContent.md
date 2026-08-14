@@ -45,7 +45,7 @@ Let's look at the shape of the [effective potential](@keyword=effective_potentia
 
 <br/>
 <div align="center">
-  <img src="https://i.imgur.com/G5gW6yS.png" alt="Effective potential with [energy levels](@keyword=energy_levels|lang=en-US|style=Feynman)" width="550"/>
+
   <br/>
   <i>Figure 1: A typical [effective potential](@keyword=effective_potential|lang=en-US|style=Feynman) $U_{\text{eff}}(r)$ for an attractive force. The particle's motion is confined to regions where its [total energy](@keyword=total_energy|lang=en-US|style=Feynman) $E$ is greater than or equal to $U_{\text{eff}}(r)$.</i>
 </div>

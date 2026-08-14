@@ -21,8 +21,6 @@
 
 这小小的平方操作，带来了深刻的差异。假设一个气象模型预测南极的温度时，误差恰好是 $3.5$ [开尔文](@keyword=kelvin|lang=zh-CN|style=Feynman)。$L_1$ 损失会给出 $3.5$ 的惩罚值。而 $L_2$ 损失呢？它会给出 $(3.5)^2 = 12.25$ 的惩罚值，是前者的整整 $3.5$ 倍 [@problem_id:1931773]。
 
-
-
 从这个简单的例子中，我们可以立即看到 $L_2$ 损失的一个关键特性：它对大误差的惩罚远比对小误差的惩罚要严厉得多。一个 10 倍大的误差，在 $L_1$ 看来只是 10 倍的坏，但在 $L_2$ 看来却是 $10^2 = 100$ 倍的坏！反之，对于小于 1 的小误差，$L_2$ 损失的惩罚值会比 $L_1$ 更小（例如，误差为 $0.1$ 时，$L_1=0.1$，$L_2=0.01$）。
 
 所以，选择哪种[损失函数](@keyword=loss_functions|lang=zh-CN|style=Feynman)，实际上是在回答一个问题：在你的任务中，你更害怕什么？是大量无关痛痒的小错误累积起来，还是偶尔一次灾难性的大错误？这没有一个放之四海而皆准的答案，完全取决于你的目标。
@@ -71,8 +69,6 @@
 -   对于 **$L_2$ 损失**，我们使用的是[欧几里得距离](@keyword=euclidean_distance|lang=zh-CN|style=Feynman)。以 $y$ 为中心，所有距离相等的点构成了一个**圆形**。为了找到最近的点，我们从 $y$ 开始“吹气球”，直到这个圆形第一次与模型所在的直线相切。这个[切点](@keyword=point_of_tangency|lang=zh-CN|style=Feynman)是唯一的，它就是 $y$ 在直线上的正交投影。这就是为什么 $L_2$ 回归（[最小二乘法](@keyword=method_of_least_squares|lang=zh-CN|style=Feynman)）通常有唯一的解 [@problem_id:3175120]。
 
 -   对于 **$L_1$ 损失**，我们使用的是[曼哈顿距离](@keyword=manhattan_distance|lang=zh-CN|style=Feynman)。以 $y$ 为中心，所有距离相等的点构成了一个旋转了 45 度的**菱形**（或称为钻石）。当我们从 $y$ 开始“吹”这个菱形气球时，如果模型所在的直线恰好与菱形的一条边平行，那么它们第一次接触时，可能会重合一整段边。这条边上的所有点都是最优解。这就解释了为什么 $L_1$ 回归的解有时是**不唯一**的 [@problem_id:3175120]。
-
-![Geometric comparison of L2 and L1 minimization. L2 shows a circle (level set) tangent to a line (model space) at a single point (unique solution). L1 shows a diamond (level set) whose edge is parallel to the model line, resulting in a line segment of solutions (non-unique solution).](https://i.imgur.com/G5Tsc3u.png)
 
 #### 最优性的几何学：正交与力平衡
 

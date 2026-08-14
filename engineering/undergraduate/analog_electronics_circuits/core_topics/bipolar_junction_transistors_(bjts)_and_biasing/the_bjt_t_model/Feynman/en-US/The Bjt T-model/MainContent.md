@@ -38,7 +38,7 @@ Here, $I_E$ is the steady DC current flowing through the emitter, and $V_T$ is t
 With these two pieces, we can now assemble the T-model. It consists of a resistor $r_e$ between the base and emitter terminals, and a dependent [current source](@keyword=current_source|lang=en-US|style=Feynman) at the collector that pulls a current equal to $\alpha i_e$. Simple, clean, and physically motivated.
 
 <center>
-<img src="https://i.imgur.com/G4VzFfH.png" alt="Diagram comparing the BJT Hybrid-Pi and T-models." width="600">
+
 <br>
 <i>Figure 1: The Hybrid-π model (left) and the T-model (right). Both describe the same [transistor](@keyword=transistor|lang=en-US|style=Feynman) but offer different perspectives. The T-model places the resistance $r_e$ in the emitter leg, physically representing the junction's [dynamic resistance](@keyword=dynamic_resistance|lang=en-US|style=Feynman).</i>
 </center>

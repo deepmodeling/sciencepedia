@@ -11,8 +11,6 @@
 
 但是，让我们换一个“对偶”的视角。这次，我们不关心首都，我们关心的是“区域”本身。我们将每个国家（也就是地图上的一个有界区域）看作一个实体。同时，别忘了环绕整个大陆的广阔海洋，它也是一个区域——一个无界的区域。现在，我们在每个区域的中心放置一个“对偶顶点”。如果两个区域（比如两个国家，或者一个国家和海洋）共享一段边界，我们就连接它们对应的对偶顶点，画一条“对偶边”，并让这条边恰好穿过那段共享的边界。
 
-![A planar graph G (black) and its dual G* (red). Each face of G corresponds to a vertex of G*, and each edge of G corresponds to an edge of G*.](https://i.imgur.com/uTjX80t.png)
-
 这就是[对偶图](@keyword=dual_graphs|lang=zh-CN|style=Feynman)的诞生过程！这不仅仅是画图游戏，这是一个深刻的转变。我们从一个关注“点”与“连接”的世界（原始图 $G$），切换到了一个关注“面”与“邻接”的世界（[对偶图](@keyword=dual_graphs|lang=zh-CN|style=Feynman) $G^*$）。
 
 这个转变带来了一些立即可见的、优美的对应关系。[@problem_id:1498285] 让我们来盘点一下：

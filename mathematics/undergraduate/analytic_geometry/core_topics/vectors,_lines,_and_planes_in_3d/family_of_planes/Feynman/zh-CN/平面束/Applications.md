@@ -10,8 +10,6 @@
 
 最经典的线索之一是“相切”。假设我们想从一个[平面束](@keyword=pencil_of_planes|lang=zh-CN|style=Feynman)中找到一个恰好与一个给定球体“相吻”的平面 [@problem_id:2130569]。几何上，“相吻”意味着球心到平面的距离正好等于球的半径。这个几何条件听起来可能很复杂，但一旦我们写出[平面束](@keyword=pencil_of_planes|lang=zh-CN|style=Feynman)的方程，其中系数是 $\lambda$ 的函数，这个距离条件就变成了一个只含 $\lambda$ 的[代数方程](@keyword=algebraic_equations|lang=zh-CN|style=Feynman)！解出这个方程，我们就能立刻锁定那一两个满足条件的“嫌疑”平面。你看，一个优雅的几何问题就这样被转化成了一次简单的代数运算。
 
-![](https://static.scholarfun.com/shared/images/2130569.png)
-
 当然，线索的形式多种多样。我们可能需要找到一个与另一个特定平面成特定角度的平面 [@problem_id:2130574]。同样，这也不是问题。我们知道，平面间的夹角可以通过它们的[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman)的[点积](@keyword=dot_product|lang=zh-CN|style=Feynman)来计算。由于[平面束](@keyword=pencil_of_planes|lang=zh-CN|style=Feynman)中每个平面的法向量 $\vec{n}(\lambda)$ 都被参数 $\lambda$ 清晰地标记着，这个角度条件又一次变成了一个关于 $\lambda$ 的方程。
 
 更进一步，我们可以施加更复杂的约束。比如，一个平面与第三个平面的交线必须平行于 $xy$ 平面 [@problem_id:2130547]。这条交线的方向向量可以通过两个平面[法向量](@keyword=normal_vector|lang=zh-CN|style=Feynman)的叉积得到。要求这个方向向量的 $z$ 分量为零，就直接给出了一个关于 $\lambda$ 的线性方程。或者，想象在某种物理或工程场景中，一个平面界面需要与两个关键点保持特定的距离比 [@problem_id:2130579]。这个条件听起来令人望而生畏，但利用[平面束](@keyword=pencil_of_planes|lang=zh-CN|style=Feynman)的表达式，你会发现大部分复杂的部分（法[向量的模](@keyword=magnitude_of_a_vector|lang=zh-CN|style=Feynman)长）在比例中被神奇地约掉了，最终又回到了一个简单的关于 $\lambda$ 的方程。

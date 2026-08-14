@@ -43,8 +43,6 @@
 
 一个具体的[栈帧](@keyword=stack_frame|lang=zh-CN|style=Feynman)布局可能像这样 [@problem_id:3670186]：从高地址到低地址依次是：函数参数、返回地址、保存的旧$FP$值、函数的局部变量……所有这些元素的位置都可以通过与$FP$的固定偏移量来计算，比如参数在$[FP + 16]$，局部变量在$[FP - 8]$。
 
-![A diagram showing a typical stack frame layout with the Frame Pointer (FP) as a stable anchor. Above the FP are the saved old FP and the return address, followed by function arguments. Below the FP are the local variables. The Stack Pointer (SP) points to the bottom of the local variables section.](https://i.imgur.com/kPz094d.png)
-
 *图1：一个典型的栈帧布局。$FP$作为一个稳定的锚点，参数和返回地址位于其上方（正偏移），局部变量位于其下方（负偏移）。$SP$则指向栈顶。*
 
 ### [帧指针](@keyword=frame_pointer|lang=zh-CN|style=Feynman)的妙用：在流沙之上建立磐石

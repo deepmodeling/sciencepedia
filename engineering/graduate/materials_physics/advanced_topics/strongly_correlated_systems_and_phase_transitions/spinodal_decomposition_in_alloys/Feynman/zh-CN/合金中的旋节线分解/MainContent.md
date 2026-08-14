@@ -18,7 +18,7 @@
 2.  **[旋节线](@keyword=spinodal_curve|lang=zh-CN|style=Feynman)（Spinodal Curve）**：在双驼峰曲线的两个“山峰”内侧，各有一个斜率变化最快的地方，即[拐点](@keyword=inflection_points|lang=zh-CN|style=Feynman)。在这些点上，自由能曲线的曲率 $\frac{d^2 f}{dc^2}$ 等于零。这些[拐点](@keyword=inflection_points|lang=zh-CN|style=Feynman)在相图上连成的线，便是**[旋节线](@keyword=spinodal_curve|lang=zh-CN|style=Feynman)**。它标志着一个至关重要的边界，即均匀相的**局部稳定性极限**。[@problem_id:2861269]
 
 <center>
-<img src="https://i.imgur.com/gK2RkG3.png" width="600">
+
 <br>
 图1：典型的[二元合金](@keyword=binary_alloy|lang=zh-CN|style=Feynman)自由能曲线，展示了[双节线](@keyword=binodal_curve|lang=zh-CN|style=Feynman)（由公切线确定）和[旋节线](@keyword=spinodal_curve|lang=zh-CN|style=Feynman)（由拐点 $\frac{d^2f}{dc^2}=0$ 确定）的定义。
 </center>

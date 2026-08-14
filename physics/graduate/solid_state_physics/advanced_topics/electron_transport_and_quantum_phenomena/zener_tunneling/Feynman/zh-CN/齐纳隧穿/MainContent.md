@@ -17,7 +17,7 @@
 
 <br/>
 <center>
-<img src="https://i.imgur.com/w46bKkF.png" alt="Energy bands of a semiconductor under a strong electric field. The bands are tilted, creating a thin triangular potential barrier for electrons in the valence band to tunnel into the conduction band." width="600">
+
 <br/>
 <em>图1：在强电场作用下，[半导体](@keyword=semiconductor|lang=zh-CN|style=Feynman)的[能带](@keyword=energy_bands|lang=zh-CN|style=Feynman)发生倾斜。这使得价带中的电子（左侧）能够隧穿一个薄的三角形势垒，直接进入导带（右侧），而无需获得足够的能量“翻越”整个[能隙](@keyword=electronic_band_gap|lang=zh-CN|style=Feynman)。</em>
 </center>

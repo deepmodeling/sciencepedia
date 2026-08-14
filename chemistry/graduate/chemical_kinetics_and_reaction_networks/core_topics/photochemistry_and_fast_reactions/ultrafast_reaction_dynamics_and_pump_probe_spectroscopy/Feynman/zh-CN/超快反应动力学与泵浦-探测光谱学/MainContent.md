@@ -55,8 +55,6 @@ $$ \Delta t_{\mathrm{FWHM}} \cdot \Delta \nu_{\mathrm{FWHM}} = \frac{2\ln(2)}{\p
 
 在泵浦-探测实验中，我们主要测量的是吸收的变化，这与光学[响应函数](@keyword=response_functions|lang=zh-CN|style=Feynman) $\Delta\chi(\omega)$ 的虚部（$\mathrm{Im}\Delta\chi(\omega)$）成正比。而光通过样品时发生的相位变化，则与其实部（$\mathrm{Re}\Delta\chi(\omega)$）相关。人们一度认为，普通的[吸收光谱](@keyword=absorption_spectrum|lang=zh-CN|style=Feynman)实验无法获得相位的完整信息。然而，一个最基本的物理原则——**因果律**（即，结果不能先于原因出现）——在这里展现了它的魔力。根据Titchmarsh定理和[Kramers-Kronig关系](@keyword=kramers_kronig_relations|lang=zh-CN|style=Feynman)，一个因果系统的[响应函数](@keyword=response_functions|lang=zh-CN|style=Feynman)，其实部和虚部并非相互独立，而是通过一种被称为希尔伯特变换的数学关系紧密相连 [@problem_id:2691601]。这意味着，如果我们能在足够宽的频率范围内精确测量吸收谱（虚部），原则上我们就能计算出相应的[相变](@keyword=phase_transition|lang=zh-CN|style=Feynman)谱（实部）！这种由一条基本物理定律所保证的内在统一性，是科学之美的一个绝佳体现。
 
-![A diagram illustrating the Kramers-Kronig relations connecting the real and imaginary parts of a causal response function.](https://i.imgur.com/K3R4kY6.png "Kramers-Kronig关系示意图，它将[响应函数](@keyword=response_functions|lang=zh-CN|style=Feynman)的实部（[色散](@keyword=frequency_dispersion|lang=zh-CN|style=Feynman)）和[虚部](@keyword=imaginary_part|lang=zh-CN|style=Feynman)（吸收）联系起来。")
-
 #### 量子路径：信号从何而来？
 
 我们探测到的信号，这个宏观的可见光斑，是如何与微观的量子世界联系起来的？答案隐藏在“刘维尔空间路径”这一概念中[@problem_id:2691625]。每一次[光与物质的相互作用](@keyword=interaction_of_light_and_matter|lang=zh-CN|style=Feynman)，都在量子力学的“历史记录本”（密度矩阵）上留下一笔。在非重叠的泵浦-探测实验中，我们探测到的信号，其来源路径惊人地统一：泵浦光必须与[分子相互作用](@keyword=molecular_interactions|lang=zh-CN|style=Feynman)两次（一次作用在密度矩阵的“右侧”ket态，一次作用在“左侧”bra态），这个过程不产生相干叠加态，而是直接在[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)或[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)上产生**粒子数布居 (population)**。然后，探测光再作用一次，将这个布居状态转变为一个可以发光的[相干态](@keyword=coherent_states|lang=zh-CN|style=Feynman)，从而产生信号。

@@ -15,7 +15,7 @@ Let's think about a simple interaction. A protein binds a small molecule, a liga
 
 But to build a real switch, we need something different. We need the response to be sluggish at low input levels and then, within a very narrow range of input, to shoot up dramatically before leveling off again. This S-shaped, or **sigmoidal**, curve is the signature of **[ultrasensitivity](@keyword=ultrasensitivity|lang=en-US|style=Feynman)**. It’s how a small change in a chemical signal can be amplified into a large, decisive change in biological activity.
 
-![A comparison of a hyperbolic (Michaelis-Menten) response curve and a sigmoidal (cooperative) response curve. The [sigmoidal curve](@keyword=sigmoidal_curve|lang=en-US|style=Feynman) shows a much steeper transition from low to high output.](https://i.imgur.com/eB3sYc8.png)
+ shows a much steeper transition from low to high output.](https://i.imgur.com/eB3sYc8.png)
 *Figure 1: The shape of a response. A simple, non-cooperative system (blue) shows a graded, hyperbolic response (a "dimmer"). A cooperative system (orange) exhibits a sigmoidal, switch-like response, which is much more sensitive to input changes within a critical range.*
 
 This switch-like behavior is essential for life. It creates sharp boundaries in a developing embryo, ensuring your liver cells become liver cells and not a strange hybrid of liver and kidney. It allows your cells to filter out noisy, low-level signals and respond only to a strong, committed stimulus.

@@ -14,7 +14,7 @@ Let's begin not with a dry formula, but with a picture. Imagine you are standing
 That's simple enough. But what if we replace the circular wall with an infinitely long, straight wall, a set distance away from the spinner? Let's say the spinner is at the origin $(0, \sigma)$ and the wall is the x-axis. When we spin the pointer, the angle $\Theta$ is chosen uniformly from $(-\frac{\pi}{2}, \frac{\pi}{2})$—any other angle would miss the wall. The [laser](@keyword=laser|lang=en-US|style=Feynman) beam strikes the wall at some position $Y$. Where is it most likely to land?
 
 <center>
-  <img src="https://i.imgur.com/gKj3t0d.png" alt="A diagram showing a spinner at (0, sigma) pointing at a random angle theta to a line (the x-axis), hitting it at position Y." width="400">
+
 </center>
 
 A little bit of trigonometry tells us that $Y = \sigma \tan(\Theta)$. When the angle $\Theta$ is close to zero, the light hits near the origin. But as the angle approaches $+\frac{\pi}{2}$ or $-\frac{\pi}{2}$, the tangent function explodes, and the light-spot shoots off towards plus or minus infinity. Because angles near the edges are just as likely as angles near the center, the landing spot $Y$ has a surprisingly high chance of being very, very far from the origin.

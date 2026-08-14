@@ -23,8 +23,6 @@
 
 中值定理的几何意义如同一幅优美的画卷：对于任意一条光滑连续的曲线，连接其上任意两点的[割线](@keyword=secant_line|lang=zh-CN|style=Feynman)，总能在两点之间找到一个地方，那里的切线与这条割线是**完全平行**的。
 
-![MVT Geometry](https://upload.wikimedia.org/wikipedia/commons/5/5a/MVT.svg)
-
 这个保证是普适的，但对于某些特殊的曲线，我们还能发现更惊人的规律。以我们最熟悉的抛物线 $f(x) = ax^2 + bx + c$ 为例 [@problem_id:2217276]，定理保证的那个切线平行于[割线](@keyword=secant_line|lang=zh-CN|style=Feynman)的点 $\xi$ 在哪里呢？通过简单的计算我们发现，这个点不多不少，正好位于区间的正中央：$\xi = \frac{x_1 + x_2}{2}$。这真是一个令人愉悦的简洁结果！对于抛物线来说，那个“平均”的瞬间，总是发生在时间的“正中间”。
 
 ### 特殊的旅程：回到起点与[罗尔定理](@keyword=rolle_s_theorem|lang=zh-CN|style=Feynman)

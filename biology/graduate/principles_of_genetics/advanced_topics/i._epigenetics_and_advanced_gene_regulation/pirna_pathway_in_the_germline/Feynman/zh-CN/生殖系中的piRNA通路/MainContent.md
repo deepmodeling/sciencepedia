@@ -16,7 +16,7 @@
 想象一下，我们通过一系列精密的实验来区分这些小 RNA。我们会发现，piRNA 在几个关键特征上都独树一帜。首先是**长度**：[miRNA](@keyword=mirna|lang=zh-CN|style=Feynman) 和 [siRNA](@keyword=sirna|lang=zh-CN|style=Feynman) 通常在 $21$ 到 $23$ 个[核苷酸](@keyword=nucleotide|lang=zh-CN|style=Feynman)（$nt$）之间，像标准的短信息；而 piRNA 则更长一些，大约在 $24$ 到 $31$ $nt$ 之间。其次是它们的**“化学签名”**：在 [piRNA](@keyword=piwi_interacting_rna|lang=zh-CN|style=Feynman) 分子的 $3'$ 末端，有一个独特的 $2'$-O-甲基化修饰。这就像给一份绝密文件盖上了防火漆，极大地增强了 [piRNA](@keyword=piwi_interacting_rna|lang=zh-CN|style=Feynman) 的稳定性，保护它在执行任务时不会轻易降解 [@problem_id:2837490]。最后，也是最根本的区别，在于它们的**“搭档”和“出身”**。[piRNA](@keyword=piwi_interacting_rna|lang=zh-CN|style=Feynman) 不与 AGO 蛋白结合，而是选择与一个专门的亚家族——PIWI 蛋白——合作，这也是它名字的由来。更重要的是，[piRNA](@keyword=piwi_interacting_rna|lang=zh-CN|style=Feynman) 的产生过程不依赖于细胞中切割双链 RNA 的“标准剪刀”Dicer 酶，而是源于一条完全不同的生产线 [@problem_id:2837481]。
 
 <center>
-<img src="https://i.imgur.com/G5YJ9A8.png" alt="A schematic diagram comparing piRNAs, miRNAs, and siRNAs across four key features: length, 3' end modification, protein partner, and biogenesis pathway. piRNAs are 24-31 nt long, 2'-O-methylated, bind to PIWI proteins, and are Dicer-independent. miRNAs are 21-23 nt, not methylated, bind AGO, and come from hairpin precursors via Dicer. [siRNA](@keyword=sirna|lang=zh-CN|style=Feynman)s are 21-22 nt, not methylated, bind AGO, and come from long dsRNA via Dicer." style="width: 80%;"/>
+
 </center>
 <br>
 
@@ -75,7 +75,7 @@ piRNA 的生产过程堪称细胞内[部分子](@keyword=partons|lang=zh-CN|styl
 小鼠雄性生殖细胞的发育过程完美地展示了这两种战术的协同应用 [@problem_id:2837517]。在[胚胎发育](@keyword=embryonic_development|lang=zh-CN|style=Feynman)早期，MIWI2 蛋白会携带 [piRNA](@keyword=piwi_interacting_rna|lang=zh-CN|style=Feynman) 进入细胞核，主导对转座子进行“锁闭”的 `de novo` DNA 甲基化，建立起可遗传的、长期的“第一道防线”。而在之后的[精子形成](@keyword=spermiogenesis|lang=zh-CN|style=Feynman)过程中，MIWI 蛋白则主要在细胞质中行使“搜索并摧毁”的功能，清除任何侥幸逃脱了[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)沉默的[转座子](@keyword=jumping_genes|lang=zh-CN|style=Feynman) RNA，构筑起“[第二道防线](@keyword=second_line_of_defense|lang=zh-CN|style=Feynman)”。
 
 <center>
-<img src="https://i.imgur.com/K5bV47C.png" alt="A diagram illustrating the two main effector functions of the [piRNA](@keyword=piwi_interacting_rna|lang=zh-CN|style=Feynman) pathway. On the left, in the cytoplasm, a PIWI-piRNA complex binds to a transposon mRNA and cleaves it (post-transcriptional silencing). On the right, in the nucleus, a different PIWI-piRNA complex binds to the transposon's DNA locus and recruits enzymes (like [DNMTs](@keyword=dnmts|lang=zh-CN|style=Feynman)) to add repressive marks (like DNA methylation), shutting down transcription (transcriptional silencing)." style="width: 80%;"/>
+
 </center>
 <br>
 

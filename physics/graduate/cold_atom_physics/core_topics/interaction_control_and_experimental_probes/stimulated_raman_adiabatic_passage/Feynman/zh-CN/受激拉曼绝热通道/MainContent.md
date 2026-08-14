@@ -13,8 +13,6 @@
 
 在量子世界里，我们有“向导”可以帮助我们——激光。我们可以用一束“泵浦”激光（Pump laser）连接起始态 $|1\rangle$ 和[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman) $|2\rangle$，再用另一束“斯托克斯”激光（Stokes laser）连接[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman) $|2\rangle$ 和目标态 $|3\rangle$。这三个能级和两束激光构成了一个典型的**拉姆达（$\Lambda$）系统**（$\Lambda$-system），因其能级结构形似希腊字母 $\Lambda$ 而得名 [@problem_id:2025887]。
 
-![Λ-system](https://i.imgur.com/uG9XNIl.png "A diagram of a Lambda (Λ) system showing states |1>, |3> and the higher energy state |2>, coupled by Pump and Stokes lasers.")
-
 最符合直觉的方案是什么？很简单：先让泵浦激光这位向导把包裹从 $|1\rangle$ 推上山峰 $|2\rangle$，然后再让斯托克斯激光这位向导把它从山峰 $|2\rangle$ 接到目的地 $|3\rangle$。这个“先泵浦，后斯托克斯”的序列听起来合情合理。但问题恰恰在于，这个方案要求包裹必须实实在在地到达山峰 $|2\rangle$。而正如我们所说，山峰 $|2\rangle$ 是个危险地带，任何停留都可能导致任务失败。在现实中，[激发态](@keyword=excited_state|lang=zh-CN|style=Feynman)的寿命极短，这种顺序操作的效率往往低得可怜。
 
 难道就没有一种方法可以既利用这两位向导，又能完全避开那危险的山峰吗？

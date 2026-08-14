@@ -13,8 +13,6 @@
 
 为什么这如此困难？当景观是**多峰的**（multimodal），即拥有许多局部最小值时，困难就出现了。我们的目标函数不是一个简单、光滑的碗状；它是一个由山丘、山谷和山脊组成的复杂地形。考虑一个模仿这种景观的一维[简单函数](@keyword=simple_functions|lang=zh-CN|style=Feynman)：$f(x) = \sin(5x) + 0.1x^2$。正弦项产生了一系列波纹，而 $x^2$ 项则形成了一个平缓的大尺度碗状形态。
 
-![函数 f(x) = sin(5x) + 0.1x^2 的图像，显示了抛物线内的一条波浪形曲线。它有多个局部最小值，全局最小值在 x=-1.5 附近。](https://i.imgur.com/k6lP0Wn.png)
-
 一个[基于梯度的方法](@keyword=gradient_based_methods|lang=zh-CN|style=Feynman)，即我们的“下坡徒步者”，如果从像 $x_0=2.8$ 这样的点出发，会直接走向附近 $x=2.5$ 左右的局部最小值。它会被困住，对自己找到了一个最小值感到非常满意，却完全没有意识到在 $x=-1.5$ 附近还有一个更深的山谷 [@problem_id:3600613]。
 
 每个局部最小值都控制着一个**吸引盆**（basin of attraction），这是所有起始点的集合，从这些点出发，我们只走下坡路的徒步者最终会到达那个特定的最小值。这些盆地划分了整个搜索空间。分隔它们的边界就像无限薄的山脊。确定性[局部搜索](@keyword=local_search|lang=zh-CN|style=Feynman)的本质决定了它生成的[连续路径](@keyword=continuous_paths|lang=zh-CN|style=Feynman)将永远被限制在其起始的那个盆地内。它永远无法越过山脊 [@problem_id:3600658]。

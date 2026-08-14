@@ -23,7 +23,6 @@
 $$ V(r) = D_e \left(1 - e^{-a(r-r_e)}\right)^2 $$
 在这里，$r$ 是原子间的距离，$r_e$ 是平衡距离，$D_e$ 是我们刚才提到的解离能，$a$ 是一个与键的“宽度”相关的常数。这个函数巧妙地捕捉了真实势能的所有关键特征：陡峭的内壁、[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)附近的抛物线形状，以及逐渐平缓并最终趋于解离能的外坡。
 
-<img src="https://i.imgur.com/GjN9vU1.png" width="600">
 *图1：[简谐振子](@keyword=simple_harmonic_oscillator|lang=zh-CN|style=Feynman)（蓝色虚线）与更真实的[莫尔斯势](@keyword=morse_potential|lang=zh-CN|style=Feynman)（红色实线）的比较。[莫尔斯势](@keyword=morse_potential|lang=zh-CN|style=Feynman)的不对称性——压缩时更陡峭，拉伸时更平缓——是理解非谐效应的关键。图中还标示了电子解离能 $D_e$ 和从[基态](@keyword=basis_states|lang=zh-CN|style=Feynman)开始的解离能 $D_0$。*
 
 ### 不对称性的涟漪

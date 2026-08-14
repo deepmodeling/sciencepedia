@@ -10,7 +10,7 @@
 
 <center>
   <figure>
-    <img src="https://static.scholarfun.com/Users/1/file/2139390-1.png" alt="线段裁剪示意图" width="400">
+
     <figcaption>图1：线段被矩形视口裁剪。计算[几何算法](@keyword=geometric_algorithms|lang=zh-CN|style=Feynman)精确地找到了可见部分的端点。</figcaption>
   </figure>
 </center>
@@ -27,7 +27,7 @@
 
 <center>
   <figure>
-    <img src="https://static.scholarfun.com/Users/1/file/2139392-1.png" alt="在长方体表面寻找[最短路径](@keyword=shortest_path|lang=zh-CN|style=Feynman)" width="500">
+
     <figcaption>图2：通过将长方体的表面展开成二维平面，三维空间中的最短表面路径问题就转化为了二维空间中的直线距离问题。</figcaption>
   </figure>
 </center>
@@ -42,7 +42,7 @@
 
 <center>
   <figure>
-    <img src="https://static.scholarfun.com/Users/1/file/2383820-1.png" alt="沃罗诺伊[图划分](@keyword=graph_partitioning|lang=zh-CN|style=Feynman)城市区域" width="450">
+
     <figcaption>图3：沃罗诺伊图将平面划分为多个区域，每个区域内的所有点都比到其他任何“中心点”更接近其所属的“中心点”。这在城市规划、物流分区等领域有广泛应用。</figcaption>
   </figure>
 </center>
@@ -59,7 +59,7 @@
 
 <center>
   <figure>
-    <img src="https://static.scholarfun.com/Users/1/file/2383853-1.png" alt="宇宙学模拟中的沃罗诺伊图" width="500">
+
     <figcaption>图4：在宇宙学模拟中，沃罗诺伊图（彩色区域）和其对偶的[德劳内三角剖分](@keyword=delaunay_triangulation|lang=zh-CN|style=Feynman)（黑色细线）被用来识别宇宙的大尺度结构，如空洞和纤维。</figcaption>
   </figure>
 </center>

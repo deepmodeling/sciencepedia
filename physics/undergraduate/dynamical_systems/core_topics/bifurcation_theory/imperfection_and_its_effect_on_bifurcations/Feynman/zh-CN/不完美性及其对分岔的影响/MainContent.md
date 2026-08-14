@@ -27,8 +27,6 @@ $$
 
 那么，[分岔图](@keyword=bifurcation_diagrams|lang=zh-CN|style=Feynman)会变成什么样呢？在完美情况下 ($h=0$)，代表[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)的两条曲线——水平线 $x=0$ 和抛物线 $x = \pm\sqrt{r}$——在原点 $(r,x)=(0,0)$ 相交。而当 $h \neq 0$ 时，这两条曲线不再相交了。它们像两条试图交汇但又互相回避的路径，形成了一种被称为**“回避[交叉](@keyword=decussation|lang=zh-CN|style=Feynman)” (avoided crossing)** 的结构。[@problem_id:1683734]
 
-![Imperfect Pitchfork Bifurcation Diagram](https://i.imgur.com/8aVwP2e.png "图1：完美[叉式分岔](@keyword=pitchfork_bifurcation|lang=zh-CN|style=Feynman)（左）与不完美[叉式分岔](@keyword=pitchfork_bifurcation|lang=zh-CN|style=Feynman)（右）。不完美性（h > 0）破坏了对称性，将[分岔点](@keyword=bifurcation_points|lang=zh-CN|style=Feynman)分解为一个光滑曲线和一个[鞍结分岔](@keyword=tangent_bifurcation|lang=zh-CN|style=Feynman)点（图中“鼻子”的尖端）。")
-
 更深刻的真相是：原本的[叉式分岔](@keyword=pitchfork_bifurcation|lang=zh-CN|style=Feynman)点消失了！取而代之的是一条光滑的平衡曲线，以及一个“凭空”冒出来的**[鞍结分岔](@keyword=tangent_bifurcation|lang=zh-CN|style=Feynman) (saddle-node bifurcation)**。[@problem_id:1683776] 这个[鞍结分岔](@keyword=tangent_bifurcation|lang=zh-CN|style=Feynman)发生在某个临界值 $r_c$ 处，它标志着一对稳定与不稳定平衡点的诞生或湮灭。这个 $r_c$ 的值取决于不完美性 $h$ 的大小，具体来说 $r_c = (27/4)^{1/3} h^{2/3}$。[@problem_id:1683745] 换句话说，不完美性将一个更复杂的分岔（叉式）“展开”成了一个更基本的[分岔](@keyword=bifurcations|lang=zh-CN|style=Feynman)（鞍结）。这就像用放大镜观察一个完美的几何点，却发现它实际上是一个有结构的微小圆形。
 
 ### 滞后与灾变：不完美的另一面
@@ -52,8 +50,6 @@ $$
 h^2 = \frac{4}{27}r^3
 $$
 这条曲线在 $(r,h)=(0,0)$ 点形成一个尖角，被称为**[尖点](@keyword=cusps|lang=zh-CN|style=Feynman) (cusp)**。[@problem_id:1683747] 这就是著名的**[尖点](@keyword=cusps|lang=zh-CN|style=Feynman)灾变 (cusp catastrophe)** 的几何形状。
-
-![Cusp Catastrophe Surface](https://i.imgur.com/kYDRaF2.png "图2：[尖点](@keyword=cusps|lang=zh-CN|style=Feynman)灾变[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)。[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)x构成了关于参数r和h的[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)。在(r,h)平面上的尖点曲线是这个[曲面](@keyword=2_dimensional_manifold|lang=zh-CN|style=Feynman)发生折叠的投影，它界定了系统从单[稳态](@keyword=steady_state_2|lang=zh-CN|style=Feynman)（区域外）到双稳态（区域内）的转变。")
 
 这个[尖点](@keyword=cusps|lang=zh-CN|style=Feynman)结构是一幅统一的蓝图，它告诉我们关于这个系统的一切。
 - **尖点内部** ($4r^3 > 27h^2$)：在这个区域，系统是[双稳态](@keyword=bistability|lang=zh-CN|style=Feynman)的，拥有三个[平衡点](@keyword=equilibrium_points|lang=zh-CN|style=Feynman)（两个稳定，一个不稳定）。

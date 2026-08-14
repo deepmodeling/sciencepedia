@@ -16,7 +16,7 @@
 那么，IEG是如何做到如此神速的呢？大自然在这里设计了一个极其精妙的“预备”机制，叫做**[启动子近端暂停](@keyword=promoter_proximal_pausing|lang=zh-CN|style=Feynman) (Promoter-Proximal Pausing)**。[@problem_id:2697308] 我们可以把它想象成一个蓄势待发的短跑运动员。负责[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)基因的酶，即[RNA聚合酶II](@keyword=rna_polymerase_ii|lang=zh-CN|style=Feynman) (Pol II)，并非在听到“开始”信号后才从起点跑过来，而是早已“招募”到基因的起跑线（[启动子](@keyword=promoter|lang=zh-CN|style=Feynman)）上，甚至已经向前冲刺了几十个碱基。然后，它被一组叫做NELF和DSIF的“制动”蛋白强行“摁住”，处于一种引擎轰鸣、蓄势待发的状态。
 
 <p align="center">
-  <img src="https://i.imgur.com/W29F642.png" alt="Promoter-Proximal Pausing" width="700"/>
+
 </p>
 <p align="center">
   <em>图1：[立即早期基因](@keyword=immediate_early_genes|lang=zh-CN|style=Feynman)的[启动子近端暂停](@keyword=promoter_proximal_pausing|lang=zh-CN|style=Feynman)机制。在静息状态下，[RNA聚合酶II](@keyword=rna_polymerase_ii|lang=zh-CN|style=Feynman) (Pol II) 已经结合在基因的起始位置并处于暂停状态。当[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)活动信号传来，激酶（如P-TEFb）被激活，它通过磷酸化修饰解除了暂停，使Pol II得以高速进入基因主体，进行“爆发式”的[转录](@keyword=rna_transcription|lang=zh-CN|style=Feynman)。</em>
@@ -32,12 +32,12 @@
 
 答案在于，[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)是一位杰出的信息处理大师。它发展出了多条“[信号转导通路](@keyword=signal_transduction_pathways|lang=zh-CN|style=Feynman)”，如同一个复杂的邮政系统，能将不同形式的刺激，打包成不同的“分子信件”，发送到细胞核。信件的内容，取决于信号的**空间位置**和**时间模式**。
 
-想象两种不同的钙信号来源：一种是来自遥远树突上的NMDA受体，另一种则来自靠近细胞核的细胞体上的L型[电压门控](@keyword=voltage_gating|lang=zh-CN|style=Feynman)钙通道。[@problem_id:2697270] 
+想象两种不同的钙信号来源：一种是来自遥远树突上的NMDA受体，另一种则来自靠近细胞核的细胞体上的L型[电压门控](@keyword=voltage_gating|lang=zh-CN|style=Feynman)钙通道。[@problem_id:2697270]
 - 对于来自远端突触的信号，细胞采用了一种“分子接力”策略。局部的钙信号激活了膜上的一系列蛋白，启动了著名的**Ras-[ERK信号通路](@keyword=erk_signaling|lang=zh-CN|style=Feynman)**。这条通路就像一波多米诺骨牌，最终激活了可溶性的ERK蛋白。活化的ERK蛋白就像一位信使，可以自由地在细胞质中穿梭，最终进入细胞核，传递指令。这个过程需要几分钟时间。
 - 而对于细胞体来源的钙信号，由于它离细胞核很近，情况就大不相同了。钙离子可以直接与细胞核内或其周围的蛋白（如[钙调蛋白](@keyword=calmodulin|lang=zh-CN|style=Feynman)Calmodulin）结合，迅速激活一条更直接的通路——**CaMKIV通路**。这条“近路”可以在一两分钟内就完成对细胞核内靶标的调控。
 
 <p align="center">
-  <img src="https://i.imgur.com/8Qj8n6i.png" alt="Spatial Decoding of Calcium Signals" width="750"/>
+
 </p>
 <p align="center">
   <em>图2：钙信号的空间解码。源自遥远树突的信号（左）通过多步的ERK[激酶级联反应](@keyword=kinase_cascades|lang=zh-CN|style=Feynman)，如同一场分子接力赛，将信息传递到细胞核。而源自细胞体的信号（右）则可以更直接地激活细胞核内的CaMKIV通路。</em>
@@ -65,7 +65,7 @@ CBP/p300的“超能力”在于它是一种**[组蛋白乙酰转移酶 (HAT)](@
 $$
 \frac{dA}{dt} = k_{\mathrm{acetyl}}\,(1 - A) - k_{\mathrm{deacetyl}}\,A
 $$
-这里，$k_{\mathrm{acetyl}}$代表乙酰化的速率，$k_{\mathrm{deacetyl}}$代表去乙酰化的速率。在静息状态下，去乙酰化占主导，乙酰化水平$A(t)$很低，基因处于“关闭”状态。当[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)活动时，CBP/p300被招募，大大提高了$k_{\mathrm{acetyl}}$，使得[乙酰化](@keyword=acetylation|lang=zh-CN|style=Feynman)水平迅速上升，基因被“打开”。[@problem_id:2697240] 
+这里，$k_{\mathrm{acetyl}}$代表乙酰化的速率，$k_{\mathrm{deacetyl}}$代表去乙酰化的速率。在静息状态下，去乙酰化占主导，乙酰化水平$A(t)$很低，基因处于“关闭”状态。当[神经元](@keyword=neurons|lang=zh-CN|style=Feynman)活动时，CBP/p300被招募，大大提高了$k_{\mathrm{acetyl}}$，使得[乙酰化](@keyword=acetylation|lang=zh-CN|style=Feynman)水平迅速上升，基因被“打开”。[@problem_id:2697240]
 
 这一“信号-磷酸化-招募-[乙酰化](@keyword=acetylation|lang=zh-CN|style=Feynman)”的链条，构成了一个优美而精确的两步验证机制，确保了只有在收到正确神经活动信号时，正确的基因才会被打开。
 

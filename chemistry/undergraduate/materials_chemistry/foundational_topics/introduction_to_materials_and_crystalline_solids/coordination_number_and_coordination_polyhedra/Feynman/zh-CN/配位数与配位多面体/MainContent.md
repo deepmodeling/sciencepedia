@@ -20,7 +20,7 @@
 在一个最简单的**[简单立方](@keyword=simple_cubic|lang=zh-CN|style=Feynman) (Simple Cubic)** [晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中，原子位于一个巨大立方体框架的每个顶点。如果我们站在位于坐标原点 $(0,0,0)$ 的一个原子上环顾四周，谁是我们的“最近邻”？不难发现，它们是沿着坐标轴方向，距离我们为 $a$（晶格常数）的六个原子：分别在 $(\pm a, 0, 0)$，$(0, \pm a, 0)$ 和 $(0, 0, \pm a)$。因此，这里的[配位数](@keyword=coordination_number|lang=zh-CN|style=Feynman)是 $6$。更有趣的是，如果我们将这六个点用线连接起来，会得到一个非常对称的形状——一个**正八面体 (Octahedron)** ([@problem_id:1291092])。这就是这个原子的[配位多面体](@keyword=coordination_polyhedra|lang=zh-CN|style=Feynman)。
 
 <center>
-<img src="https://i.imgur.com/8QG34hS.png" width="400">
+
 <br>
 <figcaption>[简单立方晶格](@keyword=simple_cubic_lattice|lang=zh-CN|style=Feynman)中的原子（中心）及其六个最近邻，构成了正八面体配位。 </figcaption>
 </center>
@@ -30,7 +30,7 @@
 而在**面心立方 (Face-Centered Cubic, FCC)** 结构（如铜、金）中，原子堆积得更加紧密。每个原子都被 $12$ 个[等距](@keyword=isometry|lang=zh-CN|style=Feynman)的邻居所包围（[配位数](@keyword=coordination_number|lang=zh-CN|style=Feynman)为 $12$）。这 $12$ 个邻居形成了一个异常美丽的[配位多面体](@keyword=coordination_polyhedra|lang=zh-CN|style=Feynman)，它由 $8$ 个正三角形的面和 $6$ 个正方形的面构成，被称为**立方八面体 (Cuboctahedron)** ([@problem_id:1291109])。
 
 <center>
-<img src="https://i.imgur.com/6jNq2zP.png" width="400">
+
 <br>
 <figcaption>面心立方 (FCC) [晶格](@keyword=crystal_lattice|lang=zh-CN|style=Feynman)中的原子及其 12 个最近邻，构成了立方八面体。 </figcaption>
 </center>
@@ -48,7 +48,7 @@
 这些范围的边界值并非凭空而来，它们是纯粹几何学的产物。让我们亲自推导一个！考虑一个阳离子被 $8$ 个阴离子包围形成立方体配位的情况。最紧凑、最临界的稳定状态是什么？那就是中央的阳离子刚好被所有 $8$ 个角上的阴离子同时接触，而这 $8$ 个阴离子自身也沿着立方体的棱边相互接触。
 
 <center>
-<img src="https://i.imgur.com/J33K21L.png" width="450">
+
 <br>
 <figcaption>立方体配位的[临界状态](@keyword=critical_state|lang=zh-CN|style=Feynman)几何示意图。 </figcaption>
 </center>

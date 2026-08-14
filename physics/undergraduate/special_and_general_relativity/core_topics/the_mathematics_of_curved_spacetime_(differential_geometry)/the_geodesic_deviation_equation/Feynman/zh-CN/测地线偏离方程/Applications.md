@@ -11,7 +11,7 @@
 让我们从一个你非常熟悉的东西开始：一个[球体](@keyword=sphere|lang=zh-CN|style=Feynman)，比如我们的地球。想象两名勇敢的探险家，从赤道上相距不远的两个点同时出发，严格地朝正北方行进。他们出发时，路径是平行的。但他们会永远保持平行吗？当然不会！当你我站在地球上，直觉就会告诉我们，他们会逐渐靠近，最终在北[极点](@keyword=extreme_points|lang=zh-CN|style=Feynman)相遇。这正是因为地球表面是弯曲的。虽然他们都以为自己在走直线（[测地线](@keyword=geodesics|lang=zh-CN|style=Feynman)），但空间的几何结构却悄悄地将他们拉向彼此。这种相对[加速度](@keyword=acceleration|lang=zh-CN|style=Feynman)，正是二维空间中[测地线偏离](@keyword=geodesic_deviation|lang=zh-CN|style=Feynman)最直观的体现 [@problem_id:1864343]。
 
 <center>
-<img src="https://assets.test.coach.corp.lingo-ace.com/images/1864343-sphere_geodesics.png" width="400" alt="两个探险家在[球面](@keyword=sphere|lang=zh-CN|style=Feynman)上沿着经线向北行进，他们的路径虽然初始平行，但由于[球面](@keyword=sphere|lang=zh-CN|style=Feynman)的[曲率](@keyword=curvature|lang=zh-CN|style=Feynman)而逐渐汇合。">
+
 </center>
 <br>
 
@@ -36,7 +36,7 @@
 首先是**[引力透镜](@keyword=gravitational_lensing|lang=zh-CN|style=Feynman)**。当一束来自遥远星系的光穿过一个大质量天体（如另一个星系或[星系团](@keyword=galaxy_clusters|lang=zh-CN|style=Feynman)）附近时，[时空](@keyword=spacetime|lang=zh-CN|style=Feynman)的弯曲会像一个巨大的透镜一样，使[光线](@keyword=light_rays|lang=zh-CN|style=Feynman)路径发生偏折和汇聚。一束原本平行的[光线](@keyword=light_rays|lang=zh-CN|style=Feynman)（一族[零测地线](@keyword=null_geodesics|lang=zh-CN|style=Feynman)）在经过“透镜”后会相互靠拢。这种[光线](@keyword=light_rays|lang=zh-CN|style=Feynman)的[相对运动](@keyword=relative_motion|lang=zh-CN|style=Feynman)，正是由[测地线偏离方程](@keyword=equation_of_geodesic_deviation|lang=zh-CN|style=Feynman)所描述的。我们可以利用这个方程，计算出这个[引力透镜](@keyword=gravitational_lensing|lang=zh-CN|style=Feynman)的“[焦距](@keyword=focal_length|lang=zh-CN|style=Feynman)”，从而理解那些我们在天文照片中看到的奇妙的弧、环和多重影像 [@problem_id:1548986]。
 
 <center>
-<img src="https://assets.test.coach.corp.lingo-ace.com/images/1548986-gravitational-lensing-diagram.png" width="500" alt="来自遥远[光源](@keyword=light_source|lang=zh-CN|style=Feynman)的[光线](@keyword=light_rays|lang=zh-CN|style=Feynman)经过一个大质量星系时路径发生弯曲，形成多个[虚像](@keyword=virtual_image|lang=zh-CN|style=Feynman)，这正是[引力透镜效应](@keyword=gravitational_lensing|lang=zh-CN|style=Feynman)。">
+
 </center>
 <br>
 

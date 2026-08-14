@@ -18,8 +18,6 @@
 
 我们的目标是最小化距离，或者等价地，最小化距离的平方 $f(x, y) = (x - x_0)^2 + (y - y_0)^2$。想象一下以监控站为圆心画出一系列的同心圆，这些圆就是我们目标函数 $f$ 的“等高线”。每个圆圈代表着所有与监控站等距的点的集合。我们想要找到的，是刚好能够“触碰”到[椭圆轨道](@keyword=elliptical_orbits|lang=zh-CN|style=Feynman)的那个最小的圆。
 
-![Lagrange Multiplier
-](https://d2w6sc6zla2hrj.cloudfront.net/items/2216700/2216724/Lagrange_multiplier_2D.gif)
 *图1：当目标函数（红色同心圆）的[等高线](@keyword=level_curves|lang=zh-CN|style=Feynman)与约束函数（蓝色曲线）的路径相切时，我们找到了一个[极值](@keyword=extrema|lang=zh-CN|style=Feynman)点。在这一点，两个函数的梯度向量（箭头所示）是平行的。*
 
 在那个神奇的“触碰”点，圆和椭圆是相切的。这意味着什么？在那个点上，它们共享同一个切线，也就意味着它们的法线——垂直于切线的方向——是指向同一个方向（或者完全相反的方向）的！在微积分的语言里，一个函数在某点的梯度（gradient）向量 $\nabla f$ 正是垂直于该点[等高线](@keyword=level_curves|lang=zh-CN|style=Feynman)的方向。
@@ -100,7 +98,6 @@ $\lambda$ 是最优值对约束变化的敏感度。在经济学中，它被称�
 
 让我们看一个经典的“失败”案例。我们要最小化函数 $f(x,y) = x$，约束条件是 $g(x,y) = y^2 - x^3 = 0$。[@problem_id:2216736] 从[约束方程](@keyword=constraint_equations|lang=zh-CN|style=Feynman)可知，$x = \sqrt[3]{y^2}$，所以 $x$ 肯定是非负的。显然，最小值在 $x=0$ 时取得，此时 $y=0$。所以最优解是 $(0,0)$。
 
-![Cusp_Constraint](https://d2w6sc6zla2hrj.cloudfront.net/items/2216700/2216736/Lagrange_Multiplier_Cusp.png)
 *图2：当约束曲线（蓝色）在最优点（原点）处存在一个尖点（cusp），约束函数的梯度 $\nabla g$ 在该点为零。这破坏了“梯度平行”的几何基础，导致[拉格朗日方法](@keyword=lagrangian_method|lang=zh-CN|style=Feynman)失效。*
 
 但是，如果我们试图用[拉格朗日方法](@keyword=lagrangian_method|lang=zh-CN|style=Feynman)来解这个问题，我们会发现 $\nabla f = (1, 0)$，而 $\nabla g = (-3x^2, 2y)$。在最优点 $(0,0)$，我们有 $\nabla g(0,0) = (0,0)$。我们核心的梯度平行方程 $\nabla f = \lambda \nabla g$ 变成了 $(1,0) = \lambda (0,0) = (0,0)$，这显然是不可能成立的！

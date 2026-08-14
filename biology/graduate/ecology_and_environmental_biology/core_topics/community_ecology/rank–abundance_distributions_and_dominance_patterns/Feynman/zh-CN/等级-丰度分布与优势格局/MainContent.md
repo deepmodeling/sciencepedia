@@ -26,7 +26,7 @@
 为了更直观地看到这种结构，生态学家 Robert Whittaker 提出了一种绝妙的可视化方法，现在被称为 **Whittaker 图**。我们以物种的等级 $r$ 为横坐标，以其相对丰度 $p_{(r)}$ 的对数为纵坐标作图。这张图的**形状**本身就讲述了一个关于统治与公平的深刻故事 [@problem_id:2527414]。
 
 <center>
-  <img src="https://i.imgur.com/example_whittaker_plot.png" alt="一个典型的[Whittaker图](@keyword=whittaker_plot|lang=zh-CN|style=Feynman)，展示了一条陡峭下降的曲线，表示[物种丰度](@keyword=species_abundance|lang=zh-CN|style=Feynman)随等级的增加而迅速减小。" width="600">
+
   <br>
   <small>图1：一张典型的[Whittaker图](@keyword=whittaker_plot|lang=zh-CN|style=Feynman)。陡峭的斜率意味着少数物种占据了绝大多数资源，即高度的优势度。平缓的斜率则代表一个物种间更加平等的“民主”社区。</small>
 </center>

@@ -14,7 +14,7 @@
 为了直观地理解这个“前缀”规则，我们可以画一棵“[编码树](@keyword=code_trees|lang=zh-CN|style=Feynman)”。从一个“根”节点开始，画出两条树枝，分别标上 `0` 和 `1`。在每条树枝的末端，再画出两条新的 `0` 和 `1` 树枝，如此无限延伸。在这棵树上，从根节点出发的任何一条路径都代表一个潜在的[二进制串](@keyword=binary_strings|lang=zh-CN|style=Feynman)。
 
 <center>
-<img src="https://i.imgur.com/83pPlk2.png" alt="A binary code tree. The root splits into 0 and 1. The 0 branch ends in a codeword '0'. The 1 branch splits into '10' and '11'. '10' is a codeword. '11' splits into '110' and '111', which are also codewords." width="450">
+
 </center>
 <div style="text-align: center; font-size: 0.9em; color:
 #666;">图1：一个[前缀码](@keyword=instantaneous_codes|lang=zh-CN|style=Feynman) `{0, 10, 110, 111}` 在二叉树上的表示。每个码字都是一个“叶子”节点，没有任何码字是另一个码字的“祖先”。</div>

@@ -19,8 +19,6 @@ $$
 
 如果你观察这个信号的波形，你会看到快速[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的载波（$\cos(\omega_c t)$ 部分），其峰值点连成的轨迹，就像一个缓慢变化的轮廓，恰好复现了我们信息信号 $m(t)$ 的形状。这个轮廓，我们称之为**包络**（Envelope）。数学上，这个包络就是 $E(t) = A_c[1 + k_a m(t)]$。只要保证 $1 + k_a m(t)$ 始终为正，这个包络就完美地承载了我们的原始信息，只是被放大并加上了一个直流偏置。
 
-![AM Waveform](https://static.prepai.com/1695770/am-envelope.svg)
-
 这个包络是如此重要，以至于我们可以通过观察它的形态来反推出系统的关键参数。想象一下，一位工程师在实验室里用示波器观察一个AM信号。他只需要测量包络的最大值 $E_{\max}$ 和最小值 $E_{\min}$，就能揭示调制的“深度”。当信息信号是一个简单的余弦波 $m(t) = M \cos(\omega_m t)$ 时，包络的[最大值和最小值](@keyword=maximum_and_minimum|lang=zh-CN|style=Feynman)分别出现在信息信号达到顶峰和谷底的时刻：
 
 $$
@@ -71,8 +69,6 @@ $$
 2.  位于 $f_c+f_m$ 的**上边带**（Upper Sideband, USB）。
 3.  位于 $f_c-f_m$ 的**下边带**（Lower Sideband, LSB）。
 
-![AM Spectrum](https://static.prepai.com/1695766/am-spectrum-example.svg)
-
 这个结论可以推广到任何复杂的信息信号 $m(t)$。利用强大的傅里叶变换工具，我们可以证明，整个信息信号的[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman) $M(\omega)$ 被完整地复制了两份，一份平移到 $+\omega_c$ 处，另一份平移到 $-\omega_c$ 处 [@problem_id:1695766]。这正是傅里叶变换的“[调制性质](@keyword=modulation_property|lang=zh-CN|style=Feynman)”的完美体现。
 
 这一发现也带来一个直接的实际后果：传输一个带宽为 $W$ 的信息信号，经过AM[调制](@keyword=modulation|lang=zh-CN|style=Feynman)后，所占用的总带宽变成了 $2W$ [@problem_id:1695735]。这解释了为什么AM广播电台需要占据比其播送的音乐带宽更宽的频段，也是无线电[频谱](@keyword=frequency_spectrum|lang=zh-CN|style=Feynman)需要被小心翼翼地规划和分配的原因。
@@ -102,8 +98,6 @@ $$
 #### 简洁之道：包络检波
 
 最直观的方法，就是我们前面提到的，去追踪那个承载着信息的包络。有没有一种简单的电路能做到这一点呢？答案是肯定的，而且它非常巧妙：一个[二极管](@keyword=diode|lang=zh-CN|style=Feynman)、一个电容和一个电阻就能构成一个**[包络检波器](@keyword=envelope_detector|lang=zh-CN|style=Feynman)**，这是老式矿石收音机的核心。
-
-![Envelope Detector](https://static.prepai.com/1695720/envelope-detector-circuit.svg)
 
 它的工作原理如下：当输入的AM信号处于波峰时，电压较高，[二极管](@keyword=diode|lang=zh-CN|style=Feynman)导通，迅速给[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman) $C$ 充电，使其电压跟随包络的上升。当信号越过波峰开始下降时，[二极管](@keyword=diode|lang=zh-CN|style=Feynman)截止，[电容器](@keyword=capacitor|lang=zh-CN|style=Feynman)便通过电阻 $R$ 缓慢放电。
 

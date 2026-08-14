@@ -43,5 +43,4 @@ $$ S(P) = \frac{1}{\phi + \frac{1 - \phi}{P} + \beta \ln P} $$
 
 基于算术强度，我们可以构建一个直观而强大的性能预测工具——**[屋顶线模型](@keyword=roofline_model|lang=zh-CN|style=Feynman) (Roofline Model)**。想象一个房子的侧面轮廓：它有一个平坦的“计算屋顶”，其高度由处理器的峰值计算性能 $T_{\text{roof}}$ 决定；还有一个倾斜的“内存屋顶”，其性能取决于内存带宽 $B$ 和[算法](@keyword=algorithm|lang=zh-CN|style=Feynman)的算术强度 $I$ 的乘积 ($B \cdot I$)。一个程序的实际性能，就被限制在这个“屋顶”之下。
 
-![Roofline Model](https://dummyimage.com/600x400/eeeeee/aaaaaa.png=Roofline+Model+Illustration)
 *一个程序的性能受限于计算屋顶（水平线）和内存屋顶（倾斜线）中较低的那个。*

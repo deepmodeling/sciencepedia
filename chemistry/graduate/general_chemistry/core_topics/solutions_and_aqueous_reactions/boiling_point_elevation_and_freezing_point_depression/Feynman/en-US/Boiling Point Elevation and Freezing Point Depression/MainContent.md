@@ -27,7 +27,7 @@ So, how does this reluctance to leave translate into a change in boiling and fre
 We can visualize this by plotting chemical potential against temperature for all three phases (solid, liquid, and vapor), as shown in Figure 1. The lines all slope downwards because as temperature increases, entropy increases, and a higher entropy means a lower chemical potential. The slope is given by $(\partial \mu / \partial T)_p = -S$, where $S$ is the molar entropy. Since the entropy of vapor is much greater than liquid, which in turn is greater than solid ($S_{\text{vapor}} \gg S_{\text{liquid}} > S_{\text{solid}}$), the vapor line is the steepest, and the solid line is the shallowest. The freezing point is the intersection of the solid and liquid lines, and the [boiling point](@keyword=boiling_point|lang=en-US|style=Feynman) is the intersection of the liquid and vapor lines.
 
 <center>
-![A schematic plot of chemical potential versus temperature for solid, liquid, and vapor phases of a pure solvent, and for the solvent in a solution.](https://i.imgur.com/example_image.png "Figure 1: The effect of a solute on the chemical potential of the solvent and its phase transition temperatures. Adding a solute lowers the chemical potential of the liquid phase (blue dashed line), causing the freezing point to decrease ($T_f < T_f^*$) and the boiling point to increase ($T_b > T_b^*$).")
+
 </center>
 
 Now, let's add our solute. As we established, this lowers the chemical potential of the solvent *in the liquid phase*. The entire line for the liquid on our plot shifts downwards. But the lines for the pure solid ice and the pure water vapor stay put (assuming the solute is nonvolatile and doesn't fit into the ice crystal structure). What happens to the intersections?

@@ -60,8 +60,6 @@ This constraint goes even deeper. The [rate constants](@keyword=rate_constants|l
 
 What happens in a more complex network of reactions? The [principle of detailed balance](@keyword=principle_of_detailed_balance|lang=en-US|style=Feynman) acts as an iron-clad logical constraint. Consider a triangular network of reactions:
 
-![Triangular Reaction Network](https://assets.test.expert.ai/problems/2670654/images/image.png)
-
 At equilibrium, [detailed balance](@keyword=detailed_balance|lang=en-US|style=Feynman) must hold for *each leg* of the triangle independently.
 - For $A \rightleftharpoons B$: $k_{AB}^+ [A] = k_{AB}^- [B] \implies K_{AB} = k_{AB}^+/k_{AB}^-$
 - For $B \rightleftharpoons C$: $k_{BC}^+ [B] = k_{BC}^- [C] \implies K_{BC} = k_{BC}^+/k_{BC}^-$

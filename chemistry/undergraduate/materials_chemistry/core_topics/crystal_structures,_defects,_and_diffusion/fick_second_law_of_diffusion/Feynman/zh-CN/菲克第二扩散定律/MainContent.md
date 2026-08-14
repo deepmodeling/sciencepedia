@@ -18,7 +18,7 @@
 这一小段切片里的墨水浓度为什么会变化呢？原因只有一个：从左边流入的墨水量和从右边流出的墨水量不相等。如果流入的比流出的多，浓度就会上升；如果流出的比流入的多，浓度就会下降。这不就是最简单的“记账”原则嘛——物理学家称之为“[质量守恒](@keyword=conservation_of_mass|lang=zh-CN|style=Feynman)”。
 
 <center>
-<img src="https://i.imgur.com/KzYfB5U.png" width="500">
+
 </center>
 <div style="text-align: center; font-size: 0.9em; color: #666;">图1：[一维扩散](@keyword=one_dimensional_diffusions|lang=zh-CN|style=Feynman)中一个小体积元内的[质量平衡](@keyword=mass_balance|lang=zh-CN|style=Feynman)。浓度的变化率取决于进出该体积元的通量差异。</div>
 
@@ -93,7 +93,7 @@ $$
 这里的 $\text{erf}$ 是一个叫做“误差函数”的[特殊函数](@keyword=special_functions|lang=zh-CN|style=Feynman)。你不需要了解它的复杂定义，只需要知道它的图像是一个平滑的 S 形曲线，能完美地把 $x=0$ 处的零浓度和远处的初始浓度 $C_0$ 连接起来。[@problem_id:1561813]
 
 <center>
-<img src="https://i.imgur.com/8Qj8j0m.png" width="500">
+
 </center>
 <div style="text-align: center; font-size: 0.9em; color: #666;">图2：在平面电极上，浓度分布 $C(x,t)$ 随时间演变。扩散层厚度 $\delta$ 随时间增长，大约与 $\sqrt{Dt}$ 成正比。</div>
 

@@ -21,7 +21,7 @@
 
 让我们以物理学中最经典的模型——简谐振子（可以想象成一个连接在完美弹簧上的小球）为例 [@problem_id:2807021]。它的总能量 $E = \frac{p^2}{2m} + \frac{1}{2}kq^2$ 是守恒的。这个方程在 $(q, p)$ 相空间画出的图形，正是一个椭圆。当小球来回[振动](@keyword=oscillation|lang=zh-CN|style=Feynman)一次，它在相空间中的“状态点”就恰好沿着这个椭圆走完一整圈。对于一个在V形“引力陷阱”里[振荡](@keyword=oscillation|lang=zh-CN|style=Feynman)的粒子，它的[相空间轨迹](@keyword=phase_space_trajectory|lang=zh-CN|style=Feynman)则更像一个圆角的矩形 [@problem_id:2030850]。每一种[周期运动](@keyword=periodic_motion|lang=zh-CN|style=Feynman)，都在相空间中描绘着它独一无二的“指纹”。
 
-![[简谐振子](@keyword=simple_harmonic_oscillator|lang=zh-CN|style=Feynman)和V形电势的相空间图像](https://i.imgur.com/example.png "不同系统在相空间中的轨迹：简谐振子（椭圆）和V形[势阱](@keyword=potential_energy_well|lang=zh-CN|style=Feynman)（类矩形）。")
+和V形电势的相空间图像](https://i.imgur.com/example.png "不同系统在相空间中的轨迹：简谐振子（椭圆）和V形[势阱](@keyword=potential_energy_well|lang=zh-CN|style=Feynman)（类矩形）。")
 
 ### “作用量”：为运动的循环“量体裁衣”
 

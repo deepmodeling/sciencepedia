@@ -6,8 +6,6 @@ This article provides a comprehensive guide to this essential computational meth
 *   Next, in **Applications and Interdisciplinary Connections**, we will witness how this abstract geometry translates into tangible insights, explaining the voltage plateaus in batteries, the mineral phases deep within the Earth, and the active surfaces of catalysts.
 *   Finally, **Hands-On Practices** will offer you the chance to apply these principles, solidifying your understanding by calculating [phase stability](@keyword=phase_stability|lang=en-US|style=Feynman), predicting decomposition reactions, and exploring the dynamic effects of temperature.
 
-![A 2D convex hull diagram showing energy vs. composition. Several points representing different phases are plotted. A line (the 'ruler') is shown forming the lower boundary, touching the stable phases and leaving unstable phases above it.](https://static.scientific.net/articles/123/12398/img/fig1.png)
-
 ## Principles and Mechanisms
 
 Imagine you are a cosmic chef with a pantry filled with all the elements of the periodic table. Your task is to bake a new material. Which recipe, out of all the infinite combinations, will produce a stable, lasting result, and which will simply crumble into a mundane mixture of its ingredients? In the universe's grand kitchen, this competition is judged by a single, ruthless principle: a system will always settle into the state of lowest possible energy. Our challenge, and our adventure, is to understand how this contest is judged and to master the beautiful, geometric tool that lets us predict the winners: the **convex hull**.
